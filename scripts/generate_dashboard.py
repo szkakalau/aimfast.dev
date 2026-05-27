@@ -168,9 +168,28 @@ tr:hover td { background:var(--bg-elevated); }
 .track-status.failed { color:var(--red); }
 .empty { color:var(--text-muted); font-size:14px; text-align:center; padding:32px 0; }
 .footer { grid-column:1/-1; text-align:center; color:var(--text-muted); font-size:12px; padding:8px; }
+.auth-overlay { position:fixed; top:0; left:0; width:100%; height:100%; background:var(--bg); z-index:9999; display:flex; flex-direction:column; align-items:center; justify-content:center; }
+.auth-box { background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius); padding:32px; width:360px; max-width:90vw; text-align:center; }
+.auth-box h2 { font-size:18px; margin-bottom:8px; color:var(--text); }
+.auth-box p { color:var(--text-muted); font-size:13px; margin-bottom:20px; }
+.auth-box input { width:100%; padding:10px 14px; border-radius:var(--radius); background:var(--bg-elevated); border:1px solid var(--border); color:var(--text); font-family:var(--font-mono); font-size:14px; outline:none; margin-bottom:12px; }
+.auth-box input:focus { border-color:var(--accent); }
+.auth-box .btn { width:100%; padding:10px; border-radius:var(--radius); background:var(--accent); color:#0d0f12; border:none; font-family:var(--font-sans); font-weight:600; font-size:14px; cursor:pointer; }
+.auth-box .btn:hover { opacity:0.9; }
+.auth-error { color:var(--red); font-size:12px; margin-top:8px; display:none; }
 </style>
 </head>
 <body>
+
+<div class="auth-overlay" id="auth-overlay">
+  <div class="auth-box">
+    <h2>KAKAOPC 情报科 Dashboard</h2>
+    <p>需要密码才能访问</p>
+    <input type="password" id="auth-password" placeholder="请输入密码" autofocus>
+    <button class="btn" id="auth-submit">验证</button>
+    <div class="auth-error" id="auth-error">密码错误，请重试</div>
+  </div>
+</div>
 
 <header>
   <h1>KAKAOPC 情报科 Dashboard</h1>
@@ -239,6 +258,29 @@ tr:hover td { background:var(--bg-elevated); }
 </main>
 
 <script>
+// ─── 密码门禁 ───
+(function() {
+  var PASSWORD_HASH = '7aa2dc06a09cea148d743648855000cdac6be2ff2909dbabc90294be783ad76e';
+  if (sessionStorage.getItem('dashboard_authed') === '1') return;
+  var overlay = document.getElementById('auth-overlay');
+  var input = document.getElementById('auth-password');
+  var btn = document.getElementById('auth-submit');
+  var error = document.getElementById('auth-error');
+  async function tryAuth() {
+    var pw = input.value;
+    if (!pw) return;
+    var hashBuffer = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(pw));
+    var hashArray = Array.from(new Uint8Array(hashBuffer));
+    var hashHex = hashArray.map(function(b) { return b.toString(16).padStart(2, '0'); }).join('');
+    if (hashHex === PASSWORD_HASH) { sessionStorage.setItem('dashboard_authed', '1'); overlay.style.display = 'none'; }
+    else { error.style.display = 'block'; input.value = ''; input.focus(); }
+  }
+  btn.addEventListener('click', tryAuth);
+  input.addEventListener('keydown', function(e) { if (e.key === 'Enter') tryAuth(); });
+  overlay.style.display = 'flex';
+  overlay.parentNode.style.display = '';
+})();
+
 var signals = __SIGNALS_JSON__;
 var history = __HISTORY_JSON__;
 var opps = __OPPS_JSON__;
