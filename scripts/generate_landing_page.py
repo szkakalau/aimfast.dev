@@ -13,7 +13,7 @@ from scripts.llm_client import chat
 ROOT = Path(__file__).resolve().parent.parent
 DAILY_DIR = ROOT / "daily"
 TRACKING_DIR = ROOT / "tracking"
-LP_DIR = ROOT / "landing_pages"
+LP_DIR = ROOT / "public"
 
 TZ_SHANGHAI = timezone(timedelta(hours=8))
 
@@ -151,35 +151,29 @@ def generate(date_str: str) -> str | None:
     if not html.strip().startswith("<!DOCTYPE"):
         print("[LP] 警告: 输出不以 DOCTYPE 开头，可能不是完整 HTML")
 
-    # 保存
-    output_dir = LP_DIR / tid
-    output_dir.mkdir(parents=True, exist_ok=True)
-    output_path = output_dir / "index.html"
-    output_path.write_text(html, encoding="utf-8")
-
-    # 复制到 aimfast.dev 风格路径
+    # 生成 URL slug
     project_slug = tracking.get("opportunity", "project").lower()[:30]
     project_slug = "".join(c if c.isalnum() else "-" for c in project_slug)
     project_slug = project_slug.strip("-")
 
-    # 生成 vercel.json
-    vercel_config = {
-        "name": project_slug,
-        "framework": None,
-    }
-    (output_dir / "vercel.json").write_text(json.dumps(vercel_config, indent=2), encoding="utf-8")
+    # 保存到 public/<slug>/
+    output_dir = LP_DIR / project_slug
+    output_dir.mkdir(parents=True, exist_ok=True)
+    output_path = output_dir / "index.html"
+    output_path.write_text(html, encoding="utf-8")
 
     # 更新 tracking
-    _update_tracking(tid, output_dir)
+    _update_tracking(tid, output_dir, project_slug)
 
     print(f"[LP] Landing Page 已保存 → {output_path}")
     print(f"[LP] 大小: {len(html):,} 字符")
-    print(f"[LP] 部署: cd {output_dir} && vercel deploy --prod")
+    print(f"[LP] URL: https://aimfast.dev/{project_slug}")
+    print(f"[LP] 部署: vercel --prod")
 
     return str(output_path)
 
 
-def _update_tracking(tid: str, output_dir: Path) -> None:
+def _update_tracking(tid: str, output_dir: Path, slug: str) -> None:
     """更新 tracking 中的 LP 状态。"""
     opp_path = TRACKING_DIR / "opportunities.json"
     if not opp_path.exists():
@@ -189,8 +183,8 @@ def _update_tracking(tid: str, output_dir: Path) -> None:
     for op in data.get("opportunities", []):
         if op.get("id") == tid:
             op["lp_status"] = "live"
-            op["landing_page_url"] = str(output_dir.resolve())
-            op["notes"] = f"LP 已生成于 {datetime.now(TZ_SHANGHAI).strftime('%Y-%m-%d %H:%M')} | 部署: cd {output_dir} && vercel"
+            op["landing_page_url"] = f"https://aimfast.dev/{slug}"
+            op["notes"] = f"LP 已生成于 {datetime.now(TZ_SHANGHAI).strftime('%Y-%m-%d %H:%M')} | 部署: vercel --prod"
             break
 
     opp_path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")

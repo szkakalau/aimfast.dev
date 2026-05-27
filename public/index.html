@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>aimfast.dev — 独立开发 · 快速验证</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background-color: #0d0f12;
+      color: #e8e6e3;
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-weight: 400;
+      line-height: 1.5;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    main {
+      width: 100%;
+      max-width: 720px;
+      padding: 3rem 1.5rem 2rem;
+    }
+
+    h1, h2, h3 { font-family: 'DM Sans', sans-serif; font-weight: 600; letter-spacing: -0.02em; }
+    .mono { font-family: 'DM Mono', monospace; font-weight: 400; }
+
+    .hero {
+      text-align: center;
+      padding: 1.5rem 0 3rem;
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+      color: #f0ede8;
+    }
+
+    .hero .accent { color: #f59e42; }
+
+    .hero .subhead {
+      font-size: 1.05rem;
+      color: #a8a6a2;
+      max-width: 480px;
+      margin: 0 auto;
+      font-weight: 400;
+    }
+
+    .projects { margin: 1.5rem 0; }
+
+    .projects h2 {
+      font-size: 1.1rem;
+      color: #7a7875;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 1rem;
+      padding-left: 0.25rem;
+    }
+
+    .project-card {
+      background: #14171c;
+      border-radius: 8px;
+      padding: 1.4rem 1.5rem;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      transition: box-shadow 0.15s, transform 0.15s;
+      text-decoration: none;
+      color: inherit;
+      border-left: 3px solid #f59e42;
+    }
+
+    .project-card:hover {
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+      transform: translateY(-1px);
+    }
+
+    .project-card .info h3 {
+      font-size: 1.1rem;
+      color: #f0ede8;
+      margin-bottom: 0.25rem;
+    }
+
+    .project-card .info .meta {
+      font-size: 0.85rem;
+      color: #7a7875;
+    }
+
+    .project-card .arrow {
+      font-size: 1.2rem;
+      color: #f59e42;
+      flex-shrink: 0;
+      margin-left: 1rem;
+    }
+
+    .project-card.draft {
+      border-left-color: #3a3835;
+      opacity: 0.6;
+    }
+
+    .project-card.draft .info h3 { color: #a8a6a2; }
+
+    .status-badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      margin-left: 0.5rem;
+      vertical-align: middle;
+      font-family: 'DM Mono', monospace;
+    }
+
+    .status-live { background: #1a3a1a; color: #4ade80; }
+    .status-building { background: #3a2a0a; color: #f59e42; }
+    .status-draft { background: #1f1f1f; color: #7a7875; }
+
+    .empty-state {
+      text-align: center;
+      padding: 3rem 1rem;
+      color: #5c5a57;
+    }
+
+    .empty-state .icon { font-size: 2.5rem; margin-bottom: 0.5rem; display: block; }
+    .empty-state p { font-size: 0.95rem; }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #5c5a57;
+      font-size: 0.8rem;
+      border-top: 1px solid #1f2329;
+      margin-top: 2rem;
+      width: 100%;
+      max-width: 720px;
+    }
+
+    footer a { color: #f59e42; text-decoration: none; }
+
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 1.6rem; }
+      .project-card { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+<main>
+  <section class="hero">
+    <h1><span class="accent">aimfast.dev</span> — 独立小工具 · 快速上线验证</h1>
+    <p class="subhead">来自 KAKAOPC 情报科的信号识别，2 小时 Landing Page，7 天数据验证。快速验证、快速废弃、快速迭代。</p>
+  </section>
+
+  <section class="projects">
+    <h2>Live Projects</h2>
+
+    <a href="/i-m-tired-of-talking-to-ai" class="project-card">
+      <div class="info">
+        <h3>DirectAnswer <span class="status-badge status-live">LIVE</span></h3>
+        <div class="meta">非对话式 AI 查询工具 · 反AI疲劳 · 2026-05-27</div>
+      </div>
+      <span class="arrow">&rarr;</span>
+    </a>
+  </section>
+</main>
+<footer>
+  <p>Powered by <a href="#">KAKAOPC 情报科</a> · aimfast.dev · 独立开发快速验证平台</p>
+</footer>
+</body>
+</html>
