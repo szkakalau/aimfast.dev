@@ -1,0 +1,17 @@
+{
+  "_schema": "经验库 — 所有放弃案例及失败原因，反哺信号判断",
+  "_version": "1.0",
+  "_fields": {
+    "id": "经验 ID，格式：LN-YYYYMMDD-XXX",
+    "date": "记录日期",
+    "opportunity_id": "关联的追踪 ID",
+    "opportunity": "机会名称",
+    "signal_score": "当时的信号打分",
+    "failure_type": "失败类型：signal_weak / market_nonexistent / execution_issue / timing_wrong / other",
+    "cause": "失败原因分析",
+    "lesson": "核心教训（一句话）",
+    "would_do_differently": "如果重来会怎么做",
+    "signal_pattern": "这个失败能反哺什么信号判断规则"
+  },
+  "lessons": []
+}

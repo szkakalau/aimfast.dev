@@ -1,0 +1,42 @@
+{
+  "_schema": "机会追踪表 — 所有历史机会的验证状态",
+  "_version": "1.0",
+  "_fields": {
+    "id": "唯一追踪 ID，格式：OP-YYYYMMDD-XXX",
+    "date": "发现日期",
+    "opportunity": "机会名称",
+    "signals": "信号来源列表",
+    "score": "信号打分",
+    "cross_platform_count": "交叉验证平台数",
+    "buyer": "目标付费用户",
+    "landing_page_url": "Landing Page 地址",
+    "lp_status": "LP 状态：not_built / live / ended",
+    "verification_result": "验证结果：pending / passed / failed / adjusted",
+    "day7_uv": "7 天 UV",
+    "day7_signups": "7 天注册/咨询数",
+    "day7_decision": "Day 7 决定：build / abandon / adjust",
+    "current_status": "当前状态：building / launched / abandoned / monitoring",
+    "notes": "备注"
+  },
+  "opportunities": [
+    {
+      "id": "OP-20260527-001",
+      "date": "2026-05-27",
+      "opportunity": "I'm Tired of Talking to AI",
+      "signals": [
+        "Hacker News"
+      ],
+      "score": 34,
+      "cross_platform_count": 3,
+      "buyer": "to-be-determined",
+      "landing_page_url": "C:\\Users\\castr\\Desktop\\OPC Project\\KAKAOPC情报科\\landing_pages\\OP-20260527-001",
+      "lp_status": "live",
+      "verification_result": "pending",
+      "day7_uv": 0,
+      "day7_signups": 0,
+      "day7_decision": "",
+      "current_status": "monitoring",
+      "notes": "LP 已生成于 2026-05-27 21:50 | 部署: cd C:\\Users\\castr\\Desktop\\OPC Project\\KAKAOPC情报科\\landing_pages\\OP-20260527-001 && vercel"
+    }
+  ]
+}
