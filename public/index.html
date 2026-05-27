@@ -1,177 +1,406 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>aimfast.dev — 独立开发 · 快速验证</title>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <title>aimfast.dev — Build & Validate in 2 Hours</title>
+  <meta name="description" content="KAKAOPC Intel scans HN, GitHub, Reddit, and Product Hunt daily. Top signals get a live LP in 2 hours, validated with real traffic in 7 days.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/_ds/base.css">
+  <link rel="stylesheet" href="/_ds/components.css">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    /* ═══════════════════════════════════════
+       aimfast.dev — Brand Narrative
+       ═══════════════════════════════════════ */
 
-    body {
-      background-color: #0d0f12;
-      color: #e8e6e3;
-      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-      font-weight: 400;
-      line-height: 1.5;
-      min-height: 100vh;
+    /* ── Hero ── */
+    .hero {
       display: flex;
       flex-direction: column;
       align-items: center;
-    }
-
-    main {
-      width: 100%;
-      max-width: 720px;
-      padding: 3rem 1.5rem 2rem;
-    }
-
-    h1, h2, h3 { font-family: 'DM Sans', sans-serif; font-weight: 600; letter-spacing: -0.02em; }
-    .mono { font-family: 'DM Mono', monospace; font-weight: 400; }
-
-    .hero {
       text-align: center;
-      padding: 1.5rem 0 3rem;
+      padding: var(--space-12) 0 var(--space-8);
     }
 
     .hero h1 {
-      font-size: 2.2rem;
-      font-weight: 700;
-      line-height: 1.2;
-      margin-bottom: 0.75rem;
-      color: #f0ede8;
+      max-width: 680px;
+      margin-bottom: var(--space-2);
     }
+    .hero h1 .brand { color: var(--color-accent); }
 
-    .hero .accent { color: #f59e42; }
-
-    .hero .subhead {
-      font-size: 1.05rem;
-      color: #a8a6a2;
-      max-width: 480px;
-      margin: 0 auto;
-      font-weight: 400;
-    }
-
-    .projects { margin: 1.5rem 0; }
-
-    .projects h2 {
+    .hero-desc {
       font-size: 1.1rem;
-      color: #7a7875;
+      color: var(--color-text-secondary);
+      max-width: 560px;
+      margin: 0 auto var(--space-4);
+      line-height: 1.7;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-3);
+      max-width: 720px;
+      width: 100%;
+      margin-top: var(--space-4);
+    }
+
+    .hero-stat {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-3);
+      text-align: center;
+    }
+
+    .hero-stat .stat-number {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      line-height: 1;
+      margin-bottom: var(--space-1);
+    }
+
+    .hero-stat .stat-label {
+      font-size: 0.78rem;
+      color: var(--color-text-muted);
       text-transform: uppercase;
       letter-spacing: 0.04em;
-      margin-bottom: 1rem;
-      padding-left: 0.25rem;
+    }
+
+    /* ── Section header ── */
+    .section-header {
+      text-align: center;
+      margin-bottom: var(--space-6);
+    }
+    .section-header h2 { margin-bottom: var(--space-1); }
+    .section-header p { color: var(--color-text-secondary); max-width: 480px; margin: 0 auto; }
+
+    /* ── Workflow ── */
+    .workflow {
+      padding: var(--space-10) 0;
+    }
+
+    .workflow-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-4);
+    }
+
+    .workflow-step {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-5) var(--space-4);
+      text-align: center;
+      transition: border-color var(--duration-normal) var(--ease-out),
+                  transform var(--duration-normal) var(--ease-out);
+    }
+
+    .workflow-step:hover {
+      border-color: var(--color-accent);
+      transform: translateY(-3px);
+    }
+
+    .workflow-step .step-num {
+      font-family: var(--font-heading);
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--color-accent-muted);
+      line-height: 1;
+      margin-bottom: var(--space-2);
+    }
+
+    .workflow-step .step-icon {
+      width: 48px; height: 48px;
+      border-radius: var(--radius-md);
+      background: var(--color-accent-muted);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto var(--space-3);
+    }
+
+    .workflow-step h3 {
+      font-size: 1.1rem;
+      margin-bottom: var(--space-1);
+    }
+
+    .workflow-step p {
+      color: var(--color-text-secondary);
+      font-size: 0.88rem;
+      line-height: 1.6;
+    }
+
+    /* ── Projects ── */
+    .projects-section {
+      padding: var(--space-8) 0 var(--space-10);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-4);
+      max-width: 800px;
+      margin: 0 auto;
     }
 
     .project-card {
-      background: #14171c;
-      border-radius: 8px;
-      padding: 1.4rem 1.5rem;
-      margin-bottom: 0.75rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      transition: box-shadow 0.15s, transform 0.15s;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-4);
       text-decoration: none;
       color: inherit;
-      border-left: 3px solid #f59e42;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+      transition: border-color var(--duration-normal) var(--ease-out),
+                  box-shadow var(--duration-normal) var(--ease-out),
+                  transform var(--duration-normal) var(--ease-out);
+      position: relative;
+      overflow: hidden;
     }
 
     .project-card:hover {
-      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
-      transform: translateY(-1px);
+      border-color: var(--color-accent);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
     }
 
-    .project-card .info h3 {
-      font-size: 1.1rem;
-      color: #f0ede8;
-      margin-bottom: 0.25rem;
+    .project-card::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--color-accent);
+      opacity: 0;
+      transition: opacity var(--duration-normal) var(--ease-out);
+    }
+    .project-card:hover::after { opacity: 1; }
+
+    .project-card .pc-header {
+      display: flex; align-items: center; justify-content: space-between;
     }
 
-    .project-card .info .meta {
-      font-size: 0.85rem;
-      color: #7a7875;
-    }
-
-    .project-card .arrow {
+    .project-card .pc-title {
+      font-family: var(--font-heading);
       font-size: 1.2rem;
-      color: #f59e42;
-      flex-shrink: 0;
-      margin-left: 1rem;
-    }
-
-    .project-card.draft {
-      border-left-color: #3a3835;
-      opacity: 0.6;
-    }
-
-    .project-card.draft .info h3 { color: #a8a6a2; }
-
-    .status-badge {
-      display: inline-block;
-      font-size: 0.7rem;
       font-weight: 600;
-      padding: 0.15rem 0.5rem;
-      border-radius: 4px;
-      margin-left: 0.5rem;
-      vertical-align: middle;
-      font-family: 'DM Mono', monospace;
     }
 
-    .status-live { background: #1a3a1a; color: #4ade80; }
-    .status-building { background: #3a2a0a; color: #f59e42; }
-    .status-draft { background: #1f1f1f; color: #7a7875; }
-
-    .empty-state {
-      text-align: center;
-      padding: 3rem 1rem;
-      color: #5c5a57;
+    .project-card .pc-desc {
+      color: var(--color-text-secondary);
+      font-size: 0.9rem;
+      line-height: 1.6;
+      flex: 1;
     }
 
-    .empty-state .icon { font-size: 2.5rem; margin-bottom: 0.5rem; display: block; }
-    .empty-state p { font-size: 0.95rem; }
+    .project-card .pc-meta {
+      font-size: 0.78rem;
+      color: var(--color-text-muted);
+      font-family: var(--font-mono);
+    }
 
-    footer {
+    .project-card .pc-arrow {
+      align-self: flex-end;
+      color: var(--color-accent);
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 0.88rem;
+      display: flex; align-items: center; gap: var(--space-1);
+    }
+
+    /* ── CTA ── */
+    .cta-section {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      padding: var(--space-8) var(--space-4);
       text-align: center;
-      padding: 2rem;
-      color: #5c5a57;
+      margin-bottom: var(--space-6);
+    }
+
+    .cta-section h2 { margin-bottom: var(--space-2); }
+    .cta-section h2 span { color: var(--color-accent); }
+
+    .cta-section .cta-desc {
+      color: var(--color-text-secondary);
+      max-width: 480px;
+      margin: 0 auto var(--space-4);
+    }
+
+    .cta-section .cta-row {
+      display: flex; justify-content: center; gap: var(--space-2); flex-wrap: wrap;
+    }
+
+    /* ── Footer ── */
+    .site-footer {
+      text-align: center;
+      padding: var(--space-4) 0 var(--space-6);
+      color: var(--color-text-muted);
       font-size: 0.8rem;
-      border-top: 1px solid #1f2329;
-      margin-top: 2rem;
-      width: 100%;
-      max-width: 720px;
     }
+    .site-footer a { color: var(--color-accent); }
 
-    footer a { color: #f59e42; text-decoration: none; }
-
-    @media (max-width: 480px) {
-      .hero h1 { font-size: 1.6rem; }
-      .project-card { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+    /* ── Responsive ── */
+    @media (max-width: 720px) {
+      .hero { padding: var(--space-6) 0 var(--space-5); }
+      .hero-stats { grid-template-columns: repeat(2, 1fr); }
+      .workflow-steps { grid-template-columns: 1fr; }
+      .projects-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
-<main>
-  <section class="hero">
-    <h1><span class="accent">aimfast.dev</span> — 独立小工具 · 快速上线验证</h1>
-    <p class="subhead">来自 KAKAOPC 情报科的信号识别，2 小时 Landing Page，7 天数据验证。快速验证、快速废弃、快速迭代。</p>
-  </section>
 
-  <section class="projects">
-    <h2>Live Projects</h2>
+<a href="#main-content" class="skip-link">Skip to content</a>
 
-    <a href="/i-m-tired-of-talking-to-ai" class="project-card">
-      <div class="info">
-        <h3>DirectAnswer <span class="status-badge status-live">LIVE</span></h3>
-        <div class="meta">非对话式 AI 查询工具 · 反AI疲劳 · 2026-05-27</div>
+<main id="main-content" class="container">
+
+  <!-- ═══ Hero ═══ -->
+  <section class="hero anim-fade-up" aria-labelledby="hero-title">
+    <div class="eyebrow">
+      <svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M4.93 4.93a10 10 0 0 1 14.14 0M4.93 19.07a10 10 0 0 0 14.14 0"/></svg>
+      KAKAOPC Intel
+    </div>
+    <h1 id="hero-title">
+      From Signal to Live LP<br>
+      in <span class="brand">2 Hours</span>
+    </h1>
+    <p class="hero-desc">
+      Our AI intel system scans Hacker News, GitHub Trending, Reddit, and Product Hunt daily,
+      scoring signals for commercial potential. Top picks get a landing page built and deployed
+      in 2 hours, then validated with real traffic over 7 days.
+    </p>
+    <div class="cta-row">
+      <a href="#projects" class="btn btn-primary">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        See Live Projects
+      </a>
+      <a href="https://github.com/szkakalau" class="btn btn-outline" target="_blank" rel="noopener">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        GitHub
+      </a>
+    </div>
+
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="stat-number">30</div>
+        <div class="stat-label">Signals / Day</div>
       </div>
-      <span class="arrow">&rarr;</span>
-    </a>
+      <div class="hero-stat">
+        <div class="stat-number">34</div>
+        <div class="stat-label">Top Score</div>
+      </div>
+      <div class="hero-stat">
+        <div class="stat-number">2h</div>
+        <div class="stat-label">LP Delivery</div>
+      </div>
+      <div class="hero-stat">
+        <div class="stat-number">5</div>
+        <div class="stat-label">Data Sources</div>
+      </div>
+    </div>
   </section>
+
+  <!-- ═══ Workflow ═══ -->
+  <section class="workflow" aria-labelledby="workflow-title">
+    <div class="section-header anim-fade-up">
+      <div class="eyebrow">
+        <svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        How It Works
+      </div>
+      <h2 id="workflow-title">Signal → LP → Validate</h2>
+      <p>One tight feedback loop — from raw signal to data-backed decision, every step optimized for speed.</p>
+    </div>
+
+    <div class="workflow-steps">
+      <div class="workflow-step anim-fade-up">
+        <div class="step-num">01</div>
+        <div class="step-icon">
+          <svg class="icon icon-lg icon-accent" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+        </div>
+        <h3>Signal Capture</h3>
+        <p>AI scans HN, GitHub, Reddit, Product Hunt, and Google Trends daily. Every signal gets an E-P-A score. Noise gets filtered.</p>
+      </div>
+
+      <div class="workflow-step anim-fade-up anim-delay-1">
+        <div class="step-num">02</div>
+        <div class="step-icon">
+          <svg class="icon icon-lg icon-accent" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5"/><path d="M4 4l2.5 7.5L12 12l-.5-5.5L4 4z"/></svg>
+        </div>
+        <h3>2-Hour Landing Page</h3>
+        <p>Top-scoring signals get a live LP with pricing, FAQ, and CTA — deployed to aimfast.dev for real-world validation.</p>
+      </div>
+
+      <div class="workflow-step anim-fade-up anim-delay-2">
+        <div class="step-num">03</div>
+        <div class="step-icon">
+          <svg class="icon icon-lg icon-accent" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
+        </div>
+        <h3>7-Day Validation</h3>
+        <p>Track visits, signups, and willingness to pay. Hit the threshold → double down. Fall short → kill it fast, zero sunk cost.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Projects ═══ -->
+  <section class="projects-section" id="projects" aria-labelledby="projects-title">
+    <div class="section-header anim-fade-up">
+      <div class="eyebrow">
+        <svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        Live Projects
+      </div>
+      <h2 id="projects-title">Currently in Validation</h2>
+      <p>Every project below started as a single signal. 2 hours to LP, 7 days to decide.</p>
+    </div>
+
+    <div class="projects-grid">
+      <a href="/i-m-tired-of-talking-to-ai" class="project-card anim-fade-up">
+        <div class="pc-header">
+          <h3 class="pc-title">DirectAnswer</h3>
+          <span class="badge badge-live">Live</span>
+        </div>
+        <p class="pc-desc">
+          No-chat AI query tool. Paste and get structured answers — no greetings, no explanations, no conversation required.
+        </p>
+        <div class="pc-meta">
+          Source HN · Score 34 · 3 platforms · 2026-05-27
+        </div>
+        <span class="pc-arrow">
+          View Project
+          <svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ═══ CTA ═══ -->
+  <section class="cta-section anim-fade-up anim-delay-2" aria-labelledby="cta-title">
+    <h2 id="cta-title">Follow <span>KAKAOPC Intel</span></h2>
+    <p class="cta-desc">
+      Daily intel reports plus actionable signals for indie developers. Watch us turn signals into products in real time.
+    </p>
+    <div class="cta-row">
+      <a href="/dashboard/" class="btn btn-primary">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        Open Intel Dashboard
+      </a>
+      <a href="https://github.com/szkakalau" class="btn btn-outline" target="_blank" rel="noopener">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        GitHub
+      </a>
+    </div>
+  </section>
+
+  <!-- ═══ Footer ═══ -->
+  <footer class="site-footer">
+    <p>Powered by <a href="/">KAKAOPC Intel</a> · aimfast.dev · Build Fast, Validate Faster</p>
+  </footer>
+
 </main>
-<footer>
-  <p>Powered by <a href="#">KAKAOPC 情报科</a> · aimfast.dev · 独立开发快速验证平台</p>
-</footer>
+
 </body>
 </html>

@@ -1,0 +1,56 @@
+/* ═════ KAKAOPC Design System — Tokens ═════ */
+:root {
+  /* ── Color: OKLCH space, warm-tinted darks ── */
+  --color-bg:             oklch(14% 0.008 250);
+  --color-surface:        oklch(18% 0.01 255);
+  --color-surface-alt:    oklch(22% 0.012 255);
+  --color-border:         oklch(28% 0.008 250);
+  --color-border-hover:   oklch(38% 0.01 250);
+  --color-text:           oklch(92% 0.005 90);
+  --color-text-secondary: oklch(68% 0.01 90);
+  --color-text-muted:     oklch(48% 0.008 90);
+
+  --color-accent:         oklch(75% 0.18 60);
+  --color-accent-hover:   oklch(80% 0.18 60);
+  --color-accent-muted:   oklch(75% 0.18 60 / 0.12);
+  --color-accent-glow:    oklch(75% 0.18 60 / 0.2);
+
+  --color-green:          oklch(72% 0.16 155);
+  --color-green-muted:    oklch(72% 0.16 155 / 0.12);
+  --color-red:            oklch(62% 0.19 25);
+  --color-red-muted:      oklch(62% 0.19 25 / 0.12);
+
+  /* ── Typography ── */
+  --font-heading: 'Space Grotesk', 'JetBrains Mono', monospace;
+  --font-mono:    'JetBrains Mono', monospace;
+  --font-body:    'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* ── Spacing: 8px rhythm ── */
+  --space-1:  8px;
+  --space-2:  16px;
+  --space-3:  24px;
+  --space-4:  32px;
+  --space-5:  40px;
+  --space-6:  48px;
+  --space-8:  64px;
+  --space-10: 80px;
+  --space-12: 96px;
+
+  /* ── Radius ── */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+
+  /* ── Motion ── */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast: 150ms;
+  --duration-normal: 200ms;
+  --duration-slow: 350ms;
+
+  /* ── Shadows ── */
+  --shadow-sm:  0 1px 3px oklch(0% 0 0 / 0.3);
+  --shadow-md:  0 4px 16px oklch(0% 0 0 / 0.4);
+  --shadow-lg:  0 8px 32px oklch(0% 0 0 / 0.5);
+  --shadow-glow: 0 0 24px var(--color-accent-glow);
+}

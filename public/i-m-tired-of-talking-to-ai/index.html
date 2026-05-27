@@ -1,456 +1,390 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DirectAnswer — 非对话式AI查询工具</title>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <title>DirectAnswer — No-Chat AI Query Tool</title>
+  <meta name="description" content="Tired of chatting with AI? DirectAnswer gives you structured answers instantly — no greetings, no explanations, just results.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/_ds/base.css">
+  <link rel="stylesheet" href="/_ds/components.css">
   <style>
-    /* ═════ Semantic Design Tokens ═════ */
-    :root {
-      --color-bg: #0d0f12;
-      --color-surface: #14171c;
-      --color-surface-alt: #1a1d24;
-      --color-border: #252830;
-      --color-text: #f0ede8;
-      --color-text-secondary: #a8a6a2;
-      --color-text-muted: #7a7875;
-      --color-accent: #f59e42;
-      --color-accent-hover: #f7b25c;
-      --color-accent-muted: rgba(245, 158, 66, 0.1);
-      --color-accent-glow: rgba(245, 158, 66, 0.2);
-      --radius-sm: 6px;
-      --radius-md: 8px;
-      --radius-lg: 12px;
-      --space-1: 8px;
-      --space-2: 16px;
-      --space-3: 24px;
-      --space-4: 32px;
-      --space-5: 40px;
-      --space-6: 48px;
-      --space-8: 64px;
-      --space-10: 80px;
-      --font-heading: 'DM Sans', sans-serif;
-      --font-mono: 'DM Mono', monospace;
-      --transition: 180ms ease;
+    /* ═══════════════════════════════════════
+       DirectAnswer LP
+       ═══════════════════════════════════════ */
+
+    /* ── Hero ── */
+    .lp-hero {
+      padding: var(--space-10) 0 var(--space-6);
     }
 
-    /* ═════ Reset ═════ */
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      background-color: var(--color-bg);
-      color: var(--color-text);
-      font-family: var(--font-heading);
-      font-weight: 400;
-      line-height: 1.65;
-      min-height: 100vh;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    main { width: 100%; max-width: 960px; margin: 0 auto; }
-
-    /* ═════ Typography ═════ */
-    h1, h2, h3 { font-family: var(--font-heading); font-weight: 600; letter-spacing: -0.02em; line-height: 1.25; }
-    .mono { font-family: var(--font-mono); font-weight: 400; }
-
-    /* ═════ Lucide Icons ═════ */
-    .icon { width: 24px; height: 24px; stroke: var(--color-accent); stroke-width: 1.8; fill: none; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
-
-    /* ═════ Hero — asymmetric intro ═════ */
-    .hero {
-      padding: var(--space-10) var(--space-3) var(--space-6);
-      text-align: left;
-      max-width: 600px;
-    }
-
-    .hero .eyebrow {
-      display: inline-flex; align-items: center; gap: var(--space-1);
-      font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase;
-      letter-spacing: 0.06em; color: var(--color-accent);
-      margin-bottom: var(--space-3);
-    }
-
-    .hero .eyebrow .icon { width: 16px; height: 16px; stroke-width: 2; }
-
-    .hero h1 {
-      font-size: 3rem; font-weight: 700; color: var(--color-text);
+    .lp-hero h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      max-width: 640px;
       margin-bottom: var(--space-2);
     }
+    .lp-hero h1 span { color: var(--color-accent); }
 
-    .hero h1 span { color: var(--color-accent); }
-
-    .hero .subhead {
-      font-size: 1.15rem; color: var(--color-text-secondary);
-      line-height: 1.6; margin-bottom: var(--space-4);
-    }
-
-    .hero .cta-group { display: flex; gap: var(--space-2); flex-wrap: wrap; }
-
-    .btn {
-      display: inline-flex; align-items: center; gap: var(--space-1);
-      font-family: var(--font-heading); font-size: 0.95rem; font-weight: 600;
-      padding: 12px 24px; border-radius: var(--radius-md);
-      border: none; cursor: pointer; text-decoration: none;
-      transition: all var(--transition);
-    }
-
-    .btn-primary {
-      background: var(--color-accent); color: var(--color-bg);
-      box-shadow: 0 2px 12px var(--color-accent-glow);
-    }
-
-    .btn-primary:hover {
-      background: var(--color-accent-hover);
-      box-shadow: 0 4px 20px var(--color-accent-glow);
-      transform: translateY(-1px);
-    }
-
-    .btn-primary .icon { stroke: var(--color-bg); }
-
-    .btn-outline {
-      background: transparent; border: 1px solid var(--color-border);
+    .lp-hero .subhead {
+      font-size: 1.1rem;
       color: var(--color-text-secondary);
+      max-width: 480px;
+      margin-bottom: var(--space-4);
+      line-height: 1.7;
     }
 
-    .btn-outline:hover {
-      border-color: var(--color-accent);
-      color: var(--color-accent);
-      background: var(--color-accent-muted);
+    .lp-hero .cta-row {
+      display: flex; gap: var(--space-2); flex-wrap: wrap;
     }
 
-    .btn-outline .icon { stroke: var(--color-text-secondary); }
-    .btn-outline:hover .icon { stroke: var(--color-accent); }
-
-    /* ═════ Selling Points — asymmetric staggered ═════ */
+    /* ── Selling Points ── */
     .selling-points {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: var(--space-3);
-      padding: 0 var(--space-3);
-      margin: var(--space-8) 0;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-4);
+      padding: var(--space-8) 0;
     }
 
     .selling-points .point {
       background: var(--color-surface);
       border: 1px solid var(--color-border);
       border-radius: var(--radius-lg);
-      padding: var(--space-4) var(--space-3);
-      transition: border-color var(--transition);
+      padding: var(--space-4);
+      text-align: center;
+      transition: border-color var(--duration-normal) var(--ease-out),
+                  transform var(--duration-normal) var(--ease-out);
     }
 
-    .selling-points .point:hover { border-color: var(--color-accent); }
-
-    /* 2nd card offset → asymmetry */
-    .selling-points .point:nth-child(2) { margin-top: var(--space-6); }
-
-    .selling-points .point-header {
-      display: flex; align-items: center; gap: var(--space-2);
-      margin-bottom: var(--space-2);
+    .selling-points .point:hover {
+      border-color: var(--color-accent);
+      transform: translateY(-3px);
     }
 
-    .selling-points .point-header .icon-wrap {
-      width: 40px; height: 40px; border-radius: var(--radius-sm);
+    .point .point-icon {
+      width: 44px; height: 44px;
+      border-radius: var(--radius-sm);
       background: var(--color-accent-muted);
       display: flex; align-items: center; justify-content: center;
+      margin: 0 auto var(--space-2);
     }
 
-    .selling-points h3 { font-size: 1.15rem; color: var(--color-text); }
-
-    .selling-points p { color: var(--color-text-secondary); font-size: 0.95rem; line-height: 1.65; }
-
-    /* ═════ Pricing — featured card elevated ═════ */
-    .pricing {
-      padding: var(--space-8) var(--space-3);
+    .point h3 {
+      font-size: 1.1rem;
+      margin-bottom: var(--space-1);
     }
 
-    .pricing h2 {
-      font-size: 1.75rem; color: var(--color-text);
-      margin-bottom: var(--space-2); text-align: center;
+    .point p {
+      color: var(--color-text-secondary);
+      font-size: 0.9rem;
+      line-height: 1.6;
     }
 
-    .pricing .sub {
-      text-align: center; color: var(--color-text-muted);
-      font-size: 0.95rem; margin-bottom: var(--space-5);
+    /* ── Pricing ── */
+    .pricing-section {
+      padding: var(--space-8) 0;
+    }
+
+    .pricing-section h2 {
+      text-align: center;
+      margin-bottom: var(--space-1);
+    }
+    .pricing-section .sub {
+      text-align: center;
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-6);
     }
 
     .pricing-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: var(--space-3);
+      gap: var(--space-4);
       align-items: start;
+      max-width: 900px;
+      margin: 0 auto;
     }
 
     .pricing-card {
       background: var(--color-surface);
       border: 1px solid var(--color-border);
       border-radius: var(--radius-lg);
-      padding: var(--space-4) var(--space-3);
+      padding: var(--space-4);
       display: flex; flex-direction: column;
-      transition: border-color var(--transition);
+      gap: var(--space-2);
+      transition: border-color var(--duration-normal) var(--ease-out);
     }
 
-    .pricing-card:hover { border-color: var(--color-accent); }
+    .pricing-card:hover { border-color: var(--color-border-hover); }
 
     .pricing-card.featured {
       border-color: var(--color-accent);
       background: var(--color-surface-alt);
-      box-shadow: 0 0 0 4px var(--color-accent-muted);
-      transform: scale(1.03);
-      z-index: 1;
+      box-shadow: 0 0 0 2px var(--color-accent-muted);
     }
 
     .pricing-card .tier {
-      font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase;
-      letter-spacing: 0.05em; color: var(--color-accent); margin-bottom: var(--space-1);
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--color-accent);
     }
 
     .pricing-card .price {
-      font-size: 2.4rem; font-weight: 700; color: var(--color-text);
-      margin: var(--space-1) 0;
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      font-weight: 700;
     }
-
     .pricing-card .price span {
-      font-size: 0.95rem; font-weight: 400; color: var(--color-text-muted);
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: var(--color-text-muted);
     }
 
     .pricing-card .desc {
-      color: var(--color-text-secondary); font-size: 0.9rem;
-      margin: var(--space-1) 0 var(--space-3); flex: 1;
+      color: var(--color-text-secondary);
+      font-size: 0.88rem;
+      flex: 1;
     }
 
-    .pricing-card .btn-sm {
-      width: 100%; justify-content: center;
-      font-size: 0.9rem; padding: 10px 16px;
+    .pricing-card .btn {
+      justify-content: center;
     }
 
-    .pricing-card.featured .btn-sm {
-      background: var(--color-accent); color: var(--color-bg);
+    .pricing-card.featured .btn {
+      background: var(--color-accent);
+      color: var(--color-bg);
       box-shadow: 0 2px 12px var(--color-accent-glow);
     }
-
-    .pricing-card.featured .btn-sm:hover {
+    .pricing-card.featured .btn:hover {
       background: var(--color-accent-hover);
-      transform: translateY(-1px);
+      color: var(--color-bg);
     }
 
     .pricing-note {
-      text-align: center; color: var(--color-text-muted);
-      font-size: 0.85rem; margin-top: var(--space-3);
+      text-align: center;
+      color: var(--color-text-muted);
+      font-size: 0.82rem;
+      margin-top: var(--space-3);
     }
 
-    /* ═════ FAQ — left-aligned with accent stripe ═════ */
-    .faq {
-      margin: var(--space-6) var(--space-3);
+    /* ── FAQ ── */
+    .faq-section {
+      padding: var(--space-6) 0;
+    }
+
+    .faq-card {
       background: var(--color-surface);
       border: 1px solid var(--color-border);
       border-radius: var(--radius-lg);
       padding: var(--space-5) var(--space-4);
+      max-width: 700px;
+      margin: 0 auto;
     }
 
-    .faq h3 {
-      font-size: 1.3rem; color: var(--color-text);
+    .faq-card h3 {
+      font-size: 1.2rem;
       margin-bottom: var(--space-3);
       display: flex; align-items: center; gap: var(--space-1);
     }
 
-    .faq .qa { margin-bottom: var(--space-3); padding-left: var(--space-2); border-left: 2px solid var(--color-accent); }
+    .faq-card .qa {
+      margin-bottom: var(--space-3);
+      padding-left: var(--space-2);
+      border-left: 2px solid var(--color-accent);
+    }
 
-    .faq .q {
-      font-weight: 600; color: var(--color-text);
+    .faq-card .question {
+      font-weight: 600;
+      color: var(--color-text);
       margin-bottom: var(--space-1);
+      font-size: 0.95rem;
     }
 
-    .faq .a {
-      color: var(--color-text-secondary); font-size: 0.95rem; line-height: 1.65;
+    .faq-card .answer {
+      color: var(--color-text-secondary);
+      font-size: 0.9rem;
+      line-height: 1.65;
     }
 
-    /* ═════ CTA — centered, generous whitespace ═════ */
-    .cta-section {
-      margin: var(--space-8) var(--space-3);
+    /* ── Bottom CTA ── */
+    .bottom-cta {
+      padding: var(--space-8) 0 var(--space-6);
+    }
+
+    .cta-block {
       background: var(--color-surface);
       border: 1px solid var(--color-border);
-      border-radius: var(--radius-lg);
-      padding: var(--space-6) var(--space-3);
+      border-radius: var(--radius-xl);
+      padding: var(--space-6) var(--space-4);
       text-align: center;
     }
 
-    .cta-section h2 {
-      font-size: 2rem; color: var(--color-text);
-      margin-bottom: var(--space-2);
-    }
+    .cta-block h2 { margin-bottom: var(--space-2); }
+    .cta-block h2 span { color: var(--color-accent); }
 
-    .cta-section h2 span { color: var(--color-accent); }
-
-    .cta-section p {
+    .cta-block p {
       color: var(--color-text-secondary);
-      max-width: 480px; margin: 0 auto var(--space-4);
+      max-width: 440px;
+      margin: 0 auto var(--space-4);
     }
 
-    .cta-section .cta-row {
-      display: flex; justify-content: center; gap: var(--space-2);
-      flex-wrap: wrap;
+    .cta-block .cta-row {
+      display: flex; justify-content: center; gap: var(--space-2); flex-wrap: wrap;
     }
 
-    .cta-section .footnote {
-      margin-top: var(--space-3); font-size: 0.8rem; color: var(--color-text-muted);
+    .cta-block .footnote {
+      margin-top: var(--space-3);
+      font-size: 0.78rem;
+      color: var(--color-text-muted);
     }
 
-    /* ═════ Footer ═════ */
-    footer {
-      text-align: center; padding: var(--space-4) var(--space-3);
-      color: var(--color-text-muted); font-size: 0.82rem;
+    /* ── Footer ── */
+    .site-footer {
+      text-align: center;
+      padding: var(--space-4) 0;
+      color: var(--color-text-muted);
+      font-size: 0.8rem;
       border-top: 1px solid var(--color-border);
-      margin: 0 var(--space-3);
     }
+    .site-footer a { color: var(--color-accent); }
 
-    footer a { color: var(--color-accent); text-decoration: none; }
-
-    /* ═════ Responsive ═════ */
+    /* ── Responsive ── */
     @media (max-width: 720px) {
-      .hero { padding: var(--space-6) var(--space-3) var(--space-4); }
-      .hero h1 { font-size: 2rem; }
       .selling-points { grid-template-columns: 1fr; }
-      .selling-points .point:nth-child(2) { margin-top: 0; }
       .pricing-grid { grid-template-columns: 1fr; }
-      .pricing-card.featured { transform: none; order: -1; }
-      .cta-section { padding: var(--space-4) var(--space-3); }
-      .cta-section h2 { font-size: 1.5rem; }
-    }
-
-    @media (max-width: 480px) {
-      .hero h1 { font-size: 1.6rem; }
-      .hero .subhead { font-size: 1rem; }
-      .btn { width: 100%; justify-content: center; }
     }
   </style>
 </head>
 <body>
-<main>
 
-  <!-- ═ Hero ═ -->
-  <section class="hero">
+<a href="#main-content" class="skip-link">Skip to content</a>
+
+<main id="main-content" class="container">
+
+  <!-- ═══ Hero ═══ -->
+  <section class="lp-hero" aria-labelledby="lp-hero-title">
     <div class="eyebrow">
-      <svg class="icon" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+      <svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
       No-Chat AI Tool
     </div>
-    <h1>Tired of Chatting?<br>Get <span>Direct Answers</span>.</h1>
+    <h1 id="lp-hero-title">Tired of Chatting?<br>Get <span>Direct Answers</span>.</h1>
     <p class="subhead">No greetings. No explanations. Just the answer you need, in the format you want — paste and go.</p>
-    <div class="cta-group">
+    <div class="cta-row">
       <a href="#" class="btn btn-primary">
-        <svg class="icon" viewBox="0 0 24 24" style="stroke:var(--color-bg)"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         Try DirectAnswer — First Query Free
       </a>
       <a href="#" class="btn btn-outline">
-        <svg class="icon" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
         View Examples
       </a>
     </div>
   </section>
 
-  <!-- ═ Selling Points — asymmetric ═ -->
-  <section class="selling-points">
-    <div class="point">
-      <div class="point-header">
-        <div class="icon-wrap">
-          <svg class="icon" viewBox="0 0 24 24"><path d="M21 12a9 9 0 0 1-9 9m9-9a9 9 0 0 0-9-9m9 9H3m9 9a9 9 0 0 1-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 0 1 9-9"/></svg>
-        </div>
-        <h3>Zero Chat</h3>
+  <!-- ═══ Selling Points ═══ -->
+  <section class="selling-points" aria-label="Core features">
+    <div class="point anim-fade-up">
+      <div class="point-icon">
+        <svg class="icon icon-accent" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a9 9 0 0 1-9 9m9-9a9 9 0 0 0-9-9m9 9H3m9 9a9 9 0 0 1-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 0 1 9-9"/></svg>
       </div>
-      <p>Paste text, get bullet points. No "Sure, here's a summary". 直接输出，零废话。</p>
+      <h3>Zero Chat</h3>
+      <p>Paste text, get bullet points. No "Sure, here's a summary." Just output, no fluff.</p>
     </div>
 
-    <div class="point">
-      <div class="point-header">
-        <div class="icon-wrap">
-          <svg class="icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-        </div>
-        <h3>Structured Output</h3>
+    <div class="point anim-fade-up anim-delay-1">
+      <div class="point-icon">
+        <svg class="icon icon-accent" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
       </div>
-      <p>Choose from Summary, List, Code Fix, Data Table. 你想要什么格式，直接给。</p>
+      <h3>Structured Output</h3>
+      <p>Choose from Summary, List, Code Fix, Data Table. You pick the format, we deliver exactly that.</p>
     </div>
 
-    <div class="point">
-      <div class="point-header">
-        <div class="icon-wrap">
-          <svg class="icon" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-        </div>
-        <h3>Fast — Under 2s</h3>
+    <div class="point anim-fade-up anim-delay-2">
+      <div class="point-icon">
+        <svg class="icon icon-accent" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
       </div>
-      <p>No streaming delay. 粘贴即得，平均 1.2 秒返回结构化答案。</p>
+      <h3>Fast — Under 2s</h3>
+      <p>No streaming delay. Paste and get results in ~1.2 seconds on average.</p>
     </div>
   </section>
 
-  <!-- ═ Pricing ═ -->
-  <section class="pricing">
-    <h2>简单定价 · 为省时而设计</h2>
-    <p class="sub">单次查询 $0.50 · 月付低至 $0.29/次</p>
+  <!-- ═══ Pricing ═══ -->
+  <section class="pricing-section" aria-labelledby="pricing-title">
+    <h2 id="pricing-title">Simple Pricing</h2>
+    <p class="sub">$0.50 per query · as low as $0.29/query with a monthly plan</p>
     <div class="pricing-grid">
       <div class="pricing-card">
-        <div class="tier">单次</div>
-        <div class="price">$0.50 <span>/ 查询</span></div>
-        <div class="desc">适合尝鲜用户，无需绑定支付方式。</div>
-        <a href="#" class="btn btn-outline btn-sm">试用一次</a>
+        <div class="tier">Pay as You Go</div>
+        <div class="price">$0.50 <span>/ query</span></div>
+        <div class="desc">Try it out. No card required. Your first query is free.</div>
+        <a href="#" class="btn btn-outline">Try Once</a>
       </div>
       <div class="pricing-card featured">
-        <div class="tier">月度 · 轻量</div>
-        <div class="price">$9 <span>/ 月</span></div>
-        <div class="desc">20 次查询，一杯咖啡钱。适合轻度使用。</div>
-        <a href="#" class="btn btn-sm">订阅 $9/月</a>
+        <div class="tier">Monthly · Light</div>
+        <div class="price">$9 <span>/ month</span></div>
+        <div class="desc">20 queries per month. The price of a coffee. For light daily use.</div>
+        <a href="#" class="btn">Subscribe $9/mo</a>
       </div>
       <div class="pricing-card">
-        <div class="tier">月度 · 重度</div>
-        <div class="price">$29 <span>/ 月</span></div>
-        <div class="desc">100 次查询，单次 $0.29。比 ChatGPT Plus 更便宜、更直接。</div>
-        <a href="#" class="btn btn-outline btn-sm">订阅 $29/月</a>
+        <div class="tier">Monthly · Heavy</div>
+        <div class="price">$29 <span>/ month</span></div>
+        <div class="desc">100 queries per month. $0.29 each. Cheaper and more direct than ChatGPT Plus.</div>
+        <a href="#" class="btn btn-outline">Subscribe $29/mo</a>
       </div>
     </div>
-    <p class="pricing-note">首查询免费 · 无需信用卡 · 随时取消</p>
+    <p class="pricing-note">First query free · No credit card required · Cancel anytime</p>
   </section>
 
-  <!-- ═ FAQ ═ -->
-  <section class="faq">
-    <h3>
-      <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="9.09" y1="9" x2="9.09" y2="9.01"/><line x1="15.09" y1="9" x2="15.09" y2="9.01"/><path d="M8 14c0 1 .9 2 2 2h1.5c1 0 1.5-.7 1.5-1.5v-.5c0-1-1.3-1.8-2.9-2.2a1.7 1.7 0 0 1-.9-.8"/></svg>
-      为什么不用 ChatGPT？
-    </h3>
-    <div class="qa">
-      <div class="q">"ChatGPT 也能总结啊，有什么区别？"</div>
-      <div class="a">ChatGPT 需要对话：打招呼、等回复、翻看历史。DirectAnswer 是 <strong style="color:var(--color-accent)">反社交 AI</strong>——粘贴即得，没有"让我想想"，没有"此外"。你付钱买的是答案，不是聊天。</div>
-    </div>
-    <div class="qa">
-      <div class="q">"输出会不会太生硬？"</div>
-      <div class="a">你可以选择格式：摘要、列表、代码修复、数据表。生硬但精准，比啰嗦的对话更省时间。如果需要上下文，点一下"展开"即可。</div>
-    </div>
-    <div class="qa">
-      <div class="q">"和直接调 API 有什么区别？"</div>
-      <div class="a">API 需要写代码、管理 token、处理错误。DirectAnswer 零代码，粘贴即用。我们硬编码了"直接回答"提示词，你不需要调 prompt。</div>
+  <!-- ═══ FAQ ═══ -->
+  <section class="faq-section" aria-labelledby="faq-title">
+    <div class="faq-card">
+      <h3 id="faq-title">
+        <svg class="icon icon-accent" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="9.09" y1="9" x2="9.09" y2="9.01"/><line x1="15.09" y1="9" x2="15.09" y2="9.01"/><path d="M8 14c0 1 .9 2 2 2h1.5c1 0 1.5-.7 1.5-1.5v-.5c0-1-1.3-1.8-2.9-2.2a1.7 1.7 0 0 1-.9-.8"/></svg>
+        Why Not Just Use ChatGPT?
+      </h3>
+      <div class="qa">
+        <div class="question">"ChatGPT can summarize too. What's the difference?"</div>
+        <div class="answer">ChatGPT requires conversation: greeting, waiting for a reply, scrolling through history. DirectAnswer is <strong>anti-social AI</strong> — paste and get results. You pay for answers, not chat.</div>
+      </div>
+      <div class="qa">
+        <div class="question">"Won't the output feel too terse?"</div>
+        <div class="answer">You choose the format: summary, list, code fix, or data table. Terse but precise beats rambling. Need context? Tap "expand" and it's there.</div>
+      </div>
+      <div class="qa">
+        <div class="question">"How is this different from calling the API directly?"</div>
+        <div class="answer">APIs require code, token management, and error handling. DirectAnswer is zero-code — paste and go. We've hardcoded the "direct answer" prompt so you never have to tune one.</div>
+      </div>
     </div>
   </section>
 
-  <!-- ═ CTA ═ -->
-  <section class="cta-section">
-    <h2>受够了对话？<span>试试直接答案</span></h2>
-    <p>前 3 次查询免费，无需注册。体验"非对话式 AI"的效率。</p>
-    <div class="cta-row">
-      <a href="#" class="btn btn-primary">
-        <svg class="icon" viewBox="0 0 24 24" style="stroke:var(--color-bg)"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        免费试用
-      </a>
-      <a href="#" class="btn btn-outline">
-        <svg class="icon" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-        View on GitHub
-      </a>
+  <!-- ═══ Bottom CTA ═══ -->
+  <section class="bottom-cta" aria-labelledby="bottom-cta-title">
+    <div class="cta-block anim-fade-up">
+      <h2 id="bottom-cta-title">Done Chatting? <span>Try Direct Answers</span></h2>
+      <p>First 3 queries are free. No signup required. Experience the speed of no-chat AI.</p>
+      <div class="cta-row">
+        <a href="#" class="btn btn-primary">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          Try Free
+        </a>
+        <a href="#" class="btn btn-outline">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          View on GitHub
+        </a>
+      </div>
+      <p class="footnote">Deployed on Vercel · 30s cold start · No tracking</p>
     </div>
-    <p class="footnote">部署于 Vercel · 30 秒启动 · 无追踪</p>
   </section>
 
-  <!-- ═ Footer ═ -->
-  <footer>
-    <p>&copy; 2026 <a href="/">DirectAnswer</a> — KAKAOPC 情报科 · 信号 OP-20260527-001</p>
-    <p style="margin-top:4px; font-size:0.75rem;">非对话式 AI 查询工具 · 静默模式 · 直接答案</p>
+  <!-- ═══ Footer ═══ -->
+  <footer class="site-footer">
+    <p>&copy; 2026 <a href="/">DirectAnswer</a> — <a href="/">KAKAOPC Intel</a> · Signal OP-20260527-001</p>
+    <p style="margin-top:4px;font-size:0.72rem;">No-Chat AI Query Tool · Silent Mode · Direct Answers</p>
   </footer>
 
 </main>
+
 </body>
 </html>
