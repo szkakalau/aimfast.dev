@@ -313,6 +313,16 @@
 - **定价锚点**：来自 Competitive Intel 中同类产品的真实定价参考
 - **反方检验**：这个 Landing Page 方案什么情况下无效
 
+**语言铁律（2026-05-27 加入）**：
+
+> Landing Page 的语言必须与**信号来源媒体的语言**一致，禁止混用。
+
+- 信号来自英语媒体（HN、Reddit、Product Hunt、GitHub、Indie Hackers 等）→ Landing Page **全部英语**
+- 信号来自中文媒体（V2EX、即刻、小红书、知乎等）→ Landing Page **全部中文**
+- 信号同时来自中英文媒体（跨平台交叉验证）→ 以**目标付费用户使用的语言**为准
+
+原因：LP 的第一批访客来自信号来源帖子的读者——他们用什么语言读帖子，就用什么语言看 LP。中英混用破坏信任感，降低转化率。
+
 ### 3.4 智识星球文章（每日公开发布）
 
 日报是内部决策工具，星球文章是**对外建立权威、吸引付费用户的内容产品**。两者源自同一套信号，但处理方式完全不同。
@@ -618,6 +628,56 @@ Score = cross_platform×3 + volume×2 + freshness×2 + actionability×2 + buyer_
 - 域名：一个主域名 + 子目录（`aimfast.dev/project-name/`）
 - 平台：Vercel（免费，自动部署）
 - 放弃的页面不删，标注"实验已结束"，积累长尾流量反哺主域名
+
+### 5.4 数据采集与分析（2026-05-27 更新）
+
+#### 5.4.1 当前状态
+
+已使用 **Vercel Web Analytics**（`@vercel/analytics` package）在 Landing Page 中嵌入分析代码，Vercel Dashboard 可查看页面访问量、访客数、来源等基本指标。
+
+**已知限制**：Vercel Web Analytics **不提供 REST API**。截至 2026 年 5 月，无法通过 API / CLI / MCP 程序化读取分析数据。社区功能请求持续开放中，Vercel 产品团队已接收反馈但尚未发布。
+
+这意味着 `update_tracking.py` 中的 `day7_uv` 和 `day7_signups` 目前**无法自动填充**，需要人工从 Vercel Dashboard 查看后手动更新到 `tracking/opportunities.json`。
+
+#### 5.4.2 目标架构（规划中，暂不实施）
+
+```
+Vercel Web Analytics
+       │
+       ▼
+  Drains（实时事件推送）
+       │
+       ▼
+  Supabase Edge Function（接收端点）
+       │
+       ▼
+  analytics_events 表（Postgres）
+       │
+       ▼
+  execute_sql / Dashboard 查询 → 自动生成分析报告
+```
+
+#### 5.4.3 Drains 事件数据格式
+
+每个 pageview 事件包含的字段（可用于分析）：
+
+| 字段 | 用途 |
+|------|------|
+| `path` | 区分不同 LP 页面 |
+| `timestamp` | 时间序列分析 |
+| `sessionId` / `deviceId` | 去重 UV / 回访识别 |
+| `country` / `city` | 地理分布 |
+| `referrer` | 流量来源（可追溯到信号来源帖） |
+| `eventType` | `pageview` 或自定义 `event`（如注册点击） |
+| `queryParams` | UTM 参数追踪 |
+
+#### 5.4.4 实施依赖
+
+- [ ] 创建 `analytics_events` 表（Supabase Postgres）
+- [ ] 部署 Supabase Edge Function 作为 Drain 接收端点
+- [ ] 在 Vercel Dashboard 配置 Drain 目的地 URL
+- [ ] 更新 `update_tracking.py` 从 Supabase 读取 UV 数据自动填充
+- [ ] Dashboard 新增分析面板（UV 趋势、来源分布、LP 对比）
 
 ---
 
