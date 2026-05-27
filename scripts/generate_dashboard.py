@@ -261,7 +261,7 @@ tr:hover td { background:var(--bg-elevated); }
 // ─── 密码门禁 ───
 (function() {
   var PASSWORD_HASH = '7aa2dc06a09cea148d743648855000cdac6be2ff2909dbabc90294be783ad76e';
-  if (sessionStorage.getItem('dashboard_authed') === '1') return;
+  if (sessionStorage.getItem('dashboard_authed') === '1') { var el = document.getElementById('auth-overlay'); if (el) el.style.display = 'none'; return; }
   var overlay = document.getElementById('auth-overlay');
   var input = document.getElementById('auth-password');
   var btn = document.getElementById('auth-submit');
