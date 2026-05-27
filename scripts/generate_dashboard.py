@@ -10,7 +10,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 DAILY_DIR = ROOT / "daily"
 TRACKING_DIR = ROOT / "tracking"
-OUTPUT_DIR = ROOT / "dashboard"
+OUTPUT_DIR = ROOT / "public" / "dashboard"
 
 TZ_SHANGHAI = timezone(timedelta(hours=8))
 
