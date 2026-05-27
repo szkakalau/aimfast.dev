@@ -6,473 +6,451 @@
   <title>DirectAnswer — 非对话式AI查询工具</title>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    /* reset & base */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    /* ═════ Semantic Design Tokens ═════ */
+    :root {
+      --color-bg: #0d0f12;
+      --color-surface: #14171c;
+      --color-surface-alt: #1a1d24;
+      --color-border: #252830;
+      --color-text: #f0ede8;
+      --color-text-secondary: #a8a6a2;
+      --color-text-muted: #7a7875;
+      --color-accent: #f59e42;
+      --color-accent-hover: #f7b25c;
+      --color-accent-muted: rgba(245, 158, 66, 0.1);
+      --color-accent-glow: rgba(245, 158, 66, 0.2);
+      --radius-sm: 6px;
+      --radius-md: 8px;
+      --radius-lg: 12px;
+      --space-1: 8px;
+      --space-2: 16px;
+      --space-3: 24px;
+      --space-4: 32px;
+      --space-5: 40px;
+      --space-6: 48px;
+      --space-8: 64px;
+      --space-10: 80px;
+      --font-heading: 'DM Sans', sans-serif;
+      --font-mono: 'DM Mono', monospace;
+      --transition: 180ms ease;
     }
+
+    /* ═════ Reset ═════ */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
-      background-color: #0d0f12;
-      color: #e8e6e3;
-      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      font-family: var(--font-heading);
       font-weight: 400;
-      line-height: 1.5;
+      line-height: 1.65;
       min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      -webkit-font-smoothing: antialiased;
     }
 
-    main {
-      width: 100%;
-      max-width: 960px;
-      padding: 2rem 1.5rem 3rem;
+    main { width: 100%; max-width: 960px; margin: 0 auto; }
+
+    /* ═════ Typography ═════ */
+    h1, h2, h3 { font-family: var(--font-heading); font-weight: 600; letter-spacing: -0.02em; line-height: 1.25; }
+    .mono { font-family: var(--font-mono); font-weight: 400; }
+
+    /* ═════ Lucide Icons ═════ */
+    .icon { width: 24px; height: 24px; stroke: var(--color-accent); stroke-width: 1.8; fill: none; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+
+    /* ═════ Hero — asymmetric intro ═════ */
+    .hero {
+      padding: var(--space-10) var(--space-3) var(--space-6);
+      text-align: left;
+      max-width: 600px;
     }
 
-    /* typography */
-    h1, h2, h3, .heading {
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 600;
-      letter-spacing: -0.02em;
+    .hero .eyebrow {
+      display: inline-flex; align-items: center; gap: var(--space-1);
+      font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase;
+      letter-spacing: 0.06em; color: var(--color-accent);
+      margin-bottom: var(--space-3);
     }
 
-    .mono {
-      font-family: 'DM Mono', monospace;
-      font-weight: 400;
+    .hero .eyebrow .icon { width: 16px; height: 16px; stroke-width: 2; }
+
+    .hero h1 {
+      font-size: 3rem; font-weight: 700; color: var(--color-text);
+      margin-bottom: var(--space-2);
     }
 
-    /* cards & containers */
-    .card {
-      background: #14171c;
-      border-radius: 8px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-      padding: 1.8rem 1.5rem;
-      transition: box-shadow 0.2s;
+    .hero h1 span { color: var(--color-accent); }
+
+    .hero .subhead {
+      font-size: 1.15rem; color: var(--color-text-secondary);
+      line-height: 1.6; margin-bottom: var(--space-4);
     }
 
-    .card-soft {
-      background: #14171c;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-      padding: 1.5rem 1.2rem;
-    }
+    .hero .cta-group { display: flex; gap: var(--space-2); flex-wrap: wrap; }
 
-    /* accent */
-    .accent {
-      color: #f59e42;
-    }
-
-    .accent-bg {
-      background: #f59e42;
-      color: #0d0f12;
-    }
-
-    .accent-border {
-      border-left: 3px solid #f59e42;
-      padding-left: 0.75rem;
-    }
-
-    /* buttons */
     .btn {
-      display: inline-block;
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 600;
-      font-size: 1rem;
-      padding: 0.7rem 1.8rem;
-      border-radius: 8px;
-      border: none;
-      cursor: pointer;
-      transition: all 0.2s;
-      text-decoration: none;
-      background: #f59e42;
-      color: #0d0f12;
-      box-shadow: 0 4px 10px rgba(245, 158, 66, 0.25);
+      display: inline-flex; align-items: center; gap: var(--space-1);
+      font-family: var(--font-heading); font-size: 0.95rem; font-weight: 600;
+      padding: 12px 24px; border-radius: var(--radius-md);
+      border: none; cursor: pointer; text-decoration: none;
+      transition: all var(--transition);
     }
 
-    .btn:hover {
-      background: #f7b25c;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 18px rgba(245, 158, 66, 0.35);
+    .btn-primary {
+      background: var(--color-accent); color: var(--color-bg);
+      box-shadow: 0 2px 12px var(--color-accent-glow);
     }
+
+    .btn-primary:hover {
+      background: var(--color-accent-hover);
+      box-shadow: 0 4px 20px var(--color-accent-glow);
+      transform: translateY(-1px);
+    }
+
+    .btn-primary .icon { stroke: var(--color-bg); }
 
     .btn-outline {
-      background: transparent;
-      border: 1px solid #f59e42;
-      color: #f59e42;
-      box-shadow: none;
+      background: transparent; border: 1px solid var(--color-border);
+      color: var(--color-text-secondary);
     }
 
     .btn-outline:hover {
-      background: rgba(245, 158, 66, 0.08);
-      border-color: #f7b25c;
-      color: #f7b25c;
-      transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(245, 158, 66, 0.15);
+      border-color: var(--color-accent);
+      color: var(--color-accent);
+      background: var(--color-accent-muted);
     }
 
-    .btn-sm {
-      font-size: 0.85rem;
-      padding: 0.5rem 1.2rem;
-    }
+    .btn-outline .icon { stroke: var(--color-text-secondary); }
+    .btn-outline:hover .icon { stroke: var(--color-accent); }
 
-    /* hero */
-    .hero {
-      text-align: center;
-      padding: 2.5rem 0 3rem;
-    }
-
-    .hero h1 {
-      font-size: 2.8rem;
-      font-weight: 700;
-      line-height: 1.2;
-      margin-bottom: 1rem;
-      color: #f0ede8;
-    }
-
-    .hero .subhead {
-      font-size: 1.2rem;
-      color: #a8a6a2;
-      max-width: 600px;
-      margin: 0 auto 2rem;
-      font-weight: 400;
-    }
-
-    .hero .cta-group {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
-      margin-top: 1.5rem;
-    }
-
-    .hero .demo-hint {
-      margin-top: 2rem;
-      font-size: 0.9rem;
-      color: #7a7875;
-    }
-
-    /* selling points */
+    /* ═════ Selling Points — asymmetric staggered ═════ */
     .selling-points {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin: 3rem 0;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-3);
+      padding: 0 var(--space-3);
+      margin: var(--space-8) 0;
     }
 
-    .selling-points .card {
-      text-align: left;
+    .selling-points .point {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-4) var(--space-3);
+      transition: border-color var(--transition);
     }
 
-    .selling-points .icon {
-      font-size: 1.8rem;
-      margin-bottom: 0.75rem;
-      display: block;
+    .selling-points .point:hover { border-color: var(--color-accent); }
+
+    /* 2nd card offset → asymmetry */
+    .selling-points .point:nth-child(2) { margin-top: var(--space-6); }
+
+    .selling-points .point-header {
+      display: flex; align-items: center; gap: var(--space-2);
+      margin-bottom: var(--space-2);
     }
 
-    .selling-points h3 {
-      font-size: 1.2rem;
-      margin-bottom: 0.4rem;
-      color: #f0ede8;
+    .selling-points .point-header .icon-wrap {
+      width: 40px; height: 40px; border-radius: var(--radius-sm);
+      background: var(--color-accent-muted);
+      display: flex; align-items: center; justify-content: center;
     }
 
-    .selling-points p {
-      color: #a8a6a2;
-      font-size: 0.95rem;
-      line-height: 1.5;
-    }
+    .selling-points h3 { font-size: 1.15rem; color: var(--color-text); }
 
-    /* pricing */
+    .selling-points p { color: var(--color-text-secondary); font-size: 0.95rem; line-height: 1.65; }
+
+    /* ═════ Pricing — featured card elevated ═════ */
     .pricing {
-      margin: 3rem 0;
+      padding: var(--space-8) var(--space-3);
     }
 
     .pricing h2 {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
+      font-size: 1.75rem; color: var(--color-text);
+      margin-bottom: var(--space-2); text-align: center;
     }
 
     .pricing .sub {
-      text-align: center;
-      color: #a8a6a2;
-      margin-bottom: 2rem;
+      text-align: center; color: var(--color-text-muted);
+      font-size: 0.95rem; margin-bottom: var(--space-5);
     }
 
     .pricing-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
+      gap: var(--space-3);
+      align-items: start;
     }
 
     .pricing-card {
-      background: #14171c;
-      border-radius: 8px;
-      padding: 1.8rem 1.2rem;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.4);
-      display: flex;
-      flex-direction: column;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-4) var(--space-3);
+      display: flex; flex-direction: column;
+      transition: border-color var(--transition);
+    }
+
+    .pricing-card:hover { border-color: var(--color-accent); }
+
+    .pricing-card.featured {
+      border-color: var(--color-accent);
+      background: var(--color-surface-alt);
+      box-shadow: 0 0 0 4px var(--color-accent-muted);
+      transform: scale(1.03);
+      z-index: 1;
     }
 
     .pricing-card .tier {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      color: #f59e42;
-      margin-bottom: 0.3rem;
+      font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase;
+      letter-spacing: 0.05em; color: var(--color-accent); margin-bottom: var(--space-1);
     }
 
     .pricing-card .price {
-      font-size: 2.2rem;
-      font-weight: 600;
-      color: #f0ede8;
-      margin: 0.3rem 0 0.2rem;
+      font-size: 2.4rem; font-weight: 700; color: var(--color-text);
+      margin: var(--space-1) 0;
     }
 
     .pricing-card .price span {
-      font-size: 1rem;
-      font-weight: 400;
-      color: #a8a6a2;
+      font-size: 0.95rem; font-weight: 400; color: var(--color-text-muted);
     }
 
     .pricing-card .desc {
-      color: #a8a6a2;
-      font-size: 0.9rem;
-      margin: 0.5rem 0 1.2rem;
-      flex: 1;
+      color: var(--color-text-secondary); font-size: 0.9rem;
+      margin: var(--space-1) 0 var(--space-3); flex: 1;
     }
 
-    .pricing-card .btn {
-      align-self: flex-start;
+    .pricing-card .btn-sm {
+      width: 100%; justify-content: center;
+      font-size: 0.9rem; padding: 10px 16px;
     }
 
-    .pricing-card.featured {
-      border: 1px solid #f59e42;
-      position: relative;
+    .pricing-card.featured .btn-sm {
+      background: var(--color-accent); color: var(--color-bg);
+      box-shadow: 0 2px 12px var(--color-accent-glow);
     }
 
-    .pricing-card.featured::after {
-      content: '推荐';
-      position: absolute;
-      top: -0.6rem;
-      right: 1rem;
-      background: #f59e42;
-      color: #0d0f12;
-      font-size: 0.7rem;
-      font-weight: 600;
-      padding: 0.2rem 0.7rem;
-      border-radius: 20px;
-      font-family: 'DM Mono', monospace;
+    .pricing-card.featured .btn-sm:hover {
+      background: var(--color-accent-hover);
+      transform: translateY(-1px);
     }
 
-    /* cta section */
+    .pricing-note {
+      text-align: center; color: var(--color-text-muted);
+      font-size: 0.85rem; margin-top: var(--space-3);
+    }
+
+    /* ═════ FAQ — left-aligned with accent stripe ═════ */
+    .faq {
+      margin: var(--space-6) var(--space-3);
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-5) var(--space-4);
+    }
+
+    .faq h3 {
+      font-size: 1.3rem; color: var(--color-text);
+      margin-bottom: var(--space-3);
+      display: flex; align-items: center; gap: var(--space-1);
+    }
+
+    .faq .qa { margin-bottom: var(--space-3); padding-left: var(--space-2); border-left: 2px solid var(--color-accent); }
+
+    .faq .q {
+      font-weight: 600; color: var(--color-text);
+      margin-bottom: var(--space-1);
+    }
+
+    .faq .a {
+      color: var(--color-text-secondary); font-size: 0.95rem; line-height: 1.65;
+    }
+
+    /* ═════ CTA — centered, generous whitespace ═════ */
     .cta-section {
-      background: #14171c;
-      border-radius: 8px;
-      padding: 2.5rem 2rem;
+      margin: var(--space-8) var(--space-3);
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-6) var(--space-3);
       text-align: center;
-      margin: 3rem 0 2rem;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.5);
     }
 
     .cta-section h2 {
-      font-size: 2rem;
-      margin-bottom: 0.75rem;
+      font-size: 2rem; color: var(--color-text);
+      margin-bottom: var(--space-2);
     }
+
+    .cta-section h2 span { color: var(--color-accent); }
 
     .cta-section p {
-      color: #a8a6a2;
-      max-width: 500px;
-      margin: 0 auto 1.8rem;
+      color: var(--color-text-secondary);
+      max-width: 480px; margin: 0 auto var(--space-4);
     }
 
-    /* footer */
+    .cta-section .cta-row {
+      display: flex; justify-content: center; gap: var(--space-2);
+      flex-wrap: wrap;
+    }
+
+    .cta-section .footnote {
+      margin-top: var(--space-3); font-size: 0.8rem; color: var(--color-text-muted);
+    }
+
+    /* ═════ Footer ═════ */
     footer {
-      text-align: center;
-      padding: 1.5rem 0 0.5rem;
-      color: #5c5a57;
-      font-size: 0.85rem;
-      border-top: 1px solid #1f2329;
-      margin-top: 2rem;
+      text-align: center; padding: var(--space-4) var(--space-3);
+      color: var(--color-text-muted); font-size: 0.82rem;
+      border-top: 1px solid var(--color-border);
+      margin: 0 var(--space-3);
     }
 
-    footer a {
-      color: #f59e42;
-      text-decoration: none;
-    }
+    footer a { color: var(--color-accent); text-decoration: none; }
 
-    /* faq / compare */
-    .faq-compare {
-      margin: 2.5rem 0;
-      background: #14171c;
-      border-radius: 8px;
-      padding: 1.8rem 1.5rem;
-    }
-
-    .faq-compare h3 {
-      font-size: 1.3rem;
-      margin-bottom: 1rem;
-      color: #f0ede8;
-    }
-
-    .faq-compare .qa {
-      margin-bottom: 1rem;
-    }
-
-    .faq-compare .q {
-      font-weight: 600;
-      color: #f59e42;
-    }
-
-    .faq-compare .a {
-      color: #b0aeaa;
-      margin-top: 0.2rem;
-      font-size: 0.95rem;
-    }
-
-    /* responsive */
+    /* ═════ Responsive ═════ */
     @media (max-width: 720px) {
-      .hero h1 {
-        font-size: 2rem;
-      }
-      .selling-points {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-      }
-      .pricing-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-      }
-      .pricing-card.featured {
-        order: -1;
-      }
-      .hero .cta-group {
-        flex-direction: column;
-        align-items: center;
-      }
-      .btn {
-        width: 100%;
-        max-width: 280px;
-        text-align: center;
-      }
+      .hero { padding: var(--space-6) var(--space-3) var(--space-4); }
+      .hero h1 { font-size: 2rem; }
+      .selling-points { grid-template-columns: 1fr; }
+      .selling-points .point:nth-child(2) { margin-top: 0; }
+      .pricing-grid { grid-template-columns: 1fr; }
+      .pricing-card.featured { transform: none; order: -1; }
+      .cta-section { padding: var(--space-4) var(--space-3); }
+      .cta-section h2 { font-size: 1.5rem; }
     }
 
     @media (max-width: 480px) {
-      main {
-        padding: 1.2rem 1rem;
-      }
-      .hero h1 {
-        font-size: 1.7rem;
-      }
-      .hero .subhead {
-        font-size: 1rem;
-      }
-      .card, .pricing-card, .cta-section {
-        padding: 1.2rem 1rem;
-      }
+      .hero h1 { font-size: 1.6rem; }
+      .hero .subhead { font-size: 1rem; }
+      .btn { width: 100%; justify-content: center; }
     }
-
-    /* utility */
-    .mt-1 { margin-top: 1rem; }
-    .mb-1 { margin-bottom: 1rem; }
-    .text-center { text-align: center; }
-    .flex-center { display: flex; justify-content: center; gap: 0.8rem; flex-wrap: wrap; }
   </style>
 </head>
 <body>
 <main>
-  <!-- Hero -->
+
+  <!-- ═ Hero ═ -->
   <section class="hero">
-    <h1>Tired of Chatting?<br>Get <span class="accent">Direct Answers</span>.</h1>
-    <p class="subhead">No greetings. No explanations. Just the answer you need, in the format you want.</p>
-    <div class="cta-group">
-      <a href="#" class="btn">Try DirectAnswer – First Query Free</a>
-      <a href="#" class="btn btn-outline">看示例 ↓</a>
+    <div class="eyebrow">
+      <svg class="icon" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+      No-Chat AI Tool
     </div>
-    <p class="demo-hint mono">Paste text → get bullet points. No “Sure, here’s a summary”.</p>
+    <h1>Tired of Chatting?<br>Get <span>Direct Answers</span>.</h1>
+    <p class="subhead">No greetings. No explanations. Just the answer you need, in the format you want — paste and go.</p>
+    <div class="cta-group">
+      <a href="#" class="btn btn-primary">
+        <svg class="icon" viewBox="0 0 24 24" style="stroke:var(--color-bg)"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        Try DirectAnswer — First Query Free
+      </a>
+      <a href="#" class="btn btn-outline">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+        View Examples
+      </a>
+    </div>
   </section>
 
-  <!-- 3 Selling Points -->
+  <!-- ═ Selling Points — asymmetric ═ -->
   <section class="selling-points">
-    <div class="card">
-      <span class="icon">🗣️➡️📋</span>
-      <h3>Zero Chat</h3>
-      <p>Paste text, get bullet points. No “Sure, here’s a summary”. 直接输出，零废话。</p>
+    <div class="point">
+      <div class="point-header">
+        <div class="icon-wrap">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M21 12a9 9 0 0 1-9 9m9-9a9 9 0 0 0-9-9m9 9H3m9 9a9 9 0 0 1-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 0 1 9-9"/></svg>
+        </div>
+        <h3>Zero Chat</h3>
+      </div>
+      <p>Paste text, get bullet points. No "Sure, here's a summary". 直接输出，零废话。</p>
     </div>
-    <div class="card">
-      <span class="icon">🧩</span>
-      <h3>Structured Output</h3>
+
+    <div class="point">
+      <div class="point-header">
+        <div class="icon-wrap">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        </div>
+        <h3>Structured Output</h3>
+      </div>
       <p>Choose from Summary, List, Code Fix, Data Table. 你想要什么格式，直接给。</p>
     </div>
-    <div class="card">
-      <span class="icon">⚡</span>
-      <h3>Fast — Under 2s</h3>
-      <p>No streaming delay. 粘贴即得，平均1.2秒返回结构化答案。</p>
+
+    <div class="point">
+      <div class="point-header">
+        <div class="icon-wrap">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        </div>
+        <h3>Fast — Under 2s</h3>
+      </div>
+      <p>No streaming delay. 粘贴即得，平均 1.2 秒返回结构化答案。</p>
     </div>
   </section>
 
-  <!-- Pricing -->
+  <!-- ═ Pricing ═ -->
   <section class="pricing">
     <h2>简单定价 · 为省时而设计</h2>
-    <p class="sub mono">单次查询 $0.50 · 月付低至 $0.29/次</p>
+    <p class="sub">单次查询 $0.50 · 月付低至 $0.29/次</p>
     <div class="pricing-grid">
       <div class="pricing-card">
         <div class="tier">单次</div>
         <div class="price">$0.50 <span>/ 查询</span></div>
         <div class="desc">适合尝鲜用户，无需绑定支付方式。</div>
-        <a href="#" class="btn btn-sm btn-outline">试用一次</a>
+        <a href="#" class="btn btn-outline btn-sm">试用一次</a>
       </div>
       <div class="pricing-card featured">
         <div class="tier">月度 · 轻量</div>
         <div class="price">$9 <span>/ 月</span></div>
-        <div class="desc">20次查询，一杯咖啡钱。适合轻度使用。</div>
+        <div class="desc">20 次查询，一杯咖啡钱。适合轻度使用。</div>
         <a href="#" class="btn btn-sm">订阅 $9/月</a>
       </div>
       <div class="pricing-card">
         <div class="tier">月度 · 重度</div>
         <div class="price">$29 <span>/ 月</span></div>
-        <div class="desc">100次查询，单次$0.29。比ChatGPT Plus更便宜、更直接。</div>
-        <a href="#" class="btn btn-sm">订阅 $29/月</a>
+        <div class="desc">100 次查询，单次 $0.29。比 ChatGPT Plus 更便宜、更直接。</div>
+        <a href="#" class="btn btn-outline btn-sm">订阅 $29/月</a>
       </div>
     </div>
-    <p style="text-align:center; margin-top:1.5rem; color:#7a7875; font-size:0.85rem;">首查询免费 · 无需信用卡 · 随时取消</p>
+    <p class="pricing-note">首查询免费 · 无需信用卡 · 随时取消</p>
   </section>
 
-  <!-- FAQ / 对比 -->
-  <section class="faq-compare">
-    <h3>🤔 为什么不用ChatGPT？</h3>
+  <!-- ═ FAQ ═ -->
+  <section class="faq">
+    <h3>
+      <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="9.09" y1="9" x2="9.09" y2="9.01"/><line x1="15.09" y1="9" x2="15.09" y2="9.01"/><path d="M8 14c0 1 .9 2 2 2h1.5c1 0 1.5-.7 1.5-1.5v-.5c0-1-1.3-1.8-2.9-2.2a1.7 1.7 0 0 1-.9-.8"/></svg>
+      为什么不用 ChatGPT？
+    </h3>
     <div class="qa">
-      <div class="q">“ChatGPT也能总结啊，有什么区别？”</div>
-      <div class="a">ChatGPT 需要对话：打招呼、等回复、翻看历史。DirectAnswer 是 <strong>反社交AI</strong>——粘贴即得，没有“让我想想”，没有“此外”。你付钱买的是答案，不是聊天。</div>
+      <div class="q">"ChatGPT 也能总结啊，有什么区别？"</div>
+      <div class="a">ChatGPT 需要对话：打招呼、等回复、翻看历史。DirectAnswer 是 <strong style="color:var(--color-accent)">反社交 AI</strong>——粘贴即得，没有"让我想想"，没有"此外"。你付钱买的是答案，不是聊天。</div>
     </div>
     <div class="qa">
-      <div class="q">“输出会不会太生硬？”</div>
-      <div class="a">你可以选择格式：摘要、列表、代码修复、数据表。生硬但精准，比啰嗦的对话更省时间。如果需要上下文，点一下“展开”即可。</div>
+      <div class="q">"输出会不会太生硬？"</div>
+      <div class="a">你可以选择格式：摘要、列表、代码修复、数据表。生硬但精准，比啰嗦的对话更省时间。如果需要上下文，点一下"展开"即可。</div>
     </div>
     <div class="qa">
-      <div class="q">“和直接调API有什么区别？”</div>
-      <div class="a">API 需要写代码、管理token、处理错误。DirectAnswer 零代码，粘贴即用。而且我们硬编码了“直接回答”提示词，你不需要调prompt。</div>
+      <div class="q">"和直接调 API 有什么区别？"</div>
+      <div class="a">API 需要写代码、管理 token、处理错误。DirectAnswer 零代码，粘贴即用。我们硬编码了"直接回答"提示词，你不需要调 prompt。</div>
     </div>
   </section>
 
-  <!-- CTA -->
+  <!-- ═ CTA ═ -->
   <section class="cta-section">
-    <h2>受够了对话？<span class="accent">试试直接答案</span></h2>
-    <p>前3次查询免费，无需注册。体验“非对话式AI”的效率。</p>
-    <div class="flex-center">
-      <a href="#" class="btn">免费试用 →</a>
-      <a href="#" class="btn btn-outline">查看GitHub</a>
+    <h2>受够了对话？<span>试试直接答案</span></h2>
+    <p>前 3 次查询免费，无需注册。体验"非对话式 AI"的效率。</p>
+    <div class="cta-row">
+      <a href="#" class="btn btn-primary">
+        <svg class="icon" viewBox="0 0 24 24" style="stroke:var(--color-bg)"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        免费试用
+      </a>
+      <a href="#" class="btn btn-outline">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        View on GitHub
+      </a>
     </div>
-    <p style="margin-top:1.2rem; font-size:0.8rem; color:#5c5a57;">部署于 Vercel · 30秒启动 · 无追踪</p>
+    <p class="footnote">部署于 Vercel · 30 秒启动 · 无追踪</p>
   </section>
 
-  <!-- Footer -->
+  <!-- ═ Footer ═ -->
   <footer>
-    <p>© 2026 <a href="#">DirectAnswer</a> — KAKAOPC 情报科 · 信号 OP-20260527-001</p>
-    <p style="margin-top:0.3rem; font-size:0.75rem;">非对话式AI查询工具 · 静默模式 · 直接答案</p>
+    <p>&copy; 2026 <a href="/">DirectAnswer</a> — KAKAOPC 情报科 · 信号 OP-20260527-001</p>
+    <p style="margin-top:4px; font-size:0.75rem;">非对话式 AI 查询工具 · 静默模式 · 直接答案</p>
   </footer>
+
 </main>
 </body>
 </html>

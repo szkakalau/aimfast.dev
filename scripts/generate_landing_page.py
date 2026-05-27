@@ -42,43 +42,67 @@ def find_action_plan(date_str: str) -> tuple[str, dict | None]:
 def _build_system_prompt() -> str:
     return """你是 KAKAOPC 情报科的 Landing Page 设计师。你的任务是将 Action 方案转化为一个可直接部署的单页 HTML。
 
-## 设计要求
+## 设计铁律（违反任何一条 = 不合格）
 
-1. **极简单页**: 一个 HTML 文件，包含所有 CSS/JS，无外部依赖（除 Google Fonts）
-2. **暖色暗色模式**: 背景 #0d0f12，卡片 #14171c，强调色 #f59e42
-3. **结构**: Hero → 3 个 Selling Points → Pricing → CTA → Footer
-4. **字体**: DM Sans（标题）+ DM Mono（代码/数字），从 Google Fonts 加载
-5. **圆角**: 8px，阴影轻柔，无硬边框
-6. **响应式**: 移动端友好，max-width 960px
-
-## HTML 页面结构
-
-```html
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>产品名 — 一句话价值主张</title>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>/* 所有 CSS 内联 */</style>
-</head>
-<body>
-  <main>
-    <section class="hero"><!-- headline + subheadline + CTA --></section>
-    <section class="selling-points"><!-- 3 cards --></section>
-    <section class="pricing"><!-- pricing tiers --></section>
-    <section class="cta"><!-- final CTA --></section>
-    <footer><!-- copyright --></footer>
-  </main>
-</body>
-</html>
+### 1. 语义 Token —— 零硬编码值
+所有颜色/间距/圆角必须定义为 CSS 变量，禁止在规则中直接写 `#xxx` 或 `px` 值。
+```
+:root {
+  --color-bg: #0d0f12;
+  --color-surface: #14171c;
+  --color-surface-alt: #1a1d24;
+  --color-border: #252830;
+  --color-text: #f0ede8;
+  --color-text-secondary: #a8a6a2;
+  --color-text-muted: #7a7875;
+  --color-accent: #f59e42;
+  --color-accent-hover: #f7b25c;
+  --color-accent-muted: rgba(245, 158, 66, 0.1);
+  --color-accent-glow: rgba(245, 158, 66, 0.2);
+  --radius-sm: 6px; --radius-md: 8px; --radius-lg: 12px;
+  --space-1: 8px; --space-2: 16px; --space-3: 24px; --space-4: 32px; --space-5: 40px; --space-6: 48px; --space-8: 64px;
+  --font-heading: 'DM Sans', sans-serif;
+  --font-mono: 'DM Mono', monospace;
+  --transition: 180ms ease;
+}
 ```
 
-## 内容要求
+### 2. Lucide Icons —— 零 Emoji
+所有图标必须是内联 Lucide SVG（viewBox="0 0 24 24"，stroke-width 1.8）。
+常用路径参考：
+- 闪电/zap: `<path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>`
+- 箭头/arrow-right: `<path d="M5 12h14M12 5l7 7-7 7"/>`
+- 文件/file-text: `<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>`
+- 编辑/edit: `<path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>`
+- 帮助/help-circle: `<circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/>`
+- 锁/lock: `<rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>`
 
+### 3. 非对称布局
+Selling Points 不可以用 3 列对称网格。必须用偏移、重叠或错位布局。
+- 推荐：2+1 staggered（第2张卡片 mt-48）、非等宽 grid、或单列交替左右。
+
+### 4. 8px 节奏
+所有间距（margin/padding/gap）必须是 8 的倍数。禁止 5px、7px、10px、15px、20px 等非 8px 倍数值。
+
+### 5. 暖色暗色模式
+背景带温度偏色（非纯黑 #000000），单一强调色 #f59e42，无彩虹配色。
+卡片用微妙 border 区分层级，阴影轻柔。圆角 6-12px，无硬边框。
+
+### 6. 排版
+- 标题 DM Sans（weight 600-700），正文 DM Sans（weight 400）
+- 代码/数字/标签用 DM Mono
+- 正文 line-height: 1.6-1.75
+- 标题与正文有明显字重/字号/颜色对比
+
+### 7. 动画克制
+hover transition ≤ 200ms，避免过度装饰。无弹跳、无旋转、无脉冲动画。
+
+## 页面结构
+Hero → Selling Points（非对称 3 卡片）→ Pricing（中间卡片突出）→ FAQ（左对齐 accent 竖线）→ CTA → Footer
+
+## 内容要求
 - Headline ≤ 10 词（英文）或 ≤ 15 字（中文）
-- 3 个 Selling Points，每个 ≤ 30 字
+- 3 个 Selling Points，每个 ≤ 30 字描述
 - 定价展示简洁（单次 / 月度）
 - CTA 按钮文字具体（"免费试用" > "了解更多"）
 
