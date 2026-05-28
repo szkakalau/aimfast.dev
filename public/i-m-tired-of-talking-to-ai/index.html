@@ -275,6 +275,100 @@
       color: var(--color-text-muted);
     }
 
+    /* ── Email Modal ── */
+    .email-modal-overlay {
+      position: fixed; inset: 0;
+      background: rgba(0, 0, 0, 0.65);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      display: flex; align-items: center; justify-content: center;
+      z-index: 1000; padding: var(--space-3);
+      opacity: 0; visibility: hidden;
+      transition: opacity var(--duration-normal) var(--ease-out),
+                  visibility var(--duration-normal) var(--ease-out);
+    }
+    .email-modal-overlay.active { opacity: 1; visibility: visible; }
+
+    .email-modal {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      padding: var(--space-6) var(--space-5);
+      max-width: 440px; width: 100%;
+      text-align: center;
+      position: relative;
+      transform: translateY(12px);
+      transition: transform var(--duration-slow) var(--ease-out);
+    }
+    .email-modal-overlay.active .email-modal { transform: translateY(0); }
+
+    .email-modal .modal-close {
+      position: absolute; top: var(--space-3); right: var(--space-3);
+      background: none; border: none; color: var(--color-text-muted);
+      cursor: pointer; padding: var(--space-1);
+      border-radius: var(--radius-sm); line-height: 1;
+      transition: color var(--duration-fast) var(--ease-out);
+    }
+    .email-modal .modal-close:hover { color: var(--color-text); }
+
+    .email-modal .modal-icon {
+      width: 56px; height: 56px;
+      border-radius: var(--radius-md);
+      background: var(--color-accent-muted);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto var(--space-3);
+    }
+
+    .email-modal h3 { font-size: 1.3rem; margin-bottom: var(--space-1); }
+
+    .email-modal .modal-desc {
+      color: var(--color-text-secondary);
+      font-size: 0.9rem; margin-bottom: var(--space-4); line-height: 1.6;
+    }
+
+    .email-modal .input-row { display: flex; gap: var(--space-2); }
+
+    .email-modal input[type="email"] {
+      flex: 1; min-width: 0;
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 12px 16px;
+      color: var(--color-text);
+      font-family: var(--font-body); font-size: 0.95rem;
+      outline: none;
+      transition: border-color var(--duration-fast) var(--ease-out);
+    }
+    .email-modal input[type="email"]:focus { border-color: var(--color-accent); }
+
+    .email-modal .btn-submit {
+      background: var(--color-accent); color: var(--color-bg);
+      border: none;
+      font-family: var(--font-heading); font-weight: 600; font-size: 0.92rem;
+      padding: 12px 20px; border-radius: var(--radius-md);
+      cursor: pointer; white-space: nowrap;
+      transition: background var(--duration-fast) var(--ease-out),
+                  box-shadow var(--duration-fast) var(--ease-out);
+      box-shadow: 0 2px 12px var(--color-accent-glow);
+    }
+    .email-modal .btn-submit:hover { background: var(--color-accent-hover); }
+
+    .email-modal .modal-note { margin-top: var(--space-3); font-size: 0.75rem; color: var(--color-text-muted); }
+
+    .email-modal .modal-success { display: none; }
+    .email-modal .modal-success .check-icon {
+      width: 56px; height: 56px; border-radius: 50%;
+      background: var(--color-green-muted);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto var(--space-3);
+    }
+    .email-modal .modal-success h3 { color: var(--color-green); }
+
+    @media (max-width: 480px) {
+      .email-modal .input-row { flex-direction: column; }
+      .email-modal .btn-submit { width: 100%; justify-content: center; }
+    }
+
     /* ── Footer ── */
     .site-footer {
       text-align: center;
@@ -307,14 +401,14 @@
     <h1 id="lp-hero-title">Tired of Chatting?<br>Get <span>Direct Answers</span>.</h1>
     <p class="subhead">No greetings. No explanations. Just the answer you need, in the format you want — paste and go.</p>
     <div class="cta-row">
-      <a href="#" class="btn btn-primary">
+      <button class="btn btn-primary" onclick="openEmailModal()">
         <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         Try DirectAnswer — First Query Free
-      </a>
-      <a href="#" class="btn btn-outline">
+      </button>
+      <button class="btn btn-outline" onclick="openEmailModal()">
         <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
         View Examples
-      </a>
+      </button>
     </div>
   </section>
 
@@ -355,19 +449,19 @@
         <div class="tier">Pay as You Go</div>
         <div class="price">$0.50 <span>/ query</span></div>
         <div class="desc">Try it out. No card required. Your first query is free.</div>
-        <a href="#" class="btn btn-outline">Try Once</a>
+        <a href="#" class="btn btn-outline" onclick="openEmailModal();return false;">Try Once</a>
       </div>
       <div class="pricing-card featured">
         <div class="tier">Monthly · Light</div>
         <div class="price">$9 <span>/ month</span></div>
         <div class="desc">20 queries per month. The price of a coffee. For light daily use.</div>
-        <a href="#" class="btn">Subscribe $9/mo</a>
+        <a href="#" class="btn" onclick="openEmailModal();return false;">Subscribe $9/mo</a>
       </div>
       <div class="pricing-card">
         <div class="tier">Monthly · Heavy</div>
         <div class="price">$29 <span>/ month</span></div>
         <div class="desc">100 queries per month. $0.29 each. Cheaper and more direct than ChatGPT Plus.</div>
-        <a href="#" class="btn btn-outline">Subscribe $29/mo</a>
+        <a href="#" class="btn btn-outline" onclick="openEmailModal();return false;">Subscribe $29/mo</a>
       </div>
     </div>
     <p class="pricing-note">First query free · No credit card required · Cancel anytime</p>
@@ -401,14 +495,14 @@
       <h2 id="bottom-cta-title">Done Chatting? <span>Try Direct Answers</span></h2>
       <p>First 3 queries are free. No signup required. Experience the speed of no-chat AI.</p>
       <div class="cta-row">
-        <a href="#" class="btn btn-primary">
+        <button class="btn btn-primary" onclick="openEmailModal()">
           <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           Try Free
-        </a>
-        <a href="#" class="btn btn-outline">
+        </button>
+        <button class="btn btn-outline" onclick="openEmailModal()">
           <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
           View on GitHub
-        </a>
+        </button>
       </div>
       <p class="footnote">Deployed on Vercel · 30s cold start · No tracking</p>
     </div>
@@ -421,6 +515,74 @@
   </footer>
 
 </main>
+
+<!-- ═══ Email Capture Modal ═══ -->
+<div class="email-modal-overlay" id="email-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="email-modal">
+    <button class="modal-close" onclick="closeEmailModal()" aria-label="Close">
+      <svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div id="modal-form">
+      <div class="modal-icon">
+        <svg class="icon icon-lg icon-accent" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      </div>
+      <h3 id="modal-title">Get Early Access</h3>
+      <p class="modal-desc">Enter your email to be first in line when DirectAnswer launches. No spam, unsubscribe anytime.</p>
+      <div class="input-row">
+        <input type="email" id="modal-email" placeholder="you@example.com" autocomplete="email" aria-label="Email address">
+        <button class="btn-submit" onclick="submitEmail()">Notify Me</button>
+      </div>
+      <p class="modal-note">First 3 queries free · No credit card required</p>
+    </div>
+    <div class="modal-success" id="modal-success">
+      <div class="check-icon">
+        <svg class="icon icon-lg" viewBox="0 0 24 24" aria-hidden="true" style="color:var(--color-green);"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <h3>You're on the list!</h3>
+      <p class="modal-desc">We'll let you know the moment DirectAnswer is ready. Talk soon.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+function openEmailModal() {
+  document.getElementById('email-modal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+  document.getElementById('modal-email').focus();
+}
+
+function closeEmailModal() {
+  document.getElementById('email-modal').classList.remove('active');
+  document.body.style.overflow = '';
+  // Reset state for next open
+  setTimeout(function() {
+    document.getElementById('modal-form').style.display = '';
+    document.getElementById('modal-success').style.display = 'none';
+    document.getElementById('modal-email').value = '';
+  }, 300);
+}
+
+function submitEmail() {
+  var email = document.getElementById('modal-email').value.trim();
+  if (!email || !email.includes('@')) {
+    document.getElementById('modal-email').style.borderColor = 'var(--color-red)';
+    return;
+  }
+  document.getElementById('modal-form').style.display = 'none';
+  document.getElementById('modal-success').style.display = 'block';
+  // Backend integration point — email is in `email` variable
+}
+
+// Close on overlay click
+document.getElementById('email-modal').addEventListener('click', function(e) {
+  if (e.target === this) closeEmailModal();
+});
+
+// Close on Escape
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeEmailModal();
+});
+</script>
 
 </body>
 </html>

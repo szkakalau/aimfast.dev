@@ -4,9 +4,11 @@ Reads daily/ + tracking/ data and writes a JSON bundle for the dashboard.
 Output: public/dashboard/data/dashboard.json
 """
 import json
+import sys
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from scripts.pipeline_status import read as read_pipeline_status
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -15,6 +17,49 @@ TRACKING_DIR = ROOT / "tracking"
 OUTPUT_DIR = ROOT / "public" / "dashboard" / "data"
 
 TZ_SHANGHAI = timezone(timedelta(hours=8))
+
+
+def _collect_archive(max_days: int = 60) -> list[dict]:
+    """Collect report.md, article.md, article.json for all available dates (newest first)."""
+    if not DAILY_DIR.exists():
+        return []
+
+    entries = []
+    for date_dir in sorted(DAILY_DIR.iterdir(), reverse=True):
+        if not date_dir.is_dir():
+            continue
+        date_str = date_dir.name
+
+        try:
+            datetime.strptime(date_str, "%Y-%m-%d")
+        except ValueError:
+            continue
+
+        report_path = date_dir / "report.md"
+        article_path = date_dir / "article.md"
+        article_json_path = date_dir / "article.json"
+
+        has_report = report_path.exists()
+        has_article = article_path.exists()
+
+        if not has_report and not has_article:
+            continue
+
+        entry = {
+            "date": date_str,
+            "report_md": report_path.read_text(encoding="utf-8") if has_report else "",
+            "article_md": article_path.read_text(encoding="utf-8") if has_article else "",
+            "article_meta": json.loads(article_json_path.read_text(encoding="utf-8"))
+                            if article_json_path.exists() else None,
+            "has_report": has_report,
+            "has_article": has_article,
+        }
+        entries.append(entry)
+
+        if len(entries) >= max_days:
+            break
+
+    return entries
 
 
 def _find_latest_date() -> str | None:
@@ -93,6 +138,9 @@ def collect_dashboard_data() -> dict:
     # 6. Pipeline status (diagnostics for skipped steps)
     pipeline_status = read_pipeline_status(effective_date)
 
+    # 7. Archive (all available historical reports + articles)
+    archive = _collect_archive(max_days=60)
+
     return {
         "date": effective_date,
         "signals": today_signals,
@@ -103,6 +151,7 @@ def collect_dashboard_data() -> dict:
         "article_md": article_md,
         "article_meta": article_meta,
         "pipeline": pipeline_status.get("steps", {}),
+        "archive": archive,
         "generated_at": datetime.now(TZ_SHANGHAI).isoformat(),
     }
 

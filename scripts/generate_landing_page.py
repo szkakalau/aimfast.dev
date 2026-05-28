@@ -141,9 +141,14 @@ Hero → Selling Points（对称 3 列 grid）→ Pricing（对称 3 列 grid，
 - CTA 按钮文字具体（"Try Free" > "Learn More"）
 - Footer 包含 © 2026 和返回 aimfast.dev 的链接
 - 每个 section 必须有 h2 标题（含 Selling Points 和 FAQ），后续层级用 h3。禁止跳过 heading 层级（h1 → h3）。
-- <title> 格式："PRODUCT_NAME — TAGLINE | aimfast.dev"
+- <title> 格式：PRODUCT_NAME - TAGLINE | aimfast.dev
 
-输出完整的 HTML 源码。不要用代码块包裹。"""
+### 9. Email Capture - All CTA buttons must trigger email collection
+All CTA buttons (Hero, Pricing, Bottom CTA) except external links (GitHub etc.) must trigger an email capture modal.
+Use design tokens from /_ds/. Modal CSS in <style>, JS before </body>.
+Button binding: onclick="openEmailModal()" (button tag) or onclick="openEmailModal();return false;" (a tag).
+
+Output complete HTML source. Do not wrap in code blocks."""
 
 
 def _build_user_prompt(plan_md: str, tracking: dict | None) -> str:
