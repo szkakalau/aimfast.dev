@@ -55,6 +55,7 @@ $Collectors = @(
     @{Name="Reddit"; Script="collect_reddit"; Enabled=$true},
     @{Name="Indie Hackers"; Script="collect_indiehackers"; Enabled=$true},
     @{Name="V2EX"; Script="collect_v2ex"; Enabled=$true},
+    @{Name="w2solo"; Script="collect_w2solo"; Enabled=$true},
     @{Name="HuggingFace"; Script="collect_huggingface"; Enabled=$true},
     @{Name="TikTok"; Script="collect_tiktok"; Enabled=$true},
     @{Name="Jike"; Script="collect_jike"; Enabled=$true},
