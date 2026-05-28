@@ -578,6 +578,7 @@
       <button class="tab active" role="tab" aria-selected="true" onclick="switchTab('report')">Daily Report</button>
       <button class="tab" role="tab" aria-selected="false" onclick="switchTab('article')">Planet Article</button>
       <button class="tab" role="tab" aria-selected="false" onclick="switchTab('tracking')">Opportunity Tracking</button>
+      <button class="tab" role="tab" aria-selected="false" onclick="switchTab('jike')">Jike Post</button>
     </div>
 
     <!-- Archive date navigation (hidden until archive data loads) -->
@@ -605,6 +606,9 @@
         <tbody id="tracking-body"></tbody>
       </table>
       <div id="tracking-empty" class="empty" style="display:none;">No opportunities tracked yet.</div>
+    </div>
+    <div id="tab-jike" class="report-body" style="display:none;" role="tabpanel">
+      <div class="loading">Loading Jike post&hellip;</div>
     </div>
   </div>
 
@@ -772,9 +776,17 @@ function renderAll(data) {
     });
   }
 
+  // Jike Post
+  var jikePostMd = data.jike_post_md || '';
+  if (jikePostMd) {
+    document.getElementById('tab-jike').innerHTML = marked.parse(jikePostMd);
+  } else {
+    document.getElementById('tab-jike').innerHTML = emptyState('jike', 'Jike post has not been generated yet.');
+  }
+
   // Pipeline status indicators in footer
-  var steps = ['report', 'article', 'action', 'lp'];
-  var labels = {report: 'RPT', article: 'ART', action: 'ACT', lp: 'LP'};
+  var steps = ['report', 'article', 'action', 'lp', 'jike_post'];
+  var labels = {report: 'RPT', article: 'ART', action: 'ACT', lp: 'LP', jike_post: 'JIKE'};
   var indicators = [];
   steps.forEach(function(step) {
     var s = pipeline[step];

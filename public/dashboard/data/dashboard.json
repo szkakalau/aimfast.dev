@@ -1918,6 +1918,7 @@
     "signal_id": "hn-48299753",
     "signal_title": "YouTube to automatically label AI-generated videos"
   },
+  "jike_post_md": "YouTube 刚宣布自动标注 AI 视频，HN 上 321 条评论里，创作者最怕的不是被封号，而是被误标——因为 YouTube 不会告诉你为什么给你打上 AI 标签。\n\n这个恐慌已经跨平台验证：Reddit r/SaaS 上 159 条讨论里，一个 AI 视频工具创始人烧了 $1,078 广告费、拿到 226 个用户后关停。教训很明确：用户不付钱，因为市场上的工具太多了。但所有人都忽略了同一个问题——他们生成的视频怎么通过平台审核？\n\n**证据锚定**\n- HN 321 条讨论 + YouTube 官方博客，跨平台 2 个独立来源\n- Reddit 159 条讨论，一个 AI 视频 SaaS 关停反思，烧了 $1,078\n- 两个信号指向同一个缺口：创作者需要合规指南，而不是另一个生成工具\n\n**白话翻译**\n这意味着：你不需要再做另一个 AI 视频工具（已经有人帮你验证了失败路径）。你需要做的是帮现有工具的用户解决合规焦虑。一个靠 YouTube 流量吃饭的创作者，花 2 小时焦虑自己的频道会不会被降权——这段时间成本就值 $19。谁会付钱？那些已经有 AI 视频工具但不知道怎么避开雷区的独立创作者。他们怕的不是 AI，是 YouTube 的算法误判。\n\n**行动建议**\n今天下午 2 小时就能验证：\n1. 写一份 10 页的 Notion 模板，包含 YouTube 新规则白话解读、20 条是/否自查清单、申诉模板、5 个常见误判场景\n2. 发布到 HN 和 Reddit，标题《我花 2 小时写了 YouTube AI 标签合规指南，免费 7 天》\n3. 用 Google Form 收集邮箱，手动发 PDF。7 天内超过 50 人下载就继续做，优化成 $19 付费版\n4. 定价：$19 一次性（Notion 模板 + PDF），$9/月订阅（每月更新规则 + 社群讨论）\n\n我可能错了——YouTube 规则可能很快被创作者抗议推翻，或者 Google 自己出一份免费指南。但数据指向一个明确的缺口：恐慌存在，解决方案缺位，而且你不需要技术背景就能做。\n\nLanding page: https://aimfast.dev/i-m-tired-of-talking-to-ai\n\n#独立开发者 #机会发现 #YouTube",
   "pipeline": {
     "action": {
       "status": "skipped",
@@ -1940,6 +1941,11 @@
       "status": "generated",
       "updated_at": "2026-05-28T11:14:44.635352+08:00",
       "message": "Planet article generated: 机会深挖 (4,985 chars)"
+    },
+    "jike_post": {
+      "status": "generated",
+      "updated_at": "2026-05-28T13:55:13.601941+08:00",
+      "message": "Jike post saved (978 chars)"
     }
   },
   "archive": [
@@ -1974,5 +1980,5 @@
       "has_article": true
     }
   ],
-  "generated_at": "2026-05-28T11:53:14.421592+08:00"
+  "generated_at": "2026-05-28T14:18:04.328914+08:00"
 }
