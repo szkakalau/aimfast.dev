@@ -168,6 +168,21 @@ try {
 
 # --- Step 9: Weekly Report (Sunday only) ---
 
+
+# --- Step 10: Jike Post Generation ---
+
+Write-Log ""
+Write-Log "--- Step 10: Jike Post ---"
+
+try {
+    $output = & $Python -m scripts.generate_jike_post 2>&1
+    Write-Log "  [JikePost] OK"
+} catch {
+    Write-Log "  [JikePost] FAIL: $_"
+}
+
+# --- Step 11: Weekly Report (Sunday only) ---
+
 $DayOfWeek = (Get-Date).DayOfWeek
 if ($DayOfWeek -eq 'Sunday') {
     Write-Log ""
@@ -181,7 +196,7 @@ if ($DayOfWeek -eq 'Sunday') {
     }
 }
 
-# --- Step 10: Git commit & push dashboard data ---
+# --- Step 12: Git commit & push dashboard data ---
 
 Write-Log ""
 Write-Log "--- Step 10: Deploy Dashboard Data ---"
