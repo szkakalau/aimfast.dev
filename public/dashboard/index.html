@@ -5,13 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KAKAOPC Intel — Dashboard</title>
 <meta name="description" content="KAKAOPC Intel Dashboard — Signal intelligence, daily reports, and opportunity tracking for indie developers.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#1a1d24">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://aimfast.dev/dashboard/">
+<!-- Open Graph (for link previews despite noindex) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="KAKAOPC Intel — Dashboard">
+<meta property="og:description" content="Signal intelligence, daily reports, and opportunity tracking for indie developers.">
+<meta property="og:url" content="https://aimfast.dev/dashboard/">
+<meta property="og:site_name" content="KAKAOPC Intel">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/_ds/base.css">
 <link rel="stylesheet" href="/_ds/components.css">
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js" defer></script>
 <style>
   /* ── Dashboard-specific styles, all values from tokens ── */
   header.dash-header {
@@ -168,6 +178,11 @@
     padding-left: var(--space-2);
     color: var(--color-text-muted);
     margin: 12px 0;
+  }
+
+  /* ── Article meta badge ── */
+  .article-meta {
+    margin-bottom: var(--space-2);
   }
 
   /* ── Tab bar ── */
@@ -377,7 +392,7 @@
       Top 10 Signals
     </h2>
     <table id="signals-table" aria-label="Top 10 signals">
-      <thead><tr><th>#</th><th>Signal</th><th>Source</th><th>Score</th><th>Cross-Platform</th><th>Engagement</th></tr></thead>
+      <thead><tr><th scope="col">#</th><th scope="col">Signal</th><th scope="col">Source</th><th scope="col">Score</th><th scope="col">Cross-Platform</th><th scope="col">Engagement</th></tr></thead>
       <tbody id="signals-body">
         <tr><td colspan="6" class="loading">Loading signal data&hellip;</td></tr>
       </tbody>
@@ -404,16 +419,20 @@
 
   <!-- Report & Tracking tabs -->
   <div class="card card-full">
-    <div class="tab-bar" role="tablist" aria-label="Report tabs">
+    <div class="tab-bar" role="tablist" aria-label="Content tabs">
       <button class="tab active" role="tab" aria-selected="true" onclick="switchTab('report')">Daily Report</button>
+      <button class="tab" role="tab" aria-selected="false" onclick="switchTab('article')">Planet Article</button>
       <button class="tab" role="tab" aria-selected="false" onclick="switchTab('tracking')">Opportunity Tracking</button>
     </div>
     <div id="tab-report" class="report-body" role="tabpanel">
       <div class="loading">Loading report&hellip;</div>
     </div>
+    <div id="tab-article" class="report-body" style="display:none;" role="tabpanel">
+      <div class="loading">Loading article&hellip;</div>
+    </div>
     <div id="tab-tracking" class="report-body" style="display:none;" role="tabpanel">
       <table aria-label="Opportunity tracking">
-        <thead><tr><th>ID</th><th>Date</th><th>Opportunity</th><th>Score</th><th>LP Status</th><th>Verification</th><th>Decision</th></tr></thead>
+        <thead><tr><th scope="col">ID</th><th scope="col">Date</th><th scope="col">Opportunity</th><th scope="col">Score</th><th scope="col">LP Status</th><th scope="col">Verification</th><th scope="col">Decision</th></tr></thead>
         <tbody id="tracking-body"></tbody>
       </table>
       <div id="tracking-empty" class="empty" style="display:none;">No opportunities tracked yet.</div>
@@ -483,6 +502,8 @@ function renderAll(data) {
   var history = data.history || [];
   var opps = data.opportunities || [];
   var reportMd = data.report_md || '';
+  var articleMd = data.article_md || '';
+  var articleMeta = data.article_meta || {};
 
   document.getElementById('dash-date').textContent = data.date || '--';
   document.getElementById('dash-generated').textContent = (data.generated_at || '').substring(0, 16);
@@ -522,6 +543,18 @@ function renderAll(data) {
     document.getElementById('tab-report').innerHTML = marked.parse(reportMd);
   } else {
     document.getElementById('tab-report').innerHTML = '<div class="empty">Daily report has not been generated yet.</div>';
+  }
+
+  // Article
+  if (articleMd) {
+    var articleHtml = '';
+    if (articleMeta.type_label) {
+      articleHtml += '<div class="article-meta"><span class="badge badge-live">' + articleMeta.type_label + '</span></div>';
+    }
+    articleHtml += marked.parse(articleMd);
+    document.getElementById('tab-article').innerHTML = articleHtml;
+  } else {
+    document.getElementById('tab-article').innerHTML = '<div class="empty">Planet article has not been generated yet.</div>';
   }
 
   // Tracking
@@ -614,6 +647,7 @@ function switchTab(tab) {
   event.target.classList.add('active');
   event.target.setAttribute('aria-selected', 'true');
   document.getElementById('tab-report').style.display = tab === 'report' ? '' : 'none';
+  document.getElementById('tab-article').style.display = tab === 'article' ? '' : 'none';
   document.getElementById('tab-tracking').style.display = tab === 'tracking' ? '' : 'none';
 }
 
