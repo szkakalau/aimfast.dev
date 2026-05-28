@@ -1,0 +1,118 @@
+/* ═════ KAKAOPC Design System — Homepage Layout ═════ */
+
+/* ── Animations ── */
+.anim-fade-up { animation: fade-up 0.6s var(--ease-out) both; }
+.anim-delay-1 { animation-delay: 0.15s; }
+.anim-delay-2 { animation-delay: 0.3s; }
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Eyebrow ── */
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--font-mono); font-size: 0.75rem; font-weight: 500;
+  text-transform: uppercase; letter-spacing: 0.06em;
+  color: var(--color-accent);
+  background: var(--color-accent-muted);
+  padding: 5px 14px; border-radius: 100px;
+  margin-bottom: var(--space-3);
+}
+
+/* ── Hero ── */
+.hero {
+  display: flex; flex-direction: column; align-items: center;
+  text-align: center;
+  padding: var(--space-10) 0 var(--space-6);
+}
+.hero h1 {
+  max-width: 680px; margin-bottom: var(--space-2);
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+.hero h1 span { color: var(--color-accent); }
+.hero-desc {
+  font-size: 1.05rem; color: var(--color-text-secondary);
+  max-width: 540px; margin: 0 auto var(--space-5);
+  line-height: 1.7;
+}
+.hero-signup {
+  display: flex; gap: var(--space-2);
+  max-width: 460px; width: 100%;
+  margin-bottom: var(--space-3);
+}
+.hero-signup input[type="email"] {
+  flex: 1; min-width: 0;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 13px 16px;
+  color: var(--color-text);
+  font-family: var(--font-body); font-size: 0.95rem;
+  outline: none;
+  transition: border-color var(--duration-fast) var(--ease-out);
+}
+.hero-signup input[type="email"]:focus { border-color: var(--color-accent); }
+.hero-signup .btn { white-space: nowrap; }
+.hero-secondary {
+  font-size: 0.85rem; color: var(--color-text-muted);
+}
+.hero-secondary a { color: var(--color-accent); font-weight: 500; }
+
+/* ── Stats Bar ── */
+.stats-bar {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-3); max-width: 720px; width: 100%;
+  margin: 0 auto var(--space-2);
+}
+.stat-item {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-3); text-align: center;
+}
+.stat-item .stat-number {
+  font-family: var(--font-heading); font-size: 1.8rem; font-weight: 700;
+  color: var(--color-accent); line-height: 1; margin-bottom: var(--space-1);
+}
+.stat-item .stat-label {
+  font-size: 0.75rem; color: var(--color-text-muted);
+  text-transform: uppercase; letter-spacing: 0.04em;
+}
+
+/* ── Section Header ── */
+.section-header { text-align: center; margin-bottom: var(--space-6); }
+.section-header h2 { margin-bottom: var(--space-1); }
+.section-header p { color: var(--color-text-secondary); max-width: 480px; margin: 0 auto; }
+
+/* ── Workflow ── */
+.workflow { padding: var(--space-8) 0; }
+.workflow-steps {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+}
+.workflow-step {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5) var(--space-4);
+  text-align: center;
+  transition: border-color var(--duration-normal) var(--ease-out),
+              transform var(--duration-normal) var(--ease-out);
+}
+.workflow-step:hover { border-color: var(--color-accent); transform: translateY(-2px); }
+.workflow-step .step-num {
+  font-family: var(--font-heading); font-size: 2.2rem; font-weight: 700;
+  color: var(--color-accent-muted); line-height: 1; margin-bottom: var(--space-2);
+}
+.workflow-step h3 { font-size: 1.05rem; margin-bottom: var(--space-1); }
+.workflow-step p { color: var(--color-text-secondary); font-size: 0.88rem; line-height: 1.6; }
+
+/* ── Responsive ── */
+@media (max-width: 720px) {
+  .stats-bar { grid-template-columns: repeat(2, 1fr); }
+  .workflow-steps { grid-template-columns: 1fr; }
+  .hero-signup { flex-direction: column; }
+  .hero-signup .btn { width: 100%; justify-content: center; }
+}

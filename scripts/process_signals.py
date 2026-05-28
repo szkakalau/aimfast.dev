@@ -291,10 +291,18 @@ def score_epa(signals: list[dict]) -> list[dict]:
             "mrr", "替代", "免费", "开源", "产品", "发布", "launch",
             "收入", "定价", "赚钱", "副业", "创业", "工具",
             "builder", "template", "starter", "boilerplate", "saas",
+            # 中文扩展 — 构建意图
+            "怎么做", "求推荐", "有没有", "想做一个", "众筹",
+            "接单", "外包", "教程", "课程", "付费", "会员",
+            "订阅", "卖", "出海", "独立开发", "变现", "接活",
         ]
         complaint_patterns = [
             "抱怨", "为什么", "太贵", "不好用", "why is", "too expensive",
             "frustrated", "problem", "issue", "bug", "broken",
+            # 中文扩展 — 抱怨信号
+            "坑", "骗", "垃圾", "没人用", "倒闭", "跑路",
+            "割韭菜", "难用", "找不到", "缺", "烦", "难受",
+            "要是…就好了", "要是...就好了", "忍不了",
         ]
 
         actionable_count = sum(1 for p in actionable_patterns if p in text_lower)
@@ -317,6 +325,11 @@ def score_epa(signals: list[dict]) -> list[dict]:
             "独立开发者", "indie hacker", "freelancer", "自由职业",
             "developer", "engineer", "designer", "pm", "产品经理",
             "企业", "enterprise", "team", "small business",
+            # 中文扩展 — 可识别买家角色
+            "程序员", "老板", "小团队", "个人", "兼职", "远程",
+            "数字游民", "学生", "宝妈", "自媒体", "博主", "运营",
+            "hr", "财务", "律师", "医生", "教师", "设计师",
+            "出海", "外贸", "电商",
         ]
         buyer_count = sum(1 for p in buyer_patterns if p in text_lower)
 

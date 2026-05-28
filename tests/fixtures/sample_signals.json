@@ -1,0 +1,69 @@
+{
+  "signals": [
+    {
+      "id": "sig-001",
+      "title": "AI Crawler Access Ledger",
+      "source": "Hacker News",
+      "source_key": "hn",
+      "url": "https://news.ycombinator.com/item?id=1",
+      "summary": "718 comments discussing AI crawlers accessing websites",
+      "discussion_count": 718,
+      "engagement": { "total": 850 },
+      "collected_at": "2026-05-28T08:00:00+08:00",
+      "tags": ["product-launch", "ai", "crawler"],
+      "signal_type": "product-launch"
+    },
+    {
+      "id": "sig-002",
+      "title": "AI Crawler Access Ledger",
+      "source": "Reddit",
+      "source_key": "reddit",
+      "url": "https://news.ycombinator.com/item?id=1",
+      "summary": "Same HN article shared on Reddit with 200 comments",
+      "discussion_count": 200,
+      "engagement": { "total": 250 },
+      "collected_at": "2026-05-28T08:05:00+08:00",
+      "tags": ["ai", "crawler"],
+      "signal_type": ""
+    },
+    {
+      "id": "sig-003",
+      "title": "Serverless Usage Circuit Breaker",
+      "source": "GitHub",
+      "source_key": "github",
+      "url": "https://github.com/user/circuit-breaker",
+      "summary": "Cloudflare Workers cost runaway from AI agents, no native circuit breaker",
+      "discussion_count": 0,
+      "engagement": { "total": 3200 },
+      "collected_at": "2026-05-28T08:10:00+08:00",
+      "tags": ["open source", "serverless", "cloudflare"],
+      "signal_type": ""
+    },
+    {
+      "id": "sig-004",
+      "title": "为什么 Vercel 这么贵",
+      "source": "V2EX",
+      "source_key": "v2ex",
+      "url": "https://v2ex.com/t/12345",
+      "summary": "独立开发者抱怨 Vercel 定价太高，求推荐替代方案",
+      "discussion_count": 89,
+      "engagement": { "total": 120 },
+      "collected_at": "2026-05-27T15:00:00+08:00",
+      "tags": ["抱怨", "太贵", "替代"],
+      "signal_type": "complaint"
+    },
+    {
+      "id": "sig-005",
+      "title": "The Future of AI Agents",
+      "source": "Reddit",
+      "source_key": "reddit",
+      "url": "https://reddit.com/r/ai/some-post",
+      "summary": "General discussion about AI agents",
+      "discussion_count": 35,
+      "engagement": { "total": 40 },
+      "collected_at": "2026-05-25T10:00:00+08:00",
+      "tags": ["ai", "discussion"],
+      "signal_type": ""
+    }
+  ]
+}
