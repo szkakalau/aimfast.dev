@@ -354,6 +354,38 @@
     font-family: var(--font-mono);
   }
 
+  /* ── Pipeline indicators ── */
+  .pi {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    padding: 2px 5px;
+    border-radius: 3px;
+    letter-spacing: 0.03em;
+    cursor: help;
+  }
+  .pi-status-generated  { background: var(--color-green-muted, rgba(52,211,153,0.12)); color: var(--color-green); }
+  .pi-status-skipped    { background: var(--color-accent-muted); color: var(--color-accent); }
+  .pi-status-error      { background: var(--color-red-muted, rgba(239,68,68,0.12)); color: var(--color-red); }
+  .pi-status-unknown    { background: var(--color-surface-alt); color: var(--color-text-muted); }
+
+  /* ── Diagnostic empty states ── */
+  .diag-label {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-accent);
+    margin-bottom: 4px;
+  }
+  .diag-reason {
+    color: var(--color-text-muted);
+    font-size: 0.82rem;
+    max-width: 480px;
+    margin: 0 auto;
+    line-height: 1.5;
+  }
+
   /* ── Responsive ── */
   @media (max-width: 900px) {
     .dash-main { grid-template-columns: 1fr; }
@@ -477,6 +509,7 @@
 
   <div class="dash-footer">
     KAKAOPC Intel v1.0 &middot; <span id="dash-generated">--</span> &middot; Data refresh: daily 08:30 CST
+    <span id="pipeline-indicators" style="margin-left:var(--space-2);"></span>
   </div>
 
 </main>
@@ -542,6 +575,8 @@ function renderAll(data) {
   var articleMd = data.article_md || '';
   var articleMeta = data.article_meta || {};
 
+  var pipeline = data.pipeline || {};
+
   document.getElementById('dash-date').textContent = data.date || '--';
   document.getElementById('dash-generated').textContent = (data.generated_at || '').substring(0, 16);
 
@@ -575,11 +610,20 @@ function renderAll(data) {
     });
   }
 
+  // Helper: build empty state message from pipeline diagnostics
+  function emptyState(step, fallback) {
+    var s = pipeline[step];
+    if (s && s.message) {
+      return '<div class="empty"><div class="diag-label">' + step.toUpperCase() + ' skipped</div><div class="diag-reason">' + s.message + '</div></div>';
+    }
+    return '<div class="empty">' + fallback + '</div>';
+  }
+
   // Report
   if (reportMd) {
     document.getElementById('tab-report').innerHTML = marked.parse(reportMd);
   } else {
-    document.getElementById('tab-report').innerHTML = '<div class="empty">Daily report has not been generated yet.</div>';
+    document.getElementById('tab-report').innerHTML = emptyState('report', 'Daily report has not been generated yet.');
   }
 
   // Article
@@ -603,7 +647,7 @@ function renderAll(data) {
     articleHtml += marked.parse(articleMd);
     document.getElementById('tab-article').innerHTML = articleHtml;
   } else {
-    document.getElementById('tab-article').innerHTML = '<div class="empty">Planet article has not been generated yet.</div>';
+    document.getElementById('tab-article').innerHTML = emptyState('article', 'Planet article has not been generated yet.');
   }
 
   // Tracking
@@ -626,6 +670,18 @@ function renderAll(data) {
       tbody2.appendChild(tr);
     });
   }
+
+  // Pipeline status indicators in footer
+  var steps = ['report', 'article', 'action', 'lp'];
+  var labels = {report: 'RPT', article: 'ART', action: 'ACT', lp: 'LP'};
+  var indicators = [];
+  steps.forEach(function(step) {
+    var s = pipeline[step];
+    var cls = s ? ('pi-status-' + s.status) : 'pi-status-unknown';
+    var title = s ? (labels[step] + ': ' + s.status + (s.message ? ' — ' + s.message : '')) : (labels[step] + ': no data');
+    indicators.push('<span class="pi ' + cls + '" title="' + title.replace(/"/g, '&quot;') + '">' + labels[step] + '</span>');
+  });
+  document.getElementById('pipeline-indicators').innerHTML = indicators.join(' ');
 
   // Charts
   renderCharts(history);

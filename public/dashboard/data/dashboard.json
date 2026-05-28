@@ -1918,5 +1918,29 @@
     "signal_id": "hn-48299753",
     "signal_title": "YouTube to automatically label AI-generated videos"
   },
-  "generated_at": "2026-05-28T09:37:51.609580+08:00"
+  "pipeline": {
+    "action": {
+      "status": "skipped",
+      "updated_at": "2026-05-28T10:43:55.028772+08:00",
+      "reason": "threshold_not_met",
+      "message": "No signals met action threshold (Score >= 15, cross-platform >= 3). Top signal: 32 pts / 2 platforms."
+    },
+    "lp": {
+      "status": "skipped",
+      "updated_at": "2026-05-28T10:43:55.121705+08:00",
+      "reason": "no_action_plan",
+      "message": "No landing-page.md found. Action plan was not generated today (threshold not met)."
+    },
+    "report": {
+      "status": "generated",
+      "updated_at": "2026-05-28T10:44:22.108965+08:00",
+      "message": "Daily report saved (12,678 chars)"
+    },
+    "article": {
+      "status": "generated",
+      "updated_at": "2026-05-28T10:44:22.110138+08:00",
+      "message": "Planet article generated: 机会深挖 (8,003 chars)"
+    }
+  },
+  "generated_at": "2026-05-28T10:44:29.636867+08:00"
 }

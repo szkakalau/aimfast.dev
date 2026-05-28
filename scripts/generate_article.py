@@ -11,6 +11,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from scripts.llm_client import chat
+from scripts.pipeline_status import write as write_pipeline_status
 
 ROOT = Path(__file__).resolve().parent.parent
 DAILY_DIR = ROOT / "daily"
@@ -307,6 +308,9 @@ def run(date_str: str | None = None) -> str:
     signals = load_signals(date)
     if not signals:
         print("[文章] 无处理后信号，跳过文章生成")
+        write_pipeline_status(date, "article", "skipped",
+            reason="no_signals_data",
+            message="No signals.json found for today — article generation skipped.")
         return ""
 
     signals.sort(key=lambda s: s.get("score", 0), reverse=True)
@@ -325,6 +329,9 @@ def run(date_str: str | None = None) -> str:
     output_path.write_text(article, encoding="utf-8")
     print(f"[文章] 文章已保存 → {output_path}")
     print(f"[文章] 字数: {len(article)} 字符")
+
+    write_pipeline_status(date, "article", "generated",
+        message=f"Planet article generated: {topic.get('type_label', 'N/A')} ({len(article):,} chars)")
 
     # 保存选题元数据（供后续轮换判断）
     meta = {

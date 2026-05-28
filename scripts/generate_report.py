@@ -11,6 +11,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from scripts.llm_client import chat
+from scripts.pipeline_status import write as write_pipeline_status
 
 ROOT = Path(__file__).resolve().parent.parent
 DAILY_DIR = ROOT / "daily"
@@ -244,6 +245,9 @@ def run(date_str: str | None = None) -> str:
     signals = load_signals(date)
     if not signals:
         print("[日报] 无处理后信号，跳过日报生成")
+        write_pipeline_status(date, "report", "skipped",
+            reason="no_signals_data",
+            message="No signals.json found for today — report generation skipped.")
         return ""
 
     # 按 score 降序
@@ -257,6 +261,9 @@ def run(date_str: str | None = None) -> str:
     output_path.write_text(report, encoding="utf-8")
     print(f"[日报] 日报已保存 → {output_path}")
     print(f"[日报] 字数: {len(report)} 字符")
+
+    write_pipeline_status(date, "report", "generated",
+        message=f"Daily report saved ({len(report):,} chars)")
 
     return report
 

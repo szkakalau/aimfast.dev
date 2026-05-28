@@ -11,6 +11,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from scripts.llm_client import chat
+from scripts.pipeline_status import write as write_pipeline_status
 
 ROOT = Path(__file__).resolve().parent.parent
 DAILY_DIR = ROOT / "daily"
@@ -234,13 +235,25 @@ def run(date_str: str | None = None) -> str:
     signals = load_signals(date)
     if not signals:
         print("[Action] 无处理后信号，跳过")
+        write_pipeline_status(date, "action", "skipped",
+            reason="no_signals_data",
+            message="No processed signals found for today.")
         return ""
 
     signals.sort(key=lambda s: s.get("score", 0), reverse=True)
 
     top = check_action_threshold(signals)
     if not top:
-        print(f"[Action] 无信号达到阈值（Score ≥ 15 且 cross_platform ≥ 3），跳过 Action 方案生成")
+        top_score = signals[0].get("score", 0)
+        top_cp = max((s.get("cross_platform_count", 0) for s in signals), default=0)
+        msg = (
+            f"No signals met action threshold (Score >= 15, cross-platform >= 3). "
+            f"Top signal: {top_score} pts / {top_cp} platforms."
+        )
+        print(f"[Action] {msg}")
+        write_pipeline_status(date, "action", "skipped",
+            reason="threshold_not_met",
+            message=msg)
         return ""
 
     print(f"[Action] 触发信号: [{top.get('score', 0)}分 | {top.get('cross_platform_count', 0)}平台] {top.get('title', 'N/A')[:60]}")
@@ -255,6 +268,9 @@ def run(date_str: str | None = None) -> str:
     print(f"[Action] 方案已保存 → {output_path}")
     if tracking_id:
         print(f"[Action] 追踪 ID: {tracking_id}")
+
+    write_pipeline_status(date, "action", "generated",
+        message=f"Action plan generated for: {top.get('title', 'N/A')[:80]} (tracking: {tracking_id})")
 
     return action_plan
 

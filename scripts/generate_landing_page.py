@@ -9,6 +9,7 @@ from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
 from scripts.llm_client import chat
+from scripts.pipeline_status import write as write_pipeline_status
 
 ROOT = Path(__file__).resolve().parent.parent
 DAILY_DIR = ROOT / "daily"
@@ -178,9 +179,15 @@ def generate(date_str: str) -> str | None:
     plan_md, tracking = find_action_plan(date_str)
     if not plan_md:
         print("[LP] 今日无 Action 方案，跳过")
+        write_pipeline_status(date_str, "lp", "skipped",
+            reason="no_action_plan",
+            message="No landing-page.md found. Action plan was not generated today (threshold not met).")
         return None
     if tracking is None:
         print("[LP] 所有机会已处理或 tracking 不存在，跳过")
+        write_pipeline_status(date_str, "lp", "skipped",
+            reason="no_pending_opportunity",
+            message="All tracked opportunities already have LPs built.")
         return None
 
     tid = tracking["id"]
@@ -229,6 +236,9 @@ def generate(date_str: str) -> str | None:
     print(f"[LP] 大小: {len(html):,} 字符")
     print(f"[LP] URL: https://aimfast.dev/{project_slug}")
     print(f"[LP] 部署: vercel --prod")
+
+    write_pipeline_status(date_str, "lp", "generated",
+        message=f"LP generated for {tracking.get('opportunity', 'N/A')[:60]} → https://aimfast.dev/{project_slug}")
 
     return str(output_path)
 

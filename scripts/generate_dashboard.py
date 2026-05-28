@@ -7,6 +7,8 @@ import json
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
+from scripts.pipeline_status import read as read_pipeline_status
+
 ROOT = Path(__file__).resolve().parent.parent
 DAILY_DIR = ROOT / "daily"
 TRACKING_DIR = ROOT / "tracking"
@@ -88,6 +90,9 @@ def collect_dashboard_data() -> dict:
     if article_json_path.exists():
         article_meta = json.loads(article_json_path.read_text(encoding="utf-8"))
 
+    # 6. Pipeline status (diagnostics for skipped steps)
+    pipeline_status = read_pipeline_status(effective_date)
+
     return {
         "date": effective_date,
         "signals": today_signals,
@@ -97,6 +102,7 @@ def collect_dashboard_data() -> dict:
         "report_md": report_md,
         "article_md": article_md,
         "article_meta": article_meta,
+        "pipeline": pipeline_status.get("steps", {}),
         "generated_at": datetime.now(TZ_SHANGHAI).isoformat(),
     }
 
