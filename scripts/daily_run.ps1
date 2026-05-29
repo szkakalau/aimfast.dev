@@ -8,6 +8,10 @@ $Date = (Get-Date).ToString("yyyy-MM-dd")
 $LogDir = Join-Path $ProjectRoot "logs"
 $LogFile = Join-Path $LogDir "$Date.log"
 
+# CRITICAL: Task Scheduler runs with CWD = C:\Windows\System32.
+# Python -m needs the project root as CWD to find the scripts package.
+Set-Location $ProjectRoot
+
 New-Item -ItemType Directory -Force -Path $LogDir | Out-Null
 
 # Resolve Python path — Task Scheduler may not have user PATH
