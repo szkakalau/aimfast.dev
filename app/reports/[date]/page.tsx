@@ -81,11 +81,20 @@ export async function generateMetadata({
       url: canonicalUrl,
       siteName: 'KAKAOPC Intel',
       locale: 'zh_CN',
+      images: [
+        {
+          url: 'https://aimfast.dev/og-image.png',
+          width: 1200,
+          height: 630,
+          alt: 'KAKAOPC Intel — Daily Signal Intelligence',
+        },
+      ],
     },
     twitter: {
       card: 'summary_large_image',
       title: `${title} — KAKAOPC Intel`,
       description: fm.summary || 'Daily product opportunities from 14 signal sources.',
+      images: ['https://aimfast.dev/og-image.png'],
     },
   };
 }
