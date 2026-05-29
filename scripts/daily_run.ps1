@@ -188,25 +188,10 @@ try {
     Write-Log "  [LP] FAIL: $_"
 }
 
-# --- Step 8: Dashboard Data ---
+# --- Step 8: Jike Post ---
 
 Write-Log ""
-Write-Log "--- Step 8: Dashboard ---"
-
-try {
-    $output = & $Python -m scripts.generate_dashboard 2>&1
-    Write-Log "  [Dashboard] OK"
-} catch {
-    Write-Log "  [Dashboard] FAIL: $_"
-}
-
-# --- Step 9: Weekly Report (Sunday only) ---
-
-
-# --- Step 10: Jike Post Generation ---
-
-Write-Log ""
-Write-Log "--- Step 10: Jike Post ---"
+Write-Log "--- Step 8: Jike Post ---"
 
 try {
     $output = & $Python -m scripts.generate_jike_post 2>&1
@@ -215,12 +200,36 @@ try {
     Write-Log "  [JikePost] FAIL: $_"
 }
 
+# --- Step 9: Translate Content (zh → en) ---
+
+Write-Log ""
+Write-Log "--- Step 9: Translate Content (zh → en) ---"
+
+try {
+    $output = & $Python -m scripts.translate_content 2>&1
+    Write-Log "  [Translate] OK"
+} catch {
+    Write-Log "  [Translate] FAIL (non-fatal): $_"
+}
+
+# --- Step 10: Dashboard Data ---
+
+Write-Log ""
+Write-Log "--- Step 10: Dashboard ---"
+
+try {
+    $output = & $Python -m scripts.generate_dashboard 2>&1
+    Write-Log "  [Dashboard] OK"
+} catch {
+    Write-Log "  [Dashboard] FAIL: $_"
+}
+
 # --- Step 11: Weekly Report (Sunday only) ---
 
 $DayOfWeek = (Get-Date).DayOfWeek
 if ($DayOfWeek -eq 'Sunday') {
     Write-Log ""
-    Write-Log "--- Step 9: Weekly Report (Sunday trigger) ---"
+    Write-Log "--- Step 11: Weekly Report (Sunday trigger) ---"
 
     try {
         $output = & $Python -m scripts.generate_weekly 2>&1
@@ -233,7 +242,7 @@ if ($DayOfWeek -eq 'Sunday') {
 # --- Step 12: Git commit & push dashboard data ---
 
 Write-Log ""
-Write-Log "--- Step 10: Deploy Dashboard Data ---"
+Write-Log "--- Step 12: Deploy Dashboard Data ---"
 
 try {
     Push-Location $ProjectRoot

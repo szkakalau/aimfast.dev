@@ -45,10 +45,18 @@ def _collect_archive(max_days: int = 60) -> list[dict]:
         if not has_report and not has_article:
             continue
 
+        # Bilingual: English variants (*-en.md) — optional, fall back to empty
+        report_en_path = date_dir / "report-en.md"
+        article_en_path = date_dir / "article-en.md"
+        has_report_en = report_en_path.exists()
+        has_article_en = article_en_path.exists()
+
         entry = {
             "date": date_str,
             "report_md": report_path.read_text(encoding="utf-8") if has_report else "",
             "article_md": article_path.read_text(encoding="utf-8") if has_article else "",
+            "report_md_en": report_en_path.read_text(encoding="utf-8") if has_report_en else "",
+            "article_md_en": article_en_path.read_text(encoding="utf-8") if has_article_en else "",
             "article_meta": json.loads(article_json_path.read_text(encoding="utf-8"))
                             if article_json_path.exists() else None,
             "has_report": has_report,
@@ -119,30 +127,42 @@ def collect_dashboard_data() -> dict:
         data = json.loads(opp_path.read_text(encoding="utf-8"))
         opportunities = data.get("opportunities", [])
 
-    # 4. Daily report (markdown)
+    # 4. Daily report (markdown) — bilingual: zh (default) + en (optional)
     report_md = ""
+    report_md_en = ""
     report_path = DAILY_DIR / effective_date / "report.md"
+    report_en_path = DAILY_DIR / effective_date / "report-en.md"
     if report_path.exists():
         report_md = report_path.read_text(encoding="utf-8")
+    if report_en_path.exists():
+        report_md_en = report_en_path.read_text(encoding="utf-8")
 
-    # 5. Planet article (markdown + metadata)
+    # 5. Planet article (markdown + metadata) — bilingual
     article_md = ""
+    article_md_en = ""
     article_meta = {}
     article_path = DAILY_DIR / effective_date / "article.md"
+    article_en_path = DAILY_DIR / effective_date / "article-en.md"
     article_json_path = DAILY_DIR / effective_date / "article.json"
     if article_path.exists():
         article_md = article_path.read_text(encoding="utf-8")
+    if article_en_path.exists():
+        article_md_en = article_en_path.read_text(encoding="utf-8")
     if article_json_path.exists():
         article_meta = json.loads(article_json_path.read_text(encoding="utf-8"))
 
     # 6. Pipeline status (diagnostics for skipped steps)
     pipeline_status = read_pipeline_status(effective_date)
 
-    # 7. Jike post (social media ready)
+    # 7. Jike post (social media ready) — bilingual
     jike_post_md = ""
+    jike_post_md_en = ""
     jike_post_path = DAILY_DIR / effective_date / "jike-post.md"
+    jike_post_en_path = DAILY_DIR / effective_date / "jike-post-en.md"
     if jike_post_path.exists():
         jike_post_md = jike_post_path.read_text(encoding="utf-8")
+    if jike_post_en_path.exists():
+        jike_post_md_en = jike_post_en_path.read_text(encoding="utf-8")
 
     # 8. Archive (all available historical reports + articles)
     archive = _collect_archive(max_days=60)
@@ -154,9 +174,12 @@ def collect_dashboard_data() -> dict:
         "history": list(reversed(history)),
         "opportunities": opportunities,
         "report_md": report_md,
+        "report_md_en": report_md_en,
         "article_md": article_md,
+        "article_md_en": article_md_en,
         "article_meta": article_meta,
         "jike_post_md": jike_post_md,
+        "jike_post_md_en": jike_post_md_en,
         "pipeline": pipeline_status.get("steps", {}),
         "archive": archive,
         "generated_at": datetime.now(TZ_SHANGHAI).isoformat(),
@@ -177,7 +200,7 @@ def run(date_str: str | None = None) -> str:
     output_path = OUTPUT_DIR / "dashboard.json"
     output_path.write_text(json_str, encoding="utf-8")
     print(f"[Dashboard] Data saved → {output_path}")
-    print(f"[Dashboard] {len(data['signals'])} signals | {len(data['history'])} days history | {len(data['opportunities'])} opportunities | article: {len(data['article_md']):,} chars | jike_post: {len(data['jike_post_md']):,} chars")
+    print(f"[Dashboard] {len(data['signals'])} signals | {len(data['history'])} days history | {len(data['opportunities'])} opportunities | article: {len(data['article_md']):,} chars (zh) / {len(data['article_md_en']):,} chars (en) | jike_post: {len(data['jike_post_md']):,} chars (zh) / {len(data['jike_post_md_en']):,} chars (en)")
     return str(output_path)
 
 

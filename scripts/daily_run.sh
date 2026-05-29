@@ -170,21 +170,10 @@ else
     log "  [LP] FAIL"
 fi
 
-# ─── Step 8: Dashboard ───
+# ─── Step 8: Jike Post ───
 
 log ""
-log "--- Step 8: Dashboard ---"
-
-if $PYTHON -m scripts.generate_dashboard 2>&1; then
-    log "  [Dashboard] OK"
-else
-    log "  [Dashboard] FAIL"
-fi
-
-# ─── Step 9: Jike Post ───
-
-log ""
-log "--- Step 9: Jike Post ---"
+log "--- Step 8: Jike Post ---"
 
 if $PYTHON -m scripts.generate_jike_post 2>&1; then
     log "  [JikePost] OK"
@@ -192,11 +181,33 @@ else
     log "  [JikePost] FAIL"
 fi
 
-# ─── Step 10: Weekly Report (Sunday only) ───
+# ─── Step 9: Translate Content (zh → en) ───
+
+log ""
+log "--- Step 9: Translate Content (zh → en) ---"
+
+if $PYTHON -m scripts.translate_content 2>&1; then
+    log "  [Translate] OK"
+else
+    log "  [Translate] FAIL (non-fatal)"
+fi
+
+# ─── Step 10: Dashboard ───
+
+log ""
+log "--- Step 10: Dashboard ---"
+
+if $PYTHON -m scripts.generate_dashboard 2>&1; then
+    log "  [Dashboard] OK"
+else
+    log "  [Dashboard] FAIL"
+fi
+
+# ─── Step 11: Weekly Report (Sunday only) ───
 
 if [ "$(date +%u)" -eq 7 ]; then
     log ""
-    log "--- Step 10: Weekly Report (Sunday trigger) ---"
+    log "--- Step 11: Weekly Report (Sunday trigger) ---"
     if $PYTHON -m scripts.generate_weekly 2>&1; then
         log "  [Weekly] OK"
     else
@@ -204,10 +215,10 @@ if [ "$(date +%u)" -eq 7 ]; then
     fi
 fi
 
-# ─── Step 11: Git commit & push ───
+# ─── Step 12: Git commit & push ───
 
 log ""
-log "--- Step 11: Deploy Dashboard Data ---"
+log "--- Step 12: Deploy Dashboard Data ---"
 
 git add public/dashboard/data/dashboard.json public/*/index.html 2>&1 || true
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="html-root">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -481,26 +481,26 @@
 </head>
 <body>
 
-<a href="#dash-content" class="skip-link">Skip to dashboard</a>
+<a href="#dash-content" class="skip-link" id="skip-link">Skip to dashboard</a>
 
-<!-- ═══ Auth Overlay ═══ -->
+<!-- ═══ Auth Overlay (Email gate) ═══ -->
 <div class="auth-overlay" id="auth-overlay">
   <div class="auth-box">
     <svg class="icon icon-accent icon-lg" viewBox="0 0 24 24" aria-hidden="true" style="margin:0 auto var(--space-2);display:block;">
-      <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-      <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+      <rect x="2" y="4" width="20" height="16" rx="2"/>
+      <path d="M2 7l10 7 10-7" fill="none" stroke="currentColor" stroke-width="1.5"/>
     </svg>
-    <h2>KAKAOPC Intel Dashboard</h2>
-    <p>Password required to access intelligence data</p>
-    <input type="password" id="auth-password" placeholder="Enter password" autofocus aria-label="Password">
-    <button class="btn-unlock" id="auth-submit">Unlock</button>
-    <div class="auth-error" id="auth-error" role="alert">Incorrect password. Please try again.</div>
+    <h2 id="auth-title">KAKAOPC Intel Dashboard</h2>
+    <p id="auth-desc">Enter your email to access intelligence data</p>
+    <input type="email" id="auth-email" placeholder="Enter your email" autofocus aria-label="Email address">
+    <button class="btn-unlock" id="auth-submit">Access Dashboard</button>
+    <div class="auth-error" id="auth-error" role="alert">Please enter a valid email address.</div>
   </div>
 </div>
 
 <!-- ═══ Header ═══ -->
 <header class="dash-header">
-  <h1>
+  <h1 id="header-title">
     <svg class="icon icon-accent" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M4.93 4.93a10 10 0 0 1 14.14 0M4.93 19.07a10 10 0 0 0 14.14 0"/></svg>
     KAKAOPC Intel
   </h1>
@@ -512,51 +512,51 @@
 
   <!-- Overview stats -->
   <div class="card card-full">
-    <h2>
+    <h2 id="overview-title">
       <svg class="icon icon-sm icon-accent" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
       Today's Overview
     </h2>
     <div class="stat-row" id="stats-row">
       <div class="stat">
         <div class="stat-value" id="stat-signals">--</div>
-        <div class="stat-label">Signals Processed</div>
+        <div class="stat-label" id="stat-label-signals">Signals Processed</div>
       </div>
       <div class="stat">
         <div class="stat-value" id="stat-top">--</div>
-        <div class="stat-label">Top Score</div>
+        <div class="stat-label" id="stat-label-top">Top Score</div>
       </div>
       <div class="stat">
         <div class="stat-value" id="stat-avg">--</div>
-        <div class="stat-label">Avg Score</div>
+        <div class="stat-label" id="stat-label-avg">Avg Score</div>
       </div>
       <div class="stat">
         <div class="stat-value" id="stat-action">--</div>
-        <div class="stat-label">Action Qualified</div>
+        <div class="stat-label" id="stat-label-action">Action Qualified</div>
       </div>
       <div class="stat">
         <div class="stat-value" id="stat-cross">--</div>
-        <div class="stat-label">Cross-Platform</div>
+        <div class="stat-label" id="stat-label-cross">Cross-Platform</div>
       </div>
     </div>
   </div>
 
   <!-- Top 10 signals -->
   <div class="card card-full">
-    <h2>
+    <h2 id="signals-title">
       <svg class="icon icon-sm icon-accent" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
       Top 10 Signals
     </h2>
     <table id="signals-table" aria-label="Top 10 signals">
-      <thead><tr><th scope="col">#</th><th scope="col">Signal</th><th scope="col">Source</th><th scope="col">Score</th><th scope="col">Cross-Platform</th><th scope="col">Engagement</th></tr></thead>
+      <thead><tr><th scope="col" id="th-rank">#</th><th scope="col" id="th-signal">Signal</th><th scope="col" id="th-source">Source</th><th scope="col" id="th-score">Score</th><th scope="col" id="th-cross">Cross-Platform</th><th scope="col" id="th-engagement">Engagement</th></tr></thead>
       <tbody id="signals-body">
-        <tr><td colspan="6" class="loading">Loading signal data&hellip;</td></tr>
+        <tr><td colspan="6" class="loading" id="loading-signals">Loading signal data&hellip;</td></tr>
       </tbody>
     </table>
   </div>
 
   <!-- Score trend chart -->
   <div class="card">
-    <h2>
+    <h2 id="chart-score-title">
       <svg class="icon icon-sm icon-accent" viewBox="0 0 24 24" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
       14-Day Score Trend
     </h2>
@@ -565,7 +565,7 @@
 
   <!-- Volume chart -->
   <div class="card">
-    <h2>
+    <h2 id="chart-volume-title">
       <svg class="icon icon-sm icon-accent" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="14" width="4" height="6" rx="1"/><rect x="10" y="8" width="4" height="12" rx="1"/><rect x="18" y="2" width="4" height="18" rx="1"/></svg>
       14-Day Signal Volume
     </h2>
@@ -574,11 +574,11 @@
 
   <!-- Report & Tracking tabs -->
   <div class="card card-full">
-    <div class="tab-bar" role="tablist" aria-label="Content tabs">
-      <button class="tab active" role="tab" aria-selected="true" onclick="switchTab('report')">Daily Report</button>
-      <button class="tab" role="tab" aria-selected="false" onclick="switchTab('article')">Planet Article</button>
-      <button class="tab" role="tab" aria-selected="false" onclick="switchTab('tracking')">Opportunity Tracking</button>
-      <button class="tab" role="tab" aria-selected="false" onclick="switchTab('jike')">Jike Post</button>
+    <div class="tab-bar" role="tablist" id="tab-bar" aria-label="Content tabs">
+      <button class="tab active" role="tab" aria-selected="true" onclick="switchTab('report')" id="tab-btn-report">Daily Report</button>
+      <button class="tab" role="tab" aria-selected="false" onclick="switchTab('article')" id="tab-btn-article">Planet Article</button>
+      <button class="tab" role="tab" aria-selected="false" onclick="switchTab('tracking')" id="tab-btn-tracking">Opportunity Tracking</button>
+      <button class="tab" role="tab" aria-selected="false" onclick="switchTab('jike')" id="tab-btn-jike">Jike Post</button>
     </div>
 
     <!-- Archive date navigation (hidden until archive data loads) -->
@@ -595,35 +595,410 @@
     </div>
 
     <div id="tab-report" class="report-body" role="tabpanel">
-      <div class="loading">Loading report&hellip;</div>
+      <div class="loading" id="loading-report">Loading report&hellip;</div>
     </div>
     <div id="tab-article" class="report-body" style="display:none;" role="tabpanel">
-      <div class="loading">Loading article&hellip;</div>
+      <div class="loading" id="loading-article">Loading article&hellip;</div>
     </div>
     <div id="tab-tracking" class="report-body" style="display:none;" role="tabpanel">
       <table aria-label="Opportunity tracking">
-        <thead><tr><th scope="col">ID</th><th scope="col">Date</th><th scope="col">Opportunity</th><th scope="col">Score</th><th scope="col">LP Status</th><th scope="col">Verification</th><th scope="col">Decision</th></tr></thead>
+        <thead><tr><th scope="col" id="th-tr-id">ID</th><th scope="col" id="th-tr-date">Date</th><th scope="col" id="th-tr-opp">Opportunity</th><th scope="col" id="th-tr-score">Score</th><th scope="col" id="th-tr-lp">LP Status</th><th scope="col" id="th-tr-verify">Verification</th><th scope="col" id="th-tr-decision">Decision</th></tr></thead>
         <tbody id="tracking-body"></tbody>
       </table>
       <div id="tracking-empty" class="empty" style="display:none;">No opportunities tracked yet.</div>
     </div>
     <div id="tab-jike" class="report-body" style="display:none;" role="tabpanel">
-      <div class="loading">Loading Jike post&hellip;</div>
+      <div class="loading" id="loading-jike">Loading Jike post&hellip;</div>
     </div>
   </div>
 
   <div class="dash-footer">
-    KAKAOPC Intel v1.0 &middot; <span id="dash-generated">--</span> &middot; Data refresh: daily 08:30 CST
+    <span id="footer-version">KAKAOPC Intel v1.0</span> &middot; <span id="dash-generated">--</span> &middot; <span id="footer-refresh">Data refresh: daily 08:30 CST</span>
     <span id="pipeline-indicators" style="margin-left:var(--space-2);"></span>
   </div>
 
 </main>
 
 <script>
-// ─── Password gate ───
-(function() {
-  var PASSWORD_HASH = 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3';
+// ═══════════════════════════════════════════
+// I18N — Chinese / English based on browser language
+// ═══════════════════════════════════════════
+var I18N = (function() {
+  var lang = (navigator.language || 'en').startsWith('zh') ? 'zh' : 'en';
 
+  var dict = {
+    zh: {
+      htmlLang: 'zh-CN',
+      title: 'KAKAOPC情报科 — 控制台',
+      skipLink: '跳至控制台',
+
+      // Auth
+      authTitle: 'KAKAOPC情报科',
+      authDesc: '请输入邮箱地址以访问情报数据',
+      authPlaceholder: '输入邮箱地址',
+      authButton: '进入控制台',
+      authError: '请输入有效的邮箱地址',
+
+      // Header
+      headerTitle: 'KAKAOPC情报科',
+      archiveLabel: '（存档）',
+
+      // Stats
+      overviewTitle: '今日概览',
+      statSignals: '处理信号数',
+      statTopScore: '最高分',
+      statAvgScore: '平均分',
+      statAction: '行动合格',
+      statCross: '跨平台',
+
+      // Table
+      thRank: '#',
+      thSignal: '信号',
+      thSource: '来源',
+      thScore: '评分',
+      thCross: '跨平台',
+      thEngagement: '互动',
+
+      // Charts
+      chartScoreTitle: '14天评分趋势',
+      chartVolumeTitle: '14天信号量',
+      chartTopScore: '最高分',
+      chartAvgScore: '平均分',
+      chartSignals: '信号',
+      chartCrossPlatform: '跨平台',
+      chartScoreAria: '14天评分趋势图',
+      chartVolumeAria: '14天信号量图',
+
+      // Tabs
+      tabReport: '日报',
+      tabArticle: '星球文章',
+      tabTracking: '机会追踪',
+      tabJike: '即刻帖子',
+      tabBarAria: '内容标签页',
+
+      // Loading
+      loadingSignals: '正在加载信号数据…',
+      loadingReport: '正在加载报告…',
+      loadingArticle: '正在加载文章…',
+      loadingJike: '正在加载即刻帖子…',
+
+      // Article actions
+      btnDownload: '下载 .txt',
+      btnCopyPlain: '复制纯文本',
+      btnCopyNotepad: '复制记事本格式',
+      toastCopied: '已复制！',
+      toastNotepadCopied: '记事本格式已复制！',
+
+      // Tracking
+      trId: 'ID',
+      trDate: '日期',
+      trOpportunity: '机会',
+      trScore: '评分',
+      trLpStatus: '落地页状态',
+      trVerification: '验证',
+      trDecision: '决策',
+      trStatusPending: '待处理',
+      trStatusPassed: '通过',
+      trStatusFailed: '失败',
+      trStatusAdjust: '调整',
+      trEmpty: '暂无追踪的机会。',
+
+      // Footer
+      footerVersion: 'KAKAOPC情报科 v2.0',
+      footerRefresh: '数据刷新：每日 08:30 CST',
+
+      // Archive
+      archiveBackToToday: '回到今天',
+      archiveNoReport: '该日期无报告。',
+      archiveNoArticle: '该日期无文章。',
+      archiveNavAria: '存档日期导航',
+      archiveDatesAria: '可用日期',
+      archivePrevAria: '前一天',
+      archiveNextAria: '后一天',
+
+      // Empty / Fallback
+      emptyNoSignals: '今日无信号数据。',
+      emptyNoReport: '日报尚未生成。',
+      emptyNoArticle: '星球文章尚未生成。',
+      emptyNoJike: '即刻帖子尚未生成。',
+      emptyNoData: '无数据。请运行每日流水线以生成情报数据。',
+      emptyNoReportData: '无报告数据。',
+
+      // Pipeline
+      diagSkippedLabel: ' 已跳过',
+      piNoData: '无数据',
+
+      // Notepad format
+      notepadDate: '日期',
+      notepadType: '类型',
+      notepadSource: '来源',
+      notepadAngle: '角度',
+      notepadGenerated: '生成时间',
+      notepadFooter: 'KAKAOPC情报科 · aimfast.dev',
+
+      // Misc
+      miscNoData: '无数据',
+      miscSignalsTableAria: 'Top 10 信号',
+      miscTrackingTableAria: '机会追踪',
+      miscDataUnavailable: '数据不可用',
+      miscDataLoadError: '数据加载失败',
+      miscNoDataAvailable: '无可用数据'
+    },
+
+    en: {
+      htmlLang: 'en',
+      title: 'KAKAOPC Intel — Dashboard',
+      skipLink: 'Skip to dashboard',
+
+      // Auth
+      authTitle: 'KAKAOPC Intel',
+      authDesc: 'Enter your email to access intelligence data',
+      authPlaceholder: 'Enter your email',
+      authButton: 'Access Dashboard',
+      authError: 'Please enter a valid email address.',
+
+      // Header
+      headerTitle: 'KAKAOPC Intel',
+      archiveLabel: ' (archive)',
+
+      // Stats
+      overviewTitle: "Today's Overview",
+      statSignals: 'Signals Processed',
+      statTopScore: 'Top Score',
+      statAvgScore: 'Avg Score',
+      statAction: 'Action Qualified',
+      statCross: 'Cross-Platform',
+
+      // Table
+      thRank: '#',
+      thSignal: 'Signal',
+      thSource: 'Source',
+      thScore: 'Score',
+      thCross: 'Cross-Platform',
+      thEngagement: 'Engagement',
+
+      // Charts
+      chartScoreTitle: '14-Day Score Trend',
+      chartVolumeTitle: '14-Day Signal Volume',
+      chartTopScore: 'Top Score',
+      chartAvgScore: 'Avg Score',
+      chartSignals: 'Signals',
+      chartCrossPlatform: 'Cross-Platform',
+      chartScoreAria: '14-day score trend chart',
+      chartVolumeAria: '14-day signal volume chart',
+
+      // Tabs
+      tabReport: 'Daily Report',
+      tabArticle: 'Planet Article',
+      tabTracking: 'Opportunity Tracking',
+      tabJike: 'Jike Post',
+      tabBarAria: 'Content tabs',
+
+      // Loading
+      loadingSignals: 'Loading signal data…',
+      loadingReport: 'Loading report…',
+      loadingArticle: 'Loading article…',
+      loadingJike: 'Loading Jike post…',
+
+      // Article actions
+      btnDownload: 'Download .txt',
+      btnCopyPlain: 'Copy Plain',
+      btnCopyNotepad: 'Copy Notepad',
+      toastCopied: 'Copied!',
+      toastNotepadCopied: 'Notepad format copied!',
+
+      // Tracking
+      trId: 'ID',
+      trDate: 'Date',
+      trOpportunity: 'Opportunity',
+      trScore: 'Score',
+      trLpStatus: 'LP Status',
+      trVerification: 'Verification',
+      trDecision: 'Decision',
+      trStatusPending: 'Pending',
+      trStatusPassed: 'Passed',
+      trStatusFailed: 'Failed',
+      trStatusAdjust: 'Adjust',
+      trEmpty: 'No opportunities tracked yet.',
+
+      // Footer
+      footerVersion: 'KAKAOPC Intel v2.0',
+      footerRefresh: 'Data refresh: daily 08:30 CST',
+
+      // Archive
+      archiveBackToToday: 'Back to Today',
+      archiveNoReport: 'No report for this date.',
+      archiveNoArticle: 'No article for this date.',
+      archiveNavAria: 'Archive date navigation',
+      archiveDatesAria: 'Available dates',
+      archivePrevAria: 'Previous day',
+      archiveNextAria: 'Next day',
+
+      // Empty / Fallback
+      emptyNoSignals: 'No signal data available for today.',
+      emptyNoReport: 'Daily report has not been generated yet.',
+      emptyNoArticle: 'Planet article has not been generated yet.',
+      emptyNoJike: 'Jike post has not been generated yet.',
+      emptyNoData: 'No data available. Run the daily pipeline to generate intelligence data.',
+      emptyNoReportData: 'No report data available.',
+
+      // Pipeline
+      diagSkippedLabel: ' skipped',
+      piNoData: 'no data',
+
+      // Notepad format
+      notepadDate: 'Date',
+      notepadType: 'Type',
+      notepadSource: 'Source',
+      notepadAngle: 'Angle',
+      notepadGenerated: 'Generated',
+      notepadFooter: 'KAKAOPC Intel · aimfast.dev',
+
+      // Misc
+      miscNoData: 'No data',
+      miscSignalsTableAria: 'Top 10 signals',
+      miscTrackingTableAria: 'Opportunity tracking',
+      miscDataUnavailable: 'Data not available',
+      miscDataLoadError: 'Data load error',
+      miscNoDataAvailable: 'No data available'
+    }
+  };
+
+  function t(key) {
+    return (dict[lang] && dict[lang][key]) || (dict['en'][key]) || key;
+  }
+
+  return {
+    lang: lang,
+    t: t,
+    dict: dict
+  };
+})();
+
+var t = I18N.t;
+var LANG = I18N.lang;
+
+// ─── Apply language to static HTML elements before page renders ───
+(function applyI18N() {
+  // HTML lang
+  document.getElementById('html-root').setAttribute('lang', I18N.dict[LANG].htmlLang);
+
+  // Page title
+  document.title = t('title');
+
+  // Skip link
+  var skipLink = document.getElementById('skip-link');
+  if (skipLink) skipLink.textContent = t('skipLink');
+
+  // Auth overlay
+  var authTitle = document.getElementById('auth-title');
+  if (authTitle) authTitle.textContent = t('authTitle');
+  var authDesc = document.getElementById('auth-desc');
+  if (authDesc) authDesc.textContent = t('authDesc');
+  var authInput = document.getElementById('auth-email');
+  if (authInput) authInput.placeholder = t('authPlaceholder');
+  var authBtn = document.getElementById('auth-submit');
+  if (authBtn) authBtn.textContent = t('authButton');
+  var authErr = document.getElementById('auth-error');
+  if (authErr) authErr.textContent = t('authError');
+
+  // Header
+  var headerTitle = document.getElementById('header-title');
+  if (headerTitle) {
+    // Preserve the SVG icon, only update the text node
+    var textNode = headerTitle.lastChild;
+    if (textNode && textNode.nodeType === 3) {
+      textNode.textContent = ' ' + t('headerTitle');
+    } else {
+      // SVG + text approach: keep SVG, append text
+      headerTitle.childNodes.forEach(function(n) {
+        if (n.nodeType === 3) n.textContent = ' ' + t('headerTitle');
+      });
+    }
+  }
+
+  // Overview
+  var ovTitle = document.getElementById('overview-title');
+  if (ovTitle) {
+    ovTitle.childNodes.forEach(function(n) {
+      if (n.nodeType === 3) n.textContent = ' ' + t('overviewTitle');
+    });
+  }
+  setEl('stat-label-signals', t('statSignals'));
+  setEl('stat-label-top', t('statTopScore'));
+  setEl('stat-label-avg', t('statAvgScore'));
+  setEl('stat-label-action', t('statAction'));
+  setEl('stat-label-cross', t('statCross'));
+
+  // Signals section
+  var sigTitle = document.getElementById('signals-title');
+  if (sigTitle) {
+    sigTitle.childNodes.forEach(function(n) {
+      if (n.nodeType === 3) n.textContent = ' ' + t('chartTopScore').replace('最高分','Top 10 Signals').replace('Top Score','Top 10 Signals');
+    });
+  }
+  // Actually let's handle the signals title properly
+  setEl('signals-title', null); // handled below with innerHTML rebuild
+
+  // Table headers
+  setEl('th-rank', t('thRank'));
+  setEl('th-signal', t('thSignal'));
+  setEl('th-source', t('thSource'));
+  setEl('th-score', t('thScore'));
+  setEl('th-cross', t('thCross'));
+  setEl('th-engagement', t('thEngagement'));
+
+  // Chart titles
+  setChartTitle('chart-score-title', t('chartScoreTitle'));
+  setChartTitle('chart-volume-title', t('chartVolumeTitle'));
+
+  // Tab buttons
+  setEl('tab-btn-report', t('tabReport'));
+  setEl('tab-btn-article', t('tabArticle'));
+  setEl('tab-btn-tracking', t('tabTracking'));
+  setEl('tab-btn-jike', t('tabJike'));
+  document.getElementById('tab-bar').setAttribute('aria-label', t('tabBarAria'));
+
+  // Loading texts
+  setEl('loading-signals', t('loadingSignals'));
+  setEl('loading-report', t('loadingReport'));
+  setEl('loading-article', t('loadingArticle'));
+  setEl('loading-jike', t('loadingJike'));
+
+  // Tracking headers
+  setEl('th-tr-id', t('trId'));
+  setEl('th-tr-date', t('trDate'));
+  setEl('th-tr-opp', t('trOpportunity'));
+  setEl('th-tr-score', t('trScore'));
+  setEl('th-tr-lp', t('trLpStatus'));
+  setEl('th-tr-verify', t('trVerification'));
+  setEl('th-tr-decision', t('trDecision'));
+  setEl('tracking-empty', t('trEmpty'));
+
+  // Footer
+  setEl('footer-version', t('footerVersion'));
+  setEl('footer-refresh', t('footerRefresh'));
+
+  // Archive
+  setEl('btn-back-today', t('archiveBackToToday'));
+
+  function setEl(id, text) {
+    var el = document.getElementById(id);
+    if (el && text != null) el.textContent = text;
+  }
+
+  function setChartTitle(id, text) {
+    var el = document.getElementById(id);
+    if (!el || !text) return;
+    // Keep SVG, update text
+    el.childNodes.forEach(function(n) {
+      if (n.nodeType === 3) n.textContent = ' ' + text;
+    });
+  }
+})();
+
+// ─── Email gate (replaces password gate) ───
+(function() {
   if (sessionStorage.getItem('dashboard_authed') === '1') {
     var el = document.getElementById('auth-overlay');
     if (el) el.style.display = 'none';
@@ -631,24 +1006,25 @@
   }
 
   var overlay = document.getElementById('auth-overlay');
-  var input = document.getElementById('auth-password');
+  var input = document.getElementById('auth-email');
   var btn = document.getElementById('auth-submit');
   var errorEl = document.getElementById('auth-error');
 
-  async function tryAuth() {
-    var pw = input.value;
-    if (!pw) return;
+  function isValidEmail(email) {
+    // Basic validation: contains @ with something before and a domain after
+    return email && email.indexOf('@') > 0 && email.indexOf('.', email.indexOf('@')) > email.indexOf('@') + 1;
+  }
 
-    var hashBuffer = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(pw));
-    var hashArray = Array.from(new Uint8Array(hashBuffer));
-    var hashHex = hashArray.map(function(b) { return b.toString(16).padStart(2, '0'); }).join('');
+  function tryAuth() {
+    var email = input.value.trim();
+    if (!email) return;
 
-    if (hashHex === PASSWORD_HASH) {
+    if (isValidEmail(email)) {
       sessionStorage.setItem('dashboard_authed', '1');
+      sessionStorage.setItem('dashboard_email', email);
       overlay.style.display = 'none';
     } else {
       errorEl.style.display = 'block';
-      input.value = '';
       input.focus();
     }
   }
@@ -679,10 +1055,19 @@ function renderAll(data) {
   var reportMd = data.report_md || '';
   var articleMd = data.article_md || '';
   var articleMeta = data.article_meta || {};
-
   var pipeline = data.pipeline || {};
 
-  document.getElementById('dash-date').textContent = data.date || '--';
+  // Bilingual content: prefer language-specific fields, fall back to default (zh)
+  var jikeMd = data.jike_post_md || '';
+  if (LANG === 'en') {
+    reportMd = data.report_md_en || reportMd;
+    articleMd = data.article_md_en || articleMd;
+    jikeMd = data.jike_post_md_en || jikeMd;
+  }
+
+  document.getElementById('dash-date').textContent = data.date
+    ? (data.date + (data._is_archive ? '' : ''))
+    : '--';
   document.getElementById('dash-generated').textContent = (data.generated_at || '').substring(0, 16);
 
   // Stats
@@ -697,7 +1082,7 @@ function renderAll(data) {
   tbody.innerHTML = '';
   var top = signals.slice(0, 10);
   if (top.length === 0) {
-    tbody.innerHTML = '<tr><td colspan="6" class="empty">No signal data available for today.</td></tr>';
+    tbody.innerHTML = '<tr><td colspan="6" class="empty">' + t('emptyNoSignals') + '</td></tr>';
   } else {
     top.forEach(function(s, i) {
       var score = s.score || 0;
@@ -715,11 +1100,17 @@ function renderAll(data) {
     });
   }
 
+  // Update signals table aria label
+  document.getElementById('signals-table').setAttribute('aria-label', t('miscSignalsTableAria'));
+
+  // Update section titles (those with SVG icons)
+  updateSectionTitle('signals-title', LANG === 'zh' ? 'Top 10 信号' : 'Top 10 Signals');
+
   // Helper: build empty state message from pipeline diagnostics
   function emptyState(step, fallback) {
     var s = pipeline[step];
     if (s && s.message) {
-      return '<div class="empty"><div class="diag-label">' + step.toUpperCase() + ' skipped</div><div class="diag-reason">' + s.message + '</div></div>';
+      return '<div class="empty"><div class="diag-label">' + step.toUpperCase() + t('diagSkippedLabel') + '</div><div class="diag-reason">' + s.message + '</div></div>';
     }
     return '<div class="empty">' + fallback + '</div>';
   }
@@ -728,7 +1119,7 @@ function renderAll(data) {
   if (reportMd) {
     document.getElementById('tab-report').innerHTML = marked.parse(reportMd);
   } else {
-    document.getElementById('tab-report').innerHTML = emptyState('report', 'Daily report has not been generated yet.');
+    document.getElementById('tab-report').innerHTML = emptyState('report', t('emptyNoReport'));
   }
 
   // Article
@@ -737,14 +1128,14 @@ function renderAll(data) {
     var articleHtml = '<div class="article-actions">' +
       '<button class="btn-article-action" onclick="downloadArticleTxt()">' +
         '<svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>' +
-        ' Download .txt</button>' +
+        ' ' + t('btnDownload') + '</button>' +
       '<button class="btn-article-action" onclick="copyArticleText()">' +
         '<svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>' +
-        ' Copy Plain</button>' +
+        ' ' + t('btnCopyPlain') + '</button>' +
       '<button class="btn-article-action" onclick="copyArticleNotepad()">' +
         '<svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>' +
-        ' Copy Notepad</button>' +
-      '<span class="copy-toast" id="copy-toast">Copied!</span>' +
+        ' ' + t('btnCopyNotepad') + '</button>' +
+      '<span class="copy-toast" id="copy-toast">' + t('toastCopied') + '</span>' +
     '</div>';
     if (articleMeta.type_label) {
       articleHtml += '<div class="article-meta"><span class="badge badge-live">' + articleMeta.type_label + '</span></div>';
@@ -752,14 +1143,18 @@ function renderAll(data) {
     articleHtml += marked.parse(articleMd);
     document.getElementById('tab-article').innerHTML = articleHtml;
   } else {
-    document.getElementById('tab-article').innerHTML = emptyState('article', 'Planet article has not been generated yet.');
+    document.getElementById('tab-article').innerHTML = emptyState('article', t('emptyNoArticle'));
   }
 
   // Tracking
   if (opps.length === 0) {
     document.getElementById('tracking-empty').style.display = 'block';
   } else {
-    var statusLabels = {pending: 'Pending', passed: 'Passed', failed: 'Failed', adjust: 'Adjust'};
+    var statusLabels = {};
+    statusLabels['pending'] = t('trStatusPending');
+    statusLabels['passed'] = t('trStatusPassed');
+    statusLabels['failed'] = t('trStatusFailed');
+    statusLabels['adjust'] = t('trStatusAdjust');
     var tbody2 = document.getElementById('tracking-body');
     opps.forEach(function(op) {
       var statusCls = op.verification_result || 'pending';
@@ -777,11 +1172,10 @@ function renderAll(data) {
   }
 
   // Jike Post
-  var jikePostMd = data.jike_post_md || '';
-  if (jikePostMd) {
-    document.getElementById('tab-jike').innerHTML = marked.parse(jikePostMd);
+  if (jikeMd) {
+    document.getElementById('tab-jike').innerHTML = marked.parse(jikeMd);
   } else {
-    document.getElementById('tab-jike').innerHTML = emptyState('jike', 'Jike post has not been generated yet.');
+    document.getElementById('tab-jike').innerHTML = emptyState('jike', t('emptyNoJike'));
   }
 
   // Pipeline status indicators in footer
@@ -791,8 +1185,8 @@ function renderAll(data) {
   steps.forEach(function(step) {
     var s = pipeline[step];
     var cls = s ? ('pi-status-' + s.status) : 'pi-status-unknown';
-    var title = s ? (labels[step] + ': ' + s.status + (s.message ? ' — ' + s.message : '')) : (labels[step] + ': no data');
-    indicators.push('<span class="pi ' + cls + '" title="' + title.replace(/"/g, '&quot;') + '">' + labels[step] + '</span>');
+    var titleText = s ? (labels[step] + ': ' + s.status + (s.message ? ' — ' + s.message : '')) : (labels[step] + ': ' + t('piNoData'));
+    indicators.push('<span class="pi ' + cls + '" title="' + titleText.replace(/"/g, '&quot;') + '">' + labels[step] + '</span>');
   });
   document.getElementById('pipeline-indicators').innerHTML = indicators.join(' ');
 
@@ -803,6 +1197,14 @@ function renderAll(data) {
   if (data.archive && data.archive.length > 0) {
     initArchive(data.archive);
   }
+}
+
+function updateSectionTitle(id, text) {
+  var el = document.getElementById(id);
+  if (!el) return;
+  el.childNodes.forEach(function(n) {
+    if (n.nodeType === 3) n.textContent = ' ' + text;
+  });
 }
 
 function renderCharts(history) {
@@ -817,14 +1219,15 @@ function renderCharts(history) {
 
   // Score chart
   var scoreCtx = document.getElementById('scoreChart').getContext('2d');
+  document.getElementById('scoreChart').setAttribute('aria-label', t('chartScoreAria'));
   new Chart(scoreCtx, {
     type: 'line',
     data: {
       labels: labels,
       datasets: [
-        { label: 'Top Score', data: history.map(function(d) { return d.top_score; }),
+        { label: t('chartTopScore'), data: history.map(function(d) { return d.top_score; }),
           borderColor: accentHex, backgroundColor: 'transparent', tension: 0.3, pointRadius: 3 },
-        { label: 'Avg Score', data: history.map(function(d) { return d.avg_score; }),
+        { label: t('chartAvgScore'), data: history.map(function(d) { return d.avg_score; }),
           borderColor: '#60a5fa', backgroundColor: 'transparent', tension: 0.3, pointRadius: 3, borderDash: [4, 4] }
       ]
     },
@@ -840,14 +1243,15 @@ function renderCharts(history) {
 
   // Volume chart
   var volCtx = document.getElementById('volumeChart').getContext('2d');
+  document.getElementById('volumeChart').setAttribute('aria-label', t('chartVolumeAria'));
   new Chart(volCtx, {
     type: 'bar',
     data: {
       labels: labels,
       datasets: [
-        { label: 'Signals', data: history.map(function(d) { return d.total_signals; }),
+        { label: t('chartSignals'), data: history.map(function(d) { return d.total_signals; }),
           backgroundColor: accentHex + '40', borderColor: accentHex, borderWidth: 1 },
-        { label: 'Cross-Platform', data: history.map(function(d) { return d.cross_platform; }),
+        { label: t('chartCrossPlatform'), data: history.map(function(d) { return d.cross_platform; }),
           backgroundColor: greenHex + '40', borderColor: greenHex, borderWidth: 1 }
       ]
     },
@@ -897,6 +1301,12 @@ function initArchive(archive) {
   var nextBtn = document.getElementById('archive-next');
   var backBtn = document.getElementById('btn-back-today');
 
+  // Update aria labels
+  nav.setAttribute('aria-label', t('archiveNavAria'));
+  datesContainer.setAttribute('aria-label', t('archiveDatesAria'));
+  prevBtn.setAttribute('aria-label', t('archivePrevAria'));
+  nextBtn.setAttribute('aria-label', t('archiveNextAria'));
+
   // Build date buttons in archive order (newest first)
   datesContainer.innerHTML = '';
   _archiveData.forEach(function(entry) {
@@ -908,8 +1318,8 @@ function initArchive(archive) {
     var parts = entry.date.split('-');
     btn.textContent = parts[1].replace(/^0/,'') + '/' + parts[2].replace(/^0/,'');
     btn.title = entry.date
-      + (entry.has_report ? '' : ' [无报告]')
-      + (entry.has_article ? '' : ' [无文章]');
+      + (entry.has_report ? '' : ' [' + (LANG === 'zh' ? '无报告' : 'No report') + ']')
+      + (entry.has_article ? '' : ' [' + (LANG === 'zh' ? '无文章' : 'No article') + ']');
     btn.setAttribute('role', 'option');
     btn.setAttribute('aria-selected', 'false');
     btn.addEventListener('click', function() { switchArchiveDate(entry.date); });
@@ -951,7 +1361,7 @@ function switchArchiveDate(dateStr) {
   _currentArchiveDate = dateStr;
 
   // Update header date
-  document.getElementById('dash-date').textContent = dateStr + (isToday ? '' : ' (archive)');
+  document.getElementById('dash-date').textContent = dateStr + (isToday ? '' : t('archiveLabel'));
 
   // Highlight active date button
   highlightArchiveDate(dateStr);
@@ -981,31 +1391,42 @@ function switchArchiveDate(dateStr) {
     return;
   }
 
+  // Resolve bilingual content for archive entries
+  var entryReportMd = '';
+  var entryArticleMd = '';
+  if (LANG === 'en') {
+    entryReportMd = entry.report_md_en || entry.report_md || '';
+    entryArticleMd = entry.article_md_en || entry.article_md || '';
+  } else {
+    entryReportMd = entry.report_md || '';
+    entryArticleMd = entry.article_md || '';
+  }
+
   // Render archive content
-  var reportHtml = entry.has_report && entry.report_md
-    ? marked.parse(entry.report_md)
-    : '<div class="empty">No report for this date.</div>';
+  var reportHtml = entry.has_report && entryReportMd
+    ? marked.parse(entryReportMd)
+    : '<div class="empty">' + t('archiveNoReport') + '</div>';
 
   var articleHtml = '';
-  if (entry.has_article && entry.article_md) {
+  if (entry.has_article && entryArticleMd) {
     articleHtml = '<div class="article-actions">' +
       '<button class="btn-article-action" onclick="downloadArchiveArticleTxt(\'' + dateStr + '\')">' +
         '<svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>' +
-        ' Download .txt</button>' +
+        ' ' + t('btnDownload') + '</button>' +
       '<button class="btn-article-action" onclick="copyArchiveArticlePlain(\'' + dateStr + '\')">' +
         '<svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>' +
-        ' Copy Plain</button>' +
+        ' ' + t('btnCopyPlain') + '</button>' +
       '<button class="btn-article-action" onclick="copyArchiveArticleNotepad(\'' + dateStr + '\')">' +
         '<svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>' +
-        ' Copy Notepad</button>' +
-      '<span class="copy-toast" id="copy-toast-archive">Copied!</span>' +
+        ' ' + t('btnCopyNotepad') + '</button>' +
+      '<span class="copy-toast" id="copy-toast-archive">' + t('toastCopied') + '</span>' +
     '</div>';
     if (entry.article_meta && entry.article_meta.type_label) {
       articleHtml += '<div class="article-meta"><span class="badge badge-live">' + entry.article_meta.type_label + '</span></div>';
     }
-    articleHtml += marked.parse(entry.article_md);
+    articleHtml += marked.parse(entryArticleMd);
   } else {
-    articleHtml = '<div class="empty">No article for this date.</div>';
+    articleHtml = '<div class="empty">' + t('archiveNoArticle') + '</div>';
   }
 
   _archiveCache[dateStr] = { reportHtml: reportHtml, articleHtml: articleHtml };
@@ -1034,8 +1455,10 @@ function getArchiveEntry(dateStr) {
 
 function downloadArchiveArticleTxt(dateStr) {
   var entry = getArchiveEntry(dateStr);
-  if (!entry || !entry.article_md) return;
-  var text = stripMarkdown(entry.article_md);
+  if (!entry) return;
+  var md = (LANG === 'en' ? (entry.article_md_en || entry.article_md) : entry.article_md) || '';
+  if (!md) return;
+  var text = stripMarkdown(md);
   var blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
   var url = URL.createObjectURL(blob);
   var a = document.createElement('a');
@@ -1049,19 +1472,23 @@ function downloadArchiveArticleTxt(dateStr) {
 
 function copyArchiveArticlePlain(dateStr) {
   var entry = getArchiveEntry(dateStr);
-  if (!entry || !entry.article_md) return;
-  var text = stripMarkdown(entry.article_md);
+  if (!entry) return;
+  var md = (LANG === 'en' ? (entry.article_md_en || entry.article_md) : entry.article_md) || '';
+  if (!md) return;
+  var text = stripMarkdown(md);
   navigator.clipboard.writeText(text).then(function() {
-    showArchiveToast('Copied!');
+    showArchiveToast(t('toastCopied'));
   });
 }
 
 function copyArchiveArticleNotepad(dateStr) {
   var entry = getArchiveEntry(dateStr);
-  if (!entry || !entry.article_md) return;
-  var text = formatArticleForNotepad(entry.article_md, entry.article_meta || {}, dateStr);
+  if (!entry) return;
+  var md = (LANG === 'en' ? (entry.article_md_en || entry.article_md) : entry.article_md) || '';
+  if (!md) return;
+  var text = formatArticleForNotepad(md, entry.article_meta || {}, dateStr);
   navigator.clipboard.writeText(text).then(function() {
-    showArchiveToast('Notepad format copied!');
+    showArchiveToast(t('toastNotepadCopied'));
   });
 }
 
@@ -1109,15 +1536,15 @@ function formatArticleForNotepad(md, meta, date) {
   }
 
   // Meta info
-  lines.push('Date: ' + (date || 'N/A'));
+  lines.push(t('notepadDate') + ': ' + (date || 'N/A'));
   if (meta.type_label) {
-    lines.push('Type: ' + meta.type_label);
+    lines.push(t('notepadType') + ': ' + meta.type_label);
   }
   if (meta.signal_title) {
-    lines.push('Source: ' + meta.signal_title);
+    lines.push(t('notepadSource') + ': ' + meta.signal_title);
   }
   if (meta.angle) {
-    lines.push('Angle: ' + meta.angle);
+    lines.push(t('notepadAngle') + ': ' + meta.angle);
   }
   lines.push('');
   lines.push(sep);
@@ -1157,8 +1584,8 @@ function formatArticleForNotepad(md, meta, date) {
   lines.push('');
   lines.push('');
   lines.push(sep);
-  lines.push('KAKAOPC Intel · aimfast.dev');
-  lines.push('Generated: ' + (date || 'N/A'));
+  lines.push(t('notepadFooter'));
+  lines.push(t('notepadGenerated') + ': ' + (date || 'N/A'));
 
   return lines.join('\n');
 }
@@ -1181,7 +1608,7 @@ function copyArticleText() {
   navigator.clipboard.writeText(text).then(function() {
     var toast = document.getElementById('copy-toast');
     if (toast) {
-      toast.textContent = 'Copied!';
+      toast.textContent = t('toastCopied');
       toast.classList.add('show');
       setTimeout(function() { toast.classList.remove('show'); }, 2000);
     }
@@ -1195,7 +1622,7 @@ function copyArticleNotepad() {
   navigator.clipboard.writeText(text).then(function() {
     var toast = document.getElementById('copy-toast');
     if (toast) {
-      toast.textContent = 'Notepad format copied!';
+      toast.textContent = t('toastNotepadCopied');
       toast.classList.add('show');
       setTimeout(function() { toast.classList.remove('show'); }, 2000);
     }
@@ -1206,7 +1633,7 @@ function copyArticleNotepad() {
 (function init() {
   fetch('data/dashboard.json')
     .then(function(res) {
-      if (!res.ok) throw new Error('Data not available');
+      if (!res.ok) throw new Error(t('miscDataUnavailable'));
       return res.json();
     })
     .then(function(data) {
@@ -1232,9 +1659,9 @@ function copyArticleNotepad() {
       } else {
         // No data at all — show empty state
         document.getElementById('dash-date').textContent = new Date().toISOString().substring(0, 10);
-        document.getElementById('dash-generated').textContent = 'No data';
-        document.getElementById('signals-body').innerHTML = '<tr><td colspan="6" class="empty">No data available. Run the daily pipeline to generate intelligence data.</td></tr>';
-        document.getElementById('tab-report').innerHTML = '<div class="empty">No report data available.</div>';
+        document.getElementById('dash-generated').textContent = t('miscNoData');
+        document.getElementById('signals-body').innerHTML = '<tr><td colspan="6" class="empty">' + t('emptyNoData') + '</td></tr>';
+        document.getElementById('tab-report').innerHTML = '<div class="empty">' + t('emptyNoReportData') + '</div>';
         document.getElementById('tracking-empty').style.display = 'block';
         document.getElementById('stat-signals').textContent = '0';
         document.getElementById('stat-top').textContent = '--';
