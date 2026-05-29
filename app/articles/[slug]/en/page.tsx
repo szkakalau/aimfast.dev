@@ -3,6 +3,8 @@ import { join } from 'node:path';
 import { compileMDX } from 'next-mdx-remote/rsc';
 import type { Metadata } from 'next';
 
+const ARTICLES_DIR = join(process.cwd(), 'content', 'articles');
+
 function parseFrontmatter(source: string): { title?: string; date?: string; summary?: string } {
   const frontmatter: { title?: string; date?: string; summary?: string } = {};
   const fmMatch = source.match(/^---\n([\s\S]*?)\n---/);
@@ -21,23 +23,13 @@ function parseFrontmatter(source: string): { title?: string; date?: string; summ
   return frontmatter;
 }
 
-function getArticleSlugs(): string[] {
-  const dir = join(process.cwd(), 'content', 'articles');
+function getEnglishArticles(): { slug: string; hasEn: boolean }[] {
   try {
-    return readdirSync(dir)
-      .filter((f) => f.endsWith('.mdx') && !f.includes('-en'))
-      .map((f) => f.replace(/\.mdx$/, ''));
+    return readdirSync(ARTICLES_DIR)
+      .filter((f) => f.endsWith('-en.mdx'))
+      .map((f) => ({ slug: f.replace(/-en\.mdx$/, ''), hasEn: true }));
   } catch {
     return [];
-  }
-}
-
-function hasEnglishVersion(slug: string): boolean {
-  try {
-    const enPath = join(process.cwd(), 'content', 'articles', `${slug}-en.mdx`);
-    return readFileSync(enPath, 'utf-8') !== undefined;
-  } catch {
-    return false;
   }
 }
 
@@ -47,7 +39,8 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const filePath = join(process.cwd(), 'content', 'articles', `${slug}.mdx`);
+  const filePath = join(ARTICLES_DIR, `${slug}-en.mdx`);
+
   let source: string;
   try {
     source = readFileSync(filePath, 'utf-8');
@@ -57,18 +50,17 @@ export async function generateMetadata({
 
   const fm = parseFrontmatter(source);
   const title = fm.title || slug;
-  const canonicalUrl = `https://aimfast.dev/articles/${slug}/`;
-
-  const alternates: Record<string, string> = { canonical: canonicalUrl };
-  if (hasEnglishVersion(slug)) {
-    alternates['languages'] = { en: `https://aimfast.dev/articles/${slug}/en/` } as any;
-  }
+  const canonicalUrl = `https://aimfast.dev/articles/${slug}/en/`;
+  const zhUrl = `https://aimfast.dev/articles/${slug}/`;
 
   return {
     title: `${title} — KAKAOPC Intel`,
     description: fm.summary || 'Deep-dive signal analysis for indie developers.',
     robots: { index: true, follow: true },
-    alternates,
+    alternates: {
+      canonical: canonicalUrl,
+      languages: { 'zh-CN': zhUrl },
+    },
     openGraph: {
       title: `${title} — KAKAOPC Intel`,
       description: fm.summary || 'Deep-dive signal analysis for indie developers.',
@@ -76,7 +68,7 @@ export async function generateMetadata({
       publishedTime: fm.date || undefined,
       url: canonicalUrl,
       siteName: 'KAKAOPC Intel',
-      locale: 'zh_CN',
+      locale: 'en_US',
     },
     twitter: {
       card: 'summary_large_image',
@@ -87,16 +79,16 @@ export async function generateMetadata({
 }
 
 export function generateStaticParams() {
-  return getArticleSlugs().map((slug) => ({ slug }));
+  return getEnglishArticles().map(({ slug }) => ({ slug }));
 }
 
-export default async function ArticlePage({
+export default async function ArticleEnPage({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const filePath = join(process.cwd(), 'content', 'articles', `${slug}.mdx`);
+  const filePath = join(ARTICLES_DIR, `${slug}-en.mdx`);
 
   let source: string;
   try {
@@ -106,18 +98,20 @@ export default async function ArticlePage({
       <main className="container">
         <article className="article" style={{ padding: 'var(--space-10) 0', textAlign: 'center' as const }}>
           <h1>Article Not Found</h1>
+          <p>
+            No English version exists for this article.{' '}
+            <a href={`/articles/${slug}/`}>View Chinese version</a>
+          </p>
           <p><a href="/">Back to home</a></p>
         </article>
       </main>
     );
   }
 
-  // Parse frontmatter
   const frontmatter = parseFrontmatter(source);
   const content = source.replace(/^---\n[\s\S]*?\n---\n?/, '');
-  const canonicalUrl = `https://aimfast.dev/articles/${slug}/`;
-  const enUrl = `https://aimfast.dev/articles/${slug}/en/`;
-  const hasEn = hasEnglishVersion(slug);
+  const canonicalUrl = `https://aimfast.dev/articles/${slug}/en/`;
+  const zhUrl = `https://aimfast.dev/articles/${slug}/`;
 
   const { content: mdxContent } = await compileMDX({
     source: content,
@@ -132,7 +126,7 @@ export default async function ArticlePage({
     description: frontmatter.summary || '',
     author: { '@type': 'Organization', name: 'KAKAOPC Intel' },
     publisher: { '@type': 'Organization', name: 'KAKAOPC Intel' },
-    inLanguage: 'zh-CN',
+    inLanguage: 'en',
     url: canonicalUrl,
     mainEntityOfPage: { '@type': 'WebPage', '@id': canonicalUrl },
   };
@@ -155,25 +149,19 @@ export default async function ArticlePage({
             {frontmatter.summary && (
               <p className="article-meta-summary">{frontmatter.summary}</p>
             )}
-            {hasEn && (
-              <div style={{ marginTop: 'var(--space-3)', fontSize: '0.875rem' }}>
-                <a href={enUrl} hrefLang="en" rel="alternate">
-                  Read in English →
-                </a>
-              </div>
-            )}
+            <div style={{ marginTop: 'var(--space-3)', fontSize: '0.875rem' }}>
+              <a href={zhUrl} hrefLang="zh-CN" rel="alternate">
+                阅读中文版 →
+              </a>
+            </div>
           </header>
           {mdxContent}
         </article>
         <footer className="site-footer">
           <p>
             &copy; {new Date().getFullYear()} KAKAOPC Intel ·{' '}
-            <a href="/">Home</a> · <a href="/dashboard/">Dashboard</a>
-            {hasEn && (
-              <>
-                {' '}· <a href={enUrl}>English version</a>
-              </>
-            )}
+            <a href="/">Home</a> · <a href="/dashboard/">Dashboard</a> ·{' '}
+            <a href={zhUrl}>中文版</a>
           </p>
         </footer>
       </main>

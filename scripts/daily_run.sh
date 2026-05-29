@@ -192,10 +192,21 @@ else
     log "  [Translate] FAIL (non-fatal)"
 fi
 
-# ─── Step 10: Dashboard ───
+# ─── Step 10: SEO Content Files ───
 
 log ""
-log "--- Step 10: Dashboard ---"
+log "--- Step 10: SEO Content Files ---"
+
+if $PYTHON -m scripts.generate_seo_files 2>&1; then
+    log "  [SEO] OK"
+else
+    log "  [SEO] FAIL (non-fatal)"
+fi
+
+# ─── Step 11: Dashboard ───
+
+log ""
+log "--- Step 11: Dashboard ---"
 
 if $PYTHON -m scripts.generate_dashboard 2>&1; then
     log "  [Dashboard] OK"
@@ -203,11 +214,11 @@ else
     log "  [Dashboard] FAIL"
 fi
 
-# ─── Step 11: Weekly Report (Sunday only) ───
+# ─── Step 12: Weekly Report (Sunday only) ───
 
 if [ "$(date +%u)" -eq 7 ]; then
     log ""
-    log "--- Step 11: Weekly Report (Sunday trigger) ---"
+    log "--- Step 12: Weekly Report (Sunday trigger) ---"
     if $PYTHON -m scripts.generate_weekly 2>&1; then
         log "  [Weekly] OK"
     else
@@ -215,12 +226,12 @@ if [ "$(date +%u)" -eq 7 ]; then
     fi
 fi
 
-# ─── Step 12: Git commit & push ───
+# ─── Step 13: Git commit & push ───
 
 log ""
-log "--- Step 12: Deploy Dashboard Data ---"
+log "--- Step 13: Deploy Dashboard Data & SEO Content ---"
 
-git add public/dashboard/data/dashboard.json public/*/index.html 2>&1 || true
+git add public/dashboard/data/dashboard.json public/sitemap.xml content/reports/ content/articles/ public/*/index.html 2>&1 || true
 
 if git diff --cached --name-only | grep -q .; then
     git config user.email "pipeline@kakaopc-intel.bot"

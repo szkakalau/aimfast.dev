@@ -212,10 +212,22 @@ try {
     Write-Log "  [Translate] FAIL (non-fatal): $_"
 }
 
-# --- Step 10: Dashboard Data ---
+# --- Step 10: SEO Content Files ---
 
 Write-Log ""
-Write-Log "--- Step 10: Dashboard ---"
+Write-Log "--- Step 10: SEO Content Files ---"
+
+try {
+    $output = & $Python -m scripts.generate_seo_files 2>&1
+    Write-Log "  [SEO] OK"
+} catch {
+    Write-Log "  [SEO] FAIL (non-fatal): $_"
+}
+
+# --- Step 11: Dashboard Data ---
+
+Write-Log ""
+Write-Log "--- Step 11: Dashboard ---"
 
 try {
     $output = & $Python -m scripts.generate_dashboard 2>&1
@@ -224,12 +236,12 @@ try {
     Write-Log "  [Dashboard] FAIL: $_"
 }
 
-# --- Step 11: Weekly Report (Sunday only) ---
+# --- Step 12: Weekly Report (Sunday only) ---
 
 $DayOfWeek = (Get-Date).DayOfWeek
 if ($DayOfWeek -eq 'Sunday') {
     Write-Log ""
-    Write-Log "--- Step 11: Weekly Report (Sunday trigger) ---"
+    Write-Log "--- Step 12: Weekly Report (Sunday trigger) ---"
 
     try {
         $output = & $Python -m scripts.generate_weekly 2>&1
@@ -239,14 +251,14 @@ if ($DayOfWeek -eq 'Sunday') {
     }
 }
 
-# --- Step 12: Git commit & push dashboard data ---
+# --- Step 13: Git commit & push dashboard data ---
 
 Write-Log ""
-Write-Log "--- Step 12: Deploy Dashboard Data ---"
+Write-Log "--- Step 13: Deploy Dashboard Data & SEO Content ---"
 
 try {
     Push-Location $ProjectRoot
-    git add public/dashboard/data/dashboard.json public/*/index.html 2>&1 | Out-Null
+    git add public/dashboard/data/dashboard.json public/sitemap.xml content/reports/ content/articles/ public/*/index.html 2>&1 | Out-Null
 
     # Check if there are staged changes
     $diffOut = git diff --cached --name-only 2>&1

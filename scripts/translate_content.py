@@ -54,7 +54,17 @@ English: "| Rank | Signal | E-P-A Score |"
 
 ## Important
 
-Output ONLY the translated markdown. No preamble, no explanation, no "Here's the translation:" — just the clean translated content."""
+Output ONLY the translated markdown. No preamble, no explanation, no "Here's the translation:" — just the clean translated content.
+
+## SEO Translation Rules (Google Indexing)
+
+1. **Title length**: Keep translated title at 50-70 characters. If the Chinese title is too short or too long, adapt it to fit the optimal SEO length while preserving meaning.
+2. **Meta description**: The first paragraph after the title should work as a standalone Google search snippet (150-160 characters). If the Chinese first paragraph doesn't translate well, restructure it to be more descriptive while keeping the core message.
+3. **Keywords in translation**: Ensure important English keywords (product names, categories, technical terms) appear naturally in the first 200 words. Don't keyword-stuff — just make sure they're present.
+4. **Heading hierarchy**: Preserve H1 → H2 → H3 exactly. Never promote or demote a heading level. Each H2 should have at least 150 words of body text in English (same as Chinese).
+5. **Link text**: Translate link descriptions to descriptive English anchor text. Never use "click here" — use descriptive phrases like "view the HN discussion (417 comments)".
+6. **Featured snippet optimization**: When translating lists, steps, or definitions, structure them clearly (numbered lists, bold terms followed by explanations) so Google can extract them as featured snippets.
+7. **Readability**: Use short English paragraphs (max 4 sentences). Break up long Chinese paragraphs into digestible English chunks. Use active voice. Aim for 8th-grade reading level (Hemingway style)."""
 
 # Content-specific temperature settings
 TRANSLATION_CONFIG = {

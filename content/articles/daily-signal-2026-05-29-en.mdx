@@ -1,0 +1,220 @@
+﻿---
+title: "Vercel Released a New Language, but the Real Opportunity Isn't the Language"
+date: 2026-05-29
+summary: "Tuesday night, Vercel's lab team dropped something on GitHub: **zerolang**. A programming language designed for AI agents."
+---
+# Vercel Released a New Language, but the Real Opportunity Isn't the Language
+
+Tuesday night, Vercel's lab team dropped something on GitHub: **zerolang**. A programming language designed for AI agents.
+
+13 days, **4,656 stars**, **297 forks**. No marketing, no launch event, no blog post. Just a repo, some code, and a README.
+
+Hacker News didn't blow up. Reddit was quiet. But on GitHub Trending, it sat there like a rock.
+
+Everyone's debating: Will this language succeed? Is Vercel making another big splash? Do AI agents even need a dedicated language?
+
+My answer might surprise you.
+
+**The language itself doesn't matter. The real opportunity is hiding in its shadow.**
+
+---
+
+## Translating This Into Plain English
+
+Let's start with what zerolang actually is.
+
+Right now, your workflow for building an AI agent looks something like this: You use Python to call OpenAI's API, write a bunch of `if-else` statements to decide which tool to invoke, and pray the model doesn't go off the rails. Your code is a mess of JSON schemas, prompt templates, tool definitions, and state management — all tangled together like a spaghetti factory no one wants to maintain.
+
+**What zerolang wants to do: cut that mess apart.**
+
+It's a language specifically for defining "what an agent can do," not for writing the agent itself. You write a file that tells the agent what tools it has, how to use them, what parameters to expect, and how to handle return values. The agent reads that file and knows exactly what to do.
+
+In terms you'll understand: **It's like HTML for web design.** You don't write logic in HTML — you describe structure with it. Zerolang wants to be the HTML of the agent world.
+
+The question is: **Who's feeling the pain?**
+
+The people in pain are **engineering managers**. Specifically, those whose teams are using Copilot, Claude, or Cursor. Here's what they're dealing with:
+
+- The people writing agents are happy because code runs
+- But agent behavior can't be audited — no one knows when it called what tool
+- When something breaks, it can't be reproduced — the agent's decision-making is a black box
+- Switch models, and all tool definitions need rewriting
+
+One engineering manager complained on Reddit r/programming: "Our team built 15 agents in three months. I have no idea what they're doing anymore. I just have a folder full of .py files, each one mixing prompts, code, and JSON together."
+
+**His boss in finance has already seen a $500+ AI API bill. And he can't produce a single report showing where that money went.**
+
+Why now? Because Anthropic just raised **$65 billion** at a **$965 billion** valuation. Claude Opus 4.8 has **1,020 comments** on HN. AI agents have gone from experimental toys to enterprise-mandated tools. And more tools mean more chaos.
+
+Pricing anchor: If I were building in this space, I'd charge **$29/month** for monitoring + audit, or **$99 one-time** for a toolchain migration package.
+
+---
+
+## What's Hiding Behind This
+
+Most people see zerolang and ask: Is the language easy to learn? Is the syntax cool? Can it replace Python?
+
+Wrong questions.
+
+**The right question: What unmet need does this language expose?**
+
+Zerolang's existence reveals a brutal truth: **There's currently no standardized way to handle tool definitions, behavior descriptions, or state management for AI agents.** Every team is reinventing the wheel, and every wheel looks different.
+
+This creates a massive market gap: **standardization and governance of the agent toolchain.**
+
+Specifically, three directions worth digging into:
+
+### Direction One: Agent Audit Reports
+
+Don't build a language — build an **audit tool**. Your tool reads an agent's tool call logs and generates a human-readable report: what tools were called, what parameters were used, how much it cost, how long it took, success rates.
+
+Who pays? **Engineering managers**, especially those with budget approval authority. They need to explain to the CFO why last month's API bill was $2,000 higher.
+
+Pricing: **$19/month**, per agent. First 5 agents free, then charge.
+
+### Direction Two: Tool Definition Migrator
+
+Your team uses OpenAI's function calling format. You want to switch to Claude's tool use format. You need to rewrite every tool definition. Nobody wants to do this.
+
+Your tool: Input OpenAI format, output Claude format. One-click migration.
+
+Who pays? **Teams migrating from OpenAI to Anthropic.** After this funding round, those teams will multiply.
+
+Pricing: **$49 one-time**, per tool count. First 10 tools $19, then $49.
+
+### Direction Three: Agent Behavior Sandbox
+
+You want to test an agent without it hitting your production database. You need a sandbox that simulates external service behavior.
+
+Who pays? **Indie developers and small teams building agents.** They run agents locally but can't simulate latency, errors, or rate limits from external services.
+
+Pricing: **$9/month**, includes 1,000 simulated calls.
+
+All three share one thing: **You're not competing with Vercel on the language — you're solving the problems the language exposes.**
+
+---
+
+## Why Most People Will Miss It
+
+The mainstream take: Vercel released another language. It'll either become the next JSX or the next CoffeeScript. Everyone debates whether the language itself will succeed.
+
+Two problems with this view:
+
+**First, it misplaces the signal.**
+
+Zerolang's star count is high not because the language is well-designed. It's because of Vercel's brand power + GitHub's exposure mechanics. The real signal isn't the repo itself — it's **why Vercel thinks this direction is worth investing in.**
+
+Vercel isn't a language company. They're a deployment platform. If they're putting resources into an agent language, it means they see a huge pain point: **tool definitions for agents are so broken they think a standard is needed.**
+
+**Second, it assumes "winner takes all."**
+
+Many think if zerolang succeeds, other approaches are dead. But history says otherwise: HTML succeeded, but CSS wasn't defined by W3C — it came from browser vendors fighting it out. JavaScript succeeded, but TypeScript was Microsoft's addition later. Standards define the base, but **the real market is the toolchain around the standard.**
+
+Vercel builds the language, but the language itself doesn't make money. What makes money is the services around it.
+
+It's like AWS open-sourcing React. React itself doesn't make money, but the more people use React, the more AWS cloud services sell. Zerolang's logic is the same: **standardize agent development, then sell deployment and monitoring services.**
+
+But this also means: **the language-level opportunity is gone.** Vercel already owns that spot. The real opportunities are above and below the language.
+
+**Below**: Tool definition editors, validators, testers.  
+**Above**: Tool call monitors, auditors, optimizers.
+
+Most people stare at the language and miss these two layers.
+
+Data point: Look at the GitHub discussion around zerolang. **Of the 297 forks, the vast majority are direct repo copies — no one's building peripheral tools.** The ecosystem is a blank slate.
+
+---
+
+## If It Were Me, Here's What I'd Do
+
+### Step One: Do This Tomorrow
+
+Open Google Forms. Create a simple survey titled "Agent Tool Definition Management Survey." Three questions:
+
+1. How does your team currently define agent tools? (OpenAI function calling / Claude tool use / custom JSON / other)
+2. What's your biggest pain point? (Migration difficulty / audit difficulty / debugging difficulty / other)
+3. If a tool solved this, how much would you pay? ($19 one-time / $9/month / $29/month / wouldn't pay)
+
+Send this form to:
+- Hacker News discussion threads about zerolang (if any exist)
+- Reddit r/MachineLearning and r/programming
+- Twitter searches for "agent tools" related topics
+- Your personal blog or newsletter
+
+Goal: **Collect 30 responses within 24 hours.** If you can't, the pain isn't sharp enough.
+
+### 7-Day Validation Plan
+
+**Days 1-2: Survey + Competitor Scan**
+- Collect survey responses, find 3 users willing to do deep interviews
+- Search for "agent audit," "tool migration," "agent sandbox" — see if competitors exist
+- If more than 3 competitors with paying users exist, consider pivoting
+
+**Days 3-4: MVP Development**
+- Build the simplest Agent Audit Report: input is JSON-format tool call logs, output is a Markdown report
+- Use Claude or GPT-4 for parsing — no need to write complex logic yourself
+- Deploy to Vercel (ironic but practical), create a landing page
+
+**Days 5-6: Launch Test**
+- Send the tool to the 3 deep users from your survey, free trial
+- Observe if they actually use it, how many times, what feedback they give
+- If no one uses it, ask why
+
+**Day 7: Decision**
+- If ≥ 3 people say they'd pay, build the product
+- If 0 people say they'd pay, drop it and turn the survey results into a blog post
+- If 1-2 people say they'd pay, adjust direction or keep collecting data
+
+### MVP Setup
+
+No code needed. Use **Google Forms + Claude API + Markdown templates**:
+
+```
+User submits JSON logs → Google Form receives → Zapier triggers Claude API → 
+Claude parses and generates report → Email sent to user
+```
+
+Zero backend code required. Cost: **Google Forms free + Claude API a few cents per call + Zapier $20/month.**
+
+### Failure Conditions
+
+**When would this judgment be wrong?**
+
+1. **Zerolang includes audit and monitoring natively.** If Vercel builds these into the language, my tool becomes redundant. But based on the current README, zerolang only defines "what a tool is," not "how a tool is monitored."
+
+2. **Nobody cares about agent governance.** If the survey shows no one will pay for audit, the pain isn't sharp enough. Time to pivot.
+
+3. **Vercel opens the ecosystem, but I don't move fast enough.** If someone builds a better tool within two weeks and I don't, that's an execution problem, not a judgment problem.
+
+4. **The AI agent direction itself is wrong.** If the hype around Claude Opus 4.8 fades and agent usage drops, the whole direction needs re-evaluation.
+
+---
+
+## Other Signals Worth Watching This Week
+
+**1. Hallucinate – Massively Multiplayer Online Rave (HN, 411 upvotes / 182 comments)**
+A purely entertainment-focused multiplayer online rave app that got 411 HN upvotes. Shows developers have a huge appetite for "useless but fun" things. Opportunity: Build a developer-focused "toy" — like a multiplayer game that generates random coding challenges.
+
+**2. Anthropic Raises $65 Billion (HN, 263 upvotes / 270 comments)**
+Valuation at $965 billion. This isn't news — it's a signal: **AI companies' burn rate is accelerating.** Opportunity: Build AI cost monitoring tools. Who hurts most? Teams using AI APIs with tight budgets.
+
+**3. Skills Repos Double Up (GitHub, anthropics/skills + mattpocock/skills)**
+Two Skills repos trending simultaneously. Anthropic's official Skills repo and an indie developer's Skills repo. Shows **"AI skills" as a concept is standardizing.** Opportunity: Build a skills marketplace search engine or recommendation system.
+
+**4. Compartment – Open Source Internal Team Software Runtime (Product Hunt)**
+Open-source runtime for internal enterprise software. Shows **"making internal tools easier to deploy" is a persistent need.** Opportunity: Build a template marketplace or tutorials around it.
+
+**5. Chrome Extension Story on w2solo**
+"My side project made $800 but took 200 hours." 32 paying users at $3.99 each. This story teaches: **Low pricing + narrow demand = wasted time.** Your product either needs high pricing ($19+) or broad demand. A $3.99 plugin only earns pocket change.
+
+---
+
+*About KAKAOPC Intelligence Bureau*
+
+I'm KaKa, columnist at KAKAOPC Intelligence Bureau. I don't write trend reports. I find signals most people overlook and tell you: **If it were me, here's what I'd do.**
+
+Core takeaway from today: **Zerolang's language itself doesn't matter. What matters is the chaos it exposes in the agent toolchain. Building audit, migration, and testing tools around that chaos — that's the real opportunity.**
+
+I could be completely wrong. But the data points in this direction, so I'm choosing to validate first.
+
+Find me on GitHub (@kakapc) or yell at me on Twitter (@kakaopc_). If you're building something similar, tell me — I'll help promote it.
