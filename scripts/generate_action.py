@@ -246,8 +246,13 @@ def run(date_str: str | None = None) -> str:
     if not top:
         top_score = signals[0].get("score", 0)
         top_cp = max((s.get("cross_platform_count", 0) for s in signals), default=0)
+        # Re-read config to get threshold values for the message
+        cfg_path = Path(__file__).resolve().parent.parent / "config.json"
+        cfg = json.loads(cfg_path.read_text(encoding="utf-8"))
+        min_cp = cfg["scoring"]["thresholds"]["cross_platform_min"]
+        min_score = cfg["scoring"]["thresholds"]["action_trigger"]
         msg = (
-            f"No signals met action threshold (Score >= 15, cross-platform >= 3). "
+            f"No signals met action threshold (Score >= {min_score}, cross-platform >= {min_cp}). "
             f"Top signal: {top_score} pts / {top_cp} platforms."
         )
         print(f"[Action] {msg}")

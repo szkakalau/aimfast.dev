@@ -35,7 +35,7 @@ $Trigger = New-ScheduledTaskTrigger -Daily -At "08:00"
 
 # Principal: run as current user
 $Principal = New-ScheduledTaskPrincipal -UserId "$env:USERDOMAIN\$env:USERNAME" `
-    -LogonType Interactive -RunLevel Limited
+    -LogonType S4U -RunLevel Limited
 
 # Settings
 $Settings = New-ScheduledTaskSettingsSet `

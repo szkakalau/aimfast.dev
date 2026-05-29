@@ -364,7 +364,8 @@ def score_epa(signals: list[dict]) -> list[dict]:
     if scores:
         print(f"[打分] 最高: {max(scores)} 分 | 平均: {sum(scores)/len(scores):.1f} 分")
         action_threshold = config["scoring"]["thresholds"]["action_trigger"]
-        qualified = [s for s in signals if s["score"] >= action_threshold and s["cross_platform_count"] >= 3]
+        min_platforms = config["scoring"]["thresholds"]["cross_platform_min"]
+        qualified = [s for s in signals if s["score"] >= action_threshold and s["cross_platform_count"] >= min_platforms]
         print(f"[打分] 触发 Action 方案: {len(qualified)} 个")
 
     return signals

@@ -261,8 +261,13 @@ def _build_user_prompt(signals: list[dict], categories: dict, date_str: str) -> 
             f"- [{s.get('score', 0)}分 | {s.get('source', '?')}] {s.get('title', '')[:100]}"
         )
 
+    # 加载配置以获取阈值
+    cfg = json.loads((ROOT / "config.json").read_text(encoding="utf-8"))
+    min_score = cfg["scoring"]["thresholds"]["action_trigger"]
+    min_platforms = cfg["scoring"]["thresholds"]["cross_platform_min"]
+
     # 跨平台验证的信号（优先关注）
-    cross_platform = [s for s in signals if s.get("cross_platform_count", 0) >= 2]
+    cross_platform = [s for s in signals if s.get("cross_platform_count", 0) >= min_platforms]
     cp_brief = []
     for s in cross_platform[:10]:
         cp_brief.append(
@@ -275,7 +280,7 @@ def _build_user_prompt(signals: list[dict], categories: dict, date_str: str) -> 
 
 {chr(10).join(all_signals_brief)}
 
-## 跨平台验证信号（≥2 独立源，共 {len(cross_platform)} 条 — 优先关注）
+## 跨平台验证信号（≥{min_platforms} 独立源，共 {len(cross_platform)} 条 — 优先关注）
 
 {chr(10).join(cp_brief) if cp_brief else '无跨平台验证信号'}
 
@@ -294,7 +299,7 @@ def _build_user_prompt(signals: list[dict], categories: dict, date_str: str) -> 
 ## 生成指令
 
 1. **主编说**: 从今天数据中找出"大家都在聊的表面话题"vs"真正可构建的信号"，200 字以内
-2. **今日 2 小时构建**: {'如果 Top1 信号达到 Action 阈值（≥15 分 + 跨平台 ≥3），生成完整产品方案，包括产品名、定价、验证路径、为什么不选另外两个方向' if top_signal and top_signal.get('score', 0) >= 15 and top_signal.get('cross_platform_count', 0) >= 3 else '即使未达 Action 阈值，也从数据中找出一个可 2 小时构建的方向'}
+2. **今日 2 小时构建**: {'如果 Top1 信号达到 Action 阈值（≥' + str(min_score) + ' 分 + 跨平台 ≥' + str(min_platforms) + '），生成完整产品方案，包括产品名、定价、验证路径、为什么不选另外两个方向' if top_signal and top_signal.get('score', 0) >= min_score and top_signal.get('cross_platform_count', 0) >= min_platforms else '即使未达 Action 阈值，也从数据中找出一个可 2 小时构建的方向'}
 3. **Top 3 信号**: 优先选跨平台验证的信号——真实趋势而非单一平台噪音
 4. **白话简报**: 用表格呈现——证据 | 讨论量 | 白话含义，加读者行动表
 5. **每个子板块**: 严格遵守 信号→白话解读→关键判断→反向视角 四段式

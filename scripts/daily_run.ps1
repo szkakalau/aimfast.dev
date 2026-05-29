@@ -49,6 +49,15 @@ Write-Log "Date: $Date"
 Write-Log "Project: $ProjectRoot"
 Write-Log "Python: $Python"
 
+# Day-level lock file to prevent duplicate runs (avoid double LLM cost)
+$DailyDir = Join-Path $ProjectRoot "daily\$Date"
+$LockFile = Join-Path $DailyDir ".pipeline_done"
+New-Item -ItemType Directory -Force -Path $DailyDir | Out-Null
+if (Test-Path $LockFile) {
+    Write-Log "Pipeline already completed for $Date (lock file exists). Exiting."
+    exit 0
+}
+
 # --- Step 1: Signal Collection (each collector runs independently) ---
 
 $Collectors = @(
@@ -130,7 +139,17 @@ Write-Log "--- Step 5: Action Plan ---"
 
 try {
     $output = & $Python -m scripts.generate_action 2>&1
-    Write-Log "  [Action] OK"
+    $pipeFile = Join-Path $ProjectRoot "daily\$Date\pipeline.json"
+    if (Test-Path $pipeFile) {
+        $pipeData = Get-Content $pipeFile -Raw -Encoding UTF8 | ConvertFrom-Json
+        if ($pipeData.steps.action.status -eq "skipped") {
+            Write-Log "  [Action] SKIPPED ($($pipeData.steps.action.reason))"
+        } else {
+            Write-Log "  [Action] OK"
+        }
+    } else {
+        Write-Log "  [Action] OK"
+    }
 } catch {
     Write-Log "  [Action] FAIL: $_"
 }
@@ -154,7 +173,17 @@ Write-Log "--- Step 7: Landing Page ---"
 
 try {
     $output = & $Python -m scripts.generate_landing_page 2>&1
-    Write-Log "  [LP] OK"
+    $pipeFile = Join-Path $ProjectRoot "daily\$Date\pipeline.json"
+    if (Test-Path $pipeFile) {
+        $pipeData = Get-Content $pipeFile -Raw -Encoding UTF8 | ConvertFrom-Json
+        if ($pipeData.steps.lp.status -eq "skipped") {
+            Write-Log "  [LP] SKIPPED ($($pipeData.steps.lp.reason))"
+        } else {
+            Write-Log "  [LP] OK"
+        }
+    } else {
+        Write-Log "  [LP] OK"
+    }
 } catch {
     Write-Log "  [LP] FAIL: $_"
 }
@@ -208,7 +237,7 @@ Write-Log "--- Step 10: Deploy Dashboard Data ---"
 
 try {
     Push-Location $ProjectRoot
-    git add public/dashboard/data/dashboard.json 2>&1 | Out-Null
+    git add public/dashboard/data/dashboard.json public/*/index.html 2>&1 | Out-Null
 
     # Check if there are staged changes
     $diffOut = git diff --cached --name-only 2>&1
@@ -235,7 +264,9 @@ try {
 Write-Log ""
 Write-Log "=== Pipeline Complete ==="
 
-$DailyDir = Join-Path $ProjectRoot "daily\$Date"
+# Write lock file to prevent duplicate runs today
+"done" | Out-File -FilePath $LockFile -Encoding UTF8
+
 if (Test-Path $DailyDir) {
     $files = Get-ChildItem $DailyDir -File | ForEach-Object { "$($_.Name) ($($_.Length) bytes)" }
     Write-Log "Output: $($files -join ', ')"
