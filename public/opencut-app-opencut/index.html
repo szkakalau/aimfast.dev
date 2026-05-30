@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenCut Migrator — CapCut to OpenCut in 30 min | aimfast.dev</title>
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#1a1d24">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://aimfast.dev/opencut-migrator/">
+  <!-- Open Graph -->
+  <meta property="og:type" content="product">
+  <meta property="og:title" content="OpenCut Migrator — CapCut to OpenCut in 30 min">
+  <meta property="og:description" content="One-time migration toolkit from CapCut Pro to OpenCut. Compatibility scan, asset export, and keymap guide — no subscription needed.">
+  <meta property="og:url" content="https://aimfast.dev/opencut-migrator/">
+  <meta property="og:site_name" content="KAKAOPC Intel">
+  <meta property="og:image" content="https://aimfast.dev/favicon.svg">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="OpenCut Migrator — CapCut to OpenCut in 30 min">
+  <meta name="twitter:description" content="One-time migration toolkit from CapCut Pro to OpenCut. Compatibility scan, asset export, and keymap guide — no subscription needed.">
+  <meta name="twitter:image" content="https://aimfast.dev/favicon.svg">
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "OpenCut Migrator",
+    "applicationCategory": "AIApplication",
+    "operatingSystem": "Web",
+    "description": "One-time migration toolkit from CapCut Pro to OpenCut. Includes compatibility scan, asset export, and keymap guide.",
+    "url": "https://aimfast.dev/opencut-migrator/",
+    "offers": {
+      "@type": "Offer",
+      "price": "9.99",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+  <!-- Shared Design System -->
+  <link rel="stylesheet" href="/_ds/base.css">
+  <link rel="stylesheet" href="/_ds/components.css">
+  <style>
+    /* Page-specific custom styles — only for layout & modal, no token redefinition */
+    .hero {
+      padding: var(--space-8) 0 var(--space-6);
+      text-align: center;
+    }
+    .hero h1 {
+      max-width: 14ch;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero .subtitle {
+      max-width: 60ch;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: var(--space-3);
+    }
+    .hero .cta-group {
+      margin-top: var(--space-5);
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-3);
+      justify-content: center;
+    }
+    .selling-points {
+      padding: var(--space-8) 0;
+    }
+    .selling-points h2 {
+      text-align: center;
+      margin-bottom: var(--space-6);
+    }
+    .selling-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-5);
+    }
+    .pricing {
+      padding: var(--space-8) 0;
+    }
+    .pricing h2 {
+      text-align: center;
+      margin-bottom: var(--space-6);
+    }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-5);
+      align-items: start;
+    }
+    .pricing-card.featured {
+      transform: scale(1.03);
+      border-color: var(--color-accent);
+      box-shadow: 0 0 0 2px var(--color-accent);
+    }
+    .pricing-card .price {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--color-text);
+      line-height: 1.2;
+    }
+    .pricing-card .price small {
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--color-text-secondary);
+    }
+    .faq {
+      padding: var(--space-8) 0;
+    }
+    .faq h2 {
+      text-align: center;
+      margin-bottom: var(--space-6);
+    }
+    .faq-list {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .faq-item {
+      border-left: 3px solid var(--color-accent);
+      padding-left: var(--space-3);
+      margin-bottom: var(--space-4);
+    }
+    .faq-item h3 {
+      margin-bottom: var(--space-1);
+    }
+    .faq-item p {
+      color: var(--color-text-secondary);
+    }
+    .cta-section {
+      padding: var(--space-8) 0;
+      text-align: center;
+    }
+    .cta-section h2 {
+      margin-bottom: var(--space-3);
+    }
+    .cta-section .cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-3);
+      justify-content: center;
+      margin-top: var(--space-4);
+    }
+    footer {
+      padding: var(--space-5) 0;
+      border-top: 1px solid var(--color-border);
+      text-align: center;
+      color: var(--color-text-muted);
+    }
+    footer a {
+      color: var(--color-text-secondary);
+    }
+    /* Modal overlay */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: var(--space-3);
+    }
+    .modal-overlay.active {
+      display: flex;
+    }
+    .modal-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      padding: var(--space-6);
+      max-width: 440px;
+      width: 100%;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+    .modal-card h3 {
+      margin-bottom: var(--space-2);
+    }
+    .modal-card p {
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-4);
+    }
+    .modal-card .input-group {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+    }
+    .modal-card input[type="email"] {
+      padding: var(--space-2) var(--space-3);
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      background: var(--color-bg);
+      color: var(--color-text);
+      font-family: var(--font-body);
+      font-size: 1rem;
+    }
+    .modal-card input[type="email"]:focus {
+      outline: none;
+      border-color: var(--color-accent);
+    }
+    .modal-card .btn-group {
+      display: flex;
+      gap: var(--space-2);
+      margin-top: var(--space-3);
+    }
+    .modal-card .btn-group .btn {
+      flex: 1;
+    }
+    .modal-close {
+      background: none;
+      border: none;
+      color: var(--color-text-muted);
+      cursor: pointer;
+      font-size: 1.2rem;
+      line-height: 1;
+      padding: var(--space-1);
+      margin-left: auto;
+      display: block;
+    }
+    .modal-close:hover {
+      color: var(--color-text);
+    }
+    @media (max-width: 768px) {
+      .selling-grid, .pricing-grid {
+        grid-template-columns: 1fr;
+      }
+      .pricing-card.featured {
+        transform: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation / Header (minimal) -->
+  <header class="container" style="padding: var(--space-3) 0; display: flex; justify-content: space-between; align-items: center;">
+    <span class="eyebrow" style="font-size: 0.9rem;">⚡ OpenCut Migrator</span>
+    <a href="https://github.com/OpenCut-app/OpenCut" target="_blank" rel="noopener" class="btn btn-ghost icon-sm" style="gap: var(--space-1);">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+      GitHub
+    </a>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero container">
+    <h1 class="heading-xl">CapCut → OpenCut<br>in 30 minutes</h1>
+    <p class="subtitle text-lg">Ditch the $7.99/month subscription. One-time migration toolkit with compatibility scan, asset export, and keymap guide.</p>
+    <div class="cta-group">
+      <button class="btn btn-primary btn-lg" onclick="openEmailModal()">Get Migration Guide — $9.99</button>
+      <button class="btn btn-secondary btn-lg" onclick="openEmailModal()">Free Compatibility Checklist</button>
+    </div>
+  </section>
+
+  <!-- Selling Points (3 columns) -->
+  <section class="selling-points container">
+    <h2 class="heading-lg">Why you need this</h2>
+    <div class="selling-grid">
+      <div class="card">
+        <div class="icon icon-accent" style="margin-bottom: var(--space-2);">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </div>
+        <h3 class="heading-sm">Compatibility Scan</h3>
+        <p>Upload your .capcut project — we detect which effects, transitions, and templates will migrate cleanly to OpenCut.</p>
+      </div>
+      <div class="card">
+        <div class="icon icon-accent" style="margin-bottom: var(--space-2);">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        </div>
+        <h3 class="heading-sm">One-Click Asset Export</h3>
+        <p>Export all media, overlays, and audio from your CapCut project in one go. No manual sorting.</p>
+      </div>
+      <div class="card">
+        <div class="icon icon-accent" style="margin-bottom: var(--space-2);">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        </div>
+        <h3 class="heading-sm">Keymap Translation</h3>
+        <p>CapCut shortcuts → OpenCut equivalents. Zero learning curve. Includes printable reference card.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing (3 columns, featured middle) -->
+  <section class="pricing container">
+    <h2 class="heading-lg">Simple, one-time pricing</h2>
+    <div class="pricing-grid">
+      <div class="card pricing-card">
+        <div class="eyebrow" style="margin-bottom: var(--space-1);">Starter</div>
+        <div class="price">$4.99 <small>one-time</small></div>
+        <ul style="list-style: none; padding: 0; margin: var(--space-3) 0; color: var(--color-text-secondary);">
+          <li style="padding: var(--space-1) 0;">✓ Compatibility scan tool</li>
+          <li style="padding: var(--space-1) 0;">✓ Basic export guide</li>
+          <li style="padding: var(--space-1) 0;">✗ Keymap translation</li>
+          <li style="padding: var(--space-1) 0;">✗ Community support</li>
+        </ul>
+        <button class="btn btn-primary" onclick="openEmailModal()" style="width:100%;">Get Starter</button>
+      </div>
+      <div class="card pricing-card featured">
+        <div class="badge" style="margin-bottom: var(--space-1);">Most popular</div>
+        <div class="price">$9.99 <small>one-time</small></div>
+        <ul style="list-style: none; padding: 0; margin: var(--space-3) 0; color: var(--color-text-secondary);">
+          <li style="padding: var(--space-1) 0;">✓ Full compatibility scan</li>
+          <li style="padding: var(--space-1) 0;">✓ One-click asset export</li>
+          <li style="padding: var(--space-1) 0;">✓ Keymap translation + PDF</li>
+          <li style="padding: var(--space-1) 0;">✓ Community access</li>
+        </ul>
+        <button class="btn btn-primary" onclick="openEmailModal()" style="width:100%;">Get Migration Guide</button>
+      </div>
+      <div class="card pricing-card">
+        <div class="eyebrow" style="margin-bottom: var(--space-1);">Complete</div>
+        <div class="price">$14.99 <small>one-time</small></div>
+        <ul style="list-style: none; padding: 0; margin: var(--space-3) 0; color: var(--color-text-secondary);">
+          <li style="padding: var(--space-1) 0;">✓ Everything in Migration Guide</li>
+          <li style="padding: var(--space-1) 0;">✓ Future updates</li>
+          <li style="padding: var(--space-1) 0;">✓ Priority email support</li>
+          <li style="padding: var(--space-1) 0;">✓ Early access to new tools</li>
+        </ul>
+        <button class="btn btn-primary" onclick="openEmailModal()" style="width:100%;">Get Complete</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq container">
+    <h2 class="heading-lg">Frequently asked questions</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <h3 class="heading-sm">Do I need to install anything?</h3>
+        <p>No. The migration guide is a PDF + web-based compatibility checker. Works in your browser.</p>
+      </div>
+      <div class="faq-item">
+        <h3 class="heading-sm">Will my CapCut effects work in OpenCut?</h3>
+        <p>Most basic effects and transitions are compatible. Our scan highlights exactly what will and won't work.</p>
+      </div>
+      <div class="faq-item">
+        <h3 class="heading-sm">What if OpenCut releases its own migration tool?</h3>
+       
