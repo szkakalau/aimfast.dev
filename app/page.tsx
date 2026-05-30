@@ -1,6 +1,49 @@
+import { readFileSync, readdirSync } from "node:fs";
+import { join } from "node:path";
 import LiveProjects from "./live-projects";
 
+function getLatestArticle(): { slug: string; title: string; date: string } | null {
+  try {
+    const dir = join(process.cwd(), "content", "articles");
+    const files = readdirSync(dir)
+      .filter((f) => f.endsWith(".mdx") && !f.includes("-en"));
+    if (files.length === 0) return null;
+
+    // Find newest by date in frontmatter
+    const articles = files
+      .map((f) => {
+        const slug = f.replace(".mdx", "");
+        const source = readFileSync(join(dir, f), "utf-8");
+        let title = slug;
+        let date = "";
+        const fmMatch = source.match(/^---\r?\n([\s\S]*?)\r?\n---/);
+        if (fmMatch) {
+          for (const line of fmMatch[1].split("\n")) {
+            const ci = line.indexOf(":");
+            if (ci > 0) {
+              const k = line.slice(0, ci).trim();
+              let v = line.slice(ci + 1).trim();
+              if ((v.startsWith('"') && v.endsWith('"')) || (v.startsWith("'") && v.endsWith("'"))) {
+                v = v.slice(1, -1);
+              }
+              if (k === "title") title = v;
+              if (k === "date") date = v;
+            }
+          }
+        }
+        return { slug, title, date };
+      })
+      .sort((a, b) => b.date.localeCompare(a.date));
+
+    return articles[0] || null;
+  } catch {
+    return null;
+  }
+}
+
 export default function HomePage() {
+  const latestArticle = getLatestArticle();
+
   return (
     <main id="main-content" className="container">
       {/* ═══ Top Nav ═══ */}
@@ -118,6 +161,32 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ═══ Latest Planet Article ═══ */}
+      {latestArticle && (
+        <section
+          className="latest-article anim-fade-up"
+          aria-labelledby="latest-article-title"
+        >
+          <div className="section-header">
+            <h2 id="latest-article-title">Today&apos;s Planet Article</h2>
+            <p>Deep-dive analysis — one signal unpacked with evidence, context, and next steps.</p>
+          </div>
+          <a href={`/articles/${latestArticle.slug}/`} className="latest-article-card">
+            <div className="latest-article-tag">星球文章 · 深度分析</div>
+            <h3>{latestArticle.title}</h3>
+            <div className="latest-article-meta">
+              <time dateTime={latestArticle.date}>{latestArticle.date}</time>
+              <span className="lp-arrow">Read →</span>
+            </div>
+          </a>
+          <div style={{ textAlign: "center", marginTop: "var(--space-2)" }}>
+            <a href="/articles/" className="hero-secondary">
+              Browse all articles →
+            </a>
+          </div>
+        </section>
+      )}
 
       {/* ═══ CTA ═══ */}
       <section className="cta-section anim-fade-up" aria-labelledby="cta-title">

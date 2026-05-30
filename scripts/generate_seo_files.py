@@ -204,6 +204,13 @@ def generate_sitemap() -> int:
         'priority': '0.9',
     })
 
+    # Articles index
+    urls.append({
+        'loc': f'{BASE_URL}/articles/',
+        'changefreq': 'daily',
+        'priority': '0.9',
+    })
+
     # Reports
     if CONTENT_REPORTS.exists():
         for f in sorted(CONTENT_REPORTS.glob('*.md')):
