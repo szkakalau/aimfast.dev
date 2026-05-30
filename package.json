@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "node scripts/generate_rss.mjs && next build",
+    "build": "node scripts/generate_rss.mjs && next build && node scripts/fix-en-lang.mjs",
     "rss": "node scripts/generate_rss.mjs",
     "start": "next start"
   },
@@ -17,6 +17,7 @@
   "devDependencies": {
     "@types/node": "^22.0.0",
     "@types/react": "^19.0.0",
+    "sharp": "^0.34.5",
     "typescript": "^5.7.0"
   }
 }
