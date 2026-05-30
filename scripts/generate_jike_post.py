@@ -18,28 +18,56 @@ DAILY_DIR = ROOT / "daily"
 TZ_SHANGHAI = timezone(timedelta(hours=8))
 
 
-def _load_inputs(date_str: str) -> tuple[str, list[dict], str]:
-    """加载日报 + 信号 + 追踪数据。"""
+def _load_inputs(date_str: str) -> tuple[str, list[dict], str, str]:
+    """加载日报 + 信号 + 追踪数据。
+    返回 (report_md, signals, lp_url, lp_opportunity)
+    """
     report_path = DAILY_DIR / date_str / "report.md"
     signals_path = DAILY_DIR / date_str / "signals.json"
 
     report_md = report_path.read_text(encoding="utf-8") if report_path.exists() else ""
-    signals = []
+    all_signals = []
     if signals_path.exists():
         data = json.loads(signals_path.read_text(encoding="utf-8"))
-        signals = data.get("signals", [])[:10]
+        all_signals = data.get("signals", [])
 
     # 检查是否有可关联的 landing page
+    # 优先级: 今天生成的 LP > 最近的 live LP
     tracking_path = ROOT / "tracking" / "opportunities.json"
     lp_url = ""
+    lp_opportunity = ""
+    lp_signal = None
     if tracking_path.exists():
         tracking = json.loads(tracking_path.read_text(encoding="utf-8"))
-        for opp in tracking.get("opportunities", []):
-            if opp.get("lp_status") == "live":
-                lp_url = opp.get("landing_page_url", "")
-                break
+        live_opps = [o for o in tracking.get("opportunities", []) if o.get("lp_status") == "live"]
+        if live_opps:
+            # 优先匹配今天的 LP
+            today_opp = next((o for o in live_opps if o.get("date") == date_str), None)
+            matched = today_opp if today_opp else live_opps[-1]  # 回退到最新的
+            lp_url = matched.get("landing_page_url", "")
+            lp_opportunity = matched.get("opportunity", "")
+            if today_opp:
+                print(f"[即刻帖子] LP 匹配: 今日 LP ({lp_opportunity}) → {lp_url}")
+            else:
+                print(f"[即刻帖子] LP 匹配: 回退到最近 LP ({lp_opportunity}, {matched.get('date')}) → {lp_url}")
 
-    return report_md, signals, lp_url
+            # 在所有信号中搜索 LP 关联的信号（按 opportunity 名称匹配）
+            if lp_opportunity and all_signals:
+                opp_lower = lp_opportunity.lower()
+                for s in all_signals:
+                    title = s.get("title", "").lower()
+                    if opp_lower and any(word in title for word in opp_lower.split() if len(word) > 2):
+                        lp_signal = s
+                        break
+
+    # 构建 top 10 信号列表；如有 LP 关联信号且不在 top 5，注入到 top 3
+    top_signals = all_signals[:10]
+    if lp_signal and all(s.get("id") != lp_signal.get("id") for s in top_signals[:5]):
+        top_signals = [s for s in top_signals if s.get("id") != lp_signal["id"]]
+        top_signals.insert(2, lp_signal)
+        print(f"[即刻帖子] LP 关联信号 ({lp_signal.get('title')}, {lp_signal.get('score')}分) 不在 top 5，已提升至 top 3")
+
+    return report_md, top_signals, lp_url, lp_opportunity
 
 
 def _build_system_prompt() -> str:
@@ -73,22 +101,38 @@ def _build_system_prompt() -> str:
 - 超过 2 个话题标签"""
 
 
-def _build_user_prompt(report_md: str, signals: list[dict], lp_url: str, date_str: str) -> str:
+def _build_user_prompt(report_md: str, signals: list[dict], lp_url: str, lp_opportunity: str, date_str: str) -> str:
     top_signal = signals[0] if signals else None
     top3 = signals[:3]
 
     top3_lines = []
     for i, s in enumerate(top3, 1):
         bd = s.get("score_breakdown", {})
+        tags = []
+        # 标记 LP 关联信号
+        if lp_url and lp_opportunity:
+            s_title = s.get("title", "").lower()
+            opp_lower = lp_opportunity.lower()
+            if any(word in s_title for word in opp_lower.split() if len(word) > 2):
+                tags.append("LP 关联 — 这是帖子的必写主题")
+        tag_str = f" 【{' | '.join(tags)}】" if tags else ""
         top3_lines.append(
-            f"### 信号 {i}: [{s.get('score', 0)}分] {s.get('title', '')}\n"
+            f"### 信号 {i}: [{s.get('score', 0)}分] {s.get('title', '')}{tag_str}\n"
             f"- 来源: {s.get('source', '')} | 跨平台: {s.get('cross_platform_count', 0)} 个\n"
             f"- 互动量: {s.get('discussion_count', 0)} 讨论\n"
             f"- 摘要: {s.get('summary', '')}\n"
             f"- 打分明细: {json.dumps(bd, ensure_ascii=False)}\n"
         )
 
-    lp_note = f"\n可关联的 Landing Page: {lp_url}" if lp_url else "\n今日无活跃 Landing Page。"
+    if lp_url and lp_opportunity:
+        lp_note = f"""可关联的 Landing Page（已上线，必须作为帖子主题）:
+- URL: {lp_url}
+- 对应机会: {lp_opportunity}
+- 硬性要求: 这篇帖子的主题必须是「{lp_opportunity}」。用 E-P-A 框架分析这个具体机会，而不是写其他信号。Top 3 中已有此信号（已标注"LP 关联"），聚焦它。"""
+    elif lp_url:
+        lp_note = f"\n可关联的 Landing Page: {lp_url}"
+    else:
+        lp_note = "\n今日无活跃 Landing Page。"
 
     return f"""## 日期: {date_str}
 
@@ -104,22 +148,22 @@ def _build_user_prompt(report_md: str, signals: list[dict], lp_url: str, date_st
 
 ---
 请基于以上数据生成即刻帖子。要求：
-1. 聚焦 Top 1 信号（如果 ≥15 分 + 跨平台 ≥3），否则聚焦最有意思的变化
-2. 严格 E-P-A 三段式
+1. 如果提供了 Landing Page，帖子主题必须是对应机会，不能写其他话题。聚焦标注了"LP 关联"的信号
+2. 严格 E-P-A 三段式: 证据、白话、行动。行动建议必须引导读者点击 Landing Page 链接
 3. 500-800 字
-4. 末尾附上 landing page 链接（如果有）
+4. 末尾单独一行: "Landing Page: <完整URL>"
 5. 加 2-3 个标签
 6. 纯文本，无 emoji，无异味"""
 
 
 def generate(date_str: str) -> str:
-    report_md, signals, lp_url = _load_inputs(date_str)
+    report_md, signals, lp_url, lp_opportunity = _load_inputs(date_str)
 
     if not report_md and not signals:
         return ""
 
     system = _build_system_prompt()
-    user = _build_user_prompt(report_md, signals, lp_url, date_str)
+    user = _build_user_prompt(report_md, signals, lp_url, lp_opportunity, date_str)
 
     print(f"[即刻帖子] 上下文: {len(system)} + {len(user)} = {len(system) + len(user)} 字符")
     print(f"[即刻帖子] 信号数: {len(signals)} | LP: {lp_url or '无'}")

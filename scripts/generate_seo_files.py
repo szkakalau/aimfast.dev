@@ -3,6 +3,7 @@ SEO 文件生成器
 将 daily/ 中的报告和文章转化为 content/ 中的可索引文件，
 并自动更新 sitemap.xml。
 """
+import json
 import re
 import sys
 from datetime import datetime, timezone, timedelta
@@ -12,8 +13,10 @@ ROOT = Path(__file__).resolve().parent.parent
 DAILY_DIR = ROOT / "daily"
 CONTENT_REPORTS = ROOT / "content" / "reports"
 CONTENT_ARTICLES = ROOT / "content" / "articles"
+TRACKING_PATH = ROOT / "tracking" / "opportunities.json"
 PUBLIC = ROOT / "public"
 SITEMAP_PATH = PUBLIC / "sitemap.xml"
+LP_INDEX_PATH = PUBLIC / "lp-index.json"
 
 TZ_SHANGHAI = timezone(timedelta(hours=8))
 BASE_URL = "https://aimfast.dev"
@@ -157,6 +160,32 @@ def process_articles(date_str: str) -> int:
     return count
 
 
+def generate_lp_index() -> int:
+    """Generate public/lp-index.json from tracking data. Returns LP count."""
+    PUBLIC.mkdir(parents=True, exist_ok=True)
+
+    live_lps = []
+    if TRACKING_PATH.exists():
+        tracking = json.loads(TRACKING_PATH.read_text(encoding="utf-8"))
+        for opp in tracking.get("opportunities", []):
+            if opp.get("lp_status") == "live":
+                live_lps.append({
+                    "id": opp.get("id", ""),
+                    "date": opp.get("date", ""),
+                    "opportunity": opp.get("opportunity", ""),
+                    "url": opp.get("landing_page_url", ""),
+                    "score": opp.get("score", 0),
+                    "buyer": opp.get("buyer", ""),
+                    "current_status": opp.get("current_status", "monitoring"),
+                })
+
+    LP_INDEX_PATH.write_text(json.dumps(live_lps, ensure_ascii=False, indent=2), encoding="utf-8")
+    print(f"  [SEO] lp-index.json → {len(live_lps)} live LPs → {LP_INDEX_PATH}")
+
+    # Also generate the LP sitemap data for use in generate_sitemap()
+    return len(live_lps)
+
+
 def generate_sitemap() -> int:
     """Regenerate sitemap.xml from content/ directories. Returns URL count."""
     urls = []
@@ -249,6 +278,26 @@ def generate_sitemap() -> int:
                     },
                 })
 
+    # Landing Pages
+    if TRACKING_PATH.exists():
+        tracking = json.loads(TRACKING_PATH.read_text(encoding="utf-8"))
+        for opp in tracking.get("opportunities", []):
+            if opp.get("lp_status") != "live":
+                continue
+            lp_url = opp.get("landing_page_url", "")
+            if not lp_url:
+                continue
+            slug = lp_url.rstrip("/").split("/")[-1] if "/" in lp_url else ""
+            if not slug:
+                continue
+
+            urls.append({
+                'loc': lp_url + "/",
+                'lastmod': opp.get("date", ""),
+                'changefreq': 'monthly',
+                'priority': '0.7',
+            })
+
     # Generate XML
     xml_lines = [
         '<?xml version="1.0" encoding="UTF-8"?>',
@@ -293,14 +342,16 @@ def run(date_str: str | None = None) -> dict:
 
     report_count = process_reports(date)
     article_count = process_articles(date)
+    lp_count = generate_lp_index()
     sitemap_urls = generate_sitemap()
 
-    print(f"\n[SEO] Done: {report_count} reports + {article_count} articles → sitemap ({sitemap_urls} URLs)")
+    print(f"\n[SEO] Done: {report_count} reports + {article_count} articles + {lp_count} LPs → sitemap ({sitemap_urls} URLs)")
 
     return {
         "date": date,
         "reports": report_count,
         "articles": article_count,
+        "lps": lp_count,
         "sitemap_urls": sitemap_urls,
     }
 

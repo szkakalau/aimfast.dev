@@ -1,3 +1,5 @@
+import LiveProjects from "./live-projects";
+
 export default function HomePage() {
   return (
     <main id="main-content" className="container">
@@ -75,6 +77,9 @@ export default function HomePage() {
           <div className="stat-label">Validation Cycle</div>
         </div>
       </div>
+
+      {/* ═══ Live Projects ═══ */}
+      <LiveProjects />
 
       {/* ═══ How It Works ═══ */}
       <section className="workflow anim-fade-up" aria-labelledby="workflow-title">
