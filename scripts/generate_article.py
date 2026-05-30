@@ -312,7 +312,8 @@ def _build_user_prompt(topic: dict, signals: list[dict], date_str: str) -> str:
 8. **语气**: Builder 聊天的语气，不是分析师报告的口气
 9. **SEO 标题**: 标题控制在 25-35 字，包含核心关键词和具体数字
 10. **SEO 摘要**: 第一段（150-160 字符）能独立作为 Google 搜索摘要
-11. **英文 Slug**: 生成一个英文 kebab-case slug（≤60 字符），如 "vercel-zerolang-opportunity""""
+11. **英文 Slug**: 生成一个英文 kebab-case slug（≤60 字符），如 "vercel-zerolang-opportunity"
+"""
 
 
 def generate_article(topic: dict, signals: list[dict], date_str: str) -> str:

@@ -311,6 +311,6 @@ if __name__ == "__main__":
     result = run(date_arg)
     total = result["reports"] + result["articles"]
     if total == 0:
-        print("\n[SEO] ⚠️ No content files generated — check if daily/ source files exist")
+        print("\n[SEO] WARN: No content files generated -- check if daily/ source files exist")
     else:
-        print(f"\n[SEO] ✓ {total} content files + sitemap ready for deployment")
+        print(f"\n[SEO] OK: {total} content files + sitemap ready for deployment")

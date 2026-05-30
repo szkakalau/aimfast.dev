@@ -118,10 +118,10 @@ def translate_file(input_path: Path, output_path: Path, content_type: str) -> bo
     chinese_chars = sum(1 for c in translated if '一' <= c <= '鿿')
     total_chars = len(translated.replace(' ', '').replace('\n', ''))
     if total_chars > 0 and chinese_chars / max(total_chars, 1) > 0.3:
-        print(f"  [{content_type}] ⚠️ Translation still contains {chinese_chars} Chinese characters ({chinese_chars/max(total_chars,1)*100:.0f}%) — possible LLM issue")
+        print(f"  [{content_type}] WARN: Translation still contains {chinese_chars} Chinese characters ({chinese_chars/max(total_chars,1)*100:.0f}%) -- possible LLM issue")
 
     output_path.write_text(translated, encoding="utf-8")
-    print(f"  [{content_type}] ✓ Saved → {output_path} ({len(translated):,} chars)")
+    print(f"  [{content_type}] Saved -> {output_path} ({len(translated):,} chars)")
 
     return True
 
@@ -172,7 +172,7 @@ if __name__ == "__main__":
 
     ok_count = sum(1 for v in result["results"].values() if v == "ok")
     if ok_count == 0:
-        print("\n[Translate] ⚠️ No files were translated — check if source files exist")
+        print("\n[Translate] WARN: No files were translated -- check if source files exist")
         sys.exit(0)  # Not a fatal error — sources may not exist yet
     else:
-        print(f"\n[Translate] ✓ {ok_count} English files ready for dashboard")
+        print(f"\n[Translate] OK: {ok_count} English files ready for dashboard")
