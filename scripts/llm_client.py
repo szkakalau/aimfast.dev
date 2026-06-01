@@ -25,7 +25,7 @@ def _get_api_key() -> str:
             key = config.get("llm", {}).get("api_key", "")
         except Exception:
             pass
-    return key
+    return _sanitize_key(key) if key else key
 
 
 def _get_model() -> str:
@@ -37,8 +37,14 @@ def _get_model() -> str:
 
 
 def _sanitize(text: str) -> str:
-    """去除 BOM 等不可序列化字符，防止 UnicodeEncodeError"""
-    return text.replace("﻿", "").replace("￾", "")
+    """去除 BOM 等不可编码字符，防止 UnicodeEncodeError"""
+    # 移除 BOM (U+FEFF) 和 BOM-reversed (U+FFFE)
+    return text.replace("﻿", "").replace("￾", "").replace("​", "")
+
+
+def _sanitize_key(key: str) -> str:
+    """清理 API key，确保只含可打印 ASCII"""
+    return "".join(c for c in key if 32 <= ord(c) <= 126)
 
 
 def chat(
@@ -65,6 +71,9 @@ def chat(
     if not api_key and not dry_run:
         print("[LLM] 未配置 DEEPSEEK_API_KEY，使用模板 fallback 模式")
         return _template_fallback(system_prompt, user_prompt)
+
+    # 防御性清理 API key（避免 BOM 等不可编码字符）
+    api_key = _sanitize(api_key).strip()
 
     if dry_run:
         print("[LLM] DRY RUN — 不调用 API")
