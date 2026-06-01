@@ -36,6 +36,11 @@ def _get_model() -> str:
         return "deepseek-chat"
 
 
+def _sanitize(text: str) -> str:
+    """去除 BOM 等不可序列化字符，防止 UnicodeEncodeError"""
+    return text.replace("﻿", "").replace("￾", "")
+
+
 def chat(
     system_prompt: str,
     user_prompt: str,
@@ -72,6 +77,10 @@ def chat(
         "Content-Type": "application/json",
     }
 
+    # 防御性清理：去除 BOM 等不可编码字符
+    system_prompt = _sanitize(system_prompt)
+    user_prompt = _sanitize(user_prompt)
+
     payload = {
         "model": _get_model(),
         "messages": [
@@ -86,7 +95,8 @@ def chat(
     max_retries = 3
     for attempt in range(max_retries):
         try:
-            resp = requests.post(DEEPSEEK_CHAT, headers=headers, json=payload, timeout=120)
+            body = json.dumps(payload, ensure_ascii=False).encode("utf-8")
+            resp = requests.post(DEEPSEEK_CHAT, headers=headers, data=body, timeout=120)
             if resp.status_code == 200:
                 data = resp.json()
                 content = data.get("choices", [{}])[0].get("message", {}).get("content", "")
