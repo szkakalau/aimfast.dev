@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KAKAOPC Intel — Dashboard</title>
-<meta name="description" content="KAKAOPC Intel Dashboard — Signal intelligence, daily reports, and opportunity tracking for indie developers.">
-<meta name="robots" content="noindex, nofollow">
+<title>Opportunity Tracking & Signal Intelligence Dashboard | KAKAOPC Intel</title>
+<meta name="description" content="Track product opportunities in real-time. Signal scores, cross-platform validation, 7-day verification, landing page analytics. Daily reports and indie hacker opportunity tracking.">
+<meta name="robots" content="index, follow">
 <meta name="theme-color" content="#1a1d24">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="canonical" href="https://aimfast.dev/dashboard/">
-<!-- Open Graph (for link previews despite noindex) -->
+<!-- Open Graph -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="KAKAOPC Intel — Dashboard">
-<meta property="og:description" content="Signal intelligence, daily reports, and opportunity tracking for indie developers.">
+<meta property="og:title" content="Opportunity Tracking & Signal Intelligence Dashboard | KAKAOPC Intel">
+<meta property="og:description" content="Track product opportunities in real-time. Signal scores, cross-platform validation, 7-day verification, landing page analytics.">
 <meta property="og:url" content="https://aimfast.dev/dashboard/">
 <meta property="og:site_name" content="KAKAOPC Intel">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1026,6 +1026,56 @@ function renderAll(data) {
   if (data.archive && data.archive.length > 0) {
     initArchive(data.archive);
   }
+
+  // JSON-LD structured data for SEO
+  injectStructuredData(opps);
+}
+
+function injectStructuredData(opps) {
+  var existing = document.getElementById('jsonld-dashboard');
+  if (existing) existing.remove();
+
+  var items = opps.map(function(op, i) {
+    return {
+      '@type': 'ListItem',
+      'position': i + 1,
+      'item': {
+        '@type': 'SoftwareApplication',
+        'name': op.opportunity || '',
+        'applicationCategory': 'DeveloperApplication',
+        'dateCreated': op.date || '',
+        'description': 'Product opportunity — Score: ' + (op.score || 0) + ', LP: ' + (op.lp_status || 'N/A'),
+        'url': op.landing_page_url || ''
+      }
+    };
+  });
+
+  var jsonld = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'WebApplication',
+        'name': 'KAKAOPC Intel Dashboard',
+        'description': 'Product opportunity tracking and signal intelligence for indie developers.',
+        'url': 'https://aimfast.dev/dashboard/',
+        'applicationCategory': 'BusinessApplication',
+        'operatingSystem': 'Web',
+        'offers': { '@type': 'Offer', 'price': '0', 'priceCurrency': 'USD' }
+      },
+      {
+        '@type': 'ItemList',
+        'name': 'Tracked Opportunities',
+        'numberOfItems': opps.length,
+        'itemListElement': items
+      }
+    ]
+  };
+
+  var script = document.createElement('script');
+  script.type = 'application/ld+json';
+  script.id = 'jsonld-dashboard';
+  script.textContent = JSON.stringify(jsonld);
+  document.head.appendChild(script);
 }
 
 function updateSectionTitle(id, text) {
