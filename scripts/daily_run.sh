@@ -69,7 +69,6 @@ COLLECTORS=(
     "w2solo:collect_w2solo"
     "HuggingFace:collect_huggingface"
     "TikTok:collect_tiktok"
-    "Jike:collect_jike"
     "Xiaohongshu:collect_xiaohongshu"
 )
 
@@ -170,18 +169,7 @@ else
     log "  [LP] FAIL"
 fi
 
-# ─── Step 8: Jike Post ───
-
-log ""
-log "--- Step 8: Jike Post ---"
-
-if $PYTHON -m scripts.generate_jike_post 2>&1; then
-    log "  [JikePost] OK"
-else
-    log "  [JikePost] FAIL"
-fi
-
-# ─── Step 9: Translate Content (zh → en) ───
+# ─── Step 8: Translate Content (zh → en) ───
 
 log ""
 log "--- Step 9: Translate Content (zh → en) ---"

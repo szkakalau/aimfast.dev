@@ -154,17 +154,7 @@ def collect_dashboard_data() -> dict:
     # 6. Pipeline status (diagnostics for skipped steps)
     pipeline_status = read_pipeline_status(effective_date)
 
-    # 7. Jike post (social media ready) — bilingual
-    jike_post_md = ""
-    jike_post_md_en = ""
-    jike_post_path = DAILY_DIR / effective_date / "jike-post.md"
-    jike_post_en_path = DAILY_DIR / effective_date / "jike-post-en.md"
-    if jike_post_path.exists():
-        jike_post_md = jike_post_path.read_text(encoding="utf-8")
-    if jike_post_en_path.exists():
-        jike_post_md_en = jike_post_en_path.read_text(encoding="utf-8")
-
-    # 8. Archive (all available historical reports + articles)
+    # 7. Archive (all available historical reports + articles)
     archive = _collect_archive(max_days=60)
 
     return {
@@ -178,8 +168,6 @@ def collect_dashboard_data() -> dict:
         "article_md": article_md,
         "article_md_en": article_md_en,
         "article_meta": article_meta,
-        "jike_post_md": jike_post_md,
-        "jike_post_md_en": jike_post_md_en,
         "pipeline": pipeline_status.get("steps", {}),
         "archive": archive,
         "generated_at": datetime.now(TZ_SHANGHAI).isoformat(),
@@ -200,7 +188,7 @@ def run(date_str: str | None = None) -> str:
     output_path = OUTPUT_DIR / "dashboard.json"
     output_path.write_text(json_str, encoding="utf-8")
     print(f"[Dashboard] Data saved → {output_path}")
-    print(f"[Dashboard] {len(data['signals'])} signals | {len(data['history'])} days history | {len(data['opportunities'])} opportunities | article: {len(data['article_md']):,} chars (zh) / {len(data['article_md_en']):,} chars (en) | jike_post: {len(data['jike_post_md']):,} chars (zh) / {len(data['jike_post_md_en']):,} chars (en)")
+    print(f"[Dashboard] {len(data['signals'])} signals | {len(data['history'])} days history | {len(data['opportunities'])} opportunities | article: {len(data['article_md']):,} chars (zh) / {len(data['article_md_en']):,} chars (en)")
     return str(output_path)
 
 

@@ -20,7 +20,6 @@
     "domestic": [
       {"name": "V2EX", "key": "v2ex", "source": "API", "priority": "P0", "enabled": true},
       {"name": "w2solo", "key": "w2solo", "source": "RSS", "priority": "P0", "enabled": true},
-      {"name": "即刻", "key": "jike", "source": "mobile_use / API", "priority": "P0", "enabled": true},
       {"name": "小红书", "key": "xiaohongshu", "source": "爆款检测 skill", "priority": "P0", "enabled": true},
       {"name": "TikTok 热销品", "key": "tiktok", "source": "定时任务", "priority": "P1", "enabled": true},
       {"name": "知乎", "key": "zhihu", "source": "搜索", "priority": "P2", "enabled": false}
@@ -66,8 +65,7 @@
   "distribution": {
     "local_archive": true,
     "planet_article": {"enabled": true, "auto_publish": false, "note": "手动审校后发布，保证质量"},
-    "wechat_mp": {"enabled": false, "note": "预留"},
-    "jike": {"enabled": false, "note": "预留"}
+    "wechat_mp": {"enabled": false, "note": "预留"}
   },
   "landing_page": {
     "domain": "aimfast.dev",

@@ -363,74 +363,6 @@
     padding: var(--space-1);
   }
 
-  /* ── Auth overlay ── */
-  .auth-overlay {
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: var(--color-bg);
-    z-index: 9999;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  .auth-box {
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
-    padding: var(--space-5);
-    width: 380px;
-    max-width: 90vw;
-    text-align: center;
-  }
-  .auth-box h2 {
-    font-size: 1.2rem;
-    margin-bottom: var(--space-1);
-  }
-  .auth-box p {
-    color: var(--color-text-muted);
-    font-size: 0.85rem;
-    margin-bottom: var(--space-3);
-  }
-  .auth-box input {
-    width: 100%;
-    padding: 10px 14px;
-    border-radius: var(--radius-md);
-    background: var(--color-surface-alt);
-    border: 1px solid var(--color-border);
-    color: var(--color-text);
-    font-family: var(--font-mono);
-    font-size: 0.9rem;
-    outline: none;
-    margin-bottom: var(--space-2);
-  }
-  .auth-box input:focus {
-    border-color: var(--color-accent);
-    box-shadow: 0 0 0 3px var(--color-accent-glow);
-  }
-  .auth-box .btn-unlock {
-    width: 100%;
-    padding: 10px;
-    border-radius: var(--radius-md);
-    background: var(--color-accent);
-    color: var(--color-bg);
-    border: none;
-    font-family: var(--font-heading);
-    font-weight: 600;
-    font-size: 0.92rem;
-    cursor: pointer;
-    transition: background var(--duration-normal) var(--ease-out);
-  }
-  .auth-box .btn-unlock:hover {
-    background: var(--color-accent-hover);
-  }
-  .auth-error {
-    color: var(--color-red);
-    font-size: 0.78rem;
-    margin-top: var(--space-1);
-    display: none;
-  }
-
   /* ── Data source badge ── */
   .source-badge {
     display: inline-flex;
@@ -482,21 +414,6 @@
 <body>
 
 <a href="#dash-content" class="skip-link" id="skip-link">Skip to dashboard</a>
-
-<!-- ═══ Auth Overlay (Email gate) ═══ -->
-<div class="auth-overlay" id="auth-overlay">
-  <div class="auth-box">
-    <svg class="icon icon-accent icon-lg" viewBox="0 0 24 24" aria-hidden="true" style="margin:0 auto var(--space-2);display:block;">
-      <rect x="2" y="4" width="20" height="16" rx="2"/>
-      <path d="M2 7l10 7 10-7" fill="none" stroke="currentColor" stroke-width="1.5"/>
-    </svg>
-    <h2 id="auth-title">KAKAOPC Intel Dashboard</h2>
-    <p id="auth-desc">Enter your email to access intelligence data</p>
-    <input type="email" id="auth-email" placeholder="Enter your email" autofocus aria-label="Email address">
-    <button class="btn-unlock" id="auth-submit">Access Dashboard</button>
-    <div class="auth-error" id="auth-error" role="alert">Please enter a valid email address.</div>
-  </div>
-</div>
 
 <!-- ═══ Header ═══ -->
 <header class="dash-header">
@@ -578,7 +495,6 @@
       <button class="tab active" role="tab" aria-selected="true" onclick="switchTab('report')" id="tab-btn-report">Daily Report</button>
       <button class="tab" role="tab" aria-selected="false" onclick="switchTab('article')" id="tab-btn-article">Planet Article</button>
       <button class="tab" role="tab" aria-selected="false" onclick="switchTab('tracking')" id="tab-btn-tracking">Opportunity Tracking</button>
-      <button class="tab" role="tab" aria-selected="false" onclick="switchTab('jike')" id="tab-btn-jike">Jike Post</button>
     </div>
 
     <!-- Archive date navigation (hidden until archive data loads) -->
@@ -607,9 +523,6 @@
       </table>
       <div id="tracking-empty" class="empty" style="display:none;">No opportunities tracked yet.</div>
     </div>
-    <div id="tab-jike" class="report-body" style="display:none;" role="tabpanel">
-      <div class="loading" id="loading-jike">Loading Jike post&hellip;</div>
-    </div>
   </div>
 
   <div class="dash-footer">
@@ -631,13 +544,6 @@ var I18N = (function() {
       htmlLang: 'zh-CN',
       title: 'KAKAOPC情报科 — 控制台',
       skipLink: '跳至控制台',
-
-      // Auth
-      authTitle: 'KAKAOPC情报科',
-      authDesc: '请输入邮箱地址以访问情报数据',
-      authPlaceholder: '输入邮箱地址',
-      authButton: '进入控制台',
-      authError: '请输入有效的邮箱地址',
 
       // Header
       headerTitle: 'KAKAOPC情报科',
@@ -673,14 +579,12 @@ var I18N = (function() {
       tabReport: '日报',
       tabArticle: '星球文章',
       tabTracking: '机会追踪',
-      tabJike: '即刻帖子',
       tabBarAria: '内容标签页',
 
       // Loading
       loadingSignals: '正在加载信号数据…',
       loadingReport: '正在加载报告…',
       loadingArticle: '正在加载文章…',
-      loadingJike: '正在加载即刻帖子…',
 
       // Article actions
       btnDownload: '下载 .txt',
@@ -720,7 +624,6 @@ var I18N = (function() {
       emptyNoSignals: '今日无信号数据。',
       emptyNoReport: '日报尚未生成。',
       emptyNoArticle: '星球文章尚未生成。',
-      emptyNoJike: '即刻帖子尚未生成。',
       emptyNoData: '无数据。请运行每日流水线以生成情报数据。',
       emptyNoReportData: '无报告数据。',
 
@@ -749,13 +652,6 @@ var I18N = (function() {
       htmlLang: 'en',
       title: 'KAKAOPC Intel — Dashboard',
       skipLink: 'Skip to dashboard',
-
-      // Auth
-      authTitle: 'KAKAOPC Intel',
-      authDesc: 'Enter your email to access intelligence data',
-      authPlaceholder: 'Enter your email',
-      authButton: 'Access Dashboard',
-      authError: 'Please enter a valid email address.',
 
       // Header
       headerTitle: 'KAKAOPC Intel',
@@ -791,14 +687,12 @@ var I18N = (function() {
       tabReport: 'Daily Report',
       tabArticle: 'Planet Article',
       tabTracking: 'Opportunity Tracking',
-      tabJike: 'Jike Post',
       tabBarAria: 'Content tabs',
 
       // Loading
       loadingSignals: 'Loading signal data…',
       loadingReport: 'Loading report…',
       loadingArticle: 'Loading article…',
-      loadingJike: 'Loading Jike post…',
 
       // Article actions
       btnDownload: 'Download .txt',
@@ -838,7 +732,6 @@ var I18N = (function() {
       emptyNoSignals: 'No signal data available for today.',
       emptyNoReport: 'Daily report has not been generated yet.',
       emptyNoArticle: 'Planet article has not been generated yet.',
-      emptyNoJike: 'Jike post has not been generated yet.',
       emptyNoData: 'No data available. Run the daily pipeline to generate intelligence data.',
       emptyNoReportData: 'No report data available.',
 
@@ -889,18 +782,6 @@ var LANG = I18N.lang;
   // Skip link
   var skipLink = document.getElementById('skip-link');
   if (skipLink) skipLink.textContent = t('skipLink');
-
-  // Auth overlay
-  var authTitle = document.getElementById('auth-title');
-  if (authTitle) authTitle.textContent = t('authTitle');
-  var authDesc = document.getElementById('auth-desc');
-  if (authDesc) authDesc.textContent = t('authDesc');
-  var authInput = document.getElementById('auth-email');
-  if (authInput) authInput.placeholder = t('authPlaceholder');
-  var authBtn = document.getElementById('auth-submit');
-  if (authBtn) authBtn.textContent = t('authButton');
-  var authErr = document.getElementById('auth-error');
-  if (authErr) authErr.textContent = t('authError');
 
   // Header
   var headerTitle = document.getElementById('header-title');
@@ -956,14 +837,12 @@ var LANG = I18N.lang;
   setEl('tab-btn-report', t('tabReport'));
   setEl('tab-btn-article', t('tabArticle'));
   setEl('tab-btn-tracking', t('tabTracking'));
-  setEl('tab-btn-jike', t('tabJike'));
   document.getElementById('tab-bar').setAttribute('aria-label', t('tabBarAria'));
 
   // Loading texts
   setEl('loading-signals', t('loadingSignals'));
   setEl('loading-report', t('loadingReport'));
   setEl('loading-article', t('loadingArticle'));
-  setEl('loading-jike', t('loadingJike'));
 
   // Tracking headers
   setEl('th-tr-id', t('trId'));
@@ -997,47 +876,6 @@ var LANG = I18N.lang;
   }
 })();
 
-// ─── Email gate (replaces password gate) ───
-(function() {
-  if (sessionStorage.getItem('dashboard_authed') === '1') {
-    var el = document.getElementById('auth-overlay');
-    if (el) el.style.display = 'none';
-    return;
-  }
-
-  var overlay = document.getElementById('auth-overlay');
-  var input = document.getElementById('auth-email');
-  var btn = document.getElementById('auth-submit');
-  var errorEl = document.getElementById('auth-error');
-
-  function isValidEmail(email) {
-    // Basic validation: contains @ with something before and a domain after
-    return email && email.indexOf('@') > 0 && email.indexOf('.', email.indexOf('@')) > email.indexOf('@') + 1;
-  }
-
-  function tryAuth() {
-    var email = input.value.trim();
-    if (!email) return;
-
-    if (isValidEmail(email)) {
-      sessionStorage.setItem('dashboard_authed', '1');
-      sessionStorage.setItem('dashboard_email', email);
-      overlay.style.display = 'none';
-    } else {
-      errorEl.style.display = 'block';
-      input.focus();
-    }
-  }
-
-  btn.addEventListener('click', tryAuth);
-  input.addEventListener('keydown', function(e) {
-    if (e.key === 'Enter') tryAuth();
-  });
-
-  overlay.style.display = 'flex';
-  overlay.parentNode.style.display = '';
-})();
-
 // ─── Data loading ───
 var _data = null;
 var _articleRaw = '';
@@ -1058,11 +896,9 @@ function renderAll(data) {
   var pipeline = data.pipeline || {};
 
   // Bilingual content: prefer language-specific fields, fall back to default (zh)
-  var jikeMd = data.jike_post_md || '';
   if (LANG === 'en') {
     reportMd = data.report_md_en || reportMd;
     articleMd = data.article_md_en || articleMd;
-    jikeMd = data.jike_post_md_en || jikeMd;
   }
 
   document.getElementById('dash-date').textContent = data.date
@@ -1171,16 +1007,9 @@ function renderAll(data) {
     });
   }
 
-  // Jike Post
-  if (jikeMd) {
-    document.getElementById('tab-jike').innerHTML = marked.parse(jikeMd);
-  } else {
-    document.getElementById('tab-jike').innerHTML = emptyState('jike', t('emptyNoJike'));
-  }
-
   // Pipeline status indicators in footer
-  var steps = ['report', 'article', 'action', 'lp', 'jike_post'];
-  var labels = {report: 'RPT', article: 'ART', action: 'ACT', lp: 'LP', jike_post: 'JIKE'};
+  var steps = ['report', 'article', 'action', 'lp'];
+  var labels = {report: 'RPT', article: 'ART', action: 'ACT', lp: 'LP'};
   var indicators = [];
   steps.forEach(function(step) {
     var s = pipeline[step];
@@ -1276,7 +1105,6 @@ function switchTab(tab) {
   document.getElementById('tab-report').style.display = tab === 'report' ? '' : 'none';
   document.getElementById('tab-article').style.display = tab === 'article' ? '' : 'none';
   document.getElementById('tab-tracking').style.display = tab === 'tracking' ? '' : 'none';
-  document.getElementById('tab-jike').style.display = tab === 'jike' ? '' : 'none';
 
   var archiveNav = document.getElementById('archive-nav');
   if (archiveNav && _archiveData.length > 1) {

@@ -71,7 +71,6 @@ $Collectors = @(
     @{Name="w2solo"; Script="collect_w2solo"; Enabled=$true},
     @{Name="HuggingFace"; Script="collect_huggingface"; Enabled=$true},
     @{Name="TikTok"; Script="collect_tiktok"; Enabled=$true},
-    @{Name="Jike"; Script="collect_jike"; Enabled=$true},
     @{Name="Xiaohongshu"; Script="collect_xiaohongshu"; Enabled=$true}
 )
 
@@ -188,19 +187,7 @@ try {
     Write-Log "  [LP] FAIL: $_"
 }
 
-# --- Step 8: Jike Post ---
-
-Write-Log ""
-Write-Log "--- Step 8: Jike Post ---"
-
-try {
-    $output = & $Python -m scripts.generate_jike_post 2>&1
-    Write-Log "  [JikePost] OK"
-} catch {
-    Write-Log "  [JikePost] FAIL: $_"
-}
-
-# --- Step 9: Translate Content (zh → en) ---
+# --- Step 8: Translate Content (zh → en) ---
 
 Write-Log ""
 Write-Log "--- Step 9: Translate Content (zh → en) ---"

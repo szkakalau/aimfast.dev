@@ -139,7 +139,7 @@ export default function HomePage() {
             <div className="step-num">01</div>
             <h3>Scan 14 Sources</h3>
             <p>
-              HN, GitHub, Reddit, Product Hunt, V2EX, Jike, Xiaohongshu & more — cross-platform
+              HN, GitHub, Reddit, Product Hunt, V2EX, Xiaohongshu & more — cross-platform
               signals validated daily.
             </p>
           </div>

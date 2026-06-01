@@ -1,7 +1,7 @@
 """
 Content Translator — Chinese → English
-Translates daily report, article, and jike post to English via DeepSeek.
-Output: report-en.md, article-en.md, jike-post-en.md in the same daily dir.
+Translates daily report and article to English via DeepSeek.
+Output: report-en.md, article-en.md in the same daily dir.
 """
 import sys
 from datetime import datetime, timezone, timedelta
@@ -70,7 +70,6 @@ Output ONLY the translated markdown. No preamble, no explanation, no "Here's the
 TRANSLATION_CONFIG = {
     "report.md": {"temperature": 0.3, "max_tokens": 8192, "label": "Report"},
     "article.md": {"temperature": 0.5, "max_tokens": 8192, "label": "Article"},
-    "jike-post.md": {"temperature": 0.5, "max_tokens": 4096, "label": "Jike Post"},
 }
 
 
@@ -142,7 +141,6 @@ def run(date_str: str | None = None) -> dict:
     targets = [
         ("report.md", "report-en.md"),
         ("article.md", "article-en.md"),
-        ("jike-post.md", "jike-post-en.md"),
     ]
 
     results = {}

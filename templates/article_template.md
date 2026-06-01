@@ -72,7 +72,7 @@
 
 ## 关于 KAKAOPC 情报科
 
-我每天从全球 14 个信号源（HN、GitHub、Product Hunt、Reddit、V2EX、即刻、小红书……）中筛选高确定性机会，用这套方法论做三件事：
+我每天从全球 13 个信号源（HN、GitHub、Product Hunt、Reddit、V2EX、小红书……）中筛选高确定性机会，用这套方法论做三件事：
 
 1. **情报日报**：每天早上 5 分钟读完今天的信号格局
 2. **机会狙击**：信号够强 → 2 小时出 Landing Page → 7 天验证
