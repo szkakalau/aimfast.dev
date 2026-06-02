@@ -104,7 +104,7 @@ def _build_user_prompt(top_signal: dict, all_signals: list[dict], date_str: str)
         f"- 讨论量: {top_signal.get('discussion_count', 0)}",
         f"- 参与度: {json.dumps(top_signal.get('engagement', {}), ensure_ascii=False)}",
         f"- 摘要: {top_signal.get('summary', 'N/A')}",
-        f"- 标签: {', '.join(top_signal.get('tags', []))}",
+        f"- 标签: {', '.join([t for t in top_signal.get('tags', []) if t])}",
         f"- 打分明细: {json.dumps(bd, ensure_ascii=False)}",
         "",
         "## 相关信号上下文（辅助判断竞品和市场规模）",

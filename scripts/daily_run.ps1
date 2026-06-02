@@ -102,7 +102,11 @@ Write-Log "--- Step 2: Signal Processing ---"
 
 try {
     $output = & $Python -m scripts.process_signals 2>&1
-    Write-Log "  [Process] OK"
+    if ($LASTEXITCODE -ne 0) {
+        Write-Log "  [Process] FAIL (exit=$LASTEXITCODE)"
+    } else {
+        Write-Log "  [Process] OK"
+    }
 } catch {
     Write-Log "  [Process] FAIL: $_"
 }
@@ -114,7 +118,11 @@ Write-Log "--- Step 3: Daily Report ---"
 
 try {
     $output = & $Python -m scripts.generate_report 2>&1
-    Write-Log "  [Report] OK"
+    if ($LASTEXITCODE -ne 0) {
+        Write-Log "  [Report] FAIL (exit=$LASTEXITCODE)"
+    } else {
+        Write-Log "  [Report] OK"
+    }
 } catch {
     Write-Log "  [Report] FAIL: $_"
 }
@@ -126,7 +134,11 @@ Write-Log "--- Step 4: Planet Article ---"
 
 try {
     $output = & $Python -m scripts.generate_article 2>&1
-    Write-Log "  [Article] OK"
+    if ($LASTEXITCODE -ne 0) {
+        Write-Log "  [Article] FAIL (exit=$LASTEXITCODE)"
+    } else {
+        Write-Log "  [Article] OK"
+    }
 } catch {
     Write-Log "  [Article] FAIL: $_"
 }
@@ -218,7 +230,11 @@ Write-Log "--- Step 11: Dashboard ---"
 
 try {
     $output = & $Python -m scripts.generate_dashboard 2>&1
-    Write-Log "  [Dashboard] OK"
+    if ($LASTEXITCODE -ne 0) {
+        Write-Log "  [Dashboard] FAIL (exit=$LASTEXITCODE)"
+    } else {
+        Write-Log "  [Dashboard] OK"
+    }
 } catch {
     Write-Log "  [Dashboard] FAIL: $_"
 }

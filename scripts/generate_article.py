@@ -260,7 +260,7 @@ def _build_user_prompt(topic: dict, signals: list[dict], date_str: str) -> str:
             f"- 链接: {main_signal.get('url', 'N/A')}",
             f"- 互动: {main_signal.get('discussion_count', 0)} 讨论 | 参与度: {main_signal.get('engagement', {}).get('total', 0)}",
             f"- 摘要: {main_signal.get('summary', 'N/A')}",
-            f"- 标签: {', '.join(main_signal.get('tags', []))}",
+            f"- 标签: {', '.join([t for t in main_signal.get('tags', []) if t])}",
             f"- 打分明细: {json.dumps(bd, ensure_ascii=False)}",
         ]
 

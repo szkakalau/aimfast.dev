@@ -233,7 +233,7 @@ def _build_user_prompt(signals: list[dict], categories: dict, date_str: str) -> 
             f"- 互动: {s.get('discussion_count', 0)} 讨论 | 参与度: {s.get('engagement', {}).get('total', 0)}\n"
             f"- 链接: {s.get('url', 'N/A')}\n"
             f"- 摘要: {s.get('summary', 'N/A')}\n"
-            f"- 标签: {', '.join(s.get('tags', []))}\n"
+            f"- 标签: {', '.join([t for t in s.get('tags', []) if t])}\n"
             f"- 打分明细: {json.dumps(bd, ensure_ascii=False)}\n"
         )
 

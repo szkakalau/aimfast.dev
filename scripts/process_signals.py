@@ -453,9 +453,13 @@ def run(date_str: str | None = None) -> list[dict]:
     # Step 6: 排序
     signals.sort(key=lambda s: s.get("score", 0), reverse=True)
 
-    # Step 7: 清理内部字段（不输出 _raw_sources 到文件）
+    # Step 7: 清理内部字段（不输出 _raw_sources 到文件）+ 净化 tags
     for s in signals:
         s.pop("_raw_sources", None)
+        # 过滤 tags 中的 None / 非字符串值，防御下游 join() 崩溃
+        raw_tags = s.get("tags", [])
+        if raw_tags:
+            s["tags"] = [t for t in raw_tags if isinstance(t, str) and t]
 
     # 保存
     output_dir = DAILY_DIR / date

@@ -51,18 +51,22 @@ def _collect_archive(max_days: int = 60) -> list[dict]:
         has_report_en = report_en_path.exists()
         has_article_en = article_en_path.exists()
 
-        entry = {
-            "date": date_str,
-            "report_md": report_path.read_text(encoding="utf-8") if has_report else "",
-            "article_md": article_path.read_text(encoding="utf-8") if has_article else "",
-            "report_md_en": report_en_path.read_text(encoding="utf-8") if has_report_en else "",
-            "article_md_en": article_en_path.read_text(encoding="utf-8") if has_article_en else "",
-            "article_meta": json.loads(article_json_path.read_text(encoding="utf-8"))
-                            if article_json_path.exists() else None,
-            "has_report": has_report,
-            "has_article": has_article,
-        }
-        entries.append(entry)
+        try:
+            entry = {
+                "date": date_str,
+                "report_md": report_path.read_text(encoding="utf-8") if has_report else "",
+                "article_md": article_path.read_text(encoding="utf-8") if has_article else "",
+                "report_md_en": report_en_path.read_text(encoding="utf-8") if has_report_en else "",
+                "article_md_en": article_en_path.read_text(encoding="utf-8") if has_article_en else "",
+                "article_meta": json.loads(article_json_path.read_text(encoding="utf-8"))
+                                if article_json_path.exists() else None,
+                "has_report": has_report,
+                "has_article": has_article,
+            }
+            entries.append(entry)
+        except Exception as e:
+            print(f"[Dashboard] ⚠️  Skipping {date_str} in archive: {e}")
+            continue
 
         if len(entries) >= max_days:
             break
@@ -183,6 +187,15 @@ def run(date_str: str | None = None) -> str:
 
     data = collect_dashboard_data()
     json_str = json.dumps(data, ensure_ascii=False, indent=2)
+
+    # ── 防御性校验：archive 异常时告警（但继续写入，不阻塞管道）──
+    archive_count = len(data.get("archive", []))
+    history_count = len(data.get("history", []))
+    daily_dir_count = len([d for d in DAILY_DIR.iterdir() if d.is_dir()]) if DAILY_DIR.exists() else 0
+    if archive_count < 2 and daily_dir_count > 1:
+        print(f"[Dashboard] ⚠️  WARNING: archive 仅 {archive_count} 条，但 daily/ 下有 {daily_dir_count} 个日期目录 — 可能存在上游数据缺失（report.md/article.md 未生成）")
+    if history_count < 2 and daily_dir_count > 1:
+        print(f"[Dashboard] ⚠️  WARNING: history 仅 {history_count} 条，但 daily/ 下有 {daily_dir_count} 个日期目录 — 检查 signals.json 是否完整")
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     output_path = OUTPUT_DIR / "dashboard.json"
