@@ -5,10 +5,8 @@
  *
  * Usage: node scripts/fix-en-lang.mjs
  */
-import { readFileSync, writeFileSync } from 'node:fs';
-import { globSync } from 'node:fs';
+import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
-import { readdirSync } from 'node:fs';
 
 const OUT_DIR = join(process.cwd(), 'out');
 
