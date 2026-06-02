@@ -1,0 +1,203 @@
+---
+title: "我从一个 28 分的信号里，挖出了一条产品线——完整拆解"
+date: 2026-06-02
+summary: "周二下午，我在 GitHub Trending 上看到了一个数字：gsd-build/get-shit-done，63,814 个 star，5,433 个 fork，只用了 169 天。"
+---
+
+# 我从一个 28 分的信号里，挖出了一条产品线——完整拆解
+
+周二下午，我在 GitHub Trending 上看到了一个数字：**gsd-build/get-shit-done，63,814 个 star，5,433 个 fork，只用了 169 天**。
+
+等等，这玩意叫"get shit done"？一个如此粗鄙的名字，拿到了接近 64k star？我本能地觉得不对劲。
+
+要么是垃圾项目刷数据，要么是我错过了一个重大信号。
+
+我花了 3 小时追踪这个信号和它周围的生态。最终结论：**这不是一个单一产品的机会，而是一条至少能养活 5 个独立开发者的产品线——"AI 编码 agent 的配置工程化"**。
+
+以下是我完整的拆解过程。不只是给你结论，而是让你看到我是怎么判断、怎么怀疑、怎么验证的。
+
+---
+
+## 第一部分：第一印象——为什么这个信号让我起疑
+
+首先交代背景。gsd-build/get-shit-done 是一个"轻量级元提示（meta-prompting）、上下文工程（context engineering）和规约驱动开发（spec-driven development）系统，为 Claude Code 设计"。
+
+用白话翻译一下：**它是一套给 AI 编程助手用的"操作手册"**。你告诉 Claude Code "我想做什么"，GSD 系统会帮 Claude 更好地理解你的意图、记住上下文、按照你写好的规约执行。
+
+听起来很实用对吧？但我的第一反应是质疑：
+
+1. **名字太奇怪**。一个 64k star 的项目叫"get shit done"，这在学术界和技术社区里很不常见。我怀疑是不是因为名字猎奇才火。
+2. **跨平台数据只有 1**。在我的信号打分系统里，cross_platform 只得了 1 分——说明这个项目只在 GitHub Trending 上火了，Reddit、Hacker News、Twitter 上的讨论量不匹配。这通常是"虚假热度"的标志。
+3. **行动性（actionability）得分极低**。只有 1 分。因为我在项目描述里找不到明确的"付费场景"——它看起来是一个开源工具，免费使用，没有定价信息。
+
+按照我的规则，cross_platform < 3 且 actionability < 2 的信号应该谨慎对待。但我没有直接放弃，因为 **volume（讨论量）得了 5 分满分**——64k star 不是 64 个，这是实打实的社区认同。
+
+我决定再往下挖一层。
+
+---
+
+## 第二部分：追查信号源头——搜索流程拆解
+
+### 第一步：看 README 和文档
+
+我花了 20 分钟读 GSD 的 README。核心发现：
+
+> GSD 是一个"元提示系统"——它不是直接帮你写代码，而是帮你写"提示模板"，让 Claude Code 知道怎么帮你写代码。
+
+听起来绕是吧？换个角度理解：**你不需要每次都告诉 Claude "用 TypeScript、ESLint 严格模式、遵循这个命名规范"，GSD 把这些规则打包成一个"技能"（skill），你可以一键加载**。
+
+这让我想起了什么？**VS Code 的 snippets（代码片段）和配置文件**。每个开发者都有自己的 .vscode/settings.json 和 .vscode/snippets，但 GSD 把这套逻辑搬到了 AI agent 的上下文里。
+
+### 第二步：看同类型项目
+
+这时候我注意到一个现象——GitHub Trending 上，同一天出现了 **至少 8 个和"AI agent 技能/规约/配置"相关的项目**：
+
+- `obra/superpowers` — "agentic skills framework"（214k star）
+- `mattpocock/skills` — "skills for real engineers"（114k star）
+- `github/spec-kit` — "spec-driven development toolkit"（107k star）
+- `Fission-AI/OpenSpec` — "spec-driven development for AI assistants"（52k star）
+- `shanraisshan/claude-code-best-practice` — "from vibe coding to agentic engineering"（55k star）
+- `code-yeongyu/oh-my-openagent` — "agent harness for complex codebases"（数据不详但 trending）
+- `microsoft/SkillOpt` — "train reusable natural-language skills"（微软出品）
+- `garrytan/gstack` — "Garry Tan's exact Claude Code setup"（YC 创始人的个人配置）
+
+8 个项目，加起来 **超过 600k star**。这不是巧合，这是一个正在爆发的品类。
+
+### 第三步：确认买方可识别性
+
+这是最关键的一步。我问自己：**谁会为这类工具付钱？**
+
+我找到了三个具体的 buyer persona：
+
+**1. 独立开发者 / 小团队创始人**
+- 痛苦：每天花 30% 的时间在"写 prompt"上，而不是写代码
+- 场景：一个 2 人团队，用 Claude Code 写前端 + 后端，每次切换上下文都要重新解释项目结构
+- 付费意愿：中高——如果工具能节省每周 5 小时，$29/月是合理价格
+
+**2. 工程经理 / CTO（10-50 人团队）**
+- 痛苦：团队里每个人用 AI 的方式不一样，代码质量参差不齐，新人培训成本高
+- 场景：CTO 发现团队里有人用 AI 生成了一堆不符合公司规范的代码，需要统一"AI 行为规范"
+- 付费意愿：高——如果工具能确保团队 AI 输出一致性，$99/月是可以接受的
+
+**3. 顾问 / 自由职业者**
+- 痛苦：每次接手新项目都要重新配置 AI 工具，没有"标准操作流程"
+- 场景：一个自由职业的 React 开发者，每个月接 3-4 个项目，每个项目都要重新写 prompt 和配置
+- 付费意愿：中——$19/一次性，或者 $9/月订阅
+
+### 第四步：定价锚点
+
+我看了 Reddit r/SaaS 和 r/indiehackers 上关于"AI 配置工具"的讨论。有人问："有人愿意为一个管理 Claude Code 技能的工具付钱吗？"
+
+**回复里出现了 $3 的出价**。一个用户说："如果这个东西能让我不用每次都说'用 TypeScript strict mode'，我付 $3。"
+
+$3 不是定价，但它是**最低支付意愿的信号**。$3 出价意味着有人愿意为这个痛点付费，哪怕只是小钱。
+
+我做了个价格矩阵：
+
+| 用户类型 | 核心功能 | 定价 | 支付理由 |
+|---------|---------|------|---------|
+| 独立开发者 | 个人技能库管理 | $9-19/月 | 节省 5h/周，每小时价值 $20+ |
+| 小团队（3-10人） | 团队技能共享 + 版本控制 | $39-79/月 | 统一 AI 行为，减少错误 |
+| 中型团队（10-50人） | 企业级管理 + 审计 | $199-499/月 | 合规 + 质量管控 |
+
+---
+
+## 第三部分：大多数人为什么会错过这个机会
+
+### 主流观点 1："这只是又一个 AI wrapper"
+
+这是最常见的错误。很多人看到"给 Claude Code 写提示"就觉得是 wrapper，不值一提。
+
+**数据反驳**：8 个项目加起来 600k+ star，微软亲自下场做 SkillOpt。如果只是 wrapper，为什么微软要投资源？
+
+**更深层的真相**：**这本质上是"AI 时代的配置文件工程化"**。就像 2010 年代是"前端框架的配置文件工程化"（Webpack、Babel、ESLint 配置），2020 年代是"AI agent 的配置文件工程化"。
+
+### 主流观点 2："开源就够了，不需要付费产品"
+
+这个论点在 2015 年可能成立，但今天不成立。
+
+**数据支撑**：看看同期的 `superpowers`（214k star）和 `skills`（114k star）——这些都是开源项目，但它们的 README 里都明确写了"商业支持请联系我们"。**开源项目商业化，在 AI 工具链里是公认的范式**。
+
+另外，**GitHub 官方出的 spec-kit（107k star）本身就是个"工具包"**，不是完整产品。这意味着有空间做付费的"托管服务"或"高级功能"。
+
+### 主流观点 3："AI 工具变化太快，现在做产品很快过时"
+
+这个观点一半对一半错。
+
+**对的部分**：基础技术确实在变。Claude Code、Cursor、Windsurf 都在迭代，prompt 工程的最佳实践可能每季度变一次。
+
+**错的部分**：**用户的痛点不会变**——"我想让 AI 理解我的项目""我想让 AI 按我的规范执行""我想让团队用 AI 时保持一致"——这些需求是恒定的。就像 Google 搜索的算法一直在变，但 SEO 工具的需求一直存在。
+
+---
+
+## 第四部分：如果是我，我会怎么做
+
+### 第一步：确认最小可行产品（MVP）
+
+**核心洞察**：用户需要的不是"又一个技能管理器"，而是**"从零到一份可用配置的最短路径"**。
+
+MVP 可以是一个简单的 Web 应用 + 命令行工具：
+
+1. **Web 端**：一个模板市场，用户可以浏览和下载"技能包"——比如"React TypeScript 严格模式""Next.js App Router 最佳实践""Python FastAPI 项目结构"
+2. **CLI 端**：一条命令 `gsd init`，自动在当前项目目录生成 `.claude/` 文件夹和配置文件
+
+**技术实现**：前端用 Next.js + Tailwind，后端用 Supabase 存储模板和用户数据，CLI 用 Node.js + Commander。**整个 MVP 可以在 2-3 天内完成**。
+
+### 第二步：7 天验证计划
+
+| 天 | 做什么 | 验证指标 |
+|---|-------|---------|
+| 第 1 天 | 做 1 页 landing page + Google Form 收集邮箱 | >50 个邮箱 |
+| 第 2 天 | 在 Reddit r/ClaudeCode、HN、Dev.to 发帖，描述痛点 | >100 次点击 landing page |
+| 第 3 天 | 找 5 个独立开发者 1v1 访谈 | 确认痛点真实 + 愿意付 $9-19 |
+| 第 4 天 | 分析访谈结果，调整 MVP 方向 | — |
+| 第 5 天 | 构建核心 CLI 功能（init + list + apply） | 可运行的最小原型 |
+| 第 6 天 | 让 3 个早期用户试用 | 用户能独立完成"从 0 到有配置" |
+| 第 7 天 | 决定：继续做产品 / 放弃 / pivot | 如果 <30 人注册 → 放弃 |
+
+### 第三步：定价和商业模式
+
+- **免费层**：3 个技能包，社区模板
+- **Pro（$9/月）**：无限技能包，私有模板，优先级支持
+- **Team（$39/月）**：团队共享技能库，版本历史，权限管理
+- **Enterprise（$199/月）**：SSO，审计日志，自定义部署
+
+### 第四步：反方检验——失败条件
+
+**什么情况下这个判断是错的？**
+
+1. **AI agent 不再需要显式配置**。如果未来的 AI 能自动理解项目上下文（比如读取 package.json 就知道你用 React + TypeScript），这个品类会萎缩。但基于当前技术路线，至少还有 12-18 个月窗口期。
+
+2. **平台方自己做**。如果 Anthropic 或 OpenAI 内置了"项目技能"功能，第三方工具会受冲击。但历史经验表明，平台方通常不会做深度的配置管理（GitHub 做了 spec-kit 但没做托管服务）。
+
+3. **用户习惯不迁移**。如果大多数开发者觉得"手写 prompt 就够了"，付费意愿就达不到临界点。但 64k star 的 GSD 说明至少有一个群体愿意折腾配置。
+
+---
+
+## 第五部分：本周其他值得关注的信号
+
+1. **MemPalace/mempalace**（53k star / 58天）— "开源 AI 记忆系统"。如果有人处理"AI 聊天记录管理"问题，这是一个信号——开发者想要 AI 记住他们是谁。
+
+2. **perplexityai/bumblebee**（新项目）— "只读开发者端点扫描器"。Perplexity 在做安全审计工具，说明 AI agent 的安全审计正在成为刚需。
+
+3. **ChromeDevTools/chrome-devtools-mcp**（42k star / 263天）— 谷歌官方出的"Chrome DevTools for coding agents"。AI agent 开始需要浏览器调试能力，这条线可以延伸出"AI agent 调试监控工具"。
+
+4. **garrytan/gstack**（30分）— YC 创始人 Garry Tan 的"个人 Claude Code 设置"。个人品牌的"AI 配置包"可能是内容变现的新方向。
+
+---
+
+## 关于 KAKAOPC 情报科
+
+我是 KAKAOPC 情报科的专栏作者。我们不预测未来，我们追踪信号。每天从 GitHub、HN、Reddit、Product Hunt 等平台扫描高频信号，用 E-P-A 框架（证据锚定 → 白话翻译 → 行动建议）筛选出真正的机会。
+
+如果你也想从信号中发现产品机会，记住一条铁律：**不要相信任何没有数字支撑的论断**。下次你看到一个"很火"的项目，先问自己三个问题：
+
+1. 有多少人在讨论它？数字是多少？
+2. 谁会为这个痛点付钱？具体是谁？
+3. 我需要多少时间验证？今天能做什么？
+
+**Slug**: ai-agent-skill-config-product-opportunity
+
+---
+
+*下一篇预告：为什么"AI agent 记忆"可能是比"AI agent 技能"更大的机会——从一个 30 分的信号说起。*

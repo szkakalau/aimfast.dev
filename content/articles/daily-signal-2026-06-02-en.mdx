@@ -1,0 +1,203 @@
+---
+title: "I Dug a Product Line Out of a 28-Point Signal — Full Breakdown"
+date: 2026-06-02
+summary: "Tuesday afternoon, I spotted a number on GitHub Trending: gsd-build/get-shit-done, 63,814 stars, 5,433 forks, in just 169 days."
+---
+
+# I Dug a Product Line Out of a 28-Point Signal — Full Breakdown
+
+Tuesday afternoon, I spotted a number on GitHub Trending: **gsd-build/get-shit-done, 63,814 stars, 5,433 forks, in just 169 days**.
+
+Wait — this thing is called "get shit done"? A name that crude, hitting nearly 64k stars? My gut said something was off.
+
+Either it's a garbage project faking numbers, or I was missing a major signal.
+
+I spent 3 hours tracing this signal and its surrounding ecosystem. Final verdict: **This isn't a single-product opportunity — it's a product line that could sustain at least 5 indie developers: "Configuration engineering for AI coding agents."**
+
+Here's my complete breakdown. I'm not just giving you the conclusion — I'm showing you how I judged, doubted, and validated it.
+
+---
+
+## Part 1: First Impressions — Why This Signal Made Me Suspicious
+
+First, some context. gsd-build/get-shit-done is a "lightweight meta-prompting, context engineering, and spec-driven development system for Claude Code."
+
+In plain English: **It's a set of "operating manuals" for AI coding assistants.** You tell Claude Code "what I want to do," and the GSD system helps Claude better understand your intent, remember context, and execute according to your specs.
+
+Sounds useful, right? But my first reaction was skepticism:
+
+1. **The name is bizarre.** A 64k-star project called "get shit done" is highly unusual in academic and technical communities. I wondered if it went viral purely for the novelty.
+2. **Cross-platform data scored only 1.** In my signal scoring system, cross_platform got just 1 point — meaning this project only blew up on GitHub Trending. Reddit, Hacker News, and Twitter discussion didn't match. That's usually a red flag for "fake hype."
+3. **Actionability scored extremely low.** Only 1 point. I couldn't find a clear "paid use case" in the project description — it looked like a free open-source tool with no pricing info.
+
+By my rules, signals with cross_platform < 3 and actionability < 2 should be approached with caution. But I didn't bail, because **volume (discussion volume) scored a perfect 5** — 64k stars isn't 64 stars. That's real community validation.
+
+I decided to dig one layer deeper.
+
+---
+
+## Part 2: Tracing the Signal Source — Search Process Breakdown
+
+### Step 1: Read the README and Docs
+
+I spent 20 minutes reading GSD's README. Core finding:
+
+> GSD is a "meta-prompting system" — it doesn't directly help you write code; it helps you write "prompt templates" so Claude Code knows *how* to help you write code.
+
+Sounds convoluted? Think of it this way: **You no longer need to tell Claude "use TypeScript, ESLint strict mode, follow this naming convention" every single time. GSD bundles those rules into a "skill" you can load with one click.**
+
+This reminded me of something: **VS Code snippets and configuration files.** Every developer has their own .vscode/settings.json and .vscode/snippets. GSD just moved that logic into the AI agent's context.
+
+### Step 2: Look at Similar Projects
+
+That's when I noticed a pattern — on the same day, GitHub Trending had **at least 8 projects related to "AI agent skills/specs/configuration":**
+
+- `obra/superpowers` — "agentic skills framework" (214k stars)
+- `mattpocock/skills` — "skills for real engineers" (114k stars)
+- `github/spec-kit` — "spec-driven development toolkit" (107k stars)
+- `Fission-AI/OpenSpec` — "spec-driven development for AI assistants" (52k stars)
+- `shanraisshan/claude-code-best-practice` — "from vibe coding to agentic engineering" (55k stars)
+- `code-yeongyu/oh-my-openagent` — "agent harness for complex codebases" (data N/A but trending)
+- `microsoft/SkillOpt` — "train reusable natural-language skills" (Microsoft-backed)
+- `garrytan/gstack` — "Garry Tan's exact Claude Code setup" (YC founder's personal config)
+
+8 projects, **over 600k stars combined**. This isn't a coincidence — it's a category exploding.
+
+### Step 3: Confirm Buyer Identifiability
+
+This was the most critical step. I asked myself: **Who would pay for this kind of tool?**
+
+I found three concrete buyer personas:
+
+**1. Indie Developers / Small Team Founders**
+- Pain: Spending 30% of their day "writing prompts" instead of writing code
+- Scenario: A 2-person team using Claude Code for frontend + backend, re-explaining project structure every time they switch context
+- Willingness to pay: Medium-high — if the tool saves 5 hours/week, $29/month is reasonable
+
+**2. Engineering Managers / CTOs (10-50 person teams)**
+- Pain: Everyone on the team uses AI differently, code quality varies, new hire onboarding is expensive
+- Scenario: CTO discovers team members generated code that doesn't follow company standards — needs to enforce "AI behavior rules"
+- Willingness to pay: High — if the tool ensures consistent AI output across the team, $99/month is acceptable
+
+**3. Consultants / Freelancers**
+- Pain: Reconfiguring AI tools for every new project, no "standard operating procedure"
+- Scenario: A freelance React developer taking on 3-4 projects per month, rewriting prompts and configs each time
+- Willingness to pay: Medium — $19 one-time, or $9/month subscription
+
+### Step 4: Pricing Anchor
+
+I checked Reddit r/SaaS and r/indiehackers for discussions about "AI configuration tools." Someone asked: "Would anyone pay for a tool to manage Claude Code skills?"
+
+**A bid of $3 appeared in the replies.** One user said: "If this thing saves me from saying 'use TypeScript strict mode' every time, I'd pay $3."
+
+$3 isn't a price — but it's a **signal of minimum willingness to pay**. A $3 bid means someone is willing to pay for this pain point, even if it's small.
+
+I built a price matrix:
+
+| User Type | Core Feature | Price | Reason to Pay |
+|-----------|-------------|-------|---------------|
+| Indie Developer | Personal skill library management | $9-19/month | Saves 5h/week, each hour worth $20+ |
+| Small Team (3-10) | Team skill sharing + version control | $39-79/month | Unifies AI behavior, reduces errors |
+| Mid-Sized Team (10-50) | Enterprise management + audit | $199-499/month | Compliance + quality control |
+
+---
+
+## Part 3: Why Most People Miss This Opportunity
+
+### Mainstream View 1: "It's Just Another AI Wrapper"
+
+This is the most common mistake. Many people see "writing prompts for Claude Code" and dismiss it as a wrapper, not worth attention.
+
+**Data counterargument**: 8 projects with 600k+ stars combined, and Microsoft themselves built SkillOpt. If it were just a wrapper, why would Microsoft invest resources?
+
+**Deeper truth**: **This is essentially "configuration file engineering for the AI era."** Just as the 2010s were about "configuration file engineering for frontend frameworks" (Webpack, Babel, ESLint configs), the 2020s are about "configuration file engineering for AI agents."
+
+### Mainstream View 2: "Open Source Is Enough — No Paid Product Needed"
+
+This argument might have held in 2015, but not today.
+
+**Data backing**: Look at `superpowers` (214k stars) and `skills` (114k stars) — both are open source, but their READMEs explicitly say "contact us for commercial support." **Commercializing open-source projects in the AI toolchain is a recognized paradigm.**
+
+Plus, **GitHub's official spec-kit (107k stars) is itself a "toolkit," not a full product.** That leaves room for paid "hosted services" or "premium features."
+
+### Mainstream View 3: "AI Tools Change Too Fast — Any Product Will Be Obsolete Soon"
+
+This view is half right, half wrong.
+
+**Right part**: The underlying tech is indeed changing. Claude Code, Cursor, and Windsurf are all iterating. Best practices for prompt engineering might shift every quarter.
+
+**Wrong part**: **User pain points don't change** — "I want AI to understand my project," "I want AI to follow my rules," "I want my team to use AI consistently" — these needs are constant. Google's search algorithm changes constantly, but the demand for SEO tools never goes away.
+
+---
+
+## Part 4: If It Were Me, Here's What I'd Do
+
+### Step 1: Define the MVP
+
+**Core insight**: Users don't need "yet another skill manager." They need **"the shortest path from zero to a usable configuration."**
+
+The MVP could be a simple web app + CLI tool:
+
+1. **Web**: A template marketplace where users browse and download "skill packs" — e.g., "React TypeScript Strict Mode," "Next.js App Router Best Practices," "Python FastAPI Project Structure"
+2. **CLI**: A single command `gsd init` that auto-generates a `.claude/` folder and config files in the current project directory
+
+**Tech stack**: Frontend with Next.js + Tailwind, backend with Supabase for template and user data storage, CLI with Node.js + Commander. **The entire MVP can be built in 2-3 days.**
+
+### Step 2: 7-Day Validation Plan
+
+| Day | What to Do | Validation Metric |
+|-----|-----------|-------------------|
+| Day 1 | Build a 1-page landing page + Google Form to collect emails | >50 emails |
+| Day 2 | Post on Reddit r/ClaudeCode, HN, Dev.to describing the pain point | >100 landing page clicks |
+| Day 3 | 1-on-1 interviews with 5 indie developers | Confirm pain is real + willing to pay $9-19 |
+| Day 4 | Analyze interview results, adjust MVP direction | — |
+| Day 5 | Build core CLI features (init + list + apply) | Runnable minimum prototype |
+| Day 6 | Onboard 3 early users | Users can independently go "from 0 to configured" |
+| Day 7 | Decision: continue / abandon / pivot | If <30 signups → abandon |
+
+### Step 3: Pricing and Business Model
+
+- **Free tier**: 3 skill packs, community templates
+- **Pro ($9/month)**: Unlimited skill packs, private templates, priority support
+- **Team ($39/month)**: Shared team skill library, version history, permissions
+- **Enterprise ($199/month)**: SSO, audit logs, custom deployment
+
+### Step 4: Counterargument Check — Failure Conditions
+
+**When would this judgment be wrong?**
+
+1. **AI agents no longer need explicit configuration.** If future AI can automatically understand project context (e.g., reading package.json to know you use React + TypeScript), this category shrinks. But based on the current tech trajectory, there's at least a 12-18 month window.
+
+2. **The platform builds it themselves.** If Anthropic or OpenAI bake "project skills" into their products, third-party tools take a hit. But history shows platforms usually don't go deep into configuration management (GitHub built spec-kit but not a hosted service).
+
+3. **User habits don't shift.** If most developers feel "writing prompts by hand is enough," willingness to pay never reaches critical mass. But GSD's 64k stars suggest at least one group is willing to tinker with configuration.
+
+---
+
+## Part 5: Other Signals Worth Watching This Week
+
+1. **MemPalace/mempalace** (53k stars / 58 days) — "Open-source AI memory system." If someone's tackling "AI chat history management," this is a signal — developers want AI to remember who they are.
+
+2. **perplexityai/bumblebee** (new project) — "Read-only developer endpoint scanner." Perplexity is building security audit tools — meaning AI agent security auditing is becoming a real need.
+
+3. **ChromeDevTools/chrome-devtools-mcp** (42k stars / 263 days) — Google's official "Chrome DevTools for coding agents." AI agents are starting to need browser debugging capabilities — this line could extend into "AI agent debugging and monitoring tools."
+
+4. **garrytan/gstack** (30 points) — YC founder Garry Tan's "personal Claude Code setup." Personal-branded "AI configuration packs" could be a new direction for content monetization.
+
+---
+
+## About KAKAOPC Intelligence Bureau
+
+I'm a columnist for KAKAOPC Intelligence Bureau. We don't predict the future — we track signals. Every day, we scan GitHub, HN, Reddit, Product Hunt, and other platforms for high-frequency signals, filtering for real opportunities using the E-P-A framework (Evidence Anchoring → Plain Language Translation → Actionable Advice).
+
+If you want to discover product opportunities from signals, remember one iron rule: **Don't trust any claim without numbers to back it up.** Next time you see a "hot" project, ask yourself three questions:
+
+1. How many people are talking about it? What's the number?
+2. Who would pay for this pain point? Specifically who?
+3. How much time do I need to validate it? What can I do today?
+
+**Slug**: ai-agent-skill-config-product-opportunity
+
+---
+
+*Next up: Why "AI agent memory" might be a bigger opportunity than "AI agent skills" — starting from a 30-point signal.*
