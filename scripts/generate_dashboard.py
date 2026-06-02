@@ -20,58 +20,77 @@ TZ_SHANGHAI = timezone(timedelta(hours=8))
 
 
 def _collect_archive(max_days: int = 60) -> list[dict]:
-    """Collect report.md, article.md, article.json for all available dates (newest first)."""
-    if not DAILY_DIR.exists():
-        return []
+    """Collect report.md, article.md, article.json for all available dates (newest first).
 
-    entries = []
-    for date_dir in sorted(DAILY_DIR.iterdir(), reverse=True):
-        if not date_dir.is_dir():
-            continue
-        date_str = date_dir.name
+    Merged with any pre-existing dashboard.json archive to preserve history when
+    daily/ directory is absent or incomplete (e.g. fresh clone, CI, Vercel build).
+    """
+    # ── 1. Collect fresh entries from daily/ ──
+    fresh_entries: dict[str, dict] = {}
+    if DAILY_DIR.exists():
+        for date_dir in sorted(DAILY_DIR.iterdir(), reverse=True):
+            if not date_dir.is_dir():
+                continue
+            date_str = date_dir.name
 
+            try:
+                datetime.strptime(date_str, "%Y-%m-%d")
+            except ValueError:
+                continue
+
+            report_path = date_dir / "report.md"
+            article_path = date_dir / "article.md"
+            article_json_path = date_dir / "article.json"
+
+            has_report = report_path.exists()
+            has_article = article_path.exists()
+
+            if not has_report and not has_article:
+                continue
+
+            report_en_path = date_dir / "report-en.md"
+            article_en_path = date_dir / "article-en.md"
+            has_report_en = report_en_path.exists()
+            has_article_en = article_en_path.exists()
+
+            try:
+                entry = {
+                    "date": date_str,
+                    "report_md": report_path.read_text(encoding="utf-8") if has_report else "",
+                    "article_md": article_path.read_text(encoding="utf-8") if has_article else "",
+                    "report_md_en": report_en_path.read_text(encoding="utf-8") if has_report_en else "",
+                    "article_md_en": article_en_path.read_text(encoding="utf-8") if has_article_en else "",
+                    "article_meta": json.loads(article_json_path.read_text(encoding="utf-8"))
+                                    if article_json_path.exists() else None,
+                    "has_report": has_report,
+                    "has_article": has_article,
+                }
+                fresh_entries[date_str] = entry
+            except Exception as e:
+                print(f"[Dashboard] [WARN] Skipping {date_str} in archive: {e}")
+                continue
+
+    # ── 2. Inherit entries from existing dashboard.json (survives git clone / CI) ──
+    existing_path = OUTPUT_DIR / "dashboard.json"
+    inherited = 0
+    if existing_path.exists():
         try:
-            datetime.strptime(date_str, "%Y-%m-%d")
-        except ValueError:
-            continue
-
-        report_path = date_dir / "report.md"
-        article_path = date_dir / "article.md"
-        article_json_path = date_dir / "article.json"
-
-        has_report = report_path.exists()
-        has_article = article_path.exists()
-
-        if not has_report and not has_article:
-            continue
-
-        # Bilingual: English variants (*-en.md) — optional, fall back to empty
-        report_en_path = date_dir / "report-en.md"
-        article_en_path = date_dir / "article-en.md"
-        has_report_en = report_en_path.exists()
-        has_article_en = article_en_path.exists()
-
-        try:
-            entry = {
-                "date": date_str,
-                "report_md": report_path.read_text(encoding="utf-8") if has_report else "",
-                "article_md": article_path.read_text(encoding="utf-8") if has_article else "",
-                "report_md_en": report_en_path.read_text(encoding="utf-8") if has_report_en else "",
-                "article_md_en": article_en_path.read_text(encoding="utf-8") if has_article_en else "",
-                "article_meta": json.loads(article_json_path.read_text(encoding="utf-8"))
-                                if article_json_path.exists() else None,
-                "has_report": has_report,
-                "has_article": has_article,
-            }
-            entries.append(entry)
+            old_data = json.loads(existing_path.read_text(encoding="utf-8"))
+            old_archive = old_data.get("archive", [])
+            for old_entry in old_archive:
+                old_date = old_entry.get("date", "")
+                if old_date and old_date not in fresh_entries:
+                    fresh_entries[old_date] = old_entry
+                    inherited += 1
         except Exception as e:
-            print(f"[Dashboard] ⚠️  Skipping {date_str} in archive: {e}")
-            continue
+            print(f"[Dashboard] [WARN] Could not inherit archive from existing dashboard.json: {e}")
 
-        if len(entries) >= max_days:
-            break
+    if inherited:
+        print(f"[Dashboard] [inherit] Restored {inherited} archive entries from previous dashboard.json")
 
-    return entries
+    # ── 3. Sort newest-first, cap at max_days ──
+    sorted_entries = sorted(fresh_entries.values(), key=lambda e: e["date"], reverse=True)
+    return sorted_entries[:max_days]
 
 
 def _find_latest_date() -> str | None:
@@ -107,22 +126,39 @@ def collect_dashboard_data() -> dict:
     else:
         today_summary = {}
 
-    # 2. History (last 14 days)
-    history = []
+    # 2. History (last 14 days) — fresh from daily/ + inherited from existing JSON
+    history_by_date: dict[str, dict] = {}
     for i in range(14):
         d = (datetime.now(TZ_SHANGHAI) - timedelta(days=i)).strftime("%Y-%m-%d")
         signals_path = DAILY_DIR / d / "signals.json"
         if signals_path.exists():
-            data = json.loads(signals_path.read_text(encoding="utf-8"))
-            summary = data.get("summary", {})
-            history.append({
-                "date": d,
-                "total_signals": data.get("total_raw", len(data.get("signals", []))),
-                "top_score": summary.get("top_score", 0),
-                "avg_score": summary.get("avg_score", 0),
-                "action_qualified": summary.get("action_qualified", 0),
-                "cross_platform": summary.get("cross_platform_signals", 0),
-            })
+            try:
+                data = json.loads(signals_path.read_text(encoding="utf-8"))
+                summary = data.get("summary", {})
+                history_by_date[d] = {
+                    "date": d,
+                    "total_signals": data.get("total_raw", len(data.get("signals", []))),
+                    "top_score": summary.get("top_score", 0),
+                    "avg_score": summary.get("avg_score", 0),
+                    "action_qualified": summary.get("action_qualified", 0),
+                    "cross_platform": summary.get("cross_platform_signals", 0),
+                }
+            except Exception as e:
+                print(f"[Dashboard] [WARN] Skipping history {d}: {e}")
+
+    # Inherit history from existing dashboard.json for dates missing in daily/
+    existing_dashboard = OUTPUT_DIR / "dashboard.json"
+    if existing_dashboard.exists():
+        try:
+            old = json.loads(existing_dashboard.read_text(encoding="utf-8"))
+            for h in old.get("history", []):
+                hd = h.get("date", "")
+                if hd and hd not in history_by_date:
+                    history_by_date[hd] = h
+        except Exception:
+            pass
+
+    history = [history_by_date[d] for d in sorted(history_by_date, reverse=True)]
 
     # 3. Opportunity tracking
     opportunities = []
@@ -192,10 +228,13 @@ def run(date_str: str | None = None) -> str:
     archive_count = len(data.get("archive", []))
     history_count = len(data.get("history", []))
     daily_dir_count = len([d for d in DAILY_DIR.iterdir() if d.is_dir()]) if DAILY_DIR.exists() else 0
-    if archive_count < 2 and daily_dir_count > 1:
-        print(f"[Dashboard] ⚠️  WARNING: archive 仅 {archive_count} 条，但 daily/ 下有 {daily_dir_count} 个日期目录 — 可能存在上游数据缺失（report.md/article.md 未生成）")
-    if history_count < 2 and daily_dir_count > 1:
-        print(f"[Dashboard] ⚠️  WARNING: history 仅 {history_count} 条，但 daily/ 下有 {daily_dir_count} 个日期目录 — 检查 signals.json 是否完整")
+    if archive_count < 3 and daily_dir_count < 3:
+        # Only warn when we have reason to expect more (enough daily dirs exist)
+        pass
+    elif archive_count < 3 and daily_dir_count >= 3:
+        print(f"[Dashboard] [WARN] WARNING: archive 仅 {archive_count} 条，但 daily/ 下有 {daily_dir_count} 个日期目录 — 可能存在上游数据缺失（report.md/article.md 未生成）")
+    if history_count < 3 and daily_dir_count >= 3:
+        print(f"[Dashboard] [WARN] WARNING: history 仅 {history_count} 条，但 daily/ 下有 {daily_dir_count} 个日期目录 — 检查 signals.json 是否完整")
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     output_path = OUTPUT_DIR / "dashboard.json"
