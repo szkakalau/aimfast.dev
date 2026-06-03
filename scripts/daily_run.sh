@@ -68,8 +68,6 @@ COLLECTORS=(
     "V2EX:collect_v2ex"
     "w2solo:collect_w2solo"
     "HuggingFace:collect_huggingface"
-    "TikTok:collect_tiktok"
-    "Xiaohongshu:collect_xiaohongshu"
 )
 
 for entry in "${COLLECTORS[@]}"; do
@@ -214,12 +212,23 @@ if [ "$(date +%u)" -eq 7 ]; then
     fi
 fi
 
+# ─── Step 12b: BuilderPulse 对比 ───
+
+log ""
+log "--- Step 12b: BuilderPulse Comparison ---"
+
+if $PYTHON -m scripts.compare_with_builderpulse --date "$DATE" 2>&1; then
+    log "  [Compare] OK"
+else
+    log "  [Compare] FAIL (non-blocking)"
+fi
+
 # ─── Step 13: Git commit & push ───
 
 log ""
 log "--- Step 13: Deploy Dashboard Data & SEO Content ---"
 
-git add public/dashboard/data/dashboard.json public/sitemap.xml content/reports/ content/articles/ public/*/index.html 2>&1 || true
+git add public/dashboard/data/dashboard.json public/sitemap.xml content/reports/ content/articles/ public/*/index.html compare/ 2>&1 || true
 
 if git diff --cached --name-only | grep -q .; then
     git config user.email "pipeline@kakaopc-intel.bot"
