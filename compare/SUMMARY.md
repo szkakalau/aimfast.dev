@@ -1,8 +1,8 @@
 # KAKAOPC vs BuilderPulse — 方法论差异报告
 
-> 最后更新: 2026-06-03
-> 已对比天数: 8 天
-> 覆盖范围: 2026-05-27 ~ 2026-06-03
+> 最后更新: 2026-06-04
+> 已对比天数: 9 天
+> 覆盖范围: 2026-05-27 ~ 2026-06-04
 
 ---
 
@@ -72,3 +72,4 @@
 | 2026-06-01 | Bot-Gate Receipt | 一份针对 AI coding agent（如 Copilot、Codex、Cursor）在企业环境中的权限与数据泄露风险 | 🔴 不同 |
 | 2026-06-02 | Recovery Flow Receipt | 一个 5 页的 Notion 页面，帮你从 Logitech Options+ 迁移到 OpenLogi（一个开源的、本 | 🔴 不同 |
 | 2026-06-03 | Audience Reality Receipt | SkillPack – AI 技能市场 / 可复用的浏览器操作技能包 | 🔴 不同 |
+| 2026-06-04 | AI Seat Cap Ledger | Lando — 用一段话生成你的 Landing Page | 🔴 不同 |
