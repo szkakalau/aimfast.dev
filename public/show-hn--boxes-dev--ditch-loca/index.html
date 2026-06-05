@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgentBox — Run Claude Code & Codex in the Cloud | aimfast.dev</title>
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#1a1d24">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://aimfast.dev/agentbox/">
+  <!-- Open Graph -->
+  <meta property="og:type" content="product">
+  <meta property="og:title" content="AgentBox — Run Claude Code & Codex in the Cloud">
+  <meta property="og:description" content="Pre-configured, isolated sandboxes for your AI coding agents. Pay per minute. No setup.">
+  <meta property="og:url" content="https://aimfast.dev/agentbox/">
+  <meta property="og:site_name" content="KAKAOPC Intel">
+  <meta property="og:image" content="https://aimfast.dev/favicon.svg">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="AgentBox — Run Claude Code & Codex in the Cloud">
+  <meta name="twitter:description" content="Pre-configured, isolated sandboxes for your AI coding agents. Pay per minute. No setup.">
+  <meta name="twitter:image" content="https://aimfast.dev/favicon.svg">
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "AgentBox",
+    "applicationCategory": "AIApplication",
+    "operatingSystem": "Web",
+    "description": "AgentBox provides pre-configured, isolated cloud sandboxes for AI coding agents like Claude Code and Codex. Pay per minute, zero setup.",
+    "url": "https://aimfast.dev/agentbox/",
+    "offers": {
+      "@type": "Offer",
+      "price": "0.02",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+
+  <!-- Shared Design System -->
+  <link rel="stylesheet" href="/_ds/base.css">
+  <link rel="stylesheet" href="/_ds/components.css">
+
+  <style>
+    /* Page-specific custom styles — only for layout/overrides, no token redefinition */
+    .hero {
+      padding: var(--space-8) 0 var(--space-6);
+      text-align: center;
+    }
+
+    .hero h1 {
+      max-width: 720px;
+      margin: 0 auto var(--space-3);
+    }
+
+    .hero .subhead {
+      max-width: 600px;
+      margin: 0 auto var(--space-5);
+      font-size: 1.15rem;
+      color: var(--color-text-secondary);
+    }
+
+    .hero .btn-group {
+      display: flex;
+      justify-content: center;
+      gap: var(--space-3);
+      flex-wrap: wrap;
+      margin-bottom: var(--space-4);
+    }
+
+    .comparison-table {
+      max-width: 640px;
+      margin: var(--space-5) auto 0;
+      border-collapse: collapse;
+      width: 100%;
+      font-size: 0.9rem;
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+      padding: var(--space-2) var(--space-3);
+      text-align: left;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .comparison-table th {
+      font-family: var(--font-heading);
+      font-weight: 600;
+      color: var(--color-text);
+      background: var(--color-surface-alt);
+    }
+
+    .comparison-table td {
+      color: var(--color-text-secondary);
+    }
+
+    .comparison-table .check {
+      color: var(--color-accent);
+    }
+
+    .selling-points {
+      padding: var(--space-8) 0;
+    }
+
+    .selling-points h2 {
+      text-align: center;
+      margin-bottom: var(--space-6);
+    }
+
+    .selling-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-5);
+    }
+
+    .pricing {
+      padding: var(--space-8) 0;
+      background: var(--color-surface-alt);
+    }
+
+    .pricing h2 {
+      text-align: center;
+      margin-bottom: var(--space-6);
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-4);
+      align-items: start;
+    }
+
+    .pricing-grid .card.featured {
+      transform: scale(1.02);
+      border-color: var(--color-accent);
+      box-shadow: 0 0 0 2px var(--color-accent), 0 8px 24px rgba(0,0,0,0.15);
+      position: relative;
+      z-index: 2;
+    }
+
+    .pricing-grid .card.featured .badge {
+      background: var(--color-accent);
+      color: #000;
+    }
+
+    .price {
+      font-family: var(--font-mono);
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--color-text);
+      line-height: 1.2;
+    }
+
+    .price small {
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--color-text-muted);
+    }
+
+    .price-desc {
+      color: var(--color-text-secondary);
+      font-size: 0.9rem;
+      margin: var(--space-1) 0 var(--space-3);
+    }
+
+    .faq {
+      padding: var(--space-8) 0;
+    }
+
+    .faq h2 {
+      text-align: center;
+      margin-bottom: var(--space-6);
+    }
+
+    .faq-list {
+      max-width: 720px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+    }
+
+    .faq-item {
+      padding-left: var(--space-4);
+      border-left: 3px solid var(--color-accent);
+    }
+
+    .faq-item h3 {
+      margin-bottom: var(--space-1);
+      font-size: 1.1rem;
+    }
+
+    .faq-item p {
+      color: var(--color-text-secondary);
+      margin: 0;
+    }
+
+    .cta-section {
+      padding: var(--space-8) 0;
+      text-align: center;
+    }
+
+    .cta-section h2 {
+      margin-bottom: var(--space-3);
+    }
+
+    .cta-section .subhead {
+      max-width: 520px;
+      margin: 0 auto var(--space-4);
+      color: var(--color-text-secondary);
+    }
+
+    footer {
+      padding: var(--space-5) 0;
+      text-align: center;
+      border-top: 1px solid var(--color-border);
+      color: var(--color-text-muted);
+      font-size: 0.85rem;
+    }
+
+    footer a {
+      color: var(--color-text-secondary);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* Modal */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity var(--duration-normal) var(--ease-out);
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      padding: var(--space-5);
+      max-width: 420px;
+      width: 90%;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.3);
+    }
+
+    .modal h3 {
+      margin-bottom: var(--space-2);
+    }
+
+    .modal p {
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-4);
+    }
+
+    .modal .input-group {
+      display: flex;
+      gap: var(--space-2);
+      margin-bottom: var(--space-3);
+    }
+
+    .modal .input-group input {
+      flex: 1;
+      padding: var(--space-2) var(--space-3);
+      border: 1px solid var(--color-border);
+      border-radius: 6px;
+      background: var(--color-bg);
+      color: var(--color-text);
+      font-family: var(--font-body);
+    }
+
+    .modal .input-group input:focus {
+      outline: none;
+      border-color: var(--color-accent);
+    }
+
+    .modal .close-btn {
+      background: transparent;
+      border: none;
+      color: var(--color-text-muted);
+      cursor: pointer;
+      font-size: 1.2rem;
+      line-height: 1;
+      padding: var(--space-1);
+      margin-top: var(--space-1);
+    }
+
+    .modal .close-btn:hover {
+      color: var(--color-text);
+    }
+
+    .modal-footer {
+      display: flex;
+      justify-content: flex-end;
+      gap: var(--space-2);
+    }
+
+    @media (max-width: 768px) {
+      .selling-grid {
+        grid-template-columns: 1fr;
+      }
+      .pricing-grid {
+        grid-template-columns: 1fr;
+      }
+      .pricing-grid .card.featured {
+        transform: none;
+      }
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      .comparison-table {
+        font-size: 0.8rem;
+      }
+      .comparison-table th,
+      .comparison-table td {
+        padding: var(--space-1) var(--space-2);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <section class="hero container">
+    <h1>AgentBox: Run Claude Code &amp; Codex in the Cloud. Ditch localhost.</h1>
+    <p class="subhead">Pre-configured, isolated sandboxes for your AI coding agents. Pay per minute. No setup.</p>
+    <div class="btn-group">
+      <button class="btn btn-primary" onclick="openEmailModal()">Get Early Access</button>
+      <a href="https://github.com/kakaopc/agentbox" class="btn btn-outline" target="_blank" rel="noopener noreferrer">
+        <span class="icon icon-sm" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+          </svg>
+        </span>
+        GitHub
+      </a>
+    </div>
+
+    <!-- Quick comparison table -->
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Localhost</th>
+          <th>AgentBox</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Setup time</td>
+          <td>30–120 min</td>
+          <td><span class="check">✓</span> Instant</td>
+        </tr>
+        <tr>
+          <td>Isolation</td>
+          <td>❌ Your files at risk</td>
+          <td><span class="check">✓</span> Disposable sandbox</td>
+        </tr>
+        <tr>
+          <td>Pricing</td>
+          <td>Idle machine cost</td>
+          <td><span class="check">✓</span> $0.02/min, no idle</td>
+        </tr>
+        <tr>
+          <td>GPU support</td>
+          <td>❌ Expensive</td>
+          <td><span class="check">✓</span> Optional T4</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Selling Points -->
+  <section class="selling-points container">
+    <h2>Why AgentBox?</h2>
+    <div class="selling-grid">
+      <div class="card">
+        <span class="icon icon-lg icon-accent" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+          </svg>
+        </span>
+        <h3>Zero Setup</h3>
+        <p>Choose an agent (Claude Code, Codex, or custom), click run. We handle Docker, dependencies, and networking.</p>
+      </div>
+      <div class="card">
+        <span class="icon icon-lg icon-accent" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </span>
+        <h3>Isolated &amp; Safe</h3>
+        <p>Your local files stay local. Each sandbox is disposable and fully isolated — no risk of agent messing with your system.</p>
+      </div>
+      <div class="card">
+        <span class="icon icon-lg icon-accent" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+          </svg>
+        </span>
+        <h3>Pay As You Go</h3>
+        <p>From $0.02/min. No monthly commitment, no idle cost. Cancel anytime. Use only what you need.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="pricing">
+    <div class="container">
+      <h2>Simple, transparent pricing</h2>
+      <div class="pricing-grid">
+        <div class="card">
+          <h3>Starter</h3>
+          <div class="price">$0.02<small>/min</small></div>
+          <p class="price-desc">1 vCPU · 2GB RAM · No GPU</p>
+          <ul class="feature-list">
+            <li><span class="icon icon-sm" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="20 6 9 17 4 12"/></svg></span> Claude Code / Codex</li>
+            <li><span class="icon icon-sm" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="20 6 9 17 4 12"/></svg></span> Web terminal</li>
+            <li><span class="icon icon-sm" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="20 6 9 17 4 12"/></svg></span> 5 min free trial</li>
+          </ul>
+          <button class="btn btn-primary" onclick="openEmailModal()">Get Early Access</button>
+        </div>
+
+        <div class="card featured">
+          <span class="badge">Most popular</span>
+          <h3>Pro</h3>
+          <div class="price">$0.05<small>/min</small></div>
+          <p class="price-desc">4 vCPU · 8GB RAM · T4 GPU</p>
+          <ul class="feature-list">
+            <li><span class="icon icon-sm" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="20 6 9 17 4 12"/></svg></span> All Starter features</li>
+            <li><span class="icon icon-sm" aria
