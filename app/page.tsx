@@ -2,6 +2,68 @@ import { readFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 import LiveProjects from "./live-projects";
 
+interface LiveProject {
+  id: string;
+  date: string;
+  opportunity: string;
+  url: string;
+  score: number;
+  buyer: string;
+  current_status: string;
+}
+
+function getLiveProjects(): LiveProject[] {
+  try {
+    const raw = readFileSync(join(process.cwd(), "public", "lp-index.json"), "utf-8");
+    return JSON.parse(raw) as LiveProject[];
+  } catch {
+    return [];
+  }
+}
+
+interface RecentReport {
+  date: string;
+  title: string;
+  summary: string;
+}
+
+function getRecentReports(count: number): RecentReport[] {
+  try {
+    const dir = join(process.cwd(), "content", "reports");
+    const files = readdirSync(dir)
+      .filter((f) => f.endsWith(".md") && !f.includes("-en"))
+      .sort()
+      .reverse();
+    const reports: RecentReport[] = [];
+    for (const f of files.slice(0, count)) {
+      const source = readFileSync(join(dir, f), "utf-8");
+      let title = f.replace(".md", "");
+      let date = "";
+      let summary = "";
+      const fmMatch = source.match(/^---\r?\n([\s\S]*?)\r?\n---/);
+      if (fmMatch) {
+        for (const line of fmMatch[1].split("\n")) {
+          const ci = line.indexOf(":");
+          if (ci > 0) {
+            const k = line.slice(0, ci).trim();
+            let v = line.slice(ci + 1).trim();
+            if ((v.startsWith('"') && v.endsWith('"')) || (v.startsWith("'") && v.endsWith("'"))) {
+              v = v.slice(1, -1);
+            }
+            if (k === "title") title = v;
+            if (k === "date") date = v;
+            if (k === "summary") summary = v;
+          }
+        }
+      }
+      reports.push({ date: date || f.replace(".md", ""), title, summary });
+    }
+    return reports;
+  } catch {
+    return [];
+  }
+}
+
 function getLatestArticle(): { slug: string; title: string; date: string } | null {
   try {
     const dir = join(process.cwd(), "content", "articles");
@@ -43,14 +105,18 @@ function getLatestArticle(): { slug: string; title: string; date: string } | nul
 
 export default function HomePage() {
   const latestArticle = getLatestArticle();
+  const liveProjects = getLiveProjects();
+  const recentReports = getRecentReports(5);
 
   return (
     <main id="main-content" className="container">
       {/* ═══ Top Nav ═══ */}
       <nav className="top-nav" aria-label="Main navigation">
         <a href="/">Intel — Daily Signals & Analysis</a>
+        <a href="/reports/">Daily Reports</a>
+        <a href="/articles/">Planet Articles</a>
         <a href="/dashboard/" className="nav-tools">
-          Tools — Signal Pipeline & Dashboard
+          Tools — Dashboard
         </a>
       </nav>
 
@@ -122,7 +188,7 @@ export default function HomePage() {
       </div>
 
       {/* ═══ Live Projects ═══ */}
-      <LiveProjects />
+      <LiveProjects projects={liveProjects} />
 
       {/* ═══ How It Works ═══ */}
       <section className="workflow anim-fade-up" aria-labelledby="workflow-title">
@@ -183,6 +249,33 @@ export default function HomePage() {
           <div style={{ textAlign: "center", marginTop: "var(--space-2)" }}>
             <a href="/articles/" className="hero-secondary">
               Browse all articles →
+            </a>
+          </div>
+        </section>
+      )}
+
+      {/* ═══ Recent Daily Reports ═══ */}
+      {recentReports.length > 0 && (
+        <section className="latest-article anim-fade-up" aria-labelledby="reports-title">
+          <div className="section-header">
+            <h2 id="reports-title">Daily Reports</h2>
+            <p>Daily signal intelligence briefings — 14 sources scanned, one actionable insight per day.</p>
+          </div>
+          <div className="lp-grid">
+            {recentReports.map((r) => (
+              <a key={r.date} href={`/reports/${r.date}/`} className="lp-card">
+                <span className="lp-score">{r.date}</span>
+                <h3>{r.title}</h3>
+                <div className="lp-meta">
+                  <span>{r.summary.replace(/^>\s*/, "").slice(0, 80)}…</span>
+                  <span className="lp-arrow">→</span>
+                </div>
+              </a>
+            ))}
+          </div>
+          <div style={{ textAlign: "center", marginTop: "var(--space-2)" }}>
+            <a href="/reports/" className="hero-secondary">
+              Browse all reports →
             </a>
           </div>
         </section>

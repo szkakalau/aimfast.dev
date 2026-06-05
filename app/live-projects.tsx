@@ -1,7 +1,3 @@
-"use client";
-
-import { useEffect, useState } from "react";
-
 interface LiveProject {
   id: string;
   date: string;
@@ -12,28 +8,7 @@ interface LiveProject {
   current_status: string;
 }
 
-export default function LiveProjects() {
-  const [projects, setProjects] = useState<LiveProject[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    fetch("/lp-index.json")
-      .then((res) => {
-        if (!res.ok) throw new Error("Not found");
-        return res.json();
-      })
-      .then((data: LiveProject[]) => {
-        setProjects(data);
-      })
-      .catch(() => {
-        // No LP data yet, that's fine
-        setProjects([]);
-      })
-      .finally(() => setLoading(false));
-  }, []);
-
-  if (loading) return null;
-
+export default function LiveProjects({ projects }: { projects: LiveProject[] }) {
   if (projects.length === 0) return null;
 
   return (
@@ -55,8 +30,6 @@ export default function LiveProjects() {
               key={p.id}
               href={p.url}
               className="lp-card"
-              target="_blank"
-              rel="noopener noreferrer"
             >
               <span className="lp-score">Score {p.score}</span>
               <h3>{p.opportunity}</h3>
