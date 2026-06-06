@@ -3,439 +3,271 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AgentBox — Run Claude Code & Codex in the Cloud | aimfast.dev</title>
+  <title>CloudDevConsole — 零配置云端开发环境 | aimfast.dev</title>
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#1a1d24">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="canonical" href="https://aimfast.dev/agentbox/">
+  <link rel="canonical" href="https://aimfast.dev/clouddevconsole/">
   <!-- Open Graph -->
   <meta property="og:type" content="product">
-  <meta property="og:title" content="AgentBox — Run Claude Code & Codex in the Cloud">
-  <meta property="og:description" content="Pre-configured, isolated sandboxes for your AI coding agents. Pay per minute. No setup.">
-  <meta property="og:url" content="https://aimfast.dev/agentbox/">
+  <meta property="og:title" content="CloudDevConsole — 零配置云端开发环境">
+  <meta property="og:description" content="零配置，按秒计费。粘贴你的仓库链接，看 Agent 立刻开始工作。">
+  <meta property="og:url" content="https://aimfast.dev/clouddevconsole/">
   <meta property="og:site_name" content="KAKAOPC Intel">
   <meta property="og:image" content="https://aimfast.dev/favicon.svg">
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="AgentBox — Run Claude Code & Codex in the Cloud">
-  <meta name="twitter:description" content="Pre-configured, isolated sandboxes for your AI coding agents. Pay per minute. No setup.">
+  <meta name="twitter:title" content="CloudDevConsole — 零配置云端开发环境">
+  <meta name="twitter:description" content="零配置，按秒计费。粘贴你的仓库链接，看 Agent 立刻开始工作。">
   <meta name="twitter:image" content="https://aimfast.dev/favicon.svg">
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "AgentBox",
+    "name": "CloudDevConsole",
     "applicationCategory": "AIApplication",
     "operatingSystem": "Web",
-    "description": "AgentBox provides pre-configured, isolated cloud sandboxes for AI coding agents like Claude Code and Codex. Pay per minute, zero setup.",
-    "url": "https://aimfast.dev/agentbox/",
+    "description": "零配置云端开发环境，让 Claude Code 和 Codex 在云端运行，按秒计费，沙箱安全。",
+    "url": "https://aimfast.dev/clouddevconsole/",
     "offers": {
       "@type": "Offer",
-      "price": "0.02",
+      "price": "9.99",
       "priceCurrency": "USD"
     }
   }
   </script>
-
   <!-- Shared Design System -->
   <link rel="stylesheet" href="/_ds/base.css">
   <link rel="stylesheet" href="/_ds/components.css">
-
+  <!-- Page-specific styles (only custom layout, no token redefinition) -->
   <style>
-    /* Page-specific custom styles — only for layout/overrides, no token redefinition */
-    .hero {
-      padding: var(--space-8) 0 var(--space-6);
-      text-align: center;
-    }
-
-    .hero h1 {
-      max-width: 720px;
-      margin: 0 auto var(--space-3);
-    }
-
-    .hero .subhead {
-      max-width: 600px;
-      margin: 0 auto var(--space-5);
-      font-size: 1.15rem;
-      color: var(--color-text-secondary);
-    }
-
-    .hero .btn-group {
-      display: flex;
-      justify-content: center;
-      gap: var(--space-3);
-      flex-wrap: wrap;
-      margin-bottom: var(--space-4);
-    }
-
-    .comparison-table {
-      max-width: 640px;
-      margin: var(--space-5) auto 0;
-      border-collapse: collapse;
-      width: 100%;
-      font-size: 0.9rem;
-    }
-
-    .comparison-table th,
-    .comparison-table td {
-      padding: var(--space-2) var(--space-3);
-      text-align: left;
-      border-bottom: 1px solid var(--color-border);
-    }
-
-    .comparison-table th {
-      font-family: var(--font-heading);
-      font-weight: 600;
-      color: var(--color-text);
-      background: var(--color-surface-alt);
-    }
-
-    .comparison-table td {
-      color: var(--color-text-secondary);
-    }
-
-    .comparison-table .check {
-      color: var(--color-accent);
-    }
-
-    .selling-points {
-      padding: var(--space-8) 0;
-    }
-
-    .selling-points h2 {
-      text-align: center;
-      margin-bottom: var(--space-6);
-    }
-
-    .selling-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: var(--space-5);
-    }
-
-    .pricing {
-      padding: var(--space-8) 0;
-      background: var(--color-surface-alt);
-    }
-
-    .pricing h2 {
-      text-align: center;
-      margin-bottom: var(--space-6);
-    }
-
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: var(--space-4);
-      align-items: start;
-    }
-
-    .pricing-grid .card.featured {
-      transform: scale(1.02);
-      border-color: var(--color-accent);
-      box-shadow: 0 0 0 2px var(--color-accent), 0 8px 24px rgba(0,0,0,0.15);
-      position: relative;
-      z-index: 2;
-    }
-
-    .pricing-grid .card.featured .badge {
-      background: var(--color-accent);
-      color: #000;
-    }
-
-    .price {
-      font-family: var(--font-mono);
-      font-size: 2.2rem;
-      font-weight: 700;
-      color: var(--color-text);
-      line-height: 1.2;
-    }
-
-    .price small {
-      font-size: 1rem;
-      font-weight: 400;
-      color: var(--color-text-muted);
-    }
-
-    .price-desc {
-      color: var(--color-text-secondary);
-      font-size: 0.9rem;
-      margin: var(--space-1) 0 var(--space-3);
-    }
-
-    .faq {
-      padding: var(--space-8) 0;
-    }
-
-    .faq h2 {
-      text-align: center;
-      margin-bottom: var(--space-6);
-    }
-
-    .faq-list {
-      max-width: 720px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-3);
-    }
-
-    .faq-item {
-      padding-left: var(--space-4);
-      border-left: 3px solid var(--color-accent);
-    }
-
-    .faq-item h3 {
-      margin-bottom: var(--space-1);
-      font-size: 1.1rem;
-    }
-
-    .faq-item p {
-      color: var(--color-text-secondary);
-      margin: 0;
-    }
-
-    .cta-section {
-      padding: var(--space-8) 0;
-      text-align: center;
-    }
-
-    .cta-section h2 {
-      margin-bottom: var(--space-3);
-    }
-
-    .cta-section .subhead {
-      max-width: 520px;
-      margin: 0 auto var(--space-4);
-      color: var(--color-text-secondary);
-    }
-
-    footer {
-      padding: var(--space-5) 0;
-      text-align: center;
-      border-top: 1px solid var(--color-border);
-      color: var(--color-text-muted);
-      font-size: 0.85rem;
-    }
-
-    footer a {
-      color: var(--color-text-secondary);
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-
-    /* Modal */
+    /* ===== Email Modal ===== */
     .modal-overlay {
       position: fixed;
       inset: 0;
       background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(4px);
       display: flex;
       align-items: center;
       justify-content: center;
-      z-index: 1000;
+      z-index: 999;
       opacity: 0;
       pointer-events: none;
       transition: opacity var(--duration-normal) var(--ease-out);
     }
-
     .modal-overlay.active {
       opacity: 1;
       pointer-events: auto;
     }
-
-    .modal {
+    .modal-card {
       background: var(--color-surface);
       border: 1px solid var(--color-border);
-      border-radius: 12px;
-      padding: var(--space-5);
+      border-radius: 16px;
+      padding: var(--space-6);
       max-width: 420px;
       width: 90%;
-      box-shadow: 0 16px 48px rgba(0,0,0,0.3);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+      position: relative;
     }
-
-    .modal h3 {
-      margin-bottom: var(--space-2);
-    }
-
-    .modal p {
-      color: var(--color-text-secondary);
-      margin-bottom: var(--space-4);
-    }
-
-    .modal .input-group {
-      display: flex;
-      gap: var(--space-2);
-      margin-bottom: var(--space-3);
-    }
-
-    .modal .input-group input {
-      flex: 1;
-      padding: var(--space-2) var(--space-3);
-      border: 1px solid var(--color-border);
-      border-radius: 6px;
-      background: var(--color-bg);
-      color: var(--color-text);
-      font-family: var(--font-body);
-    }
-
-    .modal .input-group input:focus {
-      outline: none;
-      border-color: var(--color-accent);
-    }
-
-    .modal .close-btn {
-      background: transparent;
+    .modal-card .close-btn {
+      position: absolute;
+      top: var(--space-2);
+      right: var(--space-2);
+      background: none;
       border: none;
       color: var(--color-text-muted);
       cursor: pointer;
-      font-size: 1.2rem;
-      line-height: 1;
       padding: var(--space-1);
-      margin-top: var(--space-1);
+      line-height: 1;
     }
-
-    .modal .close-btn:hover {
+    .modal-card .close-btn:hover {
       color: var(--color-text);
     }
-
-    .modal-footer {
-      display: flex;
-      justify-content: flex-end;
-      gap: var(--space-2);
+    .modal-card h3 {
+      margin-top: 0;
+      margin-bottom: var(--space-2);
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      color: var(--color-text);
     }
-
+    .modal-card p {
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-4);
+      font-size: 0.95rem;
+    }
+    .modal-card .input-group {
+      display: flex;
+      gap: var(--space-2);
+      flex-wrap: wrap;
+    }
+    .modal-card .input-group input {
+      flex: 1;
+      min-width: 180px;
+      padding: var(--space-2) var(--space-3);
+      border-radius: 40px;
+      border: 1px solid var(--color-border);
+      background: var(--color-bg);
+      color: var(--color-text);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color var(--duration-normal) var(--ease-out);
+    }
+    .modal-card .input-group input:focus {
+      border-color: var(--color-accent);
+    }
+    .modal-card .input-group .btn {
+      flex-shrink: 0;
+    }
+    .modal-card .footnote {
+      margin-top: var(--space-3);
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
+    }
+    /* ===== Pricing featured card ===== */
+    .pricing-grid .card.featured {
+      border-color: var(--color-accent);
+      box-shadow: 0 0 0 1px var(--color-accent), 0 8px 24px rgba(255, 140, 0, 0.15);
+      transform: scale(1.02);
+      position: relative;
+    }
+    .pricing-grid .card.featured .badge {
+      background: var(--color-accent);
+      color: #000;
+      font-weight: 600;
+    }
+    /* ===== FAQ accent line ===== */
+    .faq-item {
+      position: relative;
+      padding-left: var(--space-4);
+      margin-bottom: var(--space-4);
+    }
+    .faq-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.2em;
+      bottom: 0.2em;
+      width: 3px;
+      background: var(--color-accent);
+      border-radius: 2px;
+    }
+    /* ===== Responsive tweaks ===== */
     @media (max-width: 768px) {
-      .selling-grid {
-        grid-template-columns: 1fr;
-      }
       .pricing-grid {
         grid-template-columns: 1fr;
       }
       .pricing-grid .card.featured {
         transform: none;
       }
-      .hero h1 {
-        font-size: 1.8rem;
-      }
-      .comparison-table {
-        font-size: 0.8rem;
-      }
-      .comparison-table th,
-      .comparison-table td {
-        padding: var(--space-1) var(--space-2);
-      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Hero -->
+  <!-- ===== HERO ===== -->
   <section class="hero container">
-    <h1>AgentBox: Run Claude Code &amp; Codex in the Cloud. Ditch localhost.</h1>
-    <p class="subhead">Pre-configured, isolated sandboxes for your AI coding agents. Pay per minute. No setup.</p>
-    <div class="btn-group">
-      <button class="btn btn-primary" onclick="openEmailModal()">Get Early Access</button>
-      <a href="https://github.com/kakaopc/agentbox" class="btn btn-outline" target="_blank" rel="noopener noreferrer">
-        <span class="icon icon-sm" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-          </svg>
-        </span>
-        GitHub
-      </a>
-    </div>
-
-    <!-- Quick comparison table -->
-    <table class="comparison-table">
-      <thead>
-        <tr>
-          <th></th>
-          <th>Localhost</th>
-          <th>AgentBox</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Setup time</td>
-          <td>30–120 min</td>
-          <td><span class="check">✓</span> Instant</td>
-        </tr>
-        <tr>
-          <td>Isolation</td>
-          <td>❌ Your files at risk</td>
-          <td><span class="check">✓</span> Disposable sandbox</td>
-        </tr>
-        <tr>
-          <td>Pricing</td>
-          <td>Idle machine cost</td>
-          <td><span class="check">✓</span> $0.02/min, no idle</td>
-        </tr>
-        <tr>
-          <td>GPU support</td>
-          <td>❌ Expensive</td>
-          <td><span class="check">✓</span> Optional T4</td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
-
-  <!-- Selling Points -->
-  <section class="selling-points container">
-    <h2>Why AgentBox?</h2>
-    <div class="selling-grid">
-      <div class="card">
-        <span class="icon icon-lg icon-accent" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
-          </svg>
-        </span>
-        <h3>Zero Setup</h3>
-        <p>Choose an agent (Claude Code, Codex, or custom), click run. We handle Docker, dependencies, and networking.</p>
-      </div>
-      <div class="card">
-        <span class="icon icon-lg icon-accent" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-          </svg>
-        </span>
-        <h3>Isolated &amp; Safe</h3>
-        <p>Your local files stay local. Each sandbox is disposable and fully isolated — no risk of agent messing with your system.</p>
-      </div>
-      <div class="card">
-        <span class="icon icon-lg icon-accent" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-          </svg>
-        </span>
-        <h3>Pay As You Go</h3>
-        <p>From $0.02/min. No monthly commitment, no idle cost. Cancel anytime. Use only what you need.</p>
+    <div class="hero-content" style="text-align:center; padding: var(--space-8) 0 var(--space-6);">
+      <span class="eyebrow">⚡ KAKAOPC Intel</span>
+      <h1 class="hero-title" style="max-width: 800px; margin: var(--space-3) auto;">
+        CloudDevConsole: 让 Claude Code 和 Codex 在云端跑，别在本地配环境了。
+      </h1>
+      <p class="hero-subtitle" style="max-width: 600px; margin: var(--space-3) auto; color: var(--color-text-secondary); font-size: 1.2rem;">
+        零配置，按秒计费。粘贴你的仓库链接，看 Agent 立刻开始工作。
+      </p>
+      <div style="margin-top: var(--space-5); display: flex; gap: var(--space-3); justify-content: center; flex-wrap: wrap;">
+        <button class="btn btn-primary btn-lg" onclick="openEmailModal()">
+          <svg class="icon icon-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          立刻免费体验 5 分钟
+        </button>
+        <a href="https://github.com/kakaopc/clouddevconsole" target="_blank" rel="noopener" class="btn btn-outline btn-lg">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          GitHub
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- Pricing -->
-  <section class="pricing">
-    <div class="container">
-      <h2>Simple, transparent pricing</h2>
-      <div class="pricing-grid">
-        <div class="card">
-          <h3>Starter</h3>
-          <div class="price">$0.02<small>/min</small></div>
-          <p class="price-desc">1 vCPU · 2GB RAM · No GPU</p>
-          <ul class="feature-list">
-            <li><span class="icon icon-sm" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="20 6 9 17 4 12"/></svg></span> Claude Code / Codex</li>
-            <li><span class="icon icon-sm" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="20 6 9 17 4 12"/></svg></span> Web terminal</li>
-            <li><span class="icon icon-sm" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="20 6 9 17 4 12"/></svg></span> 5 min free trial</li>
-          </ul>
-          <button class="btn btn-primary" onclick="openEmailModal()">Get Early Access</button>
+  <!-- ===== SELLING POINTS ===== -->
+  <section class="container" style="padding: var(--space-8) 0;">
+    <h2 style="text-align:center; margin-bottom: var(--space-6); font-family: var(--font-heading); font-size: 2rem;">为什么选择 CloudDevConsole</h2>
+    <div class="grid selling-grid" style="grid-template-columns: repeat(3, 1fr); gap: var(--space-5);">
+      <!-- Card 1 -->
+      <div class="card" style="padding: var(--space-5);">
+        <div class="card-icon">
+          <svg class="icon icon-lg icon-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
         </div>
+        <h3 class="card-title">秒级启动</h3>
+        <p class="card-text">无需安装，无需配置。点一下，Agent 环境在几秒内就绪，比泡杯咖啡还快。</p>
+      </div>
+      <!-- Card 2 -->
+      <div class="card" style="padding: var(--space-5);">
+        <div class="card-icon">
+          <svg class="icon icon-lg icon-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <h3 class="card-title">按秒付费</h3>
+        <p class="card-text">只用为 Agent 运行的时间买单。$0.001/秒，约 $3.6/小时，省下买月费的钱。</p>
+      </div>
+      <!-- Card 3 -->
+      <div class="card" style="padding: var(--space-5);">
+        <div class="card-icon">
+          <svg class="icon icon-lg icon-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        </div>
+        <h3 class="card-title">沙箱安全</h3>
+        <p class="card-text">每次环境都是全新的、临时的，用完即焚。你的代码和数据不会残留，隐私无忧。</p>
+      </div>
+    </div>
+  </section>
 
-        <div class="card featured">
-          <span class="badge">Most popular</span>
-          <h3>Pro</h3>
-          <div class="price">$0.05<small>/min</small></div>
-          <p class="price-desc">4 vCPU · 8GB RAM · T4 GPU</p>
-          <ul class="feature-list">
-            <li><span class="icon icon-sm" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="20 6 9 17 4 12"/></svg></span> All Starter features</li>
-            <li><span class="icon icon-sm" aria
+  <!-- ===== PRICING ===== -->
+  <section class="container" style="padding: var(--space-8) 0;">
+    <h2 style="text-align:center; margin-bottom: var(--space-6); font-family: var(--font-heading); font-size: 2rem;">透明定价</h2>
+    <div class="grid pricing-grid" style="grid-template-columns: repeat(3, 1fr); gap: var(--space-5); align-items: start;">
+      <!-- Pay-as-you-go -->
+      <div class="card" style="padding: var(--space-5);">
+        <h3 class="card-title" style="font-size: 1.3rem;">按秒计费</h3>
+        <p class="card-price" style="font-size: 2.2rem; font-family: var(--font-mono); color: var(--color-accent); margin: var(--space-2) 0;">$0.001<span style="font-size: 1rem; color: var(--color-text-muted);">/秒</span></p>
+        <p style="color: var(--color-text-secondary);">约 $3.6/小时。用多少付多少，无月费，无浪费。</p>
+        <ul style="list-style: none; padding: 0; margin: var(--space-4) 0; color: var(--color-text-secondary);">
+          <li style="padding: var(--space-1) 0;">✓ 5分钟免费体验</li>
+          <li style="padding: var(--space-1) 0;">✓ 秒级启动</li>
+          <li style="padding: var(--space-1) 0;">✓ 沙箱环境</li>
+        </ul>
+        <button class="btn btn-primary" onclick="openEmailModal()" style="width:100%;">开始免费体验</button>
+      </div>
+      <!-- Monthly (featured) -->
+      <div class="card featured" style="padding: var(--space-5);">
+        <span class="badge" style="margin-bottom: var(--space-2);">最受欢迎</span>
+        <h3 class="card-title" style="font-size: 1.3rem;">月度订阅</h3>
+        <p class="card-price" style="font-size: 2.2rem; font-family: var(--font-mono); color: var(--color-accent); margin: var(--space-2) 0;">$9.99<span style="font-size: 1rem; color: var(--color-text-muted);">/月</span></p>
+        <p style="color: var(--color-text-secondary);">包含10小时运行时间（价值$36），超时按秒计费。</p>
+        <ul style="list-style: none; padding: 0; margin: var(--space-4) 0; color: var(--color-text-secondary);">
+          <li style="padding: var(--space-1) 0;">✓ 10小时 Agent 运行</li>
+          <li style="padding: var(--space-1) 0;">✓ 优先启动队列</li>
+          <li style="padding: var(--space-1) 0;">✓ 邮件支持</li>
+        </ul>
+        <button class="btn btn-primary" onclick="openEmailModal()" style="width:100%;">订阅 $9.99/月</button>
+      </div>
+      <!-- Enterprise placeholder -->
+      <div class="card" style="padding: var(--space-5);">
+        <h3 class="card-title" style="font-size: 1.3rem;">团队版</h3>
+        <p class="card-price" style="font-size: 2.2rem; font-family: var(--font-mono); color: var(--color-accent); margin: var(--space-2) 0;">$49<span style="font-size: 1rem; color: var(--color-text-muted);">/月</span></p>
+        <p style="color: var(--color-text-secondary);">5个席位，共享50小时运行时间，团队管理面板。</p>
+        <ul style="list-style: none; padding: 0; margin: var(--space-4) 0; color: var(--color-text-secondary);">
+          <li style="padding: var(--space-1) 0;">✓ 50小时共享时长</li>
+          <li style="padding: var(--space-1) 0;">✓ 团队环境模板</li>
+          <li style="padding: var(--space-1) 0;">✓ 优先支持</li>
+        </ul>
+        <button class="btn btn-outline" onclick="openEmailModal()" style="width:100%;">联系销售</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="container" style="padding: var(--space-8) 0;">
+    <h2 style="text-align:center; margin-bottom: var(--space-6); font-family: var(--font-heading); font-size: 2rem;">常见问题</h2>
+    <div style="max-width: 700px; margin: 0 auto;">
+      <div class="faq-item">
+        <h3 style="margin: 0 0 var(--space-1); font-size: 1.1rem;">环境能保留多久？</h3>
+       
