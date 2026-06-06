@@ -66,6 +66,22 @@ def extract_title_and_summary(md_text: str, max_summary: int = 160) -> tuple[str
     return title, summary
 
 
+def escape_mdx_comparison_operators(content: str) -> str:
+    """Escape < and > when used as comparison operators to prevent MDX from
+    parsing them as JSX tags. Only escapes patterns that are definitely
+    comparisons, not legitimate HTML/MDX tags (tags start with a letter).
+
+    Examples: <5 → &lt;5, <30% → &lt;30%, <$10 → &lt;$10, >$0.01 → &gt;$0.01
+    """
+    # < followed by digit → comparison operator
+    content = re.sub(r'<(\d)', r'&lt;\1', content)
+    # < followed by $ → comparison operator (e.g., <$10)
+    content = re.sub(r'<(\$)', r'&lt;\1', content)
+    # > followed by $ → comparison operator (e.g., >$0.01)
+    content = re.sub(r'>(\$)', r'&gt;\1', content)
+    return content
+
+
 def wrap_frontmatter(content: str, title: str, date: str, summary: str) -> str:
     """Add YAML frontmatter to markdown content."""
     # Escape quotes in title and summary
@@ -90,6 +106,7 @@ def process_reports(date_str: str) -> int:
     zh_dst = CONTENT_REPORTS / f"{date_str}.md"
     if zh_src.exists():
         content = zh_src.read_text(encoding="utf-8")
+        content = escape_mdx_comparison_operators(content)
         title, summary = extract_title_and_summary(content)
         wrapped = wrap_frontmatter(content, title, date_str, summary)
         zh_dst.write_text(wrapped, encoding="utf-8")
@@ -100,6 +117,7 @@ def process_reports(date_str: str) -> int:
     en_dst = CONTENT_REPORTS / f"{date_str}-en.md"
     if en_src.exists():
         content = en_src.read_text(encoding="utf-8")
+        content = escape_mdx_comparison_operators(content)
         title, summary = extract_title_and_summary(content)
         wrapped = wrap_frontmatter(content, title, date_str, summary)
         en_dst.write_text(wrapped, encoding="utf-8")
@@ -133,6 +151,7 @@ def process_articles(date_str: str) -> int:
     zh_src = DAILY_DIR / date_str / "article.md"
     if zh_src.exists():
         content = zh_src.read_text(encoding="utf-8")
+        content = escape_mdx_comparison_operators(content)
         title, summary = extract_title_and_summary(content)
         slug = generate_slug(date_str, content)
         wrapped = wrap_frontmatter(content, title, date_str, summary)
@@ -144,6 +163,7 @@ def process_articles(date_str: str) -> int:
     en_src = DAILY_DIR / date_str / "article-en.md"
     if en_src.exists():
         content = en_src.read_text(encoding="utf-8")
+        content = escape_mdx_comparison_operators(content)
         title, summary = extract_title_and_summary(content)
         # For English version, use same slug with -en suffix
         zh_content = ""
