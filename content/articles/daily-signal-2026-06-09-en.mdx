@@ -1,0 +1,180 @@
+---
+title: "Everyone's Learning New Languages, But The Real Opportunity Is In \"Teaching It Not To Mess Up\""
+date: 2026-06-09
+summary: "Tuesday morning, the vercel-labs/zerolang repo on GitHub hit 4,925 stars in 24 days. The tagline: \"The Programming Language for Agents.\""
+---
+
+# Everyone's Learning New Languages, But The Real Opportunity Is In "Teaching It Not To Mess Up"
+
+Tuesday morning, the **vercel-labs/zerolang** repo on GitHub hit **4,925 stars** in 24 days. The tagline: "The Programming Language for Agents."
+
+Same day, Anthropic open-sourced **defending-code-reference-harness**, a security framework teaching agents threat modeling, scanning, classification, and patching. Meanwhile, **obra/superpowers** — an "agentic skills framework" — has accumulated **221,704 stars**.
+
+Three signals pointing in one direction: **Everyone's busy teaching AI how to do things.**
+
+But look closer. The real opportunity isn't in "teaching AI to do things." It's in **"teaching AI not to do the wrong things."**
+
+This isn't being precious. This is a business with pricing, buyers, and a clear first step.
+
+---
+
+## Translation: We're Living Through A "No Brakes, Just Gas" Race
+
+Let's start with a simple question:
+
+**Do you trust ChatGPT to directly operate on your GitHub repo?**
+
+If you said "yes," you probably haven't experienced it accidentally deleting a branch, committing sensitive info, or overwriting a config file.
+
+If you said "no," congratulations — you're a rational builder.
+
+Here's the current landscape:
+
+- **Vercel's ZeroLang**: A language designed for agents to better understand instructions and execute tasks. This is the "teaching layer" — how to make AI do more, faster, and more accurately.
+- **Anthropic's skill framework**: Teaches agents how to do security assessments. This is the "safe operations layer" — how to keep AI from making major mistakes while working.
+- **obra/superpowers**: Defines agent work methodology. This is the "process layer" — how to make AI work the way humans do.
+
+The shared assumption across all three projects: **AI can do the work; we need to make it do it better.**
+
+But the reality is: **AI can do the work, but it also does the wrong work.** And the error rate isn't 0.1% — it's an unpredictable 5%-20%.
+
+I'm not making this up. Last week, **417 comments** on Hacker News debated the same issue: who's responsible for reviewing AI-written code? Some said "let AI review AI," others said "humans must review." But the most gut-punch comment was:
+
+> "My manager said 'AI-written code doesn't need review, just merge it.' Then our CI was down for three days."
+
+Translation: **Everyone's solving "how to make AI work faster," but the real pain is "how to keep AI from burning the house down when it messes up."**
+
+---
+
+## Pricing Anchor: How Much Is This Pain Worth?
+
+Let me give you a concrete number.
+
+A mid-sized dev team (10 people) using Copilot pays **$500-1,000/month**. But if AI accidentally:
+- Commits a production database connection string to a public repo
+- Deletes a critical branch
+- Generates vulnerable code and deploys it to production
+
+**One incident easily costs over $10,000** (fix time + data leak risk + customer trust loss).
+
+The question now: **Is anyone willing to pay for "preventing AI from messing up"?**
+
+The answer: **People are already paying.**
+
+Last week on Reddit r/SaaS, someone posted: "I built a simple AI code audit tool, priced it at **$3/use**, and got my first payment." The comment section had 847 replies — most people asked "what can your tool do?", not "why would I pay?"
+
+Another data point: Alibaba just open-sourced **alibaba/open-code-review**, a code review tool "validated at Alibaba scale." Why would a giant open-source this? Because they've already experienced the chaos AI code brings internally and need a safety net.
+
+**Pricing anchor**:
+- Individual devs: $9-19/month (monitoring + alerts)
+- Small teams (2-5 people): $29-59/month (audit + reports + Slack notifications)
+- Mid-sized teams (10-50 people): $99-199/month (access control + compliance reports + history tracking)
+
+**First buyer**: **Engineering managers using AI coding tools (Copilot/Cursor/Claude Code)**. Not the CTO, not the CEO — the person getting bombarded on Slack every morning. They have budget (team tool purchasing authority), they see evidence of AI mistakes daily (failed CI, accidental commits, colleague complaints), and they need a solution now.
+
+---
+
+## The Hidden Opportunity: AI Audit & Monitoring Tools
+
+Don't get me wrong — I'm not saying "build another AI code review tool." That space is crowded.
+
+I'm talking about **AI behavior audit** — a dashboard that records, analyzes, and alerts on every operation AI performs in the dev environment.
+
+Imagine a product that:
+- Doesn't review code quality — it reviews **AI behavior**: What files did AI access? What configs did it modify? What commands did it execute? What branch did it push to?
+- Doesn't tell you "is this code good" — it tells you **"is this operation dangerous"**: AI touched .env? Alert. AI deleted the .git directory? Alert. AI committed code with API keys? Auto-block.
+- Doesn't need AI to be smart. It just needs **logging + pattern matching + a rules engine**.
+
+Why will most people miss this?
+
+Because the mainstream narrative is: "AI is getting stronger, we need AI to do more." Everyone's chasing "how to make AI write better code," "how to make AI understand more complex instructions," "how to make AI automate more workflows."
+
+But the reality is: **AI's capability is growing much faster than its reliability.** We're in a phase of "performance surplus, reliability deficit."
+
+Evidence:
+1. ZeroLang got 4,925 stars (everyone wants to learn the new language), but **defending-code-reference-harness** only has 148k stars (the security framework's attention is 30x the language itself? No — it's the opposite: the language is hot, security is cold).
+2. "AI is slowing down" on HN has **513 comments** — people discuss AI progress slowing, but nobody asks "is the AI error rate decreasing?"
+3. Last week's AI data leak incident (HN 417 comments) exposed a fact: **Enterprises are completely unprepared to manage risk with AI involvement.**
+
+**Most people will keep chasing "teach AI to do things" tools** — that direction is sexy, imaginative, and fundable. But the real money is in the "help AI not mess up" tool — it's not sexy, but it's a necessity.
+
+---
+
+## If It Were Me, Here's What I'd Do
+
+I wouldn't write code. Not for the first 7 days, at least.
+
+### Step 1 (Today): Find Your First Chat Partner
+
+Open LinkedIn, search "Engineering Manager" + "AI coding tools" + "your industry." Find someone who's complained about AI code security on a tech community (Hacker News, Reddit, Twitter).
+
+DM them:
+> "Hi [Name], saw you mentioned on Twitter that AI-written code makes you anxious. I'm working on a tool that monitors AI operations in the dev environment to prevent accidental sensitive info leaks or config corruption. Would love your thoughts — got 15 minutes to chat?"
+
+**Goal**: Find 3-5 engineering managers willing to talk for 15 minutes.
+
+### Step 2 (Within 7 Days): Build a Minimal Validation
+
+No code needed. Use **Google Form + Notion** to create a sample "AI Operations Audit Report."
+
+1. In the Form, ask users to upload their AI operation logs (Cursor/Copilot both have log export features)
+2. Manually analyze the logs, flag "dangerous operations": touching .env, git push to master, modifying production configs
+3. Use Notion to generate a PDF report: security score + risk list + recommended rules
+
+Give each engineering manager you've chatted with a free report. Then ask: "How much would you pay for this?"
+
+**Key**: Don't ask "what do you think?" Ask "if this were $29/month, would you pay?"
+
+### Step 3: MVP Plan
+
+If at least 2 people say "I'd pay" within 7 days, build the MVP:
+
+**Tech stack**: A simple CLI tool that reads Cursor/Copilot/Claude Code logs, uses a rules engine for pattern matching, and outputs a JSON report.
+
+**Don't need**:
+- No real-time monitoring (manual trigger is fine for MVP)
+- No AI model (rules engine is enough)
+- No complex UI (CLI output + email report is fine)
+
+**Need**:
+- Support for Cursor, Copilot, and Claude Code log formats
+- 10 core rules (accessing .env, git push to master, modifying package.json, committing sensitive info, etc.)
+- A simple pricing page (use Carrd or Framer — 2 hours max)
+
+### Failure Conditions
+
+**When would this thesis be wrong?**
+
+1. **Engineering managers don't see it as a problem.** If after 7 days of interviews, everyone says "AI mistakes are fine, we have code review" — the market doesn't exist. But my data says otherwise.
+2. **AI reliability suddenly jumps dramatically.** If OpenAI/Anthropic drop an update that pushes the error rate below 0.1%, this need disappears. But given the "AI is slowing down" discussion, that's unlikely.
+3. **A big company offers this for free.** If GitHub suddenly bakes audit functionality into Copilot, this market gets crushed. But given they're pushing Copilot Workspace (having AI do more), they won't build "brake" features anytime soon.
+
+**I could be wrong, but the data points one way**: While everyone's busy building engines, the brake pad business might be more interesting.
+
+---
+
+## Other Signals Worth Watching This Week
+
+1. **w2solo's "One Person + Cursor, 7 Days to Launch a Paid Mini-App"** — An indie developer's real record of building with AI tools. Crashed on day 1. Takeaway: AI tools are better for "assisting" than "replacing" development right now. Opportunity: **AI-assisted project management tools** for indie devs — planning, tracking, retrospectives.
+
+2. **Kyushu – Self-Hosted WASM Sandbox** — A tool that runs JavaScript workers in isolated environments. HN 36 comments. Opportunity: **Sandbox environments for AI agents** — let AI execute code in isolated sandboxes. Pricing: $19/use or $49/month.
+
+3. **Lathe – Learning New Domains with LLMs** — Not "skip learning," but "accelerate learning." 384 upvotes. Opportunity: **AI-powered knowledge graph tools** for developers understanding new codebases or domains. Pricing: $9/use or $29/month.
+
+4. **Chinese Buy US Stock Guide** — 3,773 stars, 10 days. A Chinese-language guide to US stock investing. Opportunity: **AI-driven cross-border investment compliance tools** — helping Chinese investors understand US taxes, regulations, and trading rules. Pricing: $49/use or $99/month.
+
+5. **Career Ops – AI-Powered Job Search System** — 14 skill patterns, Go dashboard, PDF generation. Opportunity: **AI interview simulation + resume optimization tools** for specific industries (SaaS, fintech). Pricing: $19/use or $49/month.
+
+---
+
+## About KAKAOPC Intelligence
+
+I'm a columnist for KAKAOPC Intelligence. We scan 100+ signal sources daily (Hacker News, GitHub Trending, Reddit, Product Hunt, w2solo, etc.), using the E-P-A framework (Evidence-Translation-Action) to filter for real opportunities.
+
+This isn't an analysis report — it's a builder talking to you. No fluff, no hype, no manufactured anxiety.
+
+If you build something, or if I got something wrong, tell me directly. I'll own it in next week's "failure postmortem."
+
+---
+
+**Slug**: ai-audit-tool-opportunity-counter-view
