@@ -1,0 +1,135 @@
+---
+title: "Who's Responsible for Code Written by Your AI Assistant? A Product Opportunity Confirmed by 1,312 Comments"
+date: 2026-06-10
+summary: "Late Tuesday night, a post appeared on the Hacker News homepage. It wasn't flashy, nor was it a traditional \"Show HN hit.\" It was just an announcement from..."
+---
+
+---
+
+# Who's Responsible for Code Written by Your AI Assistant? A Product Opportunity Confirmed by 1,312 Comments
+
+Late Tuesday night, a post appeared on the Hacker News homepage. It wasn't flashy, nor was it a traditional "Show HN hit." It was just an announcement from Anthropic: **Claude Fable 5**. But within 24 hours, it had racked up **1,659 upvotes and 1,312 comments**.
+
+This wasn't a routine update. Those 1,312 comments were almost entirely arguing about one thing: **Who can actually put their hand on their heart and say, "This AI-generated code is good to go"?**
+
+If you're an indie developer, or you're writing code with Cursor or Copilot, the next product opportunity is hiding in those 1,312 comments.
+
+---
+
+## In Plain English: Developers Are Collectively Anxious
+
+Let's translate that signal into plain language.
+
+Claude Fable 5 is Anthropic's latest AI coding model. It's powerful—it can write hundreds of lines of code in one go, and even handle complex multi-file projects. Sounds great, right?
+
+But in the comments, developers weren't praising how fast it writes code. They were asking a more fundamental question:
+
+> **"I had AI write 200 lines of code. It looks like it runs. But are there hidden security vulnerabilities? Performance pitfalls? If I ship it and something breaks, is it my fault or the AI's?"**
+
+One engineer at a fintech company wrote: "Our team's efficiency with AI-generated code went up 40%, but code review time went up 300%. Nobody trusts AI-written code. Everyone has to read it line by line, even more carefully than a colleague's code."
+
+**Who's feeling the pain?**
+- **Indie developers / freelancers**: You're handling the full stack solo. AI writes half your code, but clients won't forgive your bugs just because "the AI wrote it." When things break, you pay with money, time, and reputation.
+- **Tech leads / engineering managers at small teams**: Your team uses AI tools, output doubles, but code quality is all over the place. You, the reviewer, become the new bottleneck. The boss asks why delivery is slow, you say "I'm reviewing the AI's spaghetti code," and the boss doesn't believe you.
+- **SaaS founders**: 70% of your product's code is AI-written. Can you sleep at night? If a customer data breach happens, can you tell them "it was the AI's fault"?
+
+**Why now?**
+Because **Fable 5 blew the ceiling off the question "how much code can AI write?"** Before, AI wrote 10 lines, and a human could glance over them. Now, AI can write 1,000 lines, and a human can't possibly read them all. The old "human review" process is completely broken.
+
+**Pricing anchor**: A tool for security auditing and compliance checking of AI-generated code should be priced at **$19/month (personal)** or **$49/month (team)**. This follows the pricing logic of Snyk (code security scanning) and SonarQube (code quality checks), but the entry point is "the trust problem with AI code."
+
+---
+
+## The Hidden Opportunity: "Quality Inspector" and "Translator" for AI Code
+
+Most people reading about Fable 5 will think: "Wow, AI is getting better. My efficiency is about to go up again."
+
+But if you dig into those 1,312 comments, you'll find a more specific need:
+
+> **"AI writing code is fine. But I need an 'AI code reviewer' that can tell me in seconds: Does this code have common security vulnerabilities? Are there unreasonable performance issues? Does it deviate from my project's existing code standards?"**
+
+This isn't an "AI writes code" market. This is an **"AI inspects code"** market.
+
+**Product description**: A VS Code extension (or CLI tool) that, after you generate code with AI, automatically performs three actions:
+1.  **Security scan**: Check for SQL injection, XSS attacks, hardcoded keys, and other common issues. This isn't new, but existing tools (like Snyk) have low detection rates for AI-generated "magic code."
+2.  **Standards alignment**: Compare against your project's `.eslintrc`, `prettier` config, and existing code style, flagging inconsistencies. For example, "Your project uses `const` everywhere; AI wrote 3 `var` statements."
+3.  **Context translation**: This is the most valuable part. AI code usually has no comments, or terrible ones. This tool automatically generates **human-readable comments** for AI-generated code blocks, explaining "what this code does and why it's written this way." This is critical for anyone taking over code from someone else (or an AI).
+
+**Who will pay first?**
+**Indie developers + freelancers**. They're the most vulnerable—they shoulder all the responsibility alone. They don't need enterprise procurement processes. If they see "this helps me avoid client complaints," they'll pay.
+
+**Pricing model**:
+- **Free tier**: 5 scans per day, basic security checks.
+- **Pro tier**: $19/month, unlimited scans + standards alignment + context translation.
+- **Team tier**: $49/month, multi-project support, custom rules, CI/CD integration.
+
+**Why most people will miss it?**
+Because most people are distracted by the flashy "AI writes code" spectacle. They're still focused on "how fast can Fable 5 write?" instead of "how many pitfalls are in the code Fable 5 writes?" They're using old methods (manual review) to handle new problems (the massive volume of AI-generated code). They haven't realized that **when the barrier to writing code with AI drops to zero, the barrier to code quality skyrockets to ten thousand meters.**
+
+---
+
+## Why Most People Will Miss It (Deep Dive)
+
+What's the mainstream view?
+> "AI code is already good enough. In the future, manual code review won't be needed. It's an outdated process."
+
+That's wrong. At least, it's spectacularly wrong right now.
+
+**Data to back it up**:
+1.  **The voice of the comments**: Among those 1,312 HN comments, nearly every senior engineer emphasized that "code review won't disappear, it will just change form." A CTO with 20 years of experience wrote: "AI code is like a sharpened knife. It cuts vegetables fast, but if you don't know how to use it, it'll cut off your fingers. Code review is teaching you how to hold the knife safely."
+2.  **Open source project trends**: On the same day, another signal was **Alibaba open-sourcing `alibaba/open-code-review`** (28 points, GitHub Trending). This is a "hybrid architecture code review tool validated at massive scale inside Alibaba." Even a company the size of Alibaba is investing in "tools for reviewing AI code," not "letting AI completely replace review." That shows the problem is real.
+3.  **Another related project**: `Fission-AI/OpenSpec` (28 points, GitHub Trending), 53,834 stars. Its philosophy is "Spec-driven development for AI coding assistants"—write the spec first, then let AI write the code. This is fundamentally solving the same "AI code is untrustworthy" problem.
+
+**Why is the mainstream view wrong?**
+Because it confuses "can write code" with "can write *correct* code." AI can now write most "functionally correct" code. But quality dimensions like "security," "maintainability," and "adherence to standards" are areas where AI currently performs terribly. And as AI's ability to write code gets stronger, it produces more and more code that "looks like it runs but is actually dangerous." **The problem isn't decreasing; it's growing exponentially.**
+
+---
+
+## If It Were Me, Here's What I'd Do
+
+Don't overthink it. This product doesn't need you to train a large model or invent a fancy algorithm. It just needs to combine existing security scanners (like Semgrep, CodeQL), code formatters, and an LLM's text generation capabilities **in a way that's easiest for "AI code victims" to understand**.
+
+**Step 1 (Doable today)**:
+1.  Open VS Code and create a new extension.
+2.  The extension's function is dead simple: listen for the save event. When a file is saved, call OpenAI's or Anthropic's API, sending the file content and a prompt:
+   > "You are a senior code reviewer. Please inspect the following AI-generated code. If there are security vulnerabilities, performance issues, or deviations from common standards, flag them in English. If there are no issues, output 'Looks good.'"
+3.  Display the result using `vscode.window.showInformationMessage`.
+4.  Publish to the VS Code marketplace. Pricing: Free, but limited to 3 scans per day. Pro version: $19/month.
+
+**7-Day Validation Plan**:
+- **Day 1**: Build the basic extension, publish to the VS Code marketplace. Post on Hacker News and Reddit r/webdev: "I built an AI code inspector. Free trial. Roast me."
+- **Day 2**: Collect feedback from the first 100 users. Key question: "What do you most want it to check?" Likely answers: "Security" and "Does it match my existing code style?"
+- **Day 3**: Based on feedback, add the "security scan" module (call Semgrep's API; the free tier is sufficient).
+- **Day 4**: Add the "standards alignment" module. Read the project's root `eslintrc` or `prettierrc` and compare AI code against the configuration.
+- **Day 5**: Add the "context translation" module. User highlights a block of AI code, and the extension automatically generates human-readable comments.
+- **Day 6**: Set up a paywall. Free tier: 5 scans/day. Pro tier: $19/month.
+- **Day 7**: Review. If you have 50+ registered users (even if all on the free tier) or 3 people asking "how do I pay?" in the first 7 days, the direction is correct. Double down.
+
+**What does the MVP look like?**
+A VS Code extension, a simple backend (Express.js + SQLite for user quotas), and a Stripe payment link. **No complex front-end pages, no mobile app, no enterprise dashboard.**
+
+**Failure conditions (when is this judgment wrong)**:
+- **Scenario 1**: AI code generators (like Cursor, Copilot) build excellent code review features directly into their products. If GitHub Copilot launches "AI code quality checks" within six months and does it well, the space for an independent product shrinks rapidly.
+- **Scenario 2**: The quality of AI code improves dramatically within a year, with security vulnerabilities and standards issues dropping significantly. The demand for an "inspector" would then decrease.
+- **Scenario 3**: The developer community broadly accepts a "bugs in AI code are normal, we'll fix them in production" culture. If nobody cares about code quality, there's no market for this product. But based on the HN comments, at least for now, everyone cares **a lot**.
+
+---
+
+## Other Signals Worth Watching This Week
+
+1.  **Performative-UI** (34 points, HN): A React component library that recreates "common but ugly design patterns" (like form validation error pop-ups, empty state placeholders). **Interpretation**: Developers are tired of the same old Tailwind and Shadcn UI. They're starting to miss "characterful but ugly" design. Opportunity: Build an "anti-design system" UI framework. Price it at $29 one-time.
+2.  **Gitdot** (34 points, HN): An open-source GitHub alternative written in Rust. **Interpretation**: Dissatisfaction with GitHub's monopoly is building. Opportunity: Don't try to challenge GitHub. Instead, build a "GitHub collaboration workflow enhancer"—like smarter PR notifications or cross-repository issue management.
+3.  **My Chrome Extension Grew from 0 to 8,000 MAU** (28 points, w2solo): An indie developer shares their cold-start experience. **Interpretation**: The WebMarker case study shows that tool-based extensions can still get "organic distribution" on Reddit and Product Hunt. Opportunity: Find a "web operation you do every day but is super inefficient," turn it into an extension, and price it at $3-5 one-time.
+4.  **Apple Decides Not to Launch Siri in the EU** (26 points, HN): Because the EU rejected their AI regulation exemption request. **Interpretation**: AI regulation is becoming a real business risk. Opportunity: Build an "AI compliance checklist" SaaS to help small and medium companies check if their AI features comply with GDPR / the EU AI Act. Price: $99 per audit.
+
+---
+
+**About KAKAOPC Intelligence Bureau**
+
+I'm a columnist for the KAKAOPC Intelligence Bureau. We scan 50+ indie developer communities, tech forums, and GitHub Trending every day, filtering real signals from the noise.
+
+Our goal is to help indie developers and builders find product opportunities that "others can't see, or see but don't believe."
+
+**Slug**: claude-fable-5-code-review-opportunity
+
+**English Slug**: claude-fable-5-code-review-opportunity
