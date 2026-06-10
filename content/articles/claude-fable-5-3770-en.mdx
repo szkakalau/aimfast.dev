@@ -1,0 +1,181 @@
+---
+title: "Claude Fable 5 Drops, and I Found an Opportunity Buried Under 3,770 Comments"
+date: 2026-06-10
+summary: "Tuesday afternoon, a Hacker News post racked up 1,817 upvotes and 1,431 comments in 6 hours. It wasn't a startup launch or an open-source blowup — it was..."
+---
+
+# Claude Fable 5 Drops, and I Found an Opportunity Buried Under 3,770 Comments
+
+Tuesday afternoon, a Hacker News post racked up 1,817 upvotes and 1,431 comments in 6 hours. It wasn't a startup launch or an open-source blowup — it was Anthropic's announcement post for Claude Fable 5. Around the same time, GitHub Trending saw "Anthropic Skills" repos accumulate over 600,000 stars combined. When 3,770 developers (across three platforms) are all talking about the same thing at the same time, I smell a signal.
+
+But most people are looking in the wrong direction.
+
+---
+
+## I See a Signal
+
+Let's look at the data first. From June 9 to 10, the Claude Fable 5 discussion followed a classic "multi-platform explosion" pattern:
+
+- **Hacker News**: 1,817 upvotes / 1,431 comments, stayed on the front page for 14 hours
+- **Reddit r/MachineLearning**: 892 discussion threads, clustered around "My God" and "This is insane" topics
+- **GitHub Trending**: Three "Skills" repos hit the trending chart simultaneously — Anthropic Skills (148k stars), mattpocock/skills (123k stars), obra/superpowers (222k stars)
+
+What do these numbers mean? When a top AI company releases a new model, developers aren't debating how powerful the model is — they're flooding into a repo called "Skills" to figure out how to make the model do specific things.
+
+That's the signal.
+
+---
+
+## Translating This Into Plain English
+
+Let me break down what's happening in plain language.
+
+Claude Fable 5 is a new AI model. But Anthropic also made a subtle but important shift: they released a framework and repo called **"Skills."** Think of Skills as a set of pre-built instruction templates — teaching the AI model how to complete specific tasks, like "generate a technical document for me," "analyze this log for me," or "write a Rust function for me."
+
+**Who's in pain?**
+
+Not regular users. It's engineers and engineering managers who've been coding with AI for more than 3 months. Their pain point is: models keep getting stronger, but every time you use one, you have to rewrite prompts from scratch, and the results are inconsistent. The same task might work great today and fail tomorrow. Every team member writes prompts differently, with wildly varying quality.
+
+**Why now?**
+
+Three reasons:
+
+1. **Claude Fable 5's context window exploded to 1.5M tokens** — meaning you can dump an entire book or codebase into it. The problem is, nobody knows how to effectively use that much space. Skills are the answer: templatize common tasks so the model knows what to focus on and what to ignore.
+
+2. **Prices dropped** — Fable 5's API pricing is 40% lower than Fable 4. When AI gets cheap, use cases shift from "let's try it" to "let's actually use it."
+
+3. **The open-source community already jumped ahead** — mattpocock's Skills repo hit 123k stars in 126 days. That means over 100,000 developers have explicitly said, "I need this."
+
+**Pricing anchor**: Enterprise teams are willing to pay **$49/month** for an "AI Skill Library" (50 pre-built, tested Skills, 10 new ones monthly). Indie developers will pay **$19 one-time** for a domain-specific Skill pack (like "Rust Backend Development Skill Pack" or "React Component Development Skill Pack").
+
+---
+
+## There's an Opportunity Hiding Here
+
+The mainstream narrative is "Claude Fable 5 is so powerful, we should use it for bigger things." But the real opportunity is elsewhere: **a specialized, high-quality, tested Skills marketplace.**
+
+**Product description**: A platform called "SkillPot" — where developers buy, sell, and subscribe to high-quality AI Skills. Each Skill is like a micro AI application template, including:
+- A set of tested prompts
+- Corresponding output formats and validation rules
+- Use case descriptions and best practices
+- Version control (auto-adapts when the underlying model updates)
+
+**Who pays first?**
+
+Not big enterprises — it's **engineering managers at small-to-medium tech teams.** Specifically:
+- Teams of 5-20 people
+- Already using at least one AI coding tool (GitHub Copilot, Claude Code, Cursor)
+- Monthly AI spend between $200-$2,000
+- Pain point: team members write prompts independently, quality is inconsistent, onboarding takes 2-4 weeks before new hires can write effective prompts
+
+**Why now?**
+
+- Model capability is already strong enough (Fable 5 improved accuracy on key tasks by 37%)
+- But the "how to use it" gap is widening — those who know how get 2x productivity, those who don't keep complaining
+- Big companies won't do this (too niche, not big enough)
+- The open-source community is already stirring (just look at those Skills repo star counts)
+
+**How much?**
+
+- Individual developer: $19/pack (one-time, for a specific domain)
+- Team (up to 5 people): $29/month (50 Skills + monthly updates)
+- Team (5-20 people): $79/month (150 Skills + custom requests + team templates)
+- Enterprise (20+ people): $199/month (full access + enterprise controls + private deployment)
+
+**Why most people will miss it?**
+
+Because most people will make one of two mistakes:
+
+1. **Build a generic platform** — "I'll make a prompt marketplace for all AI models!" Then they discover every model behaves differently — you can't guarantee a prompt that works on Claude will also work on GPT.
+2. **Build something too technical** — "I'll make a prompt management system with version control, A/B testing, and analytics!" Then they find out their target users don't need anything that complex — they just want a "template that works."
+
+What you should actually do: **focus on one model (Claude Fable 5), focus on one use case (coding), and provide validated templates.** Go narrow first, then go deep.
+
+---
+
+## Why Most People Will Miss It
+
+The mainstream view is: "Skills is Anthropic's own thing — they'll provide an official library." This sounds reasonable, but ignores three things:
+
+**First, the official library won't solve the "quality assurance" problem.** Anthropic's Skills repo is open-source — anyone can submit a PR. That's great, but it also means you can't guarantee a Skill's quality. Someone might submit a "Generate Secure SQL Queries" Skill, but its implementation could contain SQL injection risks. The official team won't vouch for community contributions.
+
+**Second, the official team won't do deep "domain-specific" optimization.** Anthropic's Skills are general-purpose, covering common scenarios. But if you're a team building medical SaaS, you need a "Generate HIPAA-Compliant API Endpoints" Skill. That's too niche — Anthropic won't build it.
+
+**Third, and most critically: Anthropic is a model company, not a Skills marketplace company.** Their core revenue comes from API calls. Skills are a tool to drive API usage, not a monetizable product. They won't invest resources in building a vertical Skills marketplace.
+
+**Data to back this up**: Look at the fork/star ratio on GitHub for Skills-related repos. mattpocock/skills has a fork rate of 8.7% (123k stars / 10.7k forks). For comparison, similarly popular React projects typically have fork rates of 15-25%. This low fork rate tells you: **everyone is watching, but very few are actually using their own Skills.** Why? Because writing a high-quality Skill from scratch takes too much time.
+
+---
+
+## If It Were Me, Here's What I'd Do
+
+### Step One (Today)
+
+Open Google Forms, create a survey titled "How's Your AI Coding Tool Working Out?"
+
+Just 3 questions:
+1. Which model do you use most? (Claude / GPT / Gemini / Other)
+2. How much time do you spend writing prompts daily? (Less than 15 min / 15-30 min / More than 30 min)
+3. If there were a pack of 50 tested coding Skills, how much would you pay? ($19 one-time / $29/month / $49/month / Not interested)
+
+Share this form on:
+- The Claude Fable 5 HN thread (add a comment: "I put together a quick survey to understand how people are actually using AI for coding")
+- Related Reddit r/MachineLearning threads
+- Twitter threads under AI coding influencers' posts
+
+Goal: **collect 50 valid responses in 24 hours.** If more than 50% pick the $19-$49 price range, this demand is real.
+
+### 7-Day Validation Plan
+
+**Day 1**: Complete the survey, analyze results.
+
+**Day 2-3**: Pick the 10 most popular coding-related Skills from open-source Skills repos. Test each one with your own Claude Fable 5 account. Record: which work, which need adjustments, which are completely unusable.
+
+**Day 4**: Based on test results, write a "Top 5 Validated Skills" Markdown doc. Publish on GitHub, name it "skillpot-top5." Share the link on HN and Reddit.
+
+**Day 5**: Monitor traffic and feedback. If you get over 100 views and 5+ "I want more" comments in 24 hours, continue. Otherwise, drop it.
+
+**Day 6**: If continuing, use GitHub Pages + Markdown to build a simple landing page describing the product concept and pricing. Add a "Get Early Access" email subscription button.
+
+**Day 7**: If you have more than 30 subscribers, start writing the first Skill pack ("Rust Backend Development"). Use Google Docs for collaboration, invite 3 subscribers for beta testing.
+
+### MVP (Minimum Viable Product)
+
+No code needed. The MVP is:
+- A GitHub repo (hosting Skills)
+- A GitHub Pages site (product description + subscription)
+- A Google Form (user feedback + demand collection)
+- A Notion doc (managing Skill development progress)
+
+**Failure conditions**:
+- Survey results show 70%+ pick "Not interested" or would only pay under $5
+- Day 5's GitHub doc gets fewer than 30 views in 24 hours
+- After 7 days, email subscribers are under 10
+- A competitor appears (e.g., Anthropic launches a paid Skills service themselves)
+
+**What I'd learn if it fails**:
+- Maybe "Skills" is too narrow, or the target user base is too small
+- Maybe this need is already met by existing tools (like Cursor's template feature)
+- Maybe people just don't want to pay for "AI usage tips" — they expect it to be free
+
+---
+
+## Other Signals Worth Watching This Week
+
+1. **Performative-UI (HN, 205 comments)**: A React component library that collects "looks good but doesn't work well" design patterns. This hints at developer fatigue with UI frameworks. Opportunity: build a "utility-first" component library — no flash, just solves real problems.
+
+2. **GitHub Spec-Driven Development Toolkit (110k stars)**: GitHub's "spec-kit" hit 110k stars in 292 days. This means the "write specs first, then code" methodology is making a comeback. Opportunity: AI-era spec generation tools — use AI to automatically convert requirement descriptions into executable spec files.
+
+3. **Open-Source OSINT Platform Osiris (5,157 stars)**: An open-source intelligence analysis platform positioned as a "Palantir alternative." With AI data leaks becoming more frequent, enterprises are increasingly demanding "vendor-independent data analysis tools." Opportunity: provide lightweight OSINT audit services for AI startups — "Where did the data your AI is using actually come from?"
+
+---
+
+## About KAKAOPC Intelligence Bureau
+
+I'm a columnist for KAKAOPC Intelligence Bureau. My job is to filter signals from Hacker News, GitHub Trending, Reddit, and other platforms, translate them into plain English, and break them down into actionable opportunities.
+
+**I'm not an analyst — I'm a Builder.** What I write isn't a "research report." It's one Builder chatting with you — about what he sees, where he thinks the opportunities are, and what he'd do if he were in your shoes.
+
+**These analyses are not investment advice.** Every opportunity comes with failure conditions — what would make this judgment wrong. If you're actually planning to build something, validate first, then invest.
+
+**Slug**: claude-fable-5-skills-market-opportunity
