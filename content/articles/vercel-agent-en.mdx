@@ -1,0 +1,191 @@
+---
+title: "Vercel Built an Agent Programming Language, But the Real Opportunity Is in the Opposite Direction"
+date: 2026-06-11
+summary: "On Tuesday afternoon, Vercel's zerolang repository on GitHub racked up 4,969 stars and 325 forks in just 26 days. Its README opens with: \"The Programming..."
+---
+
+---
+
+# Vercel Built an Agent Programming Language, But the Real Opportunity Is in the Opposite Direction
+
+On Tuesday afternoon, Vercel's `zerolang` repository on GitHub racked up **4,969 stars** and **325 forks** in just 26 days. Its README opens with: "The Programming Language for Agents" — a language designed for AI agents.
+
+Meanwhile, Hacker News had **228 comments** hotly debating something else: Claude Desktop spawns a **1.8 GB Hyper-V virtual machine** every time you launch it, even if you just ask "What's the weather today?"
+
+These two signals seem unrelated. One is a "future is here" new language; the other is a "this hurts right now" rant.
+
+But when you put them together, I see an opportunity most people will miss.
+
+---
+
+## I See a Signal
+
+Let's start with `zerolang`.
+
+Vercel's team is building a new language specifically for AI agents. The core selling point: **When an agent writes code in this language, execution produces no side effects** — it won't delete your files, call APIs you don't know about, or generate unexpected bills.
+
+Sounds impressive. The nearly 5,000 stars on GitHub show the tech community is excited.
+
+But after scanning discussions on HN, Reddit, and Twitter, I noticed something interesting: **Most of the excited people aren't developers currently using agents to write code** — they're tech enthusiasts who think "this idea is cool."
+
+Looking closer at `zerolang`'s scores in the intelligence system:
+
+| Dimension | Score | Interpretation |
+|-----------|-------|----------------|
+| Cross-platform | 1 | Significant discussion on only one platform |
+| Buyer clarity | 1 | No one knows who would pay for this |
+| Actionability | 1 | No concrete product form or pricing |
+
+**Total score: 7** — far below the 15-point threshold to trigger an action plan.
+
+This isn't to say `zerolang` is unimportant. It means: **Today's discussion around it is still in the "tech demo excitement" phase, not the "someone's willing to pay" phase.**
+
+---
+
+## Translating Into Plain English
+
+Let me translate these two signals:
+
+**Signal One: Claude Desktop consumes 1.8 GB on launch**
+- Plain English: You want Claude to help write an email, and it first spins up a 1.8 GB "sandbox" — a fully isolated virtual environment — before answering.
+- Who's hurting: **Independent developers using Claude Pro**, especially MacBook users with lower specs. On a 16 GB machine, launching Claude eats up 1/8 of your RAM.
+- Why now: Because Anthropic just released Claude Desktop's sandbox mechanism, and developers are discovering "every conversation requires a full VM."
+
+**Signal Two: Vercel is building a dedicated language for agents**
+- Plain English: Vercel wants to design a "safe language" for AI agents, so agent-written code can only do limited things — no messing around.
+- Who's hurting: Theoretically, everyone using agents to write code. But in reality, **agent-based coding is still in the "toy phase"** — most people only occasionally ask Claude to tweak a function.
+- Why now: Because security concerns around agent-written code are starting to be discussed, but haven't become a "must-solve" problem yet.
+
+---
+
+## There's an Opportunity Hiding Here
+
+Both signals point in the same direction: **AI agent security and cost control**. But they point to completely different timeframes.
+
+`zerolang` solves a "future" problem — when agents commonly write code, we'll need a safe language.
+Claude Desktop's 1.8 GB problem solves a "now" problem — I want to use Claude to write a script today, but it slows my computer to a crawl.
+
+**The real opportunity isn't in "how to make agents safer" — it's in "how to make agents lighter."**
+
+Specifically:
+
+### Product: Agent Sandbox Monitoring Dashboard
+
+A lightweight macOS/Linux menu bar app that monitors all AI assistants (Claude Desktop, Cursor, GitHub Copilot, etc.) on your machine — tracking processes launched, memory used, and files generated.
+
+### Who Will Pay First?
+
+**Independent developers using Claude Pro with 16 GB RAM machines.** They launch Claude multiple times a day, and each 1.8 GB hit makes their computer sluggish. Their most direct pain point: "I pay $20/month, but Chrome crashes after I open Claude."
+
+### Pricing Anchor
+
+- **$9/month** Monitoring tier: Shows current agent process resource usage, history
+- **$29** One-time purchase: Adds agent sandbox cleanup, automatic memory release, agent cost reports
+
+### Why Most People Will Miss It
+
+Most people see `zerolang` and say: "Vercel is defining the future. This is a revolutionary language. I should learn it."
+
+But the data says otherwise. `zerolang`'s discussion heat is confined to GitHub alone — no cross-platform validation. Buyer clarity scores 1 — no one can articulate who would pay for this language.
+
+Meanwhile, Claude Desktop's 1.8 GB problem: **At least 50 of those 228 HN comments are complaining "my computer is freezing."** This is real pain, and users are openly discussing it on Reddit.
+
+More critically: **AWS Bedrock just announced it will share user data with Anthropic** (393 upvotes, 225 comments). This means enterprise customers will be more cautious about cloud-based agents and shift toward local deployment. The first problem with local agents? Resource consumption.
+
+---
+
+## Why Most People Will Miss It
+
+Mainstream view: Agent programming languages are the future, and Vercel is setting the standard.
+
+Data counters:
+1. `zerolang`'s cross-platform score is only 1 — this signal hasn't broken out
+2. Buyer clarity is only 1 — no one can say who would pay for this language
+3. Actionability is only 1 — it's far from a "sellable product"
+
+What's truly worth watching is the intersection of **Claude Desktop's 1.8 GB + AWS Bedrock data sharing + 389 discussions about agent resource consumption**.
+
+This intersection points to a concrete product need: **Agent resource monitoring and cost control.**
+
+Most people will miss it because they equate "tech demo excitement" with "market opportunity." `zerolang` is cool, but it's a "solve it when agents are widespread" problem. Agent resource monitoring is a "paying customers exist today" problem.
+
+---
+
+## If It Were Me, Here's What I'd Do
+
+### Step One: Spend 2 Hours Today Building a Landing Page
+
+Use Carrd or Vercel to throw up a minimal page with the title:
+**"How much RAM did your AI assistant eat? — Agent Monitor, real-time resource tracking for Claude, Cursor, Copilot"**
+
+Page content:
+- A comparison chart: Memory usage before vs. after launching Claude Desktop
+- Three feature descriptions: Resource monitoring / One-click cleanup / Cost reports
+- A Waitlist form to collect emails
+- Pricing: $9/month or $29 one-time
+
+### 7-Day Validation Plan
+
+**Day 1-2**: Post the page on HN's Claude Desktop discussion thread, Reddit r/LocalLLaMA, and relevant Twitter threads. Goal: Get 100 Waitlist signups.
+
+**Day 3-4**: Manually email the first 20 signups with three questions:
+1. Which AI assistant do you primarily use?
+2. What's your computer's specs?
+3. How much would you pay for this tool?
+
+**Day 5-6**: If at least 5 people say "I'd pay $9/month," build an MVP:
+- A simple macOS menu bar app that does one thing: show Claude Desktop's process ID and memory usage
+- Use Swift + system APIs — can be done in 2 days
+- Core feature: Click "Free Memory" to kill zombie agent processes
+
+**Day 7**: Ship to Waitlist users and see if it spreads organically.
+
+### MVP Approach
+
+No need for a full app. The first version can be a **shell script + menu bar icon**:
+
+```bash
+#!/bin/bash
+# agent_monitor.sh
+# Monitor Claude Desktop's memory usage
+CLAUDE_PID=$(pgrep -f "Claude Desktop")
+if [ ! -z "$CLAUDE_PID" ]; then
+    MEM=$(ps -o rss= -p $CLAUDE_PID | awk '{printf "%.1f GB", $1/1048576}')
+    echo "Claude Desktop: $MEM"
+fi
+```
+
+Pair it with a SwiftBar or xbar plugin to display in the menu bar. Build this in 7 days, then see if anyone would pay $9/month for an "auto-cleanup" version.
+
+### Failure Conditions
+
+**When this judgment is wrong:**
+1. Claude Desktop optimizes resource usage in the next update, eliminating the 1.8 GB problem
+2. Users' "monitoring tool" complaints don't translate to willingness to pay (Waitlist < 30 people)
+3. macOS system permissions prevent monitoring other processes' resources
+
+**I could be wrong, but the data points to this:** Over 50 of the 228 HN comments complain about resource usage, and 1.8 GB is an extremely specific pain point number. If this can't convert to paying customers, then "agent resource monitoring" isn't ready yet.
+
+---
+
+## Other Signals Worth Watching This Week
+
+1. **AWS Bedrock requires data sharing** (HN 393 upvotes, 225 comments): Enterprise customers are becoming wary of cloud-based agent data privacy — local agent monitoring tools are in rising demand.
+
+2. **Fission-AI/OpenSpec 54,072 stars**: Spec-driven development is rising in AI coding. Opportunity: "AI code review" tools focused on checking whether AI-generated code follows specified guidelines.
+
+3. **"Most enterprise software work is performative"** (HN 200 upvotes, 225 comments): Developer fatigue with "looking busy" has peaked. Opportunity: Productivity tools focused on "real output," not "looking busy" management tools.
+
+4. **Chrome extension earns $847 in 3 months** (w2solo): A simple JSON formatter tool priced at $4.99 one-time. Validates the viability of "small but beautiful" tools on the Chrome Web Store.
+
+5. **WebMarker hits 8,000 monthly active users with zero marketing spend** (w2solo): Web annotation + Notion sync. Shows that building features users actually need is more effective than burning cash on promotion.
+
+---
+
+## About KAKAOPC Intelligence Bureau
+
+I'm an analyst at KAKAOPC Intelligence Bureau. I scan 15 signal sources daily, using the E-P-A framework (Evidence Anchoring → Plain English Translation → Action Recommendations) to filter signals worth builders' attention.
+
+This isn't investment advice or tech predictions. It's a signal-to-action playbook — helping you cut through the noise and jump straight into validation.
+
+*See you tomorrow.*
