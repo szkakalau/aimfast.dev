@@ -31,12 +31,12 @@
       "buyer": "to-be-determined",
       "landing_page_url": "https://aimfast.dev/i-m-tired-of-talking-to-ai",
       "lp_status": "live",
-      "verification_result": "pending",
+      "verification_result": "failed",
       "day7_uv": 0,
       "day7_signups": 0,
-      "day7_decision": "",
-      "current_status": "monitoring",
-      "notes": "LP 已生成于 2026-05-27 21:50 | 部署: cd C:\\Users\\castr\\Desktop\\OPC Project\\KAKAOPC情报科\\landing_pages\\OP-20260527-001 && vercel"
+      "day7_decision": "abandon",
+      "current_status": "archived",
+      "notes": "Day 13: ❌ 验证失败（0 UV < 30 阈值）→ 放弃"
     },
     {
       "id": "OP-20260530-002",
@@ -50,12 +50,12 @@
       "buyer": "to-be-determined",
       "landing_page_url": "https://aimfast.dev/opencut-app-opencut",
       "lp_status": "live",
-      "verification_result": "pending",
+      "verification_result": "failed",
       "day7_uv": 0,
       "day7_signups": 0,
-      "day7_decision": "",
-      "current_status": "monitoring",
-      "notes": "LP 已生成于 2026-05-30 10:20 | 部署: vercel --prod"
+      "day7_decision": "abandon",
+      "current_status": "archived",
+      "notes": "Day 10: ❌ 验证失败（0 UV < 30 阈值）→ 放弃"
     },
     {
       "id": "OP-20260601-003",
@@ -69,12 +69,69 @@
       "buyer": "to-be-determined",
       "landing_page_url": "https://aimfast.dev/pewdiepie-archdaemon-odysseus",
       "lp_status": "live",
+      "verification_result": "failed",
+      "day7_uv": 0,
+      "day7_signups": 0,
+      "day7_decision": "abandon",
+      "current_status": "archived",
+      "notes": "Day 8: ❌ 验证失败（0 UV < 30 阈值）→ 放弃"
+    },
+    {
+      "id": "OP-20260610-004",
+      "date": "2026-06-10",
+      "opportunity": "Claude Fable 5",
+      "signals": [
+        "Hacker News"
+      ],
+      "score": 32,
+      "cross_platform_count": 2,
+      "buyer": "to-be-determined",
+      "landing_page_url": "https://aimfast.dev/claude-fable-5",
+      "lp_status": "live",
       "verification_result": "pending",
       "day7_uv": 0,
       "day7_signups": 0,
       "day7_decision": "",
       "current_status": "monitoring",
-      "notes": "LP 已生成于 2026-06-01 10:05 | 部署: vercel --prod"
+      "notes": "LP 已生成于 2026-06-10 08:04 | 部署: vercel --prod | Day 2 (06-12): LP 确认在线，页面正常加载。Vercel Analytics 无直接访问权限，UV 待确认。LP 内容: ModelMatch — AI 模型对比推荐引擎"
+    },
+    {
+      "id": "OP-20260612-005",
+      "date": "2026-06-12",
+      "opportunity": "MCPilot — Universal MCP Server Manager",
+      "signals": [
+        "GitHub Trending (ChromeDevTools/chrome-devtools-mcp, 43K stars)"
+      ],
+      "score": 28,
+      "cross_platform_count": 1,
+      "buyer": "Developers using Claude Code, Codex, Cursor, and MCP-compatible AI agents",
+      "landing_page_url": "https://aimfast.dev/mcpilot",
+      "lp_status": "live",
+      "verification_result": "pending",
+      "day7_uv": 0,
+      "day7_signups": 0,
+      "day7_decision": "",
+      "current_status": "monitoring",
+      "notes": "LP 已生成于 2026-06-12 | 信号: chrome-devtools-mcp (43,384 stars, 158.9 star velocity, 273 天). MCP 生态爆发中，目前没有统一的管理/发现工具。产品: MCPilot — 统一仪表盘发现、安装、监控所有 MCP 服务器。"
+    },
+    {
+      "id": "OP-20260612-006",
+      "date": "2026-06-12",
+      "opportunity": "ShipSecure — AI Security Audit Before You Ship",
+      "signals": [
+        "GitHub Trending (KeygraphHQ/shannon, 44K stars)"
+      ],
+      "score": 28,
+      "cross_platform_count": 1,
+      "buyer": "Indie developers and small teams who can't afford a security breach",
+      "landing_page_url": "https://aimfast.dev/shipsecure",
+      "lp_status": "live",
+      "verification_result": "pending",
+      "day7_uv": 0,
+      "day7_signups": 0,
+      "day7_decision": "",
+      "current_status": "monitoring",
+      "notes": "LP 已生成于 2026-06-12 | 信号: KeygraphHQ/shannon (44,495 stars, 173.1 star velocity, 257 天). 自主白盒 AI 渗透测试工具。产品: ShipSecure — 一条命令审计整个代码库，找到真实漏洞并证明可被利用。定位 Snyk/Semgrep 的上游替代。"
     }
   ]
 }
