@@ -325,11 +325,23 @@ def generate_sitemap() -> int:
             if not slug:
                 continue
 
+            # Active monitoring LPs get daily + high priority; archived get monthly
+            status = opp.get("current_status", "monitoring")
+            if status in ("monitoring", "building"):
+                changefreq = "daily"
+                priority = "0.9"
+            elif status == "archived":
+                changefreq = "monthly"
+                priority = "0.5"
+            else:
+                changefreq = "weekly"
+                priority = "0.8"
+
             urls.append({
                 'loc': lp_url + "/",
                 'lastmod': opp.get("date", ""),
-                'changefreq': 'monthly',
-                'priority': '0.7',
+                'changefreq': changefreq,
+                'priority': priority,
             })
 
     # Generate XML

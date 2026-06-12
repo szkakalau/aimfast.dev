@@ -4,21 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MCPilot — One Dashboard for All Your AI Agent Tools | aimfast.dev</title>
-  <meta name="description" content="Discover, install, and monitor all your MCP servers in one place. Built for Claude Code, Codex, Cursor, and every AI coding agent that speaks MCP.">
+  <meta name="description" content="Discover, install, and monitor all your MCP servers in one dashboard. No more JSON configs — one click to add browser automation, databases, and APIs to Claude Code, Codex, or Cursor.">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#1a1d24">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="canonical" href="https://aimfast.dev/mcpilot/">
   <meta property="og:type" content="product">
   <meta property="og:title" content="MCPilot — One Dashboard for All Your AI Agent Tools">
-  <meta property="og:description" content="Stop juggling JSON configs. One click to add browser automation, database queries, and API testing to any AI coding agent.">
+  <meta property="og:description" content="Discover, install, and monitor MCP servers for Claude Code, Codex, Cursor, and every MCP-compatible agent. No more JSON configs.">
   <meta property="og:url" content="https://aimfast.dev/mcpilot/">
   <meta property="og:site_name" content="KAKAOPC Intel">
-  <meta property="og:image" content="https://aimfast.dev/favicon.svg">
-  <meta name="twitter:card" content="summary">
+  <meta property="og:image" content="https://aimfast.dev/og/mcpilot.png">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="MCPilot — One Dashboard for All Your AI Agent Tools">
-  <meta name="twitter:description" content="Stop juggling JSON configs. One click to add browser automation, database queries, and API testing to any AI coding agent.">
-  <meta name="twitter:image" content="https://aimfast.dev/favicon.svg">
+  <meta name="twitter:description" content="Discover, install, and monitor MCP servers for every AI coding agent. One dashboard, zero config pain.">
+  <meta name="twitter:image" content="https://aimfast.dev/og/mcpilot.png">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"SoftwareApplication","name":"MCPilot","applicationCategory":"DeveloperApplication","operatingSystem":"Web, macOS, Linux, Windows","description":"MCPilot is a universal MCP server manager for AI coding agents. Discover, install, and monitor MCP servers for Claude Code, Codex, Cursor, and other MCP-compatible agents.","url":"https://aimfast.dev/mcpilot/","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
   </script>
@@ -47,15 +47,31 @@
     .signup-form input:focus { outline: none; border-color: var(--color-accent); }
     .signup-form .btn { height: 48px; white-space: nowrap; }
     .signup-form .btn:disabled { opacity: 0.6; cursor: not-allowed; }
-
     .hero-note { margin-top: var(--space-1); font-size: 0.8125rem; color: var(--color-text-muted); }
 
-    .selling-points { padding: var(--space-8) 0; }
-    .selling-points h2 { text-align: center; margin-bottom: var(--space-5); }
+    .content-section { padding: var(--space-8) 0; }
+    .content-section h2 { text-align: center; margin-bottom: var(--space-5); }
+    .content-section .prose { max-width: 720px; margin: 0 auto; }
+    .content-section .prose p { color: var(--color-text-secondary); margin-bottom: var(--space-3); line-height: 1.75; font-size: 1.05rem; }
+
     .selling-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4); }
     .selling-grid .card { padding: var(--space-4); text-align: center; }
     .selling-grid .card .icon { margin-bottom: var(--space-2); }
     .selling-grid .card h3 { margin-bottom: var(--space-1); }
+    .selling-grid .card p { line-height: 1.65; }
+
+    .how-works { padding: var(--space-8) 0; }
+    .how-works h2 { text-align: center; margin-bottom: var(--space-5); }
+    .steps { max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: var(--space-4); }
+    .step { display: flex; gap: var(--space-3); align-items: flex-start; }
+    .step-num {
+      flex-shrink: 0; width: 40px; height: 40px;
+      background: var(--color-accent); color: var(--color-bg);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-family: var(--font-mono);
+    }
+    .step-content h3 { margin-bottom: var(--space-1); }
+    .step-content p { color: var(--color-text-secondary); margin: 0; line-height: 1.65; }
 
     .trust-bar { padding: var(--space-4) 0; text-align: center; border-top: 1px solid var(--color-border); }
     .trust-bar p { margin: 0; font-size: 0.8125rem; color: var(--color-text-muted); display: flex; align-items: center; justify-content: center; gap: var(--space-1); flex-wrap: wrap; }
@@ -85,10 +101,11 @@
 </head>
 <body>
 
+  <!-- ═══ HERO ═══ -->
   <section class="hero container">
-    <span class="eyebrow">🔌 MCP ecosystem · 43K+ devs already on board</span>
+    <span class="eyebrow">🔌 MCP ecosystem · 43K+ developers on GitHub</span>
     <h1>One Dashboard. All Your AI Agent Tools.</h1>
-    <p class="lead text-secondary">Stop juggling JSON configs. Discover, install, and monitor MCP servers for Claude Code, Codex, Cursor, and every agent that speaks MCP.</p>
+    <p class="lead text-secondary">Stop juggling JSON configs across 3 different files. Discover, install, and monitor MCP servers — browser automation, databases, APIs — for Claude Code, Codex, Cursor, and every agent that speaks MCP.</p>
 
     <form id="signup-form" class="signup-form" action="https://formspree.io/f/your-form-id" method="POST" onsubmit="return handleSubmit(event)">
       <input type="email" name="email" placeholder="you@example.com" required autocomplete="email" aria-label="Email address">
@@ -104,8 +121,47 @@
     <p class="hero-note">No spam, ever. Just a launch notification. · 30+ MCP servers indexed</p>
   </section>
 
-  <section class="selling-points container">
-    <h2>Why 43K developers starred chrome-devtools-mcp</h2>
+  <!-- ═══ WHY THIS MATTERS ═══ -->
+  <section class="content-section container">
+    <h2>Why MCP Server Management Matters Right Now</h2>
+    <div class="prose">
+      <p>The Model Context Protocol (MCP) is the fastest-growing standard in the AI coding ecosystem. In less than a year, ChromeDevTools' MCP server alone has racked up <strong>over 43,000 GitHub stars</strong> and more than 2,700 forks. Developers are rushing to connect their AI coding agents to browsers, databases, APIs, and file systems — because an agent without tools is just a chatbot.</p>
+      <p>But the developer experience is broken. Every MCP server requires hand-editing JSON configuration files — sometimes across three different locations for Claude Code, Codex, and Cursor. Versions drift. Servers crash silently. When an agent starts hallucinating because its database connection dropped, you won't know until you've wasted an hour debugging prompts that were never the problem.</p>
+      <p>MCPilot fixes this. It's a single desktop dashboard that discovers your installed agents, lets you browse and install MCP servers from a curated catalog with one click, and monitors server health in real time. If you're building with AI coding agents in 2026, you need an MCP manager — the same way every JavaScript project needed a package manager once the ecosystem hit critical mass.</p>
+    </div>
+  </section>
+
+  <!-- ═══ HOW IT WORKS ═══ -->
+  <section class="how-works container">
+    <h2>How It Works</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h3>Auto-detect your agents</h3>
+          <p>Open MCPilot and it instantly finds Claude Code, Codex, Cursor, Windsurf, or any MCP-compatible agent installed on your machine. No manual setup required — we scan standard install paths and config directories.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h3>Browse and install in one click</h3>
+          <p>Search the curated catalog by category — browser automation, PostgreSQL, file system, API testing, and more. Every server is reviewed for quality and security. One click installs it, writes the config, and restarts your agent with the new tool attached.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h3>Monitor everything in real time</h3>
+          <p>The dashboard shows which MCP servers are running, their memory usage, token consumption, and error rates. If a server goes down or starts returning errors, you get an alert before your agent starts producing bad output.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ SELLING POINTS ═══ -->
+  <section class="content-section container">
+    <h2>What You Get</h2>
     <div class="selling-grid">
       <div class="card">
         <div class="icon icon-accent">
@@ -113,8 +169,8 @@
             <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
           </svg>
         </div>
-        <h3>One-click install</h3>
-        <p class="text-secondary">Browse the catalog, click install. No more hand-editing JSON across 3 config files.</p>
+        <h3>One-click MCP install</h3>
+        <p>Browse a quality-reviewed catalog, click install, and your agent is ready. No more copying JSON snippets from README files or debugging indentation errors in YAML config blocks.</p>
       </div>
       <div class="card">
         <div class="icon icon-accent">
@@ -122,8 +178,8 @@
             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/>
           </svg>
         </div>
-        <h3>Curated & reviewed</h3>
-        <p class="text-secondary">Every MCP server is checked for quality and security before it reaches the catalog.</p>
+        <h3>Security-reviewed catalog</h3>
+        <p>Every MCP server in the catalog is checked for excessive permissions, data exfiltration risks, and version compatibility before it reaches you — so you're not blindly trusting a stranger's config.</p>
       </div>
       <div class="card">
         <div class="icon icon-accent">
@@ -131,12 +187,13 @@
             <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
           </svg>
         </div>
-        <h3>Live health monitoring</h3>
-        <p class="text-secondary">See which servers are running, their memory usage, and error rates in one place.</p>
+        <h3>Live health dashboard</h3>
+        <p>CPU, memory, uptime, and error rates for every connected MCP server — all in one place. Know which tool is slowing down your agent before it affects your workflow.</p>
       </div>
     </div>
   </section>
 
+  <!-- ═══ TRUST ═══ -->
   <div class="trust-bar container">
     <p>
       <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="1.8" fill="none"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>

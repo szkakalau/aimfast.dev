@@ -1,4 +1,10 @@
 User-agent: *
 Allow: /
+Crawl-delay: 5
 
 Sitemap: https://aimfast.dev/sitemap.xml
+
+# Prevent indexing of shared design system assets
+User-agent: *
+Disallow: /_ds/
+Disallow: /og/

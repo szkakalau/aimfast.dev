@@ -4,21 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ShipSecure — AI Security Audit Before You Ship | aimfast.dev</title>
-  <meta name="description" content="One command to audit your codebase. AI-powered pentest that finds real vulnerabilities and proves they exist — no false positives.">
+  <meta name="description" content="One command audits your entire codebase with AI-powered white-box pentesting. Finds real SQL injection, XSS, and auth bypass vulnerabilities — and proves they exist before attackers do.">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#1a1d24">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="canonical" href="https://aimfast.dev/shipsecure/">
   <meta property="og:type" content="product">
   <meta property="og:title" content="ShipSecure — AI Security Audit Before You Ship">
-  <meta property="og:description" content="One command to audit your codebase. Finds real vulnerabilities and proves they exist — no false positives.">
+  <meta property="og:description" content="One command to audit your codebase. Finds real vulnerabilities and proves they exist — no false positives. Built for indie devs who can't afford a breach.">
   <meta property="og:url" content="https://aimfast.dev/shipsecure/">
   <meta property="og:site_name" content="KAKAOPC Intel">
-  <meta property="og:image" content="https://aimfast.dev/favicon.svg">
-  <meta name="twitter:card" content="summary">
+  <meta property="og:image" content="https://aimfast.dev/og/shipsecure.png">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="ShipSecure — AI Security Audit Before You Ship">
-  <meta name="twitter:description" content="One command to audit your codebase. Finds real vulnerabilities and proves they exist.">
-  <meta name="twitter:image" content="https://aimfast.dev/favicon.svg">
+  <meta name="twitter:description" content="One command, real vulnerability detection, zero false positives. Built for indie devs.">
+  <meta name="twitter:image" content="https://aimfast.dev/og/shipsecure.png">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"SoftwareApplication","name":"ShipSecure","applicationCategory":"SecurityApplication","operatingSystem":"Web, macOS, Linux","description":"ShipSecure is an AI-powered security audit tool for indie developers. It analyzes source code, identifies real attack vectors, and proves vulnerabilities before they reach production.","url":"https://aimfast.dev/shipsecure/","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
   </script>
@@ -47,15 +47,31 @@
     .signup-form input:focus { outline: none; border-color: var(--color-accent); }
     .signup-form .btn { height: 48px; white-space: nowrap; }
     .signup-form .btn:disabled { opacity: 0.6; cursor: not-allowed; }
-
     .hero-note { margin-top: var(--space-1); font-size: 0.8125rem; color: var(--color-text-muted); }
 
-    .selling-points { padding: var(--space-8) 0; }
-    .selling-points h2 { text-align: center; margin-bottom: var(--space-5); }
+    .content-section { padding: var(--space-8) 0; }
+    .content-section h2 { text-align: center; margin-bottom: var(--space-5); }
+    .content-section .prose { max-width: 720px; margin: 0 auto; }
+    .content-section .prose p { color: var(--color-text-secondary); margin-bottom: var(--space-3); line-height: 1.75; font-size: 1.05rem; }
+
     .selling-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4); }
     .selling-grid .card { padding: var(--space-4); text-align: center; }
     .selling-grid .card .icon { margin-bottom: var(--space-2); }
     .selling-grid .card h3 { margin-bottom: var(--space-1); }
+    .selling-grid .card p { line-height: 1.65; }
+
+    .how-works { padding: var(--space-8) 0; }
+    .how-works h2 { text-align: center; margin-bottom: var(--space-5); }
+    .steps { max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: var(--space-4); }
+    .step { display: flex; gap: var(--space-3); align-items: flex-start; }
+    .step-num {
+      flex-shrink: 0; width: 40px; height: 40px;
+      background: var(--color-accent); color: var(--color-bg);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-family: var(--font-mono);
+    }
+    .step-content h3 { margin-bottom: var(--space-1); }
+    .step-content p { color: var(--color-text-secondary); margin: 0; line-height: 1.65; }
 
     .trust-bar { padding: var(--space-4) 0; text-align: center; border-top: 1px solid var(--color-border); }
     .trust-bar p { margin: 0; font-size: 0.8125rem; color: var(--color-text-muted); display: flex; align-items: center; justify-content: center; gap: var(--space-1); flex-wrap: wrap; }
@@ -85,10 +101,11 @@
 </head>
 <body>
 
+  <!-- ═══ HERO ═══ -->
   <section class="hero container">
     <span class="eyebrow">🛡️ white-box AI pentesting · 44K+ GitHub stars</span>
     <h1>Know your code is secure before you ship.</h1>
-    <p class="lead text-secondary">One command audits your entire codebase. Real vulnerabilities found and proven — SQL injection, XSS, auth bypass. Built for indie devs who can't afford a breach.</p>
+    <p class="lead text-secondary">One command audits your entire codebase with AI-powered white-box analysis. Finds real SQL injection, XSS, and auth bypass vulnerabilities — and proves they exist — before attackers do.</p>
 
     <form id="signup-form" class="signup-form" action="https://formspree.io/f/your-form-id" method="POST" onsubmit="return handleSubmit(event)">
       <input type="email" name="email" placeholder="you@example.com" required autocomplete="email" aria-label="Email address">
@@ -101,11 +118,50 @@
       <p style="font-weight:600;">You're on the list!</p>
       <p class="text-secondary" style="font-size:0.875rem;">We'll send you the installer when ShipSecure launches. No spam.</p>
     </div>
-    <p class="hero-note">No spam, ever. Just a launch notification. · 100% local — your code never leaves your machine</p>
+    <p class="hero-note">No spam, ever. Just a launch notification. · 100% local — your source code never leaves your machine</p>
   </section>
 
-  <section class="selling-points container">
-    <h2>Why 44K developers starred Shannon</h2>
+  <!-- ═══ WHY THIS MATTERS ═══ -->
+  <section class="content-section container">
+    <h2>Why AI-Powered Security Auditing Matters Right Now</h2>
+    <div class="prose">
+      <p>In June 2026, the open-source AI pentesting tool <strong>Shannon hit 44,000 GitHub stars</strong> and over 5,000 forks — making it one of the fastest-growing security tools in GitHub history. The reason is simple: AI coding agents now generate the majority of new code in startups and indie projects, but traditional security scanners were built for human-written code and miss the unique vulnerability patterns that AI-generated code introduces.</p>
+      <p>Existing tools like Snyk and Semgrep are valuable but limited. Snyk checks your dependencies for known CVEs — it doesn't understand your application's authentication logic. Semgrep matches code patterns — it can't execute a multi-step attack chain to prove a vulnerability is real. If you're an indie developer shipping a SaaS product, you're effectively deploying blind. A single data breach can destroy your reputation and your business overnight.</p>
+      <p>ShipSecure brings white-box AI pentesting to indie developers. Rather than scanning for patterns, it reads your source code like an attacker would — understanding your auth flow, tracing data through your API routes, and safely executing proof-of-concept exploits to confirm each finding. The result: every vulnerability in your report is real and exploitable, with a step-by-step fix guide written in plain English — not security researcher jargon.</p>
+    </div>
+  </section>
+
+  <!-- ═══ HOW IT WORKS ═══ -->
+  <section class="how-works container">
+    <h2>How It Works</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h3>Point it at your repo</h3>
+          <p>Run a single command in your project directory. ShipSecure analyzes your entire codebase — reading source files, tracing data flows through middleware and API routes, and building a map of how your application actually works.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h3>AI thinks like an attacker</h3>
+          <p>Using white-box analysis, the AI understands your authentication logic, database query patterns, and API structure. It then attempts multi-step attack chains — like chaining an IDOR with a privilege escalation — to prove vulnerabilities are real, not theoretical.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h3>Get a fix guide, not a panic attack</h3>
+          <p>Each finding includes: what's vulnerable, exactly how an attacker would exploit it, and which specific lines of code to change. No false positives, no academic CVSS scores — just actionable fixes you can apply before your next deploy.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ SELLING POINTS ═══ -->
+  <section class="content-section container">
+    <h2>What You Get</h2>
     <div class="selling-grid">
       <div class="card">
         <div class="icon icon-accent">
@@ -114,7 +170,7 @@
           </svg>
         </div>
         <h3>Real exploits, not lint warnings</h3>
-        <p class="text-secondary">Executes proof-of-concept attacks safely to confirm each vulnerability is real. Zero false positives.</p>
+        <p>ShipSecure safely executes proof-of-concept attacks to confirm each vulnerability. If a finding appears in your report, it means the AI successfully exploited it — zero false positives, guaranteed.</p>
       </div>
       <div class="card">
         <div class="icon icon-accent">
@@ -122,8 +178,8 @@
             <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>
           </svg>
         </div>
-        <h3>Reads your source, not just URLs</h3>
-        <p class="text-secondary">White-box analysis understands your auth logic, database queries, and API routes that black-box scanners miss.</p>
+        <h3>White-box source analysis</h3>
+        <p>Unlike black-box scanners that only see URLs, ShipSecure reads your actual source code — understanding auth middleware, database queries, and business logic that external tools completely miss.</p>
       </div>
       <div class="card">
         <div class="icon icon-accent">
@@ -132,11 +188,12 @@
           </svg>
         </div>
         <h3>Plain-English fix guides</h3>
-        <p class="text-secondary">Every finding tells you what's vulnerable, how an attacker exploits it, and exactly which lines to change.</p>
+        <p>Every vulnerability comes with a developer-friendly explanation: what's broken, how an attacker exploits it, and the exact code change needed — no security PhD required to understand or apply the fix.</p>
       </div>
     </div>
   </section>
 
+  <!-- ═══ TRUST ═══ -->
   <div class="trust-bar container">
     <p>
       <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="1.8" fill="none"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
