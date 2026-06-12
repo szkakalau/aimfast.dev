@@ -19,7 +19,7 @@ SITEMAP_PATH = PUBLIC / "sitemap.xml"
 LP_INDEX_PATH = PUBLIC / "lp-index.json"
 
 TZ_SHANGHAI = timezone(timedelta(hours=8))
-BASE_URL = "https://aimfast.dev"
+BASE_URL = "https://www.aimfast.dev"
 
 
 def extract_title_and_summary(md_text: str, max_summary: int = 160) -> tuple[str, str]:

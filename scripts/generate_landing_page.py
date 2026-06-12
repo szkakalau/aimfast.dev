@@ -104,19 +104,19 @@ hover transition ≤ 200ms，使用 var(--duration-normal) / var(--ease-out)。�
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#1a1d24">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="canonical" href="https://aimfast.dev/SLUG/">
+<link rel="canonical" href="https://www.aimfast.dev/SLUG/">
 <meta property="og:type" content="product">
 <meta property="og:title" content="PRODUCT_NAME — TAGLINE">
 <meta property="og:description" content="ONE_SENTENCE_VALUE_PROP">
-<meta property="og:url" content="https://aimfast.dev/SLUG/">
+<meta property="og:url" content="https://www.aimfast.dev/SLUG/">
 <meta property="og:site_name" content="KAKAOPC Intel">
-<meta property="og:image" content="https://aimfast.dev/favicon.svg">
+<meta property="og:image" content="https://www.aimfast.dev/favicon.svg">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PRODUCT_NAME — TAGLINE">
 <meta name="twitter:description" content="ONE_SENTENCE_VALUE_PROP">
-<meta name="twitter:image" content="https://aimfast.dev/favicon.svg">
+<meta name="twitter:image" content="https://www.aimfast.dev/favicon.svg">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","name":"PRODUCT_NAME","applicationCategory":"AIApplication","operatingSystem":"Web","description":"PRODUCT_DESCRIPTION","url":"https://aimfast.dev/SLUG/","offers":{"@type":"Offer","price":"PRICE","priceCurrency":"USD"}}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"PRODUCT_NAME","applicationCategory":"AIApplication","operatingSystem":"Web","description":"PRODUCT_DESCRIPTION","url":"https://www.aimfast.dev/SLUG/","offers":{"@type":"Offer","price":"PRICE","priceCurrency":"USD"}}
 </script>
 ```
 
@@ -173,10 +173,10 @@ Hero（内嵌邮箱表单）
 - Headline ≤ 8 词
 - 副标题 ≤ 15 词，解释为什么值得关注
 - 页面正文 ≥ 250 个英文单词（不含 HTML/CSS/注释/SVG）
-- <title>: PRODUCT_NAME — TAGLINE | aimfast.dev
+- <title>: PRODUCT_NAME — TAGLINE | www.aimfast.dev
 - <meta name="description"> ≤ 160 字符
-- OG image: `https://aimfast.dev/og/PRODUCT_SLUG.png`（不要用 favicon.svg）
-- Footer: © 2026 · aimfast.dev
+- OG image: `https://www.aimfast.dev/og/PRODUCT_SLUG.png`（不要用 favicon.svg）
+- Footer: © 2026 · www.aimfast.dev
 
 ## 邮箱表单技术规范
 ```html
@@ -281,11 +281,11 @@ def generate(date_str: str) -> str | None:
 
     print(f"[LP] Landing Page 已保存 → {output_path}")
     print(f"[LP] 大小: {len(html):,} 字符")
-    print(f"[LP] URL: https://aimfast.dev/{project_slug}")
+    print(f"[LP] URL: https://www.aimfast.dev/{project_slug}")
     print(f"[LP] 部署: vercel --prod")
 
     write_pipeline_status(date_str, "lp", "generated",
-        message=f"LP generated for {tracking.get('opportunity', 'N/A')[:60]} → https://aimfast.dev/{project_slug}")
+        message=f"LP generated for {tracking.get('opportunity', 'N/A')[:60]} → https://www.aimfast.dev/{project_slug}")
 
     return str(output_path)
 
@@ -300,7 +300,7 @@ def _update_tracking(tid: str, output_dir: Path, slug: str) -> None:
     for op in data.get("opportunities", []):
         if op.get("id") == tid:
             op["lp_status"] = "live"
-            op["landing_page_url"] = f"https://aimfast.dev/{slug}"
+            op["landing_page_url"] = f"https://www.aimfast.dev/{slug}"
             op["notes"] = f"LP 已生成于 {datetime.now(TZ_SHANGHAI).strftime('%Y-%m-%d %H:%M')} | 部署: vercel --prod"
             break
 
