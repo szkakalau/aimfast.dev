@@ -1,0 +1,206 @@
+---
+title: "I Dug Through a Bunch of 30-Point Signals and Found a $29/Month Product Opportunity — Full Breakdown"
+date: 2026-06-07
+summary: "Tuesday morning, I was scanning GitHub Trending and spotted a repo with a score of just 30 — cross-platform verification scored 1, buyer clarity scored 1...."
+---
+
+# I Dug Through a Bunch of 30-Point Signals and Found a $29/Month Product Opportunity — Full Breakdown
+
+**Slug**: from-30-point-signal-to-product-opportunity
+
+Tuesday morning, I was scanning GitHub Trending and spotted a repo with a score of just 30 — cross-platform verification scored 1, buyer clarity scored 1. By the rules, I should have skipped it. But out of the Top 15 signals that day, **9 repos were all doing the same thing**: writing skill files for AI agents. `mattpocock/skills`, `addyosmani/agent-skills`, `shanraisshan/claude-code-best-practice`, `microsoft/SkillOpt`... This wasn't a single signal — it was a signal forest.
+
+---
+
+## The Signal I Saw
+
+Let me show you the raw numbers. Here's what the signal board looked like on June 7, 2026:
+
+- `datawhalechina/hello-agents`: 57,080 stars, cross-platform 1, buyer clarity 1 → **30 points**
+- `mattpocock/skills`: 119,541 stars, cross-platform 1, buyer clarity 1 → **28 points**
+- `addyosmani/agent-skills`: 48,743 stars, cross-platform 1, buyer clarity 1 → **28 points**
+- `shanraisshan/claude-code-best-practice`: 56,694 stars, cross-platform 1, buyer clarity 1 → **28 points**
+- `microsoft/SkillOpt`: cross-platform 1, buyer clarity 1 → **28 points**
+- `code-yeongyu/oh-my-openagent`: cross-platform 1, buyer clarity 1 → **28 points**
+
+See the pattern? **Six signals scoring 28-30, all pointing in the same direction, but individually none of them "qualified."** By my scoring system, anything below 30 doesn't trigger action. But that day I made an exception — not because any single signal was strong, but because **the pattern between them was too clear**.
+
+It's like watching a flock of birds. Look at one bird, and its wing flap is unremarkable. But when 50 birds all fly in the same direction, you know there's food over there.
+
+---
+
+## Translating This Into Plain English
+
+Let me explain what these repos actually do. The protagonist here is the AI agent — software that can call tools, write code, and look up documentation on behalf of a user. The problem is: **agents are smart, but they don't know your engineering standards.**
+
+Here's an example. You ask Claude Code to write an API endpoint. It might write fast, but it doesn't know:
+- Whether your team uses `snake_case` or `camelCase`
+- That error handling must always return `{error: string}`, not `{message: string}`
+- That logs must include `request_id` and `user_id`
+- That test coverage must be ≥ 80%
+
+These rules are what we call **agent skills** — structured instruction files that tell the agent how to work according to your standards.
+
+`mattpocock/skills` was created by Matt Pocock, a TypeScript community legend. He turned his entire engineering team's coding standards into `.claude` files and open-sourced them. `addyosmani/agent-skills` comes from Addy Osmani of the Chrome team — same idea, a set of production-grade engineering skills. `shanraisshan/claude-code-best-practice` goes even further — it's a practical guide for moving from "vibe coding" to "agentic engineering."
+
+### Who's Feeling the Pain?
+
+**Engineering managers and tech leads using AI coding agents.** Specifically:
+
+- Teams with 5-50 developers using Claude Code, Cursor, or GitHub Copilot
+- Seeing 2-3 rollbacks per week because agent-generated code doesn't follow standards
+- Security teams complaining about vulnerabilities in agent-generated code
+- New hires spending 3 days learning team standards, while the agent forgets them after every session
+
+### Why Now?
+
+Three things are happening simultaneously:
+
+1. **Claude Code opened a custom skills interface** (Q1 2026). Previously, an agent's "personality" was a black box — now you can inject structured instructions.
+2. **GitHub released spec-kit** (also in the Top 15, 109,576 stars). From a Spec-Driven Development perspective, standardizing requirements and standardizing agent skills are two sides of the same coin.
+3. **Matt Pocock and Addy Osmani's open-source moves**. Both have massive influence in the developer community. Their repos aren't experiments — they're **defining the standard**.
+
+### Pricing Anchor
+
+This is a **$29/month** market. Not $99, not $9.
+
+Why $29? Because of the competitive anchor: there's currently no dedicated agent skill management tool. The alternative is "have the team write markdown files and maintain them manually." An engineering manager's time costs roughly $100/hour. If they spend 2 hours a month maintaining skill files, the hidden cost is $200. At $29/month vs. $200, you're saving 85%.
+
+---
+
+## The Opportunity Hiding Beneath the Surface
+
+Most people look at these repos and think: "Another set of open-source tutorials — lots of stars, but no money in it."
+
+I see something completely different. These repos prove three things:
+1. **The demand is real** — hundreds of thousands of stars don't come from nowhere
+2. **Supply is fragmented** — everyone's writing their own skill files, with no standards, no management, no version control
+3. **The pain point is clear** — agent skills need continuous updates, and open-source repos won't do that for you
+
+This points to a product: **Agent Skill Manager** — a platform for engineering teams to manage, version control, and distribute AI agent skills.
+
+### Who Will Pay?
+
+**First paying customer**: An engineering manager at a mid-sized SaaS company with a 20-person team. They've been using Claude Code for 3 months and have 1-2 code review reworks per week due to inconsistent agent behavior. They've already posted on Reddit asking "how do I make Claude Code follow a consistent style?" Their current solution: "paste a huge block of standards into the prompt."
+
+### What Does the Product Look Like?
+
+The MVP can be dead simple:
+- A web page where you upload or write `.claude` skill files
+- Automatic conflict detection (e.g., two skill files with conflicting requirements for the same function signature)
+- One-click sync to your team's Claude Code configuration
+- Version history + changelog
+
+### Why Most People Will Miss This
+
+Because they're looking at individual repo star counts instead of the pattern.
+
+- `mattpocock/skills` has 119k stars, but its "buyer clarity" score is only 1 — because it's a free open-source tutorial, not a product
+- `addyosmani/agent-skills` has 48k stars, same deal — free content
+- These repos have a **commercialization potential of exactly zero**
+
+But **abstract their common need**, and you get a commercializable product. The mistake most people make: **confusing the signal source with the product itself.** An open-source repo isn't a product — it's just a symptom. The real problem is: **agent skill management is a mess, and messes mean money.**
+
+---
+
+## Why Most People Will Miss It
+
+Let's do the math. Out of my Top 15 signals that day, 9 were related to agent skills. But individually, each one scored a 1 on buyer clarity (the lowest score). By the rules, signals below 30 don't trigger action. If I had strictly followed the rules, I would have missed this entire direction.
+
+What does this tell us? **Scoring rules are tools, not handcuffs.** When multiple low-scoring signals point in the same direction, the quality of the signal isn't determined by any single one — it's determined by **the correlation between them.**
+
+Another reason: **the open-source community is too loud.** Matt Pocock and Addy Osmani's open-source repos racked up massive stars, making it feel like "this need is already met." But star counts and commercialization are two different things. Open-source repos tell you "this need exists" — they don't tell you "this need has been solved commercially."
+
+Search for "agent skill management tool." Right now (June 2026), Google returns almost nothing. There are agent platforms (like LangChain, Agno), but **no dedicated agent skill management tool for engineering teams.** That's the gap.
+
+### Counterargument Check
+
+When would this thesis be wrong?
+
+- **If Claude Code bakes in skill management.** Anthropic might solve this in the next release. Probability: medium. But even then, cross-platform needs (Cursor, Copilot) would still exist.
+- **If the open-source community standardizes quickly.** Say a `.claude` file format becomes widely accepted, and GitHub bakes in version control. Probability: low. GitHub's spec-kit is about specification, not management.
+- **If there's already a player you haven't found.** Maybe a YC company is in stealth mode. Possible? Yes. But the cost to verify is low — one Google Form is enough.
+
+---
+
+## What I Would Do
+
+### Step 1: Build a Validation Page in 2 Hours
+
+No code needed. A Google Form is enough:
+
+- Title: "Agent Skill Manager — Manage Your Team's AI Agent Skills"
+- Description: "Are you an engineering team using Claude Code? Tell us your pain points."
+- Questions:
+  - "How many people on your team use AI coding agents?" (Single choice: 1-5 / 5-20 / 20+)
+  - "How do you currently manage your agent's coding standards?" (Multi-select: Written in prompts / Using .claude files / Verbal / No management)
+  - "Would you pay $29/month to automate this?" (Yes / No / Not sure)
+  - Email (optional)
+
+Post this form to:
+- The Issues section of relevant GitHub repos (politely ask: "How are you managing your skill files?")
+- Reddit r/ClaudeCode, r/ChatGPTCoding
+- Hacker News Ask HN
+
+### 7-Day Validation Plan
+
+| Day | Action | Validation Goal |
+|-----|--------|-----------------|
+| 1 | Build Google Form + create a landing page (Vercel + one headline + one button) | Something to show |
+| 2 | Post in 5 communities + DM 10 contributors from related repos | At least 50 form responses |
+| 3 | Analyze responses: how many would pay + what's the most painful scenario | Confirm willingness to pay |
+| 4 | Build the first version: a static page + manual version management of skill files | Minimum viable product |
+| 5 | Invite 3 form respondents to try it | Get feedback |
+| 6 | Adjust pricing and features based on feedback | Iterate |
+| 7 | Decide: keep going or kill it | Judgment call |
+
+### MVP Approach
+
+**Don't build a SaaS — build a service.** For the first 3 customers, manage their skill files manually. Why? Because:
+1. You'll truly understand the need (what format, what conflicts, what workflows)
+2. You'll build relationships (paying users will tell you their real pain points)
+3. You'll make your first money ($29/month × 3 = $87/month — not big money, but it validates willingness to pay)
+
+The manual service workflow:
+- Client sends you their `.claude` files
+- You manage version control in Notion or GitHub
+- Weekly changelog updates
+- $29/month
+
+Once you've manually served 10 clients, you'll be able to write the perfect automated product.
+
+### Failure Conditions
+
+Signals to stop:
+- Fewer than 30 form responses in 7 days
+- Less than 10% willing to pay (i.e., fewer than 3 people select "Yes")
+- Core customer feedback is "we don't need management — we just paste standards into the prompt"
+- You discover Anthropic or GitHub is building the same feature
+
+---
+
+## Other Signals Worth Watching This Week
+
+1. **garrytan/gstack** (30 points): Garry Tan open-sourced his Claude Code config — 23 utility functions. Not a product, but shows how a top-tier VC uses agents. Direction: templating advanced user configurations.
+
+2. **Lowfat CLI filter** (148 upvotes on HN): A pipeline filter claiming to save 91.8% on LLM tokens. Validates that "token cost anxiety" is real. Direction: AI cost optimization tools.
+
+3. **osiris OSINT platform** (30 points): An open-source intelligence analysis platform, self-described as a Palantir alternative. Direction: democratizing open-source intelligence tools. But requires legal compliance — not for indie developers.
+
+4. **MemPalace/mempalace** (30 points): Open-source AI memory system, 54k stars. Direction: giving AI agents long-term memory. But buyer clarity is low — developers will self-host, not pay.
+
+5. **gitHub/spec-kit** (28 points): Official GitHub release, 109k stars. Direction: spec-driven development. This is a signal: GitHub is betting on a standardized future.
+
+---
+
+## About KAKAOPC Intelligence
+
+I'm a columnist for KAKAOPC Intelligence. Every day, I scan 200+ signal sources and find **one actionable Builder opportunity**. I don't write trend analysis — I write "if you have two hours tomorrow morning, here's what you should do."
+
+Today's article is an exception — I broke down my own thought process. Not because this day's signals were particularly strong, but because they were particularly **patterned**. I want you to learn not "this direction is worth pursuing," but "next time you see a flock of 30-point signals all flying in the same direction, don't close the dashboard."
+
+**Remember: low-score signals × high density = high-probability opportunity.** Scoring rules are tools, but **correlation** is the real signal.
+
+---
+
+*Next issue preview: I've been tracking the "AI agent data leak" signal for 3 months, and I finally found a group of buyers with clear willingness to pay. If you're building a security audit tool, don't buy this one.*
