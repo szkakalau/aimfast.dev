@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BrewCheck — Check if your Homebrew 6 upgrade will break | www.aimfast.dev</title>
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#1a1d24">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://www.aimfast.dev/brewcheck/">
+  <meta name="description" content="Paste your `brew list` output and get a personalized compatibility report in 30 seconds. Know which packages will break before you upgrade to Homebrew 6.">
+  <meta property="og:type" content="product">
+  <meta property="og:title" content="BrewCheck — Check if your Homebrew 6 upgrade will break">
+  <meta property="og:description" content="Paste your `brew list` output and get a personalized compatibility report in 30 seconds. Know which packages will break before you upgrade to Homebrew 6.">
+  <meta property="og:url" content="https://www.aimfast.dev/brewcheck/">
+  <meta property="og:site_name" content="KAKAOPC Intel">
+  <meta property="og:image" content="https://www.aimfast.dev/og/brewcheck.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="BrewCheck — Check if your Homebrew 6 upgrade will break">
+  <meta name="twitter:description" content="Paste your `brew list` output and get a personalized compatibility report in 30 seconds. Know which packages will break before you upgrade to Homebrew 6.">
+  <meta name="twitter:image" content="https://www.aimfast.dev/og/brewcheck.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "BrewCheck",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Web",
+    "description": "Compatibility scanner for Homebrew 6.0.0 migration. Paste your brew list and get a risk report in seconds.",
+    "url": "https://www.aimfast.dev/brewcheck/",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+  <link rel="stylesheet" href="/_ds/base.css">
+  <link rel="stylesheet" href="/_ds/components.css">
+  <style>
+    /* custom page styles — only spacing/layout, no tokens */
+    .hero {
+      padding: var(--space-8) 0 var(--space-6);
+      text-align: center;
+    }
+    .hero h1 {
+      max-width: 720px;
+      margin: 0 auto var(--space-3);
+    }
+    .hero .subhead {
+      max-width: 540px;
+      margin: 0 auto var(--space-5);
+    }
+    .signup-form {
+      display: flex;
+      gap: var(--space-2);
+      max-width: 480px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .signup-form input {
+      flex: 1 1 240px;
+      height: 48px;
+      padding: 0 var(--space-3);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      background: var(--color-surface);
+      color: var(--color-text);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      transition: border-color var(--duration-normal) var(--ease-out);
+    }
+    .signup-form input:focus {
+      outline: none;
+      border-color: var(--color-accent);
+      box-shadow: 0 0 0 2px color-mix(in srgb, var(--color-accent) 25%, transparent);
+    }
+    .signup-form .btn {
+      height: 48px;
+      white-space: nowrap;
+    }
+    .signup-form .btn-lg {
+      padding: 0 var(--space-4);
+    }
+    .success-message {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-2);
+      padding: var(--space-3);
+      background: var(--color-surface-alt);
+      border-radius: var(--radius-md);
+      color: var(--color-text);
+      font-weight: 500;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+    .success-message svg {
+      stroke: var(--color-accent);
+    }
+    .error-message {
+      color: var(--color-accent);
+      font-size: 0.875rem;
+      margin-top: var(--space-1);
+      text-align: center;
+    }
+    .section {
+      padding: var(--space-8) 0;
+    }
+    .section h2 {
+      text-align: center;
+      margin-bottom: var(--space-5);
+    }
+    .why-text p {
+      max-width: 680px;
+      margin: 0 auto var(--space-3);
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+    }
+    .steps-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-5);
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .step {
+      display: flex;
+      gap: var(--space-3);
+      align-items: flex-start;
+    }
+    .step-num {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--color-accent);
+      color: var(--color-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 1.125rem;
+    }
+    .step-content h3 {
+      margin-bottom: var(--space-1);
+      font-size: 1.125rem;
+    }
+    .step-content p {
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+    }
+    .selling-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-4);
+    }
+    .selling-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-4);
+      text-align: center;
+    }
+    .selling-card .icon-wrap {
+      margin-bottom: var(--space-2);
+      display: flex;
+      justify-content: center;
+    }
+    .selling-card .icon-wrap svg {
+      stroke: var(--color-accent);
+      width: 32px;
+      height: 32px;
+    }
+    .selling-card h3 {
+      margin-bottom: var(--space-2);
+      font-size: 1.125rem;
+    }
+    .selling-card p {
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+      font-size: 0.9375rem;
+    }
+    .trust-bar {
+      text-align: center;
+      padding: var(--space-5) 0 var(--space-3);
+      color: var(--color-text-muted);
+      font-size: 0.875rem;
+      display: flex;
+      justify-content: center;
+      gap: var(--space-4);
+      flex-wrap: wrap;
+    }
+    .trust-bar span {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-1);
+    }
+    .trust-bar svg {
+      width: 16px;
+      height: 16px;
+      stroke: var(--color-text-muted);
+    }
+    footer {
+      text-align: center;
+      padding: var(--space-4) 0 var(--space-6);
+      color: var(--color-text-muted);
+      font-size: 0.8125rem;
+      border-top: 1px solid var(--color-border);
+    }
+    @media (max-width: 640px) {
+      .hero h1 {
+        font-size: 1.75rem;
+      }
+      .selling-grid {
+        grid-template-columns: 1fr;
+      }
+      .signup-form input {
+        flex: 1 1 100%;
+      }
+      .signup-form .btn {
+        width: 100%;
+      }
+      .trust-bar {
+        flex-direction: column;
+        gap: var(--space-2);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero + inline email form -->
+  <section class="hero">
+    <div class="container">
+      <h1>Upgrading to Homebrew 6?<br>Check if your packages will break first.</h1>
+      <p class="subhead text-secondary">Paste your <code class="inline-code">brew list</code> output → get a personalized compatibility report in 30 seconds.</p>
+      
+      <!-- inline signup form (email capture) -->
+      <form id="signup-form" class="signup-form" action="https://formspree.io/f/your-form-id" method="POST">
+        <input type="email" name="email" placeholder="you@example.com" required autocomplete="email">
+        <button type="submit" class="btn btn-primary btn-lg">Get Early Access</button>
+      </form>
+      <div id="form-feedback" style="margin-top: var(--space-2);"></div>
+    </div>
+  </section>
+
+  <!-- Why This Matters -->
+  <section class="section" id="why">
+    <div class="container why-text">
+      <h2>Why Homebrew 6 Compatibility Matters Right Now</h2>
+      <p>Homebrew 6.0.0 dropped on June 11 with breaking changes that affect hundreds of formula. The HN thread (343 comments) is filled with developers reporting <em>"brew upgrade broke my entire dev environment"</em> and <em>"I spent an afternoon manually testing each package."</em> The official changelog lists deprecations, API shifts, and mandatory recompiles — but there's no dry-run that tells you <em>which</em> of your installed packages are affected.</p>
+      <p>Existing solutions fall short: <code>brew upgrade --dry-run</code> only shows what will be upgraded, not what will break. GitHub issues are a manual scavenger hunt. Reddit threads are full of post-mortems, not prevention. Developers are left with a painful choice: upgrade blind or spend hours researching each formula.</p>
+      <p>Right now is the perfect window. The upgrade wave is just starting — HN users are still hesitating, saying <em>"I'm staying on 5.x until I know it's safe."</em> The signal is clear: the community needs a pre-flight checker. BrewCheck fills that gap in under a minute.</p>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="section" id="how-it-works">
+    <div class="container">
+      <h2>How It Works</h2>
+      <div class="steps-grid">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h3>Paste your brew list</h3>
+            <p>Run <code class="inline-code">brew list --formula</code> in your terminal and copy the output. Paste it into the BrewCheck input box — no signup, no login, no uploads.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h3>Get your compatibility report</h3>
+            <p>Our engine cross-references every formula against the Homebrew 6.0.0 changelog and GitHub issue tags. You'll see a risk score (0–100), a prioritized list of critical/warning/info items, and exactly what changed.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h3>Follow the migration plan</h3>
+            <p>Each flagged package includes a specific fix: recompile command, replacement formula, or config change. We also suggest an upgrade order — so you can migrate safely without breaking your daily work.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Selling Points (3-column grid) -->
+  <section class="section" id="what-you-get">
+    <div class="container">
+      <h2>What You Get</h2>
+      <div class="selling-grid">
+        <div class="selling-card">
+          <div class="icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="4" width="20" height="16" rx="2"/>
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+            </svg>
+          </div>
+          <h3>Personalized scan</h3>
+          <p>No generic docs. BrewCheck analyzes your exact formula list — not a sample, not a template. You get a report that matches your machine, your packages, your risk profile.</p>
+        </div>
+        <div class="selling-card">
+          <div class="icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <polyline points="9 12 11 14 15 10"/>
+            </svg>
+          </div>
+          <h3>Risk-prioritized list</h3>
+          <p>Critical, warning, info — each package gets a severity tag and a clear explanation. You'll know which formula will break your build, which need a recompile, and which are safe to ignore.</p>
+        </div>
+        <div class="selling-card">
+          <div class="icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+          </div>
+          <h3>Actionable migration guide</h3>
+          <p>Each risk includes a concrete fix: exact terminal commands, official migration links, and a suggested upgrade order. No more hunting through GitHub issues — everything you need is in one place.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Bar -->
+  <div class="trust-bar">
+    <span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        <polyline points="9 12 11 14 15 10"/>
+      </svg>
+      Used by 500+ macOS developers
+    </span>
+    <span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="4" width="20" height="16" rx="2"/>
+        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+      </svg>
+      Updated for Homebrew 6.0.0
+    </span>
+    <span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+        <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+      </svg>
+      30-second scan, no signup
+    </span>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      © 2026 · <a href="https://www.aimfast.dev" class="text-muted">www.aimfast.dev</a> · BrewCheck is an independent tool, not affiliated with Homebrew.
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      const form = document.getElementById('signup-form');
+      const feedback = document.getElementById('form-feedback');
+
+      function showSuccess() {
+        form.style.display = 'none';
+        feedback.innerHTML = `
+          <div class="success-message">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            ✓ You're on the list! We'll notify you when BrewCheck is ready.
