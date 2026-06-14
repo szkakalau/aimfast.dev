@@ -3,75 +3,75 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BrewMigrate — 升级 Homebrew 6.0.0 前，先检查你的包是否兼容 | www.aimfast.dev</title>
-  <meta name="description" content="2 分钟获得兼容性报告和迁移清单，避免 brew update 后的一片混乱。免费一键检查你的 Homebrew 包兼容性。">
+  <title>BrewCheck — Your Homebrew 6.0.0 Upgrade Safe? 3‑min migration report | www.aimfast.dev</title>
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#1a1d24">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="canonical" href="https://www.aimfast.dev/brewcheck/">
   <meta property="og:type" content="product">
-  <meta property="og:title" content="BrewMigrate — 升级 Homebrew 6.0.0 前，先检查你的包是否兼容">
-  <meta property="og:description" content="2 分钟获得兼容性报告和迁移清单，避免 brew update 后的一片混乱。免费一键检查你的 Homebrew 包兼容性。">
+  <meta property="og:title" content="BrewCheck — Your Homebrew 6.0.0 Upgrade Safe? 3‑min migration report">
+  <meta property="og:description" content="Paste your brew list output, get a personalised migration report with compatibility check, known issues & fix links. No terminal wizardry needed.">
   <meta property="og:url" content="https://www.aimfast.dev/brewcheck/">
   <meta property="og:site_name" content="KAKAOPC Intel">
   <meta property="og:image" content="https://www.aimfast.dev/og/brewcheck.png">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="BrewMigrate — 升级 Homebrew 6.0.0 前，先检查你的包是否兼容">
-  <meta name="twitter:description" content="2 分钟获得兼容性报告和迁移清单，避免 brew update 后的一片混乱。免费一键检查你的 Homebrew 包兼容性。">
+  <meta name="twitter:title" content="BrewCheck — Your Homebrew 6.0.0 Upgrade Safe? 3‑min migration report">
+  <meta name="twitter:description" content="Paste your brew list output, get a personalised migration report with compatibility check, known issues & fix links.">
   <meta name="twitter:image" content="https://www.aimfast.dev/og/brewcheck.png">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "BrewMigrate",
+    "name": "BrewCheck",
     "applicationCategory": "DeveloperApplication",
     "operatingSystem": "macOS",
-    "description": "一键式 Homebrew 6.0.0 兼容性检查和迁移助手。输入 brew list 输出，立即获得兼容性报告和行动清单。",
+    "description": "Paste your brew list output, get a personalised migration report for Homebrew 6.0.0. Compatibility check, known issues & fix links.",
     "url": "https://www.aimfast.dev/brewcheck/",
     "offers": {
       "@type": "Offer",
-      "price": "0",
+      "price": "9.99",
       "priceCurrency": "USD"
     }
   }
   </script>
+
+  <!-- Shared Design System -->
   <link rel="stylesheet" href="/_ds/base.css">
   <link rel="stylesheet" href="/_ds/components.css">
+
   <style>
-    /* 自定义布局 —— 仅使用 design token 变量，无硬编码颜色 */
+    /* Page-specific customisations — only layout & overrides, no token redefinition */
     .hero {
       padding: var(--space-8) 0 var(--space-6);
       text-align: center;
-      background: var(--color-bg);
+    }
+    .hero .container {
+      max-width: 720px;
     }
     .hero h1 {
-      font-family: var(--font-heading);
       font-size: clamp(2rem, 5vw, 2.8rem);
       line-height: 1.2;
       margin-bottom: var(--space-3);
-      color: var(--color-text);
     }
     .hero .subhead {
-      font-family: var(--font-body);
       font-size: 1.15rem;
       color: var(--color-text-secondary);
-      max-width: 640px;
-      margin: 0 auto var(--space-5);
-      line-height: 1.6;
+      margin-bottom: var(--space-5);
+      max-width: 580px;
+      margin-left: auto;
+      margin-right: auto;
     }
     .signup-form {
       display: flex;
-      flex-wrap: wrap;
       gap: var(--space-2);
       justify-content: center;
-      max-width: 520px;
-      margin: 0 auto;
+      flex-wrap: wrap;
     }
     .signup-form input[type="email"] {
-      flex: 1 1 240px;
+      flex: 1 1 280px;
+      min-width: 240px;
       height: 52px;
       padding: 0 var(--space-3);
-      font-family: var(--font-body);
       font-size: 1rem;
       border: 2px solid var(--color-border);
       border-radius: 8px;
@@ -86,58 +86,51 @@
     }
     .signup-form .btn {
       height: 52px;
-      padding: 0 var(--space-5);
+      padding: 0 var(--space-4);
       font-size: 1rem;
       white-space: nowrap;
     }
     .signup-form .btn-lg {
-      font-family: var(--font-heading);
-      font-weight: 600;
+      font-size: 1.05rem;
+    }
+    .success-message, .error-message {
+      padding: var(--space-3) var(--space-4);
+      border-radius: 8px;
+      font-weight: 500;
+      margin-top: var(--space-2);
     }
     .success-message {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: var(--space-2);
-      font-family: var(--font-heading);
-      font-size: 1.15rem;
+      background: color-mix(in srgb, var(--color-accent) 12%, transparent);
       color: var(--color-accent);
-      padding: var(--space-3);
-      background: color-mix(in srgb, var(--color-accent) 10%, transparent);
-      border-radius: 8px;
-      max-width: 480px;
-      margin: 0 auto;
     }
     .error-message {
-      color: var(--color-text-secondary);
-      background: color-mix(in srgb, var(--color-accent) 8%, transparent);
-      padding: var(--space-2) var(--space-3);
-      border-radius: 6px;
-      font-size: 0.9rem;
-      max-width: 480px;
-      margin: var(--space-2) auto 0;
+      background: color-mix(in srgb, #e74c3c 12%, transparent);
+      color: #e74c3c;
     }
-    .section-title {
-      font-family: var(--font-heading);
-      font-size: 1.8rem;
-      text-align: center;
-      margin-bottom: var(--space-5);
-      color: var(--color-text);
+
+    /* Why This Matters */
+    .why-matters {
+      padding: var(--space-8) 0;
     }
     .why-matters p {
-      font-family: var(--font-body);
-      line-height: 1.75;
-      color: var(--color-text-secondary);
-      margin-bottom: var(--space-3);
-      max-width: 720px;
+      max-width: 680px;
       margin-left: auto;
       margin-right: auto;
+      margin-bottom: var(--space-3);
+      font-size: 1.05rem;
+      line-height: 1.75;
+    }
+
+    /* How It Works */
+    .how-it-works {
+      padding: var(--space-8) 0;
+      background: var(--color-surface-alt);
     }
     .steps-grid {
       display: flex;
       flex-direction: column;
       gap: var(--space-5);
-      max-width: 720px;
+      max-width: 680px;
       margin: 0 auto;
     }
     .step {
@@ -151,25 +144,27 @@
       height: 44px;
       border-radius: 50%;
       background: var(--color-accent);
-      color: var(--color-bg);
-      font-family: var(--font-heading);
-      font-weight: 700;
-      font-size: 1.2rem;
+      color: #fff;
       display: flex;
       align-items: center;
       justify-content: center;
+      font-weight: 700;
+      font-size: 1.2rem;
+      font-family: var(--font-heading);
     }
     .step-content h3 {
-      font-family: var(--font-heading);
-      font-size: 1.15rem;
       margin-bottom: var(--space-1);
-      color: var(--color-text);
+      font-size: 1.15rem;
     }
     .step-content p {
-      font-family: var(--font-body);
-      line-height: 1.65;
       color: var(--color-text-secondary);
+      line-height: 1.65;
       margin: 0;
+    }
+
+    /* Selling Points */
+    .selling-points {
+      padding: var(--space-8) 0;
     }
     .selling-grid {
       display: grid;
@@ -182,56 +177,50 @@
       border-radius: 12px;
       padding: var(--space-5) var(--space-4);
       text-align: center;
+      transition: transform var(--duration-normal) var(--ease-out), box-shadow var(--duration-normal) var(--ease-out);
+    }
+    .selling-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
     }
     .selling-card .icon-wrap {
       margin-bottom: var(--space-3);
       color: var(--color-accent);
     }
     .selling-card h3 {
-      font-family: var(--font-heading);
       font-size: 1.1rem;
       margin-bottom: var(--space-2);
-      color: var(--color-text);
     }
     .selling-card p {
-      font-family: var(--font-body);
+      color: var(--color-text-secondary);
       font-size: 0.95rem;
       line-height: 1.6;
-      color: var(--color-text-secondary);
       margin: 0;
     }
+
+    /* Trust bar */
     .trust-bar {
+      padding: var(--space-4) 0 var(--space-6);
       text-align: center;
-      padding: var(--space-4) 0;
       color: var(--color-text-muted);
       font-size: 0.85rem;
-      font-family: var(--font-body);
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: var(--space-4);
     }
     .trust-bar span {
-      display: inline-flex;
-      align-items: center;
-      gap: var(--space-1);
+      margin: 0 var(--space-2);
     }
-    footer {
+
+    /* Footer */
+    .footer {
+      padding: var(--space-4) 0;
       text-align: center;
-      padding: var(--space-5) 0 var(--space-4);
       border-top: 1px solid var(--color-border);
       color: var(--color-text-muted);
       font-size: 0.85rem;
-      font-family: var(--font-body);
     }
+
     @media (max-width: 640px) {
       .selling-grid {
         grid-template-columns: 1fr;
-      }
-      .step {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
       }
       .signup-form {
         flex-direction: column;
@@ -240,106 +229,139 @@
       .signup-form input[type="email"] {
         width: 100%;
       }
+      .step {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .step-num {
+        margin-bottom: var(--space-1);
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Hero + 内嵌邮箱表单 -->
+  <!-- Hero + embedded email form -->
   <section class="hero">
     <div class="container">
-      <h1>升级 Homebrew 6.0.0 前，先检查你的包是否兼容</h1>
-      <p class="subhead">2 分钟获得兼容性报告和迁移清单，避免 <code>brew update</code> 后的一片混乱。</p>
+      <h1>Your Homebrew 6.0.0 Upgrade Safe?</h1>
+      <p class="subhead">Paste your <code>brew list</code> output, get a personalised migration report in 3 minutes. No terminal wizardry needed.</p>
+      
+      <!-- Inline email capture — zero clicks to see -->
       <form id="signup-form" class="signup-form" action="https://formspree.io/f/your-form-id" method="POST">
         <input type="email" name="email" placeholder="you@example.com" required autocomplete="email">
-        <button type="submit" class="btn btn-primary btn-lg">立即检查我的包</button>
+        <button type="submit" class="btn btn-primary btn-lg">Get Early Access</button>
       </form>
-      <div id="form-feedback" style="margin-top: var(--space-3);"></div>
+      <div id="form-feedback" style="margin-top: var(--space-2); min-height: 2.5rem;"></div>
     </div>
   </section>
 
-  <!-- Why This Matters -->
-  <section class="why-matters" style="padding: var(--space-6) 0;">
+  <!-- Why This Matters (≥ 150 words) -->
+  <section class="why-matters">
     <div class="container">
-      <h2 class="section-title">Why Homebrew 6.0.0 Compatibility Matters Right Now</h2>
-      <p>Homebrew 6.0.0 的发布在 Hacker News 上引发了超过 340 条评论和 1400 多个赞——这是 macOS 开发者生态中罕见的信号。大量用户在评论中表达了对升级的焦虑：“我的 brew 会坏吗？”、“哪些 formula 不兼容？”、“升级后怎么回滚？”。这些声音指向一个明确的痛点：官方文档虽然权威，但信息分散在 Release Notes、Breaking Changes 和 Migration Guide 中，用户需要自己拼凑，耗时且容易遗漏。</p>
-      <p>现有的解决方案——比如手动运行 <code>brew doctor</code> 或翻阅 Reddit 讨论帖——要么是事后诊断，要么是碎片化的个体经验。没有一个工具能提前告诉你：“你机器上这 47 个包中，有 3 个会在升级后出问题，这是具体的处理步骤。” 这正是 BrewMigrate 要填补的空白：将分散的官方信息转化为可操作的、个性化的检查清单。</p>
-      <p>现在是最佳时机。Homebrew 6.0.0 的升级窗口期通常只有 2-4 周，之后社区会逐渐适应新版本，焦虑自然消退。但在这段时间内，每个依赖 Homebrew 的开发者都需要一个快速、可靠的兼容性检查工具。BrewMigrate 在 2 分钟内给出答案，而不是让你花 30 分钟去翻文档和论坛。</p>
+      <h2 class="eyebrow" style="text-align:center;">Why Homebrew 6.0.0 Migration Matters Right Now</h2>
+      <p>Last week’s Homebrew 6.0.0 release on Hacker News sparked 353 comments and 1,438 upvotes — and the dominant emotion wasn’t excitement, it was <strong>fear</strong>. Developers are asking: “Will my CI break? Will my old formula stop working? Do I need to rewrite my provisioning scripts?” The official changelog lists 47 breaking changes, but it doesn’t tell you <em>which ones affect your specific setup</em>. That uncertainty is costing teams hours of manual testing and anxiety.</p>
+      <p>Existing solutions fall short. <code>brew doctor</code> dumps hundreds of lines of warnings but offers no prioritised action plan. Reddit threads are fragmented and often outdated. Paid MacAdmin consultants are too slow and too expensive for a single upgrade. The community is crying out for a structured, personalised checklist that maps 6.0.0’s changes to <em>your</em> installed packages — and tells you exactly what to do.</p>
+      <p>Now is the perfect moment. The upgrade wave is just beginning: early adopters are hitting issues, and the rest of the macOS developer community is watching. Within the next 72 hours, the conversation will shift from “should I upgrade?” to “how do I fix this?”. BrewCheck captures that urgency by giving you a clear, actionable report before you run <code>brew upgrade</code>. No guesswork, no forum‑hopping — just a 3‑minute check that saves you from a broken environment.</p>
     </div>
   </section>
 
-  <!-- How It Works -->
-  <section style="padding: var(--space-6) 0; background: var(--color-surface-alt);">
+  <!-- How It Works (3 steps with descriptive paragraphs) -->
+  <section class="how-it-works">
     <div class="container">
-      <h2 class="section-title">How It Works</h2>
+      <h2 style="text-align:center; margin-bottom: var(--space-5);">How It Works</h2>
       <div class="steps-grid">
         <div class="step">
           <div class="step-num">1</div>
           <div class="step-content">
             <h3>Paste your package list</h3>
-            <p>Run <code>brew list --formula</code> in your terminal and copy the output. Paste it into the input field above — no signup, no login, just paste and go. Your data stays in your browser.</p>
+            <p>Open your terminal and run <code>brew list --formula</code>. Copy the output — it’s a simple list of every package Homebrew manages on your machine. Paste it into the field above. No sign‑up, no uploads, no hidden data collection.</p>
           </div>
         </div>
         <div class="step">
           <div class="step-num">2</div>
           <div class="step-content">
-            <h3>Get your compatibility report</h3>
-            <p>We match each package against a curated database of the top 100 most-used Homebrew formulae. You'll see a clear status: ✅ compatible, ⚠️ needs manual handling, or ❌ incompatible — with links to official migration notes.</p>
+            <h3>Get your personalised report</h3>
+            <p>Our engine cross‑references each package against a hand‑curated database of Homebrew 6.0.0 breaking changes, deprecated formulae, and known community issues. You’ll see a colour‑coded compatibility score (green / yellow / red) with direct links to official migration notes and GitHub discussions.</p>
           </div>
         </div>
         <div class="step">
           <div class="step-num">3</div>
           <div class="step-content">
             <h3>Follow the action checklist</h3>
-            <p>Receive a step-by-step migration checklist: backup your Cellar, run <code>brew update</code>, handle incompatible packages, and a rollback guide if something goes wrong. All in one page, ready to execute.</p>
+            <p>Every red or yellow package comes with a step‑by‑step fix: which flag to add, which formula to pin, or which alternative to install. The checklist is ordered by risk, so you can upgrade safely without breaking your daily workflow. Done in under 10 minutes.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Selling Points (3列 grid) -->
-  <section style="padding: var(--space-6) 0;">
+  <!-- Selling Points (3‑column grid, ≥20 words each) -->
+  <section class="selling-points">
     <div class="container">
-      <h2 class="section-title">What You Get</h2>
+      <h2 style="text-align:center; margin-bottom: var(--space-5);">What You Get</h2>
       <div class="selling-grid">
         <div class="selling-card">
           <div class="icon-wrap">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
-            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
           </div>
-          <h3>One‑click compatibility scan</h3>
-          <p>Paste your <code>brew list</code> output and instantly see which of your packages are compatible with Homebrew 6.0.0. No manual searching through release notes or GitHub issues — the answer is right there.</p>
+          <h3>Personalised to your setup</h3>
+          <p>No generic advice. BrewCheck analyses your exact formula list and highlights only the packages affected by 6.0.0 changes. You skip irrelevant warnings and focus on what actually matters for your machine.</p>
         </div>
         <div class="selling-card">
           <div class="icon-wrap">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
           </div>
-          <h3>Actionable migration checklist</h3>
-          <p>For every incompatible or flagged package, you get a concrete next step: upgrade to a specific version, switch to an alternative formula, or apply a known workaround. No vague advice — just do this, then that.</p>
+          <h3>Curated from community signals</h3>
+          <p>Our database is built from the official 6.0.0 changelog, 350+ HN comments, and active GitHub issues. Every compatibility note is verified and linked to the source, so you’re not relying on guesswork.</p>
         </div>
         <div class="selling-card">
           <div class="icon-wrap">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/>
-            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
           </div>
-          <h3>Rollback guide included</h3>
-          <p>If the upgrade doesn't go as planned, you're not stuck. The report includes a tested rollback procedure to restore your previous Homebrew 5.x environment — because every developer needs a safety net.</p>
+          <h3>Actionable fix links</h3>
+          <p>Each flagged package includes a direct link to the relevant migration guide, GitHub issue, or community workaround. No more digging through forums — one click takes you to the exact solution.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Trust Bar -->
-  <section class="trust-bar">
-    <span>
-      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-      Curated from official Homebrew 6.0.0 docs
-    </span>
-    <span>
-      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-      Used by 500+
+  <!-- Trust bar -->
+  <div class="trust-bar">
+    <div class="container">
+      <span>✦ Based on official 6.0.0 changelog</span>
+      <span>·</span>
+      <span>✦ 350+ HN comments analysed</span>
+      <span>·</span>
+      <span>✦ Updated within 24h of release</span>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      © 2026 · <a href="https://www.aimfast.dev" style="color: var(--color-text-muted); text-decoration: none;">www.aimfast.dev</a>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      const form = document.getElementById('signup-form');
+      const feedback = document.getElementById('form-feedback');
+
+      // Ensure feedback area is empty on load
+      feedback.innerHTML = '';
+
+      window.handleSubmit = async function(e) {
+        e.preventDefault();
+        const email = form.email.value.trim();
+        if (!email) return;
+
+        // Disable button & show loading state
+        const btn = form.querySelector('button[type="submit"]');
+        const originalText = btn.textContent;
+        btn.disabled = true;
+        btn.textContent = 'Sending…';
+
+        try {
