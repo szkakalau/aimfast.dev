@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DailyHole — Create your own daily mini golf hole | www.aimfast.dev</title>
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#1a1d24">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://www.aimfast.dev/dailyhole/">
+  <meta name="description" content="5 minutes to create your own daily mini golf hole. Drag, drop, share. Inspired by the HN hit Putt.day. No coding needed.">
+  <meta property="og:type" content="product">
+  <meta property="og:title" content="DailyHole — Create your own daily mini golf hole">
+  <meta property="og:description" content="5 minutes to create your own daily mini golf hole. Drag, drop, share. Inspired by the HN hit Putt.day.">
+  <meta property="og:url" content="https://www.aimfast.dev/dailyhole/">
+  <meta property="og:site_name" content="KAKAOPC Intel">
+  <meta property="og:image" content="https://www.aimfast.dev/og/dailyhole.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="DailyHole — Create your own daily mini golf hole">
+  <meta name="twitter:description" content="5 minutes to create your own daily mini golf hole. Drag, drop, share. Inspired by the HN hit Putt.day.">
+  <meta name="twitter:image" content="https://www.aimfast.dev/og/dailyhole.png">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "DailyHole",
+      "applicationCategory": "GameApplication",
+      "operatingSystem": "Web",
+      "description": "A zero-code daily mini golf hole creator. Upload a background, place obstacles, and share your unique hole in 5 minutes.",
+      "url": "https://www.aimfast.dev/dailyhole/",
+      "offers": {
+        "@type": "Offer",
+        "price": "3.00",
+        "priceCurrency": "USD"
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="/_ds/base.css">
+  <link rel="stylesheet" href="/_ds/components.css">
+  <style>
+    /* custom spacing & layout — all tokens from design system */
+    .hero {
+      padding: var(--space-8) 0 var(--space-6);
+      text-align: center;
+    }
+    .hero h1 {
+      max-width: 720px;
+      margin: 0 auto var(--space-3);
+    }
+    .hero .subhead {
+      max-width: 560px;
+      margin: 0 auto var(--space-5);
+      font-size: 1.15rem;
+      color: var(--color-text-secondary);
+    }
+    .signup-form {
+      display: flex;
+      gap: var(--space-2);
+      max-width: 480px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .signup-form input {
+      flex: 1 1 240px;
+      height: 52px;
+      padding: 0 var(--space-3);
+      border: 2px solid var(--color-border);
+      border-radius: 8px;
+      background: var(--color-surface);
+      color: var(--color-text);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      transition: border-color var(--duration-normal) var(--ease-out);
+    }
+    .signup-form input:focus {
+      outline: none;
+      border-color: var(--color-accent);
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent) 20%, transparent);
+    }
+    .signup-form .btn {
+      height: 52px;
+      padding: 0 var(--space-4);
+      font-size: 1rem;
+      white-space: nowrap;
+    }
+    .signup-form .btn-lg {
+      font-size: 1.05rem;
+    }
+    .success-message {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-2);
+      max-width: 480px;
+      margin: 0 auto;
+      padding: var(--space-3);
+      background: var(--color-surface-alt);
+      border-radius: 8px;
+      border: 1px solid var(--color-border);
+      font-weight: 500;
+    }
+    .success-message svg {
+      stroke: var(--color-accent);
+    }
+    .error-message {
+      color: var(--color-accent);
+      margin-top: var(--space-2);
+      font-size: 0.9rem;
+    }
+    .section-title {
+      text-align: center;
+      margin-bottom: var(--space-5);
+    }
+    .why-matters p {
+      max-width: 720px;
+      margin: 0 auto var(--space-3);
+      line-height: 1.75;
+      color: var(--color-text-secondary);
+    }
+    .how-it-works .steps {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-5);
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .step {
+      display: flex;
+      gap: var(--space-4);
+      align-items: flex-start;
+    }
+    .step-num {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--color-accent);
+      color: var(--color-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.2rem;
+      font-family: var(--font-heading);
+    }
+    .step-content h3 {
+      margin-bottom: var(--space-1);
+      font-size: 1.15rem;
+    }
+    .step-content p {
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+    }
+    .selling-points .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-4);
+    }
+    .selling-points .card {
+      padding: var(--space-4);
+      border-radius: 12px;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      transition: transform var(--duration-normal) var(--ease-out), box-shadow var(--duration-normal) var(--ease-out);
+    }
+    .selling-points .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+    .selling-points .card .icon {
+      margin-bottom: var(--space-2);
+      width: 40px;
+      height: 40px;
+      stroke: var(--color-accent);
+      stroke-width: 1.8;
+      fill: none;
+    }
+    .selling-points .card h3 {
+      margin-bottom: var(--space-1);
+      font-size: 1.1rem;
+    }
+    .selling-points .card p {
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+    .trust-bar {
+      text-align: center;
+      padding: var(--space-4) 0 var(--space-2);
+      color: var(--color-text-muted);
+      font-size: 0.85rem;
+      display: flex;
+      justify-content: center;
+      gap: var(--space-4);
+      flex-wrap: wrap;
+    }
+    .trust-bar span {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-1);
+    }
+    .trust-bar svg {
+      width: 16px;
+      height: 16px;
+      stroke: var(--color-text-muted);
+      stroke-width: 1.8;
+      fill: none;
+    }
+    footer {
+      text-align: center;
+      padding: var(--space-5) 0 var(--space-4);
+      border-top: 1px solid var(--color-border);
+      color: var(--color-text-muted);
+      font-size: 0.85rem;
+    }
+    @media (max-width: 640px) {
+      .signup-form {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .signup-form input {
+        flex: 1 1 auto;
+      }
+      .selling-points .grid-3 {
+        grid-template-columns: 1fr;
+      }
+      .step {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero + embedded email form -->
+  <section class="hero container">
+    <h1 class="heading-xl">Tired of playing others' games?<br>Create your own daily hole.</h1>
+    <p class="subhead">Inspired by the HN hit Putt.day. 5 minutes, no code, drag &amp; drop. Share a link and challenge your friends.</p>
+    
+    <!-- inline email capture — zero clicks to see -->
+    <form id="signup-form" class="signup-form" action="https://formspree.io/f/your-form-id" method="POST">
+      <input type="email" name="email" placeholder="you@example.com" required autocomplete="email">
+      <button type="submit" class="btn btn-primary btn-lg">Get Early Access</button>
+    </form>
+    <div id="form-feedback" style="margin-top: var(--space-2);"></div>
+  </section>
+
+  <!-- Why This Matters -->
+  <section class="why-matters container" style="padding: var(--space-6) 0;">
+    <h2 class="section-title heading-lg">Why Daily Mini Golf Matters Right Now</h2>
+    <p>When Putt.day hit the front page of Hacker News with 295 upvotes and 106 comments, the message was clear: people are hungry for a daily dose of mini golf. But the comments revealed something deeper — users wanted <em>more</em> holes, different themes, and the ability to create their own. The existing solution is a single, fixed course. That's like serving one flavor of ice cream and calling it a shop.</p>
+    <p>Current alternatives like Wordle or Lichess puzzles are either too abstract or too hardcore. Roblox is a full-blown platform that takes weeks to learn. What's missing is a <strong>micro-creation tool</strong> — something that turns a player into a creator in under five minutes. The signal from HN is not just "people like mini golf" — it's "people want to <em>make</em> mini golf, and they want it now."</p>
+    <p>With the rise of daily-game habits and the proven engagement of the "one-a-day" format, the timing is perfect. The community has already validated the demand. All that's missing is the tool. DailyHole fills that gap: a zero-friction, browser-based hole editor that turns your imagination into a shareable link. No sign-up required to start, no physics degree needed.</p>
+  </section>
+
+  <!-- How It Works -->
+  <section class="how-it-works container" style="padding: var(--space-6) 0;">
+    <h2 class="section-title heading-lg">How It Works</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h3>Upload your background</h3>
+          <p>Choose any 800x600 PNG image — a photo of your desk, a space scene, or a pixel-art castle. That's the canvas for your hole. The editor accepts standard image formats and gives you a live preview.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h3>Place obstacles &amp; the hole</h3>
+          <p>Click to drop up to 5 obstacles (circles, rectangles) and set the cup location. Drag to reposition. The physics engine from Putt.day's public logic powers the ball movement — no coding required.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h3>Share your unique link</h3>
+          <p>Hit publish and get a shareable URL like <code>dailyhole.app/play/abc123</code>. Your entire level is encoded in the link — no database needed. Send it to friends, post on Reddit, or make it your daily challenge.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Selling Points (3-column grid) -->
+  <section class="selling-points container" style="padding: var(--space-6) 0;">
+    <h2 class="section-title heading-lg">What You Get</h2>
+    <div class="grid-3">
+      <div class="card">
+        <!-- mail icon (Lucide) -->
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="4" width="20" height="16" rx="2"/>
+          <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+        </svg>
+        <h3>Inspired by HN hit</h3>
+        <p>Built on the exact game mechanic that 295+ HN users loved. You're not guessing — you're extending a proven pattern that the community already validated with upvotes and comments.</p>
+      </div>
+      <div class="card">
+        <!-- lock icon (Lucide) -->
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+          <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+        </svg>
+        <h3>5-minute creation</h3>
+        <p>No sign-up, no download, no learning curve. Upload a picture, drop a few obstacles, set the hole. From zero to a playable link in under five minutes. Perfect for a coffee break.</p>
+      </div>
+      <div class="card">
+        <!-- shield-check icon (Lucide) -->
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <polyline points="9 12 11 14 15 10"/>
+        </svg>
+        <h3>Infinite themes</h3>
+        <p>From a spooky Halloween hole to a neon synthwave course, your imagination sets the limit. The editor supports any background image and obstacle layout, so every day can feel brand new.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Bar -->
+  <div class="trust-bar container">
+    <span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+      295+ HN upvotes
+    </span>
+    <span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      5 min creation
+    </span>
+    <span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      No coding needed
+    </span>
+  </div>
+
+  <!-- Footer -->
+  <footer class="container">
+    © 2026 · <a href="https://www.aimfast.dev" style="color: var(--color-text-secondary); text-decoration: none;">www.aimfast.dev</a>
+  </footer>
+
+  <script>
+    (function() {
+      const form = document.getElementById('signup-form');
+      const feedback = document.getElementById('form-feedback');
+
+      // handle submit with fetch, no modal, no redirect
+      window.handleSubmit = async function(e) {
+        e.preventDefault();
+        const email =
