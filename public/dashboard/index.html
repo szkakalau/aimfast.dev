@@ -1009,17 +1009,17 @@ var LANG = I18N.lang;
   // Archive
   setEl('btn-back-today', t('archiveBackToToday'));
 
-  function setEl(id, text) {
+  window.setEl = function(id, text) {
     var el = document.getElementById(id);
     if (el && text != null) el.textContent = text;
-  }
+  };
 
-  function safeMarked(md) {
+  window.safeMarked = function(md) {
     if (typeof marked !== 'undefined' && marked.parse) {
       try { return marked.parse(md); } catch(e) { return '<p>' + md + '</p>'; }
     }
     return '<pre>' + (md || '') + '</pre>';
-  }
+  };
 
   function setChartTitle(id, text) {
     var el = document.getElementById(id);
