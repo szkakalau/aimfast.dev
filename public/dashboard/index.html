@@ -1137,7 +1137,7 @@ var _bets = []; // in-memory bet list (loaded from localStorage + JSON)
 
 function loadBets() {
   // Merge: JSON defaults + localStorage overrides
-  var jsonBets = (data._wb_data && data._wb_data.bets) ? data._wb_data.bets : [];
+  var jsonBets = (typeof _data !== 'undefined' && _data._wb_data && _data._wb_data.bets) ? _data._wb_data.bets : [];
   var lsRaw = null;
   try { lsRaw = localStorage.getItem('kakaopc_bets'); } catch(e) {}
   var lsBets = lsRaw ? JSON.parse(lsRaw) : [];
@@ -1205,15 +1205,18 @@ function openOppCard(wbData, demandId) {
   var content = document.getElementById('wb-opp-content');
   if (!card || !content) return;
 
+  // Fallback to global _data if wbData is unavailable (e.g. called from onclick closure)
+  if (!wbData && typeof _data !== 'undefined') { wbData = _data.workbench || _data._wb_data; }
+
   // Find demand in workbench data
-  var allDems = wbData.all_demands || [];
+  var allDems = (wbData && wbData.all_demands) ? wbData.all_demands : [];
   var dem = null;
   for (var i = 0; i < allDems.length; i++) {
     if (allDems[i].id === demandId) { dem = allDems[i]; break; }
   }
   if (!dem) {
     // Also check watched_demands
-    var wd = wbData.watched_demands || [];
+    var wd = (wbData && wbData.watched_demands) ? wbData.watched_demands : [];
     for (var j = 0; j < wd.length; j++) {
       if (wd[j].id === demandId) { dem = wd[j]; break; }
     }
