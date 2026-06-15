@@ -564,7 +564,7 @@
     </div>
     <div id="tab-demand" class="report-body" style="display:none;" role="tabpanel">
       <table aria-label="Demand radar">
-        <thead><tr><th scope="col" id="th-dem-name">Demand</th><th scope="col" id="th-dem-delta">Chg</th><th scope="col" id="th-dem-market">Market</th><th scope="col" id="th-dem-business">Business</th><th scope="col" id="th-dem-confidence">Conf</th><th scope="col" id="th-dem-stage">Stage</th><th scope="col" id="th-dem-index">Score</th></tr></thead>
+        <thead><tr><th scope="col" id="th-dem-name">Demand</th><th scope="col" id="th-dem-delta">Chg</th><th scope="col" id="th-dem-market">Market</th><th scope="col" id="th-dem-business">Biz</th><th scope="col" id="th-dem-competition">Comp</th><th scope="col" id="th-dem-confidence">Conf</th><th scope="col" id="th-dem-stage">Stage</th><th scope="col" id="th-dem-index">Score</th></tr></thead>
         <tbody id="demand-body"></tbody>
       </table>
       <div id="demand-empty" class="empty" style="display:none;">No demand data yet.</div>
@@ -680,6 +680,7 @@ var I18N = (function() {
       demDelta: '变化',
       demMarket: '市场',
       demBusiness: '商业',
+      demCompetition: '竞争',
       demConfidence: '置信',
       demStage: '阶段',
       demIndex: '评分',
@@ -829,6 +830,7 @@ var I18N = (function() {
       demDelta: 'Change',
       demMarket: 'Market',
       demBusiness: 'Business',
+      demCompetition: 'Comp',
       demConfidence: 'Conf',
       demStage: 'Stage',
       demIndex: 'Score',
@@ -1016,6 +1018,7 @@ window.safeMarked = function(md) {
   setEl('th-dem-delta', t('demDelta'));
   setEl('th-dem-market', t('demMarket'));
   setEl('th-dem-business', t('demBusiness'));
+  setEl('th-dem-competition', t('demCompetition'));
   setEl('th-dem-confidence', t('demConfidence'));
   setEl('th-dem-stage', t('demStage'));
   setEl('th-dem-index', t('demIndex'));
@@ -1245,11 +1248,15 @@ function renderAll(data) {
       var indexCls = dem.opportunity_index >= 70 ? 'score-high' : (dem.opportunity_index >= 40 ? 'score-mid' : 'score-low');
       var indexHtml = '<span class="score ' + indexCls + '">' + dem.opportunity_index + '</span>';
 
+      var compCls = dem.competition >= 80 ? 'score-low' : (dem.competition >= 50 ? 'score-mid' : 'score-high');
+      var buyerInfo = (dem.target_buyer || '') ? ' | Buyer: ' + (dem.target_buyer || '') : '';
+
       tr.innerHTML =
-        '<td><strong>' + dem.name + '</strong><br><span class="muted">' + (dem.description || '') + '</span></td>' +
+        '<td><strong>' + dem.name + '</strong><br><span class="muted">' + (dem.description || '') + buyerInfo + '</span></td>' +
         '<td>' + (deltaIcons[dem.delta] || dem.delta) + '</td>' +
         '<td class="num" title="' + marketTooltip + '">' + (dem.market_score || 0) + '</td>' +
         '<td class="num" title="' + businessTooltip + '">' + (dem.business_score || 0) + '</td>' +
+        '<td class="num ' + compCls + '">' + (dem.competition || 0) + '</td>' +
         '<td class="num">' + (dem.confidence || 0) + '%</td>' +
         '<td>' + (stageLabels[dem.stage] || dem.stage || '?') + '</td>' +
         '<td>' + indexHtml + '</td>';

@@ -177,6 +177,17 @@ def _score_demand(category: dict, weekly_counts: dict[str, int], total_demand_si
     business_score = round((pain_score * 0.5 + pay_score * 0.5) * 100)
     business_score = max(1, min(100, business_score))
 
+    # ─── COMPETITION (信号密度 + 人工基值) ───
+    # 自动竞争度: 信号越多 = 竞争越激烈 (以最强需求为 100)
+    if max_appearances > 0:
+        auto_competition = round((total_appearances / max_appearances) * 100)
+    else:
+        auto_competition = 0
+    # 人工基值: 已知大厂垄断或开源泛滥的赛道
+    config_competition = category.get("competition", 50)
+    # 取两者中较高值 — 兼顾市场实际和领域知识
+    competition = min(100, max(auto_competition, config_competition))
+
     # ─── CONFIDENCE (基于样本量) ───
     confidence = round(math.log2(total_appearances + 1) * 20)
     confidence = max(1, min(100, confidence))
@@ -191,8 +202,9 @@ def _score_demand(category: dict, weekly_counts: dict[str, int], total_demand_si
     else:
         stage = "forming"
 
-    # ─── OPPORTUNITY = Market × 0.6 + Business × 0.4 ───
-    opportunity_index = round(market_score * 0.6 + business_score * 0.4)
+    # ─── OPPORTUNITY = (Market × 0.6 + Business × 0.4) × (100 - Competition) / 100 ───
+    base_opportunity = market_score * 0.6 + business_score * 0.4
+    opportunity_index = round(base_opportunity * (100 - competition) / 100)
     opportunity_index = max(1, min(100, opportunity_index))
 
     # 子分数显示 (0-10)
@@ -204,6 +216,7 @@ def _score_demand(category: dict, weekly_counts: dict[str, int], total_demand_si
     return {
         "market_score": market_score,
         "business_score": business_score,
+        "competition": competition,
         "confidence": confidence,
         "stage": stage,
         "opportunity_index": opportunity_index,
@@ -268,6 +281,7 @@ def _empty_score() -> dict:
     return {
         "market_score": 0,
         "business_score": 0,
+        "competition": 0,
         "confidence": 0,
         "stage": "early",
         "opportunity_index": 0,
@@ -380,8 +394,10 @@ def run(date_str: str | None = None) -> dict:
             # V3: Market/Business 分离
             "market_score": score["market_score"],
             "business_score": score["business_score"],
+            "competition": score["competition"],
             "confidence": score["confidence"],
             "stage": score["stage"],
+            "target_buyer": cat.get("target_buyer", ""),
             "opportunity_index": score["opportunity_index"],
             # 子维度
             "trend_score": score["trend_score"],
@@ -423,7 +439,7 @@ def run(date_str: str | None = None) -> dict:
     for i, d in enumerate(demand_entries[:8]):
         si = stage_icons.get(d["stage"], "?")
         print(f"  {i+1}. [{d['opportunity_index']}/100] {si} {d['name']}")
-        print(f"       Market:{d['market_score']}(样本:{d['total_appearances']}, 置信:{d['confidence']}) | Business:{d['business_score']}(痛:{d['pain_score']} 付:{d['pay_score']}) | 阶段:{d['stage']}")
+        print(f"       Market:{d['market_score']} | Business:{d['business_score']} | Competition:{d['competition']} | 置信:{d['confidence']}% | {d['target_buyer']}")
 
     if intersections:
         print(f"\n[需求雷达] 交叉机会 ({len(intersections)}):")
