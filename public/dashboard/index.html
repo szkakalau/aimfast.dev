@@ -892,6 +892,19 @@ var I18N = (function() {
 var t = I18N.t;
 var LANG = I18N.lang;
 
+// ─── Core utility functions (must be defined before i18n setup calls them) ───
+window.setEl = function(id, text) {
+  var el = document.getElementById(id);
+  if (el && text != null) el.textContent = text;
+};
+
+window.safeMarked = function(md) {
+  if (typeof marked !== 'undefined' && marked.parse) {
+    try { return marked.parse(md); } catch(e) { return '<p>' + md + '</p>'; }
+  }
+  return '<pre>' + (md || '') + '</pre>';
+};
+
 // ─── Apply language to static HTML elements before page renders ───
 (function applyI18N() {
   // HTML lang
@@ -1008,18 +1021,6 @@ var LANG = I18N.lang;
 
   // Archive
   setEl('btn-back-today', t('archiveBackToToday'));
-
-  window.setEl = function(id, text) {
-    var el = document.getElementById(id);
-    if (el && text != null) el.textContent = text;
-  };
-
-  window.safeMarked = function(md) {
-    if (typeof marked !== 'undefined' && marked.parse) {
-      try { return marked.parse(md); } catch(e) { return '<p>' + md + '</p>'; }
-    }
-    return '<pre>' + (md || '') + '</pre>';
-  };
 
   function setChartTitle(id, text) {
     var el = document.getElementById(id);
