@@ -175,6 +175,18 @@ try {
     Write-Log "  [Tracking] FAIL: $_"
 }
 
+# --- Step 6b: Recurring Signal Tracking ---
+
+Write-Log ""
+Write-Log "--- Step 6b: Recurring Signal Tracking ---"
+
+try {
+    $output = & $Python -m scripts.track_recurring 2>&1
+    Write-Log "  [Recurring] OK"
+} catch {
+    Write-Log "  [Recurring] FAIL: $_"
+}
+
 # --- Step 7: Landing Page Generation ---
 
 Write-Log ""
@@ -259,7 +271,7 @@ Write-Log "--- Step 13: Deploy Dashboard Data & SEO Content ---"
 
 try {
     Push-Location $ProjectRoot
-    git add public/dashboard/data/dashboard.json public/sitemap.xml content/reports/ content/articles/ public/*/index.html 2>&1 | Out-Null
+    git add public/dashboard/data/dashboard.json tracking/recurring_signals.json public/sitemap.xml content/reports/ content/articles/ public/*/index.html 2>&1 | Out-Null
 
     # Check if there are staged changes
     $diffOut = git diff --cached --name-only 2>&1

@@ -495,6 +495,7 @@
       <button class="tab active" role="tab" aria-selected="true" onclick="switchTab('report')" id="tab-btn-report">Daily Report</button>
       <button class="tab" role="tab" aria-selected="false" onclick="switchTab('article')" id="tab-btn-article">Planet Article</button>
       <button class="tab" role="tab" aria-selected="false" onclick="switchTab('tracking')" id="tab-btn-tracking">Opportunity Tracking</button>
+      <button class="tab" role="tab" aria-selected="false" onclick="switchTab('recurring')" id="tab-btn-recurring">Recurring Signals</button>
     </div>
 
     <!-- Archive date navigation (hidden until archive data loads) -->
@@ -522,6 +523,13 @@
         <tbody id="tracking-body"></tbody>
       </table>
       <div id="tracking-empty" class="empty" style="display:none;">No opportunities tracked yet.</div>
+    </div>
+    <div id="tab-recurring" class="report-body" style="display:none;" role="tabpanel">
+      <table aria-label="Recurring signals tracking">
+        <thead><tr><th scope="col" id="th-rec-topic">Topic</th><th scope="col" id="th-rec-first">First Seen</th><th scope="col" id="th-rec-last">Last Seen</th><th scope="col" id="th-rec-days">Days</th><th scope="col" id="th-rec-sources">Sources</th><th scope="col" id="th-rec-peak">Peak Score</th><th scope="col" id="th-rec-trend">Trend</th><th scope="col" id="th-rec-link">Linked</th></tr></thead>
+        <tbody id="recurring-body"></tbody>
+      </table>
+      <div id="recurring-empty" class="empty" style="display:none;">No recurring signals detected yet.</div>
     </div>
   </div>
 
@@ -579,6 +587,7 @@ var I18N = (function() {
       tabReport: '日报',
       tabArticle: '星球文章',
       tabTracking: '机会追踪',
+      tabRecurring: '重复信号',
       tabBarAria: '内容标签页',
 
       // Loading
@@ -606,6 +615,21 @@ var I18N = (function() {
       trStatusFailed: '失败',
       trStatusAdjust: '调整',
       trEmpty: '暂无追踪的机会。',
+
+      // Recurring signals
+      recTopic: '话题',
+      recFirstSeen: '首次出现',
+      recLastSeen: '最近出现',
+      recDays: '天数',
+      recSources: '来源',
+      recPeakScore: '最高分',
+      recTrend: '趋势',
+      recLinked: '关联',
+      recTrendRising: '上升 🔺',
+      recTrendStable: '稳定 ➡',
+      recTrendFading: '衰减 🔻',
+      recEmpty: '暂无重复信号。',
+      recAria: '重复信号追踪',
 
       // Footer
       footerVersion: 'KAKAOPC情报科 v2.0',
@@ -687,6 +711,7 @@ var I18N = (function() {
       tabReport: 'Daily Report',
       tabArticle: 'Planet Article',
       tabTracking: 'Opportunity Tracking',
+      tabRecurring: 'Recurring Signals',
       tabBarAria: 'Content tabs',
 
       // Loading
@@ -714,6 +739,21 @@ var I18N = (function() {
       trStatusFailed: 'Failed',
       trStatusAdjust: 'Adjust',
       trEmpty: 'No opportunities tracked yet.',
+
+      // Recurring signals
+      recTopic: 'Topic',
+      recFirstSeen: 'First Seen',
+      recLastSeen: 'Last Seen',
+      recDays: 'Days',
+      recSources: 'Sources',
+      recPeakScore: 'Peak Score',
+      recTrend: 'Trend',
+      recLinked: 'Linked',
+      recTrendRising: 'Rising 🔺',
+      recTrendStable: 'Stable ➡',
+      recTrendFading: 'Fading 🔻',
+      recEmpty: 'No recurring signals detected yet.',
+      recAria: 'Recurring signals tracking',
 
       // Footer
       footerVersion: 'KAKAOPC Intel v2.0',
@@ -837,6 +877,7 @@ var LANG = I18N.lang;
   setEl('tab-btn-report', t('tabReport'));
   setEl('tab-btn-article', t('tabArticle'));
   setEl('tab-btn-tracking', t('tabTracking'));
+  setEl('tab-btn-recurring', t('tabRecurring'));
   document.getElementById('tab-bar').setAttribute('aria-label', t('tabBarAria'));
 
   // Loading texts
@@ -853,6 +894,18 @@ var LANG = I18N.lang;
   setEl('th-tr-verify', t('trVerification'));
   setEl('th-tr-decision', t('trDecision'));
   setEl('tracking-empty', t('trEmpty'));
+
+  // Recurring signals headers
+  setEl('th-rec-topic', t('recTopic'));
+  setEl('th-rec-first', t('recFirstSeen'));
+  setEl('th-rec-last', t('recLastSeen'));
+  setEl('th-rec-days', t('recDays'));
+  setEl('th-rec-sources', t('recSources'));
+  setEl('th-rec-peak', t('recPeakScore'));
+  setEl('th-rec-trend', t('recTrend'));
+  setEl('th-rec-link', t('recLinked'));
+  setEl('recurring-empty', t('recEmpty'));
+  document.querySelector('table[aria-label="Recurring signals tracking"]').setAttribute('aria-label', t('recAria'));
 
   // Footer
   setEl('footer-version', t('footerVersion'));
@@ -1007,6 +1060,36 @@ function renderAll(data) {
     });
   }
 
+  // Recurring signals tracking
+  var recurring = data.recurring_signals || [];
+  if (recurring.length === 0) {
+    document.getElementById('recurring-empty').style.display = 'block';
+  } else {
+    var trendIcons = {
+      rising: t('recTrendRising'),
+      stable: t('recTrendStable'),
+      fading: t('recTrendFading')
+    };
+    var recTbody = document.getElementById('recurring-body');
+    recurring.forEach(function(rec) {
+      var tr = document.createElement('tr');
+      var trendHtml = trendIcons[rec.trend] || rec.trend;
+      var linkedHtml = rec.linked_opportunity_id
+        ? '<a href="#" onclick="switchTab(\'tracking\'); return false;" title="' + rec.linked_opportunity_id + '"><code>' + rec.linked_opportunity_id + '</code></a>'
+        : '--';
+      tr.innerHTML =
+        '<td title="' + (rec.topic || '').replace(/"/g, '&quot;') + '">' + (rec.topic || '').substring(0, 50) + '</td>' +
+        '<td>' + (rec.first_seen || '') + '</td>' +
+        '<td>' + (rec.last_seen || '') + '</td>' +
+        '<td class="score">' + (rec.distinct_days || 0) + 'd / ' + (rec.appearances || 0) + 'x</td>' +
+        '<td>' + (rec.sources || []).slice(0, 3).join(', ') + '</td>' +
+        '<td class="score">' + (rec.peak_score || 0) + '</td>' +
+        '<td>' + trendHtml + '</td>' +
+        '<td>' + linkedHtml + '</td>';
+      recTbody.appendChild(tr);
+    });
+  }
+
   // Pipeline status indicators in footer
   var steps = ['report', 'article', 'action', 'lp'];
   var labels = {report: 'RPT', article: 'ART', action: 'ACT', lp: 'LP'};
@@ -1155,6 +1238,7 @@ function switchTab(tab) {
   document.getElementById('tab-report').style.display = tab === 'report' ? '' : 'none';
   document.getElementById('tab-article').style.display = tab === 'article' ? '' : 'none';
   document.getElementById('tab-tracking').style.display = tab === 'tracking' ? '' : 'none';
+  document.getElementById('tab-recurring').style.display = tab === 'recurring' ? '' : 'none';
 
   var archiveNav = document.getElementById('archive-nav');
   if (archiveNav && _archiveData.length > 1) {
@@ -1541,6 +1625,7 @@ function copyArticleNotepad() {
         document.getElementById('signals-body').innerHTML = '<tr><td colspan="6" class="empty">' + t('emptyNoData') + '</td></tr>';
         document.getElementById('tab-report').innerHTML = '<div class="empty">' + t('emptyNoReportData') + '</div>';
         document.getElementById('tracking-empty').style.display = 'block';
+        document.getElementById('recurring-empty').style.display = 'block';
         document.getElementById('stat-signals').textContent = '0';
         document.getElementById('stat-top').textContent = '--';
         document.getElementById('stat-avg').textContent = '--';

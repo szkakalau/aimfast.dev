@@ -146,6 +146,17 @@ else
     log "  [Tracking] FAIL"
 fi
 
+# ─── Step 6b: Recurring Signal Tracking ───
+
+log ""
+log "--- Step 6b: Recurring Signal Tracking ---"
+
+if $PYTHON -m scripts.track_recurring 2>&1; then
+    log "  [Recurring] OK"
+else
+    log "  [Recurring] FAIL"
+fi
+
 # ─── Step 7: Landing Page ───
 
 log ""
@@ -228,7 +239,7 @@ fi
 log ""
 log "--- Step 13: Deploy Dashboard Data & SEO Content ---"
 
-git add public/dashboard/data/dashboard.json public/sitemap.xml content/reports/ content/articles/ public/*/index.html compare/ 2>&1 || true
+git add public/dashboard/data/dashboard.json tracking/recurring_signals.json public/sitemap.xml content/reports/ content/articles/ public/*/index.html compare/ 2>&1 || true
 
 if git diff --cached --name-only | grep -q .; then
     git config user.email "pipeline@kakaopc-intel.bot"

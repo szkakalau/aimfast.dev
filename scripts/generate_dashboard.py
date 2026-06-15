@@ -167,6 +167,16 @@ def collect_dashboard_data() -> dict:
         data = json.loads(opp_path.read_text(encoding="utf-8"))
         opportunities = data.get("opportunities", [])
 
+    # 3b. Recurring signals tracking
+    recurring_signals = []
+    rec_path = TRACKING_DIR / "recurring_signals.json"
+    if rec_path.exists():
+        try:
+            data = json.loads(rec_path.read_text(encoding="utf-8"))
+            recurring_signals = data.get("recurring", [])
+        except Exception as e:
+            print(f"[Dashboard] [WARN] Failed to read recurring_signals.json: {e}")
+
     # 4. Daily report (markdown) — bilingual: zh (default) + en (optional)
     report_md = ""
     report_md_en = ""
@@ -203,6 +213,7 @@ def collect_dashboard_data() -> dict:
         "summary": today_summary,
         "history": list(reversed(history)),
         "opportunities": opportunities,
+        "recurring_signals": recurring_signals,
         "report_md": report_md,
         "report_md_en": report_md_en,
         "article_md": article_md,
@@ -240,7 +251,7 @@ def run(date_str: str | None = None) -> str:
     output_path = OUTPUT_DIR / "dashboard.json"
     output_path.write_text(json_str, encoding="utf-8")
     print(f"[Dashboard] Data saved → {output_path}")
-    print(f"[Dashboard] {len(data['signals'])} signals | {len(data['history'])} days history | {len(data['opportunities'])} opportunities | article: {len(data['article_md']):,} chars (zh) / {len(data['article_md_en']):,} chars (en)")
+    print(f"[Dashboard] {len(data['signals'])} signals | {len(data['history'])} days history | {len(data['opportunities'])} opportunities | {len(data['recurring_signals'])} recurring | article: {len(data['article_md']):,} chars (zh) / {len(data['article_md_en']):,} chars (en)")
     return str(output_path)
 
 
