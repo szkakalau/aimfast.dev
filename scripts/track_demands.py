@@ -90,7 +90,7 @@ def _match_category(signal: dict, category: dict) -> int:
     return score
 
 
-def _score_demand(category: dict, weekly_counts: dict[str, int], weekly_totals: dict[str, int]) -> dict:
+def _score_demand(category: dict, weekly_counts: dict[str, int], total_demand_signals: int) -> dict:
     """计算单个需求类别的机会评分。
 
     机会指数 = heat_score × growth_score × pain_score × payment_score
@@ -100,12 +100,12 @@ def _score_demand(category: dict, weekly_counts: dict[str, int], weekly_totals: 
     if not sorted_weeks:
         return _empty_score()
 
-    # 1. 热度（信号量 vs 总信号量）
+    # 1. 热度（该需求信号数 vs 所有需求信号总数的占比）
     total_signals_in_category = sum(weekly_counts.values())
-    total_signals_overall = sum(weekly_totals.values())
-    if total_signals_overall > 0:
-        ratio = total_signals_in_category / total_signals_overall
-        heat_score = min(10, round(ratio * 100))
+    if total_demand_signals > 0:
+        ratio = total_signals_in_category / total_demand_signals
+        # ratio 范围约 0.02-0.40，线性映射到 1-10
+        heat_score = min(10, max(1, round(ratio * 25)))
     else:
         heat_score = 0
     heat_score = max(1, heat_score)  # 最低 1 分
@@ -250,11 +250,15 @@ def run(date_str: str | None = None) -> dict:
             weekly_counts[cat_id][week] = count
 
     # ─── 计算每个需求的机会评分 ───
+    # 所有需求类别的总信号数（用于热度归一化）
+    total_demand_signals = sum(
+        sum(counts.values()) for counts in weekly_counts.values()
+    )
     scores: dict[str, dict] = {}
     for cat in categories:
         cat_id = cat["id"]
         counts = weekly_counts[cat_id]
-        scores[cat_id] = _score_demand(cat, counts, weekly_totals)
+        scores[cat_id] = _score_demand(cat, counts, total_demand_signals)
 
     # ─── 检测交叉机会 ───
     intersections = _detect_intersections(categories, scores, weekly_counts)
