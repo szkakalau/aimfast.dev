@@ -564,7 +564,7 @@
     </div>
     <div id="tab-demand" class="report-body" style="display:none;" role="tabpanel">
       <table aria-label="Demand radar">
-        <thead><tr><th scope="col" id="th-dem-name">Demand</th><th scope="col" id="th-dem-w1">W1</th><th scope="col" id="th-dem-w2">W2</th><th scope="col" id="th-dem-w3">W3</th><th scope="col" id="th-dem-delta">Change</th><th scope="col" id="th-dem-heat">Heat</th><th scope="col" id="th-dem-pain">Pain</th><th scope="col" id="th-dem-pay">Pay</th><th scope="col" id="th-dem-index">Opportunity</th></tr></thead>
+        <thead><tr><th scope="col" id="th-dem-name">Demand</th><th scope="col" id="th-dem-w1">W1</th><th scope="col" id="th-dem-w2">W2</th><th scope="col" id="th-dem-w3">W3</th><th scope="col" id="th-dem-delta">Chg</th><th scope="col" id="th-dem-trend">Trend</th><th scope="col" id="th-dem-pain">Pain</th><th scope="col" id="th-dem-pay">Pay</th><th scope="col" id="th-dem-growth">xGrowth</th><th scope="col" id="th-dem-index">Score</th></tr></thead>
         <tbody id="demand-body"></tbody>
       </table>
       <div id="demand-empty" class="empty" style="display:none;">No demand data yet.</div>
@@ -678,10 +678,11 @@ var I18N = (function() {
       demW2: 'W2',
       demW3: 'W3',
       demDelta: '变化',
-      demHeat: '热度',
+      demTrend: '热度',
       demPain: '痛感',
       demPay: '付费',
-      demIndex: '机会指数',
+      demGrowth: '增速',
+      demIndex: '评分',
       demDeltaRising: '🔺',
       demDeltaFalling: '🔻',
       demDeltaStable: '➡',
@@ -822,10 +823,11 @@ var I18N = (function() {
       demW2: 'W2',
       demW3: 'W3',
       demDelta: 'Change',
-      demHeat: 'Heat',
+      demTrend: 'Trend',
       demPain: 'Pain',
       demPay: 'Pay',
-      demIndex: 'Opportunity',
+      demGrowth: 'Growth',
+      demIndex: 'Score',
       demDeltaRising: 'Rising 🔺',
       demDeltaFalling: 'Falling 🔻',
       demDeltaStable: 'Stable ➡',
@@ -990,9 +992,10 @@ var LANG = I18N.lang;
   // Demand radar headers
   setEl('th-dem-name', t('demName'));
   setEl('th-dem-delta', t('demDelta'));
-  setEl('th-dem-heat', t('demHeat'));
+  setEl('th-dem-trend', t('demTrend'));
   setEl('th-dem-pain', t('demPain'));
   setEl('th-dem-pay', t('demPay'));
+  setEl('th-dem-growth', t('demGrowth'));
   setEl('th-dem-index', t('demIndex'));
   setEl('demand-empty', t('demEmpty'));
   document.querySelector('table[aria-label="Demand radar"]').setAttribute('aria-label', t('demAria'));
@@ -1222,8 +1225,13 @@ function renderAll(data) {
       var w2 = weekKeys[1] ? (snaps[weekKeys[1]] || 0) : '-';
       var w3 = weekKeys[2] ? (snaps[weekKeys[2]] || 0) : '-';
 
-      var indexCls = dem.opportunity_index >= 8 ? 'score-high' : (dem.opportunity_index >= 5 ? 'score-mid' : 'score-low');
-      var indexHtml = '<span class="score ' + indexCls + '">' + dem.opportunity_index + '/10</span>';
+      var indexCls = dem.opportunity_index >= 70 ? 'score-high' : (dem.opportunity_index >= 40 ? 'score-mid' : 'score-low');
+      var indexHtml = '<span class="score ' + indexCls + '">' + dem.opportunity_index + '</span>';
+
+      // Pain tooltip: f×s detail
+      var painTitle = 'frequency=' + (dem.pain_frequency || '?') + ' severity=' + (dem.pain_severity || '?');
+      // Pay tooltip: b×u detail
+      var payTitle = 'budget=' + (dem.pay_budget || '?') + ' urgency=' + (dem.pay_urgency || '?');
 
       tr.innerHTML =
         '<td><strong>' + dem.name + '</strong><br><span class="muted">' + (dem.description || '') + '</span></td>' +
@@ -1231,9 +1239,10 @@ function renderAll(data) {
         '<td class="num">' + w2 + '</td>' +
         '<td class="num">' + w3 + '</td>' +
         '<td>' + (deltaIcons[dem.delta] || dem.delta) + '</td>' +
-        '<td class="num">' + dem.heat_score + '</td>' +
-        '<td class="num">' + dem.pain_score + '</td>' +
-        '<td class="num">' + dem.payment_score + '</td>' +
+        '<td class="num">' + (dem.trend_score || 0) + '</td>' +
+        '<td class="num" title="' + painTitle + '">' + (dem.pain_score || 0) + '</td>' +
+        '<td class="num" title="' + payTitle + '">' + (dem.pay_score || 0) + '</td>' +
+        '<td class="num">' + (dem.growth_modifier || 1) + 'x</td>' +
         '<td>' + indexHtml + '</td>';
       demTbody.appendChild(tr);
     });

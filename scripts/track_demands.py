@@ -90,27 +90,46 @@ def _match_category(signal: dict, category: dict) -> int:
     return score
 
 
-def _score_demand(category: dict, weekly_counts: dict[str, int], total_demand_signals: int) -> dict:
+def _score_demand(category: dict, weekly_counts: dict[str, int], total_demand_signals: int, max_appearances: int) -> dict:
     """计算单个需求类别的机会评分。
 
-    机会指数 = heat_score × growth_score × pain_score × payment_score
-    每个维度 1-10，乘积归一化到 1-10。
+    V2 公式（三级评分）:
+      PainScore  = (frequency × severity) / 10          → 0-10
+      PayScore   = (budget × urgency) / 10              → 0-10
+      TrendScore = appearances / max_appearances × 10   → 0-10 (归一化到最强需求)
+      GrowthModifier = 1.2(rising) / 1.0(stable) / 0.8(falling)
+      Opportunity = (0.35×Trend + 0.35×Pain + 0.30×Pay) × GrowthModifier
+      最终: 归一化到 0-100
     """
     sorted_weeks = sorted(weekly_counts.keys())
     if not sorted_weeks:
         return _empty_score()
 
-    # 1. 热度（该需求信号数 vs 所有需求信号总数的占比）
-    total_signals_in_category = sum(weekly_counts.values())
-    if total_demand_signals > 0:
-        ratio = total_signals_in_category / total_demand_signals
-        # ratio 范围约 0.02-0.40，线性映射到 1-10
-        heat_score = min(10, max(1, round(ratio * 25)))
-    else:
-        heat_score = 0
-    heat_score = max(1, heat_score)  # 最低 1 分
+    # ─── 从配置读取 V2 结构 ───
+    pain_cfg = category.get("pain", {})
+    pay_cfg = category.get("pay", {})
+    weights_cfg = json.loads(
+        (CONFIG_DIR / "demand_patterns.json").read_text(encoding="utf-8")
+    ).get("weights", {"trend": 0.35, "pain": 0.35, "pay": 0.30})
 
-    # 2. 增速（最近 2 周 vs 前 2 周）
+    # 1. Pain Score = frequency × severity / 10 (0-100 → 0-10)
+    pain_freq = pain_cfg.get("frequency", 5)
+    pain_sev = pain_cfg.get("severity", 5)
+    pain_score = (pain_freq * pain_sev) / 10  # 0-10
+
+    # 2. Pay Score = budget × urgency / 10 (0-100 → 0-10)
+    pay_budget = pay_cfg.get("budget", 5)
+    pay_urgency = pay_cfg.get("urgency", 5)
+    pay_score = (pay_budget * pay_urgency) / 10  # 0-10
+
+    # 3. Trend Score = appearances / max_appearances × 10 (归一化)
+    total_appearances = sum(weekly_counts.values())
+    if max_appearances > 0:
+        trend_score = (total_appearances / max_appearances) * 10  # 0-10
+    else:
+        trend_score = 0
+
+    # 4. Growth Modifier
     recent_weeks = sorted_weeks[-2:] if len(sorted_weeks) >= 2 else sorted_weeks
     earlier_weeks = sorted_weeks[:-2] if len(sorted_weeks) > 2 else []
 
@@ -122,43 +141,44 @@ def _score_demand(category: dict, weekly_counts: dict[str, int], total_demand_si
 
     if earlier_avg > 0:
         growth_ratio = recent_avg / earlier_avg
-        if growth_ratio >= 3.0:
-            growth_score = 10
-        elif growth_ratio >= 2.0:
-            growth_score = 8
-        elif growth_ratio >= 1.5:
-            growth_score = 7
-        elif growth_ratio >= 1.2:
-            growth_score = 6
+        if growth_ratio >= 1.2:
+            growth_modifier = 1.2
         elif growth_ratio >= 1.0:
-            growth_score = 5
+            growth_modifier = 1.0
         elif growth_ratio >= 0.7:
-            growth_score = 3
+            growth_modifier = 0.9
         else:
-            growth_score = 1
+            growth_modifier = 0.8
     elif recent_avg > 0 and earlier_avg == 0:
-        growth_score = 9  # 新出现的需求
+        growth_modifier = 1.1  # 新需求，略高于中性
     else:
-        growth_score = 5
+        growth_modifier = 1.0
 
-    # 3. 痛感（来自配置基值）
-    pain_score = category.get("pain_base", 5)
+    # 5. 加权求和 → 0-100
+    w_trend = weights_cfg.get("trend", 0.35)
+    w_pain = weights_cfg.get("pain", 0.35)
+    w_pay = weights_cfg.get("pay", 0.30)
 
-    # 4. 付费能力（来自配置基值）
-    payment_score = category.get("payment_base", 5)
+    raw = (w_trend * trend_score + w_pain * pain_score + w_pay * pay_score) * growth_modifier
+    opportunity_index = round(raw * 10)  # 0-10 scale × 10 → 0-100
+    opportunity_index = max(1, min(100, opportunity_index))
 
-    # 综合机会指数（归一化到 1-10）
-    raw = heat_score * growth_score * pain_score * payment_score
-    # 最大可能值 10×10×10×10 = 10000
-    opportunity_index = round(raw ** 0.25)  # 几何平均 → 1-10
-    opportunity_index = max(1, min(10, opportunity_index))
+    # 用于显示的子分数 (0-10)
+    trend_display = min(10, round(trend_score))
+    pain_display = min(10, round(pain_score))
+    pay_display = min(10, round(pay_score))
 
     return {
-        "heat_score": heat_score,
-        "growth_score": growth_score,
-        "pain_score": pain_score,
-        "payment_score": payment_score,
+        "trend_score": trend_display,
+        "pain_score": pain_display,
+        "pay_score": pay_display,
+        "growth_modifier": round(growth_modifier, 2),
         "opportunity_index": opportunity_index,
+        # 保留子维度供 dashboard 展示
+        "pain_frequency": pain_freq,
+        "pain_severity": pain_sev,
+        "pay_budget": pay_budget,
+        "pay_urgency": pay_urgency,
     }
 
 
@@ -183,16 +203,16 @@ def _detect_intersections(categories: list[dict], scores: dict[str, dict], weekl
         if not counts_a or not counts_b:
             continue
 
-        # 检查是否都在上升
-        a_growing = sa["growth_score"] >= 6
-        b_growing = sb["growth_score"] >= 6
+        # 检查是否都在上升 (growth_modifier >= 1.1 表示有增长)
+        a_growing = sa["growth_modifier"] >= 1.1
+        b_growing = sb["growth_modifier"] >= 1.1
 
         if a_growing and b_growing:
             # 找类别名称
             name_a = next((c["name"] for c in categories if c["id"] == id_a), id_a)
             name_b = next((c["name"] for c in categories if c["id"] == id_b), id_b)
 
-            cross_score = round((sa["opportunity_index"] + sb["opportunity_index"]) / 2)
+            cross_score = round((sa["opportunity_index"] + sb["opportunity_index"]) / 20)  # 0-100 → 0-10
             intersections.append({
                 "demand_a": id_a,
                 "demand_b": id_b,
@@ -250,15 +270,18 @@ def run(date_str: str | None = None) -> dict:
             weekly_counts[cat_id][week] = count
 
     # ─── 计算每个需求的机会评分 ───
-    # 所有需求类别的总信号数（用于热度归一化）
+    # 所有需求类别的总信号数 和 最大出现次数（用于归一化）
     total_demand_signals = sum(
         sum(counts.values()) for counts in weekly_counts.values()
+    )
+    max_appearances = max(
+        (sum(counts.values()) for counts in weekly_counts.values()), default=1
     )
     scores: dict[str, dict] = {}
     for cat in categories:
         cat_id = cat["id"]
         counts = weekly_counts[cat_id]
-        scores[cat_id] = _score_demand(cat, counts, total_demand_signals)
+        scores[cat_id] = _score_demand(cat, counts, total_demand_signals, max_appearances)
 
     # ─── 检测交叉机会 ───
     intersections = _detect_intersections(categories, scores, weekly_counts)
@@ -300,11 +323,17 @@ def run(date_str: str | None = None) -> dict:
             "snapshots": snapshots,
             "total_signals": total_signals,
             "delta": delta,
-            "heat_score": score["heat_score"],
-            "growth_score": score["growth_score"],
+            # V2: 三级评分
+            "trend_score": score["trend_score"],
             "pain_score": score["pain_score"],
-            "payment_score": score["payment_score"],
+            "pay_score": score["pay_score"],
+            "growth_modifier": score["growth_modifier"],
             "opportunity_index": score["opportunity_index"],
+            # 子维度
+            "pain_frequency": score["pain_frequency"],
+            "pain_severity": score["pain_severity"],
+            "pay_budget": score["pay_budget"],
+            "pay_urgency": score["pay_urgency"],
         })
 
     # ─── 按机会指数排序 ───
@@ -312,8 +341,9 @@ def run(date_str: str | None = None) -> dict:
 
     # ─── 构建输出 ───
     output = {
-        "_schema": "需求雷达 — 需求聚类 + 周快照 + 机会评分",
-        "_version": "1.0",
+        "_schema": "需求雷达 v2.0 — 三级评分：Trend(35%) + Pain(35%) + Pay(30%) × Growth",
+        "_version": "2.0",
+        "_formula": "Pain=(freq×sev)/10, Pay=(budget×urgency)/10, Trend=appearances/max×10, Growth=1.2/1.0/0.8, Final=weighted_sum×10→0-100",
         "generated_at": datetime.now(TZ_SHANGHAI).isoformat(),
         "weeks": sorted_weeks[-6:],  # 最近 6 周的标签
         "demands": demand_entries,
@@ -327,12 +357,12 @@ def run(date_str: str | None = None) -> dict:
     )
 
     # ─── 打印摘要 ───
-    print(f"\n[需求雷达] 需求机会评分 (Top 8):")
+    print(f"\n[需求雷达] 机会评分 Top 8 (0-100):")
     trend_icons = {"rising": "[UP]", "stable": "[--]", "falling": "[DN]", "new": "[NEW]"}
     for i, d in enumerate(demand_entries[:8]):
         icon = trend_icons.get(d["delta"], "?")
-        print(f"  {i+1}. [{d['opportunity_index']}/10] {icon} {d['name']} "
-              f"(热度:{d['heat_score']} 增速:{d['growth_score']} 痛感:{d['pain_score']} 付费:{d['payment_score']})")
+        print(f"  {i+1}. [{d['opportunity_index']}/100] {icon} {d['name']}")
+        print(f"       Trend:{d['trend_score']} | Pain:{d['pain_score']}(f:{d['pain_frequency']}×s:{d['pain_severity']}) | Pay:{d['pay_score']}(b:{d['pay_budget']}×u:{d['pay_urgency']}) | Growth:×{d['growth_modifier']}")
 
     if intersections:
         print(f"\n[需求雷达] 交叉机会 ({len(intersections)}):")

@@ -1,7 +1,8 @@
 {
-  "_schema": "需求模式定义 — 将信号聚类为需求类别",
-  "_version": "1.0",
-  "_note": "每个类别定义关键词、痛感信号词、付费意愿信号词。调整这些定义即可改变需求雷达的灵敏度。",
+  "_schema": "需求模式定义 v2.0 — 三级评分：基础属性 + 市场热度 + 增长速度",
+  "_version": "2.0",
+  "_scoring_formula": "Opportunity = (0.35 × TrendScore + 0.35 × PainScore + 0.30 × PayScore) × GrowthModifier",
+  "_note": "Pain = frequency × severity / 10, Pay = budget × urgency / 10, Trend = appearances/max × 10, Growth = 1.2(rising)/1.0(stable)/0.8(falling)",
   "categories": [
     {
       "id": "memory",
@@ -11,9 +12,8 @@
       "keywords": ["mem", "memory", "remember", "context", "long-term", "persistent", "recall", "history", "stateful", "session", "knowledge-base", "rag", "vector", "embedding", "chroma", "pinecone", "qdrant"],
       "pain_signals": ["lose context", "forget", "reset", "lost memory", "context window", "no memory", "can't remember", "amnesia"],
       "buyer_signals": ["enterprise", "team", "company", "startup", "paid", "subscription", "pro", "business"],
-      "heat_base": 7,
-      "pain_base": 8,
-      "payment_base": 7
+      "pain": { "frequency": 8, "severity": 8, "_note": "频率: 上下文丢失是高频痛点; 严重度: 直接导致Agent不可用" },
+      "pay": { "budget": 7, "urgency": 7, "_note": "预算: 企业愿意为可靠性付费; 紧迫度: 影响开发效率" }
     },
     {
       "id": "cost",
@@ -23,9 +23,8 @@
       "keywords": ["cost", "token", "price", "pricing", "cheap", "free", "optimiz", "budget", "saving", "spend", "billing", "usage", "rate-limit", "throttle", "inexpensive", "affordable", "expensive", "waste"],
       "pain_signals": ["too expensive", "cost too much", "waste token", "overpriced", "can't afford", "bill shock", "hidden cost", "runaway cost"],
       "buyer_signals": ["enterprise", "team", "startup", "api key", "production", "scale", "budget", "roi", "save money"],
-      "heat_base": 5,
-      "pain_base": 10,
-      "payment_base": 10
+      "pain": { "frequency": 10, "severity": 10, "_note": "频率: 每个用AI的人都会遇到; 严重度: 直接触及利润底线" },
+      "pay": { "budget": 10, "urgency": 9, "_note": "预算: 企业有明确的成本优化预算; 紧迫度: 每月账单驱动" }
     },
     {
       "id": "governance",
@@ -35,9 +34,8 @@
       "keywords": ["spec", "govern", "quality", "review", "audit", "standard", "code-review", "rule", "lint", "check", "validate", "compliance", "policy", "guard", "approval", "safety", "secure", "permission"],
       "pain_signals": ["broken code", "bad code", "unreviewed", "unsafe", "vulnerability", "bug", "error", "regression", "break", "unreliable", "hallucinat"],
       "buyer_signals": ["enterprise", "team", "company", "production", "ci/cd", "pipeline", "compliance", "audit", "regulation"],
-      "heat_base": 4,
-      "pain_base": 9,
-      "payment_base": 9
+      "pain": { "frequency": 7, "severity": 9, "_note": "频率: 企业级场景高频; 严重度: 安全/合规事故后果严重" },
+      "pay": { "budget": 9, "urgency": 9, "_note": "预算: 合规是刚需预算; 紧迫度: 受监管压力驱动" }
     },
     {
       "id": "skills",
@@ -47,9 +45,8 @@
       "keywords": ["skill", "agent", "mcp", "tool-use", "function-call", "reliability", "stable", "deterministic", "repeatable", "capability", "anthropic skill", "claude skill", "tool", "plugin", "extension", "hook", "custom"],
       "pain_signals": ["unreliable", "inconsistent", "random", "unpredictable", "fail", "break", "broken", "error", "doesn't work", "incompatible", "can't handle", "struggle"],
       "buyer_signals": ["enterprise", "team", "startup", "production", "developer", "engineer", "pro"],
-      "heat_base": 10,
-      "pain_base": 3,
-      "payment_base": 3
+      "pain": { "frequency": 6, "severity": 4, "_note": "频率: 开发者常遇到但未必致命; 严重度: 多数情况可重试解决" },
+      "pay": { "budget": 3, "urgency": 4, "_note": "预算: 开发者工具付费意愿有限; 紧迫度: 替代方案多" }
     },
     {
       "id": "multi-agent",
@@ -59,9 +56,8 @@
       "keywords": ["multi-agent", "multi agent", "orchestr", "switch", "workflow", "deploy", "manage", "cluster", "fleet", "swarm", "coordinator", "router", "dispatcher", "pipeline", "chain", "compose", "ensemble", "parallel"],
       "pain_signals": ["too many agent", "coordinate", "complex", "overwhelm", "manage multiple", "juggle", "chaos", "mess"],
       "buyer_signals": ["enterprise", "team", "startup", "production", "scale", "automation", "devops"],
-      "heat_base": 6,
-      "pain_base": 6,
-      "payment_base": 8
+      "pain": { "frequency": 5, "severity": 7, "_note": "频率: 企业扩展时遇到; 严重度: 单Agent无法解决复杂问题" },
+      "pay": { "budget": 8, "urgency": 6, "_note": "预算: 企业有编排预算; 紧迫度: 目前多数团队尚未到达瓶颈" }
     },
     {
       "id": "observability",
@@ -71,9 +67,8 @@
       "keywords": ["analytics", "monitor", "track", "dashboard", "observ", "log", "trace", "debug", "inspect", "metric", "alert", "report", "visualize", "insight", "history", "audit-log", "telemetry"],
       "pain_signals": ["can't see", "no visibility", "black box", "hard to debug", "can't tell why", "mystery", "unknown", "hidden", "opaque"],
       "buyer_signals": ["enterprise", "team", "startup", "production", "sre", "devops", "platform"],
-      "heat_base": 3,
-      "pain_base": 8,
-      "payment_base": 8
+      "pain": { "frequency": 6, "severity": 8, "_note": "频率: 调试时常遇到; 严重度: 看不见=无法优化" },
+      "pay": { "budget": 7, "urgency": 7, "_note": "预算: 运维/DevOps有观测预算; 紧迫度: 随Agent规模增长" }
     },
     {
       "id": "tutorial",
@@ -83,9 +78,8 @@
       "keywords": ["learn", "tutorial", "guide", "best-practice", "awesome", "course", "example", "demo", "template", "starter", "boilerplate", "showcase", "handbook", "cheatsheet", "cookbook", "pattern"],
       "pain_signals": ["confusing", "no documentation", "hard to learn", "no example", "don't know how", "unclear"],
       "buyer_signals": ["course", "paid", "book", "workshop", "training", "certification"],
-      "heat_base": 8,
-      "pain_base": 2,
-      "payment_base": 2
+      "pain": { "frequency": 5, "severity": 3, "_note": "频率: 新用户常遇到; 严重度: 随时间自然解决" },
+      "pay": { "budget": 2, "urgency": 2, "_note": "预算: 教育类付费意愿低; 紧迫度: 免费资源充足" }
     },
     {
       "id": "ux",
@@ -95,9 +89,8 @@
       "keywords": ["ui", "ux", "interface", "chat", "conversation", "terminal", "cli", "gui", "vscode", "editor", "ide", "web", "app", "mobile", "desktop", "dashboard", "visual", "design", "frontend"],
       "pain_signals": ["ugly", "hard to use", "clunky", "confusing", "overwhelming", "complex ui", "too many button"],
       "buyer_signals": ["enterprise", "team", "startup", "designer", "pm", "product"],
-      "heat_base": 5,
-      "pain_base": 5,
-      "payment_base": 6
+      "pain": { "frequency": 5, "severity": 5, "_note": "频率: 用户吐槽多; 严重度: 影响体验但不影响功能" },
+      "pay": { "budget": 5, "urgency": 5, "_note": "预算: 设计工具有付费传统; 紧迫度: 随市场竞争加剧" }
     }
   ],
   "intersection_rules": {
@@ -109,5 +102,11 @@
       ["cost", "observability"],
       ["memory", "multi-agent"]
     ]
+  },
+  "weights": {
+    "_note": "机会指数加权系数：Trend（市场热度）+ Pain（痛感）+ Pay（付费意愿）",
+    "trend": 0.35,
+    "pain": 0.35,
+    "pay": 0.30
   }
 }
