@@ -199,6 +199,18 @@ try {
     Write-Log "  [DemandRadar] FAIL: $_"
 }
 
+# --- Step 6d: Workbench Report ---
+
+Write-Log ""
+Write-Log "--- Step 6d: Workbench Report ---"
+
+try {
+    $output = & $Python -m scripts.update_workbench 2>&1
+    Write-Log "  [Workbench] OK"
+} catch {
+    Write-Log "  [Workbench] FAIL: $_"
+}
+
 # --- Step 7: Landing Page Generation ---
 
 Write-Log ""

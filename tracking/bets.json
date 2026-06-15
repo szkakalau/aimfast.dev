@@ -1,0 +1,17 @@
+{
+  "_schema": "下注记录 + 决策日志 — Builder 的投资决策追踪",
+  "_version": "1.0",
+  "_fields": {
+    "id": "唯一 ID，格式 BET-XXX",
+    "date": "下注日期",
+    "demand": "需求类别 ID（对应 demand_patterns.json）",
+    "demand_name": "需求名称（冗余，方便展示）",
+    "thesis": "下注理由 / 判断依据",
+    "action": "采取的行动：observe / validate / build / abandon",
+    "status": "当前状态：active / won / lost / paused",
+    "result": "最终结果（完成时填写）",
+    "result_note": "结果备注",
+    "reviewed_at": "复盘日期"
+  },
+  "bets": []
+}

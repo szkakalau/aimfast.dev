@@ -168,6 +168,17 @@ else
     log "  [DemandRadar] FAIL"
 fi
 
+# ─── Step 6d: Workbench Report ───
+
+log ""
+log "--- Step 6d: Workbench Report ---"
+
+if $PYTHON -m scripts.update_workbench 2>&1; then
+    log "  [Workbench] OK"
+else
+    log "  [Workbench] FAIL"
+fi
+
 # ─── Step 7: Landing Page ───
 
 log ""

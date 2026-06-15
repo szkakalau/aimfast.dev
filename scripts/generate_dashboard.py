@@ -186,6 +186,33 @@ def collect_dashboard_data() -> dict:
         except Exception as e:
             print(f"[Dashboard] [WARN] Failed to read demand_radar.json: {e}")
 
+    # 3d. Workbench report
+    workbench_report = {}
+    wb_path = TRACKING_DIR / "workbench_report.json"
+    if wb_path.exists():
+        try:
+            workbench_report = json.loads(wb_path.read_text(encoding="utf-8"))
+        except Exception as e:
+            print(f"[Dashboard] [WARN] Failed to read workbench_report.json: {e}")
+
+    # 3e. Bets / decision log
+    bets_data = {}
+    bets_path = TRACKING_DIR / "bets.json"
+    if bets_path.exists():
+        try:
+            bets_data = json.loads(bets_path.read_text(encoding="utf-8"))
+        except Exception as e:
+            print(f"[Dashboard] [WARN] Failed to read bets.json: {e}")
+
+    # 3f. Watchlist
+    watchlist_data = {}
+    wl_path = TRACKING_DIR / "watchlist.json"
+    if wl_path.exists():
+        try:
+            watchlist_data = json.loads(wl_path.read_text(encoding="utf-8"))
+        except Exception as e:
+            print(f"[Dashboard] [WARN] Failed to read watchlist.json: {e}")
+
     # 4. Daily report (markdown) — bilingual: zh (default) + en (optional)
     report_md = ""
     report_md_en = ""
@@ -224,6 +251,9 @@ def collect_dashboard_data() -> dict:
         "opportunities": opportunities,
         "recurring_signals": recurring_signals,
         "demand_radar": demand_radar,
+        "workbench": workbench_report,
+        "bets": bets_data.get("bets", []),
+        "watchlist": watchlist_data.get("watched", []),
         "report_md": report_md,
         "report_md_en": report_md_en,
         "article_md": article_md,

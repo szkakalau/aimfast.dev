@@ -367,6 +367,43 @@
   .score-mid { color: var(--color-accent); font-weight: 600; }
   .score-low { color: var(--color-text-muted); }
 
+  /* ── Workbench layout ── */
+  .wb-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: var(--space-3); margin-bottom: var(--space-2); }
+  .wb-subtitle { font-size: 0.82rem; font-weight: 600; margin-bottom: var(--space-2); display: flex; align-items: center; gap: var(--space-1); }
+  .wb-radar-table { font-size: 0.78rem; }
+  .wb-radar-table th, .wb-radar-table td { padding: 4px 6px; }
+  .wb-radar-table tr { cursor: pointer; }
+  .wb-radar-table tr:hover td { background: var(--color-surface-alt); }
+  .wb-radar-table tr.selected td { background: var(--color-accent); color: #1a1d24; }
+  .wb-link { font-size: 0.78rem; color: var(--color-accent); text-decoration: none; }
+  .wb-link:hover { text-decoration: underline; }
+  .btn-wb-sm { font-size: 0.7rem; background: none; border: 1px solid var(--color-border); color: var(--color-text-muted); border-radius: 3px; cursor: pointer; padding: 1px 6px; }
+  .btn-wb-sm:hover { color: var(--color-text); border-color: var(--color-accent); }
+  .wb-insight { margin-top: var(--space-2); padding: var(--space-2); background: var(--color-surface-alt); border-radius: var(--radius-md); font-size: 0.8rem; }
+  .wb-watch-item { display: flex; align-items: center; justify-content: space-between; padding: 4px 0; border-bottom: 1px solid rgba(255,255,255,0.04); font-size: 0.8rem; }
+  .wb-watch-item .chg-up { color: var(--color-green); }
+  .wb-watch-item .chg-dn { color: var(--color-red); }
+
+  /* ── Opportunity card ── */
+  .wb-opp-card { position: relative; margin-top: var(--space-3); padding: var(--space-3); background: var(--color-surface-alt); border: 1px solid var(--color-accent); border-radius: var(--radius-lg); }
+  .wb-opp-close { position: absolute; top: 8px; right: 8px; background: none; border: none; color: var(--color-text-muted); font-size: 1.2rem; cursor: pointer; }
+  .wb-opp-close:hover { color: var(--color-text); }
+  .wb-opp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-2); margin: var(--space-2) 0; }
+  .wb-opp-stat { text-align: center; padding: var(--space-2); background: var(--color-surface); border-radius: var(--radius-md); }
+  .wb-opp-stat .val { font-family: var(--font-heading); font-size: 1.3rem; font-weight: 700; }
+  .wb-opp-actions { display: flex; gap: var(--space-1); margin-top: var(--space-2); flex-wrap: wrap; }
+  .btn-bet { padding: 6px 14px; border-radius: var(--radius-sm); font-size: 0.8rem; cursor: pointer; border: 1px solid var(--color-border); background: var(--color-surface); color: var(--color-text); font-family: var(--font-body); transition: all var(--duration-fast) var(--ease-out); }
+  .btn-bet:hover { border-color: var(--color-accent); }
+  .btn-bet.active-bet { background: var(--color-accent); color: #1a1d24; border-color: var(--color-accent); }
+
+  /* ── Bet log ── */
+  .bet-row { display: flex; align-items: center; gap: var(--space-2); padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.04); font-size: 0.82rem; }
+  .bet-row .bet-id { font-family: var(--font-mono); font-size: 0.72rem; color: var(--color-text-muted); }
+  .bet-badge { font-size: 0.65rem; padding: 1px 6px; border-radius: 3px; font-weight: 600; }
+  .bet-active { background: var(--color-accent); color: #1a1d24; }
+  .bet-won { background: var(--color-green); color: #1a1d24; }
+  .bet-lost { background: var(--color-red); color: #fff; }
+
   /* ── Empty state ── */
   .empty {
     color: var(--color-text-muted);
@@ -485,6 +522,47 @@
         <div class="stat-label" id="stat-label-cross">Cross-Platform</div>
       </div>
     </div>
+  </div>
+
+  <!-- ═══ Builder Workbench ═══ -->
+  <div class="card card-full" id="card-workbench">
+    <h2 id="workbench-title">
+      <svg class="icon icon-sm icon-accent" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      Builder Workbench
+    </h2>
+    <div class="wb-grid">
+      <!-- Left: Radar mini-table -->
+      <div class="wb-left">
+        <h3 class="wb-subtitle">机会雷达 Top 5</h3>
+        <table class="wb-radar-table" aria-label="Opportunity radar top 5">
+          <thead><tr><th>Demand</th><th>Mkt</th><th>Biz</th><th>Cmp</th><th>Score</th></tr></thead>
+          <tbody id="wb-radar-body"></tbody>
+        </table>
+        <div style="margin-top:8px;text-align:right;"><a href="#" onclick="switchTab('demand');return false;" class="wb-link">查看完整雷达 →</a></div>
+      </div>
+      <!-- Right: Watchlist -->
+      <div class="wb-right">
+        <h3 class="wb-subtitle">我的关注 <button class="btn-wb-sm" id="btn-edit-watchlist" title="Edit watchlist">✎</button></h3>
+        <div id="wb-watchlist">
+          <div class="empty" id="wb-watchlist-empty">尚未设置关注列表。<br>在需求雷达中点「关注」添加。</div>
+        </div>
+        <div class="wb-insight" id="wb-insight"></div>
+      </div>
+    </div>
+    <!-- Opportunity detail card -->
+    <div class="wb-opp-card" id="wb-opp-card" style="display:none;">
+      <button class="wb-opp-close" onclick="closeOppCard()" aria-label="Close">×</button>
+      <div id="wb-opp-content"></div>
+    </div>
+  </div>
+
+  <!-- ═══ Bet Log ═══ -->
+  <div class="card card-full" id="card-betlog" style="display:none;">
+    <h2 id="betlog-title">
+      <svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+      Decision Log
+    </h2>
+    <div id="betlog-body"></div>
   </div>
 
   <!-- Top 10 signals -->
@@ -1051,6 +1129,193 @@ function fmt(n) {
   return n != null ? n.toLocaleString('en-US') : '--';
 }
 
+// ═══════════════════════════════════════════
+// Builder Workbench functions
+// ═══════════════════════════════════════════
+
+var _bets = []; // in-memory bet list (loaded from localStorage + JSON)
+
+function loadBets() {
+  // Merge: JSON defaults + localStorage overrides
+  var jsonBets = (data._wb_data && data._wb_data.bets) ? data._wb_data.bets : [];
+  var lsRaw = null;
+  try { lsRaw = localStorage.getItem('kakaopc_bets'); } catch(e) {}
+  var lsBets = lsRaw ? JSON.parse(lsRaw) : [];
+  // localStorage wins for same ID
+  var merged = {};
+  jsonBets.forEach(function(b) { merged[b.id] = b; });
+  lsBets.forEach(function(b) { merged[b.id] = b; });
+  _bets = Object.values(merged);
+  _bets.sort(function(a, b) { return b.date.localeCompare(a.date); });
+}
+
+function saveBets() {
+  try { localStorage.setItem('kakaopc_bets', JSON.stringify(_bets)); } catch(e) {}
+}
+
+function placeBet(demandId, demandName, action) {
+  var now = new Date().toISOString().substring(0, 10);
+  var id = 'BET-' + now.replace(/-/g,'') + '-' + String(_bets.length + 1).padStart(2, '0');
+  var bet = {
+    id: id,
+    date: now,
+    demand: demandId,
+    demand_name: demandName,
+    thesis: '',
+    action: action,
+    status: 'active',
+    result: null,
+    result_note: '',
+    reviewed_at: null
+  };
+  _bets.unshift(bet);
+  saveBets();
+  renderBetLog();
+  alert('已下注: ' + id + '\n需求: ' + demandName + '\n行动: ' + action);
+}
+
+function renderBetLog() {
+  loadBets();
+  var body = document.getElementById('betlog-body');
+  var card = document.getElementById('card-betlog');
+  if (!body || !card) return;
+  if (_bets.length === 0) {
+    card.style.display = 'none';
+    return;
+  }
+  card.style.display = '';
+  var html = '';
+  var statusBadges = { active: 'bet-active', won: 'bet-won', lost: 'bet-lost', paused: '' };
+  var statusNames = { active: 'Active', won: 'Won', lost: 'Lost', paused: 'Paused' };
+  _bets.slice(0, 10).forEach(function(b) {
+    html += '<div class="bet-row">' +
+      '<span class="bet-id">' + b.id + '</span>' +
+      '<span>' + b.date + '</span>' +
+      '<strong>' + (b.demand_name || b.demand) + '</strong>' +
+      '<span>' + (b.action || '') + '</span>' +
+      '<span class="bet-badge ' + (statusBadges[b.status] || '') + '">' + (statusNames[b.status] || b.status) + '</span>' +
+      (b.thesis ? '<span class="muted">' + b.thesis.substring(0, 50) + '</span>' : '') +
+      '</div>';
+  });
+  body.innerHTML = html;
+}
+
+function openOppCard(wbData, demandId) {
+  var card = document.getElementById('wb-opp-card');
+  var content = document.getElementById('wb-opp-content');
+  if (!card || !content) return;
+
+  // Find demand in workbench data
+  var allDems = wbData.all_demands || [];
+  var dem = null;
+  for (var i = 0; i < allDems.length; i++) {
+    if (allDems[i].id === demandId) { dem = allDems[i]; break; }
+  }
+  if (!dem) {
+    // Also check watched_demands
+    var wd = wbData.watched_demands || [];
+    for (var j = 0; j < wd.length; j++) {
+      if (wd[j].id === demandId) { dem = wd[j]; break; }
+    }
+  }
+  if (!dem) return;
+
+  var stageNames = { early: '萌芽期', forming: '形成期 ← 最佳下注时机', breaking: '爆发期', mature: '成熟期' };
+  var stage = stageNames[dem.stage] || dem.stage || '?';
+
+  var html = '<h3 style="margin:0 0 4px">' + dem.name + '</h3>' +
+    '<span class="muted">' + (dem.description || '') + '</span>' +
+    '<div class="wb-opp-grid">' +
+      '<div class="wb-opp-stat"><div class="val" style="color:var(--color-accent)">' + (dem.market_score || 0) + '</div><small>Market 市场</small></div>' +
+      '<div class="wb-opp-stat"><div class="val" style="color:var(--color-accent)">' + (dem.business_score || 0) + '</div><small>Business 商业</small></div>' +
+      '<div class="wb-opp-stat"><div class="val" style="color:' + (dem.competition >= 80 ? 'var(--color-red)' : 'var(--color-green)') + '">' + (dem.competition || 0) + '</div><small>Competition 竞争</small></div>' +
+    '</div>' +
+    '<div style="font-size:0.82rem;margin-top:8px">' +
+      '<strong>置信度:</strong> ' + (dem.confidence || 0) + '% | <strong>阶段:</strong> ' + stage + '<br>' +
+      '<strong>目标用户:</strong> ' + (dem.target_buyer || '未标注') + '<br>' +
+      '<strong>子维度:</strong> Pain f' + (dem.pain_frequency||'?') + '×s' + (dem.pain_severity||'?') + ' | Pay b' + (dem.pay_budget||'?') + '×u' + (dem.pay_urgency||'?') +
+    '</div>' +
+    '<div class="wb-opp-actions">' +
+      '<button class="btn-bet" onclick="placeBet(\'' + demandId + '\',\'' + (dem.name || '').replace(/'/g, "\\'") + '\',\'observe\')">🔍 下注观察</button>' +
+      '<button class="btn-bet" onclick="placeBet(\'' + demandId + '\',\'' + (dem.name || '').replace(/'/g, "\\'") + '\',\'validate\')">🧪 下注验证</button>' +
+      '<button class="btn-bet" onclick="placeBet(\'' + demandId + '\',\'' + (dem.name || '').replace(/'/g, "\\'") + '\',\'build\')">🚀 下注构建</button>' +
+      '<button class="btn-bet" onclick="placeBet(\'' + demandId + '\',\'' + (dem.name || '').replace(/'/g, "\\'") + '\',\'abandon\')">❌ 暂时放弃</button>' +
+    '</div>';
+  content.innerHTML = html;
+  card.style.display = '';
+  card.scrollIntoView({ behavior: 'smooth' });
+}
+
+function closeOppCard() {
+  var card = document.getElementById('wb-opp-card');
+  if (card) card.style.display = 'none';
+}
+
+function renderWorkbench(data) {
+  var wb = data.workbench || {};
+  var allDems = wb.all_demands || [];
+  var watched = wb.watched_demands || [];
+  var insight = wb.weekly_insight || '';
+
+  // Store for bet/opp card use
+  data._wb_data = { bets: data.bets || [], all_demands: allDems };
+
+  // ── Radar mini-table (top 5 by opportunity) ──
+  var sorted = allDems.slice().sort(function(a, b) { return b.opportunity_index - a.opportunity_index; });
+  var top5 = sorted.slice(0, 5);
+  var tbody = document.getElementById('wb-radar-body');
+  if (tbody) {
+    tbody.innerHTML = '';
+    top5.forEach(function(d) {
+      var tr = document.createElement('tr');
+      tr.onclick = function() { openOppCard(wb, d.id); };
+      var scCls = d.opportunity_index >= 49 ? 'score-high' : (d.opportunity_index >= 30 ? 'score-mid' : 'score-low');
+      tr.innerHTML =
+        '<td>' + (d.name || d.id) + '</td>' +
+        '<td class="num">' + (d.market_score || 0) + '</td>' +
+        '<td class="num">' + (d.business_score || 0) + '</td>' +
+        '<td class="num">' + (d.competition || 0) + '</td>' +
+        '<td class="num ' + scCls + '">' + (d.opportunity_index || 0) + '</td>';
+      tbody.appendChild(tr);
+    });
+  }
+
+  // ── Watchlist panel ──
+  var wlDiv = document.getElementById('wb-watchlist');
+  var wlEmpty = document.getElementById('wb-watchlist-empty');
+  if (wlDiv && wlEmpty) {
+    if (watched.length === 0) {
+      wlEmpty.style.display = '';
+      wlDiv.innerHTML = '';
+      wlDiv.appendChild(wlEmpty);
+    } else {
+      wlEmpty.style.display = 'none';
+      var wlHtml = '';
+      var deltaIcons = { rising: 'chg-up', falling: 'chg-dn', stable: '' };
+      watched.forEach(function(d) {
+        var arrow = d.change_pct > 0 ? '▲' : (d.change_pct < 0 ? '▼' : '→');
+        var chgCls = d.change_pct > 0 ? 'chg-up' : (d.change_pct < 0 ? 'chg-dn' : '');
+        var recLabel = { prepare_validate: '准备验证', observe_closely: '密切关注', avoid: '避免', low_priority: '低优先', watch: '观察' };
+        wlHtml += '<div class="wb-watch-item">' +
+          '<span><strong><a href="#" onclick="openOppCard(wb,\'' + d.id + '\');return false;" style="color:inherit">' + d.name + '</a></strong></span>' +
+          '<span class="' + chgCls + '">' + arrow + ' ' + (d.change_pct > 0 ? '+' : '') + d.change_pct + '%</span>' +
+          '<span class="muted" style="font-size:0.7rem">' + (recLabel[d.recommendation] || d.recommendation) + '</span>' +
+          '</div>';
+      });
+      wlDiv.innerHTML = wlHtml;
+    }
+  }
+
+  // ── Weekly insight ──
+  var insDiv = document.getElementById('wb-insight');
+  if (insDiv && insight) {
+    insDiv.innerHTML = '<strong>本周洞察</strong><br>' + insight;
+  }
+
+  // ── Bet log ──
+  renderBetLog();
+}
+
 function renderAll(data) {
   try {
   _data = data;
@@ -1292,6 +1557,9 @@ function renderAll(data) {
 
   // Charts
   renderCharts(history);
+
+  // Builder Workbench
+  renderWorkbench(data);
 
   // Archive browsing
   if (data.archive && data.archive.length > 0) {
