@@ -177,6 +177,15 @@ def collect_dashboard_data() -> dict:
         except Exception as e:
             print(f"[Dashboard] [WARN] Failed to read recurring_signals.json: {e}")
 
+    # 3c. Demand radar
+    demand_radar = {}
+    radar_path = TRACKING_DIR / "demand_radar.json"
+    if radar_path.exists():
+        try:
+            demand_radar = json.loads(radar_path.read_text(encoding="utf-8"))
+        except Exception as e:
+            print(f"[Dashboard] [WARN] Failed to read demand_radar.json: {e}")
+
     # 4. Daily report (markdown) — bilingual: zh (default) + en (optional)
     report_md = ""
     report_md_en = ""
@@ -214,6 +223,7 @@ def collect_dashboard_data() -> dict:
         "history": list(reversed(history)),
         "opportunities": opportunities,
         "recurring_signals": recurring_signals,
+        "demand_radar": demand_radar,
         "report_md": report_md,
         "report_md_en": report_md_en,
         "article_md": article_md,
@@ -251,7 +261,7 @@ def run(date_str: str | None = None) -> str:
     output_path = OUTPUT_DIR / "dashboard.json"
     output_path.write_text(json_str, encoding="utf-8")
     print(f"[Dashboard] Data saved → {output_path}")
-    print(f"[Dashboard] {len(data['signals'])} signals | {len(data['history'])} days history | {len(data['opportunities'])} opportunities | {len(data['recurring_signals'])} recurring | article: {len(data['article_md']):,} chars (zh) / {len(data['article_md_en']):,} chars (en)")
+    print(f"[Dashboard] {len(data['signals'])} signals | {len(data['history'])} days history | {len(data['opportunities'])} opportunities | {len(data['recurring_signals'])} recurring | {len(data.get('demand_radar', {}).get('demands', []))} demands | article: {len(data['article_md']):,} chars (zh) / {len(data['article_md_en']):,} chars (en)")
     return str(output_path)
 
 

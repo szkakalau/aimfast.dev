@@ -1,0 +1,170 @@
+{
+  "_schema": "需求雷达 — 需求聚类 + 周快照 + 机会评分",
+  "_version": "1.0",
+  "generated_at": "2026-06-15T23:56:07.020432+08:00",
+  "weeks": [
+    "2026-05-25",
+    "2026-06-01",
+    "2026-06-08"
+  ],
+  "demands": [
+    {
+      "id": "cost",
+      "name": "成本控制 / Token 优化",
+      "name_en": "Cost Control",
+      "description": "降低 AI API 调用成本、Token 优化、性价比方案",
+      "snapshots": {
+        "2026-05-25": 0,
+        "2026-06-01": 3,
+        "2026-06-08": 2
+      },
+      "total_signals": 5,
+      "delta": "falling",
+      "heat_score": 1,
+      "growth_score": 9,
+      "pain_score": 10,
+      "payment_score": 10,
+      "opportunity_index": 5
+    },
+    {
+      "id": "governance",
+      "name": "AI 治理 / 代码规范",
+      "name_en": "AI Governance",
+      "description": "AI 生成代码的质量控制、Review 流程、规范约束",
+      "snapshots": {
+        "2026-05-25": 1,
+        "2026-06-01": 4,
+        "2026-06-08": 9
+      },
+      "total_signals": 14,
+      "delta": "rising",
+      "heat_score": 1,
+      "growth_score": 10,
+      "pain_score": 9,
+      "payment_score": 9,
+      "opportunity_index": 5
+    },
+    {
+      "id": "observability",
+      "name": "可观测性 / 监控",
+      "name_en": "Observability & Monitoring",
+      "description": "Agent 行为追踪、性能监控、调试分析",
+      "snapshots": {
+        "2026-05-25": 6,
+        "2026-06-01": 12,
+        "2026-06-08": 12
+      },
+      "total_signals": 30,
+      "delta": "stable",
+      "heat_score": 1,
+      "growth_score": 8,
+      "pain_score": 8,
+      "payment_score": 8,
+      "opportunity_index": 5
+    },
+    {
+      "id": "ux",
+      "name": "AI 交互体验 / UI",
+      "name_en": "AI UX & Interface",
+      "description": "AI 工具的交互界面、用户体验优化",
+      "snapshots": {
+        "2026-05-25": 110,
+        "2026-06-01": 77,
+        "2026-06-08": 97
+      },
+      "total_signals": 284,
+      "delta": "rising",
+      "heat_score": 10,
+      "growth_score": 3,
+      "pain_score": 5,
+      "payment_score": 6,
+      "opportunity_index": 5
+    },
+    {
+      "id": "memory",
+      "name": "长期记忆 / 上下文",
+      "name_en": "Memory & Context",
+      "description": "Agent 如何记住用户偏好、跨会话保持上下文",
+      "snapshots": {
+        "2026-05-25": 20,
+        "2026-06-01": 17,
+        "2026-06-08": 18
+      },
+      "total_signals": 55,
+      "delta": "rising",
+      "heat_score": 2,
+      "growth_score": 3,
+      "pain_score": 8,
+      "payment_score": 7,
+      "opportunity_index": 4
+    },
+    {
+      "id": "skills",
+      "name": "Agent 能力 / 稳定性",
+      "name_en": "Agent Skills & Reliability",
+      "description": "让 Agent 稳定执行复杂任务、Skills 复用、MCP 工具",
+      "snapshots": {
+        "2026-05-25": 44,
+        "2026-06-01": 50,
+        "2026-06-08": 59
+      },
+      "total_signals": 153,
+      "delta": "rising",
+      "heat_score": 6,
+      "growth_score": 6,
+      "pain_score": 3,
+      "payment_score": 3,
+      "opportunity_index": 4
+    },
+    {
+      "id": "multi-agent",
+      "name": "多 Agent 编排 / 工作流",
+      "name_en": "Multi-Agent Orchestration",
+      "description": "多 Agent 协作、任务编排、工作流自动化",
+      "snapshots": {
+        "2026-05-25": 5,
+        "2026-06-01": 2,
+        "2026-06-08": 2
+      },
+      "total_signals": 9,
+      "delta": "stable",
+      "heat_score": 1,
+      "growth_score": 1,
+      "pain_score": 6,
+      "payment_score": 8,
+      "opportunity_index": 3
+    },
+    {
+      "id": "tutorial",
+      "name": "学习资源 / 教程",
+      "name_en": "Learning & Tutorials",
+      "description": "AI 工具使用教程、最佳实践、示例项目",
+      "snapshots": {
+        "2026-05-25": 0,
+        "2026-06-01": 1,
+        "2026-06-08": 0
+      },
+      "total_signals": 1,
+      "delta": "falling",
+      "heat_score": 1,
+      "growth_score": 9,
+      "pain_score": 2,
+      "payment_score": 2,
+      "opportunity_index": 2
+    }
+  ],
+  "intersections": [
+    {
+      "demand_a": "cost",
+      "demand_b": "observability",
+      "label": "成本控制 / Token 优化 × 可观测性 / 监控",
+      "cross_score": 5
+    },
+    {
+      "demand_a": "skills",
+      "demand_b": "governance",
+      "label": "Agent 能力 / 稳定性 × AI 治理 / 代码规范",
+      "cross_score": 4
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "_schema": "需求模式定义 — 将信号聚类为需求类别",
+  "_version": "1.0",
+  "_note": "每个类别定义关键词、痛感信号词、付费意愿信号词。调整这些定义即可改变需求雷达的灵敏度。",
+  "categories": [
+    {
+      "id": "memory",
+      "name": "长期记忆 / 上下文",
+      "name_en": "Memory & Context",
+      "description": "Agent 如何记住用户偏好、跨会话保持上下文",
+      "keywords": ["mem", "memory", "remember", "context", "long-term", "persistent", "recall", "history", "stateful", "session", "knowledge-base", "rag", "vector", "embedding", "chroma", "pinecone", "qdrant"],
+      "pain_signals": ["lose context", "forget", "reset", "lost memory", "context window", "no memory", "can't remember", "amnesia"],
+      "buyer_signals": ["enterprise", "team", "company", "startup", "paid", "subscription", "pro", "business"],
+      "heat_base": 7,
+      "pain_base": 8,
+      "payment_base": 7
+    },
+    {
+      "id": "cost",
+      "name": "成本控制 / Token 优化",
+      "name_en": "Cost Control",
+      "description": "降低 AI API 调用成本、Token 优化、性价比方案",
+      "keywords": ["cost", "token", "price", "pricing", "cheap", "free", "optimiz", "budget", "saving", "spend", "billing", "usage", "rate-limit", "throttle", "inexpensive", "affordable", "expensive", "waste"],
+      "pain_signals": ["too expensive", "cost too much", "waste token", "overpriced", "can't afford", "bill shock", "hidden cost", "runaway cost"],
+      "buyer_signals": ["enterprise", "team", "startup", "api key", "production", "scale", "budget", "roi", "save money"],
+      "heat_base": 5,
+      "pain_base": 10,
+      "payment_base": 10
+    },
+    {
+      "id": "governance",
+      "name": "AI 治理 / 代码规范",
+      "name_en": "AI Governance",
+      "description": "AI 生成代码的质量控制、Review 流程、规范约束",
+      "keywords": ["spec", "govern", "quality", "review", "audit", "standard", "code-review", "rule", "lint", "check", "validate", "compliance", "policy", "guard", "approval", "safety", "secure", "permission"],
+      "pain_signals": ["broken code", "bad code", "unreviewed", "unsafe", "vulnerability", "bug", "error", "regression", "break", "unreliable", "hallucinat"],
+      "buyer_signals": ["enterprise", "team", "company", "production", "ci/cd", "pipeline", "compliance", "audit", "regulation"],
+      "heat_base": 4,
+      "pain_base": 9,
+      "payment_base": 9
+    },
+    {
+      "id": "skills",
+      "name": "Agent 能力 / 稳定性",
+      "name_en": "Agent Skills & Reliability",
+      "description": "让 Agent 稳定执行复杂任务、Skills 复用、MCP 工具",
+      "keywords": ["skill", "agent", "mcp", "tool-use", "function-call", "reliability", "stable", "deterministic", "repeatable", "capability", "anthropic skill", "claude skill", "tool", "plugin", "extension", "hook", "custom"],
+      "pain_signals": ["unreliable", "inconsistent", "random", "unpredictable", "fail", "break", "broken", "error", "doesn't work", "incompatible", "can't handle", "struggle"],
+      "buyer_signals": ["enterprise", "team", "startup", "production", "developer", "engineer", "pro"],
+      "heat_base": 10,
+      "pain_base": 3,
+      "payment_base": 3
+    },
+    {
+      "id": "multi-agent",
+      "name": "多 Agent 编排 / 工作流",
+      "name_en": "Multi-Agent Orchestration",
+      "description": "多 Agent 协作、任务编排、工作流自动化",
+      "keywords": ["multi-agent", "multi agent", "orchestr", "switch", "workflow", "deploy", "manage", "cluster", "fleet", "swarm", "coordinator", "router", "dispatcher", "pipeline", "chain", "compose", "ensemble", "parallel"],
+      "pain_signals": ["too many agent", "coordinate", "complex", "overwhelm", "manage multiple", "juggle", "chaos", "mess"],
+      "buyer_signals": ["enterprise", "team", "startup", "production", "scale", "automation", "devops"],
+      "heat_base": 6,
+      "pain_base": 6,
+      "payment_base": 8
+    },
+    {
+      "id": "observability",
+      "name": "可观测性 / 监控",
+      "name_en": "Observability & Monitoring",
+      "description": "Agent 行为追踪、性能监控、调试分析",
+      "keywords": ["analytics", "monitor", "track", "dashboard", "observ", "log", "trace", "debug", "inspect", "metric", "alert", "report", "visualize", "insight", "history", "audit-log", "telemetry"],
+      "pain_signals": ["can't see", "no visibility", "black box", "hard to debug", "can't tell why", "mystery", "unknown", "hidden", "opaque"],
+      "buyer_signals": ["enterprise", "team", "startup", "production", "sre", "devops", "platform"],
+      "heat_base": 3,
+      "pain_base": 8,
+      "payment_base": 8
+    },
+    {
+      "id": "tutorial",
+      "name": "学习资源 / 教程",
+      "name_en": "Learning & Tutorials",
+      "description": "AI 工具使用教程、最佳实践、示例项目",
+      "keywords": ["learn", "tutorial", "guide", "best-practice", "awesome", "course", "example", "demo", "template", "starter", "boilerplate", "showcase", "handbook", "cheatsheet", "cookbook", "pattern"],
+      "pain_signals": ["confusing", "no documentation", "hard to learn", "no example", "don't know how", "unclear"],
+      "buyer_signals": ["course", "paid", "book", "workshop", "training", "certification"],
+      "heat_base": 8,
+      "pain_base": 2,
+      "payment_base": 2
+    },
+    {
+      "id": "ux",
+      "name": "AI 交互体验 / UI",
+      "name_en": "AI UX & Interface",
+      "description": "AI 工具的交互界面、用户体验优化",
+      "keywords": ["ui", "ux", "interface", "chat", "conversation", "terminal", "cli", "gui", "vscode", "editor", "ide", "web", "app", "mobile", "desktop", "dashboard", "visual", "design", "frontend"],
+      "pain_signals": ["ugly", "hard to use", "clunky", "confusing", "overwhelming", "complex ui", "too many button"],
+      "buyer_signals": ["enterprise", "team", "startup", "designer", "pm", "product"],
+      "heat_base": 5,
+      "pain_base": 5,
+      "payment_base": 6
+    }
+  ],
+  "intersection_rules": {
+    "_note": "需求交叉检测规则：当两个需求类别同时上升时，自动标记交叉机会",
+    "pairs": [
+      ["memory", "cost"],
+      ["skills", "governance"],
+      ["multi-agent", "observability"],
+      ["cost", "observability"],
+      ["memory", "multi-agent"]
+    ]
+  }
+}

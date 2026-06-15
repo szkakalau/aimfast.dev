@@ -337,6 +337,36 @@
   .track-status.failed   { color: var(--color-red); }
   .track-status.adjust   { color: var(--color-accent); }
 
+  /* ── Demand badge ── */
+  .badge-demand {
+    font-size: 0.65rem;
+    padding: 1px 6px;
+    border-radius: 3px;
+    background: var(--color-accent);
+    color: #1a1d24;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+
+  /* ── Demand radar intersections ── */
+  .intersections { margin-top: var(--space-3); padding-top: var(--space-2); border-top: 1px solid var(--color-border); }
+  .intersections h3 { font-size: 0.85rem; margin-bottom: var(--space-2); }
+  .inter-list { display: flex; gap: var(--space-1); flex-wrap: wrap; }
+  .badge-inter {
+    font-size: 0.72rem;
+    padding: 2px 8px;
+    border-radius: 12px;
+    background: var(--color-surface-alt);
+    color: var(--color-accent);
+    border: 1px solid var(--color-border);
+  }
+
+  /* ── Opportunity score colors ── */
+  .score-high { color: var(--color-green); font-weight: 700; }
+  .score-mid { color: var(--color-accent); font-weight: 600; }
+  .score-low { color: var(--color-text-muted); }
+
   /* ── Empty state ── */
   .empty {
     color: var(--color-text-muted);
@@ -496,6 +526,7 @@
       <button class="tab" role="tab" aria-selected="false" onclick="switchTab('article')" id="tab-btn-article">Planet Article</button>
       <button class="tab" role="tab" aria-selected="false" onclick="switchTab('tracking')" id="tab-btn-tracking">Opportunity Tracking</button>
       <button class="tab" role="tab" aria-selected="false" onclick="switchTab('recurring')" id="tab-btn-recurring">Recurring Signals</button>
+      <button class="tab" role="tab" aria-selected="false" onclick="switchTab('demand')" id="tab-btn-demand">Demand Radar</button>
     </div>
 
     <!-- Archive date navigation (hidden until archive data loads) -->
@@ -526,10 +557,18 @@
     </div>
     <div id="tab-recurring" class="report-body" style="display:none;" role="tabpanel">
       <table aria-label="Recurring signals tracking">
-        <thead><tr><th scope="col" id="th-rec-topic">Topic</th><th scope="col" id="th-rec-first">First Seen</th><th scope="col" id="th-rec-last">Last Seen</th><th scope="col" id="th-rec-days">Days</th><th scope="col" id="th-rec-sources">Sources</th><th scope="col" id="th-rec-peak">Peak Score</th><th scope="col" id="th-rec-trend">Trend</th><th scope="col" id="th-rec-link">Linked</th></tr></thead>
+        <thead><tr><th scope="col" id="th-rec-topic">Topic</th><th scope="col" id="th-rec-demand">Demand</th><th scope="col" id="th-rec-first">First Seen</th><th scope="col" id="th-rec-last">Last Seen</th><th scope="col" id="th-rec-days">Days</th><th scope="col" id="th-rec-peak">Peak Score</th><th scope="col" id="th-rec-trend">Trend</th><th scope="col" id="th-rec-link">Linked</th></tr></thead>
         <tbody id="recurring-body"></tbody>
       </table>
       <div id="recurring-empty" class="empty" style="display:none;">No recurring signals detected yet.</div>
+    </div>
+    <div id="tab-demand" class="report-body" style="display:none;" role="tabpanel">
+      <table aria-label="Demand radar">
+        <thead><tr><th scope="col" id="th-dem-name">Demand</th><th scope="col" id="th-dem-w1">W1</th><th scope="col" id="th-dem-w2">W2</th><th scope="col" id="th-dem-w3">W3</th><th scope="col" id="th-dem-delta">Change</th><th scope="col" id="th-dem-heat">Heat</th><th scope="col" id="th-dem-pain">Pain</th><th scope="col" id="th-dem-pay">Pay</th><th scope="col" id="th-dem-index">Opportunity</th></tr></thead>
+        <tbody id="demand-body"></tbody>
+      </table>
+      <div id="demand-empty" class="empty" style="display:none;">No demand data yet.</div>
+      <div id="demand-intersections" class="intersections" style="display:none;"></div>
     </div>
   </div>
 
@@ -625,11 +664,31 @@ var I18N = (function() {
       recPeakScore: '最高分',
       recTrend: '趋势',
       recLinked: '关联',
+      recDemand: '需求',
       recTrendRising: '上升 🔺',
       recTrendStable: '稳定 ➡',
       recTrendFading: '衰减 🔻',
       recEmpty: '暂无重复信号。',
       recAria: '重复信号追踪',
+
+      // Demand radar
+      tabDemand: '需求雷达',
+      demName: '需求',
+      demW1: 'W1',
+      demW2: 'W2',
+      demW3: 'W3',
+      demDelta: '变化',
+      demHeat: '热度',
+      demPain: '痛感',
+      demPay: '付费',
+      demIndex: '机会指数',
+      demDeltaRising: '🔺',
+      demDeltaFalling: '🔻',
+      demDeltaStable: '➡',
+      demDeltaNew: '🆕',
+      demEmpty: '暂无需求数据。',
+      demAria: '需求雷达',
+      demIntersections: '交叉机会',
 
       // Footer
       footerVersion: 'KAKAOPC情报科 v2.0',
@@ -749,11 +808,31 @@ var I18N = (function() {
       recPeakScore: 'Peak Score',
       recTrend: 'Trend',
       recLinked: 'Linked',
+      recDemand: 'Demand',
       recTrendRising: 'Rising 🔺',
       recTrendStable: 'Stable ➡',
       recTrendFading: 'Fading 🔻',
       recEmpty: 'No recurring signals detected yet.',
       recAria: 'Recurring signals tracking',
+
+      // Demand radar
+      tabDemand: 'Demand Radar',
+      demName: 'Demand',
+      demW1: 'W1',
+      demW2: 'W2',
+      demW3: 'W3',
+      demDelta: 'Change',
+      demHeat: 'Heat',
+      demPain: 'Pain',
+      demPay: 'Pay',
+      demIndex: 'Opportunity',
+      demDeltaRising: 'Rising 🔺',
+      demDeltaFalling: 'Falling 🔻',
+      demDeltaStable: 'Stable ➡',
+      demDeltaNew: 'New 🆕',
+      demEmpty: 'No demand data yet.',
+      demAria: 'Demand radar',
+      demIntersections: 'Cross Opportunities',
 
       // Footer
       footerVersion: 'KAKAOPC Intel v2.0',
@@ -878,6 +957,7 @@ var LANG = I18N.lang;
   setEl('tab-btn-article', t('tabArticle'));
   setEl('tab-btn-tracking', t('tabTracking'));
   setEl('tab-btn-recurring', t('tabRecurring'));
+  setEl('tab-btn-demand', t('tabDemand'));
   document.getElementById('tab-bar').setAttribute('aria-label', t('tabBarAria'));
 
   // Loading texts
@@ -900,12 +980,22 @@ var LANG = I18N.lang;
   setEl('th-rec-first', t('recFirstSeen'));
   setEl('th-rec-last', t('recLastSeen'));
   setEl('th-rec-days', t('recDays'));
-  setEl('th-rec-sources', t('recSources'));
+  setEl('th-rec-demand', t('recDemand'));
   setEl('th-rec-peak', t('recPeakScore'));
   setEl('th-rec-trend', t('recTrend'));
   setEl('th-rec-link', t('recLinked'));
   setEl('recurring-empty', t('recEmpty'));
   document.querySelector('table[aria-label="Recurring signals tracking"]').setAttribute('aria-label', t('recAria'));
+
+  // Demand radar headers
+  setEl('th-dem-name', t('demName'));
+  setEl('th-dem-delta', t('demDelta'));
+  setEl('th-dem-heat', t('demHeat'));
+  setEl('th-dem-pain', t('demPain'));
+  setEl('th-dem-pay', t('demPay'));
+  setEl('th-dem-index', t('demIndex'));
+  setEl('demand-empty', t('demEmpty'));
+  document.querySelector('table[aria-label="Demand radar"]').setAttribute('aria-label', t('demAria'));
 
   // Footer
   setEl('footer-version', t('footerVersion'));
@@ -1077,17 +1167,88 @@ function renderAll(data) {
       var linkedHtml = rec.linked_opportunity_id
         ? '<a href="#" onclick="switchTab(\'tracking\'); return false;" title="' + rec.linked_opportunity_id + '"><code>' + rec.linked_opportunity_id + '</code></a>'
         : '--';
+      var demandLabel = rec.demand_category || '';
+      var demandNames = {
+        'memory': 'Memory',
+        'cost': 'Cost',
+        'governance': 'Governance',
+        'skills': 'Skills',
+        'multi-agent': 'Multi-Agent',
+        'observability': 'Observe',
+        'tutorial': 'Learn',
+        'ux': 'UX'
+      };
+      var demandDisplay = demandLabel ? '<span class="badge badge-demand" title="' + (demandNames[demandLabel] || demandLabel) + '">' + (demandNames[demandLabel] || demandLabel) + '</span>' : '--';
       tr.innerHTML =
-        '<td title="' + (rec.topic || '').replace(/"/g, '&quot;') + '">' + (rec.topic || '').substring(0, 50) + '</td>' +
+        '<td title="' + (rec.topic || '').replace(/"/g, '&quot;') + '">' + (rec.topic || '').substring(0, 45) + '</td>' +
+        '<td>' + demandDisplay + '</td>' +
         '<td>' + (rec.first_seen || '') + '</td>' +
         '<td>' + (rec.last_seen || '') + '</td>' +
         '<td class="score">' + (rec.distinct_days || 0) + 'd / ' + (rec.appearances || 0) + 'x</td>' +
-        '<td>' + (rec.sources || []).slice(0, 3).join(', ') + '</td>' +
         '<td class="score">' + (rec.peak_score || 0) + '</td>' +
         '<td>' + trendHtml + '</td>' +
         '<td>' + linkedHtml + '</td>';
       recTbody.appendChild(tr);
     });
+  }
+
+  // Demand radar
+  var demandRadar = data.demand_radar || {};
+  var demands = demandRadar.demands || [];
+  var weeks = demandRadar.weeks || [];
+  var intersections = demandRadar.intersections || [];
+
+  // Update week column headers
+  if (weeks.length >= 1) setEl('th-dem-w1', weeks[weeks.length - 1] || 'W1');
+  if (weeks.length >= 2) setEl('th-dem-w2', weeks[weeks.length - 2] || 'W2');
+  if (weeks.length >= 3) setEl('th-dem-w3', weeks[weeks.length - 3] || 'W3');
+
+  if (demands.length === 0) {
+    document.getElementById('demand-empty').style.display = 'block';
+  } else {
+    var deltaIcons = {
+      rising: t('demDeltaRising'),
+      falling: t('demDeltaFalling'),
+      stable: t('demDeltaStable'),
+      new: t('demDeltaNew')
+    };
+    var demTbody = document.getElementById('demand-body');
+    demands.forEach(function(dem) {
+      var tr = document.createElement('tr');
+      var snaps = dem.snapshots || {};
+      var weekKeys = weeks.length >= 3 ? [weeks[weeks.length - 3], weeks[weeks.length - 2], weeks[weeks.length - 1]] : weeks;
+
+      var w1 = weekKeys[0] ? (snaps[weekKeys[0]] || 0) : '-';
+      var w2 = weekKeys[1] ? (snaps[weekKeys[1]] || 0) : '-';
+      var w3 = weekKeys[2] ? (snaps[weekKeys[2]] || 0) : '-';
+
+      var indexCls = dem.opportunity_index >= 8 ? 'score-high' : (dem.opportunity_index >= 5 ? 'score-mid' : 'score-low');
+      var indexHtml = '<span class="score ' + indexCls + '">' + dem.opportunity_index + '/10</span>';
+
+      tr.innerHTML =
+        '<td><strong>' + dem.name + '</strong><br><span class="muted">' + (dem.description || '') + '</span></td>' +
+        '<td class="num">' + w1 + '</td>' +
+        '<td class="num">' + w2 + '</td>' +
+        '<td class="num">' + w3 + '</td>' +
+        '<td>' + (deltaIcons[dem.delta] || dem.delta) + '</td>' +
+        '<td class="num">' + dem.heat_score + '</td>' +
+        '<td class="num">' + dem.pain_score + '</td>' +
+        '<td class="num">' + dem.payment_score + '</td>' +
+        '<td>' + indexHtml + '</td>';
+      demTbody.appendChild(tr);
+    });
+
+    // Intersections
+    if (intersections.length > 0) {
+      var interDiv = document.getElementById('demand-intersections');
+      interDiv.style.display = 'block';
+      var interHtml = '<h3>' + t('demIntersections') + '</h3><div class="inter-list">';
+      intersections.slice(0, 5).forEach(function(x) {
+        interHtml += '<span class="badge badge-inter" title="' + x.label + '">' + x.label + ' [' + x.cross_score + '/10]</span>';
+      });
+      interHtml += '</div>';
+      interDiv.innerHTML = interHtml;
+    }
   }
 
   // Pipeline status indicators in footer
@@ -1239,6 +1400,7 @@ function switchTab(tab) {
   document.getElementById('tab-article').style.display = tab === 'article' ? '' : 'none';
   document.getElementById('tab-tracking').style.display = tab === 'tracking' ? '' : 'none';
   document.getElementById('tab-recurring').style.display = tab === 'recurring' ? '' : 'none';
+  document.getElementById('tab-demand').style.display = tab === 'demand' ? '' : 'none';
 
   var archiveNav = document.getElementById('archive-nav');
   if (archiveNav && _archiveData.length > 1) {
@@ -1626,6 +1788,7 @@ function copyArticleNotepad() {
         document.getElementById('tab-report').innerHTML = '<div class="empty">' + t('emptyNoReportData') + '</div>';
         document.getElementById('tracking-empty').style.display = 'block';
         document.getElementById('recurring-empty').style.display = 'block';
+        document.getElementById('demand-empty').style.display = 'block';
         document.getElementById('stat-signals').textContent = '0';
         document.getElementById('stat-top').textContent = '--';
         document.getElementById('stat-avg').textContent = '--';

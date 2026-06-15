@@ -96,6 +96,34 @@ def _find_linked_opportunity(topic: str, opp_map: dict[str, dict], related_ids: 
     return None
 
 
+def _load_demand_patterns() -> list[dict]:
+    """加载需求模式定义。"""
+    patterns_path = ROOT / "config" / "demand_patterns.json"
+    if not patterns_path.exists():
+        return []
+    try:
+        return json.loads(patterns_path.read_text(encoding="utf-8")).get("categories", [])
+    except Exception:
+        return []
+
+
+def _classify_demand(topic: str, summary: str, categories: list[dict]) -> str:
+    """将话题归类到需求类别。返回类别 ID，无匹配则为空字符串。"""
+    text = f"{topic} {summary}".lower()
+    best_cat = ""
+    best_hits = 0
+    for cat in categories:
+        hits = 0
+        for kw in cat.get("keywords", []):
+            if kw.lower() in text:
+                hits += 1
+        if hits > best_hits:
+            best_hits = hits
+            best_cat = cat["id"]
+    # 至少命中 1 个关键词才算匹配
+    return best_cat if best_hits >= 1 else ""
+
+
 def _compute_trend(first_seen: str, last_seen: str, days_with_signal: set[str]) -> str:
     """计算趋势：rising / stable / fading。"""
     today = datetime.now(TZ_SHANGHAI).date()
@@ -141,6 +169,7 @@ def run(date_str: str | None = None) -> list[dict]:
         return []
 
     opp_map = _load_opportunities()
+    demand_categories = _load_demand_patterns()
 
     # ─── 使用连通分量算法分组 ───
     # 如果两条信号标题相似度 >= 0.75，归为同一话题
@@ -226,6 +255,13 @@ def run(date_str: str | None = None) -> list[dict]:
 
         rec_id = f"REC-{counter:03d}"
 
+        # 需求分类
+        demand_cat = _classify_demand(
+            best.get("title", ""),
+            best.get("summary", ""),
+            demand_categories
+        )
+
         recurring.append({
             "id": rec_id,
             "topic": best.get("title", ""),
@@ -236,6 +272,7 @@ def run(date_str: str | None = None) -> list[dict]:
             "sources": sources,
             "peak_score": peak_score,
             "trend": trend,
+            "demand_category": demand_cat,
             "linked_opportunity_id": linked_opp.get("id", "") if linked_opp else "",
             "related_signal_ids": related_ids,
             "last_updated": date,
