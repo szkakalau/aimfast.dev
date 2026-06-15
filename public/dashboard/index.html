@@ -987,7 +987,8 @@ var LANG = I18N.lang;
   setEl('th-rec-trend', t('recTrend'));
   setEl('th-rec-link', t('recLinked'));
   setEl('recurring-empty', t('recEmpty'));
-  document.querySelector('table[aria-label="Recurring signals tracking"]').setAttribute('aria-label', t('recAria'));
+  var recTable = document.querySelector('table[aria-label="Recurring signals tracking"]');
+  if (recTable) recTable.setAttribute('aria-label', t('recAria'));
 
   // Demand radar headers
   setEl('th-dem-name', t('demName'));
@@ -998,7 +999,8 @@ var LANG = I18N.lang;
   setEl('th-dem-growth', t('demGrowth'));
   setEl('th-dem-index', t('demIndex'));
   setEl('demand-empty', t('demEmpty'));
-  document.querySelector('table[aria-label="Demand radar"]').setAttribute('aria-label', t('demAria'));
+  var demTable = document.querySelector('table[aria-label="Demand radar"]');
+  if (demTable) demTable.setAttribute('aria-label', t('demAria'));
 
   // Footer
   setEl('footer-version', t('footerVersion'));
@@ -1250,13 +1252,15 @@ function renderAll(data) {
     // Intersections
     if (intersections.length > 0) {
       var interDiv = document.getElementById('demand-intersections');
-      interDiv.style.display = 'block';
-      var interHtml = '<h3>' + t('demIntersections') + '</h3><div class="inter-list">';
-      intersections.slice(0, 5).forEach(function(x) {
-        interHtml += '<span class="badge badge-inter" title="' + x.label + '">' + x.label + ' [' + x.cross_score + '/10]</span>';
-      });
-      interHtml += '</div>';
-      interDiv.innerHTML = interHtml;
+      if (interDiv) {
+        interDiv.style.display = 'block';
+        var interHtml = '<h3>' + t('demIntersections') + '</h3><div class="inter-list">';
+        intersections.slice(0, 5).forEach(function(x) {
+          interHtml += '<span class="badge badge-inter" title="' + x.label + '">' + x.label + ' [' + x.cross_score + '/10]</span>';
+        });
+        interHtml += '</div>';
+        interDiv.innerHTML = interHtml;
+      }
     }
   }
 
@@ -1408,8 +1412,10 @@ function switchTab(tab) {
   document.getElementById('tab-report').style.display = tab === 'report' ? '' : 'none';
   document.getElementById('tab-article').style.display = tab === 'article' ? '' : 'none';
   document.getElementById('tab-tracking').style.display = tab === 'tracking' ? '' : 'none';
-  document.getElementById('tab-recurring').style.display = tab === 'recurring' ? '' : 'none';
-  document.getElementById('tab-demand').style.display = tab === 'demand' ? '' : 'none';
+  var tabRecurring = document.getElementById('tab-recurring');
+  if (tabRecurring) tabRecurring.style.display = tab === 'recurring' ? '' : 'none';
+  var tabDemand = document.getElementById('tab-demand');
+  if (tabDemand) tabDemand.style.display = tab === 'demand' ? '' : 'none';
 
   var archiveNav = document.getElementById('archive-nav');
   if (archiveNav && _archiveData.length > 1) {
@@ -1786,7 +1792,13 @@ function copyArticleNotepad() {
           },
           history: typeof history !== 'undefined' ? history : [],
           opportunities: typeof opps !== 'undefined' ? opps : [],
+          recurring_signals: [],
+          demand_radar: {},
           report_md: typeof reportMd !== 'undefined' ? reportMd : '',
+          article_md: '',
+          article_meta: {},
+          pipeline: {},
+          archive: [],
           generated_at: ''
         });
       } else {
@@ -1796,8 +1808,10 @@ function copyArticleNotepad() {
         document.getElementById('signals-body').innerHTML = '<tr><td colspan="6" class="empty">' + t('emptyNoData') + '</td></tr>';
         document.getElementById('tab-report').innerHTML = '<div class="empty">' + t('emptyNoReportData') + '</div>';
         document.getElementById('tracking-empty').style.display = 'block';
-        document.getElementById('recurring-empty').style.display = 'block';
-        document.getElementById('demand-empty').style.display = 'block';
+        var recEmpty = document.getElementById('recurring-empty');
+        if (recEmpty) recEmpty.style.display = 'block';
+        var demEmpty = document.getElementById('demand-empty');
+        if (demEmpty) demEmpty.style.display = 'block';
         document.getElementById('stat-signals').textContent = '0';
         document.getElementById('stat-top').textContent = '--';
         document.getElementById('stat-avg').textContent = '--';
