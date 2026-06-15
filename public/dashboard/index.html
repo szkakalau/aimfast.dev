@@ -1014,6 +1014,13 @@ var LANG = I18N.lang;
     if (el && text != null) el.textContent = text;
   }
 
+  function safeMarked(md) {
+    if (typeof marked !== 'undefined' && marked.parse) {
+      try { return marked.parse(md); } catch(e) { return '<p>' + md + '</p>'; }
+    }
+    return '<pre>' + (md || '') + '</pre>';
+  }
+
   function setChartTitle(id, text) {
     var el = document.getElementById(id);
     if (!el || !text) return;
@@ -1033,6 +1040,7 @@ function fmt(n) {
 }
 
 function renderAll(data) {
+  try {
   _data = data;
   var summary = data.summary || {};
   var signals = data.signals || [];
@@ -1101,7 +1109,7 @@ function renderAll(data) {
 
   // Report
   if (reportMd) {
-    document.getElementById('tab-report').innerHTML = marked.parse(reportMd);
+    document.getElementById('tab-report').innerHTML = safeMarked(reportMd);
   } else {
     document.getElementById('tab-report').innerHTML = emptyState('report', t('emptyNoReport'));
   }
@@ -1124,7 +1132,7 @@ function renderAll(data) {
     if (articleMeta.type_label) {
       articleHtml += '<div class="article-meta"><span class="badge badge-live">' + articleMeta.type_label + '</span></div>';
     }
-    articleHtml += marked.parse(articleMd);
+    articleHtml += safeMarked(articleMd);
     document.getElementById('tab-article').innerHTML = articleHtml;
   } else {
     document.getElementById('tab-article').innerHTML = emptyState('article', t('emptyNoArticle'));
@@ -1285,7 +1293,14 @@ function renderAll(data) {
   }
 
   // JSON-LD structured data for SEO
-  injectStructuredData(opps);
+  try { injectStructuredData(opps); } catch(e) {}
+
+  } catch(e) {
+    console.error('renderAll error:', e);
+    // If renderAll crashes mid-way, at minimum ensure stats show the error
+    try { document.getElementById('stat-signals').textContent = 'ERR'; } catch(_) {}
+    try { document.getElementById('dash-generated').textContent = 'Render error'; } catch(_) {}
+  }
 }
 
 function injectStructuredData(opps) {
@@ -1354,6 +1369,8 @@ function renderCharts(history) {
   var labels = history.map(function(d) { return d.date.substring(5); });
 
   // Score chart
+  if (typeof Chart !== 'undefined') {
+  try {
   var scoreCtx = document.getElementById('scoreChart').getContext('2d');
   document.getElementById('scoreChart').setAttribute('aria-label', t('chartScoreAria'));
   new Chart(scoreCtx, {
@@ -1400,6 +1417,8 @@ function renderCharts(history) {
       }
     }
   });
+  } catch(e) { console.error('Chart render error:', e); }
+  } // typeof Chart check
 }
 
 function switchTab(tab) {
@@ -1543,7 +1562,7 @@ function switchArchiveDate(dateStr) {
 
   // Render archive content
   var reportHtml = entry.has_report && entryReportMd
-    ? marked.parse(entryReportMd)
+    ? safeMarked(entryReportMd)
     : '<div class="empty">' + t('archiveNoReport') + '</div>';
 
   var articleHtml = '';
@@ -1563,7 +1582,7 @@ function switchArchiveDate(dateStr) {
     if (entry.article_meta && entry.article_meta.type_label) {
       articleHtml += '<div class="article-meta"><span class="badge badge-live">' + entry.article_meta.type_label + '</span></div>';
     }
-    articleHtml += marked.parse(entryArticleMd);
+    articleHtml += safeMarked(entryArticleMd);
   } else {
     articleHtml = '<div class="empty">' + t('archiveNoArticle') + '</div>';
   }
