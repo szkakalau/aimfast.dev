@@ -82,6 +82,7 @@ def run(date_str: str | None = None) -> dict:
         watched_demands.append({
             "id": did,
             "name": d.get("name", did),
+            "name_en": d.get("name_en", d.get("name", did)),
             "market_score": market,
             "business_score": business,
             "competition": competition,
