@@ -447,6 +447,18 @@
   .btn-bet:hover { border-color: var(--color-accent); }
   .btn-bet.active-bet { background: var(--color-accent); color: #1a1d24; border-color: var(--color-accent); }
 
+  /* ── Watch button ── */
+  .btn-watch {
+    font-size: 1rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-accent);
+    padding: 0 2px;
+    line-height: 1;
+  }
+  .btn-watch:hover { transform: scale(1.2); }
+
   /* ── Bet log ── */
   .bet-row { display: flex; align-items: center; gap: var(--space-2); padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.04); font-size: 0.82rem; }
   .bet-row .bet-id { font-family: var(--font-mono); font-size: 0.72rem; color: var(--color-text-muted); }
@@ -773,7 +785,7 @@
     </div>
     <div id="tab-demand" class="report-body" style="display:none;" role="tabpanel">
       <table aria-label="Demand radar">
-        <thead><tr><th scope="col" id="th-dem-name">Demand</th><th scope="col" id="th-dem-delta">Chg</th><th scope="col" id="th-dem-market">Mkt</th><th scope="col" id="th-dem-business">Biz</th><th scope="col" id="th-dem-competition">Cmp</th><th scope="col" id="th-dem-ai">AI-pf</th><th scope="col" id="th-dem-confidence">Conf</th><th scope="col" id="th-dem-stage">Stage</th><th scope="col" id="th-dem-index">Score</th></tr></thead>
+        <thead><tr><th scope="col">☆</th><th scope="col" id="th-dem-name">Demand</th><th scope="col" id="th-dem-delta">Chg</th><th scope="col" id="th-dem-market">Mkt</th><th scope="col" id="th-dem-business">Biz</th><th scope="col" id="th-dem-competition">Cmp</th><th scope="col" id="th-dem-ai">AI-pf</th><th scope="col" id="th-dem-confidence">Conf</th><th scope="col" id="th-dem-stage">Stage</th><th scope="col" id="th-dem-index">Score</th></tr></thead>
         <tbody id="demand-body"></tbody>
       </table>
       <div id="demand-empty" class="empty" style="display:none;">No demand data yet.</div>
@@ -1347,6 +1359,43 @@ function saveBets() {
   try { localStorage.setItem('kakaopc_bets', JSON.stringify(_bets)); } catch(e) {}
 }
 
+// Watchlist management (localStorage)
+var _watchlist = [];
+
+function loadWatchlist() {
+  var jsonDefaults = (typeof _data !== 'undefined' && _data.watchlist) ? _data.watchlist : [];
+  var lsRaw = null;
+  try { lsRaw = localStorage.getItem('kakaopc_watchlist'); } catch(e) {}
+  if (lsRaw) {
+    _watchlist = JSON.parse(lsRaw);
+  } else {
+    _watchlist = jsonDefaults.slice();
+  }
+}
+
+function saveWatchlist() {
+  try { localStorage.setItem('kakaopc_watchlist', JSON.stringify(_watchlist)); } catch(e) {}
+}
+
+function toggleWatch(demandId) {
+  loadWatchlist();
+  var idx = _watchlist.indexOf(demandId);
+  if (idx >= 0) {
+    _watchlist.splice(idx, 1);
+  } else {
+    _watchlist.push(demandId);
+  }
+  saveWatchlist();
+  renderDemandTable();
+  renderWatchlistPanel();
+  var btn = document.getElementById('watch-btn-' + demandId);
+  if (btn) btn.textContent = idx >= 0 ? '☆' : '★';
+}
+
+function isWatched(demandId) {
+  return _watchlist.indexOf(demandId) >= 0;
+}
+
 function placeBet(demandId, demandName, action) {
   var now = new Date().toISOString().substring(0, 10);
   var id = 'BET-' + now.replace(/-/g,'') + '-' + String(_bets.length + 1).padStart(2, '0');
@@ -1502,32 +1551,39 @@ function renderWorkbench(data) {
     });
   }
 
-  // ── Watchlist panel ──
+  // ── Watchlist panel (from localStorage + JSON) ──
   var wlDiv = document.getElementById('wb-watchlist');
   var wlEmpty = document.getElementById('wb-watchlist-empty');
   if (wlDiv && wlEmpty) {
-    if (watched.length === 0) {
+    loadWatchlist();
+    // Build array of watched demand objects from all_demands
+    var wlItems = [];
+    _watchlist.forEach(function(wid) {
+      var found = null;
+      for (var i = 0; i < allDems.length; i++) {
+        if (allDems[i].id === wid) { found = allDems[i]; break; }
+      }
+      if (found) wlItems.push(found);
+    });
+
+    if (wlItems.length === 0) {
       wlEmpty.style.display = '';
       wlDiv.innerHTML = '';
       wlDiv.appendChild(wlEmpty);
     } else {
       wlEmpty.style.display = 'none';
       var wlHtml = '';
-      var deltaIcons = { rising: 'chg-up', falling: 'chg-dn', stable: '' };
-      watched.forEach(function(d) {
-        var arrow = d.change_pct > 0 ? '▲' : (d.change_pct < 0 ? '▼' : '→');
-        var chgCls = d.change_pct > 0 ? 'chg-up' : (d.change_pct < 0 ? 'chg-dn' : '');
-        var recLabel = {
-          prepare_validate: t('wbRecPrepare'),
-          observe_closely: t('wbRecWatch'),
-          avoid: t('wbRecAvoid'),
-          low_priority: t('wbRecLow'),
-          watch: t('wbRecObserve')
-        };
+      wlItems.forEach(function(d) {
+        var arrow = d.delta === 'rising' ? '▲' : (d.delta === 'falling' ? '▼' : '→');
+        var chgCls = d.delta === 'rising' ? 'chg-up' : (d.delta === 'falling' ? 'chg-dn' : '');
+        var stageName = (LANG === 'en')
+          ? {early:'Early',forming:'Forming',breaking:'Breaking',mature:'Mature'}[d.stage] || d.stage
+          : {early:'萌芽期',forming:'形成期',breaking:'爆发期',mature:'成熟期'}[d.stage] || d.stage;
         wlHtml += '<div class="wb-watch-item">' +
           '<span><strong><a href="#" onclick="openOppCard(wb,\'' + d.id + '\');return false;" style="color:inherit">' + demName(d) + '</a></strong></span>' +
-          '<span class="' + chgCls + '">' + arrow + ' ' + (d.change_pct > 0 ? '+' : '') + d.change_pct + '%</span>' +
-          '<span class="muted" style="font-size:0.7rem">' + (recLabel[d.recommendation] || d.recommendation) + '</span>' +
+          '<span class="' + chgCls + '">' + arrow + '</span>' +
+          '<span class="muted" style="font-size:0.7rem">' + (stageName || '') + '</span>' +
+          '<button class="btn-watch" onclick="toggleWatch(\'' + d.id + '\');renderWorkbench(data);" title="Remove">×</button>' +
           '</div>';
       });
       wlDiv.innerHTML = wlHtml;
@@ -1716,6 +1772,8 @@ function renderAll(data) {
   var weeks = demandRadar.weeks || [];
   var intersections = demandRadar.intersections || [];
 
+  loadWatchlist(); // sync watchlist from localStorage
+
   if (demands.length === 0) {
     document.getElementById('demand-empty').style.display = 'block';
   } else {
@@ -1755,7 +1813,9 @@ function renderAll(data) {
         trendsHtml += '</span>';
       }
 
+      var watchIcon = isWatched(dem.id) ? '★' : '☆';
       tr.innerHTML =
+        '<td><button class="btn-watch" id="watch-btn-' + dem.id + '" onclick="toggleWatch(\'' + dem.id + '\');event.stopPropagation();" title="Toggle watch">' + watchIcon + '</button></td>' +
         '<td><strong>' + dmName + '</strong><br><span class="muted">' + descText + buyerInfo + '</span>' + trendsHtml + '</td>' +
         '<td>' + (deltaIcons[dem.delta] || dem.delta) + '</td>' +
         '<td class="num" title="' + marketTooltip + '">' + (dem.market_score || 0) + '</td>' +
