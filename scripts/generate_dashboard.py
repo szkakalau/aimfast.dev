@@ -241,7 +241,17 @@ def collect_dashboard_data() -> dict:
     pipeline_status = read_pipeline_status(effective_date)
 
     # 7. Archive (all available historical reports + articles)
-    archive = _collect_archive(max_days=7)
+    archive = _collect_archive(max_days=60)
+    # Trim archive content to keep dashboard.json under ~500KB
+    for entry in archive:
+        if entry.get("report_md"):
+            entry["report_md"] = entry["report_md"][:1500]
+        if entry.get("report_md_en"):
+            entry["report_md_en"] = entry["report_md_en"][:1500]
+        if entry.get("article_md"):
+            entry["article_md"] = entry["article_md"][:1000]
+        if entry.get("article_md_en"):
+            entry["article_md_en"] = entry["article_md_en"][:1000]
 
     return {
         "date": effective_date,
