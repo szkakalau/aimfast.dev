@@ -1243,7 +1243,7 @@ var _data = null;
 var _articleRaw = '';
 
 function demName(d) {
-  return (LANG === 'en' && d.name_en) ? d.name_en : (demName(d) || d.id || '');
+  return (LANG === 'en' && d.name_en) ? d.name_en : (d.name || d.id || '');
 }
 
 function fmt(n) {
@@ -1347,24 +1347,42 @@ function openOppCard(wbData, demandId) {
   var stageNames = { early: '萌芽期', forming: '形成期 ← 最佳下注时机', breaking: '爆发期', mature: '成熟期' };
   var stage = stageNames[dem.stage] || dem.stage || '?';
 
+  var oppDesc = (LANG === 'en' && dem.description_en) ? dem.description_en : (dem.description || '');
+  var oppBuyer = (LANG === 'en' && dem.target_buyer_en) ? dem.target_buyer_en : (dem.target_buyer || (LANG === 'en' ? 'Unknown' : '未标注'));
+  var aiLabel = (LANG === 'en')
+    ? ((dem.ai_replaceability||0) >= 7 ? 'Architecture-level' : (dem.ai_replaceability||0) >= 4 ? 'Partially replaceable' : 'Model upgrade risk')
+    : ((dem.ai_replaceability||0) >= 7 ? '架构级需求' : (dem.ai_replaceability||0) >= 4 ? '部分可替代' : '模型升级可消灭');
+  var langMarket = (LANG === 'en') ? 'Market' : '市场';
+  var langBiz = (LANG === 'en') ? 'Business' : '商业';
+  var langComp = (LANG === 'en') ? 'Competition' : '竞争';
+  var langConf = (LANG === 'en') ? 'Confidence' : '置信度';
+  var langStage = (LANG === 'en') ? 'Stage' : '阶段';
+  var langAI = (LANG === 'en') ? 'AI Durability' : 'AI替代难度';
+  var langBuyer = (LANG === 'en') ? 'Target Buyer' : '目标用户';
+  var langDims = (LANG === 'en') ? 'Dimensions' : '子维度';
+  var betObserve = (LANG === 'en') ? 'Observe' : '下注观察';
+  var betValidate = (LANG === 'en') ? 'Validate' : '下注验证';
+  var betBuild = (LANG === 'en') ? 'Build' : '下注构建';
+  var betAbandon = (LANG === 'en') ? 'Abandon' : '暂时放弃';
+
   var html = '<h3 style="margin:0 0 4px">' + demName(dem) + '</h3>' +
-    '<span class="muted">' + (dem.description || '') + '</span>' +
+    '<span class="muted">' + oppDesc + '</span>' +
     '<div class="wb-opp-grid">' +
-      '<div class="wb-opp-stat"><div class="val" style="color:var(--color-accent)">' + (dem.market_score || 0) + '</div><small>Market 市场</small></div>' +
-      '<div class="wb-opp-stat"><div class="val" style="color:var(--color-accent)">' + (dem.business_score || 0) + '</div><small>Business 商业</small></div>' +
-      '<div class="wb-opp-stat"><div class="val" style="color:' + (dem.competition >= 80 ? 'var(--color-red)' : 'var(--color-green)') + '">' + (dem.competition || 0) + '</div><small>Competition 竞争</small></div>' +
+      '<div class="wb-opp-stat"><div class="val" style="color:var(--color-accent)">' + (dem.market_score || 0) + '</div><small>' + langMarket + '</small></div>' +
+      '<div class="wb-opp-stat"><div class="val" style="color:var(--color-accent)">' + (dem.business_score || 0) + '</div><small>' + langBiz + '</small></div>' +
+      '<div class="wb-opp-stat"><div class="val" style="color:' + (dem.competition >= 80 ? 'var(--color-red)' : 'var(--color-green)') + '">' + (dem.competition || 0) + '</div><small>' + langComp + '</small></div>' +
     '</div>' +
     '<div style="font-size:0.82rem;margin-top:8px">' +
-      '<strong>置信度:</strong> ' + (dem.confidence || 0) + '% | <strong>阶段:</strong> ' + stage + '<br>' +
-      '<strong>AI替代难度:</strong> ' + (dem.ai_replaceability || '?') + '/10 ' + ((dem.ai_replaceability||0) >= 7 ? '🛡️ 架构级需求' : (dem.ai_replaceability||0) >= 4 ? '⚡ 部分可替代' : '⚠️ 模型升级可消灭') + '<br>' +
-      '<strong>目标用户:</strong> ' + (dem.target_buyer || '未标注') + '<br>' +
-      '<strong>子维度:</strong> Pain f' + (dem.pain_frequency||'?') + '×s' + (dem.pain_severity||'?') + ' | Pay b' + (dem.pay_budget||'?') + '×u' + (dem.pay_urgency||'?') +
+      '<strong>' + langConf + ':</strong> ' + (dem.confidence || 0) + '% | <strong>' + langStage + ':</strong> ' + stage + '<br>' +
+      '<strong>' + langAI + ':</strong> ' + (dem.ai_replaceability || '?') + '/10 ' + aiLabel + '<br>' +
+      '<strong>' + langBuyer + ':</strong> ' + oppBuyer + '<br>' +
+      '<strong>' + langDims + ':</strong> Pain f' + (dem.pain_frequency||'?') + '×s' + (dem.pain_severity||'?') + ' | Pay b' + (dem.pay_budget||'?') + '×u' + (dem.pay_urgency||'?') +
     '</div>' +
     '<div class="wb-opp-actions">' +
-      '<button class="btn-bet" onclick="placeBet(\'' + demandId + '\',\'' + (demName(dem) || '').replace(/'/g, "\\'") + '\',\'observe\')">🔍 下注观察</button>' +
-      '<button class="btn-bet" onclick="placeBet(\'' + demandId + '\',\'' + (demName(dem) || '').replace(/'/g, "\\'") + '\',\'validate\')">🧪 下注验证</button>' +
-      '<button class="btn-bet" onclick="placeBet(\'' + demandId + '\',\'' + (demName(dem) || '').replace(/'/g, "\\'") + '\',\'build\')">🚀 下注构建</button>' +
-      '<button class="btn-bet" onclick="placeBet(\'' + demandId + '\',\'' + (demName(dem) || '').replace(/'/g, "\\'") + '\',\'abandon\')">❌ 暂时放弃</button>' +
+      '<button class="btn-bet" onclick="placeBet(\'' + demandId + '\',\'' + (demName(dem) || '').replace(/'/g, "\\'") + '\',\'observe\')">' + betObserve + '</button>' +
+      '<button class="btn-bet" onclick="placeBet(\'' + demandId + '\',\'' + (demName(dem) || '').replace(/'/g, "\\'") + '\',\'validate\')">' + betValidate + '</button>' +
+      '<button class="btn-bet" onclick="placeBet(\'' + demandId + '\',\'' + (demName(dem) || '').replace(/'/g, "\\'") + '\',\'build\')">' + betBuild + '</button>' +
+      '<button class="btn-bet" onclick="placeBet(\'' + demandId + '\',\'' + (demName(dem) || '').replace(/'/g, "\\'") + '\',\'abandon\')">' + betAbandon + '</button>' +
     '</div>';
   content.innerHTML = html;
   card.style.display = '';
@@ -1643,12 +1661,13 @@ function renderAll(data) {
       var indexHtml = '<span class="score ' + indexCls + '">' + dem.opportunity_index + '</span>';
 
       var compCls = dem.competition >= 80 ? 'score-low' : (dem.competition >= 50 ? 'score-mid' : 'score-high');
-      var buyerInfo = (dem.target_buyer || '') ? ' | Buyer: ' + (dem.target_buyer || '') : '';
-
+      var buyerText = (LANG === 'en' && dem.target_buyer_en) ? dem.target_buyer_en : (dem.target_buyer || '');
+      var buyerInfo = buyerText ? ' | Buyer: ' + buyerText : '';
+      var descText = (LANG === 'en' && dem.description_en) ? dem.description_en : (dem.description || '');
       var demName = (LANG === 'en' && dem.name_en) ? dem.name_en : demName(dem);
 
       tr.innerHTML =
-        '<td><strong>' + demName + '</strong><br><span class="muted">' + (dem.description || '') + buyerInfo + '</span></td>' +
+        '<td><strong>' + demName + '</strong><br><span class="muted">' + descText + buyerInfo + '</span></td>' +
         '<td>' + (deltaIcons[dem.delta] || dem.delta) + '</td>' +
         '<td class="num" title="' + marketTooltip + '">' + (dem.market_score || 0) + '</td>' +
         '<td class="num" title="' + businessTooltip + '">' + (dem.business_score || 0) + '</td>' +

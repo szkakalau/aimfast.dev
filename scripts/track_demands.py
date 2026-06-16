@@ -406,6 +406,8 @@ def run(date_str: str | None = None) -> dict:
             "confidence": score["confidence"],
             "stage": score["stage"],
             "target_buyer": cat.get("target_buyer", ""),
+            "description_en": cat.get("description_en", ""),
+            "target_buyer_en": cat.get("target_buyer_en", ""),
             "opportunity_index": score["opportunity_index"],
             # 子维度
             "trend_score": score["trend_score"],
