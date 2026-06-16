@@ -1,4 +1,4 @@
-# KAKAOPC 情报科 — 产品需求文档
+# AimFast.Dev — 产品需求文档
 
 > 从全球信号到高确定性行动 — 独立开发者的每日情报系统
 >
@@ -22,7 +22,7 @@
 
 **与 BuilderPulse 的关系**：本系统方法论文本上借鉴 BuilderPulse（刘小排）的 E-P-A 框架（Evidence → Plain-English → Action）和跨源三角验证方法论，但在以下方面做出差异化：
 
-| 维度 | BuilderPulse | KAKAOPC 情报科 |
+| 维度 | BuilderPulse | AimFast.Dev |
 |------|-------------|---------------|
 | 语言 | 中英双语独立输出 | 中文日报（核心）+ 关键机会英文摘要 |
 | 信号源 | 9 个海外源 | 9 个海外源 + 5 个中国源 |
@@ -134,7 +134,7 @@
 ### 3.1 日报结构（完整版，借鉴 BuilderPulse 五层结构）
 
 ```markdown
-# KAKAOPC 情报科日报 — X月X日
+# AimFast.Dev日报 — X月X日
 
 > 今日核心判断：[一句话，今天最重要的发现]
 > 更新时间：[Shanghai Time]
@@ -436,7 +436,7 @@
 
 ---
 
-## 关于 KAKAOPC 情报科
+## 关于 AimFast.Dev
 
 我每天从全球 14 个信号源（HN、GitHub、Product Hunt、Reddit、V2EX、即刻、小红书……）中筛选高确定性机会，用这套方法论做三件事：
 
@@ -720,7 +720,7 @@ Vercel Web Analytics
 ### 6.2 目录结构（升级版）
 
 ```
-./KAKAOPC-Intel/
+./AimFast-Dev/
 ├── PRD.md                              # 本文档
 ├── config.json                         # 配置：信号源、阈值、分发渠道
 ├── methodology.md                      # 方法论文档（E-P-A + 筛选 + 反方）
@@ -795,7 +795,7 @@ Vercel Web Analytics
 
 本 PRD 是对 `机会狙击系统.md`（v0.3）的全面升级，主要变更：
 
-| 模块 | v0.3（机会狙击系统） | v1.0（KAKAOPC 情报科） |
+| 模块 | v0.3（机会狙击系统） | v1.0（AimFast.Dev） |
 |------|---------------------|----------------------|
 | 方法论 | 信号打分公式 | E-P-A 框架 + 反方制度化 + 三重过滤 |
 | 日报结构 | 简版（今日机会 + 信号热力图 + 追踪） | 完整五层结构（Discovery → Tech Radar → Competitive Intel → Trends → Action） |

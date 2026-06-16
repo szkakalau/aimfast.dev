@@ -99,7 +99,7 @@ def collect_weekly_data(date_str: str) -> dict:
 
 def _build_system_prompt() -> str:
     methodology = load_methodology()
-    return f"""你是 KAKAOPC 情报科的周报主编。你的任务是基于本周 7 天的信号数据，生成一份独立开发者情报周报。
+    return f"""你是 AimFast.Dev的周报主编。你的任务是基于本周 7 天的信号数据，生成一份独立开发者情报周报。
 
 ## 方法论
 

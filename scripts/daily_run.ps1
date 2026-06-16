@@ -1,4 +1,4 @@
-# KAKAOPC Intel — Daily Pipeline Orchestrator
+# AimFast.Dev — Daily Pipeline Orchestrator
 # Usage: powershell -ExecutionPolicy Bypass -File scripts/daily_run.ps1
 # Windows Task Scheduler trigger: daily at 08:00
 
@@ -44,7 +44,7 @@ function Write-Log {
     Add-Content -Path $LogFile -Value $line -Encoding UTF8
 }
 
-Write-Log "=== KAKAOPC Intel Daily Pipeline Start ==="
+Write-Log "=== AimFast.Dev Daily Pipeline Start ==="
 Write-Log "Date: $Date"
 Write-Log "Project: $ProjectRoot"
 Write-Log "Python: $Python"

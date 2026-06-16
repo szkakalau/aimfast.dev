@@ -16,7 +16,7 @@ TZ_SHANGHAI = timezone(timedelta(hours=8))
 GITHUB_API = "https://api.github.com"
 HEADERS = {
     "Accept": "application/vnd.github+json",
-    "User-Agent": "KAKAOPC-Intel/1.0",
+    "User-Agent": "AimFast-Dev/1.0",
 }
 
 

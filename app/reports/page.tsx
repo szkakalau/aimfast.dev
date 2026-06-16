@@ -5,20 +5,20 @@ import type { Metadata } from 'next';
 const REPORTS_DIR = join(process.cwd(), 'content', 'reports');
 
 export const metadata: Metadata = {
-  title: 'Daily Reports — KAKAOPC Intel',
+  title: 'Daily Reports — AimFast.Dev',
   description:
     'Browse all daily signal intelligence reports. Each report contains product opportunities, trend analysis, and buildable insights for indie developers.',
   robots: { index: true, follow: true },
   alternates: { canonical: 'https://aimfast.dev/reports/' },
   openGraph: {
-    title: 'Daily Reports — KAKAOPC Intel',
+    title: 'Daily Reports — AimFast.Dev',
     description: 'Browse daily signal intelligence reports with product opportunities and trend analysis.',
     url: 'https://aimfast.dev/reports/',
-    siteName: 'KAKAOPC Intel',
+    siteName: 'AimFast.Dev',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Daily Reports — KAKAOPC Intel',
+    title: 'Daily Reports — AimFast.Dev',
     description: 'Browse daily signal intelligence reports.',
   },
 };
@@ -80,7 +80,7 @@ export default function ReportsIndexPage() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
-    name: 'Daily Reports — KAKAOPC Intel',
+    name: 'Daily Reports — AimFast.Dev',
     description: 'Daily signal intelligence reports for indie developers.',
     url: 'https://aimfast.dev/reports/',
     mainEntity: {
@@ -142,7 +142,7 @@ export default function ReportsIndexPage() {
         </div>
         <footer className="site-footer">
           <p>
-            &copy; {new Date().getFullYear()} KAKAOPC Intel ·{' '}
+            &copy; {new Date().getFullYear()} AimFast.Dev ·{' '}
             <a href="/">Home</a> · <a href="/dashboard/">Dashboard</a>
           </p>
         </footer>

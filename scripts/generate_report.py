@@ -97,7 +97,7 @@ def _build_system_prompt() -> str:
     """构建系统提示：方法论 + BuilderPulse 蒸馏风格 + 日报模板。"""
     methodology = load_methodology()
 
-    return f"""你是 KAKAOPC 情报科的日报主编。你的任务是基于处理后的信号数据，生成一份 Builder 读得懂、能行动的独立开发者情报日报。
+    return f"""你是 AimFast.Dev的日报主编。你的任务是基于处理后的信号数据，生成一份 Builder 读得懂、能行动的独立开发者情报日报。
 
 ## 方法论
 
@@ -215,7 +215,7 @@ def _build_system_prompt() -> str:
 - 格式: 完整 Markdown，不要用代码块包裹
 - 篇幅: 正文 3000-6000 字（比之前更详细，每个子节至少 150 字）
 - 语言: 全程中文，专业术语首次出现时用白话解释
-- 结尾: 加 `---` 分隔线 + `*— KAKAOPC 情报科日报*` 签名"""
+- 结尾: 加 `---` 分隔线 + `*— AimFast.Dev日报*` 签名"""
 
 
 def _build_user_prompt(signals: list[dict], categories: dict, date_str: str) -> str:
@@ -303,7 +303,7 @@ def _build_user_prompt(signals: list[dict], categories: dict, date_str: str) -> 
 
 ---
 
-请基于以上数据生成 {date_str} 的 KAKAOPC 情报科日报。
+请基于以上数据生成 {date_str} 的 AimFast.Dev日报。
 
 ## 生成指令
 
@@ -321,7 +321,7 @@ def _build_user_prompt(signals: list[dict], categories: dict, date_str: str) -> 
 def generate_report(signals: list[dict], date_str: str) -> str:
     """调用 LLM 生成完整五层日报。"""
     if not signals:
-        return f"# KAKAOPC 情报科日报 — {date_str}\n\n> 今日无信号数据。\n"
+        return f"# AimFast.Dev日报 — {date_str}\n\n> 今日无信号数据。\n"
 
     categories = _categorize_signals(signals)
     system_prompt = _build_system_prompt()

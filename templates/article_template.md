@@ -70,7 +70,7 @@
 
 ---
 
-## 关于 KAKAOPC 情报科
+## 关于 AimFast.Dev
 
 我每天从全球 13 个信号源（HN、GitHub、Product Hunt、Reddit、V2EX、小红书……）中筛选高确定性机会，用这套方法论做三件事：
 

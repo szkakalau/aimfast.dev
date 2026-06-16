@@ -45,7 +45,7 @@ export async function generateMetadata({
   try {
     source = readFileSync(filePath, 'utf-8');
   } catch {
-    return { title: 'Article Not Found — KAKAOPC Intel' };
+    return { title: 'Article Not Found — AimFast.Dev' };
   }
 
   const fm = parseFrontmatter(source);
@@ -54,7 +54,7 @@ export async function generateMetadata({
   const zhUrl = `https://aimfast.dev/articles/${slug}/`;
 
   return {
-    title: `${title} — KAKAOPC Intel`,
+    title: `${title} — AimFast.Dev`,
     description: fm.summary || 'Deep-dive signal analysis for indie developers.',
     robots: { index: true, follow: true },
     alternates: {
@@ -62,25 +62,25 @@ export async function generateMetadata({
       languages: { 'zh-CN': zhUrl },
     },
     openGraph: {
-      title: `${title} — KAKAOPC Intel`,
+      title: `${title} — AimFast.Dev`,
       description: fm.summary || 'Deep-dive signal analysis for indie developers.',
       type: 'article',
       publishedTime: fm.date || undefined,
       url: canonicalUrl,
-      siteName: 'KAKAOPC Intel',
+      siteName: 'AimFast.Dev',
       locale: 'en_US',
       images: [
         {
           url: 'https://aimfast.dev/og-image.png',
           width: 1200,
           height: 630,
-          alt: 'KAKAOPC Intel — Daily Signal Intelligence',
+          alt: 'AimFast.Dev — Daily Signal Intelligence',
         },
       ],
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${title} — KAKAOPC Intel`,
+      title: `${title} — AimFast.Dev`,
       description: fm.summary || 'Deep-dive signal analysis for indie developers.',
       images: ['https://aimfast.dev/og-image.png'],
     },
@@ -133,8 +133,8 @@ export default async function ArticleEnPage({
     headline: frontmatter.title || slug,
     datePublished: frontmatter.date || undefined,
     description: frontmatter.summary || '',
-    author: { '@type': 'Organization', name: 'KAKAOPC Intel' },
-    publisher: { '@type': 'Organization', name: 'KAKAOPC Intel' },
+    author: { '@type': 'Organization', name: 'AimFast.Dev' },
+    publisher: { '@type': 'Organization', name: 'AimFast.Dev' },
     inLanguage: 'en',
     url: canonicalUrl,
     mainEntityOfPage: { '@type': 'WebPage', '@id': canonicalUrl },
@@ -168,7 +168,7 @@ export default async function ArticleEnPage({
         </article>
         <footer className="site-footer">
           <p>
-            &copy; {new Date().getFullYear()} KAKAOPC Intel ·{' '}
+            &copy; {new Date().getFullYear()} AimFast.Dev ·{' '}
             <a href="/">Home</a> · <a href="/dashboard/">Dashboard</a> ·{' '}
             <a href={zhUrl}>中文版</a>
           </p>

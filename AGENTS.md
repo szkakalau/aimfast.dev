@@ -1,4 +1,4 @@
-# AGENTS.md - KAKAOPC情报科
+# AGENTS.md - AimFast.Dev
 
 ## Skill routing
 

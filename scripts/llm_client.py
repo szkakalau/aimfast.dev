@@ -141,5 +141,5 @@ def _template_fallback(system_prompt: str, user_prompt: str) -> str:
         + "## 信号数据已就绪\n\n"
         + "处理后的信号已保存至 daily/ 目录。请检查 signals.json 获取完整数据。\n\n"
         + "---\n\n"
-        + "*自动生成于 KAKAOPC 情报科 v1.0*\n"
+        + "*自动生成于 AimFast.Dev v1.0*\n"
     )

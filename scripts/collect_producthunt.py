@@ -48,7 +48,7 @@ def _get_access_token() -> str | None:
                 "client_secret": csecret,
                 "grant_type": "client_credentials",
             },
-            headers={"User-Agent": "KAKAOPC-Intel/2.0"},
+            headers={"User-Agent": "AimFast-Dev/2.0"},
             timeout=15,
         )
         resp.raise_for_status()
@@ -105,7 +105,7 @@ def collect(date_str: str | None = None) -> list[dict]:
             headers={
                 "Authorization": f"Bearer {token}",
                 "Content-Type": "application/json",
-                "User-Agent": "KAKAOPC-Intel/2.0",
+                "User-Agent": "AimFast-Dev/2.0",
             },
             json={"query": QUERY, "variables": {"postedAfter": posted_after, "first": 40}},
             timeout=20,

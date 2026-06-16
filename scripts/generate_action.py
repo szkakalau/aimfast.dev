@@ -59,7 +59,7 @@ def check_action_threshold(signals: list[dict]) -> dict | None:
 def _build_system_prompt() -> str:
     methodology = load_methodology()
 
-    return f"""你是 KAKAOPC 情报科的 Action 方案规划师。你的任务是为达到阈值的信号生成一份可执行的 2h Build 方案。
+    return f"""你是 AimFast.Dev的 Action 方案规划师。你的任务是为达到阈值的信号生成一份可执行的 2h Build 方案。
 
 ## 方法论
 

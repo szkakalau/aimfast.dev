@@ -1,4 +1,4 @@
-# CLAUDE.md - KAKAOPC情报科
+# CLAUDE.md - AimFast.Dev
 
 ## Skill routing
 

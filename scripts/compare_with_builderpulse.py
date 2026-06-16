@@ -53,7 +53,7 @@ def fetch_url(url: str, retries: int = 2) -> Optional[str]:
     """拉取 URL 内容，带重试"""
     for attempt in range(retries + 1):
         try:
-            req = Request(url, headers={"User-Agent": "KAKAOPC-Compare/1.0"})
+            req = Request(url, headers={"User-Agent": "AimFast-Compare/1.0"})
             with urlopen(req, timeout=15) as resp:
                 return resp.read().decode("utf-8")
         except HTTPError as e:
@@ -205,7 +205,7 @@ def extract_kp_sections(date_str: str) -> dict:
     """从 KAKAOPC 当日输出中提取结构化信息
 
     KAKAOPC 有两个版本格式：
-    - v1 (May 27): # KAKAOPC 情报科日报 + ## 🎯 今日一击 + ### 信号：
+    - v1 (May 27): # AimFast.Dev日报 + ## 🎯 今日一击 + ### 信号：
     - v2 (May 28+): # 📝 主编说 + # 🎯 今日 2 小时构建 + ## Product:
     """
     sections = {
@@ -444,7 +444,7 @@ METHODOLOGY_DIFFS = """
 
 ### 架构层差异
 
-| 维度 | BuilderPulse | KAKAOPC 情报科 |
+| 维度 | BuilderPulse | AimFast.Dev |
 |------|-------------|---------------|
 | **定位** | 每日一条 Build Idea 的纯内容简报 | 完整情报管线：采集→评分→生成→验证→部署 |
 | **仓库性质** | 纯 Markdown 内容仓库 | Next.js 全栈应用 + Python 数据管道 |
@@ -456,7 +456,7 @@ METHODOLOGY_DIFFS = """
 
 ### 方法论层差异
 
-| 维度 | BuilderPulse | KAKAOPC 情报科 |
+| 维度 | BuilderPulse | AimFast.Dev |
 |------|-------------|---------------|
 | **评分系统** | 无公开评分公式 | E-P-A 加权公式：cross×3 + vol×2 + fresh×2 + act×2 + buyer×1 |
 | **行动阈值** | 无 | Score ≥ 15 + cross_platform ≥ 2 触发落地页 |
@@ -470,7 +470,7 @@ METHODOLOGY_DIFFS = """
 
 ### 产品哲学差异
 
-| 维度 | BuilderPulse | KAKAOPC 情报科 |
+| 维度 | BuilderPulse | AimFast.Dev |
 |------|-------------|---------------|
 | **核心隐喻** | "狙击手，不是扫射者" | "狙击手，不是扫射者"（同源） |
 | **从信号到行动** | 提供方向，Builder 自己行动 | 提供方向 + 2h MVP 方案 + 定价 + 验证路径 |
@@ -480,7 +480,7 @@ METHODOLOGY_DIFFS = """
 
 ### 内容风格差异
 
-| 维度 | BuilderPulse | KAKAOPC 情报科 |
+| 维度 | BuilderPulse | AimFast.Dev |
 |------|-------------|---------------|
 | **文章长度** | 每条 ~800-1500 字（英文为主） | 日报 1500-3000 字 + 文章 2000-4000 字 |
 | **叙事风格** | 直接、精炼、英文 blog 风格 | 结构化的 5 层日报 + 白话翻译 + 角色映射 |

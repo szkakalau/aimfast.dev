@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# KAKAOPC Intel — Daily Pipeline Orchestrator (Linux / CI)
+# AimFast.Dev — Daily Pipeline Orchestrator (Linux / CI)
 # Usage: bash scripts/daily_run.sh
 # GitHub Actions triggers this daily at 00:00 UTC (08:00 CST)
 
@@ -39,7 +39,7 @@ log() {
     echo "$line" >> "$LOG_FILE"
 }
 
-log "=== KAKAOPC Intel Daily Pipeline Start ==="
+log "=== AimFast.Dev Daily Pipeline Start ==="
 log "Date: $DATE"
 log "Project: $PROJECT_ROOT"
 log "Python: $($PYTHON --version 2>&1)"
@@ -266,8 +266,8 @@ log "--- Step 13: Deploy Dashboard Data & SEO Content ---"
 git add public/dashboard/data/dashboard.json tracking/recurring_signals.json tracking/demand_radar.json public/sitemap.xml content/reports/ content/articles/ public/*/index.html compare/ 2>&1 || true
 
 if git diff --cached --name-only | grep -q .; then
-    git config user.email "pipeline@kakaopc-intel.bot"
-    git config user.name "KAKAOPC Intel Bot"
+    git config user.email "pipeline@pipeline@aimfast.dev"
+    git config user.name "AimFast.Dev Bot"
     git commit -m "Dashboard data update: $DATE" 2>&1 || true
     log "  [Git] Committed dashboard data for $DATE"
 

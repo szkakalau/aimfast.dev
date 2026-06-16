@@ -17,7 +17,7 @@ RAW_DIR = ROOT / "raw"
 
 TZ_SHANGHAI = timezone(timedelta(hours=8))
 
-HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; KAKAOPC-Intel/2.0; +https://aimfast.dev)"}
+HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; AimFast-Dev/2.0; +https://aimfast.dev)"}
 
 SUBREDDITS = [
     "programming",

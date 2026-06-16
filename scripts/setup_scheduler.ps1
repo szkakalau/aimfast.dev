@@ -1,12 +1,12 @@
-# KAKAOPC Intel — Windows Task Scheduler Setup
+# AimFast.Dev — Windows Task Scheduler Setup
 # Run as Administrator to register the daily scheduled task
 # Usage: powershell -ExecutionPolicy Bypass -File scripts/setup_scheduler.ps1
 
-$TaskName = "KAKAOPC-Intel-Daily"
+$TaskName = "AimFast-Dev-Daily"
 $ProjectRoot = Split-Path -Parent (Split-Path -Parent $MyInvocation.MyCommand.Path)
 $ScriptPath = Join-Path $ProjectRoot "scripts\daily_run.ps1"
 
-Write-Host "=== KAKAOPC Intel Task Scheduler Setup ==="
+Write-Host "=== AimFast.Dev Task Scheduler Setup ==="
 Write-Host "Project: $ProjectRoot"
 Write-Host "Script: $ScriptPath"
 Write-Host ""
@@ -53,7 +53,7 @@ try {
         -Trigger $Trigger `
         -Principal $Principal `
         -Settings $Settings `
-        -Description "KAKAOPC Intel Daily Pipeline (08:00 trigger)"
+        -Description "AimFast.Dev Daily Pipeline (08:00 trigger)"
 
     Write-Host ""
     Write-Host "Task installed successfully!"

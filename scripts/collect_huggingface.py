@@ -17,7 +17,7 @@ TZ_SHANGHAI = timezone(timedelta(hours=8))
 HF_API = "https://huggingface.co/api"
 
 HEADERS = {
-    "User-Agent": "KAKAOPC-Intel/1.0 (signal-collector; contact@aimfast.dev)",
+    "User-Agent": "AimFast-Dev/1.0 (signal-collector; contact@aimfast.dev)",
     "Accept": "application/json",
 }
 

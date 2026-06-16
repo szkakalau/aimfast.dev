@@ -15,7 +15,7 @@ RAW_DIR = ROOT / "raw"
 TZ_SHANGHAI = timezone(timedelta(hours=8))
 LOBSTERS_BASE = "https://lobste.rs"
 
-HEADERS = {"User-Agent": "KAKAOPC-Intel/2.0 (+https://aimfast.dev)"}
+HEADERS = {"User-Agent": "AimFast-Dev/2.0 (+https://aimfast.dev)"}
 
 
 def _fetch_hottest(page: int = 1) -> list[dict]:

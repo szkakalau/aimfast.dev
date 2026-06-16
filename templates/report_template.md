@@ -1,4 +1,4 @@
-# KAKAOPC 情报科日报 — {{date}}
+# AimFast.Dev日报 — {{date}}
 
 > 今日核心判断：[一句话，今天最重要的发现]
 > 更新时间：{{time}} Shanghai Time

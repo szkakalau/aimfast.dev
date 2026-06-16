@@ -71,7 +71,7 @@ const items = articles
 const rss = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
-  <title>KAKAOPC Intel — Articles</title>
+  <title>AimFast.Dev — Articles</title>
   <link>${SITE_URL}/articles/</link>
   <description>Deep-dive signal analysis for indie developers. Weekly articles translating cross-platform signals into buildable opportunities.</description>
   <language>en</language>

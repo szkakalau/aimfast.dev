@@ -1,4 +1,4 @@
-# KAKAOPC 情报科 — 方法论文档
+# AimFast.Dev — 方法论文档
 
 > 从信号到行动的操作手册 — 每条规则对应一个具体失败场景
 >
@@ -174,4 +174,4 @@ Score = cross_platform×3 + volume×2 + freshness×2 + actionability×2 + buyer_
 
 ---
 
-*本文档是 KAKAOPC 情报科日报生成和信号处理的操作规范。每条规则源于 BuilderPulse 45 天日更中验证过的方法论。*
+*本文档是 AimFast.Dev日报生成和信号处理的操作规范。每条规则源于 BuilderPulse 45 天日更中验证过的方法论。*

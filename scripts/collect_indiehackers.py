@@ -18,7 +18,7 @@ TZ_SHANGHAI = timezone(timedelta(hours=8))
 REDDIT_BASE = "https://www.reddit.com"
 IH_BASE = "https://www.indiehackers.com"
 
-HEADERS = {"User-Agent": "KAKAOPC-Intel/1.0 (signal-collector; contact@aimfast.dev)"}
+HEADERS = {"User-Agent": "AimFast-Dev/1.0 (signal-collector; contact@aimfast.dev)"}
 
 
 # ─── Reddit 搜索（替代 IH 的信号覆盖）─────────────────

@@ -15,7 +15,7 @@ RAW_DIR = ROOT / "raw"
 TZ_SHANGHAI = timezone(timedelta(hours=8))
 DEV_API = "https://dev.to/api/articles"
 
-HEADERS = {"User-Agent": "KAKAOPC-Intel/2.0 (+https://aimfast.dev)"}
+HEADERS = {"User-Agent": "AimFast-Dev/2.0 (+https://aimfast.dev)"}
 
 # 覆盖 Reddit 原本的 5 个子版块话题
 TAGS = [

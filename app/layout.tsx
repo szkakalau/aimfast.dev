@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'KAKAOPC Intel — Daily Signal Intelligence for Indie Developers',
+  title: 'AimFast.Dev — Daily Signal Intelligence for Indie Developers',
   description:
     'AI scans 14 sources daily (HN, GitHub, Reddit, Product Hunt). Every morning, get one validated product opportunity with a build plan and pricing strategy — free.',
   robots: { index: true, follow: true },
@@ -10,23 +10,23 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://aimfast.dev/' },
   openGraph: {
     type: 'website',
-    title: 'KAKAOPC Intel — Daily Signal Intelligence for Indie Developers',
+    title: 'AimFast.Dev — Daily Signal Intelligence for Indie Developers',
     description:
       'Every morning, get one validated product opportunity with a build plan and pricing strategy. Scanned from 14 global sources.',
     url: 'https://aimfast.dev/',
-    siteName: 'KAKAOPC Intel',
+    siteName: 'AimFast.Dev',
     images: [
       {
         url: 'https://aimfast.dev/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'KAKAOPC Intel — Daily Signal Intelligence',
+        alt: 'AimFast.Dev — Daily Signal Intelligence',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'KAKAOPC Intel — Daily Signal Intelligence',
+    title: 'AimFast.Dev — Daily Signal Intelligence',
     description: 'Daily product opportunities from 14 signal sources.',
     images: ['https://aimfast.dev/og-image.png'],
   },
@@ -37,7 +37,7 @@ const jsonLd = {
   '@graph': [
     {
       '@type': 'Organization',
-      name: 'KAKAOPC Intel',
+      name: 'AimFast.Dev',
       url: 'https://aimfast.dev/',
       description:
         'Daily signal intelligence for indie developers. AI scans 14 sources to deliver one validated product opportunity every morning.',
@@ -45,7 +45,7 @@ const jsonLd = {
     },
     {
       '@type': 'WebSite',
-      name: 'KAKAOPC Intel',
+      name: 'AimFast.Dev',
       url: 'https://aimfast.dev/',
       description:
         'Daily signal intelligence for indie developers. Product opportunities, trend analysis, and buildable insights from 14 global sources.',

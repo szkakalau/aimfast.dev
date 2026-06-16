@@ -165,7 +165,7 @@ def _build_system_prompt() -> str:
     """构建系统提示：写作规范 + BuilderPulse 蒸馏风格 + 文章模板。"""
     methodology = load_methodology()
 
-    return f"""你是 KAKAOPC 情报科的专栏作者，为「智识星球」撰写独立开发者情报分析文章。你的文章风格不是一个分析师在写报告，而是一个有经验的 Builder 在和朋友聊天。
+    return f"""你是 AimFast.Dev的专栏作者，为「智识星球」撰写独立开发者情报分析文章。你的文章风格不是一个分析师在写报告，而是一个有经验的 Builder 在和朋友聊天。
 
 ## 写作方法论
 
@@ -233,7 +233,7 @@ def _build_system_prompt() -> str:
 4. **为什么大多数人会错过它** — 主流观点 + 为什么错了 + 数据支撑
 5. **如果是我，我会怎么做** — 第一步 + 7 天验证计划 + MVP 方案（Google Form + Markdown 即可）+ 失败条件
 6. **本周其他值得关注的信号** — 3-5 条简报（每条 ≤ 80 字）
-7. **关于 KAKAOPC 情报科** — 固定结尾
+7. **关于 AimFast.Dev** — 固定结尾
 
 ## 字数与格式
 - 正文: 2500-5000 字
@@ -319,7 +319,7 @@ def _build_user_prompt(topic: dict, signals: list[dict], date_str: str) -> str:
 def generate_article(topic: dict, signals: list[dict], date_str: str) -> str:
     """调用 LLM 根据选题生成星球文章。"""
     if not topic.get("signal"):
-        return f"# KAKAOPC 情报科 — {date_str}\n\n> 今日无合适选题。\n"
+        return f"# AimFast.Dev — {date_str}\n\n> 今日无合适选题。\n"
 
     system_prompt = _build_system_prompt()
     user_prompt = _build_user_prompt(topic, signals, date_str)
