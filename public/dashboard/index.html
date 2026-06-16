@@ -377,6 +377,7 @@
   .wb-radar-table tr.selected td { background: var(--color-accent); color: #1a1d24; }
   .wb-link { font-size: 0.78rem; color: var(--color-accent); text-decoration: none; }
   .wb-link:hover { text-decoration: underline; }
+  .wb-updated { font-size: 0.65rem; color: var(--color-text-muted); font-weight: 400; margin-left: var(--space-2); }
   .btn-wb-sm { font-size: 0.7rem; background: none; border: 1px solid var(--color-border); color: var(--color-text-muted); border-radius: 3px; cursor: pointer; padding: 1px 6px; }
   .btn-wb-sm:hover { color: var(--color-text); border-color: var(--color-accent); }
   .wb-insight { margin-top: var(--space-2); padding: var(--space-2); background: var(--color-surface-alt); border-radius: var(--radius-md); font-size: 0.8rem; }
@@ -529,6 +530,7 @@
     <h2 id="workbench-title">
       <svg class="icon icon-sm icon-accent" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
       Builder Workbench
+      <span class="wb-updated" id="wb-updated"></span>
     </h2>
     <div class="wb-grid">
       <!-- Left: Radar mini-table -->
@@ -1260,6 +1262,10 @@ function closeOppCard() {
 
 function renderWorkbench(data) {
   var wb = data.workbench || {};
+
+  // Update timestamp
+  var ts = wb.generated_at || (wb.all_demands && wb.all_demands.length > 0 ? '' : '');
+  setEl('wb-updated', ts ? '更新于 ' + ts.substring(0, 16).replace('T', ' ') : '');
   var allDems = wb.all_demands || [];
   var watched = wb.watched_demands || [];
   var insight = wb.weekly_insight || '';
