@@ -15,7 +15,8 @@
       "pain": { "frequency": 8, "severity": 8, "_note": "频率: 上下文丢失是高频痛点; 严重度: 直接导致Agent不可用" },
       "pay": { "budget": 7, "urgency": 7, "_note": "预算: 企业愿意为可靠性付费; 紧迫度: 影响开发效率" },
       "competition": 35,
-      "target_buyer": "Agent 开发者、SaaS 创业团队"
+      "target_buyer": "Agent 开发者、SaaS 创业团队",
+      "ai_replaceability": 8
     },
     {
       "id": "cost",
@@ -28,7 +29,8 @@
       "pain": { "frequency": 10, "severity": 10, "_note": "频率: 每个用AI的人都会遇到; 严重度: 直接触及利润底线" },
       "pay": { "budget": 10, "urgency": 9, "_note": "预算: 企业有明确的成本优化预算; 紧迫度: 每月账单驱动" },
       "competition": 15,
-      "target_buyer": "Claude Code 重度用户、AI 创业公司"
+      "target_buyer": "Claude Code 重度用户、AI 创业公司",
+      "ai_replaceability": 1
     },
     {
       "id": "governance",
@@ -41,7 +43,8 @@
       "pain": { "frequency": 7, "severity": 9, "_note": "频率: 企业级场景高频; 严重度: 安全/合规事故后果严重" },
       "pay": { "budget": 9, "urgency": 9, "_note": "预算: 合规是刚需预算; 紧迫度: 受监管压力驱动" },
       "competition": 90,
-      "target_buyer": "企业安全/合规团队、大型工程组织"
+      "target_buyer": "企业安全/合规团队、大型工程组织",
+      "ai_replaceability": 6
     },
     {
       "id": "skills",
@@ -54,7 +57,8 @@
       "pain": { "frequency": 6, "severity": 4, "_note": "频率: 开发者常遇到但未必致命; 严重度: 多数情况可重试解决" },
       "pay": { "budget": 3, "urgency": 4, "_note": "预算: 开发者工具付费意愿有限; 紧迫度: 替代方案多" },
       "competition": 85,
-      "target_buyer": "Agent 开发者（付费意愿低，开源替代多）"
+      "target_buyer": "Agent 开发者（付费意愿低，开源替代多）",
+      "ai_replaceability": 3
     },
     {
       "id": "multi-agent",
@@ -67,7 +71,8 @@
       "pain": { "frequency": 5, "severity": 7, "_note": "频率: 企业扩展时遇到; 严重度: 单Agent无法解决复杂问题" },
       "pay": { "budget": 8, "urgency": 6, "_note": "预算: 企业有编排预算; 紧迫度: 目前多数团队尚未到达瓶颈" },
       "competition": 45,
-      "target_buyer": "AI 平台团队、DevOps/SRE"
+      "target_buyer": "AI 平台团队、DevOps/SRE",
+      "ai_replaceability": 6
     },
     {
       "id": "observability",
@@ -80,7 +85,8 @@
       "pain": { "frequency": 6, "severity": 8, "_note": "频率: 调试时常遇到; 严重度: 看不见=无法优化" },
       "pay": { "budget": 7, "urgency": 7, "_note": "预算: 运维/DevOps有观测预算; 紧迫度: 随Agent规模增长" },
       "competition": 40,
-      "target_buyer": "SRE、AI 基础设施团队"
+      "target_buyer": "SRE、AI 基础设施团队",
+      "ai_replaceability": 7
     },
     {
       "id": "tutorial",
@@ -93,7 +99,8 @@
       "pain": { "frequency": 5, "severity": 3, "_note": "频率: 新用户常遇到; 严重度: 随时间自然解决" },
       "pay": { "budget": 2, "urgency": 2, "_note": "预算: 教育类付费意愿低; 紧迫度: 免费资源充足" },
       "competition": 95,
-      "target_buyer": "个人学习者（几乎不付费）"
+      "target_buyer": "个人学习者（几乎不付费）",
+      "ai_replaceability": 2
     },
     {
       "id": "ux",
@@ -106,7 +113,8 @@
       "pain": { "frequency": 5, "severity": 5, "_note": "频率: 用户吐槽多; 严重度: 影响体验但不影响功能" },
       "pay": { "budget": 5, "urgency": 5, "_note": "预算: 设计工具有付费传统; 紧迫度: 随市场竞争加剧" },
       "competition": 99,
-      "target_buyer": "产品经理、设计师（通常不直接为工具付费）"
+      "target_buyer": "产品经理、设计师（通常不直接为工具付费）",
+      "ai_replaceability": 5
     }
   ],
   "intersection_rules": {

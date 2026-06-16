@@ -642,7 +642,7 @@
     </div>
     <div id="tab-demand" class="report-body" style="display:none;" role="tabpanel">
       <table aria-label="Demand radar">
-        <thead><tr><th scope="col" id="th-dem-name">Demand</th><th scope="col" id="th-dem-delta">Chg</th><th scope="col" id="th-dem-market">Market</th><th scope="col" id="th-dem-business">Biz</th><th scope="col" id="th-dem-competition">Comp</th><th scope="col" id="th-dem-confidence">Conf</th><th scope="col" id="th-dem-stage">Stage</th><th scope="col" id="th-dem-index">Score</th></tr></thead>
+        <thead><tr><th scope="col" id="th-dem-name">Demand</th><th scope="col" id="th-dem-delta">Chg</th><th scope="col" id="th-dem-market">Mkt</th><th scope="col" id="th-dem-business">Biz</th><th scope="col" id="th-dem-competition">Cmp</th><th scope="col" id="th-dem-ai">AI-proof</th><th scope="col" id="th-dem-stage">Stage</th><th scope="col" id="th-dem-index">Score</th></tr></thead>
         <tbody id="demand-body"></tbody>
       </table>
       <div id="demand-empty" class="empty" style="display:none;">No demand data yet.</div>
@@ -759,6 +759,7 @@ var I18N = (function() {
       demMarket: '市场',
       demBusiness: '商业',
       demCompetition: '竞争',
+      demAiProof: '抗AI',
       demConfidence: '置信',
       demStage: '阶段',
       demIndex: '评分',
@@ -909,6 +910,7 @@ var I18N = (function() {
       demMarket: 'Market',
       demBusiness: 'Business',
       demCompetition: 'Comp',
+      demAiProof: 'AI-pf',
       demConfidence: 'Conf',
       demStage: 'Stage',
       demIndex: 'Score',
@@ -1097,6 +1099,7 @@ window.safeMarked = function(md) {
   setEl('th-dem-market', t('demMarket'));
   setEl('th-dem-business', t('demBusiness'));
   setEl('th-dem-competition', t('demCompetition'));
+  setEl('th-dem-ai', t('demAiProof'));
   setEl('th-dem-confidence', t('demConfidence'));
   setEl('th-dem-stage', t('demStage'));
   setEl('th-dem-index', t('demIndex'));
@@ -1235,6 +1238,7 @@ function openOppCard(wbData, demandId) {
     '</div>' +
     '<div style="font-size:0.82rem;margin-top:8px">' +
       '<strong>置信度:</strong> ' + (dem.confidence || 0) + '% | <strong>阶段:</strong> ' + stage + '<br>' +
+      '<strong>AI替代难度:</strong> ' + (dem.ai_replaceability || '?') + '/10 ' + ((dem.ai_replaceability||0) >= 7 ? '🛡️ 架构级需求' : (dem.ai_replaceability||0) >= 4 ? '⚡ 部分可替代' : '⚠️ 模型升级可消灭') + '<br>' +
       '<strong>目标用户:</strong> ' + (dem.target_buyer || '未标注') + '<br>' +
       '<strong>子维度:</strong> Pain f' + (dem.pain_frequency||'?') + '×s' + (dem.pain_severity||'?') + ' | Pay b' + (dem.pay_budget||'?') + '×u' + (dem.pay_urgency||'?') +
     '</div>' +
@@ -1525,6 +1529,7 @@ function renderAll(data) {
         '<td class="num" title="' + marketTooltip + '">' + (dem.market_score || 0) + '</td>' +
         '<td class="num" title="' + businessTooltip + '">' + (dem.business_score || 0) + '</td>' +
         '<td class="num ' + compCls + '">' + (dem.competition || 0) + '</td>' +
+        '<td class="num" title="AI替代难度: ' + (dem.ai_replaceability || '?') + '/10">' + (dem.ai_replaceability || '?') + '</td>' +
         '<td class="num">' + (dem.confidence || 0) + '%</td>' +
         '<td>' + (stageLabels[dem.stage] || dem.stage || '?') + '</td>' +
         '<td>' + indexHtml + '</td>';

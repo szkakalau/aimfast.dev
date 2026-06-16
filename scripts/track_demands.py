@@ -202,9 +202,14 @@ def _score_demand(category: dict, weekly_counts: dict[str, int], total_demand_si
     else:
         stage = "forming"
 
-    # ─── OPPORTUNITY = (Market × 0.6 + Business × 0.4) × (100 - Competition) / 100 ───
+    # ─── AI Replaceability（可持续性乘数） ───
+    ai_replaceability = category.get("ai_replaceability", 5)  # 0-10, higher = harder for AI to replace
+    durability_multiplier = 0.4 + 0.6 * ai_replaceability / 10  # range: 0.4 (AI-easy) to 1.0 (AI-proof)
+
+    # ─── OPPORTUNITY = Base × Competition filter × Durability ───
     base_opportunity = market_score * 0.6 + business_score * 0.4
-    opportunity_index = round(base_opportunity * (100 - competition) / 100)
+    competition_filter = (100 - competition) / 100
+    opportunity_index = round(base_opportunity * competition_filter * durability_multiplier)
     opportunity_index = max(1, min(100, opportunity_index))
 
     # 子分数显示 (0-10)
@@ -217,6 +222,7 @@ def _score_demand(category: dict, weekly_counts: dict[str, int], total_demand_si
         "market_score": market_score,
         "business_score": business_score,
         "competition": competition,
+        "ai_replaceability": ai_replaceability,
         "confidence": confidence,
         "stage": stage,
         "opportunity_index": opportunity_index,
@@ -282,6 +288,7 @@ def _empty_score() -> dict:
         "market_score": 0,
         "business_score": 0,
         "competition": 0,
+        "ai_replaceability": 5,
         "confidence": 0,
         "stage": "early",
         "opportunity_index": 0,
@@ -395,6 +402,7 @@ def run(date_str: str | None = None) -> dict:
             "market_score": score["market_score"],
             "business_score": score["business_score"],
             "competition": score["competition"],
+            "ai_replaceability": score["ai_replaceability"],
             "confidence": score["confidence"],
             "stage": score["stage"],
             "target_buyer": cat.get("target_buyer", ""),
