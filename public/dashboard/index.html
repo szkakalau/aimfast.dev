@@ -1234,8 +1234,18 @@ window.safeMarked = function(md) {
   // Workbench static text
   setEl('wb-radar-title', t('wbRadarTitle'));
   setEl('wb-radar-link', t('wbRadarLink'));
-  setEl('wb-watchlist-title', t('wbWatchlistTitle'));
-  setEl('wb-watchlist-empty', t('wbWatchlistEmpty'));
+  // Watchlist title: preserve the ✎ button by only updating the text node
+  (function() {
+    var wt = document.getElementById('wb-watchlist-title');
+    if (wt && wt.childNodes.length > 0) {
+      wt.childNodes[0].textContent = t('wbWatchlistTitle') + ' ';
+    }
+  })();
+  // Watchlist empty: needs innerHTML because text has <br>
+  (function() {
+    var we = document.getElementById('wb-watchlist-empty');
+    if (we) we.innerHTML = t('wbWatchlistEmpty');
+  })();
 
   // Demand radar headers
   setEl('th-dem-name', t('demName'));
