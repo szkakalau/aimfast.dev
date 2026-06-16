@@ -17,25 +17,24 @@ TZ_SHANGHAI = timezone(timedelta(hours=8))
 
 # 预设关注关键词（开发者工具 + SaaS 方向）
 TRACKED_KEYWORDS = [
-    # AI 工具类
-    "AI code review",
-    "AI agent builder",
-    "AI website builder",
-    "AI API security",
-    "LLM router",
-    "AI audit",
-    # 开发者工具类
+    # 2026 AI 工具链热词
+    "Claude Code",
+    "agent memory",
+    "MCP server",
+    "AI observability",
+    "token cost optimizer",
+    "AI governance",
+    "multi-agent workflow",
+    "agent skills",
+    # 开发者工具
     "micro SaaS",
-    "no code builder",
-    "dev tools",
-    "API monetization",
-    "open source alternative",
-    # 趋势信号类
-    "prompt injection",
-    "model context protocol",
-    "agent framework",
-    "AI compliance",
-    "shadow IT",
+    "open source AI",
+    "AI code assistant",
+    "vibe coding",
+    # 基础设施
+    "agent infrastructure",
+    "LLM gateway",
+    "AI evaluation",
 ]
 
 

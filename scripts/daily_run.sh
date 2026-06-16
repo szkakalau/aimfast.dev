@@ -64,10 +64,11 @@ COLLECTORS=(
     "Google Trends:collect_trends"
     "Product Hunt:collect_producthunt"
     "Reddit:collect_reddit"
-    "Indie Hackers:collect_indiehackers"
     "V2EX:collect_v2ex"
     "w2solo:collect_w2solo"
     "HuggingFace:collect_huggingface"
+    "Lobsters:collect_lobsters"
+    "ArXiv:collect_arxiv"
 )
 
 for entry in "${COLLECTORS[@]}"; do

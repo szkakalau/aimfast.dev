@@ -13,9 +13,10 @@
       {"name": "Product Hunt", "key": "producthunt", "source": "API", "priority": "P1", "enabled": true},
       {"name": "HuggingFace", "key": "huggingface", "source": "API", "priority": "P1", "enabled": true},
       {"name": "Reddit", "key": "reddit", "source": "RSS / API", "priority": "P1", "enabled": true},
-      {"name": "Indie Hackers", "key": "indiehackers", "source": "RSS", "priority": "P1", "enabled": true},
-      {"name": "Lobsters", "key": "lobsters", "source": "RSS", "priority": "P2", "enabled": false},
-      {"name": "DEV Community", "key": "devcommunity", "source": "API", "priority": "P2", "enabled": false}
+      {"name": "Indie Hackers", "key": "indiehackers", "source": "RSS", "priority": "P2", "enabled": false},
+      {"name": "Lobsters", "key": "lobsters", "source": "API", "priority": "P1", "enabled": true},
+      {"name": "DEV Community", "key": "devcommunity", "source": "API", "priority": "P2", "enabled": false},
+      {"name": "ArXiv Papers", "key": "arxiv", "source": "API", "priority": "P1", "enabled": true}
     ],
     "domestic": [
       {"name": "V2EX", "key": "v2ex", "source": "API", "priority": "P0", "enabled": true},
