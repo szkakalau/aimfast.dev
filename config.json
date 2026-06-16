@@ -1,5 +1,11 @@
 {
-  "_comment": "KAKAOPC 情报科 — 配置文件 | 版本 v1.0",
+  "_comment": "KAKAOPC 情报科 — 配置文件 | 版本 v2.0",
+  "api_keys": {
+    "producthunt": {
+      "client_id": "YOUR_PH_CLIENT_ID",
+      "client_secret": "YOUR_PH_CLIENT_SECRET"
+    }
+  },
   "project": {
     "name": "KAKAOPC 情报科",
     "timezone": "Asia/Shanghai",

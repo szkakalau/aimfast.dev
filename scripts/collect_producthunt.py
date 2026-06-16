@@ -1,10 +1,9 @@
 """
 Product Hunt 信号采集
-数据源: Product Hunt RSS Feed (Atom XML)
-采集内容: 当日新品 + 描述 + 链接
+数据源: Product Hunt API v2 (GraphQL, 开发者 Token)
+采集内容: 当日热门新品 + 投票数 + 评论数
 """
 import json
-import xml.etree.ElementTree as ET
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
@@ -12,129 +11,182 @@ import requests
 
 ROOT = Path(__file__).resolve().parent.parent
 RAW_DIR = ROOT / "raw"
+CONFIG_PATH = ROOT / "config.json"
 
 TZ_SHANGHAI = timezone(timedelta(hours=8))
-PH_FEED_URL = "https://www.producthunt.com/feed"
+PH_API = "https://api.producthunt.com/v2/api/graphql"
+PH_TOKEN_URL = "https://api.producthunt.com/v2/oauth/token"
 
 
-def _parse_atom_feed(xml_text: str) -> list[dict]:
-    """解析 Atom XML feed 为条目列表。"""
-    entries = []
+def _get_ph_credentials() -> tuple[str, str]:
+    """从 config.json 读取 PH API 凭证。"""
+    with open(CONFIG_PATH, "r", encoding="utf-8") as f:
+        cfg = json.load(f)
+    keys = cfg.get("api_keys", {}).get("producthunt", {})
+    return keys.get("client_id", ""), keys.get("client_secret", "")
+
+# 缓存 token (运行时)
+_token_cache: dict = {}
+
+
+def _get_access_token() -> str | None:
+    """通过 client_credentials OAuth 获取 access token。"""
+    expires = _token_cache.get("expires_at", 0)
+    if isinstance(expires, (int, float)) and expires > datetime.now().timestamp():
+        return _token_cache.get("token")
+
+    cid, csecret = _get_ph_credentials()
+    if not cid:
+        print("[PH] config.json 中未配置 api_keys.producthunt")
+        return None
+
     try:
-        root = ET.fromstring(xml_text)
-    except ET.ParseError as e:
-        print(f"[PH] XML 解析失败: {e}")
-        return entries
+        resp = requests.post(
+            PH_TOKEN_URL,
+            json={
+                "client_id": cid,
+                "client_secret": csecret,
+                "grant_type": "client_credentials",
+            },
+            headers={"User-Agent": "KAKAOPC-Intel/2.0"},
+            timeout=15,
+        )
+        resp.raise_for_status()
+        data = resp.json()
+        token = data.get("access_token")
+        expires_in = data.get("expires_in", 7200)
+        _token_cache["token"] = token
+        _token_cache["expires_at"] = datetime.now().timestamp() + expires_in - 60  # 提前 1 分钟刷新
+        print(f"[PH] OAuth token 获取成功 (有效期 {expires_in}s)")
+        return token
+    except requests.RequestException as e:
+        print(f"[PH] OAuth token 获取失败: {e}")
+        return None
 
-    ns = {"atom": "http://www.w3.org/2005/Atom"}
-    for entry in root.findall("atom:entry", ns):
-        title_el = entry.find("atom:title", ns)
-        link_el = entry.find("atom:link", ns)
-        published_el = entry.find("atom:published", ns)
-        content_el = entry.find("atom:content", ns)
-        author_el = entry.find("atom:author", ns)
-
-        title = title_el.text.strip() if title_el is not None and title_el.text else ""
-        link = link_el.get("href", "") if link_el is not None else ""
-        published = published_el.text.strip() if published_el is not None and published_el.text else ""
-        description = ""
-        if content_el is not None and content_el.text:
-            # 提取纯文本描述（去掉 HTML 标签）
-            import re
-            desc_text = re.sub(r"<[^>]+>", " ", content_el.text)
-            desc_text = re.sub(r"\s+", " ", desc_text).strip()
-            description = desc_text[:300]
-
-        author = ""
-        if author_el is not None:
-            name_el = author_el.find("atom:name", ns)
-            author = name_el.text.strip() if name_el is not None and name_el.text else ""
-
-        entries.append({
-            "title": title,
-            "url": link,
-            "published": published,
-            "description": description,
-            "author": author,
-        })
-
-    return entries
-
-
-def _to_signal(entry: dict) -> dict:
-    """将 PH feed 条目转为标准信号格式。"""
-    title = entry.get("title", "")
-    url = entry.get("url", "")
-    product_slug = url.rstrip("/").split("/")[-1] if url else ""
-
-    return {
-        "id": f"ph-{product_slug}",
-        "title": title,
-        "url": url,
-        "source": "Product Hunt",
-        "source_key": "producthunt",
-        "signal_type": "product",
-        "discussion_count": 0,  # RSS 不包含评论数
-        "engagement": {
-            "total": 5,  # PH 新品默认基础权重
-        },
-        "collected_at": datetime.now(TZ_SHANGHAI).isoformat(),
-        "raw_published": entry.get("published", ""),
-        "summary": f"[Product Hunt] {title}: {entry.get('description', '')[:120]}",
-        "tags": ["product-launch"],
-        "author": entry.get("author", ""),
+# GraphQL: 获取今日热门帖子 (带投票和评论数)
+QUERY = """
+query($postedAfter: DateTime!, $first: Int!) {
+  posts(postedAfter: $postedAfter, first: $first, order: VOTES) {
+    edges {
+      node {
+        id
+        name
+        tagline
+        description
+        url
+        votesCount
+        commentsCount
+        website
+        topics { edges { node { name } } }
+        user { name username }
+        createdAt
+      }
     }
+  }
+}
+"""
 
 
 def collect(date_str: str | None = None) -> list[dict]:
-    """
-    采集 Product Hunt 当日新品（通过 RSS Feed）。
-    筛选今日发布的产品，去重后取 top 40。
-    """
+    """采集 Product Hunt 今日热门产品 (最多 40 条)。"""
     date = date_str or datetime.now(TZ_SHANGHAI).strftime("%Y-%m-%d")
     today = datetime.now(TZ_SHANGHAI).strftime("%Y-%m-%d")
+    # PH 按太平洋时间发布 — 取最近 2 天确保覆盖
+    two_days_ago = (datetime.now(TZ_SHANGHAI) - timedelta(days=2)).strftime("%Y-%m-%d")
+    posted_after = f"{two_days_ago}T00:00:00Z"
 
-    try:
-        resp = requests.get(PH_FEED_URL, timeout=15)
-        resp.raise_for_status()
-    except requests.RequestException as e:
-        print(f"[PH] RSS Feed 请求失败: {e}")
+    token = _get_access_token()
+    if not token:
         return []
 
-    entries = _parse_atom_feed(resp.text)
-    print(f"[PH] RSS 获取 {len(entries)} 条产品")
+    try:
+        resp = requests.post(
+            PH_API,
+            headers={
+                "Authorization": f"Bearer {token}",
+                "Content-Type": "application/json",
+                "User-Agent": "KAKAOPC-Intel/2.0",
+            },
+            json={"query": QUERY, "variables": {"postedAfter": posted_after, "first": 40}},
+            timeout=20,
+        )
+        resp.raise_for_status()
+        data = resp.json()
+    except requests.RequestException as e:
+        print(f"[PH] API 请求失败: {e}")
+        return []
+    except json.JSONDecodeError:
+        print(f"[PH] API 返回非 JSON")
+        return []
+
+    edges = data.get("data", {}).get("posts", {}).get("edges", [])
+    if not edges:
+        print(f"[PH] 近 2 天暂无新品数据")
+        return []
 
     signals = []
-    for entry in entries:
-        published = entry.get("published", "")
-        # 只取今天的发布
-        if published.startswith(today):
-            signal = _to_signal(entry)
-            signals.append(signal)
+    for edge in edges:
+        node = edge.get("node", {})
+        if not node:
+            continue
 
-    # 若今天新品不足，放宽到近 3 天
-    if len(signals) < 10:
-        print(f"[PH] 今日新品仅 {len(signals)} 条，扩展至近 3 天")
-        three_days = (datetime.now(TZ_SHANGHAI) - timedelta(days=3)).strftime("%Y-%m-%d")
-        for entry in entries:
-            published = entry.get("published", "")
-            if published >= three_days and published < today:
-                signal = _to_signal(entry)
-                signals.append(signal)
+        ph_id = node.get("id", "")
+        name = node.get("name", "")
+        tagline = node.get("tagline", "") or ""
+        description = node.get("description", "") or ""
 
+        votes = node.get("votesCount", 0)
+        comments = node.get("commentsCount", 0)
+        url = node.get("url") or node.get("website", "") or f"https://www.producthunt.com/posts/{node.get('slug', ph_id)}"
+
+        user = node.get("user", {}) or {}
+        author = user.get("name") or user.get("username", "")
+
+        topics = []
+        for t_edge in (node.get("topics", {}) or {}).get("edges", []):
+            t_node = t_edge.get("node", {}) if t_edge else {}
+            t_name = t_node.get("name", "")
+            if t_name:
+                topics.append(t_name)
+
+        title = f"{name}: {tagline}" if tagline else name
+
+        signals.append({
+            "id": f"ph-{ph_id}",
+            "title": title.strip()[:120],
+            "url": url,
+            "source": "Product Hunt",
+            "source_key": "producthunt",
+            "signal_type": "product-launch",
+            "discussion_count": comments,
+            "engagement": {
+                "votes": votes,
+                "comments": comments,
+                "total": votes + comments * 3,  # 真实互动数据
+            },
+            "collected_at": datetime.now(TZ_SHANGHAI).isoformat(),
+            "raw_created_at": node.get("createdAt", ""),
+            "summary": f"[Product Hunt] {name}: {tagline[:100]}（{votes} 票 / {comments} 评论）",
+            "tags": ["product-launch"] + topics[:5],
+            "author": author,
+        })
+
+    # 按互动量排序
+    signals.sort(key=lambda s: s["engagement"]["total"], reverse=True)
     signals = signals[:40]
 
-    print(f"[PH] 采集完成: {len(signals)} 条")
+    print(f"[PH] API 采集 {len(signals)} 条产品 (含投票/评论数据)")
     return signals
 
 
 def save_raw(signals: list[dict], date_str: str) -> None:
-    """保存原始采集数据到 ./raw/YYYY-MM-DD/producthunt.json"""
+    """保存到 ./raw/YYYY-MM-DD/producthunt.json"""
     dir_path = RAW_DIR / date_str
     dir_path.mkdir(parents=True, exist_ok=True)
     output = {
         "collected_at": datetime.now(TZ_SHANGHAI).isoformat(),
         "source": "producthunt",
+        "api": "GraphQL v2 (developer token)",
         "count": len(signals),
         "signals": signals,
     }
