@@ -300,8 +300,9 @@ def run(date_str: str | None = None) -> str:
     json_str = json.dumps(data, ensure_ascii=False, indent=2)
     output_path = OUTPUT_DIR / "dashboard.json"
     output_path.write_text(json_str, encoding="utf-8")
+    demand_count = len(data.get('demand_radar', {}).get('demands', []))
     print(f"[Dashboard] Data saved → {output_path}")
-    print(f"[Dashboard] {len(data['signals'])} signals | {len(data['history'])} days history | {len(data['opportunities'])} opportunities | {len(data['recurring_signals'])} recurring | {len(data.get('demand_radar', {}).get('demands', []))} demands | article: {len(data['article_md']):,} chars (zh) / {len(data['article_md_en']):,} chars (en)}")
+    print(f"[Dashboard] {len(data['signals'])} signals | {len(data['history'])} days history | {len(data['opportunities'])} opportunities | {len(data['recurring_signals'])} recurring | {demand_count} demands | article: {len(data['article_md']):,} chars (zh) / {len(data['article_md_en']):,} chars (en)}")
     return str(output_path)
 
 
