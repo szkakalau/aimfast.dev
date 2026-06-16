@@ -414,6 +414,17 @@
   .btn-wb-sm { font-size: 0.7rem; background: none; border: 1px solid var(--color-border); color: var(--color-text-muted); border-radius: 3px; cursor: pointer; padding: 1px 6px; }
   .btn-wb-sm:hover { color: var(--color-text); border-color: var(--color-accent); }
   .wb-insight { margin-top: var(--space-2); padding: var(--space-2); background: var(--color-surface-alt); border-radius: var(--radius-md); font-size: 0.8rem; }
+
+  /* ── Trend tags ── */
+  .trend-tags { display: flex; gap: 3px; flex-wrap: wrap; margin-top: 4px; }
+  .trend-tag {
+    font-size: 0.6rem;
+    padding: 1px 5px;
+    border-radius: 8px;
+    background: rgba(245,158,66,0.12);
+    color: var(--color-accent);
+    white-space: nowrap;
+  }
   .wb-watch-item { display: flex; align-items: center; justify-content: space-between; padding: 4px 0; border-bottom: 1px solid rgba(255,255,255,0.04); font-size: 0.8rem; }
   .wb-watch-item .chg-up { color: var(--color-green); }
   .wb-watch-item .chg-dn { color: var(--color-red); }
@@ -1734,8 +1745,16 @@ function renderAll(data) {
       var descText = (LANG === 'en' && dem.description_en) ? dem.description_en : (dem.description || '');
       var dmName = (LANG === 'en' && dem.name_en) ? dem.name_en : demName(dem);
 
+      var trendsHtml = '';
+      var trends = dem.trends || [];
+      if (trends.length > 0) {
+        trendsHtml = '<br><span class="trend-tags">';
+        trends.slice(0, 4).forEach(function(t) { trendsHtml += '<span class="trend-tag">' + t + '</span>'; });
+        trendsHtml += '</span>';
+      }
+
       tr.innerHTML =
-        '<td><strong>' + dmName + '</strong><br><span class="muted">' + descText + buyerInfo + '</span></td>' +
+        '<td><strong>' + dmName + '</strong><br><span class="muted">' + descText + buyerInfo + '</span>' + trendsHtml + '</td>' +
         '<td>' + (deltaIcons[dem.delta] || dem.delta) + '</td>' +
         '<td class="num" title="' + marketTooltip + '">' + (dem.market_score || 0) + '</td>' +
         '<td class="num" title="' + businessTooltip + '">' + (dem.business_score || 0) + '</td>' +

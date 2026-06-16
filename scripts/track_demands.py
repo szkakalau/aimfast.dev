@@ -408,6 +408,8 @@ def run(date_str: str | None = None) -> dict:
             "target_buyer": cat.get("target_buyer", ""),
             "description_en": cat.get("description_en", ""),
             "target_buyer_en": cat.get("target_buyer_en", ""),
+            "trends": cat.get("trends", []),
+            "trends_en": cat.get("trends_en", cat.get("trends", [])),
             "opportunity_index": score["opportunity_index"],
             # 子维度
             "trend_score": score["trend_score"],
