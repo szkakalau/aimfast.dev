@@ -483,6 +483,77 @@
   @media (max-width: 900px) {
     .dash-main { grid-template-columns: 1fr; }
   }
+  @media (max-width: 768px) {
+    /* Header */
+    header.dash-header { flex-direction: column; gap: 4px; padding: var(--space-1) var(--space-2); text-align: center; }
+    header.dash-header h1 { font-size: 0.95rem; }
+    header.dash-header .date { font-size: 0.7rem; }
+
+    /* Stats row */
+    .stat-row { gap: 6px; }
+    .stat { min-width: 60px; padding: var(--space-1); }
+    .stat-value { font-size: 1.2rem; }
+    .stat-label { font-size: 0.62rem; }
+
+    /* Grids to single column */
+    .dash-main { grid-template-columns: 1fr; padding: var(--space-2); gap: var(--space-2); }
+    .wb-grid { grid-template-columns: 1fr; gap: var(--space-2); }
+    .wb-opp-grid { grid-template-columns: repeat(3, 1fr); gap: 4px; }
+    .wb-opp-stat { padding: var(--space-1); }
+    .wb-opp-stat .val { font-size: 1rem; }
+
+    /* Cards */
+    .card { padding: var(--space-2); }
+
+    /* Tables: horizontal scroll */
+    table { font-size: 0.7rem; }
+    th, td { padding: 4px 6px; white-space: nowrap; }
+    .report-body { overflow-x: auto; -webkit-overflow-scrolling: touch; max-height: 55vh; }
+
+    /* Tab bar: horizontal scroll */
+    .tab-bar { overflow-x: auto; -webkit-overflow-scrolling: touch; flex-wrap: nowrap; padding-bottom: 4px; }
+    .tab { white-space: nowrap; font-size: 0.72rem; padding: 5px 10px; flex-shrink: 0; }
+
+    /* Charts */
+    .chart-wrap { height: 200px; }
+
+    /* Workbench */
+    .wb-subtitle { font-size: 0.75rem; }
+    .wb-radar-table { font-size: 0.68rem; }
+    .wb-insight { font-size: 0.72rem; padding: var(--space-1); }
+    .wb-opp-actions { flex-direction: column; }
+    .btn-bet { width: 100%; text-align: center; }
+    .wb-opp-close { top: 2px; right: 4px; font-size: 1rem; }
+
+    /* Bet log */
+    .bet-row { flex-wrap: wrap; gap: 4px; font-size: 0.72rem; }
+
+    /* Footer */
+    .dash-footer { font-size: 0.65rem; flex-wrap: wrap; gap: 4px; padding: var(--space-1) var(--space-2); }
+
+    /* Signals table link truncation */
+    .signal-link { display: inline-block; max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; vertical-align: bottom; }
+
+    /* Article actions */
+    .article-actions { flex-wrap: wrap; gap: 4px; }
+    .btn-article-action { font-size: 0.7rem; padding: 4px 8px; }
+
+    /* Opportunity card */
+    .wb-opp-card { padding: var(--space-2); margin-top: var(--space-2); }
+    .wb-opp-card h3 { font-size: 0.9rem; }
+
+    /* Demand radar table in tab */
+    #tab-demand table { font-size: 0.65rem; }
+    #tab-demand th, #tab-demand td { padding: 3px 4px; }
+  }
+
+  @media (max-width: 400px) {
+    .stat { min-width: 48px; }
+    .stat-value { font-size: 1rem; }
+    .stat-label { font-size: 0.55rem; }
+    .tab { font-size: 0.65rem; padding: 4px 7px; }
+    .wb-opp-grid { grid-template-columns: repeat(3, 1fr); }
+  }
 </style>
 </head>
 <body>
