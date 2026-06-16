@@ -1710,10 +1710,10 @@ function renderAll(data) {
       var buyerText = (LANG === 'en' && dem.target_buyer_en) ? dem.target_buyer_en : (dem.target_buyer || '');
       var buyerInfo = buyerText ? ' | Buyer: ' + buyerText : '';
       var descText = (LANG === 'en' && dem.description_en) ? dem.description_en : (dem.description || '');
-      var demName = (LANG === 'en' && dem.name_en) ? dem.name_en : demName(dem);
+      var dmName = (LANG === 'en' && dem.name_en) ? dem.name_en : demName(dem);
 
       tr.innerHTML =
-        '<td><strong>' + demName + '</strong><br><span class="muted">' + descText + buyerInfo + '</span></td>' +
+        '<td><strong>' + dmName + '</strong><br><span class="muted">' + descText + buyerInfo + '</span></td>' +
         '<td>' + (deltaIcons[dem.delta] || dem.delta) + '</td>' +
         '<td class="num" title="' + marketTooltip + '">' + (dem.market_score || 0) + '</td>' +
         '<td class="num" title="' + businessTooltip + '">' + (dem.business_score || 0) + '</td>' +
