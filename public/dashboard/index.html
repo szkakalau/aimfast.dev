@@ -1720,20 +1720,28 @@ function switchTab(tab) {
     t.classList.remove('active');
     t.setAttribute('aria-selected', 'false');
   });
-  event.target.classList.add('active');
-  event.target.setAttribute('aria-selected', 'true');
+  // Use the correct tab button (handles calls from non-tab links too)
+  var btn = document.getElementById('tab-btn-' + tab);
+  if (btn) {
+    btn.classList.add('active');
+    btn.setAttribute('aria-selected', 'true');
+  }
   document.getElementById('tab-report').style.display = tab === 'report' ? '' : 'none';
   document.getElementById('tab-article').style.display = tab === 'article' ? '' : 'none';
   document.getElementById('tab-tracking').style.display = tab === 'tracking' ? '' : 'none';
   var tabRecurring = document.getElementById('tab-recurring');
   if (tabRecurring) tabRecurring.style.display = tab === 'recurring' ? '' : 'none';
   var tabDemand = document.getElementById('tab-demand');
-  if (tabDemand) tabDemand.style.display = tab === 'demand' ? '' : 'none';
+  if (tabDemand) { tabDemand.style.display = tab === 'demand' ? '' : 'none'; }
 
   var archiveNav = document.getElementById('archive-nav');
   if (archiveNav && _archiveData.length > 1) {
     archiveNav.style.display = (tab === 'report' || tab === 'article') ? 'flex' : 'none';
   }
+
+  // Scroll to the tab panel if called from outside the tab bar
+  var panel = document.getElementById('tab-' + tab);
+  if (panel) { panel.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
 }
 
 // ─── Archive browsing ───
