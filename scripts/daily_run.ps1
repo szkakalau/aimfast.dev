@@ -65,7 +65,7 @@ $Collectors = @(
     @{Name="GitHub Trending"; Script="collect_github"; Enabled=$true},
     @{Name="Google Trends"; Script="collect_trends"; Enabled=$true},
     @{Name="Product Hunt"; Script="collect_producthunt"; Enabled=$true},
-    @{Name="Reddit"; Script="collect_reddit"; Enabled=$true},
+    @{Name="DEV Community"; Script="collect_devcommunity"; Enabled=$true},
     @{Name="V2EX"; Script="collect_v2ex"; Enabled=$true},
     @{Name="w2solo"; Script="collect_w2solo"; Enabled=$true},
     @{Name="HuggingFace"; Script="collect_huggingface"; Enabled=$true},

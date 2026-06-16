@@ -63,7 +63,7 @@ COLLECTORS=(
     "GitHub Trending:collect_github"
     "Google Trends:collect_trends"
     "Product Hunt:collect_producthunt"
-    "Reddit:collect_reddit"
+    "DEV Community:collect_devcommunity"
     "V2EX:collect_v2ex"
     "w2solo:collect_w2solo"
     "HuggingFace:collect_huggingface"

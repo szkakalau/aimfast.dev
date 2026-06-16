@@ -18,10 +18,9 @@
       {"name": "Google Trends", "key": "trends", "source": "pytrends", "priority": "P0", "enabled": true},
       {"name": "Product Hunt", "key": "producthunt", "source": "API", "priority": "P1", "enabled": true},
       {"name": "HuggingFace", "key": "huggingface", "source": "API", "priority": "P1", "enabled": true},
-      {"name": "Reddit", "key": "reddit", "source": "RSS / API", "priority": "P1", "enabled": true},
-      {"name": "Indie Hackers", "key": "indiehackers", "source": "RSS", "priority": "P2", "enabled": false},
+      {"name": "Reddit", "key": "reddit", "source": "API (OAuth required)", "priority": "P2", "enabled": false},
       {"name": "Lobsters", "key": "lobsters", "source": "API", "priority": "P1", "enabled": true},
-      {"name": "DEV Community", "key": "devcommunity", "source": "API", "priority": "P2", "enabled": false},
+      {"name": "DEV Community", "key": "devcommunity", "source": "API", "priority": "P1", "enabled": true},
       {"name": "ArXiv Papers", "key": "arxiv", "source": "API", "priority": "P1", "enabled": true}
     ],
     "domestic": [
