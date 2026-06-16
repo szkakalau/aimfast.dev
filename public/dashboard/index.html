@@ -1467,10 +1467,20 @@ function renderBetLog() {
   var statusBadges = { active: 'bet-active', won: 'bet-won', lost: 'bet-lost', paused: '' };
   var statusNames = { active: 'Active', won: 'Won', lost: 'Lost', paused: 'Paused' };
   _bets.slice(0, 10).forEach(function(b) {
+    // Look up English name from demand radar
+    var betDemandName = b.demand_name || b.demand;
+    var betDemandNameEn = b.demand_name_en;
+    if (!betDemandNameEn && typeof _data !== 'undefined' && _data.workbench) {
+      var allDems = _data.workbench.all_demands || [];
+      for (var di = 0; di < allDems.length; di++) {
+        if (allDems[di].id === b.demand) { betDemandNameEn = allDems[di].name_en; break; }
+      }
+    }
+    var betDemandObj = { name: betDemandName, name_en: betDemandNameEn || betDemandName, id: b.demand };
     html += '<div class="bet-row">' +
       '<span class="bet-id">' + b.id + '</span>' +
       '<span>' + b.date + '</span>' +
-      '<strong>' + (b.demand_name || b.demand) + '</strong>' +
+      '<strong>' + demName(betDemandObj) + '</strong>' +
       '<span>' + (b.action || '') + '</span>' +
       '<span class="bet-badge ' + (statusBadges[b.status] || '') + '">' + (statusNames[b.status] || b.status) + '</span>' +
       (b.thesis ? '<span class="muted">' + b.thesis.substring(0, 50) + '</span>' : '') +
@@ -1913,7 +1923,8 @@ function renderAll(data) {
   var topDem = allDems.length > 0 ? allDems[0] : null;
   if (topDem) {
     setEl('hero-demand-name', demName(topDem));
-    setEl('hero-demand-meta', (LANG === 'en' ? 'Score: ' : '评分: ') + (topDem.opportunity_index||0) + ' | ' + (LANG === 'en' ? 'Competition: ' : '竞争: ') + (topDem.competition||0) + ' | ' + (topDem.target_buyer || ''));
+    var heroBuyer = (LANG === 'en' && topDem.target_buyer_en) ? topDem.target_buyer_en : (topDem.target_buyer || '');
+    setEl('hero-demand-meta', (LANG === 'en' ? 'Score: ' : '评分: ') + (topDem.opportunity_index||0) + ' | ' + (LANG === 'en' ? 'Competition: ' : '竞争: ') + (topDem.competition||0) + ' | ' + heroBuyer);
   }
   setEl('hero-signal-count', signals.length);
   loadBets();
