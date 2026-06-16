@@ -631,16 +631,16 @@
     <div class="wb-grid">
       <!-- Left: Radar mini-table -->
       <div class="wb-left">
-        <h3 class="wb-subtitle">机会雷达 Top 5</h3>
+        <h3 class="wb-subtitle" id="wb-radar-title">机会雷达 Top 5</h3>
         <table class="wb-radar-table" aria-label="Opportunity radar top 5">
           <thead><tr><th>Demand</th><th>Mkt</th><th>Biz</th><th>Cmp</th><th>Score</th></tr></thead>
           <tbody id="wb-radar-body"></tbody>
         </table>
-        <div style="margin-top:8px;text-align:right;"><a href="#" onclick="switchTab('demand');return false;" class="wb-link">查看完整雷达 →</a></div>
+        <div style="margin-top:8px;text-align:right;"><a href="#" onclick="switchTab('demand');return false;" class="wb-link" id="wb-radar-link">查看完整雷达 →</a></div>
       </div>
       <!-- Right: Watchlist -->
       <div class="wb-right">
-        <h3 class="wb-subtitle">我的关注 <button class="btn-wb-sm" id="btn-edit-watchlist" title="Edit watchlist">✎</button></h3>
+        <h3 class="wb-subtitle" id="wb-watchlist-title">我的关注 <button class="btn-wb-sm" id="btn-edit-watchlist" title="Edit watchlist">✎</button></h3>
         <div id="wb-watchlist">
           <div class="empty" id="wb-watchlist-empty">尚未设置关注列表。<br>在需求雷达中点「关注」添加。</div>
         </div>
@@ -851,6 +851,18 @@ var I18N = (function() {
       recEmpty: '暂无重复信号。',
       recAria: '重复信号追踪',
 
+      // Workbench
+      wbRadarTitle: '机会雷达 Top 5',
+      wbRadarLink: '查看完整雷达 →',
+      wbWatchlistTitle: '我的关注',
+      wbWatchlistEmpty: '尚未设置关注列表。<br>在需求雷达中点「关注」添加。',
+      wbInsightLabel: '本周洞察',
+      wbRecPrepare: '准备验证',
+      wbRecWatch: '密切关注',
+      wbRecAvoid: '避免',
+      wbRecLow: '低优先',
+      wbRecObserve: '观察',
+
       // Demand radar
       tabDemand: '需求雷达',
       demName: '需求',
@@ -1001,6 +1013,18 @@ var I18N = (function() {
       recTrendFading: 'Fading 🔻',
       recEmpty: 'No recurring signals detected yet.',
       recAria: 'Recurring signals tracking',
+
+      // Workbench
+      wbRadarTitle: 'Opportunity Radar Top 5',
+      wbRadarLink: 'View Full Radar →',
+      wbWatchlistTitle: 'My Watchlist',
+      wbWatchlistEmpty: 'No watchlist set.<br>Click a demand in the radar to add.',
+      wbInsightLabel: 'Weekly Insight',
+      wbRecPrepare: 'Prepare Validate',
+      wbRecWatch: 'Watch Closely',
+      wbRecAvoid: 'Avoid',
+      wbRecLow: 'Low Priority',
+      wbRecObserve: 'Observe',
 
       // Demand radar
       tabDemand: 'Demand Radar',
@@ -1206,6 +1230,12 @@ window.safeMarked = function(md) {
   setEl('recurring-empty', t('recEmpty'));
   var recTable = document.querySelector('table[aria-label="Recurring signals tracking"]');
   if (recTable) recTable.setAttribute('aria-label', t('recAria'));
+
+  // Workbench static text
+  setEl('wb-radar-title', t('wbRadarTitle'));
+  setEl('wb-radar-link', t('wbRadarLink'));
+  setEl('wb-watchlist-title', t('wbWatchlistTitle'));
+  setEl('wb-watchlist-empty', t('wbWatchlistEmpty'));
 
   // Demand radar headers
   setEl('th-dem-name', t('demName'));
@@ -1442,7 +1472,13 @@ function renderWorkbench(data) {
       watched.forEach(function(d) {
         var arrow = d.change_pct > 0 ? '▲' : (d.change_pct < 0 ? '▼' : '→');
         var chgCls = d.change_pct > 0 ? 'chg-up' : (d.change_pct < 0 ? 'chg-dn' : '');
-        var recLabel = { prepare_validate: '准备验证', observe_closely: '密切关注', avoid: '避免', low_priority: '低优先', watch: '观察' };
+        var recLabel = {
+          prepare_validate: t('wbRecPrepare'),
+          observe_closely: t('wbRecWatch'),
+          avoid: t('wbRecAvoid'),
+          low_priority: t('wbRecLow'),
+          watch: t('wbRecObserve')
+        };
         wlHtml += '<div class="wb-watch-item">' +
           '<span><strong><a href="#" onclick="openOppCard(wb,\'' + d.id + '\');return false;" style="color:inherit">' + demName(d) + '</a></strong></span>' +
           '<span class="' + chgCls + '">' + arrow + ' ' + (d.change_pct > 0 ? '+' : '') + d.change_pct + '%</span>' +
@@ -1456,7 +1492,7 @@ function renderWorkbench(data) {
   // ── Weekly insight ──
   var insDiv = document.getElementById('wb-insight');
   if (insDiv && insight) {
-    insDiv.innerHTML = '<strong>本周洞察</strong><br>' + insight;
+    insDiv.innerHTML = '<strong>' + t('wbInsightLabel') + '</strong><br>' + insight;
   }
 
   // ── Bet log ──
