@@ -241,7 +241,7 @@ def collect_dashboard_data() -> dict:
     pipeline_status = read_pipeline_status(effective_date)
 
     # 7. Archive (all available historical reports + articles)
-    archive = _collect_archive(max_days=60)
+    archive = _collect_archive(max_days=7)
 
     return {
         "date": effective_date,
@@ -287,19 +287,11 @@ def run(date_str: str | None = None) -> str:
         print(f"[Dashboard] [WARN] WARNING: history 仅 {history_count} 条，但 daily/ 下有 {daily_dir_count} 个日期目录 — 检查 signals.json 是否完整")
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-
-    # Split archive to separate file (avoids large-file push truncation)
-    archive_data = {"archive": data.pop("archive", []), "generated_at": data["generated_at"]}
-    archive_json = json.dumps(archive_data, ensure_ascii=False, indent=2)
-    archive_path = OUTPUT_DIR / "archive.json"
-    archive_path.write_text(archive_json, encoding="utf-8")
-
-    # NOW serialize core data (without archive) — must be after pop
     json_str = json.dumps(data, ensure_ascii=False, indent=2)
     output_path = OUTPUT_DIR / "dashboard.json"
     output_path.write_text(json_str, encoding="utf-8")
-    print(f"[Dashboard] Data saved → {output_path} + {archive_path}")
-    print(f"[Dashboard] {len(data['signals'])} signals | {len(data['history'])} days history | {len(data['opportunities'])} opportunities | {len(data['recurring_signals'])} recurring | {len(data.get('demand_radar', {}).get('demands', []))} demands | article: {len(data['article_md']):,} chars (zh) / {len(data['article_md_en']):,} chars (en)")
+    print(f"[Dashboard] Data saved → {output_path}")
+    print(f"[Dashboard] {len(data['signals'])} signals | {len(data['history'])} days history | {len(data['opportunities'])} opportunities | {len(data['recurring_signals'])} recurring | {len(data.get('demand_radar', {}).get('demands', []))} demands | article: {len(data['article_md']):,} chars (zh) / {len(data['article_md_en']):,} chars (en)}")
     return str(output_path)
 
 

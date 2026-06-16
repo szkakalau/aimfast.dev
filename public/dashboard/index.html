@@ -2408,18 +2408,13 @@ function copyArticleNotepad() {
 
 // ─── Bootstrap: try loading data, fall back to embedded if available ───
 (function init() {
-  fetch('data/dashboard.json?v=' + Date.now()).then(function(res) {
+  fetch('data/dashboard.json?v=' + Date.now())
+    .then(function(res) {
       if (!res.ok) throw new Error(t('miscDataUnavailable'));
       return res.json();
-    }).then(function(core) {
-      // Load archive separately (large file, avoid blocking core)
-      fetch('data/archive.json?v=' + Date.now()).then(function(r) { return r.json(); }).then(function(arc) {
-        core.archive = arc.archive || [];
-        renderAll(core);
-      }).catch(function() {
-        core.archive = [];
-        renderAll(core);
-      });
+    })
+    .then(function(data) {
+      renderAll(data);
     })
     .catch(function() {
       // Fallback: use embedded data if present (from Python generator)
