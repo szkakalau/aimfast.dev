@@ -1,10 +1,12 @@
 """
 Reddit 信号采集
-数据源: PullPush.io (Reddit 公开数据归档, 免费无需认证)
-备选: RSS feeds (被封锁时降级)
-采集内容: 5 个目标子版块近 3 天热帖
+数据源: Reddit RSS feeds (公开免费, hot.rss 端点可用)
+采集内容: 5 个目标子版块热帖
 """
 import json
+import re
+import time
+import xml.etree.ElementTree as ET
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
@@ -14,106 +16,144 @@ ROOT = Path(__file__).resolve().parent.parent
 RAW_DIR = ROOT / "raw"
 
 TZ_SHANGHAI = timezone(timedelta(hours=8))
-PULLPUSH_API = "https://api.pullpush.io/reddit/search/submission/"
 
-HEADERS = {"User-Agent": "KAKAOPC-Intel/2.0 (+https://aimfast.dev)"}
+HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; KAKAOPC-Intel/2.0; +https://aimfast.dev)"}
 
 SUBREDDITS = [
     "programming",
     "MachineLearning",
-    "SaaS",
     "SideProject",
     "Entrepreneur",
 ]
 
-
-def _fetch_subreddit(sub: str, after_days: int = 7) -> list[dict]:
-    """通过 PullPush.io 获取子版块近 N 天帖子 (按分数降序, 最多 40 条)。PullPush 数据有 2-3 天延迟。"""
-    since = int((datetime.now(TZ_SHANGHAI) - timedelta(days=after_days)).timestamp())
-    params = {
-        "subreddit": sub,
-        "size": 40,
-        "sort": "desc",
-        "sort_type": "score",
-        "after": since,
-    }
-    try:
-        resp = requests.get(PULLPUSH_API, headers=HEADERS, params=params, timeout=20)
-        resp.raise_for_status()
-        return resp.json().get("data", [])
-    except requests.RequestException as e:
-        print(f"[Reddit] PullPush r/{sub} 请求失败: {e}")
-        return []
+ATOM_NS = "http://www.w3.org/2005/Atom"
 
 
-def _to_signal(post: dict, subreddit: str) -> dict | None:
-    """将 PullPush post 转为标准信号格式。"""
-    title = post.get("title", "")
-    if len(title) < 10 or post.get("stickied"):
+def _clean_xml(raw: bytes) -> bytes:
+    """移除 XML 中的非法 surrogate 字符 (U+D800-U+DFFF)。"""
+    cleaned = bytearray()
+    i = 0
+    while i < len(raw):
+        if i + 2 < len(raw):
+            # Check for UTF-8 encoded surrogate (ED A0 80 - ED BF BF)
+            if raw[i] == 0xED and (raw[i+1] & 0xF0) == 0xA0:
+                i += 3  # skip 3-byte surrogate
+                continue
+        cleaned.append(raw[i])
+        i += 1
+    return bytes(cleaned)
+
+
+def _parse_rss_entry(entry: ET.Element) -> dict | None:
+    """解析 Atom RSS entry 为信号格式。"""
+    def _text(tag: str) -> str:
+        xpath = "{%s}%s" % (ATOM_NS, tag)
+        el = entry.find(xpath)
+        return el.text.strip() if el is not None and el.text else ""
+
+    title = _text("title")
+    if len(title) < 10:
         return None
 
-    post_id = post.get("id", "")
-    permalink = post.get("permalink", "")
-    url = f"https://www.reddit.com{permalink}" if permalink else post.get("url", "")
-    comments = post.get("num_comments", 0)
-    score = post.get("score", 0)
-    ups = post.get("ups", score)
-    created = post.get("created_utc", 0)
+    link_el = entry.find(f"{{{ATOM_NS}}}link")
+    url = link_el.get("href", "") if link_el is not None else ""
+
+    author_el = entry.find(f"{{{ATOM_NS}}}author")
+    author = ""
+    if author_el is not None:
+        name_el = author_el.find(f"{{{ATOM_NS}}}name")
+        author = name_el.text.strip() if name_el is not None and name_el.text else ""
+
+    updated = _text("updated")
+    post_id = _text("id").split("/")[-1] if _text("id") else ""
+
+    # 从 title 提取粗略评论数 (如 "[123 comments]")
+    comments = 0
+    cm = re.search(r"\[(\d+)\s*comments?\]", title, re.IGNORECASE)
+    if cm:
+        comments = int(cm.group(1))
+        title = re.sub(r"\s*\[\d+\s*comments?\]", "", title).strip()
 
     return {
-        "id": f"reddit-{post_id}",
-        "title": title.strip(),
+        "id": f"reddit-{post_id}" if post_id else f"reddit-{re.sub(r'[^\\w\\-]', '', title[:30])}",
+        "title": title,
         "url": url,
-        "source": f"Reddit r/{subreddit}",
+        "source": "Reddit",
         "source_key": "reddit",
         "signal_type": "post",
         "discussion_count": comments,
         "engagement": {
-            "score": score,
-            "ups": ups,
             "comments": comments,
-            "upvote_ratio": post.get("upvote_ratio", 0),
-            "total": comments * 3 + ups,
+            "total": comments * 5 + 1,
         },
         "collected_at": datetime.now(TZ_SHANGHAI).isoformat(),
-        "raw_created_utc": created,
-        "summary": f"[r/{subreddit}] {title[:80]}（{ups} 赞 / {comments} 评论）",
-        "tags": [subreddit],
-        "author": post.get("author", ""),
+        "raw_created_at": updated,
+        "summary": f"[Reddit] {title[:80]}",
+        "tags": [],
+        "author": author,
     }
 
 
+def _fetch_subreddit(sub: str) -> list[dict]:
+    """获取子版块 RSS 热帖 (hot.rss 端点)。"""
+    url = f"https://www.reddit.com/r/{sub}/hot.rss?limit=25"
+    try:
+        resp = requests.get(url, headers=HEADERS, timeout=20)
+        if resp.status_code == 429:
+            print(f"[Reddit] r/{sub} 被限速, 等待 10s...")
+            time.sleep(10)
+            resp = requests.get(url, headers=HEADERS, timeout=20)
+        resp.raise_for_status()
+
+        raw = _clean_xml(resp.content)
+        root = ET.fromstring(raw)
+        entries = root.findall(f"{{{ATOM_NS}}}entry")
+
+        signals = []
+        for entry in entries:
+            s = _parse_rss_entry(entry)
+            if s:
+                signals.append(s)
+        return signals
+    except requests.RequestException as e:
+        print(f"[Reddit] r/{sub} 请求失败: {e}")
+        return []
+    except ET.ParseError as e:
+        print(f"[Reddit] r/{sub} XML 解析失败: {e}")
+        return []
+
+
 def collect(date_str: str | None = None) -> list[dict]:
-    """采集 5 个子版块帖子, 去重取 top 40。"""
+    """采集 5 个子版块 RSS 热帖, 去重取 top 40。"""
     date = date_str or datetime.now(TZ_SHANGHAI).strftime("%Y-%m-%d")
     seen: set[str] = set()
     signals: list[dict] = []
 
-    for sub in SUBREDDITS:
+    for i, sub in enumerate(SUBREDDITS):
+        if i > 0:
+            time.sleep(8)  # Reddit RSS 限速严格, 需较长间隔
         posts = _fetch_subreddit(sub)
         count = 0
         for p in posts:
-            signal = _to_signal(p, sub)
-            if signal and signal["id"] not in seen:
-                seen.add(signal["id"])
-                signals.append(signal)
+            if p["id"] not in seen:
+                seen.add(p["id"])
+                signals.append(p)
                 count += 1
-        print(f"[Reddit] r/{sub}: {count} 条有效信号")
+        print(f"[Reddit] r/{sub}: {count} 条信号")
 
     signals.sort(key=lambda s: s["engagement"]["total"], reverse=True)
     signals = signals[:40]
 
-    print(f"[Reddit] 总计: {len(signals)} 条 (via PullPush.io)")
+    print(f"[Reddit] 总计: {len(signals)} 条 (via RSS)")
     return signals
 
 
 def save_raw(signals: list[dict], date_str: str) -> None:
-    """保存到 ./raw/YYYY-MM-DD/reddit.json"""
     dir_path = RAW_DIR / date_str
     dir_path.mkdir(parents=True, exist_ok=True)
     output = {
         "collected_at": datetime.now(TZ_SHANGHAI).isoformat(),
-        "source": "reddit (via PullPush.io)",
+        "source": "reddit (via RSS)",
         "subreddits": SUBREDDITS,
         "count": len(signals),
         "signals": signals,

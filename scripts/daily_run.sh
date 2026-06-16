@@ -64,6 +64,7 @@ COLLECTORS=(
     "Google Trends:collect_trends"
     "Product Hunt:collect_producthunt"
     "DEV Community:collect_devcommunity"
+    "Reddit:collect_reddit"
     "V2EX:collect_v2ex"
     "w2solo:collect_w2solo"
     "HuggingFace:collect_huggingface"
