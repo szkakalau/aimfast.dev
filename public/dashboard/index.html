@@ -47,6 +47,22 @@
     font-size: 0.82rem;
     font-family: var(--font-mono);
   }
+  .lang-toggle {
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 4px;
+    border: 1px solid var(--color-border);
+    background: var(--color-surface-alt);
+    color: var(--color-text-muted);
+    cursor: pointer;
+    font-family: var(--font-mono);
+    transition: all var(--duration-fast) var(--ease-out);
+  }
+  .lang-toggle:hover {
+    color: var(--color-text);
+    border-color: var(--color-accent);
+  }
 
   .dash-main {
     max-width: 1280px;
@@ -566,7 +582,10 @@
     <svg class="icon icon-accent" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M4.93 4.93a10 10 0 0 1 14.14 0M4.93 19.07a10 10 0 0 0 14.14 0"/></svg>
     KAKAOPC Intel
   </h1>
-  <span class="date" id="dash-date">--</span>
+  <div style="display:flex;align-items:center;gap:10px;">
+    <button class="lang-toggle" id="lang-toggle" onclick="toggleLang()" title="Switch Language / 切换语言">EN</button>
+    <span class="date" id="dash-date">--</span>
+  </div>
 </header>
 
 <!-- ═══ Main Content ═══ -->
@@ -741,7 +760,11 @@
 // I18N — Chinese / English based on browser language
 // ═══════════════════════════════════════════
 var I18N = (function() {
-  var lang = (navigator.language || 'en').startsWith('zh') ? 'zh' : 'en';
+  // 先查 localStorage → 再跟浏览器语言
+  var savedLang = null;
+  try { savedLang = localStorage.getItem('kakaopc_lang'); } catch(e) {}
+  var browserLang = (navigator.language || 'en').startsWith('zh') ? 'zh' : 'en';
+  var lang = savedLang || browserLang;
 
   var dict = {
     zh: {
@@ -1059,6 +1082,18 @@ var I18N = (function() {
 })();
 
 var t = I18N.t;
+
+// Language toggle
+function toggleLang() {
+  var newLang = I18N.lang === 'zh' ? 'en' : 'zh';
+  try { localStorage.setItem('kakaopc_lang', newLang); } catch(e) {}
+  location.reload();
+}
+// Set initial toggle button text
+(function() {
+  var btn = document.getElementById('lang-toggle');
+  if (btn) btn.textContent = I18N.lang === 'zh' ? 'EN' : '中';
+})();
 var LANG = I18N.lang;
 
 // ─── Core utility functions (must be defined before i18n setup calls them) ───
