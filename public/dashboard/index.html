@@ -1439,7 +1439,7 @@ function renderWorkbench(data) {
 
   // Update timestamp
   var ts = wb.generated_at || (wb.all_demands && wb.all_demands.length > 0 ? '' : '');
-  setEl('wb-updated', ts ? '更新于 ' + ts.substring(0, 16).replace('T', ' ') : '');
+  setEl('wb-updated', ts ? (LANG === 'en' ? 'Updated ' : '更新于 ') + ts.substring(0, 16).replace('T', ' ') : '');
   var allDems = wb.all_demands || [];
   var watched = wb.watched_demands || [];
   var insight = (LANG === 'en' && wb.weekly_insight_en) ? wb.weekly_insight_en : (wb.weekly_insight || '');
