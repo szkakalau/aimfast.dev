@@ -1417,7 +1417,9 @@ function openOppCard(wbData, demandId) {
   }
   if (!dem) return;
 
-  var stageNames = { early: '萌芽期', forming: '形成期 ← 最佳下注时机', breaking: '爆发期', mature: '成熟期' };
+  var stageNames = (LANG === 'en')
+    ? { early: 'Early', forming: 'Forming — Best time to bet', breaking: 'Breaking Out', mature: 'Mature' }
+    : { early: '萌芽期', forming: '形成期 ← 最佳下注时机', breaking: '爆发期', mature: '成熟期' };
   var stage = stageNames[dem.stage] || dem.stage || '?';
 
   var oppDesc = (LANG === 'en' && dem.description_en) ? dem.description_en : (dem.description || '');
