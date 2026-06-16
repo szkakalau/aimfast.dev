@@ -3,54 +3,55 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WebPacker — Turn Any Web Page Into a Standalone App. Offline. | www.aimfast.dev</title>
+  <title>SiteVault — 一键存档，永久拥有 | www.aimfast.dev</title>
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#1a1d24">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="canonical" href="https://www.aimfast.dev/webpacker/">
+  <link rel="canonical" href="https://www.aimfast.dev/sitevault/">
   <meta property="og:type" content="product">
-  <meta property="og:title" content="WebPacker — Turn Any Web Page Into a Standalone App. Offline.">
-  <meta property="og:description" content="Paste a URL, get a .exe back. No browser, no internet, no broken links. Your page, frozen as a standalone app forever.">
-  <meta property="og:url" content="https://www.aimfast.dev/webpacker/">
+  <meta property="og:title" content="SiteVault — 一键存档，永久拥有">
+  <meta property="og:description" content="输入任何网址，下载一个完整的、可离线查看的网页存档。你的内容，永远不会消失。">
+  <meta property="og:url" content="https://www.aimfast.dev/sitevault/">
   <meta property="og:site_name" content="KAKAOPC Intel">
-  <meta property="og:image" content="https://www.aimfast.dev/og/webpacker.png">
+  <meta property="og:image" content="https://www.aimfast.dev/og/sitevault.png">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="WebPacker — Turn Any Web Page Into a Standalone App. Offline.">
-  <meta name="twitter:description" content="Paste a URL, get a .exe back. No browser, no internet, no broken links. Your page, frozen as a standalone app forever.">
-  <meta name="twitter:image" content="https://www.aimfast.dev/og/webpacker.png">
+  <meta name="twitter:title" content="SiteVault — 一键存档，永久拥有">
+  <meta name="twitter:description" content="输入任何网址，下载一个完整的、可离线查看的网页存档。你的内容，永远不会消失。">
+  <meta name="twitter:image" content="https://www.aimfast.dev/og/sitevault.png">
   <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "WebPacker",
-      "applicationCategory": "AIApplication",
-      "operatingSystem": "Web",
-      "description": "Turn any web page into a standalone offline executable. Paste a URL, get a .exe or .app back. No browser, no internet, no broken links.",
-      "url": "https://www.aimfast.dev/webpacker/",
-      "offers": {
-        "@type": "Offer",
-        "price": "2.99",
-        "priceCurrency": "USD"
-      }
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "SiteVault",
+    "applicationCategory": "AIApplication",
+    "operatingSystem": "Web",
+    "description": "一键存档任何网页，永久离线保存原始快照。",
+    "url": "https://www.aimfast.dev/sitevault/",
+    "offers": {
+      "@type": "Offer",
+      "price": "3.00",
+      "priceCurrency": "USD"
     }
+  }
   </script>
   <link rel="stylesheet" href="/_ds/base.css">
   <link rel="stylesheet" href="/_ds/components.css">
   <style>
-    /* custom page-level overrides — only for layout, not tokens */
+    /* 自定义布局，仅使用设计系统 token */
     .hero {
       padding: var(--space-8) 0 var(--space-6);
       text-align: center;
     }
     .hero h1 {
-      max-width: 720px;
-      margin: 0 auto var(--space-3);
+      font-size: clamp(2.2rem, 6vw, 3.6rem);
+      line-height: 1.1;
+      margin-bottom: var(--space-3);
     }
     .hero .subhead {
-      max-width: 560px;
+      font-size: 1.2rem;
+      max-width: 640px;
       margin: 0 auto var(--space-5);
       color: var(--color-text-secondary);
-      font-size: 1.125rem;
     }
     .signup-form {
       display: flex;
@@ -83,295 +84,264 @@
       font-size: 1rem;
       white-space: nowrap;
     }
-    .success-message {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: var(--space-2);
-      padding: var(--space-3);
-      background: color-mix(in srgb, var(--color-accent) 12%, transparent);
-      border-radius: 8px;
-      color: var(--color-text);
+    .signup-success {
+      text-align: center;
+      padding: var(--space-3) 0;
+      font-size: 1.1rem;
+      color: var(--color-accent);
       font-weight: 500;
-      max-width: 480px;
-      margin: 0 auto;
     }
-    .why-matters {
-      padding: var(--space-8) 0;
+    .signup-error {
+      text-align: center;
+      padding: var(--space-2) 0;
+      color: #e55;
+      font-size: 0.95rem;
+    }
+    .section-title {
+      text-align: center;
+      margin-bottom: var(--space-5);
     }
     .why-matters p {
       max-width: 720px;
       margin: 0 auto var(--space-3);
       line-height: 1.75;
+      color: var(--color-text-secondary);
     }
-    .how-it-works {
-      padding: var(--space-8) 0;
-    }
-    .steps {
-      display: flex;
-      flex-direction: column;
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
       gap: var(--space-5);
-      max-width: 640px;
-      margin: 0 auto;
+      margin-top: var(--space-4);
     }
     .step {
-      display: flex;
-      gap: var(--space-4);
-      align-items: flex-start;
+      background: var(--color-surface);
+      border-radius: 12px;
+      padding: var(--space-4);
+      border: 1px solid var(--color-border);
+      text-align: left;
     }
     .step-num {
-      flex-shrink: 0;
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: var(--color-accent);
-      color: var(--color-bg);
-      display: flex;
+      display: inline-flex;
       align-items: center;
       justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--color-accent);
+      color: #fff;
       font-weight: 700;
-      font-size: 1.25rem;
-      font-family: var(--font-heading);
+      font-family: var(--font-mono);
+      margin-bottom: var(--space-2);
     }
-    .step-content h3 {
-      margin: 0 0 var(--space-1);
-      font-size: 1.125rem;
+    .step h3 {
+      font-size: 1.15rem;
+      margin-bottom: var(--space-1);
     }
-    .step-content p {
-      margin: 0;
+    .step p {
+      font-size: 0.95rem;
       color: var(--color-text-secondary);
       line-height: 1.6;
-    }
-    .selling-points {
-      padding: var(--space-8) 0;
     }
     .selling-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: var(--space-5);
+      gap: var(--space-4);
     }
     .selling-card {
       background: var(--color-surface);
-      border: 1px solid var(--color-border);
       border-radius: 12px;
-      padding: var(--space-5);
+      padding: var(--space-4);
+      border: 1px solid var(--color-border);
       text-align: center;
     }
     .selling-card .icon-wrap {
-      margin-bottom: var(--space-3);
-      color: var(--color-accent);
+      display: flex;
+      justify-content: center;
+      margin-bottom: var(--space-2);
     }
     .selling-card h3 {
-      margin: 0 0 var(--space-2);
-      font-size: 1.125rem;
+      font-size: 1.1rem;
+      margin-bottom: var(--space-1);
     }
     .selling-card p {
-      margin: 0;
+      font-size: 0.95rem;
       color: var(--color-text-secondary);
       line-height: 1.6;
     }
     .trust-bar {
-      padding: var(--space-5) 0 var(--space-6);
       text-align: center;
+      padding: var(--space-4) 0;
       color: var(--color-text-muted);
-      font-size: 0.875rem;
+      font-size: 0.85rem;
+      display: flex;
+      justify-content: center;
+      gap: var(--space-4);
+      flex-wrap: wrap;
     }
     .trust-bar span {
-      display: inline-block;
-      margin: 0 var(--space-3);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
     }
-    .trust-bar .dot {
-      color: var(--color-accent);
-    }
-    footer {
-      padding: var(--space-5) 0;
+    .footer {
       text-align: center;
+      padding: var(--space-4) 0 var(--space-3);
       border-top: 1px solid var(--color-border);
       color: var(--color-text-muted);
-      font-size: 0.875rem;
+      font-size: 0.85rem;
     }
-    @media (max-width: 640px) {
-      .selling-grid {
+    @media (max-width: 768px) {
+      .steps-grid, .selling-grid {
         grid-template-columns: 1fr;
       }
       .signup-form {
         flex-direction: column;
         align-items: stretch;
       }
-      .signup-form input {
-        flex: 1 1 auto;
-      }
-      .step {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-      .hero h1 {
-        font-size: 1.75rem;
+      .signup-form input, .signup-form .btn {
+        width: 100%;
       }
     }
   </style>
 </head>
 <body>
 
+  <!-- Hero + 内嵌邮箱表单 -->
   <section class="hero container">
-    <h1 class="heading-xl">Turn Any Web Page Into a Standalone App. Offline.</h1>
-    <p class="subhead">No browser. No internet. Just a single .exe file that works forever.</p>
-    
-    <!-- inline email form — zero clicks to see -->
-    <form id="signup-form" class="signup-form" action="https://formspree.io/f/your-form-id" method="POST">
+    <h1 class="heading">SiteVault: 一键存档，永久拥有</h1>
+    <p class="subhead">输入任何网址，下载一个完整的、可离线查看的网页存档。你的内容，永远不会消失。</p>
+    <form id="signup-form" class="signup-form" action="https://formspree.io/f/your-form-id" method="POST" onsubmit="handleSubmit(event)">
       <input type="email" name="email" placeholder="you@example.com" required autocomplete="email">
       <button type="submit" class="btn btn-primary btn-lg">Get Early Access</button>
     </form>
-    <div id="form-status" style="margin-top: var(--space-3);"></div>
+    <div id="form-feedback" style="min-height: 40px;"></div>
   </section>
 
-  <section class="why-matters container">
-    <h2 class="heading-lg" style="text-align:center; margin-bottom: var(--space-4);">Why Web Page Freezing Matters Right Now</h2>
-    <p>
-      Every day, thousands of valuable web pages vanish — 404s, deleted posts, silently edited articles. 
-      A recent Hacker News discussion (34 points, cross-platform signal) highlighted a painful reality: 
-      researchers, journalists, and project managers lose critical content because websites are ephemeral. 
-      The original “Kage” tool proved that generating a standalone binary from any URL is technically possible, 
-      but it required a command line and developer skills. That leaves out 99% of people who just want to 
-      <em>save a page without losing its soul</em>.
-    </p>
-    <p>
-      Existing solutions fail in different ways. PDFs destroy layout and interactivity — no collapsible sections, 
-      no code highlighting, no search. Browser “save page” creates a fragile folder of files that breaks when 
-      moved. Pocket and Instapaper strip all styling and need an account. The Wayback Machine requires internet 
-      and can’t capture dynamic content on demand. None of them let you <strong>hand a page to someone as a 
-      single file that just works</strong> — double-click, done.
-    </p>
-    <p>
-      The timing is perfect. With the rise of AI-generated content, link rot is accelerating. 
-      GitHub stars for projects like “SingleFile” and “Kage” have doubled in the past year. 
-      People are hungry for a way to <em>own</em> the pages they depend on. WebPacker turns that 
-      technical capability into a one-click product for everyone — no terminal, no config, no hassle.
-    </p>
+  <!-- Why This Matters -->
+  <section class="why-matters container" style="padding: var(--space-6) 0;">
+    <h2 class="section-title heading">Why Web Archiving Matters Right Now</h2>
+    <p>Every day, valuable content disappears from the web — blogs shut down, pages get rewritten, and important references vanish behind broken links. A recent Hacker News thread about <em>Kage</em> (a CLI tool that shadows websites into single binaries) gathered 683 upvotes and 137 comments, revealing a deep, unmet need: people want to <strong>own</strong> the content they read, not just bookmark it. The discussion was filled with stories of lost research, vanished tutorials, and the frustration of relying on platforms that can delete content at any time.</p>
+    <p>Existing solutions fall short. Pocket and Instapaper reformat pages and keep them on their servers — you never truly possess the original. Browser extensions like SingleFile are powerful but require manual setup and technical know‑how. Archive.org is a public library, not a private vault. None of them give you a simple, one‑click way to download a faithful, self‑contained snapshot that you can store on your own hard drive, forever.</p>
+    <p>Now is the perfect moment. The surge in interest around offline‑first tools, the growing distrust of centralized platforms, and the increasing frequency of link rot have created a clear signal: people are ready to pay for digital ownership. SiteVault turns that signal into a service — no command line, no extensions, just a URL and a download.</p>
   </section>
 
-  <section class="how-it-works container">
-    <h2 class="heading-lg" style="text-align:center; margin-bottom: var(--space-5);">How It Works</h2>
-    <div class="steps">
+  <!-- How It Works -->
+  <section class="container" style="padding: var(--space-6) 0;">
+    <h2 class="section-title heading">How It Works</h2>
+    <div class="steps-grid">
       <div class="step">
         <div class="step-num">1</div>
         <div class="step-content">
           <h3>Paste any URL</h3>
-          <p>Copy the link of the web page you want to preserve — a blog post, documentation page, research paper, or even a dashboard. WebPacker works with most content-rich sites including those with JavaScript interactivity.</p>
+          <p>Copy the link of the webpage you want to preserve — a long‑form article, a technical tutorial, a documentation page, or even your own blog. Paste it into the input field above. No registration, no browser extension, no friction.</p>
         </div>
       </div>
       <div class="step">
         <div class="step-num">2</div>
         <div class="step-content">
-          <h3>We freeze it into a binary</h3>
-          <p>Our engine uses a headless browser to capture the full page — HTML, CSS, JavaScript, images, fonts — and bundles everything into a single, self-contained executable file. No external dependencies, no network calls.</p>
+          <h3>We create a faithful snapshot</h3>
+          <p>Our backend fetches the page and all its static assets — HTML, CSS, JavaScript, images — and bundles them into a single, self‑contained archive. The result preserves the original layout, styling, and interactivity, just as you saw it in your browser.</p>
         </div>
       </div>
       <div class="step">
         <div class="step-num">3</div>
         <div class="step-content">
-          <h3>Download &amp; share</h3>
-          <p>You get a .exe (Windows) or .app (macOS) file, typically under 5 MB. Send it to anyone, anywhere. They double-click and the page opens in their default browser — fully interactive, fully offline, forever.</p>
+          <h3>Download &amp; own it forever</h3>
+          <p>You receive a <code>.zip</code> file that you can store anywhere: your laptop, an external drive, or cloud storage. Open it anytime, offline, with any modern browser. No subscription required to keep it — it’s yours, permanently.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="selling-points container">
-    <h2 class="heading-lg" style="text-align:center; margin-bottom: var(--space-5);">What You Get</h2>
+  <!-- Selling Points (3列 grid) -->
+  <section class="container" style="padding: var(--space-6) 0;">
+    <h2 class="section-title heading">What You Get</h2>
     <div class="selling-grid">
       <div class="selling-card">
         <div class="icon-wrap">
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
-          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
         </div>
-        <h3>One Click, One File</h3>
-        <p>Paste a URL, get a .exe back. That’s it. No configuration, no account creation, no learning curve. The entire process takes under 30 seconds for most pages, and you get a single file that works immediately.</p>
+        <h3>One‑click archiving</h3>
+        <p>No software to install, no command line to learn. Just paste a URL and hit enter. In seconds you get a complete offline copy of any public webpage, ready to download and keep.</p>
       </div>
       <div class="selling-card">
         <div class="icon-wrap">
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
         </div>
-        <h3>Works Offline, Forever</h3>
-        <p>No more broken links or deleted pages. Your content is preserved as a fully interactive app — search, collapse sections, copy code snippets — all without an internet connection. It’s your page, frozen in time.</p>
+        <h3>Private &amp; portable</h3>
+        <p>Your archive is downloaded directly to your device — we don’t store it, and no one else can access it. Move it between computers, back it up, or share it with a friend. You are in full control.</p>
       </div>
       <div class="selling-card">
         <div class="icon-wrap">
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-            <polyline points="9 12 11 14 15 10"/>
-          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
         </div>
-        <h3>Share It Like a Gift</h3>
-        <p>Send the .exe to anyone — clients, colleagues, family. They don’t need a browser extension, an account, or any technical knowledge. Just double-click and the page opens. It’s the easiest way to deliver web content as a tangible file.</p>
+        <h3>Original fidelity</h3>
+        <p>Unlike read‑later services that strip away formatting, SiteVault preserves the exact layout, fonts, images, and interactive elements. What you see online is what you get offline — pixel perfect.</p>
       </div>
     </div>
   </section>
 
-  <section class="trust-bar container">
-    <span>🔒 256-bit encrypted processing</span>
-    <span class="dot">·</span>
-    <span>⚡ 10,000+ pages packed</span>
-    <span class="dot">·</span>
-    <span>✅ Used by researchers at 30+ universities</span>
-  </section>
+  <!-- Trust Bar -->
+  <div class="trust-bar container">
+    <span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+      Used by 50+ early adopters
+    </span>
+    <span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+      No account required
+    </span>
+    <span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      Files never stored on server
+    </span>
+  </div>
 
-  <footer>
-    © 2026 · <a href="https://www.aimfast.dev" style="color: var(--color-text-secondary); text-decoration: none;">www.aimfast.dev</a>
+  <!-- Footer -->
+  <footer class="footer container">
+    © 2026 · www.aimfast.dev
   </footer>
 
   <script>
-    (function() {
+    function handleSubmit(event) {
+      event.preventDefault();
       const form = document.getElementById('signup-form');
-      const statusDiv = document.getElementById('form-status');
+      const feedback = document.getElementById('form-feedback');
+      const formData = new FormData(form);
+      const email = formData.get('email');
 
-      if (!form) return;
+      // 简单客户端验证
+      if (!email || !email.includes('@')) {
+        feedback.innerHTML = '<div class="signup-error">Please enter a valid email address.</div>';
+        return;
+      }
 
-      form.addEventListener('submit', async function handleSubmit(e) {
-        e.preventDefault();
+      // 禁用按钮防止重复提交
+      const btn = form.querySelector('button');
+      btn.disabled = true;
+      btn.textContent = 'Sending…';
 
-        const email = form.email.value.trim();
-        if (!email) return;
-
-        // disable button and show loading state
-        const btn = form.querySelector('button');
-        const originalText = btn.textContent;
-        btn.disabled = true;
-        btn.textContent = 'Sending…';
-
-        try {
-          const response = await fetch(form.action, {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-              'Accept': 'application/json'
-            },
-            body: JSON.stringify({ email: email })
-          });
-
-          if (response.ok) {
-            // success — replace form with success message
-            form.style.display = 'none';
-            statusDiv.innerHTML = '<div class="success-message">✓ You\'re on the list! We\'ll notify you when WebPacker launches.</div>';
-          } else {
-            // error — show inline error
-            statusDiv.innerHTML = '<div class="success-message" style="background: color-mix(in srgb, #e44 20%, transparent); color: var(--color-text);">Something went wrong. Please try again or email us.</div>';
-            btn.disabled = false;
-            btn.textContent = originalText;
-          }
-        } catch (err) {
-          statusDiv.innerHTML = '<div class="success-message" style="background: color-mix(in srgb, #e44 20%, transparent); color: var(--color-text);">Network error. Check your connection and try again.</div>';
-          btn.disabled = false;
-          btn.textContent = originalText;
+      fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(response => {
+        if (response.ok) {
+          // 成功：替换表单为成功信息
+          form.style.display = 'none';
+          feedback.innerHTML = '<div class="signup-success">✓ You\'re on the list! We\'ll keep you posted.</div>';
+        } else {
+          throw new Error('Server error');
         }
+      })
+      .catch(error => {
+        // 失败：显示错误，恢复表单
+        btn.disabled = false;
+        btn.textContent = 'Get Early Access';
+        feedback.innerHTML = '<div class="signup-error">Something went wrong. Please try again later.</div>';
       });
-    })();
+    }
   </script>
 
 </body>

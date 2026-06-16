@@ -1,8 +1,8 @@
 # KAKAOPC vs BuilderPulse — 方法论差异报告
 
-> 最后更新: 2026-06-15
-> 已对比天数: 20 天
-> 覆盖范围: 2026-05-27 ~ 2026-06-15
+> 最后更新: 2026-06-16
+> 已对比天数: 21 天
+> 覆盖范围: 2026-05-27 ~ 2026-06-16
 
 ---
 
@@ -84,3 +84,4 @@
 | 2026-06-13 | Agent Spend Cutoff Sheet | 一份可交互的 Agent 配置检查清单和决策树，帮你从 gstack、skills、open-code-review 等 | 🔴 不同 |
 | 2026-06-14 |  |  | — |
 | 2026-06-15 | Offline Docs Packet | 一个专注于 AI 编码 Agent（Claude Code、Codex、OpenCode 等）技能包（Skills）的发 | 🔴 不同 |
+| 2026-06-16 | Dependency Security Calendar | 一个 Web 服务，你输入网址，它返回一个可在任何电脑上双击运行的可执行文件，包含该网站的全部内容。 | 🔴 不同 |
