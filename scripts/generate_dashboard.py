@@ -302,7 +302,9 @@ def run(date_str: str | None = None) -> str:
     output_path.write_text(json_str, encoding="utf-8")
     demand_count = len(data.get('demand_radar', {}).get('demands', []))
     print(f"[Dashboard] Data saved → {output_path}")
-    print(f"[Dashboard] {len(data['signals'])} signals | {len(data['history'])} days history | {len(data['opportunities'])} opportunities | {len(data['recurring_signals'])} recurring | {demand_count} demands | article: {len(data['article_md']):,} chars (zh) / {len(data['article_md_en']):,} chars (en)}")
+    art_zh = len(data['article_md'])
+    art_en = len(data['article_md_en'])
+    print(f"[Dashboard] {len(data['signals'])} signals | {len(data['history'])} days history | {len(data['opportunities'])} opportunities | {len(data['recurring_signals'])} recurring | {demand_count} demands | article: {art_zh} chars (zh) / {art_en} chars (en)")
     return str(output_path)
 
 
