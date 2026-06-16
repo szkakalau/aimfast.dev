@@ -2408,7 +2408,7 @@ function copyArticleNotepad() {
 
 // ─── Bootstrap: try loading data, fall back to embedded if available ───
 (function init() {
-  fetch('data/dashboard.json')
+  fetch('data/dashboard.json?v=' + Date.now())
     .then(function(res) {
       if (!res.ok) throw new Error(t('miscDataUnavailable'));
       return res.json();
