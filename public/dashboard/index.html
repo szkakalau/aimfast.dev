@@ -1635,12 +1635,12 @@ function renderAll(data) {
     : '--';
   document.getElementById('dash-generated').textContent = (data.generated_at || '').substring(0, 16);
 
-  // Stats
-  document.getElementById('stat-signals').textContent = signals.length;
-  document.getElementById('stat-top').textContent = summary.top_score != null ? summary.top_score : '--';
-  document.getElementById('stat-avg').textContent = summary.avg_score != null ? summary.avg_score.toFixed(1) : '--';
-  document.getElementById('stat-action').textContent = summary.action_qualified != null ? summary.action_qualified : '--';
-  document.getElementById('stat-cross').textContent = summary.cross_platform_signals != null ? summary.cross_platform_signals : '--';
+  // Stats (with null guards — elements may not exist after hero redesign)
+  setEl('stat-signals', signals.length);
+  setEl('stat-top', summary.top_score != null ? summary.top_score : '--');
+  setEl('stat-avg', summary.avg_score != null ? summary.avg_score.toFixed(1) : '--');
+  setEl('stat-action', summary.action_qualified != null ? summary.action_qualified : '--');
+  setEl('stat-cross', summary.cross_platform_signals != null ? summary.cross_platform_signals : '--');
 
   // Signals table
   var tbody = document.getElementById('signals-body');
