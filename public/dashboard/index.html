@@ -237,26 +237,43 @@
   }
   .copy-toast.show { opacity: 1; }
 
+  /* ── Content header (tabs + archive) ── */
+  .content-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-bottom: var(--space-2);
+  }
+
   /* ── Tab bar ── */
   .tab-bar {
     display: flex;
-    gap: 4px;
-    margin-bottom: var(--space-2);
+    gap: 6px;
   }
   .tab {
-    padding: 6px 14px;
-    border-radius: var(--radius-sm);
+    padding: 8px 18px;
+    border-radius: 20px;
     cursor: pointer;
-    font-size: 0.82rem;
+    font-size: 0.85rem;
     color: var(--color-text-muted);
-    border: 1px solid transparent;
-    background: none;
+    border: 1px solid var(--color-border);
+    background: transparent;
     font-family: var(--font-body);
+    font-weight: 500;
+    transition: all var(--duration-fast) var(--ease-out);
+    white-space: nowrap;
+  }
+  .tab:hover {
+    color: var(--color-text);
+    border-color: var(--color-accent);
   }
   .tab.active {
-    background: var(--color-surface-alt);
-    color: var(--color-text);
-    border-color: var(--color-border);
+    background: var(--color-accent);
+    color: #1a1d24;
+    border-color: var(--color-accent);
+    font-weight: 600;
   }
 
   /* ── Archive date navigation ── */
@@ -567,7 +584,8 @@
     .stat { min-width: 48px; }
     .stat-value { font-size: 1rem; }
     .stat-label { font-size: 0.55rem; }
-    .tab { font-size: 0.65rem; padding: 4px 7px; }
+    .tab { font-size: 0.72rem; padding: 6px 12px; }
+    .content-header { flex-direction: column; align-items: flex-start; }
     .wb-opp-grid { grid-template-columns: repeat(3, 1fr); }
   }
 </style>
@@ -695,34 +713,38 @@
     <div class="chart-wrap"><canvas id="volumeChart" aria-label="14-day signal volume chart" role="img"></canvas></div>
   </div>
 
-  <!-- Report & Tracking tabs -->
-  <div class="card card-full">
-    <div class="tab-bar" role="tablist" id="tab-bar" aria-label="Content tabs">
-      <button class="tab active" role="tab" aria-selected="true" onclick="switchTab('report')" id="tab-btn-report">Daily Report</button>
-      <button class="tab" role="tab" aria-selected="false" onclick="switchTab('article')" id="tab-btn-article">Planet Article</button>
-      <button class="tab" role="tab" aria-selected="false" onclick="switchTab('tracking')" id="tab-btn-tracking">Opportunity Tracking</button>
-      <button class="tab" role="tab" aria-selected="false" onclick="switchTab('recurring')" id="tab-btn-recurring">Recurring Signals</button>
-      <button class="tab" role="tab" aria-selected="false" onclick="switchTab('demand')" id="tab-btn-demand">Demand Radar</button>
-    </div>
-
-    <!-- Archive date navigation (hidden until archive data loads) -->
-    <div id="archive-nav" class="archive-nav" style="display:none;" aria-label="Archive date navigation">
-      <button class="archive-arrow" id="archive-prev" aria-label="Previous day" disabled>
-        <svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
-      </button>
-      <div class="archive-dates" id="archive-dates" role="listbox" aria-label="Available dates">
+  <!-- ═══ Content: Daily Report + Planet Article ═══ -->
+  <div class="card card-full" id="card-content">
+    <div class="content-header">
+      <div class="tab-bar" role="tablist" aria-label="Content tabs">
+        <button class="tab active" role="tab" aria-selected="true" onclick="switchTab('report')" id="tab-btn-report">📰 Daily Report</button>
+        <button class="tab" role="tab" aria-selected="false" onclick="switchTab('article')" id="tab-btn-article">🌟 Planet Article</button>
       </div>
-      <button class="archive-arrow" id="archive-next" aria-label="Next day" disabled>
-        <svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
-      </button>
-      <button class="btn-back-today" id="btn-back-today" style="display:none;">Back to Today</button>
+      <div id="archive-nav" class="archive-nav" style="display:none;" aria-label="Archive date navigation">
+        <button class="archive-arrow" id="archive-prev" aria-label="Previous day" disabled>
+          <svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <div class="archive-dates" id="archive-dates" role="listbox" aria-label="Available dates"></div>
+        <button class="archive-arrow" id="archive-next" aria-label="Next day" disabled>
+          <svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+        <button class="btn-back-today" id="btn-back-today" style="display:none;">Today</button>
+      </div>
     </div>
-
     <div id="tab-report" class="report-body" role="tabpanel">
       <div class="loading" id="loading-report">Loading report&hellip;</div>
     </div>
     <div id="tab-article" class="report-body" style="display:none;" role="tabpanel">
       <div class="loading" id="loading-article">Loading article&hellip;</div>
+    </div>
+  </div>
+
+  <!-- ═══ Data: Tracking + Recurring + Demand Radar ═══ -->
+  <div class="card card-full" id="card-data">
+    <div class="tab-bar" role="tablist" aria-label="Data tabs">
+      <button class="tab" role="tab" aria-selected="false" onclick="switchTab('tracking')" id="tab-btn-tracking">🎯 Opportunity Tracking</button>
+      <button class="tab" role="tab" aria-selected="false" onclick="switchTab('recurring')" id="tab-btn-recurring">🔄 Recurring Signals</button>
+      <button class="tab" role="tab" aria-selected="false" onclick="switchTab('demand')" id="tab-btn-demand">📡 Demand Radar</button>
     </div>
     <div id="tab-tracking" class="report-body" style="display:none;" role="tabpanel">
       <table aria-label="Opportunity tracking">
