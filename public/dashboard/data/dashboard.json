@@ -11240,7 +11240,7 @@
     "_schema": "需求雷达 v3.0 — Market/Business 分离 + Confidence + Stage",
     "_version": "3.0",
     "_formula": "Market=(Trend×0.5+Growth×0.3+Consistency×0.2)×100, Business=(Pain×0.5+Pay×0.5)×100, Opportunity=Market×0.6+Business×0.4, Confidence=log2(n+1)×20",
-    "generated_at": "2026-06-16T15:22:32.428755+08:00",
+    "generated_at": "2026-06-16T15:39:14.318441+08:00",
     "weeks": [
       "2026-05-25",
       "2026-06-01",
@@ -11526,7 +11526,7 @@
   "workbench": {
     "_schema": "Builder Workbench 报告",
     "_version": "1.0",
-    "generated_at": "2026-06-16T14:52:04.189440+08:00",
+    "generated_at": "2026-06-16T15:39:14.401650+08:00",
     "date": "2026-06-16",
     "watched_demands": [
       {
@@ -11611,6 +11611,8 @@
         "confidence": 100,
         "stage": "forming",
         "target_buyer": "Agent 开发者、SaaS 创业团队",
+        "description_en": "How agents remember user preferences and maintain context across sessions",
+        "target_buyer_en": "Agent developers, SaaS startups",
         "opportunity_index": 27,
         "trend_score": 2,
         "growth_score": 3,
@@ -11643,6 +11645,8 @@
         "confidence": 56,
         "stage": "forming",
         "target_buyer": "Claude Code 重度用户、AI 创业公司",
+        "description_en": "Reduce AI API costs, token optimization, cost-effective solutions",
+        "target_buyer_en": "Heavy Claude Code users, AI startups",
         "opportunity_index": 22,
         "trend_score": 0,
         "growth_score": 5,
@@ -11675,6 +11679,8 @@
         "confidence": 100,
         "stage": "forming",
         "target_buyer": "SRE、AI 基础设施团队",
+        "description_en": "Agent behavior tracking, performance monitoring, debugging",
+        "target_buyer_en": "SRE, AI infrastructure teams",
         "opportunity_index": 19,
         "trend_score": 1,
         "growth_score": 3,
@@ -11707,6 +11713,8 @@
         "confidence": 66,
         "stage": "forming",
         "target_buyer": "AI 平台团队、DevOps/SRE",
+        "description_en": "Multi-agent collaboration, task orchestration, workflow automation",
+        "target_buyer_en": "AI platform teams, DevOps/SRE",
         "opportunity_index": 12,
         "trend_score": 0,
         "growth_score": 1,
@@ -11739,6 +11747,8 @@
         "confidence": 83,
         "stage": "breaking",
         "target_buyer": "企业安全/合规团队、大型工程组织",
+        "description_en": "Quality control for AI-generated code, review workflows, compliance",
+        "target_buyer_en": "Enterprise security/compliance teams, large engineering orgs",
         "opportunity_index": 4,
         "trend_score": 1,
         "growth_score": 9,
@@ -11771,6 +11781,8 @@
         "confidence": 100,
         "stage": "forming",
         "target_buyer": "Agent 开发者（付费意愿低，开源替代多）",
+        "description_en": "Making agents reliably execute complex tasks, skill reuse, MCP tools",
+        "target_buyer_en": "Agent developers (low willingness to pay, many OSS alternatives)",
         "opportunity_index": 4,
         "trend_score": 5,
         "growth_score": 3,
@@ -11803,6 +11815,8 @@
         "confidence": 32,
         "stage": "early",
         "target_buyer": "个人学习者（几乎不付费）",
+        "description_en": "AI tool tutorials, best practices, example projects",
+        "target_buyer_en": "Individual learners (almost never pay)",
         "opportunity_index": 1,
         "trend_score": 0,
         "growth_score": 5,
@@ -11835,6 +11849,8 @@
         "confidence": 100,
         "stage": "forming",
         "target_buyer": "产品经理、设计师（通常不直接为工具付费）",
+        "description_en": "AI tool interfaces, user experience optimization",
+        "target_buyer_en": "Product managers, designers (rarely pay for tools directly)",
         "opportunity_index": 1,
         "trend_score": 10,
         "growth_score": 1,
@@ -12226,5 +12242,5 @@
       "has_article": true
     }
   ],
-  "generated_at": "2026-06-16T15:22:32.586001+08:00"
+  "generated_at": "2026-06-16T15:39:14.560160+08:00"
 }
