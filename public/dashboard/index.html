@@ -385,6 +385,12 @@
   .wb-watch-item .chg-up { color: var(--color-green); }
   .wb-watch-item .chg-dn { color: var(--color-red); }
 
+  /* ── Change indicators ── */
+  .chg-up { color: var(--color-green); font-weight: 700; }
+  .chg-dn { color: var(--color-red); font-weight: 700; }
+  .chg-st { color: var(--color-text-muted); }
+  .chg-new { color: var(--color-accent); }
+
   /* ── Opportunity card ── */
   .wb-opp-card { position: relative; margin-top: var(--space-3); padding: var(--space-3); background: var(--color-surface-alt); border: 1px solid var(--color-accent); border-radius: var(--radius-lg); }
   .wb-opp-close { position: absolute; top: 8px; right: 8px; background: none; border: none; color: var(--color-text-muted); font-size: 1.2rem; cursor: pointer; }
@@ -644,7 +650,7 @@
     </div>
     <div id="tab-demand" class="report-body" style="display:none;" role="tabpanel">
       <table aria-label="Demand radar">
-        <thead><tr><th scope="col" id="th-dem-name">Demand</th><th scope="col" id="th-dem-delta">Chg</th><th scope="col" id="th-dem-market">Mkt</th><th scope="col" id="th-dem-business">Biz</th><th scope="col" id="th-dem-competition">Cmp</th><th scope="col" id="th-dem-ai">AI-proof</th><th scope="col" id="th-dem-stage">Stage</th><th scope="col" id="th-dem-index">Score</th></tr></thead>
+        <thead><tr><th scope="col" id="th-dem-name">Demand</th><th scope="col" id="th-dem-delta">Chg</th><th scope="col" id="th-dem-market">Mkt</th><th scope="col" id="th-dem-business">Biz</th><th scope="col" id="th-dem-competition">Cmp</th><th scope="col" id="th-dem-ai">AI-pf</th><th scope="col" id="th-dem-confidence">Conf</th><th scope="col" id="th-dem-stage">Stage</th><th scope="col" id="th-dem-index">Score</th></tr></thead>
         <tbody id="demand-body"></tbody>
       </table>
       <div id="demand-empty" class="empty" style="display:none;">No demand data yet.</div>
@@ -769,10 +775,10 @@ var I18N = (function() {
       demStageForming: '形成',
       demStageBreaking: '爆发',
       demStageMature: '成熟',
-      demDeltaRising: '🔺',
-      demDeltaFalling: '🔻',
-      demDeltaStable: '➡',
-      demDeltaNew: '🆕',
+      demDeltaRising: '上升',
+      demDeltaFalling: '下降',
+      demDeltaStable: '持平',
+      demDeltaNew: '新出现',
       demEmpty: '暂无需求数据。',
       demAria: '需求雷达',
       demIntersections: '交叉机会',
@@ -920,10 +926,10 @@ var I18N = (function() {
       demStageForming: 'Forming',
       demStageBreaking: 'Breaking',
       demStageMature: 'Mature',
-      demDeltaRising: 'Rising 🔺',
-      demDeltaFalling: 'Falling 🔻',
-      demDeltaStable: 'Stable ➡',
-      demDeltaNew: 'New 🆕',
+      demDeltaRising: 'Rising',
+      demDeltaFalling: 'Falling',
+      demDeltaStable: 'Stable',
+      demDeltaNew: 'New',
       demEmpty: 'No demand data yet.',
       demAria: 'Demand radar',
       demIntersections: 'Cross Opportunities',
@@ -1505,10 +1511,10 @@ function renderAll(data) {
     document.getElementById('demand-empty').style.display = 'block';
   } else {
     var deltaIcons = {
-      rising: t('demDeltaRising'),
-      falling: t('demDeltaFalling'),
-      stable: t('demDeltaStable'),
-      new: t('demDeltaNew')
+      rising: '<span class="chg-up">▲</span> ' + t('demDeltaRising'),
+      falling: '<span class="chg-dn">▼</span> ' + t('demDeltaFalling'),
+      stable: '<span class="chg-st">→</span> ' + t('demDeltaStable'),
+      new: '<span class="chg-new">●</span> ' + t('demDeltaNew')
     };
     var stageLabels = {
       early: t('demStageEarly'),
