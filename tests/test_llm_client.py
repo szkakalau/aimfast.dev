@@ -19,7 +19,7 @@ class TestLLMFallback:
             dry_run=True,
         )
         assert len(result) > 0, "Expected non-empty fallback output"
-        assert "KAKAOPC" in result, "Fallback should mention KAKAOPC"
+        assert "AimFast.Dev" in result, "Fallback should mention AimFast.Dev"
         assert "LLM" in result, "Fallback should mention LLM unavailability"
 
     def test_fallback_is_valid_markdown(self):
