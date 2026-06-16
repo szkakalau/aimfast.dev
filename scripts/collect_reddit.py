@@ -1,12 +1,10 @@
 """
 Reddit 信号采集
-数据源: Reddit RSS feeds (公开免费, 无需认证)
-采集内容: 5 个目标子版块热帖
+数据源: PullPush.io (Reddit 公开数据归档, 免费无需认证)
+备选: RSS feeds (被封锁时降级)
+采集内容: 5 个目标子版块近 3 天热帖
 """
 import json
-import re
-import time
-import xml.etree.ElementTree as ET
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
@@ -16,11 +14,9 @@ ROOT = Path(__file__).resolve().parent.parent
 RAW_DIR = ROOT / "raw"
 
 TZ_SHANGHAI = timezone(timedelta(hours=8))
+PULLPUSH_API = "https://api.pullpush.io/reddit/search/submission/"
 
-HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
-    "Accept": "application/rss+xml, application/xml, text/xml, */*",
-}
+HEADERS = {"User-Agent": "KAKAOPC-Intel/2.0 (+https://aimfast.dev)"}
 
 SUBREDDITS = [
     "programming",
@@ -31,33 +27,41 @@ SUBREDDITS = [
 ]
 
 
-def _parse_rss_entry(entry: ET.Element, subreddit: str) -> dict | None:
-    """将 RSS entry 转为标准信号格式。"""
-    ns = {"atom": "http://www.w3.org/2005/Atom"}
+def _fetch_subreddit(sub: str, after_days: int = 7) -> list[dict]:
+    """通过 PullPush.io 获取子版块近 N 天帖子 (按分数降序, 最多 40 条)。PullPush 数据有 2-3 天延迟。"""
+    since = int((datetime.now(TZ_SHANGHAI) - timedelta(days=after_days)).timestamp())
+    params = {
+        "subreddit": sub,
+        "size": 40,
+        "sort": "desc",
+        "sort_type": "score",
+        "after": since,
+    }
+    try:
+        resp = requests.get(PULLPUSH_API, headers=HEADERS, params=params, timeout=20)
+        resp.raise_for_status()
+        return resp.json().get("data", [])
+    except requests.RequestException as e:
+        print(f"[Reddit] PullPush r/{sub} 请求失败: {e}")
+        return []
 
-    title_el = entry.find("title")
-    link_el = entry.find("link")
-    author_el = entry.find("author/name") or entry.find("author")
-    updated_el = entry.find("updated") or entry.find("pubDate")
 
-    title = title_el.text.strip() if title_el is not None and title_el.text else ""
-    if len(title) < 10:
+def _to_signal(post: dict, subreddit: str) -> dict | None:
+    """将 PullPush post 转为标准信号格式。"""
+    title = post.get("title", "")
+    if len(title) < 10 or post.get("stickied"):
         return None
 
-    url = link_el.get("href", "") if link_el is not None else ""
-    author = author_el.text.strip() if author_el is not None and author_el.text else ""
-
-    # 从 title 提取粗略互动量标记（如 "[123 comments]"）
-    comments = 0
-    comment_match = re.search(r"\[(\d+)\s*comments?\]", title, re.IGNORECASE)
-    if comment_match:
-        comments = int(comment_match.group(1))
-
-    # 生成 ID
-    post_id = re.sub(r"[^\w\-]", "", title[:40].replace(" ", "-").lower())
+    post_id = post.get("id", "")
+    permalink = post.get("permalink", "")
+    url = f"https://www.reddit.com{permalink}" if permalink else post.get("url", "")
+    comments = post.get("num_comments", 0)
+    score = post.get("score", 0)
+    ups = post.get("ups", score)
+    created = post.get("created_utc", 0)
 
     return {
-        "id": f"reddit-{subreddit}-{post_id}",
+        "id": f"reddit-{post_id}",
         "title": title.strip(),
         "url": url,
         "source": f"Reddit r/{subreddit}",
@@ -65,84 +69,51 @@ def _parse_rss_entry(entry: ET.Element, subreddit: str) -> dict | None:
         "signal_type": "post",
         "discussion_count": comments,
         "engagement": {
+            "score": score,
+            "ups": ups,
             "comments": comments,
-            "total": comments * 5 + 1,  # 粗略估算
+            "upvote_ratio": post.get("upvote_ratio", 0),
+            "total": comments * 3 + ups,
         },
         "collected_at": datetime.now(TZ_SHANGHAI).isoformat(),
-        "raw_created_utc": None,
-        "summary": f"[r/{subreddit}] {title[:80]}",
+        "raw_created_utc": created,
+        "summary": f"[r/{subreddit}] {title[:80]}（{ups} 赞 / {comments} 评论）",
         "tags": [subreddit],
-        "author": author,
+        "author": post.get("author", ""),
     }
 
 
-def _fetch_subreddit(sub: str) -> list[dict]:
-    """获取单个子版块的 RSS 热帖。"""
-    url = f"https://www.reddit.com/r/{sub}/hot/.rss?limit=30"
-    try:
-        resp = requests.get(url, headers=HEADERS, timeout=20)
-        resp.raise_for_status()
-        root = ET.fromstring(resp.content)
-
-        # Reddit RSS uses Atom namespace
-        atom_ns = "http://www.w3.org/2005/Atom"
-        entries = root.findall(f".//{{{atom_ns}}}entry")
-        if not entries:
-            entries = root.findall(".//entry")
-
-        signals = []
-        for entry in entries:
-            s = _parse_rss_entry(entry, sub)
-            if s:
-                signals.append(s)
-        if not signals:
-            print(f"[Reddit] r/{sub} 解析到 {len(entries)} 个 entry，但 0 条通过过滤")
-        return signals
-    except requests.RequestException as e:
-        print(f"[Reddit] r/{sub} 请求失败: {e}")
-        return []
-    except ET.ParseError as e:
-        print(f"[Reddit] r/{sub} XML 解析失败: {e}")
-        return []
-
-
 def collect(date_str: str | None = None) -> list[dict]:
-    """
-    采集 5 个子版块 RSS 热帖，每版最多 30 条。
-    去重后取 top 40。
-    """
+    """采集 5 个子版块帖子, 去重取 top 40。"""
     date = date_str or datetime.now(TZ_SHANGHAI).strftime("%Y-%m-%d")
     seen: set[str] = set()
     signals: list[dict] = []
-    sub_stats: dict[str, int] = {}
 
-    for i, sub in enumerate(SUBREDDITS):
-        if i > 0:
-            time.sleep(3)  # 避免 429 rate-limit
-        entries = _fetch_subreddit(sub)
+    for sub in SUBREDDITS:
+        posts = _fetch_subreddit(sub)
         count = 0
-        for s in entries:
-            if s["id"] not in seen:
-                seen.add(s["id"])
-                signals.append(s)
+        for p in posts:
+            signal = _to_signal(p, sub)
+            if signal and signal["id"] not in seen:
+                seen.add(signal["id"])
+                signals.append(signal)
                 count += 1
-        sub_stats[sub] = count
         print(f"[Reddit] r/{sub}: {count} 条有效信号")
 
     signals.sort(key=lambda s: s["engagement"]["total"], reverse=True)
     signals = signals[:40]
 
-    print(f"[Reddit] 总计: {sum(sub_stats.values())} 条 → 去重排序后 {len(signals)} 条")
+    print(f"[Reddit] 总计: {len(signals)} 条 (via PullPush.io)")
     return signals
 
 
 def save_raw(signals: list[dict], date_str: str) -> None:
-    """保存原始采集数据到 ./raw/YYYY-MM-DD/reddit.json"""
+    """保存到 ./raw/YYYY-MM-DD/reddit.json"""
     dir_path = RAW_DIR / date_str
     dir_path.mkdir(parents=True, exist_ok=True)
     output = {
         "collected_at": datetime.now(TZ_SHANGHAI).isoformat(),
-        "source": "reddit",
+        "source": "reddit (via PullPush.io)",
         "subreddits": SUBREDDITS,
         "count": len(signals),
         "signals": signals,
