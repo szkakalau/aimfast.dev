@@ -657,20 +657,20 @@
   <div class="card card-full">
     <div class="top-hero">
       <div class="hero-left" id="hero-opportunity">
-        <div class="hero-label">Today's Best Opportunity</div>
+        <div class="hero-label" id="hero-label-opportunity">Today's Best Opportunity</div>
         <div class="hero-demand" id="hero-demand-name">--</div>
         <div class="hero-meta" id="hero-demand-meta"></div>
-        <div class="hero-action"><a href="#" onclick="switchTab('demand');return false;">Open Radar →</a></div>
+        <div class="hero-action"><a href="#" onclick="switchTab('demand');return false;" id="hero-radar-link">Open Radar →</a></div>
       </div>
       <div class="hero-right" id="hero-bets">
-        <div class="hero-label">Active Bets</div>
+        <div class="hero-label" id="hero-label-bets">Active Bets</div>
         <div class="hero-bet-count" id="hero-bet-count">0</div>
-        <div class="hero-sub">decisions tracked</div>
+        <div class="hero-sub" id="hero-sub-bets">decisions tracked</div>
       </div>
       <div class="hero-right">
-        <div class="hero-label">Signals Today</div>
+        <div class="hero-label" id="hero-label-signals">Signals Today</div>
         <div class="hero-bet-count" id="hero-signal-count">--</div>
-        <div class="hero-sub">from 11 sources</div>
+        <div class="hero-sub" id="hero-sub-signals">from 11 sources</div>
       </div>
     </div>
   </div>
@@ -910,6 +910,14 @@ var I18N = (function() {
       recEmpty: '暂无重复信号。',
       recAria: '重复信号追踪',
 
+      // Hero
+      heroOpportunity: '今日最佳机会',
+      heroBets: '当前下注',
+      heroSignals: '今日信号',
+      heroSubBets: '个决策追踪中',
+      heroSubSignals: '来自 11 个信源',
+      heroRadarLink: '打开雷达 →',
+
       // Workbench
       wbRadarTitle: '机会雷达 Top 5',
       wbRadarLink: '查看完整雷达 →',
@@ -1072,6 +1080,14 @@ var I18N = (function() {
       recTrendFading: 'Fading 🔻',
       recEmpty: 'No recurring signals detected yet.',
       recAria: 'Recurring signals tracking',
+
+      // Hero
+      heroOpportunity: "Today's Best Opportunity",
+      heroBets: 'Active Bets',
+      heroSignals: 'Signals Today',
+      heroSubBets: 'decisions tracked',
+      heroSubSignals: 'from 11 sources',
+      heroRadarLink: 'Open Radar →',
 
       // Workbench
       wbRadarTitle: 'Opportunity Radar Top 5',
@@ -1289,6 +1305,14 @@ window.safeMarked = function(md) {
   setEl('recurring-empty', t('recEmpty'));
   var recTable = document.querySelector('table[aria-label="Recurring signals tracking"]');
   if (recTable) recTable.setAttribute('aria-label', t('recAria'));
+
+  // Hero labels
+  setEl('hero-label-opportunity', t('heroOpportunity'));
+  setEl('hero-label-bets', t('heroBets'));
+  setEl('hero-label-signals', t('heroSignals'));
+  setEl('hero-sub-bets', t('heroSubBets'));
+  setEl('hero-sub-signals', t('heroSubSignals'));
+  setEl('hero-radar-link', t('heroRadarLink'));
 
   // Workbench static text
   setEl('wb-radar-title', t('wbRadarTitle'));
