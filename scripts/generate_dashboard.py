@@ -273,7 +273,6 @@ def run(date_str: str | None = None) -> str:
     print(f"{'='*50}")
 
     data = collect_dashboard_data()
-    json_str = json.dumps(data, ensure_ascii=False, indent=2)
 
     # ── 防御性校验：archive 异常时告警（但继续写入，不阻塞管道）──
     archive_count = len(data.get("archive", []))
@@ -295,6 +294,8 @@ def run(date_str: str | None = None) -> str:
     archive_path = OUTPUT_DIR / "archive.json"
     archive_path.write_text(archive_json, encoding="utf-8")
 
+    # NOW serialize core data (without archive) — must be after pop
+    json_str = json.dumps(data, ensure_ascii=False, indent=2)
     output_path = OUTPUT_DIR / "dashboard.json"
     output_path.write_text(json_str, encoding="utf-8")
     print(f"[Dashboard] Data saved → {output_path} + {archive_path}")
