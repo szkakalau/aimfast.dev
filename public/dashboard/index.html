@@ -89,6 +89,23 @@
   }
   .card-full { grid-column: 1 / -1; }
 
+  /* ── Top Hero ── */
+  .top-hero { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: var(--space-3); align-items: center; }
+  .hero-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-muted); margin-bottom: 6px; }
+  .hero-demand { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; color: var(--color-accent); line-height: 1.2; }
+  .hero-meta { font-size: 0.78rem; color: var(--color-text-muted); margin-top: 4px; }
+  .hero-action { margin-top: 10px; }
+  .hero-action a { font-size: 0.82rem; color: var(--color-accent); text-decoration: none; font-weight: 500; }
+  .hero-action a:hover { text-decoration: underline; }
+  .hero-right { text-align: center; }
+  .hero-bet-count { font-family: var(--font-heading); font-size: 2rem; font-weight: 700; color: var(--color-text); }
+
+  @media (max-width: 768px) {
+    .top-hero { grid-template-columns: 1fr 1fr; }
+    .hero-left { grid-column: 1 / -1; }
+    .hero-demand { font-size: 1.2rem; }
+  }
+
   /* ── Stats row ── */
   .stat-row {
     display: flex;
@@ -171,6 +188,10 @@
     max-height: 70vh;
     overflow-y: auto;
   }
+  .report-collapsed { max-height: 180px; overflow: hidden; position: relative; }
+  .report-collapsed::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 60px; background: linear-gradient(transparent, var(--color-surface)); pointer-events: none; }
+  .report-expand-btn { display: block; margin: 8px auto 0; padding: 4px 16px; background: var(--color-surface-alt); border: 1px solid var(--color-border); border-radius: 12px; color: var(--color-accent); cursor: pointer; font-size: 0.75rem; font-family: var(--font-body); }
+  .report-expand-btn:hover { border-color: var(--color-accent); }
   .report-body h1,
   .report-body h2,
   .report-body h3 {
@@ -632,32 +653,24 @@
 <!-- ═══ Main Content ═══ -->
 <main class="dash-main" id="dash-content">
 
-  <!-- Overview stats -->
+  <!-- ═══ Top: Today's Best Opportunity + Current Bets ═══ -->
   <div class="card card-full">
-    <h2 id="overview-title">
-      <svg class="icon icon-sm icon-accent" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
-      Today's Overview
-    </h2>
-    <div class="stat-row" id="stats-row">
-      <div class="stat">
-        <div class="stat-value" id="stat-signals">--</div>
-        <div class="stat-label" id="stat-label-signals">Signals Processed</div>
+    <div class="top-hero">
+      <div class="hero-left" id="hero-opportunity">
+        <div class="hero-label">Today's Best Opportunity</div>
+        <div class="hero-demand" id="hero-demand-name">--</div>
+        <div class="hero-meta" id="hero-demand-meta"></div>
+        <div class="hero-action"><a href="#" onclick="switchTab('demand');return false;">Open Radar →</a></div>
       </div>
-      <div class="stat">
-        <div class="stat-value" id="stat-top">--</div>
-        <div class="stat-label" id="stat-label-top">Top Score</div>
+      <div class="hero-right" id="hero-bets">
+        <div class="hero-label">Active Bets</div>
+        <div class="hero-bet-count" id="hero-bet-count">0</div>
+        <div class="hero-sub">decisions tracked</div>
       </div>
-      <div class="stat">
-        <div class="stat-value" id="stat-avg">--</div>
-        <div class="stat-label" id="stat-label-avg">Avg Score</div>
-      </div>
-      <div class="stat">
-        <div class="stat-value" id="stat-action">--</div>
-        <div class="stat-label" id="stat-label-action">Action Qualified</div>
-      </div>
-      <div class="stat">
-        <div class="stat-value" id="stat-cross">--</div>
-        <div class="stat-label" id="stat-label-cross">Cross-Platform</div>
+      <div class="hero-right">
+        <div class="hero-label">Signals Today</div>
+        <div class="hero-bet-count" id="hero-signal-count">--</div>
+        <div class="hero-sub">from 11 sources</div>
       </div>
     </div>
   </div>
@@ -696,12 +709,13 @@
   </div>
 
   <!-- ═══ Bet Log ═══ -->
-  <div class="card card-full" id="card-betlog" style="display:none;">
+  <div class="card card-full" id="card-betlog">
     <h2 id="betlog-title">
       <svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
       Decision Log
+      <span id="betlog-count"></span>
     </h2>
-    <div id="betlog-body"></div>
+    <div id="betlog-body"><div class="empty" id="betlog-empty">No bets yet. Star a demand in the radar to start tracking.</div></div>
   </div>
 
   <!-- Top 10 signals -->
@@ -1420,13 +1434,11 @@ function placeBet(demandId, demandName, action) {
 function renderBetLog() {
   loadBets();
   var body = document.getElementById('betlog-body');
-  var card = document.getElementById('card-betlog');
-  if (!body || !card) return;
+  if (!body) return;
   if (_bets.length === 0) {
-    card.style.display = 'none';
+    body.innerHTML = '<div class="empty">No bets yet. Star a demand in the radar to start tracking your decisions.</div>';
     return;
   }
-  card.style.display = '';
   var html = '';
   var statusBadges = { active: 'bet-active', won: 'bet-won', lost: 'bet-lost', paused: '' };
   var statusNames = { active: 'Active', won: 'Won', lost: 'Lost', paused: 'Paused' };
@@ -1670,7 +1682,20 @@ function renderAll(data) {
 
   // Report
   if (reportMd) {
-    document.getElementById('tab-report').innerHTML = safeMarked(reportMd);
+    var reportEl = document.getElementById('tab-report');
+    reportEl.innerHTML = safeMarked(reportMd);
+    // Collapse long reports by default
+    if (reportMd.length > 2000) {
+      reportEl.classList.add('report-collapsed');
+      var expandBtn = document.createElement('button');
+      expandBtn.className = 'report-expand-btn';
+      expandBtn.textContent = LANG === 'en' ? '▼ Expand full report' : '▼ 展开完整日报';
+      expandBtn.onclick = function() {
+        reportEl.classList.remove('report-collapsed');
+        expandBtn.remove();
+      };
+      reportEl.parentNode.insertBefore(expandBtn, reportEl.nextSibling);
+    }
   } else {
     document.getElementById('tab-report').innerHTML = emptyState('report', t('emptyNoReport'));
   }
@@ -1857,6 +1882,18 @@ function renderAll(data) {
 
   // Charts
   renderCharts(history);
+
+  // Hero: Today's Best Opportunity
+  var wb = data.workbench || {};
+  var allDems = wb.all_demands || [];
+  var topDem = allDems.length > 0 ? allDems[0] : null;
+  if (topDem) {
+    setEl('hero-demand-name', demName(topDem));
+    setEl('hero-demand-meta', (LANG === 'en' ? 'Score: ' : '评分: ') + (topDem.opportunity_index||0) + ' | ' + (LANG === 'en' ? 'Competition: ' : '竞争: ') + (topDem.competition||0) + ' | ' + (topDem.target_buyer || ''));
+  }
+  setEl('hero-signal-count', signals.length);
+  loadBets();
+  setEl('hero-bet-count', _bets.length);
 
   // Builder Workbench
   renderWorkbench(data);
