@@ -1442,7 +1442,7 @@ function renderWorkbench(data) {
   setEl('wb-updated', ts ? '更新于 ' + ts.substring(0, 16).replace('T', ' ') : '');
   var allDems = wb.all_demands || [];
   var watched = wb.watched_demands || [];
-  var insight = wb.weekly_insight || '';
+  var insight = (LANG === 'en' && wb.weekly_insight_en) ? wb.weekly_insight_en : (wb.weekly_insight || '');
 
   // Store for bet/opp card use
   data._wb_data = { bets: data.bets || [], all_demands: allDems };

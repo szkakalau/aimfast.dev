@@ -99,16 +99,26 @@ def run(date_str: str | None = None) -> dict:
     # 按机会指数排序
     watched_demands.sort(key=lambda d: d["opportunity_index"], reverse=True)
 
-    # 生成周报摘要
+    # 生成周报摘要 (中英双语)
+    stage_names_zh = {"early": "萌芽期", "forming": "形成期", "breaking": "爆发期", "mature": "成熟期"}
+    stage_names_en = {"early": "Early", "forming": "Forming", "breaking": "Breaking", "mature": "Mature"}
+
     if watched_demands:
         rising = [d for d in watched_demands if d["change_pct"] > 0]
         if rising:
             top_rising = max(rising, key=lambda d: d["change_pct"])
-            weekly_insight = f"关注重点: {top_rising['name']} 本周上升 {top_rising['change_pct']}%，处于{top_rising['stage']}阶段"
+            nm_zh = top_rising['name']
+            nm_en = top_rising.get('name_en', nm_zh)
+            stg = top_rising['stage']
+            pct = top_rising['change_pct']
+            weekly_insight = f"关注重点: {nm_zh} 本周上升 {pct}%，处于{stage_names_zh.get(stg, stg)}阶段"
+            weekly_insight_en = f"Focus: {nm_en} rose {pct}% this week, in {stage_names_en.get(stg, stg)} stage"
         else:
             weekly_insight = "本周关注需求无明显上升，继续观察现有趋势"
+            weekly_insight_en = "No significant upward movement in watched demands. Continue observing."
     else:
         weekly_insight = "尚未设置关注列表"
+        weekly_insight_en = "No watchlist configured yet."
 
     # ─── 构建输出 ───
     output = {
@@ -118,6 +128,7 @@ def run(date_str: str | None = None) -> dict:
         "date": date,
         "watched_demands": watched_demands,
         "weekly_insight": weekly_insight,
+        "weekly_insight_en": weekly_insight_en,
         "all_demands": radar.get("demands", []),
         "intersections": radar.get("intersections", []),
     }
