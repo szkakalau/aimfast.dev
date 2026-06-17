@@ -1,0 +1,140 @@
+---
+title: "1,096 People Are Talking About Their Projects, But No One Noticed the Same Trend"
+date: 2026-06-17
+summary: "Late Tuesday night, a post appeared on Hacker News with a title as bland as white bread: \"Ask HN: What are you working on? (June 2026).\" 303 upvotes, 1,096..."
+---
+
+# 1,096 People Are Talking About Their Projects, But No One Noticed the Same Trend
+
+Late Tuesday night, a post appeared on Hacker News with a title as bland as white bread: "Ask HN: What are you working on? (June 2026)." 303 upvotes, **1,096 comments**.
+
+I spent three hours reading through them all. Not to find the coolest project — but to count **how many times the same question was asked**.
+
+The result made me sit up straight.
+
+---
+
+## Translating This Into Plain English
+
+Let me explain what this thread is about. Every month, HN has a recurring column: developers spontaneously gather and tell the world, "Here's what I'm working on this week." It's not a formal Show HN launch — it's a looser, more honest status update.
+
+Across 1,096 comments, I spotted a **recurring sentence pattern**:
+
+> "I'm building an AI agent that can [specific task] in [specific tool]."
+
+Not once or twice. **Dozens of times.** And those "specific tasks" are getting narrower — not "general-purpose AI assistant," but "write my Jira tickets for me," "reply to my Slack messages," "create a Notion database for me."
+
+The same day, Product Hunt had the same thing happening:
+
+- **Goldfish** (468 votes): A Mac app that knows your work context when you press the Option key and helps you reply to messages.
+- **Novu Connect** (404 votes): Deploy AI agents into the tools users already use (Slack, Teams, Zendesk).
+- **MakersClaw** (302 votes): "Hire" AI employees inside Slack, Teams, and Telegram.
+- **Invoko** (346 votes): A tiny hand on your Mac that clicks things for you.
+
+See the pattern?
+
+**Everyone is doing the same thing: stuffing AI into existing workflows, instead of making people learn a new AI tool.**
+
+Who's hurting? **Teams and individuals drowning in tools.** An engineering team might be running Slack, Jira, Notion, GitHub, Linear, and Figma simultaneously. Each tool has its own notifications, its own approval flows, its own context-switching costs. You used to hire a person to handle this. Now you want to hire an AI — but not one that requires opening a new website and signing up for a new account.
+
+Why now? Because Claude Code and GitHub Copilot have already educated the market: **AI can do things for you, not just answer questions.** But the education is only half-done — users know AI can do stuff, but they don't want to change their work habits to use it.
+
+Pricing anchor: $19–49/month, priced per tool. Or $9/month per tool. A one-time buyout works too — $199 per agent.
+
+---
+
+## There's an Opportunity Hiding Here
+
+Most builders looking at these signals will conclude: "The AI agent market is saturated."
+
+Wrong.
+
+What's saturated is the **general-purpose AI agent** — the "universal assistant" that can do everything but nothing well. **What's not saturated are single-tool, single-task "micro-agents."**
+
+Let me be more specific.
+
+In the HN thread, one developer said they're building a "GitHub PR reviewer agent" — not a code-writing agent, but one that does exactly one thing: when a PR is created, automatically check code style, run tests, and leave a comment on the PR. **That's it.**
+
+Another said they're building a "Slack daily standup agent" — at 9 AM every day, it starts a standup thread in Slack, collects everyone's updates, and compiles them into a Notion page. **That's it.**
+
+These aren't a startup's core product. They're **plugins**, **extensions**, **tiny tools**. A developer could probably build one in a weekend, price it at $19 one-time or $9/month.
+
+Who pays first?
+
+**Mid-level managers crushed by their toolchain.** Specifically: an engineering manager running a 5–15 person team, spending 2 hours a day switching between Jira and Slack. They don't need an "AI strategy." They need **an automatically generated standup summary waiting for them at 9 AM tomorrow.**
+
+Why do most people miss this?
+
+Because most builders chase "bigger" products — full-stack, multi-platform, enterprise-grade. They overlook the **small, certain, paid needs hiding inside a single Slack channel, a single GitHub repo, a single Notion database.**
+
+---
+
+## Why Most People Miss It
+
+The mainstream view is: build AI products big, make them "AI-native," disrupt workflows.
+
+This view is especially loud on Product Hunt. Look at the top-voted products — Goldfish, Novu Connect, MakersClaw — they all try to be "your second brain" or "AI employee." They're doing it right, but the problem is **they look too much like full products.**
+
+The real opportunity isn't there.
+
+The real opportunity is **inside that engineering manager's Slack channel.** They don't need an "AI employee." They need **a script that does one specific thing, in one specific channel, at one specific time.**
+
+What's the evidence? In the HN thread, the "micro-agent" projects got surprisingly good feedback. One developer building a "Linear → Slack notification agent" said they received 4 paid inquiries within 6 hours of posting. **Not because their code was amazing, but because they solved a very specific, very annoying problem.**
+
+Another signal: **AEVS** (129 votes) on Product Hunt is building proof-of-execution for agents — not the agent itself, but **proof of what the agent did.** This is more noteworthy than the agent itself. Why? Because when agents start doing things for people, people need to know if they did it right. This is a **meta-problem** — harder to solve than the agent itself.
+
+---
+
+## If It Were Me, Here's What I'd Do
+
+Step 1: **Don't build a product. Build a list first.**
+
+This afternoon, use a Google Form or a Markdown file. List the 10 most annoying repetitive tasks in your daily work. Describe each as one sentence, like:
+
+- "Every morning, collect team standup updates from Slack and compile them into Notion"
+- "Every time a PR is created, automatically check code style and leave a comment"
+- "Every Friday afternoon, generate a Jira sprint completion report"
+
+Then, go to that HN thread, find the corresponding "micro-agent" projects (they're open source, or at least public), and see how others implemented them. **Don't write code yet. Copy someone else's thinking first.**
+
+Step 2: **7-day validation plan.**
+
+- Day 1: Pick one task. Use existing APIs (Slack API, Linear API, GitHub Actions) to build the most bare-bones version. **No AI needed.** If you can solve it without AI, that's the real demand.
+- Days 2–3: Post in the "Ask HN: Who wants to be hired?" thread (it's the same series as "What are you working on?"): "I can build a custom [tool name] agent for you. $19 one-time. DM me."
+- Days 4–7: Get 3+ DMs → keep going. Fewer than 3 → switch tasks.
+
+MVP plan: A single README file describing what the agent does, priced at $19 one-time, a payment link (Stripe or Gumroad), then manually execute the first 5 customers. **You don't need to write a single line of code to validate demand.**
+
+Failure condition: **When is this judgment wrong?**
+
+If you get zero paid interest in 7 days, or if the interest is all "I want to see how it works" instead of "I need this right now," then the pain isn't sharp enough. Or worse: **existing tools already solve this** (e.g., Slack's built-in Workflow Builder already handles 80% of the job).
+
+Another failure condition: If engineering managers say, "This is nice, but I need IT department approval" — then you know. This is enterprise sales, not something an indie developer can close quickly.
+
+---
+
+## Other Signals Worth Watching This Week
+
+1. **Edgee Turbo Models** (PH, 165 votes): Use other models (Kimi, MiniMax) inside Claude Code. This shows developers want **model-switching flexibility**, not lock-in to a single vendor.
+
+2. **Kickbacks.ai** (PH, 286 votes): Pays you while Claude Code runs. Sounds like a joke, but the pain behind it is real: **AI agent execution time is unpredictable.**
+
+3. **Veterinarian turned founder, AI lawn diagnosis** (HN, 73 upvotes): A vet switched careers to build AI lawn diagnosis. **Cross-disciplinary founders** are often the best signal for real problems — they don't carry the baggage of "how it's supposed to be done."
+
+4. **Wobo - AI Job Search** (PH, 313 votes): Tinder-style job hunting, AI applies for you. This space is heating up, but so is the competition.
+
+5. **MockPilot** (PH, 138 votes): Turn real websites into editable mockups. **Designer pain points** have always existed, but "solving with AI" isn't a silver bullet.
+
+---
+
+## About AimFast.Dev
+
+AimFast.Dev is a signal-driven tool built for indie developers. Every day, it scrapes 6,000+ raw signals from 20+ sources — Hacker News, Product Hunt, Reddit, GitHub, Google Trends, and more — then filters them down to the 5–10 most noteworthy opportunities using a scoring formula.
+
+It's not a news aggregator. It's a complete **signal → evidence → translation → action** pipeline. Every opportunity includes: who pays, pricing anchor, 7-day validation plan, and failure conditions.
+
+If you're looking for the next small product worth building — not chasing the next big trend — AimFast.Dev is designed for you.
+
+---
+
+*Slug: hn-what-are-you-working-on-micro-agent-opportunity*

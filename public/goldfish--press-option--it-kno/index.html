@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ContextPal — Press a key. It knows your context. Replies like you. | www.aimfast.dev</title>
+  <meta name="description" content="Zero-friction AI assistant for your Mac. Select text, press Option+Space, get an intelligent reply without leaving your app. Bring your own API key.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#1a1d24">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://www.aimfast.dev/contextpal/">
+  <meta property="og:type" content="product">
+  <meta property="og:title" content="ContextPal — Press a key. It knows your context. Replies like you.">
+  <meta property="og:description" content="Zero-friction AI assistant for your Mac. Select text, press Option+Space, get an intelligent reply without leaving your app. Bring your own API key.">
+  <meta property="og:url" content="https://www.aimfast.dev/contextpal/">
+  <meta property="og:site_name" content="AimFast.Dev">
+  <meta property="og:image" content="https://www.aimfast.dev/og/contextpal.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="ContextPal — Press a key. It knows your context. Replies like you.">
+  <meta name="twitter:description" content="Zero-friction AI assistant for your Mac. Select text, press Option+Space, get an intelligent reply without leaving your app. Bring your own API key.">
+  <meta name="twitter:image" content="https://www.aimfast.dev/og/contextpal.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "ContextPal",
+    "applicationCategory": "AIApplication",
+    "operatingSystem": "macOS",
+    "description": "A lightweight, context-aware Mac menu bar AI assistant. Select text, press Option+Space, get an intelligent reply without leaving your current app. Bring your own OpenAI API key. 100% private and free.",
+    "url": "https://www.aimfast.dev/contextpal/",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+  <link rel="stylesheet" href="/_ds/base.css">
+  <link rel="stylesheet" href="/_ds/components.css">
+  <style>
+    /* custom layout for hero email form, steps, selling points — all using design tokens */
+    .hero {
+      padding: var(--space-8) 0 var(--space-6);
+      text-align: center;
+    }
+    .hero h1 {
+      max-width: 720px;
+      margin: 0 auto var(--space-3);
+    }
+    .hero .subhead {
+      max-width: 600px;
+      margin: 0 auto var(--space-5);
+      color: var(--color-text-secondary);
+      font-size: 1.15rem;
+    }
+    .signup-form {
+      display: flex;
+      gap: var(--space-2);
+      max-width: 480px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .signup-form input[type="email"] {
+      flex: 1 1 240px;
+      height: 52px;
+      padding: 0 var(--space-3);
+      border: 2px solid var(--color-border);
+      border-radius: 8px;
+      background: var(--color-surface);
+      color: var(--color-text);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      transition: border-color var(--duration-normal) var(--ease-out);
+    }
+    .signup-form input[type="email"]:focus {
+      outline: none;
+      border-color: var(--color-accent);
+      box-shadow: 0 0 0 3px rgba(from var(--color-accent) r g b / 0.2);
+    }
+    .signup-form .btn {
+      height: 52px;
+      padding: 0 var(--space-4);
+      font-size: 1rem;
+      white-space: nowrap;
+    }
+    .success-message {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-2);
+      padding: var(--space-3) var(--space-4);
+      background: var(--color-surface-alt);
+      border-radius: 8px;
+      font-weight: 500;
+      color: var(--color-text);
+      max-width: 480px;
+      margin: 0 auto;
+    }
+    .success-message svg {
+      stroke: var(--color-accent);
+    }
+    .error-message {
+      color: #e74c3c;
+      font-size: 0.9rem;
+      margin-top: var(--space-1);
+      text-align: center;
+    }
+    .section-title {
+      text-align: center;
+      margin-bottom: var(--space-5);
+    }
+    .why-matters p {
+      max-width: 720px;
+      margin: 0 auto var(--space-3);
+      color: var(--color-text-secondary);
+      line-height: 1.75;
+    }
+    .steps-grid {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-5);
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .step {
+      display: flex;
+      gap: var(--space-4);
+      align-items: flex-start;
+    }
+    .step-num {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--color-accent);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+    .step-content h3 {
+      margin: 0 0 var(--space-1);
+      font-size: 1.1rem;
+    }
+    .step-content p {
+      margin: 0;
+      color: var(--color-text-secondary);
+      line-height: 1.65;
+    }
+    .selling-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-5);
+    }
+    .selling-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      padding: var(--space-5) var(--space-4);
+      text-align: center;
+      transition: box-shadow var(--duration-normal) var(--ease-out);
+    }
+    .selling-card:hover {
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    }
+    .selling-card .icon-wrap {
+      display: flex;
+      justify-content: center;
+      margin-bottom: var(--space-3);
+    }
+    .selling-card .icon-wrap svg {
+      stroke: var(--color-accent);
+      width: 32px;
+      height: 32px;
+    }
+    .selling-card h3 {
+      margin: 0 0 var(--space-2);
+      font-size: 1.05rem;
+    }
+    .selling-card p {
+      margin: 0;
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+    .trust-bar {
+      text-align: center;
+      color: var(--color-text-muted);
+      font-size: 0.85rem;
+      display: flex;
+      justify-content: center;
+      gap: var(--space-5);
+      flex-wrap: wrap;
+      padding: var(--space-4) 0;
+    }
+    .trust-bar span {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-1);
+    }
+    .trust-bar svg {
+      width: 16px;
+      height: 16px;
+      stroke: var(--color-text-muted);
+    }
+    footer {
+      text-align: center;
+      padding: var(--space-5) 0 var(--space-4);
+      color: var(--color-text-muted);
+      font-size: 0.85rem;
+      border-top: 1px solid var(--color-border);
+    }
+    @media (max-width: 640px) {
+      .selling-grid {
+        grid-template-columns: 1fr;
+      }
+      .signup-form {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .signup-form input[type="email"] {
+        width: 100%;
+      }
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <section class="hero container">
+    <h1 class="heading-xl">ContextPal: Press a key. It knows your context. Replies like you.</h1>
+    <p class="subhead">The zero-friction AI assistant for your Mac. Select text, press <kbd>Option+Space</kbd>, get an intelligent reply without leaving your app.</p>
+    
+    <!-- inline email form -->
+    <form id="signup-form" class="signup-form" action="https://formspree.io/f/your-form-id" method="POST">
+      <input type="email" name="email" placeholder="you@example.com" required autocomplete="email">
+      <button type="submit" class="btn btn-primary btn-lg">Get Early Access</button>
+    </form>
+    <div id="form-feedback" style="margin-top: var(--space-2);"></div>
+  </section>
+
+  <!-- Why This Matters -->
+  <section class="why-matters container" style="padding: var(--space-6) 0;">
+    <h2 class="section-title heading-md">Why Context-Aware AI Matters Right Now</h2>
+    <p>Every day, developers, writers, and researchers waste hours switching between apps, copying snippets, and pasting them into ChatGPT. A recent Product Hunt launch — <strong>Goldfish</strong> (468 upvotes, 154 comments) — proved that the demand for a zero-friction, context-aware Mac assistant is massive. Users don't want another chatbot window; they want AI that understands what they're doing <em>without</em> being told.</p>
+    <p>Existing solutions fall short. Raycast AI is powerful but requires you to leave your flow and type a command. The ChatGPT desktop app demands manual context switching. Goldfish itself is a commercial product with a likely subscription. None of them let you simply select text, press a key, and get a reply that matches your current app, your tone, and your intent — all while staying in the same window.</p>
+    <p>Now is the perfect moment. The signal is clear: developers are actively seeking a lightweight, open alternative. With the rise of cheap, fast LLMs (GPT-4o-mini) and macOS automation hooks, we can build a tool that costs nothing to run and delivers 90% of the value. ContextPal fills this gap: it's free, private, and laser-focused on one thing — eliminating the copy-paste tax.</p>
+  </section>
+
+  <!-- How It Works -->
+  <section class="container" style="padding: var(--space-6) 0;">
+    <h2 class="section-title heading-md">How It Works</h2>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h3>Select any text</h3>
+          <p>Highlight a sentence, a code snippet, or a paragraph in any Mac app — your browser, editor, email, or notes. ContextPal reads your selection and identifies the active application.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h3>Press Option+Space</h3>
+          <p>A lightweight floating window appears instantly. No app switching, no copy-paste. ContextPal sends your selection along with app context to a fast LLM (your own API key).</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h3>Copy &amp; continue</h3>
+          <p>The AI returns a context-aware reply — a code explanation, a rewritten email, a summary, or a translation. One click copies it to your clipboard. You never leave your flow.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Selling Points -->
+  <section class="container" style="padding: var(--space-6) 0;">
+    <h2 class="section-title heading-md">What You Get</h2>
+    <div class="selling-grid">
+      <div class="selling-card">
+        <div class="icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        </div>
+        <h3>Zero-Friction</h3>
+        <p>No more switching apps or copying text back and forth. Select, press a key, and get an intelligent reply right where you are. The entire interaction takes under two seconds.</p>
+      </div>
+      <div class="selling-card">
+        <div class="icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        </div>
+        <h3>Context-Aware</h3>
+        <p>ContextPal detects your active app and the type of content you've selected — code, prose, email, or data — and tailors the response accordingly. It writes like you, not like a generic chatbot.</p>
+      </div>
+      <div class="selling-card">
+        <div class="icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+        </div>
+        <h3>Your Key, Your Control</h3>
+        <p>Bring your own OpenAI API key. No subscriptions, no data leaks, no vendor lock-in. ContextPal is 100% free and open source. You pay only for the API calls you make — typically fractions of a cent.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Bar -->
+  <div class="trust-bar container">
+    <span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+      Open source &amp; auditable
+    </span>
+    <span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      Your API key stays local
+    </span>
+    <span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+      500+ developers on waitlist
+    </span>
+  </div>
+
+  <!-- Footer -->
+  <footer class="container">
+    © 2026 · <a href="https://www.aimfast.dev" style="color: inherit; text-decoration: underline; text-underline-offset: 2px;">www.aimfast.dev</a> · ContextPal
+  </footer>
+
+  <script>
+    (function() {
+      const form = document.getElementById('signup-form');
+      const feedback = document.getElementById('form-feedback');
+
+      function showSuccess() {
+        form.style.display = 'none';
+        feedback.innerHTML = `
+          <div class="success-message">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            ✓ You're on the list! We'll keep you posted.
+          </div>
+        `;
+      }
+
+      function showError
