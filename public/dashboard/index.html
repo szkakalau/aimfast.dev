@@ -1788,12 +1788,14 @@ function renderAll(data) {
   if (recurring.length === 0) {
     document.getElementById('recurring-empty').style.display = 'block';
   } else {
+    document.getElementById('recurring-empty').style.display = 'none';
     var trendIcons = {
       rising: t('recTrendRising'),
       stable: t('recTrendStable'),
       fading: t('recTrendFading')
     };
     var recTbody = document.getElementById('recurring-body');
+    recTbody.innerHTML = '';
     recurring.forEach(function(rec) {
       var tr = document.createElement('tr');
       var trendHtml = trendIcons[rec.trend] || rec.trend;
@@ -2452,45 +2454,21 @@ function copyArticleNotepad() {
       renderAll(data);
     })
     .catch(function() {
-      // Fallback: use embedded data if present (from Python generator)
-      if (typeof signals !== 'undefined' && typeof history !== 'undefined') {
-        renderAll({
-          date: '__DATE_FALLBACK__',
-          signals: typeof signals !== 'undefined' ? signals : [],
-          summary: {
-            top_score: typeof signals !== 'undefined' && signals.length > 0 ? Math.max.apply(null, signals.map(function(s){return s.score||0;})) : 0,
-            avg_score: 0,
-            action_qualified: 0,
-            cross_platform_signals: 0
-          },
-          history: typeof history !== 'undefined' ? history : [],
-          opportunities: typeof opps !== 'undefined' ? opps : [],
-          recurring_signals: [],
-          demand_radar: {},
-          report_md: typeof reportMd !== 'undefined' ? reportMd : '',
-          article_md: '',
-          article_meta: {},
-          pipeline: {},
-          archive: [],
-          generated_at: ''
-        });
-      } else {
-        // No data at all — show empty state
-        document.getElementById('dash-date').textContent = new Date().toISOString().substring(0, 10);
-        document.getElementById('dash-generated').textContent = t('miscNoData');
-        document.getElementById('signals-body').innerHTML = '<tr><td colspan="6" class="empty">' + t('emptyNoData') + '</td></tr>';
-        document.getElementById('tab-report').innerHTML = '<div class="empty">' + t('emptyNoReportData') + '</div>';
-        document.getElementById('tracking-empty').style.display = 'block';
-        var recEmpty = document.getElementById('recurring-empty');
-        if (recEmpty) recEmpty.style.display = 'block';
-        var demEmpty = document.getElementById('demand-empty');
-        if (demEmpty) demEmpty.style.display = 'block';
-        document.getElementById('stat-signals').textContent = '0';
-        document.getElementById('stat-top').textContent = '--';
-        document.getElementById('stat-avg').textContent = '--';
-        document.getElementById('stat-action').textContent = '0';
-        document.getElementById('stat-cross').textContent = '0';
-      }
+      // No data at all — show empty state
+      document.getElementById('dash-date').textContent = new Date().toISOString().substring(0, 10);
+      document.getElementById('dash-generated').textContent = t('miscNoData');
+      document.getElementById('signals-body').innerHTML = '<tr><td colspan="6" class="empty">' + t('emptyNoData') + '</td></tr>';
+      document.getElementById('tab-report').innerHTML = '<div class="empty">' + t('emptyNoReportData') + '</div>';
+      document.getElementById('tracking-empty').style.display = 'block';
+      var recEmpty = document.getElementById('recurring-empty');
+      if (recEmpty) recEmpty.style.display = 'block';
+      var demEmpty = document.getElementById('demand-empty');
+      if (demEmpty) demEmpty.style.display = 'block';
+      document.getElementById('stat-signals').textContent = '0';
+      document.getElementById('stat-top').textContent = '--';
+      document.getElementById('stat-avg').textContent = '--';
+      document.getElementById('stat-action').textContent = '0';
+      document.getElementById('stat-cross').textContent = '0';
     });
 })();
 </script>

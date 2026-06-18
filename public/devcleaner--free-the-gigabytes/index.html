@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevCleaner — Reclaim gigabytes from dev tools & AI apps | www.aimfast.dev</title>
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#1a1d24">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://www.aimfast.dev/devcleaner/">
+  <meta name="description" content="One-click disk cleaner for Mac developers. Safely remove Xcode DerivedData, node_modules, Docker, CocoaPods, Ollama & LM Studio cache. Menu bar app, zero friction.">
+  <meta property="og:type" content="product">
+  <meta property="og:title" content="DevCleaner — Reclaim gigabytes from dev tools & AI apps">
+  <meta property="og:description" content="One-click disk cleaner for Mac developers. Safely remove Xcode DerivedData, node_modules, Docker, CocoaPods, Ollama & LM Studio cache. Menu bar app, zero friction.">
+  <meta property="og:url" content="https://www.aimfast.dev/devcleaner/">
+  <meta property="og:site_name" content="AimFast.Dev">
+  <meta property="og:image" content="https://www.aimfast.dev/og/devcleaner.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="DevCleaner — Reclaim gigabytes from dev tools & AI apps">
+  <meta name="twitter:description" content="One-click disk cleaner for Mac developers. Safely remove Xcode DerivedData, node_modules, Docker, CocoaPods, Ollama & LM Studio cache. Menu bar app, zero friction.">
+  <meta name="twitter:image" content="https://www.aimfast.dev/og/devcleaner.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "DevCleaner",
+    "applicationCategory": "AIApplication",
+    "operatingSystem": "macOS",
+    "description": "One-click disk cleaner for Mac developers. Safely removes Xcode DerivedData, node_modules, Docker, CocoaPods, Ollama & LM Studio cache. Menu bar app.",
+    "url": "https://www.aimfast.dev/devcleaner/",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+  <link rel="stylesheet" href="/_ds/base.css">
+  <link rel="stylesheet" href="/_ds/components.css">
+  <style>
+    /* custom page-level overrides — only layout & non-token styles */
+    .hero {
+      padding: var(--space-8) 0 var(--space-6);
+      text-align: center;
+    }
+    .hero .container {
+      max-width: 720px;
+    }
+    .hero h1 {
+      font-size: clamp(2.2rem, 6vw, 3.2rem);
+      line-height: 1.15;
+      margin-bottom: var(--space-3);
+    }
+    .hero .subhead {
+      font-size: 1.15rem;
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-5);
+      max-width: 580px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .signup-form {
+      display: flex;
+      gap: var(--space-2);
+      max-width: 500px;
+      margin: 0 auto var(--space-4);
+      align-items: center;
+      justify-content: center;
+    }
+    .signup-form input[type="email"] {
+      flex: 1;
+      min-width: 0;
+      height: 52px;
+      padding: 0 var(--space-3);
+      border: 1.5px solid var(--color-border);
+      border-radius: 8px;
+      background: var(--color-surface);
+      color: var(--color-text);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      transition: border-color var(--duration-normal) var(--ease-out);
+    }
+    .signup-form input[type="email"]:focus {
+      outline: none;
+      border-color: var(--color-accent);
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent) 20%, transparent);
+    }
+    .signup-form .btn {
+      height: 52px;
+      padding: 0 var(--space-4);
+      font-size: 1rem;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .form-feedback {
+      text-align: center;
+      font-weight: 500;
+      padding: var(--space-2) 0;
+      min-height: 2.5rem;
+    }
+    .form-feedback.success {
+      color: var(--color-accent);
+    }
+    .form-feedback.error {
+      color: #e35f5f;
+    }
+    .trust-bar {
+      display: flex;
+      justify-content: center;
+      gap: var(--space-5);
+      flex-wrap: wrap;
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+      margin-top: var(--space-3);
+    }
+    .trust-bar span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .trust-bar svg {
+      width: 16px;
+      height: 16px;
+      stroke: var(--color-text-muted);
+    }
+    .section-title {
+      text-align: center;
+      margin-bottom: var(--space-5);
+    }
+    .why-matters p {
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: var(--space-3);
+      line-height: 1.7;
+    }
+    .steps-grid {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-5);
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .step {
+      display: flex;
+      gap: var(--space-4);
+      align-items: flex-start;
+    }
+    .step-num {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--color-accent);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.1rem;
+      font-family: var(--font-mono);
+    }
+    .step-content h3 {
+      margin-bottom: var(--space-1);
+      font-size: 1.1rem;
+    }
+    .step-content p {
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+    }
+    .selling-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-4);
+    }
+    .selling-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      padding: var(--space-4);
+      text-align: center;
+    }
+    .selling-card .icon-wrap {
+      margin-bottom: var(--space-2);
+      display: inline-flex;
+    }
+    .selling-card .icon-wrap svg {
+      width: 32px;
+      height: 32px;
+      stroke: var(--color-accent);
+    }
+    .selling-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: var(--space-1);
+    }
+    .selling-card p {
+      color: var(--color-text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    footer {
+      text-align: center;
+      padding: var(--space-6) 0 var(--space-4);
+      color: var(--color-text-muted);
+      font-size: 0.85rem;
+      border-top: 1px solid var(--color-border);
+      margin-top: var(--space-6);
+    }
+    @media (max-width: 640px) {
+      .signup-form {
+        flex-direction: column;
+        gap: var(--space-2);
+      }
+      .signup-form input[type="email"] {
+        width: 100%;
+      }
+      .signup-form .btn {
+        width: 100%;
+      }
+      .selling-grid {
+        grid-template-columns: 1fr;
+      }
+      .trust-bar {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-2);
+      }
+      .step {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero + inline email form -->
+  <section class="hero">
+    <div class="container">
+      <h1 class="heading">DevCleaner: reclaim gigabytes from dev tools &amp; AI apps</h1>
+      <p class="subhead">One-click menu bar cleaner for Xcode, Docker, Node, CocoaPods, Ollama &amp; LM Studio. Zero friction, zero risk.</p>
+      
+      <form id="signup-form" class="signup-form" action="https://formspree.io/f/your-form-id" method="POST">
+        <input type="email" name="email" placeholder="you@example.com" required autocomplete="email">
+        <button type="submit" class="btn btn-primary btn-lg">Get Early Access</button>
+      </form>
+      <div id="form-feedback" class="form-feedback"></div>
+
+      <div class="trust-bar">
+        <span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          500+ developers on waitlist
+        </span>
+        <span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+          Safe delete — never removes essential files
+        </span>
+        <span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          Free forever (core)
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why This Matters -->
+  <section class="why-matters" style="padding: var(--space-6) 0;">
+    <div class="container">
+      <h2 class="section-title heading">Why developer disk cleaning matters right now</h2>
+      <p>Every Mac developer knows the pain: you're down to 5 GB, Xcode DerivedData eats 20 GB, Docker images pile up, and <code>node_modules</code> folders lurk everywhere. A recent Product Hunt launch (DevCleaner, 111 upvotes, 18 comments) confirmed what many feel — existing tools are either too generic (CleanMyMac X at $39.95/year) or too manual (GrandPerspective, DaisyDisk). Developers need a tool that understands <em>their</em> cache: <code>~/Library/Developer/Xcode/DerivedData</code>, <code>~/.ollama/models</code>, CocoaPods, and the rest.</p>
+      <p>Meanwhile, AI applications like Ollama and LM Studio are becoming the new disk hogs — model files can easily exceed 10 GB. Yet no mainstream cleaner targets them. The timing is perfect: developer tooling is shifting left, and the community is actively discussing storage pain on HN, Reddit, and PH. DevCleaner fills this gap with a focused, menu-bar-native approach that takes two hours to build and minutes to use.</p>
+      <p>By offering a free MVP that scans and cleans safely, we build trust and collect real feedback. The paid version ($9.99 one-time) adds custom paths, scheduled cleaning, and whitelists — a natural upgrade for power users. This is a textbook example of a narrow, high-signal product that solves a genuine, recurring pain.</p>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section style="padding: var(--space-6) 0; background: var(--color-surface-alt);">
+    <div class="container">
+      <h2 class="section-title heading">How It Works</h2>
+      <div class="steps-grid">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h3>Click the menu bar icon</h3>
+            <p>DevCleaner lives in your Mac menu bar — always accessible, never in your way. A single click triggers a scan of all known developer and AI cache locations.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h3>Review what can be safely removed</h3>
+            <p>The scan lists every cache folder with its size, sorted by impact. Each item is tagged “safe to delete” or “delete with caution” based on built-in heuristics — no guesswork.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h3>One click to reclaim gigabytes</h3>
+            <p>Hit “Clean All Safe Items” and watch disk space come back. DevCleaner only removes files marked safe — your projects, settings, and essential data stay untouched.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Selling Points (3-column grid) -->
+  <section style="padding: var(--space-6) 0;">
+    <div class="container">
+      <h2 class="section-title heading">What You Get</h2>
+      <div class="selling-grid">
+        <div class="selling-card">
+          <div class="icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+          </div>
+          <h3>Smart scanning engine</h3>
+          <p>Automatically detects Xcode DerivedData, CocoaPods cache, global node_modules, Docker images, and AI model files from Ollama and LM Studio — all in one pass.</p>
+        </div>
+        <div class="selling-card">
+          <div class="icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </div>
+          <h3>Safety-first design</h3>
+          <p>Every file is classified with a risk level. Only “safe delete” items are eligible for one-click cleaning. You’ll never accidentally remove project data or configuration files.</p>
+        </div>
+        <div class="selling-card">
+          <div class="icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </div>
+          <h3>Menu bar, zero friction</h3>
+          <p>No complex UI, no setup wizard. Click the menu bar icon → scan → clean. It stays out of your way until you need it — perfect for developers who value flow.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© 2026 · <a href="https://www.aimfast.dev" style="color: var(--color-text-secondary); text-decoration: none;">www.aimfast.dev</a> · DevCleaner is a project of AimFast.Dev</p>
+    </div>
+  </footer>
+
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      const form = document.getElementById('signup-form');
+      const feedback = document.getElementById('form-feedback');
+      const formData = new FormData(form);
+      const email = formData.get('email');
+
+      // basic client-side validation
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        feedback.className = 'form-feedback error';
+        feedback.textContent = 'Please enter a valid email address.';
+        return;
+      }
+
+      // show loading state
+      const btn = form.querySelector('button');
+      const original
