@@ -1,0 +1,210 @@
+---
+title: "Your Mac Is Secretly Hoarding 50GB of Junk — Someone’s Cashing In on This Pain"
+date: 2026-06-18
+summary: "Tuesday afternoon, a tool called DevCleaner launched on Product Hunt. 111 upvotes, 18 comments — not a blowout, but the comment section had a consistent..."
+---
+
+# Your Mac Is Secretly Hoarding 50GB of Junk — Someone’s Cashing In on This Pain
+
+Tuesday afternoon, a tool called DevCleaner launched on Product Hunt. **111 upvotes, 18 comments** — not a blowout, but the comment section had a consistent vibe. Not "cool" or "nice," but "finally someone made this" and "I cleaned up my Cursor cache and freed 12GB instantly."
+
+This is a signal everyone’s ignoring.
+
+**Slug**: `devcleaner-mac-dev-tools-cleanup-opportunity`
+
+---
+
+## I Spotted a Signal
+
+DevCleaner does one simple thing: scans your Mac for cache, logs, and temp files left behind by dev tools and AI apps, then cleans them in one click.
+
+Not Deep Clean, not CleanMyMac — it’s **specifically for dev tools and AI apps** — Node’s `node_modules` leftovers, Docker’s dangling images, Xcode’s DerivedData, Cursor’s `.cursor` cache, Chrome’s DevTools logs…
+
+I read through all 18 comments. **No one asked, "Is this safe?"** What they asked was: "Can it clean Claude Code’s cache?" "Does it support Windsurf?" "Can it also scan Docker’s build cache?"
+
+That’s a massive signal.
+
+Why? Because when a product launches and users’ first reaction isn’t questioning its value but **demanding support for more of their own tools** — that means the pain point already exists, just without a good solution.
+
+---
+
+## In Plain English
+
+Your Mac is getting slower, but it’s not because the hardware is aging.
+
+How many dev tools have you installed in the past two years? VS Code, Cursor, Windsurf, Claude Code, Docker, Figma, Chrome, Node, Python virtual environments… **Every single one leaves behind cache, logs, temp files, and build artifacts.**
+
+Cursor’s AI model cache can eat 2-5GB per project. Docker’s dangling images, if you frequently pull new ones, can stack up to 10GB+ in months. Chrome’s DevTools logs, if you’re a heavy frontend dev, can generate hundreds of MB per day.
+
+**Most developers know these files exist, but they don’t know the total size — and even less about which ones are safe to delete.**
+
+DevCleaner’s smart move: it doesn’t claim to be a "Mac cleaning master." It does one thing — **lets developers see how much space their tools are eating, then gives it back in one click.**
+
+### Who’s Hurting? Why Now?
+
+**Who’s hurting**: Indie developers, freelancers, and small startup teams using Macs. Especially those with 256GB/512GB drives. I know a guy building AI apps — 512GB MacBook Pro, six months later only 30GB free. He spent an afternoon manually cleaning and accidentally deleted an important Docker volume.
+
+**Why now**: Three reasons —
+
+1. **AI tools exploded**. Cursor, Claude Code, Windsurf, GitHub Copilot… These tools eat way more space than traditional IDEs. AI model cache, session history, code indexing — each can consume gigabytes.
+2. **Upgrading storage got harder**. Apple Silicon Macs have soldered SSDs — you can’t add your own. 512GB is 512GB. When it’s full, you buy a new machine.
+3. **Developers fear "cleaning."** Manually deleting stuff in `~/Library/Caches` requires knowing what you’re doing. Most people won’t touch it.
+
+### Pricing Anchor
+
+DevCleaner is currently selling on Product Hunt for **$12 one-time purchase** (limited-time discount). This pricing is clever:
+
+- **$12 < the mental cost of a bubble tea**. For a developer, spending $12 to solve a six-month pain point is a no-brainer.
+- **One-time vs subscription**. Cleaning tools follow a "use once, solve it" logic — subscriptions actually scare people off.
+- **Compared to competitors**: CleanMyMac X costs $39.95/year and does way too many non-dev things. DevCleaner focuses only on dev scenarios at 1/3 the price.
+
+---
+
+## There’s an Opportunity Hiding Here
+
+DevCleaner’s direction is right, but **it’s still too early**.
+
+Right now it only scans and cleans. But what developers really need isn’t "cleaning" — it’s "management."
+
+Let me sketch a product roadmap. **If the DevCleaner team doesn’t build it, you can:**
+
+### Opportunity Description: Developer Disk Space Management Platform
+
+Not a "cleaning tool" — a **"health dashboard for developer tools."**
+
+It does three things:
+
+1. **Visualization**: A Mac menu bar widget showing real-time disk usage per dev tool. Cursor: 12GB, Docker: 8GB, Xcode: 15GB… see it at a glance.
+2. **Safe Cleaning**: Auto-identifies files safe to delete (AI cache, build artifacts, logs) vs files to never touch (config files, auth credentials). **Safety is priority one.**
+3. **Continuous Monitoring**: Set thresholds — auto-clean Docker dangling images when they exceed 5GB, alert you when Cursor cache hits 10GB.
+
+### Who Pays? How Much?
+
+**First payers**: **Indie developers + freelancers**, using Mac, drive ≤ 512GB, daily use of 3+ dev tools.
+
+**Pricing**:
+- **Lite (Free)**: Scan + report showing how much space is eaten
+- **Pro ($19 one-time)**: One-click clean + safety rules + weekly auto-scan
+- **Team ($9/month/seat)**: Team disk usage reports + compliance cleaning policies + Slack notifications
+
+### Why Most People Will Miss It
+
+The mainstream view: "What’s there to do with a cleaning tool? CleanMyMac already does it, CCleaner already does it."
+
+**Wrong.** Here’s why:
+
+1. **Generic cleaning tools aren’t dev-friendly**. CleanMyMac might suggest cleaning Docker containers, but it can’t tell which ones are in use vs abandoned. Developers won’t trust it.
+2. **Dev tool disk consumption is accelerating**. In 2024, Cursor user growth hit 300%+. Claude Code grew 400%+ in Q1 2026. Every new tool brings new caching strategies. **This is a dynamic problem, not static.**
+3. **One-time purchase + vertical niche = low decision cost**. $12 one-time vs $39/year subscription — for "occasional use" scenarios, one-time wins.
+
+**Evidence**: Of DevCleaner’s 18 comments on Product Hunt, **zero are negative**. That’s extremely rare on PH. Typically, a new tool gets at least 20% comments like "I can do this with X" or "What’s the point?" DevCleaner didn’t. Because the pain is too real.
+
+---
+
+## Why Most People Will Miss It
+
+Let me be direct: **Most builders look down on the cleaning tool space.**
+
+They think:
+- "Isn’t this just a sub-feature of CleanMyMac?"
+- "Developers can clean themselves — no need to pay."
+- "The market’s too small, not worth it."
+
+**Every single judgment is wrong.** Let me break it down:
+
+**"Isn’t this just a sub-feature of CleanMyMac?"**
+CleanMyMac scans "Mac general junk." It doesn’t know what `~/.cursor/cache` is, doesn’t know what `~/Library/Application Support/Claude Code/` stores, doesn’t know the difference between Docker’s build cache and image cache. **Developers need a cleaning tool that understands dev tools.**
+
+**"Developers can clean themselves — no need to pay."**
+In theory, yes. But in reality, 8 out of 10 developers I know have never cleaned their dev tool cache. Not because they don’t want to — because **they don’t know what’s safe to delete and what isn’t.** The risk of manual cleaning is too high — delete the wrong Docker volume and your entire database is gone. Spending $12 on a safe one-click clean is way better than spending an afternoon manually cleaning and then worrying.
+
+**"The market’s too small."**
+There are 27 million developers globally. Assume 30% use Mac — that’s 8 million. Assume 20% have disk space anxiety — that’s 1.6 million. $12 x 1.6 million = **$19.2 million**. That’s not even counting Team subscription revenue. Small market?
+
+---
+
+## If It Were Me, Here’s What I’d Do
+
+I’d break this opportunity into three validation steps — **all completed within 7 days.**
+
+### Day 1 (2 Hours to Build)
+
+**Don’t build the product. Build a page.**
+
+A simple landing page:
+- Headline: "How much space are your Mac dev tools eating?"
+- Subheadline: "Free scan, 5-second report."
+- One button: "Download Free Scanner"
+- Promise: Won’t delete any files — just generates a report
+
+**The tool itself**: A simple Swift script that scans common dev tool cache directories, calculates total size, and outputs an HTML report. Wrap it in a SwiftUI Mac menu bar app. **2 hours is enough.**
+
+Why scan first, not clean? Because scanning is zero-risk — users are willing to try it. The scan report itself is an "aha moment" — when users see Cursor eating 12GB, their purchase intent skyrockets.
+
+### Day 2
+
+Ship the scanner to Product Hunt with the title: "DevScanner: Free Tool to See How Much Space Your Dev Tools Are Eating"
+
+Pricing strategy: Scan is free, cleaning feature is $9 one-time.
+
+**Goal**: See how many people download, and how many click the "Clean" button from the scan report page.
+
+### Day 3-7
+
+Collect scan data from the first 100 users. Analyze:
+- Which tool eats the most space? (Likely Docker or Xcode)
+- Average reclaimable space per Mac (in GB)?
+- What are users’ most common questions?
+
+Based on data, decide whether to build the cleaning feature.
+
+**Validation criteria**:
+- 100 scan downloads → Continue
+- 30% of users click "Clean" → Build cleaning feature
+- 10% of users willing to pay → **Start building seriously**
+
+### MVP Plan
+
+No fancy UI needed. A Mac menu bar app + a simple SwiftUI interface + a cleaning script. **No backend needed** — reports are generated locally, cleaning runs locally.
+
+**Tech stack**:
+- Swift + SwiftUI (native Mac app)
+- Local filesystem scanning
+- Safe cleaning rules (whitelist mode: only delete clearly safe file types)
+
+### Pricing Plan
+
+- **Free**: Scan + report + manual cleaning guide (tells users which files they can manually delete)
+- **Pro ($12 one-time)**: One-click smart cleaning + weekly auto-scan + cleaning history
+
+### Failure Conditions
+
+**When is this judgment wrong?**
+
+1. **Developers genuinely don’t care about disk space**. If the scan report shows average reclaimable space < 5GB, the pain isn’t sharp enough. But if it’s > 20GB, it’s worth doing.
+2. **macOS’s built-in storage management is already good enough**. macOS’s "Storage Management" can clean some cache, but it doesn’t understand dev tools. If you find developers already comfortable with system tools, the pain is solved.
+3. **Competitors move fast**. If CleanMyMac launches a "Developer Mode," or Cursor starts auto-cleaning its own cache, this market gets eaten. But given big company response times, you have a 3-6 month window.
+
+---
+
+## Other Signals Worth Watching This Week
+
+1. **Goldfish** (PH 610 upvotes / 186 comments): Press the Option key to wake an AI assistant that knows your work context. Priced at $19/month. **Signal**: Desktop AI assistants are entering the "low-friction interaction" phase — no need to open a browser, no copy-paste, just a hotkey.
+
+2. **Swytchcode CLI** (PH 348 upvotes / 51 comments): Lets AI agents call 2000+ APIs with persistent state. **Signal**: The bridge from "chat" to "actually doing things" for AI agents is being built. Opportunity lies in the agent "middleware" layer.
+
+3. **Garry Tan’s Claude Code config** (GitHub Trending): A 23-tool development workflow. **Signal**: A top-tier investor publicly sharing his AI dev setup — this means "AI-driven development workflows" are moving from experimental to mainstream. Opportunity in a platform for "sharing and reusing AI workflows."
+
+---
+
+## About AimFast.Dev
+
+AimFast.Dev is a signal radar and action playbook for indie developers. It scans Product Hunt, Hacker News, GitHub Trending, Reddit, and more daily — separating signals from noise, and extracting opportunities from signals.
+
+Our core belief: **Opportunities aren’t "discovered" — they’re "locked in" with evidence.** Every opportunity suggestion comes with concrete data, pricing anchors, and failure conditions — so you can decide if it’s right for you.
+
+**Next issue preview**: Behind Goldfish’s 610 upvotes — why "press one key to use AI" is 10x more important than "open ChatGPT and type a prompt."
+
+---
+
+*If you found this useful, let me know in the comments which dev tool pain point matters most to you. Disk space? AI tool management? Something else?*
