@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InboxAI — Is Your Inbox Half Human, Half Robot? | www.aimfast.dev</title>
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#1a1d24">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://www.aimfast.dev/inboxai/">
+  <meta property="og:type" content="product">
+  <meta property="og:title" content="InboxAI — Is Your Inbox Half Human, Half Robot? We’ll Tell You.">
+  <meta property="og:description" content="Identify every AI agent email in your Gmail in 30 seconds. Free. Regain control of your inbox.">
+  <meta property="og:url" content="https://www.aimfast.dev/inboxai/">
+  <meta property="og:site_name" content="AimFast.Dev">
+  <meta property="og:image" content="https://www.aimfast.dev/og/inboxai.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="InboxAI — Is Your Inbox Half Human, Half Robot? We’ll Tell You.">
+  <meta name="twitter:description" content="Identify every AI agent email in your Gmail in 30 seconds. Free. Regain control of your inbox.">
+  <meta name="twitter:image" content="https://www.aimfast.dev/og/inboxai.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "InboxAI",
+    "applicationCategory": "AIApplication",
+    "operatingSystem": "Web",
+    "description": "Instantly identify AI agent emails in your Gmail inbox. Free analysis, no storage.",
+    "url": "https://www.aimfast.dev/inboxai/",
+    "offers": {
+      "@type": "Offer",
+      "price": "3.99",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+  <link rel="stylesheet" href="/_ds/base.css">
+  <link rel="stylesheet" href="/_ds/components.css">
+  <style>
+    /* custom page styles – only layout & overrides, no token redefinition */
+    .hero {
+      padding: var(--space-8) 0 var(--space-6);
+      text-align: center;
+    }
+    .hero h1 {
+      max-width: 720px;
+      margin: 0 auto var(--space-3);
+    }
+    .hero .subhead {
+      max-width: 540px;
+      margin: 0 auto var(--space-5);
+      color: var(--color-text-secondary);
+      font-size: 1.15rem;
+    }
+    .signup-form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+      justify-content: center;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+    .signup-form input[type="email"] {
+      flex: 1 1 240px;
+      height: 52px;
+      padding: 0 var(--space-3);
+      border: 2px solid var(--color-border);
+      border-radius: 8px;
+      background: var(--color-surface);
+      color: var(--color-text);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      transition: border-color var(--duration-normal) var(--ease-out);
+    }
+    .signup-form input[type="email"]:focus {
+      border-color: var(--color-accent);
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(var(--color-accent-rgb), 0.2);
+    }
+    .signup-form .btn {
+      height: 52px;
+      padding: 0 var(--space-4);
+      font-size: 1rem;
+      white-space: nowrap;
+    }
+    .signup-success {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-2);
+      max-width: 480px;
+      margin: 0 auto;
+      padding: var(--space-3);
+      background: var(--color-surface-alt);
+      border-radius: 8px;
+      color: var(--color-accent);
+      font-weight: 600;
+    }
+    .signup-success svg {
+      flex-shrink: 0;
+    }
+    .signup-error {
+      display: none;
+      color: #e74c3c;
+      text-align: center;
+      margin-top: var(--space-2);
+      font-size: 0.9rem;
+    }
+    .why-matters {
+      padding: var(--space-8) 0;
+    }
+    .why-matters p {
+      max-width: 720px;
+      margin: 0 auto var(--space-3);
+      color: var(--color-text-secondary);
+      line-height: 1.75;
+    }
+    .how-it-works {
+      padding: var(--space-8) 0;
+      background: var(--color-surface);
+    }
+    .steps-grid {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-5);
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .step {
+      display: flex;
+      gap: var(--space-4);
+      align-items: flex-start;
+    }
+    .step-num {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--color-accent);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-mono);
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+    .step-content h3 {
+      margin: 0 0 var(--space-1);
+      font-size: 1.1rem;
+    }
+    .step-content p {
+      margin: 0;
+      color: var(--color-text-secondary);
+      line-height: 1.65;
+    }
+    .selling-points {
+      padding: var(--space-8) 0;
+    }
+    .selling-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-5);
+    }
+    .selling-card {
+      background: var(--color-surface);
+      border-radius: 12px;
+      padding: var(--space-5) var(--space-4);
+      text-align: center;
+      border: 1px solid var(--color-border);
+    }
+    .selling-card .icon-wrap {
+      margin-bottom: var(--space-3);
+      color: var(--color-accent);
+    }
+    .selling-card h3 {
+      margin: 0 0 var(--space-2);
+      font-size: 1.1rem;
+    }
+    .selling-card p {
+      margin: 0;
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+    .trust-bar {
+      padding: var(--space-5) 0 var(--space-6);
+      text-align: center;
+      color: var(--color-text-muted);
+      font-size: 0.85rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: var(--space-4);
+    }
+    .trust-bar span {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-1);
+    }
+    .footer {
+      padding: var(--space-4) 0;
+      text-align: center;
+      border-top: 1px solid var(--color-border);
+      color: var(--color-text-muted);
+      font-size: 0.85rem;
+    }
+    @media (max-width: 640px) {
+      .signup-form {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .signup-form input[type="email"] {
+        flex: 1 1 auto;
+      }
+      .selling-grid {
+        grid-template-columns: 1fr;
+      }
+      .step {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .trust-bar {
+        flex-direction: column;
+        gap: var(--space-2);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <section class="hero container">
+    <h1 class="heading-xl">Is Your Inbox Half Human, Half Robot?</h1>
+    <p class="subhead">Identify every AI agent email in your Gmail in 30 seconds. Free.</p>
+    <!-- inline email form -->
+    <form id="signup-form" class="signup-form" action="https://formspree.io/f/your-form-id" method="POST">
+      <input type="email" name="email" placeholder="you@example.com" required autocomplete="email">
+      <button type="submit" class="btn btn-primary btn-lg">Analyze My Inbox Free</button>
+    </form>
+    <div id="signup-success" class="signup-success">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      <span>✓ You're on the list! Check your inbox for the analysis link.</span>
+    </div>
+    <div id="signup-error" class="signup-error"></div>
+  </section>
+
+  <!-- Why This Matters -->
+  <section class="why-matters container">
+    <h2 class="heading-lg" style="text-align:center; margin-bottom: var(--space-4);">Why AI‑Inbox Clarity Matters Right Now</h2>
+    <p>Every day, your Gmail fills with automated status reports, CI/CD notifications, PR updates, and AI‑generated newsletters — all indistinguishable from human emails. A recent Product Hunt discussion (830+ upvotes, 220 comments) revealed that developers and managers are drowning in “agent noise.” They can’t tell which messages need immediate attention and which are machine‑generated logs.</p>
+    <p>Existing solutions like Gmail filters are too rigid — they can’t differentiate a human‑written marketing email from an AI agent’s deployment report. Superhuman and Spark focus on speed, not identity. Meanwhile, the number of AI agents sending emails is exploding in 2026, yet no tool helps you separate <em>people</em> from <em>programs</em>. That gap is exactly where InboxAI steps in.</p>
+    <p>The timing is critical: with agent‑to‑human communication growing 10x year over year, the window to build trust and control into your inbox is now. Early adopters who understand the pain will define the category.</p>
+  </section>
+
+  <!-- How It Works -->
+  <section class="how-it-works">
+    <div class="container">
+      <h2 class="heading-lg" style="text-align:center; margin-bottom: var(--space-5);">How It Works</h2>
+      <div class="steps-grid">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h3>Connect your Gmail</h3>
+            <p>One‑click OAuth authorization — we request read‑only access to your inbox. No data is stored, and you can revoke access anytime. Your privacy is our first priority.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h3>AI classifies every email</h3>
+            <p>Our lightweight GPT‑4o‑mini model analyzes the sender, subject line, and first 200 characters of each message. It labels every email as 👤 Human or 🤖 Agent with over 90% accuracy.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h3>See your inbox split</h3>
+            <p>You get a clean web dashboard showing your last 50 emails, each tagged by type. Instantly know which messages deserve your attention — and which can wait. No setup, no clutter.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Selling Points -->
+  <section class="selling-points container">
+    <h2 class="heading-lg" style="text-align:center; margin-bottom: var(--space-5);">What You Get</h2>
+    <div class="selling-grid">
+      <div class="selling-card">
+        <div class="icon-wrap">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+          </svg>
+        </div>
+        <h3>See who’s writing</h3>
+        <p>Instantly know if an email is from a human colleague or an AI agent. No more guessing whether that “status update” is from a person or a bot — clarity at a glance.</p>
+      </div>
+      <div class="selling-card">
+        <div class="icon-wrap">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+          </svg>
+        </div>
+        <h3>Regain control</h3>
+        <p>Stop being distracted by automated deployment logs and CI reports. Focus on messages that matter — human conversations, client requests, and team collaboration.</p>
+      </div>
+      <div class="selling-card">
+        <div class="icon-wrap">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/>
+          </svg>
+        </div>
+        <h3>Zero setup, private</h3>
+        <p>Connect your Gmail in one click. We never store your emails — analysis happens in real‑time and is discarded immediately. Your data stays yours, always.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Bar -->
+  <div class="trust-bar container">
+    <span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+      No email storage
+    </span>
+    <span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>
+      Read‑only OAuth
+    </span>
+    <span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      90%+ accuracy
+    </span>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer container">
+    © 2026 · www.aimfast.dev
+  </footer>
+
+  <script>
+    (function() {
+      const form = document.getElementById('signup-form');
+      const successDiv = document.getElementById('signup-success');
+      const errorDiv = document.getElementById('signup-error');
+
+      if (!form) return;
+
+      form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        // hide previous messages
+        successDiv.style.display = 'none';
+        errorDiv.style.display = 'none';
+        errorDiv.textContent = '';
+
+        const email = form.email.value.trim();
+        if (!email) return;
+
+        // disable button during request
+        const btn = form.querySelector('button[type="submit"]');
+        const originalText = btn.textContent;
+        btn.disabled = true;
+        btn.textContent = 'Sending…';
+
+        try {
+          const response = await fetch(form.action, {
+            method: 'POST',
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json'
+            },
+            body:
