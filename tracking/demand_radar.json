@@ -2,7 +2,7 @@
   "_schema": "需求雷达 v3.0 — Market/Business 分离 + Confidence + Stage",
   "_version": "3.0",
   "_formula": "Market=(Trend×0.5+Growth×0.3+Consistency×0.2)×100, Business=(Pain×0.5+Pay×0.5)×100, Opportunity=Market×0.6+Business×0.4, Confidence=log2(n+1)×20",
-  "generated_at": "2026-06-18T10:46:33.280709+08:00",
+  "generated_at": "2026-06-19T11:02:44.385376+08:00",
   "weeks": [
     "2026-06-15"
   ],
@@ -17,7 +17,7 @@
       },
       "total_signals": 1,
       "delta": "new",
-      "market_score": 48,
+      "market_score": 46,
       "business_score": 95,
       "competition": 20,
       "ai_replaceability": 2,
@@ -40,7 +40,7 @@
         "Model Routing",
         "Prompt Compression"
       ],
-      "opportunity_index": 28,
+      "opportunity_index": 27,
       "trend_score": 2,
       "growth_score": 6,
       "consistency_score": 10,
@@ -59,15 +59,15 @@
       "name_en": "Save Time — Agent Automation",
       "description": "多 Agent 协作、工作流自动化、用 MCP 工具让 AI 替你跑腿",
       "snapshots": {
-        "2026-06-15": 1
+        "2026-06-15": 2
       },
-      "total_signals": 1,
+      "total_signals": 2,
       "delta": "new",
-      "market_score": 48,
+      "market_score": 55,
       "business_score": 45,
       "competition": 35,
       "ai_replaceability": 4,
-      "confidence": 20,
+      "confidence": 32,
       "stage": "early",
       "target_buyer": "AI 平台团队、自动化工程师",
       "description_en": "Multi-agent workflows, automation, MCP tools that do the work for you.",
@@ -86,8 +86,8 @@
         "Tool Use",
         "Browser Agent"
       ],
-      "opportunity_index": 19,
-      "trend_score": 2,
+      "opportunity_index": 21,
+      "trend_score": 3,
       "growth_score": 6,
       "consistency_score": 10,
       "pain_score": 4,
@@ -96,7 +96,7 @@
       "pain_severity": 7,
       "pay_budget": 8,
       "pay_urgency": 6,
-      "total_appearances": 1,
+      "total_appearances": 2,
       "distinct_days": 1
     },
     {
@@ -109,7 +109,7 @@
       },
       "total_signals": 1,
       "delta": "new",
-      "market_score": 48,
+      "market_score": 46,
       "business_score": 71,
       "competition": 60,
       "ai_replaceability": 5,
@@ -155,7 +155,7 @@
       },
       "total_signals": 1,
       "delta": "new",
-      "market_score": 48,
+      "market_score": 46,
       "business_score": 68,
       "competition": 70,
       "ai_replaceability": 6,
@@ -178,7 +178,7 @@
         "Compliance",
         "Security Audit"
       ],
-      "opportunity_index": 13,
+      "opportunity_index": 12,
       "trend_score": 2,
       "growth_score": 6,
       "consistency_score": 10,
@@ -197,15 +197,15 @@
       "name_en": "Increase Output — Persistent Agent Memory",
       "description": "Agent 跨会话记不住你、知识库无法沉淀、每次对话从零开始",
       "snapshots": {
-        "2026-06-15": 5
+        "2026-06-15": 6
       },
-      "total_signals": 5,
+      "total_signals": 6,
       "delta": "new",
       "market_score": 88,
       "business_score": 56,
       "competition": 100,
       "ai_replaceability": 8,
-      "confidence": 52,
+      "confidence": 56,
       "stage": "forming",
       "target_buyer": "Agent 开发者、SaaS 创业团队",
       "description_en": "Agents forget everything between sessions. Knowledge doesn't accumulate.",
@@ -234,7 +234,7 @@
       "pain_severity": 8,
       "pay_budget": 7,
       "pay_urgency": 7,
-      "total_appearances": 5,
+      "total_appearances": 6,
       "distinct_days": 1
     }
   ],
