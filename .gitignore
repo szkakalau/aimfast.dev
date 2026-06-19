@@ -5,7 +5,11 @@ raw/
 logs/
 
 # 日报输出（本地归档，不需要版本控制）
-daily/
+# 例外：signals.json 是 track_recurring 跨日期检测的输入，CI fresh checkout 时
+# 需要历史信号，故提交 signals.json；其余日报产物仍仅本地保存。
+daily/**
+!daily/*/
+!daily/*/signals.json
 
 # 周报输出（本地归档，不需要版本控制）
 weekly/

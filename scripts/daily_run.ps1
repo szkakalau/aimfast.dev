@@ -297,7 +297,7 @@ Write-Log "--- Step 13: Deploy Dashboard Data & SEO Content ---"
 
 try {
     Push-Location $ProjectRoot
-    git add public/dashboard/data/dashboard.json tracking/recurring_signals.json tracking/demand_radar.json public/sitemap.xml content/reports/ content/articles/ public/*/index.html 2>&1 | Out-Null
+    git add public/dashboard/data/dashboard.json tracking/recurring_signals.json tracking/demand_radar.json public/sitemap.xml content/reports/ content/articles/ public/*/index.html daily/*/signals.json 2>&1 | Out-Null
 
     # Check if there are staged changes
     $diffOut = git diff --cached --name-only 2>&1

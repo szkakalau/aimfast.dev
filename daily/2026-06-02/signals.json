@@ -1,0 +1,7105 @@
+{
+  "processed_at": "2026-06-02T13:19:13.272956+08:00",
+  "date": "2026-06-02",
+  "config": {
+    "scoring_formula": "Score = cross_platform×3 + volume×2 + freshness×2 + actionability×2 + buyer_clarity×1",
+    "action_threshold": 15
+  },
+  "total_raw": 117,
+  "signals": [
+    {
+      "id": "github-1235056479",
+      "title": "simonlin1212/a-stock-data",
+      "url": "https://github.com/simonlin1212/a-stock-data",
+      "source": "GitHub Trending",
+      "source_key": "github",
+      "signal_type": "repo",
+      "discussion_count": 3856,
+      "engagement": {
+        "stars": 3188,
+        "forks": 668,
+        "watchers": 3188,
+        "star_velocity": 144.9,
+        "repo_age_days": 22,
+        "total": 14289
+      },
+      "collected_at": "2026-06-02T12:41:04.323953+08:00",
+      "raw_created_at": "2026-05-11T01:08:15Z",
+      "raw_updated_at": "2026-06-02T04:33:50Z",
+      "summary": "simonlin1212/a-stock-data：A股全栈数据工具包 — 7层架构 · 28端点 · 13数据源 · 零第三方依赖 | Full-stack China A-Share data toolkit for AI coding assistants（3188 star / 668 fork / 22天）",
+      "tags": [
+        "fresh"
+      ],
+      "author": "simonlin1212",
+      "language": null,
+      "topics": [],
+      "cross_platform_count": 1,
+      "score": 30,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 11000,
+          "score": 5,
+          "weighted": 10
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:1",
+          "score": 3,
+          "weighted": 6
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "github-1229729956",
+      "title": "XBuilderLAB/cheat-on-content",
+      "url": "https://github.com/XBuilderLAB/cheat-on-content",
+      "source": "GitHub Trending",
+      "source_key": "github",
+      "signal_type": "repo",
+      "discussion_count": 3730,
+      "engagement": {
+        "stars": 3182,
+        "forks": 548,
+        "watchers": 3182,
+        "star_velocity": 117.9,
+        "repo_age_days": 27,
+        "total": 12804
+      },
+      "collected_at": "2026-06-02T12:41:04.323968+08:00",
+      "raw_created_at": "2026-05-05T10:28:33Z",
+      "raw_updated_at": "2026-06-02T04:39:47Z",
+      "summary": "XBuilderLAB/cheat-on-content：You're reading this. The skill predicted it. A workflow that turns every post into a calibrated experiment—score, blind-predict, retro, evolve. The future doesn't reward effort, it rewards those who see the pattern first. 1M followers in a month — not luck, system.（3182 star / 548 fork / 27天）",
+      "tags": [
+        "Python",
+        "fresh"
+      ],
+      "author": "XBuilderLAB",
+      "language": "Python",
+      "topics": [],
+      "cross_platform_count": 1,
+      "score": 30,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 10132,
+          "score": 5,
+          "weighted": 10
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:1",
+          "score": 3,
+          "weighted": 6
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "github-1248194723",
+      "title": "AprilNEA/OpenLogi",
+      "url": "https://github.com/AprilNEA/OpenLogi",
+      "source": "GitHub Trending",
+      "source_key": "github",
+      "signal_type": "repo",
+      "discussion_count": 3046,
+      "engagement": {
+        "stars": 2995,
+        "forks": 51,
+        "watchers": 2995,
+        "star_velocity": 374.4,
+        "repo_age_days": 8,
+        "total": 24759
+      },
+      "collected_at": "2026-06-02T12:41:04.323978+08:00",
+      "raw_created_at": "2026-05-24T10:10:36Z",
+      "raw_updated_at": "2026-06-02T04:40:30Z",
+      "summary": "AprilNEA/OpenLogi：⚡️A native, local-first alternative to Logitech Options+, written in Rust 🦀 — remap buttons, DPI, and SmartShift over HID++. No account, no telemetry.（2995 star / 51 fork / 8天）",
+      "tags": [
+        "Rust",
+        "fresh"
+      ],
+      "author": "AprilNEA",
+      "language": "Rust",
+      "topics": [
+        "dpi",
+        "gpui",
+        "hid",
+        "hidpp",
+        "local-first",
+        "logitech",
+        "logitech-mouse",
+        "logitech-options",
+        "mouse-remapping",
+        "mx-master",
+        "privacy",
+        "rust",
+        "smartshift"
+      ],
+      "cross_platform_count": 1,
+      "score": 30,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 15425,
+          "score": 5,
+          "weighted": 10
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:1",
+          "score": 3,
+          "weighted": 6
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "github-1229531271",
+      "title": "zarazhangrui/beautiful-html-templates",
+      "url": "https://github.com/zarazhangrui/beautiful-html-templates",
+      "source": "GitHub Trending",
+      "source_key": "github",
+      "signal_type": "repo",
+      "discussion_count": 2573,
+      "engagement": {
+        "stars": 2355,
+        "forks": 218,
+        "watchers": 2355,
+        "star_velocity": 87.2,
+        "repo_age_days": 27,
+        "total": 9289
+      },
+      "collected_at": "2026-06-02T12:41:04.324039+08:00",
+      "raw_created_at": "2026-05-05T06:18:21Z",
+      "raw_updated_at": "2026-06-02T03:53:34Z",
+      "summary": "zarazhangrui/beautiful-html-templates：A library of HTML slide templates designed so any coding agent can pick the right one and produce a beautiful deck on the user's behalf, automatically.（2355 star / 218 fork / 27天）",
+      "tags": [
+        "HTML",
+        "fresh"
+      ],
+      "author": "zarazhangrui",
+      "language": "HTML",
+      "topics": [],
+      "cross_platform_count": 1,
+      "score": 30,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 7217,
+          "score": 5,
+          "weighted": 10
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:1",
+          "score": 3,
+          "weighted": 6
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "github-1245361579",
+      "title": "run-liyi/wechatpay",
+      "url": "https://github.com/run-liyi/wechatpay",
+      "source": "GitHub Trending",
+      "source_key": "github",
+      "signal_type": "repo",
+      "discussion_count": 1660,
+      "engagement": {
+        "stars": 1509,
+        "forks": 151,
+        "watchers": 1509,
+        "star_velocity": 137.2,
+        "repo_age_days": 11,
+        "total": 10028
+      },
+      "collected_at": "2026-06-02T12:41:04.324147+08:00",
+      "raw_created_at": "2026-05-21T06:40:00Z",
+      "raw_updated_at": "2026-06-01T18:06:42Z",
+      "summary": "run-liyi/wechatpay：微信账单分析工具 - 基于Electron的可视化账单分析应用（1509 star / 151 fork / 11天）",
+      "tags": [
+        "JavaScript",
+        "fresh"
+      ],
+      "author": "run-liyi",
+      "language": "JavaScript",
+      "topics": [],
+      "cross_platform_count": 1,
+      "score": 30,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 6674,
+          "score": 5,
+          "weighted": 10
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:1",
+          "score": 3,
+          "weighted": 6
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "github-1232669890",
+      "title": "microsoft/SkillOpt",
+      "url": "https://github.com/microsoft/SkillOpt",
+      "source": "GitHub Trending",
+      "source_key": "github",
+      "signal_type": "repo",
+      "discussion_count": 4613,
+      "engagement": {
+        "stars": 4187,
+        "forks": 426,
+        "watchers": 4187,
+        "star_velocity": 174.5,
+        "repo_age_days": 24,
+        "total": 17522
+      },
+      "collected_at": "2026-06-02T12:41:04.323918+08:00",
+      "raw_created_at": "2026-05-08T06:41:01Z",
+      "raw_updated_at": "2026-06-02T04:38:55Z",
+      "summary": "microsoft/SkillOpt：SkillOpt is a text-space optimizer that trains reusable natural-language skills for frozen LLM agents through trajectory-driven edits, validation-gated updates, and deployable best_skill.md artifacts.（4187 star / 426 fork / 24天）",
+      "tags": [
+        "Python",
+        "fresh"
+      ],
+      "author": "microsoft",
+      "language": "Python",
+      "topics": [
+        "agent-skills",
+        "self-evolving-agents"
+      ],
+      "cross_platform_count": 1,
+      "score": 28,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 13374,
+          "score": 5,
+          "weighted": 10
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:2",
+          "score": 3,
+          "weighted": 3
+        }
+      }
+    },
+    {
+      "id": "github-1238391754",
+      "title": "facebookresearch/vggt-omega",
+      "url": "https://github.com/facebookresearch/vggt-omega",
+      "source": "GitHub Trending",
+      "source_key": "github",
+      "signal_type": "repo",
+      "discussion_count": 2387,
+      "engagement": {
+        "stars": 2292,
+        "forks": 95,
+        "watchers": 2292,
+        "star_velocity": 127.3,
+        "repo_age_days": 18,
+        "total": 11045
+      },
+      "collected_at": "2026-06-02T12:41:04.324046+08:00",
+      "raw_created_at": "2026-05-14T04:43:13Z",
+      "raw_updated_at": "2026-06-02T04:12:14Z",
+      "summary": "facebookresearch/vggt-omega：[CVPR 2026 Oral] VGGT Omega（2292 star / 95 fork / 18天）",
+      "tags": [
+        "Python",
+        "fresh"
+      ],
+      "author": "facebookresearch",
+      "language": "Python",
+      "topics": [],
+      "cross_platform_count": 1,
+      "score": 28,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 7909,
+          "score": 5,
+          "weighted": 10
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:1",
+          "score": 3,
+          "weighted": 3
+        }
+      }
+    },
+    {
+      "id": "github-1228306162",
+      "title": "aattaran/deepclaude",
+      "url": "https://github.com/aattaran/deepclaude",
+      "source": "GitHub Trending",
+      "source_key": "github",
+      "signal_type": "repo",
+      "discussion_count": 2143,
+      "engagement": {
+        "stars": 2017,
+        "forks": 126,
+        "watchers": 2017,
+        "star_velocity": 69.6,
+        "repo_age_days": 29,
+        "total": 7637
+      },
+      "collected_at": "2026-06-02T12:41:04.324080+08:00",
+      "raw_created_at": "2026-05-03T21:27:49Z",
+      "raw_updated_at": "2026-06-02T02:26:23Z",
+      "summary": "aattaran/deepclaude：Use Claude Code's autonomous agent loop with DeepSeek V4 Pro, OpenRouter, or any Anthropic-compatible backend. Same UX, 17x cheaper.（2017 star / 126 fork / 29天）",
+      "tags": [
+        "JavaScript",
+        "fresh"
+      ],
+      "author": "aattaran",
+      "language": "JavaScript",
+      "topics": [],
+      "cross_platform_count": 1,
+      "score": 28,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 5961,
+          "score": 5,
+          "weighted": 10
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:1",
+          "score": 3,
+          "weighted": 3
+        }
+      }
+    },
+    {
+      "id": "github-1231291764",
+      "title": "microsoft/AI-Engineering-Coach",
+      "url": "https://github.com/microsoft/AI-Engineering-Coach",
+      "source": "GitHub Trending",
+      "source_key": "github",
+      "signal_type": "repo",
+      "discussion_count": 2074,
+      "engagement": {
+        "stars": 1833,
+        "forks": 241,
+        "watchers": 1833,
+        "star_velocity": 70.5,
+        "repo_age_days": 26,
+        "total": 7432
+      },
+      "collected_at": "2026-06-02T12:41:04.324101+08:00",
+      "raw_created_at": "2026-05-06T20:27:16Z",
+      "raw_updated_at": "2026-06-02T02:16:03Z",
+      "summary": "microsoft/AI-Engineering-Coach：better agentic engineering（1833 star / 241 fork / 26天）",
+      "tags": [
+        "TypeScript",
+        "fresh"
+      ],
+      "author": "microsoft",
+      "language": "TypeScript",
+      "topics": [],
+      "cross_platform_count": 1,
+      "score": 28,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 5790,
+          "score": 5,
+          "weighted": 10
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:1",
+          "score": 3,
+          "weighted": 3
+        }
+      }
+    },
+    {
+      "id": "github-1241325722",
+      "title": "WUBING2023/PaperSpine",
+      "url": "https://github.com/WUBING2023/PaperSpine",
+      "source": "GitHub Trending",
+      "source_key": "github",
+      "signal_type": "repo",
+      "discussion_count": 1805,
+      "engagement": {
+        "stars": 1735,
+        "forks": 70,
+        "watchers": 1735,
+        "star_velocity": 115.7,
+        "repo_age_days": 15,
+        "total": 9323
+      },
+      "collected_at": "2026-06-02T12:41:04.324107+08:00",
+      "raw_created_at": "2026-05-17T08:37:31Z",
+      "raw_updated_at": "2026-06-02T03:51:27Z",
+      "summary": "WUBING2023/PaperSpine：PaperSpine is a motivation-driven skill for learning from strong academic papers, building a paper’s central argument, and rewriting manuscripts through evidence-aware blueprints, revision matrices, and LaTeX-safe audits.（1735 star / 70 fork / 15天）",
+      "tags": [
+        "Python",
+        "fresh"
+      ],
+      "author": "WUBING2023",
+      "language": "Python",
+      "topics": [],
+      "cross_platform_count": 1,
+      "score": 28,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 6466,
+          "score": 5,
+          "weighted": 10
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:1",
+          "score": 3,
+          "weighted": 3
+        }
+      }
+    },
+    {
+      "id": "github-1229774092",
+      "title": "elementalsouls/Claude-BugHunter",
+      "url": "https://github.com/elementalsouls/Claude-BugHunter",
+      "source": "GitHub Trending",
+      "source_key": "github",
+      "signal_type": "repo",
+      "discussion_count": 1754,
+      "engagement": {
+        "stars": 1529,
+        "forks": 225,
+        "watchers": 1529,
+        "star_velocity": 56.6,
+        "repo_age_days": 27,
+        "total": 6114
+      },
+      "collected_at": "2026-06-02T12:41:04.324141+08:00",
+      "raw_created_at": "2026-05-05T11:22:32Z",
+      "raw_updated_at": "2026-06-02T04:37:35Z",
+      "summary": "elementalsouls/Claude-BugHunter：A Claude Code skill bundle for bug hunting and external red-team work - 51 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 vulnerability classes, plus enterprise identity + infrastructure attack matrices.（1529 star / 225 fork / 27天）",
+      "tags": [
+        "Python",
+        "fresh"
+      ],
+      "author": "elementalsouls",
+      "language": "Python",
+      "topics": [
+        "ai-security",
+        "anthropic",
+        "application-security",
+        "bug-bounty",
+        "bugbounty",
+        "bugcrowd",
+        "claude",
+        "claude-code",
+        "claude-skills",
+        "ethical-hacking",
+        "hackerone",
+        "offensive-security",
+        "pentesting",
+        "red-team",
+        "security-tools",
+        "web-security"
+      ],
+      "cross_platform_count": 1,
+      "score": 28,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 4811,
+          "score": 5,
+          "weighted": 10
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:2",
+          "score": 3,
+          "weighted": 3
+        }
+      }
+    },
+    {
+      "id": "hn-48364055",
+      "title": "Can the stockmarket swallow Anthropic, SpaceX and OpenAI?",
+      "url": "https://www.economist.com/finance-and-economics/2026/06/01/can-the-stockmarket-swallow-anthropic-spacex-and-openai",
+      "source": "Hacker News",
+      "source_key": "hn",
+      "signal_type": "front_page",
+      "discussion_count": 368,
+      "engagement": {
+        "points": 167,
+        "comments": 368,
+        "total": 903
+      },
+      "collected_at": "2026-06-02T12:40:59.572584+08:00",
+      "raw_created_at": "2026-06-01T23:45:46Z",
+      "summary": "Can the stockmarket swallow Anthropic, SpaceX and OpenAI?（167 赞 / 368 评论）",
+      "tags": [
+        "story",
+        "author_1vuio0pswjnm7",
+        "story_48364055",
+        "front_page"
+      ],
+      "author": "1vuio0pswjnm7",
+      "cross_platform_count": 1,
+      "score": 28,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 819,
+          "score": 5,
+          "weighted": 10
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:1",
+          "score": 3,
+          "weighted": 3
+        }
+      }
+    },
+    {
+      "id": "hn-48348429",
+      "title": "Show HN: Streambed – Stream Postgres to Iceberg on S3, Supports Postgres Wire",
+      "url": "https://github.com/viggy28/streambed",
+      "source": "Hacker News",
+      "source_key": "hn",
+      "signal_type": "show_hn",
+      "discussion_count": 33,
+      "engagement": {
+        "points": 118,
+        "comments": 33,
+        "total": 184
+      },
+      "collected_at": "2026-06-02T12:40:59.572655+08:00",
+      "raw_created_at": "2026-05-31T18:43:05Z",
+      "summary": "Show HN: Streambed – Stream Postgres to Iceberg on S3, Supports Postgres Wire（118 赞 / 33 评论）",
+      "tags": [
+        "story",
+        "author_vira28",
+        "story_48348429",
+        "show_hn"
+      ],
+      "author": "vira28",
+      "cross_platform_count": 1,
+      "score": 28,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 125,
+          "score": 2,
+          "weighted": 4
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 5,
+          "weighted": 10
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "hn-48356946",
+      "title": "Show HN: A CSS 3D Engine (no WebGL)",
+      "url": "https://github.com/LayoutitStudio/polycss",
+      "source": "Hacker News",
+      "source_key": "hn",
+      "signal_type": "show_hn",
+      "discussion_count": 24,
+      "engagement": {
+        "points": 63,
+        "comments": 24,
+        "total": 111
+      },
+      "collected_at": "2026-06-02T12:40:59.572644+08:00",
+      "raw_created_at": "2026-06-01T13:58:04Z",
+      "summary": "Show HN: A CSS 3D Engine (no WebGL)（63 赞 / 24 评论）",
+      "tags": [
+        "story",
+        "author_rofko",
+        "story_48356946",
+        "show_hn"
+      ],
+      "author": "rofko",
+      "cross_platform_count": 1,
+      "score": 28,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 79,
+          "score": 2,
+          "weighted": 4
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 5,
+          "weighted": 10
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "hn-48345201",
+      "title": "Show HN: Atomic Editor – Obsidian-style live preview for CodeMirror 6",
+      "url": "https://kenforthewin.github.io/atomic-editor/",
+      "source": "Hacker News",
+      "source_key": "hn",
+      "signal_type": "show_hn",
+      "discussion_count": 17,
+      "engagement": {
+        "points": 67,
+        "comments": 17,
+        "total": 101
+      },
+      "collected_at": "2026-06-02T12:40:59.572667+08:00",
+      "raw_created_at": "2026-05-31T12:32:54Z",
+      "summary": "Show HN: Atomic Editor – Obsidian-style live preview for CodeMirror 6（67 赞 / 17 评论）",
+      "tags": [
+        "story",
+        "author_kenforthewin",
+        "story_48345201",
+        "show_hn"
+      ],
+      "author": "kenforthewin",
+      "cross_platform_count": 1,
+      "score": 28,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 67,
+          "score": 2,
+          "weighted": 4
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 5,
+          "weighted": 10
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "w2solo-7474",
+      "title": "分享一个整理 AI 工具入口的小产品：Omni AI Pro",
+      "url": "https://w2solo.com/topics/7474",
+      "source": "w2solo",
+      "source_key": "w2solo",
+      "signal_type": "product-launch",
+      "discussion_count": 0,
+      "engagement": {
+        "likes": 0,
+        "replies": 0,
+        "total": 1
+      },
+      "collected_at": "2026-06-02T12:42:00.185844+08:00",
+      "summary": "[w2solo / ylee26386] 大家好，最近在整理自己常用的 AI 工具时，发现一个问题：现在 AI 产品越来越多，图片、视频、文案、效率类工具分散在不同平台里，每次临时找工具都要翻收藏夹或者搜索，很容易浪费时间。\n\n所以我做了一个小站，想把一些常见的 AI 工具入口和使用场景整理得更清楚一点，方便自己平时查找，也希望对其他独立开发者、内容创作者或者经常测试 AI 工具的人有点帮助。\n\n目前这个项目还在持续调整中，主要想解决几个",
+      "tags": [
+        "product-launch",
+        "indie-dev"
+      ],
+      "author": "ylee26386",
+      "cross_platform_count": 1,
+      "score": 28,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 0,
+          "score": 1,
+          "weighted": 2
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:4",
+          "score": 5,
+          "weighted": 10
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:1",
+          "score": 3,
+          "weighted": 3
+        }
+      }
+    },
+    {
+      "id": "github-1255180606",
+      "title": "pewdiepie-archdaemon/odysseus",
+      "url": "https://github.com/pewdiepie-archdaemon/odysseus",
+      "source": "GitHub Trending",
+      "source_key": "github",
+      "signal_type": "repo",
+      "discussion_count": 24896,
+      "engagement": {
+        "stars": 22167,
+        "forks": 2729,
+        "watchers": 22167,
+        "star_velocity": 22167.0,
+        "repo_age_days": 1,
+        "total": 1155413
+      },
+      "collected_at": "2026-06-02T12:41:02.071988+08:00",
+      "raw_created_at": "2026-05-31T14:05:51Z",
+      "raw_updated_at": "2026-06-02T04:40:59Z",
+      "summary": "pewdiepie-archdaemon/odysseus：Self-hosted AI workspace. （22167 star / 2729 fork / 1天）",
+      "tags": [
+        "JavaScript",
+        "rising"
+      ],
+      "author": "pewdiepie-archdaemon",
+      "language": "JavaScript",
+      "topics": [],
+      "cross_platform_count": 1,
+      "score": 26,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 602602,
+          "score": 5,
+          "weighted": 10
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "github-1231135337",
+      "title": "strukto-ai/mirage",
+      "url": "https://github.com/strukto-ai/mirage",
+      "source": "GitHub Trending",
+      "source_key": "github",
+      "signal_type": "repo",
+      "discussion_count": 3160,
+      "engagement": {
+        "stars": 2953,
+        "forks": 207,
+        "watchers": 2953,
+        "star_velocity": 113.6,
+        "repo_age_days": 26,
+        "total": 11791
+      },
+      "collected_at": "2026-06-02T12:41:04.323985+08:00",
+      "raw_created_at": "2026-05-06T17:00:48Z",
+      "raw_updated_at": "2026-06-02T04:35:02Z",
+      "summary": "strukto-ai/mirage：A Unified Virtual Filesystem For AI Agents（2953 star / 207 fork / 26天）",
+      "tags": [
+        "TypeScript",
+        "fresh"
+      ],
+      "author": "strukto-ai",
+      "language": "TypeScript",
+      "topics": [
+        "agent-sandbox",
+        "agent-tools",
+        "ai-agents",
+        "bash",
+        "claude-code",
+        "fuse",
+        "langchain",
+        "llm-agents",
+        "openai-agents",
+        "python",
+        "typescript",
+        "vfs",
+        "virtual-filesystem"
+      ],
+      "cross_platform_count": 1,
+      "score": 26,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 9055,
+          "score": 5,
+          "weighted": 10
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "github-1246399437",
+      "title": "OpenBMB/PilotDeck",
+      "url": "https://github.com/OpenBMB/PilotDeck",
+      "source": "GitHub Trending",
+      "source_key": "github",
+      "signal_type": "repo",
+      "discussion_count": 3018,
+      "engagement": {
+        "stars": 2754,
+        "forks": 264,
+        "watchers": 2754,
+        "star_velocity": 275.4,
+        "repo_age_days": 10,
+        "total": 19541
+      },
+      "collected_at": "2026-06-02T12:41:04.323992+08:00",
+      "raw_created_at": "2026-05-22T06:50:28Z",
+      "raw_updated_at": "2026-06-02T04:38:52Z",
+      "summary": "OpenBMB/PilotDeck：Task-oriented AI Agent productivity platform（2754 star / 264 fork / 10天）",
+      "tags": [
+        "TypeScript",
+        "fresh"
+      ],
+      "author": "OpenBMB",
+      "language": "TypeScript",
+      "topics": [],
+      "cross_platform_count": 1,
+      "score": 26,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 12788,
+          "score": 5,
+          "weighted": 10
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "github-1251263546",
+      "title": "op7418/guizang-social-card-skill",
+      "url": "https://github.com/op7418/guizang-social-card-skill",
+      "source": "GitHub Trending",
+      "source_key": "github",
+      "signal_type": "repo",
+      "discussion_count": 2698,
+      "engagement": {
+        "stars": 2453,
+        "forks": 245,
+        "watchers": 2453,
+        "star_velocity": 490.6,
+        "repo_age_days": 5,
+        "total": 29681
+      },
+      "collected_at": "2026-06-02T12:41:02.072012+08:00",
+      "raw_created_at": "2026-05-27T12:05:05Z",
+      "raw_updated_at": "2026-06-02T03:47:37Z",
+      "summary": "op7418/guizang-social-card-skill：🪧 Claude Code / Codex skill — generate Xiaohongshu carousels & WeChat 21:9+1:1 cover pairs. Editorial × Swiss visual systems, 28 layouts, 10 themes, single-file HTML → PNG. 小红书图文 + 公众号封面对（2453 star / 245 fork / 5天）",
+      "tags": [
+        "HTML",
+        "rising"
+      ],
+      "author": "op7418",
+      "language": "HTML",
+      "topics": [
+        "agent-skill",
+        "ai-agent",
+        "anthropic",
+        "claude-code",
+        "claude-skill",
+        "codex",
+        "editorial-design",
+        "html-template",
+        "image-generation",
+        "playwright",
+        "rednote",
+        "social-cards",
+        "swiss-design",
+        "wechat",
+        "xiaohongshu"
+      ],
+      "cross_platform_count": 1,
+      "score": 26,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 17538,
+          "score": 5,
+          "weighted": 10
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "github-1234550622",
+      "title": "huangserva/3DCellForge",
+      "url": "https://github.com/huangserva/3DCellForge",
+      "source": "GitHub Trending",
+      "source_key": "github",
+      "signal_type": "repo",
+      "discussion_count": 2810,
+      "engagement": {
+        "stars": 2410,
+        "forks": 400,
+        "watchers": 2410,
+        "star_velocity": 109.5,
+        "repo_age_days": 22,
+        "total": 10697
+      },
+      "collected_at": "2026-06-02T12:41:04.324022+08:00",
+      "raw_created_at": "2026-05-10T10:34:50Z",
+      "raw_updated_at": "2026-06-02T04:35:25Z",
+      "summary": "huangserva/3DCellForge：AI-powered interactive 3D model generation, inspection, and presentation studio.（2410 star / 400 fork / 22天）",
+      "tags": [
+        "JavaScript",
+        "fresh"
+      ],
+      "author": "huangserva",
+      "language": "JavaScript",
+      "topics": [],
+      "cross_platform_count": 1,
+      "score": 26,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 8158,
+          "score": 5,
+          "weighted": 10
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "github-1230925393",
+      "title": "yaojingang/yao-open-prompts",
+      "url": "https://github.com/yaojingang/yao-open-prompts",
+      "source": "GitHub Trending",
+      "source_key": "github",
+      "signal_type": "repo",
+      "discussion_count": 2722,
+      "engagement": {
+        "stars": 2357,
+        "forks": 365,
+        "watchers": 2357,
+        "star_velocity": 90.7,
+        "repo_age_days": 26,
+        "total": 9611
+      },
+      "collected_at": "2026-06-02T12:41:04.324029+08:00",
+      "raw_created_at": "2026-05-06T13:04:20Z",
+      "raw_updated_at": "2026-06-02T03:56:03Z",
+      "summary": "yaojingang/yao-open-prompts：Yao Open Prompts：中文 AI 提示词库，覆盖工作、学习、内容、营销和生活场景（2357 star / 365 fork / 26天）",
+      "tags": [
+        "Python",
+        "fresh"
+      ],
+      "author": "yaojingang",
+      "language": "Python",
+      "topics": [
+        "ai",
+        "chinese-prompts",
+        "geo",
+        "prompt-engineering",
+        "prompts"
+      ],
+      "cross_platform_count": 1,
+      "score": 26,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 7527,
+          "score": 5,
+          "weighted": 10
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "github-1231170332",
+      "title": "opensquilla/opensquilla",
+      "url": "https://github.com/opensquilla/opensquilla",
+      "source": "GitHub Trending",
+      "source_key": "github",
+      "signal_type": "repo",
+      "discussion_count": 2385,
+      "engagement": {
+        "stars": 2235,
+        "forks": 150,
+        "watchers": 2235,
+        "star_velocity": 86.0,
+        "repo_age_days": 26,
+        "total": 8918
+      },
+      "collected_at": "2026-06-02T12:41:04.324054+08:00",
+      "raw_created_at": "2026-05-06T17:43:05Z",
+      "raw_updated_at": "2026-06-02T04:39:41Z",
+      "summary": "opensquilla/opensquilla：OpenSquilla — Token-Efficient AI Agent with same budget, higher intelligence density（2235 star / 150 fork / 26天）",
+      "tags": [
+        "Python",
+        "fresh"
+      ],
+      "author": "opensquilla",
+      "language": "Python",
+      "topics": [
+        "agent",
+        "ai",
+        "ai-agents",
+        "deep-learning",
+        "foundation-models",
+        "llm",
+        "mcp",
+        "memory",
+        "openclaw",
+        "python",
+        "skills"
+      ],
+      "cross_platform_count": 1,
+      "score": 26,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 6844,
+          "score": 5,
+          "weighted": 10
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "github-1241257629",
+      "title": "datawhalechina/Agent-Learning-Hub",
+      "url": "https://github.com/datawhalechina/Agent-Learning-Hub",
+      "source": "GitHub Trending",
+      "source_key": "github",
+      "signal_type": "repo",
+      "discussion_count": 2423,
+      "engagement": {
+        "stars": 2200,
+        "forks": 223,
+        "watchers": 2200,
+        "star_velocity": 146.7,
+        "repo_age_days": 15,
+        "total": 11956
+      },
+      "collected_at": "2026-06-02T12:41:04.324062+08:00",
+      "raw_created_at": "2026-05-17T06:41:12Z",
+      "raw_updated_at": "2026-06-02T04:39:50Z",
+      "summary": "datawhalechina/Agent-Learning-Hub：AI Agent 学习路线与资料库收集（2200 star / 223 fork / 15天）",
+      "tags": [
+        "HTML",
+        "fresh"
+      ],
+      "author": "datawhalechina",
+      "language": "HTML",
+      "topics": [],
+      "cross_platform_count": 1,
+      "score": 26,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 8401,
+          "score": 5,
+          "weighted": 10
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "github-1246625636",
+      "title": "open-gsd/gsd-core",
+      "url": "https://github.com/open-gsd/gsd-core",
+      "source": "GitHub Trending",
+      "source_key": "github",
+      "signal_type": "repo",
+      "discussion_count": 2330,
+      "engagement": {
+        "stars": 2194,
+        "forks": 136,
+        "watchers": 2194,
+        "star_velocity": 219.4,
+        "repo_age_days": 10,
+        "total": 15494
+      },
+      "collected_at": "2026-06-02T12:41:04.324068+08:00",
+      "raw_created_at": "2026-05-22T11:36:21Z",
+      "raw_updated_at": "2026-06-02T04:34:48Z",
+      "summary": "open-gsd/gsd-core：Git. Ship. Done - Core（2194 star / 136 fork / 10天）",
+      "tags": [
+        "JavaScript",
+        "fresh"
+      ],
+      "author": "open-gsd",
+      "language": "JavaScript",
+      "topics": [
+        "claude-code",
+        "context-engineering",
+        "meta-prompting",
+        "spec-driven-development"
+      ],
+      "cross_platform_count": 1,
+      "score": 26,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 10077,
+          "score": 5,
+          "weighted": 10
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "github-1228312499",
+      "title": "raiyanyahya/how-to-train-your-gpt",
+      "url": "https://github.com/raiyanyahya/how-to-train-your-gpt",
+      "source": "GitHub Trending",
+      "source_key": "github",
+      "signal_type": "repo",
+      "discussion_count": 2462,
+      "engagement": {
+        "stars": 2182,
+        "forks": 280,
+        "watchers": 2182,
+        "star_velocity": 75.2,
+        "repo_age_days": 29,
+        "total": 8406
+      },
+      "collected_at": "2026-06-02T12:41:04.324074+08:00",
+      "raw_created_at": "2026-05-03T21:41:33Z",
+      "raw_updated_at": "2026-06-02T03:36:51Z",
+      "summary": "raiyanyahya/how-to-train-your-gpt：Build a modern LLM from scratch. Every line commented. Explained like we are five.（2182 star / 280 fork / 29天）",
+      "tags": [
+        "Jupyter Notebook",
+        "fresh"
+      ],
+      "author": "raiyanyahya",
+      "language": "Jupyter Notebook",
+      "topics": [
+        "attention-mechanism",
+        "deep-learning",
+        "educational",
+        "from-scratch",
+        "gpt",
+        "language-model",
+        "llama",
+        "llm",
+        "machine-learning",
+        "natural-language-processing",
+        "python",
+        "pytorch",
+        "tokenisation",
+        "transformers",
+        "tutorial"
+      ],
+      "cross_platform_count": 1,
+      "score": 26,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 6665,
+          "score": 5,
+          "weighted": 10
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "github-1229284184",
+      "title": "WenyuChiou/awesome-agentic-ai-zh",
+      "url": "https://github.com/WenyuChiou/awesome-agentic-ai-zh",
+      "source": "GitHub Trending",
+      "source_key": "github",
+      "signal_type": "repo",
+      "discussion_count": 2058,
+      "engagement": {
+        "stars": 1846,
+        "forks": 212,
+        "watchers": 1846,
+        "star_velocity": 65.9,
+        "repo_age_days": 28,
+        "total": 7200
+      },
+      "collected_at": "2026-06-02T12:41:04.324094+08:00",
+      "raw_created_at": "2026-05-04T22:18:51Z",
+      "raw_updated_at": "2026-06-02T01:31:31Z",
+      "summary": "WenyuChiou/awesome-agentic-ai-zh：A structured, trilingual (繁中 / 简中 / English) learning roadmap for agentic AI — from LLM basics to multi-agent systems. 8 stages · 145+ curated projects · hands-on exercises. 中文 AI agent 學習地圖。（1846 star / 212 fork / 28天）",
+      "tags": [
+        "Python",
+        "fresh"
+      ],
+      "author": "WenyuChiou",
+      "language": "Python",
+      "topics": [
+        "agentic-ai",
+        "ai-agents",
+        "awesome-list",
+        "claude-code",
+        "claude-skills",
+        "cli",
+        "learning-roadmap",
+        "llm-agents",
+        "mcp",
+        "model-context-protocol",
+        "trilingual",
+        "tutorial"
+      ],
+      "cross_platform_count": 1,
+      "score": 26,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 5658,
+          "score": 5,
+          "weighted": 10
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "github-1242107382",
+      "title": "Doorman11991/smallcode",
+      "url": "https://github.com/Doorman11991/smallcode",
+      "source": "GitHub Trending",
+      "source_key": "github",
+      "signal_type": "repo",
+      "discussion_count": 1846,
+      "engagement": {
+        "stars": 1716,
+        "forks": 130,
+        "watchers": 1716,
+        "star_velocity": 122.6,
+        "repo_age_days": 14,
+        "total": 9690
+      },
+      "collected_at": "2026-06-02T12:41:04.324112+08:00",
+      "raw_created_at": "2026-05-18T06:19:44Z",
+      "raw_updated_at": "2026-06-02T03:50:52Z",
+      "summary": "Doorman11991/smallcode：AI coding agent optimized for small LLMs. 87% benchmark with 4B-active model.（1716 star / 130 fork / 14天）",
+      "tags": [
+        "JavaScript",
+        "fresh"
+      ],
+      "author": "Doorman11991",
+      "language": "JavaScript",
+      "topics": [],
+      "cross_platform_count": 1,
+      "score": 26,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 6691,
+          "score": 5,
+          "weighted": 10
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "github-1251775733",
+      "title": "helloianneo/ian-xiaohei-illustrations",
+      "url": "https://github.com/helloianneo/ian-xiaohei-illustrations",
+      "source": "GitHub Trending",
+      "source_key": "github",
+      "signal_type": "repo",
+      "discussion_count": 1804,
+      "engagement": {
+        "stars": 1655,
+        "forks": 149,
+        "watchers": 1655,
+        "star_velocity": 331.0,
+        "repo_age_days": 5,
+        "total": 20009
+      },
+      "collected_at": "2026-06-02T12:41:02.072024+08:00",
+      "raw_created_at": "2026-05-27T22:47:56Z",
+      "raw_updated_at": "2026-06-02T04:37:12Z",
+      "summary": "helloianneo/ian-xiaohei-illustrations：中文小黑怪诞正文配图生成 Skill | 16:9 白底手绘 | 少量红橙蓝批注 | Codex Skill（1655 star / 149 fork / 5天）",
+      "tags": [
+        "rising"
+      ],
+      "author": "helloianneo",
+      "language": null,
+      "topics": [
+        "ai-agent",
+        "chinese",
+        "codex-skill",
+        "handdrawn",
+        "illustration",
+        "image-generation",
+        "xiaohei"
+      ],
+      "cross_platform_count": 1,
+      "score": 26,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 11808,
+          "score": 5,
+          "weighted": 10
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "github-1234746825",
+      "title": "TencentARC/Pixal3D",
+      "url": "https://github.com/TencentARC/Pixal3D",
+      "source": "GitHub Trending",
+      "source_key": "github",
+      "signal_type": "repo",
+      "discussion_count": 1773,
+      "engagement": {
+        "stars": 1630,
+        "forks": 143,
+        "watchers": 1630,
+        "star_velocity": 74.1,
+        "repo_age_days": 22,
+        "total": 7107
+      },
+      "collected_at": "2026-06-02T12:41:04.324125+08:00",
+      "raw_created_at": "2026-05-10T15:35:28Z",
+      "raw_updated_at": "2026-06-02T03:15:08Z",
+      "summary": "TencentARC/Pixal3D：[SIGGRAPH 2026] Pixal3D: Pixel-Aligned 3D Generation from Images（1630 star / 143 fork / 22天）",
+      "tags": [
+        "Python",
+        "fresh"
+      ],
+      "author": "TencentARC",
+      "language": "Python",
+      "topics": [],
+      "cross_platform_count": 1,
+      "score": 26,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 5326,
+          "score": 5,
+          "weighted": 10
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "github-1246459259",
+      "title": "MoonshotAI/kimi-code",
+      "url": "https://github.com/MoonshotAI/kimi-code",
+      "source": "GitHub Trending",
+      "source_key": "github",
+      "signal_type": "repo",
+      "discussion_count": 1711,
+      "engagement": {
+        "stars": 1562,
+        "forks": 149,
+        "watchers": 1562,
+        "star_velocity": 156.2,
+        "repo_age_days": 10,
+        "total": 11082
+      },
+      "collected_at": "2026-06-02T12:41:04.324130+08:00",
+      "raw_created_at": "2026-05-22T08:02:03Z",
+      "raw_updated_at": "2026-06-02T04:36:20Z",
+      "summary": "MoonshotAI/kimi-code：The Starting Point for Next-Gen Agents（1562 star / 149 fork / 10天）",
+      "tags": [
+        "TypeScript",
+        "fresh"
+      ],
+      "author": "MoonshotAI",
+      "language": "TypeScript",
+      "topics": [],
+      "cross_platform_count": 1,
+      "score": 26,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 7252,
+          "score": 5,
+          "weighted": 10
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "github-1240191065",
+      "title": "DenisSergeevitch/agents-best-practices",
+      "url": "https://github.com/DenisSergeevitch/agents-best-practices",
+      "source": "GitHub Trending",
+      "source_key": "github",
+      "signal_type": "repo",
+      "discussion_count": 1674,
+      "engagement": {
+        "stars": 1546,
+        "forks": 128,
+        "watchers": 1546,
+        "star_velocity": 90.9,
+        "repo_age_days": 17,
+        "total": 7767
+      },
+      "collected_at": "2026-06-02T12:41:04.324136+08:00",
+      "raw_created_at": "2026-05-15T21:32:21Z",
+      "raw_updated_at": "2026-06-02T04:35:46Z",
+      "summary": "DenisSergeevitch/agents-best-practices：Provider-neutral Agent Skill for Codex, Claude Code, and agentic harness design.（1546 star / 128 fork / 17天）",
+      "tags": [
+        "fresh"
+      ],
+      "author": "DenisSergeevitch",
+      "language": null,
+      "topics": [
+        "agent-skill",
+        "agent-skills",
+        "agentic-workflows",
+        "agents",
+        "ai-agents",
+        "anthropic",
+        "claude",
+        "claude-code",
+        "codex",
+        "codex-skill",
+        "mcp",
+        "prompt-engineering"
+      ],
+      "cross_platform_count": 1,
+      "score": 26,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 5557,
+          "score": 5,
+          "weighted": 10
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "github-1239918790",
+      "title": "Helvesec/rmux",
+      "url": "https://github.com/Helvesec/rmux",
+      "source": "GitHub Trending",
+      "source_key": "github",
+      "signal_type": "repo",
+      "discussion_count": 1531,
+      "engagement": {
+        "stars": 1467,
+        "forks": 64,
+        "watchers": 1467,
+        "star_velocity": 86.3,
+        "repo_age_days": 17,
+        "total": 7312
+      },
+      "collected_at": "2026-06-02T12:41:04.324152+08:00",
+      "raw_created_at": "2026-05-15T15:22:10Z",
+      "raw_updated_at": "2026-06-02T03:49:31Z",
+      "summary": "Helvesec/rmux：Universal Rust multiplexer with a typed SDK — drive any CLI or TUI app from code. Native on Linux, macOS, and Windows.（1467 star / 64 fork / 17天）",
+      "tags": [
+        "Rust",
+        "fresh"
+      ],
+      "author": "Helvesec",
+      "language": "Rust",
+      "topics": [
+        "agent",
+        "ai",
+        "cli",
+        "linux",
+        "macos",
+        "multiplexer",
+        "multiplexers",
+        "powershell",
+        "ratatui",
+        "rust",
+        "terminal",
+        "tokio",
+        "windows"
+      ],
+      "cross_platform_count": 1,
+      "score": 26,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 5187,
+          "score": 5,
+          "weighted": 10
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "hn-48359102",
+      "title": "The newest Instagram “exploit” is the goofiest I've seen",
+      "url": "https://www.0xsid.com/blog/meta-account-takeover-fiasco",
+      "source": "Hacker News",
+      "source_key": "hn",
+      "signal_type": "front_page",
+      "discussion_count": 350,
+      "engagement": {
+        "points": 1475,
+        "comments": 350,
+        "total": 2175
+      },
+      "collected_at": "2026-06-02T12:40:59.572523+08:00",
+      "raw_created_at": "2026-06-01T16:31:42Z",
+      "summary": "The newest Instagram “exploit” is the goofiest I've seen（1475 赞 / 350 评论）",
+      "tags": [
+        "story",
+        "author_ssiddharth",
+        "story_48359102",
+        "front_page"
+      ],
+      "author": "ssiddharth",
+      "cross_platform_count": 1,
+      "score": 26,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 1437,
+          "score": 5,
+          "weighted": 10
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "hn-48352939",
+      "title": "Nvidia RTX Spark",
+      "url": "https://www.nvidia.com/en-us/products/rtx-spark/",
+      "source": "Hacker News",
+      "source_key": "hn",
+      "signal_type": "front_page",
+      "discussion_count": 351,
+      "engagement": {
+        "points": 361,
+        "comments": 351,
+        "total": 1063
+      },
+      "collected_at": "2026-06-02T12:40:59.572550+08:00",
+      "raw_created_at": "2026-06-01T05:24:40Z",
+      "summary": "Nvidia RTX Spark（361 赞 / 351 评论）",
+      "tags": [
+        "story",
+        "author_shenli3514",
+        "story_48352939",
+        "front_page"
+      ],
+      "author": "shenli3514",
+      "cross_platform_count": 1,
+      "score": 26,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 882,
+          "score": 5,
+          "weighted": 10
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "hn-48355720",
+      "title": "Microsoft builds MacBook Pro rival with NVIDIA-powered Surface Laptop Ultra",
+      "url": "https://www.windowslatest.com/2026/06/01/microsoft-builds-its-ultimate-macbook-pro-rival-with-the-nvidia-powered-surface-laptop-ultra/",
+      "source": "Hacker News",
+      "source_key": "hn",
+      "signal_type": "front_page",
+      "discussion_count": 384,
+      "engagement": {
+        "points": 176,
+        "comments": 384,
+        "total": 944
+      },
+      "collected_at": "2026-06-02T12:40:59.572577+08:00",
+      "raw_created_at": "2026-06-01T12:04:29Z",
+      "summary": "Microsoft builds MacBook Pro rival with NVIDIA-powered Surface Laptop Ultra（176 赞 / 384 评论）",
+      "tags": [
+        "story",
+        "author_jbk",
+        "story_48355720",
+        "front_page"
+      ],
+      "author": "jbk",
+      "cross_platform_count": 1,
+      "score": 26,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 856,
+          "score": 5,
+          "weighted": 10
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "hn-48357724",
+      "title": "Ask HN: Who wants to be hired? (June 2026)",
+      "url": "https://news.ycombinator.com/item?id=48357724",
+      "source": "Hacker News",
+      "source_key": "hn",
+      "signal_type": "ask_hn",
+      "discussion_count": 289,
+      "engagement": {
+        "points": 102,
+        "comments": 289,
+        "total": 680
+      },
+      "collected_at": "2026-06-02T12:40:59.572694+08:00",
+      "raw_created_at": "2026-06-01T15:00:48Z",
+      "summary": "Ask HN: Who wants to be hired? (June 2026)（102 赞 / 289 评论）",
+      "tags": [
+        "story",
+        "author_whoishiring",
+        "story_48357724",
+        "ask_hn"
+      ],
+      "author": "whoishiring",
+      "cross_platform_count": 1,
+      "score": 26,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 629,
+          "score": 5,
+          "weighted": 10
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "hn-48363882",
+      "title": "Age verification for social media, the beginning of the end for a free internet?",
+      "url": "https://mullvad.net/en/blog/age-verification-for-social-media-the-beginning-of-the-end-for-a-free-internet",
+      "source": "Hacker News",
+      "source_key": "hn",
+      "signal_type": "front_page",
+      "discussion_count": 83,
+      "engagement": {
+        "points": 137,
+        "comments": 83,
+        "total": 303
+      },
+      "collected_at": "2026-06-02T12:40:59.572591+08:00",
+      "raw_created_at": "2026-06-01T23:22:28Z",
+      "summary": "Age verification for social media, the beginning of the end for a free internet?（137 赞 / 83 评论）",
+      "tags": [
+        "story",
+        "author_StrLght",
+        "story_48363882",
+        "front_page"
+      ],
+      "author": "StrLght",
+      "cross_platform_count": 1,
+      "score": 26,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 234,
+          "score": 3,
+          "weighted": 6
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:1",
+          "score": 3,
+          "weighted": 6
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "ph-stella-4",
+      "title": "Stella",
+      "url": "https://www.producthunt.com/products/stella-4",
+      "source": "Product Hunt",
+      "source_key": "producthunt",
+      "signal_type": "product",
+      "discussion_count": 0,
+      "engagement": {
+        "total": 5
+      },
+      "collected_at": "2026-06-02T12:41:24.288100+08:00",
+      "raw_published": "2026-05-31T14:46:27-07:00",
+      "summary": "[Product Hunt] Stella: Local natural language search across all your files Discussion | Link",
+      "tags": [
+        "product-launch"
+      ],
+      "author": "Senan Gaffori",
+      "cross_platform_count": 1,
+      "score": 26,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 2,
+          "score": 1,
+          "weighted": 2
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:1",
+          "score": 5,
+          "weighted": 10
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "ph-tokenwise",
+      "title": "Tokenwise",
+      "url": "https://www.producthunt.com/products/tokenwise",
+      "source": "Product Hunt",
+      "source_key": "producthunt",
+      "signal_type": "product",
+      "discussion_count": 0,
+      "engagement": {
+        "total": 5
+      },
+      "collected_at": "2026-06-02T12:41:24.288115+08:00",
+      "raw_published": "2026-05-31T07:36:39-07:00",
+      "summary": "[Product Hunt] Tokenwise: A smart LLM proxy that shows where you're overpaying Discussion | Link",
+      "tags": [
+        "product-launch"
+      ],
+      "author": "Théophile Louvart",
+      "cross_platform_count": 1,
+      "score": 26,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 2,
+          "score": 1,
+          "weighted": 2
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:1",
+          "score": 5,
+          "weighted": 10
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "ph-skylive",
+      "title": "Skylive",
+      "url": "https://www.producthunt.com/products/skylive",
+      "source": "Product Hunt",
+      "source_key": "producthunt",
+      "signal_type": "product",
+      "discussion_count": 0,
+      "engagement": {
+        "total": 5
+      },
+      "collected_at": "2026-06-02T12:41:24.288120+08:00",
+      "raw_published": "2026-05-31T16:30:09-07:00",
+      "summary": "[Product Hunt] Skylive: Never miss a celestial event, anywhere on Earth Discussion | Link",
+      "tags": [
+        "product-launch"
+      ],
+      "author": "Samuel Angel Gallo Ocampo",
+      "cross_platform_count": 1,
+      "score": 26,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 2,
+          "score": 1,
+          "weighted": 2
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:1",
+          "score": 5,
+          "weighted": 10
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "ph-open-caffeine",
+      "title": "Open Caffeine",
+      "url": "https://www.producthunt.com/products/open-caffeine",
+      "source": "Product Hunt",
+      "source_key": "producthunt",
+      "signal_type": "product",
+      "discussion_count": 0,
+      "engagement": {
+        "total": 5
+      },
+      "collected_at": "2026-06-02T12:41:24.288123+08:00",
+      "raw_published": "2026-05-31T20:48:12-07:00",
+      "summary": "[Product Hunt] Open Caffeine: Keep your Mac awake Discussion | Link",
+      "tags": [
+        "product-launch"
+      ],
+      "author": "Hoon Choi",
+      "cross_platform_count": 1,
+      "score": 26,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 2,
+          "score": 1,
+          "weighted": 2
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:1",
+          "score": 5,
+          "weighted": 10
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "ph-mistral-7b",
+      "title": "Mistral Vibe",
+      "url": "https://www.producthunt.com/products/mistral-7b",
+      "source": "Product Hunt",
+      "source_key": "producthunt",
+      "signal_type": "product",
+      "discussion_count": 0,
+      "engagement": {
+        "total": 5
+      },
+      "collected_at": "2026-06-02T12:41:24.288125+08:00",
+      "raw_published": "2026-05-31T20:25:48-07:00",
+      "summary": "[Product Hunt] Mistral Vibe: I agent for long-running, multi-step work and coding Discussion | Link",
+      "tags": [
+        "product-launch"
+      ],
+      "author": "Zac Zuo",
+      "cross_platform_count": 1,
+      "score": 26,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 2,
+          "score": 1,
+          "weighted": 2
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:1",
+          "score": 5,
+          "weighted": 10
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "ph-r0y-ai-financial-studio",
+      "title": "R0Y OMNI 1.0",
+      "url": "https://www.producthunt.com/products/r0y-ai-financial-studio",
+      "source": "Product Hunt",
+      "source_key": "producthunt",
+      "signal_type": "product",
+      "discussion_count": 0,
+      "engagement": {
+        "total": 5
+      },
+      "collected_at": "2026-06-02T12:41:24.288130+08:00",
+      "raw_published": "2026-05-31T12:03:57-07:00",
+      "summary": "[Product Hunt] R0Y OMNI 1.0: Generate more accurate investment dashboards and reports Discussion | Link",
+      "tags": [
+        "product-launch"
+      ],
+      "author": "Bryan Liu",
+      "cross_platform_count": 1,
+      "score": 26,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 2,
+          "score": 1,
+          "weighted": 2
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:1",
+          "score": 5,
+          "weighted": 10
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "ph-paint-by-json-an-api-client-for-figma",
+      "title": "Paint By JSON | Figma API Client",
+      "url": "https://www.producthunt.com/products/paint-by-json-an-api-client-for-figma",
+      "source": "Product Hunt",
+      "source_key": "producthunt",
+      "signal_type": "product",
+      "discussion_count": 0,
+      "engagement": {
+        "total": 5
+      },
+      "collected_at": "2026-06-02T12:41:24.288132+08:00",
+      "raw_published": "2026-05-31T14:45:07-07:00",
+      "summary": "[Product Hunt] Paint By JSON | Figma API Client: Real API data in your mockups made as easy as lorem ipsum. Discussion | Link",
+      "tags": [
+        "product-launch"
+      ],
+      "author": "Rob McLoughlin",
+      "cross_platform_count": 1,
+      "score": 26,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 2,
+          "score": 1,
+          "weighted": 2
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:1",
+          "score": 5,
+          "weighted": 10
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "v2ex-1217106",
+      "title": "能不能有一个不以盈利为目的的外卖平台",
+      "url": "https://www.v2ex.com/t/1217106",
+      "source": "V2EX 奇思妙想",
+      "source_key": "v2ex",
+      "signal_type": "topic",
+      "discussion_count": 195,
+      "engagement": {
+        "replies": 195,
+        "node_weight": 2,
+        "total": 400
+      },
+      "collected_at": "2026-06-02T12:41:58.453982+08:00",
+      "raw_created": 1780309735,
+      "summary": "[奇思妙想] 能不能有一个不以盈利为目的的外卖平台（195 回复）",
+      "tags": [
+        "ideas",
+        "奇思妙想"
+      ],
+      "author": "spielzeug",
+      "node": {
+        "avatar_large": "https://cdn.v2ex.com/navatar/6353/8fe6/519_large.png?m=1595507885",
+        "name": "ideas",
+        "avatar_normal": "https://cdn.v2ex.com/navatar/6353/8fe6/519_normal.png?m=1595507885",
+        "title": "奇思妙想",
+        "url": "https://www.v2ex.com/go/ideas",
+        "topics": 6547,
+        "footer": "",
+        "header": "让你的创意在这里自由流动吧。",
+        "title_alternative": "Ideas",
+        "avatar_mini": "https://cdn.v2ex.com/navatar/6353/8fe6/519_mini.png?m=1595507885",
+        "stars": 3234,
+        "founder_id": 0,
+        "aliases": [],
+        "root": false,
+        "id": 519,
+        "parent_node_name": "v2ex"
+      },
+      "cross_platform_count": 1,
+      "score": 26,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 395,
+          "score": 3,
+          "weighted": 6
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:1",
+          "score": 3,
+          "weighted": 6
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "v2ex-1217221",
+      "title": "业余时间做了一款看图猜物游戏「let us guess」，纯免费无广告，欢迎大家来找茬",
+      "url": "https://www.v2ex.com/t/1217221",
+      "source": "V2EX 产品发布",
+      "source_key": "v2ex",
+      "signal_type": "topic",
+      "discussion_count": 2,
+      "engagement": {
+        "replies": 2,
+        "node_weight": 3,
+        "total": 19
+      },
+      "collected_at": "2026-06-02T12:41:56.690328+08:00",
+      "raw_created": 1780366564,
+      "summary": "[产品发布] 业余时间做了一款看图猜物游戏「let us guess」，纯免费无广告，欢迎大家来找茬（2 回复）",
+      "tags": [
+        "create",
+        "产品发布"
+      ],
+      "author": "hekouwang123",
+      "node": {
+        "avatar_large": "https://cdn.v2ex.com/navatar/70ef/df2e/17_large.png?m=1660301119",
+        "name": "create",
+        "avatar_normal": "https://cdn.v2ex.com/navatar/70ef/df2e/17_normal.png?m=1660301119",
+        "title": "分享创造",
+        "url": "https://www.v2ex.com/go/create",
+        "topics": 33611,
+        "footer": "",
+        "header": "欢迎你在这里发布自己的最新作品！",
+        "title_alternative": "Create",
+        "avatar_mini": "https://cdn.v2ex.com/navatar/70ef/df2e/17_mini.png?m=1660301119",
+        "stars": 6058,
+        "founder_id": 0,
+        "aliases": [],
+        "root": false,
+        "id": 17,
+        "parent_node_name": "geek"
+      },
+      "cross_platform_count": 1,
+      "score": 26,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 11,
+          "score": 1,
+          "weighted": 2
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:3",
+          "score": 5,
+          "weighted": 10
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "v2ex-1217260",
+      "title": "开源一个类似 Typora 实时渲染风格的 markdown 工具",
+      "url": "https://www.v2ex.com/t/1217260",
+      "source": "V2EX 产品发布",
+      "source_key": "v2ex",
+      "signal_type": "topic",
+      "discussion_count": 0,
+      "engagement": {
+        "replies": 0,
+        "node_weight": 3,
+        "total": 15
+      },
+      "collected_at": "2026-06-02T12:41:56.690263+08:00",
+      "raw_created": 1780370464,
+      "summary": "[产品发布] 开源一个类似 Typora 实时渲染风格的 markdown 工具（0 回复）",
+      "tags": [
+        "create",
+        "产品发布"
+      ],
+      "author": "CoderChan",
+      "node": {
+        "avatar_large": "https://cdn.v2ex.com/navatar/70ef/df2e/17_large.png?m=1660301119",
+        "name": "create",
+        "avatar_normal": "https://cdn.v2ex.com/navatar/70ef/df2e/17_normal.png?m=1660301119",
+        "title": "分享创造",
+        "url": "https://www.v2ex.com/go/create",
+        "topics": 33611,
+        "footer": "",
+        "header": "欢迎你在这里发布自己的最新作品！",
+        "title_alternative": "Create",
+        "avatar_mini": "https://cdn.v2ex.com/navatar/70ef/df2e/17_mini.png?m=1660301119",
+        "stars": 6058,
+        "founder_id": 0,
+        "aliases": [],
+        "root": false,
+        "id": 17,
+        "parent_node_name": "geek"
+      },
+      "cross_platform_count": 1,
+      "score": 26,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 7,
+          "score": 1,
+          "weighted": 2
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:4",
+          "score": 5,
+          "weighted": 10
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "v2ex-1217186",
+      "title": "分享一个自己做的英语查词网站 + 浏览器扩展，主打词源地图和 WordNet 关系图（免费）",
+      "url": "https://www.v2ex.com/t/1217186",
+      "source": "V2EX 产品发布",
+      "source_key": "v2ex",
+      "signal_type": "topic",
+      "discussion_count": 0,
+      "engagement": {
+        "replies": 0,
+        "node_weight": 3,
+        "total": 15
+      },
+      "collected_at": "2026-06-02T12:41:56.690331+08:00",
+      "raw_created": 1780361615,
+      "summary": "[产品发布] 分享一个自己做的英语查词网站 + 浏览器扩展，主打词源地图和 WordNet 关系图（免费）（0 回复）",
+      "tags": [
+        "create",
+        "产品发布"
+      ],
+      "author": "meekr",
+      "node": {
+        "avatar_large": "https://cdn.v2ex.com/navatar/70ef/df2e/17_large.png?m=1660301119",
+        "name": "create",
+        "avatar_normal": "https://cdn.v2ex.com/navatar/70ef/df2e/17_normal.png?m=1660301119",
+        "title": "分享创造",
+        "url": "https://www.v2ex.com/go/create",
+        "topics": 33611,
+        "footer": "",
+        "header": "欢迎你在这里发布自己的最新作品！",
+        "title_alternative": "Create",
+        "avatar_mini": "https://cdn.v2ex.com/navatar/70ef/df2e/17_mini.png?m=1660301119",
+        "stars": 6058,
+        "founder_id": 0,
+        "aliases": [],
+        "root": false,
+        "id": 17,
+        "parent_node_name": "geek"
+      },
+      "cross_platform_count": 1,
+      "score": 26,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 7,
+          "score": 1,
+          "weighted": 2
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:3",
+          "score": 5,
+          "weighted": 10
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "w2solo-7466",
+      "title": "微软用 Go 重写 TypeScript 编译器，速度提升 10 倍，网友：这是 “背叛” 还是 “救赎”？",
+      "url": "https://w2solo.com/topics/7466",
+      "source": "w2solo",
+      "source_key": "w2solo",
+      "signal_type": "product-launch",
+      "discussion_count": 0,
+      "engagement": {
+        "likes": 0,
+        "replies": 0,
+        "total": 1
+      },
+      "collected_at": "2026-06-02T12:42:00.186081+08:00",
+      "summary": "[w2solo / 193577746] 4 月 22 日，微软宣布 TypeScript 7.0 Beta 正式发布。这一次，TypeScript 团队干了一件让整个 JS 社区炸锅的事——他们把编译器和工具栈，从 TypeScript/JavaScript 底层完全移植到了 Go。速度通常比 6.0 快约 10 倍。编译 VS Code 代码库从 78 秒缩到 7.5 秒。消息一出，有人叫好，有人愤怒，更多人在问：TypeScript",
+      "tags": [
+        "product-launch",
+        "indie-dev"
+      ],
+      "author": "193577746",
+      "cross_platform_count": 1,
+      "score": 26,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 0,
+          "score": 1,
+          "weighted": 2
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:3",
+          "score": 5,
+          "weighted": 10
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "hn-48356490",
+      "title": "Flipper Zero Zig Template",
+      "url": "https://github.com/NishantJoshi00/flipper-template",
+      "source": "Hacker News",
+      "source_key": "hn",
+      "signal_type": "front_page",
+      "discussion_count": 10,
+      "engagement": {
+        "points": 130,
+        "comments": 10,
+        "total": 150
+      },
+      "collected_at": "2026-06-02T12:40:59.572593+08:00",
+      "raw_created_at": "2026-06-01T13:20:54Z",
+      "summary": "Flipper Zero Zig Template（130 赞 / 10 评论）",
+      "tags": [
+        "story",
+        "author_Nars088",
+        "story_48356490",
+        "front_page"
+      ],
+      "author": "Nars088",
+      "cross_platform_count": 1,
+      "score": 24,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 85,
+          "score": 2,
+          "weighted": 4
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:1",
+          "score": 3,
+          "weighted": 6
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "hn-48356312",
+      "title": "Launch HN: Expanse (YC P26) – Unlock Wasted GPU Capacity",
+      "url": "https://news.ycombinator.com/item?id=48356312",
+      "source": "Hacker News",
+      "source_key": "hn",
+      "signal_type": "front_page",
+      "discussion_count": 23,
+      "engagement": {
+        "points": 74,
+        "comments": 23,
+        "total": 120
+      },
+      "collected_at": "2026-06-02T12:40:59.572607+08:00",
+      "raw_created_at": "2026-06-01T13:05:02Z",
+      "summary": "Launch HN: Expanse (YC P26) – Unlock Wasted GPU Capacity（74 赞 / 23 评论）",
+      "tags": [
+        "story",
+        "author_ismaeel_bashir",
+        "story_48356312",
+        "launch_hn",
+        "front_page"
+      ],
+      "author": "ismaeel_bashir",
+      "cross_platform_count": 1,
+      "score": 24,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 83,
+          "score": 2,
+          "weighted": 4
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:1",
+          "score": 3,
+          "weighted": 6
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "v2ex-1217185",
+      "title": "qwen 3.7 plus 发布了",
+      "url": "https://www.v2ex.com/t/1217185",
+      "source": "V2EX 程序员",
+      "source_key": "v2ex",
+      "signal_type": "topic",
+      "discussion_count": 20,
+      "engagement": {
+        "replies": 20,
+        "node_weight": 1,
+        "total": 45
+      },
+      "collected_at": "2026-06-02T12:41:59.513352+08:00",
+      "raw_created": 1780361495,
+      "summary": "[程序员] qwen 3.7 plus 发布了（20 回复）",
+      "tags": [
+        "programmer",
+        "程序员"
+      ],
+      "author": "clep",
+      "node": {
+        "avatar_large": "https://cdn.v2ex.com/navatar/94f6/d7e0/300_large.png?m=1733731195",
+        "name": "programmer",
+        "avatar_normal": "https://cdn.v2ex.com/navatar/94f6/d7e0/300_normal.png?m=1733731195",
+        "title": "程序员",
+        "url": "https://www.v2ex.com/go/programmer",
+        "topics": 71335,
+        "footer": "",
+        "header": "While code monkeys are not eating bananas, they're coding.",
+        "title_alternative": "Programmer",
+        "avatar_mini": "https://cdn.v2ex.com/navatar/94f6/d7e0/300_mini.png?m=1733731195",
+        "stars": 9698,
+        "founder_id": 0,
+        "aliases": [],
+        "root": false,
+        "id": 300,
+        "parent_node_name": "computer"
+      },
+      "cross_platform_count": 1,
+      "score": 24,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 42,
+          "score": 1,
+          "weighted": 2
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:1",
+          "score": 3,
+          "weighted": 6
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:1",
+          "score": 3,
+          "weighted": 3
+        }
+      }
+    },
+    {
+      "id": "v2ex-1217210",
+      "title": "目前有没有能辅助前端\"切图\"或提取 UI 元素的 AI 工具？",
+      "url": "https://www.v2ex.com/t/1217210",
+      "source": "V2EX 程序员",
+      "source_key": "v2ex",
+      "signal_type": "topic",
+      "discussion_count": 11,
+      "engagement": {
+        "replies": 11,
+        "node_weight": 1,
+        "total": 27
+      },
+      "collected_at": "2026-06-02T12:41:59.513339+08:00",
+      "raw_created": 1780364914,
+      "summary": "[程序员] 目前有没有能辅助前端\"切图\"或提取 UI 元素的 AI 工具？（11 回复）",
+      "tags": [
+        "programmer",
+        "程序员"
+      ],
+      "author": "erjinzhi",
+      "node": {
+        "avatar_large": "https://cdn.v2ex.com/navatar/94f6/d7e0/300_large.png?m=1733731195",
+        "name": "programmer",
+        "avatar_normal": "https://cdn.v2ex.com/navatar/94f6/d7e0/300_normal.png?m=1733731195",
+        "title": "程序员",
+        "url": "https://www.v2ex.com/go/programmer",
+        "topics": 71335,
+        "footer": "",
+        "header": "While code monkeys are not eating bananas, they're coding.",
+        "title_alternative": "Programmer",
+        "avatar_mini": "https://cdn.v2ex.com/navatar/94f6/d7e0/300_mini.png?m=1733731195",
+        "stars": 9698,
+        "founder_id": 0,
+        "aliases": [],
+        "root": false,
+        "id": 300,
+        "parent_node_name": "computer"
+      },
+      "cross_platform_count": 1,
+      "score": 24,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 24,
+          "score": 1,
+          "weighted": 2
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:2",
+          "score": 3,
+          "weighted": 6
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:1",
+          "score": 3,
+          "weighted": 3
+        }
+      }
+    },
+    {
+      "id": "hn-48359232",
+      "title": "AI Agent Guidelines for CS336 at Stanford",
+      "url": "https://github.com/stanford-cs336/assignment1-basics/blob/main/CLAUDE.md",
+      "source": "Hacker News",
+      "source_key": "hn",
+      "signal_type": "front_page",
+      "discussion_count": 124,
+      "engagement": {
+        "points": 356,
+        "comments": 124,
+        "total": 604
+      },
+      "collected_at": "2026-06-02T12:40:59.572553+08:00",
+      "raw_created_at": "2026-06-01T16:41:49Z",
+      "summary": "AI Agent Guidelines for CS336 at Stanford（356 赞 / 124 评论）",
+      "tags": [
+        "story",
+        "author_prakashqwerty",
+        "story_48359232",
+        "front_page"
+      ],
+      "author": "prakashqwerty",
+      "cross_platform_count": 1,
+      "score": 22,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 426,
+          "score": 3,
+          "weighted": 6
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "hn-48358667",
+      "title": "Florida sues OpenAI and Sam Altman over AI risks",
+      "url": "https://www.politico.com/news/2026/06/01/openai-hit-with-florida-lawsuit-00944215",
+      "source": "Hacker News",
+      "source_key": "hn",
+      "signal_type": "front_page",
+      "discussion_count": 164,
+      "engagement": {
+        "points": 195,
+        "comments": 164,
+        "total": 523
+      },
+      "collected_at": "2026-06-02T12:40:59.572568+08:00",
+      "raw_created_at": "2026-06-01T16:02:04Z",
+      "summary": "Florida sues OpenAI and Sam Altman over AI risks（195 赞 / 164 评论）",
+      "tags": [
+        "story",
+        "author_cyunker",
+        "story_48358667",
+        "front_page"
+      ],
+      "author": "cyunker",
+      "cross_platform_count": 1,
+      "score": 22,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 425,
+          "score": 3,
+          "weighted": 6
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "hn-48312443",
+      "title": "I made my phone slow on purpose",
+      "url": "https://vinewallapp.com/notes/i-made-my-phone-slow-on-purpose/",
+      "source": "Hacker News",
+      "source_key": "hn",
+      "signal_type": "front_page",
+      "discussion_count": 162,
+      "engagement": {
+        "points": 178,
+        "comments": 162,
+        "total": 502
+      },
+      "collected_at": "2026-06-02T12:40:59.572574+08:00",
+      "raw_created_at": "2026-05-28T17:30:46Z",
+      "summary": "I made my phone slow on purpose（178 赞 / 162 评论）",
+      "tags": [
+        "story",
+        "author_gcampos",
+        "story_48312443",
+        "front_page"
+      ],
+      "author": "gcampos",
+      "cross_platform_count": 1,
+      "score": 22,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 413,
+          "score": 3,
+          "weighted": 6
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "hn-48357075",
+      "title": "CS336: Language Modeling from Scratch",
+      "url": "https://cs336.stanford.edu/",
+      "source": "Hacker News",
+      "source_key": "hn",
+      "signal_type": "front_page",
+      "discussion_count": 43,
+      "engagement": {
+        "points": 393,
+        "comments": 43,
+        "total": 479
+      },
+      "collected_at": "2026-06-02T12:40:59.572544+08:00",
+      "raw_created_at": "2026-06-01T14:10:32Z",
+      "summary": "CS336: Language Modeling from Scratch（393 赞 / 43 评论）",
+      "tags": [
+        "story",
+        "author_kristianpaul",
+        "story_48357075",
+        "front_page"
+      ],
+      "author": "kristianpaul",
+      "cross_platform_count": 1,
+      "score": 22,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 282,
+          "score": 3,
+          "weighted": 6
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "hn-48362515",
+      "title": "Alphabet announces $80B equity capital raise to expand AI infra and compute",
+      "url": "https://abc.xyz/investor/news/news-details/2026/Alphabet-Announces-Proposed-80-Billion-Equity-Capital-Raise-to-Expand-AI-Infrastructure-and-Compute-2026-b0myAMewCa/default.aspx",
+      "source": "Hacker News",
+      "source_key": "hn",
+      "signal_type": "front_page",
+      "discussion_count": 134,
+      "engagement": {
+        "points": 140,
+        "comments": 134,
+        "total": 408
+      },
+      "collected_at": "2026-06-02T12:40:59.572589+08:00",
+      "raw_created_at": "2026-06-01T20:55:15Z",
+      "summary": "Alphabet announces $80B equity capital raise to expand AI infra and compute（140 赞 / 134 评论）",
+      "tags": [
+        "story",
+        "author_gregschlom",
+        "story_48362515",
+        "front_page"
+      ],
+      "author": "gregschlom",
+      "cross_platform_count": 1,
+      "score": 22,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 338,
+          "score": 3,
+          "weighted": 6
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "hn-48360054",
+      "title": "Should you normalize RGB values by 255 or 256?",
+      "url": "https://30fps.net/pages/255-vs-256-division/",
+      "source": "Hacker News",
+      "source_key": "hn",
+      "signal_type": "front_page",
+      "discussion_count": 94,
+      "engagement": {
+        "points": 217,
+        "comments": 94,
+        "total": 405
+      },
+      "collected_at": "2026-06-02T12:40:59.572559+08:00",
+      "raw_created_at": "2026-06-01T17:37:20Z",
+      "summary": "Should you normalize RGB values by 255 or 256?（217 赞 / 94 评论）",
+      "tags": [
+        "story",
+        "author_pplanu",
+        "story_48360054",
+        "front_page"
+      ],
+      "author": "pplanu",
+      "cross_platform_count": 1,
+      "score": 22,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 296,
+          "score": 3,
+          "weighted": 6
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "hn-48311003",
+      "title": "Only 17% of all 64-bit Integers are products of two 32-bit integers",
+      "url": "https://lemire.me/blog/2026/05/22/only-17-of-all-64-bit-integers-are-products-of-two-32-bit-integers/",
+      "source": "Hacker News",
+      "source_key": "hn",
+      "signal_type": "front_page",
+      "discussion_count": 96,
+      "engagement": {
+        "points": 212,
+        "comments": 96,
+        "total": 404
+      },
+      "collected_at": "2026-06-02T12:40:59.572562+08:00",
+      "raw_created_at": "2026-05-28T16:11:45Z",
+      "summary": "Only 17% of all 64-bit Integers are products of two 32-bit integers（212 赞 / 96 评论）",
+      "tags": [
+        "story",
+        "author_sebg",
+        "story_48311003",
+        "front_page"
+      ],
+      "author": "sebg",
+      "cross_platform_count": 1,
+      "score": 22,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 298,
+          "score": 3,
+          "weighted": 6
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "hn-48357905",
+      "title": "What appear to be biochemical processes may be a natural feature of geology",
+      "url": "https://www.quantamagazine.org/the-dirt-that-refused-to-die-20260601/",
+      "source": "Hacker News",
+      "source_key": "hn",
+      "signal_type": "front_page",
+      "discussion_count": 69,
+      "engagement": {
+        "points": 203,
+        "comments": 69,
+        "total": 341
+      },
+      "collected_at": "2026-06-02T12:40:59.572565+08:00",
+      "raw_created_at": "2026-06-01T15:11:35Z",
+      "summary": "What appear to be biochemical processes may be a natural feature of geology（203 赞 / 69 评论）",
+      "tags": [
+        "story",
+        "author_speckx",
+        "story_48357905",
+        "front_page"
+      ],
+      "author": "speckx",
+      "cross_platform_count": 1,
+      "score": 22,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 239,
+          "score": 3,
+          "weighted": 6
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "hn-48363132",
+      "title": "OpenAI frontier models and Codex are now available on AWS",
+      "url": "https://openai.com/index/openai-frontier-models-and-codex-are-now-available-on-aws/",
+      "source": "Hacker News",
+      "source_key": "hn",
+      "signal_type": "front_page",
+      "discussion_count": 66,
+      "engagement": {
+        "points": 190,
+        "comments": 66,
+        "total": 322
+      },
+      "collected_at": "2026-06-02T12:40:59.572571+08:00",
+      "raw_created_at": "2026-06-01T21:50:02Z",
+      "summary": "OpenAI frontier models and Codex are now available on AWS（190 赞 / 66 评论）",
+      "tags": [
+        "story",
+        "author_typpo",
+        "story_48363132",
+        "front_page"
+      ],
+      "author": "typpo",
+      "cross_platform_count": 1,
+      "score": 22,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 227,
+          "score": 3,
+          "weighted": 6
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "hn-48362347",
+      "title": "Debug Project",
+      "url": "https://debug.com/",
+      "source": "Hacker News",
+      "source_key": "hn",
+      "signal_type": "front_page",
+      "discussion_count": 75,
+      "engagement": {
+        "points": 172,
+        "comments": 75,
+        "total": 322
+      },
+      "collected_at": "2026-06-02T12:40:59.572579+08:00",
+      "raw_created_at": "2026-06-01T20:40:13Z",
+      "summary": "Debug Project（172 赞 / 75 评论）",
+      "tags": [
+        "story",
+        "author_Eridanus2",
+        "story_48362347",
+        "front_page"
+      ],
+      "author": "Eridanus2",
+      "cross_platform_count": 1,
+      "score": 22,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 236,
+          "score": 3,
+          "weighted": 6
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "hn-48356603",
+      "title": "Windows GOG DOS Games on M-Series Macs",
+      "url": "https://f055.net/technology/windows-gog-dos-games-on-m-series-macs/",
+      "source": "Hacker News",
+      "source_key": "hn",
+      "signal_type": "front_page",
+      "discussion_count": 82,
+      "engagement": {
+        "points": 143,
+        "comments": 82,
+        "total": 307
+      },
+      "collected_at": "2026-06-02T12:40:59.572586+08:00",
+      "raw_created_at": "2026-06-01T13:28:53Z",
+      "summary": "Windows GOG DOS Games on M-Series Macs（143 赞 / 82 评论）",
+      "tags": [
+        "story",
+        "author_f055",
+        "story_48356603",
+        "front_page"
+      ],
+      "author": "f055",
+      "cross_platform_count": 1,
+      "score": 22,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 235,
+          "score": 3,
+          "weighted": 6
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "v2ex-1217230",
+      "title": "中外程序员素质对比",
+      "url": "https://www.v2ex.com/t/1217230",
+      "source": "V2EX 程序员",
+      "source_key": "v2ex",
+      "signal_type": "topic",
+      "discussion_count": 54,
+      "engagement": {
+        "replies": 54,
+        "node_weight": 1,
+        "total": 113
+      },
+      "collected_at": "2026-06-02T12:41:59.513334+08:00",
+      "raw_created": 1780367424,
+      "summary": "[程序员] 中外程序员素质对比（54 回复）",
+      "tags": [
+        "programmer",
+        "程序员"
+      ],
+      "author": "dsd2077",
+      "node": {
+        "avatar_large": "https://cdn.v2ex.com/navatar/94f6/d7e0/300_large.png?m=1733731195",
+        "name": "programmer",
+        "avatar_normal": "https://cdn.v2ex.com/navatar/94f6/d7e0/300_normal.png?m=1733731195",
+        "title": "程序员",
+        "url": "https://www.v2ex.com/go/programmer",
+        "topics": 71335,
+        "footer": "",
+        "header": "While code monkeys are not eating bananas, they're coding.",
+        "title_alternative": "Programmer",
+        "avatar_mini": "https://cdn.v2ex.com/navatar/94f6/d7e0/300_mini.png?m=1733731195",
+        "stars": 9698,
+        "founder_id": 0,
+        "aliases": [],
+        "root": false,
+        "id": 300,
+        "parent_node_name": "computer"
+      },
+      "cross_platform_count": 1,
+      "score": 22,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 110,
+          "score": 2,
+          "weighted": 4
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:1",
+          "score": 3,
+          "weighted": 3
+        }
+      }
+    },
+    {
+      "id": "v2ex-1217243",
+      "title": "B 站、YouTube、小红书越刷越无聊？打破信息茧房，用 OpenBiliClaw 养成专属于你的全网内容发现 Agent",
+      "url": "https://www.v2ex.com/t/1217243",
+      "source": "V2EX 产品发布",
+      "source_key": "v2ex",
+      "signal_type": "topic",
+      "discussion_count": 1,
+      "engagement": {
+        "replies": 1,
+        "node_weight": 3,
+        "total": 17
+      },
+      "collected_at": "2026-06-02T12:41:56.690305+08:00",
+      "raw_created": 1780368659,
+      "summary": "[产品发布] B 站、YouTube、小红书越刷越无聊？打破信息茧房，用 OpenBiliClaw 养成专属于你的全网内容发现 Agent（1 回复）",
+      "tags": [
+        "create",
+        "产品发布"
+      ],
+      "author": "whiteblack",
+      "node": {
+        "avatar_large": "https://cdn.v2ex.com/navatar/70ef/df2e/17_large.png?m=1660301119",
+        "name": "create",
+        "avatar_normal": "https://cdn.v2ex.com/navatar/70ef/df2e/17_normal.png?m=1660301119",
+        "title": "分享创造",
+        "url": "https://www.v2ex.com/go/create",
+        "topics": 33611,
+        "footer": "",
+        "header": "欢迎你在这里发布自己的最新作品！",
+        "title_alternative": "Create",
+        "avatar_mini": "https://cdn.v2ex.com/navatar/70ef/df2e/17_mini.png?m=1660301119",
+        "stars": 6058,
+        "founder_id": 0,
+        "aliases": [],
+        "root": false,
+        "id": 17,
+        "parent_node_name": "geek"
+      },
+      "cross_platform_count": 1,
+      "score": 22,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 9,
+          "score": 1,
+          "weighted": 2
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:2",
+          "score": 3,
+          "weighted": 6
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "v2ex-1217173",
+      "title": "专门给 AI Agent 用的系统接口协议，不是 SSH，不是 gRPC",
+      "url": "https://www.v2ex.com/t/1217173",
+      "source": "V2EX 产品发布",
+      "source_key": "v2ex",
+      "signal_type": "topic",
+      "discussion_count": 1,
+      "engagement": {
+        "replies": 1,
+        "node_weight": 3,
+        "total": 17
+      },
+      "collected_at": "2026-06-02T12:41:56.690336+08:00",
+      "raw_created": 1780358374,
+      "summary": "[产品发布] 专门给 AI Agent 用的系统接口协议，不是 SSH，不是 gRPC（1 回复）",
+      "tags": [
+        "create",
+        "产品发布"
+      ],
+      "author": "totoismi",
+      "node": {
+        "avatar_large": "https://cdn.v2ex.com/navatar/70ef/df2e/17_large.png?m=1660301119",
+        "name": "create",
+        "avatar_normal": "https://cdn.v2ex.com/navatar/70ef/df2e/17_normal.png?m=1660301119",
+        "title": "分享创造",
+        "url": "https://www.v2ex.com/go/create",
+        "topics": 33611,
+        "footer": "",
+        "header": "欢迎你在这里发布自己的最新作品！",
+        "title_alternative": "Create",
+        "avatar_mini": "https://cdn.v2ex.com/navatar/70ef/df2e/17_mini.png?m=1660301119",
+        "stars": 6058,
+        "founder_id": 0,
+        "aliases": [],
+        "root": false,
+        "id": 17,
+        "parent_node_name": "geek"
+      },
+      "cross_platform_count": 1,
+      "score": 22,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 9,
+          "score": 1,
+          "weighted": 2
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:2",
+          "score": 3,
+          "weighted": 6
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "v2ex-1217282",
+      "title": "分享一个朋友开发的 SSH 客户端，支持多端同步",
+      "url": "https://www.v2ex.com/t/1217282",
+      "source": "V2EX 产品发布",
+      "source_key": "v2ex",
+      "signal_type": "topic",
+      "discussion_count": 0,
+      "engagement": {
+        "replies": 0,
+        "node_weight": 3,
+        "total": 15
+      },
+      "collected_at": "2026-06-02T12:41:56.690231+08:00",
+      "raw_created": 1780374755,
+      "summary": "[产品发布] 分享一个朋友开发的 SSH 客户端，支持多端同步（0 回复）",
+      "tags": [
+        "create",
+        "产品发布"
+      ],
+      "author": "demomacro",
+      "node": {
+        "avatar_large": "https://cdn.v2ex.com/navatar/70ef/df2e/17_large.png?m=1660301119",
+        "name": "create",
+        "avatar_normal": "https://cdn.v2ex.com/navatar/70ef/df2e/17_normal.png?m=1660301119",
+        "title": "分享创造",
+        "url": "https://www.v2ex.com/go/create",
+        "topics": 33611,
+        "footer": "",
+        "header": "欢迎你在这里发布自己的最新作品！",
+        "title_alternative": "Create",
+        "avatar_mini": "https://cdn.v2ex.com/navatar/70ef/df2e/17_mini.png?m=1660301119",
+        "stars": 6058,
+        "founder_id": 0,
+        "aliases": [],
+        "root": false,
+        "id": 17,
+        "parent_node_name": "geek"
+      },
+      "cross_platform_count": 1,
+      "score": 22,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 7,
+          "score": 1,
+          "weighted": 2
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:2",
+          "score": 3,
+          "weighted": 6
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "v2ex-1217242",
+      "title": "搞了个导航站",
+      "url": "https://www.v2ex.com/t/1217242",
+      "source": "V2EX 产品发布",
+      "source_key": "v2ex",
+      "signal_type": "topic",
+      "discussion_count": 0,
+      "engagement": {
+        "replies": 0,
+        "node_weight": 3,
+        "total": 15
+      },
+      "collected_at": "2026-06-02T12:41:56.690316+08:00",
+      "raw_created": 1780368642,
+      "summary": "[产品发布] 搞了个导航站（0 回复）",
+      "tags": [
+        "create",
+        "产品发布"
+      ],
+      "author": "tandk",
+      "node": {
+        "avatar_large": "https://cdn.v2ex.com/navatar/70ef/df2e/17_large.png?m=1660301119",
+        "name": "create",
+        "avatar_normal": "https://cdn.v2ex.com/navatar/70ef/df2e/17_normal.png?m=1660301119",
+        "title": "分享创造",
+        "url": "https://www.v2ex.com/go/create",
+        "topics": 33611,
+        "footer": "",
+        "header": "欢迎你在这里发布自己的最新作品！",
+        "title_alternative": "Create",
+        "avatar_mini": "https://cdn.v2ex.com/navatar/70ef/df2e/17_mini.png?m=1660301119",
+        "stars": 6058,
+        "founder_id": 0,
+        "aliases": [],
+        "root": false,
+        "id": 17,
+        "parent_node_name": "geek"
+      },
+      "cross_platform_count": 1,
+      "score": 22,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 7,
+          "score": 1,
+          "weighted": 2
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:2",
+          "score": 3,
+          "weighted": 6
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "v2ex-1217238",
+      "title": "Cursor 要到期了，用它开发了一个有趣的项目",
+      "url": "https://www.v2ex.com/t/1217238",
+      "source": "V2EX 产品发布",
+      "source_key": "v2ex",
+      "signal_type": "topic",
+      "discussion_count": 0,
+      "engagement": {
+        "replies": 0,
+        "node_weight": 3,
+        "total": 15
+      },
+      "collected_at": "2026-06-02T12:41:56.690321+08:00",
+      "raw_created": 1780368196,
+      "summary": "[产品发布] Cursor 要到期了，用它开发了一个有趣的项目（0 回复）",
+      "tags": [
+        "create",
+        "产品发布"
+      ],
+      "author": "qifengle7",
+      "node": {
+        "avatar_large": "https://cdn.v2ex.com/navatar/70ef/df2e/17_large.png?m=1660301119",
+        "name": "create",
+        "avatar_normal": "https://cdn.v2ex.com/navatar/70ef/df2e/17_normal.png?m=1660301119",
+        "title": "分享创造",
+        "url": "https://www.v2ex.com/go/create",
+        "topics": 33611,
+        "footer": "",
+        "header": "欢迎你在这里发布自己的最新作品！",
+        "title_alternative": "Create",
+        "avatar_mini": "https://cdn.v2ex.com/navatar/70ef/df2e/17_mini.png?m=1660301119",
+        "stars": 6058,
+        "founder_id": 0,
+        "aliases": [],
+        "root": false,
+        "id": 17,
+        "parent_node_name": "geek"
+      },
+      "cross_platform_count": 1,
+      "score": 22,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 7,
+          "score": 1,
+          "weighted": 2
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:2",
+          "score": 3,
+          "weighted": 6
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "v2ex-1217231",
+      "title": "做了个 GitHub Creator Ranking",
+      "url": "https://www.v2ex.com/t/1217231",
+      "source": "V2EX 产品发布",
+      "source_key": "v2ex",
+      "signal_type": "topic",
+      "discussion_count": 0,
+      "engagement": {
+        "replies": 0,
+        "node_weight": 3,
+        "total": 15
+      },
+      "collected_at": "2026-06-02T12:41:56.690325+08:00",
+      "raw_created": 1780367440,
+      "summary": "[产品发布] 做了个 GitHub Creator Ranking（0 回复）",
+      "tags": [
+        "create",
+        "产品发布"
+      ],
+      "author": "formulahendry",
+      "node": {
+        "avatar_large": "https://cdn.v2ex.com/navatar/70ef/df2e/17_large.png?m=1660301119",
+        "name": "create",
+        "avatar_normal": "https://cdn.v2ex.com/navatar/70ef/df2e/17_normal.png?m=1660301119",
+        "title": "分享创造",
+        "url": "https://www.v2ex.com/go/create",
+        "topics": 33611,
+        "footer": "",
+        "header": "欢迎你在这里发布自己的最新作品！",
+        "title_alternative": "Create",
+        "avatar_mini": "https://cdn.v2ex.com/navatar/70ef/df2e/17_mini.png?m=1660301119",
+        "stars": 6058,
+        "founder_id": 0,
+        "aliases": [],
+        "root": false,
+        "id": 17,
+        "parent_node_name": "geek"
+      },
+      "cross_platform_count": 1,
+      "score": 22,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 7,
+          "score": 1,
+          "weighted": 2
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:2",
+          "score": 3,
+          "weighted": 6
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "v2ex-1217183",
+      "title": "开发了一款支持 AI 流式编辑与甘特图的笔记应用，分享一下 5 月的重构踩坑经历",
+      "url": "https://www.v2ex.com/t/1217183",
+      "source": "V2EX 产品发布",
+      "source_key": "v2ex",
+      "signal_type": "topic",
+      "discussion_count": 0,
+      "engagement": {
+        "replies": 0,
+        "node_weight": 3,
+        "total": 15
+      },
+      "collected_at": "2026-06-02T12:41:56.690333+08:00",
+      "raw_created": 1780360910,
+      "summary": "[产品发布] 开发了一款支持 AI 流式编辑与甘特图的笔记应用，分享一下 5 月的重构踩坑经历（0 回复）",
+      "tags": [
+        "create",
+        "产品发布"
+      ],
+      "author": "lerongwan1",
+      "node": {
+        "avatar_large": "https://cdn.v2ex.com/navatar/70ef/df2e/17_large.png?m=1660301119",
+        "name": "create",
+        "avatar_normal": "https://cdn.v2ex.com/navatar/70ef/df2e/17_normal.png?m=1660301119",
+        "title": "分享创造",
+        "url": "https://www.v2ex.com/go/create",
+        "topics": 33611,
+        "footer": "",
+        "header": "欢迎你在这里发布自己的最新作品！",
+        "title_alternative": "Create",
+        "avatar_mini": "https://cdn.v2ex.com/navatar/70ef/df2e/17_mini.png?m=1660301119",
+        "stars": 6058,
+        "founder_id": 0,
+        "aliases": [],
+        "root": false,
+        "id": 17,
+        "parent_node_name": "geek"
+      },
+      "cross_platform_count": 1,
+      "score": 22,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 7,
+          "score": 1,
+          "weighted": 2
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:2",
+          "score": 3,
+          "weighted": 6
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "hn-48364800",
+      "title": "macOS needs its grid back",
+      "url": "https://blog.hopefullyuseful.com/blog/macos-needs-its-grid-back/",
+      "source": "Hacker News",
+      "source_key": "hn",
+      "signal_type": "front_page",
+      "discussion_count": 65,
+      "engagement": {
+        "points": 129,
+        "comments": 65,
+        "total": 259
+      },
+      "collected_at": "2026-06-02T12:40:59.572598+08:00",
+      "raw_created_at": "2026-06-02T01:28:34Z",
+      "summary": "macOS needs its grid back（129 赞 / 65 评论）",
+      "tags": [
+        "story",
+        "author_ranebo",
+        "story_48364800",
+        "front_page"
+      ],
+      "author": "ranebo",
+      "cross_platform_count": 1,
+      "score": 20,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 194,
+          "score": 2,
+          "weighted": 4
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "hn-48363765",
+      "title": "Chipotlai Max",
+      "url": "https://github.com/cyberpapiii/chipotlai-max",
+      "source": "Hacker News",
+      "source_key": "hn",
+      "signal_type": "front_page",
+      "discussion_count": 25,
+      "engagement": {
+        "points": 118,
+        "comments": 25,
+        "total": 168
+      },
+      "collected_at": "2026-06-02T12:40:59.572601+08:00",
+      "raw_created_at": "2026-06-01T23:06:35Z",
+      "summary": "Chipotlai Max（118 赞 / 25 评论）",
+      "tags": [
+        "story",
+        "author_nigelgutzmann",
+        "story_48363765",
+        "front_page"
+      ],
+      "author": "nigelgutzmann",
+      "cross_platform_count": 1,
+      "score": 20,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 109,
+          "score": 2,
+          "weighted": 4
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "hn-48364620",
+      "title": "How is Groq raising more money?",
+      "url": "https://www.zach.be/p/how-the-hell-is-groq-raising-more",
+      "source": "Hacker News",
+      "source_key": "hn",
+      "signal_type": "front_page",
+      "discussion_count": 28,
+      "engagement": {
+        "points": 61,
+        "comments": 28,
+        "total": 117
+      },
+      "collected_at": "2026-06-02T12:40:59.572610+08:00",
+      "raw_created_at": "2026-06-02T01:05:29Z",
+      "summary": "How is Groq raising more money?（61 赞 / 28 评论）",
+      "tags": [
+        "story",
+        "author_hasheddan",
+        "story_48364620",
+        "front_page"
+      ],
+      "author": "hasheddan",
+      "cross_platform_count": 1,
+      "score": 20,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 86,
+          "score": 2,
+          "weighted": 4
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "hn-48365237",
+      "title": "U.S. Midterms Have a Cyber Problem, but It's Not at the Ballot Box",
+      "url": "https://blog.checkpoint.com/exposure-management/the-2026-u-s-midterms-have-a-cyber-problem-but-its-not-at-the-ballot-box/",
+      "source": "Hacker News",
+      "source_key": "hn",
+      "signal_type": "front_page",
+      "discussion_count": 38,
+      "engagement": {
+        "points": 39,
+        "comments": 38,
+        "total": 115
+      },
+      "collected_at": "2026-06-02T12:40:59.572612+08:00",
+      "raw_created_at": "2026-06-02T02:28:24Z",
+      "summary": "U.S. Midterms Have a Cyber Problem, but It's Not at the Ballot Box（39 赞 / 38 评论）",
+      "tags": [
+        "story",
+        "author_gnabgib",
+        "story_48365237",
+        "front_page"
+      ],
+      "author": "gnabgib",
+      "cross_platform_count": 1,
+      "score": 20,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 95,
+          "score": 2,
+          "weighted": 4
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "hn-48338891",
+      "title": "Stealing from Biologists to Compile Haskell Faster",
+      "url": "https://www.iankduncan.com/engineering/2026-05-30-stealing-from-biologists-to-compile-haskell-faster/",
+      "source": "Hacker News",
+      "source_key": "hn",
+      "signal_type": "front_page",
+      "discussion_count": 4,
+      "engagement": {
+        "points": 101,
+        "comments": 4,
+        "total": 109
+      },
+      "collected_at": "2026-06-02T12:40:59.572604+08:00",
+      "raw_created_at": "2026-05-30T17:50:21Z",
+      "summary": "Stealing from Biologists to Compile Haskell Faster（101 赞 / 4 评论）",
+      "tags": [
+        "story",
+        "author_mooreds",
+        "story_48338891",
+        "front_page"
+      ],
+      "author": "mooreds",
+      "cross_platform_count": 1,
+      "score": 20,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 58,
+          "score": 2,
+          "weighted": 4
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "v2ex-1217203",
+      "title": "币安账户支持股票交易了！",
+      "url": "https://www.v2ex.com/t/1217203",
+      "source": "V2EX 分享发现",
+      "source_key": "v2ex",
+      "signal_type": "topic",
+      "discussion_count": 48,
+      "engagement": {
+        "replies": 48,
+        "node_weight": 3,
+        "total": 111
+      },
+      "collected_at": "2026-06-02T12:41:57.611557+08:00",
+      "raw_created": 1780364076,
+      "summary": "[分享发现] 币安账户支持股票交易了！（48 回复）",
+      "tags": [
+        "share",
+        "分享发现"
+      ],
+      "author": "cryptoboy",
+      "node": {
+        "avatar_large": "https://cdn.v2ex.com/navatar/c74d/97b0/16_large.png?m=1727584731",
+        "name": "share",
+        "avatar_normal": "https://cdn.v2ex.com/navatar/c74d/97b0/16_normal.png?m=1727584731",
+        "title": "分享发现",
+        "url": "https://www.v2ex.com/go/share",
+        "topics": 46259,
+        "footer": "",
+        "header": "分享你看到的好玩的，有信息量的，欢迎从这里获取灵感。",
+        "title_alternative": "Share",
+        "avatar_mini": "https://cdn.v2ex.com/navatar/c74d/97b0/16_mini.png?m=1727584731",
+        "stars": 6310,
+        "founder_id": 0,
+        "aliases": [],
+        "root": false,
+        "id": 16,
+        "parent_node_name": "v2ex"
+      },
+      "cross_platform_count": 1,
+      "score": 20,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 103,
+          "score": 2,
+          "weighted": 4
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "v2ex-1217197",
+      "title": "claudecode 的 workflow，看来看去也就一个优势那就是确定性的并发 agent",
+      "url": "https://www.v2ex.com/t/1217197",
+      "source": "V2EX 程序员",
+      "source_key": "v2ex",
+      "signal_type": "topic",
+      "discussion_count": 3,
+      "engagement": {
+        "replies": 3,
+        "node_weight": 1,
+        "total": 11
+      },
+      "collected_at": "2026-06-02T12:41:59.513344+08:00",
+      "raw_created": 1780363152,
+      "summary": "[程序员] claudecode 的 workflow，看来看去也就一个优势那就是确定性的并发 agent（3 回复）",
+      "tags": [
+        "programmer",
+        "程序员"
+      ],
+      "author": "zzNaLOGIC",
+      "node": {
+        "avatar_large": "https://cdn.v2ex.com/navatar/94f6/d7e0/300_large.png?m=1733731195",
+        "name": "programmer",
+        "avatar_normal": "https://cdn.v2ex.com/navatar/94f6/d7e0/300_normal.png?m=1733731195",
+        "title": "程序员",
+        "url": "https://www.v2ex.com/go/programmer",
+        "topics": 71335,
+        "footer": "",
+        "header": "While code monkeys are not eating bananas, they're coding.",
+        "title_alternative": "Programmer",
+        "avatar_mini": "https://cdn.v2ex.com/navatar/94f6/d7e0/300_mini.png?m=1733731195",
+        "stars": 9698,
+        "founder_id": 0,
+        "aliases": [],
+        "root": false,
+        "id": 300,
+        "parent_node_name": "computer"
+      },
+      "cross_platform_count": 1,
+      "score": 20,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 8,
+          "score": 1,
+          "weighted": 2
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:1",
+          "score": 3,
+          "weighted": 3
+        }
+      }
+    },
+    {
+      "id": "v2ex-1217169",
+      "title": "mimo 的 tts 朗读时会跳字",
+      "url": "https://www.v2ex.com/t/1217169",
+      "source": "V2EX 程序员",
+      "source_key": "v2ex",
+      "signal_type": "topic",
+      "discussion_count": 1,
+      "engagement": {
+        "replies": 1,
+        "node_weight": 1,
+        "total": 7
+      },
+      "collected_at": "2026-06-02T12:41:59.513356+08:00",
+      "raw_created": 1780349391,
+      "summary": "[程序员] mimo 的 tts 朗读时会跳字（1 回复）",
+      "tags": [
+        "programmer",
+        "程序员"
+      ],
+      "author": "207524zyD",
+      "node": {
+        "avatar_large": "https://cdn.v2ex.com/navatar/94f6/d7e0/300_large.png?m=1733731195",
+        "name": "programmer",
+        "avatar_normal": "https://cdn.v2ex.com/navatar/94f6/d7e0/300_normal.png?m=1733731195",
+        "title": "程序员",
+        "url": "https://www.v2ex.com/go/programmer",
+        "topics": 71335,
+        "footer": "",
+        "header": "While code monkeys are not eating bananas, they're coding.",
+        "title_alternative": "Programmer",
+        "avatar_mini": "https://cdn.v2ex.com/navatar/94f6/d7e0/300_mini.png?m=1733731195",
+        "stars": 9698,
+        "founder_id": 0,
+        "aliases": [],
+        "root": false,
+        "id": 300,
+        "parent_node_name": "computer"
+      },
+      "cross_platform_count": 1,
+      "score": 20,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 4,
+          "score": 1,
+          "weighted": 2
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:1",
+          "score": 3,
+          "weighted": 3
+        }
+      }
+    },
+    {
+      "id": "v2ex-1217191",
+      "title": "现在 harness engineering 最佳实践是什么？",
+      "url": "https://www.v2ex.com/t/1217191",
+      "source": "V2EX 程序员",
+      "source_key": "v2ex",
+      "signal_type": "topic",
+      "discussion_count": 0,
+      "engagement": {
+        "replies": 0,
+        "node_weight": 1,
+        "total": 5
+      },
+      "collected_at": "2026-06-02T12:41:59.513348+08:00",
+      "raw_created": 1780362748,
+      "summary": "[程序员] 现在 harness engineering 最佳实践是什么？（0 回复）",
+      "tags": [
+        "programmer",
+        "程序员"
+      ],
+      "author": "ethusdt",
+      "node": {
+        "avatar_large": "https://cdn.v2ex.com/navatar/94f6/d7e0/300_large.png?m=1733731195",
+        "name": "programmer",
+        "avatar_normal": "https://cdn.v2ex.com/navatar/94f6/d7e0/300_normal.png?m=1733731195",
+        "title": "程序员",
+        "url": "https://www.v2ex.com/go/programmer",
+        "topics": 71335,
+        "footer": "",
+        "header": "While code monkeys are not eating bananas, they're coding.",
+        "title_alternative": "Programmer",
+        "avatar_mini": "https://cdn.v2ex.com/navatar/94f6/d7e0/300_mini.png?m=1733731195",
+        "stars": 9698,
+        "founder_id": 0,
+        "aliases": [],
+        "root": false,
+        "id": 300,
+        "parent_node_name": "computer"
+      },
+      "cross_platform_count": 1,
+      "score": 20,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 2,
+          "score": 1,
+          "weighted": 2
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:2",
+          "score": 3,
+          "weighted": 3
+        }
+      }
+    },
+    {
+      "id": "v2ex-1217155",
+      "title": "一文讲透企业级 Harness Coding 架构落地实战！",
+      "url": "https://www.v2ex.com/t/1217155",
+      "source": "V2EX 程序员",
+      "source_key": "v2ex",
+      "signal_type": "topic",
+      "discussion_count": 0,
+      "engagement": {
+        "replies": 0,
+        "node_weight": 1,
+        "total": 5
+      },
+      "collected_at": "2026-06-02T12:41:59.513361+08:00",
+      "raw_created": 1780327736,
+      "summary": "[程序员] 一文讲透企业级 Harness Coding 架构落地实战！（0 回复）",
+      "tags": [
+        "programmer",
+        "程序员"
+      ],
+      "author": "dearzhzhao",
+      "node": {
+        "avatar_large": "https://cdn.v2ex.com/navatar/94f6/d7e0/300_large.png?m=1733731195",
+        "name": "programmer",
+        "avatar_normal": "https://cdn.v2ex.com/navatar/94f6/d7e0/300_normal.png?m=1733731195",
+        "title": "程序员",
+        "url": "https://www.v2ex.com/go/programmer",
+        "topics": 71335,
+        "footer": "",
+        "header": "While code monkeys are not eating bananas, they're coding.",
+        "title_alternative": "Programmer",
+        "avatar_mini": "https://cdn.v2ex.com/navatar/94f6/d7e0/300_mini.png?m=1733731195",
+        "stars": 9698,
+        "founder_id": 0,
+        "aliases": [],
+        "root": false,
+        "id": 300,
+        "parent_node_name": "computer"
+      },
+      "cross_platform_count": 1,
+      "score": 20,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 2,
+          "score": 1,
+          "weighted": 2
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:2",
+          "score": 3,
+          "weighted": 3
+        }
+      }
+    },
+    {
+      "id": "w2solo-7473",
+      "title": "AI 生成代码快如闪电，但我修了三个小时——它到底帮了谁？",
+      "url": "https://w2solo.com/topics/7473",
+      "source": "w2solo",
+      "source_key": "w2solo",
+      "signal_type": "idea-validation",
+      "discussion_count": 0,
+      "engagement": {
+        "likes": 0,
+        "replies": 0,
+        "total": 1
+      },
+      "collected_at": "2026-06-02T12:42:00.185908+08:00",
+      "summary": "[w2solo / 193577746] 上周，老板丢过来一个内部后台页面的需求，说 “不急，明天给就行”。我打开 v0，输入 “帮我生成一个用户管理后台，包含表格、筛选、分页、编辑弹窗”。一分钟，页面出来了。表格、按钮、弹窗、样式，一应俱全。我复制代码到项目里，跑起来，看起来没问题。然后接下来三个小时，我都在改它的代码。\n\n一、“神速” 生成，然后呢？\nv0 生成的速度确实快。但当我开始真正 “使用” 这份代码时，问题一个接一个冒出来：",
+      "tags": [
+        "idea-validation",
+        "indie-dev"
+      ],
+      "author": "193577746",
+      "cross_platform_count": 1,
+      "score": 20,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 0,
+          "score": 1,
+          "weighted": 2
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:1",
+          "score": 3,
+          "weighted": 3
+        }
+      }
+    },
+    {
+      "id": "v2ex-1216986",
+      "title": "肯德基宅急送现在都是三方配送了（美团/饿了么）",
+      "url": "https://www.v2ex.com/t/1216986",
+      "source": "V2EX 分享发现",
+      "source_key": "v2ex",
+      "signal_type": "topic",
+      "discussion_count": 21,
+      "engagement": {
+        "replies": 21,
+        "node_weight": 3,
+        "total": 57
+      },
+      "collected_at": "2026-06-02T12:41:57.611577+08:00",
+      "raw_created": 1780289936,
+      "summary": "[分享发现] 肯德基宅急送现在都是三方配送了（美团/饿了么）（21 回复）",
+      "tags": [
+        "share",
+        "分享发现"
+      ],
+      "author": "oma1989",
+      "node": {
+        "avatar_large": "https://cdn.v2ex.com/navatar/c74d/97b0/16_large.png?m=1727584731",
+        "name": "share",
+        "avatar_normal": "https://cdn.v2ex.com/navatar/c74d/97b0/16_normal.png?m=1727584731",
+        "title": "分享发现",
+        "url": "https://www.v2ex.com/go/share",
+        "topics": 46259,
+        "footer": "",
+        "header": "分享你看到的好玩的，有信息量的，欢迎从这里获取灵感。",
+        "title_alternative": "Share",
+        "avatar_mini": "https://cdn.v2ex.com/navatar/c74d/97b0/16_mini.png?m=1727584731",
+        "stars": 6310,
+        "founder_id": 0,
+        "aliases": [],
+        "root": false,
+        "id": 16,
+        "parent_node_name": "v2ex"
+      },
+      "cross_platform_count": 1,
+      "score": 18,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 49,
+          "score": 1,
+          "weighted": 2
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "v2ex-1217144",
+      "title": "事实证明，正版 Typora 确实不如盗版“省心”[微笑]",
+      "url": "https://www.v2ex.com/t/1217144",
+      "source": "V2EX 分享发现",
+      "source_key": "v2ex",
+      "signal_type": "topic",
+      "discussion_count": 14,
+      "engagement": {
+        "replies": 14,
+        "node_weight": 3,
+        "total": 43
+      },
+      "collected_at": "2026-06-02T12:41:57.611569+08:00",
+      "raw_created": 1780325247,
+      "summary": "[分享发现] 事实证明，正版 Typora 确实不如盗版“省心”[微笑]（14 回复）",
+      "tags": [
+        "share",
+        "分享发现"
+      ],
+      "author": "hlbcpt",
+      "node": {
+        "avatar_large": "https://cdn.v2ex.com/navatar/c74d/97b0/16_large.png?m=1727584731",
+        "name": "share",
+        "avatar_normal": "https://cdn.v2ex.com/navatar/c74d/97b0/16_normal.png?m=1727584731",
+        "title": "分享发现",
+        "url": "https://www.v2ex.com/go/share",
+        "topics": 46259,
+        "footer": "",
+        "header": "分享你看到的好玩的，有信息量的，欢迎从这里获取灵感。",
+        "title_alternative": "Share",
+        "avatar_mini": "https://cdn.v2ex.com/navatar/c74d/97b0/16_mini.png?m=1727584731",
+        "stars": 6310,
+        "founder_id": 0,
+        "aliases": [],
+        "root": false,
+        "id": 16,
+        "parent_node_name": "v2ex"
+      },
+      "cross_platform_count": 1,
+      "score": 18,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 35,
+          "score": 1,
+          "weighted": 2
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "v2ex-1217189",
+      "title": "[快讯] Telegram 电脑版正式支持中文",
+      "url": "https://www.v2ex.com/t/1217189",
+      "source": "V2EX 分享发现",
+      "source_key": "v2ex",
+      "signal_type": "topic",
+      "discussion_count": 12,
+      "engagement": {
+        "replies": 12,
+        "node_weight": 3,
+        "total": 39
+      },
+      "collected_at": "2026-06-02T12:41:57.611564+08:00",
+      "raw_created": 1780362519,
+      "summary": "[分享发现] [快讯] Telegram 电脑版正式支持中文（12 回复）",
+      "tags": [
+        "share",
+        "分享发现"
+      ],
+      "author": "EmotionV",
+      "node": {
+        "avatar_large": "https://cdn.v2ex.com/navatar/c74d/97b0/16_large.png?m=1727584731",
+        "name": "share",
+        "avatar_normal": "https://cdn.v2ex.com/navatar/c74d/97b0/16_normal.png?m=1727584731",
+        "title": "分享发现",
+        "url": "https://www.v2ex.com/go/share",
+        "topics": 46259,
+        "footer": "",
+        "header": "分享你看到的好玩的，有信息量的，欢迎从这里获取灵感。",
+        "title_alternative": "Share",
+        "avatar_mini": "https://cdn.v2ex.com/navatar/c74d/97b0/16_mini.png?m=1727584731",
+        "stars": 6310,
+        "founder_id": 0,
+        "aliases": [],
+        "root": false,
+        "id": 16,
+        "parent_node_name": "v2ex"
+      },
+      "cross_platform_count": 1,
+      "score": 18,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 31,
+          "score": 1,
+          "weighted": 2
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "v2ex-1217143",
+      "title": "原来 abc 只是第一关啊 后面还有好几关呢😭",
+      "url": "https://www.v2ex.com/t/1217143",
+      "source": "V2EX 分享发现",
+      "source_key": "v2ex",
+      "signal_type": "topic",
+      "discussion_count": 4,
+      "engagement": {
+        "replies": 4,
+        "node_weight": 3,
+        "total": 23
+      },
+      "collected_at": "2026-06-02T12:41:57.611572+08:00",
+      "raw_created": 1780325066,
+      "summary": "[分享发现] 原来 abc 只是第一关啊 后面还有好几关呢😭（4 回复）",
+      "tags": [
+        "share",
+        "分享发现"
+      ],
+      "author": "Tiberisino",
+      "node": {
+        "avatar_large": "https://cdn.v2ex.com/navatar/c74d/97b0/16_large.png?m=1727584731",
+        "name": "share",
+        "avatar_normal": "https://cdn.v2ex.com/navatar/c74d/97b0/16_normal.png?m=1727584731",
+        "title": "分享发现",
+        "url": "https://www.v2ex.com/go/share",
+        "topics": 46259,
+        "footer": "",
+        "header": "分享你看到的好玩的，有信息量的，欢迎从这里获取灵感。",
+        "title_alternative": "Share",
+        "avatar_mini": "https://cdn.v2ex.com/navatar/c74d/97b0/16_mini.png?m=1727584731",
+        "stars": 6310,
+        "founder_id": 0,
+        "aliases": [],
+        "root": false,
+        "id": 16,
+        "parent_node_name": "v2ex"
+      },
+      "cross_platform_count": 1,
+      "score": 18,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 15,
+          "score": 1,
+          "weighted": 2
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "v2ex-1217042",
+      "title": "马斯克终于憋出大招！ Grok Imagine Video 1.5 力压 seedance2 登顶 top1",
+      "url": "https://www.v2ex.com/t/1217042",
+      "source": "V2EX 分享发现",
+      "source_key": "v2ex",
+      "signal_type": "topic",
+      "discussion_count": 1,
+      "engagement": {
+        "replies": 1,
+        "node_weight": 3,
+        "total": 17
+      },
+      "collected_at": "2026-06-02T12:41:57.611574+08:00",
+      "raw_created": 1780299188,
+      "summary": "[分享发现] 马斯克终于憋出大招！ Grok Imagine Video 1.5 力压 seedance2 登顶 top1（1 回复）",
+      "tags": [
+        "share",
+        "分享发现"
+      ],
+      "author": "yutian666",
+      "node": {
+        "avatar_large": "https://cdn.v2ex.com/navatar/c74d/97b0/16_large.png?m=1727584731",
+        "name": "share",
+        "avatar_normal": "https://cdn.v2ex.com/navatar/c74d/97b0/16_normal.png?m=1727584731",
+        "title": "分享发现",
+        "url": "https://www.v2ex.com/go/share",
+        "topics": 46259,
+        "footer": "",
+        "header": "分享你看到的好玩的，有信息量的，欢迎从这里获取灵感。",
+        "title_alternative": "Share",
+        "avatar_mini": "https://cdn.v2ex.com/navatar/c74d/97b0/16_mini.png?m=1727584731",
+        "stars": 6310,
+        "founder_id": 0,
+        "aliases": [],
+        "root": false,
+        "id": 16,
+        "parent_node_name": "v2ex"
+      },
+      "cross_platform_count": 1,
+      "score": 18,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 9,
+          "score": 1,
+          "weighted": 2
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "v2ex-1217190",
+      "title": "tg mac 版支持官方中文了",
+      "url": "https://www.v2ex.com/t/1217190",
+      "source": "V2EX 分享发现",
+      "source_key": "v2ex",
+      "signal_type": "topic",
+      "discussion_count": 0,
+      "engagement": {
+        "replies": 0,
+        "node_weight": 3,
+        "total": 15
+      },
+      "collected_at": "2026-06-02T12:41:57.611561+08:00",
+      "raw_created": 1780362710,
+      "summary": "[分享发现] tg mac 版支持官方中文了（0 回复）",
+      "tags": [
+        "share",
+        "分享发现"
+      ],
+      "author": "at5pm",
+      "node": {
+        "avatar_large": "https://cdn.v2ex.com/navatar/c74d/97b0/16_large.png?m=1727584731",
+        "name": "share",
+        "avatar_normal": "https://cdn.v2ex.com/navatar/c74d/97b0/16_normal.png?m=1727584731",
+        "title": "分享发现",
+        "url": "https://www.v2ex.com/go/share",
+        "topics": 46259,
+        "footer": "",
+        "header": "分享你看到的好玩的，有信息量的，欢迎从这里获取灵感。",
+        "title_alternative": "Share",
+        "avatar_mini": "https://cdn.v2ex.com/navatar/c74d/97b0/16_mini.png?m=1727584731",
+        "stars": 6310,
+        "founder_id": 0,
+        "aliases": [],
+        "root": false,
+        "id": 16,
+        "parent_node_name": "v2ex"
+      },
+      "cross_platform_count": 1,
+      "score": 18,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 7,
+          "score": 1,
+          "weighted": 2
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "v2ex-1217264",
+      "title": "赛博剪报，生图 ai 和 llm 的能力比较稳定了，感觉还不错",
+      "url": "https://www.v2ex.com/t/1217264",
+      "source": "V2EX 奇思妙想",
+      "source_key": "v2ex",
+      "signal_type": "topic",
+      "discussion_count": 0,
+      "engagement": {
+        "replies": 0,
+        "node_weight": 2,
+        "total": 10
+      },
+      "collected_at": "2026-06-02T12:41:58.453933+08:00",
+      "raw_created": 1780371593,
+      "summary": "[奇思妙想] 赛博剪报，生图 ai 和 llm 的能力比较稳定了，感觉还不错（0 回复）",
+      "tags": [
+        "ideas",
+        "奇思妙想"
+      ],
+      "author": "treblex",
+      "node": {
+        "avatar_large": "https://cdn.v2ex.com/navatar/6353/8fe6/519_large.png?m=1595507885",
+        "name": "ideas",
+        "avatar_normal": "https://cdn.v2ex.com/navatar/6353/8fe6/519_normal.png?m=1595507885",
+        "title": "奇思妙想",
+        "url": "https://www.v2ex.com/go/ideas",
+        "topics": 6547,
+        "footer": "",
+        "header": "让你的创意在这里自由流动吧。",
+        "title_alternative": "Ideas",
+        "avatar_mini": "https://cdn.v2ex.com/navatar/6353/8fe6/519_mini.png?m=1595507885",
+        "stars": 3234,
+        "founder_id": 0,
+        "aliases": [],
+        "root": false,
+        "id": 519,
+        "parent_node_name": "v2ex"
+      },
+      "cross_platform_count": 1,
+      "score": 18,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 5,
+          "score": 1,
+          "weighted": 2
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      }
+    },
+    {
+      "id": "github-1237031497",
+      "title": "simplifaisoul/osiris",
+      "url": "https://github.com/simplifaisoul/osiris",
+      "source": "GitHub Trending",
+      "source_key": "github",
+      "signal_type": "repo",
+      "discussion_count": 4948,
+      "engagement": {
+        "stars": 4131,
+        "forks": 817,
+        "watchers": 4131,
+        "star_velocity": 206.6,
+        "repo_age_days": 20,
+        "total": 19406
+      },
+      "collected_at": "2026-06-02T12:41:04.323926+08:00",
+      "raw_created_at": "2026-05-12T20:09:25Z",
+      "raw_updated_at": "2026-06-02T04:36:05Z",
+      "summary": "simplifaisoul/osiris：Open Source Global Intelligence Platform - Real-Time OSINT Dashboard - A Palantir Alternative（4131 star / 817 fork / 20天）",
+      "tags": [
+        "TypeScript",
+        "fresh"
+      ],
+      "author": "simplifaisoul",
+      "language": "TypeScript",
+      "topics": [],
+      "cross_platform_count": 1,
+      "score": 15,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 14651,
+          "score": 5,
+          "weighted": 10
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:1",
+          "score": 3,
+          "weighted": 6
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      },
+      "decayed": true
+    },
+    {
+      "id": "hn-48340315",
+      "title": "Show HN: Breathe CLI – Paced resonance breathing in the macOS terminal",
+      "url": "https://github.com/marekkowalczyk/breathe-cli",
+      "source": "Hacker News",
+      "source_key": "hn",
+      "signal_type": "show_hn",
+      "discussion_count": 50,
+      "engagement": {
+        "points": 127,
+        "comments": 50,
+        "total": 227
+      },
+      "collected_at": "2026-06-02T12:40:59.572692+08:00",
+      "raw_created_at": "2026-05-30T20:30:53Z",
+      "summary": "Show HN: Breathe CLI – Paced resonance breathing in the macOS terminal（127 赞 / 50 评论）",
+      "tags": [
+        "story",
+        "author_marekkowalczyk",
+        "story_48340315",
+        "show_hn"
+      ],
+      "author": "marekkowalczyk",
+      "cross_platform_count": 1,
+      "score": 14,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 163,
+          "score": 2,
+          "weighted": 4
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 5,
+          "weighted": 10
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      },
+      "decayed": true
+    },
+    {
+      "id": "ph-oura",
+      "title": "Oura Ring 5",
+      "url": "https://www.producthunt.com/products/oura",
+      "source": "Product Hunt",
+      "source_key": "producthunt",
+      "signal_type": "product",
+      "discussion_count": 0,
+      "engagement": {
+        "total": 5
+      },
+      "collected_at": "2026-06-02T12:41:24.288137+08:00",
+      "raw_published": "2026-05-30T11:05:21-07:00",
+      "summary": "[Product Hunt] Oura Ring 5: The world’s smallest smart ring, now even better Discussion | Link",
+      "tags": [
+        "product-launch"
+      ],
+      "author": "Zac Zuo",
+      "cross_platform_count": 1,
+      "score": 13,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 2,
+          "score": 1,
+          "weighted": 2
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:1",
+          "score": 5,
+          "weighted": 10
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      },
+      "decayed": true
+    },
+    {
+      "id": "w2solo-7464",
+      "title": "我用 Deskflow 后，终于把第二套键鼠扔进抽屉了",
+      "url": "https://w2solo.com/topics/7464",
+      "source": "w2solo",
+      "source_key": "w2solo",
+      "signal_type": "product-launch",
+      "discussion_count": 0,
+      "engagement": {
+        "likes": 0,
+        "replies": 0,
+        "total": 1
+      },
+      "collected_at": "2026-06-02T12:42:00.186200+08:00",
+      "summary": "[w2solo / sphinx30] 多台电脑同时干活，桌上摆几套键鼠又占地方又割裂。最近找到一款Deskflow软件，支持 Windows 和 macOS，一套键鼠就能控制多台设备，局域网即连即用。\n\n鼠标移动到屏幕边缘自动滑到另一台电脑，就像多显示器一样自然。同时支持剪贴板共享，在一台设备复制文字、图片，另一台直接粘贴。\n\n开源地址\nhttps://github.com/deskflow/deskflow/releases\n\n\n配",
+      "tags": [
+        "product-launch",
+        "indie-dev"
+      ],
+      "author": "sphinx30",
+      "cross_platform_count": 1,
+      "score": 13,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 0,
+          "score": 1,
+          "weighted": 2
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:2",
+          "score": 5,
+          "weighted": 10
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      },
+      "decayed": true
+    },
+    {
+      "id": "hf-amazon-chronos-2",
+      "title": "amazon/chronos-2",
+      "url": "https://huggingface.co/amazon/chronos-2",
+      "source": "HuggingFace",
+      "source_key": "huggingface",
+      "signal_type": "model_trend",
+      "discussion_count": 304,
+      "engagement": {
+        "downloads": 13528892,
+        "likes": 304,
+        "total": 319
+      },
+      "collected_at": "2026-06-02T12:42:28.765943+08:00",
+      "summary": "[HF 模型] amazon/chronos-2（13,528,892 下载 / 304 likes / time series forecasting）",
+      "tags": [
+        "time series forecasting",
+        "amazon",
+        "chronos-forecasting",
+        "safetensors",
+        "t5",
+        "time series",
+        "forecasting",
+        "foundation models",
+        "pretrained models",
+        "time-series-forecasting",
+        "dataset:autogluon/chronos_datasets",
+        "dataset:Salesforce/GiftEvalPretrain",
+        "arxiv:2403.07815",
+        "arxiv:2510.15821",
+        "license:apache-2.0",
+        "region:us"
+      ],
+      "author": "amazon",
+      "raw_data": {
+        "downloads": 13528892,
+        "likes": 304,
+        "pipeline_tag": "time-series-forecasting",
+        "last_modified": "2026-01-06T09:44:02.000Z",
+        "category": "time series forecasting"
+      },
+      "cross_platform_count": 1,
+      "score": 12,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 463,
+          "score": 3,
+          "weighted": 6
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:1",
+          "score": 3,
+          "weighted": 3
+        }
+      },
+      "decayed": true
+    },
+    {
+      "id": "trends-kw-AI-audit",
+      "title": "搜索趋势: AI audit",
+      "url": "https://trends.google.com/trends/explore?q=AI%20audit",
+      "source": "Google Trends",
+      "source_key": "trends",
+      "signal_type": "keyword_trend",
+      "discussion_count": 10,
+      "engagement": {
+        "current_interest": 10,
+        "recent_avg": 7.7,
+        "older_avg": 51.1,
+        "change_pct": -84.9,
+        "total": 84
+      },
+      "collected_at": "2026-06-02T12:41:14.391689+08:00",
+      "summary": "「AI audit」搜索量 下降 85%（当前: 10）",
+      "tags": [
+        "AI audit",
+        "cooling"
+      ],
+      "cross_platform_count": 1,
+      "score": 10,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 52,
+          "score": 2,
+          "weighted": 4
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      },
+      "decayed": true
+    },
+    {
+      "id": "github-1230751102",
+      "title": "BigPizzaV3/CodexPlusPlus",
+      "url": "https://github.com/BigPizzaV3/CodexPlusPlus",
+      "source": "GitHub Trending",
+      "source_key": "github",
+      "signal_type": "repo",
+      "discussion_count": 11536,
+      "engagement": {
+        "stars": 10834,
+        "forks": 702,
+        "watchers": 10834,
+        "star_velocity": 416.7,
+        "repo_age_days": 26,
+        "total": 43204
+      },
+      "collected_at": "2026-06-02T12:41:04.323861+08:00",
+      "raw_created_at": "2026-05-06T09:32:49Z",
+      "raw_updated_at": "2026-06-02T04:40:23Z",
+      "summary": "BigPizzaV3/CodexPlusPlus：An enhanced tool for CodexApp, striving to make Codex better to use and more comfortable 一个CodexApp的增强工具，努力让Codex变得更好用更舒服（10834 star / 702 fork / 26天）",
+      "tags": [
+        "Rust",
+        "fresh"
+      ],
+      "author": "BigPizzaV3",
+      "language": "Rust",
+      "topics": [],
+      "cross_platform_count": 1,
+      "score": 9,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 33138,
+          "score": 5,
+          "weighted": 10
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:1",
+          "score": 3,
+          "weighted": 6
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      },
+      "cooling": true
+    },
+    {
+      "id": "v2ex-1216538",
+      "title": "《使用 ai 羞耻症》关于依赖 ai 的🤔",
+      "url": "https://www.v2ex.com/t/1216538",
+      "source": "V2EX 奇思妙想",
+      "source_key": "v2ex",
+      "signal_type": "topic",
+      "discussion_count": 7,
+      "engagement": {
+        "replies": 7,
+        "node_weight": 2,
+        "total": 24
+      },
+      "collected_at": "2026-06-02T12:41:58.453994+08:00",
+      "raw_created": 1780048526,
+      "summary": "[奇思妙想] 《使用 ai 羞耻症》关于依赖 ai 的🤔（7 回复）",
+      "tags": [
+        "ideas",
+        "奇思妙想"
+      ],
+      "author": "Kevin2",
+      "node": {
+        "avatar_large": "https://cdn.v2ex.com/navatar/6353/8fe6/519_large.png?m=1595507885",
+        "name": "ideas",
+        "avatar_normal": "https://cdn.v2ex.com/navatar/6353/8fe6/519_normal.png?m=1595507885",
+        "title": "奇思妙想",
+        "url": "https://www.v2ex.com/go/ideas",
+        "topics": 6547,
+        "footer": "",
+        "header": "让你的创意在这里自由流动吧。",
+        "title_alternative": "Ideas",
+        "avatar_mini": "https://cdn.v2ex.com/navatar/6353/8fe6/519_mini.png?m=1595507885",
+        "stars": 3234,
+        "founder_id": 0,
+        "aliases": [],
+        "root": false,
+        "id": 519,
+        "parent_node_name": "v2ex"
+      },
+      "cross_platform_count": 1,
+      "score": 9,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 19,
+          "score": 1,
+          "weighted": 2
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      },
+      "decayed": true
+    },
+    {
+      "id": "w2solo-7465",
+      "title": "最近用低价 Token 跑批量任务，确实省了不少钱",
+      "url": "https://w2solo.com/topics/7465",
+      "source": "w2solo",
+      "source_key": "w2solo",
+      "signal_type": "complaint",
+      "discussion_count": 0,
+      "engagement": {
+        "likes": 0,
+        "replies": 0,
+        "total": 1
+      },
+      "collected_at": "2026-06-02T12:42:00.186109+08:00",
+      "summary": "[w2solo / dazzling] 最近工作里要大量接入 AI API 做批量推理、数据处理和评测，成本压不下来是真的肉疼。\n\n一开始直接用官方 API，体验当然最好，但调用量一上来，成本就有点顶不住了。尤其是有些任务不需要最高规格的稳定性，只是大量跑 prompt、清洗文本、生成中间结果，用官方价格硬跑，多少有点浪费。\n\n这段时间陆续试了不少 token 中转站，发现坑也挺多：有的价格低但不稳，有的模型列表写得很全，实际限速很狠，",
+      "tags": [
+        "complaint",
+        "indie-dev"
+      ],
+      "author": "dazzling",
+      "cross_platform_count": 1,
+      "score": 9,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 0,
+          "score": 1,
+          "weighted": 2
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      },
+      "decayed": true
+    },
+    {
+      "id": "github-1244911834",
+      "title": "perplexityai/bumblebee",
+      "url": "https://github.com/perplexityai/bumblebee",
+      "source": "GitHub Trending",
+      "source_key": "github",
+      "signal_type": "repo",
+      "discussion_count": 4478,
+      "engagement": {
+        "stars": 4115,
+        "forks": 363,
+        "watchers": 4115,
+        "star_velocity": 342.9,
+        "repo_age_days": 12,
+        "total": 25738
+      },
+      "collected_at": "2026-06-02T12:41:04.323933+08:00",
+      "raw_created_at": "2026-05-20T18:11:37Z",
+      "raw_updated_at": "2026-06-02T04:12:51Z",
+      "summary": "perplexityai/bumblebee：Read-only developer endpoint scanner for on-disk package, extension, and developer-tool metadata, built to check exposure to known software supply-chain compromises.（4115 star / 363 fork / 12天）",
+      "tags": [
+        "Go",
+        "fresh"
+      ],
+      "author": "perplexityai",
+      "language": "Go",
+      "topics": [
+        "golang",
+        "package-inventory",
+        "supply-chain-security"
+      ],
+      "cross_platform_count": 1,
+      "score": 8,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 17347,
+          "score": 5,
+          "weighted": 10
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:1",
+          "score": 3,
+          "weighted": 3
+        }
+      },
+      "cooling": true
+    },
+    {
+      "id": "github-1231148626",
+      "title": "antirez/ds4",
+      "url": "https://github.com/antirez/ds4",
+      "source": "GitHub Trending",
+      "source_key": "github",
+      "signal_type": "repo",
+      "discussion_count": 13829,
+      "engagement": {
+        "stars": 12720,
+        "forks": 1109,
+        "watchers": 12720,
+        "star_velocity": 489.2,
+        "repo_age_days": 26,
+        "total": 51010
+      },
+      "collected_at": "2026-06-02T12:41:04.323819+08:00",
+      "raw_created_at": "2026-05-06T17:17:05Z",
+      "raw_updated_at": "2026-06-02T04:37:21Z",
+      "summary": "antirez/ds4：DeepSeek 4 Flash local inference engine for Metal and CUDA（12720 star / 1109 fork / 26天）",
+      "tags": [
+        "C",
+        "fresh"
+      ],
+      "author": "antirez",
+      "language": "C",
+      "topics": [],
+      "cross_platform_count": 1,
+      "score": 7,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 39334,
+          "score": 5,
+          "weighted": 10
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      },
+      "cooling": true
+    },
+    {
+      "id": "github-1235834494",
+      "title": "FULU-Foundation/OrcaSlicer-bambulab",
+      "url": "https://github.com/FULU-Foundation/OrcaSlicer-bambulab",
+      "source": "GitHub Trending",
+      "source_key": "github",
+      "signal_type": "repo",
+      "discussion_count": 11847,
+      "engagement": {
+        "stars": 6724,
+        "forks": 5123,
+        "watchers": 6724,
+        "star_velocity": 320.2,
+        "repo_age_days": 21,
+        "total": 34580
+      },
+      "collected_at": "2026-06-02T12:41:04.323882+08:00",
+      "raw_created_at": "2026-05-11T17:44:55Z",
+      "raw_updated_at": "2026-06-02T04:28:40Z",
+      "summary": "FULU-Foundation/OrcaSlicer-bambulab：(无描述)（6724 star / 5123 fork / 21天）",
+      "tags": [
+        "C++",
+        "fresh"
+      ],
+      "author": "FULU-Foundation",
+      "language": "C++",
+      "topics": [],
+      "cross_platform_count": 1,
+      "score": 7,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 29137,
+          "score": 5,
+          "weighted": 10
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      },
+      "cooling": true
+    },
+    {
+      "id": "github-1235403234",
+      "title": "nexu-io/html-anything",
+      "url": "https://github.com/nexu-io/html-anything",
+      "source": "GitHub Trending",
+      "source_key": "github",
+      "signal_type": "repo",
+      "discussion_count": 6360,
+      "engagement": {
+        "stars": 5795,
+        "forks": 565,
+        "watchers": 5795,
+        "star_velocity": 276.0,
+        "repo_age_days": 21,
+        "total": 25952
+      },
+      "collected_at": "2026-06-02T12:41:04.323893+08:00",
+      "raw_created_at": "2026-05-11T09:40:38Z",
+      "raw_updated_at": "2026-06-02T04:21:33Z",
+      "summary": "nexu-io/html-anything：✨ The agentic HTML editor — your local AI agent writes the HTML, you ship it. 🚀 75 Skills × 9 Surfaces (magazine · deck · poster · XHS / tweet · prototype · data report · Hyperframes) 🛡️ Sandboxed preview · 📤 1-click to WeChat / X / Zhihu / HTML / PNG 🔑 Zero API key — Claude Code / Cursor / Codex / Gemini / Copilot / OpenCode / Qwen / Aider.（5795 star / 565 fork / 21天）",
+      "tags": [
+        "HTML",
+        "fresh"
+      ],
+      "author": "nexu-io",
+      "language": "HTML",
+      "topics": [
+        "agent-skills",
+        "agentic",
+        "ai-agents",
+        "ai-design",
+        "ai-editor",
+        "byok",
+        "claude",
+        "claude-code",
+        "claude-skills",
+        "coding-agents",
+        "generative-ai",
+        "html",
+        "html-editor",
+        "hyperframes",
+        "local-first",
+        "markdown",
+        "nextjs",
+        "vibe-coding",
+        "wechat",
+        "xiaohongshu"
+      ],
+      "cross_platform_count": 1,
+      "score": 7,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 19336,
+          "score": 5,
+          "weighted": 10
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      },
+      "cooling": true
+    },
+    {
+      "id": "github-1232237440",
+      "title": "V4bel/dirtyfrag",
+      "url": "https://github.com/V4bel/dirtyfrag",
+      "source": "GitHub Trending",
+      "source_key": "github",
+      "signal_type": "repo",
+      "discussion_count": 5574,
+      "engagement": {
+        "stars": 4800,
+        "forks": 774,
+        "watchers": 4800,
+        "star_velocity": 192.0,
+        "repo_age_days": 25,
+        "total": 19974
+      },
+      "collected_at": "2026-06-02T12:41:04.323904+08:00",
+      "raw_created_at": "2026-05-07T18:18:28Z",
+      "raw_updated_at": "2026-06-02T04:26:13Z",
+      "summary": "V4bel/dirtyfrag：(无描述)（4800 star / 774 fork / 25天）",
+      "tags": [
+        "C",
+        "fresh"
+      ],
+      "author": "V4bel",
+      "language": "C",
+      "topics": [],
+      "cross_platform_count": 1,
+      "score": 7,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 15561,
+          "score": 5,
+          "weighted": 10
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      },
+      "cooling": true
+    },
+    {
+      "id": "github-1239996076",
+      "title": "vercel-labs/zerolang",
+      "url": "https://github.com/vercel-labs/zerolang",
+      "source": "GitHub Trending",
+      "source_key": "github",
+      "signal_type": "repo",
+      "discussion_count": 5102,
+      "engagement": {
+        "stars": 4793,
+        "forks": 309,
+        "watchers": 4793,
+        "star_velocity": 281.9,
+        "repo_age_days": 17,
+        "total": 23992
+      },
+      "collected_at": "2026-06-02T12:41:04.323911+08:00",
+      "raw_created_at": "2026-05-15T16:55:16Z",
+      "raw_updated_at": "2026-06-02T03:46:47Z",
+      "summary": "vercel-labs/zerolang：The programming language for agents（4793 star / 309 fork / 17天）",
+      "tags": [
+        "C",
+        "fresh"
+      ],
+      "author": "vercel-labs",
+      "language": "C",
+      "topics": [],
+      "cross_platform_count": 1,
+      "score": 7,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 17098,
+          "score": 5,
+          "weighted": 10
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      },
+      "cooling": true
+    },
+    {
+      "id": "github-1233290067",
+      "title": "vercel-labs/zero-native",
+      "url": "https://github.com/vercel-labs/zero-native",
+      "source": "GitHub Trending",
+      "source_key": "github",
+      "signal_type": "repo",
+      "discussion_count": 4239,
+      "engagement": {
+        "stars": 4072,
+        "forks": 167,
+        "watchers": 4072,
+        "star_velocity": 169.7,
+        "repo_age_days": 24,
+        "total": 16794
+      },
+      "collected_at": "2026-06-02T12:41:04.323940+08:00",
+      "raw_created_at": "2026-05-08T19:53:41Z",
+      "raw_updated_at": "2026-06-02T04:09:23Z",
+      "summary": "vercel-labs/zero-native：Build desktop + mobile apps with Zig and web UI（4072 star / 167 fork / 24天）",
+      "tags": [
+        "Zig",
+        "fresh"
+      ],
+      "author": "vercel-labs",
+      "language": "Zig",
+      "topics": [],
+      "cross_platform_count": 1,
+      "score": 7,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 12636,
+          "score": 5,
+          "weighted": 10
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      },
+      "cooling": true
+    },
+    {
+      "id": "hf-sentence-transformers-all-MiniLM-L6-v2",
+      "title": "sentence-transformers/all-MiniLM-L6-v2",
+      "url": "https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2",
+      "source": "HuggingFace",
+      "source_key": "huggingface",
+      "signal_type": "model_trend",
+      "discussion_count": 4873,
+      "engagement": {
+        "downloads": 259378419,
+        "likes": 4873,
+        "total": 4888
+      },
+      "collected_at": "2026-06-02T12:42:28.765478+08:00",
+      "summary": "[HF 模型] sentence-transformers/all-MiniLM-L6-v2（259,378,419 下载 / 4873 likes / sentence similarity）",
+      "tags": [
+        "sentence similarity",
+        "sentence-transformers",
+        "sentence-transformers",
+        "pytorch",
+        "tf",
+        "rust",
+        "onnx",
+        "safetensors",
+        "openvino",
+        "bert",
+        "feature-extraction",
+        "sentence-similarity",
+        "transformers",
+        "en",
+        "dataset:s2orc",
+        "dataset:flax-sentence-embeddings/stackexchange_xml",
+        "dataset:ms_marco",
+        "dataset:gooaq",
+        "dataset:yahoo_answers_topics",
+        "dataset:code_search_net",
+        "dataset:search_qa",
+        "dataset:eli5",
+        "dataset:snli",
+        "dataset:multi_nli",
+        "dataset:wikihow",
+        "dataset:natural_questions",
+        "dataset:trivia_qa",
+        "dataset:embedding-data/sentence-compression",
+        "dataset:embedding-data/flickr30k-captions",
+        "dataset:embedding-data/altlex",
+        "dataset:embedding-data/simple-wiki",
+        "dataset:embedding-data/QQP",
+        "dataset:embedding-data/SPECTER",
+        "dataset:embedding-data/PAQ_pairs",
+        "dataset:embedding-data/WikiAnswers",
+        "arxiv:1904.06472",
+        "arxiv:2102.07033",
+        "arxiv:2104.08727",
+        "arxiv:1704.05179",
+        "arxiv:1810.09305",
+        "base_model:nreimers/MiniLM-L6-H384-uncased",
+        "base_model:quantized:nreimers/MiniLM-L6-H384-uncased",
+        "license:apache-2.0",
+        "eval-results",
+        "text-embeddings-inference",
+        "endpoints_compatible",
+        "deploy:azure",
+        "region:us"
+      ],
+      "author": "sentence-transformers",
+      "raw_data": {
+        "downloads": 259378419,
+        "likes": 4873,
+        "pipeline_tag": "sentence-similarity",
+        "last_modified": "2026-06-01T06:29:13.000Z",
+        "category": "sentence similarity"
+      },
+      "cross_platform_count": 1,
+      "score": 7,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 7317,
+          "score": 5,
+          "weighted": 10
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      },
+      "cooling": true
+    },
+    {
+      "id": "hf-openai-clip-vit-large-patch14",
+      "title": "openai/clip-vit-large-patch14",
+      "url": "https://huggingface.co/openai/clip-vit-large-patch14",
+      "source": "HuggingFace",
+      "source_key": "huggingface",
+      "signal_type": "model_trend",
+      "discussion_count": 2026,
+      "engagement": {
+        "downloads": 25410737,
+        "likes": 2026,
+        "total": 2041
+      },
+      "collected_at": "2026-06-02T12:42:28.765720+08:00",
+      "summary": "[HF 模型] openai/clip-vit-large-patch14（25,410,737 下载 / 2026 likes / zero shot image classification）",
+      "tags": [
+        "zero shot image classification",
+        "openai",
+        "transformers",
+        "pytorch",
+        "tf",
+        "jax",
+        "safetensors",
+        "clip",
+        "zero-shot-image-classification",
+        "vision",
+        "arxiv:2103.00020",
+        "arxiv:1908.04913",
+        "endpoints_compatible",
+        "region:us"
+      ],
+      "author": "openai",
+      "raw_data": {
+        "downloads": 25410737,
+        "likes": 2026,
+        "pipeline_tag": "zero-shot-image-classification",
+        "last_modified": "2023-09-15T15:49:35.000Z",
+        "category": "zero shot image classification"
+      },
+      "cross_platform_count": 1,
+      "score": 7,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 3046,
+          "score": 5,
+          "weighted": 10
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      },
+      "cooling": true
+    },
+    {
+      "id": "hn-48230104",
+      "title": "Tell HN: I'm tired of AI-generated answers",
+      "url": "https://news.ycombinator.com/item?id=48230104",
+      "source": "Hacker News",
+      "source_key": "hn",
+      "signal_type": "ask_hn",
+      "discussion_count": 56,
+      "engagement": {
+        "points": 120,
+        "comments": 56,
+        "total": 232
+      },
+      "collected_at": "2026-06-02T12:40:59.572721+08:00",
+      "raw_created_at": "2026-05-21T23:37:14Z",
+      "summary": "Tell HN: I'm tired of AI-generated answers（120 赞 / 56 评论）",
+      "tags": [
+        "story",
+        "author_theorchid",
+        "story_48230104",
+        "ask_hn"
+      ],
+      "author": "theorchid",
+      "cross_platform_count": 1,
+      "score": 6,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 172,
+          "score": 2,
+          "weighted": 4
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      },
+      "cooling": true
+    },
+    {
+      "id": "hn-48231477",
+      "title": "Logging Off",
+      "url": "https://news.ycombinator.com/item?id=48231477",
+      "source": "Hacker News",
+      "source_key": "hn",
+      "signal_type": "ask_hn",
+      "discussion_count": 26,
+      "engagement": {
+        "points": 54,
+        "comments": 26,
+        "total": 106
+      },
+      "collected_at": "2026-06-02T12:40:59.572719+08:00",
+      "raw_created_at": "2026-05-22T03:02:11Z",
+      "summary": "Logging Off（54 赞 / 26 评论）",
+      "tags": [
+        "story",
+        "author__nxwj",
+        "story_48231477",
+        "ask_hn"
+      ],
+      "author": "_nxwj",
+      "cross_platform_count": 1,
+      "score": 6,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 79,
+          "score": 2,
+          "weighted": 4
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      },
+      "cooling": true
+    },
+    {
+      "id": "hn-48292665",
+      "title": "Ask HN: What game have you replayed more times than any other?",
+      "url": "https://news.ycombinator.com/item?id=48292665",
+      "source": "Hacker News",
+      "source_key": "hn",
+      "signal_type": "ask_hn",
+      "discussion_count": 44,
+      "engagement": {
+        "points": 12,
+        "comments": 44,
+        "total": 100
+      },
+      "collected_at": "2026-06-02T12:40:59.572704+08:00",
+      "raw_created_at": "2026-05-27T11:36:54Z",
+      "summary": "Ask HN: What game have you replayed more times than any other?（12 赞 / 44 评论）",
+      "tags": [
+        "story",
+        "author_yashnitro",
+        "story_48292665",
+        "ask_hn"
+      ],
+      "author": "yashnitro",
+      "cross_platform_count": 1,
+      "score": 6,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 94,
+          "score": 2,
+          "weighted": 4
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      },
+      "cooling": true
+    },
+    {
+      "id": "v2ex-1212366",
+      "title": "你有一款 AI 设备（项链）挂在脖子上，你最希望它有什么功能",
+      "url": "https://www.v2ex.com/t/1212366",
+      "source": "V2EX 奇思妙想",
+      "source_key": "v2ex",
+      "signal_type": "topic",
+      "discussion_count": 17,
+      "engagement": {
+        "replies": 17,
+        "node_weight": 2,
+        "total": 44
+      },
+      "collected_at": "2026-06-02T12:41:58.454041+08:00",
+      "raw_created": 1778642480,
+      "summary": "[奇思妙想] 你有一款 AI 设备（项链）挂在脖子上，你最希望它有什么功能（17 回复）",
+      "tags": [
+        "ideas",
+        "奇思妙想"
+      ],
+      "author": "jinxgogo",
+      "node": {
+        "avatar_large": "https://cdn.v2ex.com/navatar/6353/8fe6/519_large.png?m=1595507885",
+        "name": "ideas",
+        "avatar_normal": "https://cdn.v2ex.com/navatar/6353/8fe6/519_normal.png?m=1595507885",
+        "title": "奇思妙想",
+        "url": "https://www.v2ex.com/go/ideas",
+        "topics": 6547,
+        "footer": "",
+        "header": "让你的创意在这里自由流动吧。",
+        "title_alternative": "Ideas",
+        "avatar_mini": "https://cdn.v2ex.com/navatar/6353/8fe6/519_mini.png?m=1595507885",
+        "stars": 3234,
+        "founder_id": 0,
+        "aliases": [],
+        "root": false,
+        "id": 519,
+        "parent_node_name": "v2ex"
+      },
+      "cross_platform_count": 1,
+      "score": 5,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 39,
+          "score": 1,
+          "weighted": 2
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      },
+      "cooling": true
+    },
+    {
+      "id": "v2ex-1212263",
+      "title": "实现 token 自由了，可以干些什么有意思有意义的事情",
+      "url": "https://www.v2ex.com/t/1212263",
+      "source": "V2EX 奇思妙想",
+      "source_key": "v2ex",
+      "signal_type": "topic",
+      "discussion_count": 7,
+      "engagement": {
+        "replies": 7,
+        "node_weight": 2,
+        "total": 24
+      },
+      "collected_at": "2026-06-02T12:41:58.454050+08:00",
+      "raw_created": 1778594075,
+      "summary": "[奇思妙想] 实现 token 自由了，可以干些什么有意思有意义的事情（7 回复）",
+      "tags": [
+        "ideas",
+        "奇思妙想"
+      ],
+      "author": "realcaoqi95",
+      "node": {
+        "avatar_large": "https://cdn.v2ex.com/navatar/6353/8fe6/519_large.png?m=1595507885",
+        "name": "ideas",
+        "avatar_normal": "https://cdn.v2ex.com/navatar/6353/8fe6/519_normal.png?m=1595507885",
+        "title": "奇思妙想",
+        "url": "https://www.v2ex.com/go/ideas",
+        "topics": 6547,
+        "footer": "",
+        "header": "让你的创意在这里自由流动吧。",
+        "title_alternative": "Ideas",
+        "avatar_mini": "https://cdn.v2ex.com/navatar/6353/8fe6/519_mini.png?m=1595507885",
+        "stars": 3234,
+        "founder_id": 0,
+        "aliases": [],
+        "root": false,
+        "id": 519,
+        "parent_node_name": "v2ex"
+      },
+      "cross_platform_count": 1,
+      "score": 5,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 19,
+          "score": 1,
+          "weighted": 2
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      },
+      "cooling": true
+    },
+    {
+      "id": "v2ex-1215421",
+      "title": "你的\"最爱宝可梦\"是哪只？这个网站正在用全 1025 只宝可梦的黑影等你去点亮",
+      "url": "https://www.v2ex.com/t/1215421",
+      "source": "V2EX 奇思妙想",
+      "source_key": "v2ex",
+      "signal_type": "topic",
+      "discussion_count": 1,
+      "engagement": {
+        "replies": 1,
+        "node_weight": 2,
+        "total": 12
+      },
+      "collected_at": "2026-06-02T12:41:58.454010+08:00",
+      "raw_created": 1779719556,
+      "summary": "[奇思妙想] 你的\"最爱宝可梦\"是哪只？这个网站正在用全 1025 只宝可梦的黑影等你去点亮（1 回复）",
+      "tags": [
+        "ideas",
+        "奇思妙想"
+      ],
+      "author": "suchu",
+      "node": {
+        "avatar_large": "https://cdn.v2ex.com/navatar/6353/8fe6/519_large.png?m=1595507885",
+        "name": "ideas",
+        "avatar_normal": "https://cdn.v2ex.com/navatar/6353/8fe6/519_normal.png?m=1595507885",
+        "title": "奇思妙想",
+        "url": "https://www.v2ex.com/go/ideas",
+        "topics": 6547,
+        "footer": "",
+        "header": "让你的创意在这里自由流动吧。",
+        "title_alternative": "Ideas",
+        "avatar_mini": "https://cdn.v2ex.com/navatar/6353/8fe6/519_mini.png?m=1595507885",
+        "stars": 3234,
+        "founder_id": 0,
+        "aliases": [],
+        "root": false,
+        "id": 519,
+        "parent_node_name": "v2ex"
+      },
+      "cross_platform_count": 1,
+      "score": 5,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 7,
+          "score": 1,
+          "weighted": 2
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      },
+      "cooling": true
+    },
+    {
+      "id": "v2ex-1215827",
+      "title": "codex 的 Pets 能根据使用情况升级就好了",
+      "url": "https://www.v2ex.com/t/1215827",
+      "source": "V2EX 奇思妙想",
+      "source_key": "v2ex",
+      "signal_type": "topic",
+      "discussion_count": 0,
+      "engagement": {
+        "replies": 0,
+        "node_weight": 2,
+        "total": 10
+      },
+      "collected_at": "2026-06-02T12:41:58.454004+08:00",
+      "raw_created": 1779848811,
+      "summary": "[奇思妙想] codex 的 Pets 能根据使用情况升级就好了（0 回复）",
+      "tags": [
+        "ideas",
+        "奇思妙想"
+      ],
+      "author": "ysicing",
+      "node": {
+        "avatar_large": "https://cdn.v2ex.com/navatar/6353/8fe6/519_large.png?m=1595507885",
+        "name": "ideas",
+        "avatar_normal": "https://cdn.v2ex.com/navatar/6353/8fe6/519_normal.png?m=1595507885",
+        "title": "奇思妙想",
+        "url": "https://www.v2ex.com/go/ideas",
+        "topics": 6547,
+        "footer": "",
+        "header": "让你的创意在这里自由流动吧。",
+        "title_alternative": "Ideas",
+        "avatar_mini": "https://cdn.v2ex.com/navatar/6353/8fe6/519_mini.png?m=1595507885",
+        "stars": 3234,
+        "founder_id": 0,
+        "aliases": [],
+        "root": false,
+        "id": 519,
+        "parent_node_name": "v2ex"
+      },
+      "cross_platform_count": 1,
+      "score": 5,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 5,
+          "score": 1,
+          "weighted": 2
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      },
+      "cooling": true
+    },
+    {
+      "id": "v2ex-1214783",
+      "title": "如果用 AI 写一个小网游，每周玩法的胜利者会直接获得跟 ai 交流的机会，就跟龙珠一样，如此循环往复，有搞头么",
+      "url": "https://www.v2ex.com/t/1214783",
+      "source": "V2EX 奇思妙想",
+      "source_key": "v2ex",
+      "signal_type": "topic",
+      "discussion_count": 0,
+      "engagement": {
+        "replies": 0,
+        "node_weight": 2,
+        "total": 10
+      },
+      "collected_at": "2026-06-02T12:41:58.454028+08:00",
+      "raw_created": 1779445713,
+      "summary": "[奇思妙想] 如果用 AI 写一个小网游，每周玩法的胜利者会直接获得跟 ai 交流的机会，就跟龙珠一样，如此循环往复，有搞头么（0 回复）",
+      "tags": [
+        "ideas",
+        "奇思妙想"
+      ],
+      "author": "qzhai",
+      "node": {
+        "avatar_large": "https://cdn.v2ex.com/navatar/6353/8fe6/519_large.png?m=1595507885",
+        "name": "ideas",
+        "avatar_normal": "https://cdn.v2ex.com/navatar/6353/8fe6/519_normal.png?m=1595507885",
+        "title": "奇思妙想",
+        "url": "https://www.v2ex.com/go/ideas",
+        "topics": 6547,
+        "footer": "",
+        "header": "让你的创意在这里自由流动吧。",
+        "title_alternative": "Ideas",
+        "avatar_mini": "https://cdn.v2ex.com/navatar/6353/8fe6/519_mini.png?m=1595507885",
+        "stars": 3234,
+        "founder_id": 0,
+        "aliases": [],
+        "root": false,
+        "id": 519,
+        "parent_node_name": "v2ex"
+      },
+      "cross_platform_count": 1,
+      "score": 5,
+      "score_breakdown": {
+        "cross_platform": {
+          "raw": 1,
+          "score": 1,
+          "weighted": 3
+        },
+        "volume": {
+          "raw": 5,
+          "score": 1,
+          "weighted": 2
+        },
+        "freshness": {
+          "raw": 0,
+          "score": 5,
+          "weighted": 10
+        },
+        "actionability": {
+          "raw": "keywords:0",
+          "score": 1,
+          "weighted": 2
+        },
+        "buyer_clarity": {
+          "raw": "buyer_keywords:0",
+          "score": 1,
+          "weighted": 1
+        }
+      },
+      "cooling": true
+    }
+  ],
+  "summary": {
+    "top_score": 30,
+    "avg_score": 20.6,
+    "action_qualified": 92,
+    "cross_platform_signals": 0
+  }
+}
