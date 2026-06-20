@@ -1,17 +1,17 @@
-# 原始信号数据（每日采集，量大且有时效性）——仅本地保存
+# 鍘熷淇″彿鏁版嵁锛堟瘡鏃ラ噰闆嗭紝閲忓ぇ涓旀湁鏃舵晥鎬э級鈥斺€斾粎鏈湴淇濆瓨
 raw/
 
-# 日志文件
+# 鏃ュ織鏂囦欢
 logs/
 
-# 日报输出（本地归档，不需要版本控制）
-# 例外：signals.json 是 track_recurring 跨日期检测的输入，CI fresh checkout 时
-# 需要历史信号，故提交 signals.json；其余日报产物仍仅本地保存。
+# 鏃ユ姤杈撳嚭锛堟湰鍦板綊妗ｏ紝涓嶉渶瑕佺増鏈帶鍒讹級
+# 渚嬪锛歴ignals.json 鏄?track_recurring 璺ㄦ棩鏈熸娴嬬殑杈撳叆锛孋I fresh checkout 鏃?
+# 闇€瑕佸巻鍙蹭俊鍙凤紝鏁呮彁浜?signals.json锛涘叾浣欐棩鎶ヤ骇鐗╀粛浠呮湰鍦颁繚瀛樸€?
 daily/**
 !daily/*/
 !daily/*/signals.json
 
-# 周报输出（本地归档，不需要版本控制）
+# 鍛ㄦ姤杈撳嚭锛堟湰鍦板綊妗ｏ紝涓嶉渶瑕佺増鏈帶鍒讹級
 weekly/
 
 # Python
@@ -24,14 +24,14 @@ venv/
 .vscode/
 .idea/
 
-# Landing Page（旧目录，已迁移至 public/）
+# Landing Page锛堟棫鐩綍锛屽凡杩佺Щ鑷?public/锛?
 landing_pages/
 
-# Playwright 测试
+# Playwright 娴嬭瘯
 .playwright-mcp/
 lp-*.png
 
-# 环境变量（LLM API Key 等）
+# 鐜鍙橀噺锛圠LM API Key 绛夛級
 .env
 .env.local
 
@@ -46,3 +46,6 @@ node_modules/
 .next/
 out/
 .gstack/
+.claude/
+.env.*
+.credentials.json
