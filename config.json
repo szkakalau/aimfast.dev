@@ -1,5 +1,5 @@
 {
-  "_comment": "AimFast.Dev — 配置文件 | 版本 v2.0",
+  "_comment": "AimFast.Dev 鈥?閰嶇疆鏂囦欢 | 鐗堟湰 v2.0",
   "api_keys": {
     "producthunt": {
       "client_id": "YOUR_PH_CLIENT_ID",
@@ -26,11 +26,11 @@
     "domestic": [
       {"name": "V2EX", "key": "v2ex", "source": "API", "priority": "P0", "enabled": true},
       {"name": "w2solo", "key": "w2solo", "source": "RSS", "priority": "P0", "enabled": true},
-      {"name": "知乎", "key": "zhihu", "source": "搜索", "priority": "P2", "enabled": false}
+      {"name": "鐭ヤ箮", "key": "zhihu", "source": "鎼滅储", "priority": "P2", "enabled": false}
     ]
   },
   "scoring": {
-    "formula": "Score = cross_platform×3 + volume×2 + freshness×2 + actionability×2 + buyer_clarity×1",
+    "formula": "Score = cross_platform脳3 + volume脳2 + freshness脳2 + actionability脳2 + buyer_clarity脳1",
     "weights": {
       "cross_platform": 3,
       "volume": 2,
@@ -68,8 +68,8 @@
   },
   "distribution": {
     "local_archive": true,
-    "planet_article": {"enabled": true, "auto_publish": false, "note": "手动审校后发布，保证质量"},
-    "wechat_mp": {"enabled": false, "note": "预留"}
+    "planet_article": {"enabled": true, "auto_publish": false, "note": "鎵嬪姩瀹℃牎鍚庡彂甯冿紝淇濊瘉璐ㄩ噺"},
+    "wechat_mp": {"enabled": false, "note": "棰勭暀"}
   },
   "landing_page": {
     "domain": "aimfast.dev",
