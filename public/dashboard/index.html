@@ -17,7 +17,7 @@
 <meta property="og:site_name" content="AimFast.Dev">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Fira+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/_ds/base.css">
 <link rel="stylesheet" href="/_ds/components.css">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" defer></script>
@@ -633,6 +633,44 @@
     line-height: 1.5;
   }
 
+  /* ── Focus states: all interactive elements ── */
+  .tab:focus-visible,
+  .archive-date-btn:focus-visible,
+  .btn-bet:focus-visible,
+  .demand-row:focus-visible,
+  .btn-watch:focus-visible,
+  .btn-wb-sm:focus-visible,
+  .btn-article-action:focus-visible,
+  .lang-toggle:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
+
+  /* ── cursor-pointer for all clickable elements ── */
+  .card, .demand-row, .tab, .archive-date-btn, .btn-watch,
+  .wb-radar-table tr, .bet-row, .trend-item, .signal-link,
+  .btn-wb-sm, .lang-toggle, .archive-arrow, .btn-back-today,
+  .btn-article-action, .wb-watch-item, .report-expand-btn {
+    cursor: pointer;
+  }
+
+  /* ── Button loading / disabled ── */
+  .btn-bet:disabled, .btn:disabled, .tab:disabled {
+    opacity: 0.5; cursor: not-allowed; pointer-events: none;
+  }
+  .btn-bet.loading, .btn.loading { position: relative; color: transparent !important; }
+  .btn-bet.loading::after, .btn.loading::after {
+    content: ''; position: absolute; inset: 0; margin: auto;
+    width: 16px; height: 16px; border: 2px solid transparent;
+    border-top-color: var(--color-accent); border-radius: 50%;
+    animation: btn-spin 0.6s linear infinite;
+  }
+  @keyframes btn-spin { to { transform: rotate(360deg); } }
+
+  /* ── Chart container: reserve height to prevent layout shift ── */
+  .chart-wrap { min-height: 280px; position: relative; }
+
   /* ── Responsive ── */
   @media (max-width: 900px) {
     .dash-main { grid-template-columns: 1fr; }
@@ -701,6 +739,13 @@
     #tab-demand th, #tab-demand td { padding: 3px 4px; }
     .trend-metrics { gap: 8px; }
     .detail-footer { gap: 4px 12px; }
+
+    /* Touch targets: minimum 44x44px */
+    .tab { min-height: 44px; min-width: 44px; display: inline-flex; align-items: center; justify-content: center; }
+    .btn-watch { min-width: 44px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
+    .archive-date-btn { min-width: 44px; min-height: 44px; }
+    .btn-bet, .btn-article-action { min-height: 44px; }
+    .btn-wb-sm { min-width: 44px; min-height: 44px; }
   }
 
   @media (max-width: 400px) {
@@ -877,8 +922,24 @@
       <div id="recurring-empty" class="empty" style="display:none;">No recurring signals detected yet.</div>
     </div>
     <div id="tab-demand" class="report-body" style="display:none;" role="tabpanel">
+      <!-- Radar Chart Section -->
+      <div id="radar-chart-section" class="radar-card" style="display:none;">
+        <div><canvas id="demandRadarChart" width="300" height="300"></canvas></div>
+        <div id="radar-demand-info">
+          <h4 id="radar-demand-name"></h4>
+          <p id="radar-demand-desc"></p>
+          <div id="radar-demand-scores"></div>
+        </div>
+      </div>
+      <!-- Bulk Action Bar -->
+      <div id="demand-bulk-bar" class="bulk-bar">
+        <span class="selected-count" id="demand-bulk-count">0 selected</span>
+        <button class="btn btn-outline" style="font-size:0.72rem;padding:4px 10px;" onclick="bulkWatch()" id="btn-bulk-watch">★ Watch</button>
+        <button class="btn btn-outline" style="font-size:0.72rem;padding:4px 10px;" onclick="bulkBet('observe')" id="btn-bulk-observe">👁 Observe</button>
+        <button class="btn btn-outline" style="font-size:0.72rem;padding:4px 10px;" onclick="bulkExport()" id="btn-bulk-export">↓ Export CSV</button>
+      </div>
       <table aria-label="Demand radar">
-        <thead><tr><th scope="col">☆</th><th scope="col" id="th-dem-name">Demand</th><th scope="col" id="th-dem-delta">Chg</th><th scope="col" id="th-dem-market">Mkt</th><th scope="col" id="th-dem-business">Biz</th><th scope="col" id="th-dem-competition">Cmp</th><th scope="col" id="th-dem-ai">AI-pf</th><th scope="col" id="th-dem-confidence">Conf</th><th scope="col" id="th-dem-stage">Stage</th><th scope="col" id="th-dem-index">Score</th></tr></thead>
+        <thead><tr><th scope="col"><input type="checkbox" id="demand-select-all" onchange="toggleSelectAll('demand',this)" aria-label="Select all"></th><th scope="col">☆</th><th scope="col" id="th-dem-name">Demand</th><th scope="col" id="th-dem-delta">Chg</th><th scope="col" id="th-dem-market">Mkt</th><th scope="col" id="th-dem-business">Biz</th><th scope="col" id="th-dem-competition">Cmp</th><th scope="col" id="th-dem-ai">AI-pf</th><th scope="col" id="th-dem-confidence">Conf</th><th scope="col" id="th-dem-stage">Stage</th><th scope="col" id="th-dem-index">Score</th></tr></thead>
         <tbody id="demand-body"></tbody>
       </table>
       <div id="demand-empty" class="empty" style="display:none;">No demand data yet.</div>
@@ -1070,6 +1131,20 @@ var I18N = (function() {
       notepadGenerated: '生成时间',
       notepadFooter: 'AimFast.Dev · www.aimfast.dev',
 
+      // Radar chart
+      radarMarket: '市场规模',
+      radarBusiness: '商业价值',
+      radarCompetition: '竞争度',
+      radarAiProof: 'AI 抗性',
+      radarConfidence: '确定性',
+      radarSelectDemand: '点击需求行查看雷达图',
+
+      // Bulk actions
+      selected: '已选择',
+      bulkWatch: '★ 批量关注',
+      bulkObserve: '👁 批量观察',
+      bulkExport: '↓ 导出 CSV',
+
       // Misc
       miscNoData: '无数据',
       miscSignalsTableAria: 'Top 10 信号',
@@ -1244,6 +1319,20 @@ var I18N = (function() {
       notepadGenerated: 'Generated',
       notepadFooter: 'AimFast.Dev · www.aimfast.dev',
 
+      // Radar chart
+      radarMarket: 'Market',
+      radarBusiness: 'Business',
+      radarCompetition: 'Competition',
+      radarAiProof: 'AI-proof',
+      radarConfidence: 'Confidence',
+      radarSelectDemand: 'Click a demand row to see radar chart',
+
+      // Bulk actions
+      selected: 'selected',
+      bulkWatch: '★ Watch',
+      bulkObserve: '👁 Observe',
+      bulkExport: '↓ Export CSV',
+
       // Misc
       miscNoData: 'No data',
       miscSignalsTableAria: 'Top 10 signals',
@@ -1292,6 +1381,63 @@ window.safeMarked = function(md) {
   }
   return '<pre>' + (md || '') + '</pre>';
 };
+
+// ─── Skeleton loading helpers ───
+window.showLoading = function(containerId, type) {
+  var el = document.getElementById(containerId);
+  if (!el) return;
+  var html = '';
+  if (type === 'table') {
+    for (var i = 0; i < 5; i++) html += '<div class="skeleton skeleton-table-row"></div>';
+  } else if (type === 'chart') {
+    html = '<div class="skeleton skeleton-chart"></div>';
+  } else {
+    html = '<div class="skeleton skeleton-text"></div><div class="skeleton skeleton-text"></div><div class="skeleton skeleton-text"></div>';
+  }
+  el.innerHTML = html;
+};
+
+// ─── Button loading wrapper ───
+window.withLoading = function(btn, fn) {
+  return function(evt) {
+    if (btn.disabled) return;
+    btn.disabled = true;
+    btn.classList.add('loading');
+    try {
+      var result = fn(evt);
+      if (result && typeof result.then === 'function') {
+        result.then(function() { btn.disabled = false; btn.classList.remove('loading'); })
+              .catch(function() { btn.disabled = false; btn.classList.remove('loading'); });
+      } else {
+        btn.disabled = false;
+        btn.classList.remove('loading');
+      }
+      return result;
+    } catch(e) {
+      btn.disabled = false;
+      btn.classList.remove('loading');
+      throw e;
+    }
+  };
+};
+
+// ─── Chart color helper (resolves CSS vars, falls back for oklch) ───
+window.getChartColor = function(varName, fallback) {
+  var v = getComputedStyle(document.documentElement).getPropertyValue(varName).trim();
+  return (v && !v.startsWith('oklch')) ? v : fallback;
+};
+
+// ─── Bulk selection state ───
+var _selections = { demand: [], tracking: [] };
+
+// ─── Find demand by ID helper ───
+function findDemand(id) {
+  var rows = document.querySelectorAll('.demand-row');
+  for (var i = 0; i < rows.length; i++) {
+    if (rows[i].getAttribute('data-demand-id') === id) return null; // stub, real lookup in demand data
+  }
+  return null;
+}
 
 // ─── Apply language to static HTML elements before page renders ───
 (function applyI18N() {
@@ -1428,6 +1574,14 @@ window.safeMarked = function(md) {
   setEl('demand-empty', t('demEmpty'));
   var demTable = document.querySelector('table[aria-label="Demand radar"]');
   if (demTable) demTable.setAttribute('aria-label', t('demAria'));
+
+  // Bulk bar button labels
+  setEl('btn-bulk-watch', t('bulkWatch'));
+  setEl('btn-bulk-observe', t('bulkObserve'));
+  setEl('btn-bulk-export', t('bulkExport'));
+
+  // Radar chart info
+  setEl('radar-demand-desc', t('radarSelectDemand'));
 
   // Footer
   setEl('footer-version', t('footerVersion'));
@@ -1734,6 +1888,7 @@ function renderWorkbench(data) {
 function renderAll(data) {
   try {
   _data = data;
+  window._lastData = data; // for bulk actions & watchlist UI
   var summary = data.summary || {};
   var signals = data.signals || [];
   var history = data.history || [];
@@ -1918,6 +2073,10 @@ function renderAll(data) {
   var weeks = demandRadar.weeks || [];
   var intersections = demandRadar.intersections || [];
 
+  // Build demands map for bulk actions
+  window._demandsMap = {};
+  demands.forEach(function(d) { window._demandsMap[d.id] = d; });
+
   loadWatchlist(); // sync watchlist from localStorage
 
   if (demands.length === 0) {
@@ -1982,7 +2141,7 @@ function renderAll(data) {
       '</div>';
     }).join('');
 
-    return '<td colspan="10">' +
+    return '<td colspan="11">' +
       '<div class="detail-panel">' +
         trendRows +
         '<div class="detail-footer">' +
@@ -1995,6 +2154,69 @@ function renderAll(data) {
       '</td>';
   }
 
+  // ── Radar Chart Rendering ──
+  function renderRadarChart(dem) {
+    var section = document.getElementById('radar-chart-section');
+    if (!section) return;
+    section.style.display = 'grid';
+
+    document.getElementById('radar-demand-name').textContent = (LANG === 'en' && dem.name_en) ? dem.name_en : (dem.name || dem.id);
+    document.getElementById('radar-demand-desc').textContent = (LANG === 'en' && dem.description_en) ? dem.description_en : (dem.description || '');
+
+    var dims = [
+      { key: 'market_score', label: t('radarMarket') },
+      { key: 'business_score', label: t('radarBusiness') },
+      { key: 'competition', label: t('radarCompetition') },
+      { key: 'ai_replaceability', label: t('radarAiProof') },
+      { key: 'confidence', label: t('radarConfidence') }
+    ];
+
+    var scores = dims.map(function(d) { return dem[d.key] || 0; });
+    var labels = dims.map(function(d) { return d.label; });
+
+    // Show scores summary
+    var scoresHtml = dims.map(function(d) {
+      return '<span style="display:inline-block;margin-right:12px;font-size:0.78rem;"><strong>' + d.label + '</strong> ' + (dem[d.key] || 0) + '</span>';
+    }).join('');
+    document.getElementById('radar-demand-scores').innerHTML = scoresHtml;
+
+    if (typeof Chart === 'undefined') return;
+
+    var ctx = document.getElementById('demandRadarChart').getContext('2d');
+    if (window._radarChart) window._radarChart.destroy();
+
+    var blue = getChartColor('--color-chart-accent', '#1E40AF');
+    var blueFill = blue + '20';
+
+    window._radarChart = new Chart(ctx, {
+      type: 'radar',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: dem.name || dem.id,
+          data: scores,
+          backgroundColor: blueFill,
+          borderColor: blue,
+          borderWidth: 2,
+          pointBackgroundColor: blue,
+          pointRadius: 4,
+          pointHoverRadius: 6
+        }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: true,
+        scales: { r: { beginAtZero: true, max: 100, ticks: { stepSize: 20, font: { size: 10 } }, pointLabels: { font: { size: 11 } } } },
+        plugins: { legend: { display: false } }
+      }
+    });
+  }
+
+  function hideRadarChart() {
+    var section = document.getElementById('radar-chart-section');
+    if (section) section.style.display = 'none';
+    if (window._radarChart) { window._radarChart.destroy(); window._radarChart = null; }
+  }
+
   function toggleDemandDetail(demId) {
     var row = document.querySelector('[data-demand-id="' + demId + '"]');
     if (!row) return;
@@ -2004,6 +2226,7 @@ function renderAll(data) {
       // Collapse
       detailRow.remove();
       row.classList.remove('expanded');
+      hideRadarChart();
     } else {
       // Expand
       var dem = demands.find(function(d) { return d.id === demId; });
@@ -2014,6 +2237,7 @@ function renderAll(data) {
       detailRow.innerHTML = renderDemandDetail(dem);
       row.parentNode.insertBefore(detailRow, row.nextSibling);
       row.classList.add('expanded');
+      renderRadarChart(dem);
     }
   }
 
@@ -2023,8 +2247,9 @@ function renderAll(data) {
       tr.className = 'demand-row';
       tr.setAttribute('data-demand-id', dem.id);
       tr.onclick = function(e) {
-        // Don't toggle if watch button was clicked
+        // Don't toggle if watch button or checkbox was clicked
         if (e.target.closest('.btn-watch')) return;
+        if (e.target.closest('input[type="checkbox"]')) return;
         toggleDemandDetail(dem.id);
       };
 
@@ -2050,6 +2275,7 @@ function renderAll(data) {
 
       var watchIcon = isWatched(dem.id) ? '★' : '☆';
       tr.innerHTML =
+        '<td><input type="checkbox" class="demand-check" data-id="' + dem.id + '" onchange="updateBulkBar(\'demand\');event.stopPropagation();" aria-label="Select ' + dmName + '"></td>' +
         '<td><button class="btn-watch" id="watch-btn-' + dem.id + '" onclick="toggleWatch(\'' + dem.id + '\');event.stopPropagation();" title="Toggle watch">' + watchIcon + '</button></td>' +
         '<td><span class="expand-caret">▸</span><strong>' + dmName + '</strong><br><span class="muted">' + descText + buyerInfo + '</span>' + trendsHtml + '</td>' +
         '<td>' + (deltaIcons[dem.delta] || dem.delta) + '</td>' +
@@ -2076,6 +2302,102 @@ function renderAll(data) {
         interDiv.innerHTML = interHtml;
       }
     }
+  }
+
+  // ── Bulk Actions ──
+  window.toggleSelectAll = function(tableId, masterCheckbox) {
+    var checks = document.querySelectorAll('.' + tableId + '-check');
+    checks.forEach(function(cb) { cb.checked = masterCheckbox.checked; });
+    updateBulkBar(tableId);
+  };
+
+  window.updateBulkBar = function(tableId) {
+    var checks = document.querySelectorAll('.' + tableId + '-check:checked');
+    _selections[tableId] = [];
+    checks.forEach(function(cb) { _selections[tableId].push(cb.getAttribute('data-id')); });
+    var bar = document.getElementById(tableId + '-bulk-bar');
+    var countEl = document.getElementById(tableId + '-bulk-count');
+    if (!bar || !countEl) return;
+    var n = _selections[tableId].length;
+    countEl.textContent = n + ' ' + t('selected');
+    if (n > 0) { bar.classList.add('active'); }
+    else { bar.classList.remove('active'); }
+
+    // Update select-all checkbox state
+    var selectAll = document.getElementById(tableId + '-select-all');
+    if (selectAll) {
+      var allChecks = document.querySelectorAll('.' + tableId + '-check');
+      selectAll.checked = n > 0 && n === allChecks.length;
+      selectAll.indeterminate = n > 0 && n < allChecks.length;
+    }
+  };
+
+  window.bulkWatch = function() {
+    _selections.demand.forEach(function(id) {
+      if (!isWatched(id)) toggleWatchDirect(id);
+    });
+    updateWatchlistUI();
+    updateBulkBar('demand');
+  };
+
+  window.bulkBet = function(action) {
+    _selections.demand.forEach(function(id) {
+      var dem = null;
+      if (window._demandsMap) dem = window._demandsMap[id];
+      if (dem) placeBet(id, (LANG === 'en' && dem.name_en) ? dem.name_en : (dem.name || id), action);
+    });
+  };
+
+  window.bulkExport = function() {
+    var header = ['Demand', 'Market', 'Business', 'Competition', 'AI-proof', 'Confidence', 'Stage', 'Score'];
+    var rows = [header.join(',')];
+    _selections.demand.forEach(function(id) {
+      var dem = window._demandsMap ? window._demandsMap[id] : null;
+      if (dem) {
+        var name = ((LANG === 'en' && dem.name_en) ? dem.name_en : (dem.name || id)).replace(/,/g, ' ');
+        rows.push([name, dem.market_score||0, dem.business_score||0, dem.competition||0, dem.ai_replaceability||'?', dem.confidence||0, dem.stage||'', dem.opportunity_index||0].join(','));
+      }
+    });
+    var csv = rows.join('\n');
+    var blob = new Blob(['﻿' + csv], {type: 'text/csv;charset=utf-8'});
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a'); a.href = url; a.download = 'demand-radar-export.csv';
+    a.click(); URL.revokeObjectURL(url);
+  };
+
+  // ── Direct watch toggle (bypasses re-render) ──
+  function toggleWatchDirect(id) {
+    var idx = _watchlist.indexOf(id);
+    if (idx >= 0) { _watchlist.splice(idx, 1); }
+    else { _watchlist.push(id); }
+    try { localStorage.setItem('kakaopc_watchlist', JSON.stringify(_watchlist)); } catch(e) {}
+  }
+
+  function updateWatchlistUI() {
+    var wb = _lastData ? (_lastData.workbench || {}) : {};
+    var allDems = wb.all_demands || [];
+    // Re-render watchlist
+    var watchlistDiv = document.getElementById('wb-watchlist');
+    if (!watchlistDiv) return;
+    var items = allDems.filter(function(d) { return isWatched(d.id); });
+    if (items.length === 0) {
+      watchlistDiv.innerHTML = '<div class="empty" id="wb-watchlist-empty">' + t('wbWatchlistEmpty') + '</div>';
+    } else {
+      watchlistDiv.innerHTML = items.map(function(d) {
+        var name = (LANG === 'en' && d.name_en) ? d.name_en : (d.name || d.id);
+        var delta = d.delta || '';
+        return '<div class="wb-watch-item" onclick="openOppCard(_wb_data,\'' + d.id + '\')">' +
+          '<span>' + name + '</span>' +
+          '<span class="' + (delta === 'rising' ? 'chg-up' : delta === 'falling' ? 'chg-dn' : 'chg-st') + '">' + (delta === 'rising' ? '▲' : delta === 'falling' ? '▼' : '→') + '</span>' +
+        '</div>';
+      }).join('');
+    }
+    // Update star icons in demand radar
+    document.querySelectorAll('.btn-watch').forEach(function(btn) {
+      var btnId = btn.getAttribute('id') || '';
+      var demId = btnId.replace('watch-btn-', '');
+      btn.textContent = isWatched(demId) ? '★' : '☆';
+    });
   }
 
   // Pipeline status indicators in footer
@@ -2181,13 +2503,14 @@ function updateSectionTitle(id, text) {
 }
 
 function renderCharts(history) {
-  var accent = getComputedStyle(document.documentElement).getPropertyValue('--color-accent').trim() || '#f59e42';
-  var accentHex = accent.startsWith('oklch') ? '#f59e42' : accent;
-  var green = getComputedStyle(document.documentElement).getPropertyValue('--color-green').trim() || '#34d399';
-  var greenHex = green.startsWith('oklch') ? '#34d399' : green;
+  var blue = getChartColor('--color-chart-accent', '#1E40AF');
+  var blueLt = getChartColor('--color-chart-blue-lt', '#3B82F6');
+  var amber = getChartColor('--color-chart-cta', '#F59E0B');
+  var green = getChartColor('--color-chart-green', '#10B981');
   var style = getComputedStyle(document.documentElement);
-  var textMuted = style.getPropertyValue('--color-text-muted').trim() || '#6b7280';
-  var borderColor = style.getPropertyValue('--color-border').trim() || '#d1d5db';
+  var textMuted = style.getPropertyValue('--color-text-muted').trim() || '#64748b';
+  var borderColor = style.getPropertyValue('--color-border').trim() || '#cbd5e1';
+  var gridColor = getChartColor('--color-chart-grid', '#e2e8f0');
 
   var labels = history.map(function(d) { return d.date.substring(5); });
 
@@ -2202,17 +2525,17 @@ function renderCharts(history) {
       labels: labels,
       datasets: [
         { label: t('chartTopScore'), data: history.map(function(d) { return d.top_score; }),
-          borderColor: accentHex, backgroundColor: 'transparent', tension: 0.3, pointRadius: 3 },
+          borderColor: blue, backgroundColor: 'transparent', tension: 0.3, pointRadius: 3, pointBackgroundColor: blue },
         { label: t('chartAvgScore'), data: history.map(function(d) { return d.avg_score; }),
-          borderColor: '#60a5fa', backgroundColor: 'transparent', tension: 0.3, pointRadius: 3, borderDash: [4, 4] }
+          borderColor: amber, backgroundColor: 'transparent', tension: 0.3, pointRadius: 3, borderDash: [4, 4], pointBackgroundColor: amber }
       ]
     },
     options: {
       responsive: true, maintainAspectRatio: false,
       plugins: { legend: { labels: { color: textMuted, font: { size: 11 } } } },
       scales: {
-        x: { ticks: { color: textMuted, font: { size: 10 } }, grid: { color: borderColor } },
-        y: { ticks: { color: textMuted, font: { size: 10 } }, grid: { color: borderColor }, beginAtZero: true }
+        x: { ticks: { color: textMuted, font: { size: 10 } }, grid: { color: gridColor } },
+        y: { ticks: { color: textMuted, font: { size: 10 } }, grid: { color: gridColor }, beginAtZero: true }
       }
     }
   });
@@ -2226,17 +2549,17 @@ function renderCharts(history) {
       labels: labels,
       datasets: [
         { label: t('chartSignals'), data: history.map(function(d) { return d.total_signals; }),
-          backgroundColor: accentHex + '40', borderColor: accentHex, borderWidth: 1 },
+          backgroundColor: blue + '30', borderColor: blue, borderWidth: 1 },
         { label: t('chartCrossPlatform'), data: history.map(function(d) { return d.cross_platform; }),
-          backgroundColor: greenHex + '40', borderColor: greenHex, borderWidth: 1 }
+          backgroundColor: green + '30', borderColor: green, borderWidth: 1 }
       ]
     },
     options: {
       responsive: true, maintainAspectRatio: false,
       plugins: { legend: { labels: { color: textMuted, font: { size: 11 } } } },
       scales: {
-        x: { ticks: { color: textMuted, font: { size: 10 } }, grid: { color: borderColor } },
-        y: { ticks: { color: textMuted, font: { size: 10 } }, grid: { color: borderColor }, beginAtZero: true }
+        x: { ticks: { color: textMuted, font: { size: 10 } }, grid: { color: gridColor } },
+        y: { ticks: { color: textMuted, font: { size: 10 } }, grid: { color: gridColor }, beginAtZero: true }
       }
     }
   });

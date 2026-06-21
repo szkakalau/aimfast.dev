@@ -15,6 +15,12 @@
   --color-accent-muted:   oklch(55% 0.18 60 / 0.1);
   --color-accent-glow:    oklch(55% 0.18 60 / 0.15);
 
+  /* ── Blue: data visualization & primary actions ── */
+  --color-blue:           oklch(45% 0.22 265);
+  --color-blue-hover:     oklch(40% 0.23 265);
+  --color-blue-muted:     oklch(45% 0.22 265 / 0.08);
+  --color-blue-glow:      oklch(45% 0.22 265 / 0.12);
+
   --color-green:          oklch(58% 0.16 155);
   --color-green-muted:    oklch(58% 0.16 155 / 0.1);
   --color-red:            oklch(52% 0.22 25);
@@ -22,10 +28,18 @@
 
   --color-on-accent:      oklch(100% 0 0);
 
+  /* ── Chart.js hex fallbacks (Chart.js cannot parse oklch) ── */
+  --color-chart-accent:   #1E40AF;
+  --color-chart-cta:      #F59E0B;
+  --color-chart-green:    #10B981;
+  --color-chart-red:      #EF4444;
+  --color-chart-grid:     #E2E8F0;
+  --color-chart-blue-lt:  #3B82F6;
+
   /* ── Typography ── */
-  --font-heading: 'Space Grotesk', 'JetBrains Mono', monospace;
+  --font-heading: 'Fira Code', 'JetBrains Mono', monospace;
   --font-mono:    'JetBrains Mono', monospace;
-  --font-body:    'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body:    'Fira Sans', -apple-system, BlinkMacSystemFont, sans-serif;
 
   /* ── Spacing: 8px rhythm ── */
   --space-1:  8px;
