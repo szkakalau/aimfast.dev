@@ -1963,6 +1963,86 @@ function renderAll(data) {
       breaking: t('demStageBreaking'),
       mature: t('demStageMature')
     };
+
+  // ── Demand detail expand helpers ──
+  function renderScoreBar(label, value) {
+    var cls = value >= 70 ? 'high' : (value < 30 ? 'low' : '');
+    return '<div class="sub-score-row">' +
+      '<span class="sub-score-label">' + label + '</span>' +
+      '<div class="score-bar-wrap"><div class="score-bar-fill ' + cls + '" style="width:' + value + '%"></div></div>' +
+      '<span class="sub-score-val">' + value + '</span>' +
+      '</div>';
+  }
+
+  function renderSubScore(label, value, max) {
+    var pct = Math.round((value / max) * 100);
+    var cls = pct >= 70 ? 'high' : (pct < 30 ? 'low' : '');
+    return '<div class="sub-score-row" style="padding-left:20px;">' +
+      '<span class="sub-score-label" style="font-size:0.65rem;width:70px;">↳ ' + label + '</span>' +
+      '<div class="score-bar-wrap"><div class="score-bar-fill ' + cls + '" style="width:' + pct + '%"></div></div>' +
+      '<span class="sub-score-val">' + value + '/' + max + '</span>' +
+      '</div>';
+  }
+
+  function renderDemandDetail(dem) {
+    var trendTags = (dem.trends || []).map(function(t) {
+      return '<span class="trend-tag">' + t + '</span>';
+    }).join('');
+
+    var buyerText = (LANG === 'en' && dem.target_buyer_en) ? dem.target_buyer_en : (dem.target_buyer || '');
+
+    return '<td colspan="10">' +
+      '<div class="detail-grid">' +
+      // 左栏：趋势
+      '<div class="detail-section">' +
+        '<h4>' + t('detailTrends') + '</h4>' +
+        '<div class="trend-tags">' + trendTags + '</div>' +
+        (buyerText ? '<div style="margin-top:10px;font-size:0.7rem;color:var(--color-text-muted);">' + t('detailTargetBuyer') + ': <strong style="color:var(--color-text);">' + buyerText + '</strong></div>' : '') +
+        '<div style="margin-top:8px;font-size:0.62rem;color:var(--color-text-muted);">Total signals: <strong>' + (dem.total_appearances||0) + '</strong> over <strong>' + (dem.distinct_days||0) + '</strong> days</div>' +
+      '</div>' +
+      // 右栏：评分
+      '<div class="detail-section">' +
+        '<h4>' + t('detailBreakdown') + '</h4>' +
+        renderScoreBar('Market', dem.market_score || 0) +
+        renderSubScore('Trend', dem.trend_score || 0, 10) +
+        renderSubScore('Growth', dem.growth_score || 0, 10) +
+        renderSubScore('Consistency', dem.consistency_score || 0, 10) +
+        '<div style="margin-top:8px;"></div>' +
+        renderScoreBar('Business', dem.business_score || 0) +
+        '<div class="formula-text">Pain f' + (dem.pain_frequency||'?') + '×s' + (dem.pain_severity||'?') + ' = ' + ((dem.pain_score||0).toFixed(1)) + ' | Pay b' + (dem.pay_budget||'?') + '×u' + (dem.pay_urgency||'?') + ' = ' + ((dem.pay_score||0).toFixed(1)) + '</div>' +
+        '<div class="meta-row">' +
+          '<span>' + t('detailAiReplace') + ': <strong>' + (dem.ai_replaceability||'?') + '/10</strong></span>' +
+          '<span>' + t('detailCompetition') + ': <strong>' + (dem.competition||0) + '</strong></span>' +
+          '<span>' + t('detailConfidence') + ': <strong>' + (dem.confidence||0) + '%</strong></span>' +
+          '<span>' + t('detailStage') + ': <strong>' + (stageLabels[dem.stage] || dem.stage || '?') + '</strong></span>' +
+        '</div>' +
+      '</div>' +
+      '</div>' +
+      '</td>';
+  }
+
+  function toggleDemandDetail(demId) {
+    var row = document.querySelector('[data-demand-id="' + demId + '"]');
+    if (!row) return;
+    var detailRow = document.getElementById('demand-detail-' + demId);
+
+    if (detailRow) {
+      // Collapse
+      detailRow.remove();
+      row.classList.remove('expanded');
+    } else {
+      // Expand
+      var dem = demands.find(function(d) { return d.id === demId; });
+      if (!dem) return;
+      detailRow = document.createElement('tr');
+      detailRow.className = 'demand-detail';
+      detailRow.id = 'demand-detail-' + demId;
+      detailRow.innerHTML = renderDemandDetail(dem);
+      row.parentNode.insertBefore(detailRow, row.nextSibling);
+      row.classList.add('expanded');
+    }
+  }
+
     var demTbody = document.getElementById('demand-body');
     demands.forEach(function(dem) {
       var tr = document.createElement('tr');
