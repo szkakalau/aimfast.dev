@@ -70,6 +70,7 @@ COLLECTORS=(
     "HuggingFace:collect_huggingface"
     "Lobsters:collect_lobsters"
     "ArXiv:collect_arxiv"
+    # "X/Twitter:collect_x"  # 暂禁用 — 需 AUTH_TOKEN+CT0
 )
 
 for entry in "${COLLECTORS[@]}"; do

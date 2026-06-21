@@ -21,7 +21,8 @@
       {"name": "Reddit", "key": "reddit", "source": "RSS (hot.rss)", "priority": "P1", "enabled": true},
       {"name": "Lobsters", "key": "lobsters", "source": "API", "priority": "P1", "enabled": true},
       {"name": "DEV Community", "key": "devcommunity", "source": "API", "priority": "P1", "enabled": true},
-      {"name": "ArXiv Papers", "key": "arxiv", "source": "API", "priority": "P1", "enabled": true}
+      {"name": "ArXiv Papers", "key": "arxiv", "source": "API", "priority": "P1", "enabled": true},
+      {"name": "X/Twitter", "key": "x", "source": "GraphQL / bird_x", "priority": "P1", "enabled": false, "_note": "暂禁用 — 需 AUTH_TOKEN+CT0 认证"}
     ],
     "domestic": [
       {"name": "V2EX", "key": "v2ex", "source": "API", "priority": "P0", "enabled": true},

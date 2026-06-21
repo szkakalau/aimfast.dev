@@ -71,7 +71,8 @@ $Collectors = @(
     @{Name="w2solo"; Script="collect_w2solo"; Enabled=$true},
     @{Name="HuggingFace"; Script="collect_huggingface"; Enabled=$true},
     @{Name="Lobsters"; Script="collect_lobsters"; Enabled=$true},
-    @{Name="ArXiv"; Script="collect_arxiv"; Enabled=$true}
+    @{Name="ArXiv"; Script="collect_arxiv"; Enabled=$true},
+    @{Name="X/Twitter"; Script="collect_x"; Enabled=$false}
 )
 
 Write-Log ""
