@@ -468,6 +468,101 @@
   .btn-bet:hover { border-color: var(--color-accent); }
   .btn-bet.active-bet { background: var(--color-accent); color: #1a1d24; border-color: var(--color-accent); }
 
+  /* ── Demand detail expand ── */
+  .demand-row { cursor: pointer; }
+  .demand-row:hover td { background: var(--color-surface-alt); }
+  .demand-row .expand-caret {
+    display: inline-block;
+    width: 14px;
+    font-size: 0.65rem;
+    color: var(--color-text-muted);
+    transition: transform var(--duration-fast) var(--ease-out);
+    text-align: center;
+  }
+  .demand-row.expanded .expand-caret { transform: rotate(90deg); }
+
+  .demand-detail td {
+    padding: 0;
+    background: var(--color-surface-alt);
+    border-bottom: 2px solid var(--color-accent);
+  }
+  .detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3);
+    padding: var(--space-3);
+    animation: detailIn var(--duration-fast) var(--ease-out);
+  }
+  @keyframes detailIn {
+    from { opacity: 0; transform: translateY(-6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .detail-section h4 {
+    font-size: 0.7rem;
+    font-weight: 600;
+    margin: 0 0 var(--space-2) 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+  }
+
+  /* Score bars */
+  .score-bar-wrap {
+    height: 6px;
+    border-radius: 3px;
+    background: var(--color-surface);
+    overflow: hidden;
+    flex: 1;
+  }
+  .score-bar-fill {
+    height: 100%;
+    border-radius: 3px;
+    background: var(--color-accent);
+    transition: width var(--duration-slow) var(--ease-out);
+  }
+  .score-bar-fill.low  { background: var(--color-text-muted); }
+  .score-bar-fill.high { background: var(--color-green); }
+
+  .sub-score-row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    font-size: 0.72rem;
+    margin-bottom: 2px;
+  }
+  .sub-score-label {
+    width: 80px;
+    color: var(--color-text-muted);
+    flex-shrink: 0;
+  }
+  .sub-score-val {
+    font-family: var(--font-mono);
+    width: 36px;
+    text-align: right;
+    font-size: 0.7rem;
+  }
+
+  .formula-text {
+    font-size: 0.62rem;
+    color: var(--color-text-muted);
+    font-family: var(--font-mono);
+    margin-top: 2px;
+    padding-left: 4px;
+  }
+
+  .meta-row {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    font-size: 0.7rem;
+    color: var(--color-text-muted);
+    margin-top: var(--space-2);
+  }
+  .meta-row strong {
+    color: var(--color-text);
+    font-weight: 600;
+  }
+
   /* ── Watch button ── */
   .btn-watch {
     font-size: 1rem;
