@@ -1,24 +1,26 @@
 /* ═════ AimFast.Dev Design System — Tokens ═════ */
 :root {
   /* ── Color: OKLCH space, warm-tinted darks ── */
-  --color-bg:             oklch(14% 0.008 250);
-  --color-surface:        oklch(18% 0.01 255);
-  --color-surface-alt:    oklch(22% 0.012 255);
-  --color-border:         oklch(28% 0.008 250);
-  --color-border-hover:   oklch(38% 0.01 250);
-  --color-text:           oklch(92% 0.005 90);
-  --color-text-secondary: oklch(68% 0.01 90);
-  --color-text-muted:     oklch(48% 0.008 90);
+  --color-bg:             oklch(98.5% 0.002 250);
+  --color-surface:        oklch(100% 0 0 0);
+  --color-surface-alt:    oklch(95% 0.006 255);
+  --color-border:         oklch(88% 0.01 250);
+  --color-border-hover:   oklch(72% 0.012 250);
+  --color-text:           oklch(18% 0.005 90);
+  --color-text-secondary: oklch(38% 0.01 90);
+  --color-text-muted:     oklch(52% 0.01 90);
 
-  --color-accent:         oklch(75% 0.18 60);
-  --color-accent-hover:   oklch(80% 0.18 60);
-  --color-accent-muted:   oklch(75% 0.18 60 / 0.12);
-  --color-accent-glow:    oklch(75% 0.18 60 / 0.2);
+  --color-accent:         oklch(55% 0.18 60);
+  --color-accent-hover:   oklch(50% 0.19 60);
+  --color-accent-muted:   oklch(55% 0.18 60 / 0.1);
+  --color-accent-glow:    oklch(55% 0.18 60 / 0.15);
 
-  --color-green:          oklch(72% 0.16 155);
-  --color-green-muted:    oklch(72% 0.16 155 / 0.12);
-  --color-red:            oklch(62% 0.19 25);
-  --color-red-muted:      oklch(62% 0.19 25 / 0.12);
+  --color-green:          oklch(58% 0.16 155);
+  --color-green-muted:    oklch(58% 0.16 155 / 0.1);
+  --color-red:            oklch(52% 0.22 25);
+  --color-red-muted:      oklch(52% 0.22 25 / 0.1);
+
+  --color-on-accent:      oklch(100% 0 0);
 
   /* ── Typography ── */
   --font-heading: 'Space Grotesk', 'JetBrains Mono', monospace;
@@ -49,8 +51,8 @@
   --duration-slow: 350ms;
 
   /* ── Shadows ── */
-  --shadow-sm:  0 1px 3px oklch(0% 0 0 / 0.3);
-  --shadow-md:  0 4px 16px oklch(0% 0 0 / 0.4);
-  --shadow-lg:  0 8px 32px oklch(0% 0 0 / 0.5);
+  --shadow-sm:  0 1px 3px oklch(0% 0 0 / 0.06);
+  --shadow-md:  0 4px 16px oklch(0% 0 0 / 0.08);
+  --shadow-lg:  0 8px 32px oklch(0% 0 0 / 0.12);
   --shadow-glow: 0 0 24px var(--color-accent-glow);
 }

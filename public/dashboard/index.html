@@ -6,7 +6,7 @@
 <title>Opportunity Tracking & Signal Intelligence Dashboard | AimFast.Dev</title>
 <meta name="description" content="Track product opportunities in real-time. Signal scores, cross-platform validation, 7-day verification, landing page analytics. Daily reports and indie hacker opportunity tracking.">
 <meta name="robots" content="index, follow">
-<meta name="theme-color" content="#1a1d24">
+<meta name="theme-color" content="#fafafa">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="canonical" href="https://www.aimfast.dev/dashboard/">
 <!-- Open Graph -->
@@ -292,7 +292,7 @@
   }
   .tab.active {
     background: var(--color-accent);
-    color: #1a1d24;
+    color: var(--color-on-accent);
     border-color: var(--color-accent);
     font-weight: 600;
   }
@@ -397,7 +397,7 @@
     padding: 1px 6px;
     border-radius: 3px;
     background: var(--color-accent);
-    color: #1a1d24;
+    color: var(--color-on-accent);
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.3px;
@@ -428,7 +428,7 @@
   .wb-radar-table th, .wb-radar-table td { padding: 4px 6px; }
   .wb-radar-table tr { cursor: pointer; }
   .wb-radar-table tr:hover td { background: var(--color-surface-alt); }
-  .wb-radar-table tr.selected td { background: var(--color-accent); color: #1a1d24; }
+  .wb-radar-table tr.selected td { background: var(--color-accent); color: var(--color-on-accent); }
   .wb-link { font-size: 0.78rem; color: var(--color-accent); text-decoration: none; }
   .wb-link:hover { text-decoration: underline; }
   .wb-updated { font-size: 0.65rem; color: var(--color-text-muted); font-weight: 400; margin-left: var(--space-2); }
@@ -442,11 +442,11 @@
     font-size: 0.6rem;
     padding: 1px 5px;
     border-radius: 8px;
-    background: rgba(245,158,66,0.12);
+    background: var(--color-accent-muted);
     color: var(--color-accent);
     white-space: nowrap;
   }
-  .wb-watch-item { display: flex; align-items: center; justify-content: space-between; padding: 4px 0; border-bottom: 1px solid rgba(255,255,255,0.04); font-size: 0.8rem; }
+  .wb-watch-item { display: flex; align-items: center; justify-content: space-between; padding: 4px 0; border-bottom: 1px solid var(--color-border); font-size: 0.8rem; }
   .wb-watch-item .chg-up { color: var(--color-green); }
   .wb-watch-item .chg-dn { color: var(--color-red); }
 
@@ -466,7 +466,7 @@
   .wb-opp-actions { display: flex; gap: var(--space-1); margin-top: var(--space-2); flex-wrap: wrap; }
   .btn-bet { padding: 6px 14px; border-radius: var(--radius-sm); font-size: 0.8rem; cursor: pointer; border: 1px solid var(--color-border); background: var(--color-surface); color: var(--color-text); font-family: var(--font-body); transition: all var(--duration-fast) var(--ease-out); }
   .btn-bet:hover { border-color: var(--color-accent); }
-  .btn-bet.active-bet { background: var(--color-accent); color: #1a1d24; border-color: var(--color-accent); }
+  .btn-bet.active-bet { background: var(--color-accent); color: var(--color-on-accent); border-color: var(--color-accent); }
 
   /* ── Demand detail expand ── */
   .demand-row { cursor: pointer; }
@@ -558,11 +558,11 @@
   .btn-watch:hover { transform: scale(1.2); }
 
   /* ── Bet log ── */
-  .bet-row { display: flex; align-items: center; gap: var(--space-2); padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.04); font-size: 0.82rem; }
+  .bet-row { display: flex; align-items: center; gap: var(--space-2); padding: 6px 0; border-bottom: 1px solid var(--color-border); font-size: 0.82rem; }
   .bet-row .bet-id { font-family: var(--font-mono); font-size: 0.72rem; color: var(--color-text-muted); }
   .bet-badge { font-size: 0.65rem; padding: 1px 6px; border-radius: 3px; font-weight: 600; }
-  .bet-active { background: var(--color-accent); color: #1a1d24; }
-  .bet-won { background: var(--color-green); color: #1a1d24; }
+  .bet-active { background: var(--color-accent); color: var(--color-on-accent); }
+  .bet-won { background: var(--color-green); color: var(--color-on-accent); }
   .bet-lost { background: var(--color-red); color: #fff; }
 
   /* ── Empty state ── */
@@ -2185,8 +2185,9 @@ function renderCharts(history) {
   var accentHex = accent.startsWith('oklch') ? '#f59e42' : accent;
   var green = getComputedStyle(document.documentElement).getPropertyValue('--color-green').trim() || '#34d399';
   var greenHex = green.startsWith('oklch') ? '#34d399' : green;
-  var textMuted = '#6b7280';
-  var borderColor = '#252830';
+  var style = getComputedStyle(document.documentElement);
+  var textMuted = style.getPropertyValue('--color-text-muted').trim() || '#6b7280';
+  var borderColor = style.getPropertyValue('--color-border').trim() || '#d1d5db';
 
   var labels = history.map(function(d) { return d.date.substring(5); });
 
