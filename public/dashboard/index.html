@@ -486,10 +486,8 @@
     background: var(--color-surface-alt);
     border-bottom: 2px solid var(--color-accent);
   }
-  .detail-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-3);
+
+  .detail-panel {
     padding: var(--space-3);
     animation: detailIn var(--duration-fast) var(--ease-out);
   }
@@ -497,68 +495,46 @@
     from { opacity: 0; transform: translateY(-6px); }
     to { opacity: 1; transform: translateY(0); }
   }
-  .detail-section h4 {
-    font-size: 0.7rem;
+
+  .trend-item {
+    padding: 6px 0;
+  }
+  .trend-item + .trend-item {
+    border-top: 1px solid var(--color-border);
+  }
+  .trend-name {
     font-weight: 600;
-    margin: 0 0 var(--space-2) 0;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--color-text-muted);
+    font-size: 0.8rem;
+    color: var(--color-text);
+    margin-bottom: 3px;
   }
-
-  /* Score bars */
-  .score-bar-wrap {
-    height: 6px;
-    border-radius: 3px;
-    background: var(--color-surface);
-    overflow: hidden;
-    flex: 1;
-  }
-  .score-bar-fill {
-    height: 100%;
-    border-radius: 3px;
-    background: var(--color-accent);
-    transition: width var(--duration-slow) var(--ease-out);
-  }
-  .score-bar-fill.low  { background: var(--color-text-muted); }
-  .score-bar-fill.high { background: var(--color-green); }
-
-  .sub-score-row {
+  .trend-metrics {
     display: flex;
-    align-items: center;
-    gap: var(--space-1);
-    font-size: 0.72rem;
-    margin-bottom: 2px;
-  }
-  .sub-score-label {
-    width: 80px;
-    color: var(--color-text-muted);
-    flex-shrink: 0;
-  }
-  .sub-score-val {
-    font-family: var(--font-mono);
-    width: 36px;
-    text-align: right;
-    font-size: 0.7rem;
-  }
-
-  .formula-text {
-    font-size: 0.62rem;
-    color: var(--color-text-muted);
-    font-family: var(--font-mono);
-    margin-top: 2px;
-    padding-left: 4px;
-  }
-
-  .meta-row {
-    display: flex;
-    gap: 14px;
+    gap: 12px;
     flex-wrap: wrap;
     font-size: 0.7rem;
     color: var(--color-text-muted);
-    margin-top: var(--space-2);
   }
-  .meta-row strong {
+  .trend-metrics span {
+    white-space: nowrap;
+  }
+  .trend-metrics strong {
+    color: var(--color-text);
+    font-weight: 600;
+  }
+
+  .detail-footer {
+    margin-top: var(--space-2);
+    padding-top: var(--space-2);
+    border-top: 1px solid var(--color-accent);
+    font-size: 0.7rem;
+    color: var(--color-text-muted);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 18px;
+    font-family: var(--font-mono);
+  }
+  .detail-footer strong {
     color: var(--color-text);
     font-weight: 600;
   }
@@ -717,8 +693,8 @@
     /* Demand radar table in tab */
     #tab-demand table { font-size: 0.65rem; }
     #tab-demand th, #tab-demand td { padding: 3px 4px; }
-    .detail-grid { grid-template-columns: 1fr; gap: var(--space-2); padding: var(--space-2); }
-    .meta-row { gap: 8px; }
+    .trend-metrics { gap: 8px; }
+    .detail-footer { gap: 4px 12px; }
   }
 
   @media (max-width: 400px) {
@@ -1054,13 +1030,7 @@ var I18N = (function() {
       demIntersections: '交叉机会',
 
       // Demand detail expand
-      detailTrends: '细分趋势',
-      detailBreakdown: '评分拆解',
       detailTargetBuyer: '目标用户',
-      detailAiReplace: 'AI替代难度',
-      detailCompetition: '竞争',
-      detailConfidence: '置信度',
-      detailStage: '阶段',
 
       // Footer
       footerVersion: 'AimFast.Dev v2.0',
@@ -1234,13 +1204,7 @@ var I18N = (function() {
       demIntersections: 'Cross Opportunities',
 
       // Demand detail expand
-      detailTrends: 'Sub Trends',
-      detailBreakdown: 'Score Breakdown',
       detailTargetBuyer: 'Target Buyer',
-      detailAiReplace: 'AI Durability',
-      detailCompetition: 'Competition',
-      detailConfidence: 'Confidence',
-      detailStage: 'Stage',
 
       // Footer
       footerVersion: 'AimFast.Dev v2.0',
@@ -1967,58 +1931,37 @@ function renderAll(data) {
     };
 
   // ── Demand detail expand helpers ──
-  function renderScoreBar(label, value) {
-    var cls = value >= 70 ? 'high' : (value < 30 ? 'low' : '');
-    return '<div class="sub-score-row">' +
-      '<span class="sub-score-label">' + label + '</span>' +
-      '<div class="score-bar-wrap"><div class="score-bar-fill ' + cls + '" style="width:' + value + '%"></div></div>' +
-      '<span class="sub-score-val">' + value + '</span>' +
-      '</div>';
-  }
-
-  function renderSubScore(label, value, max) {
-    var pct = Math.round((value / max) * 100);
-    var cls = pct >= 70 ? 'high' : (pct < 30 ? 'low' : '');
-    return '<div class="sub-score-row" style="padding-left:20px;">' +
-      '<span class="sub-score-label" style="font-size:0.65rem;width:70px;">↳ ' + label + '</span>' +
-      '<div class="score-bar-wrap"><div class="score-bar-fill ' + cls + '" style="width:' + pct + '%"></div></div>' +
-      '<span class="sub-score-val">' + value + '/' + max + '</span>' +
-      '</div>';
-  }
-
   function renderDemandDetail(dem) {
-    var trendTags = (dem.trends || []).map(function(t) {
-      return '<span class="trend-tag">' + t + '</span>';
-    }).join('');
-
+    var trends = dem.trends || [];
+    var trendsEn = dem.trends_en || dem.trends || [];
+    var trendNames = (LANG === 'en') ? trendsEn : trends;
+    var stageLabel = stageLabels[dem.stage] || dem.stage || '?';
     var buyerText = (LANG === 'en' && dem.target_buyer_en) ? dem.target_buyer_en : (dem.target_buyer || '');
 
-    return '<td colspan="10">' +
-      '<div class="detail-grid">' +
-      // 左栏：趋势
-      '<div class="detail-section">' +
-        '<h4>' + t('detailTrends') + '</h4>' +
-        '<div class="trend-tags">' + trendTags + '</div>' +
-        (buyerText ? '<div style="margin-top:10px;font-size:0.7rem;color:var(--color-text-muted);">' + t('detailTargetBuyer') + ': <strong style="color:var(--color-text);">' + buyerText + '</strong></div>' : '') +
-        '<div style="margin-top:8px;font-size:0.62rem;color:var(--color-text-muted);">Total signals: <strong>' + (dem.total_appearances||0) + '</strong> over <strong>' + (dem.distinct_days||0) + '</strong> days</div>' +
-      '</div>' +
-      // 右栏：评分
-      '<div class="detail-section">' +
-        '<h4>' + t('detailBreakdown') + '</h4>' +
-        renderScoreBar('Market', dem.market_score || 0) +
-        renderSubScore('Trend', dem.trend_score || 0, 10) +
-        renderSubScore('Growth', dem.growth_score || 0, 10) +
-        renderSubScore('Consistency', dem.consistency_score || 0, 10) +
-        '<div style="margin-top:8px;"></div>' +
-        renderScoreBar('Business', dem.business_score || 0) +
-        '<div class="formula-text">Pain f' + (dem.pain_frequency||'?') + '×s' + (dem.pain_severity||'?') + ' = ' + ((dem.pain_score||0).toFixed(1)) + ' | Pay b' + (dem.pay_budget||'?') + '×u' + (dem.pay_urgency||'?') + ' = ' + ((dem.pay_score||0).toFixed(1)) + '</div>' +
-        '<div class="meta-row">' +
-          '<span>' + t('detailAiReplace') + ': <strong>' + (dem.ai_replaceability||'?') + '/10</strong></span>' +
-          '<span>' + t('detailCompetition') + ': <strong>' + (dem.competition||0) + '</strong></span>' +
-          '<span>' + t('detailConfidence') + ': <strong>' + (dem.confidence||0) + '%</strong></span>' +
-          '<span>' + t('detailStage') + ': <strong>' + (stageLabels[dem.stage] || dem.stage || '?') + '</strong></span>' +
+    var trendRows = trendNames.map(function(name) {
+      return '<div class="trend-item">' +
+        '<div class="trend-name">' + name + '</div>' +
+        '<div class="trend-metrics">' +
+          '<span>' + t('demMarket') + ' <strong>' + (dem.market_score || 0) + '</strong></span>' +
+          '<span>' + t('demBusiness') + ' <strong>' + (dem.business_score || 0) + '</strong></span>' +
+          '<span>' + t('demCompetition') + ' <strong>' + (dem.competition || 0) + '</strong></span>' +
+          '<span>' + t('demAiProof') + ' <strong>' + (dem.ai_replaceability || '?') + '/10</strong></span>' +
+          '<span>' + t('demConfidence') + ' <strong>' + (dem.confidence || 0) + '%</strong></span>' +
+          '<span>' + t('demStage') + ' <strong>' + stageLabel + '</strong></span>' +
+          '<span>' + t('demIndex') + ' <strong>' + (dem.opportunity_index || 0) + '</strong></span>' +
         '</div>' +
-      '</div>' +
+      '</div>';
+    }).join('');
+
+    return '<td colspan="10">' +
+      '<div class="detail-panel">' +
+        trendRows +
+        '<div class="detail-footer">' +
+          (buyerText ? '<span>' + t('detailTargetBuyer') + ': <strong>' + buyerText + '</strong></span>' : '') +
+          '<span>Pain f' + (dem.pain_frequency||'?') + '×s' + (dem.pain_severity||'?') + ' = <strong>' + ((dem.pain_score||0).toFixed(1)) + '</strong></span>' +
+          '<span>Pay b' + (dem.pay_budget||'?') + '×u' + (dem.pay_urgency||'?') + ' = <strong>' + ((dem.pay_score||0).toFixed(1)) + '</strong></span>' +
+          '<span>Signals <strong>' + (dem.total_appearances||0) + '</strong> / ' + (dem.distinct_days||0) + 'd</span>' +
+        '</div>' +
       '</div>' +
       '</td>';
   }
