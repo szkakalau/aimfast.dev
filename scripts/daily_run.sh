@@ -93,6 +93,17 @@ else
     log "  [Process] FAIL"
 fi
 
+# ─── Step 2.5: Enrich Top Signals with /last30days ───
+
+log ""
+log "--- Step 2.5: Community Enrichment (/last30days) ---"
+
+if $PYTHON -m scripts.enrich_signals 2>&1; then
+    log "  [Enrich] OK"
+else
+    log "  [Enrich] WARN (non-fatal)"
+fi
+
 # ─── Step 3: Daily Report ───
 
 log ""
@@ -244,6 +255,13 @@ if [ "$(date +%u)" -eq 7 ]; then
         log "  [Weekly] OK"
     else
         log "  [Weekly] FAIL"
+    fi
+
+    # Weekly community deep-dive (30-day lookback on the week's hottest topic)
+    if $PYTHON -m scripts.enrich_signals --weekly 2>&1; then
+        log "  [WeeklyEnrich] OK"
+    else
+        log "  [WeeklyEnrich] WARN (non-fatal)"
     fi
 fi
 

@@ -88,6 +88,17 @@
     "api_key": "",
     "monthly_budget_usd": 20
   },
+  "enrichment": {
+    "_comment": "/last30days 社区语境丰富 — 对当日 Top 信号运行社区研究引擎",
+    "enabled": true,
+    "engine_path": "auto",
+    "python_path": "auto",
+    "max_signals": 2,
+    "min_score": 20,
+    "timeout_per_signal_s": 180,
+    "max_items": 15,
+    "memory_dir": "~/Documents/Last30Days"
+  },
   "content": {
     "planet_article": {
       "type_distribution": {

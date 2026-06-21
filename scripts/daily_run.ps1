@@ -111,6 +111,22 @@ try {
     Write-Log "  [Process] FAIL: $_"
 }
 
+# --- Step 2.5: Enrich Top Signals with /last30days ---
+
+Write-Log ""
+Write-Log "--- Step 2.5: Community Enrichment (/last30days) ---"
+
+try {
+    $output = & $Python -m scripts.enrich_signals 2>&1
+    if ($LASTEXITCODE -eq 0) {
+        Write-Log "  [Enrich] OK"
+    } else {
+        Write-Log "  [Enrich] WARN (non-fatal, exit=$LASTEXITCODE)"
+    }
+} catch {
+    Write-Log "  [Enrich] FAIL (non-fatal): $_"
+}
+
 # --- Step 3: Daily Report ---
 
 Write-Log ""
@@ -287,6 +303,18 @@ if ($DayOfWeek -eq 'Sunday') {
         Write-Log "  [Weekly] OK"
     } catch {
         Write-Log "  [Weekly] FAIL: $_"
+    }
+
+    # Weekly community deep-dive (30-day lookback on the week's hottest topic)
+    try {
+        $output = & $Python -m scripts.enrich_signals --weekly 2>&1
+        if ($LASTEXITCODE -eq 0) {
+            Write-Log "  [WeeklyEnrich] OK"
+        } else {
+            Write-Log "  [WeeklyEnrich] WARN (non-fatal, exit=$LASTEXITCODE)"
+        }
+    } catch {
+        Write-Log "  [WeeklyEnrich] FAIL (non-fatal): $_"
     }
 }
 
