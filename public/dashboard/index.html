@@ -2046,6 +2046,13 @@ function renderAll(data) {
     var demTbody = document.getElementById('demand-body');
     demands.forEach(function(dem) {
       var tr = document.createElement('tr');
+      tr.className = 'demand-row';
+      tr.setAttribute('data-demand-id', dem.id);
+      tr.onclick = function(e) {
+        // Don't toggle if watch button was clicked
+        if (e.target.closest('.btn-watch')) return;
+        toggleDemandDetail(dem.id);
+      };
 
       var marketTooltip = 'Trend:' + (dem.trend_score||0) + ' Growth:' + (dem.growth_score||0) + ' Consistency:' + (dem.consistency_score||0) + ' (samples:' + (dem.total_appearances||0) + ')';
       var businessTooltip = 'Pain(f×s):' + (dem.pain_frequency||'?') + '×' + (dem.pain_severity||'?') + ' Pay(b×u):' + (dem.pay_budget||'?') + '×' + (dem.pay_urgency||'?');
@@ -2070,7 +2077,7 @@ function renderAll(data) {
       var watchIcon = isWatched(dem.id) ? '★' : '☆';
       tr.innerHTML =
         '<td><button class="btn-watch" id="watch-btn-' + dem.id + '" onclick="toggleWatch(\'' + dem.id + '\');event.stopPropagation();" title="Toggle watch">' + watchIcon + '</button></td>' +
-        '<td><strong>' + dmName + '</strong><br><span class="muted">' + descText + buyerInfo + '</span>' + trendsHtml + '</td>' +
+        '<td><span class="expand-caret">▸</span><strong>' + dmName + '</strong><br><span class="muted">' + descText + buyerInfo + '</span>' + trendsHtml + '</td>' +
         '<td>' + (deltaIcons[dem.delta] || dem.delta) + '</td>' +
         '<td class="num" title="' + marketTooltip + '">' + (dem.market_score || 0) + '</td>' +
         '<td class="num" title="' + businessTooltip + '">' + (dem.business_score || 0) + '</td>' +
