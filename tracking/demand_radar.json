@@ -2,7 +2,7 @@
   "_schema": "需求雷达 v3.0 — Market/Business 分离 + Confidence + Stage",
   "_version": "3.0",
   "_formula": "Market=(Trend×0.5+Growth×0.3+Consistency×0.2)×100, Business=(Pain×0.5+Pay×0.5)×100, Opportunity=Market×0.6+Business×0.4, Confidence=log2(n+1)×20",
-  "generated_at": "2026-06-21T08:09:42.340712+08:00",
+  "generated_at": "2026-06-21T10:58:16.945518+08:00",
   "weeks": [
     "2026-05-25",
     "2026-06-01",
@@ -114,15 +114,15 @@
       "snapshots": {
         "2026-06-01": 2,
         "2026-06-08": 0,
-        "2026-06-15": 4
+        "2026-06-15": 5
       },
-      "total_signals": 14,
+      "total_signals": 15,
       "delta": "rising",
-      "market_score": 26,
+      "market_score": 27,
       "business_score": 71,
       "competition": 60,
       "ai_replaceability": 5,
-      "confidence": 78,
+      "confidence": 80,
       "stage": "forming",
       "target_buyer": "独立开发者、SaaS 创业者",
       "description_en": "Auto lead gen, AI sales agents, monetizing open source.",
@@ -151,7 +151,7 @@
       "pain_severity": 9,
       "pay_budget": 7,
       "pay_urgency": 10,
-      "total_appearances": 14,
+      "total_appearances": 15,
       "distinct_days": 3
     },
     {
@@ -210,9 +210,9 @@
       "snapshots": {
         "2026-06-01": 17,
         "2026-06-08": 18,
-        "2026-06-15": 33
+        "2026-06-15": 32
       },
-      "total_signals": 88,
+      "total_signals": 87,
       "delta": "rising",
       "market_score": 91,
       "business_score": 56,
@@ -247,7 +247,7 @@
       "pain_severity": 8,
       "pay_budget": 7,
       "pay_urgency": 7,
-      "total_appearances": 88,
+      "total_appearances": 87,
       "distinct_days": 4
     }
   ],
