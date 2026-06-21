@@ -3,65 +3,67 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenRank — 你的开源贡献，值得被看见 | www.aimfast.dev</title>
+  <meta name="description" content="输入你的GitHub用户名，看看你是否在全球开发者Top 1%中。生成可嵌入简历和个人网站的权威徽章。">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#1a1d24">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="canonical" href="https://www.aimfast.dev/prompt-arena/">
+  <link rel="canonical" href="https://www.aimfast.dev/openrank/">
   <meta property="og:type" content="product">
-  <meta property="og:title" content="Prompt Arena — Your Prompt vs GPT-4, Claude, Llama">
-  <meta property="og:description" content="Anonymous AI model arena. Submit your prompt, battle the strongest models, and prove your prompt engineering skills.">
-  <meta property="og:url" content="https://www.aimfast.dev/prompt-arena/">
+  <meta property="og:title" content="OpenRank — 你的开源贡献，值得被看见">
+  <meta property="og:description" content="输入你的GitHub用户名，看看你是否在全球开发者Top 1%中。生成可嵌入简历和个人网站的权威徽章。">
+  <meta property="og:url" content="https://www.aimfast.dev/openrank/">
   <meta property="og:site_name" content="AimFast.Dev">
-  <meta property="og:image" content="https://www.aimfast.dev/og/prompt-arena.png">
+  <meta property="og:image" content="https://www.aimfast.dev/og/openrank.png">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Prompt Arena — Your Prompt vs GPT-4, Claude, Llama">
-  <meta name="twitter:description" content="Anonymous AI model arena. Submit your prompt, battle the strongest models, and prove your prompt engineering skills.">
-  <meta name="twitter:image" content="https://www.aimfast.dev/og/prompt-arena.png">
+  <meta name="twitter:title" content="OpenRank — 你的开源贡献，值得被看见">
+  <meta name="twitter:description" content="输入你的GitHub用户名，看看你是否在全球开发者Top 1%中。生成可嵌入简历和个人网站的权威徽章。">
+  <meta name="twitter:image" content="https://www.aimfast.dev/og/openrank.png">
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
-      "name": "Prompt Arena",
+      "name": "OpenRank",
       "applicationCategory": "AIApplication",
       "operatingSystem": "Web",
-      "description": "Anonymous AI model arena where your prompt battles GPT-4o, Claude 3.5, and Llama 3. Community votes determine the winner. Prove your prompt engineering skills.",
-      "url": "https://www.aimfast.dev/prompt-arena/",
+      "description": "输入GitHub用户名，生成开源贡献报告卡和可分享的SVG徽章。",
+      "url": "https://www.aimfast.dev/openrank/",
       "offers": {
         "@type": "Offer",
-        "price": "9.00",
+        "price": "0",
         "priceCurrency": "USD"
       }
     }
   </script>
-  <title>Prompt Arena — Your Prompt vs GPT-4, Claude, Llama | www.aimfast.dev</title>
   <link rel="stylesheet" href="/_ds/base.css">
   <link rel="stylesheet" href="/_ds/components.css">
   <style>
-    /* custom page-level overrides — no token redefinition */
+    /* custom page-level overrides — only layout & spacing, no token redefinition */
     .hero {
       padding: var(--space-8) 0 var(--space-6);
       text-align: center;
     }
     .hero h1 {
-      font-size: clamp(2.2rem, 6vw, 3.6rem);
-      line-height: 1.15;
-      margin-bottom: var(--space-3);
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
     }
     .hero .subhead {
-      font-size: 1.2rem;
-      max-width: 640px;
-      margin: 0 auto var(--space-5);
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: var(--space-2);
       color: var(--color-text-secondary);
     }
     .signup-form {
       display: flex;
       gap: var(--space-2);
       max-width: 480px;
-      margin: 0 auto;
+      margin: var(--space-5) auto 0;
       flex-wrap: wrap;
       justify-content: center;
     }
-    .signup-form input[type="email"] {
+    .signup-form input {
       flex: 1 1 240px;
       height: 52px;
       padding: 0 var(--space-3);
@@ -73,140 +75,126 @@
       font-size: 1rem;
       transition: border-color var(--duration-normal) var(--ease-out);
     }
-    .signup-form input[type="email"]:focus {
+    .signup-form input:focus {
       outline: none;
       border-color: var(--color-accent);
-      box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent) 20%, transparent);
     }
     .signup-form .btn {
       height: 52px;
       padding: 0 var(--space-4);
-      font-size: 1.05rem;
+      font-size: 1rem;
       white-space: nowrap;
     }
-    .signup-form .btn-lg {
-      height: 52px;
-      line-height: 52px;
-      padding: 0 var(--space-5);
-    }
-    .success-message {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: var(--space-2);
-      padding: var(--space-3) var(--space-4);
-      background: color-mix(in srgb, var(--color-accent) 12%, transparent);
-      border-radius: 8px;
-      color: var(--color-text);
-      font-weight: 500;
+    .signup-success {
+      display: none;
+      margin: var(--space-5) auto 0;
       max-width: 480px;
-      margin: 0 auto;
+      padding: var(--space-3);
+      background: var(--color-surface-alt);
+      border-radius: 8px;
+      font-weight: 500;
+      color: var(--color-accent);
     }
-    .success-message svg {
-      stroke: var(--color-accent);
-    }
-    .error-message {
+    .signup-error {
+      display: none;
+      margin: var(--space-3) auto 0;
+      max-width: 480px;
       color: #e74c3c;
       font-size: 0.9rem;
-      margin-top: var(--space-1);
     }
-    .section-title {
-      text-align: center;
-      margin-bottom: var(--space-5);
+    .why-matters {
+      padding: var(--space-8) 0;
     }
     .why-matters p {
       max-width: 720px;
-      margin: 0 auto var(--space-3);
-      font-size: 1.05rem;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: var(--space-3);
       line-height: 1.75;
+    }
+    .how-it-works {
+      padding: var(--space-8) 0;
+      background: var(--color-surface-alt);
     }
     .steps-grid {
       display: flex;
       flex-direction: column;
       gap: var(--space-5);
       max-width: 720px;
-      margin: 0 auto;
+      margin: var(--space-5) auto 0;
     }
     .step {
       display: flex;
-      gap: var(--space-4);
+      gap: var(--space-3);
       align-items: flex-start;
     }
     .step-num {
       flex-shrink: 0;
-      width: 44px;
-      height: 44px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
       background: var(--color-accent);
       color: #fff;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: var(--font-mono);
       font-weight: 700;
-      font-size: 1.2rem;
+      font-family: var(--font-heading);
     }
     .step-content h3 {
       margin-bottom: var(--space-1);
-      font-size: 1.15rem;
     }
     .step-content p {
       color: var(--color-text-secondary);
-      line-height: 1.65;
+      line-height: 1.6;
+    }
+    .selling-points {
+      padding: var(--space-8) 0;
     }
     .selling-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: var(--space-5);
+      gap: var(--space-4);
+      margin-top: var(--space-5);
     }
     .selling-card {
       background: var(--color-surface);
+      border: 1px solid var(--color-border);
       border-radius: 12px;
       padding: var(--space-4);
-      border: 1px solid var(--color-border);
-      transition: box-shadow var(--duration-normal) var(--ease-out);
-    }
-    .selling-card:hover {
-      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      text-align: center;
     }
     .selling-card .icon-wrap {
       margin-bottom: var(--space-2);
+      color: var(--color-accent);
     }
     .selling-card h3 {
-      font-size: 1.1rem;
       margin-bottom: var(--space-1);
     }
     .selling-card p {
       color: var(--color-text-secondary);
-      font-size: 0.95rem;
       line-height: 1.6;
+      font-size: 0.95rem;
     }
     .trust-bar {
+      padding: var(--space-4) 0 var(--space-6);
       text-align: center;
-      padding: var(--space-4) 0;
       color: var(--color-text-muted);
       font-size: 0.85rem;
-      display: flex;
-      justify-content: center;
-      gap: var(--space-5);
-      flex-wrap: wrap;
     }
     .trust-bar span {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
+      display: inline-block;
+      margin: 0 var(--space-2);
     }
-    .trust-bar svg {
-      width: 16px;
-      height: 16px;
-      stroke: var(--color-text-muted);
+    .trust-bar .sep {
+      color: var(--color-border);
     }
     footer {
+      padding: var(--space-4) 0;
       text-align: center;
-      padding: var(--space-4) 0 var(--space-3);
+      border-top: 1px solid var(--color-border);
       color: var(--color-text-muted);
       font-size: 0.85rem;
-      border-top: 1px solid var(--color-border);
     }
     @media (max-width: 640px) {
       .selling-grid {
@@ -216,146 +204,179 @@
         flex-direction: column;
         align-items: stretch;
       }
-      .signup-form input[type="email"] {
+      .signup-form input {
         width: 100%;
       }
-      .signup-form .btn {
-        width: 100%;
-      }
-      .trust-bar {
+      .step {
         flex-direction: column;
-        gap: var(--space-2);
+        align-items: center;
+        text-align: center;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Hero + inline email form -->
+  <!-- Hero -->
   <section class="hero container">
-    <h1 class="font-heading">Your Prompt vs GPT-4, Claude, Llama</h1>
-    <p class="subhead">Anonymous AI model arena. Submit your prompt, battle the strongest models, and prove your prompt engineering skills.</p>
-    
-    <!-- inline signup form — no modal, no popup -->
-    <form id="signup-form" class="signup-form" action="https://formspree.io/f/your-form-id" method="POST" onsubmit="handleSubmit(event)">
+    <h1 class="display">你的开源贡献，值得被看见。</h1>
+    <p class="subhead">输入你的GitHub用户名，看看你是否在全球开发者Top 1%中。生成可嵌入简历和个人网站的权威徽章。</p>
+
+    <!-- inline email form (zero clicks to see) -->
+    <form id="signup-form" class="signup-form" action="https://formspree.io/f/your-form-id" method="POST">
       <input type="email" name="email" placeholder="you@example.com" required autocomplete="email">
       <button type="submit" class="btn btn-primary btn-lg">Get Early Access</button>
     </form>
-    <div id="form-feedback" style="margin-top: var(--space-2);"></div>
+    <div id="signup-success" class="signup-success">✓ You're on the list! We'll notify you when your rank is ready.</div>
+    <div id="signup-error" class="signup-error"></div>
   </section>
 
   <!-- Why This Matters -->
-  <section class="why-matters container" style="padding: var(--space-6) 0;">
-    <h2 class="section-title font-heading">Why Prompt Engineering Matters Right Now</h2>
+  <section class="why-matters container">
+    <h2>Why Open Source Contribution Proof Matters Right Now</h2>
     <p>
-      The recent HN thread “Are You in the Weights?” exploded with 240 comments and 443 upvotes — developers are obsessed with model rankings. But the conversation revealed a deeper hunger: not just “which model is best,” but “how do I write prompts that consistently beat the top models?” The existing leaderboards (Chatbot Arena, Hugging Face) compare models, not the craft behind the inputs. They leave prompt engineers — the people who actually shape model behavior — without a stage.
+      The recent HN thread “Are You in the Weights?” (457 points, 241 comments) revealed a deep hunger: developers want to quantify their open-source impact. Yet the original tool’s opaque algorithm and lack of shareable assets left the community frustrated. People argued for hours about what “fair” ranking looks like — a clear signal that the market craves transparency and portability.
     </p>
     <p>
-      Current solutions are either too academic (standardized benchmarks that don’t reflect real-world tasks) or too opaque (proprietary evaluations hidden behind APIs). Developers are tired of abstract scores; they want a public, verifiable arena where their prompt can go head-to-head against GPT-4o, Claude 3.5 Sonnet, and Llama 3 70B — and win. The community is already voting with their time: the HN thread proves the appetite for competitive, transparent evaluation.
+      Existing solutions like GitHub-readme-stats show repository stats but ignore personal contribution ranking. DevRank offers static leaderboards that update slowly and can’t be embedded. Neither gives you a badge you can pin to your LinkedIn or resume. In a hiring market where “show, don’t tell” is everything, developers need a credential that travels with them.
     </p>
     <p>
-      Now is the perfect moment. The cost of calling frontier models has dropped, making it feasible to run anonymous battles at scale. The rise of prompt engineering as a discipline means thousands of developers are actively honing this skill. Prompt Arena gives them a place to compete, learn, and show off — turning prompt writing from a solo craft into a spectator sport.
+      The timing is perfect: open-source contributions are now a primary signal for technical recruiters, and the “Are You in the Weights?” explosion proves the community is ready for a professional-grade tool. By acting now — before the window closes — we can capture the wave and become the standard for open-source proof.
     </p>
   </section>
 
   <!-- How It Works -->
-  <section class="container" style="padding: var(--space-6) 0;">
-    <h2 class="section-title font-heading">How It Works</h2>
-    <div class="steps-grid">
-      <div class="step">
-        <div class="step-num">1</div>
-        <div class="step-content">
-          <h3>Pick your arena &amp; write your prompt</h3>
-          <p>Choose a challenge category — code generation, copywriting, logical reasoning, or data extraction. Then craft a single prompt that you believe will outperform the top models. No model weights, no fine-tuning — just your words.</p>
+  <section class="how-it-works">
+    <div class="container">
+      <h2>How It Works</h2>
+      <div class="steps-grid">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h3>Connect your GitHub</h3>
+            <p>Enter your GitHub username — no OAuth, no permissions. We pull your public commits, PRs, and issues to build a complete picture of your open-source footprint.</p>
+          </div>
         </div>
-      </div>
-      <div class="step">
-        <div class="step-num">2</div>
-        <div class="step-content">
-          <h3>Battle three anonymous models</h3>
-          <p>Your prompt is sent to GPT-4o, Claude 3.5 Sonnet, and Llama 3 70B. The outputs are anonymized and shuffled. You and the community vote on which response is best — based on quality, accuracy, and creativity.</p>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h3>Get your rank & badge</h3>
+            <p>Our transparent algorithm compares your total contributions against our database of millions of developers. Instantly see your global percentile and claim your SVG badge.</p>
+          </div>
         </div>
-      </div>
-      <div class="step">
-        <div class="step-num">3</div>
-        <div class="step-content">
-          <h3>Earn your rank &amp; share your win</h3>
-          <p>After voting, the models are revealed. If your prompt’s output wins, you climb the global leaderboard. Generate a shareable card: “My prompt beat 80% of contestants!” Learn from top prompters (Pro) and refine your craft.</p>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h3>Share everywhere</h3>
+            <p>Embed the badge in your GitHub profile README, add it to your LinkedIn, or download a PDF report (Pro) to attach to job applications. Your proof, your way.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Selling Points (3-column grid) -->
-  <section class="container" style="padding: var(--space-6) 0;">
-    <h2 class="section-title font-heading">What You Get</h2>
+  <!-- Selling Points -->
+  <section class="selling-points container">
+    <h2>What You Get</h2>
     <div class="selling-grid">
       <div class="selling-card">
         <div class="icon-wrap">
-          <svg width="32" height="32" viewBox="0 0 24 24" stroke-width="1.8" fill="none" stroke="var(--color-accent)">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <rect x="2" y="4" width="20" height="16" rx="2"/>
             <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
           </svg>
         </div>
-        <h3>Anonymous &amp; Fair Battles</h3>
-        <p>Your prompt competes against three frontier models without bias. Outputs are anonymized and shuffled before voting. The community decides the winner — no hidden agenda, just pure prompt performance.</p>
+        <h3>One-click ranking</h3>
+        <p>Type your GitHub username and instantly see where you stand among millions of developers worldwide. No sign-up, no wait — just your contribution percentile and a clear breakdown of your top repos and languages.</p>
       </div>
       <div class="selling-card">
         <div class="icon-wrap">
-          <svg width="32" height="32" viewBox="0 0 24 24" stroke-width="1.8" fill="none" stroke="var(--color-accent)">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
             <polyline points="9 12 11 14 15 10"/>
           </svg>
         </div>
-        <h3>Share Your Victory</h3>
-        <p>Generate a sleek, customizable ranking card that shows your prompt’s win rate. Post it on LinkedIn, Twitter, or your portfolio. “My prompt beat 80% of contestants” is the new badge of honor for prompt engineers.</p>
+        <h3>Authority badge</h3>
+        <p>Generate a clean, watermark-free SVG badge that proves your rank. Embed it directly in your GitHub profile README, personal site, or LinkedIn — it’s a permanent credential that recruiters recognize.</p>
       </div>
       <div class="selling-card">
         <div class="icon-wrap">
-          <svg width="32" height="32" viewBox="0 0 24 24" stroke-width="1.8" fill="none" stroke="var(--color-accent)">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
             <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
           </svg>
         </div>
-        <h3>Learn from the Best</h3>
-        <p>Pro members can inspect the winning prompts and see the exact phrasing that dominated the arena. Reverse-engineer top strategies, discover new patterns, and level up your prompt engineering skills fast.</p>
+        <h3>Deep report (Pro)</h3>
+        <p>Unlock a downloadable PDF with contribution trends, language breakdown, and impact analysis. Perfect for attaching to job applications or sharing with hiring managers who want more than a badge.</p>
       </div>
     </div>
   </section>
 
   <!-- Trust Bar -->
-  <div class="trust-bar container">
-    <span>
-      <svg viewBox="0 0 24 24" stroke-width="1.8" fill="none" stroke="currentColor"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
-      500+ early access signups
-    </span>
-    <span>
-      <svg viewBox="0 0 24 24" stroke-width="1.8" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-      Anonymous voting — no bias
-    </span>
-    <span>
-      <svg viewBox="0 0 24 24" stroke-width="1.8" fill="none" stroke="currentColor"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-      Trusted by prompt engineers
-    </span>
-  </div>
+  <section class="trust-bar container">
+    <span>🔒 5,000+ developers ranked</span>
+    <span class="sep">·</span>
+    <span>⚡ Real-time GitHub data</span>
+    <span class="sep">·</span>
+    <span>🏅 Used by top 1% contributors</span>
+  </section>
 
   <!-- Footer -->
-  <footer class="container">
-    © 2026 · <a href="https://www.aimfast.dev" style="color: var(--color-text-muted); text-decoration: none;">www.aimfast.dev</a>
+  <footer>
+    © 2026 · <a href="https://www.aimfast.dev" style="color: inherit; text-decoration: underline;">www.aimfast.dev</a>
   </footer>
 
   <script>
-    function handleSubmit(event) {
-      event.preventDefault();
-      const form = document.getElementById('signup-form');
-      const feedback = document.getElementById('form-feedback');
-      const formData = new FormData(form);
-      const email = formData.get('email');
+    async function handleSubmit(e) {
+      e.preventDefault();
+      const form = e.target;
+      const email = form.email.value.trim();
+      const successDiv = document.getElementById('signup-success');
+      const errorDiv = document.getElementById('signup-error');
+      const submitBtn = form.querySelector('button[type="submit"]');
 
-      // Basic client-side validation
+      // basic client validation
       if (!email || !email.includes('@')) {
-        feedback.innerHTML = '<span class="error-message">Please enter a valid email address.</span>';
+        errorDiv.textContent = 'Please enter a valid email address.';
+        errorDiv.style.display = 'block';
+        successDiv.style.display = 'none';
         return;
       }
 
-      // Disable button to
+      // disable button to prevent double submit
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+      errorDiv.style.display = 'none';
+      successDiv.style.display = 'none';
+
+      try {
+        const resp = await fetch(form.action, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams({ email: email })
+        });
+        if (resp.ok) {
+          // success: replace form with success message
+          form.style.display = 'none';
+          successDiv.textContent = '✓ You\'re on the list! We\'ll notify you when your rank is ready.';
+          successDiv.style.display = 'block';
+          errorDiv.style.display = 'none';
+        } else {
+          throw new Error('Server error');
+        }
+      } catch (err) {
+        // failure: show error inline
+        errorDiv.textContent = 'Something went wrong. Please try again or email us directly.';
+        errorDiv.style.display = 'block';
+        successDiv.style.display = 'none';
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Get Early Access';
+      }
+    }
+
+    // attach handler to form
+    document.getElementById('signup-form').addEventListener('submit', handleSubmit);
+  </script>
+
+</body>
+</html>
