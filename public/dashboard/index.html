@@ -522,6 +522,12 @@
     color: var(--color-text);
     font-weight: 600;
   }
+  .trend-sig {
+    font-size: 0.62rem;
+    color: var(--color-text-muted);
+    font-family: var(--font-mono);
+    margin-left: 6px;
+  }
 
   .detail-footer {
     margin-top: var(--space-2);
@@ -1938,17 +1944,40 @@ function renderAll(data) {
     var stageLabel = stageLabels[dem.stage] || dem.stage || '?';
     var buyerText = (LANG === 'en' && dem.target_buyer_en) ? dem.target_buyer_en : (dem.target_buyer || '');
 
+    // Build lookup for per-trend scores (v3.1+)
+    var tdMap = {};
+    var hasTrendDetails = false;
+    (dem.trend_details || []).forEach(function(td) {
+      tdMap[td.name] = td;
+      hasTrendDetails = true;
+    });
+
+    var deltaArrows = { rising: '▲', falling: '▼', stable: '→', new: '●' };
+
     var trendRows = trendNames.map(function(name) {
+      var td = tdMap[name];
+
+      // Per-trend scores with fallback to demand-level
+      var mkt = td ? (td.market_score || 0) : (dem.market_score || 0);
+      var biz = td ? (td.business_score || 0) : (dem.business_score || 0);
+      var cmp = td ? (td.competition || 0) : (dem.competition || 0);
+      var ai  = td ? (td.ai_replaceability != null ? td.ai_replaceability : '?') : (dem.ai_replaceability || '?');
+      var cnf = td ? (td.confidence || 0) : (dem.confidence || 0);
+      var stg = td ? (stageLabels[td.stage] || td.stage || '?') : stageLabel;
+      var opp = td ? (td.opportunity_index || 0) : (dem.opportunity_index || 0);
+      var deltaIcon = td ? (deltaArrows[td.delta] || '') : '';
+      var sigInfo = td ? ' <span class="trend-sig">' + (td.total_appearances || 0) + ' sig</span>' : '';
+
       return '<div class="trend-item">' +
-        '<div class="trend-name">' + name + '</div>' +
+        '<div class="trend-name">' + deltaIcon + ' ' + name + sigInfo + '</div>' +
         '<div class="trend-metrics">' +
-          '<span>' + t('demMarket') + ' <strong>' + (dem.market_score || 0) + '</strong></span>' +
-          '<span>' + t('demBusiness') + ' <strong>' + (dem.business_score || 0) + '</strong></span>' +
-          '<span>' + t('demCompetition') + ' <strong>' + (dem.competition || 0) + '</strong></span>' +
-          '<span>' + t('demAiProof') + ' <strong>' + (dem.ai_replaceability || '?') + '/10</strong></span>' +
-          '<span>' + t('demConfidence') + ' <strong>' + (dem.confidence || 0) + '%</strong></span>' +
-          '<span>' + t('demStage') + ' <strong>' + stageLabel + '</strong></span>' +
-          '<span>' + t('demIndex') + ' <strong>' + (dem.opportunity_index || 0) + '</strong></span>' +
+          '<span>' + t('demMarket') + ' <strong>' + mkt + '</strong></span>' +
+          '<span>' + t('demBusiness') + ' <strong>' + biz + '</strong></span>' +
+          '<span>' + t('demCompetition') + ' <strong>' + cmp + '</strong></span>' +
+          '<span>' + t('demAiProof') + ' <strong>' + ai + '/10</strong></span>' +
+          '<span>' + t('demConfidence') + ' <strong>' + cnf + '%</strong></span>' +
+          '<span>' + t('demStage') + ' <strong>' + stg + '</strong></span>' +
+          '<span>' + t('demIndex') + ' <strong>' + opp + '</strong></span>' +
         '</div>' +
       '</div>';
     }).join('');
@@ -1960,7 +1989,7 @@ function renderAll(data) {
           (buyerText ? '<span>' + t('detailTargetBuyer') + ': <strong>' + buyerText + '</strong></span>' : '') +
           '<span>Pain f' + (dem.pain_frequency||'?') + '×s' + (dem.pain_severity||'?') + ' = <strong>' + ((dem.pain_score||0).toFixed(1)) + '</strong></span>' +
           '<span>Pay b' + (dem.pay_budget||'?') + '×u' + (dem.pay_urgency||'?') + ' = <strong>' + ((dem.pay_score||0).toFixed(1)) + '</strong></span>' +
-          '<span>Signals <strong>' + (dem.total_appearances||0) + '</strong> / ' + (dem.distinct_days||0) + 'd</span>' +
+          '<span>Demand total <strong>' + (dem.total_appearances||0) + '</strong> sig / ' + (dem.distinct_days||0) + 'd</span>' +
         '</div>' +
       '</div>' +
       '</td>';

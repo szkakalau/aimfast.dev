@@ -11,6 +11,13 @@
       "description": "开发者抱怨 Claude 账单爆炸、Token 消耗失控、API 费用月月翻倍",
       "description_en": "Developers hate AI bills. Token costs spiraling out of control.",
       "trends": ["Cost Control", "Token Optimization", "Local Model Hybrid", "Model Routing", "Prompt Compression"],
+      "trend_keywords": {
+        "Cost Control": ["cost control", "spend management", "budget tracking", "bill shock", "cost spike", "spending limit", "cost monitor", "cost explosion", "runaway cost"],
+        "Token Optimization": ["token optimiz", "token count", "token limit", "context window", "reduce token", "prompt token", "token usage", "input token", "output token", "token waste"],
+        "Local Model Hybrid": ["local model", "ollama", "llama local", "local infer", "air-gapped", "offline model", "on-premise", "self-hosted", "private deployment", "edge infer"],
+        "Model Routing": ["model router", "model gateway", "openrouter", "least expensive", "fallback model", "model select", "smart routing", "cheapest model", "request routing"],
+        "Prompt Compression": ["prompt compress", "context compress", "prompt cache", "semantic compress", "llmlingua", "prompt short", "compress prompt", "prompt summariz", "context pruning"]
+      },
       "keywords": ["cost", "token", "price", "pricing", "bill", "budget", "saving", "spend", "expensive", "cheap", "optimiz", "waste", "local model", "model routing", "hybrid"],
       "pain_signals": ["too expensive", "cost too much", "waste token", "overpriced", "can't afford", "bill shock", "runaway cost", "billing", "rate limit"],
       "buyer_signals": ["enterprise", "team", "startup", "api key", "production", "scale", "budget", "roi", "save money"],
@@ -28,6 +35,13 @@
       "description": "Reddit/Twitter 自动获客、AI 销售代理、开源项目商业化变现",
       "description_en": "Auto lead gen, AI sales agents, monetizing open source.",
       "trends": ["Lead Generation", "Sales Agents", "AI Prospecting", "Open Source Monetization", "Content Marketing AI"],
+      "trend_keywords": {
+        "Lead Generation": ["lead gen", "auto lead", "customer find", "prospecting", "lead capture", "user acquisition", "outreach auto", "lead magnet", "customer acquisition"],
+        "Sales Agents": ["sales agent", "ai sales", "sales bot", "sales automation", "sales pipeline", "deal closer", "sales demo", "sales assistant"],
+        "AI Prospecting": ["prospect", "cold email", "cold outreach", "social selling", "linkedin auto", "twitter dm", "prospect list", "cold message"],
+        "Open Source Monetization": ["open source monetiz", "oss business", "open core", "sponsor", "donate model", "license change", "commercialization", "open source sustain"],
+        "Content Marketing AI": ["content market", "ai content", "seo content", "blog auto", "auto post", "social media content", "content generation", "content automation"]
+      },
       "keywords": ["lead gen", "sales", "revenue", "mrr", "monetiz", "customer", "prospecting", "marketing", "growth", "acquisition", "reddit", "twitter", "landing page", "conversion", "funnel", "nocode", "nocodb", "noco"],
       "pain_signals": ["no customers", "can't find users", "zero revenue", "no sales", "growth hack", "how to market", "launch", "promote"],
       "buyer_signals": ["startup", "founder", "indie hacker", "solopreneur", "small business", "side project"],
@@ -45,6 +59,13 @@
       "description": "多 Agent 协作、工作流自动化、用 MCP 工具让 AI 替你跑腿",
       "description_en": "Multi-agent workflows, automation, MCP tools that do the work for you.",
       "trends": ["Multi-Agent Workflow", "Agent Automation", "MCP Integration", "Tool Use", "Browser Agent"],
+      "trend_keywords": {
+        "Multi-Agent Workflow": ["multi-agent", "multi agent", "agent swarm", "agent orchestrate", "agent coordinate", "agent team", "agent delegate", "agent collaborate", "sub agent"],
+        "Agent Automation": ["agent auto", "auto agent", "agent task", "agent schedule", "background agent", "agent pipeline", "agent daemon", "agent loop", "autonomous agent"],
+        "MCP Integration": ["mcp server", "mcp tool", "mcp connect", "mcp protocol", "model context protocol", "mcp integrat", "mcp plugin", "mcp registry"],
+        "Tool Use": ["tool use", "tool call", "function call", "tool chain", "tool compose", "agent tool", "tool execution", "tool framework"],
+        "Browser Agent": ["browser agent", "web agent", "playwright agent", "puppeteer agent", "web auto", "browser auto", "headless browser", "browser automation"]
+      },
       "keywords": ["multi-agent", "multi agent", "orchestr", "workflow", "automation", "mcp", "tool-use", "browser agent", "scheduler", "pipeline", "chain", "compose", "deploy", "ci/cd", "agent swarms"],
       "pain_signals": ["too many agent", "manual work", "repetitive", "automate", "coordinate", "complex", "overwhelm", "juggle", "too many tools"],
       "buyer_signals": ["enterprise", "team", "startup", "production", "scale", "automation", "devops", "efficiency"],
@@ -62,6 +83,13 @@
       "description": "Agent 输出不可靠、代码质量失控、安全合规漏洞、幻觉导致事故",
       "description_en": "Unreliable agent output, code quality issues, compliance gaps, hallucination risks.",
       "trends": ["AI Governance", "Code Review Automation", "Agent Reliability", "Compliance", "Security Audit"],
+      "trend_keywords": {
+        "AI Governance": ["ai govern", "ai policy", "ai oversight", "ai audit", "ai regulation", "ai standard", "responsible ai", "ai ethics", "ai framework"],
+        "Code Review Automation": ["code review ai", "auto code review", "ai reviewer", "pr review ai", "code quality gate", "code inspection", "automated review", "lint ai"],
+        "Agent Reliability": ["agent reliab", "agent determinis", "agent predictable", "agent safe", "agent trust", "agent guard", "agent validate", "agent verify"],
+        "Compliance": ["complian", "regulatory", "gdpr", "soc2", "hipaa", "data privacy", "legal requirement", "iso27001", "audit trail"],
+        "Security Audit": ["security audit", "security scan", "vulnerability detect", "security review", "pen test ai", "code security", "secure code", "security check"]
+      },
       "keywords": ["govern", "quality", "review", "audit", "standard", "code-review", "rule", "lint", "check", "validate", "compliance", "policy", "guard", "safety", "secure", "permission", "reliability", "deterministic", "testing"],
       "pain_signals": ["broken code", "unreviewed", "unsafe", "vulnerability", "bug", "error", "regression", "break", "unreliable", "hallucinat", "can't trust"],
       "buyer_signals": ["enterprise", "team", "company", "production", "ci/cd", "pipeline", "compliance", "audit", "regulation", "security"],
@@ -79,6 +107,13 @@
       "description": "Agent 跨会话记不住你、知识库无法沉淀、每次对话从零开始",
       "description_en": "Agents forget everything between sessions. Knowledge doesn't accumulate.",
       "trends": ["Long-term Memory", "Context Persistence", "Agent Skills", "Knowledge Base", "Personal AI"],
+      "trend_keywords": {
+        "Long-term Memory": ["long-term memory", "long term memory", "persistent memory", "memory store", "memory recall", "external memory", "mem place", "memory bank", "memory retention"],
+        "Context Persistence": ["context persist", "cross session", "session memory", "conversation memory", "context carry", "state persist", "context retain", "resume session", "context restore"],
+        "Agent Skills": ["agent skill", "skill library", "reusable skill", "skill marketplace", "skill pack", "skill share", "custom instruction", "skill system", "skill registry"],
+        "Knowledge Base": ["knowledge base", "knowledge store", "knowledge graph", "rag system", "knowledge management", "document store", "wiki ai", "knowledge repo", "institutional knowledge"],
+        "Personal AI": ["personal ai", "ai assistant personal", "personalized ai", "ai companion", "custom ai", "ai persona", "ai profile", "private ai", "individual ai"]
+      },
       "keywords": ["mem", "memory", "remember", "context", "long-term", "persistent", "recall", "history", "stateful", "session", "knowledge-base", "rag", "vector", "embedding", "skill", "personal ai", "claude-mem", "mempalace"],
       "pain_signals": ["lose context", "forget", "reset", "lost memory", "context window", "no memory", "can't remember", "amnesia", "start over", "from scratch"],
       "buyer_signals": ["enterprise", "team", "company", "startup", "paid", "subscription", "pro", "business", "productivity"],

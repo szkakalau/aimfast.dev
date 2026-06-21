@@ -90,6 +90,27 @@ def _match_category(signal: dict, category: dict) -> int:
     return score
 
 
+def _match_trend(signal: dict, trend_keywords: list[str]) -> int:
+    """计算信号与单个趋势的匹配度（0-10）。
+    阈值 ≥ 2 分算匹配（比需求级的 ≥3 更低，因趋势关键词更窄）。
+    """
+    tags = [t for t in signal.get('tags', []) if isinstance(t, str)]
+    text = f"{signal.get('title', '')} {signal.get('summary', '')} {' '.join(tags)}"
+    text_lower = text.lower()
+
+    if not trend_keywords:
+        return 0
+
+    hits = 0
+    for kw in trend_keywords:
+        if kw.lower() in text_lower:
+            hits += 1
+
+    if hits == 0:
+        return 0
+    return min(hits + 1, 10)
+
+
 def _score_demand(category: dict, weekly_counts: dict[str, int], total_demand_signals: int, max_appearances: int, max_distinct_days: int) -> dict:
     """计算单个需求类别的机会评分。
 
@@ -241,6 +262,148 @@ def _score_demand(category: dict, weekly_counts: dict[str, int], total_demand_si
     }
 
 
+def _score_trend(trend_name: str, category: dict, weekly_counts: dict[str, int],
+                 max_appearances_in_category: int, max_days_in_category: int) -> dict:
+    """计算单个趋势的机会评分。与 _score_demand 相同公式，但归一化参数在同类趋势内。"""
+    import math
+
+    sorted_weeks = sorted(weekly_counts.keys())
+    if not sorted_weeks:
+        return _empty_trend_score()
+
+    total_appearances = sum(weekly_counts.values())
+
+    # ─── MARKET SCORE (从数据计算，同类内归一化) ───
+    if max_appearances_in_category > 0:
+        trend_component = total_appearances / max_appearances_in_category
+    else:
+        trend_component = 0
+
+    # Growth
+    recent_weeks = sorted_weeks[-2:] if len(sorted_weeks) >= 2 else sorted_weeks
+    earlier_weeks = sorted_weeks[:-2] if len(sorted_weeks) > 2 else []
+    recent_avg = sum(weekly_counts[w] for w in recent_weeks) / len(recent_weeks) if recent_weeks else 0
+    if earlier_weeks:
+        earlier_avg = sum(weekly_counts[w] for w in earlier_weeks) / len(earlier_weeks)
+    else:
+        earlier_avg = 0
+
+    if earlier_avg > 0:
+        growth_ratio = recent_avg / earlier_avg
+        if growth_ratio >= 3.0:   growth_component = 1.0
+        elif growth_ratio >= 2.0: growth_component = 0.9
+        elif growth_ratio >= 1.5: growth_component = 0.8
+        elif growth_ratio >= 1.2: growth_component = 0.7
+        elif growth_ratio >= 1.0: growth_component = 0.5
+        elif growth_ratio >= 0.7: growth_component = 0.3
+        else:                     growth_component = 0.1
+    elif recent_avg > 0 and earlier_avg == 0:
+        growth_component = 0.6
+    else:
+        growth_component = 0.5
+
+    # Consistency
+    distinct_days = len([w for w in weekly_counts if weekly_counts[w] > 0])
+    if max_days_in_category > 0:
+        consistency_component = distinct_days / max_days_in_category
+    else:
+        consistency_component = 0
+
+    market_score = round((trend_component * 0.5 + growth_component * 0.3 + consistency_component * 0.2) * 100)
+    market_score = max(1, min(100, market_score))
+
+    # ─── BUSINESS SCORE (继承需求配置，趋势间相同) ───
+    pain_cfg = category.get("pain", {})
+    pay_cfg = category.get("pay", {})
+    pain_freq = pain_cfg.get("frequency", 5)
+    pain_sev = pain_cfg.get("severity", 5)
+    pain_score = (pain_freq * pain_sev) / 100
+    pay_budget = pay_cfg.get("budget", 5)
+    pay_urgency = pay_cfg.get("urgency", 5)
+    pay_score = (pay_budget * pay_urgency) / 100
+    business_score = round((pain_score * 0.5 + pay_score * 0.5) * 100)
+    business_score = max(1, min(100, business_score))
+
+    # ─── COMPETITION (趋势密度 + 类别基值) ───
+    if max_appearances_in_category > 0:
+        density = total_appearances / max_appearances_in_category
+    else:
+        density = 0
+    config_competition = category.get("competition", 50)
+    # 热门趋势竞争更高：类别基值 × 0.7 + 密度 × 30
+    competition = min(100, round(config_competition * 0.6 + density * 40))
+    competition = max(1, competition)
+
+    # ─── CONFIDENCE ───
+    confidence = round(math.log2(total_appearances + 1) * 20)
+    confidence = max(1, min(100, confidence))
+
+    # ─── STAGE ───
+    if distinct_days <= 2 and total_appearances <= 2:
+        stage = "early"
+    elif distinct_days >= 15 and growth_component <= 0.3:
+        stage = "mature"
+    elif growth_component >= 0.7 and total_appearances >= 3:
+        stage = "breaking"
+    else:
+        stage = "forming"
+
+    # ─── AI REPLACEABILITY (继承需求) ───
+    ai_replaceability = category.get("ai_replaceability", 5)
+    durability_multiplier = 0.4 + 0.6 * ai_replaceability / 10
+
+    # ─── OPPORTUNITY ───
+    base_opportunity = market_score * 0.6 + business_score * 0.4
+    competition_filter = (100 - competition) / 100
+    opportunity_index = round(base_opportunity * competition_filter * durability_multiplier)
+    opportunity_index = max(1, min(100, opportunity_index))
+
+    return {
+        "market_score": market_score,
+        "business_score": business_score,
+        "competition": competition,
+        "ai_replaceability": ai_replaceability,
+        "confidence": confidence,
+        "stage": stage,
+        "opportunity_index": opportunity_index,
+        "trend_score": round(trend_component * 10),
+        "growth_score": round(growth_component * 10),
+        "consistency_score": round(consistency_component * 10),
+        "pain_score": round(pain_score * 10),
+        "pay_score": round(pay_score * 10),
+        "pain_frequency": pain_freq,
+        "pain_severity": pain_sev,
+        "pay_budget": pay_budget,
+        "pay_urgency": pay_urgency,
+        "total_appearances": total_appearances,
+        "distinct_days": distinct_days,
+    }
+
+
+def _empty_trend_score() -> dict:
+    """趋势零分骨架（无匹配信号时使用）。"""
+    return {
+        "market_score": 0,
+        "business_score": 0,
+        "competition": 0,
+        "ai_replaceability": 5,
+        "confidence": 0,
+        "stage": "early",
+        "opportunity_index": 0,
+        "trend_score": 0,
+        "growth_score": 0,
+        "consistency_score": 0,
+        "pain_score": 0,
+        "pay_score": 0,
+        "pain_frequency": 0,
+        "pain_severity": 0,
+        "pay_budget": 0,
+        "pay_urgency": 0,
+        "total_appearances": 0,
+        "distinct_days": 0,
+    }
+
+
 def _detect_intersections(categories: list[dict], scores: dict[str, dict], weekly_counts: dict[str, dict]) -> list[dict]:
     """检测需求交叉点。当两个需求同时上升时，标记交叉机会。"""
     patterns = json.loads(
@@ -306,6 +469,57 @@ def _empty_score() -> dict:
     }
 
 
+def _build_trend_details(category: dict, recent_weeks: list[str],
+                         scores_by_name: dict[str, dict],
+                         counts_by_name: dict[str, dict[str, int]]) -> list[dict]:
+    """为每个趋势构建前端需要的 detail 对象。"""
+    trend_details = []
+    for trend_name in category.get("trends", []):
+        ts = scores_by_name.get(trend_name, _empty_trend_score())
+        t_counts = counts_by_name.get(trend_name, {})
+
+        # 最近几周快照
+        snapshots = {}
+        for w in recent_weeks:
+            snapshots[w] = t_counts.get(w, 0)
+
+        # 变化方向
+        if len(recent_weeks) >= 2:
+            latest = t_counts.get(recent_weeks[-1], 0)
+            prev = t_counts.get(recent_weeks[-2], 0)
+            if latest > prev:     delta = "rising"
+            elif latest < prev:   delta = "falling"
+            else:                 delta = "stable"
+        else:
+            delta = "new"
+
+        trend_details.append({
+            "name": trend_name,
+            "snapshots": snapshots,
+            "total_signals": sum(t_counts.values()),
+            "delta": delta,
+            "market_score": ts["market_score"],
+            "business_score": ts["business_score"],
+            "competition": ts["competition"],
+            "ai_replaceability": ts["ai_replaceability"],
+            "confidence": ts["confidence"],
+            "stage": ts["stage"],
+            "opportunity_index": ts["opportunity_index"],
+            "trend_score": ts["trend_score"],
+            "growth_score": ts["growth_score"],
+            "consistency_score": ts["consistency_score"],
+            "pain_score": ts["pain_score"],
+            "pay_score": ts["pay_score"],
+            "pain_frequency": ts["pain_frequency"],
+            "pain_severity": ts["pain_severity"],
+            "pay_budget": ts["pay_budget"],
+            "pay_urgency": ts["pay_urgency"],
+            "total_appearances": ts["total_appearances"],
+            "distinct_days": ts["distinct_days"],
+        })
+    return trend_details
+
+
 def run(date_str: str | None = None) -> dict:
     """执行需求雷达分析。"""
     date = date_str or datetime.now(TZ_SHANGHAI).strftime("%Y-%m-%d")
@@ -341,6 +555,20 @@ def run(date_str: str | None = None) -> dict:
             count = sum(1 for s in signals if _match_category(s, cat) >= 3)
             weekly_counts[cat_id][week] = count
 
+    # ─── 计算每周每个趋势的信号数 ───
+    weekly_trend_counts: dict[str, dict[str, dict[str, int]]] = {}
+    # {cat_id: {trend_name: {week: count}}}
+    for cat in categories:
+        cat_id = cat["id"]
+        trend_keywords_map = cat.get("trend_keywords", {})
+        weekly_trend_counts[cat_id] = {}
+        for trend_name in cat.get("trends", []):
+            weekly_trend_counts[cat_id][trend_name] = {}
+            trend_kws = trend_keywords_map.get(trend_name, [])
+            for week, signals in weeks.items():
+                count = sum(1 for s in signals if _match_trend(s, trend_kws) >= 2)
+                weekly_trend_counts[cat_id][trend_name][week] = count
+
     # ─── 计算每个需求的机会评分 ───
     # 所有需求类别的总信号数 和 最大出现次数（用于归一化）
     total_demand_signals = sum(
@@ -357,6 +585,33 @@ def run(date_str: str | None = None) -> dict:
         cat_id = cat["id"]
         counts = weekly_counts[cat_id]
         scores[cat_id] = _score_demand(cat, counts, total_demand_signals, max_appearances, max_distinct_days)
+
+    # ─── 计算每个趋势的机会评分（同类内归一化） ───
+    trend_scores: dict[str, dict[str, dict]] = {}
+    # {cat_id: {trend_name: score_dict}}
+    for cat in categories:
+        cat_id = cat["id"]
+        trend_scores[cat_id] = {}
+
+        # 找同类内最大出现次数和天数用于归一化
+        all_trend_totals = []
+        for trend_name in cat.get("trends", []):
+            counts = weekly_trend_counts.get(cat_id, {}).get(trend_name, {})
+            all_trend_totals.append(sum(counts.values()))
+        max_trend_appearances = max(all_trend_totals) if all_trend_totals else 1
+
+        all_trend_days = []
+        for trend_name in cat.get("trends", []):
+            counts = weekly_trend_counts.get(cat_id, {}).get(trend_name, {})
+            days = len([w for w in counts if counts[w] > 0])
+            all_trend_days.append(days)
+        max_trend_days = max(all_trend_days) if all_trend_days else 1
+
+        for trend_name in cat.get("trends", []):
+            counts = weekly_trend_counts.get(cat_id, {}).get(trend_name, {})
+            trend_scores[cat_id][trend_name] = _score_trend(
+                trend_name, cat, counts, max_trend_appearances, max_trend_days
+            )
 
     # ─── 检测交叉机会 ───
     intersections = _detect_intersections(categories, scores, weekly_counts)
@@ -410,6 +665,11 @@ def run(date_str: str | None = None) -> dict:
             "target_buyer_en": cat.get("target_buyer_en", ""),
             "trends": cat.get("trends", []),
             "trends_en": cat.get("trends_en", cat.get("trends", [])),
+            # 趋势级独立评分
+            "trend_details": _build_trend_details(
+                cat, sorted_weeks[-3:] if len(sorted_weeks) >= 3 else sorted_weeks,
+                trend_scores.get(cat_id, {}), weekly_trend_counts.get(cat_id, {})
+            ),
             "opportunity_index": score["opportunity_index"],
             # 子维度
             "trend_score": score["trend_score"],
@@ -430,8 +690,8 @@ def run(date_str: str | None = None) -> dict:
 
     # ─── 构建输出 ───
     output = {
-        "_schema": "需求雷达 v3.0 — Market/Business 分离 + Confidence + Stage",
-        "_version": "3.0",
+        "_schema": "需求雷达 v3.1 — Market/Business 分离 + 趋势级独立评分",
+        "_version": "3.1",
         "_formula": "Market=(Trend×0.5+Growth×0.3+Consistency×0.2)×100, Business=(Pain×0.5+Pay×0.5)×100, Opportunity=Market×0.6+Business×0.4, Confidence=log2(n+1)×20",
         "generated_at": datetime.now(TZ_SHANGHAI).isoformat(),
         "weeks": sorted_weeks[-6:],  # 最近 6 周的标签
