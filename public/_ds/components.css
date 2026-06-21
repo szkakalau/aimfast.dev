@@ -154,18 +154,30 @@
 .bulk-bar.active { display: flex; }
 .bulk-bar .selected-count { font-weight: 600; color: var(--color-blue); font-size: 0.82rem; }
 
-/* ── Radar Chart Container ── */
-.radar-card {
-  display: grid; grid-template-columns: 300px 1fr; gap: var(--space-4);
-  align-items: center; margin-bottom: var(--space-3);
-  padding: var(--space-3); background: var(--color-surface-alt);
-  border-radius: var(--radius-lg); border: 1px solid var(--color-border);
+/* ── Dimension Bars (demand radar detail) ── */
+.dim-bars {
+  margin-bottom: var(--space-3);
+  padding: var(--space-3);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
 }
-.radar-card canvas { max-height: 300px; }
-.radar-card h4 { font-size: 1rem; margin-bottom: 4px; }
-.radar-card p { font-size: 0.82rem; color: var(--color-text-secondary); }
+.dim-bars-header {
+  display: flex; align-items: baseline; gap: var(--space-2); flex-wrap: wrap;
+  margin-bottom: var(--space-2); padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--color-border);
+}
+.dim-bars-header strong { font-family: var(--font-heading); font-size: 0.95rem; }
+.dim-bars-header span { font-size: 0.78rem; color: var(--color-text-secondary); }
+.dim-bars-list { display: flex; flex-direction: column; gap: 8px; }
+.dim-bar-row { display: flex; align-items: center; gap: var(--space-2); }
+.dim-bar-label { width: 90px; font-size: 0.78rem; font-weight: 500; color: var(--color-text-secondary); text-align: right; flex-shrink: 0; }
+.dim-bar-track { flex: 1; height: 20px; background: var(--color-surface-alt); border-radius: 4px; overflow: hidden; position: relative; }
+.dim-bar-fill { height: 100%; min-width: 3px; border-radius: 4px; transition: width 0.5s var(--ease-out); }
+.dim-bar-val { width: 36px; font-size: 0.8rem; font-weight: 600; font-family: var(--font-mono); color: var(--color-text); text-align: left; flex-shrink: 0; }
 @media (max-width: 768px) {
-  .radar-card { grid-template-columns: 1fr; }
+  .dim-bar-label { width: 70px; font-size: 0.7rem; }
+  .dim-bars { padding: var(--space-2); }
 }
 
 /* ── Responsive ── */

@@ -922,14 +922,13 @@
       <div id="recurring-empty" class="empty" style="display:none;">No recurring signals detected yet.</div>
     </div>
     <div id="tab-demand" class="report-body" style="display:none;" role="tabpanel">
-      <!-- Radar Chart Section -->
-      <div id="radar-chart-section" class="radar-card" style="display:none;">
-        <div><canvas id="demandRadarChart" width="300" height="300"></canvas></div>
-        <div id="radar-demand-info">
-          <h4 id="radar-demand-name"></h4>
-          <p id="radar-demand-desc"></p>
-          <div id="radar-demand-scores"></div>
+      <!-- Dimension Breakdown (replaces radar chart) -->
+      <div id="radar-chart-section" class="dim-bars" style="display:none;">
+        <div class="dim-bars-header">
+          <strong id="radar-demand-name"></strong>
+          <span id="radar-demand-desc"></span>
         </div>
+        <div id="radar-demand-scores" class="dim-bars-list"></div>
       </div>
       <!-- Bulk Action Bar -->
       <div id="demand-bulk-bar" class="bulk-bar">
@@ -1137,7 +1136,7 @@ var I18N = (function() {
       radarCompetition: '竞争度',
       radarAiProof: 'AI 抗性',
       radarConfidence: '确定性',
-      radarSelectDemand: '点击需求行查看雷达图',
+      radarSelectDemand: '点击需求行查看维度评分',
 
       // Bulk actions
       selected: '已选择',
@@ -1325,7 +1324,7 @@ var I18N = (function() {
       radarCompetition: 'Competition',
       radarAiProof: 'AI-proof',
       radarConfidence: 'Confidence',
-      radarSelectDemand: 'Click a demand row to see radar chart',
+      radarSelectDemand: 'Click a demand row to see dimension scores',
 
       // Bulk actions
       selected: 'selected',
@@ -2154,11 +2153,11 @@ function renderAll(data) {
       '</td>';
   }
 
-  // ── Radar Chart Rendering ──
-  function renderRadarChart(dem) {
+  // ── Dimension Bars Rendering ──
+  function renderDimBars(dem) {
     var section = document.getElementById('radar-chart-section');
     if (!section) return;
-    section.style.display = 'grid';
+    section.style.display = 'block';
 
     document.getElementById('radar-demand-name').textContent = (LANG === 'en' && dem.name_en) ? dem.name_en : (dem.name || dem.id);
     document.getElementById('radar-demand-desc').textContent = (LANG === 'en' && dem.description_en) ? dem.description_en : (dem.description || '');
@@ -2171,50 +2170,28 @@ function renderAll(data) {
       { key: 'confidence', label: t('radarConfidence') }
     ];
 
-    var scores = dims.map(function(d) { return dem[d.key] || 0; });
-    var labels = dims.map(function(d) { return d.label; });
+    // Bar color: gradient from blue-lt → blue → amber based on score
+    function barColor(v) {
+      if (v >= 70) return 'var(--color-accent)';
+      if (v >= 40) return 'var(--color-chart-accent)';
+      return 'var(--color-chart-blue-lt)';
+    }
 
-    // Show scores summary
-    var scoresHtml = dims.map(function(d) {
-      return '<span style="display:inline-block;margin-right:12px;font-size:0.78rem;"><strong>' + d.label + '</strong> ' + (dem[d.key] || 0) + '</span>';
+    var barsHtml = dims.map(function(d) {
+      var v = dem[d.key] || 0;
+      return '<div class="dim-bar-row">' +
+        '<span class="dim-bar-label">' + d.label + '</span>' +
+        '<div class="dim-bar-track"><div class="dim-bar-fill" style="width:' + v + '%;background:' + barColor(v) + ';"></div></div>' +
+        '<span class="dim-bar-val">' + v + '</span>' +
+      '</div>';
     }).join('');
-    document.getElementById('radar-demand-scores').innerHTML = scoresHtml;
 
-    if (typeof Chart === 'undefined') return;
-
-    var ctx = document.getElementById('demandRadarChart').getContext('2d');
-    if (window._radarChart) window._radarChart.destroy();
-
-    var blue = getChartColor('--color-chart-accent', '#1E40AF');
-    var blueFill = blue + '20';
-
-    window._radarChart = new Chart(ctx, {
-      type: 'radar',
-      data: {
-        labels: labels,
-        datasets: [{
-          label: dem.name || dem.id,
-          data: scores,
-          backgroundColor: blueFill,
-          borderColor: blue,
-          borderWidth: 2,
-          pointBackgroundColor: blue,
-          pointRadius: 4,
-          pointHoverRadius: 6
-        }]
-      },
-      options: {
-        responsive: true, maintainAspectRatio: true,
-        scales: { r: { beginAtZero: true, max: 100, ticks: { stepSize: 20, font: { size: 10 } }, pointLabels: { font: { size: 11 } } } },
-        plugins: { legend: { display: false } }
-      }
-    });
+    document.getElementById('radar-demand-scores').innerHTML = barsHtml;
   }
 
-  function hideRadarChart() {
+  function hideDimBars() {
     var section = document.getElementById('radar-chart-section');
     if (section) section.style.display = 'none';
-    if (window._radarChart) { window._radarChart.destroy(); window._radarChart = null; }
   }
 
   function toggleDemandDetail(demId) {
@@ -2226,7 +2203,7 @@ function renderAll(data) {
       // Collapse
       detailRow.remove();
       row.classList.remove('expanded');
-      hideRadarChart();
+      hideDimBars();
     } else {
       // Expand
       var dem = demands.find(function(d) { return d.id === demId; });
@@ -2237,7 +2214,7 @@ function renderAll(data) {
       detailRow.innerHTML = renderDemandDetail(dem);
       row.parentNode.insertBefore(detailRow, row.nextSibling);
       row.classList.add('expanded');
-      renderRadarChart(dem);
+      renderDimBars(dem);
     }
   }
 
