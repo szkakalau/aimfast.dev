@@ -2,7 +2,7 @@
   "_schema": "需求雷达 v3.1 — Market/Business 分离 + 趋势级独立评分",
   "_version": "3.1",
   "_formula": "Market=(Trend×0.5+Growth×0.3+Consistency×0.2)×100, Business=(Pain×0.5+Pay×0.5)×100, Opportunity=Market×0.6+Business×0.4, Confidence=log2(n+1)×20",
-  "generated_at": "2026-06-22T08:11:22.356343+08:00",
+  "generated_at": "2026-06-22T10:59:47.715377+08:00",
   "weeks": [
     "2026-05-25",
     "2026-06-01",
@@ -108,9 +108,9 @@
           "snapshots": {
             "2026-06-08": 7,
             "2026-06-15": 14,
-            "2026-06-22": 3
+            "2026-06-22": 4
           },
-          "total_signals": 42,
+          "total_signals": 43,
           "delta": "falling",
           "market_score": 85,
           "business_score": 95,
@@ -128,7 +128,7 @@
           "pain_severity": 10,
           "pay_budget": 10,
           "pay_urgency": 9,
-          "total_appearances": 42,
+          "total_appearances": 43,
           "distinct_days": 5
         },
         {
@@ -140,7 +140,7 @@
           },
           "total_signals": 3,
           "delta": "stable",
-          "market_score": 19,
+          "market_score": 18,
           "business_score": 95,
           "competition": 15,
           "ai_replaceability": 2,
@@ -209,15 +209,15 @@
       "snapshots": {
         "2026-06-08": 2,
         "2026-06-15": 8,
-        "2026-06-22": 1
+        "2026-06-22": 2
       },
-      "total_signals": 18,
+      "total_signals": 19,
       "delta": "falling",
       "market_score": 54,
       "business_score": 45,
       "competition": 35,
       "ai_replaceability": 4,
-      "confidence": 85,
+      "confidence": 86,
       "stage": "breaking",
       "target_buyer": "AI 平台团队、自动化工程师",
       "description_en": "Multi-agent workflows, automation, MCP tools that do the work for you.",
@@ -242,28 +242,28 @@
           "snapshots": {
             "2026-06-08": 0,
             "2026-06-15": 8,
-            "2026-06-22": 0
+            "2026-06-22": 3
           },
-          "total_signals": 15,
+          "total_signals": 18,
           "delta": "falling",
-          "market_score": 57,
+          "market_score": 69,
           "business_score": 45,
-          "competition": 38,
+          "competition": 42,
           "ai_replaceability": 4,
-          "confidence": 80,
+          "confidence": 85,
           "stage": "breaking",
-          "opportunity_index": 21,
-          "trend_score": 4,
-          "growth_score": 8,
-          "consistency_score": 6,
+          "opportunity_index": 22,
+          "trend_score": 5,
+          "growth_score": 9,
+          "consistency_score": 8,
           "pain_score": 4,
           "pay_score": 5,
           "pain_frequency": 6,
           "pain_severity": 7,
           "pay_budget": 8,
           "pay_urgency": 6,
-          "total_appearances": 15,
-          "distinct_days": 3
+          "total_appearances": 18,
+          "distinct_days": 4
         },
         {
           "name": "Agent Automation",
@@ -388,7 +388,7 @@
       "pain_severity": 7,
       "pay_budget": 8,
       "pay_urgency": 6,
-      "total_appearances": 18,
+      "total_appearances": 19,
       "distinct_days": 5
     },
     {
@@ -593,7 +593,7 @@
       },
       "total_signals": 12,
       "delta": "falling",
-      "market_score": 39,
+      "market_score": 38,
       "business_score": 68,
       "competition": 70,
       "ai_replaceability": 6,
@@ -678,28 +678,28 @@
           "snapshots": {
             "2026-06-08": 2,
             "2026-06-15": 2,
-            "2026-06-22": 0
+            "2026-06-22": 1
           },
-          "total_signals": 4,
+          "total_signals": 5,
           "delta": "falling",
-          "market_score": 62,
+          "market_score": 78,
           "business_score": 68,
-          "competition": 62,
+          "competition": 67,
           "ai_replaceability": 6,
-          "confidence": 46,
+          "confidence": 52,
           "stage": "breaking",
           "opportunity_index": 19,
-          "trend_score": 5,
-          "growth_score": 8,
-          "consistency_score": 7,
+          "trend_score": 6,
+          "growth_score": 9,
+          "consistency_score": 10,
           "pain_score": 6,
           "pay_score": 7,
           "pain_frequency": 7,
           "pain_severity": 9,
           "pay_budget": 9,
           "pay_urgency": 8,
-          "total_appearances": 4,
-          "distinct_days": 2
+          "total_appearances": 5,
+          "distinct_days": 3
         },
         {
           "name": "Compliance",
@@ -758,7 +758,7 @@
           "distinct_days": 0
         }
       ],
-      "opportunity_index": 12,
+      "opportunity_index": 11,
       "trend_score": 1,
       "growth_score": 8,
       "consistency_score": 4,
@@ -779,9 +779,9 @@
       "snapshots": {
         "2026-06-08": 18,
         "2026-06-15": 32,
-        "2026-06-22": 5
+        "2026-06-22": 8
       },
-      "total_signals": 92,
+      "total_signals": 95,
       "delta": "falling",
       "market_score": 85,
       "business_score": 56,
@@ -958,7 +958,7 @@
       "pain_severity": 8,
       "pay_budget": 7,
       "pay_urgency": 7,
-      "total_appearances": 92,
+      "total_appearances": 95,
       "distinct_days": 5
     }
   ],

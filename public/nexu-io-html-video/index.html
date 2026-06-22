@@ -3,82 +3,80 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VideoGen API — Build Video into Your AI Agent in 5 Minutes | www.aimfast.dev</title>
+  <meta name="description" content="One API for AI agent video generation. No GPU, no per-second fees. 21 templates, POST /generate-video. Get your API key for $19.">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#1a1d24">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="canonical" href="https://www.aimfast.dev/video-api-for-agents/">
+  <link rel="canonical" href="https://www.aimfast.dev/videogen-api/">
   <meta property="og:type" content="product">
-  <meta property="og:title" content="Instant Video API for AI Agents — Turn HTML into MP4s with one call">
-  <meta property="og:description" content="Simple REST API that turns HTML, CSS & data into real MP4s. No per-render fees. 21 templates included. Get your free API key.">
-  <meta property="og:url" content="https://www.aimfast.dev/video-api-for-agents/">
+  <meta property="og:title" content="VideoGen API — Build Video into Your AI Agent in 5 Minutes">
+  <meta property="og:description" content="One API for AI agent video generation. No GPU, no per-second fees. 21 templates, POST /generate-video. Get your API key for $19.">
+  <meta property="og:url" content="https://www.aimfast.dev/videogen-api/">
   <meta property="og:site_name" content="AimFast.Dev">
-  <meta property="og:image" content="https://www.aimfast.dev/og/video-api-for-agents.png">
+  <meta property="og:image" content="https://www.aimfast.dev/og/videogen-api.png">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Instant Video API for AI Agents — Turn HTML into MP4s with one call">
-  <meta name="twitter:description" content="Simple REST API that turns HTML, CSS & data into real MP4s. No per-render fees. 21 templates included. Get your free API key.">
-  <meta name="twitter:image" content="https://www.aimfast.dev/og/video-api-for-agents.png">
+  <meta name="twitter:title" content="VideoGen API — Build Video into Your AI Agent in 5 Minutes">
+  <meta name="twitter:description" content="One API for AI agent video generation. No GPU, no per-second fees. 21 templates, POST /generate-video. Get your API key for $19.">
+  <meta name="twitter:image" content="https://www.aimfast.dev/og/videogen-api.png">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "Instant Video API for AI Agents",
+    "name": "VideoGen API",
     "applicationCategory": "AIApplication",
     "operatingSystem": "Web",
-    "description": "A programmatic video generation API built on html-video. Turn HTML, CSS & JSON data into MP4s with a single HTTP request. No per-render fees, flat monthly pricing.",
-    "url": "https://www.aimfast.dev/video-api-for-agents/",
+    "description": "One API for AI agent video generation. No GPU, no per-second fees. 21 templates, POST /generate-video. Get your API key for $19.",
+    "url": "https://www.aimfast.dev/videogen-api/",
     "offers": {
       "@type": "Offer",
-      "price": "9.99",
+      "price": "19",
       "priceCurrency": "USD"
     }
   }
   </script>
   <link rel="stylesheet" href="/_ds/base.css">
   <link rel="stylesheet" href="/_ds/components.css">
-  <title>Instant Video API for AI Agents — Turn HTML into MP4s with one call | www.aimfast.dev</title>
   <style>
-    /* custom page-level overrides — only layout & non-token styles */
+    /* custom page-level overrides — no token redefinition */
     .hero {
       padding: var(--space-8) 0 var(--space-6);
       text-align: center;
     }
-    .hero .container {
-      max-width: 720px;
-    }
     .hero h1 {
-      font-size: clamp(2.2rem, 6vw, 3.4rem);
-      line-height: 1.15;
-      margin-bottom: var(--space-3);
+      max-width: 720px;
+      margin: 0 auto var(--space-3);
     }
     .hero .subhead {
-      font-size: 1.2rem;
+      max-width: 560px;
+      margin: 0 auto var(--space-5);
       color: var(--color-text-secondary);
-      margin-bottom: var(--space-5);
-      line-height: 1.6;
+      font-size: 1.15rem;
     }
     .signup-form {
       display: flex;
       gap: var(--space-2);
-      max-width: 520px;
+      max-width: 480px;
       margin: 0 auto;
       flex-wrap: wrap;
       justify-content: center;
     }
     .signup-form input[type="email"] {
-      flex: 1 1 260px;
+      flex: 1 1 240px;
       height: 52px;
       padding: 0 var(--space-3);
-      font-size: 1rem;
       border: 2px solid var(--color-border);
       border-radius: 8px;
       background: var(--color-surface);
       color: var(--color-text);
+      font-size: 1rem;
+      font-family: var(--font-body);
       transition: border-color var(--duration-normal) var(--ease-out);
     }
     .signup-form input[type="email"]:focus {
       outline: none;
       border-color: var(--color-accent);
-      box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent) 20%, transparent);
+      box-shadow: 0 0 0 3px rgba(from var(--color-accent) r g b / 0.15);
     }
     .signup-form .btn {
       height: 52px;
@@ -87,24 +85,21 @@
       white-space: nowrap;
     }
     .signup-success {
-      display: none;
-      padding: var(--space-3) var(--space-4);
-      background: color-mix(in srgb, var(--color-accent) 12%, transparent);
-      border-radius: 8px;
-      font-weight: 500;
-      color: var(--color-accent);
-      max-width: 520px;
+      max-width: 480px;
       margin: 0 auto;
+      padding: var(--space-3);
+      background: var(--color-surface-alt);
+      border-radius: 8px;
+      border-left: 4px solid var(--color-accent);
+      font-weight: 500;
+      display: none;
     }
     .signup-error {
+      max-width: 480px;
+      margin: var(--space-2) auto 0;
+      color: var(--color-text-muted);
+      font-size: 0.9rem;
       display: none;
-      padding: var(--space-3) var(--space-4);
-      background: color-mix(in srgb, #e03e3e 12%, transparent);
-      border-radius: 8px;
-      font-weight: 500;
-      color: #e03e3e;
-      max-width: 520px;
-      margin: 0 auto;
     }
     .section-title {
       text-align: center;
@@ -112,25 +107,26 @@
     }
     .why-matters p {
       max-width: 720px;
-      margin-left: auto;
-      margin-right: auto;
+      margin: 0 auto var(--space-3);
+      color: var(--color-text-secondary);
+      line-height: 1.7;
     }
     .steps-grid {
-      display: grid;
-      grid-template-columns: 1fr;
+      display: flex;
+      flex-direction: column;
       gap: var(--space-5);
-      max-width: 720px;
+      max-width: 680px;
       margin: 0 auto;
     }
     .step {
       display: flex;
-      gap: var(--space-4);
+      gap: var(--space-3);
       align-items: flex-start;
     }
     .step-num {
       flex-shrink: 0;
-      width: 44px;
-      height: 44px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
       background: var(--color-accent);
       color: #fff;
@@ -138,15 +134,15 @@
       align-items: center;
       justify-content: center;
       font-weight: 700;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
     }
     .step-content h3 {
       margin-bottom: var(--space-1);
-      font-size: 1.15rem;
+      font-size: 1.1rem;
     }
     .step-content p {
       color: var(--color-text-secondary);
-      line-height: 1.7;
+      line-height: 1.6;
     }
     .selling-grid {
       display: grid;
@@ -166,22 +162,22 @@
     }
     .selling-card h3 {
       margin-bottom: var(--space-1);
-      font-size: 1.1rem;
+      font-size: 1.05rem;
     }
     .selling-card p {
       color: var(--color-text-secondary);
       font-size: 0.95rem;
-      line-height: 1.65;
+      line-height: 1.6;
     }
     .trust-bar {
       text-align: center;
-      padding: var(--space-4) 0;
       color: var(--color-text-muted);
       font-size: 0.85rem;
       display: flex;
       justify-content: center;
       gap: var(--space-4);
       flex-wrap: wrap;
+      padding: var(--space-4) 0;
     }
     .trust-bar span {
       display: inline-flex;
@@ -196,169 +192,131 @@
     footer {
       text-align: center;
       padding: var(--space-5) 0 var(--space-4);
-      border-top: 1px solid var(--color-border);
       color: var(--color-text-muted);
       font-size: 0.85rem;
+      border-top: 1px solid var(--color-border);
     }
     @media (max-width: 640px) {
-      .selling-grid {
-        grid-template-columns: 1fr;
-      }
-      .signup-form {
-        flex-direction: column;
-        align-items: stretch;
-      }
-      .signup-form input[type="email"] {
-        width: 100%;
-      }
-      .signup-form .btn {
-        width: 100%;
-      }
-      .step {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-      .trust-bar {
-        flex-direction: column;
-        gap: var(--space-2);
-      }
+      .hero h1 { font-size: 1.8rem; }
+      .signup-form { flex-direction: column; align-items: stretch; }
+      .signup-form input[type="email"] { flex: 1 1 auto; }
+      .selling-grid { grid-template-columns: 1fr; }
+      .trust-bar { flex-direction: column; gap: var(--space-2); }
     }
   </style>
 </head>
 <body>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="container">
-      <h1 class="font-heading">Instant Video API for AI Agents</h1>
-      <p class="subhead">Turn HTML, CSS &amp; data into real MP4s. One API call. No per-render fees.</p>
-      
-      <!-- inline email form -->
-      <form id="signup-form" class="signup-form" action="https://formspree.io/f/your-form-id" method="POST">
-        <input type="email" name="email" placeholder="you@example.com" required autocomplete="email">
-        <button type="submit" class="btn btn-primary btn-lg">Get Your Free API Key</button>
-      </form>
-      <div id="signup-success" class="signup-success">✓ You're on the list! Check your inbox for your API key.</div>
-      <div id="signup-error" class="signup-error">Something went wrong. Please try again or email us.</div>
-    </div>
+  <!-- Hero + inline email form -->
+  <section class="hero container">
+    <h1 class="heading-xl">Build Video into Your AI Agent in 5 Minutes</h1>
+    <p class="subhead">One API. Zero GPU Hassle. Pay per Generation, Not per Second.</p>
+    
+    <!-- inline signup form -->
+    <form id="signup-form" class="signup-form" action="https://formspree.io/f/your-form-id" method="POST">
+      <input type="email" name="email" placeholder="you@example.com" required autocomplete="email">
+      <button type="submit" class="btn btn-primary btn-lg">Get Your API Key — $19</button>
+    </form>
+    <div id="signup-success" class="signup-success">✓ You're on the list! Check your inbox for your API key.</div>
+    <div id="signup-error" class="signup-error">Something went wrong. Please try again or email us.</div>
   </section>
 
   <!-- Why This Matters -->
-  <section class="why-matters section-padding">
-    <div class="container">
-      <h2 class="section-title font-heading">Why Programmatic Video Matters Right Now</h2>
-      <p>The <code>html-video</code> project exploded on GitHub — 3,403 stars in 25 days, growing at 136 stars per day. Developers are desperate for a way to generate video programmatically without paying per-frame fees. Existing solutions like Remotion Cloud charge $0.01 per frame — a 30-second video at 30fps costs $9. That's insane for AI agents that need to generate hundreds of videos.</p>
-      <p>Current alternatives are either too complex (self-hosting a full rendering pipeline) or too expensive (cloud rendering services with unpredictable bills). The <code>html-video</code> project proved that HTML-to-video is technically feasible and fast — but it's still a CLI tool. Developers need a simple API they can call from their agent, their CI/CD pipeline, or their product. That's exactly what we built.</p>
-      <p>This is the perfect timing: the open-source community has validated the approach, the pain point is fresh, and the demand for agent-friendly APIs is at an all-time high. By offering a flat monthly price with no per-render fees, we remove the two biggest barriers: complexity and cost.</p>
-    </div>
+  <section class="why-matters container" style="padding: var(--space-6) 0;">
+    <h2 class="section-title heading-md">Why AI Agent Video Generation Matters Right Now</h2>
+    <p>The <a href="https://github.com/nexu-io/html-video" target="_blank" rel="noopener">html-video</a> project by nexu-io crossed 3,400 GitHub stars in just 26 days — a clear signal that developers are desperate for programmatic video. Existing solutions like RunwayML or HeyGen charge per second, lock you into proprietary formats, and offer no API designed for agents. They were built for human editors, not for code.</p>
+    <p>Worse, every AI agent framework — from AutoGPT to CrewAI — lacks a native video output. Agents can write text, generate images, even produce code, but they cannot create a simple product demo or social video without expensive, brittle integrations. This gap is absurd: video is the most engaging medium, yet it remains the hardest to generate programmatically.</p>
+    <p>Now is the perfect moment. The open-source html-video engine provides a free, local, HTML-to-MP4 pipeline with 21 templates and AI music. By wrapping it in a dead-simple POST /generate-video endpoint, we remove every barrier. No GPU, no CLI, no rendering farm — just JSON in, MP4 out. The window to own this “agent video API” category is open, and it will close fast.</p>
   </section>
 
   <!-- How It Works -->
-  <section class="section-padding" style="background: var(--color-surface-alt);">
-    <div class="container">
-      <h2 class="section-title font-heading">How It Works</h2>
-      <div class="steps-grid">
-        <div class="step">
-          <div class="step-num">1</div>
-          <div class="step-content">
-            <h3>Choose a template</h3>
-            <p>Pick from 21 ready-to-use templates — product demos, social media clips, intros, and more. Each template accepts dynamic data fields so you can customize text, colors, and assets without touching HTML.</p>
-          </div>
+  <section class="container" style="padding: var(--space-6) 0;">
+    <h2 class="section-title heading-md">How It Works</h2>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h3>Choose a template &amp; pass data</h3>
+          <p>Pick from 21 ready-made templates — product launch, social card, explainer, and more. Send a simple JSON payload with your headline, subheadline, and call-to-action text. No HTML or CSS required.</p>
         </div>
-        <div class="step">
-          <div class="step-num">2</div>
-          <div class="step-content">
-            <h3>Send your data via API</h3>
-            <p>Make a single HTTP POST to <code>/render</code> with your template name and a JSON payload. Your AI agent, backend, or CI pipeline can call it directly. No SDK required — just a REST client.</p>
-          </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h3>Call POST /generate-video</h3>
+          <p>Your AI agent makes a single HTTP request to our endpoint. Include your API key and the JSON data. The engine renders the video using the open-source html-video library — locally, fast, and without any per-second licensing fees.</p>
         </div>
-        <div class="step">
-          <div class="step-num">3</div>
-          <div class="step-content">
-            <h3>Get your MP4 back</h3>
-            <p>We render the video asynchronously and notify you via webhook or you can poll the status endpoint. Download the final MP4 and use it anywhere — social media, product demos, email campaigns.</p>
-          </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h3>Get your MP4 URL</h3>
+          <p>Within seconds, you receive a direct URL to the generated MP4 file. Stream it, download it, or embed it — no storage hassle. Your agent can now produce video content as easily as it writes text.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Selling Points -->
-  <section class="section-padding">
-    <div class="container">
-      <h2 class="section-title font-heading">What You Get</h2>
-      <div class="selling-grid">
-        <div class="selling-card card">
-          <div class="icon-wrap">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="4" width="20" height="16" rx="2"/>
-              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
-            </svg>
-          </div>
-          <h3 class="font-heading">Agent-Ready API</h3>
-          <p>Your AI agent can call our REST endpoint directly — no browser, no Puppeteer, no complex setup. Just pass JSON and get back a video URL. Built for LangChain, Vercel AI SDK, and custom agent workflows.</p>
+  <!-- Selling Points (3-column grid) -->
+  <section class="container" style="padding: var(--space-6) 0;">
+    <h2 class="section-title heading-md">What You Get</h2>
+    <div class="selling-grid">
+      <div class="selling-card">
+        <div class="icon-wrap">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
         </div>
-        <div class="selling-card card">
-          <div class="icon-wrap">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-              <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-            </svg>
-          </div>
-          <h3 class="font-heading">Flat Monthly Pricing</h3>
-          <p>No per-frame, per-second, or per-render fees. Pay a predictable monthly rate and render as many videos as your plan allows. No surprise bills — ever. The free tier gives you 10 renders to test everything.</p>
+        <h3>No Per-Render Fees</h3>
+        <p>Powered by the open-source html-video engine, you pay only for the server resources you use — no per-second or per-video licensing. This makes high-volume agent video generation economically viable for the first time.</p>
+      </div>
+      <div class="selling-card">
+        <div class="icon-wrap">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
         </div>
-        <div class="selling-card card">
-          <div class="icon-wrap">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-              <polyline points="9 12 11 14 15 10"/>
-            </svg>
-          </div>
-          <h3 class="font-heading">21 Templates Included</h3>
-          <p>Product demos, social clips, intros, feature highlights, and more. Each template is fully customizable via JSON — change text, colors, images, and layout. No HTML or CSS skills required.</p>
+        <h3>21 Ready-Made Templates</h3>
+        <p>Product demos, social media cards, explainer videos, and more — all pre-built and tested. Just pass JSON with your content. No design skills, no HTML editing, no CSS tweaks needed to get a professional-looking video.</p>
+      </div>
+      <div class="selling-card">
+        <div class="icon-wrap">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
         </div>
+        <h3>Built for Agents</h3>
+        <p>Simple POST /generate-video endpoint with JSON input and MP4 output. Works with any LLM, agent framework, or automation tool. No GPU, no CLI, no rendering farm — just a clean API your agent can call.</p>
       </div>
     </div>
   </section>
 
   <!-- Trust Bar -->
-  <div class="trust-bar">
+  <div class="container trust-bar">
     <span>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
-      Built on open-source html-video (Apache-2.0)
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+      Powered by open-source html-video (3,400+ ★)
     </span>
     <span>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-      3,400+ GitHub stars · 136 stars/day
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+      Instant API key — no approval needed
     </span>
     <span>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-      No per-render fees · Predictable costs
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      Pay once, use forever — $19 for 100 generations
     </span>
   </div>
 
   <!-- Footer -->
-  <footer>
-    <div class="container">
-      © 2026 · <a href="https://www.aimfast.dev" style="color: var(--color-text-secondary); text-decoration: none;">www.aimfast.dev</a>
-    </div>
+  <footer class="container">
+    © 2026 · <a href="https://www.aimfast.dev" style="color: var(--color-text-secondary); text-decoration: none;">www.aimfast.dev</a>
   </footer>
 
   <script>
+    const form = document.getElementById('signup-form');
+    const successDiv = document.getElementById('signup-success');
+    const errorDiv = document.getElementById('signup-error');
+
     async function handleSubmit(e) {
       e.preventDefault();
-      const form = document.getElementById('signup-form');
-      const successDiv = document.getElementById('signup-success');
-      const errorDiv = document.getElementById('signup-error');
       const email = form.email.value.trim();
-
-      // hide previous messages
-      successDiv.style.display = 'none';
-      errorDiv.style.display = 'none';
-
       if (!email) return;
 
-      try {
-        const resp = await fetch(form.action,
+      // disable button to prevent double submit
+      const btn = form.querySelector('button');
+      btn.disabled = true;
+      btn.textContent = 'Sending
