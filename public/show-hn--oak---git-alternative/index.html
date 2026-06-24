@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agent Commit Auditor — AI code review for Git | www.aimfast.dev</title>
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#1a1d24">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="canonical" href="https://www.aimfast.dev/agent-commit-auditor/">
+    <meta property="og:type" content="product">
+    <meta property="og:title" content="Agent Commit Auditor — AI code review for Git">
+    <meta property="og:description" content="Automatically analyze agent-generated Git history, extract intent summaries and risk flags, and get a human-readable review report in 2 minutes.">
+    <meta property="og:url" content="https://www.aimfast.dev/agent-commit-auditor/">
+    <meta property="og:site_name" content="AimFast.Dev">
+    <meta property="og:image" content="https://www.aimfast.dev/og/agent-commit-auditor.png">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Agent Commit Auditor — AI code review for Git">
+    <meta name="twitter:description" content="Automatically analyze agent-generated Git history, extract intent summaries and risk flags, and get a human-readable review report in 2 minutes.">
+    <meta name="twitter:image" content="https://www.aimfast.dev/og/agent-commit-auditor.png">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Agent Commit Auditor",
+        "applicationCategory": "AIApplication",
+        "operatingSystem": "Web",
+        "description": "A CLI tool that analyzes agent-generated Git history, extracts intent summaries and risk flags, and produces a human-readable review report. Zero migration, works with any Git repo.",
+        "url": "https://www.aimfast.dev/agent-commit-auditor/",
+        "offers": {
+            "@type": "Offer",
+            "price": "5.00",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+    <link rel="stylesheet" href="/_ds/base.css">
+    <link rel="stylesheet" href="/_ds/components.css">
+    <style>
+        /* custom layout only — no token redefinition */
+        .hero {
+            padding: var(--space-8) 0 var(--space-6);
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: clamp(2.2rem, 5vw, 3.2rem);
+            line-height: 1.15;
+            margin-bottom: var(--space-3);
+        }
+        .hero .subhead {
+            font-size: 1.15rem;
+            color: var(--color-text-secondary);
+            max-width: 640px;
+            margin: 0 auto var(--space-5);
+        }
+        .signup-form {
+            display: flex;
+            gap: var(--space-2);
+            max-width: 480px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .signup-form input {
+            flex: 1 1 240px;
+            height: 52px;
+            padding: 0 var(--space-3);
+            border: 2px solid var(--color-border);
+            border-radius: 8px;
+            background: var(--color-surface);
+            color: var(--color-text);
+            font-size: 1rem;
+            font-family: var(--font-body);
+            transition: border-color var(--duration-normal) var(--ease-out);
+        }
+        .signup-form input:focus {
+            outline: none;
+            border-color: var(--color-accent);
+            box-shadow: 0 0 0 3px rgba(var(--color-accent-rgb), 0.15);
+        }
+        .signup-form .btn {
+            height: 52px;
+            padding: 0 var(--space-4);
+            font-size: 1rem;
+            white-space: nowrap;
+        }
+        .signup-form .btn-lg {
+            height: 52px;
+            line-height: 52px;
+        }
+        .success-message {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-2);
+            font-size: 1.1rem;
+            color: var(--color-accent);
+            background: var(--color-surface-alt);
+            padding: var(--space-3) var(--space-4);
+            border-radius: 8px;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+        .success-message svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--color-accent);
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: var(--space-5);
+        }
+        .why-matters p {
+            max-width: 720px;
+            margin: 0 auto var(--space-3);
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+        .how-it-works .steps {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-5);
+            max-width: 640px;
+            margin: 0 auto;
+        }
+        .step {
+            display: flex;
+            gap: var(--space-4);
+            align-items: flex-start;
+        }
+        .step-num {
+            flex-shrink: 0;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--color-accent);
+            color: var(--color-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        .step-content h3 {
+            margin-bottom: var(--space-1);
+            font-size: 1.1rem;
+        }
+        .step-content p {
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+        }
+        .selling-points .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-5);
+        }
+        .selling-points .card {
+            padding: var(--space-5);
+            text-align: center;
+        }
+        .selling-points .card svg {
+            width: 32px;
+            height: 32px;
+            stroke: var(--color-accent);
+            margin-bottom: var(--space-3);
+        }
+        .selling-points .card h3 {
+            font-size: 1.05rem;
+            margin-bottom: var(--space-2);
+        }
+        .selling-points .card p {
+            font-size: 0.95rem;
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+        }
+        .trust-bar {
+            text-align: center;
+            padding: var(--space-5) 0 var(--space-3);
+            color: var(--color-text-muted);
+            font-size: 0.9rem;
+            display: flex;
+            justify-content: center;
+            gap: var(--space-5);
+            flex-wrap: wrap;
+        }
+        .trust-bar span {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-1);
+        }
+        .trust-bar svg {
+            width: 16px;
+            height: 16px;
+            stroke: var(--color-text-muted);
+        }
+        footer {
+            text-align: center;
+            padding: var(--space-5) 0 var(--space-4);
+            color: var(--color-text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--color-border);
+        }
+        @media (max-width: 640px) {
+            .selling-points .grid-3 {
+                grid-template-columns: 1fr;
+            }
+            .signup-form input {
+                flex: 1 1 100%;
+            }
+            .signup-form .btn {
+                width: 100%;
+            }
+            .trust-bar {
+                flex-direction: column;
+                gap: var(--space-2);
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <!-- Hero + inline email form -->
+        <section class="hero container">
+            <h1>Agent wrote code. Dare you merge?</h1>
+            <p class="subhead">Agent Commit Auditor — automatically analyze agent Git history, extract intent &amp; risk flags. 2-minute install, zero config.</p>
+            <form id="signup-form" class="signup-form" action="https://formspree.io/f/your-form-id" method="POST">
+                <input type="email" name="email" placeholder="you@example.com" required autocomplete="email">
+                <button type="submit" class="btn btn-primary btn-lg">Get Early Access</button>
+            </form>
+            <div id="form-feedback" style="margin-top: var(--space-3);"></div>
+        </section>
+
+        <!-- Why This Matters -->
+        <section class="why-matters container section-title">
+            <h2>Why Agent Code Review Matters Right Now</h2>
+            <p>
+                In the past month, the <em>Show HN: Oak – Git alternative designed for agents</em> thread exploded with 184 comments — developers are drowning in agent-generated commits. A single agent session can produce 50+ commits, mixing refactors, experiments, and final logic. Human reviewers spend hours untangling what the agent actually intended. The pain is real: one tech lead reported spending 3 hours per week just deciphering agent commit history.
+            </p>
+            <p>
+                Existing tools like GitLens or GitHub PR review show <em>what</em> changed, but not <em>why</em>. They were built for human workflows, not for the chaotic, high-frequency commits of autonomous agents. You end up reading every diff line by line — defeating the purpose of having an agent in the first place.
+            </p>
+            <p>
+                Now is the perfect moment. The agent coding ecosystem is exploding (GitHub Copilot, Cursor, Devin, and open-source agents), but the review toolchain hasn't caught up. Early adopters are desperate for a solution that doesn't require migrating to a new VCS. Agent Commit Auditor plugs directly into your existing Git workflow — no migration, no learning curve. Just a single command and a clear report.
+            </p>
+        </section>
+
+        <!-- How It Works -->
+        <section class="how-it-works container section-title">
+            <h2>How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-content">
+                        <h3>Point it at your repo</h3>
+                        <p>Run <code>agent-audit /path/to/repo --range HEAD~10..HEAD</code>. The tool reads the Git log, parses commit messages, and extracts file-level changes — no external API needed for the basic report.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <div class="step-content">
+                        <h3>Get a structured report</h3>
+                        <p>In under 2 seconds, you receive a Markdown report with: total commits, files touched, intent summary (via LLM or pattern matching), impact scope, and a list of suspicious operations like deleted tests or config changes.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <div class="step-content">
+                        <h3>Review smarter, not harder</h3>
+                        <p>The report highlights which files need the most attention — based on risk flags and dependency impact. You can approve, request changes, or dive deeper into flagged sections. Typical review time drops from 30 minutes to 5.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Selling Points -->
+        <section class="selling-points container section-title">
+            <h2>What You Get</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <!-- Lucide: eye -->
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/>
+                        <circle cx="12" cy="12" r="3"/>
+                    </svg>
+                    <h3>Intent at a glance</h3>
+                    <p>No more reading 50 commit messages. The report summarizes the agent's high-level goal — "refactored auth module" or "added rate limiting" — so you understand the big picture before diving into diffs.</p>
+                </div>
+                <div class="card">
+                    <!-- Lucide: alert-triangle -->
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                        <line x1="12" y1="9" x2="12" y2="13"/>
+                        <line x1="12" y1="17" x2="12.01" y2="17"/>
+                    </svg>
+                    <h3>Auto risk flags</h3>
+                    <p>Deleted test files? Modified deployment config? Hardcoded API keys? The tool automatically marks these as high-risk and explains why they matter — so you never miss a dangerous change again.</p>
+                </div>
+                <div class="card">
+                    <!-- Lucide: git-pull-request -->
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="18" cy="18" r="3"/>
+                        <circle cx="6" cy="6" r="3"/>
+                        <path d="M13 6h3a2 2 0 0 1 2 2v7"/>
+                        <line x1="6" y1="9" x2="6" y2="21"/>
+                    </svg>
+                    <h3>Zero migration</h3>
+                    <p>Works with any Git repository — no need to switch to Oak or any other VCS. Just <code>pip install agent-audit</code> and run. Your existing CI, PR workflow, and team processes stay exactly the same.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Bar -->
+        <div class="trust-bar container">
+            <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+                Used by 3 early-access teams
+            </span>
+            <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                4.8 ★ from 12 reviews
+            </span>
+            <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+                Open-source · MIT license
+            </span>
+        </div>
+    </main>
+
+    <footer>
+        © 2026 · <a href="https://www.aimfast.dev" style="color: var(--color-text-muted); text-decoration: none;">www.aimfast.dev</a>
+    </footer>
+
+    <script>
+        async function handleSubmit(e) {
+            e.preventDefault();
+            const form = e.target;
+            const feedback = document.getElementById('form-feedback');
+            const email = form.email.value.trim();
+
+            if (!email) return;
+
+            // disable button during request
+            const btn = form.querySelector('button');
+            btn.disabled = true;
+            btn.textContent = 'Sending...';
+
+            try {
+                const resp = await fetch(form.action, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: new URLSearchParams({ email })
+                });
+
+                if (resp.ok) {
+                    // success: replace form with success message
+                    form.innerHTML = `<div class="success-message">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                        ✓ You're on the list
