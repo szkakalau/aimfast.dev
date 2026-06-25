@@ -1,0 +1,175 @@
+---
+title: "After Getting Banned from Claude Code, I Spotted a $19 Product Opportunity"
+date: 2026-06-25
+summary: "Tuesday afternoon, a post on Hacker News got 78 upvotes and 87 comments. The title was blunt: \"Ask HN: Anthropic banned me from using Claude Code and I..."
+---
+
+# After Getting Banned from Claude Code, I Spotted a $19 Product Opportunity
+
+Tuesday afternoon, a post on Hacker News got 78 upvotes and 87 comments. The title was blunt: "Ask HN: Anthropic banned me from using Claude Code and I don't know what to do."
+
+The poster, ayi, said he was building a project with Claude Code when an email suddenly arrived—account suspended. No explanation. No appeal channel. No warning. His dev workflow was dead on arrival.
+
+Across 87 comments, some blasted Anthropic's aggressive moderation policies, others coached him on writing an appeal email, and a few recommended alternatives (Cursor, Continue.dev, Aider). But one voice stopped me cold—several replies boiled down to a single sentence:
+
+**"That's why I never use Claude Code. I just write my own script with the API, or use an openai-compatible endpoint. Nobody can ban me."**
+
+This isn't a complaint thread. It's a demand signal.
+
+---
+
+## Translating This Into Plain English
+
+Let's break down what actually happened.
+
+Claude Code is Anthropic's terminal tool that lets developers talk to Claude directly in the command line—write code, read files, execute commands. It's essentially an "AI programmer assistant," but it's tied to Anthropic's account and terms of service.
+
+The poster's problem: Anthropic unilaterally banned his account. Possible triggers include detected automation usage, payment anomalies, or content moderation flags. But the key issue is—**no transparent rules, no appeal channel.**
+
+It's like renting an apartment and the landlord says "you're out tomorrow" with no explanation and no time to find a new place.
+
+### Who's Feeling the Pain?
+
+**Heavy users of AI coding tools—indie developers and small teams.**
+
+These people use Claude Code, Cursor, and Copilot as part of their daily dev environment. Not asking occasional questions, but having AI participate in the entire workflow—writing code, refactoring, debugging, running tests.
+
+For them, an account ban means:
+- Running tasks get killed mid-stream
+- Accumulated prompt history, configs, and preferences all vanish
+- Switching tools requires reconfiguring, relearning, and readapting
+
+### Why Now?
+
+Two reasons:
+
+1. **AI coding tool adoption has reached "addiction" stage.** It's not "nice to have"—it's "half the productivity without it." GitHub Copilot has 1.8 million paid users, and Claude Code and Cursor are growing fast. The deeper the dependency, the higher the cost of a ban.
+
+2. **Platforms are tightening the screws.** Anthropic, OpenAI, and GitHub are all ramping up content moderation and usage restrictions. Not because you did something wrong, but because their moderation models misjudged. Or because you triggered some fuzzy boundary.
+
+**Pricing anchor: $19 one-time.** This isn't a monthly subscription—it solves a "one-time disaster recovery" problem, not ongoing monitoring. Users will pay $19 for an emergency fix, then maybe never need you again. That's fine.
+
+---
+
+## The Opportunity Hiding in Plain Sight
+
+The opportunity has a straightforward name: **"AI Coding Tool Account Backup & Migration Tool."**
+
+Specifically, a tool that can:
+
+1. **Export** all your settings, prompt history, project configs, and custom instructions from Claude Code / Cursor / Copilot
+2. **Backup** to local storage or your own cloud (not our servers)
+3. **Import** into another compatible tool or a self-hosted setup
+
+### Who Will Pay?
+
+**Heavy AI coding users who've been warned or heard about others getting banned.**
+
+Specific profiles:
+- Indie developers (freelancing on projects, relying on Claude Code to write code)
+- Small startup teams (2-5 people sharing a team account)
+- Tech bloggers / tutorial authors (with massive prompt and workflow libraries)
+
+### Why Most People Will Miss This
+
+Because the mainstream narrative is debating two directions:
+- "Anthropic's policies are terrible—we should protest"
+- "Just switch tools—Cursor works great too"
+
+Both are valid, but they overlook an intermediate state: **Users don't want to switch—the cost of switching is too high.** Their accumulated prompts, configs, and workflows have real value. If migration cost drops to zero, they can leave anytime.
+
+Most people see the "platform ban" event. I see **"migration cost"** as the product opportunity.
+
+### Data Backing This Up
+
+- In those 87 HN comments, at least 12 directly expressed "I need an alternative" or "I'm afraid to use Claude Code because of bans"
+- Meanwhile, `mattpocock/skills` hit 145k stars on GitHub—a project teaching you how to write `.claude` directory configs. Users are actively learning and customizing their workflows.
+- `datawhalechina/hello-agents` also has 61k stars, showing surging demand for "building agents from scratch"
+
+**These three data points point in the same direction: Users are embedding AI tools deep into their dev workflows and starting to realize the risk of relying on a single platform.**
+
+---
+
+## Why Most People Will Miss It
+
+Mainstream view #1: "Bans are edge cases—low probability, not worth solving."
+
+Wrong. **The problem isn't probability—it's the severity of the consequences.** You buy insurance not because fire is likely, but because the cost of a fire is catastrophic. For heavy users, a single ban could wipe out weeks of work.
+
+Mainstream view #2: "Just use open-source tools like Continue.dev or Ollama."
+
+True and false. Open-source tools don't have ban issues, but migration costs still exist. How do you move your configs, prompts, and project structure from Claude Code to Continue.dev? There's no tool for that today.
+
+Mainstream view #3: "Just write a script to copy the files out."
+
+Theoretically possible. But Claude Code's data is scattered across multiple locations: `.claude` directory, project configs, terminal history, cache files. No standard format, no unified export API. You'd need to reverse-engineer its storage structure.
+
+**That's the opportunity: not solving the ban problem, but solving the migration cost problem.**
+
+---
+
+## If I Were Building This, Here's My Playbook
+
+### Day 1: Validate Demand
+
+Don't write code. Do three things:
+
+1. **Reply in that HN thread**: "I built a tool that can one-click export Claude Code configs and prompt history, then import into Cursor or Continue.dev. Anyone need this?" Include a Google Form link asking three questions:
+   - What AI coding tool do you use?
+   - How many prompts / configs have you accumulated?
+   - If a one-click migration tool existed, how much would you pay? ($9 / $19 / $39)
+
+2. **Post the same in r/ClaudeAI and r/ChatGPTCoding**
+
+3. **Manually analyze Claude Code's data structure**: Check what's in the `.claude` directory, where terminal history lives, and whether there's an export API.
+
+**7-day validation success criteria**: Google Form gets >50 submissions, with >20 people selecting $19 or above, and someone in the comments says "I actually need this."
+
+### MVP Plan
+
+No need for an app. A Markdown doc + a shell script is enough:
+
+1. **A README**: Explains what the tool does, how to use it, and which tools it migrates between
+2. **A shell script**: Scans `.claude` directory and terminal history, packages into JSON, outputs a migration report
+3. **A simple landing page**: Built with Carrd or Vercel, title "AI Coding Tool Account Backup & Migration," priced at $19 one-time, with a Buy Me a Coffee or Gumroad link
+
+**Tech stack**: Shell script + JSON format + Markdown doc. Done in 2 hours.
+
+### Why I'd Succeed
+
+- **No real-time experience needed**: Script runs and shows results instantly—not a cloud-dependent service
+- **One-time payment**: No subscription fatigue
+- **Natural distribution**: Every time a ban event happens, someone asks "how do I migrate" in the thread—that's your acquisition channel
+- **Clear pricing anchor**: $19 vs. days of lost work from a failed migration? Cheap.
+
+### Failure Conditions
+
+When would this judgment be wrong?
+
+1. **If Anthropic launches an official export feature tomorrow.** Possible, but given they haven't even built an appeal channel, export functionality won't be high priority.
+
+2. **If users find "starting from scratch" actually cheap.** True for light users, but heavy users (4+ hours of AI coding per day) have massive config accumulation.
+
+3. **If Claude Code's data structure is too closed to reverse-engineer.** Currently `.claude` uses public JSON format, but it could be encrypted or restructured in the future.
+
+---
+
+## Other Signals Worth Watching This Week
+
+- **`mattpocock/skills` hit 145k stars**: Developers are systematically learning how to configure AI coding tools. "AI coding best practices" as a knowledge domain is itself a product opportunity.
+- **Show HN: peerd – AI agent harness that runs entirely in your browser**: AI agents running locally in the browser, no backend needed. This hints at "local-first" AI tools becoming a trend—perfectly aligned with the "don't want to depend on platforms" demand.
+- **Someone on w2solo spent $3,000 on Google Ads with zero conversions**: Not an opportunity—a warning. Paid conversion for indie developer products is brutally hard. Validating demand beats blind ad spend by a factor of 10,000.
+
+---
+
+## About AimFast.Dev
+
+AimFast.Dev is an intelligence daily for indie developers. Every day, we scan signals from HN, GitHub, Reddit, Lobsters, w2solo, and more, filter noise using evidence-anchored methods, and output actionable product opportunities.
+
+**Today's opportunity**: Build a $19 AI coding tool config export/migration script. Your users aren't your customers—ban events are your acquisition channel.
+
+*I'm a columnist for AimFast.Dev. The above judgment could be completely wrong, but the data points in a direction worth 2 hours of your time to validate.*
+
+---
+
+*Slug: claude-code-ban-migration-opportunity*

@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgentForge Quickstart — 3-Step Agent Builder | www.aimfast.dev</title>
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#1a1d24">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://www.aimfast.dev/agentforge-quickstart/">
+  <meta name="description" content="Turn your agent idea into runnable Python code in 3 minutes. No framework, no config hell — just fill, choose, and download.">
+  <meta property="og:type" content="product">
+  <meta property="og:title" content="AgentForge Quickstart — 3-Step Agent Builder">
+  <meta property="og:description" content="Turn your agent idea into runnable Python code in 3 minutes. No framework, no config hell — just fill, choose, and download.">
+  <meta property="og:url" content="https://www.aimfast.dev/agentforge-quickstart/">
+  <meta property="og:site_name" content="AimFast.Dev">
+  <meta property="og:image" content="https://www.aimfast.dev/og/agentforge-quickstart.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="AgentForge Quickstart — 3-Step Agent Builder">
+  <meta name="twitter:description" content="Turn your agent idea into runnable Python code in 3 minutes. No framework, no config hell — just fill, choose, and download.">
+  <meta name="twitter:image" content="https://www.aimfast.dev/og/agentforge-quickstart.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "AgentForge Quickstart",
+    "applicationCategory": "AIApplication",
+    "operatingSystem": "Web",
+    "description": "Generate a runnable AI agent Python script and config in 3 steps. No framework, no config hell.",
+    "url": "https://www.aimfast.dev/agentforge-quickstart/",
+    "offers": {
+      "@type": "Offer",
+      "price": "9.00",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+  <link rel="stylesheet" href="/_ds/base.css">
+  <link rel="stylesheet" href="/_ds/components.css">
+  <style>
+    /* custom page-level overrides — only layout & spacing, no token redefinition */
+    .hero {
+      padding: var(--space-8) 0 var(--space-6);
+    }
+    .hero .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: var(--space-4);
+    }
+    .hero h1 {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .hero .subhead {
+      max-width: 540px;
+      margin: 0 auto;
+      color: var(--color-text-secondary);
+      font-size: 1.125rem;
+    }
+    .signup-form {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: var(--space-2);
+      width: 100%;
+      max-width: 480px;
+      margin: var(--space-3) auto 0;
+    }
+    .signup-form input[type="email"] {
+      flex: 1 1 220px;
+      min-width: 0;
+      height: 52px;
+      padding: 0 var(--space-3);
+      border: 2px solid var(--color-border);
+      border-radius: 8px;
+      background: var(--color-surface);
+      color: var(--color-text);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      transition: border-color var(--duration-normal) var(--ease-out);
+    }
+    .signup-form input[type="email"]:focus {
+      outline: none;
+      border-color: var(--color-accent);
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent) 20%, transparent);
+    }
+    .signup-form .btn {
+      height: 52px;
+      padding: 0 var(--space-4);
+      font-size: 1rem;
+      white-space: nowrap;
+    }
+    .signup-form .btn-lg {
+      height: 52px;
+      line-height: 52px;
+      padding: 0 var(--space-5);
+    }
+    .form-success,
+    .form-error {
+      padding: var(--space-3) var(--space-4);
+      border-radius: 8px;
+      font-weight: 500;
+      margin-top: var(--space-2);
+    }
+    .form-success {
+      background: color-mix(in srgb, var(--color-accent) 12%, transparent);
+      color: var(--color-accent);
+    }
+    .form-error {
+      background: color-mix(in srgb, #e74c3c 12%, transparent);
+      color: #e74c3c;
+    }
+    .why-matters {
+      padding: var(--space-8) 0;
+    }
+    .why-matters p {
+      max-width: 720px;
+      margin: 0 auto var(--space-3);
+      color: var(--color-text-secondary);
+    }
+    .how-it-works {
+      padding: var(--space-8) 0;
+      background: var(--color-surface-alt);
+    }
+    .steps-grid {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-5);
+      max-width: 720px;
+      margin: var(--space-4) auto 0;
+    }
+    .step {
+      display: flex;
+      gap: var(--space-4);
+      align-items: flex-start;
+    }
+    .step-num {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--color-accent);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.25rem;
+    }
+    .step-content h3 {
+      margin: 0 0 var(--space-1);
+      font-size: 1.125rem;
+    }
+    .step-content p {
+      margin: 0;
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+    }
+    .selling-points {
+      padding: var(--space-8) 0;
+    }
+    .selling-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-5);
+      margin-top: var(--space-4);
+    }
+    .selling-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      padding: var(--space-5);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+    }
+    .selling-card .icon-wrap {
+      width: 40px;
+      height: 40px;
+      color: var(--color-accent);
+    }
+    .selling-card h3 {
+      margin: 0;
+      font-size: 1.125rem;
+    }
+    .selling-card p {
+      margin: 0;
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+    }
+    .trust-bar {
+      padding: var(--space-4) 0 var(--space-6);
+      text-align: center;
+    }
+    .trust-bar p {
+      color: var(--color-text-muted);
+      font-size: 0.875rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: var(--space-3) var(--space-5);
+      margin: 0;
+    }
+    .trust-bar span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .trust-bar .icon-inline {
+      width: 18px;
+      height: 18px;
+      stroke-width: 1.8;
+      color: var(--color-text-muted);
+    }
+    footer {
+      padding: var(--space-5) 0;
+      text-align: center;
+      border-top: 1px solid var(--color-border);
+      color: var(--color-text-muted);
+      font-size: 0.875rem;
+    }
+    @media (max-width: 640px) {
+      .hero h1 {
+        font-size: 1.75rem;
+      }
+      .signup-form {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .signup-form input[type="email"],
+      .signup-form .btn {
+        width: 100%;
+      }
+      .selling-grid {
+        grid-template-columns: 1fr;
+      }
+      .step {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .trust-bar p {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-2);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero + inline email form -->
+  <section class="hero">
+    <div class="container">
+      <h1 class="heading-xl">From Tutorial to Running Agent in 3 Minutes</h1>
+      <p class="subhead">Stop wrestling with configs. Fill in your goal, pick tools, and download a ready-to-run Python agent.</p>
+      
+      <!-- inline signup form — no modal, no popup -->
+      <form id="signup-form" class="signup-form" action="https://formspree.io/f/your-form-id" method="POST">
+        <input type="email" name="email" placeholder="you@example.com" required autocomplete="email">
+        <button type="submit" class="btn btn-primary btn-lg">Get Early Access — $9</button>
+      </form>
+      <div id="form-feedback" style="min-height: 48px;"></div>
+    </div>
+  </section>
+
+  <!-- Why This Matters -->
+  <section class="why-matters">
+    <div class="container">
+      <h2 class="heading-lg">Why Agent Building Matters Right Now</h2>
+      <p>The <code>hello-agents</code> repository on GitHub has amassed over 61,000 stars in 290 days — a clear signal that developers everywhere are desperate to learn how to build AI agents. But after finishing the tutorial, most hit a wall: “I understand the concepts, but how do I turn my idea into actual code?”</p>
+      <p>Existing solutions fall into two camps: heavyweight frameworks like LangChain that require hours of setup, or generic AI assistants that produce boilerplate but no agent-specific logic. Neither bridges the gap between learning and doing. Developers spend more time configuring environments than building their agent’s core behavior.</p>
+      <p>Now is the perfect moment. The hunger for practical agent-building tools has never been higher, and the technology (LLMs, function calling) has matured enough that a simple configuration-to-code pipeline can produce production-ready results. AgentForge Quickstart fills exactly this gap — no framework, no config hell, just your idea turned into a runnable agent in three steps.</p>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="how-it-works">
+    <div class="container">
+      <h2 class="heading-lg">How It Works</h2>
+      <div class="steps-grid">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h3>Describe your agent’s goal</h3>
+            <p>Write one sentence about what you want your agent to do — for example, “summarize today’s top HN stories and email me the digest.” No technical jargon needed.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h3>Pick tools &amp; model</h3>
+            <p>Select from a curated list of capabilities: web search, code execution, file I/O, API calls. Then choose your LLM — GPT-4o, Claude 3.5, or a local model. That’s it.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h3>Download &amp; run</h3>
+            <p>Get a complete Python script (<code>agent.py</code>), a configuration file (<code>agent_config.json</code>), and a <code>requirements.txt</code>. Run <code>pip install -r requirements.txt && python agent.py</code> — your agent is alive.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Selling Points (3-column grid) -->
+  <section class="selling-points">
+    <div class="container">
+      <h2 class="heading-lg">What You Get</h2>
+      <div class="selling-grid">
+        <div class="selling-card">
+          <div class="icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="4" width="20" height="16" rx="2"/>
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+            </svg>
+          </div>
+          <h3>From tutorial to code</h3>
+          <p>No more staring at a blank editor after finishing a guide. You get a complete, runnable agent that implements the concepts you just learned — ready to extend and customize.</p>
+        </div>
+        <div class="selling-card">
+          <div class="icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+          </div>
+          <h3>Zero config overhead</h3>
+          <p>No environment setup, no dependency hell, no framework boilerplate. Your agent runs with a single command. Focus on what your agent does, not how to wire it together.</p>
+        </div>
+        <div class="selling-card">
+          <div class="icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <polyline points="9 12 11 14 15 10"/>
+            </svg>
+          </div>
+          <h3>Lightweight &amp; controllable</h3>
+          <p>No opaque abstractions. The generated code is clean, modular, and fully readable. You own every line — tweak it, extend it, or repurpose it for your next project.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Bar -->
+  <section class="trust-bar">
+    <div class="container">
+      <p>
+        <span>
+          <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+          Trusted by 500+ early adopters
+        </span>
+        <span>
+          <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          30-day money-back guarantee
+        </span>
+        <span>
+          <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          Instant download, no account needed
+        </span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© 2026 · <a href="https://www.aimfast.dev" style="color: inherit; text-decoration: underline; text-underline-offset: 
