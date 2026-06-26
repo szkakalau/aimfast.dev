@@ -1,5 +1,5 @@
 {
-  "_comment": "AimFast.Dev 鈥?閰嶇疆鏂囦欢 | 鐗堟湰 v2.0",
+  "_comment": "AimFast.Dev — 配置文件 | 版本 v2.1 — 新增 C 端信号检测",
   "api_keys": {
     "producthunt": {
       "client_id": "YOUR_PH_CLIENT_ID",
@@ -27,17 +27,24 @@
     "domestic": [
       {"name": "V2EX", "key": "v2ex", "source": "API", "priority": "P0", "enabled": true},
       {"name": "w2solo", "key": "w2solo", "source": "RSS", "priority": "P0", "enabled": true},
-      {"name": "鐭ヤ箮", "key": "zhihu", "source": "鎼滅储", "priority": "P2", "enabled": false}
+      {"name": "知乎", "key": "zhihu", "source": "搜索", "priority": "P2", "enabled": false}
+    ],
+    "_c_end_sources_note": "v2.1: C 端信号采集源已实现。Reddit Consumer 免费可用；豆瓣 API 免费但有限速；小红书未认证模式数据量有限。",
+    "c_end_planned": [
+      {"name": "Reddit Consumer", "key": "reddit-consumer", "source": "RSS (hot.rss)", "subreddits": ["BuyItForLife","GoodValue","digitalnomad","solotravel","onebag","minimalism","homeautomation","HomeKit","gadgets","MechanicalKeyboards","headphones","macapps","iosapps","androidapps","InternetIsBeautiful","selfhosted","personalfinance","Frugal"], "priority": "P1", "enabled": true, "script": "collect_reddit_consumer"},
+      {"name": "豆瓣", "key": "douban", "source": "API v2 + Web", "priority": "P1", "enabled": true, "script": "collect_douban", "_note": "电影/图书/小组热门 — API 无认证, 有限速"},
+      {"name": "小红书", "key": "xiaohongshu", "source": "API (未认证/认证)", "priority": "P1", "enabled": true, "script": "collect_xiaohongshu", "_note": "未登录模式数据量有限, 设置 ~/.config/aimfast/xhs_cookies.json 后可获取完整搜索数据"}
     ]
   },
   "scoring": {
-    "formula": "Score = cross_platform脳3 + volume脳2 + freshness脳2 + actionability脳2 + buyer_clarity脳1",
+    "formula": "Score = cross_platform×3 + volume×2 + freshness×2 + actionability×2 + buyer_clarity×1 + consumer_appeal×2",
     "weights": {
       "cross_platform": 3,
       "volume": 2,
       "freshness": 2,
       "actionability": 2,
-      "buyer_clarity": 1
+      "buyer_clarity": 1,
+      "consumer_appeal": 2
     },
     "thresholds": {
       "action_trigger": 15,
@@ -48,7 +55,8 @@
       "volume": {"lt_50": 1, "50_200": 2, "200_500": 3, "gt_500": 5},
       "freshness": {"today": 5, "yesterday": 3, "3_days_plus": 1},
       "actionability": {"concrete_product_with_pricing": 5, "vague_direction": 3, "pure_complaint": 1},
-      "buyer_clarity": {"specific_buyer": 5, "likely_buyer": 3, "unknown_buyer": 1}
+      "buyer_clarity": {"specific_buyer": 5, "likely_buyer": 3, "unknown_buyer": 1},
+      "consumer_appeal": {"strong_c_end": 5, "mixed_audience": 3, "developer_only": 1}
     }
   },
   "decay": {
@@ -69,8 +77,8 @@
   },
   "distribution": {
     "local_archive": true,
-    "planet_article": {"enabled": true, "auto_publish": false, "note": "鎵嬪姩瀹℃牎鍚庡彂甯冿紝淇濊瘉璐ㄩ噺"},
-    "wechat_mp": {"enabled": false, "note": "棰勭暀"}
+    "planet_article": {"enabled": true, "auto_publish": false, "note": "手动审核后发布，保证质量"},
+    "wechat_mp": {"enabled": false, "note": "预留"}
   },
   "landing_page": {
     "domain": "aimfast.dev",

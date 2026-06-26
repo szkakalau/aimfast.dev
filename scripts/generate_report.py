@@ -37,7 +37,7 @@ def load_methodology() -> str:
 
 
 def _categorize_signals(signals: list[dict]) -> dict:
-    """将信号按日报板块分类。"""
+    """将信号按日报板块分类。v2.1: 新增 C 端消费信号分类。"""
     categories = {
         "new_products": [],       # 新产品发布
         "search_trends": [],      # 搜索趋势异动
@@ -52,6 +52,7 @@ def _categorize_signals(signals: list[dict]) -> dict:
         "migration": [],          # 迁移话题
         "trending": [],           # 趋势信号
         "cooling": [],            # 降温信号
+        "c_end": [],              # C 端消费信号（v2.1 新增）
     }
 
     for s in signals:
@@ -89,6 +90,32 @@ def _categorize_signals(signals: list[dict]) -> dict:
             categories["revival"].append(s)
         if any(kw in text for kw in ["migration", "迁移", "switch from", "alternative to", "替代"]):
             categories["migration"].append(s)
+
+        # C 端消费信号检测（v2.1 新增）
+        # 优先使用 scoring 阶段已计算的 c_end_flag
+        if s.get("c_end_flag"):
+            categories["c_end"].append(s)
+        else:
+            # 备用：基于关键词的 C 端检测
+            c_kw = [
+                "game", "游戏", "play", "gaming",
+                "pdf", "scan", "文档", "扫描",
+                "audio", "music", "podcast", "音乐", "播客", "有声",
+                "video", "视频", "movie",
+                "photo", "image", "图片", "照片",
+                "health", "fitness", "健康", "运动",
+                "travel", "旅行",
+                "home", "garden", "家居", "花园", "lawn",
+                "pet", "dog", "cat", "宠物",
+                "book", "reading", "阅读",
+                "mac app", "macos", "menu bar",
+                "chrome extension", "浏览器插件",
+                "desktop app", "桌面应用",
+                "logitech", "razer", "外设", "鼠标", "键盘", "硬件",
+                "subscription", "订阅",
+            ]
+            if any(kw in text for kw in c_kw):
+                categories["c_end"].append(s)
 
     return categories
 
@@ -149,6 +176,22 @@ def _build_system_prompt() -> str:
 - **图片替代文字**: 如果引用图表/表格，确保有文字描述版本
 - **段落长度**: 每段不超过 4 句，便于 Google 提取 featured snippet
 
+### 🆕 C 端机会专项（v2.1 新增 — 必须执行）
+
+**问题背景**：信号源（GitHub、HN、V2EX）天然偏开发者，评分公式历史上偏 B2B SaaS。但这不意味着 C 端机会不存在——只是被系统性过滤了。
+
+**你必须做到**：
+1. 在每个日报的「发现机会」板块中，**优先列出 3 个 C 端消费信号**（面向普通用户，非 AI 开发者工具）
+2. C 端信号的特征识别：Mac App / Chrome 插件 / 桌面工具 / 游戏 / 生活效率 / 音频视频 / 健康 / 家居 / 宠物 / 旅行 / 有声书 / 播客 / 外设硬件 / 订阅制服务
+3. 对于每个 C 端信号，回答：**普通用户（非程序员）会用它做什么？为什么愿意付钱？**
+4. 定价锚点改为 C 端友好的：$2.99-9.99 一次性 / $4.99-14.99/月（而非 B2B 的 $19-29/月）
+5. 验证路径改为 C 端友好的：App Store 预注册 / Reddit 消费者子版块 / 直接 Dribbble/ProductHunt 发布 / 社交媒体传播
+
+**C 端 vs B 端判断规则**：
+- 如果买方是"工程经理/CTO/开发者团队"→ B 端，放入「发现机会」的 Solo-founder 子板块
+- 如果买方是"普通 Mac 用户/上班族/学生/宠物主/旅行者/创意工作者"→ C 端，放入独立的「🛍️ C端消费机会」子板块
+- 如果一个信号两者都可以，**优先放入 C 端板块**（因为历史上 C 端被系统性低估）
+
 ## 日报结构
 
 ### 📝 主编说（~200 字人话开场）
@@ -178,6 +221,24 @@ def _build_system_prompt() -> str:
 - 搜索词暴涨
 - GitHub 快速增长开源项目（无商业版本）
 - 开发者在抱怨什么
+
+### 🛍️ C端消费机会（v2.1 新增 — 独立板块，级别等同于「发现机会」）
+**目的**: 识别面向普通消费者（非程序员）的产品机会。从今日信号中挖掘那些被评分公式低估的 C 端信号。
+
+**必须包含**：
+- **C 端信号 Top 3**: 每个用「信号 → 白话解读 → 谁会付钱（普通人角色）→ 定价（C端友好价）→ 验证路径」格式
+- **为什么日报过去漏掉了它**：一句话解释（如"因为被评分公式的 actionability 维度低估"）
+- **可复制的模式**：这个 C 端信号暗示了什么可复制的产品模式？
+
+**定价参考**：
+- 工具类: $4.99-9.99 一次性
+- 订阅类: $4.99-14.99/月
+- 游戏类: 免费 + $2.99 去广告 / $9.99 年费
+
+**验证路径参考**：
+- Mac App: App Store 预注册页 + Reddit r/macapps 发帖
+- Chrome 插件: Chrome Web Store 上架 + 相关论坛签名档
+- 游戏: itch.io 发布 + HN Show HN（HN偏好极简游戏）
 
 ### 🛰️ 技术选型
 4 个子板块，每个必须遵守原子结构:
@@ -215,7 +276,8 @@ def _build_system_prompt() -> str:
 - 格式: 完整 Markdown，不要用代码块包裹
 - 篇幅: 正文 3000-6000 字（比之前更详细，每个子节至少 150 字）
 - 语言: 全程中文，专业术语首次出现时用白话解释
-- 结尾: 加 `---` 分隔线 + `*— AimFast.Dev日报*` 签名"""
+- 结尾: 加 `---` 分隔线 + `*— AimFast.Dev日报*` 签名
+- 🆕 **C端消费机会板块为必选项**，即使今日 C 端信号较少，也要基于现有数据给出至少 1 个 C 端方向（可以是从开发者信号中推导出的消费者版本）"""
 
 
 def _build_user_prompt(signals: list[dict], categories: dict, date_str: str) -> str:
@@ -261,6 +323,7 @@ def _build_user_prompt(signals: list[dict], categories: dict, date_str: str) -> 
         _section_signals("migration", "迁移话题"),
         _section_signals("trending", "趋势信号"),
         _section_signals("cooling", "降温信号"),
+        _section_signals("c_end", "🛍️ C端消费信号（v2.1 — 非AI SaaS，面向普通用户）"),
     ]
 
     # 信号总览
@@ -315,7 +378,8 @@ def _build_user_prompt(signals: list[dict], categories: dict, date_str: str) -> 
 6. **技术术语**: 首次出现必须白话解释
 7. **定价**: 每个产品推荐必须有定价锚点和验证路径
 8. **无数据板块**: 如实写"今日无显著发现"，不要编造
-9. **篇幅**: 3000-6000 字，比常规日报更详细"""
+9. **篇幅**: 3000-6000 字，比常规日报更详细
+10. 🆕 **C端消费机会板块为必填**: 从 c_end 分类信号中提取至少 3 个面向普通消费者的产品机会。如果 c_end 信号不足 3 个，从其他分类中发掘可以"C端化"的信号。每个 C 端机会必须回答: 普通人用它做什么？为什么愿意付钱？用什么渠道验证（非 Landing Page）？"""
 
 
 def generate_report(signals: list[dict], date_str: str) -> str:

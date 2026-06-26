@@ -67,11 +67,14 @@ $Collectors = @(
     @{Name="Product Hunt"; Script="collect_producthunt"; Enabled=$true},
     @{Name="DEV Community"; Script="collect_devcommunity"; Enabled=$true},
     @{Name="Reddit"; Script="collect_reddit"; Enabled=$true},
+    @{Name="Reddit Consumer"; Script="collect_reddit_consumer"; Enabled=$true},
     @{Name="V2EX"; Script="collect_v2ex"; Enabled=$true},
     @{Name="w2solo"; Script="collect_w2solo"; Enabled=$true},
     @{Name="HuggingFace"; Script="collect_huggingface"; Enabled=$true},
     @{Name="Lobsters"; Script="collect_lobsters"; Enabled=$true},
     @{Name="ArXiv"; Script="collect_arxiv"; Enabled=$true},
+    @{Name="豆瓣"; Script="collect_douban"; Enabled=$true},
+    @{Name="小红书"; Script="collect_xiaohongshu"; Enabled=$false},
     @{Name="X/Twitter"; Script="collect_x"; Enabled=$false}
 )
 

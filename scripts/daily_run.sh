@@ -65,13 +65,19 @@ COLLECTORS=(
     "Product Hunt:collect_producthunt"
     "DEV Community:collect_devcommunity"
     "Reddit:collect_reddit"
+    "Reddit Consumer:collect_reddit_consumer"
     "V2EX:collect_v2ex"
     "w2solo:collect_w2solo"
     "HuggingFace:collect_huggingface"
     "Lobsters:collect_lobsters"
     "ArXiv:collect_arxiv"
+    "豆瓣:collect_douban"
+    # "小红书:collect_xiaohongshu"  # 暂禁用 — 未认证模式数据量有限
     # "X/Twitter:collect_x"  # 暂禁用 — 需 AUTH_TOKEN+CT0
 )
+
+# C-end collectors are non-blocking — they may fail due to rate limits or missing auth
+C_END_COLLECTORS=("Reddit Consumer" "豆瓣" "小红书")
 
 for entry in "${COLLECTORS[@]}"; do
     name="${entry%%:*}"
@@ -79,7 +85,12 @@ for entry in "${COLLECTORS[@]}"; do
     if $PYTHON -m "scripts.$script" 2>&1; then
         log "  [$name] OK"
     else
-        log "  [$name] ERROR (exit=$?)"
+        # C-end collectors: warn instead of error
+        if [[ " ${C_END_COLLECTORS[*]} " =~ " ${name} " ]]; then
+            log "  [$name] WARN (non-blocking C-end collector, exit=$?)"
+        else
+            log "  [$name] ERROR (exit=$?)"
+        fi
     fi
 done
 

@@ -340,23 +340,88 @@ def score_epa(signals: list[dict]) -> list[dict]:
         else:
             b_score = rubrics["buyer_clarity"]["unknown_buyer"]
 
+        # 6. consumer_appeal（C 端消费者吸引力 — v2.1 新增）
+        # 检测信号是否面向普通消费者（而非纯开发者工具）
+        c_end_patterns = [
+            # 消费场景关键词
+            "game", "gaming", "golf", "puzzle", "游戏", "娱乐", "play",
+            "pdf", "document", "文档", "scan", "扫描",
+            "audio", "music", "podcast", "音乐", "播客", "有声", "tts", "text-to-speech",
+            "video", "视频", "movie", "film",
+            "photo", "image", "图片", "照片", "camera",
+            "health", "fitness", "wellness", "健康", "运动", "sleep", "睡眠",
+            "food", "recipe", "cooking", "美食", "菜", "做饭",
+            "travel", "旅行", "trip", "flight",
+            "home", "garden", "lawn", "家居", "花园", "植物", "grass",
+            "pet", "dog", "cat", "宠物", "猫", "狗",
+            "fashion", "clothing", "时尚", "衣服",
+            "book", "reading", "阅读", "书",
+            "writing", "写作", "日记", "journal",
+            "kids", "children", "儿童", "小孩", "教育",
+            "shopping", "deal", "购物", "优惠",
+            "car", "vehicle", "auto", "driving",
+            "finance", "budget", "理财", "省钱", "saving money",
+            # 桌面/移动 App
+            "mac app", "macos", "mac menu bar", "menu bar app",
+            "iphone", "ipad", "ios app", "android app",
+            "chrome extension", "浏览器插件", "chrome 插件", "browser extension",
+            "desktop app", "桌面应用", "桌面工具", "electron app",
+            # 生活方式 / 非技术场景
+            "lifestyle", "生活", "日常",
+            "productivity", "效率", "番茄", "pomodoro",
+            "break reminder", "休息提醒", "休息",
+            "logitech", "razer", "keychron", "外设", "鼠标", "键盘", "硬件", "peripheral",
+            "drone", "iot", "smart home", "智能家居",
+            # 消费者服务
+            "subscription", "订阅", "membership",
+            "marketplace", "freelance", "兼职", "副业",
+            "no ai", "without ai", "pure", "不依赖 ai",
+            # 讽刺/娱乐/内容
+            "satire", "parody", "讽刺", "恶搞", "搞笑", "fun", "daily",
+        ]
+        c_end_count = sum(1 for p in c_end_patterns if p in text_lower)
+
+        # 信号源加权：Product Hunt + HN Show HN 通常有 C 端受众
+        source_bonus = 0
+        if s.get("source_key") in ("producthunt",):
+            source_bonus += 1
+        if "show_hn" in s.get("signal_type", ""):
+            source_bonus += 1
+        # Reddit 非编程子版块
+        if s.get("source_key") == "reddit":
+            source_bonus += 1
+
+        c_end_total = c_end_count + source_bonus
+
+        if c_end_total >= 3:
+            c_score = rubrics["consumer_appeal"]["strong_c_end"]
+        elif c_end_total >= 2:
+            c_score = rubrics["consumer_appeal"]["mixed_audience"]
+        else:
+            c_score = rubrics["consumer_appeal"]["developer_only"]
+
         # 计算总分
+        c_weight = weights.get("consumer_appeal", 2)  # 向前兼容旧 config
         score = (
             cp_score * weights["cross_platform"]
             + v_score * weights["volume"]
             + f_score * weights["freshness"]
             + a_score * weights["actionability"]
             + b_score * weights["buyer_clarity"]
+            + c_score * c_weight
         )
 
         s["cross_platform_count"] = unique_sources
         s["score"] = score
+        s["c_end_flag"] = c_end_total >= 3  # 标记为强 C 端信号（v2.1: 阈值从4降至3以适配开发者向信号源）
+        s["c_end_score"] = c_end_total
         s["score_breakdown"] = {
             "cross_platform": {"raw": unique_sources, "score": cp_score, "weighted": cp_score * weights["cross_platform"]},
             "volume": {"raw": volume, "score": v_score, "weighted": v_score * weights["volume"]},
             "freshness": {"raw": days_old, "score": f_score, "weighted": f_score * weights["freshness"]},
             "actionability": {"raw": f"keywords:{actionable_count}", "score": a_score, "weighted": a_score * weights["actionability"]},
             "buyer_clarity": {"raw": f"buyer_keywords:{buyer_count}", "score": b_score, "weighted": b_score * weights["buyer_clarity"]},
+            "consumer_appeal": {"raw": f"c_end_keywords:{c_end_total}", "score": c_score, "weighted": c_score * c_weight},
         }
 
     # 最高分和平均分

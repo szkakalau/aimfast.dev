@@ -88,12 +88,12 @@
       "buyer": "to-be-determined",
       "landing_page_url": "https://www.aimfast.dev/claude-fable-5",
       "lp_status": "live",
-      "verification_result": "pending",
+      "verification_result": "failed",
       "day7_uv": 0,
       "day7_signups": 0,
-      "day7_decision": "",
-      "current_status": "monitoring",
-      "notes": "LP 已生成于 2026-06-10 08:04 | 部署: vercel --prod | Day 2 (06-12): LP 确认在线，页面正常加载。Vercel Analytics 无直接访问权限，UV 待确认。LP 内容: ModelMatch — AI 模型对比推荐引擎"
+      "day7_decision": "abandon",
+      "current_status": "archived",
+      "notes": "Day 11: ❌ 验证失败（0 UV < 30 阈值）→ 放弃"
     },
     {
       "id": "OP-20260612-005",
@@ -107,12 +107,12 @@
       "buyer": "Developers using Claude Code, Codex, Cursor, and MCP-compatible AI agents",
       "landing_page_url": "https://www.aimfast.dev/mcpilot",
       "lp_status": "live",
-      "verification_result": "pending",
+      "verification_result": "failed",
       "day7_uv": 0,
       "day7_signups": 0,
-      "day7_decision": "",
-      "current_status": "monitoring",
-      "notes": "LP 已生成于 2026-06-12 | 信号: chrome-devtools-mcp (43,384 stars, 158.9 star velocity, 273 天). MCP 生态爆发中，目前没有统一的管理/发现工具。产品: MCPilot — 统一仪表盘发现、安装、监控所有 MCP 服务器。"
+      "day7_decision": "abandon",
+      "current_status": "archived",
+      "notes": "Day 9: ❌ 验证失败（0 UV < 30 阈值）→ 放弃"
     },
     {
       "id": "OP-20260612-006",
@@ -126,12 +126,12 @@
       "buyer": "Indie developers and small teams who can't afford a security breach",
       "landing_page_url": "https://www.aimfast.dev/shipsecure",
       "lp_status": "live",
-      "verification_result": "pending",
+      "verification_result": "failed",
       "day7_uv": 0,
       "day7_signups": 0,
-      "day7_decision": "",
-      "current_status": "monitoring",
-      "notes": "LP 已生成于 2026-06-12 | 信号: KeygraphHQ/shannon (44,495 stars, 173.1 star velocity, 257 天). 自主白盒 AI 渗透测试工具。产品: ShipSecure — 一条命令审计整个代码库，找到真实漏洞并证明可被利用。定位 Snyk/Semgrep 的上游替代。"
+      "day7_decision": "abandon",
+      "current_status": "archived",
+      "notes": "Day 9: ❌ 验证失败（0 UV < 30 阈值）→ 放弃"
     },
     {
       "id": "OP-20260613-007",
@@ -145,12 +145,12 @@
       "buyer": "to-be-determined",
       "landing_page_url": "https://www.aimfast.dev/show-hn--homebrew-6-0-0",
       "lp_status": "live",
-      "verification_result": "pending",
+      "verification_result": "failed",
       "day7_uv": 0,
       "day7_signups": 0,
-      "day7_decision": "",
-      "current_status": "monitoring",
-      "notes": "LP 已生成于 2026-06-13 14:49 | 部署: vercel --prod"
+      "day7_decision": "abandon",
+      "current_status": "archived",
+      "notes": "Day 8: ❌ 验证失败（0 UV < 30 阈值）→ 放弃"
     },
     {
       "id": "OP-20260614-008",
@@ -164,12 +164,12 @@
       "buyer": "to-be-determined",
       "landing_page_url": "https://www.aimfast.dev/show-hn--putt-day-a-daily-mini",
       "lp_status": "live",
-      "verification_result": "pending",
+      "verification_result": "failed",
       "day7_uv": 0,
       "day7_signups": 0,
-      "day7_decision": "",
-      "current_status": "monitoring",
-      "notes": "LP 已生成于 2026-06-14 08:04 | 部署: vercel --prod"
+      "day7_decision": "abandon",
+      "current_status": "archived",
+      "notes": "Day 7: ❌ 验证失败（0 UV < 30 阈值）→ 放弃"
     },
     {
       "id": "OP-20260616-009",
@@ -183,12 +183,126 @@
       "buyer": "to-be-determined",
       "landing_page_url": "https://www.aimfast.dev/show-hn--kage---shadow-any-web",
       "lp_status": "live",
+      "verification_result": "failed",
+      "day7_uv": 0,
+      "day7_signups": 0,
+      "day7_decision": "abandon",
+      "current_status": "archived",
+      "notes": "Day 7: ❌ 验证失败（0 UV < 30 阈值）→ 放弃"
+    },
+    {
+      "id": "OP-20260621-010",
+      "date": "2026-06-21",
+      "opportunity": "Show HN: Are You in the Weights?",
+      "signals": [
+        "Hacker News"
+      ],
+      "score": 34,
+      "cross_platform_count": 1,
+      "buyer": "to-be-determined",
+      "landing_page_url": "https://www.aimfast.dev/show-hn--are-you-in-the-weight",
+      "lp_status": "live",
       "verification_result": "pending",
       "day7_uv": 0,
       "day7_signups": 0,
       "day7_decision": "",
       "current_status": "monitoring",
-      "notes": "LP 已生成于 2026-06-16 08:06 | 部署: vercel --prod"
+      "notes": "LP 已生成于 2026-06-21 08:10 | 部署: vercel --prod"
+    },
+    {
+      "id": "OP-20260622-011",
+      "date": "2026-06-22",
+      "opportunity": "nexu-io/html-video",
+      "signals": [
+        "GitHub Trending"
+      ],
+      "score": 32,
+      "cross_platform_count": 1,
+      "buyer": "to-be-determined",
+      "landing_page_url": "https://www.aimfast.dev/nexu-io-html-video",
+      "lp_status": "live",
+      "verification_result": "pending",
+      "day7_uv": 0,
+      "day7_signups": 0,
+      "day7_decision": "",
+      "current_status": "monitoring",
+      "notes": "LP 已生成于 2026-06-22 08:11 | 部署: vercel --prod"
+    },
+    {
+      "id": "OP-20260623-012",
+      "date": "2026-06-23",
+      "opportunity": "One year with Codeberg",
+      "signals": [
+        "Lobsters"
+      ],
+      "score": 32,
+      "cross_platform_count": 3,
+      "buyer": "to-be-determined",
+      "landing_page_url": "https://www.aimfast.dev/one-year-with-codeberg",
+      "lp_status": "live",
+      "verification_result": "pending",
+      "day7_uv": 0,
+      "day7_signups": 0,
+      "day7_decision": "",
+      "current_status": "monitoring",
+      "notes": "LP 已生成于 2026-06-23 08:15 | 部署: vercel --prod"
+    },
+    {
+      "id": "OP-20260624-013",
+      "date": "2026-06-24",
+      "opportunity": "Show HN: Oak – Git alternative designed for agents",
+      "signals": [
+        "Hacker News"
+      ],
+      "score": 30,
+      "cross_platform_count": 1,
+      "buyer": "to-be-determined",
+      "landing_page_url": "https://www.aimfast.dev/show-hn--oak---git-alternative",
+      "lp_status": "live",
+      "verification_result": "pending",
+      "day7_uv": 0,
+      "day7_signups": 0,
+      "day7_decision": "",
+      "current_status": "monitoring",
+      "notes": "LP 已生成于 2026-06-24 13:12 | 部署: vercel --prod"
+    },
+    {
+      "id": "OP-20260625-014",
+      "date": "2026-06-25",
+      "opportunity": "datawhalechina/hello-agents",
+      "signals": [
+        "GitHub Trending"
+      ],
+      "score": 30,
+      "cross_platform_count": 1,
+      "buyer": "to-be-determined",
+      "landing_page_url": "https://www.aimfast.dev/datawhalechina-hello-agents",
+      "lp_status": "live",
+      "verification_result": "pending",
+      "day7_uv": 0,
+      "day7_signups": 0,
+      "day7_decision": "",
+      "current_status": "monitoring",
+      "notes": "LP 已生成于 2026-06-25 14:43 | 部署: vercel --prod"
+    },
+    {
+      "id": "OP-20260626-015",
+      "date": "2026-06-26",
+      "opportunity": "Show HN: I made Google Trends for Hacker News by indexing 18 years of comments",
+      "signals": [
+        "Hacker News"
+      ],
+      "score": 34,
+      "cross_platform_count": 1,
+      "buyer": "to-be-determined",
+      "landing_page_url": "https://www.aimfast.dev/show-hn--i-made-google-trends",
+      "lp_status": "live",
+      "verification_result": "pending",
+      "day7_uv": 0,
+      "day7_signups": 0,
+      "day7_decision": "",
+      "current_status": "monitoring",
+      "notes": "LP 已生成于 2026-06-26 08:15 | 部署: vercel --prod"
     }
   ]
 }

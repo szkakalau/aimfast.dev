@@ -41,6 +41,43 @@ def get_enrichment_config() -> dict:
     }
 
 
+# ── X/Twitter 认证注入 ─────────────────────────────────
+
+def _inject_x_credentials(env: dict):
+    """从 ~/.config/last30days/.env 读取 X 认证并注入环境变量。"""
+    creds = _read_x_credentials()
+    if not creds:
+        return
+    for key, val in creds.items():
+        if val and key not in env:
+            env[key] = val
+
+
+def _read_x_credentials() -> dict | None:
+    """读取 X 认证凭据。返回 {AUTH_TOKEN, CT0} 或 {XAI_API_KEY} 等。"""
+    env_path = Path.home() / ".config" / "last30days" / ".env"
+    if not env_path.exists():
+        return None
+    auth_token = ct0 = xai_key = xquik_key = None
+    for line in env_path.read_text(encoding="utf-8").splitlines():
+        line = line.strip()
+        if line.startswith("AUTH_TOKEN="):
+            auth_token = line.split("=", 1)[1].strip().strip('"').strip("'")
+        elif line.startswith("CT0="):
+            ct0 = line.split("=", 1)[1].strip().strip('"').strip("'")
+        elif line.startswith("XAI_API_KEY="):
+            xai_key = line.split("=", 1)[1].strip().strip('"').strip("'")
+        elif line.startswith("XQUIK_API_KEY="):
+            xquik_key = line.split("=", 1)[1].strip().strip('"').strip("'")
+    if auth_token and ct0:
+        return {"AUTH_TOKEN": auth_token, "CT0": ct0}
+    if xai_key:
+        return {"XAI_API_KEY": xai_key}
+    if xquik_key:
+        return {"XQUIK_API_KEY": xquik_key}
+    return None
+
+
 # ── 引擎路径解析 ──────────────────────────────────────
 
 def resolve_engine_path(config_engine_path: str) -> Path | None:
@@ -190,11 +227,12 @@ def run_engine(topic: str, engine_path: Path, python_path: str,
         "--save-suffix=",
     ]
 
-    # 设置环境变量
+    # 设置环境变量（含 X/Twitter 认证）
     env = {
         **dict(subprocess.os.environ),
         "LAST30DAYS_NATIVE_SEARCH": "0",  # 自动化模式不用 WebSearch
     }
+    _inject_x_credentials(env)
 
     try:
         result = subprocess.run(
@@ -565,6 +603,7 @@ def run_weekly(date_str: str | None = None):
         "--save-suffix=",
     ]
     env = {**dict(subprocess.os.environ), "LAST30DAYS_NATIVE_SEARCH": "0"}
+    _inject_x_credentials(env)
 
     start = time.time()
     try:

@@ -110,6 +110,58 @@
 
 ---
 
+## 12. C 端消费机会识别（v2.1 新增）
+
+> 背景：信号源（GitHub、HN、V2EX）天然偏开发者，评分公式的 actionability/buyer_clarity 维度历史上偏 B2B SaaS。这导致大量面向普通消费者的产品机会被系统性过滤。
+
+### C 端机会的定义
+
+C 端机会 = 买方是**普通用户**（非程序员、非工程经理），产品形态是**消费者工具/游戏/内容**（非 AI 开发套壳）。
+
+### C 端信号特征识别清单
+
+| 维度 | B 端信号（传统 AI SaaS） | C 端信号（消费者产品） |
+|------|------------------------|---------------------|
+| 买方 | 工程经理/CTO/开发者团队 | Mac 用户/上班族/学生/宠物主/旅行者/创意工作者 |
+| 产品形态 | API/SaaS/CLI 工具/模板 | 桌面 App/Chrome 插件/游戏/订阅服务 |
+| 定价 | $19-99/月/一次性 | $2.99-9.99 一次性 / $4.99-14.99/月 |
+| 验证渠道 | Landing Page + HN/Reddit | App Store / Chrome Web Store / Reddit 消费者版块 / 社交媒体 |
+| 关键词 | API, SaaS, CLI, agent, framework, template | game, mac app, chrome extension, desktop, audio, video, photo, health, home, pet, travel, book |
+| 技术依赖 | 高（需要理解 MCP/RAG/API 等） | 低（用户不需要懂技术） |
+
+### C 端信号的三类来源
+
+1. **现有源中的 C 端信号**（process_signals.py 已自动标注 `c_end_flag=true`）
+   - HN Show HN 中的消费产品（游戏、Mac App、桌面工具）
+   - Product Hunt 中的非开发者工具
+   - Reddit 中的消费话题
+   - w2solo 中的副业/兼职故事
+
+2. **从开发者信号中推导出的 C 端版本**
+   - 例：一个开发者工具（Chrome DevTools MCP）→ C 端版本（自动网页截图 + PDF 导出，卖给普通用户）
+   - 例：一个 AI 模型（Kokoro TTS）→ C 端版本（桌面有声书制作器）
+   - 例：一个抱怨（Logitech Options+ 难用）→ C 端版本（外设配置管理 Mac App）
+
+3. **待实现的独立 C 端采集源**（config.json `c_end_planned`）
+   - Reddit 消费者子版块（BuyItForLife, InternetIsBeautiful, malelivingspace 等）
+   - 小红书（中文 C 端趋势第一来源）
+   - 豆瓣（书影音 + 生活方式）
+
+### C 端验证方法（与 B 端不同！）
+
+C 端产品**不要用 Landing Page** 验证。使用以下替代方法：
+- **Mac App**: App Store 预注册页 + Reddit r/macapps 发帖
+- **Chrome 插件**: Chrome Web Store 上架 + 相关论坛回答问题（签名档放链接）
+- **游戏**: itch.io 发布 + HN Show HN（HN 偏好极简、有创意的个人游戏）
+- **消费者服务**: Reddit 消费者子版块 DM / 小型 Kickstarter / Google Form 收集痛点
+- **实物产品**: Etsy 预购 / 社交媒体展示制作过程
+
+### 日报中的 C 端板块
+
+从 v2.1 开始，每份日报必须包含独立的「🛍️ C端消费机会」板块，列出至少 3 个面向普通消费者的产品机会。该板块的优先级等同于传统的「发现机会」板块。
+
+---
+
 ## 8. 信号打分公式
 
 ```
