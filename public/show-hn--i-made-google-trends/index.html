@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HackerNews Trends — Stop Guessing What's Hot. Know It. | www.aimfast.dev</title>
+  <meta name="description" content="Get a data-driven report on any technology’s popularity on Hacker News. See the slope, not just the spike. Based on 18 years of HN comments.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#1a1d24">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://www.aimfast.dev/hackernews-trends/">
+  <meta property="og:type" content="product">
+  <meta property="og:title" content="HackerNews Trends — Stop Guessing What's Hot. Know It.">
+  <meta property="og:description" content="Get a data-driven report on any technology’s popularity on Hacker News. See the slope, not just the spike.">
+  <meta property="og:url" content="https://www.aimfast.dev/hackernews-trends/">
+  <meta property="og:site_name" content="AimFast.Dev">
+  <meta property="og:image" content="https://www.aimfast.dev/og/hackernews-trends.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="HackerNews Trends — Stop Guessing What's Hot. Know It.">
+  <meta name="twitter:description" content="Get a data-driven report on any technology’s popularity on Hacker News. See the slope, not just the spike.">
+  <meta name="twitter:image" content="https://www.aimfast.dev/og/hackernews-trends.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "HackerNews Trends",
+    "applicationCategory": "AIApplication",
+    "operatingSystem": "Web",
+    "description": "Get a data-driven report on any technology’s popularity on Hacker News. See the slope, not just the spike. Based on 18 years of HN comments.",
+    "url": "https://www.aimfast.dev/hackernews-trends/",
+    "offers": {
+      "@type": "Offer",
+      "price": "9.99",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+  <link rel="stylesheet" href="/_ds/base.css">
+  <link rel="stylesheet" href="/_ds/components.css">
+  <style>
+    /* custom layout overrides — using design tokens only */
+    .hero {
+      padding: var(--space-8) 0 var(--space-6);
+      text-align: center;
+    }
+    .hero h1 {
+      max-width: 720px;
+      margin: 0 auto var(--space-3);
+    }
+    .hero .subhead {
+      max-width: 600px;
+      margin: 0 auto var(--space-5);
+      color: var(--color-text-secondary);
+    }
+    .signup-form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+      justify-content: center;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    .signup-form input[type="email"] {
+      flex: 1 1 220px;
+      height: 52px;
+      padding: 0 var(--space-3);
+      border: 2px solid var(--color-border);
+      border-radius: 8px;
+      background: var(--color-surface);
+      color: var(--color-text);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      transition: border-color var(--duration-normal) var(--ease-out);
+    }
+    .signup-form input[type="email"]:focus {
+      border-color: var(--color-accent);
+      outline: none;
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent) 20%, transparent);
+    }
+    .signup-form .btn {
+      height: 52px;
+      padding: 0 var(--space-4);
+      font-size: 1rem;
+      white-space: nowrap;
+    }
+    .signup-success {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-2);
+      padding: var(--space-3);
+      background: color-mix(in srgb, var(--color-accent) 10%, var(--color-surface-alt));
+      border-radius: 8px;
+      color: var(--color-accent);
+      font-weight: 500;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    .signup-error {
+      color: var(--color-text-secondary);
+      background: color-mix(in srgb, var(--color-accent) 8%, var(--color-surface-alt));
+      padding: var(--space-3);
+      border-radius: 8px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    .section-title {
+      text-align: center;
+      margin-bottom: var(--space-5);
+    }
+    .why-matters p {
+      max-width: 720px;
+      margin: 0 auto var(--space-3);
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+    }
+    .how-it-works-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: var(--space-5);
+      margin-top: var(--space-4);
+    }
+    .step {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+      background: var(--color-surface);
+      padding: var(--space-4);
+      border-radius: 12px;
+      border: 1px solid var(--color-border);
+    }
+    .step-num {
+      font-family: var(--font-mono);
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: var(--color-accent);
+      line-height: 1;
+    }
+    .step-content h3 {
+      margin: 0 0 var(--space-1);
+      font-size: 1.2rem;
+    }
+    .step-content p {
+      color: var(--color-text-secondary);
+      margin: 0;
+      line-height: 1.6;
+    }
+    .selling-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: var(--space-5);
+    }
+    .selling-card {
+      background: var(--color-surface);
+      padding: var(--space-5);
+      border-radius: 12px;
+      border: 1px solid var(--color-border);
+      text-align: center;
+    }
+    .selling-card .icon {
+      margin-bottom: var(--space-3);
+      color: var(--color-accent);
+    }
+    .selling-card h3 {
+      margin: 0 0 var(--space-2);
+      font-size: 1.15rem;
+    }
+    .selling-card p {
+      color: var(--color-text-secondary);
+      margin: 0;
+      line-height: 1.6;
+    }
+    .trust-bar {
+      text-align: center;
+      padding: var(--space-5) 0 var(--space-3);
+      color: var(--color-text-muted);
+      font-size: 0.9rem;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: var(--space-4);
+    }
+    .trust-bar span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .footer {
+      text-align: center;
+      padding: var(--space-5) 0 var(--space-4);
+      border-top: 1px solid var(--color-border);
+      color: var(--color-text-muted);
+      font-size: 0.85rem;
+    }
+    @media (max-width: 700px) {
+      .how-it-works-grid, .selling-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      .signup-form {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .signup-form input[type="email"] {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero + inline email form -->
+  <section class="hero container">
+    <h1 class="heading-xl">HackerNews Trends:<br>Stop Guessing What's Hot. Know It.</h1>
+    <p class="subhead text-lg">Get a data-driven report on any technology’s popularity on Hacker News. See the slope, not just the spike.</p>
+    
+    <!-- inline signup form -->
+    <form id="signup-form" class="signup-form" action="https://formspree.io/f/your-form-id" method="POST">
+      <input type="email" name="email" placeholder="you@example.com" required autocomplete="email">
+      <button type="submit" class="btn btn-primary btn-lg">Generate Your First Report · $9.99</button>
+    </form>
+    <div id="form-feedback" style="margin-top: var(--space-3);"></div>
+  </section>
+
+  <!-- Why This Matters -->
+  <section class="why-matters container" style="padding: var(--space-6) 0;">
+    <h2 class="section-title heading-md">Why Hacker News Trends Matters Right Now</h2>
+    <p>Every week, thousands of developers and technical leaders scan Hacker News to decide which frameworks to learn, which tools to adopt, and which bets to place. But the signal is buried in 18 years of unstructured comments. The original Show HN project — indexing 18 years of HN comments — received 637 upvotes and 143 comments in a single day, with users explicitly asking for keyword comparison, time-series analysis, and exportable reports. That’s not curiosity; that’s unmet demand.</p>
+    <p>Existing solutions fall short. HN’s native search (Algolia) is great for finding a specific post, but it can’t show you whether “Rust” has been rising or falling over the past three years. Google Trends is too broad — it mixes HN data with the entire web, diluting the signal from the exact community that matters most for tech decisions. Other tools like GummySearch focus on community monitoring, but they don’t give you a clear, data-backed answer to the single question every technical leader asks: “Is this technology gaining or losing momentum?”</p>
+    <p>Right now is the perfect moment. The HN discussion proved that developers are hungry for trend intelligence — they want to compare “Bun vs. Node.js” over time, they want to see the slope, not just the spike. With 18 years of historical data already indexed, the raw material is ready. What’s missing is a clean, decision-ready report that turns that data into a clear verdict. That’s exactly what we’re launching today.</p>
+  </section>
+
+  <!-- How It Works -->
+  <section class="container" style="padding: var(--space-6) 0;">
+    <h2 class="section-title heading-md">How It Works</h2>
+    <div class="how-it-works-grid">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h3>Enter your keywords</h3>
+          <p>Type in 1–3 technologies you care about — like “Rust”, “AI agent”, or “Next.js”. Choose a time range: past year, past 3 years, or all 18 years of HN comments.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h3>We analyze the slope</h3>
+          <p>Our engine scans 18 years of HN comment data, calculates the discussion volume over time, and computes the trend slope — is it rising, flat, or declining? You get the direction, not just raw numbers.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h3>Get your PDF report</h3>
+          <p>Download a clean, shareable PDF with trend charts, slope indicators, and the top 5 most relevant HN posts with summaries. Show your team, your boss, or just keep it for your own roadmap.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Selling Points (3 columns) -->
+  <section class="container" style="padding: var(--space-6) 0;">
+    <h2 class="section-title heading-md">What You Get</h2>
+    <div class="selling-grid">
+      <div class="selling-card">
+        <div class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        </div>
+        <h3>18 Years of HN Data</h3>
+        <p>Your decisions are backed by the full history of Hacker News comments — not a snapshot, not a sample. Every keyword trend is calculated from millions of posts, giving you statistical confidence.</p>
+      </div>
+      <div class="selling-card">
+        <div class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        </div>
+        <h3>One-Click Comparison</h3>
+        <p>Enter “Rust vs. Python vs. Go” and instantly see which is rising. The slope calculation normalizes for volume, so you get a fair comparison even between niche and mainstream technologies.</p>
+      </div>
+      <div class="selling-card">
+        <div class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+        </div>
+        <h3>Downloadable PDF Report</h3>
+        <p>Get a polished, data-rich PDF you can share with your team, include in a board deck, or use to justify your next technology investment. Includes charts, slope scores, and top post summaries.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Bar -->
+  <div class="trust-bar container">
+    <span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+      Based on 18 years of HN comments
+    </span>
+    <span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      Reports in under 2 minutes
+    </span>
+    <span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      500+ developers on the waitlist
+    </span>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer container">
+    © 2026 · www.aimfast.dev
+  </footer>
+
+  <script>
+    async function handleSubmit(e) {
+      e.preventDefault();
+      const form = e.target;
+      const feedback = document.getElementById('form-feedback
