@@ -3,34 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HackerNews Trends — Stop Guessing What's Hot. Know It. | www.aimfast.dev</title>
-  <meta name="description" content="Get a data-driven report on any technology’s popularity on Hacker News. See the slope, not just the spike. Based on 18 years of HN comments.">
+  <title>HN Pulse — Your daily HackerNews trend briefing | www.aimfast.dev</title>
+  <meta name="description" content="Stop scrolling. Get a daily email with the top 3 trending HN topics, rising signals, and a one-line action tip for builders.">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#1a1d24">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="canonical" href="https://www.aimfast.dev/hackernews-trends/">
+  <link rel="canonical" href="https://www.aimfast.dev/hnpulse/">
   <meta property="og:type" content="product">
-  <meta property="og:title" content="HackerNews Trends — Stop Guessing What's Hot. Know It.">
-  <meta property="og:description" content="Get a data-driven report on any technology’s popularity on Hacker News. See the slope, not just the spike.">
-  <meta property="og:url" content="https://www.aimfast.dev/hackernews-trends/">
+  <meta property="og:title" content="HN Pulse — Your daily HackerNews trend briefing">
+  <meta property="og:description" content="Stop scrolling. Get a daily email with the top 3 trending HN topics, rising signals, and a one-line action tip for builders.">
+  <meta property="og:url" content="https://www.aimfast.dev/hnpulse/">
   <meta property="og:site_name" content="AimFast.Dev">
-  <meta property="og:image" content="https://www.aimfast.dev/og/hackernews-trends.png">
+  <meta property="og:image" content="https://www.aimfast.dev/og/hnpulse.png">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="HackerNews Trends — Stop Guessing What's Hot. Know It.">
-  <meta name="twitter:description" content="Get a data-driven report on any technology’s popularity on Hacker News. See the slope, not just the spike.">
-  <meta name="twitter:image" content="https://www.aimfast.dev/og/hackernews-trends.png">
+  <meta name="twitter:title" content="HN Pulse — Your daily HackerNews trend briefing">
+  <meta name="twitter:description" content="Stop scrolling. Get a daily email with the top 3 trending HN topics, rising signals, and a one-line action tip for builders.">
+  <meta name="twitter:image" content="https://www.aimfast.dev/og/hnpulse.png">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "HackerNews Trends",
+    "name": "HN Pulse",
     "applicationCategory": "AIApplication",
     "operatingSystem": "Web",
-    "description": "Get a data-driven report on any technology’s popularity on Hacker News. See the slope, not just the spike. Based on 18 years of HN comments.",
-    "url": "https://www.aimfast.dev/hackernews-trends/",
+    "description": "Daily email briefing that analyzes HackerNews trends and gives builders a one-line action tip.",
+    "url": "https://www.aimfast.dev/hnpulse/",
     "offers": {
       "@type": "Offer",
-      "price": "9.99",
+      "price": "0",
       "priceCurrency": "USD"
     }
   }
@@ -38,7 +38,7 @@
   <link rel="stylesheet" href="/_ds/base.css">
   <link rel="stylesheet" href="/_ds/components.css">
   <style>
-    /* custom layout overrides — using design tokens only */
+    /* custom layout only — no token redefinition */
     .hero {
       padding: var(--space-8) 0 var(--space-6);
       text-align: center;
@@ -48,33 +48,34 @@
       margin: 0 auto var(--space-3);
     }
     .hero .subhead {
-      max-width: 600px;
+      max-width: 560px;
       margin: 0 auto var(--space-5);
       color: var(--color-text-secondary);
+      font-size: 1.15rem;
     }
     .signup-form {
       display: flex;
-      flex-wrap: wrap;
       gap: var(--space-2);
-      justify-content: center;
-      max-width: 500px;
+      max-width: 480px;
       margin: 0 auto;
+      flex-wrap: wrap;
+      justify-content: center;
     }
-    .signup-form input[type="email"] {
-      flex: 1 1 220px;
+    .signup-form input {
+      flex: 1 1 240px;
       height: 52px;
       padding: 0 var(--space-3);
-      border: 2px solid var(--color-border);
-      border-radius: 8px;
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius-md);
       background: var(--color-surface);
       color: var(--color-text);
       font-family: var(--font-body);
       font-size: 1rem;
       transition: border-color var(--duration-normal) var(--ease-out);
     }
-    .signup-form input[type="email"]:focus {
-      border-color: var(--color-accent);
+    .signup-form input:focus {
       outline: none;
+      border-color: var(--color-accent);
       box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent) 20%, transparent);
     }
     .signup-form .btn {
@@ -83,26 +84,17 @@
       font-size: 1rem;
       white-space: nowrap;
     }
-    .signup-success {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: var(--space-2);
-      padding: var(--space-3);
-      background: color-mix(in srgb, var(--color-accent) 10%, var(--color-surface-alt));
-      border-radius: 8px;
-      color: var(--color-accent);
+    .form-feedback {
+      margin-top: var(--space-2);
+      font-size: 0.95rem;
       font-weight: 500;
-      max-width: 500px;
-      margin: 0 auto;
+      min-height: 1.6em;
     }
-    .signup-error {
-      color: var(--color-text-secondary);
-      background: color-mix(in srgb, var(--color-accent) 8%, var(--color-surface-alt));
-      padding: var(--space-3);
-      border-radius: 8px;
-      max-width: 500px;
-      margin: 0 auto;
+    .form-feedback.success {
+      color: var(--color-accent);
+    }
+    .form-feedback.error {
+      color: #e55;
     }
     .section-title {
       text-align: center;
@@ -114,97 +106,104 @@
       color: var(--color-text-secondary);
       line-height: 1.7;
     }
-    .how-it-works-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
+    .steps-grid {
+      display: flex;
+      flex-direction: column;
       gap: var(--space-5);
-      margin-top: var(--space-4);
+      max-width: 680px;
+      margin: 0 auto;
     }
     .step {
       display: flex;
-      flex-direction: column;
-      gap: var(--space-2);
-      background: var(--color-surface);
-      padding: var(--space-4);
-      border-radius: 12px;
-      border: 1px solid var(--color-border);
+      gap: var(--space-3);
+      align-items: flex-start;
     }
     .step-num {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--color-accent);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.1rem;
       font-family: var(--font-mono);
-      font-size: 1.75rem;
-      font-weight: 600;
-      color: var(--color-accent);
-      line-height: 1;
     }
     .step-content h3 {
       margin: 0 0 var(--space-1);
-      font-size: 1.2rem;
+      font-size: 1.1rem;
     }
     .step-content p {
-      color: var(--color-text-secondary);
       margin: 0;
+      color: var(--color-text-secondary);
       line-height: 1.6;
     }
     .selling-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: var(--space-5);
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-4);
     }
     .selling-card {
       background: var(--color-surface);
-      padding: var(--space-5);
-      border-radius: 12px;
       border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-4);
       text-align: center;
     }
-    .selling-card .icon {
-      margin-bottom: var(--space-3);
+    .selling-card .icon-wrap {
+      margin-bottom: var(--space-2);
       color: var(--color-accent);
     }
     .selling-card h3 {
-      margin: 0 0 var(--space-2);
-      font-size: 1.15rem;
+      margin: 0 0 var(--space-1);
+      font-size: 1.05rem;
     }
     .selling-card p {
-      color: var(--color-text-secondary);
       margin: 0;
+      color: var(--color-text-secondary);
+      font-size: 0.95rem;
       line-height: 1.6;
     }
     .trust-bar {
       text-align: center;
-      padding: var(--space-5) 0 var(--space-3);
       color: var(--color-text-muted);
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       display: flex;
       justify-content: center;
-      flex-wrap: wrap;
       gap: var(--space-4);
+      flex-wrap: wrap;
     }
     .trust-bar span {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 4px;
     }
     .footer {
       text-align: center;
       padding: var(--space-5) 0 var(--space-4);
-      border-top: 1px solid var(--color-border);
       color: var(--color-text-muted);
       font-size: 0.85rem;
+      border-top: 1px solid var(--color-border);
     }
-    @media (max-width: 700px) {
-      .how-it-works-grid, .selling-grid {
+    @media (max-width: 640px) {
+      .selling-grid {
         grid-template-columns: 1fr;
       }
       .hero h1 {
         font-size: 1.8rem;
       }
-      .signup-form {
-        flex-direction: column;
-        align-items: stretch;
+      .signup-form input {
+        flex: 1 1 100%;
       }
-      .signup-form input[type="email"] {
+      .signup-form .btn {
         width: 100%;
+      }
+      .trust-bar {
+        flex-direction: column;
+        gap: var(--space-1);
       }
     }
   </style>
@@ -213,104 +212,128 @@
 
   <!-- Hero + inline email form -->
   <section class="hero container">
-    <h1 class="heading-xl">HackerNews Trends:<br>Stop Guessing What's Hot. Know It.</h1>
-    <p class="subhead text-lg">Get a data-driven report on any technology’s popularity on Hacker News. See the slope, not just the spike.</p>
+    <h1 class="heading-xl">Stop scrolling. Start building.</h1>
+    <p class="subhead">HN Pulse delivers the top 3 trending topics + a one-line action tip to your inbox every morning.</p>
     
-    <!-- inline signup form -->
     <form id="signup-form" class="signup-form" action="https://formspree.io/f/your-form-id" method="POST">
       <input type="email" name="email" placeholder="you@example.com" required autocomplete="email">
-      <button type="submit" class="btn btn-primary btn-lg">Generate Your First Report · $9.99</button>
+      <button type="submit" class="btn btn-primary btn-lg">Get Early Access</button>
     </form>
-    <div id="form-feedback" style="margin-top: var(--space-3);"></div>
+    <div id="form-feedback" class="form-feedback" aria-live="polite"></div>
   </section>
 
   <!-- Why This Matters -->
   <section class="why-matters container" style="padding: var(--space-6) 0;">
-    <h2 class="section-title heading-md">Why Hacker News Trends Matters Right Now</h2>
-    <p>Every week, thousands of developers and technical leaders scan Hacker News to decide which frameworks to learn, which tools to adopt, and which bets to place. But the signal is buried in 18 years of unstructured comments. The original Show HN project — indexing 18 years of HN comments — received 637 upvotes and 143 comments in a single day, with users explicitly asking for keyword comparison, time-series analysis, and exportable reports. That’s not curiosity; that’s unmet demand.</p>
-    <p>Existing solutions fall short. HN’s native search (Algolia) is great for finding a specific post, but it can’t show you whether “Rust” has been rising or falling over the past three years. Google Trends is too broad — it mixes HN data with the entire web, diluting the signal from the exact community that matters most for tech decisions. Other tools like GummySearch focus on community monitoring, but they don’t give you a clear, data-backed answer to the single question every technical leader asks: “Is this technology gaining or losing momentum?”</p>
-    <p>Right now is the perfect moment. The HN discussion proved that developers are hungry for trend intelligence — they want to compare “Bun vs. Node.js” over time, they want to see the slope, not just the spike. With 18 years of historical data already indexed, the raw material is ready. What’s missing is a clean, decision-ready report that turns that data into a clear verdict. That’s exactly what we’re launching today.</p>
+    <h2 class="section-title heading-lg">Why HN Trends Matter Right Now</h2>
+    <p>The HackerNews front page moves fast — 30+ stories per day, hundreds of comments. The recent <em>Show HN: Google Trends for HackerNews</em> (668 points, 146 comments) proved that builders are desperate for signal, not noise. They want to know: <em>what's heating up, and should I care?</em></p>
+    <p>Existing solutions like HackerNews Trends show you beautiful charts — but they don't tell you what to <em>do</em>. You still have to interpret the data, cross-reference with your own niche, and decide if a rising topic is worth your weekend. That's where HN Pulse changes the game: we turn raw trend data into a <strong>one-minute read</strong> with a concrete action tip. No dashboards, no graphs, just clarity.</p>
+    <p>Right now the window is open. The original signal got 668 upvotes in hours — that's a community screaming for a better way to filter the firehose. By the time the next big Show HN drops, you'll already know what the community is hungry for. <strong>This is the moment to stop watching trends and start using them.</strong></p>
   </section>
 
   <!-- How It Works -->
   <section class="container" style="padding: var(--space-6) 0;">
-    <h2 class="section-title heading-md">How It Works</h2>
-    <div class="how-it-works-grid">
+    <h2 class="section-title heading-lg">How It Works</h2>
+    <div class="steps-grid">
       <div class="step">
         <div class="step-num">1</div>
         <div class="step-content">
-          <h3>Enter your keywords</h3>
-          <p>Type in 1–3 technologies you care about — like “Rust”, “AI agent”, or “Next.js”. Choose a time range: past year, past 3 years, or all 18 years of HN comments.</p>
+          <h3>We scan 18 years of HN comments</h3>
+          <p>Every night our cron job hits the HN Search API and analyzes comment velocity, front-page frequency, and cross-topic clustering. We look for signals that are rising — not just popular.</p>
         </div>
       </div>
       <div class="step">
         <div class="step-num">2</div>
         <div class="step-content">
-          <h3>We analyze the slope</h3>
-          <p>Our engine scans 18 years of HN comment data, calculates the discussion volume over time, and computes the trend slope — is it rising, flat, or declining? You get the direction, not just raw numbers.</p>
+          <h3>We distill into a 60-second brief</h3>
+          <p>Our algorithm picks the top 3 trending topics, adds a short context line, and — most importantly — writes a one-sentence action tip: “Build a CLI tool around this API” or “Write a Show HN about your take.”</p>
         </div>
       </div>
       <div class="step">
         <div class="step-num">3</div>
         <div class="step-content">
-          <h3>Get your PDF report</h3>
-          <p>Download a clean, shareable PDF with trend charts, slope indicators, and the top 5 most relevant HN posts with summaries. Show your team, your boss, or just keep it for your own roadmap.</p>
+          <h3>It lands in your inbox every morning</h3>
+          <p>No login, no dashboard. Just a clean HTML email you can read in under a minute. If a topic is worth your time, you'll know. If not, you just saved 30 minutes of scrolling.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Selling Points (3 columns) -->
+  <!-- Selling Points (3 col grid) -->
   <section class="container" style="padding: var(--space-6) 0;">
-    <h2 class="section-title heading-md">What You Get</h2>
+    <h2 class="section-title heading-lg">What You Get</h2>
     <div class="selling-grid">
       <div class="selling-card">
-        <div class="icon">
+        <div class="icon-wrap">
           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
         </div>
-        <h3>18 Years of HN Data</h3>
-        <p>Your decisions are backed by the full history of Hacker News comments — not a snapshot, not a sample. Every keyword trend is calculated from millions of posts, giving you statistical confidence.</p>
+        <h3>Curated, not crowded</h3>
+        <p>We filter out the noise and surface only the 3 topics with the strongest rising signal. No more doom-scrolling through 200 comments to find the gold. You get the pulse, not the firehose.</p>
       </div>
       <div class="selling-card">
-        <div class="icon">
+        <div class="icon-wrap">
           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
         </div>
-        <h3>One-Click Comparison</h3>
-        <p>Enter “Rust vs. Python vs. Go” and instantly see which is rising. The slope calculation normalizes for volume, so you get a fair comparison even between niche and mainstream technologies.</p>
+        <h3>Actionable insight</h3>
+        <p>Every trend comes with a one-line “builder tip” — a concrete suggestion for what to build, write, or explore. We turn data into direction, so you spend less time analyzing and more time creating.</p>
       </div>
       <div class="selling-card">
-        <div class="icon">
+        <div class="icon-wrap">
           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
         </div>
-        <h3>Downloadable PDF Report</h3>
-        <p>Get a polished, data-rich PDF you can share with your team, include in a board deck, or use to justify your next technology investment. Includes charts, slope scores, and top post summaries.</p>
+        <h3>Zero setup, zero clutter</h3>
+        <p>No account creation, no dashboard, no learning curve. Just enter your email and start receiving your daily brief. It's the lowest-friction way to stay ahead of the HackerNews curve.</p>
       </div>
     </div>
   </section>
 
-  <!-- Trust Bar -->
-  <div class="trust-bar container">
-    <span>
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
-      Based on 18 years of HN comments
-    </span>
-    <span>
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-      Reports in under 2 minutes
-    </span>
-    <span>
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-      500+ developers on the waitlist
-    </span>
-  </div>
+  <!-- Trust bar -->
+  <section class="container" style="padding: 0 0 var(--space-5);">
+    <div class="trust-bar">
+      <span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+        Used by 500+ builders
+      </span>
+      <span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+        No spam — unsubscribe anytime
+      </span>
+      <span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        Powered by HN Search API
+      </span>
+    </div>
+  </section>
 
   <!-- Footer -->
   <footer class="footer container">
-    © 2026 · www.aimfast.dev
+    © 2026 · <a href="https://www.aimfast.dev" style="color: var(--color-text-muted); text-decoration: underline;">www.aimfast.dev</a> · HN Pulse
   </footer>
 
   <script>
-    async function handleSubmit(e) {
-      e.preventDefault();
-      const form = e.target;
-      const feedback = document.getElementById('form-feedback
+    (function() {
+      const form = document.getElementById('signup-form');
+      const feedback = document.getElementById('form-feedback');
+
+      // handle submit with fetch, no modal
+      async function handleSubmit(e) {
+        e.preventDefault();
+        const email = form.email.value.trim();
+        if (!email) return;
+
+        // disable button & show loading
+        const btn = form.querySelector('button');
+        const originalText = btn.textContent;
+        btn.disabled = true;
+        btn.textContent = 'Sending…';
+        feedback.textContent = '';
+        feedback.className = 'form-feedback';
+
+        try {
+          const resp = await fetch(form.action, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams({ email: email })
+          });
+          if (resp.ok) {
+            // success: replace form with inline message
+            form.innerHTML = '<div style="
