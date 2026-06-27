@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LingoPaste — From YouTube to flashcards in one paste | www.aimfast.dev</title>
+  <meta name="description" content="Paste any YouTube URL, get printable flashcards + MP3 shadowing pack. Learn real language from real videos. No signup, 5 seconds.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#1a1d24">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://www.aimfast.dev/lingopaste/">
+  <meta property="og:type" content="product">
+  <meta property="og:title" content="LingoPaste — From YouTube to flashcards in one paste">
+  <meta property="og:description" content="Paste any YouTube URL, get printable flashcards + MP3 shadowing pack. Learn real language from real videos. No signup, 5 seconds.">
+  <meta property="og:url" content="https://www.aimfast.dev/lingopaste/">
+  <meta property="og:site_name" content="AimFast.Dev">
+  <meta property="og:image" content="https://www.aimfast.dev/og/lingopaste.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="LingoPaste — From YouTube to flashcards in one paste">
+  <meta name="twitter:description" content="Paste any YouTube URL, get printable flashcards + MP3 shadowing pack. Learn real language from real videos. No signup, 5 seconds.">
+  <meta name="twitter:image" content="https://www.aimfast.dev/og/lingopaste.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "LingoPaste",
+    "applicationCategory": "AIApplication",
+    "operatingSystem": "Web",
+    "description": "Turn any YouTube video into printable flashcards and MP3 shadowing exercises. Paste URL → download pack → learn offline.",
+    "url": "https://www.aimfast.dev/lingopaste/",
+    "offers": {
+      "@type": "Offer",
+      "price": "2.99",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+  <link rel="stylesheet" href="/_ds/base.css">
+  <link rel="stylesheet" href="/_ds/components.css">
+  <style>
+    /* custom page-level overrides — only layout & non-token styles */
+    .hero {
+      padding: var(--space-8) 0 var(--space-6);
+      text-align: center;
+    }
+    .hero h1 {
+      max-width: 720px;
+      margin: 0 auto var(--space-3);
+    }
+    .hero .subhead {
+      max-width: 560px;
+      margin: 0 auto var(--space-5);
+      color: var(--color-text-secondary);
+      font-size: 1.125rem;
+    }
+    .signup-form {
+      display: flex;
+      gap: var(--space-2);
+      max-width: 480px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .signup-form input {
+      flex: 1 1 240px;
+      height: 52px;
+      padding: 0 var(--space-3);
+      border: 2px solid var(--color-border);
+      border-radius: 8px;
+      background: var(--color-surface);
+      color: var(--color-text);
+      font-size: 1rem;
+      font-family: var(--font-body);
+      transition: border-color var(--duration-normal) var(--ease-out);
+    }
+    .signup-form input:focus {
+      outline: none;
+      border-color: var(--color-accent);
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent) 20%, transparent);
+    }
+    .signup-form .btn {
+      height: 52px;
+      padding: 0 var(--space-4);
+      font-size: 1rem;
+      white-space: nowrap;
+    }
+    .signup-form .btn-lg {
+      height: 52px;
+      line-height: 52px;
+    }
+    .success-message {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-2);
+      max-width: 480px;
+      margin: 0 auto;
+      padding: var(--space-3);
+      background: color-mix(in srgb, var(--color-accent) 12%, transparent);
+      border-radius: 8px;
+      color: var(--color-accent);
+      font-weight: 500;
+    }
+    .error-message {
+      max-width: 480px;
+      margin: var(--space-2) auto 0;
+      padding: var(--space-2) var(--space-3);
+      background: color-mix(in srgb, #e03e3e 12%, transparent);
+      border-radius: 6px;
+      color: #e03e3e;
+      font-size: 0.9rem;
+    }
+    .why-matters p {
+      max-width: 720px;
+      margin: 0 auto var(--space-3);
+      color: var(--color-text-secondary);
+      line-height: 1.75;
+    }
+    .how-it-works .steps-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-5);
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .step {
+      display: flex;
+      gap: var(--space-4);
+      align-items: flex-start;
+    }
+    .step-num {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--color-accent);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.2rem;
+      font-family: var(--font-heading);
+    }
+    .step-content h3 {
+      margin: 0 0 var(--space-1);
+      font-size: 1.1rem;
+    }
+    .step-content p {
+      margin: 0;
+      color: var(--color-text-secondary);
+      line-height: 1.65;
+    }
+    .selling-points .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-5);
+    }
+    .selling-points .card {
+      padding: var(--space-4);
+      text-align: center;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+    }
+    .selling-points .card .icon-wrap {
+      margin-bottom: var(--space-2);
+      color: var(--color-accent);
+    }
+    .selling-points .card h3 {
+      margin: 0 0 var(--space-2);
+      font-size: 1.1rem;
+    }
+    .selling-points .card p {
+      margin: 0;
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+    .trust-bar {
+      text-align: center;
+      padding: var(--space-4) 0 var(--space-2);
+      color: var(--color-text-muted);
+      font-size: 0.85rem;
+      display: flex;
+      justify-content: center;
+      gap: var(--space-4);
+      flex-wrap: wrap;
+    }
+    .trust-bar span {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    footer {
+      text-align: center;
+      padding: var(--space-4) 0 var(--space-6);
+      color: var(--color-text-muted);
+      font-size: 0.85rem;
+      border-top: 1px solid var(--color-border);
+      margin-top: var(--space-6);
+    }
+    @media (max-width: 640px) {
+      .signup-form {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .signup-form input {
+        flex: 1 1 auto;
+      }
+      .selling-points .grid-3 {
+        grid-template-columns: 1fr;
+      }
+      .step {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .trust-bar {
+        flex-direction: column;
+        gap: var(--space-1);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero + inline email form -->
+  <section class="hero container">
+    <h1 class="heading-xl">From YouTube to flashcards, one paste</h1>
+    <p class="subhead">Turn any native-language video into printable flashcards + MP3 shadowing pack. No signup, 5 seconds.</p>
+    
+    <!-- inline email capture form -->
+    <form id="signup-form" class="signup-form" action="https://formspree.io/f/your-form-id" method="POST">
+      <input type="email" name="email" placeholder="you@example.com" required autocomplete="email">
+      <button type="submit" class="btn btn-primary btn-lg">Get Early Access — $2.99</button>
+    </form>
+    <div id="form-feedback" style="margin-top: var(--space-2);"></div>
+  </section>
+
+  <!-- Why This Matters -->
+  <section class="why-matters container" style="padding: var(--space-6) 0;">
+    <h2 class="heading-lg" style="text-align:center; margin-bottom: var(--space-4);">Why real-content learning matters right now</h2>
+    <p>Every day, thousands of intermediate language learners hit a wall. Duolingo streaks feel like a game, but you still freeze when a native speaker talks fast. The HN community saw this gap too — LingoChunk’s Show HN (88 upvotes, 36 comments) proved the hunger for tools that turn <em>real</em> audio into structured practice. Yet existing solutions are either manual (Anki decks take hours to build) or shallow (app dialogues sound like robots).</p>
+    <p>Meanwhile, Whisper transcription costs have dropped 90% in two years, and GPT-4o-mini can extract high-value sentences with context in under a second. The tech stack is finally cheap and fast enough to serve a $500B+ language market. Learners are tired of fake content — they want to study the YouTube channels they already love. That’s exactly what LingoPaste does: paste a URL, get a printable flashcard deck + MP3 shadowing track, and learn offline. No login, no clutter.</p>
+    <p>This isn’t a nice-to-have. It’s a direct response to a signal that’s growing: Reddit’s r/languagelearning sees weekly “how to make Anki from YouTube” threads. The window is open. The tool is ready. All that’s missing is your email to get early access.</p>
+  </section>
+
+  <!-- How It Works -->
+  <section class="how-it-works container" style="padding: var(--space-6) 0;">
+    <h2 class="heading-lg" style="text-align:center; margin-bottom: var(--space-5);">How It Works</h2>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h3>Paste any YouTube URL</h3>
+          <p>Copy the link of any video in your target language — a vlog, interview, podcast, or tutorial. LingoPaste grabs the audio and optional subtitles automatically using yt-dlp.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h3>AI extracts 10 power sentences</h3>
+          <p>Whisper transcribes the audio (if no captions), then GPT-4o-mini selects the 10 most useful, high-frequency, or tricky sentences. For each one we generate: original text, translation, pronunciation guide, and context note.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h3>Download your learning pack</h3>
+          <p>You get a printable PDF flashcard deck (ready for Anki or physical cards) plus an MP3 shadowing file with original audio + pauses + beeps. Study offline, anywhere, without staring at a screen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Selling Points (3-column grid) -->
+  <section class="selling-points container" style="padding: var(--space-6) 0;">
+    <h2 class="heading-lg" style="text-align:center; margin-bottom: var(--space-5);">What You Get</h2>
+    <div class="grid-3">
+      <div class="card">
+        <div class="icon-wrap">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+          </svg>
+        </div>
+        <h3>Real content, not textbook</h3>
+        <p>Learn from the YouTube creators you already follow — native speed, real idioms, natural pauses. No more robotic “hello, how are you” dialogues. Every flashcard comes from authentic speech.</p>
+      </div>
+      <div class="card">
+        <div class="icon-wrap">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <polyline points="9 12 11 14 15 10"/>
+          </svg>
+        </div>
+        <h3>5-second workflow</h3>
+        <p>Paste link → download PDF + MP3 → study offline. No account creation, no credit card required for the first pack. The entire process is designed to be faster than making a single Anki card manually.</p>
+      </div>
+      <div class="card">
+        <div class="icon-wrap">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+          </svg>
+        </div>
+        <h3>Shadowing MP3 included</h3>
+        <p>Each pack comes with a custom audio file: original sentence → 2-second pause → beep for your repetition. It’s like having a pronunciation coach in your pocket, built from real native speech.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Bar -->
+  <div class="trust-bar container">
+    <span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+      100% privacy — we never share your email
+    </span>
+    <span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>
+      Used by 50+ early testers
+    </span>
+    <span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+      Instant download — no queue
+    </span>
+  </div>
+
+  <!-- Footer -->
+  <footer class="container">
+    © 2026 · <a href="https://www.aimfast.dev" style="color: var(--color-text-secondary); text-decoration: none;">www.aimfast.dev</a>
+  </footer>
+
+  <script>
+    (function() {
+      const form = document.getElementById('signup-form');
+      const feedback = document.getElementById('form-feedback');
+
+      // handle
