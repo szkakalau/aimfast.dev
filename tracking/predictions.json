@@ -1,0 +1,21 @@
+{
+  "_schema": "预测日志 v1.0 — 系统每日 top 推荐的追踪与回溯校准",
+  "_version": "1.0",
+  "_fields": {
+    "date": "预测日期",
+    "signal_id": "信号 ID",
+    "title": "信号标题",
+    "score": "预测时的 E-P-A 总分",
+    "score_breakdown": "各维度加权分数",
+    "cross_platform_count": "跨平台数",
+    "action_triggered": "是否触发了 Action Plan",
+    "landing_page_url": "Landing Page 地址",
+    "opportunity_id": "关联的追踪 ID",
+    "7day_verification": "7 天后验证结果: pending / validated / false_positive",
+    "7day_uv": "7 天 UV",
+    "7day_signups": "7 天注册数",
+    "calibration_applied": "是否已被校准引用"
+  },
+  "predictions": [],
+  "calibration_history": []
+}

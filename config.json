@@ -1,5 +1,5 @@
 {
-  "_comment": "AimFast.Dev — 配置文件 | 版本 v2.1 — 新增 C 端信号检测",
+  "_comment": "AimFast.Dev — 配置文件 | 版本 v2.2 — 新增 problem_clarity 维度",
   "api_keys": {
     "producthunt": {
       "client_id": "YOUR_PH_CLIENT_ID",
@@ -13,50 +13,206 @@
   },
   "signals": {
     "overseas": [
-      {"name": "Hacker News", "key": "hn", "source": "Algolia API", "priority": "P0", "enabled": true},
-      {"name": "GitHub Trending", "key": "github", "source": "RSS / API", "priority": "P0", "enabled": true},
-      {"name": "Google Trends", "key": "trends", "source": "pytrends", "priority": "P0", "enabled": true},
-      {"name": "Product Hunt", "key": "producthunt", "source": "API", "priority": "P1", "enabled": true},
-      {"name": "HuggingFace", "key": "huggingface", "source": "API", "priority": "P1", "enabled": true},
-      {"name": "Reddit", "key": "reddit", "source": "RSS (hot.rss)", "priority": "P1", "enabled": true},
-      {"name": "Lobsters", "key": "lobsters", "source": "API", "priority": "P1", "enabled": true},
-      {"name": "DEV Community", "key": "devcommunity", "source": "API", "priority": "P1", "enabled": true},
-      {"name": "ArXiv Papers", "key": "arxiv", "source": "API", "priority": "P1", "enabled": true},
-      {"name": "X/Twitter", "key": "x", "source": "GraphQL / bird_x", "priority": "P1", "enabled": false, "_note": "暂禁用 — 需 AUTH_TOKEN+CT0 认证"}
+      {
+        "name": "Hacker News",
+        "key": "hn",
+        "source": "Algolia API",
+        "priority": "P0",
+        "enabled": true
+      },
+      {
+        "name": "GitHub Trending",
+        "key": "github",
+        "source": "RSS / API",
+        "priority": "P0",
+        "enabled": true
+      },
+      {
+        "name": "Google Trends",
+        "key": "trends",
+        "source": "pytrends",
+        "priority": "P0",
+        "enabled": true
+      },
+      {
+        "name": "Product Hunt",
+        "key": "producthunt",
+        "source": "API",
+        "priority": "P1",
+        "enabled": true
+      },
+      {
+        "name": "HuggingFace",
+        "key": "huggingface",
+        "source": "API",
+        "priority": "P1",
+        "enabled": true
+      },
+      {
+        "name": "Reddit",
+        "key": "reddit",
+        "source": "RSS (hot.rss)",
+        "priority": "P1",
+        "enabled": true
+      },
+      {
+        "name": "Lobsters",
+        "key": "lobsters",
+        "source": "API",
+        "priority": "P1",
+        "enabled": true
+      },
+      {
+        "name": "DEV Community",
+        "key": "devcommunity",
+        "source": "API",
+        "priority": "P1",
+        "enabled": true
+      },
+      {
+        "name": "ArXiv Papers",
+        "key": "arxiv",
+        "source": "API",
+        "priority": "P1",
+        "enabled": true
+      },
+      {
+        "name": "X/Twitter",
+        "key": "x",
+        "source": "GraphQL / bird_x",
+        "priority": "P1",
+        "enabled": false,
+        "_note": "暂禁用 — 需 AUTH_TOKEN+CT0 认证"
+      }
     ],
     "domestic": [
-      {"name": "V2EX", "key": "v2ex", "source": "API", "priority": "P0", "enabled": true},
-      {"name": "w2solo", "key": "w2solo", "source": "RSS", "priority": "P0", "enabled": true},
-      {"name": "知乎", "key": "zhihu", "source": "搜索", "priority": "P2", "enabled": false}
+      {
+        "name": "V2EX",
+        "key": "v2ex",
+        "source": "API",
+        "priority": "P0",
+        "enabled": true
+      },
+      {
+        "name": "w2solo",
+        "key": "w2solo",
+        "source": "RSS",
+        "priority": "P0",
+        "enabled": true
+      },
+      {
+        "name": "知乎",
+        "key": "zhihu",
+        "source": "搜索",
+        "priority": "P2",
+        "enabled": false
+      }
     ],
     "_c_end_sources_note": "v2.1: C 端信号采集源已实现。Reddit Consumer 免费可用；豆瓣 API 免费但有限速；小红书未认证模式数据量有限。",
     "c_end_planned": [
-      {"name": "Reddit Consumer", "key": "reddit-consumer", "source": "RSS (hot.rss)", "subreddits": ["BuyItForLife","GoodValue","digitalnomad","solotravel","onebag","minimalism","homeautomation","HomeKit","gadgets","MechanicalKeyboards","headphones","macapps","iosapps","androidapps","InternetIsBeautiful","selfhosted","personalfinance","Frugal"], "priority": "P1", "enabled": true, "script": "collect_reddit_consumer"},
-      {"name": "豆瓣", "key": "douban", "source": "API v2 + Web", "priority": "P1", "enabled": true, "script": "collect_douban", "_note": "电影/图书/小组热门 — API 无认证, 有限速"},
-      {"name": "小红书", "key": "xiaohongshu", "source": "API (未认证/认证)", "priority": "P1", "enabled": true, "script": "collect_xiaohongshu", "_note": "未登录模式数据量有限, 设置 ~/.config/aimfast/xhs_cookies.json 后可获取完整搜索数据"}
+      {
+        "name": "Reddit Consumer",
+        "key": "reddit-consumer",
+        "source": "RSS (hot.rss)",
+        "subreddits": [
+          "BuyItForLife",
+          "GoodValue",
+          "digitalnomad",
+          "solotravel",
+          "onebag",
+          "minimalism",
+          "homeautomation",
+          "HomeKit",
+          "gadgets",
+          "MechanicalKeyboards",
+          "headphones",
+          "macapps",
+          "iosapps",
+          "androidapps",
+          "InternetIsBeautiful",
+          "selfhosted",
+          "personalfinance",
+          "Frugal"
+        ],
+        "priority": "P1",
+        "enabled": true,
+        "script": "collect_reddit_consumer"
+      },
+      {
+        "name": "豆瓣",
+        "key": "douban",
+        "source": "API v2 + Web",
+        "priority": "P1",
+        "enabled": true,
+        "script": "collect_douban",
+        "_note": "电影/图书/小组热门 — API 无认证, 有限速"
+      },
+      {
+        "name": "小红书",
+        "key": "xiaohongshu",
+        "source": "API (未认证/认证)",
+        "priority": "P1",
+        "enabled": true,
+        "script": "collect_xiaohongshu",
+        "_note": "未登录模式数据量有限, 设置 ~/.config/aimfast/xhs_cookies.json 后可获取完整搜索数据"
+      }
     ]
   },
   "scoring": {
-    "formula": "Score = cross_platform×3 + volume×2 + freshness×2 + actionability×2 + buyer_clarity×1 + consumer_appeal×2",
+    "formula": "Score = cross_platform×3 + volume×2 + freshness×2 + actionability×2 + buyer_clarity×1 + consumer_appeal×2 + problem_clarity×2",
     "weights": {
       "cross_platform": 3,
       "volume": 2,
       "freshness": 2,
       "actionability": 2,
       "buyer_clarity": 1,
-      "consumer_appeal": 2
+      "consumer_appeal": 2,
+      "problem_clarity": 2
     },
     "thresholds": {
-      "action_trigger": 15,
+      "action_trigger": 17,
       "cross_platform_min": 1
     },
     "rubrics": {
-      "cross_platform": {"1_platform": 1, "2_platforms": 3, "3_plus_platforms": 5},
-      "volume": {"lt_50": 1, "50_200": 2, "200_500": 3, "gt_500": 5},
-      "freshness": {"today": 5, "yesterday": 3, "3_days_plus": 1},
-      "actionability": {"concrete_product_with_pricing": 5, "vague_direction": 3, "pure_complaint": 1},
-      "buyer_clarity": {"specific_buyer": 5, "likely_buyer": 3, "unknown_buyer": 1},
-      "consumer_appeal": {"strong_c_end": 5, "mixed_audience": 3, "developer_only": 1}
+      "cross_platform": {
+        "1_platform": 1,
+        "2_platforms": 3,
+        "3_plus_platforms": 5
+      },
+      "volume": {
+        "lt_50": 1,
+        "50_200": 2,
+        "200_500": 3,
+        "gt_500": 5
+      },
+      "freshness": {
+        "today": 5,
+        "yesterday": 3,
+        "3_days_plus": 1
+      },
+      "actionability": {
+        "concrete_product_with_pricing": 5,
+        "vague_direction": 3,
+        "pure_complaint": 1
+      },
+      "buyer_clarity": {
+        "specific_buyer": 5,
+        "likely_buyer": 3,
+        "unknown_buyer": 1
+      },
+      "consumer_appeal": {
+        "strong_c_end": 5,
+        "mixed_audience": 3,
+        "developer_only": 1
+      },
+      "problem_clarity": {
+        "clear_pain_point": 5,
+        "likely_pain": 4,
+        "possible_pain": 3,
+        "mixed_signal": 2,
+        "likely_hype": 1,
+        "neutral": 2
+      }
     }
   },
   "decay": {
@@ -77,8 +233,15 @@
   },
   "distribution": {
     "local_archive": true,
-    "planet_article": {"enabled": true, "auto_publish": false, "note": "手动审核后发布，保证质量"},
-    "wechat_mp": {"enabled": false, "note": "预留"}
+    "planet_article": {
+      "enabled": true,
+      "auto_publish": false,
+      "note": "手动审核后发布，保证质量"
+    },
+    "wechat_mp": {
+      "enabled": false,
+      "note": "预留"
+    }
   },
   "landing_page": {
     "domain": "aimfast.dev",
@@ -86,9 +249,18 @@
     "framework": "Next.js",
     "verification_days": 7,
     "thresholds": {
-      "success": {"uv": 100, "has_signup": true},
-      "fail": {"uv": 30},
-      "adjust": {"uv_min": 30, "uv_max": 100, "condition": "zero_signups"}
+      "success": {
+        "uv": 100,
+        "has_signup": true
+      },
+      "fail": {
+        "uv": 30
+      },
+      "adjust": {
+        "uv_min": 30,
+        "uv_max": 100,
+        "condition": "zero_signups"
+      }
     }
   },
   "llm": {
@@ -111,18 +283,24 @@
   "content": {
     "planet_article": {
       "type_distribution": {
-        "opportunity_deep_dive": 0.40,
+        "opportunity_deep_dive": 0.4,
         "counter_intuitive": 0.25,
-        "methodology": 0.20,
-        "trend_alert": 0.10,
+        "methodology": 0.2,
+        "trend_alert": 0.1,
         "failure_postmortem": 0.05
       },
       "max_consecutive_same_type": 2,
       "title_max_chars": 30,
-      "word_count_range": [2000, 4000]
+      "word_count_range": [
+        2000,
+        4000
+      ]
     },
     "daily_report": {
-      "word_count_range": [1500, 3000],
+      "word_count_range": [
+        1500,
+        3000
+      ],
       "reading_time_minutes": 5
     }
   }

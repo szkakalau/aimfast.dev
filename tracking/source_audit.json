@@ -1,0 +1,610 @@
+{
+  "_schema": "信号源 ROI 审计 v1.0",
+  "generated_at": "2026-06-28T22:55:57.411366+08:00",
+  "lookback_days": 30,
+  "summary": {
+    "total_sources": 17,
+    "keep_p0": 1,
+    "keep_p2": 3,
+    "cut": 8,
+    "investigate": 5,
+    "total_raw_signals": 5904,
+    "total_processed_signals": 4481
+  },
+  "sources": [
+    {
+      "source_key": "hn",
+      "name": "Hacker News",
+      "tier": "overseas",
+      "priority": "P0",
+      "enabled": true,
+      "total_raw": 1040,
+      "total_processed": 806,
+      "survival_rate": 0.775,
+      "days_active": 26,
+      "days_empty": 0,
+      "avg_score": 22.7,
+      "top10_appearances": 125,
+      "top10_rate": 0.155,
+      "action_triggered": 705,
+      "cross_platform_signals": 15,
+      "unique_top10": 117,
+      "roi_score": 0.988,
+      "roi_breakdown": {
+        "top10_contribution": 0.4,
+        "action_triggered": 0.3,
+        "unique_insight": 0.2,
+        "cross_platform": 0.088
+      },
+      "recommendation": "keep_p0",
+      "recommendation_label": "保留 · P0 每日运行",
+      "top_titles": [
+        {
+          "date": "2026-06-16",
+          "title": "Iroh 1.0",
+          "score": 38
+        },
+        {
+          "date": "2026-06-26",
+          "title": "Show HN: I made Google Trends for Hacker News by indexing 18 years of comments",
+          "score": 34
+        },
+        {
+          "date": "2026-06-20",
+          "title": "Show HN: Are You in the Weights?",
+          "score": 34
+        }
+      ]
+    },
+    {
+      "source_key": "github",
+      "name": "GitHub Trending",
+      "tier": "overseas",
+      "priority": "P0",
+      "enabled": true,
+      "total_raw": 1000,
+      "total_processed": 957,
+      "survival_rate": 0.957,
+      "days_active": 25,
+      "days_empty": 0,
+      "avg_score": 14.1,
+      "top10_appearances": 61,
+      "top10_rate": 0.064,
+      "action_triggered": 217,
+      "cross_platform_signals": 3,
+      "unique_top10": 60,
+      "roi_score": 0.408,
+      "roi_breakdown": {
+        "top10_contribution": 0.195,
+        "action_triggered": 0.092,
+        "unique_insight": 0.103,
+        "cross_platform": 0.018
+      },
+      "recommendation": "keep_p2",
+      "recommendation_label": "降级 · P2 每周运行",
+      "top_titles": [
+        {
+          "date": "2026-06-23",
+          "title": "nexu-io/html-video",
+          "score": 32
+        },
+        {
+          "date": "2026-06-22",
+          "title": "nexu-io/html-video",
+          "score": 32
+        },
+        {
+          "date": "2026-06-10",
+          "title": "alibaba/open-code-review",
+          "score": 32
+        }
+      ]
+    },
+    {
+      "source_key": "v2ex",
+      "name": "V2EX",
+      "tier": "domestic",
+      "priority": "P0",
+      "enabled": true,
+      "total_raw": 958,
+      "total_processed": 751,
+      "survival_rate": 0.784,
+      "days_active": 24,
+      "days_empty": 0,
+      "avg_score": 19.0,
+      "top10_appearances": 7,
+      "top10_rate": 0.009,
+      "action_triggered": 614,
+      "cross_platform_signals": 0,
+      "unique_top10": 7,
+      "roi_score": 0.296,
+      "roi_breakdown": {
+        "top10_contribution": 0.022,
+        "action_triggered": 0.261,
+        "unique_insight": 0.012,
+        "cross_platform": 0.0
+      },
+      "recommendation": "keep_p2",
+      "recommendation_label": "降级 · P2 每周运行",
+      "top_titles": [
+        {
+          "date": "2026-06-16",
+          "title": "时隔半年， NocoBase 收入再次翻倍。 在满屏 AI 的氛围中，跟大家分享一下不太一样的经历。 [感谢 V2EX + 抽奖]",
+          "score": 34
+        },
+        {
+          "date": "2026-06-14",
+          "title": "开源自荐一个 Mac 监控与管理面板，简单易用，可本地可远程",
+          "score": 28
+        },
+        {
+          "date": "2026-06-11",
+          "title": "[开源求个免费的 star!] V2EX Max Helper 发布！完全开源的 V2EX 一站式自动助手：每日签到 + 自动阅读刷活跃度 + Telegram Bot 上报/远程控制，自动保活。支持 agent 辅助部署！",
+          "score": 28
+        }
+      ]
+    },
+    {
+      "source_key": "producthunt",
+      "name": "Product Hunt",
+      "tier": "overseas",
+      "priority": "P1",
+      "enabled": true,
+      "total_raw": 357,
+      "total_processed": 278,
+      "survival_rate": 0.779,
+      "days_active": 18,
+      "days_empty": 6,
+      "avg_score": 26.9,
+      "top10_appearances": 30,
+      "top10_rate": 0.108,
+      "action_triggered": 277,
+      "cross_platform_signals": 2,
+      "unique_top10": 28,
+      "roi_score": 0.274,
+      "roi_breakdown": {
+        "top10_contribution": 0.096,
+        "action_triggered": 0.118,
+        "unique_insight": 0.048,
+        "cross_platform": 0.012
+      },
+      "recommendation": "keep_p2",
+      "recommendation_label": "降级 · P2 每周运行",
+      "top_titles": [
+        {
+          "date": "2026-06-18",
+          "title": "DevCleaner: Free the gigabytes your dev tools and AI apps hoard",
+          "score": 36
+        },
+        {
+          "date": "2026-06-18",
+          "title": "GitHits beta 0.9: Give your AI coding agent access to open-source code",
+          "score": 36
+        },
+        {
+          "date": "2026-06-18",
+          "title": "Goldfish: Press Option. It knows your work and replies like you",
+          "score": 34
+        }
+      ]
+    },
+    {
+      "source_key": "lobsters",
+      "name": "Lobsters",
+      "tier": "overseas",
+      "priority": "P1",
+      "enabled": true,
+      "total_raw": 250,
+      "total_processed": 213,
+      "survival_rate": 0.852,
+      "days_active": 10,
+      "days_empty": 0,
+      "avg_score": 19.1,
+      "top10_appearances": 3,
+      "top10_rate": 0.014,
+      "action_triggered": 210,
+      "cross_platform_signals": 17,
+      "unique_top10": 0,
+      "roi_score": 0.199,
+      "roi_breakdown": {
+        "top10_contribution": 0.01,
+        "action_triggered": 0.089,
+        "unique_insight": 0.0,
+        "cross_platform": 0.1
+      },
+      "recommendation": "cut",
+      "recommendation_label": "建议砍掉 · 对最终输出贡献极低",
+      "top_titles": [
+        {
+          "date": "2026-06-23",
+          "title": "One year with Codeberg",
+          "score": 32
+        },
+        {
+          "date": "2026-06-23",
+          "title": "Deno Desktop apps",
+          "score": 32
+        },
+        {
+          "date": "2026-06-20",
+          "title": "I hate compilers",
+          "score": 26
+        }
+      ]
+    },
+    {
+      "source_key": "w2solo",
+      "name": "w2solo",
+      "tier": "domestic",
+      "priority": "P0",
+      "enabled": true,
+      "total_raw": 370,
+      "total_processed": 372,
+      "survival_rate": 1.005,
+      "days_active": 24,
+      "days_empty": 0,
+      "avg_score": 18.4,
+      "top10_appearances": 13,
+      "top10_rate": 0.035,
+      "action_triggered": 216,
+      "cross_platform_signals": 0,
+      "unique_top10": 13,
+      "roi_score": 0.156,
+      "roi_breakdown": {
+        "top10_contribution": 0.042,
+        "action_triggered": 0.092,
+        "unique_insight": 0.022,
+        "cross_platform": 0.0
+      },
+      "recommendation": "cut",
+      "recommendation_label": "建议砍掉 · 对最终输出贡献极低",
+      "top_titles": [
+        {
+          "date": "2026-06-13",
+          "title": "我的 SaaS 产品被用户要求开发票，我懵了",
+          "score": 30
+        },
+        {
+          "date": "2026-06-12",
+          "title": "我的 SaaS 产品被用户要求开发票，我懵了",
+          "score": 30
+        },
+        {
+          "date": "2026-06-21",
+          "title": "SerpBase 运营两个月后，终于把 Google 搜索接进 Agent 这件事做顺了",
+          "score": 28
+        }
+      ]
+    },
+    {
+      "source_key": "devcommunity",
+      "name": "DEV Community",
+      "tier": "overseas",
+      "priority": "P1",
+      "enabled": true,
+      "total_raw": 400,
+      "total_processed": 355,
+      "survival_rate": 0.887,
+      "days_active": 10,
+      "days_empty": 0,
+      "avg_score": 17.8,
+      "top10_appearances": 1,
+      "top10_rate": 0.003,
+      "action_triggered": 313,
+      "cross_platform_signals": 2,
+      "unique_top10": 0,
+      "roi_score": 0.148,
+      "roi_breakdown": {
+        "top10_contribution": 0.003,
+        "action_triggered": 0.133,
+        "unique_insight": 0.0,
+        "cross_platform": 0.012
+      },
+      "recommendation": "cut",
+      "recommendation_label": "建议砍掉 · 对最终输出贡献极低",
+      "top_titles": [
+        {
+          "date": "2026-06-26",
+          "title": "The Frontend Engineer Will Not Be Replaced by AI",
+          "score": 32
+        }
+      ]
+    },
+    {
+      "source_key": "reddit",
+      "name": "Reddit",
+      "tier": "overseas",
+      "priority": "P1",
+      "enabled": true,
+      "total_raw": 400,
+      "total_processed": 382,
+      "survival_rate": 0.955,
+      "days_active": 10,
+      "days_empty": 14,
+      "avg_score": 17.1,
+      "top10_appearances": 0,
+      "top10_rate": 0.0,
+      "action_triggered": 331,
+      "cross_platform_signals": 0,
+      "unique_top10": 0,
+      "roi_score": 0.141,
+      "roi_breakdown": {
+        "top10_contribution": 0.0,
+        "action_triggered": 0.141,
+        "unique_insight": 0.0,
+        "cross_platform": 0.0
+      },
+      "recommendation": "cut",
+      "recommendation_label": "建议砍掉 · 对最终输出贡献极低",
+      "top_titles": []
+    },
+    {
+      "source_key": "arxiv",
+      "name": "ArXiv Papers",
+      "tier": "overseas",
+      "priority": "P1",
+      "enabled": true,
+      "total_raw": 240,
+      "total_processed": 280,
+      "survival_rate": 1.167,
+      "days_active": 6,
+      "days_empty": 4,
+      "avg_score": 17.0,
+      "top10_appearances": 0,
+      "top10_rate": 0.0,
+      "action_triggered": 240,
+      "cross_platform_signals": 0,
+      "unique_top10": 0,
+      "roi_score": 0.102,
+      "roi_breakdown": {
+        "top10_contribution": 0.0,
+        "action_triggered": 0.102,
+        "unique_insight": 0.0,
+        "cross_platform": 0.0
+      },
+      "recommendation": "cut",
+      "recommendation_label": "建议砍掉 · 对最终输出贡献极低",
+      "top_titles": []
+    },
+    {
+      "source_key": "trends",
+      "name": "Google Trends",
+      "tier": "overseas",
+      "priority": "P0",
+      "enabled": true,
+      "total_raw": 215,
+      "total_processed": 21,
+      "survival_rate": 0.098,
+      "days_active": 18,
+      "days_empty": 7,
+      "avg_score": 13.4,
+      "top10_appearances": 0,
+      "top10_rate": 0.0,
+      "action_triggered": 9,
+      "cross_platform_signals": 0,
+      "unique_top10": 0,
+      "roi_score": 0.004,
+      "roi_breakdown": {
+        "top10_contribution": 0.0,
+        "action_triggered": 0.004,
+        "unique_insight": 0.0,
+        "cross_platform": 0.0
+      },
+      "recommendation": "investigate",
+      "recommendation_label": "调查 · 高采集量低存活率，检查采集器质量",
+      "top_titles": []
+    },
+    {
+      "source_key": "huggingface",
+      "name": "HuggingFace",
+      "tier": "overseas",
+      "priority": "P1",
+      "enabled": true,
+      "total_raw": 599,
+      "total_processed": 63,
+      "survival_rate": 0.105,
+      "days_active": 24,
+      "days_empty": 0,
+      "avg_score": 11.9,
+      "top10_appearances": 0,
+      "top10_rate": 0.0,
+      "action_triggered": 6,
+      "cross_platform_signals": 0,
+      "unique_top10": 0,
+      "roi_score": 0.003,
+      "roi_breakdown": {
+        "top10_contribution": 0.0,
+        "action_triggered": 0.003,
+        "unique_insight": 0.0,
+        "cross_platform": 0.0
+      },
+      "recommendation": "cut",
+      "recommendation_label": "建议砍掉 · 对最终输出贡献极低",
+      "top_titles": []
+    },
+    {
+      "source_key": "douban",
+      "name": "豆瓣",
+      "tier": "c_end",
+      "priority": "P1",
+      "enabled": true,
+      "total_raw": 15,
+      "total_processed": 0,
+      "survival_rate": 0.0,
+      "days_active": 1,
+      "days_empty": 0,
+      "avg_score": 0,
+      "top10_appearances": 0,
+      "top10_rate": 0,
+      "action_triggered": 0,
+      "cross_platform_signals": 0,
+      "unique_top10": 0,
+      "roi_score": 0.0,
+      "roi_breakdown": {
+        "top10_contribution": 0.0,
+        "action_triggered": 0.0,
+        "unique_insight": 0.0,
+        "cross_platform": 0.0
+      },
+      "recommendation": "cut",
+      "recommendation_label": "建议砍掉 · 对最终输出贡献极低",
+      "top_titles": []
+    },
+    {
+      "source_key": "reddit-consumer",
+      "name": "Reddit Consumer",
+      "tier": "c_end",
+      "priority": "P1",
+      "enabled": true,
+      "total_raw": 60,
+      "total_processed": 0,
+      "survival_rate": 0.0,
+      "days_active": 1,
+      "days_empty": 0,
+      "avg_score": 0,
+      "top10_appearances": 0,
+      "top10_rate": 0,
+      "action_triggered": 0,
+      "cross_platform_signals": 0,
+      "unique_top10": 0,
+      "roi_score": 0.0,
+      "roi_breakdown": {
+        "top10_contribution": 0.0,
+        "action_triggered": 0.0,
+        "unique_insight": 0.0,
+        "cross_platform": 0.0
+      },
+      "recommendation": "cut",
+      "recommendation_label": "建议砍掉 · 对最终输出贡献极低",
+      "top_titles": []
+    },
+    {
+      "source_key": "indiehackers",
+      "name": "indiehackers",
+      "tier": "unknown",
+      "priority": "?",
+      "enabled": true,
+      "total_raw": 0,
+      "total_processed": 0,
+      "survival_rate": 0,
+      "days_active": 0,
+      "days_empty": 15,
+      "avg_score": 0,
+      "top10_appearances": 0,
+      "top10_rate": 0,
+      "action_triggered": 0,
+      "cross_platform_signals": 0,
+      "unique_top10": 0,
+      "roi_score": 0.0,
+      "roi_breakdown": {
+        "top10_contribution": 0.0,
+        "action_triggered": 0.0,
+        "unique_insight": 0.0,
+        "cross_platform": 0.0
+      },
+      "recommendation": "investigate",
+      "recommendation_label": "调查 · 无原始数据产出，检查采集器是否正常运行",
+      "top_titles": []
+    },
+    {
+      "source_key": "tiktok",
+      "name": "tiktok",
+      "tier": "unknown",
+      "priority": "?",
+      "enabled": true,
+      "total_raw": 0,
+      "total_processed": 0,
+      "survival_rate": 0,
+      "days_active": 0,
+      "days_empty": 5,
+      "avg_score": 0,
+      "top10_appearances": 0,
+      "top10_rate": 0,
+      "action_triggered": 0,
+      "cross_platform_signals": 0,
+      "unique_top10": 0,
+      "roi_score": 0.0,
+      "roi_breakdown": {
+        "top10_contribution": 0.0,
+        "action_triggered": 0.0,
+        "unique_insight": 0.0,
+        "cross_platform": 0.0
+      },
+      "recommendation": "investigate",
+      "recommendation_label": "调查 · 无原始数据产出，检查采集器是否正常运行",
+      "top_titles": []
+    },
+    {
+      "source_key": "xhs",
+      "name": "xhs",
+      "tier": "unknown",
+      "priority": "?",
+      "enabled": true,
+      "total_raw": 0,
+      "total_processed": 0,
+      "survival_rate": 0,
+      "days_active": 0,
+      "days_empty": 5,
+      "avg_score": 0,
+      "top10_appearances": 0,
+      "top10_rate": 0,
+      "action_triggered": 0,
+      "cross_platform_signals": 0,
+      "unique_top10": 0,
+      "roi_score": 0.0,
+      "roi_breakdown": {
+        "top10_contribution": 0.0,
+        "action_triggered": 0.0,
+        "unique_insight": 0.0,
+        "cross_platform": 0.0
+      },
+      "recommendation": "investigate",
+      "recommendation_label": "调查 · 无原始数据产出，检查采集器是否正常运行",
+      "top_titles": []
+    },
+    {
+      "source_key": "jike",
+      "name": "即刻",
+      "tier": "unknown",
+      "priority": "?",
+      "enabled": true,
+      "total_raw": 0,
+      "total_processed": 3,
+      "survival_rate": 0,
+      "days_active": 0,
+      "days_empty": 0,
+      "avg_score": 9.3,
+      "top10_appearances": 0,
+      "top10_rate": 0.0,
+      "action_triggered": 0,
+      "cross_platform_signals": 0,
+      "unique_top10": 0,
+      "roi_score": 0.0,
+      "roi_breakdown": {
+        "top10_contribution": 0.0,
+        "action_triggered": 0.0,
+        "unique_insight": 0.0,
+        "cross_platform": 0.0
+      },
+      "recommendation": "investigate",
+      "recommendation_label": "调查 · 无原始数据产出，检查采集器是否正常运行",
+      "top_titles": []
+    }
+  ],
+  "gaps": [
+    {
+      "source_key": "douban",
+      "name": "豆瓣",
+      "total_raw": 15,
+      "total_processed": 0,
+      "issue": "采集器产生数据但未进入 daily/signals.json —— 可能被去重/过滤/或数据结构不兼容"
+    },
+    {
+      "source_key": "reddit-consumer",
+      "name": "Reddit Consumer",
+      "total_raw": 60,
+      "total_processed": 0,
+      "issue": "采集器产生数据但未进入 daily/signals.json —— 可能被去重/过滤/或数据结构不兼容"
+    }
+  ]
+}

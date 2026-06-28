@@ -65,14 +65,14 @@ $Collectors = @(
     @{Name="GitHub Trending"; Script="collect_github"; Enabled=$true},
     @{Name="Google Trends"; Script="collect_trends"; Enabled=$true},
     @{Name="Product Hunt"; Script="collect_producthunt"; Enabled=$true},
-    @{Name="DEV Community"; Script="collect_devcommunity"; Enabled=$true},
+    @{Name="DEV Community"; Script="collect_devcommunity"; Enabled=$false},
     @{Name="Reddit"; Script="collect_reddit"; Enabled=$true},
     @{Name="Reddit Consumer"; Script="collect_reddit_consumer"; Enabled=$true},
     @{Name="V2EX"; Script="collect_v2ex"; Enabled=$true},
     @{Name="w2solo"; Script="collect_w2solo"; Enabled=$true},
-    @{Name="HuggingFace"; Script="collect_huggingface"; Enabled=$true},
-    @{Name="Lobsters"; Script="collect_lobsters"; Enabled=$true},
-    @{Name="ArXiv"; Script="collect_arxiv"; Enabled=$true},
+    @{Name="HuggingFace"; Script="collect_huggingface"; Enabled=$false},
+    @{Name="Lobsters"; Script="collect_lobsters"; Enabled=$false},
+    @{Name="ArXiv"; Script="collect_arxiv"; Enabled=$false},
     @{Name="豆瓣"; Script="collect_douban"; Enabled=$true},
     @{Name="小红书"; Script="collect_xiaohongshu"; Enabled=$false},
     @{Name="X/Twitter"; Script="collect_x"; Enabled=$false}
@@ -233,6 +233,18 @@ try {
     Write-Log "  [Workbench] FAIL: $_"
 }
 
+# --- Step 6e: Prediction Logging (daily) ---
+
+Write-Log ""
+Write-Log "--- Step 6e: Prediction Logging ---"
+
+try {
+    $output = & $Python -m scripts.calibrate_scoring log 2>&1
+    Write-Log "  [PredictLog] OK"
+} catch {
+    Write-Log "  [PredictLog] FAIL (non-fatal): $_"
+}
+
 # --- Step 7: Landing Page Generation ---
 
 Write-Log ""
@@ -319,6 +331,18 @@ if ($DayOfWeek -eq 'Sunday') {
         }
     } catch {
         Write-Log "  [WeeklyEnrich] FAIL (non-fatal): $_"
+    }
+
+    # Weekly calibration: analyze prediction accuracy, adjust scoring weights
+    try {
+        $output = & $Python -m scripts.calibrate_scoring calibrate 2>&1
+        if ($LASTEXITCODE -eq 0) {
+            Write-Log "  [Calibrate] OK"
+        } else {
+            Write-Log "  [Calibrate] WARN (non-fatal, exit=$LASTEXITCODE)"
+        }
+    } catch {
+        Write-Log "  [Calibrate] FAIL (non-fatal): $_"
     }
 }
 
