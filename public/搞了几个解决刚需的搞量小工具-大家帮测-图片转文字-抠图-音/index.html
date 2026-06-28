@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VocalSnap — 30秒提取视频背景音乐，免费 | www.aimfast.dev</title>
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#1a1d24">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://www.aimfast.dev/vocalsnap/">
+  <meta name="description" content="专为短视频创作者打造的人声/伴奏分离工具。无需注册，上传即用，30秒内完成分离。基于AI，极致简单。">
+  <meta property="og:type" content="product">
+  <meta property="og:title" content="VocalSnap — 30秒提取视频背景音乐，免费">
+  <meta property="og:description" content="专为短视频创作者打造的人声/伴奏分离工具。无需注册，上传即用，30秒内完成分离。基于AI，极致简单。">
+  <meta property="og:url" content="https://www.aimfast.dev/vocalsnap/">
+  <meta property="og:site_name" content="AimFast.Dev">
+  <meta property="og:image" content="https://www.aimfast.dev/og/vocalsnap.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="VocalSnap — 30秒提取视频背景音乐，免费">
+  <meta name="twitter:description" content="专为短视频创作者打造的人声/伴奏分离工具。无需注册，上传即用，30秒内完成分离。基于AI，极致简单。">
+  <meta name="twitter:image" content="https://www.aimfast.dev/og/vocalsnap.png">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "VocalSnap",
+      "applicationCategory": "AIApplication",
+      "operatingSystem": "Web",
+      "description": "一键人声/背景音分离在线工具，专为短视频创作者设计。上传音频，30秒内获得纯净人声和伴奏。",
+      "url": "https://www.aimfast.dev/vocalsnap/",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="/_ds/base.css">
+  <link rel="stylesheet" href="/_ds/components.css">
+  <style>
+    /* 自定义样式仅用于布局微调，不重复定义token */
+    .hero {
+      padding: var(--space-8) 0 var(--space-6);
+      text-align: center;
+    }
+    .hero h1 {
+      max-width: 720px;
+      margin: 0 auto var(--space-3);
+    }
+    .hero .subhead {
+      max-width: 540px;
+      margin: 0 auto var(--space-5);
+      font-size: 1.15rem;
+    }
+    .signup-form {
+      display: flex;
+      gap: var(--space-2);
+      max-width: 480px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .signup-form input {
+      flex: 1 1 240px;
+      height: 52px;
+      padding: 0 var(--space-3);
+      border: 2px solid var(--color-border);
+      border-radius: var(--radius-md);
+      background: var(--color-surface);
+      color: var(--color-text);
+      font-size: 1rem;
+      font-family: var(--font-body);
+      transition: border-color var(--duration-normal) var(--ease-out);
+    }
+    .signup-form input:focus {
+      outline: none;
+      border-color: var(--color-accent);
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent) 20%, transparent);
+    }
+    .signup-form .btn {
+      height: 52px;
+      padding: 0 var(--space-4);
+      font-size: 1rem;
+      white-space: nowrap;
+    }
+    .signup-form .btn-lg {
+      height: 52px;
+      line-height: 52px;
+      padding: 0 var(--space-5);
+    }
+    .success-message {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-2);
+      padding: var(--space-3) var(--space-4);
+      background: color-mix(in srgb, var(--color-accent) 12%, transparent);
+      border-radius: var(--radius-md);
+      color: var(--color-accent);
+      font-weight: 500;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+    .success-message svg {
+      flex-shrink: 0;
+    }
+    .error-message {
+      color: var(--color-text-secondary);
+      background: color-mix(in srgb, var(--color-text) 8%, transparent);
+      padding: var(--space-2) var(--space-3);
+      border-radius: var(--radius-sm);
+      max-width: 480px;
+      margin: var(--space-2) auto 0;
+      font-size: 0.9rem;
+    }
+    .why-matters {
+      padding: var(--space-8) 0;
+    }
+    .why-matters p {
+      max-width: 680px;
+      margin: 0 auto var(--space-3);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+    .how-it-works {
+      padding: var(--space-8) 0;
+    }
+    .steps-grid {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-5);
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .step {
+      display: flex;
+      gap: var(--space-4);
+      align-items: flex-start;
+    }
+    .step-num {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--color-accent);
+      color: var(--color-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.2rem;
+      font-family: var(--font-heading);
+    }
+    .step-content h3 {
+      margin: 0 0 var(--space-1);
+      font-size: 1.15rem;
+    }
+    .step-content p {
+      margin: 0;
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+    }
+    .selling-points {
+      padding: var(--space-8) 0;
+    }
+    .selling-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-5);
+    }
+    .selling-card {
+      background: var(--color-surface);
+      border-radius: var(--radius-lg);
+      padding: var(--space-5);
+      border: 1px solid var(--color-border);
+      transition: transform var(--duration-normal) var(--ease-out), box-shadow var(--duration-normal) var(--ease-out);
+    }
+    .selling-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px -8px rgba(0,0,0,0.25);
+    }
+    .selling-card .icon-wrap {
+      margin-bottom: var(--space-3);
+      color: var(--color-accent);
+    }
+    .selling-card h3 {
+      margin: 0 0 var(--space-2);
+      font-size: 1.1rem;
+    }
+    .selling-card p {
+      margin: 0;
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+    .trust-bar {
+      padding: var(--space-5) 0 var(--space-6);
+      text-align: center;
+      color: var(--color-text-muted);
+      font-size: 0.85rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: var(--space-4) var(--space-6);
+    }
+    .trust-bar span {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-1);
+    }
+    .trust-bar svg {
+      width: 18px;
+      height: 18px;
+      stroke-width: 1.8;
+    }
+    footer {
+      padding: var(--space-5) 0;
+      text-align: center;
+      color: var(--color-text-muted);
+      font-size: 0.85rem;
+      border-top: 1px solid var(--color-border);
+    }
+    @media (max-width: 640px) {
+      .signup-form {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .signup-form input {
+        width: 100%;
+      }
+      .selling-grid {
+        grid-template-columns: 1fr;
+      }
+      .step {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .step-num {
+        margin-bottom: var(--space-1);
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Hero + 内嵌邮箱表单 -->
+  <section class="hero container">
+    <h1 class="display-heading">30秒提取视频背景音乐，免费</h1>
+    <p class="subhead text-secondary">专为短视频创作者打造的人声/伴奏分离工具。无需注册，上传即用。</p>
+    
+    <!-- 内嵌邮箱表单 — 零点击可见 -->
+    <form id="signup-form" class="signup-form" action="https://formspree.io/f/your-form-id" method="POST">
+      <input type="email" name="email" placeholder="you@example.com" required autocomplete="email">
+      <button type="submit" class="btn btn-primary btn-lg">Get Early Access</button>
+    </form>
+    <div id="form-feedback" style="margin-top: var(--space-3);"></div>
+  </section>
+
+  <!-- Why This Matters -->
+  <section class="why-matters container">
+    <h2 class="section-heading text-center">Why Vocal Separation Matters Right Now</h2>
+    <p>Every day, thousands of video creators spend hours manually stripping background music from clips using clunky desktop software like Audacity or Adobe Audition. A recent discussion on w2solo (a community for indie makers) highlighted that the top requested tool is a dead-simple vocal remover — no sign-ups, no ads, just upload and download. The signal is clear: creators are tired of bloated tools that require tutorials.</p>
+    <p>Existing online solutions like VocalRemover.org or media.io are either slow, plastered with ads, or force you to create an account. Worse, they often fail on short-form content (TikTok, Reels, Shorts) where the audio is already compressed. Our approach uses a lightweight AI model (Spleeter 2stems) that processes a 30-second clip in under 10 seconds — no login, no waiting, no noise.</p>
+    <p>With the explosion of short video platforms, the demand for quick audio extraction has never been higher. Creators need to grab a beat for a transition, isolate a voiceover, or remix a trending sound — all within seconds. This is the perfect moment for a focused, frictionless tool that does one thing exceptionally well.</p>
+  </section>
+
+  <!-- How It Works -->
+  <section class="how-it-works container">
+    <h2 class="section-heading text-center">How It Works</h2>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h3>Upload your audio</h3>
+          <p>Choose an MP3, WAV, or M4A file from your device — up to 50MB. No account needed. The interface is intentionally minimal: one button, one file picker.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h3>AI separates in seconds</h3>
+          <p>Our backend runs a pre-trained Spleeter model that splits the track into two stems: vocals and instrumental. For a 30-second clip, processing takes about 10 seconds.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h3>Download your stems</h3>
+          <p>Get both files instantly: vocal.mp3 and instrumental.mp3. Use them in your video editor, podcast, or remix — no watermarks, no hidden limits.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Selling Points (3列等宽grid) -->
+  <section class="selling-points container">
+    <h2 class="section-heading text-center">What You Get</h2>
+    <div class="selling-grid">
+      <div class="selling-card">
+        <div class="icon-wrap">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+          </svg>
+        </div>
+        <h3>Blazing fast AI</h3>
+        <p>Powered by the latest Spleeter model, our tool processes a 30-second audio clip in under 10 seconds — up to 3x faster than most online alternatives. No queues, no waiting.</p>
+      </div>
+      <div class="selling-card">
+        <div class="icon-wrap">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+          </svg>
+        </div>
+        <h3>Zero friction</h3>
+        <p>No sign-up, no email, no credit card. Just upload and download. Designed for the "I need this now" moment — perfect for last-minute edits and quick extractions.</p>
+      </div>
+      <div class="selling-card">
+        <div class="icon-wrap">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <polyline points="9 12 11 14 15 10"/>
+          </svg>
+        </div>
+        <h3>Free to start</h3>
+        <p>Get 3 free separations every day — no strings attached. If you need more, upgrade to unlimited for just $4.99/month. Perfect for testing before committing.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Bar -->
+  <div class="trust-bar container">
+    <span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        <polyline points="9 12 11 14 15 10"/>
+      </svg>
+      No data stored — files deleted after 1 hour
+    </span>
+    <span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+        <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+      </svg>
+      Encrypted transfer (HTTPS)
+    </span>
+    <span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/>
+        <path d="M12 6v6l4 2"/>
+      </svg>
+      Processed in under 10 seconds
+    </span>
+  </div>
+
+  <!-- Footer -->
+  <footer class

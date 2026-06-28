@@ -1,0 +1,165 @@
+---
+title: "A 32-Point Signal: Why I'm Zeroing In on the Niche of One-Click HAR Export"
+date: 2026-06-28
+summary: "Tuesday night, someone on V2EX posted a small tool — \"One-click record current tab network requests and export as HAR.\" The post got 3 replies, 2 platform..."
+---
+
+# A 32-Point Signal: Why I'm Zeroing In on the Niche of One-Click HAR Export
+
+Tuesday night, someone on V2EX posted a small tool — "One-click record current tab network requests and export as HAR." The post got 3 replies, 2 platform confirmations, and 32 points. By AimFast.Dev's scoring standards, that's not high, but it scored a 3 on "Buyer Clarity" — not the highest, but enough to make me stop and think.
+
+What's HAR? A HAR file is a complete log of browser network requests — all those API calls, response times, and status codes you see when you open DevTools, exportable as a .har file. Frontend devs use it to debug performance issues, QA teams use it to reproduce bugs, and backend devs use it to verify data formats.
+
+But if you're not a developer, you'll probably never touch this thing in your life.
+
+The question is — **who needs to export HAR files from someone else's website?**
+
+That's what I want to talk about today: a product opportunity hiding in the gap between developer tools and ordinary users.
+
+---
+
+## Translating to Plain English: Who's Hurting, and Why Now
+
+Let's decode this signal into plain English.
+
+The V2EX poster built a Chrome extension. Simple feature: click a button, record all network requests on the current page, then export as a HAR file. Sounds like existing DevTools functionality (F12 → Network → Export) — so why rebuild it?
+
+The answer: **the workflow is too long.**
+
+If you're a frontend developer, opening DevTools → Network tab → Check Preserve log → Refresh page → Right-click → Save all as HAR with content. Not hard.
+
+But what if you're not a developer? What if you're:
+- **A technical product manager** trying to prove to engineers that a page loads too slowly?
+- **An SEO consultant** wanting to check a competitor's API call patterns?
+- **An operations person** trying to confirm if a tracking event actually fired?
+- **An independent e-commerce seller** analyzing a competitor's product loading flow?
+
+These people won't open F12. They don't even know what F12 does. But they still need to capture network traffic — no, they don't need the term "capture traffic." They need **"help me see why this website is slow"** or **"show me how the competitor does it."**
+
+Why now?
+1. **AI debugging tools are exploding**: Cursor, Claude Code, Codex — these tools increasingly rely on API calls. Developers need to quickly export and share network requests for AI analysis. Saying "I'll feed this HAR to Claude and ask it to analyze why the API is slow" — that's becoming a real scenario.
+2. **Remote collaboration is the norm**: A bug going from QA to backend needs "scene evidence" passed along. Screenshots aren't enough, console logs aren't enough — HAR files are the complete evidence chain. But not everyone on the QA team knows how to export HAR.
+3. **Competitor analysis tools are getting expensive**: Similarweb, Semrush — these cost $100+/month and don't show you raw API requests. But in a HAR file, you can see a competitor's API endpoints, parameters, and response data structures — if you can export it.
+
+**Pricing anchor**: $9 one-time purchase. Or a free tier limited to 5 exports per day, Pro at $29/year. Not a $99/month SaaS — a tool under $10. Buyers won't hesitate.
+
+---
+
+## The Opportunity Hiding Beneath
+
+This signal isn't telling me to build a "HAR export tool" — that's too narrow. A Chrome extension solves that problem; it's not worth a standalone product.
+
+It's telling me there's an opportunity for a **"non-technical person's network capture tool."**
+
+Product form: A desktop app (Mac/Windows), or a Chrome extension with a companion web-based analysis panel. Core features:
+1. **One-click recording**: Click start → do your thing (open a website, fill a form, trigger an error) → click stop. It generates not a HAR, but a **human-readable network request report**.
+2. **Auto-generated summary**: Translates raw HAR into plain English — "This page sent 47 requests total, 3 returned 404s, the homepage image took 2.3 seconds to load, and the API from cdn.example.com was the slowest (1.8 seconds)."
+3. **AI analysis entry point**: Directly export results to ChatGPT/Claude, or embed an AI analysis button — "Tell me what to optimize on this page."
+
+**Who pays first?**
+- **Independent SEO consultants and operations managers**: They need to prove website performance issues to clients or bosses, but lack technical background. $9 one-time is an easy expense to justify.
+- **Technical product managers**: Need to file bugs or performance requests to engineers, but don't want to be asked "why didn't you export the HAR file?" every time. $9 for a tool saves hours of back-and-forth with engineers.
+- **Small QA teams**: 3-5 person teams exporting HAR as bug attachments during internal testing. Teams buy the $29/year version.
+
+**Why most people will miss it?**
+
+Because most people's first reaction to this signal is: "Isn't this just F12 export? Chrome already has that."
+
+This judgment has two problems:
+1. **Overestimating ordinary users' technical literacy**: My wife is a content operations person. Last week she asked me to help figure out why her company's backend page was loading slowly. I said "Open DevTools and look at the Network tab." She replied: "What's DevTools?" — That's the real world.
+2. **Underestimating the value of reducing friction**: F12 → Network → Right-click → Save all as HAR with content takes 4 steps. One-click record → export report takes 2 steps. For non-technical users, every step is a barrier. For high-frequency QA/operations users, every step is friction cost.
+
+**Data backing**: A similar tool on the Chrome Web Store, "Requestly," has 100,000+ users and is priced at $19/month (team plan). And it solves a much more complex problem than "export HAR" — it does request interception and modification. If you build a pure export tool, priced at $9 one-time, user acquisition costs are lower, and conversion rates would be higher.
+
+---
+
+## Why Most People Will Miss It
+
+The mainstream view: HAR export is a standard DevTools feature, not worth a standalone product.
+
+This view is wrong. It's wrong because it **confuses the capability of a technical tool with the capability of the user.**
+
+Chrome DevTools is built for developers. 90% of its features are noise to non-technical users. Show an operations person the Network panel with hundreds of requests, and they'll just close it.
+
+More critically: **The HAR format itself is designed for machines to read.** A raw HAR file is JSON — a deeply nested structure with status, timing, request, and response scattered across different levels. A non-technical user's first reaction to a HAR file is "What the hell is this?"
+
+So the real product opportunity isn't "export HAR" — it's **"translate HAR into plain English."**
+
+It's like: Excel can do data analysis, but data analysis SaaS companies (like Airtable, Notion's database) still thrive. Because users don't need "can do" — they need "can do easily."
+
+---
+
+## If It Were Me, Here's What I'd Do
+
+### Day 1 (Within 2 Hours)
+
+1. **Create a Google Forms survey** titled "Do you need to export website network requests?"
+2. **Post it in three places**:
+   - Reply to the original V2EX thread (directly ask the author "Does your tool support non-technical users?")
+   - Reddit r/SEO ("Question: How do you prove a website is slow to clients?")
+   - Chinese operations-focused knowledge circles/WeChat groups
+3. **Survey content** (just 3 questions):
+   - What was your most recent scenario for needing to export network requests? (Multiple choice: Debugging bugs / Performance analysis / Competitor analysis / Other)
+   - How much would you pay for a "one-click export + auto-generated report" tool? (0 / 9 / 19 / 29 in local currency)
+   - Leave your email (optional)
+
+Goal: 30+ responses within 24 hours, confirming willingness to pay.
+
+### Days 2-3
+
+1. **Grab a Chrome Extension template from GitHub**, hack together an MVP:
+   - A popup window with a "Start Recording" button
+   - Use the `chrome.devtools.network` API to capture requests
+   - Instead of exporting raw HAR, generate a Markdown report (request count, error count, slowest request, average load time)
+2. **Pricing**: $9 one-time, listed on Gumroad or Lemonsqueezy.
+3. **Landing Page**: A single page with core copy — "One click to export the network request report you need. No DevTools required."
+
+### Days 4-7
+
+1. **Launch MVP on Product Hunt and Hacker News Show HN**. Title: Show HN: I made a tool that exports HAR files as human-readable reports in one click.
+2. **Post on Reddit r/macapps, r/SideProject, r/webdev**.
+3. **Monitor feedback**:
+   - If 50+ downloads in 7 days, with at least 10 people willing to pay $9 → keep building
+   - If < 30 downloads and 0 paid → abandon, file it in the experience log
+   - If 30-50 downloads but 0 paid → adjust pricing (drop to $4.99) or switch to free + donation model
+
+### My First Version
+
+I wouldn't build a desktop app. The first version would be **a Chrome extension + a Markdown report**.
+
+Chrome extension development has an extremely low barrier (1-2 days to ship). Markdown reports can be pasted directly into Notion, GitHub Issues, or Slack. Users don't need to register, install extra software, or learn anything.
+
+Key differentiator: **The report is for humans, not machines.**
+
+### Failure Conditions
+
+When would this judgment be wrong?
+
+1. **Users genuinely don't need this**: If after 7 days of validation, downloads are < 30 and 0 paid, it means either the pain point isn't sharp enough, or users have already found alternatives (like browser screenshots + manual report assembly).
+2. **Replaced by native browser functionality**: If Chrome adds a "one-click export HAR summary" feature in the next release, this product dies. But given the Chrome team's attitude toward DevTools (they assume users are developers), this risk is low.
+3. **AI solves the problem directly**: If future AI browser agents (like Browser Use, Playwright) can automatically analyze website performance and generate reports, then standalone HAR capture becomes less meaningful. But that's a 1-2 year scenario, not now.
+
+---
+
+## Other Signals Worth Watching This Week
+
+1. **Smart model routing directly in Claude, Codex and Cursor** (32 points | HN 201 upvotes/109 comments): A tool for intelligent model routing within Claude/Cursor. AI models are getting cheaper, but the choices are multiplying — routing layers become essential. **→ Opportunity: Build an AI model routing middleware that automatically selects the cheapest/fastest model based on task type.**
+
+2. **GetBlocked – a local-only Chrome extension for blocking web trackers** (34 points | HN 7 upvotes/3 comments): A locally-run tracker blocker. The privacy tool market is shifting from "cloud blocking" to "local processing," as users realize cloud blocking itself is a data leak. **→ Opportunity: Local-first privacy tools that need no server, running purely in the browser.**
+
+3. **Built several small utility tools for essential needs (image-to-text, background removal, audio track separation)** (38 points | w2solo): An indie developer built three online tools, emphasizing no registration, instant use, completely free. **→ Validates my thesis: Lightweight tools don't need to be SaaS. One-time payment or free + donation model works in the Chinese community.**
+
+---
+
+**Related Reading:**
+- How to validate product demand in 24 hours using Google Forms
+- Chrome extension development primer: From 0 to MVP in 2 hours
+- Why $9 one-time pricing beats $9/month for developer tools
+
+---
+
+*About AimFast.Dev*
+
+I'm a columnist for AimFast.Dev. Every day I scan 15+ signal sources (HN, Product Hunt, V2EX, GitHub, Reddit, w2solo), using the E-P-A framework (Evidence Anchoring → Plain English Translation → Actionable Advice) to filter the noise and find product opportunities the mainstream overlooks. This isn't an analyst report — it's a Builder chatting with you.
+
+*English Slug*: export-har-non-developer-opportunity
