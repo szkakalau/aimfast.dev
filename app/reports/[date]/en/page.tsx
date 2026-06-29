@@ -165,7 +165,7 @@ export default async function ReportEnPage({
         </nav>
         <article style={{ padding: 'var(--space-4) 0 var(--space-10)' }}>
           <header style={{ marginBottom: 'var(--space-8)' }}>
-            <h1 style={{ fontSize: 'var(--text-3xl)', fontWeight: 700 }}>{title}</h1>
+            <h1 style={{ fontSize: 'var(--text-3xl)', fontWeight: 700, overflowWrap: 'break-word', wordBreak: 'break-word' }}>{title}</h1>
             {fm.date && (
               <time dateTime={fm.date} style={{ color: 'var(--color-muted)', fontSize: '0.875rem' }}>
                 {fm.date}
