@@ -330,17 +330,12 @@
   }
   .archive-dates {
     display: flex;
+    flex-wrap: wrap;
     gap: 4px;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
     flex: 1 1 auto;
     padding: 2px 0;
   }
-  .archive-dates::-webkit-scrollbar { display: none; }
   .archive-date-btn {
-    flex-shrink: 0;
     padding: 4px 10px;
     border-radius: var(--radius-md);
     border: 1px solid var(--color-border);
