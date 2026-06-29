@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StockPulse — AI 帮你 3 秒看懂一只股票 | www.aimfast.dev</title>
+  <meta name="description" content="StockPulse: 输入股票代码，AI 自动抓取行情与新闻，生成今日决策简报。零部署，零注册，完全免费。">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#1a1d24">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://www.aimfast.dev/stockpulse/">
+  <meta property="og:type" content="product">
+  <meta property="og:title" content="StockPulse — AI 帮你 3 秒看懂一只股票">
+  <meta property="og:description" content="输入股票代码，AI 自动抓取行情与新闻，生成今日决策简报。零部署，零注册，完全免费。">
+  <meta property="og:url" content="https://www.aimfast.dev/stockpulse/">
+  <meta property="og:site_name" content="AimFast.Dev">
+  <meta property="og:image" content="https://www.aimfast.dev/og/stockpulse.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="StockPulse — AI 帮你 3 秒看懂一只股票">
+  <meta name="twitter:description" content="输入股票代码，AI 自动抓取行情与新闻，生成今日决策简报。零部署，零注册，完全免费。">
+  <meta name="twitter:image" content="https://www.aimfast.dev/og/stockpulse.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "StockPulse",
+    "applicationCategory": "AIApplication",
+    "operatingSystem": "Web",
+    "description": "AI 驱动的股票决策简报工具。输入股票代码，3 秒获得包含行情、新闻情绪、技术信号和 LLM 综合观点的今日简报。",
+    "url": "https://www.aimfast.dev/stockpulse/",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+  <link rel="stylesheet" href="/_ds/base.css">
+  <link rel="stylesheet" href="/_ds/components.css">
+  <style>
+    /* 自定义样式仅用于布局微调，不重复定义 token */
+    .hero {
+      padding: var(--space-8) 0 var(--space-6);
+      text-align: center;
+    }
+    .hero h1 {
+      max-width: 720px;
+      margin: 0 auto var(--space-2);
+    }
+    .hero .subhead {
+      max-width: 540px;
+      margin: 0 auto var(--space-5);
+      color: var(--color-text-secondary);
+      font-size: 1.125rem;
+    }
+    .signup-form {
+      display: flex;
+      gap: var(--space-2);
+      max-width: 480px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .signup-form input {
+      flex: 1 1 220px;
+      height: 52px;
+      padding: 0 var(--space-3);
+      border: 2px solid var(--color-border);
+      border-radius: 8px;
+      background: var(--color-surface);
+      color: var(--color-text);
+      font-size: 1rem;
+      font-family: var(--font-body);
+      transition: border-color var(--duration-normal) var(--ease-out);
+    }
+    .signup-form input:focus {
+      outline: none;
+      border-color: var(--color-accent);
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent) 20%, transparent);
+    }
+    .signup-form .btn {
+      height: 52px;
+      padding: 0 var(--space-4);
+      font-size: 1rem;
+      white-space: nowrap;
+    }
+    .signup-form .btn-lg {
+      height: 52px;
+      line-height: 52px;
+    }
+    .success-message, .error-message {
+      max-width: 480px;
+      margin: var(--space-3) auto 0;
+      padding: var(--space-2) var(--space-3);
+      border-radius: 8px;
+      font-weight: 500;
+    }
+    .success-message {
+      background: color-mix(in srgb, var(--color-accent) 12%, transparent);
+      color: var(--color-accent);
+      border: 1px solid color-mix(in srgb, var(--color-accent) 30%, transparent);
+    }
+    .error-message {
+      background: color-mix(in srgb, #e53e3e 12%, transparent);
+      color: #e53e3e;
+      border: 1px solid color-mix(in srgb, #e53e3e 30%, transparent);
+    }
+    .why-matters {
+      padding: var(--space-8) 0;
+    }
+    .why-matters p {
+      max-width: 700px;
+      margin: 0 auto var(--space-3);
+      color: var(--color-text-secondary);
+      line-height: 1.75;
+    }
+    .how-it-works {
+      padding: var(--space-8) 0;
+      background: var(--color-surface-alt);
+    }
+    .steps-grid {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-5);
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .step {
+      display: flex;
+      gap: var(--space-3);
+      align-items: flex-start;
+    }
+    .step-num {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--color-accent);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.125rem;
+      font-family: var(--font-heading);
+    }
+    .step-content h3 {
+      margin: 0 0 var(--space-1);
+      font-size: 1.125rem;
+    }
+    .step-content p {
+      margin: 0;
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+    }
+    .selling-points {
+      padding: var(--space-8) 0;
+    }
+    .selling-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-5);
+    }
+    .selling-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      padding: var(--space-4);
+      text-align: center;
+    }
+    .selling-card .icon-wrap {
+      display: flex;
+      justify-content: center;
+      margin-bottom: var(--space-2);
+    }
+    .selling-card .icon-wrap svg {
+      width: 32px;
+      height: 32px;
+      stroke: var(--color-accent);
+      stroke-width: 1.8;
+      fill: none;
+    }
+    .selling-card h3 {
+      margin: 0 0 var(--space-1);
+      font-size: 1.125rem;
+    }
+    .selling-card p {
+      margin: 0;
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+    }
+    .trust-bar {
+      padding: var(--space-4) 0 var(--space-6);
+      text-align: center;
+      color: var(--color-text-muted);
+      font-size: 0.875rem;
+    }
+    .trust-bar span {
+      display: inline-block;
+      margin: 0 var(--space-2);
+    }
+    .trust-bar .dot {
+      color: var(--color-border);
+    }
+    footer {
+      padding: var(--space-4) 0;
+      text-align: center;
+      color: var(--color-text-muted);
+      font-size: 0.8125rem;
+      border-top: 1px solid var(--color-border);
+    }
+    @media (max-width: 640px) {
+      .signup-form {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .signup-form input {
+        width: 100%;
+      }
+      .selling-grid {
+        grid-template-columns: 1fr;
+      }
+      .step {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .hero h1 {
+        font-size: 1.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero + 内嵌邮箱表单 -->
+  <section class="hero container">
+    <h1 class="display">StockPulse: AI 帮你 3 秒看懂一只股票</h1>
+    <p class="subhead">输入股票代码，立刻获得 AI 生成的今日决策简报。不用部署，不用注册，完全免费。</p>
+    
+    <form id="signup-form" class="signup-form" action="https://formspree.io/f/your-form-id" method="POST" onsubmit="handleSubmit(event)">
+      <input type="email" name="email" placeholder="you@example.com" required autocomplete="email">
+      <button type="submit" class="btn btn-primary btn-lg">Get Early Access</button>
+    </form>
+    <div id="form-feedback" style="min-height: 48px;"></div>
+  </section>
+
+  <!-- Why This Matters -->
+  <section class="why-matters container">
+    <h2 class="section-title">Why AI Stock Analysis Matters Right Now</h2>
+    <p>The GitHub repository <em>ZhuLinsen/daily_stock_analysis</em> has amassed over 51,200 stars and 44,486 forks — a clear signal that developers and early adopters are desperate for LLM-driven stock insights. Yet the project remains a bare‑bones script: users must clone, configure API keys, and deploy themselves. The result? Thousands of people who want the output but never get past the setup.</p>
+    <p>Existing tools like TradingView or Finviz bury users under charts, indicators, and subscriptions. They assume you already know what a MACD crossover means. But the majority of retail investors — the 80% who trade on their phone during lunch — don’t want more data. They want a <strong>decision</strong>. Is this stock worth a look today? Bullish or bearish? That’s the gap StockPulse fills.</p>
+    <p>With Reddit discussions around “AI + stocks” exceeding 95,000 posts and the original repo still growing, the timing is perfect. The demand is proven; what’s missing is a zero‑friction, consumer‑grade wrapper. StockPulse turns a 5‑star GitHub project into a tool anyone can use in three seconds — no terminal, no API key, no credit card.</p>
+  </section>
+
+  <!-- How It Works -->
+  <section class="how-it-works">
+    <div class="container">
+      <h2 class="section-title">How It Works</h2>
+      <div class="steps-grid">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h3>Enter a ticker</h3>
+            <p>Type any US, HK, or Shanghai stock symbol — like AAPL, 0700.HK, or 600519.SH. No account, no login. Just paste and go.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h3>AI gathers the signals</h3>
+            <p>Our backend fetches live price data, recent news headlines, and technical indicators (MA5/MA20). Then GPT‑3.5 synthesizes everything into a concise briefing.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h3>Read your decision brief</h3>
+            <p>In under 3 seconds you get: today’s price summary, 3 key news items with sentiment, a short‑term trend signal, and a plain‑English LLM verdict. No fluff.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Selling Points (3列 grid) -->
+  <section class="selling-points container">
+    <h2 class="section-title">What You Get</h2>
+    <div class="selling-grid">
+      <div class="selling-card">
+        <div class="icon-wrap">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+          </svg>
+        </div>
+        <h3>AI‑powered insights</h3>
+        <p>Not a wall of numbers — a clear verdict. The LLM reads the news, checks the moving averages, and tells you if the short‑term outlook is bullish, bearish, or sideways.</p>
+      </div>
+      <div class="selling-card">
+        <div class="icon-wrap">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+          </svg>
+        </div>
+        <h3>Zero setup, zero cost</h3>
+        <p>No deployment, no API keys, no credit card. The original 51k‑star repo requires you to run Python scripts — we removed that friction entirely. Open, type, done.</p>
+      </div>
+      <div class="selling-card">
+        <div class="icon-wrap">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <polyline points="9 12 11 14 15 10"/>
+          </svg>
+        </div>
+        <h3>Privacy‑first design</h3>
+        <p>We never ask for your name, phone, or brokerage. No tracking pixels, no spam. Just a ticker input and an instant briefing. Your data is never stored or sold.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Bar -->
+  <div class="trust-bar container">
+    <span>🔒 100% free · no credit card</span>
+    <span class="dot">·</span>
+    <span>⚡ 3‑second response</span>
+    <span class="dot">·</span>
+    <span>🧠 powered by GPT‑3.5 + real market data</span>
+  </div>
+
+  <!-- Footer -->
+  <footer class="container">
+    © 2026 · <a href="https://www.aimfast.dev" style="color: inherit; text-decoration: underline;">www.aimfast.dev</a>
+  </footer>
+
+  <script>
+    function handleSubmit(event) {
+      event.preventDefault();
+      const form = event.target;
+      const feedback = document.getElementById('form-feedback');
+      const formData = new FormData(form);
+      const email = formData.get('email');
+
+      // 简单客户端验证
+      if (!email || !email.includes('@')) {
+        feedback.innerHTML = '<div class="error-message">Please enter a valid email address.</div>';
+        return;
+      }
+
+      // 显示加载状态
+      const btn = form.querySelector('button');
+      const originalText = btn.textContent;
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
+
+      fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(response => {
+        if (response.ok) {
+          // 成功：替换表单为成功消息
+          form.style.display = 'none';
+          feedback.innerHTML = '<div class="success-message">✓ You\'re on the list! We\'ll notify you when StockPulse launches.</div>';
+        } else {
+          // 失败：显示错误
+          feedback.innerHTML = '<div class="error-message">Something went wrong. Please try again or use a different email.</div>';
+          btn.textContent = originalText;
+          btn.disabled = false;
+        }
+      })
+      .catch(() => {
+        feedback.innerHTML = '<div class="error-message">Network error. Please check your connection and try again.</div>';
+        btn.textContent = originalText;
+        btn.disabled = false;
+      });
+    }
+  </script>
+</body>
+</html>
