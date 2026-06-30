@@ -266,8 +266,8 @@
   "llm": {
     "provider": "DeepSeek",
     "model": "deepseek-chat",
-    "api_key": "",
-    "monthly_budget_usd": 20
+    "monthly_budget_usd": 20,
+    "_api_key_note": "API key 仅通过环境变量 DEEPSEEK_API_KEY 配置，请勿在此填写"
   },
   "enrichment": {
     "_comment": "/last30days 社区语境丰富 — 对当日 Top 信号运行社区研究引擎",

@@ -1,10 +1,12 @@
 """
 共享 LLM 客户端
 支持 DeepSeek API（OpenAI 兼容格式）和本地 fallback。
+v2.3: 添加月度 token 预算追踪，接近预算时自动降级为模板 fallback。
 """
 import json
 import os
 import time
+from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
 from dotenv import load_dotenv
@@ -16,15 +18,13 @@ load_dotenv(ROOT / ".env")
 DEEPSEEK_BASE = "https://api.deepseek.com"
 DEEPSEEK_CHAT = f"{DEEPSEEK_BASE}/v1/chat/completions"
 
-# 从环境变量或 config.json 获取配置
+TZ_SHANGHAI = timezone(timedelta(hours=8))
+TOKEN_USAGE_PATH = ROOT / "tracking" / "token_usage.json"
+
+# 从环境变量获取配置
 def _get_api_key() -> str:
+    # API key 仅从环境变量读取，不在 config.json 中存储
     key = os.environ.get("DEEPSEEK_API_KEY", "")
-    if not key:
-        try:
-            config = json.loads((ROOT / "config.json").read_text(encoding="utf-8"))
-            key = config.get("llm", {}).get("api_key", "")
-        except Exception:
-            pass
     return _sanitize_key(key) if key else key
 
 
@@ -34,6 +34,68 @@ def _get_model() -> str:
         return config.get("llm", {}).get("model", "deepseek-chat")
     except Exception:
         return "deepseek-chat"
+
+
+def _get_monthly_budget() -> int:
+    """从 config.json 获取月度预算（美元），转换为估算 token 数。"""
+    try:
+        config = json.loads((ROOT / "config.json").read_text(encoding="utf-8"))
+        budget_usd = config.get("llm", {}).get("monthly_budget_usd", 20)
+        # DeepSeek 定价约 ¥1/百万 token ≈ $0.14/百万 token（输入+输出混合约 $0.50/百万）
+        # 保守估算: $1 ≈ 2M tokens
+        return int(budget_usd * 2_000_000)
+    except Exception:
+        return 40_000_000  # 默认 $20 ≈ 40M tokens
+
+
+def _read_token_usage() -> dict:
+    """读取当月 token 使用记录。每月自动重置。"""
+    current_month = datetime.now(TZ_SHANGHAI).strftime("%Y-%m")
+    if TOKEN_USAGE_PATH.exists():
+        try:
+            data = json.loads(TOKEN_USAGE_PATH.read_text(encoding="utf-8"))
+            if data.get("month") == current_month:
+                return data
+        except (json.JSONDecodeError, KeyError):
+            pass
+    return {"month": current_month, "total_tokens": 0, "calls": 0, "budget_exceeded": False}
+
+
+def _write_token_usage(data: dict):
+    """写入 token 使用记录。"""
+    TOKEN_USAGE_PATH.parent.mkdir(parents=True, exist_ok=True)
+    TOKEN_USAGE_PATH.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def _check_and_record_tokens(tokens_used: int, is_retry: bool = False):
+    """记录 token 消耗。如果超过月度预算的 90%，打印警告；超过 100%，设置预算超限标志。"""
+    if tokens_used <= 0:
+        return
+
+    usage = _read_token_usage()
+    # 重试不计入（避免重复计数同一请求）
+    if not is_retry:
+        usage["total_tokens"] += tokens_used
+        usage["calls"] += 1
+
+    budget = _get_monthly_budget()
+    ratio = usage["total_tokens"] / budget
+
+    if ratio >= 1.0 and not usage.get("budget_exceeded"):
+        usage["budget_exceeded"] = True
+        print(f"[LLM] ⚠️ 月度 token 预算已用尽！（{usage['total_tokens']:,}/{budget:,} = {ratio:.0%})")
+        print(f"[LLM] 后续调用将使用模板 fallback 直到下个月")
+    elif ratio >= 0.9 and not usage.get("budget_warned"):
+        usage["budget_warned"] = True
+        print(f"[LLM] ⚠️ 月度 token 预算已用 {ratio:.0%}（{usage['total_tokens']:,}/{budget:,}）")
+
+    _write_token_usage(usage)
+
+
+def _is_budget_exceeded() -> bool:
+    """检查月度预算是否已超限。"""
+    usage = _read_token_usage()
+    return usage.get("budget_exceeded", False)
 
 
 def _sanitize(text: str) -> str:
@@ -79,6 +141,11 @@ def chat(
         print("[LLM] DRY RUN — 不调用 API")
         return _template_fallback(system_prompt, user_prompt)
 
+    # 月度预算检查
+    if _is_budget_exceeded():
+        print("[LLM] 月度 token 预算已超限，使用模板 fallback")
+        return _template_fallback(system_prompt, user_prompt)
+
     import requests
 
     headers = {
@@ -111,6 +178,7 @@ def chat(
                 content = data.get("choices", [{}])[0].get("message", {}).get("content", "")
                 tokens = data.get("usage", {}).get("total_tokens", 0)
                 print(f"[LLM] 生成完成 ({tokens} tokens)")
+                _check_and_record_tokens(tokens, is_retry=(attempt > 0))
                 return content
             elif resp.status_code == 429:
                 wait = (attempt + 1) * 10

@@ -296,7 +296,7 @@ log "--- Step 13: Deploy Dashboard Data & SEO Content ---"
 git add public/dashboard/data/dashboard.json tracking/recurring_signals.json tracking/demand_radar.json public/sitemap.xml content/reports/ content/articles/ public/*/index.html compare/ daily/*/signals.json 2>&1 || true
 
 if git diff --cached --name-only | grep -q .; then
-    git config user.email "pipeline@pipeline@aimfast.dev"
+    git config user.email "pipeline@aimfast.dev"
     git config user.name "AimFast.Dev Bot"
     git commit -m "Dashboard data update: $DATE" 2>&1 || true
     log "  [Git] Committed dashboard data for $DATE"

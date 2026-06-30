@@ -1,6 +1,7 @@
 import { readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import type { Metadata } from 'next';
+import { parseFrontmatter } from '@/lib/frontmatter';
 
 const REPORTS_DIR = join(process.cwd(), 'content', 'reports');
 
@@ -45,28 +46,13 @@ function getReports(): ReportMeta[] {
         const filePath = join(REPORTS_DIR, f);
         const source = readFileSync(filePath, 'utf-8');
 
-        let title = `Daily Report — ${date}`;
-        let summary = '';
-        const fmMatch = source.match(/^---\r?\n([\s\S]*?)\r?\n---/);
-        if (fmMatch) {
-          const lines = fmMatch[1].split('\n');
-          for (const line of lines) {
-            const colonIdx = line.indexOf(':');
-            if (colonIdx > 0) {
-              const key = line.slice(0, colonIdx).trim();
-              let val = line.slice(colonIdx + 1).trim();
-              if (
-                (val.startsWith('"') && val.endsWith('"')) ||
-                (val.startsWith("'") && val.endsWith("'"))
-              ) {
-                val = val.slice(1, -1);
-              }
-              if (key === 'title') title = val;
-              if (key === 'summary') summary = val;
-            }
-          }
-        }
-        return { date, title, summary, hasEn };
+        const fm = parseFrontmatter(source);
+        return {
+          date,
+          title: fm.title || `Daily Report — ${date}`,
+          summary: fm.summary || '',
+          hasEn,
+        };
       })
       .sort((a, b) => b.date.localeCompare(a.date)); // newest first
   } catch {

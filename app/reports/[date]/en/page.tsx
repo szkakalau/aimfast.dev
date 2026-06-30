@@ -2,38 +2,10 @@ import { readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { compileMDX } from 'next-mdx-remote/rsc';
 import type { Metadata } from 'next';
+import { isValidPathSegment } from '@/lib/path-security';
+import { parseFrontmatterWithBody } from '@/lib/frontmatter';
 
 const REPORTS_DIR = join(process.cwd(), 'content', 'reports');
-
-interface ReportFrontmatter {
-  title?: string;
-  date?: string;
-  summary?: string;
-}
-
-function parseFrontmatter(source: string): { fm: ReportFrontmatter; body: string } {
-  const fm: ReportFrontmatter = {};
-  let body = source;
-  const fmMatch = source.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?/);
-  if (fmMatch) {
-    const lines = fmMatch[1].split('\n');
-    for (const line of lines) {
-      const colonIdx = line.indexOf(':');
-      if (colonIdx > 0) {
-        const key = line.slice(0, colonIdx).trim();
-        let val = line.slice(colonIdx + 1).trim();
-        if ((val.startsWith('"') && val.endsWith('"')) || (val.startsWith("'") && val.endsWith("'"))) {
-          val = val.slice(1, -1);
-        }
-        if (key === 'title') fm.title = val;
-        if (key === 'date') fm.date = val;
-        if (key === 'summary') fm.summary = val;
-      }
-    }
-    body = source.slice(fmMatch[0].length);
-  }
-  return { fm, body };
-}
 
 function getReportDates(): string[] {
   try {
@@ -60,7 +32,7 @@ export async function generateMetadata({
     return { title: 'Report Not Found — AimFast.Dev' };
   }
 
-  const { fm } = parseFrontmatter(source);
+  const { fm } = parseFrontmatterWithBody(source);
   const title = fm.title || `Daily Report — ${date}`;
   const canonicalUrl = `https://aimfast.dev/reports/${date}/en/`;
   const zhUrl = `https://aimfast.dev/reports/${date}/`;
@@ -109,6 +81,14 @@ export default async function ReportEnPage({
   params: Promise<{ date: string }>;
 }) {
   const { date } = await params;
+  if (!isValidPathSegment(date)) {
+    return (
+      <main className="container" style={{ padding: 'var(--space-10) 0', textAlign: 'center' as const }}>
+        <h1>Invalid Request</h1>
+        <p><a href="/">Back to home</a></p>
+      </main>
+    );
+  }
   const filePath = join(REPORTS_DIR, `${date}-en.md`);
 
   let source: string;
@@ -124,7 +104,7 @@ export default async function ReportEnPage({
     );
   }
 
-  const { fm, body } = parseFrontmatter(source);
+  const { fm, body } = parseFrontmatterWithBody(source);
   const title = fm.title || `Daily Report — ${date}`;
   const canonicalUrl = `https://aimfast.dev/reports/${date}/en/`;
   const zhUrl = `https://aimfast.dev/reports/${date}/`;

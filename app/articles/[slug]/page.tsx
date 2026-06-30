@@ -2,24 +2,8 @@ import { readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { compileMDX } from 'next-mdx-remote/rsc';
 import type { Metadata } from 'next';
-
-function parseFrontmatter(source: string): { title?: string; date?: string; summary?: string } {
-  const frontmatter: { title?: string; date?: string; summary?: string } = {};
-  const fmMatch = source.match(/^---\n([\s\S]*?)\n---/);
-  if (!fmMatch) return frontmatter;
-  const lines = fmMatch[1].split('\n');
-  for (const line of lines) {
-    const colonIdx = line.indexOf(':');
-    if (colonIdx > 0) {
-      const key = line.slice(0, colonIdx).trim();
-      const val = line.slice(colonIdx + 1).trim();
-      if (key === 'title') frontmatter.title = val;
-      if (key === 'date') frontmatter.date = val;
-      if (key === 'summary') frontmatter.summary = val;
-    }
-  }
-  return frontmatter;
-}
+import { isValidPathSegment } from '@/lib/path-security';
+import { parseFrontmatter, extractBody } from '@/lib/frontmatter';
 
 function getArticleSlugs(): string[] {
   const dir = join(process.cwd(), 'content', 'articles');
@@ -47,6 +31,9 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
+  if (!isValidPathSegment(slug)) {
+    return { title: 'Invalid Request — AimFast.Dev' };
+  }
   const filePath = join(process.cwd(), 'content', 'articles', `${slug}.mdx`);
   let source: string;
   try {
@@ -105,6 +92,16 @@ export default async function ArticlePage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
+  if (!isValidPathSegment(slug)) {
+    return (
+      <main className="container">
+        <article className="article" style={{ padding: 'var(--space-10) 0', textAlign: 'center' as const }}>
+          <h1>Invalid Request</h1>
+          <p><a href="/">Back to home</a></p>
+        </article>
+      </main>
+    );
+  }
   const filePath = join(process.cwd(), 'content', 'articles', `${slug}.mdx`);
 
   let source: string;
@@ -123,7 +120,7 @@ export default async function ArticlePage({
 
   // Parse frontmatter
   const frontmatter = parseFrontmatter(source);
-  const content = source.replace(/^---\n[\s\S]*?\n---\n?/, '');
+  const content = extractBody(source);
   const canonicalUrl = `https://aimfast.dev/articles/${slug}/`;
   const enUrl = `https://aimfast.dev/articles/${slug}/en/`;
   const hasEn = hasEnglishVersion(slug);

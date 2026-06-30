@@ -373,6 +373,18 @@ def detect_cross_domain_patterns(signals: list[dict], top_n: int = 15) -> list[d
 
     except Exception as e:
         print(f"[跨域] LLM 调用/解析失败: {e}，跳过跨域检测")
+        # 写入 pipeline_status 以便 dashboard 显示告警
+        try:
+            from scripts.pipeline_status import write as write_pipeline_status
+            write_pipeline_status(
+                datetime.now(TZ_SHANGHAI).strftime("%Y-%m-%d"),
+                "cross_domain",
+                "error",
+                reason="llm_or_parse_failure",
+                message=f"Cross-domain LLM call/parse failed: {str(e)[:200]}"
+            )
+        except Exception:
+            pass
         return signals
 
     if not matches:

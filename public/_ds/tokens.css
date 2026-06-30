@@ -1,31 +1,59 @@
 /* ═════ AimFast.Dev Design System — Tokens ═════ */
 :root {
-  /* ── Color: OKLCH space, warm-tinted darks ── */
+  /* ── Color: OKLCH with hex fallbacks (Safari <15.4, old Android WebView) ── */
+
+  /* bg: light gray-white */
+  --color-bg:             #f8f9fb;
   --color-bg:             oklch(98.5% 0.002 250);
+  /* surface: pure white */
+  --color-surface:        #ffffff;
   --color-surface:        oklch(100% 0 0 0);
+  /* surface-alt: light gray */
+  --color-surface-alt:    #edf0f5;
   --color-surface-alt:    oklch(95% 0.006 255);
+  /* border */
+  --color-border:         #d9dce2;
   --color-border:         oklch(88% 0.01 250);
+  --color-border-hover:   #aeb3bd;
   --color-border-hover:   oklch(72% 0.012 250);
+  /* text: near-black */
+  --color-text:           #1a1d22;
   --color-text:           oklch(18% 0.005 90);
+  --color-text-secondary: #505560;
   --color-text-secondary: oklch(38% 0.01 90);
+  --color-text-muted:     #737885;
   --color-text-muted:     oklch(52% 0.01 90);
 
+  /* accent: warm amber/gold */
+  --color-accent:         #d97706;
   --color-accent:         oklch(55% 0.18 60);
+  --color-accent-hover:   #b45309;
   --color-accent-hover:   oklch(50% 0.19 60);
+  --color-accent-muted:   rgba(217, 119, 6, 0.1);
   --color-accent-muted:   oklch(55% 0.18 60 / 0.1);
+  --color-accent-glow:    rgba(217, 119, 6, 0.15);
   --color-accent-glow:    oklch(55% 0.18 60 / 0.15);
 
   /* ── Blue: data visualization & primary actions ── */
+  --color-blue:           #1d4ed8;
   --color-blue:           oklch(45% 0.22 265);
+  --color-blue-hover:     #1e3a8a;
   --color-blue-hover:     oklch(40% 0.23 265);
+  --color-blue-muted:     rgba(29, 78, 216, 0.08);
   --color-blue-muted:     oklch(45% 0.22 265 / 0.08);
+  --color-blue-glow:      rgba(29, 78, 216, 0.12);
   --color-blue-glow:      oklch(45% 0.22 265 / 0.12);
 
+  --color-green:          #10b981;
   --color-green:          oklch(58% 0.16 155);
+  --color-green-muted:    rgba(16, 185, 129, 0.1);
   --color-green-muted:    oklch(58% 0.16 155 / 0.1);
+  --color-red:            #ef4444;
   --color-red:            oklch(52% 0.22 25);
+  --color-red-muted:      rgba(239, 68, 68, 0.1);
   --color-red-muted:      oklch(52% 0.22 25 / 0.1);
 
+  --color-on-accent:      #ffffff;
   --color-on-accent:      oklch(100% 0 0);
 
   /* ── Chart.js hex fallbacks (Chart.js cannot parse oklch) ── */

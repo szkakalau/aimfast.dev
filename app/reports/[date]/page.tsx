@@ -2,38 +2,10 @@ import { readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { compileMDX } from 'next-mdx-remote/rsc';
 import type { Metadata } from 'next';
+import { isValidPathSegment } from '@/lib/path-security';
+import { parseFrontmatterWithBody } from '@/lib/frontmatter';
 
 const REPORTS_DIR = join(process.cwd(), 'content', 'reports');
-
-interface ReportFrontmatter {
-  title?: string;
-  date?: string;
-  summary?: string;
-}
-
-function parseFrontmatter(source: string): { fm: ReportFrontmatter; body: string } {
-  const fm: ReportFrontmatter = {};
-  let body = source;
-  const fmMatch = source.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?/);
-  if (fmMatch) {
-    const lines = fmMatch[1].split('\n');
-    for (const line of lines) {
-      const colonIdx = line.indexOf(':');
-      if (colonIdx > 0) {
-        const key = line.slice(0, colonIdx).trim();
-        let val = line.slice(colonIdx + 1).trim();
-        if ((val.startsWith('"') && val.endsWith('"')) || (val.startsWith("'") && val.endsWith("'"))) {
-          val = val.slice(1, -1);
-        }
-        if (key === 'title') fm.title = val;
-        if (key === 'date') fm.date = val;
-        if (key === 'summary') fm.summary = val;
-      }
-    }
-    body = source.slice(fmMatch[0].length);
-  }
-  return { fm, body };
-}
 
 function getReportDates(): string[] {
   try {
@@ -45,12 +17,24 @@ function getReportDates(): string[] {
   }
 }
 
+function hasEnglishVersion(date: string): boolean {
+  try {
+    const enPath = join(REPORTS_DIR, `${date}-en.md`);
+    return readFileSync(enPath, 'utf-8') !== undefined;
+  } catch {
+    return false;
+  }
+}
+
 export async function generateMetadata({
   params,
 }: {
   params: Promise<{ date: string }>;
 }): Promise<Metadata> {
   const { date } = await params;
+  if (!isValidPathSegment(date)) {
+    return { title: 'Invalid Request — AimFast.Dev' };
+  }
   const filePath = join(REPORTS_DIR, `${date}.md`);
 
   let source: string;
@@ -60,19 +44,22 @@ export async function generateMetadata({
     return { title: 'Report Not Found — AimFast.Dev' };
   }
 
-  const { fm } = parseFrontmatter(source);
+  const { fm } = parseFrontmatterWithBody(source);
   const title = fm.title || `Daily Report — ${date}`;
   const canonicalUrl = `https://aimfast.dev/reports/${date}/`;
   const enUrl = `https://aimfast.dev/reports/${date}/en/`;
+  const hasEn = hasEnglishVersion(date);
+
+  const alternates: Record<string, unknown> = { canonical: canonicalUrl };
+  if (hasEn) {
+    alternates['languages'] = { en: enUrl };
+  }
 
   return {
     title: `${title} — AimFast.Dev`,
     description: fm.summary || `Daily signal intelligence report for ${date}. Product opportunities, trend analysis, and buildable insights for indie developers.`,
     robots: { index: true, follow: true },
-    alternates: {
-      canonical: canonicalUrl,
-      languages: { en: enUrl },
-    },
+    alternates,
     openGraph: {
       title: `${title} — AimFast.Dev`,
       description: fm.summary || `Daily signal intelligence report for ${date}.`,
@@ -109,6 +96,14 @@ export default async function ReportPage({
   params: Promise<{ date: string }>;
 }) {
   const { date } = await params;
+  if (!isValidPathSegment(date)) {
+    return (
+      <main className="container" style={{ padding: 'var(--space-10) 0', textAlign: 'center' as const }}>
+        <h1>Invalid Request</h1>
+        <p><a href="/">Back to home</a></p>
+      </main>
+    );
+  }
   const filePath = join(REPORTS_DIR, `${date}.md`);
 
   let source: string;
@@ -124,10 +119,11 @@ export default async function ReportPage({
     );
   }
 
-  const { fm, body } = parseFrontmatter(source);
+  const { fm, body } = parseFrontmatterWithBody(source);
   const title = fm.title || `Daily Report — ${date}`;
   const canonicalUrl = `https://aimfast.dev/reports/${date}/`;
   const enUrl = `https://aimfast.dev/reports/${date}/en/`;
+  const hasEn = hasEnglishVersion(date);
 
   const { content } = await compileMDX({
     source: body,
@@ -176,11 +172,13 @@ export default async function ReportPage({
                 {fm.summary}
               </p>
             )}
-            <div style={{ marginTop: 'var(--space-4)', fontSize: '0.875rem' }}>
-              <a href={enUrl} hrefLang="en" rel="alternate">
-                Read in English →
-              </a>
-            </div>
+            {hasEn && (
+              <div style={{ marginTop: 'var(--space-4)', fontSize: '0.875rem' }}>
+                <a href={enUrl} hrefLang="en" rel="alternate">
+                  Read in English →
+                </a>
+              </div>
+            )}
           </header>
           <div className="report-content">
             {content}
@@ -189,8 +187,10 @@ export default async function ReportPage({
         <footer className="site-footer" style={{ borderTop: '1px solid var(--color-border)', paddingTop: 'var(--space-6)', marginTop: 'var(--space-10)' }}>
           <p style={{ fontSize: '0.875rem', color: 'var(--color-muted)' }}>
             &copy; {new Date().getFullYear()} AimFast.Dev ·{' '}
-            <a href="/">Home</a> · <a href="/dashboard/">Dashboard</a> ·{' '}
-            <a href={`/reports/${date}/en/`}>English version</a>
+            <a href="/">Home</a> · <a href="/dashboard/">Dashboard</a>
+            {hasEn && (
+              <> · <a href={`/reports/${date}/en/`}>English version</a></>
+            )}
           </p>
         </footer>
       </main>
