@@ -75,7 +75,7 @@ $Collectors = @(
     @{Name="ArXiv"; Script="collect_arxiv"; Enabled=$false},
     @{Name="豆瓣"; Script="collect_douban"; Enabled=$true},
     @{Name="小红书"; Script="collect_xiaohongshu"; Enabled=$false},
-    @{Name="X/Twitter"; Script="collect_x"; Enabled=$false}
+    @{Name="X/Twitter"; Script="collect_x"; Enabled=$true}
 )
 
 Write-Log ""
