@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PicOne — The simplest image uploader for Mac writers | www.aimfast.dev</title>
+  <meta name="description" content="One-click image upload for Mac writers. Drag, paste, copy. Auto-compress, instant Markdown/HTML links. Native menu bar tool.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#1a1d24">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://www.aimfast.dev/picone/">
+  <meta property="og:type" content="product">
+  <meta property="og:title" content="PicOne — The simplest image uploader for Mac writers">
+  <meta property="og:description" content="One-click image upload for Mac writers. Drag, paste, copy. Auto-compress, instant Markdown/HTML links. Native menu bar tool.">
+  <meta property="og:url" content="https://www.aimfast.dev/picone/">
+  <meta property="og:site_name" content="AimFast.Dev">
+  <meta property="og:image" content="https://www.aimfast.dev/og/picone.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="PicOne — The simplest image uploader for Mac writers">
+  <meta name="twitter:description" content="One-click image upload for Mac writers. Drag, paste, copy. Auto-compress, instant Markdown/HTML links. Native menu bar tool.">
+  <meta name="twitter:image" content="https://www.aimfast.dev/og/picone.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "PicOne",
+    "applicationCategory": "AIApplication",
+    "operatingSystem": "macOS",
+    "description": "The simplest image uploader for Mac writers. Drag, paste, copy. Auto-compress, instant Markdown/HTML links. Native menu bar tool.",
+    "url": "https://www.aimfast.dev/picone/",
+    "offers": {
+      "@type": "Offer",
+      "price": "4.99",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+  <link rel="stylesheet" href="/_ds/base.css">
+  <link rel="stylesheet" href="/_ds/components.css">
+  <style>
+    /* custom page-level overrides — only layout & spacing, no token redefinition */
+    .hero {
+      padding: var(--space-8) 0 var(--space-6);
+      text-align: center;
+    }
+    .hero h1 {
+      max-width: 720px;
+      margin: 0 auto var(--space-3);
+    }
+    .hero .subhead {
+      max-width: 560px;
+      margin: 0 auto var(--space-5);
+      font-size: 1.125rem;
+    }
+    .signup-form {
+      display: flex;
+      gap: var(--space-2);
+      max-width: 480px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .signup-form input {
+      flex: 1 1 220px;
+      height: 52px;
+      padding: 0 var(--space-3);
+      font-size: 1rem;
+      border: 2px solid var(--color-border);
+      border-radius: 8px;
+      background: var(--color-surface);
+      color: var(--color-text);
+      transition: border-color var(--duration-normal) var(--ease-out);
+    }
+    .signup-form input:focus {
+      outline: none;
+      border-color: var(--color-accent);
+    }
+    .signup-form .btn {
+      height: 52px;
+      padding: 0 var(--space-4);
+      font-size: 1rem;
+      white-space: nowrap;
+    }
+    .signup-success {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-2);
+      max-width: 480px;
+      margin: 0 auto;
+      padding: var(--space-3);
+      background: var(--color-surface-alt);
+      border-radius: 8px;
+      font-weight: 500;
+    }
+    .signup-success svg {
+      stroke: var(--color-accent);
+    }
+    .signup-error {
+      display: none;
+      color: var(--color-text-secondary);
+      margin-top: var(--space-2);
+      text-align: center;
+    }
+    .why-matters {
+      padding: var(--space-8) 0;
+    }
+    .why-matters p {
+      max-width: 720px;
+      margin: 0 auto var(--space-3);
+    }
+    .how-it-works {
+      padding: var(--space-8) 0;
+      background: var(--color-surface-alt);
+    }
+    .steps-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: var(--space-5);
+      margin-top: var(--space-5);
+    }
+    .step {
+      display: flex;
+      gap: var(--space-3);
+      align-items: flex-start;
+    }
+    .step-num {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--color-accent);
+      color: var(--color-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.125rem;
+    }
+    .step-content h3 {
+      margin-bottom: var(--space-1);
+    }
+    .step-content p {
+      font-size: 0.95rem;
+      color: var(--color-text-secondary);
+    }
+    .selling-points {
+      padding: var(--space-8) 0;
+    }
+    .selling-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: var(--space-5);
+      margin-top: var(--space-5);
+    }
+    .selling-card {
+      background: var(--color-surface);
+      border-radius: 12px;
+      padding: var(--space-4);
+      border: 1px solid var(--color-border);
+    }
+    .selling-card .icon-wrap {
+      margin-bottom: var(--space-2);
+    }
+    .selling-card h3 {
+      margin-bottom: var(--space-1);
+    }
+    .selling-card p {
+      font-size: 0.95rem;
+      color: var(--color-text-secondary);
+    }
+    .trust-bar {
+      padding: var(--space-4) 0 var(--space-6);
+      text-align: center;
+      color: var(--color-text-muted);
+      font-size: 0.875rem;
+      display: flex;
+      justify-content: center;
+      gap: var(--space-4);
+      flex-wrap: wrap;
+    }
+    .trust-bar span {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-1);
+    }
+    .trust-bar svg {
+      width: 16px;
+      height: 16px;
+      stroke: var(--color-text-muted);
+    }
+    footer {
+      padding: var(--space-4) 0;
+      text-align: center;
+      color: var(--color-text-muted);
+      font-size: 0.8rem;
+      border-top: 1px solid var(--color-border);
+    }
+    @media (max-width: 768px) {
+      .steps-grid, .selling-grid {
+        grid-template-columns: 1fr;
+      }
+      .signup-form {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .signup-form input {
+        width: 100%;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero + email form -->
+  <section class="hero container">
+    <h1 class="heading-xl">PicOne: Mac’s fastest image uploader</h1>
+    <p class="subhead text-secondary">Drag, paste, copy. Auto-compress, instant Markdown/HTML links. Native menu bar — zero friction.</p>
+
+    <!-- inline email form -->
+    <form id="signup-form" class="signup-form" action="https://formspree.io/f/your-form-id" method="POST">
+      <input type="email" name="email" placeholder="you@example.com" required autocomplete="email">
+      <button type="submit" class="btn btn-primary btn-lg">Get Early Access</button>
+    </form>
+    <div id="signup-success" class="signup-success">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      <span>✓ You're on the list!</span>
+    </div>
+    <div id="signup-error" class="signup-error"></div>
+  </section>
+
+  <!-- Why This Matters -->
+  <section class="why-matters container">
+    <h2 class="heading-lg">Why a smarter image uploader matters right now</h2>
+    <p>Every day, thousands of Mac writers, bloggers, and note-takers waste minutes on a repetitive chore: take a screenshot, open a cloud storage console, upload, wait, copy the URL, then manually wrap it in Markdown or HTML. A recent V2EX thread (40 points, 13 replies) showed that even the best existing tools like uPic and PicGo feel over-engineered — they require API configuration, lack built-in compression, and don’t output ready-to-paste links. The pain is real, but the solutions are still too complex.</p>
+    <p>Existing tools like iPic have stalled in development, and PicGo’s plugin system adds unnecessary complexity for the 80% use case: one image, one link, instantly. Writers don’t want a dashboard — they want a menu bar icon that just works. The market is ripe for a tool that strips away every option except the one that matters: upload → compress → copy link.</p>
+    <p>With the rise of Markdown-based publishing (Notion, Obsidian, Ghost, Dev.to) and the growing number of solo creators, the demand for a dead-simple image pipeline has never been higher. PicOne fills that gap with a native macOS menu bar experience that takes two seconds from screenshot to published link. No configuration, no learning curve.</p>
+  </section>
+
+  <!-- How It Works -->
+  <section class="how-it-works">
+    <div class="container">
+      <h2 class="heading-lg text-center">How It Works</h2>
+      <div class="steps-grid">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h3>Drag or paste an image</h3>
+            <p>Drop any PNG, JPEG, or GIF onto the PicOne menu bar icon, or simply copy an image to your clipboard — the app detects it automatically. No file dialogs, no extra clicks.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h3>Auto-compress & upload</h3>
+            <p>PicOne uses macOS’s built-in <code>sips</code> engine to losslessly compress your image, then uploads it to a reliable free image host (SM.MS). The whole process takes under a second.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h3>Paste the link anywhere</h3>
+            <p>Both Markdown <code>![]()</code> and HTML <code>&lt;img&gt;</code> formats are copied to your clipboard instantly. Paste into Notion, Obsidian, WordPress, or any editor — done.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Selling Points -->
+  <section class="selling-points container">
+    <h2 class="heading-lg text-center">What You Get</h2>
+    <div class="selling-grid">
+      <div class="selling-card">
+        <div class="icon-wrap">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+          </svg>
+        </div>
+        <h3>One-click upload</h3>
+        <p>No menus, no dialogs, no API keys. Drag an image onto the menu bar icon or paste from clipboard — PicOne uploads and copies the link in one seamless motion. Zero configuration required.</p>
+      </div>
+      <div class="selling-card">
+        <div class="icon-wrap">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <polyline points="9 12 11 14 15 10"/>
+          </svg>
+        </div>
+        <h3>Auto-compression</h3>
+        <p>Every image is automatically compressed using macOS’s native <code>sips</code> tool — no extra software, no quality loss. Your images load faster and your blog stays lean.</p>
+      </div>
+      <div class="selling-card">
+        <div class="icon-wrap">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+          </svg>
+        </div>
+        <h3>Native menu bar</h3>
+        <p>Lives quietly in your Mac menu bar — always a click away, never in your way. No dock icon, no window management. It’s the most Mac-native way to upload images.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Bar -->
+  <div class="trust-bar container">
+    <span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+      Built for macOS 12+
+    </span>
+    <span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+      Free SM.MS hosting included
+    </span>
+    <span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+      One-time purchase · $4.99
+    </span>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    © 2026 · www.aimfast.dev
+  </footer>
+
+  <script>
+    const form = document.getElementById('signup-form');
+    const successDiv = document.getElementById('signup-success');
+    const errorDiv = document.getElementById('signup-error');
+
+    async function handleSubmit(e) {
+      e.preventDefault();
+      const email = form.email.value.trim();
+      if (!email) return;
+
+      // disable form during submission
+      form.querySelector('button').disabled = true;
+      errorDiv.style.display = 'none';
+      errorDiv.textContent = '';
+
+      try {
+        const resp = await fetch(form.action, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams({ email })
+        });
+        if (resp.ok) {
+          form.style.display = 'none';
+          successDiv.style.display = 'flex';
+        } else {
+          throw new Error('Server error');
+        }
+      } catch (err) {
+        form.style.display = 'none';
+        errorDiv.textContent = 'Something went wrong. Please try again or email us directly.';
+        errorDiv.style.display = 'block';
+      } finally {
+        form.querySelector('button').disabled = false;
+      }
+    }
+
+    form.addEventListener('submit', handleSubmit);
+  </script>
+</body>
+</html>
