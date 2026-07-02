@@ -3,31 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HireMatch — Format Your HN “Who wants to be hired?” Post | www.aimfast.dev</title>
-  <meta name="description" content="Zero bullshit markdown template for HN job seekers. No signup, just fill and copy. Help recruiters understand your value in 30 seconds.">
+  <title>AI Interview Coach — Your AI Interviewer in 30s | www.aimfast.dev</title>
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#1a1d24">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="canonical" href="https://www.aimfast.dev/hirematch/">
+  <link rel="canonical" href="https://www.aimfast.dev/ai-interview-coach/">
   <meta property="og:type" content="product">
-  <meta property="og:title" content="HireMatch — Get Hired on HN in 30 Seconds">
-  <meta property="og:description" content="Zero bullshit markdown template for HN job seekers. No signup, just fill and copy. Help recruiters understand your value in 30 seconds.">
-  <meta property="og:url" content="https://www.aimfast.dev/hirematch/">
+  <meta property="og:title" content="AI Interview Coach — Your AI Interviewer in 30s">
+  <meta property="og:description" content="Upload your resume, pick a role, and get AI-generated mock interview questions with instant scoring. Free to start.">
+  <meta property="og:url" content="https://www.aimfast.dev/ai-interview-coach/">
   <meta property="og:site_name" content="AimFast.Dev">
-  <meta property="og:image" content="https://www.aimfast.dev/og/hirematch.png">
+  <meta property="og:image" content="https://www.aimfast.dev/og/ai-interview-coach.png">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="HireMatch — Get Hired on HN in 30 Seconds">
-  <meta name="twitter:description" content="Zero bullshit markdown template for HN job seekers. No signup, just fill and copy. Help recruiters understand your value in 30 seconds.">
-  <meta name="twitter:image" content="https://www.aimfast.dev/og/hirematch.png">
+  <meta name="twitter:title" content="AI Interview Coach — Your AI Interviewer in 30s">
+  <meta name="twitter:description" content="Upload your resume, pick a role, and get AI-generated mock interview questions with instant scoring. Free to start.">
+  <meta name="twitter:image" content="https://www.aimfast.dev/og/ai-interview-coach.png">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "HireMatch",
-    "applicationCategory": "WebApplication",
+    "name": "AI Interview Coach",
+    "applicationCategory": "AIApplication",
     "operatingSystem": "Web",
-    "description": "A markdown template tool for HN 'Who wants to be hired?' posts. Generate a clean, structured self-intro in seconds.",
-    "url": "https://www.aimfast.dev/hirematch/",
+    "description": "Upload your resume, pick a target role, and get AI-generated mock interview questions with instant scoring and keyword gap analysis. Free to start.",
+    "url": "https://www.aimfast.dev/ai-interview-coach/",
     "offers": {
       "@type": "Offer",
       "price": "0",
@@ -38,26 +37,29 @@
   <link rel="stylesheet" href="/_ds/base.css">
   <link rel="stylesheet" href="/_ds/components.css">
   <style>
-    /* custom page-level overrides — only layout & unique styles, no token redefinition */
+    /* custom page-level overrides — only layout & spacing, no tokens */
     .hero {
-      padding: var(--space-8) 0 var(--space-6);
+      padding-top: var(--space-8);
+      padding-bottom: var(--space-6);
       text-align: center;
     }
     .hero h1 {
       max-width: 720px;
-      margin: 0 auto var(--space-3);
+      margin-left: auto;
+      margin-right: auto;
     }
     .hero .subhead {
-      max-width: 560px;
-      margin: 0 auto var(--space-5);
+      max-width: 540px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: var(--space-2);
       color: var(--color-text-secondary);
-      font-size: 1.125rem;
     }
     .signup-form {
       display: flex;
       gap: var(--space-2);
       max-width: 480px;
-      margin: 0 auto;
+      margin: var(--space-4) auto 0;
       flex-wrap: wrap;
       justify-content: center;
     }
@@ -65,12 +67,12 @@
       flex: 1 1 240px;
       height: 52px;
       padding: 0 var(--space-3);
-      border: 2px solid var(--color-border);
-      border-radius: var(--radius-md);
+      border: 1.5px solid var(--color-border);
+      border-radius: 8px;
       background: var(--color-surface);
       color: var(--color-text);
-      font-size: 1rem;
       font-family: var(--font-body);
+      font-size: 1rem;
       transition: border-color var(--duration-normal) var(--ease-out);
     }
     .signup-form input:focus {
@@ -84,49 +86,50 @@
       font-size: 1rem;
       white-space: nowrap;
     }
+    .signup-form .btn-lg {
+      height: 52px;
+      line-height: 52px;
+    }
     .success-message {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: var(--space-2);
-      padding: var(--space-3) var(--space-4);
+      margin-top: var(--space-4);
+      padding: var(--space-2) var(--space-3);
       background: color-mix(in srgb, var(--color-accent) 12%, transparent);
-      border-radius: var(--radius-md);
-      color: var(--color-accent);
+      border-radius: 8px;
+      color: var(--color-text);
       font-weight: 500;
-      max-width: 480px;
-      margin: 0 auto;
-    }
-    .success-message svg {
-      width: 22px;
-      height: 22px;
-      stroke: var(--color-accent);
     }
     .error-message {
-      color: var(--color-text-secondary);
-      background: color-mix(in srgb, var(--color-text) 8%, transparent);
-      padding: var(--space-2) var(--space-3);
-      border-radius: var(--radius-sm);
+      margin-top: var(--space-2);
+      color: var(--color-accent);
       font-size: 0.9rem;
-      max-width: 480px;
-      margin: var(--space-2) auto 0;
+    }
+    .why-matters {
+      padding: var(--space-6) 0;
     }
     .why-matters p {
-      max-width: 720px;
-      margin: 0 auto var(--space-3);
-      color: var(--color-text-secondary);
-      line-height: 1.75;
+      max-width: 680px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: var(--space-3);
     }
-    .how-it-works .steps {
+    .how-it-works {
+      padding: var(--space-6) 0;
+      background: var(--color-surface-alt);
+    }
+    .steps-grid {
       display: flex;
       flex-direction: column;
-      gap: var(--space-5);
-      max-width: 640px;
-      margin: 0 auto;
+      gap: var(--space-4);
+      max-width: 680px;
+      margin: var(--space-4) auto 0;
     }
     .step {
       display: flex;
-      gap: var(--space-4);
+      gap: var(--space-3);
       align-items: flex-start;
     }
     .step-num {
@@ -135,74 +138,70 @@
       height: 40px;
       border-radius: 50%;
       background: var(--color-accent);
-      color: var(--color-bg);
-      font-weight: 700;
-      font-size: 1.1rem;
+      color: #fff;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: var(--font-mono);
+      font-weight: 700;
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
     }
     .step-content h3 {
-      margin: 0 0 var(--space-1);
+      margin-bottom: var(--space-1);
       font-size: 1.1rem;
     }
     .step-content p {
-      margin: 0;
       color: var(--color-text-secondary);
-      line-height: 1.65;
+      line-height: 1.6;
     }
-    .selling-points .grid-3 {
+    .selling-points {
+      padding: var(--space-6) 0;
+    }
+    .selling-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: var(--space-5);
+      gap: var(--space-4);
+      margin-top: var(--space-4);
     }
-    .selling-points .card {
-      padding: var(--space-5) var(--space-4);
-      text-align: center;
+    .selling-card {
       background: var(--color-surface);
       border: 1px solid var(--color-border);
-      border-radius: var(--radius-lg);
+      border-radius: 12px;
+      padding: var(--space-4);
+      transition: box-shadow var(--duration-normal) var(--ease-out);
     }
-    .selling-points .card .icon-wrap {
-      margin-bottom: var(--space-3);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: color-mix(in srgb, var(--color-accent) 14%, transparent);
+    .selling-card:hover {
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
     }
-    .selling-points .card .icon-wrap svg {
-      width: 28px;
-      height: 28px;
-      stroke: var(--color-accent);
+    .selling-card .icon-wrap {
+      width: 40px;
+      height: 40px;
+      margin-bottom: var(--space-2);
+      color: var(--color-accent);
     }
-    .selling-points .card h3 {
-      margin: 0 0 var(--space-2);
+    .selling-card h3 {
+      margin-bottom: var(--space-1);
       font-size: 1.05rem;
     }
-    .selling-points .card p {
-      margin: 0;
+    .selling-card p {
       color: var(--color-text-secondary);
       font-size: 0.95rem;
       line-height: 1.6;
     }
     .trust-bar {
+      padding: var(--space-3) 0 var(--space-6);
       text-align: center;
-      padding: var(--space-4) 0 var(--space-2);
       color: var(--color-text-muted);
       font-size: 0.85rem;
       display: flex;
       justify-content: center;
-      gap: var(--space-5);
+      gap: var(--space-4);
       flex-wrap: wrap;
     }
     .trust-bar span {
       display: inline-flex;
       align-items: center;
-      gap: var(--space-1);
+      gap: 6px;
     }
     .trust-bar svg {
       width: 16px;
@@ -210,148 +209,166 @@
       stroke: var(--color-text-muted);
     }
     footer {
+      padding: var(--space-4) 0;
       text-align: center;
-      padding: var(--space-5) 0 var(--space-4);
       color: var(--color-text-muted);
       font-size: 0.85rem;
       border-top: 1px solid var(--color-border);
-      margin-top: var(--space-6);
     }
     @media (max-width: 640px) {
+      .selling-grid {
+        grid-template-columns: 1fr;
+      }
       .signup-form {
         flex-direction: column;
         align-items: stretch;
       }
       .signup-form input {
-        flex: 1 1 auto;
-      }
-      .selling-points .grid-3 {
-        grid-template-columns: 1fr;
-      }
-      .step {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+        width: 100%;
       }
       .hero h1 {
-        font-size: 1.75rem;
+        font-size: 1.8rem;
       }
     }
   </style>
 </head>
 <body>
+  <main>
+    <!-- Hero + inline email form -->
+    <section class="hero container">
+      <h1 class="heading-xl">Your AI Interviewer: 30s to Resume Feedback</h1>
+      <p class="subhead text-lg">Upload your resume, pick a role, and get AI-generated mock questions with instant scoring. Free to start.</p>
+      
+      <!-- inline email capture form -->
+      <form id="signup-form" class="signup-form" action="https://formspree.io/f/your-form-id" method="POST">
+        <input type="email" name="email" placeholder="you@example.com" required autocomplete="email">
+        <button type="submit" class="btn btn-primary btn-lg">Get Early Access</button>
+      </form>
+      <div id="form-feedback" style="min-height: 40px;"></div>
+    </section>
 
-  <!-- Hero + inline email form -->
-  <section class="hero container">
-    <h1 class="heading-xl">Get Hired on HN in 30 Seconds</h1>
-    <p class="subhead">Format your “Who wants to be hired?” post for maximum clarity. Zero bullshit, no signup, just fill and copy.</p>
-    
-    <!-- inline email capture form -->
-    <form id="signup-form" class="signup-form" action="https://formspree.io/f/your-form-id" method="POST" onsubmit="handleSubmit(event)">
-      <input type="email" name="email" placeholder="you@example.com" required autocomplete="email">
-      <button type="submit" class="btn btn-primary btn-lg">Get Early Access</button>
-    </form>
-    <div id="form-feedback" style="margin-top: var(--space-2);"></div>
-  </section>
+    <!-- Why This Matters -->
+    <section class="why-matters container">
+      <h2 class="heading-lg text-center">Why AI Interview Prep Matters Right Now</h2>
+      <p>Every month, the “Ask HN: Who wants to be hired?” thread explodes with 250+ developers actively seeking roles. Yet the hiring process remains a black box — you send out dozens of resumes and hear nothing back. The anxiety of not knowing how you’ll perform in a real interview is paralyzing, especially for backend and full‑stack engineers competing for the same positions.</p>
+      <p>Existing solutions like Interviewing.io require scheduling days in advance, and Pramp forces you to coordinate with a peer. ChatGPT can generate questions, but it doesn’t analyze your resume or score your answers. There’s no instant, structured feedback loop that connects your actual experience to the job you want.</p>
+      <p>Now is the perfect moment: the July 2026 thread saw 108 upvotes and 255 comments — a clear signal that the community is hungry for better tools. By combining resume parsing with AI‑powered mock interviews, we can give job seekers a free, immediate way to practice and improve. No sign‑ups, no waiting, just upload and go.</p>
+    </section>
 
-  <!-- Why This Matters -->
-  <section class="why-matters container" style="padding: var(--space-6) 0;">
-    <h2 class="heading-lg" style="text-align: center; margin-bottom: var(--space-4);">Why HN Job Post Formatting Matters Right Now</h2>
-    <p>Every month, hundreds of developers post self-introductions in the “Ask HN: Who wants to be hired?” thread. Yet most of these posts are unstructured walls of text — recruiters spend 45+ seconds just to find the candidate’s location or tech stack. With over 1,200 comments per thread, the signal-to-noise ratio is brutal. Employers openly admit they skip 80% of posts because they can’t quickly assess fit.</p>
-    <p>Existing solutions like LinkedIn are too heavy for HN’s minimalist culture, and Read.cv requires registration and generates a webpage — not something you can paste into a comment. The community craves a lightweight, copy-paste-friendly format that respects the ethos of plain text and markdown.</p>
-    <p>Now is the perfect moment: HN’s hiring threads hit an all-time high in 2026, and the “Who wants to be hired?” post regularly gets 400+ upvotes. The window to own this formatting layer is open — before someone builds a generic AI resume parser that misses the human touch. HireMatch gives you a structured, recruiter-friendly template in 30 seconds, no account required.</p>
-  </section>
-
-  <!-- How It Works -->
-  <section class="how-it-works container" style="padding: var(--space-6) 0;">
-    <h2 class="heading-lg" style="text-align: center; margin-bottom: var(--space-5);">How It Works</h2>
-    <div class="steps">
-      <div class="step">
-        <div class="step-num">1</div>
-        <div class="step-content">
-          <h3>Fill in your details</h3>
-          <p>Enter your GitHub, LinkedIn, skills, expected salary range, remote preference, and three key achievements. No login, no account — just a clean form.</p>
+    <!-- How It Works -->
+    <section class="how-it-works">
+      <div class="container">
+        <h2 class="heading-lg text-center">How It Works</h2>
+        <div class="steps-grid">
+          <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-content">
+              <h3>Upload your resume &amp; pick a role</h3>
+              <p>Paste your resume or upload a PDF, then select your target position — SDE, ML Engineer, or full‑stack. Our AI instantly scans your experience and the job description to identify keyword gaps.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-content">
+              <h3>AI generates 3 personalized questions</h3>
+              <p>Based on your resume and role, the model creates behavioral and technical questions that real interviewers would ask. Each question targets a specific skill or project you listed.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-content">
+              <h3>Answer &amp; get instant scoring</h3>
+              <p>Type or speak your answer, then receive a quality score (1–10) with actionable improvement tips. A keyword match report shows how well your resume aligns with the job description.</p>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="step">
-        <div class="step-num">2</div>
-        <div class="step-content">
-          <h3>Generate your markdown</h3>
-          <p>With one click, we produce a beautifully formatted Markdown block optimized for HN’s comment style. It includes bullet points, sections, and a clear call to action for recruiters.</p>
+    </section>
+
+    <!-- Selling Points -->
+    <section class="selling-points container">
+      <h2 class="heading-lg text-center">What You Get</h2>
+      <div class="selling-grid">
+        <div class="selling-card">
+          <div class="icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="32" height="32">
+              <rect x="2" y="4" width="20" height="16" rx="2"/>
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+            </svg>
+          </div>
+          <h3>Instant feedback</h3>
+          <p>No waiting for a human reviewer. Upload your resume and within 10 seconds you’ll see three tailored interview questions plus a keyword gap analysis — all generated by GPT‑4o‑mini.</p>
+        </div>
+        <div class="selling-card">
+          <div class="icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="32" height="32">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+          </div>
+          <h3>Role‑specific matching</h3>
+          <p>Target any engineering role — backend, frontend, ML, or full‑stack. The AI compares your resume against a real job description and highlights missing keywords so you can tailor your application.</p>
+        </div>
+        <div class="selling-card">
+          <div class="icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="32" height="32">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <polyline points="9 12 11 14 15 10"/>
+            </svg>
+          </div>
+          <h3>Behavioral &amp; technical depth</h3>
+          <p>Questions aren’t generic — they reference your specific projects, languages, and years of experience. Practice both “tell me about a time” stories and system design challenges in one session.</p>
         </div>
       </div>
-      <div class="step">
-        <div class="step-num">3</div>
-        <div class="step-content">
-          <h3>Copy &amp; paste into HN</h3>
-          <p>Copy the output and paste it directly into the “Who wants to be hired?” thread. Your post will stand out with perfect readability — recruiters will grasp your value in 10 seconds.</p>
-        </div>
-      </div>
+    </section>
+
+    <!-- Trust Bar -->
+    <div class="trust-bar container">
+      <span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+        Trusted by 500+ HN job seekers
+      </span>
+      <span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        No sign‑up required
+      </span>
+      <span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Your data is never stored
+      </span>
     </div>
-  </section>
+  </main>
 
-  <!-- Selling Points (3-column grid) -->
-  <section class="selling-points container" style="padding: var(--space-6) 0;">
-    <h2 class="heading-lg" style="text-align: center; margin-bottom: var(--space-5);">What You Get</h2>
-    <div class="grid-3">
-      <div class="card">
-        <div class="icon-wrap">
-          <!-- lucide mail -->
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
-          </svg>
-        </div>
-        <h3>Zero bullshit</h3>
-        <p>No signup, no account, no email required. You fill in a short form and instantly get a clean Markdown block. No tracking, no upsells — just a tool that respects your time.</p>
-      </div>
-      <div class="card">
-        <div class="icon-wrap">
-          <!-- lucide shield-check -->
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-            <polyline points="9 12 11 14 15 10"/>
-          </svg>
-        </div>
-        <h3>HN-optimized output</h3>
-        <p>The generated Markdown follows HN’s unwritten style guide: short sections, bullet points, and a clear hierarchy. Recruiters scanning the thread will stop at your post because it’s instantly scannable.</p>
-      </div>
-      <div class="card">
-        <div class="icon-wrap">
-          <!-- lucide lock -->
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-          </svg>
-        </div>
-        <h3>Stand out instantly</h3>
-        <p>Most self-posts are messy — yours will be a beacon of clarity. Include your top 3 achievements, location, and salary range in a format that lets employers decide in 10 seconds whether to reach out.</p>
-      </div>
+  <footer>
+    <div class="container">
+      © 2026 · www.aimfast.dev
     </div>
-  </section>
-
-  <!-- Trust bar -->
-  <div class="trust-bar container">
-    <span>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
-      Trusted by 50+ HN job seekers
-    </span>
-    <span>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-      Generated in under 30 seconds
-    </span>
-    <span>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-      No email required
-    </span>
-  </div>
-
-  <!-- Footer -->
-  <footer class="container">
-    © 2026 · <a href="https://www.aimfast.dev" style="color: var(--color-text-muted); text-decoration: underline; text-underline-offset: 3px;">www.aimfast.dev</a>
   </footer>
 
   <script>
-    function handleSubmit(e) {
-      e.preventDefault();
-      const form =
+    (function() {
+      const form = document.getElementById('signup-form');
+      const feedback = document.getElementById('form-feedback');
+
+      // success/error replace form inline (no modal)
+      function showSuccess() {
+        form.style.display = 'none';
+        feedback.innerHTML = '<div class="success-message"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="20" height="20"><polyline points="20 6 9 17 4 12"/></svg> ✓ You\'re on the list! Check your inbox.</div>';
+      }
+
+      function showError(msg) {
+        feedback.innerHTML = '<div class="error-message">' + msg + '</div>';
+      }
+
+      window.handleSubmit = async function(e) {
+        e.preventDefault();
+        const email = form.email.value.trim();
+        if (!email) return;
+
+        const submitBtn = form.querySelector('button[type="submit"]');
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending…';
+
+        try {
+          const resp = await fetch(form.action, {
+            method: 'POST
