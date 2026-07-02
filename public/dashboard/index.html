@@ -670,6 +670,135 @@
   .btn-bet:hover { border-color: var(--color-accent); }
   .btn-bet.active-bet { background: var(--color-accent); color: var(--color-on-accent); border-color: var(--color-accent); }
 
+  /* ── Opportunity Board (unified 3-zone layout) ── */
+  .opp-board { display: flex; flex-direction: column; gap: var(--space-3); }
+  .opp-zone { padding: var(--space-2) 0; }
+  .opp-zone + .opp-zone { border-top: 1px solid var(--color-border); }
+  .opp-zone-title { font-size: 0.88rem; font-weight: 600; margin-bottom: var(--space-2); color: var(--color-text); display: flex; align-items: center; gap: var(--space-1); }
+
+  /* ── Active bet row ── */
+  .active-bet-row {
+    display: flex; align-items: center; gap: var(--space-2); padding: 8px 10px;
+    background: var(--color-surface-alt); border-radius: var(--radius-md);
+    margin-bottom: var(--space-1); font-size: 0.82rem; transition: background var(--duration-fast) var(--ease-out);
+  }
+  .active-bet-row:hover { background: var(--color-surface); }
+  .bet-status-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+  .bet-status-dot.active-bet { background: var(--color-accent); }
+  .bet-status-dot.review-due { background: var(--color-red); animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+  .bet-day-counter { font-size: 0.7rem; color: var(--color-text-muted); white-space: nowrap; margin-left: auto; }
+
+  /* ── Opportunity pipeline card ── */
+  .opp-card {
+    border: 1px solid var(--color-border); border-radius: var(--radius-md);
+    margin-bottom: var(--space-1); transition: all var(--duration-fast) var(--ease-out);
+  }
+  .opp-card:hover { border-color: var(--color-accent-muted); }
+  .opp-card-header {
+    display: flex; align-items: center; gap: var(--space-2); padding: 10px 12px;
+    cursor: pointer; user-select: none;
+  }
+  .opp-card-rank { font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; color: var(--color-text-muted); min-width: 24px; }
+  .opp-card-badge {
+    font-size: 0.6rem; padding: 1px 6px; border-radius: 8px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.3px; white-space: nowrap;
+  }
+  .opp-card-badge.save-money { background: #fee2e2; color: #dc2626; }
+  .opp-card-badge.make-money { background: #dcfce7; color: #16a34a; }
+  .opp-card-badge.save-time { background: #dbeafe; color: #2563eb; }
+  .opp-card-badge.reduce-risk { background: #fef3c7; color: #d97706; }
+  .opp-card-badge.increase-output { background: #f3e8ff; color: #9333ea; }
+  .opp-card-name { flex: 1 1 auto; font-weight: 600; font-size: 0.88rem; min-width: 0; }
+  .opp-card-why { font-size: 0.72rem; color: var(--color-text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 240px; }
+  .opp-card-indicators { display: flex; align-items: center; gap: var(--space-2); flex-shrink: 0; }
+  .opp-score { font-family: var(--font-heading); font-weight: 700; font-size: 1rem; min-width: 28px; text-align: right; }
+  .opp-stage {
+    font-size: 0.68rem; padding: 2px 8px; border-radius: 10px; font-weight: 500;
+    background: var(--color-surface-alt); color: var(--color-text-muted); white-space: nowrap;
+  }
+  .opp-stage.breaking { background: var(--color-green); color: #fff; }
+  .opp-stage.forming { background: var(--color-accent-muted); color: var(--color-accent); }
+  .opp-card-actions { display: flex; gap: var(--space-1); flex-shrink: 0; padding: 10px 12px; border-top: 1px solid var(--color-border); }
+  .btn-opp-action {
+    padding: 5px 12px; border-radius: var(--radius-sm); font-size: 0.75rem; cursor: pointer;
+    border: 1px solid var(--color-border); background: var(--color-surface); color: var(--color-text);
+    font-family: var(--font-body); transition: all var(--duration-fast) var(--ease-out);
+  }
+  .btn-opp-action:hover { border-color: var(--color-accent); color: var(--color-accent); }
+  .btn-opp-action.primary-action { background: var(--color-accent); color: var(--color-on-accent); border-color: var(--color-accent); }
+  .btn-opp-action.primary-action:hover { opacity: 0.9; }
+
+  /* ── Opp card detail expand ── */
+  .opp-card-detail { padding: 0 12px 12px; display: none; border-top: 1px solid var(--color-border); }
+  .opp-card.expanded .opp-card-detail { display: block; animation: detailIn var(--duration-fast) var(--ease-out); }
+  .opp-detail-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: var(--space-2); margin: var(--space-2) 0; }
+  .opp-detail-item { text-align: center; }
+  .opp-detail-val { font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; }
+  .opp-detail-label { font-size: 0.68rem; color: var(--color-text-muted); }
+  .opp-detail-meta { font-size: 0.75rem; color: var(--color-text-muted); margin-top: var(--space-1); }
+  .opp-detail-related { margin-top: var(--space-2); font-size: 0.75rem; }
+
+  /* ── AI Suggested badge ── */
+  .badge-ai-suggest {
+    font-size: 0.6rem; padding: 1px 6px; border-radius: 8px;
+    background: var(--color-blue-muted); color: #2563eb; font-weight: 600;
+  }
+
+  /* ── Bet Drawer ── */
+  .bet-drawer-overlay {
+    position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 200;
+    display: flex; align-items: flex-end; justify-content: center;
+  }
+  .bet-drawer {
+    background: var(--color-bg); border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    width: 100%; max-width: 560px; max-height: 90vh; overflow-y: auto;
+    box-shadow: 0 -4px 24px rgba(0,0,0,0.12); animation: slideUp 0.25s var(--ease-out);
+  }
+  @keyframes slideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
+  .bet-drawer-header { display: flex; align-items: center; justify-content: space-between; padding: var(--space-3); border-bottom: 1px solid var(--color-border); }
+  .bet-drawer-header h3 { margin: 0; font-size: 1rem; }
+  .bet-drawer-close { background: none; border: none; font-size: 1.3rem; cursor: pointer; color: var(--color-text-muted); }
+  .bet-drawer-close:hover { color: var(--color-text); }
+  .bet-drawer-body { padding: var(--space-3); }
+  .bet-drawer-demand { font-size: 0.9rem; font-weight: 600; margin-bottom: var(--space-2); color: var(--color-accent); }
+  .bet-drawer-actions { display: flex; gap: var(--space-1); margin-bottom: var(--space-3); }
+  .btn-bet-action { padding: 8px 16px; border-radius: var(--radius-md); font-size: 0.82rem; cursor: pointer; border: 1px solid var(--color-border); background: var(--color-surface); color: var(--color-text); font-family: var(--font-body); transition: all var(--duration-fast) var(--ease-out); }
+  .btn-bet-action:hover { border-color: var(--color-accent); }
+  .btn-bet-action.active { background: var(--color-accent); color: var(--color-on-accent); border-color: var(--color-accent); }
+  .bet-drawer-label { display: block; font-size: 0.78rem; font-weight: 600; margin-bottom: var(--space-1); color: var(--color-text); }
+  .bet-drawer-input { width: 100%; padding: 8px 10px; border: 1px solid var(--color-border); border-radius: var(--radius-md); font-family: var(--font-body); font-size: 0.82rem; resize: vertical; background: var(--color-surface); color: var(--color-text); box-sizing: border-box; }
+  .bet-drawer-input:focus { outline: none; border-color: var(--color-accent); }
+  .bet-drawer-timeline { display: flex; gap: var(--space-1); margin-bottom: var(--space-2); }
+  .btn-timeline { padding: 6px 16px; border-radius: var(--radius-md); font-size: 0.78rem; cursor: pointer; border: 1px solid var(--color-border); background: var(--color-surface); color: var(--color-text); font-family: var(--font-body); transition: all var(--duration-fast) var(--ease-out); }
+  .btn-timeline:hover { border-color: var(--color-accent); }
+  .btn-timeline.active { background: var(--color-accent); color: var(--color-on-accent); border-color: var(--color-accent); }
+  .bet-drawer-footer { display: flex; justify-content: flex-end; gap: var(--space-2); padding: var(--space-3); border-top: 1px solid var(--color-border); }
+
+  /* ── Lesson row ── */
+  .lesson-row {
+    padding: 8px 10px; background: var(--color-surface-alt); border-radius: var(--radius-md);
+    margin-bottom: var(--space-1); font-size: 0.82rem;
+  }
+  .lesson-type {
+    font-size: 0.65rem; padding: 1px 6px; border-radius: 8px; font-weight: 600;
+    text-transform: uppercase; display: inline-block;
+  }
+  .lesson-type.no_traffic { background: #fee2e2; color: #dc2626; }
+  .lesson-type.no_conversion { background: #fef3c7; color: #d97706; }
+  .lesson-type.signal_weak { background: #f3e8ff; color: #9333ea; }
+
+  /* ── Opp history (collapsible details) ── */
+  .opp-history { margin-top: var(--space-2); font-size: 0.82rem; }
+  .opp-history summary { cursor: pointer; color: var(--color-text-muted); padding: var(--space-1) 0; }
+  .opp-history summary:hover { color: var(--color-text); }
+  .opp-history-table-wrap { overflow-x: auto; margin-top: var(--space-1); }
+
+  /* ── Portfolio (workbench left) ── */
+  .wb-portfolio-item { display: flex; align-items: center; gap: var(--space-2); padding: 6px 0; border-bottom: 1px solid var(--color-border); font-size: 0.8rem; }
+  .wb-portfolio-item .chg-up { color: var(--color-green); }
+  .wb-portfolio-item .chg-dn { color: var(--color-red); }
+
   /* ── Demand detail expand ── */
   .demand-row { cursor: pointer; }
   .demand-row:hover td { background: var(--color-surface-alt); }
@@ -999,7 +1128,7 @@
         <div class="hero-label" id="hero-label-opportunity">Today's Best Opportunity</div>
         <div class="hero-demand" id="hero-demand-name">--</div>
         <div class="hero-meta" id="hero-demand-meta"></div>
-        <div class="hero-action"><a href="#" onclick="switchTab('demand');return false;" id="hero-radar-link">Open Radar →</a></div>
+        <div class="hero-action"><a href="#" onclick="document.getElementById('opp-zone-pipeline').scrollIntoView({behavior:'smooth'});return false;" id="hero-radar-link">Open Radar →</a></div>
       </div>
       <div class="hero-right" id="hero-bets">
         <div class="hero-label" id="hero-label-bets">Active Bets</div>
@@ -1022,28 +1151,21 @@
       <span class="wb-updated" id="wb-updated"></span>
     </h2>
     <div class="wb-grid">
-      <!-- Left: Radar mini-table -->
+      <!-- Left: Portfolio Summary (active bets) -->
       <div class="wb-left">
-        <h3 class="wb-subtitle" id="wb-radar-title">机会雷达 Top 5</h3>
-        <table class="wb-radar-table" aria-label="Opportunity radar top 5">
-          <thead><tr><th>Demand</th><th>Mkt</th><th>Biz</th><th>Cmp</th><th>Score</th></tr></thead>
-          <tbody id="wb-radar-body"></tbody>
-        </table>
-        <div style="margin-top:8px;text-align:right;"><a href="#" onclick="switchTab('demand');return false;" class="wb-link" id="wb-radar-link">查看完整雷达 →</a></div>
+        <h3 class="wb-subtitle" id="wb-portfolio-title">📊 你的组合</h3>
+        <div id="wb-portfolio-body">
+          <div class="empty" id="wb-portfolio-empty">暂无活跃下注。</div>
+        </div>
       </div>
       <!-- Right: Watchlist -->
       <div class="wb-right">
         <h3 class="wb-subtitle" id="wb-watchlist-title">我的关注 <button class="btn-wb-sm" id="btn-edit-watchlist" title="Edit watchlist">✎</button></h3>
         <div id="wb-watchlist">
-          <div class="empty" id="wb-watchlist-empty">尚未设置关注列表。<br>在需求雷达中点「关注」添加。</div>
+          <div class="empty" id="wb-watchlist-empty">尚未设置关注列表。<br>在机会管线中点「☆」添加。</div>
         </div>
         <div class="wb-insight" id="wb-insight"></div>
       </div>
-    </div>
-    <!-- Opportunity detail card -->
-    <div class="wb-opp-card" id="wb-opp-card" style="display:none;">
-      <button class="wb-opp-close" onclick="closeOppCard()" aria-label="Close">×</button>
-      <div id="wb-opp-content"></div>
     </div>
   </div>
 
@@ -1125,49 +1247,93 @@
     <button id="btn-back-to-top" class="btn-back-to-top" style="display:none;" aria-label="Back to top" title="Back to top">↑</button>
   </div>
 
-  <!-- ═══ Data: Tracking + Recurring + Demand Radar ═══ -->
+  <!-- ═══ Data: Unified Opportunity Board ═══ -->
   <div class="card card-full" id="card-data">
-    <div class="tab-bar" role="tablist" id="tab-bar" aria-label="Data tabs">
-      <button class="tab" role="tab" aria-selected="false" onclick="switchTab('tracking')" id="tab-btn-tracking">🎯 Opportunity Tracking</button>
-      <button class="tab" role="tab" aria-selected="false" onclick="switchTab('recurring')" id="tab-btn-recurring">🔄 Recurring Signals</button>
-      <button class="tab" role="tab" aria-selected="false" onclick="switchTab('demand')" id="tab-btn-demand">📡 Demand Radar</button>
-    </div>
-    <div id="tab-tracking" class="report-body" style="display:none;" role="tabpanel">
-      <table aria-label="Opportunity tracking">
-        <thead><tr><th scope="col" id="th-tr-id">ID</th><th scope="col" id="th-tr-date">Date</th><th scope="col" id="th-tr-opp">Opportunity</th><th scope="col" id="th-tr-score">Score</th><th scope="col" id="th-tr-lp">LP Status</th><th scope="col" id="th-tr-verify">Verification</th><th scope="col" id="th-tr-decision">Decision</th></tr></thead>
-        <tbody id="tracking-body"></tbody>
-      </table>
-      <div id="tracking-empty" class="empty" style="display:none;">No opportunities tracked yet.</div>
-    </div>
-    <div id="tab-recurring" class="report-body" style="display:none;" role="tabpanel">
-      <table aria-label="Recurring signals tracking">
-        <thead><tr><th scope="col" id="th-rec-topic">Topic</th><th scope="col" id="th-rec-demand">Demand</th><th scope="col" id="th-rec-first">First Seen</th><th scope="col" id="th-rec-last">Last Seen</th><th scope="col" id="th-rec-days">Days</th><th scope="col" id="th-rec-peak">Peak Score</th><th scope="col" id="th-rec-trend">Trend</th><th scope="col" id="th-rec-link">Linked</th></tr></thead>
-        <tbody id="recurring-body"></tbody>
-      </table>
-      <div id="recurring-empty" class="empty" style="display:none;">No recurring signals detected yet.</div>
-    </div>
-    <div id="tab-demand" class="report-body" style="display:none;" role="tabpanel">
-      <!-- Dimension Breakdown (replaces radar chart) -->
-      <div id="radar-chart-section" class="dim-bars" style="display:none;">
-        <div class="dim-bars-header">
-          <strong id="radar-demand-name"></strong>
-          <span id="radar-demand-desc"></span>
+    <h2 id="opp-board-title">
+      <svg class="icon icon-sm icon-accent" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      机会看板
+    </h2>
+    <div class="opp-board" id="opp-board">
+
+      <!-- ① Active Bets -->
+      <section class="opp-zone" id="opp-zone-bets">
+        <h3 class="opp-zone-title" id="opp-active-bets-title">🎯 活跃下注</h3>
+        <div id="active-bets-body"></div>
+        <div id="active-bets-empty" class="empty">暂无活跃下注。在下方机会管线中点击行动按钮开始追踪。</div>
+      </section>
+
+      <!-- ② Opportunity Pipeline -->
+      <section class="opp-zone" id="opp-zone-pipeline">
+        <h3 class="opp-zone-title" id="opp-pipeline-title">📡 机会管线</h3>
+        <!-- Dimension Breakdown (for expanded demand) -->
+        <div id="radar-chart-section" class="dim-bars" style="display:none;">
+          <div class="dim-bars-header">
+            <strong id="radar-demand-name"></strong>
+            <span id="radar-demand-desc"></span>
+          </div>
+          <div id="radar-demand-scores" class="dim-bars-list"></div>
         </div>
-        <div id="radar-demand-scores" class="dim-bars-list"></div>
+        <!-- Bulk Action Bar -->
+        <div id="demand-bulk-bar" class="bulk-bar">
+          <span class="selected-count" id="demand-bulk-count">0 selected</span>
+          <button class="btn btn-outline" style="font-size:0.72rem;padding:4px 10px;" onclick="bulkWatch()" id="btn-bulk-watch">★ Watch</button>
+          <button class="btn btn-outline" style="font-size:0.72rem;padding:4px 10px;" onclick="bulkExport()" id="btn-bulk-export">↓ Export CSV</button>
+        </div>
+        <div id="pipeline-body"></div>
+        <div id="pipeline-empty" class="empty" style="display:none;">暂无机会数据。</div>
+        <div id="demand-intersections" class="intersections" style="display:none;"></div>
+        <!-- Historical tracking (collapsed by default) -->
+        <details class="opp-history" id="opp-history">
+          <summary id="opp-history-title">📋 历史机会追踪 (15)</summary>
+          <div class="opp-history-table-wrap">
+            <table aria-label="Opportunity tracking history">
+              <thead><tr><th scope="col" id="th-tr-id">ID</th><th scope="col" id="th-tr-date">Date</th><th scope="col" id="th-tr-opp">Opportunity</th><th scope="col" id="th-tr-score">Score</th><th scope="col" id="th-tr-lp">LP Status</th><th scope="col" id="th-tr-verify">Verification</th><th scope="col" id="th-tr-decision">Decision</th></tr></thead>
+              <tbody id="tracking-body"></tbody>
+            </table>
+          </div>
+          <div id="tracking-empty" class="empty" style="display:none;">No opportunities tracked yet.</div>
+        </details>
+      </section>
+
+      <!-- ③ Recent Lessons -->
+      <section class="opp-zone" id="opp-zone-lessons">
+        <h3 class="opp-zone-title" id="opp-lessons-title">📖 近期复盘</h3>
+        <div id="lessons-body"></div>
+        <div id="lessons-empty" class="empty">暂无复盘记录。完成下注复盘后这里会显示经验教训。</div>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- Bet Drawer (hidden by default) -->
+  <div class="bet-drawer-overlay" id="bet-drawer-overlay" style="display:none;" onclick="closeBetDrawer()">
+    <div class="bet-drawer" id="bet-drawer" onclick="event.stopPropagation()">
+      <div class="bet-drawer-header">
+        <h3 id="bet-drawer-title">新下注</h3>
+        <button class="bet-drawer-close" onclick="closeBetDrawer()" aria-label="Close">×</button>
       </div>
-      <!-- Bulk Action Bar -->
-      <div id="demand-bulk-bar" class="bulk-bar">
-        <span class="selected-count" id="demand-bulk-count">0 selected</span>
-        <button class="btn btn-outline" style="font-size:0.72rem;padding:4px 10px;" onclick="bulkWatch()" id="btn-bulk-watch">★ Watch</button>
-        <button class="btn btn-outline" style="font-size:0.72rem;padding:4px 10px;" onclick="bulkBet('observe')" id="btn-bulk-observe">👁 Observe</button>
-        <button class="btn btn-outline" style="font-size:0.72rem;padding:4px 10px;" onclick="bulkExport()" id="btn-bulk-export">↓ Export CSV</button>
+      <div class="bet-drawer-body">
+        <div class="bet-drawer-demand" id="bet-drawer-demand-name"></div>
+        <div class="bet-drawer-actions" id="bet-drawer-actions">
+          <button class="btn-bet-action active" data-action="observe" onclick="selectBetAction(this)">🔍 <span id="bet-action-observe">观察</span></button>
+          <button class="btn-bet-action" data-action="validate" onclick="selectBetAction(this)">🧪 <span id="bet-action-validate">验证</span></button>
+          <button class="btn-bet-action" data-action="build" onclick="selectBetAction(this)">🔨 <span id="bet-action-build">构建</span></button>
+        </div>
+        <label class="bet-drawer-label" id="bet-label-thesis">判断依据 (thesis)</label>
+        <textarea class="bet-drawer-input" id="bet-input-thesis" rows="3" placeholder="为什么这个需求值得下注？你的判断逻辑是什么？"></textarea>
+        <label class="bet-drawer-label" id="bet-label-criteria">成功标准 (可选)</label>
+        <textarea class="bet-drawer-input" id="bet-input-criteria" rows="2" placeholder="如何判断这次下注是成功的？如：LP上线7天内 UV>50 或 注册>3"></textarea>
+        <label class="bet-drawer-label" id="bet-label-timeline">时间线</label>
+        <div class="bet-drawer-timeline" id="bet-drawer-timeline">
+          <button class="btn-timeline active" data-days="7" onclick="selectTimeline(this)">7天</button>
+          <button class="btn-timeline" data-days="14" onclick="selectTimeline(this)">14天</button>
+          <button class="btn-timeline" data-days="30" onclick="selectTimeline(this)">30天</button>
+        </div>
       </div>
-      <table aria-label="Demand radar">
-        <thead><tr><th scope="col"><input type="checkbox" id="demand-select-all" onchange="toggleSelectAll('demand',this)" aria-label="Select all"></th><th scope="col">☆</th><th scope="col" id="th-dem-name">Demand</th><th scope="col" id="th-dem-delta">Chg</th><th scope="col" id="th-dem-market">Mkt</th><th scope="col" id="th-dem-business">Biz</th><th scope="col" id="th-dem-competition">Cmp</th><th scope="col" id="th-dem-ai">AI-pf</th><th scope="col" id="th-dem-confidence">Conf</th><th scope="col" id="th-dem-stage">Stage</th><th scope="col" id="th-dem-index">Score</th></tr></thead>
-        <tbody id="demand-body"></tbody>
-      </table>
-      <div id="demand-empty" class="empty" style="display:none;">No demand data yet.</div>
-      <div id="demand-intersections" class="intersections" style="display:none;"></div>
+      <div class="bet-drawer-footer">
+        <button class="btn btn-outline" onclick="closeBetDrawer()" id="bet-btn-cancel">取消</button>
+        <button class="btn btn-primary" onclick="confirmBet()" id="bet-btn-confirm">确认下注</button>
+      </div>
     </div>
   </div>
 
@@ -1227,9 +1393,39 @@ var I18N = (function() {
 
       // Tabs
       tabReport: '日报',
-      tabTracking: '机会追踪',
-      tabRecurring: '重复信号',
       tabBarAria: '内容标签页',
+
+      // Opportunity Board
+      oppBoardTitle: '机会看板',
+      oppActiveBets: '🎯 活跃下注',
+      oppActiveBetsEmpty: '暂无活跃下注。在下方机会管线中点击行动按钮开始追踪。',
+      oppPipeline: '📡 机会管线',
+      oppPipelineEmpty: '暂无机会数据。运行每日管线后自动生成。',
+      oppLessons: '📖 近期复盘',
+      oppLessonsEmpty: '暂无复盘记录。完成下注复盘后这里会显示经验教训。',
+      oppHistory: '📋 历史机会追踪',
+      oppWhy: '为什么',
+      oppSuggested: '💡 AI 建议',
+      oppObserve: '观察',
+      oppValidate: '验证',
+      oppBuild: '构建',
+
+      // Bet Drawer
+      betDrawerTitle: '新下注',
+      betLabelThesis: '判断依据 (thesis)',
+      betLabelCriteria: '成功标准 (可选)',
+      betLabelTimeline: '时间线',
+      betActionObserve: '观察',
+      betActionValidate: '验证',
+      betActionBuild: '构建',
+      betCancel: '取消',
+      betConfirm: '确认下注',
+      betPlaced: '已下注',
+      betReviewDue: '待复盘',
+
+      // Portfolio
+      wbPortfolioTitle: '📊 你的组合',
+      wbPortfolioEmpty: '暂无活跃下注。',
 
       // Loading
       loadingSignals: '正在加载信号数据…',
@@ -1403,9 +1599,39 @@ var I18N = (function() {
 
       // Tabs
       tabReport: 'Daily Report',
-      tabTracking: 'Opportunity Tracking',
-      tabRecurring: 'Recurring Signals',
       tabBarAria: 'Content tabs',
+
+      // Opportunity Board
+      oppBoardTitle: 'Opportunity Board',
+      oppActiveBets: '🎯 Active Bets',
+      oppActiveBetsEmpty: 'No active bets. Click an action button in the pipeline below to start tracking.',
+      oppPipeline: '📡 Opportunity Pipeline',
+      oppPipelineEmpty: 'No opportunity data yet. Run the daily pipeline to generate.',
+      oppLessons: '📖 Recent Lessons',
+      oppLessonsEmpty: 'No lessons recorded yet. Complete a bet review to see lessons learned here.',
+      oppHistory: '📋 Historical Tracking',
+      oppWhy: 'Why',
+      oppSuggested: '💡 AI Suggested',
+      oppObserve: 'Observe',
+      oppValidate: 'Validate',
+      oppBuild: 'Build',
+
+      // Bet Drawer
+      betDrawerTitle: 'New Bet',
+      betLabelThesis: 'Thesis',
+      betLabelCriteria: 'Success Criteria (optional)',
+      betLabelTimeline: 'Timeline',
+      betActionObserve: 'Observe',
+      betActionValidate: 'Validate',
+      betActionBuild: 'Build',
+      betCancel: 'Cancel',
+      betConfirm: 'Place Bet',
+      betPlaced: 'Bet placed',
+      betReviewDue: 'Review Due',
+
+      // Portfolio
+      wbPortfolioTitle: '📊 Your Portfolio',
+      wbPortfolioEmpty: 'No active bets.',
 
       // Loading
       loadingSignals: 'Loading signal data…',
@@ -1712,11 +1938,25 @@ function findDemand(id) {
   setChartTitle('chart-score-title', t('chartScoreTitle'));
   setChartTitle('chart-volume-title', t('chartVolumeTitle'));
 
-  // Tab buttons
-  setEl('tab-btn-tracking', t('tabTracking'));
-  setEl('tab-btn-recurring', t('tabRecurring'));
-  setEl('tab-btn-demand', t('tabDemand'));
-  document.getElementById('tab-bar').setAttribute('aria-label', t('tabBarAria'));
+  // Opportunity board titles
+  setEl('opp-board-title', t('oppBoardTitle'));
+  setEl('opp-active-bets-title', t('oppActiveBets'));
+  setEl('opp-pipeline-title', t('oppPipeline'));
+  setEl('opp-lessons-title', t('oppLessons'));
+  setEl('active-bets-empty', t('oppActiveBetsEmpty'));
+  setEl('pipeline-empty', t('oppPipelineEmpty'));
+  setEl('lessons-empty', t('oppLessonsEmpty'));
+
+  // Bet drawer
+  setEl('bet-drawer-title', t('betDrawerTitle'));
+  setEl('bet-label-thesis', t('betLabelThesis'));
+  setEl('bet-label-criteria', t('betLabelCriteria'));
+  setEl('bet-label-timeline', t('betLabelTimeline'));
+  setEl('bet-action-observe', t('betActionObserve'));
+  setEl('bet-action-validate', t('betActionValidate'));
+  setEl('bet-action-build', t('betActionBuild'));
+  setEl('bet-btn-cancel', t('betCancel'));
+  setEl('bet-btn-confirm', t('betConfirm'));
 
   // Loading texts
   setEl('loading-signals', t('loadingSignals'));
@@ -1736,18 +1976,7 @@ function findDemand(id) {
   setEl('th-tr-decision', t('trDecision'));
   setEl('tracking-empty', t('trEmpty'));
 
-  // Recurring signals headers
-  setEl('th-rec-topic', t('recTopic'));
-  setEl('th-rec-first', t('recFirstSeen'));
-  setEl('th-rec-last', t('recLastSeen'));
-  setEl('th-rec-days', t('recDays'));
-  setEl('th-rec-demand', t('recDemand'));
-  setEl('th-rec-peak', t('recPeakScore'));
-  setEl('th-rec-trend', t('recTrend'));
-  setEl('th-rec-link', t('recLinked'));
-  setEl('recurring-empty', t('recEmpty'));
-  var recTable = document.querySelector('table[aria-label="Recurring signals tracking"]');
-  if (recTable) recTable.setAttribute('aria-label', t('recAria'));
+  // Historical tracking headers (keep for collapsible section)
 
   // Hero labels
   setEl('hero-label-opportunity', t('heroOpportunity'));
@@ -1758,8 +1987,9 @@ function findDemand(id) {
   setEl('hero-radar-link', t('heroRadarLink'));
 
   // Workbench static text
-  setEl('wb-radar-title', t('wbRadarTitle'));
-  setEl('wb-radar-link', t('wbRadarLink'));
+  setEl('wb-portfolio-title', t('wbPortfolioTitle'));
+  var wpe = document.getElementById('wb-portfolio-empty');
+  if (wpe) wpe.textContent = t('wbPortfolioEmpty');
   // Watchlist title: preserve the ✎ button by only updating the text node
   (function() {
     var wt = document.getElementById('wb-watchlist-title');
@@ -1773,27 +2003,9 @@ function findDemand(id) {
     if (we) we.innerHTML = t('wbWatchlistEmpty');
   })();
 
-  // Demand radar headers
-  setEl('th-dem-name', t('demName'));
-  setEl('th-dem-delta', t('demDelta'));
-  setEl('th-dem-market', t('demMarket'));
-  setEl('th-dem-business', t('demBusiness'));
-  setEl('th-dem-competition', t('demCompetition'));
-  setEl('th-dem-ai', t('demAiProof'));
-  setEl('th-dem-confidence', t('demConfidence'));
-  setEl('th-dem-stage', t('demStage'));
-  setEl('th-dem-index', t('demIndex'));
-  setEl('demand-empty', t('demEmpty'));
-  var demTable = document.querySelector('table[aria-label="Demand radar"]');
-  if (demTable) demTable.setAttribute('aria-label', t('demAria'));
-
   // Bulk bar button labels
   setEl('btn-bulk-watch', t('bulkWatch'));
-  setEl('btn-bulk-observe', t('bulkObserve'));
   setEl('btn-bulk-export', t('bulkExport'));
-
-  // Radar chart info
-  setEl('radar-demand-desc', t('radarSelectDemand'));
 
   // Footer
   setEl('footer-version', t('footerVersion'));
@@ -1875,8 +2087,8 @@ function toggleWatch(demandId) {
     _watchlist.push(demandId);
   }
   saveWatchlist();
-  renderDemandTable();
-  renderWatchlistPanel();
+  renderPipeline();
+  renderWorkbench(_data);
   var btn = document.getElementById('watch-btn-' + demandId);
   if (btn) btn.textContent = idx >= 0 ? '☆' : '★';
 }
@@ -1885,25 +2097,103 @@ function isWatched(demandId) {
   return _watchlist.indexOf(demandId) >= 0;
 }
 
-function placeBet(demandId, demandName, action) {
+// ─── Bet Drawer ───
+var _betDrawerDemandId = null;
+var _betDrawerDemandName = null;
+var _betDrawerAction = 'observe';
+var _betDrawerDays = 7;
+
+function openBetDrawer(demandId, demandName) {
+  _betDrawerDemandId = demandId;
+  _betDrawerDemandName = demandName;
+  _betDrawerAction = 'observe';
+  _betDrawerDays = 7;
+
+  document.getElementById('bet-drawer-demand-name').textContent = demandName;
+  document.getElementById('bet-drawer-overlay').style.display = '';
+
+  // Reset action buttons
+  var actionBtns = document.querySelectorAll('.btn-bet-action');
+  for (var i = 0; i < actionBtns.length; i++) { actionBtns[i].classList.remove('active'); }
+  var observeBtn = document.querySelector('.btn-bet-action[data-action="observe"]');
+  if (observeBtn) observeBtn.classList.add('active');
+
+  // Reset timeline buttons
+  var tlBtns = document.querySelectorAll('.btn-timeline');
+  for (var j = 0; j < tlBtns.length; j++) { tlBtns[j].classList.remove('active'); }
+  var day7Btn = document.querySelector('.btn-timeline[data-days="7"]');
+  if (day7Btn) day7Btn.classList.add('active');
+
+  // Clear inputs
+  document.getElementById('bet-input-thesis').value = '';
+  document.getElementById('bet-input-criteria').value = '';
+
+  document.getElementById('bet-drawer').scrollTop = 0;
+}
+
+function closeBetDrawer() {
+  document.getElementById('bet-drawer-overlay').style.display = 'none';
+}
+
+function selectBetAction(btn) {
+  var btns = document.querySelectorAll('.btn-bet-action');
+  for (var i = 0; i < btns.length; i++) { btns[i].classList.remove('active'); }
+  btn.classList.add('active');
+  _betDrawerAction = btn.getAttribute('data-action');
+}
+
+function selectTimeline(btn) {
+  var btns = document.querySelectorAll('.btn-timeline');
+  for (var i = 0; i < btns.length; i++) { btns[i].classList.remove('active'); }
+  btn.classList.add('active');
+  _betDrawerDays = parseInt(btn.getAttribute('data-days'), 10);
+}
+
+function confirmBet() {
+  loadBets();
   var now = new Date().toISOString().substring(0, 10);
+  var reviewDate = new Date();
+  reviewDate.setDate(reviewDate.getDate() + _betDrawerDays);
+  var reviewDateStr = reviewDate.toISOString().substring(0, 10);
   var id = 'BET-' + now.replace(/-/g,'') + '-' + String(_bets.length + 1).padStart(2, '0');
+  var thesis = document.getElementById('bet-input-thesis').value.trim();
+  var criteria = document.getElementById('bet-input-criteria').value.trim();
+
   var bet = {
     id: id,
     date: now,
-    demand: demandId,
-    demand_name: demandName,
-    thesis: '',
-    action: action,
+    demand: _betDrawerDemandId,
+    demand_name: _betDrawerDemandName,
+    thesis: thesis,
+    action: _betDrawerAction,
+    success_criteria: criteria,
+    timeline_days: _betDrawerDays,
+    review_date: reviewDateStr,
     status: 'active',
     result: null,
     result_note: '',
+    lesson_learned: '',
     reviewed_at: null
   };
   _bets.unshift(bet);
   saveBets();
+  closeBetDrawer();
+
+  // Refresh
+  renderPipeline();
+  renderActiveBets();
+  renderWorkbench(_data);
   renderBetLog();
-  alert('已下注: ' + id + '\n需求: ' + demandName + '\n行动: ' + action);
+}
+
+function placeBet(demandId, demandName, action) {
+  // Keep for backward compatibility (bulk actions still call this)
+  openBetDrawer(demandId, demandName);
+  if (action && action !== 'observe') {
+    _betDrawerAction = action;
+    var btn = document.querySelector('.btn-bet-action[data-action="' + action + '"]');
+    if (btn) selectBetAction(btn);
+  }
 }
 
 function renderBetLog() {
@@ -1911,13 +2201,14 @@ function renderBetLog() {
   var body = document.getElementById('betlog-body');
   if (!body) return;
   if (_bets.length === 0) {
-    body.innerHTML = '<div class="empty">No bets yet. Star a demand in the radar to start tracking your decisions.</div>';
+    body.innerHTML = '<div class="empty">' + t('oppActiveBetsEmpty') + '</div>';
     return;
   }
   var html = '';
   var statusBadges = { active: 'bet-active', won: 'bet-won', lost: 'bet-lost', paused: '' };
   var statusNames = { active: 'Active', won: 'Won', lost: 'Lost', paused: 'Paused' };
-  _bets.slice(0, 10).forEach(function(b) {
+  var statusNamesZh = { active: '活跃', won: '成功', lost: '失败', paused: '暂停' };
+  _bets.slice(0, 15).forEach(function(b) {
     // Look up English name from demand radar
     var betDemandName = b.demand_name || b.demand;
     var betDemandNameEn = b.demand_name_en;
@@ -1928,91 +2219,260 @@ function renderBetLog() {
       }
     }
     var betDemandObj = { name: betDemandName, name_en: betDemandNameEn || betDemandName, id: b.demand };
+    var statusLabel = LANG === 'zh' ? (statusNamesZh[b.status] || b.status) : (statusNames[b.status] || b.status);
+    var isReviewDue = b.status === 'active' && b.review_date && b.review_date <= new Date().toISOString().substring(0, 10);
     html += '<div class="bet-row">' +
       '<span class="bet-id">' + b.id + '</span>' +
       '<span>' + b.date + '</span>' +
       '<strong>' + demName(betDemandObj) + '</strong>' +
       '<span>' + (b.action || '') + '</span>' +
-      '<span class="bet-badge ' + (statusBadges[b.status] || '') + '">' + (statusNames[b.status] || b.status) + '</span>' +
+      '<span class="bet-badge ' + (statusBadges[b.status] || '') + '">' + statusLabel + (isReviewDue ? ' ⏰' : '') + '</span>' +
       (b.thesis ? '<span class="muted">' + b.thesis.substring(0, 50) + '</span>' : '') +
       '</div>';
   });
   body.innerHTML = html;
 }
 
-function openOppCard(wbData, demandId) {
-  var card = document.getElementById('wb-opp-card');
-  var content = document.getElementById('wb-opp-content');
-  if (!card || !content) return;
+// ─── Opportunity Pipeline ───
+var _pipelineExpanded = {};
 
-  // Fallback to global _data if wbData is unavailable (e.g. called from onclick closure)
-  if (!wbData && typeof _data !== 'undefined') { wbData = _data.workbench || _data._wb_data; }
+function renderPipeline() {
+  var body = document.getElementById('pipeline-body');
+  var emptyEl = document.getElementById('pipeline-empty');
+  if (!body) return;
 
-  // Find demand in workbench data
-  var allDems = (wbData && wbData.all_demands) ? wbData.all_demands : [];
-  var dem = null;
-  for (var i = 0; i < allDems.length; i++) {
-    if (allDems[i].id === demandId) { dem = allDems[i]; break; }
+  var allDems = [];
+  if (_data && _data.workbench && _data.workbench.all_demands) {
+    allDems = _data.workbench.all_demands;
+  } else if (_data && _data.demand_radar && _data.demand_radar.demands) {
+    allDems = _data.demand_radar.demands;
   }
-  if (!dem) {
-    // Also check watched_demands
-    var wd = (wbData && wbData.watched_demands) ? wbData.watched_demands : [];
-    for (var j = 0; j < wd.length; j++) {
-      if (wd[j].id === demandId) { dem = wd[j]; break; }
+
+  if (allDems.length === 0) {
+    if (emptyEl) emptyEl.style.display = '';
+    body.innerHTML = '';
+    return;
+  }
+  if (emptyEl) emptyEl.style.display = 'none';
+
+  // Sort by opportunity_index descending
+  var sorted = allDems.slice().sort(function(a, b) { return (b.opportunity_index || 0) - (a.opportunity_index || 0); });
+
+  loadBets();
+  loadWatchlist();
+
+  var betMap = {};
+  _bets.forEach(function(b) { if (!betMap[b.demand] || b.date > betMap[b.demand].date) betMap[b.demand] = b; });
+
+  var demandNames = {
+    'save-money': LANG === 'zh' ? '省钱' : 'Save $',
+    'make-money': LANG === 'zh' ? '赚钱' : 'Make $',
+    'save-time': LANG === 'zh' ? '省时' : 'Save Time',
+    'reduce-risk': LANG === 'zh' ? '降风险' : 'Reduce Risk',
+    'increase-output': LANG === 'zh' ? '提产出' : 'Output'
+  };
+  var stageNames = LANG === 'en'
+    ? { early: 'Early', forming: 'Forming', breaking: 'Breaking', mature: 'Mature' }
+    : { early: '萌芽', forming: '形成', breaking: '爆发', mature: '成熟' };
+
+  var html = '';
+  sorted.forEach(function(dem, idx) {
+    var oppIdx = dem.opportunity_index || 0;
+    var scoreCls = oppIdx >= 70 ? 'score-high' : (oppIdx >= 40 ? 'score-mid' : 'score-low');
+    var stage = dem.stage || 'forming';
+    var stageCls = stage;
+    var stageName = stageNames[stage] || stage;
+    var delta = dem.delta || 'stable';
+    var deltaIcon = delta === 'rising' ? '🔺' : (delta === 'falling' ? '🔻' : '→');
+    var catId = dem.id || '';
+    var catBadge = demandNames[catId] || catId.substring(0, 6);
+    var demDisplayName = (LANG === 'en' && dem.name_en) ? dem.name_en : (dem.name || dem.id);
+    var isW = isWatched(catId);
+    var bet = betMap[catId];
+
+    // Why string
+    var whyParts = [];
+    if (dem.total_signals > 0) whyParts.push(dem.total_signals + ' signals');
+    if (dem.market_score >= 50) whyParts.push(LANG === 'zh' ? '市场信号强' : 'Strong market');
+    if (dem.business_score >= 60) whyParts.push(LANG === 'zh' ? '付费意愿高' : 'High pay');
+    if (dem.competition <= 30) whyParts.push(LANG === 'zh' ? '竞争低' : 'Low competition');
+    var whyStr = whyParts.length > 0 ? whyParts.join(' | ') : (LANG === 'zh' ? '追踪中' : 'Tracking');
+
+    var expanded = !!_pipelineExpanded[catId];
+
+    html += '<div class="opp-card' + (expanded ? ' expanded' : '') + '" data-demand-id="' + catId + '">' +
+      '<div class="opp-card-header" onclick="toggleOppCard(\'' + catId + '\')">' +
+        '<span class="opp-card-rank">' + (idx + 1) + '</span>' +
+        '<span class="opp-card-badge ' + catId + '">' + catBadge + '</span>' +
+        '<span class="opp-card-name">' + demDisplayName + '</span>' +
+        '<span class="opp-card-why muted">' + whyStr + '</span>' +
+        '<span class="opp-card-indicators">' +
+          '<span class="opp-score ' + scoreCls + '">' + oppIdx + '</span>' +
+          '<span class="opp-stage ' + stageCls + '">' + stageName + '</span>' +
+          '<span class="muted" style="font-size:0.75rem">' + deltaIcon + '</span>' +
+          (isW ? '<span style="color:var(--color-accent);font-size:0.7rem">★</span>' : '') +
+          '<span class="expand-caret" style="font-size:0.65rem;color:var(--color-text-muted)">' + (expanded ? '▾' : '▸') + '</span>' +
+        '</span>' +
+      '</div>' +
+      '<div class="opp-card-detail">' +
+        '<div style="margin-bottom:8px">' +
+          '<span class="muted" style="font-size:0.78rem">' + (LANG === 'en' && dem.description_en ? dem.description_en : (dem.description || '')) + '</span>' +
+        '</div>' +
+        '<div class="opp-detail-grid">' +
+          '<div class="opp-detail-item"><div class="opp-detail-val" style="color:var(--color-accent)">' + (dem.market_score || 0) + '</div><div class="opp-detail-label">' + t('demMarket') + '</div></div>' +
+          '<div class="opp-detail-item"><div class="opp-detail-val" style="color:var(--color-accent)">' + (dem.business_score || 0) + '</div><div class="opp-detail-label">' + t('demBusiness') + '</div></div>' +
+          '<div class="opp-detail-item"><div class="opp-detail-val" style="color:' + ((dem.competition || 0) >= 80 ? 'var(--color-red)' : 'var(--color-green)') + '">' + (dem.competition || 0) + '</div><div class="opp-detail-label">' + t('demCompetition') + '</div></div>' +
+        '</div>' +
+        '<div class="opp-detail-meta">' +
+          '<strong>' + t('detailTargetBuyer') + ':</strong> ' + (LANG === 'en' && dem.target_buyer_en ? dem.target_buyer_en : (dem.target_buyer || '--')) +
+          ' | <strong>' + t('demConfidence') + ':</strong> ' + (dem.confidence || 0) + '%' +
+          ' | <strong>' + t('demAiProof') + ':</strong> ' + (dem.ai_replaceability || '?') + '/10' +
+        '</div>';
+    // Related recurring signals
+    if (_data && _data.recurring_signals) {
+      var related = [];
+      for (var ri = 0; ri < _data.recurring_signals.length; ri++) {
+        var rec = _data.recurring_signals[ri];
+        if (rec.demand_category === catId || (rec.linked_opportunity_id && allDems.some(function(d) { return d.id === catId; }))) {
+          related.push(rec);
+        }
+      }
+      if (related.length > 0) {
+        html += '<div class="opp-detail-related"><strong>' + t('recTrend') + ':</strong> ';
+        related.slice(0, 3).forEach(function(r) {
+          var tIcon = r.trend === 'rising' ? '🔺' : (r.trend === 'fading' ? '🔻' : '→');
+          html += '<span style="margin-right:8px;font-size:0.72rem">' + tIcon + ' ' + (r.topic || '').substring(0, 30) + '</span>';
+        });
+        html += '</div>';
+      }
     }
-  }
-  if (!dem) return;
-
-  var stageNames = (LANG === 'en')
-    ? { early: 'Early', forming: 'Forming — Best time to bet', breaking: 'Breaking Out', mature: 'Mature' }
-    : { early: '萌芽期', forming: '形成期 ← 最佳下注时机', breaking: '爆发期', mature: '成熟期' };
-  var stage = stageNames[dem.stage] || dem.stage || '?';
-
-  var oppDesc = (LANG === 'en' && dem.description_en) ? dem.description_en : (dem.description || '');
-  var oppBuyer = (LANG === 'en' && dem.target_buyer_en) ? dem.target_buyer_en : (dem.target_buyer || (LANG === 'en' ? 'Unknown' : '未标注'));
-  var aiLabel = (LANG === 'en')
-    ? ((dem.ai_replaceability||0) >= 7 ? 'Architecture-level' : (dem.ai_replaceability||0) >= 4 ? 'Partially replaceable' : 'Model upgrade risk')
-    : ((dem.ai_replaceability||0) >= 7 ? '架构级需求' : (dem.ai_replaceability||0) >= 4 ? '部分可替代' : '模型升级可消灭');
-  var langMarket = (LANG === 'en') ? 'Market' : '市场';
-  var langBiz = (LANG === 'en') ? 'Business' : '商业';
-  var langComp = (LANG === 'en') ? 'Competition' : '竞争';
-  var langConf = (LANG === 'en') ? 'Confidence' : '置信度';
-  var langStage = (LANG === 'en') ? 'Stage' : '阶段';
-  var langAI = (LANG === 'en') ? 'AI Durability' : 'AI替代难度';
-  var langBuyer = (LANG === 'en') ? 'Target Buyer' : '目标用户';
-  var langDims = (LANG === 'en') ? 'Dimensions' : '子维度';
-  var betObserve = (LANG === 'en') ? 'Observe' : '下注观察';
-  var betValidate = (LANG === 'en') ? 'Validate' : '下注验证';
-  var betBuild = (LANG === 'en') ? 'Build' : '下注构建';
-  var betAbandon = (LANG === 'en') ? 'Abandon' : '暂时放弃';
-
-  var html = '<h3 style="margin:0 0 4px">' + demName(dem) + '</h3>' +
-    '<span class="muted">' + oppDesc + '</span>' +
-    '<div class="wb-opp-grid">' +
-      '<div class="wb-opp-stat"><div class="val" style="color:var(--color-accent)">' + (dem.market_score || 0) + '</div><small>' + langMarket + '</small></div>' +
-      '<div class="wb-opp-stat"><div class="val" style="color:var(--color-accent)">' + (dem.business_score || 0) + '</div><small>' + langBiz + '</small></div>' +
-      '<div class="wb-opp-stat"><div class="val" style="color:' + (dem.competition >= 80 ? 'var(--color-red)' : 'var(--color-green)') + '">' + (dem.competition || 0) + '</div><small>' + langComp + '</small></div>' +
-    '</div>' +
-    '<div style="font-size:0.82rem;margin-top:8px">' +
-      '<strong>' + langConf + ':</strong> ' + (dem.confidence || 0) + '% | <strong>' + langStage + ':</strong> ' + stage + '<br>' +
-      '<strong>' + langAI + ':</strong> ' + (dem.ai_replaceability || '?') + '/10 ' + aiLabel + '<br>' +
-      '<strong>' + langBuyer + ':</strong> ' + oppBuyer + '<br>' +
-      '<strong>' + langDims + ':</strong> Pain f' + (dem.pain_frequency||'?') + '×s' + (dem.pain_severity||'?') + ' | Pay b' + (dem.pay_budget||'?') + '×u' + (dem.pay_urgency||'?') +
-    '</div>' +
-    '<div class="wb-opp-actions">' +
-      '<button class="btn-bet" onclick="placeBet(\'' + demandId + '\',\'' + (demName(dem) || '').replace(/'/g, "\\'") + '\',\'observe\')">' + betObserve + '</button>' +
-      '<button class="btn-bet" onclick="placeBet(\'' + demandId + '\',\'' + (demName(dem) || '').replace(/'/g, "\\'") + '\',\'validate\')">' + betValidate + '</button>' +
-      '<button class="btn-bet" onclick="placeBet(\'' + demandId + '\',\'' + (demName(dem) || '').replace(/'/g, "\\'") + '\',\'build\')">' + betBuild + '</button>' +
-      '<button class="btn-bet" onclick="placeBet(\'' + demandId + '\',\'' + (demName(dem) || '').replace(/'/g, "\\'") + '\',\'abandon\')">' + betAbandon + '</button>' +
+    html += '</div>' +
+      '<div class="opp-card-actions">' +
+        '<button class="btn-watch" style="font-size:0.75rem;padding:4px 8px;border:1px solid var(--color-border);background:transparent;cursor:pointer;border-radius:var(--radius-sm)" onclick="event.stopPropagation();toggleWatch(\'' + catId + '\')" id="watch-btn-' + catId + '">' + (isW ? '★' : '☆') + '</button>' +
+        '<button class="btn-opp-action" onclick="event.stopPropagation();openBetDrawer(\'' + catId + '\',\'' + demDisplayName.replace(/'/g, "\\'") + '\')">🔍 ' + t('oppObserve') + '</button>' +
+        '<button class="btn-opp-action" onclick="event.stopPropagation();openBetDrawer(\'' + catId + '\',\'' + demDisplayName.replace(/'/g, "\\'") + '\');_betDrawerAction=\'validate\';selectBetAction(document.querySelector(\'.btn-bet-action[data-action=validate]\'))">🧪 ' + t('oppValidate') + '</button>' +
+        '<button class="btn-opp-action primary-action" onclick="event.stopPropagation();openBetDrawer(\'' + catId + '\',\'' + demDisplayName.replace(/'/g, "\\'") + '\');_betDrawerAction=\'build\';selectBetAction(document.querySelector(\'.btn-bet-action[data-action=build]\'))">🔨 ' + t('oppBuild') + '</button>' +
+        (bet ? '<span style="font-size:0.7rem;color:var(--color-text-muted);margin-left:auto">' + t('betPlaced') + ': ' + bet.id + '</span>' : '') +
+      '</div>' +
     '</div>';
-  content.innerHTML = html;
-  card.style.display = '';
-  card.scrollIntoView({ behavior: 'smooth' });
+  });
+
+  body.innerHTML = html;
+
+  // Update history count
+  var histSummary = document.getElementById('opp-history-title');
+  if (histSummary) {
+    var opps = (_data && _data.opportunities) ? _data.opportunities : [];
+    histSummary.textContent = '📋 ' + t('oppHistory') + ' (' + opps.length + ')';
+  }
+}
+
+function toggleOppCard(demId) {
+  if (_pipelineExpanded[demId]) {
+    delete _pipelineExpanded[demId];
+  } else {
+    _pipelineExpanded[demId] = true;
+  }
+  renderPipeline();
+}
+
+// ─── Active Bets ───
+function renderActiveBets() {
+  var body = document.getElementById('active-bets-body');
+  var emptyEl = document.getElementById('active-bets-empty');
+  if (!body) return;
+
+  loadBets();
+  var active = [];
+  for (var i = 0; i < _bets.length; i++) {
+    if (_bets[i].status === 'active') active.push(_bets[i]);
+  }
+
+  if (active.length === 0) {
+    body.innerHTML = '';
+    if (emptyEl) emptyEl.style.display = '';
+    return;
+  }
+  if (emptyEl) emptyEl.style.display = 'none';
+
+  var now = new Date().toISOString().substring(0, 10);
+  var html = '';
+  active.forEach(function(b) {
+    var isReviewDue = b.review_date && b.review_date <= now;
+    var daysLeft = b.review_date ? Math.ceil((new Date(b.review_date) - new Date(now)) / 86400000) : 0;
+    var dayText = daysLeft > 0 ? ('Day ' + (b.timeline_days - daysLeft) + '/' + b.timeline_days) : (LANG === 'zh' ? '待复盘' : 'Review due');
+    var demandNames = {
+      'save-money': LANG === 'zh' ? '省钱' : 'Save $',
+      'make-money': LANG === 'zh' ? '赚钱' : 'Make $',
+      'save-time': LANG === 'zh' ? '省时' : 'Save Time',
+      'reduce-risk': LANG === 'zh' ? '降风险' : 'Reduce Risk',
+      'increase-output': LANG === 'zh' ? '提产出' : 'Output'
+    };
+    var catShort = demandNames[b.demand] || b.demand.substring(0, 6);
+    var actionNames = { observe: LANG === 'zh' ? '观察' : 'Observe', validate: LANG === 'zh' ? '验证' : 'Validate', build: LANG === 'zh' ? '构建' : 'Build' };
+
+    html += '<div class="active-bet-row">' +
+      '<span class="bet-status-dot ' + (isReviewDue ? 'review-due' : 'active-bet') + '" title="' + (isReviewDue ? t('betReviewDue') : b.action) + '"></span>' +
+      '<strong>' + b.id + '</strong>' +
+      '<span class="badge-demand">' + catShort + '</span>' +
+      '<span>' + (b.demand_name || b.demand).substring(0, 30) + '</span>' +
+      '<span class="muted">' + (actionNames[b.action] || b.action) + '</span>' +
+      '<span class="bet-day-counter">' + dayText + '</span>' +
+      '</div>';
+  });
+  body.innerHTML = html;
+}
+
+// ─── Lessons ───
+function renderLessons() {
+  var body = document.getElementById('lessons-body');
+  var emptyEl = document.getElementById('lessons-empty');
+  if (!body) return;
+
+  var lessons = [];
+  if (_data && _data.lessons) {
+    lessons = _data.lessons;
+  } else if (_data && _data._lessons_data) {
+    lessons = _data._lessons_data;
+  }
+
+  if (!lessons || lessons.length === 0) {
+    body.innerHTML = '';
+    if (emptyEl) emptyEl.style.display = '';
+    return;
+  }
+  if (emptyEl) emptyEl.style.display = 'none';
+
+  var typeNamesZh = { no_traffic: '无流量', no_conversion: '无转化', signal_weak: '信号弱', needs_pivot: '需调整', market_nonexistent: '无市场' };
+  var typeNamesEn = { no_traffic: 'No Traffic', no_conversion: 'No Conversion', signal_weak: 'Weak Signal', needs_pivot: 'Needs Pivot', market_nonexistent: 'No Market' };
+
+  var html = '';
+  lessons.slice(0, 5).forEach(function(l) {
+    var fType = l.failure_type || 'signal_weak';
+    var typeName = LANG === 'en' ? (typeNamesEn[fType] || fType) : (typeNamesZh[fType] || fType);
+    html += '<div class="lesson-row">' +
+      '<div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">' +
+        '<span class="lesson-type ' + fType + '">' + typeName + '</span>' +
+        '<strong style="font-size:0.82rem">' + (l.opportunity || '').substring(0, 40) + '</strong>' +
+        '<span class="muted" style="font-size:0.7rem;margin-left:auto">' + (l.date || '') + '</span>' +
+      '</div>' +
+      '<div class="muted" style="font-size:0.78rem">' + t('oppWhy') + ': ' + (l.lesson || l.cause || '') + '</div>' +
+    '</div>';
+  });
+  body.innerHTML = html;
+}
+
+function openOppCard(wbData, demandId) {
+  // Expand the pipeline card for this demand
+  _pipelineExpanded[demandId] = true;
+  renderPipeline();
+  // Scroll to the card
+  var card = document.querySelector('.opp-card[data-demand-id="' + demandId + '"]');
+  if (card) card.scrollIntoView({ behavior: 'smooth' });
 }
 
 function closeOppCard() {
-  var card = document.getElementById('wb-opp-card');
-  if (card) card.style.display = 'none';
+  // No-op — deprecated with unified pipeline
 }
 
 function renderWorkbench(data) {
@@ -2028,24 +2488,34 @@ function renderWorkbench(data) {
   // Store for bet/opp card use
   data._wb_data = { bets: data.bets || [], all_demands: allDems };
 
-  // ── Radar mini-table (top 5 by opportunity) ──
-  var sorted = allDems.slice().sort(function(a, b) { return b.opportunity_index - a.opportunity_index; });
-  var top5 = sorted.slice(0, 5);
-  var tbody = document.getElementById('wb-radar-body');
-  if (tbody) {
-    tbody.innerHTML = '';
-    top5.forEach(function(d) {
-      var tr = document.createElement('tr');
-      tr.onclick = function() { openOppCard(wb, d.id); };
-      var scCls = d.opportunity_index >= 49 ? 'score-high' : (d.opportunity_index >= 30 ? 'score-mid' : 'score-low');
-      tr.innerHTML =
-        '<td>' + (demName(d) || d.id) + '</td>' +
-        '<td class="num">' + (d.market_score || 0) + '</td>' +
-        '<td class="num">' + (d.business_score || 0) + '</td>' +
-        '<td class="num">' + (d.competition || 0) + '</td>' +
-        '<td class="num ' + scCls + '">' + (d.opportunity_index || 0) + '</td>';
-      tbody.appendChild(tr);
-    });
+  // ── Portfolio (active bets summary) ──
+  var portBody = document.getElementById('wb-portfolio-body');
+  var portEmpty = document.getElementById('wb-portfolio-empty');
+  if (portBody && portEmpty) {
+    loadBets();
+    var activeBets = [];
+    for (var bi = 0; bi < _bets.length; bi++) {
+      if (_bets[bi].status === 'active') activeBets.push(_bets[bi]);
+    }
+    if (activeBets.length === 0) {
+      portEmpty.style.display = '';
+      portBody.innerHTML = '';
+      portBody.appendChild(portEmpty);
+    } else {
+      portEmpty.style.display = 'none';
+      var portHtml = '';
+      var portActionNames = { observe: LANG === 'zh' ? '观察' : 'Observe', validate: LANG === 'zh' ? '验证' : 'Validate', build: LANG === 'zh' ? '构建' : 'Build' };
+      activeBets.slice(0, 5).forEach(function(ab) {
+        var isDue = ab.review_date && ab.review_date <= new Date().toISOString().substring(0, 10);
+        portHtml += '<div class="wb-portfolio-item">' +
+          '<span style="color:' + (isDue ? 'var(--color-red)' : 'var(--color-accent)') + '">' + (isDue ? '⏰' : '●') + '</span>' +
+          '<strong>' + (ab.demand_name || ab.demand).substring(0, 25) + '</strong>' +
+          '<span class="muted">' + (portActionNames[ab.action] || ab.action) + '</span>' +
+          '<span class="muted" style="font-size:0.7rem;margin-left:auto">' + (ab.review_date || '') + '</span>' +
+          '</div>';
+      });
+      portBody.innerHTML = portHtml;
+    }
   }
 
   // ── Watchlist panel (from localStorage + JSON) ──
@@ -2053,7 +2523,6 @@ function renderWorkbench(data) {
   var wlEmpty = document.getElementById('wb-watchlist-empty');
   if (wlDiv && wlEmpty) {
     loadWatchlist();
-    // Build array of watched demand objects from all_demands
     var wlItems = [];
     _watchlist.forEach(function(wid) {
       var found = null;
@@ -2077,7 +2546,7 @@ function renderWorkbench(data) {
           ? {early:'Early',forming:'Forming',breaking:'Breaking',mature:'Mature'}[d.stage] || d.stage
           : {early:'萌芽期',forming:'形成期',breaking:'爆发期',mature:'成熟期'}[d.stage] || d.stage;
         wlHtml += '<div class="wb-watch-item">' +
-          '<span><strong><a href="#" onclick="openOppCard(wb,\'' + d.id + '\');return false;" style="color:inherit">' + demName(d) + '</a></strong></span>' +
+          '<span><strong><a href="#" onclick="openOppCard(null,\'' + d.id + '\');return false;" style="color:inherit">' + demName(d) + '</a></strong></span>' +
           '<span class="' + chgCls + '">' + arrow + '</span>' +
           '<span class="muted" style="font-size:0.7rem">' + (stageName || '') + '</span>' +
           '<button class="btn-watch" onclick="toggleWatch(\'' + d.id + '\');renderWorkbench(data);" title="Remove">×</button>' +
@@ -2176,16 +2645,23 @@ function renderAll(data) {
     if (tocSidebar) tocSidebar.style.display = 'none';
   }
 
-  // Tracking
+  // ── Unified Opportunity Board ──
+  renderPipeline();
+  renderActiveBets();
+  renderLessons();
+
+  // ── Historical tracking table (in collapsible details) ──
   if (opps.length === 0) {
     document.getElementById('tracking-empty').style.display = 'block';
   } else {
+    document.getElementById('tracking-empty').style.display = 'none';
     var statusLabels = {};
     statusLabels['pending'] = t('trStatusPending');
     statusLabels['passed'] = t('trStatusPassed');
     statusLabels['failed'] = t('trStatusFailed');
     statusLabels['adjust'] = t('trStatusAdjust');
     var tbody2 = document.getElementById('tracking-body');
+    tbody2.innerHTML = '';
     opps.forEach(function(op) {
       var statusCls = op.verification_result || 'pending';
       var tr = document.createElement('tr');
@@ -2201,146 +2677,25 @@ function renderAll(data) {
     });
   }
 
-  // Recurring signals tracking
-  var recurring = data.recurring_signals || [];
-  if (recurring.length === 0) {
-    document.getElementById('recurring-empty').style.display = 'block';
-  } else {
-    document.getElementById('recurring-empty').style.display = 'none';
-    var trendIcons = {
-      rising: t('recTrendRising'),
-      stable: t('recTrendStable'),
-      fading: t('recTrendFading')
-    };
-    var recTbody = document.getElementById('recurring-body');
-    recTbody.innerHTML = '';
-    recurring.forEach(function(rec) {
-      var tr = document.createElement('tr');
-      var trendHtml = trendIcons[rec.trend] || rec.trend;
-      var linkedHtml = rec.linked_opportunity_id
-        ? '<a href="#" onclick="switchTab(\'tracking\'); return false;" title="' + rec.linked_opportunity_id + '"><code>' + rec.linked_opportunity_id + '</code></a>'
-        : '--';
-      var demandLabel = rec.demand_category || '';
-      var demandNames = {
-        'memory': 'Memory',
-        'cost': 'Cost',
-        'governance': 'Governance',
-        'skills': 'Skills',
-        'multi-agent': 'Multi-Agent',
-        'observability': 'Observe',
-        'tutorial': 'Learn',
-        'ux': 'UX'
-      };
-      var demandDisplay = demandLabel ? '<span class="badge badge-demand" title="' + (demandNames[demandLabel] || demandLabel) + '">' + (demandNames[demandLabel] || demandLabel) + '</span>' : '--';
-      tr.innerHTML =
-        '<td title="' + (rec.topic || '').replace(/"/g, '&quot;') + '">' + (rec.topic || '').substring(0, 45) + '</td>' +
-        '<td>' + demandDisplay + '</td>' +
-        '<td>' + (rec.first_seen || '') + '</td>' +
-        '<td>' + (rec.last_seen || '') + '</td>' +
-        '<td class="score">' + (rec.distinct_days || 0) + 'd / ' + (rec.appearances || 0) + 'x</td>' +
-        '<td class="score">' + (rec.peak_score || 0) + '</td>' +
-        '<td>' + trendHtml + '</td>' +
-        '<td>' + linkedHtml + '</td>';
-      recTbody.appendChild(tr);
-    });
-  }
+  // Update history count
+  var histSummary = document.getElementById('opp-history-title');
+  if (histSummary) histSummary.textContent = '📋 ' + t('oppHistory') + ' (' + opps.length + ')';
 
-  // Demand radar
+  // ── Demand Radar data (keep helpers for dimension bars) ──
   var demandRadar = data.demand_radar || {};
   var demands = demandRadar.demands || [];
-  var weeks = demandRadar.weeks || [];
   var intersections = demandRadar.intersections || [];
-
-  // Build demands map for bulk actions
   window._demandsMap = {};
   demands.forEach(function(d) { window._demandsMap[d.id] = d; });
+  loadWatchlist();
 
-  loadWatchlist(); // sync watchlist from localStorage
-
-  if (demands.length === 0) {
-    document.getElementById('demand-empty').style.display = 'block';
-  } else {
-    var deltaIcons = {
-      rising: '<span class="chg-up">▲</span> ' + t('demDeltaRising'),
-      falling: '<span class="chg-dn">▼</span> ' + t('demDeltaFalling'),
-      stable: '<span class="chg-st">→</span> ' + t('demDeltaStable'),
-      new: '<span class="chg-new">●</span> ' + t('demDeltaNew')
-    };
-    var stageLabels = {
-      early: t('demStageEarly'),
-      forming: t('demStageForming'),
-      breaking: t('demStageBreaking'),
-      mature: t('demStageMature')
-    };
-
-  // ── Demand detail expand helpers ──
-  function renderDemandDetail(dem) {
-    var trends = dem.trends || [];
-    var trendsEn = dem.trends_en || dem.trends || [];
-    var trendNames = (LANG === 'en') ? trendsEn : trends;
-    var stageLabel = stageLabels[dem.stage] || dem.stage || '?';
-    var buyerText = (LANG === 'en' && dem.target_buyer_en) ? dem.target_buyer_en : (dem.target_buyer || '');
-
-    // Build lookup for per-trend scores (v3.1+)
-    var tdMap = {};
-    var hasTrendDetails = false;
-    (dem.trend_details || []).forEach(function(td) {
-      tdMap[td.name] = td;
-      hasTrendDetails = true;
-    });
-
-    var deltaArrows = { rising: '▲', falling: '▼', stable: '→', new: '●' };
-
-    var trendRows = trendNames.map(function(name) {
-      var td = tdMap[name];
-
-      // Per-trend scores with fallback to demand-level
-      var mkt = td ? (td.market_score || 0) : (dem.market_score || 0);
-      var biz = td ? (td.business_score || 0) : (dem.business_score || 0);
-      var cmp = td ? (td.competition || 0) : (dem.competition || 0);
-      var ai  = td ? (td.ai_replaceability != null ? td.ai_replaceability : '?') : (dem.ai_replaceability || '?');
-      var cnf = td ? (td.confidence || 0) : (dem.confidence || 0);
-      var stg = td ? (stageLabels[td.stage] || td.stage || '?') : stageLabel;
-      var opp = td ? (td.opportunity_index || 0) : (dem.opportunity_index || 0);
-      var deltaIcon = td ? (deltaArrows[td.delta] || '') : '';
-      var sigInfo = td ? ' <span class="trend-sig">' + (td.total_appearances || 0) + ' sig</span>' : '';
-
-      return '<div class="trend-item">' +
-        '<div class="trend-name">' + deltaIcon + ' ' + name + sigInfo + '</div>' +
-        '<div class="trend-metrics">' +
-          '<span>' + t('demMarket') + ' <strong>' + mkt + '</strong></span>' +
-          '<span>' + t('demBusiness') + ' <strong>' + biz + '</strong></span>' +
-          '<span>' + t('demCompetition') + ' <strong>' + cmp + '</strong></span>' +
-          '<span>' + t('demAiProof') + ' <strong>' + ai + '/10</strong></span>' +
-          '<span>' + t('demConfidence') + ' <strong>' + cnf + '%</strong></span>' +
-          '<span>' + t('demStage') + ' <strong>' + stg + '</strong></span>' +
-          '<span>' + t('demIndex') + ' <strong>' + opp + '</strong></span>' +
-        '</div>' +
-      '</div>';
-    }).join('');
-
-    return '<td colspan="11">' +
-      '<div class="detail-panel">' +
-        trendRows +
-        '<div class="detail-footer">' +
-          (buyerText ? '<span>' + t('detailTargetBuyer') + ': <strong>' + buyerText + '</strong></span>' : '') +
-          '<span>Pain f' + (dem.pain_frequency||'?') + '×s' + (dem.pain_severity||'?') + ' = <strong>' + ((dem.pain_score||0).toFixed(1)) + '</strong></span>' +
-          '<span>Pay b' + (dem.pay_budget||'?') + '×u' + (dem.pay_urgency||'?') + ' = <strong>' + ((dem.pay_score||0).toFixed(1)) + '</strong></span>' +
-          '<span>Demand total <strong>' + (dem.total_appearances||0) + '</strong> sig / ' + (dem.distinct_days||0) + 'd</span>' +
-        '</div>' +
-      '</div>' +
-      '</td>';
-  }
-
-  // ── Dimension Bars Rendering ──
+  // ── Dimension Bars Helpers (used by pipeline expand) ──
   function renderDimBars(dem) {
     var section = document.getElementById('radar-chart-section');
     if (!section) return;
     section.style.display = 'block';
-
     document.getElementById('radar-demand-name').textContent = (LANG === 'en' && dem.name_en) ? dem.name_en : (dem.name || dem.id);
     document.getElementById('radar-demand-desc').textContent = (LANG === 'en' && dem.description_en) ? dem.description_en : (dem.description || '');
-
     var dims = [
       { key: 'market_score', label: t('radarMarket') },
       { key: 'business_score', label: t('radarBusiness') },
@@ -2348,14 +2703,11 @@ function renderAll(data) {
       { key: 'ai_replaceability', label: t('radarAiProof') },
       { key: 'confidence', label: t('radarConfidence') }
     ];
-
-    // Bar color: gradient from blue-lt → blue → amber based on score
     function barColor(v) {
       if (v >= 70) return 'var(--color-accent)';
       if (v >= 40) return 'var(--color-chart-accent)';
       return 'var(--color-chart-blue-lt)';
     }
-
     var barsHtml = dims.map(function(d) {
       var v = dem[d.key] || 0;
       return '<div class="dim-bar-row">' +
@@ -2364,7 +2716,6 @@ function renderAll(data) {
         '<span class="dim-bar-val">' + v + '</span>' +
       '</div>';
     }).join('');
-
     document.getElementById('radar-demand-scores').innerHTML = barsHtml;
   }
 
@@ -2373,91 +2724,21 @@ function renderAll(data) {
     if (section) section.style.display = 'none';
   }
 
-  function toggleDemandDetail(demId) {
-    var row = document.querySelector('[data-demand-id="' + demId + '"]');
-    if (!row) return;
-    var detailRow = document.getElementById('demand-detail-' + demId);
-
-    if (detailRow) {
-      // Collapse
-      detailRow.remove();
-      row.classList.remove('expanded');
-      hideDimBars();
-    } else {
-      // Expand
-      var dem = demands.find(function(d) { return d.id === demId; });
-      if (!dem) return;
-      detailRow = document.createElement('tr');
-      detailRow.className = 'demand-detail';
-      detailRow.id = 'demand-detail-' + demId;
-      detailRow.innerHTML = renderDemandDetail(dem);
-      row.parentNode.insertBefore(detailRow, row.nextSibling);
-      row.classList.add('expanded');
-      renderDimBars(dem);
+  // Intersections
+  if (intersections.length > 0) {
+    var interDiv = document.getElementById('demand-intersections');
+    if (interDiv) {
+      interDiv.style.display = 'block';
+      var interHtml = '<h3>' + t('demIntersections') + '</h3><div class="inter-list">';
+      intersections.slice(0, 5).forEach(function(x) {
+        interHtml += '<span class="badge badge-inter" title="' + x.label + '">' + x.label + ' [' + x.cross_score + '/10]</span>';
+      });
+      interHtml += '</div>';
+      interDiv.innerHTML = interHtml;
     }
-  }
-
-    var demTbody = document.getElementById('demand-body');
-    demands.forEach(function(dem) {
-      var tr = document.createElement('tr');
-      tr.className = 'demand-row';
-      tr.setAttribute('data-demand-id', dem.id);
-      tr.onclick = function(e) {
-        // Don't toggle if watch button or checkbox was clicked
-        if (e.target.closest('.btn-watch')) return;
-        if (e.target.closest('input[type="checkbox"]')) return;
-        toggleDemandDetail(dem.id);
-      };
-
-      var marketTooltip = 'Trend:' + (dem.trend_score||0) + ' Growth:' + (dem.growth_score||0) + ' Consistency:' + (dem.consistency_score||0) + ' (samples:' + (dem.total_appearances||0) + ')';
-      var businessTooltip = 'Pain(f×s):' + (dem.pain_frequency||'?') + '×' + (dem.pain_severity||'?') + ' Pay(b×u):' + (dem.pay_budget||'?') + '×' + (dem.pay_urgency||'?');
-
-      var indexCls = dem.opportunity_index >= 70 ? 'score-high' : (dem.opportunity_index >= 40 ? 'score-mid' : 'score-low');
-      var indexHtml = '<span class="score ' + indexCls + '">' + dem.opportunity_index + '</span>';
-
-      var compCls = dem.competition >= 80 ? 'score-low' : (dem.competition >= 50 ? 'score-mid' : 'score-high');
-      var buyerText = (LANG === 'en' && dem.target_buyer_en) ? dem.target_buyer_en : (dem.target_buyer || '');
-      var buyerInfo = buyerText ? ' | Buyer: ' + buyerText : '';
-      var descText = (LANG === 'en' && dem.description_en) ? dem.description_en : (dem.description || '');
-      var dmName = (LANG === 'en' && dem.name_en) ? dem.name_en : demName(dem);
-
-      var trendsHtml = '';
-      var trends = dem.trends || [];
-      if (trends.length > 0) {
-        trendsHtml = '<br><span class="trend-tags">';
-        trends.slice(0, 4).forEach(function(t) { trendsHtml += '<span class="trend-tag">' + t + '</span>'; });
-        trendsHtml += '</span>';
-      }
-
-      var watchIcon = isWatched(dem.id) ? '★' : '☆';
-      tr.innerHTML =
-        '<td><input type="checkbox" class="demand-check" data-id="' + dem.id + '" onchange="updateBulkBar(\'demand\');event.stopPropagation();" aria-label="Select ' + dmName + '"></td>' +
-        '<td><button class="btn-watch" id="watch-btn-' + dem.id + '" onclick="toggleWatch(\'' + dem.id + '\');event.stopPropagation();" title="Toggle watch">' + watchIcon + '</button></td>' +
-        '<td><span class="expand-caret">▸</span><strong>' + dmName + '</strong><br><span class="muted">' + descText + buyerInfo + '</span>' + trendsHtml + '</td>' +
-        '<td>' + (deltaIcons[dem.delta] || dem.delta) + '</td>' +
-        '<td class="num" title="' + marketTooltip + '">' + (dem.market_score || 0) + '</td>' +
-        '<td class="num" title="' + businessTooltip + '">' + (dem.business_score || 0) + '</td>' +
-        '<td class="num ' + compCls + '">' + (dem.competition || 0) + '</td>' +
-        '<td class="num" title="AI替代难度: ' + (dem.ai_replaceability || '?') + '/10">' + (dem.ai_replaceability || '?') + '</td>' +
-        '<td class="num">' + (dem.confidence || 0) + '%</td>' +
-        '<td>' + (stageLabels[dem.stage] || dem.stage || '?') + '</td>' +
-        '<td>' + indexHtml + '</td>';
-      demTbody.appendChild(tr);
-    });
-
-    // Intersections
-    if (intersections.length > 0) {
-      var interDiv = document.getElementById('demand-intersections');
-      if (interDiv) {
-        interDiv.style.display = 'block';
-        var interHtml = '<h3>' + t('demIntersections') + '</h3><div class="inter-list">';
-        intersections.slice(0, 5).forEach(function(x) {
-          interHtml += '<span class="badge badge-inter" title="' + x.label + '">' + x.label + ' [' + x.cross_score + '/10]</span>';
-        });
-        interHtml += '</div>';
-        interDiv.innerHTML = interHtml;
-      }
-    }
+  } else {
+    var interDiv2 = document.getElementById('demand-intersections');
+    if (interDiv2) interDiv2.style.display = 'none';
   }
 
   // ── Bulk Actions ──

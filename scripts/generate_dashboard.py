@@ -213,6 +213,16 @@ def collect_dashboard_data() -> dict:
         except Exception as e:
             print(f"[Dashboard] [WARN] Failed to read watchlist.json: {e}")
 
+    # 3g. Lessons (failure knowledge base)
+    lessons_data = []
+    lessons_path = TRACKING_DIR / "lessons.json"
+    if lessons_path.exists():
+        try:
+            lessons_raw = json.loads(lessons_path.read_text(encoding="utf-8"))
+            lessons_data = lessons_raw.get("lessons", [])
+        except Exception as e:
+            print(f"[Dashboard] [WARN] Failed to read lessons.json: {e}")
+
     # 4. Daily report (markdown) — bilingual: zh (default) + en (optional)
     report_md = ""
     report_md_en = ""
@@ -263,6 +273,7 @@ def collect_dashboard_data() -> dict:
         "demand_radar": demand_radar,
         "workbench": workbench_report,
         "bets": bets_data.get("bets", []),
+        "lessons": lessons_data,
         "watchlist": watchlist_data.get("watched", []),
         "report_md": report_md,
         "report_md_en": report_md_en,
