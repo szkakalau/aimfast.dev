@@ -787,6 +787,8 @@
   .lesson-type.no_traffic { background: #fee2e2; color: #dc2626; }
   .lesson-type.no_conversion { background: #fef3c7; color: #d97706; }
   .lesson-type.signal_weak { background: #f3e8ff; color: #9333ea; }
+  .lesson-type.needs_pivot { background: #e0f2fe; color: #0284c7; }
+  .lesson-type.market_nonexistent { background: #f1f5f9; color: #64748b; }
 
   /* ── Opp history (collapsible details) ── */
   .opp-history { margin-top: var(--space-2); font-size: 0.82rem; }
@@ -1128,7 +1130,7 @@
         <div class="hero-label" id="hero-label-opportunity">Today's Best Opportunity</div>
         <div class="hero-demand" id="hero-demand-name">--</div>
         <div class="hero-meta" id="hero-demand-meta"></div>
-        <div class="hero-action"><a href="#" onclick="document.getElementById('opp-zone-pipeline').scrollIntoView({behavior:'smooth'});return false;" id="hero-radar-link">Open Radar →</a></div>
+        <div class="hero-action"><a href="#" onclick="var el=document.getElementById('opp-zone-pipeline');if(el)el.scrollIntoView({behavior:'smooth'});return false;" id="hero-radar-link">Open Radar →</a></div>
       </div>
       <div class="hero-right" id="hero-bets">
         <div class="hero-label" id="hero-label-bets">Active Bets</div>
@@ -2036,6 +2038,16 @@ function fmt(n) {
   return n != null ? n.toLocaleString('en-US') : '--';
 }
 
+function escapeHtml(s) {
+  if (s == null) return '';
+  return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+function escapeJsStr(s) {
+  if (s == null) return '';
+  return String(s).replace(/\\/g, '\\\\').replace(/'/g, "\\'");
+}
+
 // ═══════════════════════════════════════════
 // Builder Workbench functions
 // ═══════════════════════════════════════════
@@ -2043,15 +2055,33 @@ function fmt(n) {
 var _bets = []; // in-memory bet list (loaded from localStorage + JSON)
 
 function loadBets() {
-  // Merge: JSON defaults + localStorage overrides
+  // Merge: JSON is the source of truth for machine-updated fields,
+  // localStorage overrides user-editable fields (thesis, criteria)
   var jsonBets = (typeof _data !== 'undefined' && _data._wb_data && _data._wb_data.bets) ? _data._wb_data.bets : [];
   var lsRaw = null;
   try { lsRaw = localStorage.getItem('kakaopc_bets'); } catch(e) {}
   var lsBets = lsRaw ? JSON.parse(lsRaw) : [];
-  // localStorage wins for same ID
   var merged = {};
+  // Start with JSON as base
   jsonBets.forEach(function(b) { merged[b.id] = b; });
-  lsBets.forEach(function(b) { merged[b.id] = b; });
+  // localStorage: overwrite only user-editable fields, preserve server status
+  lsBets.forEach(function(b) {
+    if (merged[b.id]) {
+      // Preserve server-updated fields: status, result, lesson_learned, reviewed_at
+      var serverStatus = merged[b.id].status;
+      var serverResult = merged[b.id].result;
+      var serverLesson = merged[b.id].lesson_learned;
+      var serverReviewed = merged[b.id].reviewed_at;
+      merged[b.id] = b;
+      // Restore server fields if they changed from default
+      if (serverStatus && serverStatus !== 'active') merged[b.id].status = serverStatus;
+      if (serverResult != null) merged[b.id].result = serverResult;
+      if (serverLesson) merged[b.id].lesson_learned = serverLesson;
+      if (serverReviewed) merged[b.id].reviewed_at = serverReviewed;
+    } else {
+      merged[b.id] = b;
+    }
+  });
   _bets = Object.values(merged);
   _bets.sort(function(a, b) { return b.date.localeCompare(a.date); });
 }
@@ -2224,10 +2254,10 @@ function renderBetLog() {
     html += '<div class="bet-row">' +
       '<span class="bet-id">' + b.id + '</span>' +
       '<span>' + b.date + '</span>' +
-      '<strong>' + demName(betDemandObj) + '</strong>' +
+      '<strong>' + escapeHtml(demName(betDemandObj)) + '</strong>' +
       '<span>' + (b.action || '') + '</span>' +
       '<span class="bet-badge ' + (statusBadges[b.status] || '') + '">' + statusLabel + (isReviewDue ? ' ⏰' : '') + '</span>' +
-      (b.thesis ? '<span class="muted">' + b.thesis.substring(0, 50) + '</span>' : '') +
+      (b.thesis ? '<span class="muted">' + escapeHtml(b.thesis.substring(0, 50)) + '</span>' : '') +
       '</div>';
   });
   body.innerHTML = html;
@@ -2304,8 +2334,8 @@ function renderPipeline() {
       '<div class="opp-card-header" onclick="toggleOppCard(\'' + catId + '\')">' +
         '<span class="opp-card-rank">' + (idx + 1) + '</span>' +
         '<span class="opp-card-badge ' + catId + '">' + catBadge + '</span>' +
-        '<span class="opp-card-name">' + demDisplayName + '</span>' +
-        '<span class="opp-card-why muted">' + whyStr + '</span>' +
+        '<span class="opp-card-name">' + escapeHtml(demDisplayName) + '</span>' +
+        '<span class="opp-card-why muted">' + escapeHtml(whyStr) + '</span>' +
         '<span class="opp-card-indicators">' +
           '<span class="opp-score ' + scoreCls + '">' + oppIdx + '</span>' +
           '<span class="opp-stage ' + stageCls + '">' + stageName + '</span>' +
@@ -2316,7 +2346,7 @@ function renderPipeline() {
       '</div>' +
       '<div class="opp-card-detail">' +
         '<div style="margin-bottom:8px">' +
-          '<span class="muted" style="font-size:0.78rem">' + (LANG === 'en' && dem.description_en ? dem.description_en : (dem.description || '')) + '</span>' +
+          '<span class="muted" style="font-size:0.78rem">' + escapeHtml(LANG === 'en' && dem.description_en ? dem.description_en : (dem.description || '')) + '</span>' +
         '</div>' +
         '<div class="opp-detail-grid">' +
           '<div class="opp-detail-item"><div class="opp-detail-val" style="color:var(--color-accent)">' + (dem.market_score || 0) + '</div><div class="opp-detail-label">' + t('demMarket') + '</div></div>' +
@@ -2324,7 +2354,7 @@ function renderPipeline() {
           '<div class="opp-detail-item"><div class="opp-detail-val" style="color:' + ((dem.competition || 0) >= 80 ? 'var(--color-red)' : 'var(--color-green)') + '">' + (dem.competition || 0) + '</div><div class="opp-detail-label">' + t('demCompetition') + '</div></div>' +
         '</div>' +
         '<div class="opp-detail-meta">' +
-          '<strong>' + t('detailTargetBuyer') + ':</strong> ' + (LANG === 'en' && dem.target_buyer_en ? dem.target_buyer_en : (dem.target_buyer || '--')) +
+          '<strong>' + t('detailTargetBuyer') + ':</strong> ' + escapeHtml(LANG === 'en' && dem.target_buyer_en ? dem.target_buyer_en : (dem.target_buyer || '--')) +
           ' | <strong>' + t('demConfidence') + ':</strong> ' + (dem.confidence || 0) + '%' +
           ' | <strong>' + t('demAiProof') + ':</strong> ' + (dem.ai_replaceability || '?') + '/10' +
         '</div>';
@@ -2341,7 +2371,7 @@ function renderPipeline() {
         html += '<div class="opp-detail-related"><strong>' + t('recTrend') + ':</strong> ';
         related.slice(0, 3).forEach(function(r) {
           var tIcon = r.trend === 'rising' ? '🔺' : (r.trend === 'fading' ? '🔻' : '→');
-          html += '<span style="margin-right:8px;font-size:0.72rem">' + tIcon + ' ' + (r.topic || '').substring(0, 30) + '</span>';
+          html += '<span style="margin-right:8px;font-size:0.72rem">' + tIcon + ' ' + escapeHtml((r.topic || '').substring(0, 30)) + '</span>';
         });
         html += '</div>';
       }
@@ -2349,9 +2379,9 @@ function renderPipeline() {
     html += '</div>' +
       '<div class="opp-card-actions">' +
         '<button class="btn-watch" style="font-size:0.75rem;padding:4px 8px;border:1px solid var(--color-border);background:transparent;cursor:pointer;border-radius:var(--radius-sm)" onclick="event.stopPropagation();toggleWatch(\'' + catId + '\')" id="watch-btn-' + catId + '">' + (isW ? '★' : '☆') + '</button>' +
-        '<button class="btn-opp-action" onclick="event.stopPropagation();openBetDrawer(\'' + catId + '\',\'' + demDisplayName.replace(/'/g, "\\'") + '\')">🔍 ' + t('oppObserve') + '</button>' +
-        '<button class="btn-opp-action" onclick="event.stopPropagation();openBetDrawer(\'' + catId + '\',\'' + demDisplayName.replace(/'/g, "\\'") + '\');_betDrawerAction=\'validate\';selectBetAction(document.querySelector(\'.btn-bet-action[data-action=validate]\'))">🧪 ' + t('oppValidate') + '</button>' +
-        '<button class="btn-opp-action primary-action" onclick="event.stopPropagation();openBetDrawer(\'' + catId + '\',\'' + demDisplayName.replace(/'/g, "\\'") + '\');_betDrawerAction=\'build\';selectBetAction(document.querySelector(\'.btn-bet-action[data-action=build]\'))">🔨 ' + t('oppBuild') + '</button>' +
+        '<button class="btn-opp-action" onclick="event.stopPropagation();openBetDrawer(\'' + catId + '\',\'' + escapeJsStr(demDisplayName) + '\')">🔍 ' + t('oppObserve') + '</button>' +
+        '<button class="btn-opp-action" onclick="event.stopPropagation();openBetDrawer(\'' + catId + '\',\'' + escapeJsStr(demDisplayName) + '\');_betDrawerAction=\'validate\';selectBetAction(document.querySelector(\'.btn-bet-action[data-action=validate]\'))">🧪 ' + t('oppValidate') + '</button>' +
+        '<button class="btn-opp-action primary-action" onclick="event.stopPropagation();openBetDrawer(\'' + catId + '\',\'' + escapeJsStr(demDisplayName) + '\');_betDrawerAction=\'build\';selectBetAction(document.querySelector(\'.btn-bet-action[data-action=build]\'))">🔨 ' + t('oppBuild') + '</button>' +
         (bet ? '<span style="font-size:0.7rem;color:var(--color-text-muted);margin-left:auto">' + t('betPlaced') + ': ' + bet.id + '</span>' : '') +
       '</div>' +
     '</div>';
@@ -2400,7 +2430,8 @@ function renderActiveBets() {
   active.forEach(function(b) {
     var isReviewDue = b.review_date && b.review_date <= now;
     var daysLeft = b.review_date ? Math.ceil((new Date(b.review_date) - new Date(now)) / 86400000) : 0;
-    var dayText = daysLeft > 0 ? ('Day ' + (b.timeline_days - daysLeft) + '/' + b.timeline_days) : (LANG === 'zh' ? '待复盘' : 'Review due');
+    var td = b.timeline_days || 7;
+    var dayText = daysLeft > 0 ? ('Day ' + Math.max(0, td - daysLeft) + '/' + td) : (LANG === 'zh' ? '待复盘' : 'Review due');
     var demandNames = {
       'save-money': LANG === 'zh' ? '省钱' : 'Save $',
       'make-money': LANG === 'zh' ? '赚钱' : 'Make $',
@@ -2415,7 +2446,7 @@ function renderActiveBets() {
       '<span class="bet-status-dot ' + (isReviewDue ? 'review-due' : 'active-bet') + '" title="' + (isReviewDue ? t('betReviewDue') : b.action) + '"></span>' +
       '<strong>' + b.id + '</strong>' +
       '<span class="badge-demand">' + catShort + '</span>' +
-      '<span>' + (b.demand_name || b.demand).substring(0, 30) + '</span>' +
+      '<span>' + escapeHtml((b.demand_name || b.demand).substring(0, 30)) + '</span>' +
       '<span class="muted">' + (actionNames[b.action] || b.action) + '</span>' +
       '<span class="bet-day-counter">' + dayText + '</span>' +
       '</div>';
@@ -2453,10 +2484,10 @@ function renderLessons() {
     html += '<div class="lesson-row">' +
       '<div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">' +
         '<span class="lesson-type ' + fType + '">' + typeName + '</span>' +
-        '<strong style="font-size:0.82rem">' + (l.opportunity || '').substring(0, 40) + '</strong>' +
+        '<strong style="font-size:0.82rem">' + escapeHtml((l.opportunity || '').substring(0, 40)) + '</strong>' +
         '<span class="muted" style="font-size:0.7rem;margin-left:auto">' + (l.date || '') + '</span>' +
       '</div>' +
-      '<div class="muted" style="font-size:0.78rem">' + t('oppWhy') + ': ' + (l.lesson || l.cause || '') + '</div>' +
+      '<div class="muted" style="font-size:0.78rem">' + t('oppWhy') + ': ' + escapeHtml(l.lesson || l.cause || '') + '</div>' +
     '</div>';
   });
   body.innerHTML = html;
@@ -2509,7 +2540,7 @@ function renderWorkbench(data) {
         var isDue = ab.review_date && ab.review_date <= new Date().toISOString().substring(0, 10);
         portHtml += '<div class="wb-portfolio-item">' +
           '<span style="color:' + (isDue ? 'var(--color-red)' : 'var(--color-accent)') + '">' + (isDue ? '⏰' : '●') + '</span>' +
-          '<strong>' + (ab.demand_name || ab.demand).substring(0, 25) + '</strong>' +
+          '<strong>' + escapeHtml((ab.demand_name || ab.demand).substring(0, 25)) + '</strong>' +
           '<span class="muted">' + (portActionNames[ab.action] || ab.action) + '</span>' +
           '<span class="muted" style="font-size:0.7rem;margin-left:auto">' + (ab.review_date || '') + '</span>' +
           '</div>';
@@ -2778,11 +2809,39 @@ function renderAll(data) {
   };
 
   window.bulkBet = function(action) {
+    loadBets();
+    var now = new Date().toISOString().substring(0, 10);
     _selections.demand.forEach(function(id) {
       var dem = null;
       if (window._demandsMap) dem = window._demandsMap[id];
-      if (dem) placeBet(id, (LANG === 'en' && dem.name_en) ? dem.name_en : (dem.name || id), action);
+      if (!dem) return;
+      var demName = (LANG === 'en' && dem.name_en) ? dem.name_en : (dem.name || id);
+      var reviewDate = new Date();
+      reviewDate.setDate(reviewDate.getDate() + 7);
+      var bet = {
+        id: 'BET-' + now.replace(/-/g,'') + '-' + String(_bets.length + 1).padStart(2, '0'),
+        date: now,
+        demand: id,
+        demand_name: demName,
+        thesis: '',
+        action: action || 'observe',
+        success_criteria: '',
+        timeline_days: 7,
+        review_date: reviewDate.toISOString().substring(0, 10),
+        status: 'active',
+        result: null,
+        result_note: '',
+        lesson_learned: '',
+        reviewed_at: null
+      };
+      _bets.unshift(bet);
     });
+    saveBets();
+    renderPipeline();
+    renderActiveBets();
+    renderWorkbench(_data);
+    renderBetLog();
+    updateBulkBar('demand');
   };
 
   window.bulkExport = function() {
@@ -3020,7 +3079,8 @@ function switchTab(tab) {
     btn.setAttribute('aria-selected', 'true');
   }
   // Data tab panels
-  document.getElementById('tab-tracking').style.display = tab === 'tracking' ? '' : 'none';
+  var tabTracking = document.getElementById('tab-tracking');
+  if (tabTracking) tabTracking.style.display = tab === 'tracking' ? '' : 'none';
   var tabRecurring = document.getElementById('tab-recurring');
   if (tabRecurring) tabRecurring.style.display = tab === 'recurring' ? '' : 'none';
   var tabDemand = document.getElementById('tab-demand');
