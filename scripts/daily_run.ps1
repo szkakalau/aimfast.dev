@@ -147,21 +147,12 @@ try {
     Write-Log "  [Report] FAIL: $_"
 }
 
-# --- Step 4: Planet Article ---
+# --- Step 4: Planet Article (DISABLED) ---
+# 星球文章生成已禁用 — config.json distribution.planet_article.enabled = false
 
 Write-Log ""
-Write-Log "--- Step 4: Planet Article ---"
-
-try {
-    $output = & $Python -m scripts.generate_article 2>&1
-    if ($LASTEXITCODE -ne 0) {
-        Write-Log "  [Article] FAIL (exit=$LASTEXITCODE)"
-    } else {
-        Write-Log "  [Article] OK"
-    }
-} catch {
-    Write-Log "  [Article] FAIL: $_"
-}
+Write-Log "--- Step 4: Planet Article (DISABLED) ---"
+Write-Log "  [Article] DISABLED — planet_article generation turned off in config.json"
 
 # --- Step 5: Action Plan ---
 

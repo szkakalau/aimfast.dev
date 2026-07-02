@@ -127,16 +127,12 @@ else
     log "  [Report] FAIL"
 fi
 
-# ─── Step 4: Planet Article ───
+# --- Step 4: Planet Article (DISABLED) ---
+# 星球文章生成已禁用 — config.json distribution.planet_article.enabled = false
 
 log ""
-log "--- Step 4: Planet Article ---"
-
-if $PYTHON -m scripts.generate_article 2>&1; then
-    log "  [Article] OK"
-else
-    log "  [Article] FAIL"
-fi
+log "--- Step 4: Planet Article (DISABLED) ---"
+log "  [Article] DISABLED — planet_article generation turned off in config.json"
 
 # ─── Step 5: Action Plan ───
 

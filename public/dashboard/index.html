@@ -184,99 +184,303 @@
     position: relative;
   }
 
-  /* ── Report body ── */
-  .report-body {
-    font-size: 0.88rem;
-    line-height: 1.7;
-    max-height: 70vh;
-    overflow-y: auto;
+  /* ── Reading progress bar ── */
+  #reading-progress {
+    height: 3px;
+    background: var(--color-border);
+    border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+    overflow: hidden;
   }
-  .report-collapsed { max-height: 180px; overflow: hidden; position: relative; }
-  .report-collapsed::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 60px; background: linear-gradient(transparent, var(--color-surface)); pointer-events: none; }
-  .report-expand-btn { display: block; margin: 8px auto 0; padding: 4px 16px; background: var(--color-surface-alt); border: 1px solid var(--color-border); border-radius: 12px; color: var(--color-accent); cursor: pointer; font-size: 0.75rem; font-family: var(--font-body); }
-  .report-expand-btn:hover { border-color: var(--color-accent); }
-  .report-body h1,
-  .report-body h2,
+  #reading-progress-bar {
+    height: 100%;
+    width: 0;
+    background: var(--color-accent);
+    transition: width 100ms linear;
+  }
+
+  /* ── Hero insight ── */
+  #hero-insight {
+    margin: var(--space-2) 0 var(--space-3);
+    padding: var(--space-3);
+    background: var(--color-accent-muted);
+    border-left: 4px solid var(--color-accent);
+    border-radius: var(--radius-md);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--color-text);
+  }
+
+  /* ── TOC sidebar ── */
+  .toc-sidebar {
+    display: none;
+    flex-shrink: 0;
+    width: 200px;
+    position: sticky;
+    top: calc(64px + var(--space-3));
+    align-self: flex-start;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+    padding: var(--space-2);
+    border-right: 1px solid var(--color-border);
+    font-size: 0.82rem;
+  }
+  .toc-sidebar .toc-title {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-1);
+    font-family: var(--font-mono);
+  }
+  .toc-sidebar a {
+    display: block;
+    padding: 3px 8px;
+    font-size: 0.78rem;
+    color: var(--color-text-muted);
+    text-decoration: none;
+    border-radius: var(--radius-sm);
+    margin-bottom: 2px;
+    transition: all var(--duration-fast) var(--ease-out);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .toc-sidebar a:hover,
+  .toc-sidebar a.active {
+    color: var(--color-accent);
+    background: var(--color-accent-muted);
+  }
+
+  /* ── Mobile TOC dropdown ── */
+  .toc-dropdown-wrap { display: none; }
+  .toc-dropdown-wrap select {
+    width: 100%;
+    max-width: 100%;
+    padding: 8px 12px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+  }
+
+  /* ── Report layout: TOC sidebar + body ── */
+  .report-layout {
+    display: flex;
+    gap: var(--space-3);
+    position: relative;
+  }
+
+  /* ── Report body (redesigned) ── */
+  .report-body {
+    font-size: 1rem;
+    line-height: 1.8;
+    flex: 1;
+    min-width: 0;
+  }
+  .report-body h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.35;
+    margin: var(--space-4) 0 var(--space-3);
+    padding-bottom: var(--space-2);
+    border-bottom: 2px solid var(--color-accent);
+    color: var(--color-text);
+  }
+  .report-body h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: var(--space-5);
+    margin-bottom: var(--space-2);
+    padding: var(--space-1) 0 var(--space-1) var(--space-2);
+    border-left: 4px solid var(--color-accent);
+    border-bottom: 1px solid var(--color-border);
+    color: var(--color-text);
+    scroll-margin-top: 80px;
+  }
+  .report-body h2.build-section {
+    background: var(--color-accent-muted);
+    border-left-color: var(--color-accent);
+    padding: var(--space-2);
+    border-radius: var(--radius-md);
+    border-bottom: none;
+    position: relative;
+  }
+  .report-body h2.build-section::after {
+    content: '🔨';
+    position: absolute;
+    right: var(--space-2);
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+  }
   .report-body h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-top: var(--space-3);
+    margin-bottom: var(--space-1);
+    color: var(--color-text);
+  }
+  .report-body h4 {
+    font-size: 0.95rem;
+    font-weight: 600;
     margin-top: var(--space-2);
     margin-bottom: var(--space-1);
+    color: var(--color-text-secondary);
   }
-  .report-body h1 { font-size: 1.25rem; }
-  .report-body h2 { font-size: 1rem; color: var(--color-accent); }
-  .report-body p  { margin-bottom: 10px; }
-  .report-body table { margin: 12px 0; }
-  .report-body a { color: var(--color-accent); }
-  .report-body code {
-    background: var(--color-surface-alt);
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-family: var(--font-mono);
-    font-size: 0.8rem;
+  .report-body p {
+    margin-bottom: 14px;
+    max-width: 72ch;
+  }
+  .report-body a {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .report-body a:hover {
+    color: var(--color-accent-hover);
   }
   .report-body blockquote {
     border-left: 3px solid var(--color-accent);
-    padding-left: var(--space-2);
-    color: var(--color-text-muted);
-    margin: 12px 0;
+    padding: var(--space-2) var(--space-3);
+    margin: var(--space-3) 0;
+    background: var(--color-accent-muted);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    color: var(--color-text-secondary);
+    font-style: italic;
+  }
+  .report-body blockquote p:last-child { margin-bottom: 0; }
+
+  /* ── Report tables ── */
+  .report-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: var(--space-3) 0;
+    font-size: 0.9rem;
+  }
+  .report-body th {
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--color-surface-alt);
+    border-bottom: 2px solid var(--color-border);
+    font-weight: 600;
+    font-size: 0.82rem;
+    color: var(--color-text-secondary);
+    white-space: nowrap;
+  }
+  .report-body td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--color-border);
+    vertical-align: top;
+  }
+  .report-body tr:nth-child(even) td {
+    background: var(--color-surface-alt);
+  }
+  .report-body tr:hover td {
+    background: var(--color-accent-muted);
   }
 
-  /* ── Article meta badge ── */
-  .article-meta {
-    margin-bottom: var(--space-2);
+  /* ── Report code ── */
+  .report-body code {
+    background: var(--color-surface-alt);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--color-accent-hover);
+  }
+  .report-body pre {
+    background: var(--color-surface-alt);
+    padding: var(--space-2);
+    border-radius: var(--radius-md);
+    overflow-x: auto;
+    margin: var(--space-2) 0;
+  }
+  .report-body pre code {
+    background: none;
+    padding: 0;
+    color: var(--color-text);
   }
 
-  /* ── Article actions ── */
-  .article-actions {
+  /* ── Report lists ── */
+  .report-body ul, .report-body ol {
+    margin: var(--space-1) 0 var(--space-2) var(--space-3);
+    padding-left: var(--space-1);
+  }
+  .report-body li {
+    margin-bottom: 6px;
+    max-width: 68ch;
+  }
+
+  /* ── Report misc ── */
+  .report-body hr {
+    border: none;
+    border-top: 1px solid var(--color-border);
+    margin: var(--space-4) 0;
+  }
+  .report-body img {
+    max-width: 100%;
+    border-radius: var(--radius-md);
+    margin: var(--space-2) 0;
+  }
+  .report-body strong {
+    font-weight: 600;
+    color: var(--color-text);
+  }
+
+  /* ── Back to top ── */
+  .btn-back-to-top {
+    position: fixed;
+    bottom: var(--space-3);
+    right: var(--space-3);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid var(--color-border);
+    background: var(--color-surface);
+    color: var(--color-accent);
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: var(--shadow-md);
     display: flex;
     align-items: center;
-    gap: var(--space-1);
-    margin-bottom: var(--space-2);
-    padding-bottom: var(--space-2);
-    border-bottom: 1px solid var(--color-border);
-  }
-  .btn-article-action {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    padding: 6px 12px;
-    border-radius: var(--radius-md);
-    background: var(--color-surface-alt);
-    border: 1px solid var(--color-border);
-    color: var(--color-text-muted);
-    font-family: var(--font-body);
-    font-size: 0.78rem;
-    cursor: pointer;
+    justify-content: center;
+    z-index: 20;
     transition: all var(--duration-fast) var(--ease-out);
   }
-  .btn-article-action:hover {
-    background: var(--color-surface);
-    color: var(--color-text);
+  .btn-back-to-top:hover {
     border-color: var(--color-accent);
+    box-shadow: var(--shadow-glow);
   }
-  .copy-toast {
-    font-size: 0.75rem;
-    color: var(--color-green);
-    opacity: 0;
-    transition: opacity var(--duration-normal) var(--ease-out);
-  }
-  .copy-toast.show { opacity: 1; }
 
-  /* ── Content header (tabs + archive) ── */
+  /* ── Content header (report title + archive) ── */
   .content-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
     gap: var(--space-2);
-    margin-bottom: var(--space-2);
+    margin-bottom: 0;
+    padding-bottom: var(--space-2);
+    border-bottom: 1px solid var(--color-border);
+  }
+  .content-header h2 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
   }
 
-  /* ── Tab bar ── */
-  .tab-bar {
+  /* ── Data card tab bar ── */
+  #card-data .tab-bar {
     display: flex;
     gap: 6px;
   }
-  .tab {
+  #card-data .tab {
     padding: 8px 18px;
     border-radius: 20px;
     cursor: pointer;
@@ -289,11 +493,11 @@
     transition: all var(--duration-fast) var(--ease-out);
     white-space: nowrap;
   }
-  .tab:hover {
+  #card-data .tab:hover {
     color: var(--color-text);
     border-color: var(--color-accent);
   }
-  .tab.active {
+  #card-data .tab.active {
     background: var(--color-accent);
     color: var(--color-on-accent);
     border-color: var(--color-accent);
@@ -638,7 +842,6 @@
   .demand-row:focus-visible,
   .btn-watch:focus-visible,
   .btn-wb-sm:focus-visible,
-  .btn-article-action:focus-visible,
   .lang-toggle:focus-visible {
     outline: 2px solid var(--color-accent);
     outline-offset: 2px;
@@ -649,7 +852,7 @@
   .card, .demand-row, .tab, .archive-date-btn, .btn-watch,
   .wb-radar-table tr, .bet-row, .trend-item, .signal-link,
   .btn-wb-sm, .lang-toggle, .archive-arrow, .btn-back-today,
-  .btn-article-action, .wb-watch-item, .report-expand-btn {
+  .wb-watch-item {
     cursor: pointer;
   }
 
@@ -698,11 +901,15 @@
     /* Tables: horizontal scroll */
     table { font-size: 0.7rem; }
     th, td { padding: 4px 6px; white-space: nowrap; }
-    .report-body { overflow-x: auto; -webkit-overflow-scrolling: touch; max-height: 55vh; }
+    .report-body { font-size: 0.95rem; line-height: 1.7; }
+    .report-body h1 { font-size: 1.35rem; }
+    .report-body h2 { font-size: 1.1rem; scroll-margin-top: 60px; }
+    .report-body h3 { font-size: 0.95rem; }
+    #hero-insight { font-size: 0.9rem; padding: var(--space-2); }
 
-    /* Tab bar: horizontal scroll */
-    .tab-bar { overflow-x: auto; -webkit-overflow-scrolling: touch; flex-wrap: nowrap; padding-bottom: 4px; }
-    .tab { white-space: nowrap; font-size: 0.72rem; padding: 5px 10px; flex-shrink: 0; }
+    /* Tab bar: horizontal scroll (data card) */
+    #card-data .tab-bar { overflow-x: auto; -webkit-overflow-scrolling: touch; flex-wrap: nowrap; padding-bottom: 4px; }
+    #card-data .tab { white-space: nowrap; font-size: 0.72rem; padding: 5px 10px; flex-shrink: 0; }
 
     /* Charts */
     .chart-wrap { height: 200px; }
@@ -724,9 +931,13 @@
     /* Signals table link truncation */
     .signal-link { display: inline-block; max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; vertical-align: bottom; }
 
-    /* Article actions */
-    .article-actions { flex-wrap: wrap; gap: 4px; }
-    .btn-article-action { font-size: 0.7rem; padding: 4px 8px; }
+    /* Report TOC: show dropdown, hide sidebar */
+    .toc-sidebar { display: none !important; }
+    .toc-dropdown-wrap { display: block; margin-bottom: var(--space-2); }
+    .report-layout { display: block; }
+
+    /* Back to top */
+    .btn-back-to-top { bottom: var(--space-2); right: var(--space-2); }
 
     /* Opportunity card */
     .wb-opp-card { padding: var(--space-2); margin-top: var(--space-2); }
@@ -739,10 +950,10 @@
     .detail-footer { gap: 4px 12px; }
 
     /* Touch targets: minimum 44x44px */
-    .tab { min-height: 44px; min-width: 44px; display: inline-flex; align-items: center; justify-content: center; }
+    #card-data .tab { min-height: 44px; min-width: 44px; display: inline-flex; align-items: center; justify-content: center; }
     .btn-watch { min-width: 44px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
     .archive-date-btn { min-width: 44px; min-height: 44px; }
-    .btn-bet, .btn-article-action { min-height: 44px; }
+    .btn-bet { min-height: 44px; }
     .btn-wb-sm { min-width: 44px; min-height: 44px; }
   }
 
@@ -750,9 +961,15 @@
     .stat { min-width: 48px; }
     .stat-value { font-size: 1rem; }
     .stat-label { font-size: 0.55rem; }
-    .tab { font-size: 0.72rem; padding: 6px 12px; }
+    #card-data .tab { font-size: 0.72rem; padding: 6px 12px; }
     .content-header { flex-direction: column; align-items: flex-start; }
     .wb-opp-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  /* ── Desktop: show TOC sidebar ── */
+  @media (min-width: 901px) {
+    .toc-sidebar { display: block; }
+    .toc-dropdown-wrap { display: none; }
   }
 </style>
 </head>
@@ -872,13 +1089,13 @@
     <div class="chart-wrap"><canvas id="volumeChart" aria-label="14-day signal volume chart" role="img"></canvas></div>
   </div>
 
-  <!-- ═══ Content: Daily Report + Planet Article ═══ -->
+  <!-- ═══ Content: Daily Report ═══ -->
   <div class="card card-full" id="card-content">
     <div class="content-header">
-      <div class="tab-bar" role="tablist" id="tab-bar" aria-label="Content tabs">
-        <button class="tab active" role="tab" aria-selected="true" onclick="switchTab('report')" id="tab-btn-report">📰 Daily Report</button>
-        <button class="tab" role="tab" aria-selected="false" onclick="switchTab('article')" id="tab-btn-article">🌟 Planet Article</button>
-      </div>
+      <h2 id="report-card-title">
+        <svg class="icon icon-sm icon-accent" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        <span id="report-card-label">📰 日报</span>
+      </h2>
       <div id="archive-nav" class="archive-nav" style="display:none;" aria-label="Archive date navigation">
         <button class="archive-arrow" id="archive-prev" aria-label="Previous day" disabled>
           <svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
@@ -890,17 +1107,27 @@
         <button class="btn-back-today" id="btn-back-today" style="display:none;">Today</button>
       </div>
     </div>
-    <div id="tab-report" class="report-body" role="tabpanel">
-      <div class="loading" id="loading-report">Loading report&hellip;</div>
+    <!-- Reading progress bar -->
+    <div id="reading-progress"><div id="reading-progress-bar"></div></div>
+    <!-- Hero insight (extracted from report) -->
+    <div id="hero-insight" style="display:none;"></div>
+    <!-- TOC dropdown (mobile) -->
+    <div class="toc-dropdown-wrap" id="toc-dropdown-wrap">
+      <select id="toc-dropdown" aria-label="Table of Contents"></select>
     </div>
-    <div id="tab-article" class="report-body" style="display:none;" role="tabpanel">
-      <div class="loading" id="loading-article">Loading article&hellip;</div>
+    <!-- Report layout: TOC sidebar + report body -->
+    <div class="report-layout">
+      <nav id="toc-sidebar" class="toc-sidebar" aria-label="Table of Contents"></nav>
+      <div id="tab-report" class="report-body" role="region" aria-label="Daily Report">
+        <div class="loading" id="loading-report">Loading report&hellip;</div>
+      </div>
     </div>
+    <button id="btn-back-to-top" class="btn-back-to-top" style="display:none;" aria-label="Back to top" title="Back to top">↑</button>
   </div>
 
   <!-- ═══ Data: Tracking + Recurring + Demand Radar ═══ -->
   <div class="card card-full" id="card-data">
-    <div class="tab-bar" role="tablist" aria-label="Data tabs">
+    <div class="tab-bar" role="tablist" id="tab-bar" aria-label="Data tabs">
       <button class="tab" role="tab" aria-selected="false" onclick="switchTab('tracking')" id="tab-btn-tracking">🎯 Opportunity Tracking</button>
       <button class="tab" role="tab" aria-selected="false" onclick="switchTab('recurring')" id="tab-btn-recurring">🔄 Recurring Signals</button>
       <button class="tab" role="tab" aria-selected="false" onclick="switchTab('demand')" id="tab-btn-demand">📡 Demand Radar</button>
@@ -1000,7 +1227,6 @@ var I18N = (function() {
 
       // Tabs
       tabReport: '日报',
-      tabArticle: '星球文章',
       tabTracking: '机会追踪',
       tabRecurring: '重复信号',
       tabBarAria: '内容标签页',
@@ -1008,14 +1234,13 @@ var I18N = (function() {
       // Loading
       loadingSignals: '正在加载信号数据…',
       loadingReport: '正在加载报告…',
-      loadingArticle: '正在加载文章…',
 
-      // Article actions
-      btnDownload: '下载 .txt',
-      btnCopyPlain: '复制纯文本',
-      btnCopyNotepad: '复制记事本格式',
-      toastCopied: '已复制！',
-      toastNotepadCopied: '记事本格式已复制！',
+      // Report
+      reportCardTitle: '📰 日报',
+      tocTitle: '目录',
+      tocJumpTo: '-- 跳转到 --',
+      backToTop: '回到顶部',
+      reportAria: '日报',
 
       // Tracking
       trId: 'ID',
@@ -1103,7 +1328,6 @@ var I18N = (function() {
       // Archive
       archiveBackToToday: '回到今天',
       archiveNoReport: '该日期无报告。',
-      archiveNoArticle: '该日期无文章。',
       archiveNavAria: '存档日期导航',
       archiveDatesAria: '可用日期',
       archivePrevAria: '前一天',
@@ -1112,21 +1336,12 @@ var I18N = (function() {
       // Empty / Fallback
       emptyNoSignals: '今日无信号数据。',
       emptyNoReport: '日报尚未生成。',
-      emptyNoArticle: '星球文章尚未生成。',
       emptyNoData: '无数据。请运行每日流水线以生成情报数据。',
       emptyNoReportData: '无报告数据。',
 
       // Pipeline
       diagSkippedLabel: ' 已跳过',
       piNoData: '无数据',
-
-      // Notepad format
-      notepadDate: '日期',
-      notepadType: '类型',
-      notepadSource: '来源',
-      notepadAngle: '角度',
-      notepadGenerated: '生成时间',
-      notepadFooter: 'AimFast.Dev · www.aimfast.dev',
 
       // Radar chart
       radarMarket: '市场规模',
@@ -1188,7 +1403,6 @@ var I18N = (function() {
 
       // Tabs
       tabReport: 'Daily Report',
-      tabArticle: 'Planet Article',
       tabTracking: 'Opportunity Tracking',
       tabRecurring: 'Recurring Signals',
       tabBarAria: 'Content tabs',
@@ -1196,14 +1410,13 @@ var I18N = (function() {
       // Loading
       loadingSignals: 'Loading signal data…',
       loadingReport: 'Loading report…',
-      loadingArticle: 'Loading article…',
 
-      // Article actions
-      btnDownload: 'Download .txt',
-      btnCopyPlain: 'Copy Plain',
-      btnCopyNotepad: 'Copy Notepad',
-      toastCopied: 'Copied!',
-      toastNotepadCopied: 'Notepad format copied!',
+      // Report
+      reportCardTitle: '📰 Daily Report',
+      tocTitle: 'Contents',
+      tocJumpTo: '-- Jump to --',
+      backToTop: 'Back to top',
+      reportAria: 'Daily Report',
 
       // Tracking
       trId: 'ID',
@@ -1291,7 +1504,6 @@ var I18N = (function() {
       // Archive
       archiveBackToToday: 'Back to Today',
       archiveNoReport: 'No report for this date.',
-      archiveNoArticle: 'No article for this date.',
       archiveNavAria: 'Archive date navigation',
       archiveDatesAria: 'Available dates',
       archivePrevAria: 'Previous day',
@@ -1300,21 +1512,12 @@ var I18N = (function() {
       // Empty / Fallback
       emptyNoSignals: 'No signal data available for today.',
       emptyNoReport: 'Daily report has not been generated yet.',
-      emptyNoArticle: 'Planet article has not been generated yet.',
       emptyNoData: 'No data available. Run the daily pipeline to generate intelligence data.',
       emptyNoReportData: 'No report data available.',
 
       // Pipeline
       diagSkippedLabel: ' skipped',
       piNoData: 'no data',
-
-      // Notepad format
-      notepadDate: 'Date',
-      notepadType: 'Type',
-      notepadSource: 'Source',
-      notepadAngle: 'Angle',
-      notepadGenerated: 'Generated',
-      notepadFooter: 'AimFast.Dev · www.aimfast.dev',
 
       // Radar chart
       radarMarket: 'Market',
@@ -1510,8 +1713,6 @@ function findDemand(id) {
   setChartTitle('chart-volume-title', t('chartVolumeTitle'));
 
   // Tab buttons
-  setEl('tab-btn-report', t('tabReport'));
-  setEl('tab-btn-article', t('tabArticle'));
   setEl('tab-btn-tracking', t('tabTracking'));
   setEl('tab-btn-recurring', t('tabRecurring'));
   setEl('tab-btn-demand', t('tabDemand'));
@@ -1520,7 +1721,10 @@ function findDemand(id) {
   // Loading texts
   setEl('loading-signals', t('loadingSignals'));
   setEl('loading-report', t('loadingReport'));
-  setEl('loading-article', t('loadingArticle'));
+
+  // Report card
+  setEl('report-card-label', t('reportCardTitle'));
+  document.getElementById('tab-report').setAttribute('aria-label', t('reportAria'));
 
   // Tracking headers
   setEl('th-tr-id', t('trId'));
@@ -1610,7 +1814,7 @@ function findDemand(id) {
 
 // ─── Data loading ───
 var _data = null;
-var _articleRaw = '';
+// (deprecated) _articleRaw removed — planet article feature removed
 
 function demName(d) {
   return (LANG === 'en' && d.name_en) ? d.name_en : (d.name || d.id || '');
@@ -1902,14 +2106,11 @@ function renderAll(data) {
   var history = data.history || [];
   var opps = data.opportunities || [];
   var reportMd = data.report_md || '';
-  var articleMd = data.article_md || '';
-  var articleMeta = data.article_meta || {};
   var pipeline = data.pipeline || {};
 
   // Bilingual content: prefer language-specific fields, fall back to default (zh)
   if (LANG === 'en') {
     reportMd = data.report_md_en || reportMd;
-    articleMd = data.article_md_en || articleMd;
   }
 
   document.getElementById('dash-date').textContent = data.date
@@ -1962,48 +2163,17 @@ function renderAll(data) {
     return '<div class="empty">' + fallback + '</div>';
   }
 
-  // Report
+  // Report (redesigned — no collapse, post-processing for TOC/Hero/Build highlight)
+  var reportEl = document.getElementById('tab-report');
   if (reportMd) {
-    var reportEl = document.getElementById('tab-report');
     reportEl.innerHTML = safeMarked(reportMd);
-    // Collapse long reports by default
-    if (reportMd.length > 2000) {
-      reportEl.classList.add('report-collapsed');
-      var expandBtn = document.createElement('button');
-      expandBtn.className = 'report-expand-btn';
-      expandBtn.textContent = LANG === 'en' ? '▼ Expand full report' : '▼ 展开完整日报';
-      expandBtn.onclick = function() {
-        reportEl.classList.remove('report-collapsed');
-        expandBtn.remove();
-      };
-      reportEl.parentNode.insertBefore(expandBtn, reportEl.nextSibling);
-    }
+    postProcessReport(reportEl);
   } else {
-    document.getElementById('tab-report').innerHTML = emptyState('report', t('emptyNoReport'));
-  }
-
-  // Article
-  _articleRaw = articleMd;
-  if (articleMd) {
-    var articleHtml = '<div class="article-actions">' +
-      '<button class="btn-article-action" onclick="downloadArticleTxt()">' +
-        '<svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>' +
-        ' ' + t('btnDownload') + '</button>' +
-      '<button class="btn-article-action" onclick="copyArticleText()">' +
-        '<svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>' +
-        ' ' + t('btnCopyPlain') + '</button>' +
-      '<button class="btn-article-action" onclick="copyArticleNotepad()">' +
-        '<svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>' +
-        ' ' + t('btnCopyNotepad') + '</button>' +
-      '<span class="copy-toast" id="copy-toast">' + t('toastCopied') + '</span>' +
-    '</div>';
-    if (articleMeta.type_label) {
-      articleHtml += '<div class="article-meta"><span class="badge badge-live">' + articleMeta.type_label + '</span></div>';
-    }
-    articleHtml += safeMarked(articleMd);
-    document.getElementById('tab-article').innerHTML = articleHtml;
-  } else {
-    document.getElementById('tab-article').innerHTML = emptyState('article', t('emptyNoArticle'));
+    reportEl.innerHTML = emptyState('report', t('emptyNoReport'));
+    var heroDiv = document.getElementById('hero-insight');
+    if (heroDiv) heroDiv.style.display = 'none';
+    var tocSidebar = document.getElementById('toc-sidebar');
+    if (tocSidebar) tocSidebar.style.display = 'none';
   }
 
   // Tracking
@@ -2387,8 +2557,8 @@ function renderAll(data) {
   }
 
   // Pipeline status indicators in footer
-  var steps = ['report', 'article', 'action', 'lp'];
-  var labels = {report: 'RPT', article: 'ART', action: 'ACT', lp: 'LP'};
+  var steps = ['report', 'action', 'lp'];
+  var labels = {report: 'RPT', action: 'ACT', lp: 'LP'};
   var indicators = [];
   steps.forEach(function(step) {
     var s = pipeline[step];
@@ -2421,6 +2591,10 @@ function renderAll(data) {
   if (data.archive && data.archive.length > 0) {
     initArchive(data.archive);
   }
+
+  // Initialize reading progress & back-to-top (once per load)
+  initReadingProgress();
+  initBackToTop();
 
   // JSON-LD structured data for SEO
   try { injectStructuredData(opps); } catch(e) {}
@@ -2554,32 +2728,142 @@ function renderCharts(history) {
 }
 
 function switchTab(tab) {
-  document.querySelectorAll('.tab').forEach(function(t) {
+  // Data card tabs only (report is always visible, no tab needed)
+  document.querySelectorAll('#card-data .tab').forEach(function(t) {
     t.classList.remove('active');
     t.setAttribute('aria-selected', 'false');
   });
-  // Use the correct tab button (handles calls from non-tab links too)
   var btn = document.getElementById('tab-btn-' + tab);
   if (btn) {
     btn.classList.add('active');
     btn.setAttribute('aria-selected', 'true');
   }
-  document.getElementById('tab-report').style.display = tab === 'report' ? '' : 'none';
-  document.getElementById('tab-article').style.display = tab === 'article' ? '' : 'none';
+  // Data tab panels
   document.getElementById('tab-tracking').style.display = tab === 'tracking' ? '' : 'none';
   var tabRecurring = document.getElementById('tab-recurring');
   if (tabRecurring) tabRecurring.style.display = tab === 'recurring' ? '' : 'none';
   var tabDemand = document.getElementById('tab-demand');
   if (tabDemand) { tabDemand.style.display = tab === 'demand' ? '' : 'none'; }
 
-  var archiveNav = document.getElementById('archive-nav');
-  if (archiveNav && _archiveData.length > 1) {
-    archiveNav.style.display = (tab === 'report' || tab === 'article') ? 'flex' : 'none';
-  }
-
   // Scroll to the tab panel if called from outside the tab bar
   var panel = document.getElementById('tab-' + tab);
   if (panel) { panel.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+}
+
+// ─── Report post-processing (TOC, Hero, Build highlight) ───
+function postProcessReport(reportEl) {
+  if (!reportEl) return;
+  extractHeroInsight(reportEl);
+  highlightBuildSection(reportEl);
+  buildTOC(reportEl);
+}
+
+function extractHeroInsight(reportEl) {
+  var heroDiv = document.getElementById('hero-insight');
+  if (!heroDiv) return;
+  var blockquote = reportEl.querySelector('blockquote');
+  if (!blockquote) {
+    heroDiv.style.display = 'none';
+    return;
+  }
+  heroDiv.innerHTML = blockquote.innerHTML;
+  heroDiv.style.display = 'block';
+  blockquote.remove();
+}
+
+function highlightBuildSection(reportEl) {
+  var h2s = reportEl.querySelectorAll('h2');
+  h2s.forEach(function(h2) {
+    var text = h2.textContent || '';
+    if (/今日.*构建|构建.*建议|2.?小时|build.*today|today.*build/i.test(text)) {
+      h2.classList.add('build-section');
+    }
+  });
+}
+
+function buildTOC(containerEl) {
+  var tocSidebar = document.getElementById('toc-sidebar');
+  var tocDropdown = document.getElementById('toc-dropdown');
+  if (!tocSidebar && !tocDropdown) return;
+
+  var headings = containerEl.querySelectorAll('h2');
+  if (headings.length < 2) {
+    if (tocSidebar) tocSidebar.style.display = 'none';
+    var tocWrap = document.getElementById('toc-dropdown-wrap');
+    if (tocWrap) tocWrap.style.display = 'none';
+    return;
+  }
+
+  var tocItems = [];
+  headings.forEach(function(h, i) {
+    var id = 'section-' + i;
+    h.id = id;
+    var text = h.textContent.trim();
+    // Remove emoji prefixes for cleaner TOC
+    text = text.replace(/^[\u{1F000}-\u{1FFFF}]\s*|^[🎯📊📖🔍🛰🏭📈🎬📉🔗📝🛍️]\s*/u, '');
+    tocItems.push({ id: id, text: text });
+  });
+
+  // Sidebar TOC (desktop)
+  if (tocSidebar) {
+    var html = '<div class="toc-title">' + (LANG === 'zh' ? '目录' : 'Contents') + '</div>';
+    tocItems.forEach(function(item) {
+      html += '<a href="#' + item.id + '" data-toc="' + item.id + '" onclick="scrollToSection(\'' + item.id + '\');return false;">' + item.text + '</a>';
+    });
+    tocSidebar.innerHTML = html;
+  }
+
+  // Dropdown TOC (mobile)
+  if (tocDropdown) {
+    var optHtml = '<option value="">' + (LANG === 'zh' ? '-- 跳转到 --' : '-- Jump to --') + '</option>';
+    tocItems.forEach(function(item) {
+      optHtml += '<option value="' + item.id + '">' + item.text + '</option>';
+    });
+    tocDropdown.innerHTML = optHtml;
+    tocDropdown.onchange = function() {
+      if (this.value) scrollToSection(this.value);
+    };
+  }
+}
+
+function scrollToSection(id) {
+  var el = document.getElementById(id);
+  if (el) {
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    document.querySelectorAll('.toc-sidebar a').forEach(function(a) {
+      a.classList.toggle('active', a.getAttribute('data-toc') === id);
+    });
+  }
+}
+
+function initReadingProgress() {
+  var reportEl = document.getElementById('tab-report');
+  var progressBar = document.getElementById('reading-progress-bar');
+  if (!reportEl || !progressBar) return;
+
+  var updateProgress = function() {
+    var scrollTop = window.scrollY || document.documentElement.scrollTop;
+    var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    if (docHeight <= 0) return;
+    var pct = Math.min(100, Math.round((scrollTop / docHeight) * 100));
+    progressBar.style.width = pct + '%';
+  };
+
+  window.addEventListener('scroll', updateProgress, { passive: true });
+}
+
+function initBackToTop() {
+  var btn = document.getElementById('btn-back-to-top');
+  if (!btn) return;
+
+  window.addEventListener('scroll', function() {
+    var scrollTop = window.scrollY || document.documentElement.scrollTop;
+    btn.style.display = scrollTop > 400 ? 'flex' : 'none';
+  }, { passive: true });
+
+  btn.addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
 }
 
 // ─── Archive browsing ───
@@ -2587,7 +2871,6 @@ var _archiveData = [];
 var _archiveCache = {};     // date -> {reportHtml, articleHtml}
 var _currentArchiveDate = null;
 var _originalReportHtml = '';
-var _originalArticleHtml = '';
 
 function initArchive(archive) {
   _archiveData = archive || [];
@@ -2610,14 +2893,13 @@ function initArchive(archive) {
   _archiveData.forEach(function(entry) {
     var btn = document.createElement('button');
     btn.className = 'archive-date-btn';
-    if (!entry.has_report || !entry.has_article) {
+    if (!entry.has_report) {
       btn.classList.add('partial');
     }
     var parts = entry.date.split('-');
     btn.textContent = parts[1].replace(/^0/,'') + '/' + parts[2].replace(/^0/,'');
     btn.title = entry.date
-      + (entry.has_report ? '' : ' [' + (LANG === 'zh' ? '无报告' : 'No report') + ']')
-      + (entry.has_article ? '' : ' [' + (LANG === 'zh' ? '无文章' : 'No article') + ']');
+      + (entry.has_report ? '' : ' [' + (LANG === 'zh' ? '无报告' : 'No report') + ']');
     btn.setAttribute('role', 'option');
     btn.setAttribute('aria-selected', 'false');
     btn.addEventListener('click', function() { switchArchiveDate(entry.date); });
@@ -2673,63 +2955,37 @@ function switchArchiveDate(dateStr) {
   // Save original content on first switch
   if (!_originalReportHtml) {
     _originalReportHtml = document.getElementById('tab-report').innerHTML;
-    _originalArticleHtml = document.getElementById('tab-article').innerHTML;
   }
 
   if (isToday) {
     document.getElementById('tab-report').innerHTML = _originalReportHtml;
-    document.getElementById('tab-article').innerHTML = _originalArticleHtml;
+    postProcessReport(document.getElementById('tab-report'));
     return;
   }
 
   // Check cache
   if (_archiveCache[dateStr]) {
     document.getElementById('tab-report').innerHTML = _archiveCache[dateStr].reportHtml;
-    document.getElementById('tab-article').innerHTML = _archiveCache[dateStr].articleHtml;
+    postProcessReport(document.getElementById('tab-report'));
     return;
   }
 
   // Resolve bilingual content for archive entries
   var entryReportMd = '';
-  var entryArticleMd = '';
   if (LANG === 'en') {
     entryReportMd = entry.report_md_en || entry.report_md || '';
-    entryArticleMd = entry.article_md_en || entry.article_md || '';
   } else {
     entryReportMd = entry.report_md || '';
-    entryArticleMd = entry.article_md || '';
   }
 
-  // Render archive content
+  // Render archive report content
   var reportHtml = entry.has_report && entryReportMd
     ? safeMarked(entryReportMd)
     : '<div class="empty">' + t('archiveNoReport') + '</div>';
 
-  var articleHtml = '';
-  if (entry.has_article && entryArticleMd) {
-    articleHtml = '<div class="article-actions">' +
-      '<button class="btn-article-action" onclick="downloadArchiveArticleTxt(\'' + dateStr + '\')">' +
-        '<svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>' +
-        ' ' + t('btnDownload') + '</button>' +
-      '<button class="btn-article-action" onclick="copyArchiveArticlePlain(\'' + dateStr + '\')">' +
-        '<svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>' +
-        ' ' + t('btnCopyPlain') + '</button>' +
-      '<button class="btn-article-action" onclick="copyArchiveArticleNotepad(\'' + dateStr + '\')">' +
-        '<svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>' +
-        ' ' + t('btnCopyNotepad') + '</button>' +
-      '<span class="copy-toast" id="copy-toast-archive">' + t('toastCopied') + '</span>' +
-    '</div>';
-    if (entry.article_meta && entry.article_meta.type_label) {
-      articleHtml += '<div class="article-meta"><span class="badge badge-live">' + entry.article_meta.type_label + '</span></div>';
-    }
-    articleHtml += safeMarked(entryArticleMd);
-  } else {
-    articleHtml = '<div class="empty">' + t('archiveNoArticle') + '</div>';
-  }
-
-  _archiveCache[dateStr] = { reportHtml: reportHtml, articleHtml: articleHtml };
+  _archiveCache[dateStr] = { reportHtml: reportHtml };
   document.getElementById('tab-report').innerHTML = reportHtml;
-  document.getElementById('tab-article').innerHTML = articleHtml;
+  postProcessReport(document.getElementById('tab-report'));
 }
 
 function highlightArchiveDate(dateStr) {
@@ -2745,10 +3001,6 @@ function updateArchiveArrows(dateStr) {
   var idx = _archiveData.findIndex(function(e) { return e.date === dateStr; });
   document.getElementById('archive-prev').disabled = (idx < 0 || idx >= _archiveData.length - 1);
   document.getElementById('archive-next').disabled = (idx <= 0);
-}
-
-function getArchiveEntry(dateStr) {
-  return _archiveData.find(function(e) { return e.date === dateStr; });
 }
 
 function downloadArchiveArticleTxt(dateStr) {
