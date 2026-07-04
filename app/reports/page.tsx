@@ -10,11 +10,11 @@ export const metadata: Metadata = {
   description:
     'Browse all daily signal intelligence reports. Each report contains product opportunities, trend analysis, and buildable insights for indie developers.',
   robots: { index: true, follow: true },
-  alternates: { canonical: 'https://aimfast.dev/reports/' },
+  alternates: { canonical: 'https://www.aimfast.dev/reports/' },
   openGraph: {
     title: 'Daily Reports — AimFast.Dev',
     description: 'Browse daily signal intelligence reports with product opportunities and trend analysis.',
-    url: 'https://aimfast.dev/reports/',
+    url: 'https://www.aimfast.dev/reports/',
     siteName: 'AimFast.Dev',
   },
   twitter: {
@@ -68,13 +68,13 @@ export default function ReportsIndexPage() {
     '@type': 'CollectionPage',
     name: 'Daily Reports — AimFast.Dev',
     description: 'Daily signal intelligence reports for indie developers.',
-    url: 'https://aimfast.dev/reports/',
+    url: 'https://www.aimfast.dev/reports/',
     mainEntity: {
       '@type': 'ItemList',
       itemListElement: reports.map((r, i) => ({
         '@type': 'ListItem',
         position: i + 1,
-        url: `https://aimfast.dev/reports/${r.date}/`,
+        url: `https://www.aimfast.dev/reports/${r.date}/`,
       })),
     },
   };

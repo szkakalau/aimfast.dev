@@ -265,7 +265,7 @@ hype_signal_patterns = [
       "title": "...",
       "score": 32,
       "action_triggered": true,
-      "landing_page_url": "https://aimfast.dev/xxx/",
+      "landing_page_url": "https://www.aimfast.dev/xxx/",
       "7day_uv": null,
       "7day_signups": null,
       "status": "pending"

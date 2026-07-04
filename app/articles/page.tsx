@@ -10,11 +10,11 @@ export const metadata: Metadata = {
   description:
     'Deep-dive signal analysis articles. Each article unpacks a product opportunity with evidence, plain-English translation, and actionable steps.',
   robots: { index: true, follow: true },
-  alternates: { canonical: 'https://aimfast.dev/articles/' },
+  alternates: { canonical: 'https://www.aimfast.dev/articles/' },
   openGraph: {
     title: 'Planet Articles — AimFast.Dev',
     description: 'Deep-dive product opportunity analysis for indie developers.',
-    url: 'https://aimfast.dev/articles/',
+    url: 'https://www.aimfast.dev/articles/',
     siteName: 'AimFast.Dev',
   },
   twitter: {
@@ -70,13 +70,13 @@ export default function ArticlesIndexPage() {
     '@type': 'CollectionPage',
     name: 'Planet Articles — AimFast.Dev',
     description: 'Deep-dive signal analysis articles for indie developers.',
-    url: 'https://aimfast.dev/articles/',
+    url: 'https://www.aimfast.dev/articles/',
     mainEntity: {
       '@type': 'ItemList',
       itemListElement: articles.map((a, i) => ({
         '@type': 'ListItem',
         position: i + 1,
-        url: `https://aimfast.dev/articles/${a.slug}/`,
+        url: `https://www.aimfast.dev/articles/${a.slug}/`,
       })),
     },
   };

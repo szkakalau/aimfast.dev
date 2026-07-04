@@ -34,8 +34,8 @@ export async function generateMetadata({
 
   const { fm } = parseFrontmatterWithBody(source);
   const title = fm.title || `Daily Report — ${date}`;
-  const canonicalUrl = `https://aimfast.dev/reports/${date}/en/`;
-  const zhUrl = `https://aimfast.dev/reports/${date}/`;
+  const canonicalUrl = `https://www.aimfast.dev/reports/${date}/en/`;
+  const zhUrl = `https://www.aimfast.dev/reports/${date}/`;
 
   return {
     title: `${title} — AimFast.Dev`,
@@ -55,7 +55,7 @@ export async function generateMetadata({
       locale: 'en_US',
       images: [
         {
-          url: 'https://aimfast.dev/og-image.png',
+          url: 'https://www.aimfast.dev/og-image.png',
           width: 1200,
           height: 630,
           alt: 'AimFast.Dev — Daily Signal Intelligence',
@@ -66,7 +66,7 @@ export async function generateMetadata({
       card: 'summary_large_image',
       title: `${title} — AimFast.Dev`,
       description: fm.summary || 'Daily product opportunities from 14 signal sources.',
-      images: ['https://aimfast.dev/og-image.png'],
+      images: ['https://www.aimfast.dev/og-image.png'],
     },
   };
 }
@@ -106,8 +106,8 @@ export default async function ReportEnPage({
 
   const { fm, body } = parseFrontmatterWithBody(source);
   const title = fm.title || `Daily Report — ${date}`;
-  const canonicalUrl = `https://aimfast.dev/reports/${date}/en/`;
-  const zhUrl = `https://aimfast.dev/reports/${date}/`;
+  const canonicalUrl = `https://www.aimfast.dev/reports/${date}/en/`;
+  const zhUrl = `https://www.aimfast.dev/reports/${date}/`;
 
   const { content } = await compileMDX({
     source: body,

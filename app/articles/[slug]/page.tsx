@@ -44,11 +44,11 @@ export async function generateMetadata({
 
   const fm = parseFrontmatter(source);
   const title = fm.title || slug;
-  const canonicalUrl = `https://aimfast.dev/articles/${slug}/`;
+  const canonicalUrl = `https://www.aimfast.dev/articles/${slug}/`;
 
   const alternates: Record<string, string> = { canonical: canonicalUrl };
   if (hasEnglishVersion(slug)) {
-    alternates['languages'] = { en: `https://aimfast.dev/articles/${slug}/en/` } as any;
+    alternates['languages'] = { en: `https://www.aimfast.dev/articles/${slug}/en/` } as any;
   }
 
   return {
@@ -66,7 +66,7 @@ export async function generateMetadata({
       locale: 'zh_CN',
       images: [
         {
-          url: 'https://aimfast.dev/og-image.png',
+          url: 'https://www.aimfast.dev/og-image.png',
           width: 1200,
           height: 630,
           alt: 'AimFast.Dev — Daily Signal Intelligence',
@@ -77,7 +77,7 @@ export async function generateMetadata({
       card: 'summary_large_image',
       title: `${title} — AimFast.Dev`,
       description: fm.summary || 'Deep-dive signal analysis for indie developers.',
-      images: ['https://aimfast.dev/og-image.png'],
+      images: ['https://www.aimfast.dev/og-image.png'],
     },
   };
 }
@@ -121,8 +121,8 @@ export default async function ArticlePage({
   // Parse frontmatter
   const frontmatter = parseFrontmatter(source);
   const content = extractBody(source);
-  const canonicalUrl = `https://aimfast.dev/articles/${slug}/`;
-  const enUrl = `https://aimfast.dev/articles/${slug}/en/`;
+  const canonicalUrl = `https://www.aimfast.dev/articles/${slug}/`;
+  const enUrl = `https://www.aimfast.dev/articles/${slug}/en/`;
   const hasEn = hasEnglishVersion(slug);
 
   const { content: mdxContent } = await compileMDX({
