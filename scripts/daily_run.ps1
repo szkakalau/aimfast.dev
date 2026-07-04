@@ -131,6 +131,54 @@ try {
     Write-Log "  [Enrich] FAIL (non-fatal): $_"
 }
 
+# --- Step 2.6: Merge Competitor Targets (merge Dashboard-added pending targets) ---
+
+Write-Log ""
+Write-Log "--- Step 2.6: Merge Competitor Targets ---"
+
+try {
+    $output = & $Python -m scripts.merge_competitor_targets 2>&1
+    if ($LASTEXITCODE -eq 0) {
+        Write-Log "  [MergeTargets] OK"
+    } else {
+        Write-Log "  [MergeTargets] WARN (non-fatal, exit=$LASTEXITCODE)"
+    }
+} catch {
+    Write-Log "  [MergeTargets] FAIL (non-fatal): $_"
+}
+
+# --- Step 2.7: Competitor Matching ---
+
+Write-Log ""
+Write-Log "--- Step 2.6: Competitor Matching (Phase 1 双引擎) ---"
+
+try {
+    $output = & $Python -m scripts.match_competitors 2>&1
+    if ($LASTEXITCODE -eq 0) {
+        Write-Log "  [MatchCompetitor] OK"
+    } else {
+        Write-Log "  [MatchCompetitor] WARN (non-fatal, exit=$LASTEXITCODE)"
+    }
+} catch {
+    Write-Log "  [MatchCompetitor] FAIL (non-fatal): $_"
+}
+
+# --- Step 2.7: Competitor Intel Generation ---
+
+Write-Log ""
+Write-Log "--- Step 2.7: Competitor Intel (LLM) ---"
+
+try {
+    $output = & $Python -m scripts.generate_competitor_intel 2>&1
+    if ($LASTEXITCODE -eq 0) {
+        Write-Log "  [CompetitorIntel] OK"
+    } else {
+        Write-Log "  [CompetitorIntel] WARN (non-fatal, exit=$LASTEXITCODE)"
+    }
+} catch {
+    Write-Log "  [CompetitorIntel] FAIL (non-fatal): $_"
+}
+
 # --- Step 3: Daily Report ---
 
 Write-Log ""
@@ -344,7 +392,7 @@ Write-Log "--- Step 13: Deploy Dashboard Data & SEO Content ---"
 
 try {
     Push-Location $ProjectRoot
-    git add public/dashboard/data/dashboard.json tracking/recurring_signals.json tracking/demand_radar.json public/sitemap.xml content/reports/ content/articles/ public/*/index.html daily/*/signals.json 2>&1 | Out-Null
+    git add public/dashboard/data/dashboard.json tracking/recurring_signals.json tracking/demand_radar.json tracking/competitor_targets.json public/sitemap.xml content/reports/ content/articles/ public/*/index.html daily/*/signals.json daily/*/competitor_matches.json daily/*/competitor_intel.json 2>&1 | Out-Null
 
     # Check if there are staged changes
     $diffOut = git diff --cached --name-only 2>&1

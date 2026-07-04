@@ -1,0 +1,65 @@
+{
+  "_schema": "Competitor & Topic Tracking Targets — 用户指定的竞品/话题追踪列表",
+  "_version": "1.1",
+  "_limit": 10,
+  "_matching": "语义匹配为主（contains + fuzzy）+ 关键词匹配兜底",
+  "_updated": "2026-07-05 — Phase 3 替换 demo 为真实目标",
+  "targets": [
+    {
+      "id": "target-001",
+      "name": "Cursor",
+      "type": "competitor",
+      "aliases": ["cursor", "cursor.sh", "cursor ide", "cursor ai", "cursor editor"],
+      "keywords": ["AI code editor", "copilot alternative", "vscode fork", "ai programming", "agent ide"],
+      "added_at": "2026-07-05",
+      "status": "active",
+      "paused_at": null,
+      "notes": "AI编程编辑器标杆 — 关注功能更新、用户体验讨论、竞品对比"
+    },
+    {
+      "id": "target-002",
+      "name": "Vercel",
+      "type": "platform",
+      "aliases": ["vercel", "vercel.com", "zeit", "next.js"],
+      "keywords": ["deployment platform", "edge functions", "serverless", "frontend cloud", "fluid compute"],
+      "added_at": "2026-07-05",
+      "status": "active",
+      "paused_at": null,
+      "notes": "开发者平台标杆 — 关注产品更新、定价变化、竞品对比"
+    },
+    {
+      "id": "target-003",
+      "name": "AI Agent",
+      "type": "topic",
+      "aliases": ["ai agent", "ai agents", "agentic", "agent framework", "autonomous agent", "llm agent"],
+      "keywords": ["agent", "crewai", "autogpt", "langgraph", "swarm", "multi-agent", "tool calling", "function calling", "agent orchestration"],
+      "added_at": "2026-07-05",
+      "status": "active",
+      "paused_at": null,
+      "notes": "AI Agent 赛道追踪 — 框架、工具链、开源项目、创业公司"
+    },
+    {
+      "id": "target-004",
+      "name": "Indie Hacker",
+      "type": "topic",
+      "aliases": ["indie hacker", "indie hackers", "indiehacker", "indie dev", "solo founder", "bootstrapper"],
+      "keywords": ["indie hacker", "bootstrapping", "mrr", "saas", "side project", "solo founder", "one person business", "build in public"],
+      "added_at": "2026-07-05",
+      "status": "active",
+      "paused_at": null,
+      "notes": "独立开发者生态 — 关注变现方式、工具链、社区趋势"
+    },
+    {
+      "id": "target-005",
+      "name": "Open Source Business",
+      "type": "topic",
+      "aliases": ["open source business", "open source monetization", "oss business", "commercial open source", "open core"],
+      "keywords": ["open source", "oss", "commercial oss", "open core", "bsl", "agpl", "fair source", "source available", "monetization", "license change"],
+      "added_at": "2026-07-05",
+      "status": "active",
+      "paused_at": null,
+      "notes": "开源商业化追踪 — 许可证变化、融资、社区争议、新模式"
+    }
+  ],
+  "updated_at": "2026-07-05T00:00:00+08:00"
+}

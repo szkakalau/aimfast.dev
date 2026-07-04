@@ -223,6 +223,25 @@ def collect_dashboard_data() -> dict:
         except Exception as e:
             print(f"[Dashboard] [WARN] Failed to read lessons.json: {e}")
 
+    # 3h. Competitor tracking targets (for Dashboard UI)
+    competitor_targets = []
+    ct_path = TRACKING_DIR / "competitor_targets.json"
+    if ct_path.exists():
+        try:
+            ct_data = json.loads(ct_path.read_text(encoding="utf-8"))
+            competitor_targets = ct_data.get("targets", [])
+        except Exception as e:
+            print(f"[Dashboard] [WARN] Failed to read competitor_targets.json: {e}")
+
+    # 3i. Competitor intelligence (LLM-generated daily)
+    competitor_intel = {}
+    ci_path = DAILY_DIR / effective_date / "competitor_intel.json"
+    if ci_path.exists():
+        try:
+            competitor_intel = json.loads(ci_path.read_text(encoding="utf-8"))
+        except Exception as e:
+            print(f"[Dashboard] [WARN] Failed to read competitor_intel.json: {e}")
+
     # 4. Daily report (markdown) — bilingual: zh (default) + en (optional)
     report_md = ""
     report_md_en = ""
@@ -275,6 +294,8 @@ def collect_dashboard_data() -> dict:
         "bets": bets_data.get("bets", []),
         "lessons": lessons_data,
         "watchlist": watchlist_data.get("watched", []),
+        "competitor_targets": competitor_targets,
+        "competitor_intel": competitor_intel,
         "report_md": report_md,
         "report_md_en": report_md_en,
         "article_md": article_md,
@@ -315,7 +336,8 @@ def run(date_str: str | None = None) -> str:
     print(f"[Dashboard] Data saved → {output_path}")
     art_zh = len(data['article_md'])
     art_en = len(data['article_md_en'])
-    print(f"[Dashboard] {len(data['signals'])} signals | {len(data['history'])} days history | {len(data['opportunities'])} opportunities | {len(data['recurring_signals'])} recurring | {demand_count} demands | article: {art_zh} chars (zh) / {art_en} chars (en)")
+    intel_count = len(data.get('competitor_intel', {}).get('targets', []))
+    print(f"[Dashboard] {len(data['signals'])} signals | {len(data['history'])} days history | {len(data['opportunities'])} opportunities | {len(data['recurring_signals'])} recurring | {demand_count} demands | {intel_count} competitor intel | article: {art_zh} chars (zh) / {art_en} chars (en)")
     return str(output_path)
 
 

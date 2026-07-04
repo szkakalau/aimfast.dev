@@ -30,6 +30,19 @@ def load_signals(date_str: str) -> list[dict]:
     return data.get("signals", [])
 
 
+def load_competitor_intel(date_str: str) -> dict | None:
+    """加载竞品情报（Phase 2 — 双引擎架构：监控引擎输出）。"""
+    path = DAILY_DIR / date_str / "competitor_intel.json"
+    if not path.exists():
+        print(f"[日报] competitor_intel.json 不存在（可能未运行 generate_competitor_intel.py）")
+        return None
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, KeyError) as e:
+        print(f"[日报] 竞品情报加载失败: {e}")
+        return None
+
+
 def load_methodology() -> str:
     if METHODOLOGY_PATH.exists():
         return METHODOLOGY_PATH.read_text(encoding="utf-8")
@@ -215,6 +228,32 @@ def _build_system_prompt() -> str:
 - 证据表格: 证据 | 讨论量 | 白话含义
 - 读者行动表: 技术爱好者 | Builder | 谨慎点
 
+
+    ### 🎯 竞品动态（Phase 2 新增 — 用户追踪的竞品/话题情报）
+    **目的**: 展示用户主动追踪的竞品/话题的最新动态。这不是"市场趋势"，而是用户**指定的追踪目标**的具体情报。
+
+    **数据来源**: competitor_intel.json（竞品情报引擎 + LLM 处理后的结构化输出）。
+
+    **必须包含**：
+    - **每个追踪目标一小节**，格式如下：
+      ```
+      #### 目标名（类型标签）
+      - 📊 本周提及 X 次（↑/↓/→ 趋势）
+      - 情感倾向：正面/负面/中性
+      - 💬 关键动态（最多 2 条，精选最有价值的）
+        - [来源] 原文核心 → 竞品影响 → 对你有什么用
+      - 🗑️ 已过滤 N 条噪音
+      - 📌 建议行动：[action_label]
+      ```
+    - **如果今日无追踪目标**：写"未设置追踪目标。[去 Dashboard 添加 →](/dashboard/)"
+    - **如果某目标今日无匹配**：写"今日无相关提及"并附上周趋势
+    - **篇幅控制**：每个目标 100-200 字，总篇幅不超过 600 字
+
+    **写作铁律**：
+    - 直接引用 LLM 已生成的 highlights 和 suggested_actions，不要重新分析
+    - 竞品情报的价值在于"对你有什么用"，不要写成新闻报道
+    - 如果 LLM 返回了 _fallback: true，标注"⚠️ LLM 不可用，数据可能不完整"
+
 ### 🔍 发现机会
 4 个子板块，每个必须遵守原子结构:
 - Solo-founder 产品发布
@@ -280,8 +319,59 @@ def _build_system_prompt() -> str:
 - 🆕 **C端消费机会板块为必选项**，即使今日 C 端信号较少，也要基于现有数据给出至少 1 个 C 端方向（可以是从开发者信号中推导出的消费者版本）"""
 
 
-def _build_user_prompt(signals: list[dict], categories: dict, date_str: str) -> str:
-    """构建用户提示：信号数据 + 具体生成指令。"""
+def _format_competitor_intel(intel_data: dict) -> str:
+    """将竞品情报 JSON 格式化为 LLM 可读的文本块。"""
+    if not intel_data:
+        return "**无竞品追踪数据**"
+
+    targets = intel_data.get("targets", [])
+    if not targets:
+        return "**今日无追踪目标**"
+
+    lines = [f"共 {len(targets)} 个追踪目标，以下为每个目标的 LLM 分析结果：\n"]
+    for t in targets:
+        tname = t.get("target_name", "未知")
+        ttype = t.get("target_type", "competitor")
+        stats = t.get("stats", {})
+        highlights = t.get("highlights", [])
+        actions = t.get("suggested_actions", [])
+        noise = t.get("noise_summary", "")
+        is_fallback = t.get("_fallback", False)
+
+        type_label = {"competitor": "竞品", "topic": "话题", "person": "人物", "tech": "技术", "platform": "平台"}.get(ttype, ttype)
+
+        lines.append(f"### {tname}（{type_label}）")
+        if is_fallback:
+            lines.append("⚠️ LLM 不可用，以下为降级数据")
+        lines.append(f"- 本周提及: {stats.get('weekly_mentions', 0)} 次（趋势: {stats.get('trend', 'stable')}）")
+        lines.append(f"- 情感倾向: {stats.get('sentiment', 'unknown')}")
+        lines.append(f"- 信号数: {stats.get('signal_count', 0)} | 噪音数: {stats.get('noise_count', 0)}")
+        lines.append(f"- 核心叙事: {stats.get('core_narrative', '无')}")
+
+        if highlights:
+            lines.append(f"- 💬 关键动态（{len(highlights)} 条）:")
+            for h in highlights[:3]:  # 最多 3 条给 LLM 参考
+                lines.append(f"    - [{h.get('source', '?')}] {h.get('original_text', '')[:150]}")
+                lines.append(f"      → 翻译: {h.get('translation', '')[:150]}")
+                lines.append(f"      → 竞品影响: {h.get('competitor_impact', '')[:150]}")
+                lines.append(f"      → 对你有什么用: {h.get('your_action', '')[:150]}")
+                lines.append(f"      → 相关性: {h.get('relevance', 'medium')}")
+
+        if actions:
+            lines.append(f"- 📌 建议行动:")
+            for a in actions:
+                lines.append(f"    - [{a.get('action', '?')}] {a.get('label', '')}")
+
+        if noise:
+            lines.append(f"- 🗑️ {noise}")
+
+        lines.append("")
+
+    return "\n".join(lines)
+
+
+def _build_user_prompt(signals: list[dict], categories: dict, date_str: str, competitor_intel: dict | None = None) -> str:
+    """构建用户提示：信号数据 + 竞品情报 + 具体生成指令。"""
     top5 = signals[:5]
     top_signal = top5[0] if top5 else None
 
@@ -364,6 +454,10 @@ def _build_user_prompt(signals: list[dict], categories: dict, date_str: str) -> 
 
 {chr(10).join(sections)}
 
+## 🎯 竞品追踪情报（Phase 2 — 用户主动追踪的竞品/话题）
+
+{_format_competitor_intel(competitor_intel) if competitor_intel else '**无竞品追踪数据**（未设置追踪目标或今日未运行竞品情报管线）'}
+
 ---
 
 请基于以上数据生成 {date_str} 的 AimFast.Dev日报。
@@ -374,24 +468,27 @@ def _build_user_prompt(signals: list[dict], categories: dict, date_str: str) -> 
 2. **今日 2 小时构建**: {'如果 Top1 信号达到 Action 阈值（≥' + str(min_score) + ' 分 + 跨平台 ≥' + str(min_platforms) + '），生成完整产品方案，包括产品名、定价、验证路径、为什么不选另外两个方向' if top_signal and top_signal.get('score', 0) >= min_score and top_signal.get('cross_platform_count', 0) >= min_platforms else '即使未达 Action 阈值，也从数据中找出一个可 2 小时构建的方向'}
 3. **Top 3 信号**: 优先选跨平台验证的信号——真实趋势而非单一平台噪音
 4. **白话简报**: 用表格呈现——证据 | 讨论量 | 白话含义，加读者行动表
-5. **每个子板块**: 严格遵守 信号→白话解读→关键判断→反向视角 四段式
-6. **技术术语**: 首次出现必须白话解释
-7. **定价**: 每个产品推荐必须有定价锚点和验证路径
-8. **无数据板块**: 如实写"今日无显著发现"，不要编造
-9. **篇幅**: 3000-6000 字，比常规日报更详细
-10. 🆕 **C端消费机会板块为必填**: 从 c_end 分类信号中提取至少 3 个面向普通消费者的产品机会。如果 c_end 信号不足 3 个，从其他分类中发掘可以"C端化"的信号。每个 C 端机会必须回答: 普通人用它做什么？为什么愿意付钱？用什么渠道验证（非 Landing Page）？"""
+5. **竞品动态**: 🆕 从上方「竞品追踪情报」数据中提取每个追踪目标的 highlights 和 suggested_actions，按系统提示中的格式写入日报。直接引用 LLM 已生成的分析，不要重新解读。无数据时写"未设置追踪目标"。
+6. **每个子板块**: 严格遵守 信号→白话解读→关键判断→反向视角 四段式
+7. **技术术语**: 首次出现必须白话解释
+8. **定价**: 每个产品推荐必须有定价锚点和验证路径
+9. **无数据板块**: 如实写"今日无显著发现"，不要编造
+10. **篇幅**: 3000-6000 字，比常规日报更详细
+11. 🆕 **C端消费机会板块为必填**: 从 c_end 分类信号中提取至少 3 个面向普通消费者的产品机会。如果 c_end 信号不足 3 个，从其他分类中发掘可以"C端化"的信号。每个 C 端机会必须回答: 普通人用它做什么？为什么愿意付钱？用什么渠道验证（非 Landing Page）？"""
 
 
-def generate_report(signals: list[dict], date_str: str) -> str:
-    """调用 LLM 生成完整五层日报。"""
+def generate_report(signals: list[dict], date_str: str, competitor_intel: dict | None = None) -> str:
+    """调用 LLM 生成完整五层日报（Phase 2: 含竞品动态板块）。"""
     if not signals:
         return f"# AimFast.Dev日报 — {date_str}\n\n> 今日无信号数据。\n"
 
     categories = _categorize_signals(signals)
     system_prompt = _build_system_prompt()
-    user_prompt = _build_user_prompt(signals, categories, date_str)
+    user_prompt = _build_user_prompt(signals, categories, date_str, competitor_intel)
 
     print(f"[日报] 上下文: {len(system_prompt)} + {len(user_prompt)} = {len(system_prompt) + len(user_prompt)} 字符")
+    if competitor_intel:
+        print(f"[日报] 竞品情报: {competitor_intel.get('intel_count', 0)} 个目标已加载")
 
     report = chat(
         system_prompt=system_prompt,
@@ -429,7 +526,12 @@ def run(date_str: str | None = None) -> str:
     # 按 score 降序
     signals.sort(key=lambda s: s.get("score", 0), reverse=True)
 
-    report = generate_report(signals, date)
+    # Phase 2: 加载竞品情报（双引擎架构 — 监控引擎输出）
+    competitor_intel = load_competitor_intel(date)
+    if competitor_intel:
+        print(f"[日报] 竞品情报已加载: {competitor_intel.get('intel_count', 0)} 个目标")
+
+    report = generate_report(signals, date, competitor_intel)
 
     output_dir = DAILY_DIR / date
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -445,10 +547,13 @@ def run(date_str: str | None = None) -> str:
 
 
 if __name__ == "__main__":
-    today = datetime.now(TZ_SHANGHAI).strftime("%Y-%m-%d")
-    report = run(today)
+    if len(sys.argv) > 1:
+        date_str = sys.argv[1]
+    else:
+        date_str = datetime.now(TZ_SHANGHAI).strftime("%Y-%m-%d")
+    report = run(date_str)
     if report:
         try:
             print("\n" + report[:500] + "...")
         except UnicodeEncodeError:
-            print(f"\n[Report preview: {len(report)} chars, see daily/{today}/report.md]")
+            print(f"\n[Report preview: {len(report)} chars, see daily/{date_str}/report.md]")

@@ -1102,6 +1102,47 @@
     .toc-sidebar { display: block; }
     .toc-dropdown-wrap { display: none; }
   }
+
+  /* ── Competitor Intel Zone (Phase 1 — 双引擎) ── */
+  .ci-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-3); grid-column: 1 / -1; }
+  .ci-card h2 { font-size: 0.95rem; font-weight: 600; display: flex; align-items: center; gap: var(--space-1); }
+  .ci-header { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-2); margin-bottom: var(--space-2); }
+  .ci-target-list { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3); }
+  .ci-target-card { border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-2); background: var(--color-surface-alt); transition: border-color var(--duration-fast) var(--ease-out); }
+  .ci-target-card:hover { border-color: var(--color-accent); }
+  .ci-target-header { display: flex; align-items: center; gap: var(--space-1); margin-bottom: var(--space-1); }
+  .ci-target-name { font-weight: 600; font-size: 0.88rem; flex: 1; }
+  .ci-target-type { font-size: 0.62rem; padding: 1px 8px; border-radius: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em; white-space: nowrap; }
+  .ci-type-competitor { background: #fee2e2; color: #dc2626; }
+  .ci-type-topic { background: #dbeafe; color: #2563eb; }
+  .ci-type-person { background: #fef3c7; color: #d97706; }
+  .ci-type-tech { background: #f3e8ff; color: #9333ea; }
+  .ci-type-platform { background: #dcfce7; color: #16a34a; }
+  .ci-stats { display: flex; gap: var(--space-2); font-size: 0.72rem; color: var(--color-text-muted); margin-bottom: var(--space-2); flex-wrap: wrap; }
+  .ci-stat { display: flex; align-items: center; gap: 3px; }
+  .ci-trend-up { color: var(--color-green); }
+  .ci-trend-down { color: var(--color-red); }
+  .ci-trend-stable { color: var(--color-text-muted); }
+  .ci-highlight { padding: var(--space-1) 0; border-bottom: 1px solid var(--color-border); font-size: 0.78rem; }
+  .ci-highlight:last-child { border-bottom: none; }
+  .ci-hl-source { font-size: 0.62rem; font-family: var(--font-mono); color: var(--color-accent); font-weight: 600; }
+  .ci-hl-text { color: var(--color-text-secondary); margin: 2px 0; }
+  .ci-hl-action { color: var(--color-green); font-size: 0.72rem; margin-top: 2px; }
+  .ci-hl-action:before { content: '→ '; }
+  .ci-suggested-actions { display: flex; gap: var(--space-1); margin-top: var(--space-2); flex-wrap: wrap; }
+  .ci-btn { padding: 4px 10px; border-radius: var(--radius-sm); font-size: 0.72rem; cursor: pointer; border: 1px solid var(--color-border); background: var(--color-surface); color: var(--color-text); font-family: var(--font-body); transition: all var(--duration-fast) var(--ease-out); }
+  .ci-btn:hover { border-color: var(--color-accent); color: var(--color-accent); }
+  .ci-btn.primary { background: var(--color-accent); color: var(--color-on-accent); border-color: var(--color-accent); }
+  .ci-btn.ignore { color: var(--color-text-muted); }
+  .ci-no-intel { color: var(--color-text-muted); font-size: 0.85rem; text-align: center; padding: var(--space-3); }
+  .ci-add-target { display: inline-flex; align-items: center; gap: 4px; font-size: 0.75rem; color: var(--color-accent); cursor: pointer; border: 1px dashed var(--color-accent-muted); border-radius: var(--radius-md); padding: 6px 14px; background: transparent; font-family: var(--font-body); transition: all var(--duration-fast) var(--ease-out); }
+  .ci-add-target:hover { background: var(--color-accent-muted); border-color: var(--color-accent); }
+  .ci-empty { text-align: center; padding: var(--space-4); color: var(--color-text-muted); font-size: 0.85rem; }
+  .ci-target-meta { font-size: 0.68rem; color: var(--color-text-muted); margin-top: 2px; }
+
+  @media (max-width: 768px) {
+    .ci-target-list { grid-template-columns: 1fr; }
+  }
 </style>
 </head>
 <body>
@@ -1142,6 +1183,23 @@
         <div class="hero-bet-count" id="hero-signal-count">--</div>
         <div class="hero-sub" id="hero-sub-signals">from 11 sources</div>
       </div>
+    </div>
+  </div>
+
+  <!-- ═══ Competitor Intelligence Zone (Phase 1 — 双引擎：监控引擎) ═══ -->
+  <div class="ci-card" id="card-competitor">
+    <div class="ci-header">
+      <h2 id="ci-title">
+        <svg class="icon icon-sm icon-accent" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><circle cx="5" cy="5" r="2"/><circle cx="19" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/></svg>
+        <span id="ci-label">🎯 竞品动态</span>
+      </h2>
+      <button class="ci-add-target" id="btn-add-target" onclick="showAddTargetForm()" title="添加追踪目标">
+        + <span id="ci-add-text">添加追踪</span>
+      </button>
+    </div>
+    <!-- Target list (rendered by JS) -->
+    <div id="ci-body">
+      <div class="ci-empty" id="ci-empty">暂无竞品追踪目标。<br>点击「+ 添加追踪」输入你关心的竞品或话题。</div>
     </div>
   </div>
 
@@ -1555,6 +1613,38 @@ var I18N = (function() {
       bulkObserve: '👁 批量观察',
       bulkExport: '↓ 导出 CSV',
 
+      // Competitor Intel (Phase 1)
+      ciTitle: '🎯 竞品动态',
+      ciAddTarget: '添加追踪',
+      ciEmpty: '暂无竞品追踪目标。<br>点击「+ 添加追踪」输入你关心的竞品或话题。',
+      ciNoIntel: '今日暂无竞品情报。',
+      ciMentions: '提及',
+      ciTrendUp: '↑',
+      ciTrendDown: '↓',
+      ciTrendStable: '→',
+      ciNoise: '已过滤',
+      ciRelevanceHigh: '高价值',
+      ciRelevanceMed: '中等',
+      ciActionDeepDive: '深入了解',
+      ciActionBuild: '考虑做工具',
+      ciActionIgnore: '忽略',
+      ciTypeCompetitor: '竞品',
+      ciTypeTopic: '话题',
+      ciTypePerson: '人物',
+      ciTypeTech: '技术',
+      ciTypePlatform: '平台',
+      ciAddDialogTitle: '添加追踪目标',
+      ciAddNamePlaceholder: '名称（如 "Polymarket Whale"）',
+      ciAddTypeLabel: '类型',
+      ciAddAliasesPlaceholder: '别名（逗号分隔，如 "polymarket, polymarket.com"）',
+      ciAddKeywordsPlaceholder: '关键词（逗号分隔）',
+      ciAddNotesPlaceholder: '备注（可选）',
+      ciAddConfirm: '添加',
+      ciAddCancel: '取消',
+      ciTooMany: '最多追踪 10 个目标，请先删除一些。',
+      ciDeleted: '已删除',
+      ciSaved: '已保存到 localStorage（下次管线运行后生效）',
+
       // Misc
       miscNoData: '无数据',
       miscSignalsTableAria: 'Top 10 信号',
@@ -1760,6 +1850,38 @@ var I18N = (function() {
       bulkWatch: '★ Watch',
       bulkObserve: '👁 Observe',
       bulkExport: '↓ Export CSV',
+
+      // Competitor Intel (Phase 1)
+      ciTitle: '🎯 Competitor Intel',
+      ciAddTarget: 'Add Target',
+      ciEmpty: 'No tracking targets yet.<br>Click "+ Add Target" to track competitors or topics.',
+      ciNoIntel: 'No competitor intel for today.',
+      ciMentions: 'mentions',
+      ciTrendUp: '↑',
+      ciTrendDown: '↓',
+      ciTrendStable: '→',
+      ciNoise: 'filtered',
+      ciRelevanceHigh: 'High Value',
+      ciRelevanceMed: 'Medium',
+      ciActionDeepDive: 'Deep Dive',
+      ciActionBuild: 'Build Tool',
+      ciActionIgnore: 'Ignore',
+      ciTypeCompetitor: 'Competitor',
+      ciTypeTopic: 'Topic',
+      ciTypePerson: 'Person',
+      ciTypeTech: 'Tech',
+      ciTypePlatform: 'Platform',
+      ciAddDialogTitle: 'Add Tracking Target',
+      ciAddNamePlaceholder: 'Name (e.g. "Polymarket Whale")',
+      ciAddTypeLabel: 'Type',
+      ciAddAliasesPlaceholder: 'Aliases (comma-separated)',
+      ciAddKeywordsPlaceholder: 'Keywords (comma-separated)',
+      ciAddNotesPlaceholder: 'Notes (optional)',
+      ciAddConfirm: 'Add',
+      ciAddCancel: 'Cancel',
+      ciTooMany: 'Max 10 targets. Please remove some first.',
+      ciDeleted: 'Deleted',
+      ciSaved: 'Saved to localStorage (effective after next pipeline run)',
 
       // Misc
       miscNoData: 'No data',
@@ -2936,6 +3058,9 @@ function renderAll(data) {
   initReadingProgress();
   initBackToTop();
 
+  // ── Competitor Intel (Phase 1 — 双引擎) ──
+  try { renderCompetitorIntel(data); } catch(e) { console.error('renderCompetitorIntel error:', e); }
+
   // JSON-LD structured data for SEO
   try { injectStructuredData(opps); } catch(e) {}
 
@@ -3518,6 +3643,131 @@ function copyArticleNotepad() {
       setTimeout(function() { toast.classList.remove('show'); }, 2000);
     }
   });
+}
+
+// ─── Competitor Intel Rendering (Phase 1 — 双引擎：监控引擎) ───
+function renderCompetitorIntel(data) {
+  var ciBody = document.getElementById('ci-body');
+  var ciEmpty = document.getElementById('ci-empty');
+  if (!ciBody) return;
+
+  var targets = data.competitor_targets || [];
+  var intelData = data.competitor_intel || {};
+  var intelTargets = intelData.targets || [];
+
+  if (targets.length === 0) {
+    ciBody.innerHTML = '';
+    if (ciEmpty) { ciEmpty.style.display = ''; ciBody.appendChild(ciEmpty); }
+    return;
+  }
+  if (ciEmpty) ciEmpty.style.display = 'none';
+
+  var intelById = {};
+  intelTargets.forEach(function(it) { intelById[it.target_id] = it; });
+
+  var html = '<div class="ci-target-list">';
+  targets.forEach(function(t) {
+    if (t.status !== 'active') return;
+    var intel = intelById[t.id] || null;
+    var typeClass = 'ci-type-' + (t.type || 'competitor');
+    var typeLabels = { competitor: t('ciTypeCompetitor'), topic: t('ciTypeTopic'), person: t('ciTypePerson'), tech: t('ciTypeTech'), platform: t('ciTypePlatform') };
+    var typeLabel = typeLabels[t.type] || t('ciTypeCompetitor');
+    var stats = intel ? (intel.stats || {}) : {};
+    var trendIcons = { up: t('ciTrendUp'), down: t('ciTrendDown'), stable: t('ciTrendStable') };
+    var trendIcon = trendIcons[stats.trend] || trendIcons.stable;
+    var trendCls = 'ci-trend-' + (stats.trend || 'stable');
+
+    html += '<div class="ci-target-card">';
+    html += '<div class="ci-target-header"><span class="ci-target-name">' + escapeHtml(t.name) + '</span><span class="ci-target-type ' + typeClass + '">' + typeLabel + '</span>';
+    if (t.notes) html += '<span class="ci-target-meta">' + escapeHtml(t.notes.substring(0, 30)) + '</span>';
+    html += '</div>';
+    html += '<div class="ci-stats"><span class="ci-stat">' + (stats.weekly_mentions || 0) + ' ' + t('ciMentions') + '</span><span class="ci-stat ' + trendCls + '">' + trendIcon + '</span>';
+    if (stats.noise_count) html += '<span class="ci-stat">' + t('ciNoise') + ': ' + stats.noise_count + '</span>';
+    html += '</div>';
+
+    if (intel && intel.highlights && intel.highlights.length > 0) {
+      intel.highlights.slice(0, 4).forEach(function(hl) {
+        html += '<div class="ci-highlight"><span class="ci-hl-source">[' + escapeHtml(hl.source || '?') + ']</span> ';
+        html += '<span class="ci-hl-text">' + escapeHtml((hl.original_text || '').substring(0, 180)) + '</span>';
+        if (hl.your_action) html += '<div class="ci-hl-action">' + escapeHtml(hl.your_action) + '</div>';
+        html += '</div>';
+      });
+    } else if (intel) {
+      html += '<div class="ci-no-intel">' + (intel.noise_summary || t('ciNoIntel')) + '</div>';
+    } else {
+      html += '<div class="ci-no-intel">' + t('ciNoIntel') + '</div>';
+    }
+
+    if (intel && intel.suggested_actions && intel.suggested_actions.length > 0) {
+      html += '<div class="ci-suggested-actions">';
+      intel.suggested_actions.forEach(function(act) {
+        var cls = 'ci-btn' + (act.action === 'build' ? ' primary' : '') + (act.action === 'ignore' ? ' ignore' : '');
+        html += '<button class="' + cls + '" onclick="ciAction(\'' + t.id + '\',\'' + act.action + '\')">' + escapeHtml(act.label) + '</button>';
+      });
+      html += '</div>';
+    }
+    html += '</div>';
+  });
+  html += '</div>';
+  ciBody.innerHTML = html;
+}
+
+function ciAction(targetId, action) {
+  var decisions = {};
+  try { decisions = JSON.parse(localStorage.getItem('aimfast_ci_decisions') || '{}'); } catch(e) {}
+  decisions[targetId] = { action: action, at: new Date().toISOString() };
+  localStorage.setItem('aimfast_ci_decisions', JSON.stringify(decisions));
+}
+
+function showAddTargetForm() {
+  var existing = document.getElementById('ci-add-dialog');
+  if (existing) { existing.remove(); return; }
+  var targets = (_data && _data.competitor_targets) ? _data.competitor_targets : [];
+  var activeCount = targets.filter(function(t) { return t.status === 'active'; }).length;
+  if (activeCount >= 10) { alert(t('ciTooMany')); return; }
+
+  var overlay = document.createElement('div');
+  overlay.id = 'ci-add-dialog';
+  overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:300;display:flex;align-items:center;justify-content:center;';
+  overlay.onclick = function(e) { if (e.target === overlay) overlay.remove(); };
+  overlay.innerHTML = '<div class="bet-drawer" onclick="event.stopPropagation()" style="max-width:480px;">' +
+    '<div class="bet-drawer-header"><h3>' + t('ciAddDialogTitle') + '</h3><button class="bet-drawer-close" onclick="document.getElementById(\'ci-add-dialog\').remove()">×</button></div>' +
+    '<div class="bet-drawer-body">' +
+    '<label class="bet-drawer-label">' + t('ciAddNamePlaceholder') + '</label><input class="bet-drawer-input" id="ci-input-name" placeholder="' + t('ciAddNamePlaceholder') + '" style="margin-bottom:var(--space-2)">' +
+    '<label class="bet-drawer-label">' + t('ciAddTypeLabel') + '</label><select class="bet-drawer-input" id="ci-input-type" style="margin-bottom:var(--space-2)"><option value="competitor">' + t('ciTypeCompetitor') + '</option><option value="topic">' + t('ciTypeTopic') + '</option><option value="person">' + t('ciTypePerson') + '</option><option value="tech">' + t('ciTypeTech') + '</option><option value="platform">' + t('ciTypePlatform') + '</option></select>' +
+    '<label class="bet-drawer-label">' + t('ciAddAliasesPlaceholder') + '</label><input class="bet-drawer-input" id="ci-input-aliases" placeholder="' + t('ciAddAliasesPlaceholder') + '" style="margin-bottom:var(--space-2)">' +
+    '<label class="bet-drawer-label">' + t('ciAddKeywordsPlaceholder') + '</label><input class="bet-drawer-input" id="ci-input-keywords" placeholder="' + t('ciAddKeywordsPlaceholder') + '" style="margin-bottom:var(--space-2)">' +
+    '<label class="bet-drawer-label">' + t('ciAddNotesPlaceholder') + '</label><input class="bet-drawer-input" id="ci-input-notes" placeholder="' + t('ciAddNotesPlaceholder') + '" style="margin-bottom:var(--space-2)">' +
+    '</div>' +
+    '<div class="bet-drawer-footer"><button class="btn btn-outline" onclick="document.getElementById(\'ci-add-dialog\').remove()">' + t('ciAddCancel') + '</button><button class="btn btn-primary" onclick="confirmAddTarget()">' + t('ciAddConfirm') + '</button></div>' +
+    '</div>';
+  document.body.appendChild(overlay);
+  setTimeout(function() { var inp = document.getElementById('ci-input-name'); if (inp) inp.focus(); }, 100);
+}
+
+function confirmAddTarget() {
+  var name = (document.getElementById('ci-input-name') || {}).value || '';
+  var type = (document.getElementById('ci-input-type') || {}).value || 'competitor';
+  var aliases = (document.getElementById('ci-input-aliases') || {}).value || '';
+  var keywords = (document.getElementById('ci-input-keywords') || {}).value || '';
+  var notes = (document.getElementById('ci-input-notes') || {}).value || '';
+  if (!name.trim()) return;
+
+  var pending = [];
+  try { pending = JSON.parse(localStorage.getItem('aimfast_ci_pending_targets') || '[]'); } catch(e) {}
+  pending.push({ id: 'target-pending-' + Date.now(), name: name.trim(), type: type,
+    aliases: aliases.split(',').map(function(s) { return s.trim(); }).filter(Boolean),
+    keywords: keywords.split(',').map(function(s) { return s.trim(); }).filter(Boolean),
+    notes: notes.trim(), added_at: new Date().toISOString().substring(0, 10), status: 'active' });
+  localStorage.setItem('aimfast_ci_pending_targets', JSON.stringify(pending));
+  // Full copy for Python merge script
+  localStorage.setItem('aimfast_ci_pending_targets_full', JSON.stringify({ targets: pending, updated_at: new Date().toISOString() }));
+  document.getElementById('ci-add-dialog').remove();
+  if (_data) {
+    _data.competitor_targets = (_data.competitor_targets || []).concat(pending);
+    renderCompetitorIntel(_data);
+  }
+  alert(t('ciSaved'));
 }
 
 // ─── Bootstrap: try loading data, fall back to embedded if available ───
