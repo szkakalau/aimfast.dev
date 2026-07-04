@@ -1,9 +1,7 @@
 {
   "framework": "nextjs",
   "cleanUrls": true,
-  "redirects": [
-    { "source": "/", "destination": "/dashboard/", "permanent": false }
-  ],
+  "redirects": [],
   "headers": [
     {
       "source": "/_ds/(.*)",
