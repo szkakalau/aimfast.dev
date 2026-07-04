@@ -76,9 +76,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        {/* hreflang: root page has both zh-CN (default) and en alternates */}
         <link rel="alternate" hrefLang="zh-CN" href="https://aimfast.dev/" />
-        <link rel="alternate" hrefLang="en" href="https://aimfast.dev/en/" />
         <link rel="alternate" hrefLang="x-default" href="https://aimfast.dev/" />
       </head>
       <body>{children}</body>
