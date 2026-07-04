@@ -3,7 +3,7 @@
   "cleanUrls": true,
   "redirects": [
     { "source": "/", "destination": "/dashboard/", "permanent": false },
-    { "source": "/(.*)", "has": { "type": "host", "value": "www.aimfast.dev" }, "destination": "https://aimfast.dev/$1", "permanent": true }
+    { "source": "/(.*)", "has": [{ "type": "host", "value": "www.aimfast.dev" }], "destination": "https://aimfast.dev/$1", "permanent": true }
   ],
   "headers": [
     {
