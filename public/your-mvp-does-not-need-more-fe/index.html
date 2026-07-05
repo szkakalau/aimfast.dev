@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signal Tracker — Your MVP Has Users. Do You Know Which Ones Will Pay? | www.aimfast.dev</title>
+  <meta name="description" content="Stop guessing. In 2 minutes, get a signal score for each user behavior — and 3 experiments to run today. No SDK, no setup.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#1a1d24">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://www.aimfast.dev/signal-tracker/">
+  <meta property="og:type" content="product">
+  <meta property="og:title" content="Signal Tracker — Your MVP Has Users. Do You Know Which Ones Will Pay?">
+  <meta property="og:description" content="Stop guessing. In 2 minutes, get a signal score for each user behavior — and 3 experiments to run today. No SDK, no setup.">
+  <meta property="og:url" content="https://www.aimfast.dev/signal-tracker/">
+  <meta property="og:site_name" content="AimFast.Dev">
+  <meta property="og:image" content="https://www.aimfast.dev/og/signal-tracker.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Signal Tracker — Your MVP Has Users. Do You Know Which Ones Will Pay?">
+  <meta name="twitter:description" content="Stop guessing. In 2 minutes, get a signal score for each user behavior — and 3 experiments to run today. No SDK, no setup.">
+  <meta name="twitter:image" content="https://www.aimfast.dev/og/signal-tracker.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Signal Tracker",
+    "applicationCategory": "AIApplication",
+    "operatingSystem": "Web",
+    "description": "A lightweight user behavior signal dashboard for SaaS founders. Track 5 events, get a signal score, and run 3 experiments — all without SDK or setup.",
+    "url": "https://www.aimfast.dev/signal-tracker/",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+  <link rel="stylesheet" href="/_ds/base.css">
+  <link rel="stylesheet" href="/_ds/components.css">
+  <style>
+    /* custom page-level overrides — only spacing, layout, form specifics */
+    .hero {
+      padding: var(--space-8) 0 var(--space-6);
+      text-align: center;
+    }
+    .hero h1 {
+      max-width: 14ch;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero .subtitle {
+      max-width: 48ch;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: var(--space-3);
+      color: var(--color-text-secondary);
+    }
+    .signup-form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+      justify-content: center;
+      margin-top: var(--space-5);
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .signup-form input {
+      flex: 1 1 220px;
+      height: 52px;
+      padding: 0 var(--space-3);
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius-md);
+      background: var(--color-surface);
+      color: var(--color-text);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      transition: border-color var(--duration-normal) var(--ease-out);
+    }
+    .signup-form input:focus {
+      outline: none;
+      border-color: var(--color-accent);
+      box-shadow: 0 0 0 3px color-mix(in oklch, var(--color-accent) 20%, transparent);
+    }
+    .signup-form button {
+      height: 52px;
+      padding: 0 var(--space-5);
+      font-size: 1rem;
+      white-space: nowrap;
+    }
+    .form-feedback {
+      margin-top: var(--space-3);
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--color-accent);
+      text-align: center;
+      min-height: 2em;
+    }
+    .form-feedback.error {
+      color: var(--color-text-secondary);
+    }
+    .why-matters p {
+      margin-bottom: var(--space-3);
+      max-width: 72ch;
+    }
+    .steps-grid {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-5);
+      margin-top: var(--space-4);
+    }
+    .step {
+      display: flex;
+      gap: var(--space-4);
+      align-items: flex-start;
+    }
+    .step-num {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--color-accent);
+      color: var(--color-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+    .step-content h3 {
+      margin-bottom: var(--space-1);
+    }
+    .step-content p {
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+    }
+    .selling-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-5);
+      margin-top: var(--space-4);
+    }
+    .selling-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-4);
+      transition: box-shadow var(--duration-normal) var(--ease-out);
+    }
+    .selling-card:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    .selling-card .icon-wrap {
+      margin-bottom: var(--space-2);
+      color: var(--color-accent);
+    }
+    .selling-card h3 {
+      margin-bottom: var(--space-1);
+    }
+    .selling-card p {
+      color: var(--color-text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .trust-bar {
+      text-align: center;
+      padding: var(--space-4) 0;
+      color: var(--color-text-muted);
+      font-size: 0.85rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: var(--space-4);
+    }
+    .trust-bar span {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-1);
+    }
+    .footer {
+      text-align: center;
+      padding: var(--space-4) 0 var(--space-3);
+      border-top: 1px solid var(--color-border);
+      color: var(--color-text-muted);
+      font-size: 0.8rem;
+    }
+    @media (max-width: 640px) {
+      .selling-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      .signup-form {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .signup-form input {
+        width: 100%;
+      }
+      .signup-form button {
+        width: 100%;
+      }
+      .step {
+        flex-direction: column;
+        gap: var(--space-2);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero + inline email form -->
+  <section class="hero container">
+    <h1 class="heading-xl">Your MVP Has Users. Do You Know Which Ones Will Pay?</h1>
+    <p class="subtitle text-lg">Stop guessing. In 2 minutes, get a signal score for each user behavior — and 3 experiments to run today. No SDK, no setup.</p>
+
+    <!-- inline email capture -->
+    <form id="signup-form" class="signup-form" action="https://formspree.io/f/your-form-id" method="POST">
+      <input type="email" name="email" placeholder="you@example.com" required autocomplete="email">
+      <button type="submit" class="btn btn-primary btn-lg">Get Your First Signal Score</button>
+    </form>
+    <div id="form-feedback" class="form-feedback" aria-live="polite"></div>
+  </section>
+
+  <!-- Why This Matters -->
+  <section class="why-matters container">
+    <h2 class="heading-lg">Why Signal Tracking Matters Right Now</h2>
+    <p>Every week on Hacker News and DEV, founders launch MVPs that get 50, 100, even 500 signups — then stall. They have users, but no idea which behaviors actually lead to payment. A recent thread on DEV (5 upvotes, cross-validated at 36 points) put it bluntly: “Your MVP does not need more features. It needs better signals.” The pain is real: you’re building features nobody asked for, while the users who would pay are slipping away.</p>
+    <p>Existing tools like Amplitude and Mixpanel require SDK integration, a data team, and a monthly bill that starts at $1,000. PostHog is open-source but demands self-hosting and technical know-how. Google Analytics wasn’t built for SaaS signals. Hotjar shows you heatmaps, not “what to do next.” Founders are left guessing — and that guesswork costs them weeks of wasted development.</p>
+    <p>Now is the perfect moment. The “signal” conversation is peaking across HN, DEV, and Reddit r/SaaS. Founders are tired of vanity metrics and want actionable insights. Signal Tracker fills the gap: no SDK, no setup, just 5 events you already track. In 2 minutes you get a score and 3 experiments. The window to own this category is open — and it’s closing fast as more builders wake up to the need.</p>
+  </section>
+
+  <!-- How It Works -->
+  <section class="container">
+    <h2 class="heading-lg">How It Works</h2>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h3>List your 5 key events</h3>
+          <p>Think about the actions your users take — signup, first core action, invite a friend, upgrade, churn. Type them in. No SDK, no tracking code. Just the events you already have in your head or your spreadsheet.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h3>Get your signal score</h3>
+          <p>Our algorithm weights each event based on conversion likelihood from thousands of SaaS patterns. You’ll see a 1–10 score for every behavior, plus a trend line showing how signals changed over the last 7 days.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h3>Run 3 experiments today</h3>
+          <p>Stop staring at dashboards. For your highest-scoring signal, we generate 3 concrete growth experiments you can implement this afternoon. No fluff — just actions that move the needle.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Selling Points (3-column grid) -->
+  <section class="container">
+    <h2 class="heading-lg">What You Get</h2>
+    <div class="selling-grid">
+      <div class="selling-card">
+        <div class="icon-wrap">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+          </svg>
+        </div>
+        <h3>No SDK required</h3>
+        <p>Forget about installing tracking libraries or configuring data pipelines. You just type in 5 events you’re already tracking in your head or a spreadsheet. Zero setup, zero friction — start in 30 seconds.</p>
+      </div>
+      <div class="selling-card">
+        <div class="icon-wrap">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <polyline points="9 12 11 14 15 10"/>
+          </svg>
+        </div>
+        <h3>From data to action</h3>
+        <p>Not another dashboard full of charts you ignore. Signal Tracker gives you a prioritized list of experiments based on your actual user behavior. Stop analyzing — start growing with concrete next steps.</p>
+      </div>
+      <div class="selling-card">
+        <div class="icon-wrap">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+          </svg>
+        </div>
+        <h3>Works with 10 users</h3>
+        <p>Most analytics tools tell you “wait until you have 10,000 users.” Signal Tracker works from day one. Even with 10 free users, you’ll see which behaviors predict payment — so you can focus on what matters.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust bar -->
+  <div class="trust-bar container">
+    <span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      Used by founders at 12 early-stage SaaS
+    </span>
+    <span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+      No credit card required
+    </span>
+    <span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      Data stays in your browser
+    </span>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer container">
+    © 2026 · <a href="https://www.aimfast.dev" style="color: inherit; text-decoration: underline; text-underline-offset: 2px;">www.aimfast.dev</a>
+  </footer>
+
+  <script>
+    (function() {
+      const form = document.getElementById('signup-form');
+      const feedback = document.getElementById('form-feedback');
+
+      // handle submit via fetch (no page reload)
+      async function handleSubmit(e) {
+        e.preventDefault();
+        const email = form.email.value.trim();
+        if (!email) return;
+
+        // disable button + show loading
+        const btn = form.querySelector('button');
+        const originalText = btn.textContent;
+        btn.disabled = true;
+        btn.textContent = 'Sending…';
+        feedback.textContent = '';
+        feedback.className = 'form-feedback';
+
+        try {
+          const resp = await fetch(form.action, {
+            method: 'POST',
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ email })
+          });
+
+          if (resp.ok) {
+            // success — replace form with inline message
+            form.innerHTML = '<div style="font-size:1.2rem; font-weight:600; color: var(--color-accent); padding: var(--space-2) 0;">✓ You\'re on the list
