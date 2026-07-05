@@ -91,8 +91,8 @@
 .reports-index { max-width: 760px; margin: 0 auto; }
 .reports-index h1 { font-size: 2rem; margin-bottom: var(--space-6); }
 .reports-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: var(--space-4); }
-.reports-list li { border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-4); transition: border-color 0.15s; }
-.reports-list li:hover { border-color: var(--color-accent); }
+.reports-list li { border: none; border-radius: var(--radius-md); padding: var(--space-4); box-shadow: var(--shadow-xs); transition: box-shadow 0.15s, transform 0.15s; }
+.reports-list li:hover { box-shadow: var(--shadow-sm); transform: translateY(-1px); }
 .reports-list a { text-decoration: none; color: inherit; }
 .reports-list h2 { font-size: 1.15rem; margin: 0 0 var(--space-1); overflow-wrap: break-word; word-break: break-word; }
 .reports-list time { font-size: 0.8rem; color: var(--color-muted); }
@@ -102,11 +102,12 @@
 /* ── Articles index page ── */
 .article-list { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: var(--space-4); }
 .article-list-item {
-  border: 1px solid var(--color-border); border-radius: var(--radius-md);
-  padding: var(--space-4); transition: border-color 0.15s;
+  border: none; border-radius: var(--radius-md);
+  padding: var(--space-4); box-shadow: var(--shadow-xs);
+  transition: box-shadow 0.15s, transform 0.15s;
   display: flex; align-items: flex-start; gap: var(--space-3);
 }
-.article-list-item:hover { border-color: var(--color-accent); }
+.article-list-item:hover { box-shadow: var(--shadow-sm); transform: translateY(-1px); }
 .article-list-link { text-decoration: none; color: inherit; flex: 1; }
 .article-list-date { font-size: 0.8rem; color: var(--color-muted); }
 .article-list-title { font-size: 1.15rem; margin: var(--space-1) 0; }

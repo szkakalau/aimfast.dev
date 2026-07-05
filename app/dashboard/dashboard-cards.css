@@ -49,6 +49,11 @@
 /* ═════ Decision Card ═════ */
 .decision-card {
   border-left: 3px solid var(--color-accent);
+  box-shadow: var(--shadow-sm);
+}
+.decision-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
 }
 
 .decision-header {
@@ -229,12 +234,16 @@
 
 .competitor-item {
   padding: var(--space-2);
-  border: 1px solid var(--color-border);
+  border: none;
   border-radius: var(--radius-md);
-  transition: border-color var(--duration-fast) var(--ease-out);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-xs);
+  transition: box-shadow var(--duration-fast) var(--ease-out),
+              transform var(--duration-fast) var(--ease-out);
 }
 .competitor-item:hover {
-  border-color: var(--color-border-hover);
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-1px);
 }
 
 .competitor-item-header {
@@ -447,9 +456,10 @@
 .ai-chat-panel {
   margin-top: calc(var(--space-3) * -1 + var(--space-1));
   margin-bottom: var(--space-3);
-  border: 1px solid var(--color-border);
+  border: none;
   border-radius: var(--radius-md);
   background: var(--color-surface);
+  box-shadow: var(--shadow-md);
   overflow: hidden;
   animation: chatIn var(--duration-fast) var(--ease-out);
 }
@@ -665,17 +675,20 @@
   gap: var(--space-2);
   width: 100%;
   padding: var(--space-3) var(--space-4);
-  border: 1px solid var(--color-border);
+  border: none;
   border-radius: var(--radius-md);
   background: var(--color-surface);
   color: var(--color-text);
   font-size: 0.9rem;
   font-family: var(--font-body);
   cursor: pointer;
-  transition: border-color var(--duration-fast) var(--ease-out);
+  box-shadow: var(--shadow-xs);
+  transition: box-shadow var(--duration-fast) var(--ease-out),
+              color var(--duration-fast) var(--ease-out);
 }
 .full-report-toggle:hover {
-  border-color: var(--color-accent);
+  box-shadow: var(--shadow-sm);
+  color: var(--color-accent);
 }
 .full-report-toggle-icon {
   font-size: 0.7rem;
