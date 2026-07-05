@@ -6,6 +6,7 @@ import { DecisionCard } from './components/decision-card';
 import { CompetitorCard } from './components/competitor-card';
 import { SystemPulse } from './components/system-pulse';
 import { AiChatPanel } from './components/ai-chat-panel';
+import { FullReport } from './components/full-report';
 import { DashboardFooter } from './components/dashboard-footer';
 
 /* ── I18N dictionary ── */
@@ -51,6 +52,9 @@ const I18N_DICT: Record<string, Record<string, string>> = {
     aiChatSend: '→',
     footerRefresh: '数据刷新：每日 08:30 CST',
     footerNextUpdate: '下次更新',
+    fullReportToggle: '📋 完整日报',
+    fullReportExpand: '展开阅读',
+    fullReportCollapse: '收起',
     loading: '加载中…',
     noData: '无数据',
     backToTop: '回到顶部',
@@ -96,6 +100,9 @@ const I18N_DICT: Record<string, Record<string, string>> = {
     aiChatSend: '→',
     footerRefresh: 'Data refresh: daily 08:30 CST',
     footerNextUpdate: 'Next update',
+    fullReportToggle: '📋 Full Report',
+    fullReportExpand: 'Expand',
+    fullReportCollapse: 'Collapse',
     loading: 'Loading…',
     noData: 'No data',
     backToTop: 'Back to top',
@@ -381,6 +388,9 @@ export function DashboardClient() {
             onClose={closeChat}
           />
         )}
+
+        {/* ── Full Report (collapsible daily report) ── */}
+        <FullReport t={t} reportMd={reportMd} />
       </main>
 
       <DashboardFooter t={t} generatedAt={data.generated_at} />
