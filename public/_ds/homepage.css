@@ -28,8 +28,10 @@
   padding: var(--space-10) 0 var(--space-6);
 }
 .hero h1 {
-  max-width: 720px; margin-bottom: var(--space-3);
-  font-size: clamp(2rem, 4.5vw, 3.2rem); line-height: 1.15;
+  max-width: 760px; margin-bottom: var(--space-3);
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  font-weight: 800; line-height: 1.08;
+  letter-spacing: -0.035em;
 }
 .hero h1 span { color: var(--color-accent); }
 .hero-desc {
