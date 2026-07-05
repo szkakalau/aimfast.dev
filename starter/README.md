@@ -2,7 +2,7 @@
 
 一个独立的 CSS 文件，拖进任何项目就能让界面看起来更专业。约 5KB（gzip 后）。
 
-> 🤖 **用 Claude 自动化**：打开 [upgrade-prompt.md](upgrade-prompt.md)，把里面的 prompt 粘贴到 Claude 对话中，AI 会自动执行所有升级步骤。
+> 🤖 **用 Claude 一键升级**：打开 [UPGRADE.md](UPGRADE.md)，复制那行 prompt，粘贴到 Claude 对话中即可。
 
 ---
 
