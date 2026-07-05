@@ -1,0 +1,229 @@
+/* ═══════════════════════════════════════════════════════════
+   Starter Design System v1.0
+   Drop into any project → @import 'design-system.css';
+
+   🔧 Customize: search "BRAND" to find branding points
+   📖 Docs:    starter/README.md
+   ═══════════════════════════════════════════════════════════ */
+
+/* ═════ TOKENS ═════ */
+:root {
+  /* ── BRAND: Change these 3 lines to match your brand ── */
+  --color-accent:       #d97706;
+  --color-accent-hover: #b45309;
+  --color-accent-muted: oklch(55% 0.18 60 / 0.1);
+
+  /* bg + surface */
+  --color-bg:          #f8f9fb;
+  --color-surface:     #ffffff;
+  --color-surface-alt: #edf0f5;
+
+  /* border */
+  --color-border:      #d9dce2;
+  --color-border-hover:#aeb3bd;
+
+  /* text */
+  --color-text:          #1a1d22;
+  --color-text-secondary:#505560;
+  --color-text-muted:    #737885;
+
+  /* semantic */
+  --color-green:       #10b981;
+  --color-green-muted: rgba(16, 185, 129, 0.1);
+  --color-red:         #ef4444;
+  --color-red-muted:   rgba(239, 68, 68, 0.1);
+  --color-on-accent:   #ffffff;
+
+  /* typography — BRAND: swap font families here */
+  --font-heading: 'Fira Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body:    'Fira Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono:    'JetBrains Mono', 'Fira Code', monospace;
+
+  /* spacing — 8px rhythm */
+  --space-1:  8px;
+  --space-2:  16px;
+  --space-3:  24px;
+  --space-4:  32px;
+  --space-5:  40px;
+  --space-6:  48px;
+  --space-8:  64px;
+  --space-10: 80px;
+  --space-12: 96px;
+
+  /* radius */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+
+  /* motion */
+  --ease-out:       cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast:  150ms;
+  --duration-normal:200ms;
+  --duration-slow:  350ms;
+
+  /* shadows — multi-layer for realistic depth */
+  --shadow-xs:  0 1px 2px oklch(0% 0 0 / 0.04);
+  --shadow-sm:  0 1px 3px oklch(0% 0 0 / 0.04), 0 1px 2px oklch(0% 0 0 / 0.06);
+  --shadow-md:  0 4px 12px oklch(0% 0 0 / 0.06), 0 2px 4px oklch(0% 0 0 / 0.04);
+  --shadow-lg:  0 12px 32px oklch(0% 0 0 / 0.10), 0 4px 8px oklch(0% 0 0 / 0.06);
+  --shadow-xl:  0 16px 48px oklch(0% 0 0 / 0.14), 0 6px 12px oklch(0% 0 0 / 0.06);
+  --shadow-glow: 0 0 24px oklch(55% 0.18 60 / 0.15);
+}
+
+/* ═════ BASE ═════ */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.65;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+}
+h1 { font-size: clamp(2.4rem, 5.5vw, 4rem); letter-spacing: -0.03em; }
+h2 { font-size: clamp(1.6rem, 3.2vw, 2.2rem); font-weight: 600; }
+h3 { font-size: 1.15rem; font-weight: 600; }
+
+.mono, code, kbd { font-family: var(--font-mono); font-weight: 400; }
+
+a { color: var(--color-accent); text-decoration: none; transition: color var(--duration-fast) var(--ease-out); }
+a:hover { color: var(--color-accent-hover); }
+
+strong { color: var(--color-text); font-weight: 600; }
+
+::selection { background: var(--color-accent-muted); color: var(--color-accent); }
+
+p + p { margin-top: var(--space-2); }
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-bg); }
+::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-border-hover); }
+
+/* ═════ COMPONENTS ═════ */
+
+/* Button */
+.btn {
+  display: inline-flex; align-items: center; gap: var(--space-1);
+  font-family: var(--font-heading); font-size: 0.92rem; font-weight: 600;
+  padding: 12px 24px; border-radius: var(--radius-md);
+  border: 1px solid transparent; cursor: pointer; text-decoration: none;
+  transition: all var(--duration-normal) var(--ease-out);
+  white-space: nowrap;
+}
+.btn:active { transform: scale(0.97); }
+
+.btn-primary {
+  background: var(--color-accent); color: var(--color-on-accent);
+  box-shadow: var(--shadow-sm);
+}
+.btn-primary:hover {
+  background: var(--color-accent-hover); color: var(--color-on-accent);
+  box-shadow: var(--shadow-md); transform: translateY(-1px);
+}
+
+.btn-outline {
+  background: transparent; border-color: var(--color-border);
+  color: var(--color-text-secondary);
+}
+.btn-outline:hover {
+  border-color: var(--color-accent); color: var(--color-accent);
+  background: var(--color-accent-muted);
+}
+
+/* Badge */
+.badge {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-family: var(--font-mono); font-size: 0.7rem; font-weight: 500;
+  padding: 3px 10px; border-radius: 100px;
+  letter-spacing: 0.03em; text-transform: uppercase;
+}
+
+/* Card — shadow-based, no border */
+.card {
+  background: var(--color-surface);
+  border: none;
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  box-shadow: var(--shadow-xs);
+  transition: box-shadow var(--duration-normal) var(--ease-out),
+              transform var(--duration-normal) var(--ease-out);
+}
+.card:hover { box-shadow: var(--shadow-md); transform: translateY(-1px); }
+
+.card-accent {
+  border-left: 3px solid var(--color-accent);
+  box-shadow: var(--shadow-sm);
+}
+.card-accent:hover { box-shadow: var(--shadow-md); }
+
+/* Container */
+.container {
+  width: 100%; max-width: 1100px; margin: 0 auto;
+  padding: 0 var(--space-3);
+}
+
+/* Eyebrow label */
+.eyebrow {
+  display: inline-flex; align-items: center; gap: var(--space-1);
+  font-family: var(--font-mono); font-size: 0.72rem; text-transform: uppercase;
+  letter-spacing: 0.06em; color: var(--color-accent);
+  margin-bottom: var(--space-3);
+}
+
+/* Divider */
+.hr { border: none; border-top: 1px solid var(--color-border); margin: var(--space-8) 0; }
+
+/* ═════ UTILITIES ═════ */
+
+/* Inline icon helper (for Lucide icons next to text) */
+.icon-inline {
+  display: inline-block; vertical-align: middle;
+  margin-right: 4px; flex-shrink: 0;
+}
+
+/* Fade-up entrance */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.anim-fade-up { animation: fade-up var(--duration-slow) var(--ease-out) both; }
+.anim-delay-1 { animation-delay: 0.08s; }
+.anim-delay-2 { animation-delay: 0.16s; }
+.anim-delay-3 { animation-delay: 0.24s; }
+
+/* Skeleton loader */
+.skeleton {
+  background: linear-gradient(90deg, var(--color-border) 25%, var(--color-surface-alt) 50%, var(--color-border) 75%);
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.5s ease-in-out infinite;
+  border-radius: var(--radius-sm);
+}
+@keyframes skeleton-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Responsive */
+@media (max-width: 720px) {
+  .btn { width: 100%; justify-content: center; }
+}
