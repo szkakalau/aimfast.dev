@@ -1,31 +1,33 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'AimFast.Dev — Daily Market Intelligence for Indie Builders',
+  title: 'AimFast.Dev — Know What Your Market Is Doing, Every Morning',
   description:
-    'Every morning, get one validated product opportunity — what to build, who will pay, and how much to charge. AI scans 11 sources so you don\'t have to.',
+    'You\'re building. They\'re watching. Are you? — Daily competitive intel and market signals for indie developers who already have revenue.',
 };
 
 export default function LandingPage() {
   return (
     <main>
-      {/* ─── Hero ─── */}
+      {/* ═══════ Hero ═══════ */}
       <section className="hero">
-        <span className="eyebrow anim-fade-up">Daily Market Intelligence</span>
+        <span className="eyebrow anim-fade-up">Daily Market Intelligence for Indie Builders</span>
         <h1 className="anim-fade-up anim-delay-1">
-          One validated product opportunity.<br />
-          <span>Every single morning.</span>
+          You&apos;re building.<br />
+          They&apos;re watching.<br />
+          <span>Are you?</span>
         </h1>
         <p className="hero-desc anim-fade-up anim-delay-2">
-          AI scans 11 sources — HN, Reddit, GitHub, Product Hunt, and more —
-          filters 300+ signals, and delivers one actionable insight: what to build,
-          who will pay, and how much to charge.
+          Every morning, know what your competitors are doing, what trends are rising,
+          and which opportunities are worth your time — in 2 minutes. Built for indie
+          developers who already have revenue and can&apos;t afford to be blindsided.
         </p>
 
         <form
           className="hero-signup anim-fade-up anim-delay-2"
-          action="/api/signup"
-          method="POST"
+          action="https://tally.so/r/placeholder"
+          method="GET"
+          target="_blank"
         >
           <input
             type="email"
@@ -35,366 +37,275 @@ export default function LandingPage() {
             aria-label="Email address"
           />
           <button type="submit" className="btn btn-primary">
-            Start Free Trial →
+            Get Early Access →
           </button>
         </form>
         <p className="hero-secondary">
-          14 days free · cancel anytime · no spam, one actionable insight per day
+          $19/mo after trial · cancel anytime · one actionable insight per day
         </p>
       </section>
 
-      {/* ─── Stats Bar ─── */}
-      <div className="stats-bar anim-fade-up">
-        <div className="stat-item">
-          <div className="stat-number">11</div>
-          <div className="stat-label">sources scanned daily</div>
-        </div>
-        <div className="stat-item">
-          <div className="stat-number">300+</div>
-          <div className="stat-label">signals filtered</div>
-        </div>
-        <div className="stat-item">
-          <div className="stat-number">1</div>
-          <div className="stat-label">validated insight</div>
-        </div>
-        <div className="stat-item">
-          <div className="stat-number">2h</div>
-          <div className="stat-label">to validate & build</div>
-        </div>
-      </div>
-
-      {/* ─── How It Works ─── */}
-      <section className="workflow">
+      {/* ═══════ Pain Cards ═══════ */}
+      <section className="pain-cards" style={{ padding: 'var(--space-8) 0' }}>
         <div className="section-header">
-          <h2>How It Works</h2>
+          <h2>The Cost of Not Knowing</h2>
           <p>
-            Every night, our dual-engine system scans the internet so you wake up
-            to a ready-made product brief every morning.
+            Every morning without market intel costs you one of three things.
           </p>
         </div>
 
-        <div className="workflow-steps">
-          <div className="workflow-step">
-            <div className="step-num">1</div>
-            <h3>Discovery Engine</h3>
+        <div className="pain-grid">
+          {/* Pain 3: Direction Waste */}
+          <div className="pain-card">
+            <div className="pain-icon">⏳</div>
+            <h3>Direction Waste</h3>
             <p>
-              AI scans 11 sources (HN, Reddit, GitHub, Product Hunt, DEV, X, and
-              more) for emerging trends, pain points, and market gaps. We filter
-              out the noise — you only see the signals that matter.
+              You spent 2 weeks building a feature nobody asked for. If you had
+              known the demand was fading 10 days ago, you would have built
+              something else.
             </p>
+            <div className="pain-solution">
+              <span className="pain-arrow">→</span>
+              Daily decision card tells you what to build — and what to skip
+            </div>
           </div>
 
-          <div className="workflow-step">
-            <div className="step-num">2</div>
-            <h3>Monitoring Engine</h3>
+          {/* Pain 1: Competition Blind Spots */}
+          <div className="pain-card pain-card-accent">
+            <div className="pain-icon">👁️</div>
+            <h3>Competition Blind Spots</h3>
             <p>
-              Set up to 10 competitors, topics, or tech stacks you want to track.
-              Every day, our AI tells you what they&apos;re doing, what it means,
-              and — most importantly — what <em>you</em> should do about it.
+              Your competitor changed their pricing 3 days ago. Their free users
+              are looking for alternatives. You didn&apos;t know — until now.
             </p>
+            <div className="pain-solution">
+              <span className="pain-arrow">→</span>
+              Monitor up to 10 competitors, topics, or tech stacks
+            </div>
           </div>
 
-          <div className="workflow-step">
-            <div className="step-num">3</div>
-            <h3>Daily Decision</h3>
+          {/* Pain 2: Trend Lag */}
+          <div className="pain-card">
+            <div className="pain-icon">📉</div>
+            <h3>Trend Lag</h3>
             <p>
-              Every morning, open one report. It tells you: what to build today,
-              who will pay for it, and what to ignore. No more analysis paralysis
-              — just one actionable decision per day.
+              A new distribution channel is taking off. Early adopters are
+              getting customers at near-zero cost. By the time you hear about it,
+              the window is closed.
             </p>
+            <div className="pain-solution">
+              <span className="pain-arrow">→</span>
+              11+ sources scanned daily for emerging signals before they peak
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ─── Sample Report Card ─── */}
-      <section className="sample-report" style={{
-        padding: 'var(--space-8) 0',
-        textAlign: 'center',
-      }}>
+      {/* ═══════ Product Demo: Sample Decision Card ═══════ */}
+      <section className="sample-report" style={{ padding: 'var(--space-8) 0', textAlign: 'center' }}>
         <div className="section-header">
           <h2>Here&apos;s What You Get Every Morning</h2>
-          <p>A real excerpt from a recent daily report.</p>
+          <p>A real excerpt from a recent daily report — exactly what lands in your dashboard.</p>
         </div>
 
-        <div className="sample-report-card" style={{
-          maxWidth: '680px',
-          margin: '0 auto',
-          background: 'var(--color-surface)',
-          border: '1px solid var(--color-border)',
-          borderRadius: 'var(--radius-lg)',
-          padding: 'var(--space-5)',
-          textAlign: 'left',
-          fontSize: '0.92rem',
-          lineHeight: '1.75',
-        }}>
-          <div style={{
-            fontFamily: 'var(--font-mono)',
-            fontSize: '0.7rem',
-            fontWeight: 600,
-            textTransform: 'uppercase',
-            letterSpacing: '0.05em',
-            color: 'var(--color-accent)',
-            marginBottom: 'var(--space-3)',
-          }}>
-            📰 AimFast.Dev 日报 · 2026-07-04
+        <div className="sample-decision-card">
+          <div className="sample-card-header">
+            <span className="sample-card-title">🎯 Today&apos;s Decision</span>
+            <span className="sample-card-date">2026-07-04</span>
           </div>
 
-          <h3 style={{
-            fontSize: '1.1rem',
-            fontWeight: 600,
-            marginBottom: 'var(--space-2)',
-            color: 'var(--color-text)',
-          }}>
-            🎯 今日 2 小时构建：Gmail Photo Rescue
-          </h3>
-
-          <p style={{
-            color: 'var(--color-text-secondary)',
-            marginBottom: 'var(--space-3)',
-          }}>
-            一个一键下载 Gmail 中所有照片附件的桌面 App。<br />
-            <strong style={{ color: 'var(--color-text)' }}>支撑证据：</strong>
-            Mail Memories 在 HN 获得 <strong>101 赞 / 53 条讨论</strong>。
-            用户评论集中在"这功能太需要了"和"但为什么不能批量导出？"。
+          <h3 className="sample-card-opportunity">Gmail Photo Rescue</h3>
+          <p className="sample-card-summary">
+            One-click desktop app to download all photo attachments from Gmail.
           </p>
 
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 1fr',
-            gap: 'var(--space-3)',
-            marginBottom: 'var(--space-3)',
-            padding: 'var(--space-3)',
-            background: 'var(--color-surface-alt)',
-            borderRadius: 'var(--radius-md)',
-          }}>
+          <div className="sample-card-evidence">
+            <strong>📊 Evidence:</strong>{' '}
+            Mail Memories on HN: <strong>101 upvotes, 53 comments</strong>.
+            Users repeatedly said: &ldquo;I need this&rdquo; and &ldquo;But why
+            can&apos;t I batch export?&rdquo;
+          </div>
+
+          <div className="sample-card-two-col">
             <div>
-              <div style={{
-                fontSize: '0.65rem',
-                textTransform: 'uppercase',
-                letterSpacing: '0.05em',
-                color: 'var(--color-text-muted)',
-                marginBottom: '4px',
-              }}>
-                💰 定价建议
-              </div>
-              <div style={{
-                fontFamily: 'var(--font-heading)',
-                fontSize: '1.4rem',
-                fontWeight: 700,
-                color: 'var(--color-accent)',
-              }}>
-                $9.99
-              </div>
-              <div style={{ fontSize: '0.78rem', color: 'var(--color-text-muted)' }}>
-                一次性购买
-              </div>
+              <span className="sample-card-label">💰 Pricing</span>
+              <div className="sample-card-price">$9.99 <span>one-time</span></div>
             </div>
             <div>
-              <div style={{
-                fontSize: '0.65rem',
-                textTransform: 'uppercase',
-                letterSpacing: '0.05em',
-                color: 'var(--color-text-muted)',
-                marginBottom: '4px',
-              }}>
-                ⚡ 验证路径
-              </div>
-              <div style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)' }}>
-                2 小时 Electron MVP → Show HN → 看多少人问"能导出吗？"
-              </div>
+              <span className="sample-card-label">⚡ Validation</span>
+              <p className="sample-card-validation">
+                2h Electron MVP → Show HN → count how many ask &ldquo;can it export?&rdquo;
+              </p>
             </div>
           </div>
 
-          <div style={{
-            padding: 'var(--space-2) var(--space-3)',
-            background: 'var(--color-accent-muted)',
-            borderLeft: '3px solid var(--color-accent)',
-            borderRadius: '0 var(--radius-sm) var(--radius-sm) 0',
-            fontSize: '0.85rem',
-            color: 'var(--color-text-secondary)',
-          }}>
-            <strong style={{ color: 'var(--color-text)' }}>为什么不选另外两个：</strong>
-            ❌ Graphify 插件生态 — 巨头竞争，2 小时不够<br />
-            ❌ AI Agent 安全工具 — 技术门槛高，2 小时无法交付
+          <div className="sample-card-whynot">
+            <strong>Why not the other two:</strong>{' '}
+            ❌ Graphify plugin ecosystem — dominated by big players, can&apos;t compete in 2h{' '}
+            · ❌ AI Agent security tool — technical barrier too high for a 2h validation
           </div>
         </div>
       </section>
 
-      {/* ─── Pricing ─── */}
-      <section className="pricing" style={{
-        padding: 'var(--space-8) 0',
-      }}>
+      {/* ═══════ How It Works ═══════ */}
+      <section className="workflow" style={{ padding: 'var(--space-8) 0' }}>
+        <div className="section-header">
+          <h2>Two Engines, One Report</h2>
+          <p>
+            Every night, our dual-engine system scans the internet. Every morning,
+            you get one decision.
+          </p>
+        </div>
+
+        <div className="engine-grid">
+          <div className="engine-card">
+            <div className="engine-icon">🔍</div>
+            <h3>Discovery Engine</h3>
+            <p>
+              AI scans 11+ sources — HN, Reddit, GitHub, Product Hunt, X, DEV,
+              V2EX, and more — for emerging pain points, rising trends, and
+              market gaps. It filters 300+ signals down to the one that matters.
+            </p>
+            <ul className="engine-list">
+              <li>Cross-platform signal validation</li>
+              <li>Pain point vs. hype detection</li>
+              <li>Actionability scoring</li>
+            </ul>
+          </div>
+
+          <div className="engine-card">
+            <div className="engine-icon">🛡️</div>
+            <h3>Monitoring Engine</h3>
+            <p>
+              Track up to 10 competitors, topics, people, or tech stacks.
+              Every day, the AI tells you what they did, what it means, and —
+              most importantly — what <em>you</em> should do about it.
+            </p>
+            <ul className="engine-list">
+              <li>Competitor pricing & feature changes</li>
+              <li>Topic trend tracking</li>
+              <li>Actionable alerts, not noise</li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="engine-arrow" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <path d="M12 5v14M5 12l7 7 7-7" />
+          </svg>
+        </div>
+
+        <div className="engine-output">
+          <span className="engine-output-label">Daily Report</span>
+          One decision card · Competitor updates · System pulse · 2 minutes to read
+        </div>
+      </section>
+
+      {/* ═══════ Pricing ═══════ */}
+      <section className="pricing-section" style={{ padding: 'var(--space-8) 0' }}>
         <div className="section-header">
           <h2>Simple Pricing</h2>
           <p>
-            One plan, full access. No per-seat nonsense, no feature gating.
+            One plan, everything included. No per-seat pricing, no feature gating.
+            You either get full value or you cancel — no hard feelings.
           </p>
         </div>
 
-        <div style={{
-          maxWidth: '400px',
-          margin: '0 auto',
-          background: 'var(--color-surface)',
-          border: '2px solid var(--color-accent)',
-          borderRadius: 'var(--radius-xl)',
-          padding: 'var(--space-6)',
-          textAlign: 'center',
-        }}>
-          <div style={{
-            fontFamily: 'var(--font-mono)',
-            fontSize: '0.75rem',
-            fontWeight: 600,
-            textTransform: 'uppercase',
-            letterSpacing: '0.06em',
-            color: 'var(--color-accent)',
-            marginBottom: 'var(--space-2)',
-          }}>
-            Everything Included
-          </div>
+        <div className="pricing-card">
+          <div className="pricing-badge">Everything Included</div>
 
-          <div style={{
-            fontFamily: 'var(--font-heading)',
-            fontSize: '3rem',
-            fontWeight: 700,
-            color: 'var(--color-text)',
-            lineHeight: '1',
-            marginBottom: '4px',
-          }}>
-            $19<span style={{ fontSize: '1.2rem', color: 'var(--color-text-muted)' }}>/mo</span>
+          <div className="pricing-amount-row">
+            <span className="pricing-dollar">$</span>
+            <span className="pricing-number">19</span>
+            <span className="pricing-period">/mo</span>
           </div>
-          <div style={{
-            fontSize: '0.85rem',
-            color: 'var(--color-text-muted)',
-            marginBottom: 'var(--space-4)',
-          }}>
-            or $190/year — save $38
-          </div>
+          <div className="pricing-annual">or $190/year — save $38</div>
 
-          <ul style={{
-            listStyle: 'none',
-            padding: 0,
-            marginBottom: 'var(--space-4)',
-            textAlign: 'left',
-            fontSize: '0.9rem',
-          }}>
-            <li style={checkStyle}>✓ Daily verified product opportunity</li>
-            <li style={checkStyle}>✓ Competitor & topic tracking (up to 10)</li>
-            <li style={checkStyle}>✓ Full report archive</li>
-            <li style={checkStyle}>✓ Signal dashboard with trends</li>
-            <li style={checkStyle}>✓ 14-day free trial</li>
+          <ul className="pricing-features">
+            <li>✓ Daily verified product opportunity</li>
+            <li>✓ Competitor & topic tracking (up to 10)</li>
+            <li>✓ Full report archive</li>
+            <li>✓ Signal dashboard with system pulse</li>
+            <li>✓ AI assistant (coming soon)</li>
+            <li>✓ 14-day free trial</li>
           </ul>
 
-          <a href="/signup" className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }}>
+          <a
+            href="https://tally.so/r/placeholder"
+            className="btn btn-primary pricing-cta"
+            target="_blank"
+          >
             Start Free Trial →
           </a>
 
-          <div style={{
-            fontSize: '0.75rem',
-            color: 'var(--color-text-muted)',
-            marginTop: 'var(--space-2)',
-          }}>
-            Cancel anytime. No questions asked.
-          </div>
+          <div className="pricing-cancel">Cancel anytime. No questions asked.</div>
         </div>
       </section>
 
-      {/* ─── FAQ ─── */}
-      <section className="faq" style={{
-        padding: 'var(--space-8) 0',
-        maxWidth: '640px',
-        margin: '0 auto',
-      }}>
+      {/* ═══════ FAQ ═══════ */}
+      <section className="faq-section" style={{ padding: 'var(--space-8) 0', maxWidth: '640px', margin: '0 auto' }}>
         <div className="section-header">
           <h2>Frequently Asked Questions</h2>
         </div>
 
-        <dl>
+        <dl className="faq-list">
           {[
             {
-              q: 'How is this different from reading Hacker News?',
-              a: 'Hacker News gives you raw links. We give you a validated product brief — what to build, evidence of demand, who the buyer is, and how much to charge. We do the filtering, translation, and analysis so you can spend your 2 hours building, not browsing.',
+              q: 'How is this different from setting up Google Alerts?',
+              a: 'Google Alerts gives you links. We give you a decision. Our AI reads 300+ signals across 11 platforms, cross-references them, scores them, and tells you "build this, skip that." Google Alerts cannot tell you that a Reddit complaint and a GitHub star spike are the same unmet need.',
             },
             {
               q: 'What sources do you scan?',
-              a: 'HN, Reddit (r/programming, r/MachineLearning, r/SideProject, r/Entrepreneur, r/digitalnomad), GitHub Trending, DEV Community, Lobsters, V2EX, w2solo, X/Twitter, Product Hunt, HuggingFace, Arxiv, Indie Hackers, Douban, Xiaohongshu — 11+ sources, daily.',
+              a: 'HN, Reddit (r/programming, r/MachineLearning, r/SideProject, r/Entrepreneur, r/digitalnomad), GitHub Trending, DEV Community, Lobsters, V2EX, X/Twitter, Product Hunt, HuggingFace, Arxiv, Indie Hackers, and more — 11+ sources, daily.',
             },
             {
               q: 'Can I track my competitors?',
-              a: 'Yes — that is the Monitoring Engine. Add up to 10 competitors, topics, people, or tech stacks. Every day, the AI tells you what they are doing and what you should do about it. Not just "they launched X" — we tell you "their launch reveals a gap you can fill."',
+              a: 'Yes — that is the Monitoring Engine. Add up to 10 competitors, topics, people, or tech stacks. Every day, you see what they did and what you should do about it. Not just "they launched X" — we tell you "their launch reveals a gap you can fill."',
             },
             {
-              q: 'What if I don\'t like the daily insight?',
-              a: 'Some days the insight will be better than others. That is the nature of scanning live markets. But over a month, you will see patterns emerge — recurring pain points, underserved niches, and weak competitors. The value compounds.',
+              q: 'What if I miss a day?',
+              a: 'Every report is archived. You can browse past daily decisions and full reports from the dashboard at any time. The value compounds — patterns emerge over weeks, not days.',
             },
             {
-              q: 'What happens after the 14-day trial?',
-              a: 'You will be charged $19/mo (or $190/year if you choose annual). Cancel anytime before the trial ends and you pay nothing. No tricks.',
+              q: 'Is there a long-term contract?',
+              a: 'No. Cancel anytime — monthly or annual. If you cancel, you keep access until the end of your billing period. No tricks, no retention calls.',
             },
           ].map(({ q, a }) => (
-            <div key={q} style={{
-              padding: 'var(--space-3) 0',
-              borderBottom: '1px solid var(--color-border)',
-            }}>
-              <dt style={{
-                fontWeight: 600,
-                fontSize: '0.95rem',
-                marginBottom: 'var(--space-1)',
-                color: 'var(--color-text)',
-              }}>
-                {q}
-              </dt>
-              <dd style={{
-                fontSize: '0.88rem',
-                color: 'var(--color-text-secondary)',
-                lineHeight: '1.7',
-                marginLeft: 0,
-              }}>
-                {a}
-              </dd>
+            <div key={q} className="faq-item">
+              <dt>{q}</dt>
+              <dd>{a}</dd>
             </div>
           ))}
         </dl>
       </section>
 
-      {/* ─── Footer CTA ─── */}
-      <section style={{
-        textAlign: 'center',
-        padding: 'var(--space-8) 0 var(--space-10)',
-      }}>
-        <h2 style={{
-          fontSize: '1.5rem',
-          fontWeight: 600,
-          marginBottom: 'var(--space-3)',
-        }}>
-          Wake up to a product opportunity every morning.
-        </h2>
-        <a href="/signup" className="btn btn-primary" style={{ fontSize: '1rem', padding: '14px 32px' }}>
-          Start Free Trial →
+      {/* ═══════ Footer CTA ═══════ */}
+      <section className="footer-cta" style={{ textAlign: 'center', padding: 'var(--space-8) 0 var(--space-10)' }}>
+        <h2>You&apos;re building. They&apos;re watching.</h2>
+        <p style={{ color: 'var(--color-text-secondary)', marginBottom: 'var(--space-3)', fontSize: '1rem' }}>
+          Start your 14-day free trial. One decision every morning.
+        </p>
+        <a
+          href="https://tally.so/r/placeholder"
+          className="btn btn-primary"
+          style={{ fontSize: '1rem', padding: '14px 32px' }}
+          target="_blank"
+        >
+          Get Early Access →
         </a>
       </section>
 
-      {/* ─── Footer ─── */}
-      <footer style={{
-        borderTop: '1px solid var(--color-border)',
-        padding: 'var(--space-5) 0',
-        textAlign: 'center',
-        fontSize: '0.82rem',
-        color: 'var(--color-text-muted)',
-      }}>
-        <div style={{ marginBottom: 'var(--space-2)' }}>
-          <a href="/dashboard/" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>Dashboard (subscribers)</a>
-          <span style={{ margin: '0 var(--space-2)', color: 'var(--color-border)' }}>|</span>
-          <a href="/reports/" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>Archive</a>
-          <span style={{ margin: '0 var(--space-2)', color: 'var(--color-border)' }}>|</span>
-          <a href="/articles/" style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>Articles</a>
+      {/* ═══════ Footer ═══════ */}
+      <footer className="site-footer">
+        <div className="footer-links">
+          <a href="/dashboard/">Dashboard</a>
+          <span className="footer-sep">|</span>
+          <a href="/reports/">Archive</a>
         </div>
-        <div>AimFast.Dev — Daily Market Intelligence for Indie Builders</div>
+        <div className="footer-copy">
+          AimFast.Dev — Daily Market Intelligence for Indie Builders
+        </div>
       </footer>
     </main>
   );
 }
-
-const checkStyle: React.CSSProperties = {
-  padding: '6px 0',
-  color: 'var(--color-text-secondary)',
-};

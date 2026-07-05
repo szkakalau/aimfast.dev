@@ -2,165 +2,107 @@
 
 import { useState, useEffect, useCallback, useMemo } from 'react';
 import { DashboardHeader } from './components/dashboard-header';
-import { DashboardHero } from './components/dashboard-hero';
-import { CompetitorIntel } from './components/competitor-intel';
-import { TopSignals } from './components/top-signals';
-import { TrendCharts } from './components/trend-charts';
-import { DailyReport } from './components/daily-report';
-import { OpportunityBoard } from './components/opportunity-board';
-import { BetDrawer } from './components/bet-drawer';
+import { DecisionCard } from './components/decision-card';
+import { CompetitorCard } from './components/competitor-card';
+import { SystemPulse } from './components/system-pulse';
+import { AiChatPanel } from './components/ai-chat-panel';
 import { DashboardFooter } from './components/dashboard-footer';
 
-/* ── I18N dictionary (mirrors existing zh/en) ── */
+/* ── I18N dictionary ── */
 const I18N_DICT: Record<string, Record<string, string>> = {
   zh: {
     headerTitle: 'AimFast.Dev',
-    heroOpportunity: '今日最佳机会',
-    heroBets: '当前下注',
-    heroSignals: '今日信号',
-    heroSubBets: '个决策追踪中',
-    heroSubSignals: '来自 11 个信源',
-    ciTitle: '🎯 竞品动态',
+    decisionCardTitle: '今日决策',
+    decisionNoSignal: '今日暂无高确定性机会。以下是过去 7 天热度最高的信号。',
+    decisionEvidence: '证据',
+    decisionBuyer: '谁会付费',
+    decisionBuyerInferred: '正在遭受此问题的独立开发者和小团队。',
+    decisionPricing: '定价',
+    decisionOneTime: '一次性',
+    decisionValidation: '验证路径',
+    decisionValidationDefault: '2 小时 MVP → 发到信号源社区 → 测量反馈',
+    decisionWhyNot: '为什么不选另外两个',
+    decisionAskAI: '问 AI',
+    decisionEngagement: '互动',
+    ciTitle: '竞品动态',
     ciAddTarget: '添加追踪',
     ciEmpty: '暂无竞品追踪目标。',
-    ciNoIntel: '今日暂无竞品情报。',
+    ciNoIntel: '今天没有值得关注的新动作。',
     ciMentions: '提及',
-    ciTrendUp: '↑',
-    ciTrendDown: '↓',
-    ciTrendStable: '→',
-    ciNoise: '已过滤',
-    ciTypeCompetitor: '竞品',
-    ciTypeTopic: '话题',
-    ciTypePerson: '人物',
-    ciTypeTech: '技术',
-    ciTypePlatform: '平台',
-    signalsTitle: 'Top 10 信号',
-    thRank: '#',
-    thSignal: '信号',
-    thSource: '来源',
-    thScore: '评分',
-    thCross: '跨平台',
-    thEngagement: '互动',
-    chartScoreTitle: '14天评分趋势',
-    chartVolumeTitle: '14天信号量',
-    reportTitle: '📰 日报',
-    tocTitle: '目录',
-    tocJumpTo: '-- 跳转到 --',
-    oppBoardTitle: '机会看板',
-    oppActiveBets: '🎯 活跃下注',
-    oppActiveBetsEmpty: '暂无活跃下注。',
-    oppPipeline: '📡 机会管线',
-    oppPipelineEmpty: '暂无机会数据。',
-    oppLessons: '📖 近期复盘',
-    oppLessonsEmpty: '暂无复盘记录。',
-    betDrawerTitle: '新下注',
-    betActionObserve: '观察',
-    betActionValidate: '验证',
-    betActionBuild: '构建',
-    betCancel: '取消',
-    betConfirm: '确认下注',
-    loadingSignals: '正在加载信号数据…',
-    loadingReport: '正在加载报告…',
+    competitorCardTitle: '竞品动态',
+    competitorNoIntel: '今天你的追踪目标没有值得关注的新动作。',
+    competitorEmpty: '还没有追踪目标。添加你的第一个竞品或话题。',
+    competitorAddTarget: '+ 添加追踪目标',
+    competitorAddPlaceholder: '竞品名、话题或技术栈…',
+    competitorAddConfirm: '添加',
+    competitorAction: '→ 你的行动',
+    pulseTitle: '系统脉搏',
+    pulseSignals: '今日信号',
+    pulseTopScore: '最高分',
+    pulseCrossPlatform: '跨平台',
+    pulseSourcesOnline: '信源在线',
+    pulseViewArchive: '查看完整日报归档 →',
+    pulseHealthy: '正常',
+    pulseDegraded: '部分异常',
+    pulseNoData: '暂无数据',
+    aiChatTitle: '问 AI',
+    aiChatWelcome: '关于今天的数据有什么想问的？深入追问证据、探索替代方案、验证假设。',
+    aiChatPlaceholder: 'AI 助手即将上线…',
+    aiChatSend: '→',
     footerRefresh: '数据刷新：每日 08:30 CST',
-    oppObserve: '观察',
-    oppValidate: '验证',
-    oppBuild: '构建',
-    oppWhy: '为什么',
-    reportAria: '日报',
+    footerNextUpdate: '下次更新',
     loading: '加载中…',
     noData: '无数据',
     backToTop: '回到顶部',
   },
   en: {
     headerTitle: 'AimFast.Dev',
-    heroOpportunity: "Today's Best Opportunity",
-    heroBets: 'Active Bets',
-    heroSignals: 'Signals Today',
-    heroSubBets: 'decisions tracked',
-    heroSubSignals: 'from 11 sources',
-    ciTitle: '🎯 Competitor Intel',
+    decisionCardTitle: "Today's Decision",
+    decisionNoSignal: 'No high-confidence opportunity today. Here are the hottest signals from the past 7 days.',
+    decisionEvidence: 'Evidence',
+    decisionBuyer: 'Who Will Pay',
+    decisionBuyerInferred: 'Independent developers and small teams facing this problem daily.',
+    decisionPricing: 'Pricing',
+    decisionOneTime: 'one-time',
+    decisionValidation: 'Validation',
+    decisionValidationDefault: '2h MVP → post to signal source → measure response',
+    decisionWhyNot: 'Why Not the Others',
+    decisionAskAI: 'Ask AI',
+    decisionEngagement: 'interactions',
+    ciTitle: 'Competitor Intel',
     ciAddTarget: 'Add Target',
-    ciEmpty: 'No tracking targets.',
-    ciNoIntel: 'No intel today.',
+    ciEmpty: 'No tracking targets set up yet.',
+    ciNoIntel: 'No notable competitor activity today.',
     ciMentions: 'mentions',
-    ciTrendUp: '↑',
-    ciTrendDown: '↓',
-    ciTrendStable: '→',
-    ciNoise: 'filtered',
-    ciTypeCompetitor: 'Competitor',
-    ciTypeTopic: 'Topic',
-    ciTypePerson: 'Person',
-    ciTypeTech: 'Tech',
-    ciTypePlatform: 'Platform',
-    signalsTitle: 'Top 10 Signals',
-    thRank: '#',
-    thSignal: 'Signal',
-    thSource: 'Source',
-    thScore: 'Score',
-    thCross: 'Cross-Platform',
-    thEngagement: 'Engagement',
-    chartScoreTitle: '14-Day Score Trend',
-    chartVolumeTitle: '14-Day Signal Volume',
-    reportTitle: '📰 Daily Report',
-    tocTitle: 'Contents',
-    tocJumpTo: '-- Jump to --',
-    oppBoardTitle: 'Opportunity Board',
-    oppActiveBets: '🎯 Active Bets',
-    oppActiveBetsEmpty: 'No active bets.',
-    oppPipeline: '📡 Opportunity Pipeline',
-    oppPipelineEmpty: 'No opportunity data yet.',
-    oppLessons: '📖 Recent Lessons',
-    oppLessonsEmpty: 'No lessons recorded yet.',
-    betDrawerTitle: 'New Bet',
-    betActionObserve: 'Observe',
-    betActionValidate: 'Validate',
-    betActionBuild: 'Build',
-    betCancel: 'Cancel',
-    betConfirm: 'Place Bet',
-    loadingSignals: 'Loading signal data…',
-    loadingReport: 'Loading report…',
+    competitorCardTitle: 'Competitor Intel',
+    competitorNoIntel: 'No notable activity from your tracked targets today.',
+    competitorEmpty: 'No tracking targets yet. Add your first competitor or topic.',
+    competitorAddTarget: '+ Add Target',
+    competitorAddPlaceholder: 'Competitor name, topic, or tech…',
+    competitorAddConfirm: 'Add',
+    competitorAction: '→ Your move',
+    pulseTitle: 'System Pulse',
+    pulseSignals: 'Signals Today',
+    pulseTopScore: 'Top Score',
+    pulseCrossPlatform: 'Cross-Platform',
+    pulseSourcesOnline: 'Sources Online',
+    pulseViewArchive: 'View Full Report Archive →',
+    pulseHealthy: 'Healthy',
+    pulseDegraded: 'Degraded',
+    pulseNoData: 'No data yet',
+    aiChatTitle: 'Ask AI',
+    aiChatWelcome: 'Ask me anything about this data — dig deeper into the evidence, explore alternatives, or validate assumptions.',
+    aiChatPlaceholder: 'AI assistant coming soon…',
+    aiChatSend: '→',
     footerRefresh: 'Data refresh: daily 08:30 CST',
-    oppObserve: 'Observe',
-    oppValidate: 'Validate',
-    oppBuild: 'Build',
-    oppWhy: 'Why',
-    reportAria: 'Daily Report',
+    footerNextUpdate: 'Next update',
     loading: 'Loading…',
     noData: 'No data',
     backToTop: 'Back to top',
   },
 };
 
-export type IntelAction = { action: string; label: string };
-export type IntelHighlight = { source: string; source_url: string; original_text: string; translation: string; competitor_impact: string; your_action: string; relevance: string };
-export type CompetitorIntelTarget = {
-  target_id: string; target_name: string; target_type: string;
-  stats: { weekly_mentions: number; trend: string; sentiment: string; noise_count: number; signal_count: number; core_narrative: string };
-  highlights: IntelHighlight[];
-  suggested_actions: IntelAction[];
-  noise_summary: string;
-};
-export type CompetitorIntel = { date: string; target_count: number; targets: CompetitorIntelTarget[] };
-export type DashboardData = {
-  date: string;
-  signals: Signal[];
-  summary: Record<string, unknown>;
-  history: HistoryEntry[];
-  opportunities: OppEntry[];
-  demand_radar: Record<string, unknown>;
-  workbench: Record<string, unknown>;
-  bets: Bet[];
-  lessons: Lesson[];
-  watchlist: unknown[];
-  competitor_targets: CompetitorTarget[];
-  competitor_intel: CompetitorIntel;
-  report_md: string;
-  report_md_en: string;
-  pipeline: Record<string, unknown>;
-  archive: ArchiveEntry[];
-  generated_at: string;
-};
-
+/* ── Shared types ── */
 export type Signal = {
   id: string;
   title: string;
@@ -176,12 +118,74 @@ export type Signal = {
   author: string;
 };
 
-export type HistoryEntry = { date: string; total_signals: number; top_score: number; avg_score: number; action_qualified: number; cross_platform: number };
-export type Bet = { id: string; date: string; demand: string; action: string; status: string; thesis?: string; criteria?: string; timeline_days?: number; created_at?: string };
-export type Lesson = { id: string; type: string; opportunity: string; lesson: string; date: string };
-export type CompetitorTarget = { id: string; name: string; type: string; aliases: string[]; keywords: string[]; status: string };
-export type OppEntry = { id?: string; name?: string; demand?: string; score?: number; stage?: string; why?: string; type?: string; _suggested?: boolean };
-export type ArchiveEntry = { date: string; report_md: string; report_md_en: string; has_report: boolean };
+export type HistoryEntry = {
+  date: string;
+  total_signals: number;
+  top_score: number;
+  avg_score: number;
+  action_qualified: number;
+  cross_platform: number;
+};
+
+export type CompetitorIntelTarget = {
+  target_id: string;
+  target_name: string;
+  target_type: string;
+  stats: {
+    weekly_mentions: number;
+    trend: string;
+    sentiment: string;
+    noise_count: number;
+    signal_count: number;
+    core_narrative: string;
+  };
+  highlights: Array<{
+    source: string;
+    source_url: string;
+    original_text: string;
+    translation: string;
+    competitor_impact: string;
+    your_action: string;
+    relevance: string;
+  }>;
+  suggested_actions: Array<{ action: string; label: string }>;
+  noise_summary: string;
+};
+
+export type CompetitorIntel = {
+  date: string;
+  target_count: number;
+  targets: CompetitorIntelTarget[];
+};
+
+export type CompetitorTarget = {
+  id: string;
+  name: string;
+  type: string;
+  aliases: string[];
+  keywords: string[];
+  status: string;
+};
+
+export type DashboardData = {
+  date: string;
+  signals: Signal[];
+  summary: Record<string, unknown>;
+  history: HistoryEntry[];
+  opportunities: unknown[];
+  demand_radar: Record<string, unknown>;
+  workbench: Record<string, unknown>;
+  bets: unknown[];
+  lessons: unknown[];
+  watchlist: unknown[];
+  competitor_targets: CompetitorTarget[];
+  competitor_intel: CompetitorIntel;
+  report_md: string;
+  report_md_en: string;
+  pipeline: Record<string, unknown>;
+  archive: Array<{ date: string; report_md: string; report_md_en: string; has_report: boolean }>;
+  generated_at: string;
+};
 
 export function DashboardClient() {
   // ── State ──
@@ -189,12 +193,7 @@ export function DashboardClient() {
   const [loading, setLoading] = useState(true);
   const [lang, setLang] = useState<'zh' | 'en'>('zh');
   const [selectedDate, setSelectedDate] = useState<string>('');
-  const [drawerOpen, setDrawerOpen] = useState(false);
-  const [drawerDemand, setDrawerDemand] = useState<{ name: string; id: string } | null>(null);
-  const [drawerAction, setDrawerAction] = useState('observe');
-  const [drawerTimeline, setDrawerTimeline] = useState(7);
-  const [drawerThesis, setDrawerThesis] = useState('');
-  const [drawerCriteria, setDrawerCriteria] = useState('');
+  const [chatCard, setChatCard] = useState<'decision' | 'competitor' | 'system' | null>(null);
 
   // ── i18n ──
   const t = useMemo(() => I18N_DICT[lang] || I18N_DICT.en, [lang]);
@@ -223,13 +222,26 @@ export function DashboardClient() {
       try {
         const res = await fetch('/dashboard/data/dashboard.json');
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        const json = await res.json();
+        const json: DashboardData = await res.json();
         if (!cancelled) {
           setData(json);
           setSelectedDate(json.date);
+          // Cache for offline fallback
+          try { localStorage.setItem('kakaopc_dashboard_cache', JSON.stringify(json)); } catch { /* noop */ }
         }
       } catch (err) {
         console.error('[Dashboard] Failed to load data:', err);
+        // Fallback to cache
+        if (!cancelled) {
+          try {
+            const cached = localStorage.getItem('kakaopc_dashboard_cache');
+            if (cached) {
+              const parsed = JSON.parse(cached) as DashboardData;
+              setData(parsed);
+              setSelectedDate(parsed.date);
+            }
+          } catch { /* noop */ }
+        }
       } finally {
         if (!cancelled) setLoading(false);
       }
@@ -238,57 +250,65 @@ export function DashboardClient() {
     return () => { cancelled = true; };
   }, []);
 
-  // ── Bet actions ──
-  const openBetDrawer = useCallback((demandName: string, demandId: string) => {
-    setDrawerDemand({ name: demandName, id: demandId });
-    setDrawerAction('observe');
-    setDrawerTimeline(7);
-    setDrawerThesis('');
-    setDrawerCriteria('');
-    setDrawerOpen(true);
+  // ── AI Chat ──
+  const openChat = useCallback((card: 'decision' | 'competitor' | 'system') => {
+    setChatCard((prev) => (prev === card ? null : card));
   }, []);
 
-  const closeBetDrawer = useCallback(() => setDrawerOpen(false), []);
+  const closeChat = useCallback(() => setChatCard(null), []);
 
-  const confirmBet = useCallback(() => {
-    if (!drawerDemand) return;
-    const bets: Bet[] = data?.bets ? [...data.bets] : [];
-    const newBet: Bet = {
-      id: `bet-${Date.now()}`,
-      date: data?.date || '',
-      demand: drawerDemand.name,
-      action: drawerAction,
-      status: 'active',
-      thesis: drawerThesis,
-      criteria: drawerCriteria,
-      timeline_days: drawerTimeline,
-      created_at: new Date().toISOString(),
-    };
-    bets.push(newBet);
-    setData((prev) => prev ? { ...prev, bets } : prev);
-    // Persist to localStorage
-    try {
-      const stored = JSON.parse(localStorage.getItem('kakaopc_bets') || '[]');
-      stored.push(newBet);
-      localStorage.setItem('kakaopc_bets', JSON.stringify(stored));
-    } catch { /* noop */ }
-    closeBetDrawer();
-  }, [drawerDemand, drawerAction, drawerTimeline, drawerThesis, drawerCriteria, data, closeBetDrawer]);
+  // ── Derived data ──
+  const topSignal = data?.signals?.[0] || null;
+  const history = data?.history || [];
+  const signalCount = data?.signals?.length || 0;
+  const topScore = topSignal?.score || (history.length > 0 ? history[history.length - 1].top_score : 0);
+  const crossPlatformCount = data?.signals?.filter((s) => s.cross_platform_count > 0).length || 0;
+  const reportMd = lang === 'en' && data?.report_md_en ? data.report_md_en : (data?.report_md || '');
+
+  // Archive dates for date picker
+  const allDates = useMemo(() => {
+    if (!data?.archive) return data?.date ? [data.date] : [];
+    return data.archive.map((a) => a.date).sort().reverse();
+  }, [data]);
 
   // ── Render ──
   if (loading) {
     return (
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '60vh' }}>
-        <p style={{ color: 'var(--color-text-muted)', fontFamily: 'var(--font-mono)' }}>{t.loading}</p>
-      </div>
+      <>
+        <DashboardHeader
+          lang={lang}
+          onToggleLang={toggleLang}
+          title={t.headerTitle}
+          date="--"
+          dates={[]}
+          onSelectDate={() => {}}
+        />
+        <main className="dash-main">
+          <DecisionCard t={t} signal={null} reportMd="" date="--" loading />
+          <CompetitorCard t={t} intel={null} targets={[]} loading />
+          <SystemPulse t={t} history={[]} signalCount={0} topScore={0} crossPlatformCount={0} sourcesOnline={0} sourcesTotal={0} loading />
+        </main>
+      </>
     );
   }
 
   if (!data) {
     return (
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '60vh' }}>
-        <p style={{ color: 'var(--color-text-muted)' }}>{t.noData}</p>
-      </div>
+      <>
+        <DashboardHeader
+          lang={lang}
+          onToggleLang={toggleLang}
+          title={t.headerTitle}
+          date="--"
+          dates={[]}
+          onSelectDate={() => {}}
+        />
+        <main className="dash-main">
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '40vh' }}>
+            <p style={{ color: 'var(--color-text-muted)' }}>{t.noData}</p>
+          </div>
+        </main>
+      </>
     );
   }
 
@@ -299,71 +319,71 @@ export function DashboardClient() {
         onToggleLang={toggleLang}
         title={t.headerTitle}
         date={selectedDate || data.date}
+        dates={allDates}
+        onSelectDate={setSelectedDate}
       />
 
       <main className="dash-main">
-        {/* ── Hero Strip ── */}
-        <DashboardHero
+        {/* ── Card 1: Today's Decision ── */}
+        <DecisionCard
           t={t}
-          topSignal={data.signals[0] || null}
-          betCount={data.bets?.filter((b: Bet) => b.status === 'active').length || 0}
-          signalCount={data.signals.length}
+          signal={topSignal}
+          reportMd={reportMd}
+          date={selectedDate || data.date}
+          onAskAI={() => openChat('decision')}
         />
 
-        {/* ── Competitor Intel ── */}
-        <CompetitorIntel
+        {/* AI Chat for decision card */}
+        {chatCard === 'decision' && (
+          <AiChatPanel
+            t={t}
+            cardType="decision"
+            isOpen
+            onClose={closeChat}
+          />
+        )}
+
+        {/* ── Card 2: Competitor Intel ── */}
+        <CompetitorCard
           t={t}
           intel={data.competitor_intel}
           targets={data.competitor_targets || []}
+          onAskAI={() => openChat('competitor')}
         />
 
-        {/* ── Top 10 Signals ── */}
-        <TopSignals t={t} signals={data.signals.slice(0, 10)} />
+        {/* AI Chat for competitor card */}
+        {chatCard === 'competitor' && (
+          <AiChatPanel
+            t={t}
+            cardType="competitor"
+            isOpen
+            onClose={closeChat}
+          />
+        )}
 
-        {/* ── Charts ── */}
-        <TrendCharts t={t} history={data.history || []} />
-
-        {/* ── Daily Report ── */}
-        <DailyReport
+        {/* ── Card 3: System Pulse ── */}
+        <SystemPulse
           t={t}
-          lang={lang}
-          reportMd={lang === 'en' && data.report_md_en ? data.report_md_en : data.report_md}
-          date={selectedDate || data.date}
-          archive={data.archive || []}
-          selectedDate={selectedDate}
-          onSelectDate={setSelectedDate}
+          history={history}
+          signalCount={signalCount}
+          topScore={topScore}
+          crossPlatformCount={crossPlatformCount}
+          sourcesOnline={11}
+          sourcesTotal={11}
         />
 
-        {/* ── Opportunity Board ── */}
-        <OpportunityBoard
-          t={t}
-          bets={data.bets || []}
-          opportunities={data.opportunities || []}
-          demandRadar={data.demand_radar}
-          lessons={data.lessons || []}
-          onPlaceBet={openBetDrawer}
-        />
+        {/* AI Chat for system pulse */}
+        {chatCard === 'system' && (
+          <AiChatPanel
+            t={t}
+            cardType="system"
+            isOpen
+            onClose={closeChat}
+          />
+        )}
       </main>
 
       <DashboardFooter t={t} generatedAt={data.generated_at} />
-
-      {/* ── Bet Drawer ── */}
-      {drawerOpen && (
-        <BetDrawer
-          t={t}
-          demandName={drawerDemand?.name || ''}
-          action={drawerAction}
-          timeline={drawerTimeline}
-          thesis={drawerThesis}
-          criteria={drawerCriteria}
-          onActionChange={setDrawerAction}
-          onTimelineChange={setDrawerTimeline}
-          onThesisChange={setDrawerThesis}
-          onCriteriaChange={setDrawerCriteria}
-          onConfirm={confirmBet}
-          onClose={closeBetDrawer}
-        />
-      )}
     </>
   );
 }
