@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useMemo } from 'react';
+import { ClipboardList } from 'lucide-react';
 
 type Props = {
   t: Record<string, string>;
@@ -136,7 +137,8 @@ export function FullReport({ t, reportMd }: Props) {
         aria-expanded={open}
       >
         <span className="full-report-toggle-icon">{open ? '▾' : '▸'}</span>
-        <span>{t.fullReportToggle || '📋 完整日报'}</span>
+        <ClipboardList size={16} />
+        <span>{t.fullReportToggle || '完整日报'}</span>
         <span className="full-report-toggle-hint">
           {open ? (t.fullReportCollapse || '收起') : (t.fullReportExpand || '展开阅读')}
         </span>

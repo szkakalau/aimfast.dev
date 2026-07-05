@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Clock, Eye, TrendingDown, Search, Shield, Target, BarChart3, Banknote, Zap } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'AimFast.Dev — Know What Your Market Is Doing, Every Morning',
@@ -57,7 +58,7 @@ export default function LandingPage() {
         <div className="pain-grid">
           {/* Pain 3: Direction Waste */}
           <div className="pain-card">
-            <div className="pain-icon">⏳</div>
+            <Clock size={32} className="pain-icon" />
             <h3>Direction Waste</h3>
             <p>
               You spent 2 weeks building a feature nobody asked for. If you had
@@ -72,7 +73,7 @@ export default function LandingPage() {
 
           {/* Pain 1: Competition Blind Spots */}
           <div className="pain-card pain-card-accent">
-            <div className="pain-icon">👁️</div>
+            <Eye size={32} className="pain-icon" />
             <h3>Competition Blind Spots</h3>
             <p>
               Your competitor changed their pricing 3 days ago. Their free users
@@ -86,7 +87,7 @@ export default function LandingPage() {
 
           {/* Pain 2: Trend Lag */}
           <div className="pain-card">
-            <div className="pain-icon">📉</div>
+            <TrendingDown size={32} className="pain-icon" />
             <h3>Trend Lag</h3>
             <p>
               A new distribution channel is taking off. Early adopters are
@@ -110,7 +111,7 @@ export default function LandingPage() {
 
         <div className="sample-decision-card">
           <div className="sample-card-header">
-            <span className="sample-card-title">🎯 Today&apos;s Decision</span>
+            <span className="sample-card-title"><Target size={16} className="icon-inline" /> Today&apos;s Decision</span>
             <span className="sample-card-date">2026-07-04</span>
           </div>
 
@@ -120,7 +121,7 @@ export default function LandingPage() {
           </p>
 
           <div className="sample-card-evidence">
-            <strong>📊 Evidence:</strong>{' '}
+            <strong><BarChart3 size={16} className="icon-inline" /> Evidence:</strong>{' '}
             Mail Memories on HN: <strong>101 upvotes, 53 comments</strong>.
             Users repeatedly said: &ldquo;I need this&rdquo; and &ldquo;But why
             can&apos;t I batch export?&rdquo;
@@ -128,11 +129,11 @@ export default function LandingPage() {
 
           <div className="sample-card-two-col">
             <div>
-              <span className="sample-card-label">💰 Pricing</span>
+              <span className="sample-card-label"><Banknote size={14} className="icon-inline" /> Pricing</span>
               <div className="sample-card-price">$9.99 <span>one-time</span></div>
             </div>
             <div>
-              <span className="sample-card-label">⚡ Validation</span>
+              <span className="sample-card-label"><Zap size={14} className="icon-inline" /> Validation</span>
               <p className="sample-card-validation">
                 2h Electron MVP → Show HN → count how many ask &ldquo;can it export?&rdquo;
               </p>
@@ -159,7 +160,7 @@ export default function LandingPage() {
 
         <div className="engine-grid">
           <div className="engine-card">
-            <div className="engine-icon">🔍</div>
+            <Search size={32} className="engine-icon" />
             <h3>Discovery Engine</h3>
             <p>
               AI scans 11+ sources — HN, Reddit, GitHub, Product Hunt, X, DEV,
@@ -174,7 +175,7 @@ export default function LandingPage() {
           </div>
 
           <div className="engine-card">
-            <div className="engine-icon">🛡️</div>
+            <Shield size={32} className="engine-icon" />
             <h3>Monitoring Engine</h3>
             <p>
               Track up to 10 competitors, topics, people, or tech stacks.

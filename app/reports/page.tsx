@@ -2,6 +2,7 @@ import { readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import type { Metadata } from 'next';
 import { parseFrontmatter } from '@/lib/frontmatter';
+import { ClipboardList } from 'lucide-react';
 
 const REPORTS_DIR = join(process.cwd(), 'content', 'reports');
 
@@ -87,7 +88,7 @@ export default function ReportsIndexPage() {
       />
       <main className="container">
         <div className="reports-index" style={{ padding: 'var(--space-8) 0' }}>
-          <h1>📋 Daily Reports</h1>
+          <h1><ClipboardList size={28} className="icon-inline" /> Daily Reports</h1>
           <p style={{ color: 'var(--color-muted)', marginBottom: 'var(--space-6)' }}>
             {reports.length} report{reports.length !== 1 ? 's' : ''} available. Click any date to read the full report.
           </p>

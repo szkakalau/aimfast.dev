@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect, useCallback } from 'react';
+import { X } from 'lucide-react';
 
 type Message = {
   role: 'user' | 'assistant';
@@ -78,7 +79,7 @@ export function AiChatPanel({ t, cardType: _cardType, isOpen, onClose }: Props) 
           {t.aiChatTitle || 'Ask AI'}
         </span>
         <button className="ai-chat-close" onClick={onClose} aria-label="Close">
-          ✕
+          <X size={16} />
         </button>
       </div>
 

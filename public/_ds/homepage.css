@@ -1,5 +1,8 @@
 /* ═════ AimFast.Dev Design System — Homepage Layout ═════ */
 
+/* ── Inline icon helper ── */
+.icon-inline { display: inline-block; vertical-align: middle; margin-right: 4px; flex-shrink: 0; }
+
 /* ── Animations ── */
 .anim-fade-up { animation: fade-up 0.6s var(--ease-out) both; }
 .anim-delay-1 { animation-delay: 0.15s; }
@@ -96,8 +99,8 @@
   box-shadow: var(--shadow-lg);
 }
 .pain-icon {
-  font-size: 2rem;
   margin-bottom: var(--space-2);
+  color: var(--color-accent);
 }
 .pain-card h3 {
   font-size: 1.05rem;
@@ -241,8 +244,8 @@
   transform: translateY(-2px);
 }
 .engine-icon {
-  font-size: 2rem;
   margin-bottom: var(--space-2);
+  color: var(--color-accent);
 }
 .engine-card h3 {
   font-size: 1.1rem;

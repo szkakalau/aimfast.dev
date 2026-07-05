@@ -1,5 +1,6 @@
 'use client';
 
+import { BarChart3 } from 'lucide-react';
 import type { CompetitorIntel, CompetitorTarget } from '../dashboard-client';
 
 type Props = {
