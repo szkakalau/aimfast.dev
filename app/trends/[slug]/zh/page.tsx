@@ -10,15 +10,14 @@ import {
   Globe,
 } from 'lucide-react';
 
-import type { TrendTerm, TrendTermsData } from '../types';
+import type { TrendTerm, TrendTermsData } from '../../types';
 import {
   getAllTrendTerms,
   getTrendTerm,
   getResearchContent,
-  stageLabel,
   stageLabelZh,
   stagePct,
-} from '../data';
+} from '../../data';
 
 /* ── Static params ── */
 
@@ -39,12 +38,12 @@ export async function generateMetadata({
   const { slug } = await params;
   const term = getTrendTerm(slug);
   if (!term) {
-    return { title: 'Trend Not Found — AimFast.Dev' };
+    return { title: '未找到趋势词 — AimFast.Dev' };
   }
 
-  const title = `${term.canonical} — Trend Report & Analysis | AimFast.Dev`;
-  const description = term.summary_en || term.summary_zh;
-  const url = `https://www.aimfast.dev/trends/${slug}/`;
+  const title = `${term.canonical} — 趋势报告与分析 | AimFast.Dev`;
+  const description = term.summary_zh || term.summary_en;
+  const url = `https://www.aimfast.dev/trends/${slug}/zh/`;
 
   return {
     title,
@@ -53,8 +52,8 @@ export async function generateMetadata({
     alternates: {
       canonical: url,
       languages: {
-        'zh-CN': `https://www.aimfast.dev/trends/${slug}/zh/`,
-        en: url,
+        en: `https://www.aimfast.dev/trends/${slug}/`,
+        'zh-CN': url,
       },
     },
     openGraph: {
@@ -74,7 +73,7 @@ export async function generateMetadata({
 
 /* ── Page ── */
 
-export default async function TrendDetailPage({
+export default async function TrendDetailZhPage({
   params,
 }: {
   params: Promise<{ slug: string }>;
@@ -86,9 +85,9 @@ export default async function TrendDetailPage({
     return (
       <main className="trend-detail">
         <div className="trends-empty">
-          <h2>Trend not found</h2>
+          <h2>未找到趋势词</h2>
           <p>
-            <a href="/trends/">← Back to all trends</a>
+            <a href="/trends/">← 返回趋势列表</a>
           </p>
         </div>
       </main>
@@ -111,28 +110,18 @@ export default async function TrendDetailPage({
       sections.push(m[1].trim());
     }
 
-    // Generate FAQ from research report sections
     if (sections.length > 0) {
-      // What is X?
-      const whatIs = sections.find((s) => /what is/i.test(s));
-      if (whatIs) {
-        faqItems.push({
-          q: `What is ${term.canonical}?`,
-          a: `${term.canonical} is an emerging technology term tracked by AimFast.Dev. ${term.summary_en || term.summary_zh} First detected on ${term.first_seen} across ${term.source_count} independent sources.`,
-        });
-      }
-      // Why now?
-      const whyNow = sections.find((s) => /why now/i.test(s));
-      if (whyNow) {
-        faqItems.push({
-          q: `Why is ${term.canonical} trending now?`,
-          a: `The term "${term.canonical}" has been spotted across ${term.source_count} sources (${term.sources.join(', ')}) with ${term.total_mentions} total mentions and ${term.growth_pct}% growth. See the full report below for market signals and commercial context.`,
-        });
-      }
-      // Who should care?
       faqItems.push({
-        q: `Who should pay attention to ${term.canonical}?`,
-        a: `Independent developers, indie hackers, and product builders tracking emerging tech trends. This term falls under the "${term.category}" category and is currently in the ${term.stage} stage (${stagePct(term.stage)} days since first detection).`,
+        q: `${term.canonical} 是什么？`,
+        a: `${term.canonical} 是 AimFast.Dev 追踪的新兴技术术语。${term.summary_zh || term.summary_en} 首次发现于 ${term.first_seen}，已覆盖 ${term.source_count} 个独立信源。`,
+      });
+      faqItems.push({
+        q: `为什么 ${term.canonical} 现在火了？`,
+        a: `该词已出现在 ${term.source_count} 个信源中（${term.sources.join('、')}），累计 ${term.total_mentions} 次提及，增长 ${term.growth_pct}%。详见下方完整报告。`,
+      });
+      faqItems.push({
+        q: `谁应该关注 ${term.canonical}？`,
+        a: `独立开发者、独立黑客、以及关注新兴技术趋势的产品人。该词属于"${term.category}"类别，目前处于${stageLabelZh(term.stage)}。`,
       });
     }
   }
@@ -144,22 +133,22 @@ export default async function TrendDetailPage({
     '@graph': [
       {
         '@type': 'Article',
-        headline: `${term.canonical} — Trend Report`,
-        description: term.summary_en,
-        url: `https://www.aimfast.dev/trends/${slug}/`,
+        headline: `${term.canonical} — 趋势报告`,
+        description: term.summary_zh,
+        url: `https://www.aimfast.dev/trends/${slug}/zh/`,
         datePublished: term.first_seen,
         dateModified: term.last_seen,
         author: { '@type': 'Organization', name: 'AimFast.Dev' },
-        inLanguage: 'en',
+        inLanguage: 'zh-CN',
         mainEntityOfPage: {
           '@type': 'WebPage',
-          '@id': `https://www.aimfast.dev/trends/${slug}/`,
+          '@id': `https://www.aimfast.dev/trends/${slug}/zh/`,
         },
         about: {
           '@type': 'DefinedTerm',
           name: term.canonical,
-          description: term.summary_en,
-          inDefinedTermSet: 'https://www.aimfast.dev/trends/',
+          description: term.summary_zh,
+          inDefinedTermSet: 'https://www.aimfast.dev/trends/zh/',
         },
       },
       ...(faqItems.length > 0
@@ -191,18 +180,18 @@ export default async function TrendDetailPage({
         {/* ── Breadcrumb + Language Switcher ── */}
         <div className="trend-detail-topbar">
           <a href="/trends/" className="trend-breadcrumb">
-            ← Back to all trends
+            ← 返回趋势列表
           </a>
-          <a href={`/trends/${slug}/zh/`} className="lang-switch">
+          <a href={`/trends/${slug}/`} className="lang-switch">
             <Globe size={13} />
-            中文
+            English
           </a>
         </div>
 
         {/* ── Header ── */}
         <div className="trend-detail-header">
           <span className={`stage-badge ${term.stage}`}>
-            {stageLabel(term.stage)}
+            {stageLabelZh(term.stage)}
           </span>
           <h1>{term.canonical}</h1>
 
@@ -217,27 +206,27 @@ export default async function TrendDetailPage({
           <div className="trend-detail-meta-row">
             <span className="trend-detail-meta-item">
               <Calendar size={14} />
-              First seen <strong>{term.first_seen}</strong>
+              首次出现 <strong>{term.first_seen}</strong>
             </span>
             <span className="trend-detail-meta-item">
               <Calendar size={14} />
-              Last seen <strong>{term.last_seen}</strong>
+              最近出现 <strong>{term.last_seen}</strong>
             </span>
             <span className="trend-detail-meta-item">
               <BarChart3 size={14} />
-              Score <strong>{term.score}</strong>
+              评分 <strong>{term.score}</strong>
             </span>
             <span className="trend-detail-meta-item">
               <Activity size={14} />
-              <strong>{term.source_count}</strong> sources
+              <strong>{term.source_count}</strong> 个信源
             </span>
             <span className="trend-detail-meta-item">
               <Hash size={14} />
-              <strong>{term.total_mentions}</strong> mentions
+              <strong>{term.total_mentions}</strong> 次提及
             </span>
             <span className="trend-detail-meta-item">
               <TrendingUp size={14} />
-              Growth <strong>+{term.growth_pct}%</strong>
+              增长 <strong>+{term.growth_pct}%</strong>
             </span>
           </div>
         </div>
@@ -253,15 +242,14 @@ export default async function TrendDetailPage({
               />
             ) : (
               <p style={{ color: 'var(--color-text-muted)' }}>
-                Research report not yet generated. Check back soon — our AI
-                generates deep-dive reports for high-scoring trends daily.
+                研究报告尚未生成。请稍后再来——我们的 AI 每天会为高分趋势词自动生成深度研究报告。
               </p>
             )}
 
             {/* ── FAQ Section (GEO) ── */}
             {faqItems.length > 0 && (
               <section className="trend-faq" style={{ marginTop: 'var(--space-6)' }}>
-                <h2>Frequently Asked Questions</h2>
+                <h2>常见问题</h2>
                 {faqItems.map((f, i) => (
                   <details key={i} className="faq-item" open={i === 0}>
                     <summary>{f.q}</summary>
@@ -277,8 +265,8 @@ export default async function TrendDetailPage({
           {/* ── Sidebar ── */}
           <aside className="trend-sidebar">
             <div className="trend-sidebar-card">
-              <h4>About This Trend</h4>
-              <p>{term.summary_en || term.summary_zh}</p>
+              <h4>关于这个趋势</h4>
+              <p>{term.summary_zh || term.summary_en}</p>
               <div
                 style={{
                   fontSize: '0.82rem',
@@ -287,13 +275,13 @@ export default async function TrendDetailPage({
                 }}
               >
                 <div>
-                  <strong>Category:</strong> {term.category}
+                  <strong>分类：</strong>{term.category}
                 </div>
                 <div>
-                  <strong>Age:</strong> {stagePct(term.stage)} days
+                  <strong>发现天数：</strong>{stagePct(term.stage)} 天
                 </div>
                 <div>
-                  <strong>Tags:</strong>{' '}
+                  <strong>标签：</strong>
                   {term.tags.map((t) => (
                     <span
                       key={t}
@@ -307,10 +295,9 @@ export default async function TrendDetailPage({
             </div>
 
             <div className="trend-sidebar-card">
-              <h4>Want the full picture?</h4>
+              <h4>想看完整情报？</h4>
               <p>
-                Get daily competitive intel, product opportunities, and
-                monitoring — not just trends.
+                获取每日竞品情报、产品机会和持续监控——不止是趋势。
               </p>
               <a
                 href="/"
@@ -322,7 +309,7 @@ export default async function TrendDetailPage({
                   padding: '10px 20px',
                 }}
               >
-                Start Free Trial
+                免费试用
                 <ArrowUpRight size={14} />
               </a>
             </div>
@@ -331,34 +318,32 @@ export default async function TrendDetailPage({
 
         {/* ── Bottom CTA ── */}
         <section className="trends-cta">
-          <h2>Don&apos;t just track trends — act on them</h2>
+          <h2>不只是追踪趋势——抓住机会</h2>
           <p>
-            Every morning, get one actionable product opportunity with
-            evidence, pricing strategy, and validation path. 14-day free
-            trial.
+            每天早上，你会收到一个可执行的产品机会，附带证据链、定价策略和验证路径。14 天免费试用。
           </p>
           <a
             href="/"
             className="btn btn-primary"
             style={{ fontSize: '1rem', padding: '14px 32px' }}
           >
-            Start Free Trial →
+            免费试用 →
           </a>
         </section>
 
         {/* ── Footer ── */}
         <footer className="site-footer">
           <div className="footer-links">
-            <a href="/">Home</a>
+            <a href="/">首页</a>
             <span className="footer-sep">|</span>
-            <a href="/trends/">All Trends</a>
+            <a href="/trends/">趋势列表</a>
             <span className="footer-sep">|</span>
             <a href="/dashboard/">Dashboard</a>
             <span className="footer-sep">|</span>
             <a href="/reports/">Reports</a>
           </div>
           <div className="footer-copy">
-            AimFast.Dev — Trend reports updated daily
+            AimFast.Dev — 趋势报告每日更新
           </div>
         </footer>
       </main>

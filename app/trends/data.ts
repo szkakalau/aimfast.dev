@@ -39,3 +39,23 @@ export function stageLabel(stage: string): string {
   };
   return map[stage] || stage;
 }
+
+export function stageLabelZh(stage: string): string {
+  const map: Record<string, string> = {
+    nascent: '萌芽期 (0-7天)',
+    emergent: '涌现期 (8-30天)',
+    validating: '验证期 (31-90天)',
+    rising: '上升期 (90天+)',
+  };
+  return map[stage] || stage;
+}
+
+export function stagePct(stage: string): string {
+  const map: Record<string, string> = {
+    nascent: '0–7',
+    emergent: '8–30',
+    validating: '31–90',
+    rising: '90+',
+  };
+  return map[stage] || '';
+}
