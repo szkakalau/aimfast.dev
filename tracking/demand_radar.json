@@ -2,14 +2,14 @@
   "_schema": "需求雷达 v3.1 — Market/Business 分离 + 趋势级独立评分",
   "_version": "3.1",
   "_formula": "Market=(Trend×0.5+Growth×0.3+Consistency×0.2)×100, Business=(Pain×0.5+Pay×0.5)×100, Opportunity=Market×0.6+Business×0.4, Confidence=log2(n+1)×20",
-  "generated_at": "2026-07-05T11:01:43.924877+08:00",
+  "generated_at": "2026-07-06T10:59:21.943602+08:00",
   "weeks": [
-    "2026-05-25",
     "2026-06-01",
     "2026-06-08",
     "2026-06-15",
     "2026-06-22",
-    "2026-06-29"
+    "2026-06-29",
+    "2026-07-06"
   ],
   "demands": [
     {
@@ -18,18 +18,18 @@
       "name_en": "Save Money — AI Cost Crisis",
       "description": "开发者抱怨 Claude 账单爆炸、Token 消耗失控、API 费用月月翻倍",
       "snapshots": {
-        "2026-06-15": 3,
         "2026-06-22": 7,
-        "2026-06-29": 3
+        "2026-06-29": 3,
+        "2026-07-06": 0
       },
       "total_signals": 16,
       "delta": "falling",
-      "market_score": 48,
+      "market_score": 19,
       "business_score": 95,
       "competition": 20,
       "ai_replaceability": 2,
       "confidence": 82,
-      "stage": "breaking",
+      "stage": "forming",
       "target_buyer": "Claude Code 重度用户、AI 创业公司 CTO",
       "description_en": "Developers hate AI bills. Token costs spiraling out of control.",
       "target_buyer_en": "Heavy AI users, startup CTOs",
@@ -51,9 +51,9 @@
         {
           "name": "Cost Control",
           "snapshots": {
-            "2026-06-15": 0,
             "2026-06-22": 0,
-            "2026-06-29": 0
+            "2026-06-29": 0,
+            "2026-07-06": 0
           },
           "total_signals": 0,
           "delta": "stable",
@@ -79,49 +79,49 @@
         {
           "name": "Token Optimization",
           "snapshots": {
-            "2026-06-15": 2,
             "2026-06-22": 0,
-            "2026-06-29": 0
+            "2026-06-29": 0,
+            "2026-07-06": 1
           },
-          "total_signals": 2,
-          "delta": "stable",
-          "market_score": 8,
+          "total_signals": 3,
+          "delta": "rising",
+          "market_score": 29,
           "business_score": 95,
-          "competition": 13,
+          "competition": 14,
           "ai_replaceability": 2,
-          "confidence": 32,
-          "stage": "early",
-          "opportunity_index": 19,
+          "confidence": 40,
+          "stage": "breaking",
+          "opportunity_index": 25,
           "trend_score": 0,
-          "growth_score": 1,
-          "consistency_score": 2,
+          "growth_score": 7,
+          "consistency_score": 3,
           "pain_score": 10,
           "pay_score": 9,
           "pain_frequency": 10,
           "pain_severity": 10,
           "pay_budget": 10,
           "pay_urgency": 9,
-          "total_appearances": 2,
-          "distinct_days": 1
+          "total_appearances": 3,
+          "distinct_days": 2
         },
         {
           "name": "Local Model Hybrid",
           "snapshots": {
-            "2026-06-15": 14,
             "2026-06-22": 12,
-            "2026-06-29": 7
+            "2026-06-29": 7,
+            "2026-07-06": 2
           },
-          "total_signals": 58,
+          "total_signals": 60,
           "delta": "falling",
-          "market_score": 79,
+          "market_score": 73,
           "business_score": 95,
           "competition": 52,
           "ai_replaceability": 2,
           "confidence": 100,
           "stage": "forming",
-          "opportunity_index": 21,
+          "opportunity_index": 20,
           "trend_score": 10,
-          "growth_score": 3,
+          "growth_score": 1,
           "consistency_score": 10,
           "pain_score": 10,
           "pay_score": 9,
@@ -129,28 +129,28 @@
           "pain_severity": 10,
           "pay_budget": 10,
           "pay_urgency": 9,
-          "total_appearances": 58,
-          "distinct_days": 6
+          "total_appearances": 60,
+          "distinct_days": 7
         },
         {
           "name": "Model Routing",
           "snapshots": {
-            "2026-06-15": 0,
             "2026-06-22": 0,
-            "2026-06-29": 0
+            "2026-06-29": 0,
+            "2026-07-06": 0
           },
           "total_signals": 3,
           "delta": "stable",
-          "market_score": 16,
+          "market_score": 14,
           "business_score": 95,
           "competition": 14,
           "ai_replaceability": 2,
           "confidence": 40,
           "stage": "forming",
           "opportunity_index": 21,
-          "trend_score": 1,
+          "trend_score": 0,
           "growth_score": 1,
-          "consistency_score": 5,
+          "consistency_score": 4,
           "pain_score": 10,
           "pay_score": 9,
           "pain_frequency": 10,
@@ -163,36 +163,36 @@
         {
           "name": "Prompt Compression",
           "snapshots": {
-            "2026-06-15": 0,
             "2026-06-22": 0,
-            "2026-06-29": 0
+            "2026-06-29": 0,
+            "2026-07-06": 1
           },
-          "total_signals": 0,
-          "delta": "stable",
-          "market_score": 15,
+          "total_signals": 1,
+          "delta": "rising",
+          "market_score": 22,
           "business_score": 95,
-          "competition": 12,
+          "competition": 13,
           "ai_replaceability": 2,
-          "confidence": 1,
+          "confidence": 20,
           "stage": "early",
-          "opportunity_index": 22,
+          "opportunity_index": 23,
           "trend_score": 0,
-          "growth_score": 5,
-          "consistency_score": 0,
+          "growth_score": 6,
+          "consistency_score": 1,
           "pain_score": 10,
           "pay_score": 9,
           "pain_frequency": 10,
           "pain_severity": 10,
           "pay_budget": 10,
           "pay_urgency": 9,
-          "total_appearances": 0,
-          "distinct_days": 0
+          "total_appearances": 1,
+          "distinct_days": 1
         }
       ],
-      "opportunity_index": 28,
+      "opportunity_index": 21,
       "trend_score": 1,
-      "growth_score": 10,
-      "consistency_score": 7,
+      "growth_score": 1,
+      "consistency_score": 6,
       "pain_score": 10,
       "pay_score": 9,
       "pain_frequency": 10,
@@ -208,18 +208,18 @@
       "name_en": "Make Money — AI-Powered Revenue",
       "description": "Reddit/Twitter 自动获客、AI 销售代理、开源项目商业化变现",
       "snapshots": {
-        "2026-06-15": 5,
         "2026-06-22": 8,
-        "2026-06-29": 8
+        "2026-06-29": 8,
+        "2026-07-06": 1
       },
-      "total_signals": 31,
-      "delta": "stable",
-      "market_score": 52,
+      "total_signals": 32,
+      "delta": "falling",
+      "market_score": 34,
       "business_score": 71,
       "competition": 60,
       "ai_replaceability": 5,
       "confidence": 100,
-      "stage": "breaking",
+      "stage": "forming",
       "target_buyer": "独立开发者、SaaS 创业者",
       "description_en": "Auto lead gen, AI sales agents, monetizing open source.",
       "target_buyer_en": "Indie developers, SaaS founders",
@@ -241,22 +241,22 @@
         {
           "name": "Lead Generation",
           "snapshots": {
-            "2026-06-15": 0,
             "2026-06-22": 1,
-            "2026-06-29": 0
+            "2026-06-29": 0,
+            "2026-07-06": 0
           },
           "total_signals": 1,
-          "delta": "falling",
-          "market_score": 38,
+          "delta": "stable",
+          "market_score": 18,
           "business_score": 71,
-          "competition": 44,
+          "competition": 43,
           "ai_replaceability": 5,
           "confidence": 20,
           "stage": "early",
-          "opportunity_index": 20,
+          "opportunity_index": 16,
           "trend_score": 2,
-          "growth_score": 6,
-          "consistency_score": 5,
+          "growth_score": 1,
+          "consistency_score": 3,
           "pain_score": 7,
           "pay_score": 7,
           "pain_frequency": 8,
@@ -269,22 +269,22 @@
         {
           "name": "Sales Agents",
           "snapshots": {
-            "2026-06-15": 2,
             "2026-06-22": 0,
-            "2026-06-29": 0
+            "2026-06-29": 0,
+            "2026-07-06": 0
           },
           "total_signals": 2,
           "delta": "stable",
-          "market_score": 33,
+          "market_score": 26,
           "business_score": 71,
-          "competition": 52,
+          "competition": 49,
           "ai_replaceability": 5,
           "confidence": 32,
           "stage": "early",
           "opportunity_index": 16,
-          "trend_score": 4,
+          "trend_score": 3,
           "growth_score": 1,
-          "consistency_score": 5,
+          "consistency_score": 3,
           "pain_score": 7,
           "pay_score": 7,
           "pain_frequency": 8,
@@ -297,21 +297,21 @@
         {
           "name": "AI Prospecting",
           "snapshots": {
-            "2026-06-15": 0,
             "2026-06-22": 2,
-            "2026-06-29": 3
+            "2026-06-29": 3,
+            "2026-07-06": 1
           },
-          "total_signals": 5,
-          "delta": "rising",
-          "market_score": 88,
+          "total_signals": 6,
+          "delta": "falling",
+          "market_score": 100,
           "business_score": 71,
           "competition": 76,
           "ai_replaceability": 5,
-          "confidence": 52,
-          "stage": "forming",
-          "opportunity_index": 14,
+          "confidence": 56,
+          "stage": "breaking",
+          "opportunity_index": 15,
           "trend_score": 10,
-          "growth_score": 6,
+          "growth_score": 10,
           "consistency_score": 10,
           "pain_score": 7,
           "pay_score": 7,
@@ -319,15 +319,15 @@
           "pain_severity": 9,
           "pay_budget": 7,
           "pay_urgency": 10,
-          "total_appearances": 5,
-          "distinct_days": 2
+          "total_appearances": 6,
+          "distinct_days": 3
         },
         {
           "name": "Open Source Monetization",
           "snapshots": {
-            "2026-06-15": 0,
             "2026-06-22": 0,
-            "2026-06-29": 0
+            "2026-06-29": 0,
+            "2026-07-06": 0
           },
           "total_signals": 0,
           "delta": "stable",
@@ -353,9 +353,9 @@
         {
           "name": "Content Marketing AI",
           "snapshots": {
-            "2026-06-15": 0,
             "2026-06-22": 0,
-            "2026-06-29": 0
+            "2026-06-29": 0,
+            "2026-07-06": 0
           },
           "total_signals": 0,
           "delta": "stable",
@@ -379,18 +379,18 @@
           "distinct_days": 0
         }
       ],
-      "opportunity_index": 17,
+      "opportunity_index": 14,
       "trend_score": 2,
-      "growth_score": 9,
-      "consistency_score": 8,
+      "growth_score": 3,
+      "consistency_score": 9,
       "pain_score": 7,
       "pay_score": 7,
       "pain_frequency": 8,
       "pain_severity": 9,
       "pay_budget": 7,
       "pay_urgency": 10,
-      "total_appearances": 31,
-      "distinct_days": 5
+      "total_appearances": 32,
+      "distinct_days": 6
     },
     {
       "id": "save-time",
@@ -398,13 +398,13 @@
       "name_en": "Save Time — Agent Automation",
       "description": "多 Agent 协作、工作流自动化、用 MCP 工具让 AI 替你跑腿",
       "snapshots": {
-        "2026-06-15": 8,
         "2026-06-22": 5,
-        "2026-06-29": 2
+        "2026-06-29": 2,
+        "2026-07-06": 0
       },
       "total_signals": 24,
       "delta": "falling",
-      "market_score": 35,
+      "market_score": 26,
       "business_score": 45,
       "competition": 35,
       "ai_replaceability": 4,
@@ -431,75 +431,75 @@
         {
           "name": "Multi-Agent Workflow",
           "snapshots": {
-            "2026-06-15": 8,
             "2026-06-22": 6,
-            "2026-06-29": 7
+            "2026-06-29": 7,
+            "2026-07-06": 5
           },
-          "total_signals": 28,
-          "delta": "rising",
-          "market_score": 62,
+          "total_signals": 33,
+          "delta": "falling",
+          "market_score": 63,
           "business_score": 45,
-          "competition": 38,
+          "competition": 41,
           "ai_replaceability": 4,
-          "confidence": 97,
+          "confidence": 100,
           "stage": "breaking",
-          "opportunity_index": 22,
-          "trend_score": 4,
-          "growth_score": 8,
-          "consistency_score": 8,
+          "opportunity_index": 21,
+          "trend_score": 5,
+          "growth_score": 7,
+          "consistency_score": 9,
           "pain_score": 4,
           "pay_score": 5,
           "pain_frequency": 6,
           "pain_severity": 7,
           "pay_budget": 8,
           "pay_urgency": 6,
-          "total_appearances": 28,
-          "distinct_days": 5
+          "total_appearances": 33,
+          "distinct_days": 6
         },
         {
           "name": "Agent Automation",
           "snapshots": {
-            "2026-06-15": 7,
             "2026-06-22": 7,
-            "2026-06-29": 8
+            "2026-06-29": 8,
+            "2026-07-06": 1
           },
-          "total_signals": 28,
-          "delta": "rising",
-          "market_score": 65,
+          "total_signals": 29,
+          "delta": "falling",
+          "market_score": 54,
           "business_score": 45,
           "competition": 38,
           "ai_replaceability": 4,
-          "confidence": 97,
-          "stage": "breaking",
-          "opportunity_index": 23,
+          "confidence": 98,
+          "stage": "forming",
+          "opportunity_index": 20,
           "trend_score": 4,
-          "growth_score": 9,
-          "consistency_score": 8,
+          "growth_score": 5,
+          "consistency_score": 9,
           "pain_score": 4,
           "pay_score": 5,
           "pain_frequency": 6,
           "pain_severity": 7,
           "pay_budget": 8,
           "pay_urgency": 6,
-          "total_appearances": 28,
-          "distinct_days": 5
+          "total_appearances": 29,
+          "distinct_days": 6
         },
         {
           "name": "MCP Integration",
           "snapshots": {
-            "2026-06-15": 2,
             "2026-06-22": 7,
-            "2026-06-29": 12
+            "2026-06-29": 12,
+            "2026-07-06": 1
           },
-          "total_signals": 22,
-          "delta": "rising",
-          "market_score": 60,
+          "total_signals": 23,
+          "delta": "falling",
+          "market_score": 61,
           "business_score": 45,
           "competition": 35,
           "ai_replaceability": 4,
-          "confidence": 90,
+          "confidence": 92,
           "stage": "breaking",
-          "opportunity_index": 22,
+          "opportunity_index": 23,
           "trend_score": 3,
           "growth_score": 10,
           "consistency_score": 7,
@@ -509,27 +509,27 @@
           "pain_severity": 7,
           "pay_budget": 8,
           "pay_urgency": 6,
-          "total_appearances": 22,
-          "distinct_days": 4
+          "total_appearances": 23,
+          "distinct_days": 5
         },
         {
           "name": "Tool Use",
           "snapshots": {
-            "2026-06-15": 10,
             "2026-06-22": 19,
-            "2026-06-29": 15
+            "2026-06-29": 15,
+            "2026-07-06": 2
           },
-          "total_signals": 65,
+          "total_signals": 67,
           "delta": "falling",
-          "market_score": 97,
+          "market_score": 79,
           "business_score": 45,
           "competition": 61,
           "ai_replaceability": 4,
           "confidence": 100,
-          "stage": "breaking",
-          "opportunity_index": 19,
+          "stage": "forming",
+          "opportunity_index": 16,
           "trend_score": 10,
-          "growth_score": 9,
+          "growth_score": 3,
           "consistency_score": 10,
           "pain_score": 4,
           "pay_score": 5,
@@ -537,42 +537,42 @@
           "pain_severity": 7,
           "pay_budget": 8,
           "pay_urgency": 6,
-          "total_appearances": 65,
-          "distinct_days": 6
+          "total_appearances": 67,
+          "distinct_days": 7
         },
         {
           "name": "Browser Agent",
           "snapshots": {
-            "2026-06-15": 0,
             "2026-06-22": 0,
-            "2026-06-29": 1
+            "2026-06-29": 1,
+            "2026-07-06": 1
           },
-          "total_signals": 4,
-          "delta": "rising",
-          "market_score": 16,
+          "total_signals": 5,
+          "delta": "stable",
+          "market_score": 39,
           "business_score": 45,
-          "competition": 23,
+          "competition": 24,
           "ai_replaceability": 4,
-          "confidence": 46,
-          "stage": "forming",
-          "opportunity_index": 14,
+          "confidence": 52,
+          "stage": "breaking",
+          "opportunity_index": 20,
           "trend_score": 1,
-          "growth_score": 1,
-          "consistency_score": 5,
+          "growth_score": 8,
+          "consistency_score": 6,
           "pain_score": 4,
           "pay_score": 5,
           "pain_frequency": 6,
           "pain_severity": 7,
           "pay_budget": 8,
           "pay_urgency": 6,
-          "total_appearances": 4,
-          "distinct_days": 3
+          "total_appearances": 5,
+          "distinct_days": 4
         }
       ],
-      "opportunity_index": 16,
+      "opportunity_index": 14,
       "trend_score": 1,
-      "growth_score": 3,
-      "consistency_score": 10,
+      "growth_score": 1,
+      "consistency_score": 9,
       "pain_score": 4,
       "pay_score": 5,
       "pain_frequency": 6,
@@ -588,18 +588,18 @@
       "name_en": "Reduce Risk — Trustworthy Agents",
       "description": "Agent 输出不可靠、代码质量失控、安全合规漏洞、幻觉导致事故",
       "snapshots": {
-        "2026-06-15": 6,
         "2026-06-22": 3,
-        "2026-06-29": 6
+        "2026-06-29": 6,
+        "2026-07-06": 1
       },
-      "total_signals": 21,
-      "delta": "rising",
-      "market_score": 43,
+      "total_signals": 22,
+      "delta": "falling",
+      "market_score": 35,
       "business_score": 68,
       "competition": 70,
       "ai_replaceability": 6,
-      "confidence": 89,
-      "stage": "breaking",
+      "confidence": 90,
+      "stage": "forming",
       "target_buyer": "企业安全/合规团队",
       "description_en": "Unreliable agent output, code quality issues, compliance gaps, hallucination risks.",
       "target_buyer_en": "Enterprise security/compliance teams",
@@ -621,13 +621,13 @@
         {
           "name": "AI Governance",
           "snapshots": {
-            "2026-06-15": 0,
             "2026-06-22": 2,
-            "2026-06-29": 1
+            "2026-06-29": 1,
+            "2026-07-06": 0
           },
           "total_signals": 11,
           "delta": "falling",
-          "market_score": 79,
+          "market_score": 73,
           "business_score": 68,
           "competition": 82,
           "ai_replaceability": 6,
@@ -635,7 +635,7 @@
           "stage": "forming",
           "opportunity_index": 10,
           "trend_score": 10,
-          "growth_score": 3,
+          "growth_score": 1,
           "consistency_score": 10,
           "pain_score": 6,
           "pay_score": 7,
@@ -649,21 +649,21 @@
         {
           "name": "Code Review Automation",
           "snapshots": {
-            "2026-06-15": 0,
             "2026-06-22": 1,
-            "2026-06-29": 1
+            "2026-06-29": 1,
+            "2026-07-06": 0
           },
           "total_signals": 2,
-          "delta": "stable",
-          "market_score": 35,
+          "delta": "falling",
+          "market_score": 44,
           "business_score": 68,
           "competition": 49,
           "ai_replaceability": 6,
           "confidence": 32,
           "stage": "early",
-          "opportunity_index": 19,
+          "opportunity_index": 21,
           "trend_score": 2,
-          "growth_score": 6,
+          "growth_score": 9,
           "consistency_score": 4,
           "pain_score": 6,
           "pay_score": 7,
@@ -677,12 +677,12 @@
         {
           "name": "Agent Reliability",
           "snapshots": {
-            "2026-06-15": 2,
             "2026-06-22": 1,
-            "2026-06-29": 0
+            "2026-06-29": 0,
+            "2026-07-06": 0
           },
           "total_signals": 5,
-          "delta": "falling",
+          "delta": "stable",
           "market_score": 38,
           "business_score": 68,
           "competition": 60,
@@ -705,49 +705,49 @@
         {
           "name": "Compliance",
           "snapshots": {
-            "2026-06-15": 0,
             "2026-06-22": 1,
-            "2026-06-29": 5
+            "2026-06-29": 5,
+            "2026-07-06": 1
           },
-          "total_signals": 7,
-          "delta": "rising",
-          "market_score": 74,
+          "total_signals": 8,
+          "delta": "falling",
+          "market_score": 82,
           "business_score": 68,
-          "competition": 67,
+          "competition": 71,
           "ai_replaceability": 6,
-          "confidence": 60,
+          "confidence": 63,
           "stage": "breaking",
-          "opportunity_index": 18,
-          "trend_score": 6,
+          "opportunity_index": 17,
+          "trend_score": 7,
           "growth_score": 10,
-          "consistency_score": 6,
+          "consistency_score": 8,
           "pain_score": 6,
           "pay_score": 7,
           "pain_frequency": 7,
           "pain_severity": 9,
           "pay_budget": 9,
           "pay_urgency": 8,
-          "total_appearances": 7,
-          "distinct_days": 3
+          "total_appearances": 8,
+          "distinct_days": 4
         },
         {
           "name": "Security Audit",
           "snapshots": {
-            "2026-06-15": 0,
             "2026-06-22": 1,
-            "2026-06-29": 0
+            "2026-06-29": 0,
+            "2026-07-06": 0
           },
           "total_signals": 1,
-          "delta": "falling",
-          "market_score": 27,
+          "delta": "stable",
+          "market_score": 12,
           "business_score": 68,
           "competition": 46,
           "ai_replaceability": 6,
           "confidence": 20,
           "stage": "early",
-          "opportunity_index": 18,
+          "opportunity_index": 14,
           "trend_score": 1,
-          "growth_score": 6,
+          "growth_score": 1,
           "consistency_score": 2,
           "pain_score": 6,
           "pay_score": 7,
@@ -759,9 +759,9 @@
           "distinct_days": 1
         }
       ],
-      "opportunity_index": 12,
+      "opportunity_index": 11,
       "trend_score": 1,
-      "growth_score": 8,
+      "growth_score": 5,
       "consistency_score": 7,
       "pain_score": 6,
       "pay_score": 7,
@@ -769,8 +769,8 @@
       "pain_severity": 9,
       "pay_budget": 9,
       "pay_urgency": 8,
-      "total_appearances": 21,
-      "distinct_days": 4
+      "total_appearances": 22,
+      "distinct_days": 5
     },
     {
       "id": "increase-output",
@@ -778,18 +778,18 @@
       "name_en": "Increase Output — Persistent Agent Memory",
       "description": "Agent 跨会话记不住你、知识库无法沉淀、每次对话从零开始",
       "snapshots": {
-        "2026-06-15": 32,
         "2026-06-22": 52,
-        "2026-06-29": 46
+        "2026-06-29": 46,
+        "2026-07-06": 10
       },
-      "total_signals": 185,
+      "total_signals": 195,
       "delta": "falling",
-      "market_score": 97,
+      "market_score": 85,
       "business_score": 56,
       "competition": 100,
       "ai_replaceability": 8,
       "confidence": 100,
-      "stage": "breaking",
+      "stage": "forming",
       "target_buyer": "Agent 开发者、SaaS 创业团队",
       "description_en": "Agents forget everything between sessions. Knowledge doesn't accumulate.",
       "target_buyer_en": "Agent developers, SaaS startups",
@@ -811,13 +811,13 @@
         {
           "name": "Long-term Memory",
           "snapshots": {
-            "2026-06-15": 1,
             "2026-06-22": 0,
-            "2026-06-29": 0
+            "2026-06-29": 0,
+            "2026-07-06": 0
           },
           "total_signals": 1,
           "delta": "stable",
-          "market_score": 7,
+          "market_score": 6,
           "business_score": 56,
           "competition": 18,
           "ai_replaceability": 8,
@@ -826,7 +826,7 @@
           "opportunity_index": 19,
           "trend_score": 0,
           "growth_score": 1,
-          "consistency_score": 2,
+          "consistency_score": 1,
           "pain_score": 6,
           "pay_score": 5,
           "pain_frequency": 8,
@@ -839,21 +839,21 @@
         {
           "name": "Context Persistence",
           "snapshots": {
-            "2026-06-15": 5,
             "2026-06-22": 9,
-            "2026-06-29": 7
+            "2026-06-29": 7,
+            "2026-07-06": 1
           },
-          "total_signals": 36,
+          "total_signals": 37,
           "delta": "falling",
-          "market_score": 65,
+          "market_score": 44,
           "business_score": 56,
           "competition": 35,
           "ai_replaceability": 8,
           "confidence": 100,
-          "stage": "breaking",
-          "opportunity_index": 35,
+          "stage": "forming",
+          "opportunity_index": 28,
           "trend_score": 4,
-          "growth_score": 8,
+          "growth_score": 1,
           "consistency_score": 10,
           "pain_score": 6,
           "pay_score": 5,
@@ -861,27 +861,27 @@
           "pain_severity": 8,
           "pay_budget": 7,
           "pay_urgency": 7,
-          "total_appearances": 36,
-          "distinct_days": 6
+          "total_appearances": 37,
+          "distinct_days": 7
         },
         {
           "name": "Agent Skills",
           "snapshots": {
-            "2026-06-15": 3,
             "2026-06-22": 2,
-            "2026-06-29": 17
+            "2026-06-29": 17,
+            "2026-07-06": 1
           },
-          "total_signals": 32,
-          "delta": "rising",
-          "market_score": 66,
+          "total_signals": 33,
+          "delta": "falling",
+          "market_score": 69,
           "business_score": 56,
           "competition": 33,
           "ai_replaceability": 8,
           "confidence": 100,
           "stage": "breaking",
-          "opportunity_index": 37,
+          "opportunity_index": 38,
           "trend_score": 4,
-          "growth_score": 9,
+          "growth_score": 10,
           "consistency_score": 10,
           "pain_score": 6,
           "pay_score": 5,
@@ -889,27 +889,27 @@
           "pain_severity": 8,
           "pay_budget": 7,
           "pay_urgency": 7,
-          "total_appearances": 32,
-          "distinct_days": 6
+          "total_appearances": 33,
+          "distinct_days": 7
         },
         {
           "name": "Knowledge Base",
           "snapshots": {
-            "2026-06-15": 14,
             "2026-06-22": 22,
-            "2026-06-29": 17
+            "2026-06-29": 17,
+            "2026-07-06": 4
           },
-          "total_signals": 84,
+          "total_signals": 88,
           "delta": "falling",
-          "market_score": 94,
+          "market_score": 79,
           "business_score": 56,
           "competition": 58,
           "ai_replaceability": 8,
           "confidence": 100,
-          "stage": "breaking",
-          "opportunity_index": 29,
+          "stage": "forming",
+          "opportunity_index": 26,
           "trend_score": 10,
-          "growth_score": 8,
+          "growth_score": 3,
           "consistency_score": 10,
           "pain_score": 6,
           "pay_score": 5,
@@ -917,27 +917,27 @@
           "pain_severity": 8,
           "pay_budget": 7,
           "pay_urgency": 7,
-          "total_appearances": 84,
-          "distinct_days": 6
+          "total_appearances": 88,
+          "distinct_days": 7
         },
         {
           "name": "Personal AI",
           "snapshots": {
-            "2026-06-15": 7,
             "2026-06-22": 10,
-            "2026-06-29": 7
+            "2026-06-29": 7,
+            "2026-07-06": 1
           },
-          "total_signals": 41,
+          "total_signals": 42,
           "delta": "falling",
-          "market_score": 65,
+          "market_score": 47,
           "business_score": 56,
-          "competition": 38,
+          "competition": 37,
           "ai_replaceability": 8,
           "confidence": 100,
-          "stage": "breaking",
-          "opportunity_index": 33,
+          "stage": "forming",
+          "opportunity_index": 28,
           "trend_score": 5,
-          "growth_score": 7,
+          "growth_score": 1,
           "consistency_score": 10,
           "pain_score": 6,
           "pay_score": 5,
@@ -945,13 +945,13 @@
           "pain_severity": 8,
           "pay_budget": 7,
           "pay_urgency": 7,
-          "total_appearances": 41,
-          "distinct_days": 6
+          "total_appearances": 42,
+          "distinct_days": 7
         }
       ],
       "opportunity_index": 1,
       "trend_score": 10,
-      "growth_score": 9,
+      "growth_score": 5,
       "consistency_score": 10,
       "pain_score": 6,
       "pay_score": 5,
@@ -959,22 +959,9 @@
       "pain_severity": 8,
       "pay_budget": 7,
       "pay_urgency": 7,
-      "total_appearances": 185,
-      "distinct_days": 6
+      "total_appearances": 195,
+      "distinct_days": 7
     }
   ],
-  "intersections": [
-    {
-      "demand_a": "save-money",
-      "demand_b": "reduce-risk",
-      "label": "省钱 — AI 成本飙升 × 降风险 — Agent 别把事搞砸",
-      "cross_score": 2
-    },
-    {
-      "demand_a": "save-money",
-      "demand_b": "increase-output",
-      "label": "省钱 — AI 成本飙升 × 提产出 — Agent 记住一切、越用越强",
-      "cross_score": 1
-    }
-  ]
+  "intersections": []
 }
