@@ -1,5 +1,3 @@
-import { readFileSync, existsSync } from 'node:fs';
-import { join } from 'node:path';
 import type { Metadata } from 'next';
 import { marked } from 'marked';
 import {
@@ -11,61 +9,8 @@ import {
   Hash,
 } from 'lucide-react';
 
-/* ── Types ── */
-
-interface TrendTerm {
-  id: string;
-  canonical: string;
-  aliases: string[];
-  first_seen: string;
-  last_seen: string;
-  stage: 'nascent' | 'emergent' | 'validating' | 'rising';
-  score: number;
-  source_count: number;
-  total_mentions: number;
-  sources: string[];
-  growth_pct: number;
-  category: string;
-  tags: string[];
-  summary_zh: string;
-  summary_en: string;
-  research_md_path: string;
-}
-
-interface TrendTermsData {
-  updated_at: string;
-  terms: TrendTerm[];
-}
-
-/* ── Data ── */
-
-function getAllTrendTerms(): TrendTermsData {
-  try {
-    const raw = readFileSync(
-      join(process.cwd(), 'tracking', 'trend_terms.json'),
-      'utf-8',
-    );
-    return JSON.parse(raw) as TrendTermsData;
-  } catch {
-    return { updated_at: '', terms: [] };
-  }
-}
-
-function getTrendTerm(slug: string): TrendTerm | null {
-  const termId = `trend-${slug}`;
-  const data = getAllTrendTerms();
-  return data.terms.find((t) => t.id === termId) || null;
-}
-
-function getResearchContent(path: string): string {
-  try {
-    const fullPath = join(process.cwd(), path);
-    if (!existsSync(fullPath)) return '';
-    return readFileSync(fullPath, 'utf-8');
-  } catch {
-    return '';
-  }
-}
+import type { TrendTerm, TrendTermsData } from '../types';
+import { getAllTrendTerms, getTrendTerm, getResearchContent, stageLabel } from '../data';
 
 /* ── Static params ── */
 
@@ -114,16 +59,6 @@ export async function generateMetadata({
 }
 
 /* ── Helpers ── */
-
-function stageLabel(stage: string): string {
-  const map: Record<string, string> = {
-    nascent: 'Nascent (0–7 days)',
-    emergent: 'Emergent (8–30 days)',
-    validating: 'Validating (31–90 days)',
-    rising: 'Rising (90+ days)',
-  };
-  return map[stage] || stage;
-}
 
 function stagePct(stage: string): string {
   const map: Record<string, string> = {

@@ -2,6 +2,7 @@ import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import type { Metadata } from 'next';
 import { TrendingUp, Calendar, BarChart3, Activity } from 'lucide-react';
+import type { TrendTerm, TrendTermsData } from './types';
 
 export const metadata: Metadata = {
   title: 'Trend Discovery — Emerging Tech Terms & Concepts | AimFast.Dev',
@@ -22,32 +23,6 @@ export const metadata: Metadata = {
     description: 'Discover emerging tech terms before they trend. Free daily tracking.',
   },
 };
-
-/* ── Types ── */
-
-interface TrendTerm {
-  id: string;
-  canonical: string;
-  aliases: string[];
-  first_seen: string;
-  last_seen: string;
-  stage: 'nascent' | 'emergent' | 'validating' | 'rising';
-  score: number;
-  source_count: number;
-  total_mentions: number;
-  sources: string[];
-  growth_pct: number;
-  category: string;
-  tags: string[];
-  summary_zh: string;
-  summary_en: string;
-  research_md_path: string;
-}
-
-interface TrendTermsData {
-  updated_at: string;
-  terms: TrendTerm[];
-}
 
 /* ── Data ── */
 
@@ -156,7 +131,7 @@ export default function TrendsPage() {
                   className="trend-card"
                 >
                   <span className={`stage-badge ${term.stage}`}>
-                    {term.stage}
+                    {stageLabel(term.stage)}
                   </span>
                   <span className="trend-card-category">{term.category}</span>
                   <h3>{term.canonical}</h3>
