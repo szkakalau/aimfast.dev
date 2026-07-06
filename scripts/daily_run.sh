@@ -171,6 +171,17 @@ else
     log "  [Trends] FAIL (non-fatal)"
 fi
 
+# ─── Step 3.6: Opportunity Analysis ───
+
+log ""
+log "--- Step 3.6: Opportunity Analysis ---"
+
+if $PYTHON -m scripts.generate_opportunity 2>&1; then
+    log "  [Opportunity] OK"
+else
+    log "  [Opportunity] FAIL (non-fatal)"
+fi
+
 # --- Step 4: Planet Article (DISABLED) ---
 # 星球文章生成已禁用 — config.json distribution.planet_article.enabled = false
 

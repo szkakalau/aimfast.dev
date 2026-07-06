@@ -211,6 +211,22 @@ try {
     Write-Log "  [Trends] FAIL (non-fatal): $_"
 }
 
+# --- Step 3.6: Opportunity Analysis ---
+
+Write-Log ""
+Write-Log "--- Step 3.6: Opportunity Analysis ---"
+
+try {
+    $output = & $Python -m scripts.generate_opportunity 2>&1
+    if ($LASTEXITCODE -eq 0) {
+        Write-Log "  [Opportunity] OK"
+    } else {
+        Write-Log "  [Opportunity] FAIL (non-fatal, exit=$LASTEXITCODE)"
+    }
+} catch {
+    Write-Log "  [Opportunity] FAIL (non-fatal): $_"
+}
+
 # --- Step 4: Planet Article (DISABLED) ---
 # 星球文章生成已禁用 — config.json distribution.planet_article.enabled = false
 

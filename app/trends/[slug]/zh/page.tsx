@@ -19,6 +19,21 @@ import {
   stagePct,
 } from '../../data';
 
+/* ── Helpers ── */
+
+function scoreColor(v: number): string {
+  if (v >= 70) return 'var(--opp-score-high)';
+  if (v >= 40) return 'var(--opp-score-mid)';
+  return 'var(--opp-score-low)';
+}
+
+/** Inverted: low = green (good), high = red (bad). Used for competition & SEO difficulty. */
+function invertScoreColor(v: number): string {
+  if (v <= 30) return 'var(--opp-score-high)';
+  if (v <= 60) return 'var(--opp-score-mid)';
+  return 'var(--opp-score-low)';
+}
+
 /* ── Static params ── */
 
 export function generateStaticParams() {
@@ -244,6 +259,119 @@ export default async function TrendDetailZhPage({
               <p style={{ color: 'var(--color-text-muted)' }}>
                 研究报告尚未生成。请稍后再来——我们的 AI 每天会为高分趋势词自动生成深度研究报告。
               </p>
+            )}
+
+            {/* ── Opportunity Analysis (v2) ── */}
+            {term.opportunity_score != null && (
+              <section className="opportunity-section">
+                <div className="opp-header">
+                  <h2>机会分析</h2>
+                  <div className="opp-overall">
+                    <span className="opp-overall-score" style={{ color: scoreColor(term.opportunity_score) }}>
+                      {term.opportunity_score}
+                    </span>
+                    <span className="opp-overall-label">/100 · 综合机会评分</span>
+                    {term.revenue_potential != null && (
+                      <span className="opp-stars">
+                        {'★'.repeat(term.revenue_potential)}
+                        {'☆'.repeat(5 - term.revenue_potential)}
+                      </span>
+                    )}
+                  </div>
+                </div>
+
+                {/* Score Grid */}
+                <div className="opp-score-grid">
+                  {term.market_score != null && (
+                    <div className="opp-score-card">
+                      <div className="score-value" style={{ color: scoreColor(term.market_score) }}>
+                        {term.market_score}
+                      </div>
+                      <div className="score-label">市场评分</div>
+                      <div className="score-bar">
+                        <div className="score-bar-fill" style={{ width: `${term.market_score}%`, background: scoreColor(term.market_score) }} />
+                      </div>
+                    </div>
+                  )}
+                  {term.competition_score != null && (
+                    <div className="opp-score-card">
+                      <div className="score-value" style={{ color: invertScoreColor(term.competition_score) }}>
+                        {term.competition_score}
+                      </div>
+                      <div className="score-label">竞争评分</div>
+                      <div className="score-sub">越低越好</div>
+                      <div className="score-bar">
+                        <div className="score-bar-fill" style={{ width: `${term.competition_score}%`, background: invertScoreColor(term.competition_score) }} />
+                      </div>
+                    </div>
+                  )}
+                  {term.demand_score != null && (
+                    <div className="opp-score-card">
+                      <div className="score-value" style={{ color: scoreColor(term.demand_score) }}>
+                        {term.demand_score}
+                      </div>
+                      <div className="score-label">需求评分</div>
+                      <div className="score-bar">
+                        <div className="score-bar-fill" style={{ width: `${term.demand_score}%`, background: scoreColor(term.demand_score) }} />
+                      </div>
+                    </div>
+                  )}
+                  {term.seo_difficulty != null && (
+                    <div className="opp-score-card">
+                      <div className="score-value" style={{ color: invertScoreColor(term.seo_difficulty) }}>
+                        {term.seo_difficulty}
+                      </div>
+                      <div className="score-label">SEO 难度</div>
+                      <div className="score-sub">越低越容易</div>
+                      <div className="score-bar">
+                        <div className="score-bar-fill" style={{ width: `${term.seo_difficulty}%`, background: invertScoreColor(term.seo_difficulty) }} />
+                      </div>
+                    </div>
+                  )}
+                </div>
+
+                {/* Suggested Products */}
+                {term.suggested_products && term.suggested_products.length > 0 && (
+                  <div className="opp-products">
+                    <span className="opp-products-label">建议产品形态：</span>
+                    {term.suggested_products.map((p) => (
+                      <span key={p} className="opp-product-badge">{p}</span>
+                    ))}
+                  </div>
+                )}
+
+                {/* Meta: Dev time */}
+                <div className="opp-meta-row">
+                  {term.estimated_dev_days != null && (
+                    <span className="opp-meta-item">
+                      预计 MVP 开发时间：~{term.estimated_dev_days} 天
+                    </span>
+                  )}
+                </div>
+
+                {/* Opportunity Summary */}
+                {term.opportunity_summary_zh && (
+                  <p className="opp-summary">{term.opportunity_summary_zh}</p>
+                )}
+
+                {/* Risk Factors */}
+                {term.risk_factors_zh && term.risk_factors_zh.length > 0 && (
+                  <div className="opp-risks">
+                    <span className="opp-risks-label">风险因素：</span>
+                    {term.risk_factors_zh.map((r) => (
+                      <span key={r} className="opp-risk-badge">{r}</span>
+                    ))}
+                  </div>
+                )}
+
+                {/* CTA */}
+                <div className="opp-cta">
+                  <p>想要每个新兴趋势都获得这样的机会分析？</p>
+                  <a href="/" className="btn btn-primary" style={{ fontSize: '0.92rem', padding: '10px 24px' }}>
+                    免费试用 →
+                  </a>
+                </div>
+              </section>
             )}
 
             {/* ── FAQ Section (GEO) ── */}

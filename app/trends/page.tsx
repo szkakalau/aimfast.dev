@@ -147,6 +147,11 @@ export default function TrendsPage() {
                   <span className={`stage-badge ${term.stage}`}>
                     {stageLabel(term.stage)}
                   </span>
+                  {term.revenue_potential != null && (
+                    <span className="trend-card-stars" title={`Revenue potential: ${term.revenue_potential}/5`}>
+                      {'★'.repeat(term.revenue_potential)}{'☆'.repeat(5 - term.revenue_potential)}
+                    </span>
+                  )}
                   <span className="trend-card-category">{term.category}</span>
                   <h3>{term.canonical}</h3>
                   <p className="trend-card-summary">

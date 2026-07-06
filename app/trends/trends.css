@@ -6,6 +6,11 @@
   --stage-emergent:   oklch(65% 0.16 80);
   --stage-validating: oklch(55% 0.15 250);
   --stage-rising:     oklch(50% 0.18 290);
+  /* Opportunity analysis colors */
+  --opp-score-high:   oklch(55% 0.18 160);
+  --opp-score-mid:    oklch(65% 0.16 80);
+  --opp-score-low:    oklch(50% 0.15 20);
+  --opp-risk:         oklch(55% 0.15 40);
 }
 
 /* ── Stage badge ── */
@@ -477,4 +482,185 @@
   .trends-cta { padding: var(--space-5) 0; }
   .trends-cta h2 { font-size: 1.25rem; }
   .stage-filter-btn { font-size: 0.7rem; padding: 6px 12px; }
+  .opp-score-grid { grid-template-columns: repeat(2, 1fr); }
+  .opp-header { flex-direction: column; align-items: flex-start; gap: var(--space-2); }
+}
+
+/* ════════════════════════════════════════════
+   Opportunity Analysis (v2)
+   ════════════════════════════════════════════ */
+
+.opportunity-section {
+  margin-top: var(--space-6);
+  padding-top: var(--space-5);
+  border-top: 2px solid var(--color-accent);
+}
+
+.opp-header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: var(--space-4);
+  flex-wrap: wrap; gap: var(--space-2);
+}
+
+.opp-header h2 {
+  font-size: 1.2rem; font-weight: 700;
+  margin: 0; padding: 0; border: none;
+}
+
+.opp-overall {
+  display: flex; align-items: center; gap: var(--space-2);
+}
+
+.opp-overall-score {
+  font-family: var(--font-mono);
+  font-size: 2rem; font-weight: 800;
+  line-height: 1;
+}
+
+.opp-overall-label {
+  font-size: 0.8rem; color: var(--color-text-muted);
+  font-family: var(--font-mono);
+}
+
+.opp-stars {
+  font-size: 0.9rem; letter-spacing: 2px;
+  color: var(--color-accent);
+  margin-left: var(--space-1);
+}
+
+/* Score grid — 4 columns */
+.opp-score-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.opp-score-card {
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+  text-align: center;
+  box-shadow: var(--shadow-xs);
+}
+
+.score-value {
+  font-family: var(--font-mono);
+  font-size: 2rem; font-weight: 800;
+  line-height: 1.1;
+}
+
+.score-label {
+  font-size: 0.75rem; font-weight: 600;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-top: 4px;
+}
+
+.score-sub {
+  font-size: 0.65rem; color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  margin-top: 2px;
+}
+
+.score-bar {
+  height: 3px; background: var(--color-surface-alt);
+  border-radius: 2px; margin-top: 8px;
+  overflow: hidden;
+}
+
+.score-bar-fill {
+  height: 100%; border-radius: 2px;
+  transition: width 0.4s var(--ease-out);
+}
+
+/* Products */
+.opp-products {
+  display: flex; align-items: center; gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: var(--space-3);
+}
+
+.opp-products-label {
+  font-size: 0.8rem; font-weight: 600;
+  color: var(--color-text);
+}
+
+.opp-product-badge {
+  display: inline-flex; align-items: center;
+  font-family: var(--font-mono); font-size: 0.72rem;
+  padding: 4px 10px; border-radius: 100px;
+  border: 1px solid var(--color-accent);
+  color: var(--color-accent);
+  white-space: nowrap;
+  transition: all var(--duration-fast) var(--ease-out);
+}
+
+.opp-product-badge:hover {
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+}
+
+/* Meta row */
+.opp-meta-row {
+  display: flex; align-items: center; gap: var(--space-3);
+  margin-bottom: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.opp-meta-item {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-family: var(--font-mono); font-size: 0.78rem;
+  color: var(--color-text-muted);
+}
+
+/* Summary */
+.opp-summary {
+  font-size: 0.9rem; color: var(--color-text-secondary);
+  line-height: 1.7;
+  margin-bottom: var(--space-3);
+}
+
+/* Risks */
+.opp-risks {
+  display: flex; align-items: center; gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: var(--space-4);
+}
+
+.opp-risks-label {
+  font-size: 0.78rem; font-weight: 600;
+  color: var(--opp-risk);
+}
+
+.opp-risk-badge {
+  display: inline-flex; align-items: center;
+  font-family: var(--font-mono); font-size: 0.7rem;
+  padding: 3px 10px; border-radius: 100px;
+  background: oklch(55% 0.15 40 / 0.1);
+  color: var(--opp-risk);
+  white-space: nowrap;
+}
+
+/* CTA */
+.opp-cta {
+  text-align: center;
+  padding: var(--space-4);
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-xs);
+}
+
+.opp-cta p {
+  font-size: 0.9rem; color: var(--color-text-secondary);
+  margin: 0 0 var(--space-2);
+}
+
+/* List card stars */
+.trend-card-stars {
+  font-size: 0.65rem; letter-spacing: 1px;
+  color: var(--color-accent);
+  opacity: 0.7;
+  margin-left: auto;
 }
