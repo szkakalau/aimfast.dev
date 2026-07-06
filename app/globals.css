@@ -4,6 +4,7 @@
 @import '../public/_ds/components.css';
 @import '../public/_ds/homepage.css';
 @import './dashboard/dashboard-cards.css';
+@import './trends/trends.css';
 
 /* ── Article-specific styles ── */
 .article {
@@ -113,3 +114,32 @@
 .article-list-title { font-size: 1.15rem; margin: var(--space-1) 0; }
 .article-list-summary { font-size: 0.9rem; color: var(--color-muted); margin: var(--space-1) 0 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 .article-list-lang { font-size: 0.8rem; color: var(--color-accent); white-space: nowrap; padding-top: var(--space-1); }
+
+/* ── Site Navigation ── */
+.site-nav {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: var(--space-2) var(--space-3);
+  max-width: 1100px; margin: 0 auto;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.site-nav-logo {
+  font-family: var(--font-heading);
+  font-weight: 700; font-size: 0.95rem;
+  color: var(--color-text); text-decoration: none;
+  letter-spacing: -0.01em;
+}
+
+.site-nav-links {
+  display: flex; align-items: center; gap: var(--space-3);
+}
+
+.site-nav-links a {
+  font-size: 0.85rem; color: var(--color-text-secondary);
+  text-decoration: none; font-weight: 500;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.site-nav-links a:hover {
+  color: var(--color-accent);
+}

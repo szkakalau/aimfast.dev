@@ -79,7 +79,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="alternate" hrefLang="zh-CN" href="https://www.aimfast.dev/" />
         <link rel="alternate" hrefLang="x-default" href="https://www.aimfast.dev/" />
       </head>
-      <body>{children}</body>
+      <body>
+        <nav className="site-nav">
+          <a href="/" className="site-nav-logo">AimFast.Dev</a>
+          <div className="site-nav-links">
+            <a href="/trends/">Trends</a>
+            <a href="/dashboard/">Dashboard</a>
+            <a href="/reports/">Reports</a>
+          </div>
+        </nav>
+        {children}
+      </body>
     </html>
   );
 }
