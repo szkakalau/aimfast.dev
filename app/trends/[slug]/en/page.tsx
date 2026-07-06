@@ -98,7 +98,7 @@ export async function generateMetadata({
     description,
     robots: { index: true, follow: true },
     alternates: {
-      canonical: `https://www.aimfast.dev/trends/${slug}/`,
+      canonical: url,
       languages: {
         'zh-CN': `https://www.aimfast.dev/trends/${slug}/`,
         'en': `https://www.aimfast.dev/trends/${slug}/en/`,
