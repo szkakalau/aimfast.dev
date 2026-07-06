@@ -7,21 +7,33 @@ import { ClipboardList } from 'lucide-react';
 const REPORTS_DIR = join(process.cwd(), 'content', 'reports');
 
 export const metadata: Metadata = {
-  title: 'Daily Reports — AimFast.Dev',
+  title: 'Daily Reports — Signal Intelligence Archive | AimFast.Dev',
   description:
     'Browse all daily signal intelligence reports. Each report contains product opportunities, trend analysis, and buildable insights for indie developers.',
   robots: { index: true, follow: true },
-  alternates: { canonical: 'https://www.aimfast.dev/reports/' },
+  alternates: {
+    canonical: 'https://www.aimfast.dev/reports/',
+    languages: { 'zh-CN': 'https://www.aimfast.dev/reports/' },
+  },
   openGraph: {
     title: 'Daily Reports — AimFast.Dev',
     description: 'Browse daily signal intelligence reports with product opportunities and trend analysis.',
     url: 'https://www.aimfast.dev/reports/',
     siteName: 'AimFast.Dev',
+    images: [
+      {
+        url: 'https://www.aimfast.dev/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'AimFast.Dev — Daily Reports',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Daily Reports — AimFast.Dev',
     description: 'Browse daily signal intelligence reports.',
+    images: ['https://www.aimfast.dev/og-image.png'],
   },
 };
 

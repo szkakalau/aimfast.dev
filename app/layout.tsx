@@ -1,13 +1,25 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import './globals.css';
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  viewportFit: 'cover',
+};
 
 export const metadata: Metadata = {
   title: 'AimFast.Dev — Daily Market Intelligence for Indie Builders',
   description:
     'Every morning, get one validated product opportunity — what to build, who will pay, and how much to charge. AI scans 11 sources so you don\'t have to. 14-day free trial, $19/mo.',
   robots: { index: true, follow: true },
-  metadataBase: new URL('https://aimfast.dev'),
-  alternates: { canonical: 'https://www.aimfast.dev/' },
+  metadataBase: new URL('https://www.aimfast.dev'),
+  alternates: {
+    canonical: 'https://www.aimfast.dev/',
+    languages: {
+      en: 'https://www.aimfast.dev/',
+      'zh-CN': 'https://www.aimfast.dev/',
+    },
+  },
   openGraph: {
     type: 'website',
     title: 'AimFast.Dev — Daily Market Intelligence for Indie Builders',
@@ -63,7 +75,7 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="zh-CN">
+    <html lang="en">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -76,6 +88,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <link rel="alternate" hrefLang="en" href="https://www.aimfast.dev/" />
         <link rel="alternate" hrefLang="zh-CN" href="https://www.aimfast.dev/" />
         <link rel="alternate" hrefLang="x-default" href="https://www.aimfast.dev/" />
       </head>

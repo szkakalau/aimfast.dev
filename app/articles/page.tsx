@@ -6,21 +6,33 @@ import { parseFrontmatter } from '@/lib/frontmatter';
 const ARTICLES_DIR = join(process.cwd(), 'content', 'articles');
 
 export const metadata: Metadata = {
-  title: 'Planet Articles — AimFast.Dev',
+  title: 'Planet Articles — Deep-Dive Signal Analysis | AimFast.Dev',
   description:
     'Deep-dive signal analysis articles. Each article unpacks a product opportunity with evidence, plain-English translation, and actionable steps.',
   robots: { index: true, follow: true },
-  alternates: { canonical: 'https://www.aimfast.dev/articles/' },
+  alternates: {
+    canonical: 'https://www.aimfast.dev/articles/',
+    languages: { 'zh-CN': 'https://www.aimfast.dev/articles/' },
+  },
   openGraph: {
     title: 'Planet Articles — AimFast.Dev',
     description: 'Deep-dive product opportunity analysis for indie developers.',
     url: 'https://www.aimfast.dev/articles/',
     siteName: 'AimFast.Dev',
+    images: [
+      {
+        url: 'https://www.aimfast.dev/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'AimFast.Dev — Planet Articles',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Planet Articles — AimFast.Dev',
     description: 'Deep-dive product opportunity analysis for indie developers.',
+    images: ['https://www.aimfast.dev/og-image.png'],
   },
 };
 

@@ -198,7 +198,7 @@ export function DashboardClient() {
   // ── State ──
   const [data, setData] = useState<DashboardData | null>(null);
   const [loading, setLoading] = useState(true);
-  const [lang, setLang] = useState<'zh' | 'en'>('zh');
+  const [lang, setLang] = useState<'zh' | 'en'>('en');
   const [selectedDate, setSelectedDate] = useState<string>('');
   const [chatCard, setChatCard] = useState<'decision' | 'competitor' | 'system' | null>(null);
 

@@ -78,11 +78,20 @@ export async function generateMetadata({
       url,
       siteName: 'AimFast.Dev',
       type: 'article',
+      images: [
+        {
+          url: 'https://www.aimfast.dev/og-image.png',
+          width: 1200,
+          height: 630,
+          alt: `${term.canonical} — Trend Report | AimFast.Dev`,
+        },
+      ],
     },
     twitter: {
       card: 'summary_large_image',
       title,
       description,
+      images: ['https://www.aimfast.dev/og-image.png'],
     },
   };
 }

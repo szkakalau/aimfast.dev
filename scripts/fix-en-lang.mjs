@@ -1,27 +1,26 @@
 /**
- * Post-build fix: 将英文页面的 <html lang="zh-CN"> 替换为 <html lang="en">
- * Next.js 静态导出不支持按路由覆盖根布局的 html lang 属性，
- * 此脚本在构建后修正 out/ 目录中所有英文页面的 lang 属性。
+ * Post-build fix: 将中文页面的 <html lang="en"> 替换为 <html lang="zh-CN">
+ * 根布局默认 lang="en"；构建后此脚本将 /zh/ 路径下的页面修正为 zh-CN。
  *
  * Usage: node scripts/fix-en-lang.mjs
  */
 import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
-import { join, dirname } from 'node:path';
+import { join } from 'node:path';
 
 const OUT_DIR = join(process.cwd(), 'out');
+const SEP = join('a', 'b').includes('\\') ? '\\' : '/';
 
-function findEnglishPages(dir) {
+function findZhPages(dir) {
   const results = [];
   try {
     const entries = readdirSync(dir, { withFileTypes: true });
     for (const entry of entries) {
       const fullPath = join(dir, entry.name);
       if (entry.isDirectory()) {
-        // Follow directories — detect English pages by /en/ path segment
-        results.push(...findEnglishPages(fullPath));
+        results.push(...findZhPages(fullPath));
       } else if (entry.name === 'index.html') {
-        // An HTML file is English if its directory path ends with /en
-        if (dirname(fullPath).endsWith('/en') || dirname(fullPath).endsWith('\\en')) {
+        // 中文页面：路径中包含 /zh/ 目录段
+        if (fullPath.includes(`${SEP}zh${SEP}`)) {
           results.push(fullPath);
         }
       }
@@ -32,10 +31,10 @@ function findEnglishPages(dir) {
   return results;
 }
 
-const pages = findEnglishPages(OUT_DIR);
+const pages = findZhPages(OUT_DIR);
 
 if (pages.length === 0) {
-  console.log('[fix-en-lang] No English pages found in out/ — skipping');
+  console.log('[fix-zh-lang] No ZH pages found in out/ — skipping');
   process.exit(0);
 }
 
@@ -43,15 +42,15 @@ let fixed = 0;
 for (const filePath of pages) {
   try {
     const html = readFileSync(filePath, 'utf-8');
-    if (html.includes('lang="zh-CN"')) {
-      const fixedHtml = html.replace(/lang="zh-CN"/g, 'lang="en"');
+    if (html.includes('lang="en"')) {
+      const fixedHtml = html.replace(/lang="en"/g, 'lang="zh-CN"');
       writeFileSync(filePath, fixedHtml, 'utf-8');
       fixed++;
-      console.log(`[fix-en-lang] Fixed: ${filePath}`);
+      console.log(`[fix-zh-lang] Fixed: ${filePath}`);
     }
   } catch (err) {
-    console.error(`[fix-en-lang] Error: ${filePath} — ${err.message}`);
+    console.error(`[fix-zh-lang] Error: ${filePath} — ${err.message}`);
   }
 }
 
-console.log(`[fix-en-lang] Done: ${fixed} English page(s) fixed`);
+console.log(`[fix-zh-lang] Done: ${fixed} ZH page(s) fixed`);

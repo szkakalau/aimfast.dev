@@ -734,6 +734,7 @@
     z-index: 100;
     max-height: 60vh;
     margin: 0;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
     box-shadow: var(--shadow-lg);
   }
   .ai-chat-messages {

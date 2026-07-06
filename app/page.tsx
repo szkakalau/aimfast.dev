@@ -8,8 +8,59 @@ export const metadata: Metadata = {
 };
 
 export default function LandingPage() {
+  const faqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'How is this different from setting up Google Alerts?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Google Alerts gives you links. We give you a decision. Our AI reads 300+ signals across 11 platforms, cross-references them, scores them, and tells you "build this, skip that." Google Alerts cannot tell you that a Reddit complaint and a GitHub star spike are the same unmet need.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'What sources do you scan?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'HN, Reddit, GitHub Trending, DEV Community, Lobsters, V2EX, X/Twitter, Product Hunt, HuggingFace, Arxiv, Indie Hackers, and more — 11+ sources, daily.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Can I track my competitors?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes — that is the Monitoring Engine. Add up to 10 competitors, topics, people, or tech stacks. Every day, you see what they did and what you should do about it.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'What if I miss a day?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Every report is archived. You can browse past daily decisions and full reports from the dashboard at any time. The value compounds — patterns emerge over weeks, not days.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Is there a long-term contract?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'No. Cancel anytime — monthly or annual. If you cancel, you keep access until the end of your billing period. No tricks, no retention calls.',
+        },
+      },
+    ],
+  };
+
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       {/* ═══════ Hero ═══════ */}
       <section className="hero">
         <span className="eyebrow anim-fade-up">Daily Market Intelligence for Indie Builders</span>
