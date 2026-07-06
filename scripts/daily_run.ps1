@@ -195,6 +195,22 @@ try {
     Write-Log "  [Report] FAIL: $_"
 }
 
+# --- Step 3.5: Trend Discovery ---
+
+Write-Log ""
+Write-Log "--- Step 3.5: Trend Discovery ---"
+
+try {
+    $output = & $Python -m scripts.generate_trends 2>&1
+    if ($LASTEXITCODE -eq 0) {
+        Write-Log "  [Trends] OK"
+    } else {
+        Write-Log "  [Trends] FAIL (non-fatal, exit=$LASTEXITCODE)"
+    }
+} catch {
+    Write-Log "  [Trends] FAIL (non-fatal): $_"
+}
+
 # --- Step 4: Planet Article (DISABLED) ---
 # 星球文章生成已禁用 — config.json distribution.planet_article.enabled = false
 
@@ -392,7 +408,7 @@ Write-Log "--- Step 13: Deploy Dashboard Data & SEO Content ---"
 
 try {
     Push-Location $ProjectRoot
-    git add public/dashboard/data/dashboard.json tracking/recurring_signals.json tracking/demand_radar.json tracking/competitor_targets.json public/sitemap.xml content/reports/ content/articles/ public/*/index.html daily/*/signals.json daily/*/competitor_matches.json daily/*/competitor_intel.json 2>&1 | Out-Null
+    git add public/dashboard/data/dashboard.json tracking/recurring_signals.json tracking/demand_radar.json tracking/competitor_targets.json tracking/trend_terms.json public/sitemap.xml content/reports/ content/articles/ content/trends/ public/*/index.html daily/*/signals.json daily/*/competitor_matches.json daily/*/competitor_intel.json 2>&1 | Out-Null
 
     # Check if there are staged changes
     $diffOut = git diff --cached --name-only 2>&1

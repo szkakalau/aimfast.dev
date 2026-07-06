@@ -160,6 +160,17 @@ else
     log "  [Report] FAIL"
 fi
 
+# ─── Step 3.5: Trend Discovery ───
+
+log ""
+log "--- Step 3.5: Trend Discovery ---"
+
+if $PYTHON -m scripts.generate_trends 2>&1; then
+    log "  [Trends] OK"
+else
+    log "  [Trends] FAIL (non-fatal)"
+fi
+
 # --- Step 4: Planet Article (DISABLED) ---
 # 星球文章生成已禁用 — config.json distribution.planet_article.enabled = false
 
@@ -322,7 +333,7 @@ fi
 log ""
 log "--- Step 13: Deploy Dashboard Data & SEO Content ---"
 
-git add public/dashboard/data/dashboard.json tracking/recurring_signals.json tracking/demand_radar.json tracking/competitor_targets.json public/sitemap.xml content/reports/ content/articles/ public/*/index.html compare/ daily/*/signals.json daily/*/competitor_matches.json daily/*/competitor_intel.json 2>&1 || true
+git add public/dashboard/data/dashboard.json tracking/recurring_signals.json tracking/demand_radar.json tracking/competitor_targets.json tracking/trend_terms.json public/sitemap.xml content/reports/ content/articles/ content/trends/ public/*/index.html compare/ daily/*/signals.json daily/*/competitor_matches.json daily/*/competitor_intel.json 2>&1 || true
 
 if git diff --cached --name-only | grep -q .; then
     git config user.email "pipeline@aimfast.dev"
