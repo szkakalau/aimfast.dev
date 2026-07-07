@@ -101,19 +101,33 @@ def extract_terms_from_signals(signals: list[dict]) -> list[dict]:
             "score": s.get("score", 0),
         })
 
-    user_prompt = f"""从以下今日采集的技术社区 signals 中，提取新出现的技术术语、产品名、或概念。
+    user_prompt = f"""从以下今日采集的技术社区 signals 中，提取值得追踪的新兴主题。
 
-规则：
-1. 只提取近 30 天内首次在技术社区出现的词
-2. 忽略已知通用词汇（如 "AI", "React", "Python", "API", "OpenAI" 等）
-3. 每个词返回 JSON 格式：canonical（规范化名称）、category（分类）、summary_zh（一句话中文摘要）、summary_en（一句话英文摘要）
-4. 最多提取 20 个词，按重要性排序
-5. 只返回 JSON array，不要其他文字
+范围：新概念、新技术、新产品、热门讨论 — 都可以。
+
+提取原则（重要）：
+1. 优先提取在多个信号中反复出现的主题（≥2 个独立信源讨论同一概念/产品）
+2. 对于新产品/项目：仅当它是某新兴方向的代表时才提取（如多个信号在讨论同一个新范式），而非孤立的"我做了个 App"帖
+3. 对于热门讨论：判断讨论量是否值得追踪，单个低分帖子不算
+4. 忽略已知通用技术词汇（如 "AI", "React", "Python", "API", "OpenAI", "LLM", "GPT" 等）
+5. 最多提取 20 个词，按重要性和讨论度排序。如果没有足够质量的候选，宁可返回少一些
+
+分类体系（category 字段）：
+- TechConcept: 新兴技术概念/方法论（如 Fluid Compute、WebAssembly）
+- DevTools: 开发者工具/平台方向
+- AI/LLM: AI 与大模型相关
+- Infra: 基础设施/云计算
+- Product: 值得关注的独立产品
+- Project: 值得关注的开源项目
+- HotTopic: 热门讨论话题
+
+返回格式（JSON array），每个元素包含 canonical、category、summary_zh（一句话中文摘要，说明为什么值得追踪）、summary_en（一句话英文摘要）。
+只返回 JSON array，不要其他文字。
 
 Signals:
 {json.dumps(signal_summaries, ensure_ascii=False, indent=2)}"""
 
-    system_prompt = "You extract emerging tech terms from community signals. Return only valid JSON array."
+    system_prompt = "You extract emerging themes from tech community signals — new concepts, technologies, products, and hot discussions. Focus on signals that appear across multiple sources, not one-off posts. Return only valid JSON array."
 
     # Try LLM extraction
     try:
@@ -297,6 +311,67 @@ def generate_research_report(term: dict) -> bool:
         return False
 
 
+def generate_quick_brief(term: dict) -> bool:
+    """Generate a lightweight tracking note for medium-score terms (30-59).
+    No LLM call needed — template-based, costs nothing."""
+    slug = term["id"].replace("trend-", "")
+    output_path = CONTENT_DIR / f"{slug}.md"
+
+    if output_path.exists():
+        return False
+
+    canonical = term.get("canonical", "")
+    category = term.get("category", "General")
+    first_seen = term.get("first_seen", "")
+    score = term.get("score", 0)
+    total_mentions = term.get("total_mentions", 0)
+    sources = ", ".join(term.get("sources", []))
+    summary_zh = term.get("summary_zh", "")
+    summary_en = term.get("summary_en", "")
+
+    brief = f"""---
+title: "{canonical} — 快速追踪"
+category: {category}
+first_seen: {first_seen}
+score: {score}
+status: tracking
+---
+
+## {canonical}
+
+**分类**: {category}
+**首次发现**: {first_seen}
+**信号数**: {total_mentions}
+**来源**: {sources}
+**趋势评分**: {score}/100
+
+### 概述
+
+{summary_zh}
+
+{summary_en}
+
+### 追踪状态
+
+> ⚠️ **追踪阶段** — 当前信源数量和讨论度尚不足以触发完整研究报揭。该主题将持续在每日 Pipeline 中接收新信号，当跨平台讨论热度积累到 60 分以上时自动升级为完整趋势分析。
+
+### 为什么值得关注
+
+该主题首次出现于技术社区，可能是早期信号。AimFast.Dev 将持续追踪其发展动态：
+- 每日信号采集覆盖 HN / GitHub / Reddit / Product Hunt / V2EX 等 13 个信源
+- 术语评分随跨平台讨论自动增长
+- 达到 60 分阈值后自动生成深度研究报揭 + 机会分析
+
+---
+
+*此简报由 AimFast.Dev 趋势管道自动生成。最后更新: {datetime.now(TZ_SHANGHAI).strftime('%Y-%m-%d %H:%M')} CST*
+"""
+
+    CONTENT_DIR.mkdir(parents=True, exist_ok=True)
+    output_path.write_text(brief, encoding="utf-8")
+    return True
+
+
 def _default_research_prompt() -> str:
     return """Write a comprehensive trend research report for the term "{canonical}" in category {category}.
 
@@ -371,19 +446,28 @@ def main():
     new_count = len(updated_terms) - len(existing_terms)
     print(f"[trends] Merged: {len(updated_terms)} total ({new_count} new)")
 
-    # Generate research reports for high-score terms without reports
+    # Generate research reports (≥60) and quick briefs (30-59)
     reports_generated = 0
+    briefs_generated = 0
     for term in updated_terms:
-        if term.get("score", 0) >= 60:
-            slug = term["id"].replace("trend-", "")
-            report_path = CONTENT_DIR / f"{slug}.md"
+        score = term.get("score", 0)
+        slug = term["id"].replace("trend-", "")
+        report_path = CONTENT_DIR / f"{slug}.md"
+
+        if score >= 60:
             if not report_path.exists():
-                print(f"[trends] Generating research report for {term['canonical']} (score={term['score']})...")
+                print(f"[trends] Generating research report for {term['canonical']} (score={score})...")
                 if not args.dry_run:
                     if generate_research_report(term):
                         reports_generated += 1
+        elif score >= 30:
+            if not report_path.exists():
+                print(f"[trends] Generating quick brief for {term['canonical']} (score={score})...")
+                if not args.dry_run:
+                    if generate_quick_brief(term):
+                        briefs_generated += 1
 
-    print(f"[trends] Generated {reports_generated} new research reports")
+    print(f"[trends] Generated {reports_generated} research reports + {briefs_generated} quick briefs")
 
     # Save
     trend_data["terms"] = updated_terms

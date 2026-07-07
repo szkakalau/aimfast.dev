@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-07T14:52:07.993466+08:00",
+  "updated_at": "2026-07-07T15:04:48.133204+08:00",
   "terms": [
     {
       "id": "trend-claude-agent-sdk",
@@ -336,6 +336,33 @@
       "opportunity_summary_zh": "开放的协议标准，生态潜力巨大。目前几乎没有竞争——只有官方参考实现。MCP Server 市场类似 WordPress 插件生态——越早进入越有利。"
     },
     {
+      "id": "trend-vibe-coding",
+      "canonical": "Vibe Coding",
+      "aliases": [],
+      "first_seen": "2026-07-07",
+      "last_seen": "2026-07-07",
+      "stage": "nascent",
+      "score": 61,
+      "source_count": 2,
+      "total_mentions": 3,
+      "sources": [
+        "github",
+        "v2ex"
+      ],
+      "growth_pct": 100,
+      "category": "HotTopic",
+      "tags": [
+        "奇思妙想",
+        "ideas",
+        "HTML",
+        "active",
+        "产品发布"
+      ],
+      "summary_zh": "多个独立开发者分享用AI工具（如Codex）快速构建产品的经验，'Vibe Coding'成为热门实践。",
+      "summary_en": "Multiple indie developers share experiences of rapidly building products with AI tools (e.g., Codex), making 'Vibe Coding' a hot practice.",
+      "research_md_path": "content/trends/vibe-coding.md"
+    },
+    {
       "id": "trend-homegames",
       "canonical": "Homegames",
       "aliases": [],
@@ -601,6 +628,31 @@
       "research_md_path": "content/trends/orzma.md"
     },
     {
+      "id": "trend-unmetered-llm-api",
+      "canonical": "Unmetered LLM API",
+      "aliases": [],
+      "first_seen": "2026-07-07",
+      "last_seen": "2026-07-07",
+      "stage": "nascent",
+      "score": 40,
+      "source_count": 1,
+      "total_mentions": 1,
+      "sources": [
+        "hn"
+      ],
+      "growth_pct": 100,
+      "category": "AI/LLM",
+      "tags": [
+        "story_48799719",
+        "story",
+        "author_yolo-auto",
+        "show_hn"
+      ],
+      "summary_zh": "出现无计量LLM API服务（$6/月无限制），挑战传统按token计费模式。",
+      "summary_en": "An unmetered LLM API service ($6/month, no limits) emerges, challenging the traditional per-token pricing model.",
+      "research_md_path": "content/trends/unmetered-llm-api.md"
+    },
+    {
       "id": "trend-otari",
       "canonical": "Otari",
       "aliases": [],
@@ -624,6 +676,31 @@
       "summary_zh": "一个开源的LLM控制平面。",
       "summary_en": "An open-source LLM control plane.",
       "research_md_path": "content/trends/otari.md"
+    },
+    {
+      "id": "trend-llm-control-plane",
+      "canonical": "LLM Control Plane",
+      "aliases": [],
+      "first_seen": "2026-07-07",
+      "last_seen": "2026-07-07",
+      "stage": "nascent",
+      "score": 36,
+      "source_count": 1,
+      "total_mentions": 1,
+      "sources": [
+        "hn"
+      ],
+      "growth_pct": 100,
+      "category": "AI/LLM",
+      "tags": [
+        "story_48810528",
+        "story",
+        "author_angpt",
+        "show_hn"
+      ],
+      "summary_zh": "出现开源LLM控制平面和LLM thought visualization等工具，反映LLM管理和监控需求上升。",
+      "summary_en": "Open-source LLM control planes and thought visualization tools emerge, reflecting rising demand for LLM management and monitoring.",
+      "research_md_path": "content/trends/llm-control-plane.md"
     },
     {
       "id": "trend-l9gpu",
@@ -820,6 +897,132 @@
       "summary_zh": "飞投的非大陆地区名称，功能相同，专注于跨平台文件共享。",
       "summary_en": "The international name for 飞投, offering the same cross-platform file sharing functionality.",
       "research_md_path": "content/trends/webdrop.md"
+    },
+    {
+      "id": "trend-ai-agent-security-scanning",
+      "canonical": "AI Agent Security Scanning",
+      "aliases": [],
+      "first_seen": "2026-07-07",
+      "last_seen": "2026-07-07",
+      "stage": "nascent",
+      "score": 0,
+      "source_count": 0,
+      "total_mentions": 0,
+      "sources": [],
+      "growth_pct": 100,
+      "category": "AI/LLM",
+      "tags": [],
+      "summary_zh": "多个信号关注AI agent的安全漏洞扫描和危险能力检测，表明AI agent安全正成为新兴热点。",
+      "summary_en": "Multiple signals highlight the need for scanning AI agents for vulnerabilities and dangerous capabilities, indicating a growing focus on AI agent security.",
+      "research_md_path": "content/trends/ai-agent-security-scanning.md"
+    },
+    {
+      "id": "trend-home-automation-diy",
+      "canonical": "Home Automation DIY",
+      "aliases": [],
+      "first_seen": "2026-07-07",
+      "last_seen": "2026-07-07",
+      "stage": "nascent",
+      "score": 0,
+      "source_count": 0,
+      "total_mentions": 0,
+      "sources": [],
+      "growth_pct": 100,
+      "category": "HotTopic",
+      "tags": [],
+      "summary_zh": "Reddit上大量关于家庭自动化设备选择、本地存储、智能锁等讨论，显示DIY智能家居社区活跃。",
+      "summary_en": "Numerous Reddit discussions on home automation device selection, local storage, smart locks, etc., show a vibrant DIY smart home community.",
+      "research_md_path": "content/trends/home-automation-diy.md"
+    },
+    {
+      "id": "trend-open-source-robot-vacuum",
+      "canonical": "Open-Source Robot Vacuum",
+      "aliases": [],
+      "first_seen": "2026-07-07",
+      "last_seen": "2026-07-07",
+      "stage": "nascent",
+      "score": 0,
+      "source_count": 0,
+      "total_mentions": 0,
+      "sources": [],
+      "growth_pct": 100,
+      "category": "Project",
+      "tags": [],
+      "summary_zh": "开源扫地机器人项目oomwoo获得关注，代表开源硬件和机器人领域的创新。",
+      "summary_en": "The open-source vacuum robot project oomwoo gains traction, representing innovation in open-source hardware and robotics.",
+      "research_md_path": "content/trends/open-source-robot-vacuum.md"
+    },
+    {
+      "id": "trend-web-view-terminal-emulator",
+      "canonical": "Web-View Terminal Emulator",
+      "aliases": [],
+      "first_seen": "2026-07-07",
+      "last_seen": "2026-07-07",
+      "stage": "nascent",
+      "score": 0,
+      "source_count": 0,
+      "total_mentions": 0,
+      "sources": [],
+      "growth_pct": 100,
+      "category": "DevTools",
+      "tags": [],
+      "summary_zh": "",
+      "summary_en": "Terminal emulators like orzma now support rendering web views, expanding the functional boundaries of the terminal.",
+      "research_md_path": "content/trends/web-view-terminal-emulator.md"
+    },
+    {
+      "id": "trend-cloudflare-saas-template",
+      "canonical": "Cloudflare SaaS Template",
+      "aliases": [],
+      "first_seen": "2026-07-07",
+      "last_seen": "2026-07-07",
+      "stage": "nascent",
+      "score": 0,
+      "source_count": 0,
+      "total_mentions": 0,
+      "sources": [],
+      "growth_pct": 100,
+      "category": "DevTools",
+      "tags": [],
+      "summary_zh": "基于Cloudflare的零成本出海SaaS模板出现，降低独立开发者海外部署门槛。",
+      "summary_en": "A zero-cost Cloudflare-based SaaS template for going global lowers the barrier for indie developers to deploy overseas.",
+      "research_md_path": "content/trends/cloudflare-saas-template.md"
+    },
+    {
+      "id": "trend-local-first-file-sharing",
+      "canonical": "Local-First File Sharing",
+      "aliases": [],
+      "first_seen": "2026-07-07",
+      "last_seen": "2026-07-07",
+      "stage": "nascent",
+      "score": 0,
+      "source_count": 0,
+      "total_mentions": 0,
+      "sources": [],
+      "growth_pct": 100,
+      "category": "Product",
+      "tags": [],
+      "summary_zh": "纯局域网文件共享工具（如飞投/WebDrop）受关注，强调零安装、跨平台、隐私保护。",
+      "summary_en": "LAN-only file sharing tools (e.g., Feitou/WebDrop) gain attention for zero-install, cross-platform, and privacy-focused features.",
+      "research_md_path": "content/trends/local-first-file-sharing.md"
+    },
+    {
+      "id": "trend-ai-agent-tutorial",
+      "canonical": "AI Agent Tutorial",
+      "aliases": [],
+      "first_seen": "2026-07-07",
+      "last_seen": "2026-07-07",
+      "stage": "nascent",
+      "score": 0,
+      "source_count": 0,
+      "total_mentions": 0,
+      "sources": [],
+      "growth_pct": 100,
+      "category": "AI/LLM",
+      "tags": [],
+      "summary_zh": "《从零开始构建智能体》教程在GitHub上获得大量星标，反映学习AI agent开发的需求旺盛。",
+      "summary_en": "The 'Building Agents from Scratch' tutorial stars on GitHub, reflecting high demand for learning AI agent development.",
+      "research_md_path": "content/trends/ai-agent-tutorial.md"
     }
   ]
 }
