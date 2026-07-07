@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-07T14:32:40.335821+08:00",
+  "updated_at": "2026-07-07T14:52:07.993466+08:00",
   "terms": [
     {
       "id": "trend-claude-agent-sdk",
@@ -334,6 +334,492 @@
       ],
       "opportunity_summary_en": "An open protocol with massive ecosystem potential. Almost no competition — only official reference implementations exist. The MCP server marketplace is analogous to the WordPress plugin ecosystem. Build now, before the official marketplace fills up.",
       "opportunity_summary_zh": "开放的协议标准，生态潜力巨大。目前几乎没有竞争——只有官方参考实现。MCP Server 市场类似 WordPress 插件生态——越早进入越有利。"
+    },
+    {
+      "id": "trend-homegames",
+      "canonical": "Homegames",
+      "aliases": [],
+      "first_seen": "2026-07-07",
+      "last_seen": "2026-07-07",
+      "stage": "nascent",
+      "score": 51,
+      "source_count": 1,
+      "total_mentions": 1,
+      "sources": [
+        "hn"
+      ],
+      "growth_pct": 100,
+      "category": "product",
+      "tags": [
+        "story",
+        "show_hn",
+        "author_homegamesjoseph",
+        "story_48798153"
+      ],
+      "summary_zh": "一个开源游戏平台，由开发者历时8年打造。",
+      "summary_en": "An open-source game platform built by a developer over 8 years.",
+      "research_md_path": "content/trends/homegames.md"
+    },
+    {
+      "id": "trend-instantvideos.org",
+      "canonical": "InstantVideos.org",
+      "aliases": [],
+      "first_seen": "2026-07-07",
+      "last_seen": "2026-07-07",
+      "stage": "nascent",
+      "score": 49,
+      "source_count": 1,
+      "total_mentions": 1,
+      "sources": [
+        "hn"
+      ],
+      "growth_pct": 100,
+      "category": "product",
+      "tags": [
+        "author_pw",
+        "story",
+        "story_48812045",
+        "show_hn"
+      ],
+      "summary_zh": "一个提供约30秒短纪录片的网站。",
+      "summary_en": "A website offering short documentaries around 30 seconds in length.",
+      "research_md_path": "content/trends/instantvideos.org.md"
+    },
+    {
+      "id": "trend-hello-agents",
+      "canonical": "hello-agents",
+      "aliases": [],
+      "first_seen": "2026-07-07",
+      "last_seen": "2026-07-07",
+      "stage": "nascent",
+      "score": 49,
+      "source_count": 1,
+      "total_mentions": 1,
+      "sources": [
+        "github"
+      ],
+      "growth_pct": 100,
+      "category": "project",
+      "tags": [
+        "Python",
+        "active"
+      ],
+      "summary_zh": "一个从零开始构建智能体的原理与实践教程项目。",
+      "summary_en": "A tutorial project for building agents from scratch, covering principles and practice.",
+      "research_md_path": "content/trends/hello-agents.md"
+    },
+    {
+      "id": "trend-exploitarium",
+      "canonical": "exploitarium",
+      "aliases": [],
+      "first_seen": "2026-07-07",
+      "last_seen": "2026-07-07",
+      "stage": "nascent",
+      "score": 49,
+      "source_count": 1,
+      "total_mentions": 1,
+      "sources": [
+        "github"
+      ],
+      "growth_pct": 100,
+      "category": "project",
+      "tags": [
+        "fresh",
+        "Python"
+      ],
+      "summary_zh": "一个公开漏洞PoC和漏洞研究报告的归档项目。",
+      "summary_en": "An archive project for public exploit PoCs and vulnerability research writeups.",
+      "research_md_path": "content/trends/exploitarium.md"
+    },
+    {
+      "id": "trend-openwiki",
+      "canonical": "OpenWiki",
+      "aliases": [],
+      "first_seen": "2026-07-07",
+      "last_seen": "2026-07-07",
+      "stage": "nascent",
+      "score": 48,
+      "source_count": 1,
+      "total_mentions": 1,
+      "sources": [
+        "github"
+      ],
+      "growth_pct": 100,
+      "category": "project",
+      "tags": [
+        "TypeScript",
+        "fresh"
+      ],
+      "summary_zh": "一个CLI工具，用于为代码库编写和维护智能体文档。",
+      "summary_en": "A CLI tool for writing and maintaining agent documentation for codebases.",
+      "research_md_path": "content/trends/openwiki.md"
+    },
+    {
+      "id": "trend-oomwoo",
+      "canonical": "oomwoo",
+      "aliases": [],
+      "first_seen": "2026-07-07",
+      "last_seen": "2026-07-07",
+      "stage": "nascent",
+      "score": 48,
+      "source_count": 1,
+      "total_mentions": 1,
+      "sources": [
+        "github"
+      ],
+      "growth_pct": 100,
+      "category": "project",
+      "tags": [
+        "fresh",
+        "Python"
+      ],
+      "summary_zh": "一个开源的真空机器人吸尘器项目。",
+      "summary_en": "An open-source vacuum robot cleaner project.",
+      "research_md_path": "content/trends/oomwoo.md"
+    },
+    {
+      "id": "trend-pulpie",
+      "canonical": "Pulpie",
+      "aliases": [],
+      "first_seen": "2026-07-07",
+      "last_seen": "2026-07-07",
+      "stage": "nascent",
+      "score": 48,
+      "source_count": 1,
+      "total_mentions": 1,
+      "sources": [
+        "hn"
+      ],
+      "growth_pct": 100,
+      "category": "product",
+      "tags": [
+        "story_48806575",
+        "story",
+        "show_hn",
+        "author_snyy"
+      ],
+      "summary_zh": "用于清理网页数据的模型。",
+      "summary_en": "Models designed for cleaning web data.",
+      "research_md_path": "content/trends/pulpie.md"
+    },
+    {
+      "id": "trend-pet-reminder",
+      "canonical": "Pet Reminder",
+      "aliases": [],
+      "first_seen": "2026-07-07",
+      "last_seen": "2026-07-07",
+      "stage": "nascent",
+      "score": 47,
+      "source_count": 1,
+      "total_mentions": 1,
+      "sources": [
+        "hn"
+      ],
+      "growth_pct": 100,
+      "category": "product",
+      "tags": [
+        "story",
+        "show_hn",
+        "story_48804000",
+        "author_terryXyz"
+      ],
+      "summary_zh": "一款带有桌面宠物的macOS提醒应用。",
+      "summary_en": "A macOS reminder app with a desktop pet companion.",
+      "research_md_path": "content/trends/pet-reminder.md"
+    },
+    {
+      "id": "trend-langgraph-for-swift",
+      "canonical": "LangGraph for Swift",
+      "aliases": [],
+      "first_seen": "2026-07-07",
+      "last_seen": "2026-07-07",
+      "stage": "nascent",
+      "score": 43,
+      "source_count": 1,
+      "total_mentions": 1,
+      "sources": [
+        "hn"
+      ],
+      "growth_pct": 100,
+      "category": "project",
+      "tags": [
+        "story",
+        "author_christkarani",
+        "story_48805437",
+        "show_hn"
+      ],
+      "summary_zh": "为Swift语言实现的LangGraph库。",
+      "summary_en": "A LangGraph implementation for the Swift programming language.",
+      "research_md_path": "content/trends/langgraph-for-swift.md"
+    },
+    {
+      "id": "trend-哒哒哒",
+      "canonical": "哒哒哒",
+      "aliases": [],
+      "first_seen": "2026-07-07",
+      "last_seen": "2026-07-07",
+      "stage": "nascent",
+      "score": 40,
+      "source_count": 1,
+      "total_mentions": 1,
+      "sources": [
+        "v2ex"
+      ],
+      "growth_pct": 100,
+      "category": "product",
+      "tags": [
+        "产品发布",
+        "create"
+      ],
+      "summary_zh": "一款通过MacBook触摸板震动提醒用户休息的App，旨在不打断心流。",
+      "summary_en": "An app that uses MacBook trackpad haptics to remind users to take breaks without disrupting flow.",
+      "research_md_path": "content/trends/哒哒哒.md"
+    },
+    {
+      "id": "trend-orzma",
+      "canonical": "orzma",
+      "aliases": [],
+      "first_seen": "2026-07-07",
+      "last_seen": "2026-07-07",
+      "stage": "nascent",
+      "score": 40,
+      "source_count": 1,
+      "total_mentions": 1,
+      "sources": [
+        "hn"
+      ],
+      "growth_pct": 100,
+      "category": "product",
+      "tags": [
+        "story",
+        "show_hn",
+        "story_48809267",
+        "author_notelm"
+      ],
+      "summary_zh": "一个能在终端内渲染Web视图的终端模拟器。",
+      "summary_en": "A terminal emulator that renders webviews inside the terminal.",
+      "research_md_path": "content/trends/orzma.md"
+    },
+    {
+      "id": "trend-otari",
+      "canonical": "Otari",
+      "aliases": [],
+      "first_seen": "2026-07-07",
+      "last_seen": "2026-07-07",
+      "stage": "nascent",
+      "score": 36,
+      "source_count": 1,
+      "total_mentions": 1,
+      "sources": [
+        "hn"
+      ],
+      "growth_pct": 100,
+      "category": "product",
+      "tags": [
+        "story",
+        "show_hn",
+        "story_48810528",
+        "author_angpt"
+      ],
+      "summary_zh": "一个开源的LLM控制平面。",
+      "summary_en": "An open-source LLM control plane.",
+      "research_md_path": "content/trends/otari.md"
+    },
+    {
+      "id": "trend-l9gpu",
+      "canonical": "L9gpu",
+      "aliases": [],
+      "first_seen": "2026-07-07",
+      "last_seen": "2026-07-07",
+      "stage": "nascent",
+      "score": 35,
+      "source_count": 1,
+      "total_mentions": 1,
+      "sources": [
+        "hn"
+      ],
+      "growth_pct": 100,
+      "category": "product",
+      "tags": [
+        "story",
+        "show_hn",
+        "story_48811382",
+        "author_nishantmodak"
+      ],
+      "summary_zh": "一个GPU遥测工具，将每个GPU关联到K8s Pod或Slurm作业。",
+      "summary_en": "A GPU telemetry tool that ties each GPU to a K8s pod or Slurm job.",
+      "research_md_path": "content/trends/l9gpu.md"
+    },
+    {
+      "id": "trend-captchainbox",
+      "canonical": "Captchainbox",
+      "aliases": [],
+      "first_seen": "2026-07-07",
+      "last_seen": "2026-07-07",
+      "stage": "nascent",
+      "score": 35,
+      "source_count": 1,
+      "total_mentions": 1,
+      "sources": [
+        "hn"
+      ],
+      "growth_pct": 100,
+      "category": "product",
+      "tags": [
+        "story",
+        "story_48804775",
+        "author_felixdoerp",
+        "show_hn"
+      ],
+      "summary_zh": "一个让发件人完成工作才能进入收件箱的邮件工具。",
+      "summary_en": "An email tool that makes senders work to get into your inbox.",
+      "research_md_path": "content/trends/captchainbox.md"
+    },
+    {
+      "id": "trend-nectar",
+      "canonical": "Nectar",
+      "aliases": [],
+      "first_seen": "2026-07-07",
+      "last_seen": "2026-07-07",
+      "stage": "nascent",
+      "score": 32,
+      "source_count": 1,
+      "total_mentions": 1,
+      "sources": [
+        "hn"
+      ],
+      "growth_pct": 100,
+      "category": "project",
+      "tags": [
+        "story",
+        "author_blakeburnette",
+        "story_48805857",
+        "show_hn"
+      ],
+      "summary_zh": "一个类似Rust的React框架，可编译为WebAssembly。",
+      "summary_en": "A Rust-like React framework that compiles to WebAssembly.",
+      "research_md_path": "content/trends/nectar.md"
+    },
+    {
+      "id": "trend-peek-cli",
+      "canonical": "Peek-CLI",
+      "aliases": [],
+      "first_seen": "2026-07-07",
+      "last_seen": "2026-07-07",
+      "stage": "nascent",
+      "score": 32,
+      "source_count": 1,
+      "total_mentions": 1,
+      "sources": [
+        "hn"
+      ],
+      "growth_pct": 100,
+      "category": "product",
+      "tags": [
+        "story",
+        "show_hn",
+        "story_48799078",
+        "author_ReactRocks"
+      ],
+      "summary_zh": "一个让Claude Code能够查看浏览器的CLI工具。",
+      "summary_en": "A CLI tool that lets Claude Code see the browser.",
+      "research_md_path": "content/trends/peek-cli.md"
+    },
+    {
+      "id": "trend-rnet",
+      "canonical": "RNet",
+      "aliases": [],
+      "first_seen": "2026-07-07",
+      "last_seen": "2026-07-07",
+      "stage": "nascent",
+      "score": 32,
+      "source_count": 1,
+      "total_mentions": 1,
+      "sources": [
+        "hn"
+      ],
+      "growth_pct": 100,
+      "category": "product",
+      "tags": [
+        "story",
+        "story_48801948",
+        "author_nextma",
+        "show_hn"
+      ],
+      "summary_zh": "一个面向日常用户的AI信用钱包。",
+      "summary_en": "An AI credit wallet for everyday users.",
+      "research_md_path": "content/trends/rnet.md"
+    },
+    {
+      "id": "trend-sidenote",
+      "canonical": "Sidenote",
+      "aliases": [],
+      "first_seen": "2026-07-07",
+      "last_seen": "2026-07-07",
+      "stage": "nascent",
+      "score": 32,
+      "source_count": 1,
+      "total_mentions": 1,
+      "sources": [
+        "hn"
+      ],
+      "growth_pct": 100,
+      "category": "product",
+      "tags": [
+        "story",
+        "show_hn",
+        "story_48797739",
+        "author_bharadwajp"
+      ],
+      "summary_zh": "一个在渲染博客上评论的工具，LLM会生成Git diff。",
+      "summary_en": "A tool for commenting on rendered blogs, where an LLM generates the Git diff.",
+      "research_md_path": "content/trends/sidenote.md"
+    },
+    {
+      "id": "trend-飞投",
+      "canonical": "飞投",
+      "aliases": [],
+      "first_seen": "2026-07-07",
+      "last_seen": "2026-07-07",
+      "stage": "nascent",
+      "score": 31,
+      "source_count": 1,
+      "total_mentions": 1,
+      "sources": [
+        "w2solo"
+      ],
+      "growth_pct": 100,
+      "category": "product",
+      "tags": [
+        "indie-dev",
+        "product-launch"
+      ],
+      "summary_zh": "一个纯局域网文件共享工具，接收方无需安装 App，打开浏览器即可传输文件。",
+      "summary_en": "A pure LAN file sharing tool that requires no app installation on the receiver's side; files can be transferred via browser.",
+      "research_md_path": "content/trends/飞投.md"
+    },
+    {
+      "id": "trend-webdrop",
+      "canonical": "WebDrop",
+      "aliases": [],
+      "first_seen": "2026-07-07",
+      "last_seen": "2026-07-07",
+      "stage": "nascent",
+      "score": 31,
+      "source_count": 1,
+      "total_mentions": 1,
+      "sources": [
+        "w2solo"
+      ],
+      "growth_pct": 100,
+      "category": "product",
+      "tags": [
+        "indie-dev",
+        "product-launch"
+      ],
+      "summary_zh": "飞投的非大陆地区名称，功能相同，专注于跨平台文件共享。",
+      "summary_en": "The international name for 飞投, offering the same cross-platform file sharing functionality.",
+      "research_md_path": "content/trends/webdrop.md"
     }
   ]
 }

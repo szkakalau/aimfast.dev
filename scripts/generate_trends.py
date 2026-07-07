@@ -348,8 +348,12 @@ def main():
         return
 
     # Load data
-    signals = load_json(signals_path)
-    if not isinstance(signals, list):
+    signals_raw = load_json(signals_path)
+    if isinstance(signals_raw, dict):
+        signals = signals_raw.get("signals", [])
+    elif isinstance(signals_raw, list):
+        signals = signals_raw
+    else:
         signals = []
     print(f"[trends] Loaded {len(signals)} signals for {date_str}")
 
