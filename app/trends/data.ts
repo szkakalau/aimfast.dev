@@ -30,6 +30,15 @@ export function getResearchContent(path: string): string {
   }
 }
 
+export function getResearchContentEn(path: string): string {
+  // Try English variant first (e.g., content/trends/homegames-en.md)
+  const enPath = path.replace(/\.md$/, '-en.md');
+  const enContent = getResearchContent(enPath);
+  if (enContent) return enContent;
+  // Fall back to original
+  return getResearchContent(path);
+}
+
 export function stageLabel(stage: string): string {
   const map: Record<string, string> = {
     nascent: 'Nascent (0-7d)',

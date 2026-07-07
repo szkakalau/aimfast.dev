@@ -15,6 +15,7 @@ import {
   getAllTrendTerms,
   getTrendTerm,
   getResearchContent,
+  getResearchContentEn,
   stageLabel,
   stageLabelZh,
   stagePct,
@@ -119,7 +120,7 @@ export default async function TrendDetailPage({
     );
   }
 
-  const researchMd = getResearchContent(term.research_md_path);
+  const researchMd = getResearchContentEn(term.research_md_path);
 
   // Strip YAML frontmatter, extract sections for FAQ generation
   let researchHtml = '';
