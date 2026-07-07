@@ -1,5 +1,14 @@
 'use client';
 
+type DecisionData = {
+  product_name?: string;
+  one_liner?: string;
+  pricing?: string;
+  validation_path?: string;
+  buyer?: string;
+  why_not_others?: string;
+};
+
 type Props = {
   t: Record<string, string>;
   signal: {
@@ -16,13 +25,14 @@ type Props = {
     tags: string[];
     author: string;
   } | null;
+  decision?: DecisionData;
   reportMd: string;
   date: string;
   loading?: boolean;
   onAskAI?: () => void;
 };
 
-export function DecisionCard({ t, signal, reportMd: _reportMd, date, loading, onAskAI }: Props) {
+export function DecisionCard({ t, signal, decision, reportMd: _reportMd, date, loading, onAskAI }: Props) {
   if (loading) {
     return (
       <div className="card card-full skeleton-card" aria-busy="true">
@@ -34,7 +44,7 @@ export function DecisionCard({ t, signal, reportMd: _reportMd, date, loading, on
     );
   }
 
-  if (!signal) {
+  if (!signal && !decision?.product_name) {
     return (
       <div className="card card-full">
         <h2>{t.decisionCardTitle}</h2>
@@ -45,42 +55,62 @@ export function DecisionCard({ t, signal, reportMd: _reportMd, date, loading, on
     );
   }
 
-  const scoreBadge = signal.score >= 30 ? 'score-badge high' : signal.score >= 15 ? 'score-badge mid' : 'score-badge';
+  const scoreBadge = signal && signal.score >= 30 ? 'score-badge high' : signal && signal.score >= 15 ? 'score-badge mid' : 'score-badge';
+
+  // Use decision data when available, fall back to signal data
+  const hasDecision = !!decision?.product_name;
 
   return (
     <div className="card card-full decision-card">
       {/* ── Header ── */}
       <div className="decision-header">
         <h2>{t.decisionCardTitle}</h2>
-        <span className={scoreBadge}>{signal.score}</span>
+        {signal && <span className={scoreBadge}>{signal.score}</span>}
       </div>
 
-      {/* ── Title ── */}
-      <h3 className="decision-title">{signal.title}</h3>
-      <p className="decision-summary">{signal.summary}</p>
+      {/* ── Product / Signal Title ── */}
+      {hasDecision ? (
+        <>
+          <h3 className="decision-title">{decision.product_name}</h3>
+          <p className="decision-summary">{decision.one_liner}</p>
+        </>
+      ) : (
+        <>
+          <h3 className="decision-title">{signal?.title}</h3>
+          <p className="decision-summary">{signal?.summary}</p>
+        </>
+      )}
 
       {/* ── Evidence ── */}
       <div className="decision-section">
         <h4 className="decision-section-title">{t.decisionEvidence}</h4>
-        <div className="evidence-list">
-          <div className="evidence-item">
-            <span className="evidence-source">{signal.source}</span>
-            <span className="evidence-stat">
-              {signal.engagement.total > 0
-                ? `${signal.engagement.total} ${t.decisionEngagement || 'interactions'}`
-                : ''}
-            </span>
+        {hasDecision && decision.why_not_others ? (
+          <p className="decision-why-not">{decision.why_not_others}</p>
+        ) : signal ? (
+          <div className="evidence-list">
+            <div className="evidence-item">
+              <span className="evidence-source">{signal.source}</span>
+              <span className="evidence-stat">
+                {signal.engagement.total > 0
+                  ? `${signal.engagement.total} ${t.decisionEngagement || 'interactions'}`
+                  : ''}
+              </span>
+            </div>
+            {signal.tags.slice(0, 3).map((tag) => (
+              <span key={tag} className="evidence-tag">{tag}</span>
+            ))}
           </div>
-          {signal.tags.slice(0, 3).map((tag) => (
-            <span key={tag} className="evidence-tag">{tag}</span>
-          ))}
-        </div>
+        ) : null}
       </div>
 
       {/* ── Buyer ── */}
       <div className="decision-section">
         <h4 className="decision-section-title">{t.decisionBuyer}</h4>
-        <p className="decision-buyer-text">{signal.summary.includes('付费') || signal.summary.includes('pay') ? signal.summary : t.decisionBuyerInferred || 'Independent developers and small teams facing this problem daily.'}</p>
+        <p className="decision-buyer-text">
+          {hasDecision && decision.buyer
+            ? decision.buyer
+            : t.decisionBuyerInferred || 'Independent developers and small teams facing this problem daily.'}
+        </p>
       </div>
 
       {/* ── Pricing + Validation ── */}
@@ -88,14 +118,20 @@ export function DecisionCard({ t, signal, reportMd: _reportMd, date, loading, on
         <div className="decision-col">
           <h4 className="decision-section-title">{t.decisionPricing}</h4>
           <div className="decision-pricing">
-            <span className="pricing-amount">$9.99</span>
-            <span className="pricing-unit">{t.decisionOneTime || 'one-time'}</span>
+            <span className="pricing-amount">
+              {hasDecision && decision.pricing ? decision.pricing : '$9.99'}
+            </span>
+            {!hasDecision && (
+              <span className="pricing-unit">{t.decisionOneTime || 'one-time'}</span>
+            )}
           </div>
         </div>
         <div className="decision-col">
           <h4 className="decision-section-title">{t.decisionValidation}</h4>
           <p className="decision-validation-text">
-            {t.decisionValidationDefault || '2h MVP → post to signal source → measure response'}
+            {hasDecision && decision.validation_path
+              ? decision.validation_path
+              : t.decisionValidationDefault || '2h MVP → post to signal source → measure response'}
           </p>
         </div>
       </div>

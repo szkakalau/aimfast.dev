@@ -252,6 +252,16 @@ def collect_dashboard_data() -> dict:
     if report_en_path.exists():
         report_md_en = report_en_path.read_text(encoding="utf-8")
 
+    # 4b. Decision (structured, from report LLM extraction — feeds Dashboard 今日决策 card)
+    decision = {}
+    decision_path = DAILY_DIR / effective_date / "decision.json"
+    if decision_path.exists():
+        try:
+            decision = json.loads(decision_path.read_text(encoding="utf-8"))
+            print(f"[Dashboard] Decision data loaded: {decision.get('product_name', 'unnamed')}")
+        except Exception as e:
+            print(f"[Dashboard] [WARN] Failed to read decision.json: {e}")
+
     # 5. Planet article (markdown + metadata) — bilingual
     article_md = ""
     article_md_en = ""
@@ -296,6 +306,7 @@ def collect_dashboard_data() -> dict:
         "watchlist": watchlist_data.get("watched", []),
         "competitor_targets": competitor_targets,
         "competitor_intel": competitor_intel,
+        "decision": decision,
         "report_md": report_md,
         "report_md_en": report_md_en,
         "article_md": article_md,

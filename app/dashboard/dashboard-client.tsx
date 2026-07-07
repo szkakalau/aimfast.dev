@@ -174,12 +174,22 @@ export type CompetitorTarget = {
   status: string;
 };
 
+export type DashboardDecision = {
+  product_name?: string;
+  one_liner?: string;
+  pricing?: string;
+  validation_path?: string;
+  buyer?: string;
+  why_not_others?: string;
+};
+
 export type DashboardData = {
   date: string;
   signals: Signal[];
   summary: Record<string, unknown>;
   history: HistoryEntry[];
   opportunities: unknown[];
+  decision?: DashboardDecision;
   demand_radar: Record<string, unknown>;
   workbench: Record<string, unknown>;
   bets: unknown[];
@@ -266,6 +276,7 @@ export function DashboardClient() {
 
   // ── Derived data ──
   const topSignal = data?.signals?.[0] || null;
+  const decision = data?.decision || {};
   const history = data?.history || [];
   const signalCount = data?.signals?.length || 0;
   const topScore = topSignal?.score || (history.length > 0 ? history[history.length - 1].top_score : 0);
@@ -291,7 +302,7 @@ export function DashboardClient() {
           onSelectDate={() => {}}
         />
         <main className="dash-main">
-          <DecisionCard t={t} signal={null} reportMd="" date="--" loading />
+          <DecisionCard t={t} signal={null} decision={{}} reportMd="" date="--" loading />
           <CompetitorCard t={t} intel={null} targets={[]} loading />
           <SystemPulse t={t} history={[]} signalCount={0} topScore={0} crossPlatformCount={0} sourcesOnline={0} sourcesTotal={0} loading />
         </main>
@@ -335,6 +346,7 @@ export function DashboardClient() {
         <DecisionCard
           t={t}
           signal={topSignal}
+          decision={decision}
           reportMd={reportMd}
           date={selectedDate || data.date}
           onAskAI={() => openChat('decision')}

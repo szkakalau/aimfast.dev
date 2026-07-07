@@ -543,7 +543,68 @@ def run(date_str: str | None = None) -> str:
     write_pipeline_status(date, "report", "generated",
         message=f"Daily report saved ({len(report):,} chars)")
 
+    # Extract structured decision data from the report for Dashboard consumption
+    decision = extract_decision(report, date)
+    if decision:
+        decision_path = output_dir / "decision.json"
+        decision_path.write_text(json.dumps(decision, ensure_ascii=False, indent=2), encoding="utf-8")
+        print(f"[日报] 结构化决策已保存 → {decision_path}")
+
     return report
+
+
+def extract_decision(report_md: str, date_str: str) -> dict | None:
+    """Extract structured decision data from the generated report using LLM.
+    This feeds the Dashboard '今日决策' card — replacing hardcoded constants."""
+    if "2 小时构建" not in report_md and "2 hour build" not in report_md.lower():
+        print("[日报] 决策提取：日报中无「今日 2 小时构建」板块，跳过")
+        return None
+
+    prompt = f"""从以下日报的「今日 2 小时构建」板块中提取结构化决策数据。只提取该板块中的具体信息，不要编造。
+
+返回 JSON 格式：
+{{
+  "product_name": "产品名称（含英文名）",
+  "one_liner": "一句话描述（50 字以内）",
+  "pricing": "具体定价（含金额和计费方式）",
+  "validation_path": "最快验证路径（具体可执行的步骤）",
+  "buyer": "谁会最先付费（具体用户画像）",
+  "why_not_others": "为什么不是另外两个方向"
+}}
+
+如果该板块不存在或无实质内容，返回 {{}}。
+
+日报：
+{report_md[:5000]}"""
+
+    try:
+        response = chat(
+            system_prompt="Extract structured decision data from Chinese tech reports. Return ONLY valid JSON, no other text.",
+            user_prompt=prompt,
+            temperature=0.3,
+            max_tokens=1024,
+        )
+        response = response.strip()
+        if response.startswith("```"):
+            lines = response.split("\n")
+            if lines[0].startswith("```"):
+                lines = lines[1:]
+            if lines and lines[-1].strip() == "```":
+                lines = lines[:-1]
+            response = "\n".join(lines)
+
+        decision = json.loads(response)
+        if isinstance(decision, dict) and decision.get("product_name"):
+            print(f"[日报] 决策提取成功：{decision.get('product_name')}")
+            return decision
+        else:
+            print(f"[日报] 决策提取：无有效产品名，跳过")
+    except json.JSONDecodeError as e:
+        print(f"[日报] 决策提取 JSON 解析失败: {e}")
+    except Exception as e:
+        print(f"[日报] 决策提取失败: {e}")
+
+    return None
 
 
 if __name__ == "__main__":
