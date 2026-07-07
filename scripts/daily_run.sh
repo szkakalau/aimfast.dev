@@ -18,13 +18,28 @@ cd "$PROJECT_ROOT"
 mkdir -p "$LOG_DIR"
 
 # Resolve Python — prefer python3, then python
+# Must verify with --version (Windows App alias passes `command -v` but fails)
 PYTHON=""
 for candidate in python3 python; do
-    if command -v "$candidate" &>/dev/null; then
+    if command -v "$candidate" &>/dev/null && "$candidate" --version &>/dev/null 2>&1; then
         PYTHON="$candidate"
         break
     fi
 done
+
+# Fallback: explicit paths for Windows Git Bash
+if [ -z "$PYTHON" ]; then
+    for candidate in \
+        "$LOCALAPPDATA/Programs/Python/Python314/python" \
+        "$LOCALAPPDATA/Programs/Python/Python313/python" \
+        "$LOCALAPPDATA/Programs/Python/Python312/python" \
+        "/c/Users/castr/AppData/Local/Programs/Python/Python314/python"; do
+        if [ -x "$candidate" ] && "$candidate" --version &>/dev/null 2>&1; then
+            PYTHON="$candidate"
+            break
+        fi
+    done
+fi
 
 if [ -z "$PYTHON" ]; then
     echo "[FATAL] Python not found in PATH"

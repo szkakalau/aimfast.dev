@@ -1,170 +1,37 @@
 {
-  "updated_at": "2026-07-07T08:30:00+08:00",
+  "updated_at": "2026-07-07T14:32:40.335821+08:00",
   "terms": [
-    {
-      "id": "trend-mcp-protocol",
-      "canonical": "MCP Protocol",
-      "aliases": ["Model Context Protocol", "MCP", "Anthropic MCP"],
-      "first_seen": "2026-07-05",
-      "last_seen": "2026-07-07",
-      "stage": "nascent",
-      "score": 78,
-      "source_count": 4,
-      "total_mentions": 23,
-      "sources": ["GitHub", "Hacker News", "Reddit", "Twitter/X"],
-      "growth_pct": 450,
-      "category": "AI/LLM",
-      "tags": ["anthropic", "ai-agents", "protocol"],
-      "summary_zh": "Anthropic 推出的 AI 模型与工具之间的开放协议标准，允许 LLM 安全地调用外部工具和数据源。",
-      "summary_en": "An open protocol standard from Anthropic enabling LLMs to securely call external tools and data sources.",
-      "research_md_path": "content/trends/mcp-protocol.md",
-      "opportunity_score": 88,
-      "market_score": 92,
-      "competition_score": 15,
-      "demand_score": 90,
-      "seo_difficulty": 12,
-      "suggested_products": ["MCP Server", "SaaS", "CLI Tool", "VS Code Extension"],
-      "estimated_dev_days": 3,
-      "revenue_potential": 5,
-      "risk_factors_en": ["Anthropic may build official solutions", "Protocol may change rapidly"],
-      "risk_factors_zh": ["Anthropic 可能官方进入", "协议可能快速迭代"],
-      "opportunity_summary_en": "An open protocol with massive ecosystem potential. Almost no competition — only official reference implementations exist. The MCP server marketplace is analogous to the WordPress plugin ecosystem. Build now, before the official marketplace fills up.",
-      "opportunity_summary_zh": "开放的协议标准，生态潜力巨大。目前几乎没有竞争——只有官方参考实现。MCP Server 市场类似 WordPress 插件生态——越早进入越有利。"
-    },
-    {
-      "id": "trend-fluid-compute",
-      "canonical": "Fluid Compute",
-      "aliases": ["Vercel Fluid Compute", "Fluid"],
-      "first_seen": "2026-07-02",
-      "last_seen": "2026-07-07",
-      "stage": "nascent",
-      "score": 85,
-      "source_count": 5,
-      "total_mentions": 41,
-      "sources": ["Hacker News", "Reddit", "GitHub", "DEV Community", "Twitter/X"],
-      "growth_pct": 720,
-      "category": "Infrastructure",
-      "tags": ["vercel", "serverless", "compute"],
-      "summary_zh": "Vercel 推出的新一代计算运行时，函数实例可跨并发请求复用，大幅减少冷启动延迟。",
-      "summary_en": "Vercel's next-gen compute runtime where function instances are reused across concurrent requests, drastically reducing cold starts.",
-      "research_md_path": "content/trends/fluid-compute.md",
-      "opportunity_score": 65,
-      "market_score": 60,
-      "competition_score": 45,
-      "demand_score": 72,
-      "seo_difficulty": 55,
-      "suggested_products": ["SaaS", "Template/Boilerplate", "Open Source"],
-      "estimated_dev_days": 10,
-      "revenue_potential": 3,
-      "risk_factors_en": ["Vercel-controlled ecosystem", "Niche audience (Vercel users only)"],
-      "risk_factors_zh": ["Vercel 控制生态", "受众人群窄（仅 Vercel 用户）"],
-      "opportunity_summary_en": "Vercel-specific infrastructure trend with growing interest. Build tooling around migration and optimization. Limited TAM since it's tied to one platform, but Vercel's user base is large and growing.",
-      "opportunity_summary_zh": "Vercel 平台特有的基础设施趋势，关注度在增长。可围绕迁移和优化构建工具。受限于单一平台，但 Vercel 用户基数大且持续增长。"
-    },
-    {
-      "id": "trend-ai-gateway",
-      "canonical": "AI Gateway",
-      "aliases": ["Vercel AI Gateway", "AI API Gateway"],
-      "first_seen": "2026-06-28",
-      "last_seen": "2026-07-07",
-      "stage": "emergent",
-      "score": 91,
-      "source_count": 6,
-      "total_mentions": 67,
-      "sources": ["Hacker News", "GitHub", "Reddit", "DEV Community", "Product Hunt", "Twitter/X"],
-      "growth_pct": 340,
-      "category": "AI/LLM",
-      "tags": ["vercel", "ai", "api", "gateway"],
-      "summary_zh": "统一的 AI API 网关，提供多模型访问、可观测性、模型回退和零数据保留策略。",
-      "summary_en": "A unified AI gateway offering multi-provider access with observability, model fallbacks, and zero data retention.",
-      "research_md_path": "content/trends/ai-gateway.md",
-      "opportunity_score": 78,
-      "market_score": 85,
-      "competition_score": 38,
-      "demand_score": 82,
-      "seo_difficulty": 25,
-      "suggested_products": ["SaaS", "Open Source", "API", "Chrome Extension"],
-      "estimated_dev_days": 7,
-      "revenue_potential": 4,
-      "risk_factors_en": ["Vercel, Cloudflare, Kong competing", "Requires enterprise sales for high ACV"],
-      "risk_factors_zh": ["Vercel、Cloudflare、Kong 在竞争", "高客单价需要企业销售能力"],
-      "opportunity_summary_en": "Strong demand for multi-model management. The open-source AI Gateway angle is under-served — all major players are hosted platforms. Build an OSS self-hosted gateway with cost analytics as the differentiator.",
-      "opportunity_summary_zh": "多模型管理需求强烈。开源 AI Gateway 细分市场尚未被充分服务——大厂都在做托管平台。做一个带成本分析的自部署开源网关是差异化机会。"
-    },
-    {
-      "id": "trend-webcontainer",
-      "canonical": "WebContainer",
-      "aliases": ["StackBlitz WebContainer", "Browser Node.js"],
-      "first_seen": "2026-06-15",
-      "last_seen": "2026-07-07",
-      "stage": "validating",
-      "score": 88,
-      "source_count": 5,
-      "total_mentions": 94,
-      "sources": ["Hacker News", "GitHub", "Reddit", "DEV Community", "Product Hunt"],
-      "growth_pct": 120,
-      "category": "DevTools",
-      "tags": ["stackblitz", "browser", "nodejs", "webassembly"],
-      "summary_zh": "StackBlitz 推出的浏览器内 Node.js 运行时，基于 WebAssembly，允许在浏览器中运行完整的开发环境。",
-      "summary_en": "StackBlitz's in-browser Node.js runtime based on WebAssembly, enabling full dev environments to run entirely in the browser.",
-      "research_md_path": "content/trends/webcontainer.md",
-      "opportunity_score": 60,
-      "market_score": 55,
-      "competition_score": 30,
-      "demand_score": 65,
-      "seo_difficulty": 35,
-      "suggested_products": ["VS Code Extension", "Chrome Extension", "SaaS"],
-      "estimated_dev_days": 14,
-      "revenue_potential": 3,
-      "risk_factors_en": ["StackBlitz dominates the tech", "Niche developer tooling market"],
-      "risk_factors_zh": ["StackBlitz 主导技术方向", "小众开发者工具市场"],
-      "opportunity_summary_en": "Browser-based dev environments are gaining traction. Build complementary tools (VS Code extensions, tutorials, templates) that integrate with WebContainer. Monetize through educational content and premium templates.",
-      "opportunity_summary_zh": "浏览器内开发环境正在获得关注。构建兼容 WebContainer 的辅助工具（VS Code 插件、教程、模板）。通过教育内容和高级模板变现。"
-    },
-    {
-      "id": "trend-cursor-rules",
-      "canonical": "Cursor Rules",
-      "aliases": [".cursorrules", "Cursor IDE Rules", "AI Coding Rules"],
-      "first_seen": "2026-06-01",
-      "last_seen": "2026-07-07",
-      "stage": "validating",
-      "score": 93,
-      "source_count": 7,
-      "total_mentions": 156,
-      "sources": ["GitHub", "Hacker News", "Reddit", "Twitter/X", "DEV Community", "Product Hunt", "V2EX"],
-      "growth_pct": 280,
-      "category": "DevTools",
-      "tags": ["cursor", "ai-coding", "rules", "configuration"],
-      "summary_zh": "Cursor IDE 的项目级 AI 行为配置文件，开发者通过 .cursorrules 定制 AI 编码助手的规则和偏好。",
-      "summary_en": "Project-level AI behavior configuration files for Cursor IDE, allowing developers to customize coding assistant rules and preferences.",
-      "research_md_path": "content/trends/cursor-rules.md",
-      "opportunity_score": 85,
-      "market_score": 78,
-      "competition_score": 10,
-      "demand_score": 88,
-      "seo_difficulty": 8,
-      "suggested_products": ["Web App", "VS Code Extension", "Template/Boilerplate", "SaaS"],
-      "estimated_dev_days": 5,
-      "revenue_potential": 5,
-      "risk_factors_en": ["Cursor may build a built-in rules marketplace", "Dependent on Cursor's market share"],
-      "risk_factors_zh": ["Cursor 可能内置规则市场", "依赖 Cursor 市场份额"],
-      "opportunity_summary_en": "The best opportunity on this list. A .cursorrules marketplace with curated, battle-tested rules for different tech stacks. Almost zero competition, massive organic search traffic potential, and clear monetization (paid premium rules + team plans).",
-      "opportunity_summary_zh": "当前列表中最佳机会。做一个 .cursorrules 精选市场，按技术栈分类的实战规则。几乎零竞争、SEO 潜力巨大、变现路径清晰（高级规则付费 + 团队版）。"
-    },
     {
       "id": "trend-claude-agent-sdk",
       "canonical": "Claude Agent SDK",
-      "aliases": ["Claude Code SDK", "Anthropic Agent SDK"],
+      "aliases": [
+        "Claude Code SDK",
+        "Anthropic Agent SDK"
+      ],
       "first_seen": "2026-05-20",
       "last_seen": "2026-07-07",
       "stage": "rising",
       "score": 95,
       "source_count": 8,
       "total_mentions": 234,
-      "sources": ["GitHub", "Hacker News", "Reddit", "Twitter/X", "DEV Community", "Product Hunt", "V2EX", "Lobsters"],
+      "sources": [
+        "GitHub",
+        "Hacker News",
+        "Reddit",
+        "Twitter/X",
+        "DEV Community",
+        "Product Hunt",
+        "V2EX",
+        "Lobsters"
+      ],
       "growth_pct": 180,
       "category": "AI/LLM",
-      "tags": ["anthropic", "claude", "sdk", "agents"],
+      "tags": [
+        "anthropic",
+        "claude",
+        "sdk",
+        "agents"
+      ],
       "summary_zh": "Anthropic 发布的官方 Agent SDK，允许开发者构建自定义 AI Agent 并集成到应用中。",
       "summary_en": "Anthropic's official Agent SDK for building custom AI agents and integrating them into applications.",
       "research_md_path": "content/trends/claude-agent-sdk.md",
@@ -173,13 +40,300 @@
       "competition_score": 25,
       "demand_score": 85,
       "seo_difficulty": 20,
-      "suggested_products": ["SaaS", "Template/Boilerplate", "CLI Tool", "MCP Server", "API"],
+      "suggested_products": [
+        "SaaS",
+        "Template/Boilerplate",
+        "CLI Tool",
+        "MCP Server",
+        "API"
+      ],
       "estimated_dev_days": 7,
       "revenue_potential": 4,
-      "risk_factors_en": ["Anthropic controls the SDK direction", "Rapid API changes during beta"],
-      "risk_factors_zh": ["Anthropic 控制 SDK 方向", "Beta 阶段 API 变动频繁"],
+      "risk_factors_en": [
+        "Anthropic controls the SDK direction",
+        "Rapid API changes during beta"
+      ],
+      "risk_factors_zh": [
+        "Anthropic 控制 SDK 方向",
+        "Beta 阶段 API 变动频繁"
+      ],
       "opportunity_summary_en": "Large market with growing adoption. Build agent templates, deployment platforms, and monitoring tools on top of the SDK. Less competition than MCP (which is more protocol-level) — but SDK changes could break integrations.",
       "opportunity_summary_zh": "市场大且采用率在增长。在 SDK 之上构建 Agent 模板、部署平台和监控工具。竞争比 MCP 少——但 SDK 的 API 变动可能导致集成中断。"
+    },
+    {
+      "id": "trend-cursor-rules",
+      "canonical": "Cursor Rules",
+      "aliases": [
+        ".cursorrules",
+        "Cursor IDE Rules",
+        "AI Coding Rules"
+      ],
+      "first_seen": "2026-06-01",
+      "last_seen": "2026-07-07",
+      "stage": "validating",
+      "score": 93,
+      "source_count": 7,
+      "total_mentions": 156,
+      "sources": [
+        "GitHub",
+        "Hacker News",
+        "Reddit",
+        "Twitter/X",
+        "DEV Community",
+        "Product Hunt",
+        "V2EX"
+      ],
+      "growth_pct": 280,
+      "category": "DevTools",
+      "tags": [
+        "cursor",
+        "ai-coding",
+        "rules",
+        "configuration"
+      ],
+      "summary_zh": "Cursor IDE 的项目级 AI 行为配置文件，开发者通过 .cursorrules 定制 AI 编码助手的规则和偏好。",
+      "summary_en": "Project-level AI behavior configuration files for Cursor IDE, allowing developers to customize coding assistant rules and preferences.",
+      "research_md_path": "content/trends/cursor-rules.md",
+      "opportunity_score": 85,
+      "market_score": 78,
+      "competition_score": 10,
+      "demand_score": 88,
+      "seo_difficulty": 8,
+      "suggested_products": [
+        "Web App",
+        "VS Code Extension",
+        "Template/Boilerplate",
+        "SaaS"
+      ],
+      "estimated_dev_days": 5,
+      "revenue_potential": 5,
+      "risk_factors_en": [
+        "Cursor may build a built-in rules marketplace",
+        "Dependent on Cursor's market share"
+      ],
+      "risk_factors_zh": [
+        "Cursor 可能内置规则市场",
+        "依赖 Cursor 市场份额"
+      ],
+      "opportunity_summary_en": "The best opportunity on this list. A .cursorrules marketplace with curated, battle-tested rules for different tech stacks. Almost zero competition, massive organic search traffic potential, and clear monetization (paid premium rules + team plans).",
+      "opportunity_summary_zh": "当前列表中最佳机会。做一个 .cursorrules 精选市场，按技术栈分类的实战规则。几乎零竞争、SEO 潜力巨大、变现路径清晰（高级规则付费 + 团队版）。"
+    },
+    {
+      "id": "trend-ai-gateway",
+      "canonical": "AI Gateway",
+      "aliases": [
+        "Vercel AI Gateway",
+        "AI API Gateway"
+      ],
+      "first_seen": "2026-06-28",
+      "last_seen": "2026-07-07",
+      "stage": "emergent",
+      "score": 91,
+      "source_count": 6,
+      "total_mentions": 67,
+      "sources": [
+        "Hacker News",
+        "GitHub",
+        "Reddit",
+        "DEV Community",
+        "Product Hunt",
+        "Twitter/X"
+      ],
+      "growth_pct": 340,
+      "category": "AI/LLM",
+      "tags": [
+        "vercel",
+        "ai",
+        "api",
+        "gateway"
+      ],
+      "summary_zh": "统一的 AI API 网关，提供多模型访问、可观测性、模型回退和零数据保留策略。",
+      "summary_en": "A unified AI gateway offering multi-provider access with observability, model fallbacks, and zero data retention.",
+      "research_md_path": "content/trends/ai-gateway.md",
+      "opportunity_score": 78,
+      "market_score": 85,
+      "competition_score": 38,
+      "demand_score": 82,
+      "seo_difficulty": 25,
+      "suggested_products": [
+        "SaaS",
+        "Open Source",
+        "API",
+        "Chrome Extension"
+      ],
+      "estimated_dev_days": 7,
+      "revenue_potential": 4,
+      "risk_factors_en": [
+        "Vercel, Cloudflare, Kong competing",
+        "Requires enterprise sales for high ACV"
+      ],
+      "risk_factors_zh": [
+        "Vercel、Cloudflare、Kong 在竞争",
+        "高客单价需要企业销售能力"
+      ],
+      "opportunity_summary_en": "Strong demand for multi-model management. The open-source AI Gateway angle is under-served — all major players are hosted platforms. Build an OSS self-hosted gateway with cost analytics as the differentiator.",
+      "opportunity_summary_zh": "多模型管理需求强烈。开源 AI Gateway 细分市场尚未被充分服务——大厂都在做托管平台。做一个带成本分析的自部署开源网关是差异化机会。"
+    },
+    {
+      "id": "trend-webcontainer",
+      "canonical": "WebContainer",
+      "aliases": [
+        "StackBlitz WebContainer",
+        "Browser Node.js"
+      ],
+      "first_seen": "2026-06-15",
+      "last_seen": "2026-07-07",
+      "stage": "validating",
+      "score": 88,
+      "source_count": 5,
+      "total_mentions": 94,
+      "sources": [
+        "Hacker News",
+        "GitHub",
+        "Reddit",
+        "DEV Community",
+        "Product Hunt"
+      ],
+      "growth_pct": 120,
+      "category": "DevTools",
+      "tags": [
+        "stackblitz",
+        "browser",
+        "nodejs",
+        "webassembly"
+      ],
+      "summary_zh": "StackBlitz 推出的浏览器内 Node.js 运行时，基于 WebAssembly，允许在浏览器中运行完整的开发环境。",
+      "summary_en": "StackBlitz's in-browser Node.js runtime based on WebAssembly, enabling full dev environments to run entirely in the browser.",
+      "research_md_path": "content/trends/webcontainer.md",
+      "opportunity_score": 60,
+      "market_score": 55,
+      "competition_score": 30,
+      "demand_score": 65,
+      "seo_difficulty": 35,
+      "suggested_products": [
+        "VS Code Extension",
+        "Chrome Extension",
+        "SaaS"
+      ],
+      "estimated_dev_days": 14,
+      "revenue_potential": 3,
+      "risk_factors_en": [
+        "StackBlitz dominates the tech",
+        "Niche developer tooling market"
+      ],
+      "risk_factors_zh": [
+        "StackBlitz 主导技术方向",
+        "小众开发者工具市场"
+      ],
+      "opportunity_summary_en": "Browser-based dev environments are gaining traction. Build complementary tools (VS Code extensions, tutorials, templates) that integrate with WebContainer. Monetize through educational content and premium templates.",
+      "opportunity_summary_zh": "浏览器内开发环境正在获得关注。构建兼容 WebContainer 的辅助工具（VS Code 插件、教程、模板）。通过教育内容和高级模板变现。"
+    },
+    {
+      "id": "trend-fluid-compute",
+      "canonical": "Fluid Compute",
+      "aliases": [
+        "Vercel Fluid Compute",
+        "Fluid"
+      ],
+      "first_seen": "2026-07-02",
+      "last_seen": "2026-07-07",
+      "stage": "nascent",
+      "score": 85,
+      "source_count": 5,
+      "total_mentions": 41,
+      "sources": [
+        "Hacker News",
+        "Reddit",
+        "GitHub",
+        "DEV Community",
+        "Twitter/X"
+      ],
+      "growth_pct": 720,
+      "category": "Infrastructure",
+      "tags": [
+        "vercel",
+        "serverless",
+        "compute"
+      ],
+      "summary_zh": "Vercel 推出的新一代计算运行时，函数实例可跨并发请求复用，大幅减少冷启动延迟。",
+      "summary_en": "Vercel's next-gen compute runtime where function instances are reused across concurrent requests, drastically reducing cold starts.",
+      "research_md_path": "content/trends/fluid-compute.md",
+      "opportunity_score": 65,
+      "market_score": 60,
+      "competition_score": 45,
+      "demand_score": 72,
+      "seo_difficulty": 55,
+      "suggested_products": [
+        "SaaS",
+        "Template/Boilerplate",
+        "Open Source"
+      ],
+      "estimated_dev_days": 10,
+      "revenue_potential": 3,
+      "risk_factors_en": [
+        "Vercel-controlled ecosystem",
+        "Niche audience (Vercel users only)"
+      ],
+      "risk_factors_zh": [
+        "Vercel 控制生态",
+        "受众人群窄（仅 Vercel 用户）"
+      ],
+      "opportunity_summary_en": "Vercel-specific infrastructure trend with growing interest. Build tooling around migration and optimization. Limited TAM since it's tied to one platform, but Vercel's user base is large and growing.",
+      "opportunity_summary_zh": "Vercel 平台特有的基础设施趋势，关注度在增长。可围绕迁移和优化构建工具。受限于单一平台，但 Vercel 用户基数大且持续增长。"
+    },
+    {
+      "id": "trend-mcp-protocol",
+      "canonical": "MCP Protocol",
+      "aliases": [
+        "Model Context Protocol",
+        "MCP",
+        "Anthropic MCP"
+      ],
+      "first_seen": "2026-07-05",
+      "last_seen": "2026-07-07",
+      "stage": "nascent",
+      "score": 78,
+      "source_count": 4,
+      "total_mentions": 23,
+      "sources": [
+        "GitHub",
+        "Hacker News",
+        "Reddit",
+        "Twitter/X"
+      ],
+      "growth_pct": 450,
+      "category": "AI/LLM",
+      "tags": [
+        "anthropic",
+        "ai-agents",
+        "protocol"
+      ],
+      "summary_zh": "Anthropic 推出的 AI 模型与工具之间的开放协议标准，允许 LLM 安全地调用外部工具和数据源。",
+      "summary_en": "An open protocol standard from Anthropic enabling LLMs to securely call external tools and data sources.",
+      "research_md_path": "content/trends/mcp-protocol.md",
+      "opportunity_score": 88,
+      "market_score": 92,
+      "competition_score": 15,
+      "demand_score": 90,
+      "seo_difficulty": 12,
+      "suggested_products": [
+        "MCP Server",
+        "SaaS",
+        "CLI Tool",
+        "VS Code Extension"
+      ],
+      "estimated_dev_days": 3,
+      "revenue_potential": 5,
+      "risk_factors_en": [
+        "Anthropic may build official solutions",
+        "Protocol may change rapidly"
+      ],
+      "risk_factors_zh": [
+        "Anthropic 可能官方进入",
+        "协议可能快速迭代"
+      ],
+      "opportunity_summary_en": "An open protocol with massive ecosystem potential. Almost no competition — only official reference implementations exist. The MCP server marketplace is analogous to the WordPress plugin ecosystem. Build now, before the official marketplace fills up.",
+      "opportunity_summary_zh": "开放的协议标准，生态潜力巨大。目前几乎没有竞争——只有官方参考实现。MCP Server 市场类似 WordPress 插件生态——越早进入越有利。"
     }
   ]
 }
