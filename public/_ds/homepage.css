@@ -242,6 +242,139 @@
   color: var(--color-text);
 }
 
+/* ═══════ Live Stats Bar ═══════ */
+.live-stats {
+  display: flex; align-items: center; justify-content: center;
+  flex-wrap: wrap; gap: 6px var(--space-3);
+  padding: 0 0 var(--space-5);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  text-align: center;
+}
+.live-stat {
+  display: inline-flex; align-items: center; gap: 5px;
+  white-space: nowrap;
+}
+.live-stat-value {
+  font-weight: 700;
+  color: var(--color-accent);
+}
+.live-stat-sep {
+  color: var(--color-border);
+  user-select: none;
+}
+
+/* ═══════ Trend Spotlight ═══════ */
+.trend-spotlight-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+  max-width: 880px;
+  margin: 0 auto var(--space-5);
+}
+.trend-spotlight-card {
+  display: flex; flex-direction: column;
+  background: var(--color-surface);
+  border: none;
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  text-decoration: none;
+  color: var(--color-text);
+  box-shadow: var(--shadow-xs);
+  transition: box-shadow var(--duration-normal) var(--ease-out),
+              transform var(--duration-normal) var(--ease-out);
+  text-align: left;
+  /* touch target */
+  min-height: 44px;
+}
+.trend-spotlight-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+.trend-spotlight-card:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+.trend-spotlight-badge {
+  display: inline-flex; align-items: center;
+  align-self: flex-start;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 3px 10px;
+  border-radius: 100px;
+  margin-bottom: var(--space-2);
+}
+.trend-spotlight-badge.nascent {
+  color: oklch(55% 0.16 155);
+  background: oklch(58% 0.16 155 / 0.12);
+}
+.trend-spotlight-badge.emergent {
+  color: oklch(60% 0.14 75);
+  background: oklch(65% 0.16 80 / 0.15);
+}
+.trend-spotlight-badge.validating {
+  color: oklch(50% 0.14 245);
+  background: oklch(55% 0.15 250 / 0.12);
+}
+.trend-spotlight-badge.rising {
+  color: oklch(45% 0.16 285);
+  background: oklch(50% 0.18 290 / 0.12);
+}
+.trend-spotlight-card h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: var(--space-1);
+}
+.trend-spotlight-summary {
+  color: var(--color-text-secondary);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  margin-bottom: var(--space-3);
+  flex: 1;
+  /* limit to 3 lines */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.trend-spotlight-meta {
+  display: flex; align-items: center; flex-wrap: wrap;
+  gap: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--color-border);
+}
+.trend-spotlight-meta-item {
+  display: inline-flex; align-items: center; gap: 4px;
+}
+.trend-spotlight-score {
+  font-weight: 700;
+  color: var(--color-accent);
+}
+.trend-spotlight-cta {
+  text-align: center;
+}
+.trend-spotlight-cta a {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-accent);
+  text-decoration: none;
+  padding: 10px 20px;
+  min-height: 44px;
+  border-radius: var(--radius-md);
+  transition: background var(--duration-fast) var(--ease-out);
+}
+.trend-spotlight-cta a:hover {
+  background: var(--color-accent-muted);
+}
+
 /* ═══════ Engine Grid (Dual Engine) ═══════ */
 .engine-grid {
   display: grid;
@@ -439,8 +572,14 @@
 /* ═══════ Responsive ═══════ */
 @media (max-width: 720px) {
   .pain-grid { grid-template-columns: 1fr; }
+  .trend-spotlight-grid { grid-template-columns: 1fr; }
   .engine-grid { grid-template-columns: 1fr; }
   .hero-signup { flex-direction: column; }
   .hero-signup .btn { width: 100%; justify-content: center; }
   .sample-card-two-col { grid-template-columns: 1fr; }
+  .live-stats { font-size: 0.75rem; }
+}
+
+@media (max-width: 360px) {
+  .trend-spotlight-meta { flex-direction: column; align-items: flex-start; gap: 4px; }
 }

@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
-import { Clock, Eye, TrendingDown, Search, Shield, Target, BarChart3, Banknote, Zap } from 'lucide-react';
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
+import { Clock, Eye, TrendingDown, Search, Shield, Zap, TrendingUp, Activity, Globe } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'AimFast.Dev — Know What Your Market Is Doing, Every Morning',
@@ -7,7 +9,61 @@ export const metadata: Metadata = {
     'You\'re building. They\'re watching. Are you? — Daily competitive intel and market signals for indie developers who already have revenue.',
 };
 
+/* ── Trend data (build-time from tracking/trend_terms.json) ── */
+
+interface TrendTerm {
+  id: string;
+  canonical: string;
+  stage: string;
+  score: number;
+  source_count: number;
+  total_mentions: number;
+  summary_en: string;
+  summary_zh: string;
+  research_md_path: string;
+  sources: string[];
+  category: string;
+}
+
+function getTrendStats(): { total: number; withResearch: number; totalSources: number } {
+  try {
+    const raw = readFileSync(join(process.cwd(), 'tracking', 'trend_terms.json'), 'utf-8');
+    const data = JSON.parse(raw);
+    const terms: TrendTerm[] = data.terms || [];
+    const withResearch = terms.filter((t) => t.research_md_path && t.score >= 60).length;
+    const totalSources = new Set(terms.flatMap((t) => t.sources || [])).size;
+    return { total: terms.length, withResearch, totalSources };
+  } catch {
+    return { total: 0, withResearch: 0, totalSources: 0 };
+  }
+}
+
+function getTopTrends(count: number = 3): TrendTerm[] {
+  try {
+    const raw = readFileSync(join(process.cwd(), 'tracking', 'trend_terms.json'), 'utf-8');
+    const data = JSON.parse(raw);
+    const terms: TrendTerm[] = data.terms || [];
+    return terms
+      .filter((t) => t.research_md_path && t.score >= 60)
+      .slice(0, count);
+  } catch {
+    return [];
+  }
+}
+
+function stageLabel(stage: string): string {
+  const map: Record<string, string> = {
+    nascent: 'Nascent',
+    emergent: 'Emergent',
+    validating: 'Validating',
+    rising: 'Rising',
+  };
+  return map[stage] || stage;
+}
+
 export default function LandingPage() {
+  const stats = getTrendStats();
+  const topTrends = getTopTrends(3);
   const faqJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -97,6 +153,28 @@ export default function LandingPage() {
         </p>
       </section>
 
+      {/* ═══════ Live Stats Bar ═══════ */}
+      {stats.total > 0 && (
+        <div className="live-stats" aria-label="Trend tracking statistics">
+          <span className="live-stat">
+            <TrendingUp size={16} aria-hidden="true" />
+            <span className="live-stat-value">{stats.total}</span> terms tracked
+          </span>
+          <span className="live-stat-sep" aria-hidden="true">·</span>
+          <span className="live-stat">
+            <Zap size={16} aria-hidden="true" />
+            <span className="live-stat-value">{stats.withResearch}</span> research reports
+          </span>
+          <span className="live-stat-sep" aria-hidden="true">·</span>
+          <span className="live-stat">
+            <Globe size={16} aria-hidden="true" />
+            <span className="live-stat-value">{stats.totalSources}</span>+ sources
+          </span>
+          <span className="live-stat-sep" aria-hidden="true">·</span>
+          <span className="live-stat">Updated daily 08:30 CST</span>
+        </div>
+      )}
+
       {/* ═══════ Pain Cards ═══════ */}
       <section className="pain-cards" style={{ padding: 'var(--space-8) 0' }}>
         <div className="section-header">
@@ -153,51 +231,56 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ═══════ Product Demo: Sample Decision Card ═══════ */}
-      <section className="sample-report" style={{ padding: 'var(--space-8) 0', textAlign: 'center' }}>
-        <div className="section-header">
-          <h2>Here&apos;s What You Get Every Morning</h2>
-          <p>A real excerpt from a recent daily report — exactly what lands in your dashboard.</p>
-        </div>
-
-        <div className="sample-decision-card">
-          <div className="sample-card-header">
-            <span className="sample-card-title"><Target size={16} className="icon-inline" /> Today&apos;s Decision</span>
-            <span className="sample-card-date">2026-07-04</span>
+      {/* ═══════ Trend Spotlight ═══════ */}
+      {topTrends.length > 0 && (
+        <section className="trend-spotlight" style={{ padding: 'var(--space-8) 0', textAlign: 'center' }}>
+          <div className="section-header">
+            <h2>Trends We're Tracking Right Now</h2>
+            <p>
+              Real data from our Discovery Engine — the highest-signal emerging trends,
+              with research reports, commercial opportunities, and product ideas.
+              Updated daily.
+            </p>
           </div>
 
-          <h3 className="sample-card-opportunity">Gmail Photo Rescue</h3>
-          <p className="sample-card-summary">
-            One-click desktop app to download all photo attachments from Gmail.
-          </p>
-
-          <div className="sample-card-evidence">
-            <strong><BarChart3 size={16} className="icon-inline" /> Evidence:</strong>{' '}
-            Mail Memories on HN: <strong>101 upvotes, 53 comments</strong>.
-            Users repeatedly said: &ldquo;I need this&rdquo; and &ldquo;But why
-            can&apos;t I batch export?&rdquo;
+          <div className="trend-spotlight-grid">
+            {topTrends.map((trend) => {
+              const slug = trend.id.replace('trend-', '');
+              return (
+                <a key={trend.id} href={`/trends/${slug}/`} className="trend-spotlight-card">
+                  <span className={`trend-spotlight-badge ${trend.stage}`}>
+                    {stageLabel(trend.stage)}
+                  </span>
+                  <h3>{trend.canonical}</h3>
+                  <p className="trend-spotlight-summary">
+                    {trend.summary_en || trend.summary_zh}
+                  </p>
+                  <div className="trend-spotlight-meta">
+                    <span className="trend-spotlight-meta-item">
+                      <TrendingUp size={14} aria-hidden="true" />
+                      <span className="trend-spotlight-score">{trend.score}</span>
+                    </span>
+                    <span className="trend-spotlight-meta-item">
+                      <Globe size={14} aria-hidden="true" />
+                      {trend.source_count} sources
+                    </span>
+                    <span className="trend-spotlight-meta-item">
+                      <Activity size={14} aria-hidden="true" />
+                      {trend.total_mentions} mentions
+                    </span>
+                  </div>
+                </a>
+              );
+            })}
           </div>
 
-          <div className="sample-card-two-col">
-            <div>
-              <span className="sample-card-label"><Banknote size={14} className="icon-inline" /> Pricing</span>
-              <div className="sample-card-price">$9.99 <span>one-time</span></div>
-            </div>
-            <div>
-              <span className="sample-card-label"><Zap size={14} className="icon-inline" /> Validation</span>
-              <p className="sample-card-validation">
-                2h Electron MVP → Show HN → count how many ask &ldquo;can it export?&rdquo;
-              </p>
-            </div>
+          <div className="trend-spotlight-cta">
+            <a href="/trends/">
+              See all {stats.total} emerging trends →
+            </a>
           </div>
-
-          <div className="sample-card-whynot">
-            <strong>Why not the other two:</strong>{' '}
-            ❌ Graphify plugin ecosystem — dominated by big players, can&apos;t compete in 2h{' '}
-            · ❌ AI Agent security tool — technical barrier too high for a 2h validation
-          </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* ═══════ How It Works ═══════ */}
       <section className="workflow" style={{ padding: 'var(--space-8) 0' }}>
