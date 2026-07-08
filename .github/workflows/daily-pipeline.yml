@@ -1,13 +1,13 @@
 # AimFast.Dev — Daily Pipeline (GitHub Actions)
-# Runs daily at 00:00 UTC (08:00 CST / 北京时区)
+# Runs daily at 01:00 UTC (09:00 CST / 北京时区)
 # Also triggerable manually via GitHub UI → Actions → Daily Pipeline → Run workflow
 
 name: AimFast.Dev Daily Pipeline
 
 on:
   schedule:
-    # Daily at 00:00 UTC = 08:00 CST (Beijing)
-    - cron: '0 0 * * *'
+    # Daily at 01:00 UTC = 09:00 CST (Beijing)
+    - cron: '0 1 * * *'
   workflow_dispatch:
     inputs:
       date_override:

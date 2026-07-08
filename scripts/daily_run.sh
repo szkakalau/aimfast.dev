@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # AimFast.Dev — Daily Pipeline Orchestrator (Linux / CI)
 # Usage: bash scripts/daily_run.sh
-# GitHub Actions triggers this daily at 00:00 UTC (08:00 CST)
+# GitHub Actions triggers this daily at 01:00 UTC (09:00 CST)
 
 set -euo pipefail
 
