@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-07T15:04:48.133204+08:00",
+  "updated_at": "2026-07-08T18:41:30.522918+08:00",
   "terms": [
     {
       "id": "trend-claude-agent-sdk",
@@ -360,7 +360,32 @@
       ],
       "summary_zh": "多个独立开发者分享用AI工具（如Codex）快速构建产品的经验，'Vibe Coding'成为热门实践。",
       "summary_en": "Multiple indie developers share experiences of rapidly building products with AI tools (e.g., Codex), making 'Vibe Coding' a hot practice.",
-      "research_md_path": "content/trends/vibe-coding.md"
+      "research_md_path": "content/trends/vibe-coding.md",
+      "opportunity_score": 68,
+      "market_score": 65,
+      "competition_score": 25,
+      "demand_score": 70,
+      "seo_difficulty": 30,
+      "suggested_products": [
+        "Web App",
+        "VS Code Extension",
+        "Template/Boilerplate",
+        "AI Agent"
+      ],
+      "estimated_dev_days": 21,
+      "revenue_potential": 3,
+      "risk_factors_en": [
+        "Market may remain niche if AI coding tools become commoditized",
+        "Large players like GitHub or OpenAI could launch similar features",
+        "User adoption depends on AI model reliability and cost"
+      ],
+      "risk_factors_zh": [
+        "如果AI编码工具商品化，市场可能保持小众",
+        "GitHub或OpenAI等大厂可能推出类似功能",
+        "用户采用依赖AI模型的可靠性和成本"
+      ],
+      "opportunity_summary_en": "Vibe Coding is an early-stage trend with high growth and low competition, ideal for independent developers to build tools that streamline AI-driven prototyping. The market is nascent but signals strong demand from developers seeking faster iteration. Early entry can establish brand and capture SEO advantage.",
+      "opportunity_summary_zh": "Vibe Coding 是早期趋势，增长高、竞争低，适合独立开发者构建简化AI驱动原型的工具。市场萌芽但开发者对快速迭代的需求信号强烈。早期进入可建立品牌并占据SEO优势。"
     },
     {
       "id": "trend-homegames",
@@ -530,6 +555,29 @@
       "research_md_path": "content/trends/pulpie.md"
     },
     {
+      "id": "trend-open-source-vacuum-robot",
+      "canonical": "Open-Source Vacuum Robot",
+      "aliases": [],
+      "first_seen": "2026-07-08",
+      "last_seen": "2026-07-08",
+      "stage": "nascent",
+      "score": 48,
+      "source_count": 1,
+      "total_mentions": 1,
+      "sources": [
+        "github"
+      ],
+      "growth_pct": 100,
+      "category": "Project",
+      "tags": [
+        "fresh",
+        "Python"
+      ],
+      "summary_zh": "makerspet/oomwoo开源真空机器人项目获得高星，代表消费级机器人开源化趋势。",
+      "summary_en": "The makerspet/oomwoo open-source vacuum robot project gains stars, representing a trend toward open-source consumer robotics.",
+      "research_md_path": "content/trends/open-source-vacuum-robot.md"
+    },
+    {
       "id": "trend-pet-reminder",
       "canonical": "Pet Reminder",
       "aliases": [],
@@ -651,6 +699,31 @@
       "summary_zh": "出现无计量LLM API服务（$6/月无限制），挑战传统按token计费模式。",
       "summary_en": "An unmetered LLM API service ($6/month, no limits) emerges, challenging the traditional per-token pricing model.",
       "research_md_path": "content/trends/unmetered-llm-api.md"
+    },
+    {
+      "id": "trend-open-source-llm-control-plane",
+      "canonical": "Open-Source LLM Control Plane",
+      "aliases": [],
+      "first_seen": "2026-07-08",
+      "last_seen": "2026-07-08",
+      "stage": "nascent",
+      "score": 38,
+      "source_count": 1,
+      "total_mentions": 1,
+      "sources": [
+        "hn"
+      ],
+      "growth_pct": 100,
+      "category": "DevTools",
+      "tags": [
+        "show_hn",
+        "story_48810528",
+        "story",
+        "author_angpt"
+      ],
+      "summary_zh": "Otari等开源项目提供LLM控制平面，简化多模型管理和调度，反映AI基础设施层工具需求增长。",
+      "summary_en": "Open-source projects like Otari offer LLM control planes for multi-model management, reflecting growing demand for AI infrastructure tooling.",
+      "research_md_path": "content/trends/open-source-llm-control-plane.md"
     },
     {
       "id": "trend-otari",
@@ -1023,6 +1096,150 @@
       "summary_zh": "《从零开始构建智能体》教程在GitHub上获得大量星标，反映学习AI agent开发的需求旺盛。",
       "summary_en": "The 'Building Agents from Scratch' tutorial stars on GitHub, reflecting high demand for learning AI agent development.",
       "research_md_path": "content/trends/ai-agent-tutorial.md"
+    },
+    {
+      "id": "trend-local-first-ai-agent-tools",
+      "canonical": "Local-first AI Agent Tools",
+      "aliases": [],
+      "first_seen": "2026-07-08",
+      "last_seen": "2026-07-08",
+      "stage": "nascent",
+      "score": 0,
+      "source_count": 0,
+      "total_mentions": 0,
+      "sources": [],
+      "growth_pct": 100,
+      "category": "DevTools",
+      "tags": [],
+      "summary_zh": "多个独立开发者推出本地优先的AI代理工具（如Rowboat、Shellular），强调数据隐私和离线运行，代表AI工具从云端向本地迁移的新趋势。",
+      "summary_en": "Multiple indie developers launch local-first AI agent tools (e.g., Rowboat, Shellular), emphasizing data privacy and offline capability, signaling a shift from cloud to local AI tooling.",
+      "research_md_path": "content/trends/local-first-ai-agent-tools.md"
+    },
+    {
+      "id": "trend-ai-agent-runtime-integrity",
+      "canonical": "AI Agent Runtime Integrity",
+      "aliases": [],
+      "first_seen": "2026-07-08",
+      "last_seen": "2026-07-08",
+      "stage": "nascent",
+      "score": 0,
+      "source_count": 0,
+      "total_mentions": 0,
+      "sources": [],
+      "growth_pct": 100,
+      "category": "AI/LLM",
+      "tags": [],
+      "summary_zh": "Halo等项目提供防篡改的AI代理运行时证据，解决AI代理行为可信度问题，成为AI安全领域的新热点。",
+      "summary_en": "Projects like Halo offer tamper-evident runtime evidence for AI agents, addressing trustworthiness in AI agent behavior, emerging as a key AI security topic.",
+      "research_md_path": "content/trends/ai-agent-runtime-integrity.md"
+    },
+    {
+      "id": "trend-ai-powered-video/media-tools",
+      "canonical": "AI-Powered Video/Media Tools",
+      "aliases": [],
+      "first_seen": "2026-07-08",
+      "last_seen": "2026-07-08",
+      "stage": "nascent",
+      "score": 0,
+      "source_count": 0,
+      "total_mentions": 0,
+      "sources": [],
+      "growth_pct": 100,
+      "category": "Product",
+      "tags": [],
+      "summary_zh": "多个产品（如InstantVideos、NanoScene AI）利用AI快速生成短视频或图像，反映AI内容创作工具向极速、低门槛方向发展的趋势。",
+      "summary_en": "Products like InstantVideos and NanoScene AI use AI for rapid video/image generation, reflecting a trend toward fast, low-barrier AI content creation tools.",
+      "research_md_path": "content/trends/ai-powered-video/media-tools.md"
+    },
+    {
+      "id": "trend-terminal-ui-(tui)-innovation",
+      "canonical": "Terminal UI (TUI) Innovation",
+      "aliases": [],
+      "first_seen": "2026-07-08",
+      "last_seen": "2026-07-08",
+      "stage": "nascent",
+      "score": 0,
+      "source_count": 0,
+      "total_mentions": 0,
+      "sources": [],
+      "growth_pct": 100,
+      "category": "TechConcept",
+      "tags": [],
+      "summary_zh": "多个项目（如orzma、browser TUI）探索在终端内渲染网页或构建自定义布局引擎，推动TUI复兴和终端体验现代化。",
+      "summary_en": "Multiple projects (orzma, browser TUI) explore rendering webviews or custom layout engines inside terminals, driving a TUI revival and modern terminal experiences.",
+      "research_md_path": "content/trends/terminal-ui-(tui)-innovation.md"
+    },
+    {
+      "id": "trend-ai-code-generation-quality-debate",
+      "canonical": "AI Code Generation Quality Debate",
+      "aliases": [],
+      "first_seen": "2026-07-08",
+      "last_seen": "2026-07-08",
+      "stage": "nascent",
+      "score": 0,
+      "source_count": 0,
+      "total_mentions": 0,
+      "sources": [],
+      "growth_pct": 100,
+      "category": "HotTopic",
+      "tags": [],
+      "summary_zh": "多个社区讨论AI生成代码的质量问题（如社交媒体影响、代码审查），反映开发者对AI代码可靠性的广泛关注。",
+      "summary_en": "Community discussions on AI code generation quality (social media impact, code review) reflect widespread developer concern about AI code reliability.",
+      "research_md_path": "content/trends/ai-code-generation-quality-debate.md"
+    },
+    {
+      "id": "trend-postgresql-cost-optimization",
+      "canonical": "PostgreSQL Cost Optimization",
+      "aliases": [],
+      "first_seen": "2026-07-08",
+      "last_seen": "2026-07-08",
+      "stage": "nascent",
+      "score": 0,
+      "source_count": 0,
+      "total_mentions": 0,
+      "sources": [],
+      "growth_pct": 100,
+      "category": "Infra",
+      "tags": [],
+      "summary_zh": "一项针对23种EC2实例类型的PostgreSQL性能和成本分析成为热门，反映开发者对数据库成本优化的持续关注。",
+      "summary_en": "A performance and cost analysis of PostgreSQL across 23 EC2 instance types gains traction, highlighting ongoing developer interest in database cost optimization.",
+      "research_md_path": "content/trends/postgresql-cost-optimization.md"
+    },
+    {
+      "id": "trend-stealth-browser-for-ai-agents",
+      "canonical": "Stealth Browser for AI Agents",
+      "aliases": [],
+      "first_seen": "2026-07-08",
+      "last_seen": "2026-07-08",
+      "stage": "nascent",
+      "score": 0,
+      "source_count": 0,
+      "total_mentions": 0,
+      "sources": [],
+      "growth_pct": 100,
+      "category": "DevTools",
+      "tags": [],
+      "summary_zh": "Fortress等工具开发隐身Chromium防止AI代理被拦截，反映AI自动化场景下反检测需求的增长。",
+      "summary_en": "Tools like Fortress develop stealth Chromium to prevent AI agent blocking, reflecting growing anti-detection needs in AI automation.",
+      "research_md_path": "content/trends/stealth-browser-for-ai-agents.md"
+    },
+    {
+      "id": "trend-multiplayer-world-model-ai",
+      "canonical": "Multiplayer World Model AI",
+      "aliases": [],
+      "first_seen": "2026-07-08",
+      "last_seen": "2026-07-08",
+      "stage": "nascent",
+      "score": 0,
+      "source_count": 0,
+      "total_mentions": 0,
+      "sources": [],
+      "growth_pct": 100,
+      "category": "AI/LLM",
+      "tags": [],
+      "summary_zh": "MIRA项目训练多人世界模型（基于火箭联盟），探索AI在复杂交互环境中的泛化能力。",
+      "summary_en": "The MIRA project trains a multiplayer world model on Rocket League, exploring AI generalization in complex interactive environments.",
+      "research_md_path": "content/trends/multiplayer-world-model-ai.md"
     }
   ]
 }

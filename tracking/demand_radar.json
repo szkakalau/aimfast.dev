@@ -2,7 +2,7 @@
   "_schema": "需求雷达 v3.1 — Market/Business 分离 + 趋势级独立评分",
   "_version": "3.1",
   "_formula": "Market=(Trend×0.5+Growth×0.3+Consistency×0.2)×100, Business=(Pain×0.5+Pay×0.5)×100, Opportunity=Market×0.6+Business×0.4, Confidence=log2(n+1)×20",
-  "generated_at": "2026-07-07T15:07:35.727847+08:00",
+  "generated_at": "2026-07-08T18:43:45.635541+08:00",
   "weeks": [
     "2026-06-01",
     "2026-06-08",
@@ -20,15 +20,15 @@
       "snapshots": {
         "2026-06-22": 7,
         "2026-06-29": 3,
-        "2026-07-06": 0
+        "2026-07-06": 1
       },
-      "total_signals": 16,
+      "total_signals": 17,
       "delta": "falling",
-      "market_score": 18,
+      "market_score": 27,
       "business_score": 95,
       "competition": 20,
       "ai_replaceability": 2,
-      "confidence": 82,
+      "confidence": 83,
       "stage": "forming",
       "target_buyer": "Claude Code 重度用户、AI 创业公司 CTO",
       "description_en": "Developers hate AI bills. Token costs spiraling out of control.",
@@ -109,10 +109,10 @@
           "snapshots": {
             "2026-06-22": 12,
             "2026-06-29": 7,
-            "2026-07-06": 4
+            "2026-07-06": 7
           },
-          "total_signals": 62,
-          "delta": "falling",
+          "total_signals": 65,
+          "delta": "stable",
           "market_score": 73,
           "business_score": 95,
           "competition": 52,
@@ -129,7 +129,7 @@
           "pain_severity": 10,
           "pay_budget": 10,
           "pay_urgency": 9,
-          "total_appearances": 62,
+          "total_appearances": 65,
           "distinct_days": 7
         },
         {
@@ -143,7 +143,7 @@
           "delta": "rising",
           "market_score": 24,
           "business_score": 95,
-          "competition": 15,
+          "competition": 14,
           "ai_replaceability": 2,
           "confidence": 46,
           "stage": "forming",
@@ -189,18 +189,18 @@
           "distinct_days": 1
         }
       ],
-      "opportunity_index": 20,
+      "opportunity_index": 23,
       "trend_score": 1,
-      "growth_score": 1,
-      "consistency_score": 6,
+      "growth_score": 3,
+      "consistency_score": 7,
       "pain_score": 10,
       "pay_score": 9,
       "pain_frequency": 10,
       "pain_severity": 10,
       "pay_budget": 10,
       "pay_urgency": 9,
-      "total_appearances": 16,
-      "distinct_days": 4
+      "total_appearances": 17,
+      "distinct_days": 5
     },
     {
       "id": "make-money",
@@ -210,11 +210,11 @@
       "snapshots": {
         "2026-06-22": 8,
         "2026-06-29": 8,
-        "2026-07-06": 1
+        "2026-07-06": 3
       },
-      "total_signals": 32,
+      "total_signals": 34,
       "delta": "falling",
-      "market_score": 34,
+      "market_score": 40,
       "business_score": 71,
       "competition": 60,
       "ai_replaceability": 5,
@@ -379,9 +379,9 @@
           "distinct_days": 0
         }
       ],
-      "opportunity_index": 14,
+      "opportunity_index": 15,
       "trend_score": 2,
-      "growth_score": 3,
+      "growth_score": 5,
       "consistency_score": 9,
       "pain_score": 7,
       "pay_score": 7,
@@ -389,7 +389,7 @@
       "pain_severity": 9,
       "pay_budget": 7,
       "pay_urgency": 10,
-      "total_appearances": 32,
+      "total_appearances": 34,
       "distinct_days": 6
     },
     {
@@ -433,10 +433,10 @@
           "snapshots": {
             "2026-06-22": 6,
             "2026-06-29": 7,
-            "2026-07-06": 6
+            "2026-07-06": 8
           },
-          "total_signals": 34,
-          "delta": "falling",
+          "total_signals": 36,
+          "delta": "rising",
           "market_score": 66,
           "business_score": 45,
           "competition": 41,
@@ -453,7 +453,7 @@
           "pain_severity": 7,
           "pay_budget": 8,
           "pay_urgency": 6,
-          "total_appearances": 34,
+          "total_appearances": 36,
           "distinct_days": 6
         },
         {
@@ -461,19 +461,19 @@
           "snapshots": {
             "2026-06-22": 7,
             "2026-06-29": 8,
-            "2026-07-06": 2
+            "2026-07-06": 4
           },
-          "total_signals": 30,
+          "total_signals": 32,
           "delta": "falling",
-          "market_score": 60,
+          "market_score": 63,
           "business_score": 45,
-          "competition": 38,
+          "competition": 39,
           "ai_replaceability": 4,
-          "confidence": 99,
+          "confidence": 100,
           "stage": "breaking",
-          "opportunity_index": 21,
+          "opportunity_index": 22,
           "trend_score": 4,
-          "growth_score": 7,
+          "growth_score": 8,
           "consistency_score": 9,
           "pain_score": 4,
           "pay_score": 5,
@@ -481,7 +481,7 @@
           "pain_severity": 7,
           "pay_budget": 8,
           "pay_urgency": 6,
-          "total_appearances": 30,
+          "total_appearances": 32,
           "distinct_days": 6
         },
         {
@@ -489,15 +489,15 @@
           "snapshots": {
             "2026-06-22": 7,
             "2026-06-29": 12,
-            "2026-07-06": 2
+            "2026-07-06": 3
           },
-          "total_signals": 24,
+          "total_signals": 25,
           "delta": "falling",
           "market_score": 62,
           "business_score": 45,
           "competition": 35,
           "ai_replaceability": 4,
-          "confidence": 93,
+          "confidence": 94,
           "stage": "breaking",
           "opportunity_index": 23,
           "trend_score": 3,
@@ -509,7 +509,7 @@
           "pain_severity": 7,
           "pay_budget": 8,
           "pay_urgency": 6,
-          "total_appearances": 24,
+          "total_appearances": 25,
           "distinct_days": 5
         },
         {
@@ -517,19 +517,19 @@
           "snapshots": {
             "2026-06-22": 19,
             "2026-06-29": 15,
-            "2026-07-06": 4
+            "2026-07-06": 7
           },
-          "total_signals": 69,
+          "total_signals": 72,
           "delta": "falling",
-          "market_score": 79,
+          "market_score": 85,
           "business_score": 45,
           "competition": 61,
           "ai_replaceability": 4,
           "confidence": 100,
           "stage": "forming",
-          "opportunity_index": 16,
+          "opportunity_index": 17,
           "trend_score": 10,
-          "growth_score": 3,
+          "growth_score": 5,
           "consistency_score": 10,
           "pain_score": 4,
           "pay_score": 5,
@@ -537,7 +537,7 @@
           "pain_severity": 7,
           "pay_budget": 8,
           "pay_urgency": 6,
-          "total_appearances": 69,
+          "total_appearances": 72,
           "distinct_days": 7
         },
         {
@@ -590,16 +590,16 @@
       "snapshots": {
         "2026-06-22": 3,
         "2026-06-29": 6,
-        "2026-07-06": 1
+        "2026-07-06": 3
       },
-      "total_signals": 22,
+      "total_signals": 24,
       "delta": "falling",
-      "market_score": 35,
+      "market_score": 44,
       "business_score": 68,
       "competition": 70,
       "ai_replaceability": 6,
-      "confidence": 90,
-      "stage": "forming",
+      "confidence": 93,
+      "stage": "breaking",
       "target_buyer": "企业安全/合规团队",
       "description_en": "Unreliable agent output, code quality issues, compliance gaps, hallucination risks.",
       "target_buyer_en": "Enterprise security/compliance teams",
@@ -759,9 +759,9 @@
           "distinct_days": 1
         }
       ],
-      "opportunity_index": 11,
+      "opportunity_index": 12,
       "trend_score": 1,
-      "growth_score": 5,
+      "growth_score": 8,
       "consistency_score": 7,
       "pain_score": 6,
       "pay_score": 7,
@@ -769,7 +769,7 @@
       "pain_severity": 9,
       "pay_budget": 9,
       "pay_urgency": 8,
-      "total_appearances": 22,
+      "total_appearances": 24,
       "distinct_days": 5
     },
     {
@@ -780,16 +780,16 @@
       "snapshots": {
         "2026-06-22": 52,
         "2026-06-29": 46,
-        "2026-07-06": 16
+        "2026-07-06": 22
       },
-      "total_signals": 201,
+      "total_signals": 207,
       "delta": "falling",
-      "market_score": 85,
+      "market_score": 91,
       "business_score": 56,
       "competition": 100,
       "ai_replaceability": 8,
       "confidence": 100,
-      "stage": "forming",
+      "stage": "breaking",
       "target_buyer": "Agent 开发者、SaaS 创业团队",
       "description_en": "Agents forget everything between sessions. Knowledge doesn't accumulate.",
       "target_buyer_en": "Agent developers, SaaS startups",
@@ -841,13 +841,13 @@
           "snapshots": {
             "2026-06-22": 9,
             "2026-06-29": 7,
-            "2026-07-06": 2
+            "2026-07-06": 3
           },
-          "total_signals": 38,
+          "total_signals": 39,
           "delta": "falling",
           "market_score": 50,
           "business_score": 56,
-          "competition": 35,
+          "competition": 34,
           "ai_replaceability": 8,
           "confidence": 100,
           "stage": "forming",
@@ -861,7 +861,7 @@
           "pain_severity": 8,
           "pay_budget": 7,
           "pay_urgency": 7,
-          "total_appearances": 38,
+          "total_appearances": 39,
           "distinct_days": 7
         },
         {
@@ -873,14 +873,14 @@
           },
           "total_signals": 33,
           "delta": "falling",
-          "market_score": 68,
+          "market_score": 67,
           "business_score": 56,
-          "competition": 33,
+          "competition": 32,
           "ai_replaceability": 8,
           "confidence": 100,
           "stage": "breaking",
           "opportunity_index": 37,
-          "trend_score": 4,
+          "trend_score": 3,
           "growth_score": 10,
           "consistency_score": 10,
           "pain_score": 6,
@@ -897,18 +897,46 @@
           "snapshots": {
             "2026-06-22": 22,
             "2026-06-29": 17,
-            "2026-07-06": 7
+            "2026-07-06": 11
           },
-          "total_signals": 91,
+          "total_signals": 95,
           "delta": "falling",
-          "market_score": 79,
+          "market_score": 85,
           "business_score": 56,
           "competition": 58,
           "ai_replaceability": 8,
           "confidence": 100,
           "stage": "forming",
-          "opportunity_index": 26,
+          "opportunity_index": 27,
           "trend_score": 10,
+          "growth_score": 5,
+          "consistency_score": 10,
+          "pain_score": 6,
+          "pay_score": 5,
+          "pain_frequency": 8,
+          "pain_severity": 8,
+          "pay_budget": 7,
+          "pay_urgency": 7,
+          "total_appearances": 95,
+          "distinct_days": 7
+        },
+        {
+          "name": "Personal AI",
+          "snapshots": {
+            "2026-06-22": 10,
+            "2026-06-29": 7,
+            "2026-07-06": 3
+          },
+          "total_signals": 44,
+          "delta": "falling",
+          "market_score": 52,
+          "business_score": 56,
+          "competition": 37,
+          "ai_replaceability": 8,
+          "confidence": 100,
+          "stage": "forming",
+          "opportunity_index": 30,
+          "trend_score": 5,
           "growth_score": 3,
           "consistency_score": 10,
           "pain_score": 6,
@@ -917,41 +945,13 @@
           "pain_severity": 8,
           "pay_budget": 7,
           "pay_urgency": 7,
-          "total_appearances": 91,
-          "distinct_days": 7
-        },
-        {
-          "name": "Personal AI",
-          "snapshots": {
-            "2026-06-22": 10,
-            "2026-06-29": 7,
-            "2026-07-06": 2
-          },
-          "total_signals": 43,
-          "delta": "falling",
-          "market_score": 47,
-          "business_score": 56,
-          "competition": 37,
-          "ai_replaceability": 8,
-          "confidence": 100,
-          "stage": "forming",
-          "opportunity_index": 28,
-          "trend_score": 5,
-          "growth_score": 1,
-          "consistency_score": 10,
-          "pain_score": 6,
-          "pay_score": 5,
-          "pain_frequency": 8,
-          "pain_severity": 8,
-          "pay_budget": 7,
-          "pay_urgency": 7,
-          "total_appearances": 43,
+          "total_appearances": 44,
           "distinct_days": 7
         }
       ],
       "opportunity_index": 1,
       "trend_score": 10,
-      "growth_score": 5,
+      "growth_score": 7,
       "consistency_score": 10,
       "pain_score": 6,
       "pay_score": 5,
@@ -959,7 +959,7 @@
       "pain_severity": 8,
       "pay_budget": 7,
       "pay_urgency": 7,
-      "total_appearances": 201,
+      "total_appearances": 207,
       "distinct_days": 7
     }
   ],
