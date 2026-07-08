@@ -15,6 +15,23 @@ TRACKING_DIR = ROOT / "tracking"
 
 TZ_SHANGHAI = timezone(timedelta(hours=8))
 
+# 停用词 — 过滤掉高频无意义词，避免倒排索引桶过大
+STOPWORDS: set[str] = {
+    # 英文功能词
+    "the", "and", "for", "with", "from", "that", "this", "what", "your",
+    "how", "its", "not", "are", "was", "all", "can", "has", "been", "will",
+    "new", "just", "like", "have", "more", "when", "make", "than", "into",
+    "over", "also", "some", "one", "two", "out", "use", "get", "see", "way",
+    "now", "after", "about", "each", "our", "but", "you", "too", "did",
+    # 技术文档常见无意义词
+    "using", "based", "v0", "v1", "v2", "v3", "v4", "v5", "day", "days",
+    "week", "may", "need", "set", "try", "end", "yet", "via", "api",
+    "add", "big", "top", "llm", "ai",
+}
+
+# 高频词截断阈值 — 出现次数超过此比例的词不建索引
+WORD_INDEX_MAX_RATIO = 0.30
+
 
 def _title_similarity(a: str, b: str) -> float:
     """计算两个标题的相似度（0-1），与 process_signals.py 保持一致。"""
@@ -23,6 +40,69 @@ def _title_similarity(a: str, b: str) -> float:
     if not a_clean or not b_clean:
         return 0.0
     return SequenceMatcher(None, a_clean, b_clean).ratio()
+
+
+def _extract_keywords(title: str) -> list[str]:
+    """从标题中提取关键词（去停用词、长度 ≥ 3、非纯数字）。"""
+    cleaned = re.sub(r"[^\w\s]", " ", title.lower())
+    words = cleaned.split()
+    result: list[str] = []
+    for w in words:
+        w = w.strip()
+        if len(w) < 3:
+            continue
+        if w in STOPWORDS:
+            continue
+        if w.isdigit():
+            continue
+        result.append(w)
+    # 去重保序
+    seen: set[str] = set()
+    unique: list[str] = []
+    for w in result:
+        if w not in seen:
+            seen.add(w)
+            unique.append(w)
+    return unique
+
+
+def _build_word_index(all_signals: list[dict]) -> dict[str, list[int]]:
+    """构建倒排索引：word → [signal_index, ...]，并截断过高频词。"""
+    from collections import defaultdict
+
+    n = len(all_signals)
+    # 第一步：统计每个词的文档频率
+    word_df: dict[str, int] = defaultdict(int)
+    word_signals: dict[str, list[int]] = defaultdict(list)
+
+    for i, s in enumerate(all_signals):
+        keywords = _extract_keywords(s.get("title", ""))
+        for kw in keywords:
+            word_signals[kw].append(i)
+        for kw in set(keywords):  # 每信号每词只计一次 DF
+            word_df[kw] += 1
+
+    # 第二步：截断高文档频率词
+    max_df = int(n * WORD_INDEX_MAX_RATIO)
+    skipped_words: list[str] = []
+    index: dict[str, list[int]] = {}
+
+    for word, indices in word_signals.items():
+        df = word_df.get(word, 0)
+        if df > max_df:
+            skipped_words.append(word)
+            continue
+        # 同一词桶内，跳过同一天的信号对（之后 Union-Find 也会跳过）
+        index[word] = indices
+
+    print(f"[重复追踪] 词索引: {len(index)} 个关键词, "
+          f"平均桶大小 {sum(len(v) for v in index.values()) / max(len(index), 1):.1f}, "
+          f"最大桶 {max((len(v) for v in index.values()), default=0)}")
+    if skipped_words:
+        print(f"[重复追踪] 跳过高频词 ({len(skipped_words)}): "
+              f"{', '.join(sorted(skipped_words, key=lambda w: -word_df[w])[:20])}")
+
+    return index
 
 
 def _load_all_signals() -> list[dict]:
@@ -187,22 +267,39 @@ def run(date_str: str | None = None) -> list[dict]:
         if px != py:
             parent[px] = py
 
-    # 跨日期标题相似度匹配
+    # ─── 构建词索引，生成候选对 ───
+    word_index = _build_word_index(all_signals)
+
+    # 从词索引桶中收集候选信号对（去重）
+    candidate_pairs: set[tuple[int, int]] = set()
+    for word, indices in word_index.items():
+        bucket_size = len(indices)
+        if bucket_size < 2:
+            continue
+        for a in range(bucket_size):
+            for b in range(a + 1, bucket_size):
+                i, j = indices[a], indices[b]
+                if i > j:
+                    i, j = j, i
+                candidate_pairs.add((i, j))
+
+    print(f"[重复追踪] 候选对数量: {len(candidate_pairs)} "
+          f"(vs 全量 O(n^2) = {n * (n-1) // 2:,})")
+
+    # 跨日期标题相似度匹配（仅在候选对内比较）
     threshold = 0.75
     match_count = 0
-    for i in range(n):
-        for j in range(i + 1, n):
-            # 同一天内的重复信号已经被 process_signals 的 dedup/cluster 处理过
-            # 这里只关注跨日期的重复
-            if all_signals[i]["_date"] == all_signals[j]["_date"]:
-                continue
-            sim = _title_similarity(
-                all_signals[i].get("title", ""),
-                all_signals[j].get("title", "")
-            )
-            if sim >= threshold:
-                union(i, j)
-                match_count += 1
+    for i, j in candidate_pairs:
+        # 同一天内的重复信号已经被 process_signals 的 dedup/cluster 处理过
+        if all_signals[i]["_date"] == all_signals[j]["_date"]:
+            continue
+        sim = _title_similarity(
+            all_signals[i].get("title", ""),
+            all_signals[j].get("title", "")
+        )
+        if sim >= threshold:
+            union(i, j)
+            match_count += 1
 
     print(f"[重复追踪] 跨日期标题匹配: {match_count} 对（阈值 {threshold}）")
 
