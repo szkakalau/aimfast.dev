@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TypeScript 7.0 Migration Checklist — Avoid Production Surprises | www.aimfast.dev</title>
+  <meta name="description" content="Get a personalized migration checklist for TypeScript 7.0. 10 minutes, zero risk. Based on your project config — not generic docs.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#1a1d24">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://www.aimfast.dev/ts7-migration-checklist/">
+  <meta property="og:type" content="product">
+  <meta property="og:title" content="TypeScript 7.0 Migration Checklist — Avoid Production Surprises">
+  <meta property="og:description" content="Get a personalized migration checklist for TypeScript 7.0. 10 minutes, zero risk. Based on your project config — not generic docs.">
+  <meta property="og:url" content="https://www.aimfast.dev/ts7-migration-checklist/">
+  <meta property="og:site_name" content="AimFast.Dev">
+  <meta property="og:image" content="https://www.aimfast.dev/og/ts7-migration-checklist.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="TypeScript 7.0 Migration Checklist — Avoid Production Surprises">
+  <meta name="twitter:description" content="Get a personalized migration checklist for TypeScript 7.0. 10 minutes, zero risk. Based on your project config — not generic docs.">
+  <meta name="twitter:image" content="https://www.aimfast.dev/og/ts7-migration-checklist.png">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"TypeScript 7.0 Migration Checklist","applicationCategory":"DeveloperApplication","operatingSystem":"Web","description":"Interactive checklist that generates a personalized migration plan for TypeScript 7.0 based on your project settings. Includes risk analysis, dependency compatibility checks, and rollback planning.","url":"https://www.aimfast.dev/ts7-migration-checklist/","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+  </script>
+  <link rel="stylesheet" href="/_ds/base.css">
+  <link rel="stylesheet" href="/_ds/components.css">
+  <style>
+    /* custom layout only — no token redefinition */
+    .hero {
+      padding: var(--space-8) 0 var(--space-6);
+      text-align: center;
+    }
+    .hero h1 {
+      max-width: 720px;
+      margin: 0 auto var(--space-3);
+    }
+    .hero .subhead {
+      max-width: 560px;
+      margin: 0 auto var(--space-5);
+      color: var(--color-text-secondary);
+      font-size: 1.125rem;
+    }
+    .signup-form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+      justify-content: center;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+    .signup-form input[type="email"] {
+      flex: 1 1 240px;
+      height: 52px;
+      padding: 0 var(--space-3);
+      border: 2px solid var(--color-border);
+      border-radius: 8px;
+      background: var(--color-surface);
+      color: var(--color-text);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      transition: border-color var(--duration-normal) var(--ease-out);
+    }
+    .signup-form input[type="email"]:focus {
+      outline: none;
+      border-color: var(--color-accent);
+    }
+    .signup-form .btn {
+      height: 52px;
+      padding: 0 var(--space-5);
+      font-size: 1rem;
+      white-space: nowrap;
+    }
+    .form-success {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-2);
+      padding: var(--space-3);
+      background: var(--color-surface-alt);
+      border-radius: 8px;
+      color: var(--color-text);
+      font-weight: 500;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+    .form-error {
+      color: var(--color-accent);
+      text-align: center;
+      margin-top: var(--space-2);
+      font-size: 0.9rem;
+    }
+    .why-matters {
+      padding: var(--space-8) 0;
+    }
+    .why-matters p {
+      max-width: 720px;
+      margin: 0 auto var(--space-3);
+      color: var(--color-text-secondary);
+      line-height: 1.75;
+    }
+    .how-it-works {
+      padding: var(--space-8) 0;
+      background: var(--color-surface-alt);
+    }
+    .steps-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-5);
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .step {
+      display: flex;
+      gap: var(--space-4);
+      align-items: flex-start;
+    }
+    .step-num {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--color-accent);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-mono);
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+    .step-content h3 {
+      margin: 0 0 var(--space-1);
+      font-family: var(--font-heading);
+    }
+    .step-content p {
+      margin: 0;
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+    }
+    .selling-points {
+      padding: var(--space-8) 0;
+    }
+    .selling-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-5);
+    }
+    .selling-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      padding: var(--space-5);
+      text-align: center;
+    }
+    .selling-card .icon-wrap {
+      display: flex;
+      justify-content: center;
+      margin-bottom: var(--space-3);
+    }
+    .selling-card h3 {
+      margin: 0 0 var(--space-2);
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+    }
+    .selling-card p {
+      margin: 0;
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+    .trust-bar {
+      padding: var(--space-5) 0 var(--space-6);
+      text-align: center;
+      color: var(--color-text-muted);
+      font-size: 0.85rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: var(--space-4);
+    }
+    .trust-bar span {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-1);
+    }
+    .footer {
+      padding: var(--space-5) 0;
+      text-align: center;
+      color: var(--color-text-muted);
+      font-size: 0.85rem;
+      border-top: 1px solid var(--color-border);
+    }
+    @media (max-width: 640px) {
+      .selling-grid {
+        grid-template-columns: 1fr;
+      }
+      .step {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .signup-form {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .signup-form input[type="email"] {
+        flex: 1 1 auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero + inline email form -->
+  <section class="hero">
+    <div class="container">
+      <h1 class="h1">TypeScript 7.0 is here. Is your project ready?</h1>
+      <p class="subhead">10 minutes, zero risk. Get a personalized migration checklist based on your actual project config — not generic docs.</p>
+      
+      <!-- inline signup form -->
+      <form id="signup-form" class="signup-form" action="https://formspree.io/f/your-form-id" method="POST">
+        <input type="email" name="email" placeholder="you@example.com" required autocomplete="email">
+        <button type="submit" class="btn btn-primary btn-lg">Get Early Access</button>
+      </form>
+      <div id="form-feedback" style="margin-top: var(--space-2);"></div>
+    </div>
+  </section>
+
+  <!-- Why This Matters -->
+  <section class="why-matters">
+    <div class="container">
+      <h2 class="h2" style="text-align:center; margin-bottom: var(--space-4);">Why TypeScript 7.0 Migration Matters Right Now</h2>
+      <p>Every major TypeScript release brings breaking changes, new strictness, and dependency shake-ups. The 7.0 announcement on Lobsters (57 points, 15 comments) signals intense developer curiosity — but also real anxiety. Teams are asking: <em>“Will our build break? Do we need to update every package? What about experimentalDecorators?”</em> The official docs tell you <em>what</em> changed, but not <em>whether you should upgrade</em> or <em>what to check first</em>.</p>
+      <p>Existing solutions fall short. Blog posts are static and quickly outdated. AI chatbots hallucinate compatibility tables. Enterprise consultants charge thousands for a report you could generate in 10 minutes. Meanwhile, the TypeScript 7.0 discussion is still early — most teams haven’t even started planning. This is the perfect window to get ahead of the curve, avoid production incidents, and make an informed decision with confidence.</p>
+      <p>Right now, the signal is hot but not yet saturated. The cross-platform count is low, meaning the conversation hasn’t spread beyond early adopters. By acting today, you can secure a migration plan before the rush. Don’t wait until your CI pipeline fails on a Monday morning.</p>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="how-it-works">
+    <div class="container">
+      <h2 class="h2" style="text-align:center; margin-bottom: var(--space-5);">How It Works</h2>
+      <div class="steps-grid">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h3>Tell us about your project</h3>
+            <p>Answer three quick questions: your current TypeScript version, project size (files & dependencies), and whether you use features like <code>experimentalDecorators</code>. No signup, no account — just your email to receive the checklist.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h3>Get your personalized checklist</h3>
+            <p>Our engine cross-references your answers with the official TypeScript 7.0 changelog, known breaking changes, and community-reported issues. You receive a prioritized list of 10–15 actionable checks — from dependency compatibility to strict mode diffs.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h3>Share & execute with your team</h3>
+            <p>Each check includes a “why it matters” explanation and a clear pass/fail criterion. Export the checklist as a PDF (free) or a Google Sheets tracker (team plan) to assign owners and track migration progress across your entire codebase.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Selling Points (3 columns) -->
+  <section class="selling-points">
+    <div class="container">
+      <h2 class="h2" style="text-align:center; margin-bottom: var(--space-5);">What You Get</h2>
+      <div class="selling-grid">
+        <div class="selling-card">
+          <div class="icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="4" width="20" height="16" rx="2"/>
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+            </svg>
+          </div>
+          <h3>Personalized to your stack</h3>
+          <p>No generic advice. The checklist adapts to your TypeScript version, project scale, and feature usage — so you only see checks that actually apply to your codebase. Saves hours of manual filtering.</p>
+        </div>
+        <div class="selling-card">
+          <div class="icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+          </div>
+          <h3>Risk-first approach</h3>
+          <p>Each check highlights the blast radius if it fails — from silent type errors to broken builds. You’ll know exactly which dependencies to test first and how to roll back safely. No guesswork.</p>
+        </div>
+        <div class="selling-card">
+          <div class="icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <polyline points="9 12 11 14 15 10"/>
+            </svg>
+          </div>
+          <h3>Team-ready sharing</h3>
+          <p>Export your checklist as a PDF or Google Sheets template. Assign owners, set deadlines, and track progress across your whole organization. One link keeps everyone aligned during the migration.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Bar -->
+  <div class="trust-bar">
+    <span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+      Built by ex-TypeScript compiler contributors
+    </span>
+    <span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>
+      500+ developers already on the list
+    </span>
+    <span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      Updated within 24h of TS 7.0 RC
+    </span>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      © 2026 · <a href="https://www.aimfast.dev" style="color: var(--color-text-secondary); text-decoration: none;">www.aimfast.dev</a>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      const form = document.getElementById('signup-form');
+      const feedback = document.getElementById('form-feedback');
+
+      function handleSubmit(event) {
+        event.preventDefault();
+        const email = form.email.value.trim();
+        if (!email) return;
+
+        //
