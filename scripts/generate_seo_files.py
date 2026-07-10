@@ -13,7 +13,9 @@ ROOT = Path(__file__).resolve().parent.parent
 DAILY_DIR = ROOT / "daily"
 CONTENT_REPORTS = ROOT / "content" / "reports"
 CONTENT_ARTICLES = ROOT / "content" / "articles"
+CONTENT_TRENDS = ROOT / "content" / "trends"
 TRACKING_PATH = ROOT / "tracking" / "opportunities.json"
+TREND_TERMS_PATH = ROOT / "tracking" / "trend_terms.json"
 PUBLIC = ROOT / "public"
 SITEMAP_PATH = PUBLIC / "sitemap.xml"
 LP_INDEX_PATH = PUBLIC / "lp-index.json"
@@ -309,6 +311,59 @@ def generate_sitemap() -> int:
                     'alternates': {
                         'en': f'{BASE_URL}/articles/{slug}/en/',
                         'zh-CN': f'{BASE_URL}/articles/{slug}/',
+                    },
+                })
+
+    # Trends — listing + detail pages
+    urls.append({
+        'loc': f'{BASE_URL}/trends/',
+        'changefreq': 'daily',
+        'priority': '0.9',
+        'alternates': {
+            'en': f'{BASE_URL}/trends/',
+            'zh-CN': f'{BASE_URL}/trends/zh/',
+        },
+    })
+
+    if CONTENT_TRENDS.exists():
+        # Build slug → last_seen mapping from trend_terms.json
+        terms_by_slug: dict[str, str] = {}
+        if TREND_TERMS_PATH.exists():
+            try:
+                terms_data = json.loads(TREND_TERMS_PATH.read_text(encoding="utf-8"))
+                for t in terms_data.get("terms", []):
+                    slug = t["id"].replace("trend-", "")
+                    terms_by_slug[slug] = t.get("last_seen", "")
+            except Exception:
+                pass
+
+        for f in sorted(CONTENT_TRENDS.glob("*.md")):
+            if "-en" in f.name:
+                continue
+            slug = f.stem
+            lastmod = terms_by_slug.get(slug, "")
+            en_file = CONTENT_TRENDS / f"{slug}-en.md"
+            has_en = en_file.exists()
+
+            urls.append({
+                'loc': f'{BASE_URL}/trends/{slug}/',
+                'lastmod': lastmod,
+                'changefreq': 'weekly',
+                'priority': '0.8',
+                'alternates': {
+                    'en': f'{BASE_URL}/trends/{slug}/',
+                    'zh-CN': f'{BASE_URL}/trends/{slug}/zh/',
+                } if has_en else None,
+            })
+            if has_en:
+                urls.append({
+                    'loc': f'{BASE_URL}/trends/{slug}/zh/',
+                    'lastmod': lastmod,
+                    'changefreq': 'weekly',
+                    'priority': '0.8',
+                    'alternates': {
+                        'zh-CN': f'{BASE_URL}/trends/{slug}/zh/',
+                        'en': f'{BASE_URL}/trends/{slug}/',
                     },
                 })
 
