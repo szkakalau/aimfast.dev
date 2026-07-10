@@ -250,6 +250,36 @@ def _extract_terms_keyword_fallback(signals: list[dict]) -> list[dict]:
     return terms[:20]
 
 
+def _make_slug_id(canonical: str, fallback_idx: int = 0) -> str:
+    """Generate a URL-safe English slug from canonical name.
+
+    If the canonical contains Chinese characters, extracts the ASCII portion
+    (e.g. 'GPT-5.6 / Grok-4.5' from '超大模型发布与测试（GPT-5.6 / Grok-4.5）').
+    Falls back to a hash-based ID if no ASCII content is found.
+    """
+    import re, hashlib, unicodedata
+
+    # If already English, just slugify
+    if not _has_chinese(canonical):
+        slug = re.sub(r'[^\w\s\-.]', '', canonical.lower()).strip()
+        slug = re.sub(r'[-\s]+', '-', slug)[:50]
+        return f"trend-{slug}"
+
+    # Mixed Chinese + English — extract ASCII/English parts
+    # Match Latin words, numbers, common tech abbreviations
+    ascii_parts = re.findall(r'[A-Za-z0-9]+(?:[.\-+/][A-Za-z0-9]+)*', canonical)
+    if ascii_parts:
+        # Join significant parts (skip Chinese punctuation context)
+        meaningful = [p for p in ascii_parts if len(p) >= 2 or p.isdigit()]
+        if meaningful:
+            slug = '-'.join(p.lower() for p in meaningful)[:50]
+            return f"trend-{slug}"
+
+    # Pure Chinese — use hash-based fallback
+    h = hashlib.md5(canonical.encode()).hexdigest()[:8]
+    return f"trend-term-{h}"
+
+
 def merge_terms(existing: list[dict], extracted: list[dict], signals: list[dict], today: datetime) -> list[dict]:
     """Merge extracted terms into existing, updating existing terms and adding new ones."""
     today_str = today.strftime("%Y-%m-%d")
@@ -303,7 +333,7 @@ def merge_terms(existing: list[dict], extracted: list[dict], signals: list[dict]
                 t["summary_en"] = new_summary_en
         else:
             # New term
-            new_id = f"trend-{canonical.lower().replace(' ', '-')[:40]}"
+            new_id = _make_slug_id(canonical)
             slug = new_id.replace("trend-", "")
 
             matching_signals = [

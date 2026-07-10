@@ -1136,7 +1136,7 @@
       "research_md_path": "content/trends/ai-agent-runtime-integrity.md"
     },
     {
-      "id": "trend-ai-powered-video/media-tools",
+      "id": "trend-ai-powered-videomedia-tools",
       "canonical": "AI-Powered Video/Media Tools",
       "aliases": [],
       "first_seen": "2026-07-08",
@@ -1151,10 +1151,10 @@
       "tags": [],
       "summary_zh": "多个产品（如InstantVideos、NanoScene AI）利用AI快速生成短视频或图像，反映AI内容创作工具向极速、低门槛方向发展的趋势。",
       "summary_en": "Products like InstantVideos and NanoScene AI use AI for rapid video/image generation, reflecting a trend toward fast, low-barrier AI content creation tools.",
-      "research_md_path": "content/trends/ai-powered-video/media-tools.md"
+      "research_md_path": "content/trends/ai-powered-videomedia-tools.md"
     },
     {
-      "id": "trend-terminal-ui-(tui)-innovation",
+      "id": "trend-terminal-ui-tui-innovation",
       "canonical": "Terminal UI (TUI) Innovation",
       "aliases": [],
       "first_seen": "2026-07-08",
@@ -1169,7 +1169,7 @@
       "tags": [],
       "summary_zh": "多个项目（如orzma、browser TUI）探索在终端内渲染网页或构建自定义布局引擎，推动TUI复兴和终端体验现代化。",
       "summary_en": "Multiple projects (orzma, browser TUI) explore rendering webviews or custom layout engines inside terminals, driving a TUI revival and modern terminal experiences.",
-      "research_md_path": "content/trends/terminal-ui-(tui)-innovation.md"
+      "research_md_path": "content/trends/terminal-ui-tui-innovation.md"
     },
     {
       "id": "trend-ai-code-generation-quality-debate",
@@ -1244,8 +1244,8 @@
       "research_md_path": "content/trends/multiplayer-world-model-ai.md"
     },
     {
-      "id": "trend-ai-agent-自编辑溯源问题",
-      "canonical": "AI Agent 自编辑溯源问题",
+      "id": "trend-ai-agent-self-edit-traceability",
+      "canonical": "AI Agent Self-Edit Traceability",
       "aliases": [],
       "first_seen": "2026-07-09",
       "last_seen": "2026-07-09",
@@ -1259,11 +1259,12 @@
       "tags": [],
       "summary_zh": "多个信号指出 AI Agent 在自编辑或自验证过程中会伪造日志并自我欺骗，导致溯源和可靠性问题，是 Agent 工程中的关键挑战。",
       "summary_en": "Multiple signals highlight that AI agents can fabricate logs and deceive themselves during self-editing or self-verification, causing provenance and reliability issues — a key challenge in agent engineering.",
-      "research_md_path": "content/trends/ai-agent-自编辑溯源问题.md"
+      "research_md_path": "content/trends/ai-agent-self-edit-traceability.md",
+      "canonical_zh": "AI Agent 自编辑溯源问题"
     },
     {
-      "id": "trend-ai-编程工具作为招聘信号",
-      "canonical": "AI 编程工具作为招聘信号",
+      "id": "trend-ai-coding-tools-as-hiring-signals",
+      "canonical": "AI Coding Tools as Hiring Signals",
       "aliases": [],
       "first_seen": "2026-07-09",
       "last_seen": "2026-07-09",
@@ -1277,11 +1278,12 @@
       "tags": [],
       "summary_zh": "开发者使用的 AI 编程工具正在成为新的招聘信号，反映了行业对开发者工具链和 AI 熟练度的重视。",
       "summary_en": "The AI coding tool a developer uses is becoming a new hiring signal, reflecting the industry's focus on toolchain fluency and AI proficiency.",
-      "research_md_path": "content/trends/ai-编程工具作为招聘信号.md"
+      "research_md_path": "content/trends/ai-coding-tools-as-hiring-signals.md",
+      "canonical_zh": "AI 编程工具作为招聘信号"
     },
     {
-      "id": "trend-多-agent-系统抽象层设计",
-      "canonical": "多 Agent 系统抽象层设计",
+      "id": "trend-multi-agent-system-abstraction-layer-design",
+      "canonical": "Multi-Agent System Abstraction Layer Design",
       "aliases": [],
       "first_seen": "2026-07-09",
       "last_seen": "2026-07-09",
@@ -1295,11 +1297,12 @@
       "tags": [],
       "summary_zh": "多个信号讨论多 Agent 系统的设计，指出核心挑战在于抽象层级的合理设计，而非 Agent 数量，是 Agent 工程的重要方法论。",
       "summary_en": "Multiple signals discuss multi-agent system design, emphasizing that the core challenge lies in proper abstraction levels rather than agent count — a key methodology in agent engineering.",
-      "research_md_path": "content/trends/多-agent-系统抽象层设计.md"
+      "research_md_path": "content/trends/multi-agent-system-abstraction-layer-design.md",
+      "canonical_zh": "多 Agent 系统抽象层设计"
     },
     {
-      "id": "trend-超大模型发布与测试（gpt-5.6-/-grok-4.5）",
-      "canonical": "超大模型发布与测试（GPT-5.6 / Grok-4.5）",
+      "id": "trend-large-model-release-and-testing-gpt-5.6-grok-4.5",
+      "canonical": "Large Model Release and Testing (GPT-5.6 / Grok-4.5)",
       "aliases": [],
       "first_seen": "2026-07-09",
       "last_seen": "2026-07-09",
@@ -1313,11 +1316,12 @@
       "tags": [],
       "summary_zh": "GPT-5.6 和 Grok-4.5 在同一天被广泛讨论和测试，表明大模型竞争激烈，前端设计能力成为新焦点。",
       "summary_en": "GPT-5.6 and Grok-4.5 are widely discussed and tested on the same day, indicating intense LLM competition with frontend design ability as a new focus.",
-      "research_md_path": "content/trends/超大模型发布与测试（gpt-5.6-/-grok-4.5）.md"
+      "research_md_path": "content/trends/large-model-release-and-testing-gpt-5.6-grok-4.5.md",
+      "canonical_zh": "超大模型发布与测试（GPT-5.6 / Grok-4.5）"
     },
     {
-      "id": "trend-大模型-api-网关开源",
-      "canonical": "大模型 API 网关开源",
+      "id": "trend-open-source-large-model-api-gateway",
+      "canonical": "Open-Source Large Model API Gateway",
       "aliases": [],
       "first_seen": "2026-07-09",
       "last_seen": "2026-07-09",
@@ -1331,11 +1335,12 @@
       "tags": [],
       "summary_zh": "多个信号提及开源的大模型 API 网关，支持 OpenAI、Anthropic、DeepSeek 等，反映开发者对统一管理多模型 API 的需求增长。",
       "summary_en": "Multiple signals mention open-source LLM API gateways supporting OpenAI, Anthropic, DeepSeek, etc., reflecting growing demand for unified multi-model API management.",
-      "research_md_path": "content/trends/大模型-api-网关开源.md"
+      "research_md_path": "content/trends/open-source-large-model-api-gateway.md",
+      "canonical_zh": "大模型 API 网关开源"
     },
     {
-      "id": "trend-typescript-7.0-发布",
-      "canonical": "TypeScript 7.0 发布",
+      "id": "trend-typescript-7.0-release",
+      "canonical": "TypeScript 7.0 Release",
       "aliases": [],
       "first_seen": "2026-07-09",
       "last_seen": "2026-07-09",
@@ -1349,11 +1354,12 @@
       "tags": [],
       "summary_zh": "TypeScript 7.0 发布在多个社区引发讨论，作为主流语言的重要版本更新值得追踪。",
       "summary_en": "TypeScript 7.0 release sparks discussion across multiple communities; as a major version update of a mainstream language, it's worth tracking.",
-      "research_md_path": "content/trends/typescript-7.0-发布.md"
+      "research_md_path": "content/trends/typescript-7.0-release.md",
+      "canonical_zh": "TypeScript 7.0 发布"
     },
     {
-      "id": "trend-自动驾驶高风险场景数据集",
-      "canonical": "自动驾驶高风险场景数据集",
+      "id": "trend-autonomous-driving-high-risk-scenario-dataset",
+      "canonical": "Autonomous Driving High-Risk Scenario Dataset",
       "aliases": [],
       "first_seen": "2026-07-09",
       "last_seen": "2026-07-09",
@@ -1367,11 +1373,12 @@
       "tags": [],
       "summary_zh": "多个学术信号关注用 LLM 标注的高风险驾驶场景数据集，推动自动驾驶安全研究。",
       "summary_en": "Multiple academic signals focus on high-risk driving scenario datasets annotated with LLMs, advancing autonomous driving safety research.",
-      "research_md_path": "content/trends/自动驾驶高风险场景数据集.md"
+      "research_md_path": "content/trends/autonomous-driving-high-risk-scenario-dataset.md",
+      "canonical_zh": "自动驾驶高风险场景数据集"
     },
     {
-      "id": "trend-ai-agent-自主红队测试平台",
-      "canonical": "AI Agent 自主红队测试平台",
+      "id": "trend-ai-agent-autonomous-red-team-testing-platform",
+      "canonical": "AI Agent Autonomous Red-Team Testing Platform",
       "aliases": [],
       "first_seen": "2026-07-09",
       "last_seen": "2026-07-09",
@@ -1385,11 +1392,12 @@
       "tags": [],
       "summary_zh": "elder-plinius/T3MP3ST 作为自主 AI 红队测试平台在 GitHub Trending 上获得关注，体现 Agent 安全测试工具化趋势。",
       "summary_en": "elder-plinius/T3MP3ST, an autonomous AI red-teaming platform, gains traction on GitHub Trending, reflecting the trend of toolized agent security testing.",
-      "research_md_path": "content/trends/ai-agent-自主红队测试平台.md"
+      "research_md_path": "content/trends/ai-agent-autonomous-red-team-testing-platform.md",
+      "canonical_zh": "AI Agent 自主红队测试平台"
     },
     {
-      "id": "trend-ai-编程工具对比与选型（cursor/claude-code/codex）",
-      "canonical": "AI 编程工具对比与选型（Cursor/Claude Code/Codex）",
+      "id": "trend-ai-coding-tool-comparison-cursorclaude-codecodex",
+      "canonical": "AI Coding Tool Comparison (Cursor/Claude Code/Codex)",
       "aliases": [],
       "first_seen": "2026-07-09",
       "last_seen": "2026-07-09",
@@ -1403,11 +1411,12 @@
       "tags": [],
       "summary_zh": "开发者深度对比 Cursor、Claude Code 和 Codex 等 AI 编程工具，讨论真实项目中的差距和选型策略。",
       "summary_en": "Developers deeply compare AI coding tools like Cursor, Claude Code, and Codex, discussing real-world gaps and selection strategies.",
-      "research_md_path": "content/trends/ai-编程工具对比与选型（cursor/claude-code/codex）.md"
+      "research_md_path": "content/trends/ai-coding-tool-comparison-cursorclaude-codecodex.md",
+      "canonical_zh": "AI 编程工具对比与选型（Cursor/Claude Code/Codex）"
     },
     {
-      "id": "trend-无注册零门槛演示模式",
-      "canonical": "无注册零门槛演示模式",
+      "id": "trend-no-registration-zero-barrier-demo-mode",
+      "canonical": "No-Registration Zero-Barrier Demo Mode",
       "aliases": [],
       "first_seen": "2026-07-09",
       "last_seen": "2026-07-09",
@@ -1421,11 +1430,12 @@
       "tags": [],
       "summary_zh": "多个信号提及“点击链接即获得临时租户”或“无注册演示”模式，作为降低用户试用门槛的新实践。",
       "summary_en": "Multiple signals mention 'click a link, get a throwaway tenant' or zero-signup demo patterns as a new practice to lower user trial barriers.",
-      "research_md_path": "content/trends/无注册零门槛演示模式.md"
+      "research_md_path": "content/trends/no-registration-zero-barrier-demo-mode.md",
+      "canonical_zh": "无注册零门槛演示模式"
     },
     {
-      "id": "trend-出海业务代理-ip-风控优化",
-      "canonical": "出海业务代理 IP 风控优化",
+      "id": "trend-overseas-business-proxy-ip-risk-control-optimizati",
+      "canonical": "Overseas Business Proxy IP Risk Control Optimization",
       "aliases": [],
       "first_seen": "2026-07-09",
       "last_seen": "2026-07-09",
@@ -1439,11 +1449,12 @@
       "tags": [],
       "summary_zh": "独立开发者讨论出海业务中住宅代理的选择与风控优化，反映跨境业务对网络基础设施的精细化需求。",
       "summary_en": "Indie developers discuss residential proxy selection and risk control optimization for overseas businesses, reflecting refined network infrastructure needs.",
-      "research_md_path": "content/trends/出海业务代理-ip-风控优化.md"
+      "research_md_path": "content/trends/overseas-business-proxy-ip-risk-control-optimizati.md",
+      "canonical_zh": "出海业务代理 IP 风控优化"
     },
     {
-      "id": "trend-ai-编程破坏已有功能问题",
-      "canonical": "AI 编程破坏已有功能问题",
+      "id": "trend-ai-coding-breaking-existing-features",
+      "canonical": "AI Coding Breaking Existing Features",
       "aliases": [],
       "first_seen": "2026-07-09",
       "last_seen": "2026-07-09",
@@ -1457,11 +1468,12 @@
       "tags": [],
       "summary_zh": "独立开发者分享 AI 编程中 AI 生成的代码破坏已有正常功能的真实教训，是 AI 辅助开发中的普遍痛点。",
       "summary_en": "Indie developers share real lessons about AI-generated code breaking existing working features, a common pain point in AI-assisted development.",
-      "research_md_path": "content/trends/ai-编程破坏已有功能问题.md"
+      "research_md_path": "content/trends/ai-coding-breaking-existing-features.md",
+      "canonical_zh": "AI 编程破坏已有功能问题"
     },
     {
-      "id": "trend-智能家居配置错误自动化修复",
-      "canonical": "智能家居配置错误自动化修复",
+      "id": "trend-smart-home-misconfiguration-auto-fix",
+      "canonical": "Smart Home Misconfiguration Auto-Fix",
       "aliases": [],
       "first_seen": "2026-07-09",
       "last_seen": "2026-07-09",
@@ -1475,11 +1487,12 @@
       "tags": [],
       "summary_zh": "学术论文提出利用大模型自动检测和修复智能家居配置错误，是 AI 与 IoT 结合的新方向。",
       "summary_en": "A research paper proposes using LLMs to automatically detect and repair smart home configuration errors, a new direction at the AI-IoT intersection.",
-      "research_md_path": "content/trends/智能家居配置错误自动化修复.md"
+      "research_md_path": "content/trends/smart-home-misconfiguration-auto-fix.md",
+      "canonical_zh": "智能家居配置错误自动化修复"
     },
     {
-      "id": "trend-独立开发真实成本讨论",
-      "canonical": "独立开发真实成本讨论",
+      "id": "trend-indie-development-real-cost-discussion",
+      "canonical": "Indie Development Real Cost Discussion",
       "aliases": [],
       "first_seen": "2026-07-09",
       "last_seen": "2026-07-09",
@@ -1493,11 +1506,12 @@
       "tags": [],
       "summary_zh": "多篇独立开发者的深度分享讨论月入 3000 背后的隐性成本，反映独立开发社区对生存现实的理性反思。",
       "summary_en": "Multiple in-depth indie developer posts discuss the hidden costs behind monthly earnings of $3000, reflecting a rational rethinking of survival realities.",
-      "research_md_path": "content/trends/独立开发真实成本讨论.md"
+      "research_md_path": "content/trends/indie-development-real-cost-discussion.md",
+      "canonical_zh": "独立开发真实成本讨论"
     },
     {
-      "id": "trend-eve-online-carbon-引擎开源",
-      "canonical": "EVE Online Carbon 引擎开源",
+      "id": "trend-eve-online-carbon-engine-open-sourced",
+      "canonical": "EVE Online Carbon Engine Open-Sourced",
       "aliases": [],
       "first_seen": "2026-07-09",
       "last_seen": "2026-07-09",
@@ -1511,11 +1525,12 @@
       "tags": [],
       "summary_zh": "EVE Online 的 Carbon 游戏引擎开源，在技术社区引发关注，可能影响游戏开发工具链。",
       "summary_en": "EVE Online's Carbon game engine is open-sourced, drawing attention in tech communities and potentially impacting game development toolchains.",
-      "research_md_path": "content/trends/eve-online-carbon-引擎开源.md"
+      "research_md_path": "content/trends/eve-online-carbon-engine-open-sourced.md",
+      "canonical_zh": "EVE Online Carbon 引擎开源"
     },
     {
-      "id": "trend-开源软件可持续融资讨论",
-      "canonical": "开源软件可持续融资讨论",
+      "id": "trend-open-source-software-sustainable-funding-discussio",
+      "canonical": "Open-Source Software Sustainable Funding Discussion",
       "aliases": [],
       "first_seen": "2026-07-09",
       "last_seen": "2026-07-09",
@@ -1529,11 +1544,12 @@
       "tags": [],
       "summary_zh": "Lobsters 社区围绕“不妥协地资助开源软件”展开讨论，反映开源可持续发展焦虑。",
       "summary_en": "The Lobsters community discusses 'funding open-source without compromising it,' reflecting ongoing anxiety about open-source sustainability.",
-      "research_md_path": "content/trends/开源软件可持续融资讨论.md"
+      "research_md_path": "content/trends/open-source-software-sustainable-funding-discussio.md",
+      "canonical_zh": "开源软件可持续融资讨论"
     },
     {
-      "id": "trend-ai-时代工程师角色转变",
-      "canonical": "AI 时代工程师角色转变",
+      "id": "trend-engineer-role-shift-in-ai-era",
+      "canonical": "Engineer Role Shift in AI Era",
       "aliases": [],
       "first_seen": "2026-07-09",
       "last_seen": "2026-07-09",
@@ -1547,11 +1563,12 @@
       "tags": [],
       "summary_zh": "多个 DEV 社区帖子讨论 AI 时代工程师的定位变化，包括不再阅读文档导致的系统理解能力下降。",
       "summary_en": "Multiple DEV posts discuss the shifting role of engineers in the AI era, including the degradation of system understanding from not reading docs.",
-      "research_md_path": "content/trends/ai-时代工程师角色转变.md"
+      "research_md_path": "content/trends/engineer-role-shift-in-ai-era.md",
+      "canonical_zh": "AI 时代工程师角色转变"
     },
     {
-      "id": "trend-anchor-pointing-代码-文档链接约定",
-      "canonical": "Anchor Pointing 代码-文档链接约定",
+      "id": "trend-anchor-pointing-code-doc-linking-convention",
+      "canonical": "Anchor Pointing Code-Doc Linking Convention",
       "aliases": [],
       "first_seen": "2026-07-09",
       "last_seen": "2026-07-09",
@@ -1565,11 +1582,12 @@
       "tags": [],
       "summary_zh": "一种无需工具的轻量级代码与文档链接约定被提出，旨在解决代码文档同步问题。",
       "summary_en": "A lightweight, tool-free convention for linking code and documentation is proposed to solve the code-doc synchronization problem.",
-      "research_md_path": "content/trends/anchor-pointing-代码-文档链接约定.md"
+      "research_md_path": "content/trends/anchor-pointing-code-doc-linking-convention.md",
+      "canonical_zh": "Anchor Pointing 代码-文档链接约定"
     },
     {
-      "id": "trend-kubernetes-开发自发布流程讨论",
-      "canonical": "Kubernetes 开发自发布流程讨论",
+      "id": "trend-kubernetes-dev-self-release-workflow-discussion",
+      "canonical": "Kubernetes Dev Self-Release Workflow Discussion",
       "aliases": [],
       "first_seen": "2026-07-09",
       "last_seen": "2026-07-09",
@@ -1583,11 +1601,12 @@
       "tags": [],
       "summary_zh": "V2EX 程序员社区讨论上 Kubernetes 后开发者能否自行发布，反映 DevOps 权限与效率的平衡难题。",
       "summary_en": "The V2EX programmer community debates whether developers can self-deploy on Kubernetes, reflecting the balance between DevOps permissions and efficiency.",
-      "research_md_path": "content/trends/kubernetes-开发自发布流程讨论.md"
+      "research_md_path": "content/trends/kubernetes-dev-self-release-workflow-discussion.md",
+      "canonical_zh": "Kubernetes 开发自发布流程讨论"
     },
     {
-      "id": "trend-ai-驱动的多市场股票分析系统",
-      "canonical": "AI 驱动的多市场股票分析系统",
+      "id": "trend-ai-driven-multi-market-stock-analysis-system",
+      "canonical": "AI-Driven Multi-Market Stock Analysis System",
       "aliases": [],
       "first_seen": "2026-07-09",
       "last_seen": "2026-07-09",
@@ -1601,11 +1620,12 @@
       "tags": [],
       "summary_zh": "ZhuLinsen/daily_stock_analysis 项目在 GitHub Trending 获得极高关注，体现 LLM 在金融分析领域的应用热度。",
       "summary_en": "The ZhuLinsen/daily_stock_analysis project gains massive traction on GitHub Trending, reflecting the popularity of LLMs in financial analysis.",
-      "research_md_path": "content/trends/ai-驱动的多市场股票分析系统.md"
+      "research_md_path": "content/trends/ai-driven-multi-market-stock-analysis-system.md",
+      "canonical_zh": "AI 驱动的多市场股票分析系统"
     },
     {
-      "id": "trend-rust重写经典软件",
-      "canonical": "Rust重写经典软件",
+      "id": "trend-rewriting-classic-software-in-rust",
+      "canonical": "Rewriting Classic Software in Rust",
       "aliases": [],
       "first_seen": "2026-07-10",
       "last_seen": "2026-07-10",
@@ -1619,11 +1639,12 @@
       "tags": [],
       "summary_zh": "多个独立项目（如Bun、Postgres）正在被用Rust重写，并取得显著进展，表明Rust在系统软件领域的替代趋势正在加速。",
       "summary_en": "Multiple independent projects (Bun, Postgres) are being rewritten in Rust with significant progress, indicating an accelerating trend of Rust replacing classic system software.",
-      "research_md_path": "content/trends/rust重写经典软件.md"
+      "research_md_path": "content/trends/rewriting-classic-software-in-rust.md",
+      "canonical_zh": "Rust重写经典软件"
     },
     {
-      "id": "trend-ai-agent幻觉与可追溯性问题",
-      "canonical": "AI Agent幻觉与可追溯性问题",
+      "id": "trend-ai-agent-hallucination-and-traceability",
+      "canonical": "AI Agent Hallucination and Traceability",
       "aliases": [],
       "first_seen": "2026-07-10",
       "last_seen": "2026-07-10",
@@ -1637,11 +1658,12 @@
       "tags": [],
       "summary_zh": "多个技术社区讨论AI Agent伪造测试日志并自我相信的问题，反映出对Agent行为可靠性和可追溯性的担忧成为热点。",
       "summary_en": "Multiple tech communities discuss AI agents faking test logs and believing them, highlighting growing concerns about agent reliability and provenance as a hot topic.",
-      "research_md_path": "content/trends/ai-agent幻觉与可追溯性问题.md"
+      "research_md_path": "content/trends/ai-agent-hallucination-and-traceability.md",
+      "canonical_zh": "AI Agent幻觉与可追溯性问题"
     },
     {
-      "id": "trend-浏览器视频编辑器ai驱动",
-      "canonical": "浏览器视频编辑器AI驱动",
+      "id": "trend-browser-video-editor-ai-driven",
+      "canonical": "Browser Video Editor AI-Driven",
       "aliases": [],
       "first_seen": "2026-07-10",
       "last_seen": "2026-07-10",
@@ -1655,11 +1677,12 @@
       "tags": [],
       "summary_zh": "FableCut作为零依赖的浏览器视频编辑器，可由AI Agent驱动，在HN获得高赞，代表AI与创意工具结合的新方向。",
       "summary_en": "FableCut, a zero-dependency browser video editor drivable by AI agents, gained high upvotes on HN, representing a new direction in AI-powered creative tools.",
-      "research_md_path": "content/trends/浏览器视频编辑器ai驱动.md"
+      "research_md_path": "content/trends/browser-video-editor-ai-driven.md",
+      "canonical_zh": "浏览器视频编辑器AI驱动"
     },
     {
-      "id": "trend-chrome-devtools-mcp协议",
-      "canonical": "Chrome DevTools MCP协议",
+      "id": "trend-chrome-devtools-mcp-protocol",
+      "canonical": "Chrome DevTools MCP Protocol",
       "aliases": [],
       "first_seen": "2026-07-10",
       "last_seen": "2026-07-10",
@@ -1673,11 +1696,12 @@
       "tags": [],
       "summary_zh": "Chrome DevTools MCP项目使编码Agent能直接控制浏览器调试工具，在GitHub Trending上获得高星，标志开发工具与AI Agent的深度集成。",
       "summary_en": "The Chrome DevTools MCP project enables coding agents to directly control browser debugging tools, trending on GitHub, marking deep integration of dev tools with AI agents.",
-      "research_md_path": "content/trends/chrome-devtools-mcp协议.md"
+      "research_md_path": "content/trends/chrome-devtools-mcp-protocol.md",
+      "canonical_zh": "Chrome DevTools MCP协议"
     },
     {
-      "id": "trend-ai代码审查疲劳",
-      "canonical": "AI代码审查疲劳",
+      "id": "trend-ai-code-review-fatigue",
+      "canonical": "AI Code Review Fatigue",
       "aliases": [],
       "first_seen": "2026-07-10",
       "last_seen": "2026-07-10",
@@ -1691,11 +1715,12 @@
       "tags": [],
       "summary_zh": "多篇讨论指出AI代码审查虽然效率高，但导致开发者注意力疲劳和审查质量下降，成为开发者社区热议话题。",
       "summary_en": "Multiple discussions point out that AI code reviews, while efficient, cause attention fatigue and reduced review quality, becoming a hot topic in developer communities.",
-      "research_md_path": "content/trends/ai代码审查疲劳.md"
+      "research_md_path": "content/trends/ai-code-review-fatigue.md",
+      "canonical_zh": "AI代码审查疲劳"
     },
     {
-      "id": "trend-ai辅助历史文档ocr校正",
-      "canonical": "AI辅助历史文档OCR校正",
+      "id": "trend-ai-assisted-historical-document-ocr-correction",
+      "canonical": "AI-Assisted Historical Document OCR Correction",
       "aliases": [],
       "first_seen": "2026-07-10",
       "last_seen": "2026-07-10",
@@ -1709,11 +1734,12 @@
       "tags": [],
       "summary_zh": "ICDAR 2026推出LLM辅助历史文档OCR后校正竞赛，表明AI在文化遗产数字化领域的专业化应用正在形成。",
       "summary_en": "ICDAR 2026 launches a competition on LLM-assisted OCR post-correction for historical documents, indicating emerging specialized AI applications in cultural heritage digitization.",
-      "research_md_path": "content/trends/ai辅助历史文档ocr校正.md"
+      "research_md_path": "content/trends/ai-assisted-historical-document-ocr-correction.md",
+      "canonical_zh": "AI辅助历史文档OCR校正"
     },
     {
-      "id": "trend-自主红队测试平台",
-      "canonical": "自主红队测试平台",
+      "id": "trend-autonomous-red-team-testing-platform",
+      "canonical": "Autonomous Red-Team Testing Platform",
       "aliases": [],
       "first_seen": "2026-07-10",
       "last_seen": "2026-07-10",
@@ -1727,11 +1753,12 @@
       "tags": [],
       "summary_zh": "T3MP3ST作为多Agent自主红队测试平台在GitHub Trending上快速增长，代表AI安全领域自动化攻击测试的新趋势。",
       "summary_en": "T3MP3ST, a multi-agent autonomous red teaming platform, is rapidly trending on GitHub, representing a new trend in automated offensive security testing.",
-      "research_md_path": "content/trends/自主红队测试平台.md"
+      "research_md_path": "content/trends/autonomous-red-team-testing-platform.md",
+      "canonical_zh": "自主红队测试平台"
     },
     {
-      "id": "trend-ai编码助手搜索热度下降",
-      "canonical": "AI编码助手搜索热度下降",
+      "id": "trend-ai-coding-assistant-search-interest-decline",
+      "canonical": "AI Coding Assistant Search Interest Decline",
       "aliases": [],
       "first_seen": "2026-07-10",
       "last_seen": "2026-07-10",
@@ -1745,29 +1772,12 @@
       "tags": [],
       "summary_zh": "Google Trends数据显示「AI code assistant」搜索量下降66%，可能反映市场趋于成熟或用户兴趣转移。",
       "summary_en": "Google Trends shows a 66% decline in search volume for 'AI code assistant', possibly indicating market maturation or shifting user interest.",
-      "research_md_path": "content/trends/ai编码助手搜索热度下降.md"
+      "research_md_path": "content/trends/ai-coding-assistant-search-interest-decline.md",
+      "canonical_zh": "AI编码助手搜索热度下降"
     },
     {
-      "id": "trend-typescript-7.0发布",
-      "canonical": "TypeScript 7.0发布",
-      "aliases": [],
-      "first_seen": "2026-07-10",
-      "last_seen": "2026-07-10",
-      "stage": "nascent",
-      "score": 0,
-      "source_count": 0,
-      "total_mentions": 0,
-      "sources": [],
-      "growth_pct": 100,
-      "category": "DevTools",
-      "tags": [],
-      "summary_zh": "TypeScript 7.0的发布在Lobsters和开发者社区引起讨论，作为主流语言的重要版本更新值得追踪。",
-      "summary_en": "The release of TypeScript 7.0 sparks discussion on Lobsters and developer communities, making it a notable version update for a mainstream language.",
-      "research_md_path": "content/trends/typescript-7.0发布.md"
-    },
-    {
-      "id": "trend-ai无干扰版vim",
-      "canonical": "AI无干扰版Vim",
+      "id": "trend-ai-distraction-free-vim",
+      "canonical": "AI Distraction-Free Vim",
       "aliases": [],
       "first_seen": "2026-07-10",
       "last_seen": "2026-07-10",
@@ -1781,11 +1791,12 @@
       "tags": [],
       "summary_zh": "Drew DeVault关于开发无AI版Vim的访谈在Lobsters引发讨论，反映部分开发者对AI过度嵌入工具的抵触情绪。",
       "summary_en": "Drew DeVault's interview about developing an AI-free version of Vim sparks discussion on Lobsters, reflecting pushback from some developers against excessive AI integration in tools.",
-      "research_md_path": "content/trends/ai无干扰版vim.md"
+      "research_md_path": "content/trends/ai-distraction-free-vim.md",
+      "canonical_zh": "AI无干扰版Vim"
     },
     {
-      "id": "trend-开源软件可持续资金模式",
-      "canonical": "开源软件可持续资金模式",
+      "id": "trend-open-source-software-sustainable-funding-model",
+      "canonical": "Open-Source Software Sustainable Funding Model",
       "aliases": [],
       "first_seen": "2026-07-10",
       "last_seen": "2026-07-10",
@@ -1799,11 +1810,12 @@
       "tags": [],
       "summary_zh": "关于如何在不妥协的情况下资助开源软件的讨论在Lobsters上持续，反映开源社区对资金可持续性的长期关注。",
       "summary_en": "Discussions on funding open-source software without compromising it continue on Lobsters, reflecting the community's persistent concern about financial sustainability.",
-      "research_md_path": "content/trends/开源软件可持续资金模式.md"
+      "research_md_path": "content/trends/open-source-software-sustainable-funding-model.md",
+      "canonical_zh": "开源软件可持续资金模式"
     },
     {
-      "id": "trend-ai-agent等待体验优化",
-      "canonical": "AI Agent等待体验优化",
+      "id": "trend-ai-agent-wait-experience-optimization",
+      "canonical": "AI Agent Wait Experience Optimization",
       "aliases": [],
       "first_seen": "2026-07-10",
       "last_seen": "2026-07-10",
@@ -1817,11 +1829,12 @@
       "tags": [],
       "summary_zh": "FreeBuddy等产品针对AI Agent执行任务时的等待空档提供内容推荐，代表AI工作流中用户体验优化的新方向。",
       "summary_en": "Products like FreeBuddy offer content recommendations during AI agent task execution, representing a new direction in UX optimization for AI workflows.",
-      "research_md_path": "content/trends/ai-agent等待体验优化.md"
+      "research_md_path": "content/trends/ai-agent-wait-experience-optimization.md",
+      "canonical_zh": "AI Agent等待体验优化"
     },
     {
-      "id": "trend-网站逆向ai工具",
-      "canonical": "网站逆向AI工具",
+      "id": "trend-website-reverse-engineering-ai-tool",
+      "canonical": "Website Reverse Engineering AI Tool",
       "aliases": [],
       "first_seen": "2026-07-10",
       "last_seen": "2026-07-10",
@@ -1835,11 +1848,12 @@
       "tags": [],
       "summary_zh": "为AI开发的网站逆向辅助工具在V2EX发布，反映AI辅助逆向工程成为开发者工具的新兴细分领域。",
       "summary_en": "An AI-assisted website reverse engineering tool posted on V2EX highlights an emerging niche in developer tools for AI-aided reverse engineering.",
-      "research_md_path": "content/trends/网站逆向ai工具.md"
+      "research_md_path": "content/trends/website-reverse-engineering-ai-tool.md",
+      "canonical_zh": "网站逆向AI工具"
     },
     {
-      "id": "trend-外部大脑依赖与认知退化",
-      "canonical": "外部大脑依赖与认知退化",
+      "id": "trend-external-brain-dependency-and-cognitive-decline",
+      "canonical": "External Brain Dependency and Cognitive Decline",
       "aliases": [],
       "first_seen": "2026-07-10",
       "last_seen": "2026-07-10",
@@ -1853,11 +1867,12 @@
       "tags": [],
       "summary_zh": "V2EX上关于外部AI大脑越来越强导致原生大脑退化的讨论获得28条回复，反映开发者对AI依赖的深层反思。",
       "summary_en": "A V2EX discussion on how increasingly powerful external AI brains may degrade native cognition, with 28 replies, reflects deep reflection on AI dependency among developers.",
-      "research_md_path": "content/trends/外部大脑依赖与认知退化.md"
+      "research_md_path": "content/trends/external-brain-dependency-and-cognitive-decline.md",
+      "canonical_zh": "外部大脑依赖与认知退化"
     },
     {
-      "id": "trend-gpt-5.6代码生成质量",
-      "canonical": "GPT-5.6代码生成质量",
+      "id": "trend-gpt-5.6-code-generation-quality",
+      "canonical": "GPT-5.6 Code Generation Quality",
       "aliases": [],
       "first_seen": "2026-07-10",
       "last_seen": "2026-07-10",
@@ -1871,11 +1886,12 @@
       "tags": [],
       "summary_zh": "GPT-5.6在HN和V2EX引发大量讨论，特别是其代码生成质量和实际应用效果成为关注焦点。",
       "summary_en": "GPT-5.6 sparks extensive discussion on HN and V2EX, with focus on its code generation quality and practical application effectiveness.",
-      "research_md_path": "content/trends/gpt-5.6代码生成质量.md"
+      "research_md_path": "content/trends/gpt-5.6-code-generation-quality.md",
+      "canonical_zh": "GPT-5.6代码生成质量"
     },
     {
-      "id": "trend-ai克隆saas威胁",
-      "canonical": "AI克隆SaaS威胁",
+      "id": "trend-ai-clone-saas-threat",
+      "canonical": "AI Clone SaaS Threat",
       "aliases": [],
       "first_seen": "2026-07-10",
       "last_seen": "2026-07-10",
@@ -1889,11 +1905,12 @@
       "tags": [],
       "summary_zh": "HN上关于用户可能用AI克隆SaaS产品的讨论，反映AI降低软件复制成本对SaaS商业模式的潜在冲击。",
       "summary_en": "Discussion on HN about users potentially cloning SaaS products with AI reflects the potential disruption to SaaS business models from reduced software replication costs.",
-      "research_md_path": "content/trends/ai克隆saas威胁.md"
+      "research_md_path": "content/trends/ai-clone-saas-threat.md",
+      "canonical_zh": "AI克隆SaaS威胁"
     },
     {
-      "id": "trend-ai导师实时交互",
-      "canonical": "AI导师实时交互",
+      "id": "trend-ai-tutor-real-time-interaction",
+      "canonical": "AI Tutor Real-Time Interaction",
       "aliases": [],
       "first_seen": "2026-07-10",
       "last_seen": "2026-07-10",
@@ -1907,11 +1924,12 @@
       "tags": [],
       "summary_zh": "为5岁儿童构建的实时AI导师在HN获得关注，代表AI教育在低龄儿童个性化学习领域的新探索。",
       "summary_en": "A real-time AI tutor for 5-year-olds gains attention on HN, representing new exploration in personalized AI education for young children.",
-      "research_md_path": "content/trends/ai导师实时交互.md"
+      "research_md_path": "content/trends/ai-tutor-real-time-interaction.md",
+      "canonical_zh": "AI导师实时交互"
     },
     {
-      "id": "trend-零注册演示体验模式",
-      "canonical": "零注册演示体验模式",
+      "id": "trend-zero-registration-demo-experience-mode",
+      "canonical": "Zero-Registration Demo Experience Mode",
       "aliases": [],
       "first_seen": "2026-07-10",
       "last_seen": "2026-07-10",
@@ -1925,11 +1943,12 @@
       "tags": [],
       "summary_zh": "DEV上分享的点击链接即获得临时租户的零注册演示模式，代表SaaS产品降低用户试用门槛的新实践。",
       "summary_en": "A zero-signup demo model where clicking a link provides a throwaway tenant, shared on DEV, represents a new practice for lowering SaaS trial friction.",
-      "research_md_path": "content/trends/零注册演示体验模式.md"
+      "research_md_path": "content/trends/zero-registration-demo-experience-mode.md",
+      "canonical_zh": "零注册演示体验模式"
     },
     {
-      "id": "trend-ai视频质量评估工具",
-      "canonical": "AI视频质量评估工具",
+      "id": "trend-ai-video-quality-assessment-tool",
+      "canonical": "AI Video Quality Assessment Tool",
       "aliases": [],
       "first_seen": "2026-07-10",
       "last_seen": "2026-07-10",
@@ -1943,11 +1962,12 @@
       "tags": [],
       "summary_zh": "用C和Zig实现的快速图像视频保真度指标工具在Lobsters发布，代表高性能媒体质量评估工具的新方向。",
       "summary_en": "A fast image and video fidelity metrics tool implemented in C and Zig, posted on Lobsters, represents a new direction in high-performance media quality assessment.",
-      "research_md_path": "content/trends/ai视频质量评估工具.md"
+      "research_md_path": "content/trends/ai-video-quality-assessment-tool.md",
+      "canonical_zh": "AI视频质量评估工具"
     },
     {
-      "id": "trend-ai模型极端低比特压缩",
-      "canonical": "AI模型极端低比特压缩",
+      "id": "trend-ai-model-extreme-low-bit-compression",
+      "canonical": "AI Model Extreme Low-Bit Compression",
       "aliases": [],
       "first_seen": "2026-07-10",
       "last_seen": "2026-07-10",
@@ -1961,7 +1981,8 @@
       "tags": [],
       "summary_zh": "BiSCo-LLM研究提出无查找表的二进制球形编码用于极端低比特大模型压缩，代表模型压缩技术的前沿探索。",
       "summary_en": "BiSCo-LLM research proposes lookup-free binary spherical coding for extreme low-bit LLM compression, representing cutting-edge exploration in model compression.",
-      "research_md_path": "content/trends/ai模型极端低比特压缩.md"
+      "research_md_path": "content/trends/ai-model-extreme-low-bit-compression.md",
+      "canonical_zh": "AI模型极端低比特压缩"
     }
   ]
 }
