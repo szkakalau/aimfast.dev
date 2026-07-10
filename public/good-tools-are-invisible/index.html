@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>quiet — Good Tools Are Invisible | www.aimfast.dev</title>
+  <meta name="description" content="A zero-config, always-on status bar for your dev environment. See ports, processes, and git status without lifting a finger.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#1a1d24">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://www.aimfast.dev/quiet/">
+  <meta property="og:type" content="product">
+  <meta property="og:title" content="quiet — Good Tools Are Invisible">
+  <meta property="og:description" content="A zero-config, always-on status bar for your dev environment. See ports, processes, and git status without lifting a finger.">
+  <meta property="og:url" content="https://www.aimfast.dev/quiet/">
+  <meta property="og:site_name" content="AimFast.Dev">
+  <meta property="og:image" content="https://www.aimfast.dev/og/quiet.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="quiet — Good Tools Are Invisible">
+  <meta name="twitter:description" content="A zero-config, always-on status bar for your dev environment. See ports, processes, and git status without lifting a finger.">
+  <meta name="twitter:image" content="https://www.aimfast.dev/og/quiet.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "quiet",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "macOS",
+    "description": "A zero-config, always-on status bar for your dev environment. Auto-detects Node, Python, Rust, Go. Shows running dev servers, environment variables (opt-in), and git status.",
+    "url": "https://www.aimfast.dev/quiet/",
+    "offers": {
+      "@type": "Offer",
+      "price": "9.99",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+  <link rel="stylesheet" href="/_ds/base.css">
+  <link rel="stylesheet" href="/_ds/components.css">
+  <style>
+    /* custom page-level overrides — no token redefinition */
+    .hero {
+      padding: var(--space-8) 0 var(--space-6);
+      text-align: center;
+    }
+    .hero h1 {
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      line-height: 1.15;
+    }
+    .hero .lead {
+      max-width: 600px;
+      margin: var(--space-3) auto var(--space-5);
+      font-size: 1.15rem;
+      color: var(--color-text-secondary);
+    }
+    .signup-form {
+      display: flex;
+      gap: var(--space-2);
+      max-width: 480px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .signup-form input[type="email"] {
+      flex: 1 1 240px;
+      height: 52px;
+      padding: 0 var(--space-3);
+      border: 2px solid var(--color-border);
+      border-radius: 8px;
+      background: var(--color-surface);
+      color: var(--color-text);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      transition: border-color var(--duration-normal) var(--ease-out);
+    }
+    .signup-form input[type="email"]:focus {
+      outline: none;
+      border-color: var(--color-accent);
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent) 20%, transparent);
+    }
+    .signup-form .btn {
+      height: 52px;
+      padding: 0 var(--space-4);
+      font-size: 1rem;
+      white-space: nowrap;
+    }
+    .signup-form .btn-lg {
+      height: 52px;
+      line-height: 52px;
+      padding: 0 var(--space-5);
+    }
+    .form-feedback {
+      text-align: center;
+      padding: var(--space-3) 0;
+      font-weight: 500;
+    }
+    .form-feedback.success {
+      color: var(--color-accent);
+    }
+    .form-feedback.error {
+      color: #e45;
+    }
+    .why-section {
+      padding: var(--space-8) 0;
+    }
+    .why-section p {
+      max-width: 680px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: var(--space-3);
+      line-height: 1.7;
+    }
+    .how-section {
+      padding: var(--space-8) 0;
+      background: var(--color-surface-alt);
+    }
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-5);
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .step {
+      display: flex;
+      gap: var(--space-4);
+      align-items: flex-start;
+    }
+    .step-num {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--color-accent);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-mono);
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+    .step-content h3 {
+      margin: 0 0 var(--space-1);
+      font-size: 1.2rem;
+    }
+    .step-content p {
+      margin: 0;
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+    }
+    .selling-section {
+      padding: var(--space-8) 0;
+    }
+    .selling-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-5);
+    }
+    .selling-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      padding: var(--space-5) var(--space-4);
+      text-align: center;
+      transition: box-shadow var(--duration-normal) var(--ease-out);
+    }
+    .selling-card:hover {
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+    .selling-card .icon-wrap {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      margin-bottom: var(--space-3);
+      color: var(--color-accent);
+    }
+    .selling-card h3 {
+      margin: 0 0 var(--space-2);
+      font-size: 1.1rem;
+    }
+    .selling-card p {
+      margin: 0;
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+    .trust-bar {
+      padding: var(--space-4) 0 var(--space-6);
+      text-align: center;
+      color: var(--color-text-muted);
+      font-size: 0.85rem;
+      display: flex;
+      justify-content: center;
+      gap: var(--space-5);
+      flex-wrap: wrap;
+    }
+    .trust-bar span {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-1);
+    }
+    .trust-bar svg {
+      width: 16px;
+      height: 16px;
+      stroke: var(--color-text-muted);
+    }
+    footer {
+      padding: var(--space-5) 0;
+      text-align: center;
+      border-top: 1px solid var(--color-border);
+      color: var(--color-text-muted);
+      font-size: 0.85rem;
+    }
+    @media (max-width: 640px) {
+      .selling-grid {
+        grid-template-columns: 1fr;
+      }
+      .step {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .signup-form {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .signup-form input[type="email"] {
+        width: 100%;
+      }
+      .trust-bar {
+        flex-direction: column;
+        gap: var(--space-2);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <section class="hero container">
+    <h1 class="font-heading">Good Tools Are Invisible.<br><span style="color:var(--color-accent)">quiet</span> is one of them.</h1>
+    <p class="lead">A zero-config, always-on status bar for your dev environment. See your ports, processes, and git status without lifting a finger.</p>
+    
+    <!-- inline email form — no modal, no popup -->
+    <form id="signup-form" class="signup-form" action="https://formspree.io/f/your-form-id" method="POST">
+      <input type="email" name="email" placeholder="you@example.com" required autocomplete="email">
+      <button type="submit" class="btn btn-primary btn-lg">Get Early Access</button>
+    </form>
+    <div id="form-feedback" class="form-feedback" style="display:none;"></div>
+  </section>
+
+  <!-- Why This Matters -->
+  <section class="why-section container">
+    <h2 class="font-heading" style="text-align:center; margin-bottom:var(--space-4);">Why a Quiet Dev Environment Matters Right Now</h2>
+    <p>The HN post “Good Tools Are Invisible” (331 points, 149 comments) struck a nerve. Developers are exhausted by noisy, bloated tools that demand attention. Every new framework, every AI assistant, every dashboard competes for a slice of your focus. The result? Tool fatigue. You spend more time configuring than creating.</p>
+    <p>Existing solutions like tmux, powerlevel10k, or iTerm2 status bars are powerful — but they require hours of dotfile tweaking. They’re not invisible; they’re demanding. And when you switch machines or teams, your setup breaks. The developer’s environment should be a calm, constant companion, not another project to maintain.</p>
+    <p>Now is the perfect moment. The community is actively discussing what “invisible” means. The signal is hot. Developers are ready for a tool that assumes what they need — ports, processes, git state — and shows it without being asked. <strong>quiet</strong> is that tool. No config. No learning curve. Just a single command that reads your project and gets out of your way.</p>
+  </section>
+
+  <!-- How It Works -->
+  <section class="how-section">
+    <div class="container">
+      <h2 class="font-heading" style="text-align:center; margin-bottom:var(--space-5);">How It Works</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h3>Install with one command</h3>
+            <p>Open your terminal and run <code>brew install quiet</code> (macOS). No dependencies, no config files, no environment setup. The binary is under 5 MB and works immediately on both Intel and Apple Silicon.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h3>Run <code>quiet</code> in any project</h3>
+            <p>Navigate to any Node, Python, Rust, or Go project and type <code>quiet</code>. It automatically inspects your <code>$PATH</code>, <code>$PWD</code>, running processes, and git status. In under 200ms, it prints a single-line status bar.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h3>See what matters, nothing else</h3>
+            <p>The output shows your project name, live dev server port (e.g., localhost:3000), current git branch with dirty file count, and language version. No noise. No popups. Just the facts you need to stay in flow.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Selling Points -->
+  <section class="selling-section container">
+    <h2 class="font-heading" style="text-align:center; margin-bottom:var(--space-5);">What You Get</h2>
+    <div class="selling-grid">
+      <div class="selling-card">
+        <div class="icon-wrap">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+          </svg>
+        </div>
+        <h3>Zero Config</h3>
+        <p>No <code>.quietrc</code>, no YAML, no environment variables to set. Just <code>brew install quiet</code> and you're done. It auto-detects your stack — Node, Python, Rust, Go — and adapts instantly. Your time is better spent building, not configuring.</p>
+      </div>
+      <div class="selling-card">
+        <div class="icon-wrap">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+          </svg>
+        </div>
+        <h3>Sees Everything</h3>
+        <p>Automatically detects running dev servers (port, process name), environment variables (opt-in), git branch and uncommitted changes, and language runtime version. One glance tells you exactly what's happening in your project.</p>
+      </div>
+      <div class="selling-card">
+        <div class="icon-wrap">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <polyline points="9 12 11 14 15 10"/>
+          </svg>
+        </div>
+        <h3>Stays Out of Your Way</h3>
+        <p>No popups, no notifications, no dashboard. Runs in your terminal or menu bar. It's invisible until you need it. The information is always there — but never demands your attention. Exactly how a good tool should behave.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Bar -->
+  <div class="trust-bar container">
+    <span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+      Join 500+ developers on the waitlist
+    </span>
+    <span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+      One-time $9.99 — no subscriptions
+    </span>
+    <span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      Open source & auditable
+    </span>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    © 2026 · <a href="https://www.aimfast.dev" style="color:var(--color-text-muted);text-decoration:none;">www.aimfast.dev</a>
+  </footer>
+
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      const form = document.getElementById('signup-form');
+      const feedback = document.getElementById('form-feedback');
+      const formData = new FormData(form);
+      
+      feedback.style
