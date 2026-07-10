@@ -2,15 +2,22 @@
 
 type DecisionData = {
   product_name?: string;
+  product_name_en?: string;
   one_liner?: string;
+  one_liner_en?: string;
   pricing?: string;
+  pricing_en?: string;
   validation_path?: string;
+  validation_path_en?: string;
   buyer?: string;
+  buyer_en?: string;
   why_not_others?: string;
+  why_not_others_en?: string;
 };
 
 type Props = {
   t: Record<string, string>;
+  lang: 'zh' | 'en';
   signal: {
     id: string;
     title: string;
@@ -32,7 +39,8 @@ type Props = {
   onAskAI?: () => void;
 };
 
-export function DecisionCard({ t, signal, decision, reportMd: _reportMd, date, loading, onAskAI }: Props) {
+export function DecisionCard({ t, lang, signal, decision, reportMd: _reportMd, date, loading, onAskAI }: Props) {
+  const isEn = lang === 'en';
   if (loading) {
     return (
       <div className="card card-full skeleton-card" aria-busy="true">
@@ -71,8 +79,8 @@ export function DecisionCard({ t, signal, decision, reportMd: _reportMd, date, l
       {/* ── Product / Signal Title ── */}
       {hasDecision ? (
         <>
-          <h3 className="decision-title">{decision.product_name}</h3>
-          <p className="decision-summary">{decision.one_liner}</p>
+          <h3 className="decision-title">{isEn && decision.product_name_en ? decision.product_name_en : decision.product_name}</h3>
+          <p className="decision-summary">{isEn && decision.one_liner_en ? decision.one_liner_en : decision.one_liner}</p>
         </>
       ) : (
         <>
@@ -84,8 +92,8 @@ export function DecisionCard({ t, signal, decision, reportMd: _reportMd, date, l
       {/* ── Evidence ── */}
       <div className="decision-section">
         <h4 className="decision-section-title">{t.decisionEvidence}</h4>
-        {hasDecision && decision.why_not_others ? (
-          <p className="decision-why-not">{decision.why_not_others}</p>
+        {hasDecision && (decision.why_not_others || decision.why_not_others_en) ? (
+          <p className="decision-why-not">{isEn && decision.why_not_others_en ? decision.why_not_others_en : decision.why_not_others}</p>
         ) : signal ? (
           <div className="evidence-list">
             <div className="evidence-item">
@@ -107,8 +115,8 @@ export function DecisionCard({ t, signal, decision, reportMd: _reportMd, date, l
       <div className="decision-section">
         <h4 className="decision-section-title">{t.decisionBuyer}</h4>
         <p className="decision-buyer-text">
-          {hasDecision && decision.buyer
-            ? decision.buyer
+          {hasDecision && (decision.buyer || decision.buyer_en)
+            ? (isEn && decision.buyer_en ? decision.buyer_en : decision.buyer)
             : t.decisionBuyerInferred || 'Independent developers and small teams facing this problem daily.'}
         </p>
       </div>
@@ -119,7 +127,9 @@ export function DecisionCard({ t, signal, decision, reportMd: _reportMd, date, l
           <h4 className="decision-section-title">{t.decisionPricing}</h4>
           <div className="decision-pricing">
             <span className="pricing-amount">
-              {hasDecision && decision.pricing ? decision.pricing : '$9.99'}
+              {hasDecision && (decision.pricing || decision.pricing_en)
+                ? (isEn && decision.pricing_en ? decision.pricing_en : decision.pricing)
+                : '$9.99'}
             </span>
             {!hasDecision && (
               <span className="pricing-unit">{t.decisionOneTime || 'one-time'}</span>
@@ -129,8 +139,8 @@ export function DecisionCard({ t, signal, decision, reportMd: _reportMd, date, l
         <div className="decision-col">
           <h4 className="decision-section-title">{t.decisionValidation}</h4>
           <p className="decision-validation-text">
-            {hasDecision && decision.validation_path
-              ? decision.validation_path
+            {hasDecision && (decision.validation_path || decision.validation_path_en)
+              ? (isEn && decision.validation_path_en ? decision.validation_path_en : decision.validation_path)
               : t.decisionValidationDefault || '2h MVP → post to signal source → measure response'}
           </p>
         </div>

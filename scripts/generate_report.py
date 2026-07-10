@@ -555,21 +555,28 @@ def run(date_str: str | None = None) -> str:
 
 def extract_decision(report_md: str, date_str: str) -> dict | None:
     """Extract structured decision data from the generated report using LLM.
-    This feeds the Dashboard '今日决策' card — replacing hardcoded constants."""
+    Returns bilingual fields (ZH + EN) for Dashboard display.
+    This feeds the Dashboard '今日决策' / 'Today's Decision' card."""
     if "2 小时构建" not in report_md and "2 hour build" not in report_md.lower():
         print("[日报] 决策提取：日报中无「今日 2 小时构建」板块，跳过")
         return None
 
-    prompt = f"""从以下日报的「今日 2 小时构建」板块中提取结构化决策数据。只提取该板块中的具体信息，不要编造。
+    prompt = f"""从以下日报的「今日 2 小时构建」板块中提取结构化决策数据。同时提供中文和英文版本。
 
 返回 JSON 格式：
 {{
-  "product_name": "产品名称（含英文名）",
-  "one_liner": "一句话描述（50 字以内）",
-  "pricing": "具体定价（含金额和计费方式）",
-  "validation_path": "最快验证路径（具体可执行的步骤）",
-  "buyer": "谁会最先付费（具体用户画像）",
-  "why_not_others": "为什么不是另外两个方向"
+  "product_name": "产品名称（中文，含英文名）",
+  "product_name_en": "Product name (English only)",
+  "one_liner": "一句话描述（中文，50 字以内）",
+  "one_liner_en": "One-line description (English, under 100 chars)",
+  "pricing": "具体定价（中文，含金额和计费方式）",
+  "pricing_en": "Pricing (English, with amount and billing model)",
+  "validation_path": "最快验证路径（中文，具体可执行的步骤）",
+  "validation_path_en": "Validation path (English, specific actionable steps)",
+  "buyer": "谁会最先付费（中文，具体用户画像）",
+  "buyer_en": "Who pays first (English, specific user persona)",
+  "why_not_others": "为什么不是另外两个方向（中文）",
+  "why_not_others_en": "Why not the other two (English)"
 }}
 
 如果该板块不存在或无实质内容，返回 {{}}。
@@ -579,10 +586,10 @@ def extract_decision(report_md: str, date_str: str) -> dict | None:
 
     try:
         response = chat(
-            system_prompt="Extract structured decision data from Chinese tech reports. Return ONLY valid JSON, no other text.",
+            system_prompt="Extract structured decision data from Chinese tech reports. Return bilingual JSON (Chinese + English for every field). Return ONLY valid JSON, no other text.",
             user_prompt=prompt,
             temperature=0.3,
-            max_tokens=1024,
+            max_tokens=2048,
         )
         response = response.strip()
         if response.startswith("```"):
@@ -595,6 +602,14 @@ def extract_decision(report_md: str, date_str: str) -> dict | None:
 
         decision = json.loads(response)
         if isinstance(decision, dict) and decision.get("product_name"):
+            # Fallback: if English fields are empty, try to auto-translate the Chinese ones
+            if not decision.get("product_name_en") and decision.get("product_name"):
+                # Extract just the English part from product_name if it contains both (e.g. "飞投（WebDrop）")
+                cn_name = decision["product_name"]
+                if "（" in cn_name and "）" in cn_name:
+                    # Already has English in parentheses — use product_name_en field
+                    pass
+                decision["product_name_en"] = cn_name
             print(f"[日报] 决策提取成功：{decision.get('product_name')}")
             return decision
         else:

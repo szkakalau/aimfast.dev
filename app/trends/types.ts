@@ -1,6 +1,7 @@
 export interface TrendTerm {
   id: string;
   canonical: string;
+  canonical_zh?: string;                // Chinese display name (empty for English-only terms)
   aliases: string[];
   first_seen: string;
   last_seen: string;

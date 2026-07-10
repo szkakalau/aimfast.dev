@@ -302,7 +302,7 @@ export function DashboardClient() {
           onSelectDate={() => {}}
         />
         <main className="dash-main">
-          <DecisionCard t={t} signal={null} decision={{}} reportMd="" date="--" loading />
+          <DecisionCard t={t} lang={lang} signal={null} decision={{}} reportMd="" date="--" loading />
           <CompetitorCard t={t} intel={null} targets={[]} loading />
           <SystemPulse t={t} history={[]} signalCount={0} topScore={0} crossPlatformCount={0} sourcesOnline={0} sourcesTotal={0} loading />
         </main>
@@ -345,6 +345,7 @@ export function DashboardClient() {
         {/* ── Card 1: Today's Decision ── */}
         <DecisionCard
           t={t}
+          lang={lang}
           signal={topSignal}
           decision={decision}
           reportMd={reportMd}

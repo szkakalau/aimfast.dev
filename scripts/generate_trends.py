@@ -121,13 +121,19 @@ def extract_terms_from_signals(signals: list[dict]) -> list[dict]:
 - Project: 值得关注的开源项目
 - HotTopic: 热门讨论话题
 
-返回格式（JSON array），每个元素包含 canonical、category、summary_zh（一句话中文摘要，说明为什么值得追踪）、summary_en（一句话英文摘要）。
+字段说明（每个元素必须包含以下 5 个字段）：
+- canonical: 英文术语名称（MUST be in English — 如果原始信号是中文，翻译为简洁的英文术语。如 "哒哒哒" → "Taptap Break Reminder"，"飞投" → "WebDrop LAN Transfer"。确保英文名自然、可读。）
+- canonical_zh: 中文术语名称（如果原始信号有中文名则保留，否则为空字符串）
+- category: 分类标签
+- summary_zh: 一句话中文摘要，说明为什么值得追踪
+- summary_en: 一句话英文摘要（必须填写！不可为空。如果原始信号是中文，翻译成英文。）
+
 只返回 JSON array，不要其他文字。
 
 Signals:
 {json.dumps(signal_summaries, ensure_ascii=False, indent=2)}"""
 
-    system_prompt = "You extract emerging themes from tech community signals — new concepts, technologies, products, and hot discussions. Focus on signals that appear across multiple sources, not one-off posts. Return only valid JSON array."
+    system_prompt = "You extract emerging themes from tech community signals — new concepts, technologies, products, and hot discussions. IMPORTANT: The 'canonical' field MUST be in English for every entry. If the original signal uses a Chinese name, translate it to a natural, readable English equivalent. The 'canonical_zh' field stores the Chinese name if one exists. Both 'summary_en' and 'summary_zh' are required — never leave summary_en empty. Return only valid JSON array."
 
     # Try LLM extraction
     try:
@@ -143,12 +149,69 @@ Signals:
                 response = response[:-3]
         terms = json.loads(response)
         if isinstance(terms, list) and len(terms) > 0 and isinstance(terms[0], dict):
+            # Post-process: ensure canonical is English
+            terms = _ensure_english_canonical(terms)
             return terms
     except Exception as e:
         print(f"  [trends] LLM extraction failed: {e}, falling back to keyword method")
 
     # Fallback: tag-based extraction
     return _extract_terms_keyword_fallback(signals)
+
+
+def _has_chinese(text: str) -> bool:
+    """Check if text contains Chinese characters."""
+    return any('一' <= c <= '鿿' or '㐀' <= c <= '䶿' for c in text)
+
+
+def _ensure_english_canonical(terms: list[dict]) -> list[dict]:
+    """Post-process: if canonical contains Chinese, translate to English via LLM."""
+    chinese_terms = [t for t in terms if _has_chinese(t.get("canonical", ""))]
+    if not chinese_terms:
+        return terms
+
+    print(f"  [trends] Found {len(chinese_terms)} Chinese canonical names, translating...")
+    try:
+        sys.path.insert(0, str(ROOT / "scripts"))
+        from llm_client import chat
+
+        chinese_names = [t["canonical"] for t in chinese_terms]
+        translate_prompt = f"""Translate these Chinese tech product/term names to concise, natural English equivalents.
+Return a JSON object mapping each Chinese name to its English translation.
+
+Chinese names:
+{json.dumps(chinese_names, ensure_ascii=False)}
+
+Example translations:
+- "哒哒哒" → "Taptap Break Reminder"
+- "飞投" → "WebDrop LAN Transfer"
+- "AI Agent 自编辑溯源问题" → "AI Agent Self-Editing Provenance"
+- "AI 编程工具作为招聘信号" → "AI Coding Tools as Hiring Signals"
+
+Return ONLY a JSON object: {{"chinese_name": "english translation", ...}}"""
+
+        response = chat(
+            "You are a translator specializing in Chinese→English tech terminology. Return only valid JSON.",
+            translate_prompt,
+        )
+        response = response.strip()
+        if response.startswith("```"):
+            response = response.split("\n", 1)[1]
+            if response.endswith("```"):
+                response = response[:-3]
+        translations = json.loads(response)
+
+        if isinstance(translations, dict):
+            for t in terms:
+                cn = t.get("canonical", "")
+                if cn in translations and translations[cn]:
+                    t["canonical_zh"] = cn  # Preserve original Chinese as canonical_zh
+                    t["canonical"] = translations[cn]
+                    print(f"  [trends]   Translated: '{cn}' → '{translations[cn]}'")
+    except Exception as e:
+        print(f"  [trends] Canonical translation failed: {e}, keeping original names")
+
+    return terms
 
 
 def _extract_terms_keyword_fallback(signals: list[dict]) -> list[dict]:
@@ -178,6 +241,7 @@ def _extract_terms_keyword_fallback(signals: list[dict]) -> list[dict]:
 
         terms.append({
             "canonical": tag.replace("-", " ").title(),
+            "canonical_zh": "",
             "category": "DevTools",
             "summary_zh": f"与 {tag} 相关的新兴趋势，今日出现在多个技术社区信源中。",
             "summary_en": f"An emerging trend related to {tag}, appearing across multiple tech community sources today.",
@@ -229,6 +293,14 @@ def merge_terms(existing: list[dict], extracted: list[dict], signals: list[dict]
             t["score"] = max(t["score"], compute_score_from_signals(
                 [s for s in signals if canonical.lower() in s.get("summary", "").lower()]
             ))
+            # Update canonical_zh if newly provided
+            cn_zh = extracted_term.get("canonical_zh", "").strip()
+            if cn_zh and not t.get("canonical_zh"):
+                t["canonical_zh"] = cn_zh
+            # Update summary_en if existing is empty
+            new_summary_en = extracted_term.get("summary_en", "").strip()
+            if new_summary_en and not t.get("summary_en"):
+                t["summary_en"] = new_summary_en
         else:
             # New term
             new_id = f"trend-{canonical.lower().replace(' ', '-')[:40]}"
@@ -246,6 +318,7 @@ def merge_terms(existing: list[dict], extracted: list[dict], signals: list[dict]
             new_term = {
                 "id": new_id,
                 "canonical": canonical,
+                "canonical_zh": extracted_term.get("canonical_zh", "").strip(),
                 "aliases": [],
                 "first_seen": today_str,
                 "last_seen": today_str,
@@ -269,14 +342,14 @@ def merge_terms(existing: list[dict], extracted: list[dict], signals: list[dict]
     return existing
 
 
-def generate_research_report(term: dict) -> bool:
-    """Generate a research report for a term via LLM. Returns True if successful."""
+def generate_research_report(term: dict) -> int:
+    """Generate research reports for a term via LLM — BOTH Chinese and English.
+    Returns count of new files written (0-2)."""
     slug = term["id"].replace("trend-", "")
-    output_path = CONTENT_DIR / f"{slug}.md"
+    zh_path = CONTENT_DIR / f"{slug}.md"
+    en_path = CONTENT_DIR / f"{slug}-en.md"
 
-    # Skip if already generated and term hasn't changed stage
-    if output_path.exists():
-        return False
+    written = 0
 
     # Load prompt template
     template_path = TEMPLATES_DIR / "trend_research_prompt.md"
@@ -285,30 +358,67 @@ def generate_research_report(term: dict) -> bool:
     else:
         template = _default_research_prompt()
 
-    user_prompt = template.replace("{canonical}", term["canonical"])
-    user_prompt = user_prompt.replace("{category}", term.get("category", "General"))
-    user_prompt = user_prompt.replace("{summary_zh}", term.get("summary_zh", ""))
-    user_prompt = user_prompt.replace("{summary_en}", term.get("summary_en", ""))
-    user_prompt = user_prompt.replace("{sources}", ", ".join(term.get("sources", [])))
-    user_prompt = user_prompt.replace("{first_seen}", term.get("first_seen", ""))
-    user_prompt = user_prompt.replace("{stage}", term.get("stage", "nascent"))
-    user_prompt = user_prompt.replace("{score}", str(term.get("score", 0)))
-    user_prompt = user_prompt.replace("{source_count}", str(term.get("source_count", 0)))
-    user_prompt = user_prompt.replace("{total_mentions}", str(term.get("total_mentions", 0)))
+    # ── Chinese report ──
+    if not zh_path.exists():
+        user_prompt_zh = template.replace("{canonical}", term["canonical"])
+        user_prompt_zh = user_prompt_zh.replace("{category}", term.get("category", "General"))
+        user_prompt_zh = user_prompt_zh.replace("{summary_zh}", term.get("summary_zh", ""))
+        user_prompt_zh = user_prompt_zh.replace("{summary_en}", term.get("summary_en", ""))
+        user_prompt_zh = user_prompt_zh.replace("{sources}", ", ".join(term.get("sources", [])))
+        user_prompt_zh = user_prompt_zh.replace("{first_seen}", term.get("first_seen", ""))
+        user_prompt_zh = user_prompt_zh.replace("{stage}", term.get("stage", "nascent"))
+        user_prompt_zh = user_prompt_zh.replace("{score}", str(term.get("score", 0)))
+        user_prompt_zh = user_prompt_zh.replace("{source_count}", str(term.get("source_count", 0)))
+        user_prompt_zh = user_prompt_zh.replace("{total_mentions}", str(term.get("total_mentions", 0)))
 
-    system_prompt = "You write technical trend research reports for indie developers. Use Chinese (zh-CN)."
+        system_prompt_zh = "You write technical trend research reports for indie developers. Use Chinese (zh-CN)."
 
-    try:
-        sys.path.insert(0, str(ROOT / "scripts"))
-        from llm_client import chat
+        try:
+            sys.path.insert(0, str(ROOT / "scripts"))
+            from llm_client import chat
 
-        report = chat(system_prompt, user_prompt)
-        CONTENT_DIR.mkdir(parents=True, exist_ok=True)
-        output_path.write_text(report, encoding="utf-8")
-        return True
-    except Exception as e:
-        print(f"  [trends] Failed to generate report for {term['canonical']}: {e}")
-        return False
+            report_zh = chat(system_prompt_zh, user_prompt_zh)
+            CONTENT_DIR.mkdir(parents=True, exist_ok=True)
+            zh_path.write_text(report_zh, encoding="utf-8")
+            written += 1
+            print(f"  [trends] Generated ZH research report for {term['canonical']}")
+        except Exception as e:
+            print(f"  [trends] Failed to generate ZH report for {term['canonical']}: {e}")
+    else:
+        # Still mark as "already exists" for clarity
+        pass
+
+    # ── English report ──
+    if not en_path.exists():
+        en_system = "You write technical trend research reports for indie developers. Use natural, idiomatic English. Target audience: indie hackers, SaaS founders, and software developers worldwide."
+
+        en_template = template.replace(
+            "Write a comprehensive trend research report",
+            "Write a comprehensive trend research report in English"
+        )
+        user_prompt_en = en_template.replace("{canonical}", term["canonical"])
+        user_prompt_en = user_prompt_en.replace("{category}", term.get("category", "General"))
+        user_prompt_en = user_prompt_en.replace("{summary_zh}", term.get("summary_zh", ""))
+        user_prompt_en = user_prompt_en.replace("{summary_en}", term.get("summary_en", ""))
+        user_prompt_en = user_prompt_en.replace("{sources}", ", ".join(term.get("sources", [])))
+        user_prompt_en = user_prompt_en.replace("{first_seen}", term.get("first_seen", ""))
+        user_prompt_en = user_prompt_en.replace("{stage}", term.get("stage", "nascent"))
+        user_prompt_en = user_prompt_en.replace("{score}", str(term.get("score", 0)))
+        user_prompt_en = user_prompt_en.replace("{source_count}", str(term.get("source_count", 0)))
+        user_prompt_en = user_prompt_en.replace("{total_mentions}", str(term.get("total_mentions", 0)))
+
+        try:
+            sys.path.insert(0, str(ROOT / "scripts"))
+            from llm_client import chat
+
+            report_en = chat(en_system, user_prompt_en)
+            en_path.write_text(report_en, encoding="utf-8")
+            written += 1
+            print(f"  [trends] Generated EN research report for {term['canonical']}")
+        except Exception as e:
+            print(f"  [trends] Failed to generate EN report for {term['canonical']}: {e}")
+
+    return written
 
 
 def generate_quick_brief(term: dict) -> int:
@@ -497,21 +607,27 @@ def main():
     for term in updated_terms:
         score = term.get("score", 0)
         slug = term["id"].replace("trend-", "")
-        report_path = CONTENT_DIR / f"{slug}.md"
+        zh_path = CONTENT_DIR / f"{slug}.md"
+        en_path = CONTENT_DIR / f"{slug}-en.md"
 
         if score >= 60:
-            if not report_path.exists():
-                print(f"[trends] Generating research report for {term['canonical']} (score={score})...")
+            # Generate if either ZH or EN report is missing
+            if not zh_path.exists() or not en_path.exists():
+                missing = []
+                if not zh_path.exists():
+                    missing.append("ZH")
+                if not en_path.exists():
+                    missing.append("EN")
+                print(f"[trends] Generating research report for {term['canonical']} (score={score}, missing: {', '.join(missing)})...")
                 if not args.dry_run:
-                    if generate_research_report(term):
-                        reports_generated += 1
+                    reports_generated += generate_research_report(term)
         elif score >= 30:
-            if not report_path.exists():
+            if not zh_path.exists():
                 print(f"[trends] Generating quick brief for {term['canonical']} (score={score})...")
                 if not args.dry_run:
                     briefs_generated += generate_quick_brief(term)
 
-    print(f"[trends] Generated {reports_generated} research reports + {briefs_generated} quick briefs (ZH+EN)")
+    print(f"[trends] Generated {reports_generated} report files + {briefs_generated} quick brief files (ZH+EN)")
 
     # Save
     trend_data["terms"] = updated_terms
