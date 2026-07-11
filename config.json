@@ -1,5 +1,5 @@
 {
-  "_comment": "AimFast.Dev — 配置文件 | 版本 v2.2 — 新增 problem_clarity 维度",
+  "_comment": "AimFast.Dev — v2.3 第一层信号源扩展: changelogs + Google News + GitHub Releases。RSS feed 仅保留已验证可用的 7 个源；Anthropic/Cursor/Midjourney/Replit/ElevenLabs 无可用 RSS，通过 GitHub Releases 或 Google News 覆盖。",
   "api_keys": {
     "producthunt": {
       "client_id": "YOUR_PH_CLIENT_ID",
@@ -81,8 +81,8 @@
         "key": "x",
         "source": "GraphQL / bird_x",
         "priority": "P1",
-        "enabled": false,
-        "_note": "暂禁用 — 需 AUTH_TOKEN+CT0 认证"
+        "enabled": true,
+        "_note": "v2.3 启用 — Tier 3 零认证兜底 (公开 trends)，有 Firefox X 登录时自动升级到 Tier 1"
       }
     ],
     "domestic": [
@@ -303,5 +303,38 @@
       ],
       "reading_time_minutes": 5
     }
-  }
+  },
+  "product_changelogs": [
+    {"name": "OpenAI",           "key": "openai",           "feed": "https://openai.com/blog/rss.xml"},
+    {"name": "Google AI Blog",   "key": "google-ai",        "feed": "https://blog.google/technology/ai/rss/"},
+    {"name": "Apple ML",         "key": "apple-ml",         "feed": "https://machinelearning.apple.com/rss.xml"},
+    {"name": "Cloudflare",       "key": "cloudflare",       "feed": "https://blog.cloudflare.com/rss/"},
+    {"name": "Vercel",           "key": "vercel",           "feed": "https://vercel.com/blog/feed.xml"},
+    {"name": "Supabase",         "key": "supabase",         "feed": "https://supabase.com/rss.xml"},
+    {"name": "HuggingFace Blog", "key": "huggingface-blog", "feed": "https://huggingface.co/blog/feed.xml"}
+  ],
+  "github_release_repos": [
+    "openai/openai-python",
+    "anthropics/anthropic-sdk-python",
+    "vercel/ai-chatbot",
+    "supabase/supabase",
+    "google-gemini/generative-ai-python",
+    "cloudflare/workers-sdk",
+    "microsoft/TypeScript",
+    "facebook/react",
+    "shadcn-ui/ui",
+    "langchain-ai/langchain",
+    "ollama/ollama",
+    "continuedev/continue",
+    "microsoft/vscode",
+    "n8n-io/n8n",
+    "mastra-ai/mastra"
+  ],
+  "googlenews_queries": [
+    "AI developer tools launch",
+    "open source AI release",
+    "indie hacker SaaS",
+    "YC startup",
+    "new API product"
+  ]
 }

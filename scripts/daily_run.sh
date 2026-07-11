@@ -88,11 +88,14 @@ COLLECTORS=(
     "ArXiv:collect_arxiv"
     "豆瓣:collect_douban"
     # "小红书:collect_xiaohongshu"  # 暂禁用 — 未认证模式数据量有限
-    # "X/Twitter:collect_x"  # 暂禁用 — 需 AUTH_TOKEN+CT0
+    "X/Twitter:collect_x"
+    "Product Changelogs:collect_changelogs"
+    "Google News:collect_googlenews"
+    "GitHub Releases:collect_github_releases"
 )
 
 # C-end collectors are non-blocking — they may fail due to rate limits or missing auth
-C_END_COLLECTORS=("Reddit Consumer" "豆瓣" "小红书")
+C_END_COLLECTORS=("Reddit Consumer" "豆瓣" "小红书" "X/Twitter" "Product Changelogs" "Google News" "GitHub Releases")
 
 for entry in "${COLLECTORS[@]}"; do
     name="${entry%%:*}"
@@ -108,6 +111,61 @@ for entry in "${COLLECTORS[@]}"; do
         fi
     fi
 done
+
+# ═══ Step 1.5: Term Extraction (NLP Entity Extraction + Cross-Source Term DB) ═══
+
+log ""
+log "--- Step 1.5: Term Extraction (LLM NER + Cross-Source DB) ---"
+
+if $PYTHON -m scripts.extract_terms 2>&1; then
+    log "  [TermExtract] OK"
+else
+    log "  [TermExtract] WARN (non-fatal — term index not updated)"
+fi
+
+# ═══ Step 1.6: Term Normalization (Entity Dedup + Canonical Mapping) ═══
+
+log ""
+log "--- Step 1.6: Term Normalization (Canonical Mapping) ---"
+
+if $PYTHON -m scripts.normalize_terms 2>&1; then
+    log "  [Norm] OK"
+else
+    log "  [Norm] WARN (non-fatal — normalization skipped)"
+fi
+
+# ═══ Step 1.7: Term Lifecycle Classification (Age → Stage Mapping) ═══
+
+log ""
+log "--- Step 1.7: Term Lifecycle (Age → Nascent/Emergent/Validating/Rising) ---"
+
+if $PYTHON -m scripts.classify_terms 2>&1; then
+    log "  [Stages] OK"
+else
+    log "  [Stages] WARN (non-fatal)"
+fi
+
+# ═══ Step 1.8: Term Scoring (Multi-Factor Score → Visibility Ranking) ═══
+
+log ""
+log "--- Step 1.8: Term Scoring (source_count + growth + authority + mentions + freshness) ---"
+
+if $PYTHON -m scripts.score_terms 2>&1; then
+    log "  [Scores] OK"
+else
+    log "  [Scores] WARN (non-fatal)"
+fi
+
+# ═══ Step 1.9: Term Research Reports (AI-Generated Deep Dive for High-Score Terms) ═══
+
+log ""
+log "--- Step 1.9: Term Research Reports (12-section opportunity analysis) ---"
+
+if $PYTHON -m scripts.generate_term_research 2>&1; then
+    log "  [Research] OK"
+else
+    log "  [Research] WARN (non-fatal)"
+fi
 
 # ─── Step 2: Signal Processing ───
 
