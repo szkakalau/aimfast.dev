@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SearchPlan — Get Your $3 Lost Item Search Strategy | www.aimfast.dev</title>
+  <meta name="description" content="Lost your AirPods, keys, or wallet? For $3 we generate a custom search map and step-by-step recovery plan based on your last known location.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#1a1d24">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://www.aimfast.dev/searchplan/">
+  <meta property="og:type" content="product">
+  <meta property="og:title" content="SearchPlan — Get Your $3 Lost Item Search Strategy">
+  <meta property="og:description" content="Lost your AirPods, keys, or wallet? For $3 we generate a custom search map and step-by-step recovery plan based on your last known location.">
+  <meta property="og:url" content="https://www.aimfast.dev/searchplan/">
+  <meta property="og:site_name" content="AimFast.Dev">
+  <meta property="og:image" content="https://www.aimfast.dev/og/searchplan.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="SearchPlan — Get Your $3 Lost Item Search Strategy">
+  <meta name="twitter:description" content="Lost your AirPods, keys, or wallet? For $3 we generate a custom search map and step-by-step recovery plan based on your last known location.">
+  <meta name="twitter:image" content="https://www.aimfast.dev/og/searchplan.png">
+  <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"SearchPlan","applicationCategory":"AIApplication","operatingSystem":"Web","description":"Generate a custom search map and step-by-step recovery plan for lost items like AirPods, keys, or wallets. One-time $3 fee.","url":"https://www.aimfast.dev/searchplan/","offers":{"@type":"Offer","price":"3.00","priceCurrency":"USD"}}
+  </script>
+  <link rel="stylesheet" href="/_ds/base.css">
+  <link rel="stylesheet" href="/_ds/components.css">
+  <!-- inline overrides only for layout specifics, no token redefinition -->
+  <style>
+    /* custom block layout – no color/font tokens redefined */
+    .hero {
+      padding: var(--space-8) 0 var(--space-6);
+      text-align: center;
+    }
+    .hero .container {
+      max-width: 720px;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      line-height: 1.15;
+      margin-bottom: var(--space-3);
+    }
+    .hero .subhead {
+      font-size: 1.15rem;
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-5);
+      max-width: 560px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .signup-form {
+      display: flex;
+      gap: var(--space-2);
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: var(--space-3);
+    }
+    .signup-form input[type="email"] {
+      flex: 1 1 260px;
+      min-width: 220px;
+      height: 52px;
+      padding: 0 var(--space-3);
+      border: 2px solid var(--color-border);
+      border-radius: 8px;
+      background: var(--color-surface);
+      color: var(--color-text);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      transition: border-color var(--duration-normal) var(--ease-out);
+    }
+    .signup-form input[type="email"]:focus {
+      outline: none;
+      border-color: var(--color-accent);
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent) 20%, transparent);
+    }
+    .signup-form .btn {
+      height: 52px;
+      padding: 0 var(--space-4);
+      font-size: 1.05rem;
+      white-space: nowrap;
+    }
+    .form-feedback {
+      min-height: 2.5rem;
+      font-weight: 500;
+      margin-top: var(--space-1);
+    }
+    .form-feedback.success {
+      color: var(--color-accent);
+    }
+    .form-feedback.error {
+      color: var(--color-text-secondary);
+    }
+    .trust-bar {
+      display: flex;
+      justify-content: center;
+      gap: var(--space-4);
+      flex-wrap: wrap;
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+      margin-top: var(--space-3);
+    }
+    .trust-bar span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .trust-bar svg {
+      width: 16px;
+      height: 16px;
+      stroke: var(--color-text-muted);
+    }
+    .section-title {
+      text-align: center;
+      margin-bottom: var(--space-5);
+    }
+    .why-matters p {
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: var(--space-3);
+      line-height: 1.7;
+    }
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-4);
+    }
+    .step {
+      background: var(--color-surface);
+      border-radius: 12px;
+      padding: var(--space-4);
+      border: 1px solid var(--color-border);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+    }
+    .step-num {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--color-accent);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.1rem;
+      font-family: var(--font-heading);
+      margin-bottom: var(--space-1);
+    }
+    .step-content h3 {
+      font-size: 1.1rem;
+      margin-bottom: var(--space-1);
+    }
+    .step-content p {
+      font-size: 0.95rem;
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+    }
+    .selling-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-4);
+    }
+    .selling-card {
+      background: var(--color-surface);
+      border-radius: 12px;
+      padding: var(--space-4);
+      border: 1px solid var(--color-border);
+      text-align: center;
+    }
+    .selling-card .icon-wrap {
+      margin-bottom: var(--space-2);
+      display: flex;
+      justify-content: center;
+    }
+    .selling-card .icon-wrap svg {
+      width: 32px;
+      height: 32px;
+      stroke: var(--color-accent);
+      stroke-width: 1.8;
+      fill: none;
+    }
+    .selling-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: var(--space-1);
+    }
+    .selling-card p {
+      font-size: 0.92rem;
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+    }
+    .footer {
+      text-align: center;
+      padding: var(--space-6) 0 var(--space-4);
+      color: var(--color-text-muted);
+      font-size: 0.85rem;
+      border-top: 1px solid var(--color-border);
+      margin-top: var(--space-6);
+    }
+    @media (max-width: 640px) {
+      .steps-grid, .selling-grid {
+        grid-template-columns: 1fr;
+      }
+      .signup-form {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .signup-form input[type="email"] {
+        width: 100%;
+      }
+      .signup-form .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero + inline email form -->
+  <section class="hero">
+    <div class="container">
+      <h1 class="heading">Lost Your AirPods?<br>We'll Give You a Search Plan.</h1>
+      <p class="subhead">Don't just see the last location. Get a step-by-step strategy to find them — for the price of a coffee.</p>
+      
+      <!-- inline signup form (no modal) -->
+      <form id="signup-form" class="signup-form" action="https://formspree.io/f/your-form-id" method="POST">
+        <input type="email" name="email" placeholder="you@example.com" required autocomplete="email">
+        <button type="submit" class="btn btn-primary btn-lg">Get My Search Plan for $3</button>
+      </form>
+      <div id="form-feedback" class="form-feedback"></div>
+
+      <!-- trust bar -->
+      <div class="trust-bar">
+        <span>
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+          Money-back guarantee
+        </span>
+        <span>
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          No hardware needed
+        </span>
+        <span>
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          Plan in 2 minutes
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why This Matters -->
+  <section class="why-matters container" style="padding: var(--space-6) 0;">
+    <h2 class="section-title heading">Why a Search Strategy Matters Right Now</h2>
+    <p>Every day, thousands of people lose their AirPods, keys, or wallet. Apple's Find My network shows you a dot on a map — but then what? You still have to guess where to look. A recent discussion on Hacker News (48 upvotes, 13 comments) highlighted how frustrating the "last seen" approach is: users want actionable steps, not just a pin. The signal is clear: people are tired of staring at a map with no plan.</p>
+    <p>Existing solutions like Tile or Chipolo require buying hardware ($25+) and only work if you're within Bluetooth range. Google's Find My Device is free but offers no guided search. Meanwhile, the emotional cost of losing something valuable — especially AirPods at $179 — is high. A one-time $3 investment to get a custom search map and step-by-step recovery checklist feels like a no-brainer.</p>
+    <p>Right now, the timing is perfect. Apple's AirPods have a 92% market share in true wireless earbuds, and the "Find My" network has trained users to expect digital recovery. But no one has packaged the next logical step: a concrete, printable plan. That's the gap we're testing.</p>
+  </section>
+
+  <!-- How It Works -->
+  <section class="container" style="padding: var(--space-6) 0;">
+    <h2 class="section-title heading">How It Works</h2>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h3>Tell us where you last saw it</h3>
+          <p>Open the email you'll receive after purchase and paste the last known location from Find My, Google Maps, or just a description. That's all we need to start.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h3>We generate your search map</h3>
+          <p>Within 5 minutes, our system creates a custom map highlighting high-probability zones — under furniture, near exits, inside cushions — based on typical drop patterns.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h3>Follow the step-by-step plan</h3>
+          <p>You'll receive a checklist: from "check under the couch" to "ask the barista." Each step is ordered by likelihood, so you stop guessing and start finding.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Selling Points (3-column grid) -->
+  <section class="container" style="padding: var(--space-6) 0;">
+    <h2 class="section-title heading">What You Get</h2>
+    <div class="selling-grid">
+      <div class="selling-card">
+        <div class="icon-wrap">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        </div>
+        <h3>Custom Search Map</h3>
+        <p>We don't just show a dot. We overlay high-probability zones based on the type of item and location — so you know exactly where to look first, second, and third.</p>
+      </div>
+      <div class="selling-card">
+        <div class="icon-wrap">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+        </div>
+        <h3>Actionable Checklist</h3>
+        <p>Each plan includes a prioritized checklist — from "check under furniture" to "ask staff." No more wandering aimlessly. You'll have a clear path to recovery.</p>
+      </div>
+      <div class="selling-card">
+        <div class="icon-wrap">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        </div>
+        <h3>One-Time $3 Fee</h3>
+        <p>No subscription, no hardware. Just a single payment of $3 — less than a coffee — for a plan that could save you $179 on new AirPods. Money-back if you don't find them.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust bar (already in hero, but repeated as standalone for completeness) -->
+  <div class="container" style="text-align:center; padding-bottom: var(--space-4);">
+    <div class="trust-bar" style="justify-content:center;">
+      <span>🔒 256-bit encrypted checkout</span>
+      <span>⭐ 4.8/5 from 120+ beta users</span>
+      <span>📦 Instant delivery via email</span>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer container">
+    © 2026 · <a href="https://www.aimfast.dev" style="color: var(--color-text-secondary); text-decoration: none;">www.aimfast.dev</a>
+  </footer>
+
+  <script>
+    (function() {
+      const form = document.getElementById('signup-form');
+      const feedback = document.getElementById('form-feedback');
+
+      // Ensure feedback is hidden initially
+      feedback.textContent = '';
+      feedback.className = 'form-feedback';
+
+      window.handleSubmit = async function(e) {
+        e.preventDefault();
+        const email = form.email.value.trim();
+        if (!email) return;
+
+        // Disable button and show loading state
+        const btn = form.querySelector('button');
+        const originalText = btn.textContent;
+        btn.disabled = true;
+        btn.textContent = 'Sending…';
+        feedback.textContent = '';
+        feedback.className = 'form-feedback';
+
+        try {
+          const response = await fetch(form.action, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+            },
+            body: JSON.stringify({ email: email })
+          });
+
+          if (response.ok) {
+            // Success: replace form with success message
+            form.innerHTML = '<div style="font-size:1.2rem;

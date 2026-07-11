@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-10T12:52:07.891121+08:00",
+  "updated_at": "2026-07-12T07:37:45.100026+08:00",
   "terms": [
     {
       "id": "trend-claude-agent-sdk",
@@ -388,6 +388,34 @@
       "opportunity_summary_zh": "Vibe Coding 是早期趋势，增长高、竞争低，适合独立开发者构建简化AI驱动原型的工具。市场萌芽但开发者对快速迭代的需求信号强烈。早期进入可建立品牌并占据SEO优势。"
     },
     {
+      "id": "trend-muse-spark-1.1",
+      "canonical": "Muse Spark 1.1",
+      "canonical_zh": "",
+      "aliases": [],
+      "first_seen": "2026-07-12",
+      "last_seen": "2026-07-12",
+      "stage": "nascent",
+      "score": 56,
+      "source_count": 2,
+      "total_mentions": 4,
+      "sources": [
+        "googlenews",
+        "vercel"
+      ],
+      "growth_pct": 100,
+      "category": "Product",
+      "tags": [
+        "googlenews",
+        "model",
+        "agent",
+        "launch",
+        "ai"
+      ],
+      "summary_zh": "Meta 发布了 Muse Spark 1.1 并推出付费开发者 API，标志着 AI 图像生成平台商业化的重要进展。",
+      "summary_en": "Meta's release of Muse Spark 1.1 with a paid developer API marks a significant step in the commercialization of AI image generation platforms.",
+      "research_md_path": "content/trends/muse-spark-1.1.md"
+    },
+    {
       "id": "trend-homegames",
       "canonical": "Homegames",
       "aliases": [],
@@ -484,6 +512,32 @@
       "research_md_path": "content/trends/exploitarium.md"
     },
     {
+      "id": "trend-reverse-engineering-web-apps-into-agent-tools",
+      "canonical": "Reverse-Engineering Web Apps into Agent Tools",
+      "canonical_zh": "",
+      "aliases": [],
+      "first_seen": "2026-07-12",
+      "last_seen": "2026-07-12",
+      "stage": "nascent",
+      "score": 49,
+      "source_count": 1,
+      "total_mentions": 1,
+      "sources": [
+        "hn"
+      ],
+      "growth_pct": 100,
+      "category": "TechConcept",
+      "tags": [
+        "story",
+        "author_pancomplex",
+        "story_48847834",
+        "show_hn"
+      ],
+      "summary_zh": "一种将现有 Web 应用逆向工程转化为 AI Agent 工具的方法论，正在成为 Agent 工具链构建的新范式。",
+      "summary_en": "A methodology for reverse-engineering existing web applications into tools for AI agents, emerging as a new paradigm in agent toolchain construction.",
+      "research_md_path": "content/trends/reverse-engineering-web-apps-into-agent-tools.md"
+    },
+    {
       "id": "trend-openwiki",
       "canonical": "OpenWiki",
       "aliases": [],
@@ -578,6 +632,129 @@
       "research_md_path": "content/trends/open-source-vacuum-robot.md"
     },
     {
+      "id": "trend-runloom",
+      "canonical": "Runloom",
+      "canonical_zh": "",
+      "aliases": [],
+      "first_seen": "2026-07-12",
+      "last_seen": "2026-07-12",
+      "stage": "nascent",
+      "score": 48,
+      "source_count": 1,
+      "total_mentions": 1,
+      "sources": [
+        "hn"
+      ],
+      "growth_pct": 100,
+      "category": "DevTools",
+      "tags": [
+        "story",
+        "show_hn",
+        "author_Uptrenda",
+        "story_48859387"
+      ],
+      "summary_zh": "一个为 Python 自由线程模式实现 Go 风格协程的开源库，引起了开发者社区的广泛讨论。",
+      "summary_en": "An open-source library bringing Go-style coroutines to Python's free-threaded mode, generating significant discussion in the developer community.",
+      "research_md_path": "content/trends/runloom.md"
+    },
+    {
+      "id": "trend-livekit-realtime-voice-agents",
+      "canonical": "LiveKit Realtime Voice Agents",
+      "canonical_zh": "",
+      "aliases": [],
+      "first_seen": "2026-07-12",
+      "last_seen": "2026-07-12",
+      "stage": "nascent",
+      "score": 48,
+      "source_count": 1,
+      "total_mentions": 1,
+      "sources": [
+        "github-releases"
+      ],
+      "growth_pct": 100,
+      "category": "AI/LLM",
+      "tags": [
+        "breaking-change",
+        "github-release",
+        "release"
+      ],
+      "summary_zh": "Mastra 推出的新包，可将 Agent 转变为实时语音 Agent，代表 AI Agent 交互方式的重要演进方向。",
+      "summary_en": "A new Mastra package that transforms agents into real-time voice agents, representing a key evolution in AI agent interaction.",
+      "research_md_path": "content/trends/livekit-realtime-voice-agents.md"
+    },
+    {
+      "id": "trend-colibri",
+      "canonical": "Colibri",
+      "canonical_zh": "",
+      "aliases": [],
+      "first_seen": "2026-07-12",
+      "last_seen": "2026-07-12",
+      "stage": "nascent",
+      "score": 48,
+      "source_count": 1,
+      "total_mentions": 1,
+      "sources": [
+        "github"
+      ],
+      "growth_pct": 100,
+      "category": "Project",
+      "tags": [
+        "fresh",
+        "C"
+      ],
+      "summary_zh": "一个用纯 C 语言编写的超轻量推理引擎，可在 25GB 内存的消费级机器上运行 744B 参数的 MoE 模型，关注度极高。",
+      "summary_en": "A ultra-lightweight inference engine in pure C that runs a 744B-parameter MoE model on a 25GB consumer machine, gaining massive attention.",
+      "research_md_path": "content/trends/colibri.md"
+    },
+    {
+      "id": "trend-wloc",
+      "canonical": "wloc",
+      "canonical_zh": "",
+      "aliases": [],
+      "first_seen": "2026-07-12",
+      "last_seen": "2026-07-12",
+      "stage": "nascent",
+      "score": 48,
+      "source_count": 1,
+      "total_mentions": 1,
+      "sources": [
+        "github"
+      ],
+      "growth_pct": 100,
+      "category": "Project",
+      "tags": [
+        "JavaScript",
+        "fresh"
+      ],
+      "summary_zh": "一个可修改 Apple 网络定位返回坐标的开源工具，支持多种代理工具，在 GitHub 上获得了极高关注。",
+      "summary_en": "An open-source tool that modifies Apple's network location coordinates, supporting various proxy tools and gaining massive GitHub attention.",
+      "research_md_path": "content/trends/wloc.md"
+    },
+    {
+      "id": "trend-torlink",
+      "canonical": "torlink",
+      "canonical_zh": "",
+      "aliases": [],
+      "first_seen": "2026-07-12",
+      "last_seen": "2026-07-12",
+      "stage": "nascent",
+      "score": 48,
+      "source_count": 1,
+      "total_mentions": 1,
+      "sources": [
+        "github"
+      ],
+      "growth_pct": 100,
+      "category": "Project",
+      "tags": [
+        "fresh",
+        "TypeScript"
+      ],
+      "summary_zh": "一个在终端中运行的种子文件查找和下载工具，以零配置和简洁设计获得了大量关注。",
+      "summary_en": "A sleek, zero-setup torrent finder and downloader that lives in the terminal, gaining significant attention for its minimalist design.",
+      "research_md_path": "content/trends/torlink.md"
+    },
+    {
       "id": "trend-pet-reminder",
       "canonical": "Pet Reminder",
       "aliases": [],
@@ -603,6 +780,32 @@
       "research_md_path": "content/trends/pet-reminder.md"
     },
     {
+      "id": "trend-developers-alienated-by-llms",
+      "canonical": "Developers Alienated by LLMs",
+      "canonical_zh": "被 LLM 疏远的开发者",
+      "aliases": [],
+      "first_seen": "2026-07-12",
+      "last_seen": "2026-07-12",
+      "stage": "nascent",
+      "score": 46,
+      "source_count": 1,
+      "total_mentions": 1,
+      "sources": [
+        "hn"
+      ],
+      "growth_pct": 100,
+      "category": "HotTopic",
+      "tags": [
+        "story",
+        "story_48857085",
+        "author_sph",
+        "ask_hn"
+      ],
+      "summary_zh": "Hacker News 上关于开发者因 LLM 感到疏远是否需要支持小组的讨论，反映了 AI 时代开发者的焦虑情绪。",
+      "summary_en": "A discussion on Hacker News about whether developers alienated by LLMs need a support group, reflecting developer anxiety in the AI era.",
+      "research_md_path": "content/trends/developers-alienated-by-llms.md"
+    },
+    {
       "id": "trend-langgraph-for-swift",
       "canonical": "LangGraph for Swift",
       "aliases": [],
@@ -626,6 +829,33 @@
       "summary_zh": "为Swift语言实现的LangGraph库。",
       "summary_en": "A LangGraph implementation for the Swift programming language.",
       "research_md_path": "content/trends/langgraph-for-swift.md"
+    },
+    {
+      "id": "trend-lightwell",
+      "canonical": "Lightwell",
+      "canonical_zh": "",
+      "aliases": [],
+      "first_seen": "2026-07-12",
+      "last_seen": "2026-07-12",
+      "stage": "nascent",
+      "score": 41,
+      "source_count": 1,
+      "total_mentions": 2,
+      "sources": [
+        "googlenews"
+      ],
+      "growth_pct": 100,
+      "category": "DevTools",
+      "tags": [
+        "googlenews",
+        "platform",
+        "open-source",
+        "launch",
+        "ai"
+      ],
+      "summary_zh": "IBM 和 Red Hat 联合推出的 AI 驱动的开源安全平台，旨在保护开源代码免受 AI 攻击。",
+      "summary_en": "An AI-powered open-source security platform launched by IBM and Red Hat to defend open-source code from AI attacks.",
+      "research_md_path": "content/trends/lightwell.md"
     },
     {
       "id": "trend-taptap-break-reminder",
@@ -972,6 +1202,82 @@
       "summary_zh": "飞投的非大陆地区名称，功能相同，专注于跨平台文件共享。",
       "summary_en": "A cross-platform LAN file sharing tool — no app installation needed, works directly through the browser.",
       "research_md_path": "content/trends/webdrop.md"
+    },
+    {
+      "id": "trend-distributed-git-network-for-ai-agents",
+      "canonical": "Distributed Git Network for AI Agents",
+      "canonical_zh": "面向 AI Agent 的分布式 Git 网络",
+      "aliases": [],
+      "first_seen": "2026-07-12",
+      "last_seen": "2026-07-12",
+      "stage": "nascent",
+      "score": 29,
+      "source_count": 1,
+      "total_mentions": 1,
+      "sources": [
+        "googlenews"
+      ],
+      "growth_pct": 100,
+      "category": "Infra",
+      "tags": [
+        "googlenews",
+        "agent",
+        "launch",
+        "ai",
+        "news"
+      ],
+      "summary_zh": "前 GitHub CEO 推出的为 AI Agent 设计的分布式 Git 网络，可能重塑 Agent 代码协作的基础设施。",
+      "summary_en": "A distributed Git network for AI agents launched by a former GitHub CEO, potentially reshaping the infrastructure for agent code collaboration.",
+      "research_md_path": "content/trends/distributed-git-network-for-ai-agents.md"
+    },
+    {
+      "id": "trend-leanstral-1.5",
+      "canonical": "Leanstral 1.5",
+      "canonical_zh": "",
+      "aliases": [],
+      "first_seen": "2026-07-12",
+      "last_seen": "2026-07-12",
+      "stage": "nascent",
+      "score": 29,
+      "source_count": 1,
+      "total_mentions": 1,
+      "sources": [
+        "googlenews"
+      ],
+      "growth_pct": 100,
+      "category": "AI/LLM",
+      "tags": [
+        "googlenews",
+        "release",
+        "news"
+      ],
+      "summary_zh": "Mistral 以 Apache 2.0 许可证发布的开源模型，代表了开源 AI 模型生态的持续扩展。",
+      "summary_en": "An open-source model released by Mistral under the Apache 2.0 license, representing the continued expansion of the open-source AI model ecosystem.",
+      "research_md_path": "content/trends/leanstral-1.5.md"
+    },
+    {
+      "id": "trend-sageport",
+      "canonical": "Sageport",
+      "canonical_zh": "",
+      "aliases": [],
+      "first_seen": "2026-07-12",
+      "last_seen": "2026-07-12",
+      "stage": "nascent",
+      "score": 28,
+      "source_count": 1,
+      "total_mentions": 1,
+      "sources": [
+        "w2solo"
+      ],
+      "growth_pct": 100,
+      "category": "Product",
+      "tags": [
+        "indie-dev",
+        "product-launch"
+      ],
+      "summary_zh": "一个开源的桌面 SSH 工作台，整合了终端、SFTP、凭据管理、AI 助手等功能，代表了服务器管理工具的整合趋势。",
+      "summary_en": "An open-source desktop SSH workbench integrating terminal, SFTP, credential management, and AI assistant, representing the trend in server management tool consolidation.",
+      "research_md_path": "content/trends/sageport.md"
     },
     {
       "id": "trend-ai-agent-security-scanning",
@@ -1983,6 +2289,82 @@
       "summary_en": "BiSCo-LLM research proposes lookup-free binary spherical coding for extreme low-bit LLM compression, representing cutting-edge exploration in model compression.",
       "research_md_path": "content/trends/ai-model-extreme-low-bit-compression.md",
       "canonical_zh": "AI模型极端低比特压缩"
+    },
+    {
+      "id": "trend-deterministic-routing-and-sampling-for-llms",
+      "canonical": "Deterministic Routing and Sampling for LLMs",
+      "canonical_zh": "确定性路由与采样",
+      "aliases": [],
+      "first_seen": "2026-07-12",
+      "last_seen": "2026-07-12",
+      "stage": "nascent",
+      "score": 0,
+      "source_count": 0,
+      "total_mentions": 0,
+      "sources": [],
+      "growth_pct": 100,
+      "category": "AI/LLM",
+      "tags": [],
+      "summary_zh": "一种替代 LLM 质量门控的新方法，通过确定性路由和采样来优化模型输出质量，引发技术讨论。",
+      "summary_en": "An alternative to LLM quality gates using deterministic routing and sampling to optimize output quality, sparking technical debate.",
+      "research_md_path": "content/trends/deterministic-routing-and-sampling-for-llms.md"
+    },
+    {
+      "id": "trend-agent-bug-hunting",
+      "canonical": "Agent Bug Hunting",
+      "canonical_zh": "Agent 自动漏洞狩猎",
+      "aliases": [],
+      "first_seen": "2026-07-12",
+      "last_seen": "2026-07-12",
+      "stage": "nascent",
+      "score": 0,
+      "source_count": 0,
+      "total_mentions": 0,
+      "sources": [],
+      "growth_pct": 100,
+      "category": "AI/LLM",
+      "tags": [],
+      "summary_zh": "利用 AI Agent 在开发者睡眠时自动扫描和寻找应用 Bug 的实践，代表了 AI 在自动化测试领域的新应用。",
+      "summary_en": "The practice of using AI agents to automatically scan and hunt for bugs in applications while developers sleep, representing a new application in automated testing.",
+      "research_md_path": "content/trends/agent-bug-hunting.md"
+    },
+    {
+      "id": "trend-negative-leap-second-preparedness",
+      "canonical": "Negative Leap Second Preparedness",
+      "canonical_zh": "负闰秒准备",
+      "aliases": [],
+      "first_seen": "2026-07-12",
+      "last_seen": "2026-07-12",
+      "stage": "nascent",
+      "score": 0,
+      "source_count": 0,
+      "total_mentions": 0,
+      "sources": [],
+      "growth_pct": 100,
+      "category": "HotTopic",
+      "tags": [],
+      "summary_zh": "Hacker News 上关于系统是否为首次负闰秒做好准备的讨论，凸显了时间同步基础设施面临的新挑战。",
+      "summary_en": "A discussion on Hacker News about whether systems are ready for the first negative leap second, highlighting new challenges in time synchronization infrastructure.",
+      "research_md_path": "content/trends/negative-leap-second-preparedness.md"
+    },
+    {
+      "id": "trend-pgbouncer-4x-throughput",
+      "canonical": "PgBouncer 4x Throughput",
+      "canonical_zh": "",
+      "aliases": [],
+      "first_seen": "2026-07-12",
+      "last_seen": "2026-07-12",
+      "stage": "nascent",
+      "score": 0,
+      "source_count": 0,
+      "total_mentions": 0,
+      "sources": [],
+      "growth_pct": 100,
+      "category": "Infra",
+      "tags": [],
+      "summary_zh": "一项将 PgBouncer 吞吐量提升 4 倍的技术成果，对 PostgreSQL 连接池优化有重要参考价值。",
+      "summary_en": "A technical achievement that scaled PgBouncer throughput by 4x, providing important reference for PostgreSQL connection pool optimization.",
+      "research_md_path": "content/trends/pgbouncer-4x-throughput.md"
     }
   ],
   "_version": "1.0"
