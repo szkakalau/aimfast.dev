@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AntCheck — 你的项目准备好迁移到 Ant 了吗？ | www.aimfast.dev</title>
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#1a1d24">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://www.aimfast.dev/antcheck/">
+  <meta property="og:type" content="product">
+  <meta property="og:title" content="AntCheck — 30秒分析你的Node.js项目，获得Ant兼容性报告">
+  <meta property="og:description" content="零配置迁移诊断：上传 package.json 或运行一行命令，即可获得可执行的迁移清单与性能预估。">
+  <meta property="og:url" content="https://www.aimfast.dev/antcheck/">
+  <meta property="og:site_name" content="AimFast.Dev">
+  <meta property="og:image" content="https://www.aimfast.dev/og/antcheck.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="AntCheck — 你的项目准备好迁移到 Ant 了吗？">
+  <meta name="twitter:description" content="零配置迁移诊断：上传 package.json 或运行一行命令，即可获得可执行的迁移清单与性能预估。">
+  <meta name="twitter:image" content="https://www.aimfast.dev/og/antcheck.png">
+  <meta name="description" content="零配置迁移诊断：上传 package.json 或运行一行命令，即可获得可执行的迁移清单与性能预估。30秒内分析你的 Node.js 项目，获得一份免费的 Ant 兼容性报告。">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"AntCheck","applicationCategory":"DeveloperApplication","operatingSystem":"Web","description":"零配置迁移诊断工具：分析 Node.js 项目对 Ant runtime 的兼容性，生成可执行的迁移清单与性能预估。","url":"https://www.aimfast.dev/antcheck/","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+  </script>
+  <link rel="stylesheet" href="/_ds/base.css">
+  <link rel="stylesheet" href="/_ds/components.css">
+  <style>
+    /* 仅自定义布局与组件细节，不重复定义 token */
+    .hero {
+      padding: var(--space-8) 0 var(--space-6);
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: clamp(2.2rem, 6vw, 3.4rem);
+      line-height: 1.15;
+      max-width: 720px;
+      margin: 0 auto var(--space-3);
+    }
+    .hero .subhead {
+      font-size: 1.15rem;
+      max-width: 560px;
+      margin: 0 auto var(--space-5);
+      color: var(--color-text-secondary);
+    }
+    .signup-form {
+      display: flex;
+      gap: var(--space-2);
+      max-width: 480px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .signup-form input[type="email"] {
+      flex: 1 1 220px;
+      height: 52px;
+      padding: 0 var(--space-3);
+      border: 1.5px solid var(--color-border);
+      border-radius: 8px;
+      background: var(--color-surface);
+      color: var(--color-text);
+      font-size: 1rem;
+      transition: border-color var(--duration-normal) var(--ease-out);
+    }
+    .signup-form input[type="email"]:focus {
+      border-color: var(--color-accent);
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(var(--color-accent-rgb), 0.15);
+    }
+    .signup-form .btn {
+      height: 52px;
+      padding: 0 var(--space-4);
+      font-size: 1rem;
+      white-space: nowrap;
+    }
+    .signup-success {
+      max-width: 480px;
+      margin: 0 auto;
+      padding: var(--space-3);
+      background: var(--color-surface-alt);
+      border-radius: 8px;
+      border: 1px solid var(--color-border);
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      justify-content: center;
+    }
+    .signup-error {
+      color: #e45;
+      font-size: 0.9rem;
+      margin-top: var(--space-1);
+    }
+    .section-title {
+      text-align: center;
+      margin-bottom: var(--space-5);
+    }
+    .why-matters p {
+      max-width: 720px;
+      margin: 0 auto var(--space-3);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+    .steps-grid {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-5);
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .step {
+      display: flex;
+      gap: var(--space-3);
+      align-items: flex-start;
+    }
+    .step-num {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--color-accent);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+    .step-content h3 {
+      margin: 0 0 var(--space-1);
+      font-size: 1.1rem;
+    }
+    .step-content p {
+      margin: 0;
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+    }
+    .selling-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-4);
+    }
+    .selling-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      padding: var(--space-4) var(--space-3);
+      text-align: center;
+      transition: transform var(--duration-normal) var(--ease-out), box-shadow var(--duration-normal) var(--ease-out);
+    }
+    .selling-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+    .selling-card .icon-wrap {
+      display: flex;
+      justify-content: center;
+      margin-bottom: var(--space-2);
+    }
+    .selling-card h3 {
+      font-size: 1.1rem;
+      margin: 0 0 var(--space-1);
+    }
+    .selling-card p {
+      font-size: 0.95rem;
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+      margin: 0;
+    }
+    .trust-bar {
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+      display: flex;
+      justify-content: center;
+      gap: var(--space-4);
+      flex-wrap: wrap;
+      padding: var(--space-4) 0 var(--space-2);
+    }
+    .trust-bar span {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    footer {
+      text-align: center;
+      padding: var(--space-4) 0 var(--space-3);
+      border-top: 1px solid var(--color-border);
+      color: var(--color-text-muted);
+      font-size: 0.85rem;
+    }
+    @media (max-width: 640px) {
+      .selling-grid {
+        grid-template-columns: 1fr;
+      }
+      .signup-form {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .signup-form input[type="email"] {
+        width: 100%;
+      }
+      .trust-bar {
+        flex-direction: column;
+        gap: var(--space-1);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Hero + 内嵌邮箱表单 -->
+  <section class="hero container">
+    <h1 class="font-heading">你的项目准备好迁移到 Ant 了吗？</h1>
+    <p class="subhead font-body">30 秒内分析你的 Node.js 项目，获得一份免费的 Ant 兼容性报告。</p>
+    <form id="signup-form" class="signup-form" action="https://formspree.io/f/your-form-id" method="POST" onsubmit="handleSubmit(event)">
+      <input type="email" name="email" placeholder="you@example.com" required autocomplete="email">
+      <button type="submit" class="btn btn-primary btn-lg">Get Early Access</button>
+    </form>
+    <div id="form-feedback" style="min-height: 40px; margin-top: var(--space-2);"></div>
+  </section>
+
+  <!-- Why This Matters -->
+  <section class="why-matters container" style="padding: var(--space-6) 0;">
+    <h2 class="section-title font-heading">Why Ant Compatibility Matters Right Now</h2>
+    <p>上周 Hacker News 上关于 Ant runtime 的讨论获得了 314 个赞和 144 条评论——这是自 Bun 发布以来社区对“新 JavaScript runtime”最强烈的信号。但几乎所有评论都指向同一个问题：“我的 Node.js 项目能直接跑在 Ant 上吗？” 现有的迁移指南要么是通用原则，要么只针对 Bun 生态，没有人为 Ant 做自动化的兼容性诊断。</p>
+    <p>更关键的是，Ant 的 npm 兼容层仍处于早期阶段，许多常用依赖（比如 Prisma、Puppeteer、node:crypto 的同步写法）可能无法正常工作。手动检查每个依赖的兼容性需要数小时，而且很容易遗漏。开发者需要的是一个工具，能在 30 秒内告诉他们：“你的项目离 Ant 还有多远，具体需要改什么。”</p>
+    <p>现在正是最好的时机：Ant 的 GitHub 仓库在过去两周内收到了 200+ 个 issue，其中 40% 与兼容性相关。社区正在寻找解决方案，而我们的工具能直接填补这个空白。越早提供诊断能力，就越能成为 Ant 生态中“迁移”这个心智节点的默认选择。</p>
+  </section>
+
+  <!-- How It Works -->
+  <section class="container" style="padding: var(--space-6) 0;">
+    <h2 class="section-title font-heading">How It Works</h2>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h3>上传 package.json 或运行 CLI</h3>
+          <p>直接把你的 package.json 拖拽到页面，或者下载我们的一行命令 CLI 工具，在项目根目录运行 `bash check_ant_compat.sh`。两种方式都会立即开始分析你的依赖和 API 使用情况。</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h3>获得兼容性报告</h3>
+          <p>30 秒内，你会看到一份结构化的报告：哪些依赖在 Ant 的 npm 兼容层下已知工作、哪些可能有问题、哪些完全不兼容。同时扫描出使用了 Node.js 特有 API（如 `fs.promises` 旧写法、`crypto.randomBytes` 同步版本）的代码行。</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h3>执行迁移清单</h3>
+          <p>报告附带一个可执行的步骤清单，告诉你“替换 `crypto.randomBytes` 为 Ant 原生 API”或“升级 `express` 到 5.x 版本以获得兼容性”。基于 Ant 官方 benchmark，还会估算迁移后可能的性能提升。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Selling Points (3列 grid) -->
+  <section class="container" style="padding: var(--space-6) 0;">
+    <h2 class="section-title font-heading">What You Get</h2>
+    <div class="selling-grid">
+      <div class="selling-card">
+        <div class="icon-wrap">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        </div>
+        <h3>零配置分析</h3>
+        <p>无需注册、无需安装。上传 package.json 或运行一行命令，30 秒内获得完整的兼容性报告。支持 monorepo 和私有包，所有分析在浏览器或本地完成，代码不会上传到第三方服务器。</p>
+      </div>
+      <div class="selling-card">
+        <div class="icon-wrap">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        </div>
+        <h3>可执行建议</h3>
+        <p>不只是标记“不兼容”——每条问题都附带具体的修改方案，包括代码示例和链接到 Ant 官方 API 文档。迁移清单按优先级排序，从“必须修改”到“可选优化”，让你能按部就班地完成迁移。</p>
+      </div>
+      <div class="selling-card">
+        <div class="icon-wrap">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+        </div>
+        <h3>持续更新的数据库</h3>
+        <p>我们的兼容性数据库与 Ant 社区同步更新——每周自动抓取 Ant 的 GitHub Release、npm 包更新以及社区报告的兼容性问题。当你再次分析时，会自动匹配最新数据，确保报告始终准确。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Bar -->
+  <div class="trust-bar container">
+    <span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+      已分析 340+ 个开源项目
+    </span>
+    <span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+      社区维护的兼容性数据库
+    </span>
+    <span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 0 1 10 10c0 5-4 8-10 8S2 17 2 12 7 2 12 2z"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>
+      完全免费 · 无需注册
+    </span>
+  </div>
+
+  <!-- Footer -->
+  <footer class="container">
+    © 2026 · <a href="https://www.aimfast.dev" style="color: var(--color-text-secondary); text-decoration: none;">www.aimfast.dev</
