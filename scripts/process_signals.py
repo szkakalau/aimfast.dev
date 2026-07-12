@@ -862,15 +862,21 @@ def run(date_str: str | None = None) -> list[dict]:
     output_path.write_text(json.dumps(output_data, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"\n[处理] 结果已保存 → {output_path}")
 
-    # 打印 Top 10
+    # 打印 Top 10（sanitize emoji，Windows GBK 兼容）
+    def _safe_str(s: str) -> str:
+        """去除 GBK 无法编码的字符（emoji 等），避免 UnicodeEncodeError."""
+        return s.encode("gbk", errors="replace").decode("gbk")
+
     action_threshold = config["scoring"]["thresholds"]["action_trigger"]
     print(f"\n{'─'*60}")
     print(f"Top 10 信号（阈值: {action_threshold} 分）:")
     print(f"{'─'*60}")
     for i, s in enumerate(signals[:10], 1):
         flag = ">>>" if s["score"] >= action_threshold else "   "
-        print(f"  {i:2d}. [{s['score']:3d}分] {flag} {s.get('title', 'N/A')[:65]}")
-        print(f"      来源: {s.get('source', '?')} | 跨平台: {s.get('cross_platform_count', 0)} | 互动: {s.get('discussion_count', 0)}")
+        title = _safe_str(s.get("title", "N/A")[:65])
+        print(f"  {i:2d}. [{s['score']:3d}分] {flag} {title}")
+        source = _safe_str(s.get("source", "?"))
+        print(f"      来源: {source} | 跨平台: {s.get('cross_platform_count', 0)} | 互动: {s.get('discussion_count', 0)}")
 
     return signals
 

@@ -693,7 +693,7 @@ def main():
     else:
         dates = [today]
 
-    print(f"📡 对比日期范围: {dates[0]} ~ {dates[-1]} ({len(dates)} 天)")
+    print(f"[对比] 对比日期范围: {dates[0]} ~ {dates[-1]} ({len(dates)} 天)")
 
     # 生成单日报告
     generated = []
@@ -708,7 +708,7 @@ def main():
             generated.append(ds)
             continue
 
-        print(f"  📝 {ds} — 生成对比报告...")
+        print(f"  [生成] {ds} — 生成对比报告...")
         report = compare_single_date(ds)
         out_path.write_text(report, encoding="utf-8")
         print(f"     → {out_path}")
@@ -721,11 +721,11 @@ def main():
     all_existing = sorted([f.stem for f in COMPARE_DIR.glob("*.md") if f.stem != "SUMMARY"])
     summary = generate_summary(all_existing)
     (COMPARE_DIR / "SUMMARY.md").write_text(summary, encoding="utf-8")
-    print(f"\n📊 总结已更新: {COMPARE_DIR / 'SUMMARY.md'}")
+    print(f"\n[总结] 总结已更新: {COMPARE_DIR / 'SUMMARY.md'}")
 
     # 输出统计
     print(f"\n{'='*50}")
-    print(f"✅ 共对比 {len(generated)} 天")
+    print(f"[OK] 共对比 {len(generated)} 天")
     if bp_missing:
         print(f"⚠️  BuilderPulse 缺失 {len(bp_missing)} 天: {', '.join(bp_missing)}")
     print(f"📂 报告目录: {COMPARE_DIR}")

@@ -338,7 +338,7 @@ generated_at: {datetime.now(TZ_SHANGHAI).isoformat()}
 该术语从 {len(sources)} 个信源获得 {appearances} 次提及。AimFast.Dev 将持续追踪其发展：
 - 每日 18 个信源全覆盖（HN / GitHub / Reddit / V2EX / 官方 Blog / Google News 等）
 - 术语评分随跨平台讨论自动增长
-- 达到 {FULL_RESEARCH_THRESHOLD} 分阈值 → 自动生成深度报告 + 12 板块机会分析
+- 进入 top {FULL_RESEARCH_PCT*100:.0f}% 分数区间后 → 自动升级为完整机会分析报告
 
 ---
 
@@ -369,13 +369,13 @@ generated_at: {datetime.now(TZ_SHANGHAI).isoformat()}
 
 ### Tracking Status
 
-> ⚠️ **Tracking Stage** — Current cross-platform signal volume hasn't reached the threshold for a full research report (≥{FULL_RESEARCH_THRESHOLD}).
+> ⚠️ **Tracking Stage** — Current cross-platform signal volume hasn't reached the top {FULL_RESEARCH_PCT*100:.0f}% percentile for a full research report.
 > This term continues receiving new signals in the daily pipeline. Full opportunity analysis auto-triggers when discussion reaches threshold.
 
 ### Known Signals
 
 {appearances} mentions from {len(sources)} sources. AimFast.Dev continues tracking across 18+ sources daily.
-At ≥{FULL_RESEARCH_THRESHOLD} points → auto-generates a full 12-section opportunity report.
+At top {FULL_RESEARCH_PCT*100:.0f}% percentile → auto-generates a full 12-section opportunity report.
 
 ---
 

@@ -1,0 +1,2049 @@
+{
+  "_schema": "Term 多因子评分 — 决定日报展示优先级",
+  "_version": "1.0",
+  "_formula": "source_count×15 + growth×12 + authority×8 + mentions×5 + freshness×10",
+  "date": "2026-07-12",
+  "total_terms": 60,
+  "scores": [
+    {
+      "term": "Grok 4.5",
+      "term_type": "model",
+      "stage": "nascent",
+      "age_days": 0,
+      "score": 295.5,
+      "breakdown": {
+        "source_count": {
+          "raw": 2,
+          "score": 5.0,
+          "weighted": 75.0
+        },
+        "growth": {
+          "raw": "ratio=5.0",
+          "score": 5.0,
+          "weighted": 60.0
+        },
+        "authority": {
+          "raw": "avg=6.0",
+          "score": 6.0,
+          "weighted": 48.0
+        },
+        "mentions": {
+          "raw": 2,
+          "score": 2.5,
+          "weighted": 12.5
+        },
+        "freshness": {
+          "raw": "2026-07-12",
+          "score": 10.0,
+          "weighted": 100.0
+        }
+      }
+    },
+    {
+      "term": "Muse Spark 1.1",
+      "term_type": "model",
+      "stage": "nascent",
+      "age_days": 0,
+      "score": 295.0,
+      "breakdown": {
+        "source_count": {
+          "raw": 2,
+          "score": 5.0,
+          "weighted": 75.0
+        },
+        "growth": {
+          "raw": "ratio=5.0",
+          "score": 5.0,
+          "weighted": 60.0
+        },
+        "authority": {
+          "raw": "avg=5.0",
+          "score": 5.0,
+          "weighted": 40.0
+        },
+        "mentions": {
+          "raw": 4,
+          "score": 4.0,
+          "weighted": 20.0
+        },
+        "freshness": {
+          "raw": "2026-07-12",
+          "score": 10.0,
+          "weighted": 100.0
+        }
+      }
+    },
+    {
+      "term": "OpenAI",
+      "term_type": "company",
+      "stage": "nascent",
+      "age_days": 0,
+      "score": 275.8,
+      "breakdown": {
+        "source_count": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 15.0
+        },
+        "growth": {
+          "raw": "ratio=5.0",
+          "score": 5.0,
+          "weighted": 60.0
+        },
+        "authority": {
+          "raw": "avg=9.0",
+          "score": 9.0,
+          "weighted": 72.0
+        },
+        "mentions": {
+          "raw": 9,
+          "score": 5.8,
+          "weighted": 28.8
+        },
+        "freshness": {
+          "raw": "2026-07-12",
+          "score": 10.0,
+          "weighted": 100.0
+        }
+      }
+    },
+    {
+      "term": "Vercel",
+      "term_type": "company",
+      "stage": "nascent",
+      "age_days": 0,
+      "score": 272.6,
+      "breakdown": {
+        "source_count": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 15.0
+        },
+        "growth": {
+          "raw": "ratio=5.0",
+          "score": 5.0,
+          "weighted": 60.0
+        },
+        "authority": {
+          "raw": "avg=8.0",
+          "score": 8.0,
+          "weighted": 64.0
+        },
+        "mentions": {
+          "raw": 14,
+          "score": 6.7,
+          "weighted": 33.6
+        },
+        "freshness": {
+          "raw": "2026-07-12",
+          "score": 10.0,
+          "weighted": 100.0
+        }
+      }
+    },
+    {
+      "term": "Apple ML",
+      "term_type": "company",
+      "stage": "nascent",
+      "age_days": 0,
+      "score": 259.0,
+      "breakdown": {
+        "source_count": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 15.0
+        },
+        "growth": {
+          "raw": "ratio=5.0",
+          "score": 5.0,
+          "weighted": 60.0
+        },
+        "authority": {
+          "raw": "avg=8.0",
+          "score": 8.0,
+          "weighted": 64.0
+        },
+        "mentions": {
+          "raw": 4,
+          "score": 4.0,
+          "weighted": 20.0
+        },
+        "freshness": {
+          "raw": "2026-07-12",
+          "score": 10.0,
+          "weighted": 100.0
+        }
+      }
+    },
+    {
+      "term": "Chat SDK",
+      "term_type": "product",
+      "stage": "nascent",
+      "age_days": 0,
+      "score": 259.0,
+      "breakdown": {
+        "source_count": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 15.0
+        },
+        "growth": {
+          "raw": "ratio=5.0",
+          "score": 5.0,
+          "weighted": 60.0
+        },
+        "authority": {
+          "raw": "avg=8.0",
+          "score": 8.0,
+          "weighted": 64.0
+        },
+        "mentions": {
+          "raw": 4,
+          "score": 4.0,
+          "weighted": 20.0
+        },
+        "freshness": {
+          "raw": "2026-07-12",
+          "score": 10.0,
+          "weighted": 100.0
+        }
+      }
+    },
+    {
+      "term": "AI Gateway",
+      "term_type": "product",
+      "stage": "nascent",
+      "age_days": 0,
+      "score": 255.9,
+      "breakdown": {
+        "source_count": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 15.0
+        },
+        "growth": {
+          "raw": "ratio=5.0",
+          "score": 5.0,
+          "weighted": 60.0
+        },
+        "authority": {
+          "raw": "avg=8.0",
+          "score": 8.0,
+          "weighted": 64.0
+        },
+        "mentions": {
+          "raw": 3,
+          "score": 3.4,
+          "weighted": 16.9
+        },
+        "freshness": {
+          "raw": "2026-07-12",
+          "score": 10.0,
+          "weighted": 100.0
+        }
+      }
+    },
+    {
+      "term": "Deutsche Telekom",
+      "term_type": "company",
+      "stage": "nascent",
+      "age_days": 0,
+      "score": 252.0,
+      "breakdown": {
+        "source_count": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 15.0
+        },
+        "growth": {
+          "raw": "ratio=5.0",
+          "score": 5.0,
+          "weighted": 60.0
+        },
+        "authority": {
+          "raw": "avg=9.0",
+          "score": 9.0,
+          "weighted": 72.0
+        },
+        "mentions": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 5.0
+        },
+        "freshness": {
+          "raw": "2026-07-12",
+          "score": 10.0,
+          "weighted": 100.0
+        }
+      }
+    },
+    {
+      "term": "Microsoft 365 Copilot",
+      "term_type": "product",
+      "stage": "nascent",
+      "age_days": 0,
+      "score": 252.0,
+      "breakdown": {
+        "source_count": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 15.0
+        },
+        "growth": {
+          "raw": "ratio=5.0",
+          "score": 5.0,
+          "weighted": 60.0
+        },
+        "authority": {
+          "raw": "avg=9.0",
+          "score": 9.0,
+          "weighted": 72.0
+        },
+        "mentions": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 5.0
+        },
+        "freshness": {
+          "raw": "2026-07-12",
+          "score": 10.0,
+          "weighted": 100.0
+        }
+      }
+    },
+    {
+      "term": "ChatGPT",
+      "term_type": "product",
+      "stage": "nascent",
+      "age_days": 0,
+      "score": 252.0,
+      "breakdown": {
+        "source_count": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 15.0
+        },
+        "growth": {
+          "raw": "ratio=5.0",
+          "score": 5.0,
+          "weighted": 60.0
+        },
+        "authority": {
+          "raw": "avg=9.0",
+          "score": 9.0,
+          "weighted": 72.0
+        },
+        "mentions": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 5.0
+        },
+        "freshness": {
+          "raw": "2026-07-12",
+          "score": 10.0,
+          "weighted": 100.0
+        }
+      }
+    },
+    {
+      "term": "GPT-Live",
+      "term_type": "product",
+      "stage": "nascent",
+      "age_days": 0,
+      "score": 252.0,
+      "breakdown": {
+        "source_count": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 15.0
+        },
+        "growth": {
+          "raw": "ratio=5.0",
+          "score": 5.0,
+          "weighted": 60.0
+        },
+        "authority": {
+          "raw": "avg=9.0",
+          "score": 9.0,
+          "weighted": 72.0
+        },
+        "mentions": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 5.0
+        },
+        "freshness": {
+          "raw": "2026-07-12",
+          "score": 10.0,
+          "weighted": 100.0
+        }
+      }
+    },
+    {
+      "term": "GPT-5.5",
+      "term_type": "model",
+      "stage": "nascent",
+      "age_days": 0,
+      "score": 252.0,
+      "breakdown": {
+        "source_count": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 15.0
+        },
+        "growth": {
+          "raw": "ratio=5.0",
+          "score": 5.0,
+          "weighted": 60.0
+        },
+        "authority": {
+          "raw": "avg=9.0",
+          "score": 9.0,
+          "weighted": 72.0
+        },
+        "mentions": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 5.0
+        },
+        "freshness": {
+          "raw": "2026-07-12",
+          "score": 10.0,
+          "weighted": 100.0
+        }
+      }
+    },
+    {
+      "term": "HuggingFace",
+      "term_type": "company",
+      "stage": "nascent",
+      "age_days": 0,
+      "score": 251.0,
+      "breakdown": {
+        "source_count": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 15.0
+        },
+        "growth": {
+          "raw": "ratio=5.0",
+          "score": 5.0,
+          "weighted": 60.0
+        },
+        "authority": {
+          "raw": "avg=7.0",
+          "score": 7.0,
+          "weighted": 56.0
+        },
+        "mentions": {
+          "raw": 4,
+          "score": 4.0,
+          "weighted": 20.0
+        },
+        "freshness": {
+          "raw": "2026-07-12",
+          "score": 10.0,
+          "weighted": 100.0
+        }
+      }
+    },
+    {
+      "term": "LangChain",
+      "term_type": "project",
+      "stage": "nascent",
+      "age_days": 0,
+      "score": 249.1,
+      "breakdown": {
+        "source_count": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 15.0
+        },
+        "growth": {
+          "raw": "ratio=5.0",
+          "score": 5.0,
+          "weighted": 60.0
+        },
+        "authority": {
+          "raw": "avg=6.0",
+          "score": 6.0,
+          "weighted": 48.0
+        },
+        "mentions": {
+          "raw": 7,
+          "score": 5.2,
+          "weighted": 26.1
+        },
+        "freshness": {
+          "raw": "2026-07-12",
+          "score": 10.0,
+          "weighted": 100.0
+        }
+      }
+    },
+    {
+      "term": "Cloudflare",
+      "term_type": "company",
+      "stage": "nascent",
+      "age_days": 0,
+      "score": 247.9,
+      "breakdown": {
+        "source_count": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 15.0
+        },
+        "growth": {
+          "raw": "ratio=5.0",
+          "score": 5.0,
+          "weighted": 60.0
+        },
+        "authority": {
+          "raw": "avg=7.0",
+          "score": 7.0,
+          "weighted": 56.0
+        },
+        "mentions": {
+          "raw": 3,
+          "score": 3.4,
+          "weighted": 16.9
+        },
+        "freshness": {
+          "raw": "2026-07-12",
+          "score": 10.0,
+          "weighted": 100.0
+        }
+      }
+    },
+    {
+      "term": "n8n-io/n8n",
+      "term_type": "project",
+      "stage": "nascent",
+      "age_days": 0,
+      "score": 245.4,
+      "breakdown": {
+        "source_count": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 15.0
+        },
+        "growth": {
+          "raw": "ratio=5.0",
+          "score": 5.0,
+          "weighted": 60.0
+        },
+        "authority": {
+          "raw": "avg=6.0",
+          "score": 6.0,
+          "weighted": 48.0
+        },
+        "mentions": {
+          "raw": 5,
+          "score": 4.5,
+          "weighted": 22.4
+        },
+        "freshness": {
+          "raw": "2026-07-12",
+          "score": 10.0,
+          "weighted": 100.0
+        }
+      }
+    },
+    {
+      "term": "cloudflare/workers-sdk",
+      "term_type": "project",
+      "stage": "nascent",
+      "age_days": 0,
+      "score": 245.4,
+      "breakdown": {
+        "source_count": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 15.0
+        },
+        "growth": {
+          "raw": "ratio=5.0",
+          "score": 5.0,
+          "weighted": 60.0
+        },
+        "authority": {
+          "raw": "avg=6.0",
+          "score": 6.0,
+          "weighted": 48.0
+        },
+        "mentions": {
+          "raw": 5,
+          "score": 4.5,
+          "weighted": 22.4
+        },
+        "freshness": {
+          "raw": "2026-07-12",
+          "score": 10.0,
+          "weighted": 100.0
+        }
+      }
+    },
+    {
+      "term": "Lovable",
+      "term_type": "product",
+      "stage": "nascent",
+      "age_days": 0,
+      "score": 244.0,
+      "breakdown": {
+        "source_count": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 15.0
+        },
+        "growth": {
+          "raw": "ratio=5.0",
+          "score": 5.0,
+          "weighted": 60.0
+        },
+        "authority": {
+          "raw": "avg=8.0",
+          "score": 8.0,
+          "weighted": 64.0
+        },
+        "mentions": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 5.0
+        },
+        "freshness": {
+          "raw": "2026-07-12",
+          "score": 10.0,
+          "weighted": 100.0
+        }
+      }
+    },
+    {
+      "term": "GPT 5.6 Sol",
+      "term_type": "model",
+      "stage": "nascent",
+      "age_days": 0,
+      "score": 244.0,
+      "breakdown": {
+        "source_count": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 15.0
+        },
+        "growth": {
+          "raw": "ratio=5.0",
+          "score": 5.0,
+          "weighted": 60.0
+        },
+        "authority": {
+          "raw": "avg=8.0",
+          "score": 8.0,
+          "weighted": 64.0
+        },
+        "mentions": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 5.0
+        },
+        "freshness": {
+          "raw": "2026-07-12",
+          "score": 10.0,
+          "weighted": 100.0
+        }
+      }
+    },
+    {
+      "term": "GPT 5.6 Luna",
+      "term_type": "model",
+      "stage": "nascent",
+      "age_days": 0,
+      "score": 244.0,
+      "breakdown": {
+        "source_count": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 15.0
+        },
+        "growth": {
+          "raw": "ratio=5.0",
+          "score": 5.0,
+          "weighted": 60.0
+        },
+        "authority": {
+          "raw": "avg=8.0",
+          "score": 8.0,
+          "weighted": 64.0
+        },
+        "mentions": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 5.0
+        },
+        "freshness": {
+          "raw": "2026-07-12",
+          "score": 10.0,
+          "weighted": 100.0
+        }
+      }
+    },
+    {
+      "term": "GPT 5.6 Terra",
+      "term_type": "model",
+      "stage": "nascent",
+      "age_days": 0,
+      "score": 244.0,
+      "breakdown": {
+        "source_count": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 15.0
+        },
+        "growth": {
+          "raw": "ratio=5.0",
+          "score": 5.0,
+          "weighted": 60.0
+        },
+        "authority": {
+          "raw": "avg=8.0",
+          "score": 8.0,
+          "weighted": 64.0
+        },
+        "mentions": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 5.0
+        },
+        "freshness": {
+          "raw": "2026-07-12",
+          "score": 10.0,
+          "weighted": 100.0
+        }
+      }
+    },
+    {
+      "term": "Vercel Agent",
+      "term_type": "product",
+      "stage": "nascent",
+      "age_days": 0,
+      "score": 244.0,
+      "breakdown": {
+        "source_count": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 15.0
+        },
+        "growth": {
+          "raw": "ratio=5.0",
+          "score": 5.0,
+          "weighted": 60.0
+        },
+        "authority": {
+          "raw": "avg=8.0",
+          "score": 8.0,
+          "weighted": 64.0
+        },
+        "mentions": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 5.0
+        },
+        "freshness": {
+          "raw": "2026-07-12",
+          "score": 10.0,
+          "weighted": 100.0
+        }
+      }
+    },
+    {
+      "term": "Vercel CLI",
+      "term_type": "product",
+      "stage": "nascent",
+      "age_days": 0,
+      "score": 244.0,
+      "breakdown": {
+        "source_count": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 15.0
+        },
+        "growth": {
+          "raw": "ratio=5.0",
+          "score": 5.0,
+          "weighted": 60.0
+        },
+        "authority": {
+          "raw": "avg=8.0",
+          "score": 8.0,
+          "weighted": 64.0
+        },
+        "mentions": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 5.0
+        },
+        "freshness": {
+          "raw": "2026-07-12",
+          "score": 10.0,
+          "weighted": 100.0
+        }
+      }
+    },
+    {
+      "term": "Vercel Microfrontends",
+      "term_type": "product",
+      "stage": "nascent",
+      "age_days": 0,
+      "score": 244.0,
+      "breakdown": {
+        "source_count": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 15.0
+        },
+        "growth": {
+          "raw": "ratio=5.0",
+          "score": 5.0,
+          "weighted": 60.0
+        },
+        "authority": {
+          "raw": "avg=8.0",
+          "score": 8.0,
+          "weighted": 64.0
+        },
+        "mentions": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 5.0
+        },
+        "freshness": {
+          "raw": "2026-07-12",
+          "score": 10.0,
+          "weighted": 100.0
+        }
+      }
+    },
+    {
+      "term": "Flags SDK",
+      "term_type": "product",
+      "stage": "nascent",
+      "age_days": 0,
+      "score": 244.0,
+      "breakdown": {
+        "source_count": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 15.0
+        },
+        "growth": {
+          "raw": "ratio=5.0",
+          "score": 5.0,
+          "weighted": 60.0
+        },
+        "authority": {
+          "raw": "avg=8.0",
+          "score": 8.0,
+          "weighted": 64.0
+        },
+        "mentions": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 5.0
+        },
+        "freshness": {
+          "raw": "2026-07-12",
+          "score": 10.0,
+          "weighted": 100.0
+        }
+      }
+    },
+    {
+      "term": "Vercel Connect",
+      "term_type": "product",
+      "stage": "nascent",
+      "age_days": 0,
+      "score": 244.0,
+      "breakdown": {
+        "source_count": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 15.0
+        },
+        "growth": {
+          "raw": "ratio=5.0",
+          "score": 5.0,
+          "weighted": 60.0
+        },
+        "authority": {
+          "raw": "avg=8.0",
+          "score": 8.0,
+          "weighted": 64.0
+        },
+        "mentions": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 5.0
+        },
+        "freshness": {
+          "raw": "2026-07-12",
+          "score": 10.0,
+          "weighted": 100.0
+        }
+      }
+    },
+    {
+      "term": "Dial",
+      "term_type": "product",
+      "stage": "nascent",
+      "age_days": 0,
+      "score": 244.0,
+      "breakdown": {
+        "source_count": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 15.0
+        },
+        "growth": {
+          "raw": "ratio=5.0",
+          "score": 5.0,
+          "weighted": 60.0
+        },
+        "authority": {
+          "raw": "avg=8.0",
+          "score": 8.0,
+          "weighted": 64.0
+        },
+        "mentions": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 5.0
+        },
+        "freshness": {
+          "raw": "2026-07-12",
+          "score": 10.0,
+          "weighted": 100.0
+        }
+      }
+    },
+    {
+      "term": "Photon",
+      "term_type": "product",
+      "stage": "nascent",
+      "age_days": 0,
+      "score": 244.0,
+      "breakdown": {
+        "source_count": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 15.0
+        },
+        "growth": {
+          "raw": "ratio=5.0",
+          "score": 5.0,
+          "weighted": 60.0
+        },
+        "authority": {
+          "raw": "avg=8.0",
+          "score": 8.0,
+          "weighted": 64.0
+        },
+        "mentions": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 5.0
+        },
+        "freshness": {
+          "raw": "2026-07-12",
+          "score": 10.0,
+          "weighted": 100.0
+        }
+      }
+    },
+    {
+      "term": "Meerkat",
+      "term_type": "project",
+      "stage": "nascent",
+      "age_days": 0,
+      "score": 236.0,
+      "breakdown": {
+        "source_count": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 15.0
+        },
+        "growth": {
+          "raw": "ratio=5.0",
+          "score": 5.0,
+          "weighted": 60.0
+        },
+        "authority": {
+          "raw": "avg=7.0",
+          "score": 7.0,
+          "weighted": 56.0
+        },
+        "mentions": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 5.0
+        },
+        "freshness": {
+          "raw": "2026-07-12",
+          "score": 10.0,
+          "weighted": 100.0
+        }
+      }
+    },
+    {
+      "term": "vLLM",
+      "term_type": "project",
+      "stage": "nascent",
+      "age_days": 0,
+      "score": 236.0,
+      "breakdown": {
+        "source_count": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 15.0
+        },
+        "growth": {
+          "raw": "ratio=5.0",
+          "score": 5.0,
+          "weighted": 60.0
+        },
+        "authority": {
+          "raw": "avg=7.0",
+          "score": 7.0,
+          "weighted": 56.0
+        },
+        "mentions": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 5.0
+        },
+        "freshness": {
+          "raw": "2026-07-12",
+          "score": 10.0,
+          "weighted": 100.0
+        }
+      }
+    },
+    {
+      "term": "Amazon SageMaker Studio",
+      "term_type": "product",
+      "stage": "nascent",
+      "age_days": 0,
+      "score": 236.0,
+      "breakdown": {
+        "source_count": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 15.0
+        },
+        "growth": {
+          "raw": "ratio=5.0",
+          "score": 5.0,
+          "weighted": 60.0
+        },
+        "authority": {
+          "raw": "avg=7.0",
+          "score": 7.0,
+          "weighted": 56.0
+        },
+        "mentions": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 5.0
+        },
+        "freshness": {
+          "raw": "2026-07-12",
+          "score": 10.0,
+          "weighted": 100.0
+        }
+      }
+    },
+    {
+      "term": "PyTorch",
+      "term_type": "technology",
+      "stage": "nascent",
+      "age_days": 0,
+      "score": 236.0,
+      "breakdown": {
+        "source_count": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 15.0
+        },
+        "growth": {
+          "raw": "ratio=5.0",
+          "score": 5.0,
+          "weighted": 60.0
+        },
+        "authority": {
+          "raw": "avg=7.0",
+          "score": 7.0,
+          "weighted": 56.0
+        },
+        "mentions": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 5.0
+        },
+        "freshness": {
+          "raw": "2026-07-12",
+          "score": 10.0,
+          "weighted": 100.0
+        }
+      }
+    },
+    {
+      "term": "Wrangler",
+      "term_type": "product",
+      "stage": "nascent",
+      "age_days": 0,
+      "score": 235.5,
+      "breakdown": {
+        "source_count": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 15.0
+        },
+        "growth": {
+          "raw": "ratio=5.0",
+          "score": 5.0,
+          "weighted": 60.0
+        },
+        "authority": {
+          "raw": "avg=6.0",
+          "score": 6.0,
+          "weighted": 48.0
+        },
+        "mentions": {
+          "raw": 2,
+          "score": 2.5,
+          "weighted": 12.5
+        },
+        "freshness": {
+          "raw": "2026-07-12",
+          "score": 10.0,
+          "weighted": 100.0
+        }
+      }
+    },
+    {
+      "term": "Miniflare",
+      "term_type": "product",
+      "stage": "nascent",
+      "age_days": 0,
+      "score": 235.5,
+      "breakdown": {
+        "source_count": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 15.0
+        },
+        "growth": {
+          "raw": "ratio=5.0",
+          "score": 5.0,
+          "weighted": 60.0
+        },
+        "authority": {
+          "raw": "avg=6.0",
+          "score": 6.0,
+          "weighted": 48.0
+        },
+        "mentions": {
+          "raw": 2,
+          "score": 2.5,
+          "weighted": 12.5
+        },
+        "freshness": {
+          "raw": "2026-07-12",
+          "score": 10.0,
+          "weighted": 100.0
+        }
+      }
+    },
+    {
+      "term": "mastra-ai/mastra",
+      "term_type": "project",
+      "stage": "nascent",
+      "age_days": 0,
+      "score": 228.0,
+      "breakdown": {
+        "source_count": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 15.0
+        },
+        "growth": {
+          "raw": "ratio=5.0",
+          "score": 5.0,
+          "weighted": 60.0
+        },
+        "authority": {
+          "raw": "avg=6.0",
+          "score": 6.0,
+          "weighted": 48.0
+        },
+        "mentions": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 5.0
+        },
+        "freshness": {
+          "raw": "2026-07-12",
+          "score": 10.0,
+          "weighted": 100.0
+        }
+      }
+    },
+    {
+      "term": "LiveKit",
+      "term_type": "product",
+      "stage": "nascent",
+      "age_days": 0,
+      "score": 228.0,
+      "breakdown": {
+        "source_count": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 15.0
+        },
+        "growth": {
+          "raw": "ratio=5.0",
+          "score": 5.0,
+          "weighted": 60.0
+        },
+        "authority": {
+          "raw": "avg=6.0",
+          "score": 6.0,
+          "weighted": 48.0
+        },
+        "mentions": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 5.0
+        },
+        "freshness": {
+          "raw": "2026-07-12",
+          "score": 10.0,
+          "weighted": 100.0
+        }
+      }
+    },
+    {
+      "term": "microsoft/vscode",
+      "term_type": "project",
+      "stage": "nascent",
+      "age_days": 0,
+      "score": 228.0,
+      "breakdown": {
+        "source_count": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 15.0
+        },
+        "growth": {
+          "raw": "ratio=5.0",
+          "score": 5.0,
+          "weighted": 60.0
+        },
+        "authority": {
+          "raw": "avg=6.0",
+          "score": 6.0,
+          "weighted": 48.0
+        },
+        "mentions": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 5.0
+        },
+        "freshness": {
+          "raw": "2026-07-12",
+          "score": 10.0,
+          "weighted": 100.0
+        }
+      }
+    },
+    {
+      "term": "ollama/ollama",
+      "term_type": "project",
+      "stage": "nascent",
+      "age_days": 0,
+      "score": 228.0,
+      "breakdown": {
+        "source_count": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 15.0
+        },
+        "growth": {
+          "raw": "ratio=5.0",
+          "score": 5.0,
+          "weighted": 60.0
+        },
+        "authority": {
+          "raw": "avg=6.0",
+          "score": 6.0,
+          "weighted": 48.0
+        },
+        "mentions": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 5.0
+        },
+        "freshness": {
+          "raw": "2026-07-12",
+          "score": 10.0,
+          "weighted": 100.0
+        }
+      }
+    },
+    {
+      "term": "shadcn-ui/ui",
+      "term_type": "project",
+      "stage": "nascent",
+      "age_days": 0,
+      "score": 228.0,
+      "breakdown": {
+        "source_count": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 15.0
+        },
+        "growth": {
+          "raw": "ratio=5.0",
+          "score": 5.0,
+          "weighted": 60.0
+        },
+        "authority": {
+          "raw": "avg=6.0",
+          "score": 6.0,
+          "weighted": 48.0
+        },
+        "mentions": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 5.0
+        },
+        "freshness": {
+          "raw": "2026-07-12",
+          "score": 10.0,
+          "weighted": 100.0
+        }
+      }
+    },
+    {
+      "term": "supabase/supabase",
+      "term_type": "project",
+      "stage": "nascent",
+      "age_days": 0,
+      "score": 228.0,
+      "breakdown": {
+        "source_count": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 15.0
+        },
+        "growth": {
+          "raw": "ratio=5.0",
+          "score": 5.0,
+          "weighted": 60.0
+        },
+        "authority": {
+          "raw": "avg=6.0",
+          "score": 6.0,
+          "weighted": 48.0
+        },
+        "mentions": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 5.0
+        },
+        "freshness": {
+          "raw": "2026-07-12",
+          "score": 10.0,
+          "weighted": 100.0
+        }
+      }
+    },
+    {
+      "term": "Supabase",
+      "term_type": "company",
+      "stage": "nascent",
+      "age_days": 0,
+      "score": 228.0,
+      "breakdown": {
+        "source_count": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 15.0
+        },
+        "growth": {
+          "raw": "ratio=5.0",
+          "score": 5.0,
+          "weighted": 60.0
+        },
+        "authority": {
+          "raw": "avg=6.0",
+          "score": 6.0,
+          "weighted": 48.0
+        },
+        "mentions": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 5.0
+        },
+        "freshness": {
+          "raw": "2026-07-12",
+          "score": 10.0,
+          "weighted": 100.0
+        }
+      }
+    },
+    {
+      "term": "openai/openai-python",
+      "term_type": "project",
+      "stage": "nascent",
+      "age_days": 0,
+      "score": 228.0,
+      "breakdown": {
+        "source_count": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 15.0
+        },
+        "growth": {
+          "raw": "ratio=5.0",
+          "score": 5.0,
+          "weighted": 60.0
+        },
+        "authority": {
+          "raw": "avg=6.0",
+          "score": 6.0,
+          "weighted": 48.0
+        },
+        "mentions": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 5.0
+        },
+        "freshness": {
+          "raw": "2026-07-12",
+          "score": 10.0,
+          "weighted": 100.0
+        }
+      }
+    },
+    {
+      "term": "Qwen3.5",
+      "term_type": "model",
+      "stage": "nascent",
+      "age_days": 0,
+      "score": 228.0,
+      "breakdown": {
+        "source_count": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 15.0
+        },
+        "growth": {
+          "raw": "ratio=5.0",
+          "score": 5.0,
+          "weighted": 60.0
+        },
+        "authority": {
+          "raw": "avg=6.0",
+          "score": 6.0,
+          "weighted": 48.0
+        },
+        "mentions": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 5.0
+        },
+        "freshness": {
+          "raw": "2026-07-12",
+          "score": 10.0,
+          "weighted": 100.0
+        }
+      }
+    },
+    {
+      "term": "Meta",
+      "term_type": "company",
+      "stage": "nascent",
+      "age_days": 0,
+      "score": 227.0,
+      "breakdown": {
+        "source_count": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 15.0
+        },
+        "growth": {
+          "raw": "ratio=5.0",
+          "score": 5.0,
+          "weighted": 60.0
+        },
+        "authority": {
+          "raw": "avg=4.0",
+          "score": 4.0,
+          "weighted": 32.0
+        },
+        "mentions": {
+          "raw": 4,
+          "score": 4.0,
+          "weighted": 20.0
+        },
+        "freshness": {
+          "raw": "2026-07-12",
+          "score": 10.0,
+          "weighted": 100.0
+        }
+      }
+    },
+    {
+      "term": "Robbyant",
+      "term_type": "company",
+      "stage": "nascent",
+      "age_days": 0,
+      "score": 223.9,
+      "breakdown": {
+        "source_count": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 15.0
+        },
+        "growth": {
+          "raw": "ratio=5.0",
+          "score": 5.0,
+          "weighted": 60.0
+        },
+        "authority": {
+          "raw": "avg=4.0",
+          "score": 4.0,
+          "weighted": 32.0
+        },
+        "mentions": {
+          "raw": 3,
+          "score": 3.4,
+          "weighted": 16.9
+        },
+        "freshness": {
+          "raw": "2026-07-12",
+          "score": 10.0,
+          "weighted": 100.0
+        }
+      }
+    },
+    {
+      "term": "IBM",
+      "term_type": "company",
+      "stage": "nascent",
+      "age_days": 0,
+      "score": 219.5,
+      "breakdown": {
+        "source_count": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 15.0
+        },
+        "growth": {
+          "raw": "ratio=5.0",
+          "score": 5.0,
+          "weighted": 60.0
+        },
+        "authority": {
+          "raw": "avg=4.0",
+          "score": 4.0,
+          "weighted": 32.0
+        },
+        "mentions": {
+          "raw": 2,
+          "score": 2.5,
+          "weighted": 12.5
+        },
+        "freshness": {
+          "raw": "2026-07-12",
+          "score": 10.0,
+          "weighted": 100.0
+        }
+      }
+    },
+    {
+      "term": "Red Hat",
+      "term_type": "company",
+      "stage": "nascent",
+      "age_days": 0,
+      "score": 219.5,
+      "breakdown": {
+        "source_count": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 15.0
+        },
+        "growth": {
+          "raw": "ratio=5.0",
+          "score": 5.0,
+          "weighted": 60.0
+        },
+        "authority": {
+          "raw": "avg=4.0",
+          "score": 4.0,
+          "weighted": 32.0
+        },
+        "mentions": {
+          "raw": 2,
+          "score": 2.5,
+          "weighted": 12.5
+        },
+        "freshness": {
+          "raw": "2026-07-12",
+          "score": 10.0,
+          "weighted": 100.0
+        }
+      }
+    },
+    {
+      "term": "Lightwell",
+      "term_type": "project",
+      "stage": "nascent",
+      "age_days": 0,
+      "score": 219.5,
+      "breakdown": {
+        "source_count": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 15.0
+        },
+        "growth": {
+          "raw": "ratio=5.0",
+          "score": 5.0,
+          "weighted": 60.0
+        },
+        "authority": {
+          "raw": "avg=4.0",
+          "score": 4.0,
+          "weighted": 32.0
+        },
+        "mentions": {
+          "raw": 2,
+          "score": 2.5,
+          "weighted": 12.5
+        },
+        "freshness": {
+          "raw": "2026-07-12",
+          "score": 10.0,
+          "weighted": 100.0
+        }
+      }
+    },
+    {
+      "term": "Anthropic",
+      "term_type": "company",
+      "stage": "nascent",
+      "age_days": 0,
+      "score": 219.5,
+      "breakdown": {
+        "source_count": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 15.0
+        },
+        "growth": {
+          "raw": "ratio=5.0",
+          "score": 5.0,
+          "weighted": 60.0
+        },
+        "authority": {
+          "raw": "avg=4.0",
+          "score": 4.0,
+          "weighted": 32.0
+        },
+        "mentions": {
+          "raw": 2,
+          "score": 2.5,
+          "weighted": 12.5
+        },
+        "freshness": {
+          "raw": "2026-07-12",
+          "score": 10.0,
+          "weighted": 100.0
+        }
+      }
+    },
+    {
+      "term": "Ollama",
+      "term_type": "company",
+      "stage": "nascent",
+      "age_days": 0,
+      "score": 212.0,
+      "breakdown": {
+        "source_count": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 15.0
+        },
+        "growth": {
+          "raw": "ratio=5.0",
+          "score": 5.0,
+          "weighted": 60.0
+        },
+        "authority": {
+          "raw": "avg=4.0",
+          "score": 4.0,
+          "weighted": 32.0
+        },
+        "mentions": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 5.0
+        },
+        "freshness": {
+          "raw": "2026-07-12",
+          "score": 10.0,
+          "weighted": 100.0
+        }
+      }
+    },
+    {
+      "term": "Linux Foundation",
+      "term_type": "company",
+      "stage": "nascent",
+      "age_days": 0,
+      "score": 212.0,
+      "breakdown": {
+        "source_count": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 15.0
+        },
+        "growth": {
+          "raw": "ratio=5.0",
+          "score": 5.0,
+          "weighted": 60.0
+        },
+        "authority": {
+          "raw": "avg=4.0",
+          "score": 4.0,
+          "weighted": 32.0
+        },
+        "mentions": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 5.0
+        },
+        "freshness": {
+          "raw": "2026-07-12",
+          "score": 10.0,
+          "weighted": 100.0
+        }
+      }
+    },
+    {
+      "term": "LingBot-World 2.0",
+      "term_type": "model",
+      "stage": "nascent",
+      "age_days": 0,
+      "score": 212.0,
+      "breakdown": {
+        "source_count": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 15.0
+        },
+        "growth": {
+          "raw": "ratio=5.0",
+          "score": 5.0,
+          "weighted": 60.0
+        },
+        "authority": {
+          "raw": "avg=4.0",
+          "score": 4.0,
+          "weighted": 32.0
+        },
+        "mentions": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 5.0
+        },
+        "freshness": {
+          "raw": "2026-07-12",
+          "score": 10.0,
+          "weighted": 100.0
+        }
+      }
+    },
+    {
+      "term": "Mistral",
+      "term_type": "company",
+      "stage": "nascent",
+      "age_days": 0,
+      "score": 212.0,
+      "breakdown": {
+        "source_count": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 15.0
+        },
+        "growth": {
+          "raw": "ratio=5.0",
+          "score": 5.0,
+          "weighted": 60.0
+        },
+        "authority": {
+          "raw": "avg=4.0",
+          "score": 4.0,
+          "weighted": 32.0
+        },
+        "mentions": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 5.0
+        },
+        "freshness": {
+          "raw": "2026-07-12",
+          "score": 10.0,
+          "weighted": 100.0
+        }
+      }
+    },
+    {
+      "term": "Leanstral 1.5",
+      "term_type": "model",
+      "stage": "nascent",
+      "age_days": 0,
+      "score": 212.0,
+      "breakdown": {
+        "source_count": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 15.0
+        },
+        "growth": {
+          "raw": "ratio=5.0",
+          "score": 5.0,
+          "weighted": 60.0
+        },
+        "authority": {
+          "raw": "avg=4.0",
+          "score": 4.0,
+          "weighted": 32.0
+        },
+        "mentions": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 5.0
+        },
+        "freshness": {
+          "raw": "2026-07-12",
+          "score": 10.0,
+          "weighted": 100.0
+        }
+      }
+    },
+    {
+      "term": "GPT-5.6",
+      "term_type": "model",
+      "stage": "nascent",
+      "age_days": 0,
+      "score": 212.0,
+      "breakdown": {
+        "source_count": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 15.0
+        },
+        "growth": {
+          "raw": "ratio=5.0",
+          "score": 5.0,
+          "weighted": 60.0
+        },
+        "authority": {
+          "raw": "avg=4.0",
+          "score": 4.0,
+          "weighted": 32.0
+        },
+        "mentions": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 5.0
+        },
+        "freshness": {
+          "raw": "2026-07-12",
+          "score": 10.0,
+          "weighted": 100.0
+        }
+      }
+    },
+    {
+      "term": "Databricks",
+      "term_type": "company",
+      "stage": "nascent",
+      "age_days": 0,
+      "score": 212.0,
+      "breakdown": {
+        "source_count": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 15.0
+        },
+        "growth": {
+          "raw": "ratio=5.0",
+          "score": 5.0,
+          "weighted": 60.0
+        },
+        "authority": {
+          "raw": "avg=4.0",
+          "score": 4.0,
+          "weighted": 32.0
+        },
+        "mentions": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 5.0
+        },
+        "freshness": {
+          "raw": "2026-07-12",
+          "score": 10.0,
+          "weighted": 100.0
+        }
+      }
+    },
+    {
+      "term": "GLM 5.2",
+      "term_type": "model",
+      "stage": "nascent",
+      "age_days": 0,
+      "score": 212.0,
+      "breakdown": {
+        "source_count": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 15.0
+        },
+        "growth": {
+          "raw": "ratio=5.0",
+          "score": 5.0,
+          "weighted": 60.0
+        },
+        "authority": {
+          "raw": "avg=4.0",
+          "score": 4.0,
+          "weighted": 32.0
+        },
+        "mentions": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 5.0
+        },
+        "freshness": {
+          "raw": "2026-07-12",
+          "score": 10.0,
+          "weighted": 100.0
+        }
+      }
+    },
+    {
+      "term": "SpaceXAI",
+      "term_type": "company",
+      "stage": "nascent",
+      "age_days": 0,
+      "score": 212.0,
+      "breakdown": {
+        "source_count": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 15.0
+        },
+        "growth": {
+          "raw": "ratio=5.0",
+          "score": 5.0,
+          "weighted": 60.0
+        },
+        "authority": {
+          "raw": "avg=4.0",
+          "score": 4.0,
+          "weighted": 32.0
+        },
+        "mentions": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 5.0
+        },
+        "freshness": {
+          "raw": "2026-07-12",
+          "score": 10.0,
+          "weighted": 100.0
+        }
+      }
+    },
+    {
+      "term": "LingBot-VLA 2.0",
+      "term_type": "model",
+      "stage": "nascent",
+      "age_days": 0,
+      "score": 212.0,
+      "breakdown": {
+        "source_count": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 15.0
+        },
+        "growth": {
+          "raw": "ratio=5.0",
+          "score": 5.0,
+          "weighted": 60.0
+        },
+        "authority": {
+          "raw": "avg=4.0",
+          "score": 4.0,
+          "weighted": 32.0
+        },
+        "mentions": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 5.0
+        },
+        "freshness": {
+          "raw": "2026-07-12",
+          "score": 10.0,
+          "weighted": 100.0
+        }
+      }
+    },
+    {
+      "term": "Finto",
+      "term_type": "company",
+      "stage": "nascent",
+      "age_days": 0,
+      "score": 212.0,
+      "breakdown": {
+        "source_count": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 15.0
+        },
+        "growth": {
+          "raw": "ratio=5.0",
+          "score": 5.0,
+          "weighted": 60.0
+        },
+        "authority": {
+          "raw": "avg=4.0",
+          "score": 4.0,
+          "weighted": 32.0
+        },
+        "mentions": {
+          "raw": 1,
+          "score": 1.0,
+          "weighted": 5.0
+        },
+        "freshness": {
+          "raw": "2026-07-12",
+          "score": 10.0,
+          "weighted": 100.0
+        }
+      }
+    }
+  ]
+}
