@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RISCBoy Toolbox — Flash & manage your open-source handheld in minutes | www.aimfast.dev</title>
+  <meta name="description" content="RISCBoy Toolbox: one-click firmware flashing, drag-and-drop ROM manager. The first desktop app built for RISCBoy & RP2040 handhelds.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#1a1d24">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://www.aimfast.dev/riscboy-toolbox/">
+  <meta property="og:type" content="product">
+  <meta property="og:title" content="RISCBoy Toolbox — Flash & manage your open-source handheld in minutes">
+  <meta property="og:description" content="One-click firmware flashing, drag-and-drop ROM manager. The first desktop app built for RISCBoy & RP2040 handhelds.">
+  <meta property="og:url" content="https://www.aimfast.dev/riscboy-toolbox/">
+  <meta property="og:site_name" content="AimFast.Dev">
+  <meta property="og:image" content="https://www.aimfast.dev/og/riscboy-toolbox.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="RISCBoy Toolbox — Flash & manage your open-source handheld in minutes">
+  <meta name="twitter:description" content="One-click firmware flashing, drag-and-drop ROM manager. The first desktop app built for RISCBoy & RP2040 handhelds.">
+  <meta name="twitter:image" content="https://www.aimfast.dev/og/riscboy-toolbox.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "RISCBoy Toolbox",
+    "applicationCategory": "AIApplication",
+    "operatingSystem": "Web",
+    "description": "Desktop app for RISCBoy handheld: one-click firmware flashing, drag-and-drop ROM manager, device detection. Free + Pro version.",
+    "url": "https://www.aimfast.dev/riscboy-toolbox/",
+    "offers": {
+      "@type": "Offer",
+      "price": "4.99",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+
+  <!-- Shared design system -->
+  <link rel="stylesheet" href="/_ds/base.css">
+  <link rel="stylesheet" href="/_ds/components.css">
+
+  <style>
+    /* ===== custom page styles (only layout & overrides, no token redefinitions) ===== */
+    .hero {
+      padding: var(--space-8) 0 var(--space-6);
+      text-align: center;
+    }
+    .hero h1 {
+      max-width: 720px;
+      margin: 0 auto var(--space-3);
+    }
+    .hero .subhead {
+      max-width: 540px;
+      margin: 0 auto var(--space-5);
+      color: var(--color-text-secondary);
+      font-size: 1.15rem;
+    }
+    .signup-form {
+      display: flex;
+      gap: var(--space-2);
+      max-width: 480px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .signup-form input[type="email"] {
+      flex: 1 1 240px;
+      height: 52px;
+      padding: 0 var(--space-3);
+      border: 2px solid var(--color-border);
+      border-radius: var(--radius-md);
+      background: var(--color-surface);
+      color: var(--color-text);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      transition: border-color var(--duration-normal) var(--ease-out);
+    }
+    .signup-form input[type="email"]:focus {
+      outline: none;
+      border-color: var(--color-accent);
+      box-shadow: 0 0 0 3px color-mix(in oklch, var(--color-accent) 20%, transparent);
+    }
+    .signup-form .btn {
+      height: 52px;
+      padding: 0 var(--space-4);
+      font-size: 1rem;
+      white-space: nowrap;
+    }
+    .signup-form .btn-lg {
+      height: 52px;
+      line-height: 52px;
+    }
+    .form-feedback {
+      margin-top: var(--space-3);
+      font-weight: 500;
+      min-height: 2rem;
+    }
+    .form-feedback.success {
+      color: var(--color-accent);
+    }
+    .form-feedback.error {
+      color: #e45;
+    }
+
+    /* sections */
+    .section {
+      padding: var(--space-8) 0;
+    }
+    .section h2 {
+      text-align: center;
+      margin-bottom: var(--space-5);
+    }
+    .why-text p {
+      max-width: 720px;
+      margin: 0 auto var(--space-3);
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+    }
+    .steps-grid {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-5);
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .step {
+      display: flex;
+      gap: var(--space-4);
+      align-items: flex-start;
+    }
+    .step-num {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--color-accent);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+    .step-content h3 {
+      margin-bottom: var(--space-1);
+      font-size: 1.1rem;
+    }
+    .step-content p {
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+    }
+
+    .selling-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-5);
+    }
+    .selling-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-5) var(--space-4);
+      text-align: center;
+      transition: transform var(--duration-normal) var(--ease-out), box-shadow var(--duration-normal) var(--ease-out);
+    }
+    .selling-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+    .selling-card .icon-wrap {
+      margin-bottom: var(--space-3);
+      color: var(--color-accent);
+    }
+    .selling-card h3 {
+      margin-bottom: var(--space-2);
+      font-size: 1.05rem;
+    }
+    .selling-card p {
+      color: var(--color-text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .trust-bar {
+      text-align: center;
+      padding: var(--space-5) 0 var(--space-3);
+      color: var(--color-text-muted);
+      font-size: 0.85rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: var(--space-4) var(--space-6);
+    }
+    .trust-bar span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .trust-bar svg {
+      width: 18px;
+      height: 18px;
+      stroke-width: 1.8;
+    }
+
+    footer {
+      text-align: center;
+      padding: var(--space-5) 0 var(--space-4);
+      border-top: 1px solid var(--color-border);
+      color: var(--color-text-muted);
+      font-size: 0.85rem;
+    }
+
+    /* mobile */
+    @media (max-width: 640px) {
+      .hero h1 { font-size: 1.8rem; }
+      .signup-form { flex-direction: column; align-items: stretch; }
+      .signup-form input[type="email"] { flex: 1 1 auto; }
+      .selling-grid { grid-template-columns: 1fr; }
+      .step { flex-direction: column; align-items: center; text-align: center; }
+      .step-num { margin-bottom: var(--space-2); }
+      .trust-bar { flex-direction: column; gap: var(--space-2); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero container">
+    <h1 class="heading-xl">RISCBoy Toolbox: Flash & manage in 3 minutes</h1>
+    <p class="subhead">No terminal needed. One-click firmware flashing, drag‑and‑drop ROMs. Built for RISCBoy &amp; RP2040 handhelds.</p>
+
+    <!-- inline email form – zero clicks to see -->
+    <form id="signup-form" class="signup-form" action="https://formspree.io/f/your-form-id" method="POST">
+      <input type="email" name="email" placeholder="you@example.com" required autocomplete="email">
+      <button type="submit" class="btn btn-primary btn-lg">Get Early Access</button>
+    </form>
+    <div id="form-feedback" class="form-feedback" aria-live="polite"></div>
+  </section>
+
+  <!-- ===== WHY THIS MATTERS ===== -->
+  <section class="section why-text container">
+    <h2 class="heading-lg">Why an open‑source handheld toolbox matters right now</h2>
+    <p>The RISCBoy project hit 62 upvotes and 17 comments on Hacker News in its first day — a clear signal that the maker community is hungry for a portable, hackable game console. But the excitement quickly turns into frustration: new owners flood Reddit and Discord asking “how do I flash the firmware?” and “what do I do with these .uf2 files?”. The official tools are CLI‑only, and the community scripts are scattered, platform‑specific, and assume you already know how to use a terminal.</p>
+    <p>Existing solutions like <code>picotool</code> and Arduino IDE are either too low‑level or too bloated. They weren’t designed for someone who just bought a cool open‑source handheld and wants to play games. RISCBoy Toolbox fills that gap: a lightweight, cross‑platform desktop app that does one thing well — get you from unboxing to gaming in under three minutes. No config files, no PATH variables, no frustration.</p>
+    <p>With the RP2040 ecosystem growing (over 10 million units shipped) and new handhelds like RISCBoy, GameShell, and M5Stack Cardputer gaining traction, the timing is perfect. The community is still small enough that a dedicated tool can become the de‑facto standard. Early adopters are actively looking for a better way — and they’re willing to pay for it.</p>
+  </section>
+
+  <!-- ===== HOW IT WORKS ===== -->
+  <section class="section container">
+    <h2 class="heading-lg">How It Works</h2>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h3>Connect your handheld</h3>
+          <p>Plug your RISCBoy (or any RP2040‑based console) into your Mac or Windows computer via USB. The app automatically detects the device and shows a green “connected” indicator — no drivers to install.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h3>Flash firmware in one click</h3>
+          <p>Drag a <code>.uf2</code> firmware file onto the app window, or click “Browse” to select it. Then hit the big “Flash” button. The tool calls <code>picotool</code> under the hood, but you never see a terminal. Progress bar + success sound.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h3>Manage your game library</h3>
+          <p>Drop your ROMs (NES, Game Boy, SNES, etc.) into the app. It scans the files, shows cover art placeholders, and lets you launch games directly. The free version handles up to 5 ROMs; Pro unlocks unlimited storage and automatic cover downloads.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SELLING POINTS ===== -->
+  <section class="section container">
+    <h2 class="heading-lg">What You Get</h2>
+    <div class="selling-grid">
+      <div class="selling-card">
+        <div class="icon-wrap">
+          <!-- zap / flash icon -->
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+          </svg>
+        </div>
+        <h3>One‑click firmware flash</h3>
+        <p>Select any <code>.uf2</code> file and flash it to your RISCBoy with a single button press. No command line, no environment setup. The app automatically detects the correct device and verifies the write.</p>
+      </div>
+      <div class="selling-card">
+        <div class="icon-wrap">
+          <!-- gamepad / grid icon -->
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="6" width="20" height="12" rx="2"/>
+            <circle cx="6" cy="12" r="1.5"/>
+            <circle cx="18" cy="12" r="1.5"/>
+            <path d="M9 12h6"/>
+          </svg>
+        </div>
+        <h3>Drag‑and‑drop ROM manager</h3>
+        <p>Drag your game ROMs straight into the app. It automatically scans the files, detects the platform (NES, GB, SNES, etc.), and builds a browsable library. No manual tagging or folder sorting required.</p>
+      </div>
+      <div class="selling-card">
+        <div class="icon-wrap">
+          <!-- monitor / device icon -->
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="3" width="20" height="14" rx="2"/>
+            <line x1="8" y1="21" x2="16" y2="21"/>
+            <line x1="12" y1="17" x2="12" y2="21"/>
+          </svg>
+        </div>
+        <h3>Cross‑platform &amp; lightweight</h3>
+        <p>Works on both macOS and Windows. The app is built with Electron but optimized for low memory usage — under 80 MB idle. No background services, no telemetry. Just a clean tool that does its job.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TRUST BAR ===== -->
+  <div class="trust-bar container">
+    <span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        <polyline points="9 12 11 14 15 10"/>
+      </svg>
+      Built for the RISCBoy community
+    </span>
+    <span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+        <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+      </svg>
+      No data collection, no ads
+    </span>
+    <span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="4" width="20" height="16" rx="2"/>
+        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+      </svg>
+      Free tier available · Pro $4.99
+    </span>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="container">
+    © 2026 · <a href="https://www.aimfast.dev"
