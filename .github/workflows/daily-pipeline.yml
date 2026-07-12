@@ -56,9 +56,28 @@ jobs:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           PYTHONUTF8: '1'
           LANG: en_US.UTF-8
+          TZ: Asia/Shanghai
         run: |
           chmod +x scripts/daily_run.sh
           bash scripts/daily_run.sh
+
+      - name: Commit and push pipeline output
+        if: always()
+        env:
+          TZ: Asia/Shanghai
+        run: |
+          git config user.name "AimFast.Dev Bot"
+          git config user.email "bot@aimfast.dev"
+
+          DATE=$(date +%Y-%m-%d)
+          git add -A
+
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Pipeline data update: $DATE"
+            git push origin HEAD:master
+          fi
 
       - name: Upload pipeline log
         if: always()
