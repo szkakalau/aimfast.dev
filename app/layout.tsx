@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from 'next';
+import LangToggle from '../components/LangToggle';
 import './globals.css';
 
 export const viewport: Viewport = {
@@ -17,7 +18,7 @@ export const metadata: Metadata = {
     canonical: 'https://www.aimfast.dev/',
     languages: {
       en: 'https://www.aimfast.dev/',
-      'zh-CN': 'https://www.aimfast.dev/',
+      'zh-CN': 'https://www.aimfast.dev/zh/',
     },
   },
   openGraph: {
@@ -90,7 +91,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <link rel="alternate" hrefLang="en" href="https://www.aimfast.dev/" />
-        <link rel="alternate" hrefLang="zh-CN" href="https://www.aimfast.dev/" />
+        <link rel="alternate" hrefLang="zh-CN" href="https://www.aimfast.dev/zh/" />
         <link rel="alternate" hrefLang="x-default" href="https://www.aimfast.dev/" />
       </head>
       <body>
@@ -104,6 +105,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <a href="/">Trends</a>
             <a href="/dashboard/">Dashboard</a>
             <a href="/pricing/">Pricing</a>
+            <LangToggle />
           </div>
         </nav>
         {children}

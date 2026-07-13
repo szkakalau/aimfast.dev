@@ -39,6 +39,18 @@ export function getResearchContentEn(path: string): string {
   return getResearchContent(path);
 }
 
+export function getTrendStats(): { total: number; withResearch: number; totalSources: number } {
+  try {
+    const data = getAllTrendTerms();
+    const terms = data.terms || [];
+    const withResearch = terms.filter((t) => t.research_md_path && t.score >= 60).length;
+    const totalSources = new Set(terms.flatMap((t) => t.sources || [])).size;
+    return { total: terms.length, withResearch, totalSources };
+  } catch {
+    return { total: 0, withResearch: 0, totalSources: 0 };
+  }
+}
+
 export function stageLabel(stage: string): string {
   const map: Record<string, string> = {
     nascent: 'Nascent (0-7d)',

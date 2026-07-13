@@ -162,6 +162,7 @@ export default function PricingPage() {
             href="https://tally.so/r/placeholder"
             className="btn btn-primary pricing-cta"
             target="_blank"
+            rel="noopener noreferrer"
           >
             Start Free Trial →
           </a>
@@ -197,6 +198,7 @@ export default function PricingPage() {
           className="btn btn-primary"
           style={{ fontSize: '1rem', padding: '14px 32px' }}
           target="_blank"
+          rel="noopener noreferrer"
         >
           Get Early Access →
         </a>

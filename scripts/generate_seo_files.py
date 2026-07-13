@@ -233,6 +233,13 @@ def generate_sitemap() -> int:
         'priority': '0.9',
     })
 
+    # Chinese pages
+    urls.append({
+        'loc': f'{BASE_URL}/zh/',
+        'changefreq': 'daily',
+        'priority': '1.0',
+    })
+
     # Dashboard
     urls.append({
         'loc': f'{BASE_URL}/dashboard/',
@@ -243,6 +250,11 @@ def generate_sitemap() -> int:
     # Pricing
     urls.append({
         'loc': f'{BASE_URL}/pricing/',
+        'changefreq': 'weekly',
+        'priority': '0.9',
+    })
+    urls.append({
+        'loc': f'{BASE_URL}/pricing/zh/',
         'changefreq': 'weekly',
         'priority': '0.9',
     })

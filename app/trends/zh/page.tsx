@@ -6,13 +6,13 @@ export const metadata: Metadata = {
     '在新兴技术术语和概念流行之前，先人一步发现它们。',
   robots: { index: false, follow: true },
   alternates: {
-    canonical: 'https://www.aimfast.dev/',
+    canonical: 'https://www.aimfast.dev/zh/',
   },
   // Meta refresh is the only redirect option for static export (no middleware).
   // Tradeoff: W3C discourages meta refresh for accessibility reasons.
   // If the site enables SSR/middleware, replace with a 301 permanent redirect.
   other: {
-    refresh: '0;url=/',
+    refresh: '0;url=/zh/',
   },
 };
 
@@ -22,7 +22,7 @@ export default function TrendsZhRedirect() {
       <div className="trends-empty" style={{ textAlign: 'center', padding: 'var(--space-10) 0' }}>
         <h2>趋势发现已迁移</h2>
         <p>
-          趋势发现页面现在是<a href="/">首页</a>。
+          中文趋势发现现在是<a href="/zh/">中文首页</a>。
         </p>
         <p style={{ marginTop: 'var(--space-3)', color: 'var(--color-text-muted)' }}>
           正在跳转…

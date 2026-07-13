@@ -226,6 +226,18 @@ a, button, input, select, textarea, label, [role="button"] {
   color: var(--color-accent);
 }
 
+/* ── Nav language toggle ── */
+.nav-lang {
+  font-size: 0.85rem; font-weight: 500;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--ease-out);
+  padding: 8px 4px;
+  min-height: 44px; display: inline-flex; align-items: center;
+  touch-action: manipulation;
+}
+.nav-lang:hover { color: var(--color-accent); }
+
 /* Mobile nav */
 @media (max-width: 640px) {
   .nav-toggle-label {
