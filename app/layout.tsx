@@ -8,9 +8,9 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: 'AimFast.Dev — Daily Market Intelligence for Indie Builders',
+  title: 'AimFast.Dev — Free Trend Discovery & Market Intelligence',
   description:
-    'Every morning, get one validated product opportunity — what to build, who will pay, and how much to charge. AI scans 11 sources so you don\'t have to. 14-day free trial, $19/mo.',
+    'Discover emerging tech terms before they trend. Free daily tracking across 11+ sources. Dashboard membership unlocks daily product opportunities — what to build, who will pay, and how much to charge.',
   robots: { index: true, follow: true },
   metadataBase: new URL('https://www.aimfast.dev'),
   alternates: {
@@ -22,9 +22,9 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'website',
-    title: 'AimFast.Dev — Daily Market Intelligence for Indie Builders',
+    title: 'AimFast.Dev — Free Trend Discovery & Market Intelligence',
     description:
-      'Every morning, get one validated product opportunity with a build plan and pricing strategy. AI scans 11 global sources.',
+      'Discover emerging tech terms before they trend. Free daily tracking. Dashboard: one validated product opportunity every morning.',
     url: 'https://www.aimfast.dev/',
     siteName: 'AimFast.Dev',
     images: [
@@ -32,14 +32,14 @@ export const metadata: Metadata = {
         url: 'https://www.aimfast.dev/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'AimFast.Dev — Daily Market Intelligence',
+        alt: 'AimFast.Dev — Trend Discovery & Market Intelligence',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AimFast.Dev — Daily Market Intelligence',
-    description: 'Daily validated product opportunities from 11 global signal sources.',
+    title: 'AimFast.Dev — Free Trend Discovery',
+    description: 'Discover emerging tech terms before they trend. Free daily tracking. Dashboard: daily product opportunities.',
     images: ['https://www.aimfast.dev/og-image.png'],
   },
 };
@@ -84,6 +84,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           rel="stylesheet"
         />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="alternate" type="application/rss+xml" title="AimFast.Dev Articles RSS" href="/articles/rss.xml" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -93,12 +94,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="alternate" hrefLang="x-default" href="https://www.aimfast.dev/" />
       </head>
       <body>
-        <nav className="site-nav">
+        <nav className="site-nav" aria-label="Main navigation">
           <a href="/" className="site-nav-logo">AimFast.Dev</a>
+          <input type="checkbox" id="nav-toggle" className="nav-toggle-input" aria-hidden="true" />
+          <label htmlFor="nav-toggle" className="nav-toggle-label" aria-label="Toggle navigation menu">
+            <span className="nav-toggle-icon" />
+          </label>
           <div className="site-nav-links">
-            <a href="/trends/">Trends</a>
+            <a href="/">Trends</a>
             <a href="/dashboard/">Dashboard</a>
-            <a href="/reports/">Reports</a>
+            <a href="/pricing/">Pricing</a>
           </div>
         </nav>
         {children}

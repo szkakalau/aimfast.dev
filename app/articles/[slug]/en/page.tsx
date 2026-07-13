@@ -126,15 +126,27 @@ export default async function ArticleEnPage({
 
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'Article',
-    headline: frontmatter.title || slug,
-    datePublished: frontmatter.date || undefined,
-    description: frontmatter.summary || '',
-    author: { '@type': 'Organization', name: 'AimFast.Dev' },
-    publisher: { '@type': 'Organization', name: 'AimFast.Dev' },
-    inLanguage: 'en',
-    url: canonicalUrl,
-    mainEntityOfPage: { '@type': 'WebPage', '@id': canonicalUrl },
+    '@graph': [
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Trends', item: 'https://www.aimfast.dev/' },
+          { '@type': 'ListItem', position: 2, name: 'Articles', item: 'https://www.aimfast.dev/articles/' },
+          { '@type': 'ListItem', position: 3, name: frontmatter.title || slug, item: canonicalUrl },
+        ],
+      },
+      {
+        '@type': 'Article',
+        headline: frontmatter.title || slug,
+        datePublished: frontmatter.date || undefined,
+        description: frontmatter.summary || '',
+        author: { '@type': 'Organization', name: 'AimFast.Dev' },
+        publisher: { '@type': 'Organization', name: 'AimFast.Dev' },
+        inLanguage: 'en',
+        url: canonicalUrl,
+        mainEntityOfPage: { '@type': 'WebPage', '@id': canonicalUrl },
+      },
+    ],
   };
 
   return (
@@ -166,7 +178,7 @@ export default async function ArticleEnPage({
         <footer className="site-footer">
           <p>
             &copy; {new Date().getFullYear()} AimFast.Dev ·{' '}
-            <a href="/">Home</a> · <a href="/dashboard/">Dashboard</a> ·{' '}
+            <a href="/">Trends</a> · <a href="/dashboard/">Dashboard</a> · <a href="/pricing/">Pricing</a> ·{' '}
             <a href={zhUrl}>中文版</a>
           </p>
         </footer>

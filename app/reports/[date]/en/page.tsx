@@ -116,15 +116,27 @@ export default async function ReportEnPage({
 
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'Article',
-    headline: title,
-    datePublished: fm.date || date,
-    description: fm.summary || '',
-    author: { '@type': 'Organization', name: 'AimFast.Dev' },
-    publisher: { '@type': 'Organization', name: 'AimFast.Dev' },
-    inLanguage: 'en',
-    url: canonicalUrl,
-    mainEntityOfPage: { '@type': 'WebPage', '@id': canonicalUrl },
+    '@graph': [
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Trends', item: 'https://www.aimfast.dev/' },
+          { '@type': 'ListItem', position: 2, name: 'Reports', item: 'https://www.aimfast.dev/reports/' },
+          { '@type': 'ListItem', position: 3, name: title, item: canonicalUrl },
+        ],
+      },
+      {
+        '@type': 'Article',
+        headline: title,
+        datePublished: fm.date || date,
+        description: fm.summary || `Daily signal intelligence report for ${date}.`,
+        author: { '@type': 'Organization', name: 'AimFast.Dev' },
+        publisher: { '@type': 'Organization', name: 'AimFast.Dev' },
+        inLanguage: 'en',
+        url: canonicalUrl,
+        mainEntityOfPage: { '@type': 'WebPage', '@id': canonicalUrl },
+      },
+    ],
   };
 
   return (
@@ -136,7 +148,7 @@ export default async function ReportEnPage({
       <main className="container">
         <nav aria-label="Breadcrumb" style={{ padding: 'var(--space-4) 0', fontSize: '0.875rem' }}>
           <ol style={{ listStyle: 'none', display: 'flex', gap: 'var(--space-2)', margin: 0, padding: 0 }}>
-            <li><a href="/">Home</a></li>
+            <li><a href="/">Trends</a></li>
             <li aria-hidden="true">/</li>
             <li><a href="/reports/">Reports</a></li>
             <li aria-hidden="true">/</li>
@@ -169,7 +181,7 @@ export default async function ReportEnPage({
         <footer className="site-footer" style={{ borderTop: '1px solid var(--color-border)', paddingTop: 'var(--space-6)', marginTop: 'var(--space-10)' }}>
           <p style={{ fontSize: '0.875rem', color: 'var(--color-muted)' }}>
             &copy; {new Date().getFullYear()} AimFast.Dev ·{' '}
-            <a href="/">Home</a> · <a href="/dashboard/">Dashboard</a> ·{' '}
+            <a href="/">Trends</a> · <a href="/dashboard/">Dashboard</a> · <a href="/pricing/">Pricing</a> ·{' '}
             <a href={zhUrl}>中文版</a>
           </p>
         </footer>

@@ -107,7 +107,7 @@ export default function ArticlesIndexPage() {
             plain-English translation, and actionable next steps.
           </p>
           <nav style={{ marginTop: 'var(--space-3)', fontSize: '0.85rem' }}>
-            <a href="/">← Home</a>
+            <a href="/">← Trends</a>
             {' · '}
             <a href="/reports/">Daily Reports</a>
           </nav>
@@ -143,7 +143,7 @@ export default function ArticlesIndexPage() {
         <footer className="site-footer">
           <p>
             &copy; {new Date().getFullYear()} AimFast.Dev ·{' '}
-            <a href="/">Home</a> · <a href="/dashboard/">Dashboard</a>
+            <a href="/">Trends</a> · <a href="/dashboard/">Dashboard</a> · <a href="/pricing/">Pricing</a>
           </p>
         </footer>
       </main>

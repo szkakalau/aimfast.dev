@@ -168,6 +168,13 @@ export default async function TrendDetailPage({
     '@context': 'https://schema.org',
     '@graph': [
       {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Trend Discovery', item: 'https://www.aimfast.dev/' },
+          { '@type': 'ListItem', position: 2, name: term.canonical, item: `https://www.aimfast.dev/trends/${slug}/` },
+        ],
+      },
+      {
         '@type': 'Article',
         headline: `${term.canonical} — Trend Report`,
         description: term.summary_en,
@@ -215,7 +222,7 @@ export default async function TrendDetailPage({
       <main className="trend-detail">
         {/* ── Breadcrumb + Language Switcher ── */}
         <div className="trend-detail-topbar">
-          <a href="/trends/" className="trend-breadcrumb">
+          <a href="/" className="trend-breadcrumb">
             ← Back to all trends
           </a>
           <a href={`/trends/${slug}/zh/`} className="lang-switch">
@@ -487,11 +494,11 @@ export default async function TrendDetailPage({
         {/* ── Footer ── */}
         <footer className="site-footer">
           <div className="footer-links">
-            <a href="/">Home</a>
-            <span className="footer-sep">|</span>
-            <a href="/trends/">All Trends</a>
+            <a href="/">Trends</a>
             <span className="footer-sep">|</span>
             <a href="/dashboard/">Dashboard</a>
+            <span className="footer-sep">|</span>
+            <a href="/pricing/">Pricing</a>
             <span className="footer-sep">|</span>
             <a href="/reports/">Reports</a>
           </div>

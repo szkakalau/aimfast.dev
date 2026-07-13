@@ -136,13 +136,13 @@ export default function ReportsIndexPage() {
           )}
 
           <p style={{ marginTop: 'var(--space-6)', fontSize: '0.85rem', color: 'var(--color-muted)' }}>
-            <a href="/">← Back to home</a>
+            <a href="/">← Back to trends</a>
           </p>
         </div>
         <footer className="site-footer">
           <p>
             &copy; {new Date().getFullYear()} AimFast.Dev ·{' '}
-            <a href="/">Home</a> · <a href="/dashboard/">Dashboard</a>
+            <a href="/">Trends</a> · <a href="/dashboard/">Dashboard</a> · <a href="/pricing/">Pricing</a>
           </p>
         </footer>
       </main>

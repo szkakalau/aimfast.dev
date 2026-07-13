@@ -156,6 +156,13 @@ export default async function TrendDetailZhPage({
     '@context': 'https://schema.org',
     '@graph': [
       {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: '趋势发现', item: 'https://www.aimfast.dev/' },
+          { '@type': 'ListItem', position: 2, name: term.canonical, item: `https://www.aimfast.dev/trends/${slug}/zh/` },
+        ],
+      },
+      {
         '@type': 'Article',
         headline: `${term.canonical} — 趋势报告`,
         description: term.summary_zh,
@@ -203,7 +210,7 @@ export default async function TrendDetailZhPage({
       <main className="trend-detail">
         {/* ── Breadcrumb + Language Switcher ── */}
         <div className="trend-detail-topbar">
-          <a href="/trends/" className="trend-breadcrumb">
+          <a href="/" className="trend-breadcrumb">
             ← 返回趋势列表
           </a>
           <a href={`/trends/${slug}/`} className="lang-switch">
@@ -471,11 +478,11 @@ export default async function TrendDetailZhPage({
         {/* ── Footer ── */}
         <footer className="site-footer">
           <div className="footer-links">
-            <a href="/">首页</a>
-            <span className="footer-sep">|</span>
-            <a href="/trends/">趋势列表</a>
+            <a href="/">趋势</a>
             <span className="footer-sep">|</span>
             <a href="/dashboard/">Dashboard</a>
+            <span className="footer-sep">|</span>
+            <a href="/pricing/">定价</a>
             <span className="footer-sep">|</span>
             <a href="/reports/">Reports</a>
           </div>

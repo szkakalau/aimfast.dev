@@ -1,35 +1,66 @@
 import type { Metadata } from 'next';
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { Clock, Eye, TrendingDown, Search, Shield, Zap, TrendingUp, Activity, Globe } from 'lucide-react';
+import { TrendingUp, Calendar, BarChart3, Activity, Globe, Zap, Search, Shield } from 'lucide-react';
+// Trends data module is the single source of truth for types + stage labels.
+// The homepage IS the trends discovery page — this cross-route import is intentional.
+import type { TrendTermsData } from './trends/types';
+import { stageLabel } from './trends/data';
 
 export const metadata: Metadata = {
-  title: 'AimFast.Dev — Know What Your Market Is Doing, Every Morning',
+  title: 'Trend Discovery — Emerging Tech Terms & Market Signals | AimFast.Dev',
   description:
-    'You\'re building. They\'re watching. Are you? — Daily competitive intel and market signals for indie developers who already have revenue.',
+    'Discover emerging technology terms, concepts, and market signals before they trend. Free daily tracking of nascent tech across 11+ sources. No signup required.',
+  robots: { index: true, follow: true },
+  alternates: {
+    canonical: 'https://www.aimfast.dev/',
+    languages: {
+      en: 'https://www.aimfast.dev/',
+      'zh-CN': 'https://www.aimfast.dev/',
+    },
+  },
+  openGraph: {
+    title: 'Trend Discovery — Emerging Tech Terms | AimFast.Dev',
+    description:
+      'Track emerging tech terms before they trend. Daily updates from 11+ sources. Free. No signup required.',
+    url: 'https://www.aimfast.dev/',
+    siteName: 'AimFast.Dev',
+    images: [
+      {
+        url: 'https://www.aimfast.dev/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'AimFast.Dev — Trend Discovery',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Trend Discovery — Emerging Tech Terms | AimFast.Dev',
+    description:
+      'Discover emerging tech terms before they trend. Free daily tracking.',
+    images: ['https://www.aimfast.dev/og-image.png'],
+  },
 };
 
-/* ── Trend data (build-time from tracking/trend_terms.json) ── */
+/* ── Data ── */
 
-interface TrendTerm {
-  id: string;
-  canonical: string;
-  stage: string;
-  score: number;
-  source_count: number;
-  total_mentions: number;
-  summary_en: string;
-  summary_zh: string;
-  research_md_path: string;
-  sources: string[];
-  category: string;
+function getTrendTerms(): TrendTermsData {
+  try {
+    const raw = readFileSync(
+      join(process.cwd(), 'tracking', 'trend_terms.json'),
+      'utf-8',
+    );
+    return JSON.parse(raw) as TrendTermsData;
+  } catch {
+    return { updated_at: '', terms: [] };
+  }
 }
 
 function getTrendStats(): { total: number; withResearch: number; totalSources: number } {
   try {
-    const raw = readFileSync(join(process.cwd(), 'tracking', 'trend_terms.json'), 'utf-8');
-    const data = JSON.parse(raw);
-    const terms: TrendTerm[] = data.terms || [];
+    const data = getTrendTerms();
+    const terms = data.terms || [];
     const withResearch = terms.filter((t) => t.research_md_path && t.score >= 60).length;
     const totalSources = new Set(terms.flatMap((t) => t.sources || [])).size;
     return { total: terms.length, withResearch, totalSources };
@@ -38,409 +69,248 @@ function getTrendStats(): { total: number; withResearch: number; totalSources: n
   }
 }
 
-function getTopTrends(count: number = 3): TrendTerm[] {
-  try {
-    const raw = readFileSync(join(process.cwd(), 'tracking', 'trend_terms.json'), 'utf-8');
-    const data = JSON.parse(raw);
-    const terms: TrendTerm[] = data.terms || [];
-    return terms
-      .filter((t) => t.research_md_path && t.score >= 60)
-      .slice(0, count);
-  } catch {
-    return [];
-  }
-}
+/* ── Page ── */
 
-function stageLabel(stage: string): string {
-  const map: Record<string, string> = {
-    nascent: 'Nascent',
-    emergent: 'Emergent',
-    validating: 'Validating',
-    rising: 'Rising',
-  };
-  return map[stage] || stage;
-}
-
-export default function LandingPage() {
+export default function HomePage() {
+  const data = getTrendTerms();
+  const { terms, updated_at } = data;
   const stats = getTrendStats();
-  const topTrends = getTopTrends(3);
-  const faqJsonLd = {
+
+  const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: [
+    '@graph': [
       {
-        '@type': 'Question',
-        name: 'How is this different from setting up Google Alerts?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Google Alerts gives you links. We give you a decision. Our AI reads 300+ signals across 11 platforms, cross-references them, scores them, and tells you "build this, skip that." Google Alerts cannot tell you that a Reddit complaint and a GitHub star spike are the same unmet need.',
+        '@type': 'CollectionPage',
+        name: 'Trend Discovery — AimFast.Dev',
+        description:
+          'Discover emerging technology terms, concepts, and market signals before they trend.',
+        url: 'https://www.aimfast.dev/',
+        inLanguage: 'en',
+        mainEntity: {
+          '@type': 'ItemList',
+          itemListElement: terms.map((t, i) => ({
+            '@type': 'ListItem',
+            position: i + 1,
+            url: `https://www.aimfast.dev/trends/${t.id.replace('trend-', '')}/`,
+            name: t.canonical,
+          })),
         },
       },
-      {
-        '@type': 'Question',
-        name: 'What sources do you scan?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'HN, Reddit, GitHub Trending, DEV Community, Lobsters, V2EX, X/Twitter, Product Hunt, HuggingFace, Arxiv, Indie Hackers, and more — 11+ sources, daily.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: 'Can I track my competitors?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Yes — that is the Monitoring Engine. Add up to 10 competitors, topics, people, or tech stacks. Every day, you see what they did and what you should do about it.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: 'What if I miss a day?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Every report is archived. You can browse past daily decisions and full reports from the dashboard at any time. The value compounds — patterns emerge over weeks, not days.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: 'Is there a long-term contract?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'No. Cancel anytime — monthly or annual. If you cancel, you keep access until the end of your billing period. No tricks, no retention calls.',
-        },
-      },
+
+      // Organization + WebSite declared in root layout head — not duplicated here
     ],
   };
 
   return (
-    <main>
+    <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      {/* ═══════ Hero ═══════ */}
-      <section className="hero">
-        <span className="eyebrow anim-fade-up">Daily Market Intelligence for Indie Builders</span>
-        <h1 className="anim-fade-up anim-delay-1">
-          You&apos;re building.<br />
-          They&apos;re watching.<br />
-          <span>Are you?</span>
-        </h1>
-        <p className="hero-desc anim-fade-up anim-delay-2">
-          Every morning, know what your competitors are doing, what trends are rising,
-          and which opportunities are worth your time — in 2 minutes. Built for indie
-          developers who already have revenue and can&apos;t afford to be blindsided.
-        </p>
 
-        <form
-          className="hero-signup anim-fade-up anim-delay-2"
-          action="https://tally.so/r/placeholder"
-          method="GET"
-          target="_blank"
-        >
-          <input
-            type="email"
-            name="email"
-            placeholder="you@email.com"
-            required
-            aria-label="Email address"
-          />
-          <button type="submit" className="btn btn-primary">
-            Get Early Access →
-          </button>
-        </form>
-        <p className="hero-secondary">
-          $19/mo after trial · cancel anytime · one actionable insight per day
-        </p>
-      </section>
-
-      {/* ═══════ Live Stats Bar ═══════ */}
-      {stats.total > 0 && (
-        <div className="live-stats" aria-label="Trend tracking statistics">
-          <span className="live-stat">
-            <TrendingUp size={16} aria-hidden="true" />
-            <span className="live-stat-value">{stats.total}</span> terms tracked
-          </span>
-          <span className="live-stat-sep" aria-hidden="true">·</span>
-          <span className="live-stat">
-            <Zap size={16} aria-hidden="true" />
-            <span className="live-stat-value">{stats.withResearch}</span> research reports
-          </span>
-          <span className="live-stat-sep" aria-hidden="true">·</span>
-          <span className="live-stat">
-            <Globe size={16} aria-hidden="true" />
-            <span className="live-stat-value">{stats.totalSources}</span>+ sources
-          </span>
-          <span className="live-stat-sep" aria-hidden="true">·</span>
-          <span className="live-stat">Updated daily 08:30 CST</span>
-        </div>
-      )}
-
-      {/* ═══════ Pain Cards ═══════ */}
-      <section className="pain-cards" style={{ padding: 'var(--space-8) 0' }}>
-        <div className="section-header">
-          <h2>The Cost of Not Knowing</h2>
-          <p>
-            Every morning without market intel costs you one of three things.
+      <main className="trends-page">
+        {/* ── Hero ── */}
+        <section className="trends-hero">
+          <h1>
+            Discover What&apos;s Emerging
+            <br />
+            Before Everyone Else
+          </h1>
+          <p className="trends-hero-desc">
+            Daily tracking of new tech terms, concepts, and market signals
+            across {stats.totalSources}+ sources. Free. No signup required.
           </p>
-        </div>
-
-        <div className="pain-grid">
-          {/* Pain 3: Direction Waste */}
-          <div className="pain-card">
-            <Clock size={32} className="pain-icon" />
-            <h3>Direction Waste</h3>
-            <p>
-              You spent 2 weeks building a feature nobody asked for. If you had
-              known the demand was fading 10 days ago, you would have built
-              something else.
-            </p>
-            <div className="pain-solution">
-              <span className="pain-arrow">→</span>
-              Daily decision card tells you what to build — and what to skip
-            </div>
+          <div className="trends-hero-stats">
+            <TrendingUp size={14} />
+            Tracking <strong>{terms.length} terms</strong>
+            {' · '}Updated daily 08:30 CST
           </div>
-
-          {/* Pain 1: Competition Blind Spots */}
-          <div className="pain-card pain-card-accent">
-            <Eye size={32} className="pain-icon" />
-            <h3>Competition Blind Spots</h3>
-            <p>
-              Your competitor changed their pricing 3 days ago. Their free users
-              are looking for alternatives. You didn&apos;t know — until now.
-            </p>
-            <div className="pain-solution">
-              <span className="pain-arrow">→</span>
-              Monitor up to 10 competitors, topics, or tech stacks
-            </div>
+          <div className="trends-lang-bar">
+            <Globe size={13} />
+            <span>English</span>
+            <span className="lang-sep">·</span>
+            <a href="/trends/zh/">中文</a>
           </div>
+        </section>
 
-          {/* Pain 2: Trend Lag */}
-          <div className="pain-card">
-            <TrendingDown size={32} className="pain-icon" />
-            <h3>Trend Lag</h3>
-            <p>
-              A new distribution channel is taking off. Early adopters are
-              getting customers at near-zero cost. By the time you hear about it,
-              the window is closed.
-            </p>
-            <div className="pain-solution">
-              <span className="pain-arrow">→</span>
-              11+ sources scanned daily for emerging signals before they peak
-            </div>
+        {/* ── Live Stats Bar ── */}
+        {stats.total > 0 && (
+          <div className="live-stats" aria-label="Trend tracking statistics">
+            <span className="live-stat">
+              <TrendingUp size={16} aria-hidden="true" />
+              <span className="live-stat-value">{stats.total}</span> terms tracked
+            </span>
+            <span className="live-stat-sep" aria-hidden="true">·</span>
+            <span className="live-stat">
+              <Zap size={16} aria-hidden="true" />
+              <span className="live-stat-value">{stats.withResearch}</span> research reports
+            </span>
+            <span className="live-stat-sep" aria-hidden="true">·</span>
+            <span className="live-stat">
+              <Globe size={16} aria-hidden="true" />
+              <span className="live-stat-value">{stats.totalSources}</span>+ sources
+            </span>
+            <span className="live-stat-sep" aria-hidden="true">·</span>
+            <span className="live-stat">Updated daily 08:30 CST</span>
           </div>
-        </div>
-      </section>
+        )}
 
-      {/* ═══════ Trend Spotlight ═══════ */}
-      {topTrends.length > 0 && (
-        <section className="trend-spotlight" style={{ padding: 'var(--space-8) 0', textAlign: 'center' }}>
-          <div className="section-header">
-            <h2>Trends We're Tracking Right Now</h2>
+        {/* ── Stage Filter ── */}
+        {terms.length > 0 && (
+          <div className="stage-filter">
+            {['all', 'nascent', 'emergent', 'validating', 'rising'].map(
+              (s) => (
+                <a
+                  key={s}
+                  href={s === 'all' ? '#trend-grid' : `#stage-${s}`}
+                  className="stage-filter-btn"
+                >
+                  {s === 'all' ? 'All' : stageLabel(s)}
+                </a>
+              ),
+            )}
+          </div>
+        )}
+
+        {/* ── Trend Grid ── */}
+        {terms.length === 0 ? (
+          <div className="trends-empty">
+            <h2>No trends yet</h2>
             <p>
-              Real data from our Discovery Engine — the highest-signal emerging trends,
-              with research reports, commercial opportunities, and product ideas.
-              Updated daily.
+              Check back after the daily pipeline runs. New terms are added
+              every morning.
             </p>
           </div>
-
-          <div className="trend-spotlight-grid">
-            {topTrends.map((trend) => {
-              const slug = trend.id.replace('trend-', '');
+        ) : (
+          <div className="trend-grid" id="trend-grid">
+            {terms.map((term) => {
+              const slug = term.id.replace('trend-', '');
               return (
-                <a key={trend.id} href={`/trends/${slug}/`} className="trend-spotlight-card">
-                  <span className={`trend-spotlight-badge ${trend.stage}`}>
-                    {stageLabel(trend.stage)}
+                <a
+                  key={term.id}
+                  href={`/trends/${slug}/`}
+                  className="trend-card"
+                >
+                  <span className={`stage-badge ${term.stage}`}>
+                    {stageLabel(term.stage)}
                   </span>
-                  <h3>{trend.canonical}</h3>
-                  <p className="trend-spotlight-summary">
-                    {trend.summary_en || trend.summary_zh}
+                  {term.revenue_potential != null && (
+                    <span className="trend-card-stars" title={`Revenue potential: ${term.revenue_potential}/5`}>
+                      {'★'.repeat(term.revenue_potential)}{'☆'.repeat(5 - term.revenue_potential)}
+                    </span>
+                  )}
+                  <span className="trend-card-category">{term.category}</span>
+                  <h3>{term.canonical}</h3>
+                  <p className="trend-card-summary">
+                    {term.summary_en || term.summary_zh}
                   </p>
-                  <div className="trend-spotlight-meta">
-                    <span className="trend-spotlight-meta-item">
-                      <TrendingUp size={14} aria-hidden="true" />
-                      <span className="trend-spotlight-score">{trend.score}</span>
+                  <div className="trend-card-meta">
+                    <span className="trend-card-meta-item">
+                      <Calendar size={12} />
+                      {term.first_seen}
                     </span>
-                    <span className="trend-spotlight-meta-item">
-                      <Globe size={14} aria-hidden="true" />
-                      {trend.source_count} sources
+                    <span className="trend-card-meta-item">
+                      <Activity size={12} />
+                      {term.source_count} sources
                     </span>
-                    <span className="trend-spotlight-meta-item">
-                      <Activity size={14} aria-hidden="true" />
-                      {trend.total_mentions} mentions
+                    <span className="trend-card-meta-item">
+                      <BarChart3 size={12} />
+                      {term.total_mentions} mentions
                     </span>
                   </div>
                 </a>
               );
             })}
           </div>
+        )}
 
-          <div className="trend-spotlight-cta">
-            <a href="/trends/">
-              See all {stats.total} emerging trends →
-            </a>
+        {/* ── How It Works (mini) ── */}
+        <section className="workflow" style={{ padding: 'var(--space-8) 0' }}>
+          <div className="section-header">
+            <h2>Two Engines, One Report</h2>
+            <p>
+              Every night, our dual-engine system scans the internet. Every morning,
+              you get one decision.
+            </p>
+          </div>
+
+          <div className="engine-grid">
+            <div className="engine-card">
+              <Search size={32} className="engine-icon" />
+              <h3>Discovery Engine</h3>
+              <p>
+                AI scans 11+ sources — HN, Reddit, GitHub, Product Hunt, X, DEV,
+                V2EX, and more — for emerging pain points, rising trends, and
+                market gaps.
+              </p>
+              <ul className="engine-list">
+                <li>Cross-platform signal validation</li>
+                <li>Pain point vs. hype detection</li>
+                <li>Actionability scoring</li>
+              </ul>
+            </div>
+
+            <div className="engine-card">
+              <Shield size={32} className="engine-icon" />
+              <h3>Monitoring Engine</h3>
+              <p>
+                Track up to 10 competitors, topics, people, or tech stacks.
+                Every day, the AI tells you what they did, and — most importantly
+                — what <em>you</em> should do about it.
+              </p>
+              <ul className="engine-list">
+                <li>Competitor pricing & feature changes</li>
+                <li>Topic trend tracking</li>
+                <li>Actionable alerts, not noise</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="engine-arrow" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M12 5v14M5 12l7 7 7-7" />
+            </svg>
+          </div>
+
+          <div className="engine-output">
+            <span className="engine-output-label">Daily Report</span>
+            One decision card · Competitor updates · System pulse · 2 minutes to read
           </div>
         </section>
-      )}
 
-      {/* ═══════ How It Works ═══════ */}
-      <section className="workflow" style={{ padding: 'var(--space-8) 0' }}>
-        <div className="section-header">
-          <h2>Two Engines, One Report</h2>
+        {/* ── CTA ── */}
+        <section className="trends-cta">
+          <h2>Want the full picture?</h2>
           <p>
-            Every night, our dual-engine system scans the internet. Every morning,
-            you get one decision.
+            Every morning, our Discovery Engine scans {stats.totalSources}+ sources and
+            distills signals like these into one actionable decision — with
+            pricing, validation, and competitor context.
           </p>
-        </div>
-
-        <div className="engine-grid">
-          <div className="engine-card">
-            <Search size={32} className="engine-icon" />
-            <h3>Discovery Engine</h3>
-            <p>
-              AI scans 11+ sources — HN, Reddit, GitHub, Product Hunt, X, DEV,
-              V2EX, and more — for emerging pain points, rising trends, and
-              market gaps. It filters 300+ signals down to the one that matters.
-            </p>
-            <ul className="engine-list">
-              <li>Cross-platform signal validation</li>
-              <li>Pain point vs. hype detection</li>
-              <li>Actionability scoring</li>
-            </ul>
-          </div>
-
-          <div className="engine-card">
-            <Shield size={32} className="engine-icon" />
-            <h3>Monitoring Engine</h3>
-            <p>
-              Track up to 10 competitors, topics, people, or tech stacks.
-              Every day, the AI tells you what they did, what it means, and —
-              most importantly — what <em>you</em> should do about it.
-            </p>
-            <ul className="engine-list">
-              <li>Competitor pricing & feature changes</li>
-              <li>Topic trend tracking</li>
-              <li>Actionable alerts, not noise</li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="engine-arrow" aria-hidden="true">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <path d="M12 5v14M5 12l7 7 7-7" />
-          </svg>
-        </div>
-
-        <div className="engine-output">
-          <span className="engine-output-label">Daily Report</span>
-          One decision card · Competitor updates · System pulse · 2 minutes to read
-        </div>
-      </section>
-
-      {/* ═══════ Pricing ═══════ */}
-      <section className="pricing-section" style={{ padding: 'var(--space-8) 0' }}>
-        <div className="section-header">
-          <h2>Simple Pricing</h2>
-          <p>
-            One plan, everything included. No per-seat pricing, no feature gating.
-            You either get full value or you cancel — no hard feelings.
-          </p>
-        </div>
-
-        <div className="pricing-card">
-          <div className="pricing-badge">Everything Included</div>
-
-          <div className="pricing-amount-row">
-            <span className="pricing-dollar">$</span>
-            <span className="pricing-number">19</span>
-            <span className="pricing-period">/mo</span>
-          </div>
-          <div className="pricing-annual">or $190/year — save $38</div>
-
-          <ul className="pricing-features">
-            <li>✓ Daily verified product opportunity</li>
-            <li>✓ Competitor & topic tracking (up to 10)</li>
-            <li>✓ Full report archive</li>
-            <li>✓ Signal dashboard with system pulse</li>
-            <li>✓ AI assistant (coming soon)</li>
-            <li>✓ 14-day free trial</li>
-          </ul>
-
           <a
-            href="https://tally.so/r/placeholder"
-            className="btn btn-primary pricing-cta"
-            target="_blank"
+            href="/dashboard/"
+            className="btn btn-primary"
+            style={{ fontSize: '1rem', padding: '14px 32px' }}
           >
-            Start Free Trial →
+            View Dashboard →
           </a>
+        </section>
 
-          <div className="pricing-cancel">Cancel anytime. No questions asked.</div>
-        </div>
-      </section>
-
-      {/* ═══════ FAQ ═══════ */}
-      <section className="faq-section" style={{ padding: 'var(--space-8) 0', maxWidth: '640px', margin: '0 auto' }}>
-        <div className="section-header">
-          <h2>Frequently Asked Questions</h2>
-        </div>
-
-        <dl className="faq-list">
-          {[
-            {
-              q: 'How is this different from setting up Google Alerts?',
-              a: 'Google Alerts gives you links. We give you a decision. Our AI reads 300+ signals across 11 platforms, cross-references them, scores them, and tells you "build this, skip that." Google Alerts cannot tell you that a Reddit complaint and a GitHub star spike are the same unmet need.',
-            },
-            {
-              q: 'What sources do you scan?',
-              a: 'HN, Reddit (r/programming, r/MachineLearning, r/SideProject, r/Entrepreneur, r/digitalnomad), GitHub Trending, DEV Community, Lobsters, V2EX, X/Twitter, Product Hunt, HuggingFace, Arxiv, Indie Hackers, and more — 11+ sources, daily.',
-            },
-            {
-              q: 'Can I track my competitors?',
-              a: 'Yes — that is the Monitoring Engine. Add up to 10 competitors, topics, people, or tech stacks. Every day, you see what they did and what you should do about it. Not just "they launched X" — we tell you "their launch reveals a gap you can fill."',
-            },
-            {
-              q: 'What if I miss a day?',
-              a: 'Every report is archived. You can browse past daily decisions and full reports from the dashboard at any time. The value compounds — patterns emerge over weeks, not days.',
-            },
-            {
-              q: 'Is there a long-term contract?',
-              a: 'No. Cancel anytime — monthly or annual. If you cancel, you keep access until the end of your billing period. No tricks, no retention calls.',
-            },
-          ].map(({ q, a }) => (
-            <div key={q} className="faq-item">
-              <dt>{q}</dt>
-              <dd>{a}</dd>
-            </div>
-          ))}
-        </dl>
-      </section>
-
-      {/* ═══════ Footer CTA ═══════ */}
-      <section className="footer-cta" style={{ textAlign: 'center', padding: 'var(--space-8) 0 var(--space-10)' }}>
-        <h2>You&apos;re building. They&apos;re watching.</h2>
-        <p style={{ color: 'var(--color-text-secondary)', marginBottom: 'var(--space-3)', fontSize: '1rem' }}>
-          Start your 14-day free trial. One decision every morning.
-        </p>
-        <a
-          href="https://tally.so/r/placeholder"
-          className="btn btn-primary"
-          style={{ fontSize: '1rem', padding: '14px 32px' }}
-          target="_blank"
-        >
-          Get Early Access →
-        </a>
-      </section>
-
-      {/* ═══════ Footer ═══════ */}
-      <footer className="site-footer">
-        <div className="footer-links">
-          <a href="/dashboard/">Dashboard</a>
-          <span className="footer-sep">|</span>
-          <a href="/reports/">Archive</a>
-        </div>
-        <div className="footer-copy">
-          AimFast.Dev — Daily Market Intelligence for Indie Builders
-        </div>
-      </footer>
-    </main>
+        {/* ── Footer ── */}
+        <footer className="site-footer">
+          <div className="footer-links">
+            <a href="/dashboard/">Dashboard</a>
+            <span className="footer-sep">|</span>
+            <a href="/pricing/">Pricing</a>
+            <span className="footer-sep">|</span>
+            <a href="/reports/">Reports</a>
+          </div>
+          <div className="footer-copy">
+            AimFast.Dev — Updated{' '}
+            {updated_at ? updated_at.slice(0, 10) : 'daily'} · Free trend
+            discovery
+          </div>
+        </footer>
+      </main>
+    </>
   );
 }

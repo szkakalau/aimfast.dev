@@ -240,6 +240,13 @@ def generate_sitemap() -> int:
         'priority': '0.8',
     })
 
+    # Pricing
+    urls.append({
+        'loc': f'{BASE_URL}/pricing/',
+        'changefreq': 'weekly',
+        'priority': '0.9',
+    })
+
     # Reports
     if CONTENT_REPORTS.exists():
         for f in sorted(CONTENT_REPORTS.glob('*.md')):
@@ -314,17 +321,7 @@ def generate_sitemap() -> int:
                     },
                 })
 
-    # Trends — listing + detail pages
-    urls.append({
-        'loc': f'{BASE_URL}/trends/',
-        'changefreq': 'daily',
-        'priority': '0.9',
-        'alternates': {
-            'en': f'{BASE_URL}/trends/',
-            'zh-CN': f'{BASE_URL}/trends/zh/',
-        },
-    })
-
+    # Trends — detail pages only (index moved to homepage /)
     if CONTENT_TRENDS.exists():
         # Build slug → last_seen mapping from trend_terms.json
         terms_by_slug: dict[str, str] = {}

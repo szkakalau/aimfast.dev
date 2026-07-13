@@ -63,7 +63,7 @@ export async function generateMetadata({
       publishedTime: fm.date || undefined,
       url: canonicalUrl,
       siteName: 'AimFast.Dev',
-      locale: 'zh_CN',
+      locale: 'zh-CN',
       images: [
         {
           url: 'https://www.aimfast.dev/og-image.png',
@@ -132,15 +132,27 @@ export default async function ArticlePage({
 
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'Article',
-    headline: frontmatter.title || slug,
-    datePublished: frontmatter.date || undefined,
-    description: frontmatter.summary || '',
-    author: { '@type': 'Organization', name: 'AimFast.Dev' },
-    publisher: { '@type': 'Organization', name: 'AimFast.Dev' },
-    inLanguage: 'zh-CN',
-    url: canonicalUrl,
-    mainEntityOfPage: { '@type': 'WebPage', '@id': canonicalUrl },
+    '@graph': [
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Trends', item: 'https://www.aimfast.dev/' },
+          { '@type': 'ListItem', position: 2, name: 'Articles', item: 'https://www.aimfast.dev/articles/' },
+          { '@type': 'ListItem', position: 3, name: frontmatter.title || slug, item: canonicalUrl },
+        ],
+      },
+      {
+        '@type': 'Article',
+        headline: frontmatter.title || slug,
+        datePublished: frontmatter.date || undefined,
+        description: frontmatter.summary || '',
+        author: { '@type': 'Organization', name: 'AimFast.Dev' },
+        publisher: { '@type': 'Organization', name: 'AimFast.Dev' },
+        inLanguage: 'zh-CN',
+        url: canonicalUrl,
+        mainEntityOfPage: { '@type': 'WebPage', '@id': canonicalUrl },
+      },
+    ],
   };
 
   return (
@@ -174,7 +186,7 @@ export default async function ArticlePage({
         <footer className="site-footer">
           <p>
             &copy; {new Date().getFullYear()} AimFast.Dev ·{' '}
-            <a href="/">Home</a> · <a href="/dashboard/">Dashboard</a>
+            <a href="/">Trends</a> · <a href="/dashboard/">Dashboard</a> · <a href="/pricing/">Pricing</a>
             {hasEn && (
               <>
                 {' '}· <a href={enUrl}>English version</a>
