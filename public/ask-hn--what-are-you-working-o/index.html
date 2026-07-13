@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevShowcase — Your Show HN project deserves a better home. | www.aimfast.dev</title>
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#1a1d24">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://www.aimfast.dev/devshowcase/">
+  <meta name="description" content="One-click portfolio for your Show HN projects. Combine your HN post, GitHub repo & demo into a beautiful, shareable page. Zero config, 30 seconds.">
+  <meta property="og:type" content="product">
+  <meta property="og:title" content="DevShowcase — Your Show HN project deserves a better home.">
+  <meta property="og:description" content="One-click portfolio for your Show HN projects. Combine your HN post, GitHub repo & demo into a beautiful, shareable page. Zero config, 30 seconds.">
+  <meta property="og:url" content="https://www.aimfast.dev/devshowcase/">
+  <meta property="og:site_name" content="AimFast.Dev">
+  <meta property="og:image" content="https://www.aimfast.dev/og/devshowcase.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="DevShowcase — Your Show HN project deserves a better home.">
+  <meta name="twitter:description" content="One-click portfolio for your Show HN projects. Combine your HN post, GitHub repo & demo into a beautiful, shareable page. Zero config, 30 seconds.">
+  <meta name="twitter:image" content="https://www.aimfast.dev/og/devshowcase.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "DevShowcase",
+    "applicationCategory": "WebApplication",
+    "operatingSystem": "Web",
+    "description": "One-click portfolio generator for Show HN projects. Aggregates HN posts, GitHub repos, and demos into a beautiful, shareable project page.",
+    "url": "https://www.aimfast.dev/devshowcase/",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+  <link rel="stylesheet" href="/_ds/base.css">
+  <link rel="stylesheet" href="/_ds/components.css">
+  <style>
+    /* custom page-level overrides — no token redefinition */
+    .hero {
+      padding: var(--space-8) 0 var(--space-6);
+      text-align: center;
+    }
+    .hero h1 {
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero .subhead {
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: var(--space-5);
+    }
+    .signup-form {
+      display: flex;
+      gap: var(--space-2);
+      max-width: 480px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .signup-form input {
+      flex: 1 1 220px;
+      height: 52px;
+      padding: 0 var(--space-3);
+      border: 1.5px solid var(--color-border);
+      border-radius: 8px;
+      background: var(--color-surface);
+      color: var(--color-text);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      transition: border-color var(--duration-normal) var(--ease-out);
+    }
+    .signup-form input:focus {
+      outline: none;
+      border-color: var(--color-accent);
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent) 20%, transparent);
+    }
+    .signup-form .btn {
+      height: 52px;
+      padding: 0 var(--space-4);
+      font-size: 1rem;
+      flex: 0 0 auto;
+    }
+    .signup-success {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-2);
+      padding: var(--space-3);
+      background: color-mix(in srgb, var(--color-accent) 12%, transparent);
+      border-radius: 8px;
+      color: var(--color-text);
+      font-weight: 500;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+    .signup-success svg {
+      stroke: var(--color-accent);
+    }
+    .signup-error {
+      display: none;
+      color: #e74c3c;
+      font-size: 0.9rem;
+      margin-top: var(--space-1);
+      text-align: center;
+    }
+    .why-matters p {
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .steps-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-5);
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .step {
+      display: flex;
+      gap: var(--space-3);
+      align-items: flex-start;
+    }
+    .step-num {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--color-accent);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-mono);
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+    .step-content h3 {
+      margin-bottom: var(--space-1);
+    }
+    .step-content p {
+      margin: 0;
+    }
+    .selling-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-4);
+    }
+    .selling-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      padding: var(--space-4);
+      text-align: center;
+    }
+    .selling-card .icon-wrap {
+      margin-bottom: var(--space-2);
+      display: inline-flex;
+    }
+    .selling-card h3 {
+      margin-bottom: var(--space-1);
+    }
+    .selling-card p {
+      margin: 0;
+      font-size: 0.95rem;
+    }
+    .trust-bar {
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+      display: flex;
+      justify-content: center;
+      gap: var(--space-4);
+      flex-wrap: wrap;
+    }
+    .trust-bar span {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .trust-bar svg {
+      width: 16px;
+      height: 16px;
+      stroke: var(--color-text-muted);
+    }
+    footer {
+      text-align: center;
+      padding: var(--space-5) 0 var(--space-4);
+      border-top: 1px solid var(--color-border);
+      color: var(--color-text-muted);
+      font-size: 0.85rem;
+    }
+    @media (max-width: 640px) {
+      .selling-grid {
+        grid-template-columns: 1fr;
+      }
+      .signup-form {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .signup-form input {
+        width: 100%;
+      }
+      .signup-form .btn {
+        width: 100%;
+      }
+      .trust-bar {
+        flex-direction: column;
+        gap: var(--space-1);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero + email form -->
+  <section class="hero container">
+    <h1 class="heading-xl">Your Show HN project deserves a better home.</h1>
+    <p class="subhead text-secondary">One-click portfolio that combines your HN post, GitHub repo &amp; demo into a beautiful, shareable page. Zero config, 30 seconds.</p>
+    
+    <form id="signup-form" class="signup-form" action="https://formspree.io/f/your-form-id" method="POST">
+      <input type="email" name="email" placeholder="you@example.com" required autocomplete="email">
+      <button type="submit" class="btn btn-primary btn-lg">Get Early Access</button>
+    </form>
+    <div id="signup-success" class="signup-success">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      <span>✓ You're on the list! We'll keep you posted.</span>
+    </div>
+    <div id="signup-error" class="signup-error"></div>
+  </section>
+
+  <!-- Why This Matters -->
+  <section class="why-matters container" style="padding: var(--space-6) 0;">
+    <h2 class="heading-lg" style="text-align:center; margin-bottom: var(--space-4);">Why Show HN Portfolios Matter Right Now</h2>
+    <div class="text-secondary" style="max-width:720px; margin:0 auto; line-height:1.75;">
+      <p>Every month, the “Ask HN: What Are You Working On?” thread collects over 900 comments — a firehose of raw creativity from solo developers and small teams. Yet 95% of those projects vanish within hours, buried under the next wave of links. A single Show HN post might get 20 upvotes and 5 comments, but there’s no persistent, searchable home for that work. Developers pour weeks into building, then watch their launch fizzle because there’s no structured way to present the story — the HN discussion, the GitHub stars, the live demo — in one place.</p>
+      <p>Existing solutions fall short. GitHub profiles are code-centric and lack narrative; personal portfolios require design skills and hours of setup; Product Hunt demands a full product launch. None of them leverage the built-in social proof of a Show HN thread — the upvotes, the comments, the “why I built this” context that makes a project trustworthy. Developers are left stitching together links in a tweet or a README, hoping someone will piece it together.</p>
+      <p>Now is the perfect moment. The July 2026 “Ask HN” thread hit 924 comments and 243 points — the highest engagement in six months. The signal is clear: developers are hungry for visibility, and they’re actively searching for better ways to showcase their work. By offering a zero-friction, HN-native portfolio generator, we can capture this wave before it crests. Early adopters are already in the thread, waiting for a tool that makes their project stand out.</p>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="container" style="padding: var(--space-6) 0;">
+    <h2 class="heading-lg" style="text-align:center; margin-bottom: var(--space-5);">How It Works</h2>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h3>Share your HN username</h3>
+          <p>Paste your Hacker News username or the direct link to your Show HN post. No sign-up, no password — we use the public HN API to pull your submission history and discussion metadata.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h3>We build your showcase</h3>
+          <p>Our engine fetches your Show HN post (title, points, comments), your GitHub repo (stars, description, README), and any demo link you provide. It assembles them into a clean, responsive page with a timeline, social proof badges, and a prominent “Try the Demo” button.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h3>Share your unique URL</h3>
+          <p>You get a permanent, shareable link like <code>devshowcase.io/u/yourhandle</code>. Add it to your HN profile, Twitter bio, or resume. Every time someone visits, they see the full story — upvotes, comments, code, and demo — in one glance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Selling Points -->
+  <section class="container" style="padding: var(--space-6) 0;">
+    <h2 class="heading-lg" style="text-align:center; margin-bottom: var(--space-5);">What You Get</h2>
+    <div class="selling-grid">
+      <div class="selling-card card">
+        <div class="icon-wrap">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        </div>
+        <h3>Zero config setup</h3>
+        <p>No account creation, no database, no deployment pipeline. Just enter your HN username and we generate a polished project page in under 30 seconds. It’s the fastest way to turn a Show HN post into a permanent portfolio piece.</p>
+      </div>
+      <div class="selling-card card">
+        <div class="icon-wrap">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+        </div>
+        <h3>HN social proof</h3>
+        <p>Your page automatically displays upvote count, comment threads, and the original HN discussion context. Visitors see that real people found your project valuable — a trust signal that no other portfolio tool offers.</p>
+      </div>
+      <div class="selling-card card">
+        <div class="icon-wrap">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        </div>
+        <h3>Beautiful templates</h3>
+        <p>Choose from a growing library of responsive, mobile-optimized themes designed specifically for project showcases. Each template highlights your demo, code, and community engagement — no CSS skills required.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Bar -->
+  <section class="container" style="padding: 0 0 var(--space-5);">
+    <div class="trust-bar">
+      <span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+        Trusted by 50+ HN builders
+      </span>
+      <span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h6v-4h-2"/></svg>
+        Free during beta
+      </span>
+      <span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        No spam, ever
+      </span>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      © 2026 · <a href="https://www.aimfast.dev" style="color: var(--color-text-secondary); text-decoration: none;">www.aimfast.dev</a>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      const form = document.getElementById('signup-form
