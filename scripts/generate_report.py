@@ -556,12 +556,13 @@ def run(date_str: str | None = None) -> str:
 def extract_decision(report_md: str, date_str: str) -> dict | None:
     """Extract structured decision data from the generated report using LLM.
     Returns bilingual fields (ZH + EN) for Dashboard display.
-    This feeds the Dashboard '今日决策' / 'Today's Decision' card."""
+    This feeds the Dashboard '今日决策' / 'Today's Decision' card.
+    v2.2: Now also extracts C-end (consumer) opportunities from the report."""
     if "2 小时构建" not in report_md and "2 hour build" not in report_md.lower():
         print("[日报] 决策提取：日报中无「今日 2 小时构建」板块，跳过")
         return None
 
-    prompt = f"""从以下日报的「今日 2 小时构建」板块中提取结构化决策数据。同时提供中文和英文版本。
+    prompt = f"""从以下日报中提取结构化决策数据。提取两个部分：1)「今日 2 小时构建」板块的主产品推荐；2)「🛍️ C端消费机会」板块的 Top 3 C 端机会（如果有的话）。同时提供中文和英文版本。
 
 返回 JSON 格式：
 {{
@@ -576,20 +577,37 @@ def extract_decision(report_md: str, date_str: str) -> dict | None:
   "buyer": "谁会最先付费（中文，具体用户画像）",
   "buyer_en": "Who pays first (English, specific user persona)",
   "why_not_others": "为什么不是另外两个方向（中文）",
-  "why_not_others_en": "Why not the other two (English)"
+  "why_not_others_en": "Why not the other two (English)",
+  "c_end_opportunities": [
+    {{
+      "name": "C 端产品名（中文，含英文名）",
+      "name_en": "C-end product name (English only)",
+      "signal_snippet": "信号来源和一句话描述（中文，60 字以内）",
+      "signal_snippet_en": "Signal source and one-liner (English, under 150 chars)",
+      "buyer": "谁会付钱（中文，普通人角色，如「小红书旅行博主」）",
+      "buyer_en": "Who pays (English, consumer persona, e.g. 'travel bloggers on Instagram')",
+      "pricing": "定价（中文，C 端友好价）",
+      "pricing_en": "Pricing (English, consumer-friendly)",
+      "validation": "最快验证路径（中文，具体可执行）",
+      "validation_en": "Validation path (English, specific and actionable)"
+    }}
+  ]
 }}
 
-如果该板块不存在或无实质内容，返回 {{}}。
+规则：
+- 如果「🛍️ C端消费机会」板块存在，提取其中的 Top 3 C 端机会。如果不存在或少于 3 个，c_end_opportunities 可以少于 3 个或为空数组 []。
+- 如果「今日 2 小时构建」板块不存在或无实质内容，返回 {{}}。
+- 每个字段都要有实际内容，不要留空字符串。
 
 日报：
-{report_md[:5000]}"""
+{report_md[:8000]}"""
 
     try:
         response = chat(
             system_prompt="Extract structured decision data from Chinese tech reports. Return bilingual JSON (Chinese + English for every field). Return ONLY valid JSON, no other text.",
             user_prompt=prompt,
             temperature=0.3,
-            max_tokens=2048,
+            max_tokens=4096,
         )
         response = response.strip()
         if response.startswith("```"):
@@ -610,7 +628,8 @@ def extract_decision(report_md: str, date_str: str) -> dict | None:
                     # Already has English in parentheses — use product_name_en field
                     pass
                 decision["product_name_en"] = cn_name
-            print(f"[日报] 决策提取成功：{decision.get('product_name')}")
+            c_end_count = len(decision.get("c_end_opportunities", []))
+            print(f"[日报] 决策提取成功：{decision.get('product_name')} + {c_end_count} 个 C 端机会")
             return decision
         else:
             print(f"[日报] 决策提取：无有效产品名，跳过")

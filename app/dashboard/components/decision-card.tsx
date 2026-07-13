@@ -1,5 +1,18 @@
 'use client';
 
+type CEndOpportunity = {
+  name?: string;
+  name_en?: string;
+  signal_snippet?: string;
+  signal_snippet_en?: string;
+  buyer?: string;
+  buyer_en?: string;
+  pricing?: string;
+  pricing_en?: string;
+  validation?: string;
+  validation_en?: string;
+};
+
 type DecisionData = {
   product_name?: string;
   product_name_en?: string;
@@ -13,6 +26,7 @@ type DecisionData = {
   buyer_en?: string;
   why_not_others?: string;
   why_not_others_en?: string;
+  c_end_opportunities?: CEndOpportunity[];
 };
 
 type Props = {
@@ -156,6 +170,38 @@ export function DecisionCard({ t, lang, signal, decision, reportMd: _reportMd, d
           {t.decisionAskAI}
         </button>
       </div>
+
+      {/* ── C-End Consumer Opportunities ── */}
+      {decision?.c_end_opportunities && decision.c_end_opportunities.length > 0 && (
+        <div className="decision-cend-section">
+          <h3 className="decision-cend-title">{t.cEndTitle}</h3>
+          <div className="cend-list">
+            {decision.c_end_opportunities.map((opp, idx) => (
+              <div key={idx} className="cend-item">
+                <div className="cend-item-header">
+                  <span className="cend-item-index">{idx + 1}</span>
+                  <h4 className="cend-item-name">{isEn && opp.name_en ? opp.name_en : opp.name}</h4>
+                </div>
+                <p className="cend-item-signal">{isEn && opp.signal_snippet_en ? opp.signal_snippet_en : opp.signal_snippet}</p>
+                <div className="cend-item-meta">
+                  <div className="cend-meta-row">
+                    <span className="cend-meta-label">{t.cEndBuyer}</span>
+                    <span className="cend-meta-value">{isEn && opp.buyer_en ? opp.buyer_en : opp.buyer}</span>
+                  </div>
+                  <div className="cend-meta-row">
+                    <span className="cend-meta-label">{t.decisionPricing}</span>
+                    <span className="cend-meta-value cend-pricing">{isEn && opp.pricing_en ? opp.pricing_en : opp.pricing}</span>
+                  </div>
+                  <div className="cend-meta-row">
+                    <span className="cend-meta-label">{t.decisionValidation}</span>
+                    <span className="cend-meta-value">{isEn && opp.validation_en ? opp.validation_en : opp.validation}</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 }

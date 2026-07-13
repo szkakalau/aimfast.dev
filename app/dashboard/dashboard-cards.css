@@ -219,6 +219,99 @@
   cursor: not-allowed;
 }
 
+/* C-End Consumer Opportunities */
+.decision-cend-section {
+  margin-top: var(--space-4);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--color-border);
+}
+
+.decision-cend-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0 0 var(--space-3);
+}
+
+.cend-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.cend-item {
+  padding: var(--space-2) var(--space-3);
+  background: var(--color-bg-subtle);
+  border-radius: var(--radius-sm);
+  transition: background var(--duration-fast) var(--ease-out);
+}
+.cend-item:hover {
+  background: var(--color-surface-hover);
+}
+
+.cend-item-header {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  margin-bottom: 4px;
+}
+
+.cend-item-index {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.cend-item-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.cend-item-signal {
+  font-size: 0.78rem;
+  color: var(--color-text-secondary);
+  margin: 0 0 var(--space-1);
+  line-height: 1.4;
+}
+
+.cend-item-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cend-meta-row {
+  display: flex;
+  gap: var(--space-2);
+  font-size: 0.75rem;
+  line-height: 1.4;
+}
+
+.cend-meta-label {
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+  min-width: 56px;
+}
+
+.cend-meta-value {
+  color: var(--color-text-secondary);
+}
+
+.cend-pricing {
+  font-weight: 600;
+  color: var(--color-accent);
+}
+
 /* ═════ Competitor Card ═════ */
 .competitor-card h2 {
   margin: 0 0 var(--space-3);
