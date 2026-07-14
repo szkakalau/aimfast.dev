@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#1a1d24">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://www.aimfast.dev/type-erasure-gen/">
+  <meta property="og:type" content="product">
+  <meta property="og:title" content="TypeErasureGen — Generate Beautiful C++ Type Erasure Code in Seconds">
+  <meta property="og:description" content="Paste your struct, pick your strategy (Virtual, std::function, or C++26 Reflection), and get production-ready, elegant code. No more void* nightmares.">
+  <meta property="og:url" content="https://www.aimfast.dev/type-erasure-gen/">
+  <meta property="og:site_name" content="AimFast.Dev">
+  <meta property="og:image" content="https://www.aimfast.dev/og/type-erasure-gen.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="TypeErasureGen — Generate Beautiful C++ Type Erasure Code in Seconds">
+  <meta name="twitter:description" content="Paste your struct, pick your strategy (Virtual, std::function, or C++26 Reflection), and get production-ready, elegant code. No more void* nightmares.">
+  <meta name="twitter:image" content="https://www.aimfast.dev/og/type-erasure-gen.png">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "TypeErasureGen",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Web",
+      "description": "An online C++ type erasure code generator. Input your struct definition and instantly get beautiful, idiomatic code using Virtual, std::function, or C++26 reflection patterns.",
+      "url": "https://www.aimfast.dev/type-erasure-gen/",
+      "offers": {
+        "@type": "Offer",
+        "price": "4.99",
+        "priceCurrency": "USD"
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="/_ds/base.css">
+  <link rel="stylesheet" href="/_ds/components.css">
+  <title>TypeErasureGen — Generate Beautiful C++ Type Erasure Code | www.aimfast.dev</title>
+  <style>
+    /* custom page-level overrides — only layout & spacing, no token redefinition */
+    .hero {
+      padding: var(--space-8) 0 var(--space-6);
+    }
+    .hero .signup-form {
+      display: flex;
+      gap: var(--space-2);
+      max-width: 480px;
+      margin: var(--space-4) auto 0;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .hero .signup-form input {
+      flex: 1 1 240px;
+      height: 52px;
+      padding: 0 var(--space-3);
+      font-size: 1rem;
+      border: 2px solid var(--color-border);
+      border-radius: 8px;
+      background: var(--color-surface);
+      color: var(--color-text);
+      transition: border-color var(--duration-normal) var(--ease-out);
+    }
+    .hero .signup-form input:focus {
+      outline: none;
+      border-color: var(--color-accent);
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent) 20%, transparent);
+    }
+    .hero .signup-form .btn {
+      height: 52px;
+      padding: 0 var(--space-4);
+      font-size: 1rem;
+      flex: 0 0 auto;
+    }
+    .hero .success-message {
+      max-width: 480px;
+      margin: var(--space-4) auto 0;
+      padding: var(--space-3);
+      background: color-mix(in srgb, var(--color-accent) 12%, var(--color-surface));
+      border-radius: 8px;
+      color: var(--color-text);
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+    }
+    .hero .success-message svg {
+      stroke: var(--color-accent);
+      flex-shrink: 0;
+    }
+    .why-matters {
+      padding: var(--space-8) 0;
+    }
+    .why-matters p {
+      max-width: 720px;
+      margin: 0 auto var(--space-3);
+    }
+    .how-it-works {
+      padding: var(--space-8) 0;
+    }
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-5);
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .step {
+      display: flex;
+      gap: var(--space-3);
+      align-items: flex-start;
+    }
+    .step-num {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--color-accent);
+      color: var(--color-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-family: var(--font-mono);
+      font-size: 1.1rem;
+    }
+    .step-content h3 {
+      margin: 0 0 var(--space-1);
+      font-size: 1.15rem;
+    }
+    .step-content p {
+      margin: 0;
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+    }
+    .selling-points {
+      padding: var(--space-8) 0;
+    }
+    .selling-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-4);
+    }
+    .selling-card {
+      background: var(--color-surface);
+      border-radius: 12px;
+      padding: var(--space-4);
+      border: 1px solid var(--color-border);
+    }
+    .selling-card .icon-wrap {
+      width: 40px;
+      height: 40px;
+      margin-bottom: var(--space-2);
+      color: var(--color-accent);
+    }
+    .selling-card .icon-wrap svg {
+      width: 32px;
+      height: 32px;
+      stroke-width: 1.8;
+    }
+    .selling-card h3 {
+      margin: 0 0 var(--space-1);
+      font-size: 1.1rem;
+    }
+    .selling-card p {
+      margin: 0;
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+    .trust-bar {
+      padding: var(--space-4) 0 var(--space-6);
+      text-align: center;
+      color: var(--color-text-muted);
+      font-size: 0.85rem;
+      display: flex;
+      justify-content: center;
+      gap: var(--space-4);
+      flex-wrap: wrap;
+    }
+    .trust-bar span {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-1);
+    }
+    .trust-bar svg {
+      width: 16px;
+      height: 16px;
+      stroke-width: 1.8;
+    }
+    footer {
+      padding: var(--space-4) 0;
+      text-align: center;
+      color: var(--color-text-muted);
+      font-size: 0.85rem;
+      border-top: 1px solid var(--color-border);
+    }
+    @media (max-width: 640px) {
+      .hero .signup-form {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .hero .signup-form input {
+        flex: 1 1 auto;
+        width: 100%;
+      }
+      .hero .signup-form .btn {
+        width: 100%;
+      }
+      .selling-grid {
+        grid-template-columns: 1fr;
+      }
+      .trust-bar {
+        flex-direction: column;
+        gap: var(--space-2);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Hero -->
+  <section class="hero container">
+    <h1 class="text-center" style="max-width: 680px; margin: 0 auto;">Stop Writing Ugly Type Erasure Boilerplate</h1>
+    <p class="text-center text-secondary" style="max-width: 560px; margin: var(--space-2) auto 0; font-size: 1.1rem;">
+      Input your struct. Pick your strategy. Get production-ready, elegant code. No more <code style="background: var(--color-surface-alt); padding: 0.1em 0.3em; border-radius: 4px;">void*</code> nightmares.
+    </p>
+
+    <!-- inline email form -->
+    <form id="signup-form" class="signup-form" action="https://formspree.io/f/your-form-id" method="POST">
+      <input type="email" name="email" placeholder="you@example.com" required autocomplete="email">
+      <button type="submit" class="btn btn-primary btn-lg">Get Early Access</button>
+    </form>
+    <div id="form-feedback" style="max-width: 480px; margin: var(--space-2) auto 0; text-align: center; min-height: 2rem;"></div>
+  </section>
+
+  <!-- Why This Matters -->
+  <section class="why-matters container">
+    <h2 class="text-center" style="margin-bottom: var(--space-3);">Why C++ Type Erasure Matters Right Now</h2>
+    <p>
+      Every day, thousands of C++ developers wrestle with type erasure — hiding concrete types behind a uniform interface. 
+      The recent <em>“Show HN: Beautiful Type Erasure with C++26 Reflection”</em> post gathered 44 points and cross-platform traction in hours, 
+      revealing a deep, unmet need: developers want <strong>elegant</strong> type erasure, not the clunky <code>std::any</code> or error-prone <code>void*</code> patterns. 
+      Existing solutions either sacrifice performance (virtual tables) or readability (manual type tags). 
+      The community is hungry for a tool that generates idiomatic, committee-quality code — instantly.
+    </p>
+    <p>
+      Why now? C++26 reflection is still a proposal, but the discussion is at its peak. 
+      Developers are actively searching for ways to simulate reflection today, while keeping their codebase future-proof. 
+      This is the perfect window to provide a bridge: a code generator that produces both current-day patterns (virtual, <code>std::function</code>) 
+      and a reflection-mock that mirrors the upcoming standard. Early adopters are already engaging — the signal is hot, the pain is real, and no product owns this space yet.
+    </p>
+    <p>
+      The alternative? Keep writing the same 50-line wrapper by hand, debugging subtle lifetime bugs, and explaining to your team why “it’s just a type erasure.” 
+      Or use a generator that does it in one click, with three strategies side-by-side, so you can pick the trade-off that fits your project. 
+      That’s the shift we’re enabling.
+    </p>
+  </section>
+
+  <!-- How It Works -->
+  <section class="how-it-works container">
+    <h2 class="text-center" style="margin-bottom: var(--space-4);">How It Works</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h3>Paste your struct</h3>
+          <p>Copy any C++ struct or class definition — even one with multiple fields and nested types. The parser extracts names and types in real time, right in your browser.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h3>Choose your erasure strategy</h3>
+          <p>Pick from Virtual (classic OOP), <code>std::function</code> (modern, allocation-free), or C++26 Reflection mock (future-proof). Each strategy is generated with idiomatic naming and const-correctness.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h3>Copy & ship</h3>
+          <p>Review the side-by-side comparison, see the trade-offs at a glance, and copy the generated code with one click. No sign-up, no backend — your data never leaves your machine.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Selling Points -->
+  <section class="selling-points container">
+    <h2 class="text-center" style="margin-bottom: var(--space-4);">What You Get</h2>
+    <div class="selling-grid">
+      <div class="selling-card">
+        <div class="icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+          </svg>
+        </div>
+        <h3>Instant Generation</h3>
+        <p>Paste your struct definition and get three complete type erasure implementations in under a second. No waiting, no compilation — just clean, ready-to-use C++ code.</p>
+      </div>
+      <div class="selling-card">
+        <div class="icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <polyline points="9 12 11 14 15 10"/>
+          </svg>
+        </div>
+        <h3>Beautiful & Idiomatic</h3>
+        <p>Every generated snippet follows the latest C++ Core Guidelines, uses <code>constexpr</code> where possible, and avoids raw pointers. Your code will look like it was reviewed by the committee.</p>
+      </div>
+      <div class="selling-card">
+        <div class="icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+          </svg>
+        </div>
+        <h3>Side-by-Side Comparison</h3>
+        <p>See Virtual, <code>std::function</code>, and Reflection mock displayed together with highlighted differences. Understand the performance vs. readability trade-off instantly.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Bar -->
+  <div class="trust-bar container">
+    <span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+      </svg>
+      Used by 120+ C++ engineers in private beta
+    </span>
+    <span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2a10 10 0 0 1 10 10c0 5-3 8-10 10C5 20 2 17 2 12 2 6.5 6.5 2 12 2z"/>
+        <path d="M8 12h8"/>
+        <path d="M12 8v8"/>
+      </svg>
+      No sign-up required — runs entirely in your browser
+    </span>
+    <span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+        <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+      </svg>
+      Your code never leaves your machine
+    </span>
+  </div>
+
+  <!-- Footer -->
+  <footer class="container">
+    © 2026 · <a href="https://www.aimfast.dev" style="color: var(--color-text-secondary); text-decoration: none;">www.aimfast.dev</a>
+  </footer>
+
+  <script>
+    (function() {
+      const form = document.getElementById('signup-form');
+      const feedback = document.getElementById('form-feedback');
+
+      if (!form) return;
+
+      form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        const email = form.email.value.trim();
+        if (!email) return;
+
+        // Disable button & show loading
+        const btn = form.querySelector('button[type="submit"]');
+        const original
