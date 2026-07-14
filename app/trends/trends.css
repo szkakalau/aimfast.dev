@@ -468,27 +468,85 @@
   .trend-grid { grid-template-columns: 1fr; }
   .trend-detail { padding: var(--space-3) var(--space-2); }
   .trend-detail-header h1 { font-size: clamp(1.5rem, 6vw, 2rem); }
+
+  /* Hero: reduce padding earlier — 96px top is too much at 640px */
+  .trends-hero { padding: var(--space-6) 0 var(--space-5); }
+  .trends-hero h1 { font-size: clamp(1.8rem, 6vw, 2.4rem); }
+  .trends-hero-desc { font-size: 0.95rem; }
+
+  /* Stage filter: bigger touch targets, horizontal scroll on narrow */
+  .stage-filter {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 4px;
+    margin-left: calc(var(--space-2) * -1);
+    margin-right: calc(var(--space-2) * -1);
+    padding-left: var(--space-2);
+    padding-right: var(--space-2);
+  }
+  .stage-filter-btn {
+    flex-shrink: 0;
+    font-size: 0.8rem;
+    padding: 10px 18px;
+    min-height: 44px;
+  }
+
+  /* Trend card spacing */
+  .trend-card { padding: var(--space-3); }
+  .trend-card h3 { font-size: 1.05rem; }
+
+  /* Live stats bar more compact */
+  .live-stats { gap: 4px var(--space-2); padding-bottom: var(--space-3); }
+
+  /* Workflow section padding */
+  .workflow { padding-top: var(--space-5) !important; padding-bottom: var(--space-5) !important; }
+
+  /* CTA section */
+  .trends-cta { padding: var(--space-5) 0; }
+  .trends-cta h2 { font-size: 1.25rem; }
 }
 
 @media (max-width: 480px) {
   .trends-hero h1 { font-size: clamp(1.6rem, 7vw, 2.2rem); }
-  .trends-hero { padding: var(--space-7) 0 var(--space-5); }
+  .trends-hero { padding: var(--space-5) 0 var(--space-4); }
   .trends-hero-desc { font-size: 0.92rem; }
   .trend-card { min-height: 140px; padding: var(--space-3); }
   .trend-card h3 { font-size: 1.05rem; }
+  .trend-card-meta { font-size: 0.68rem; gap: var(--space-1); }
   .trend-detail-meta-row { gap: var(--space-2); font-size: 0.72rem; }
   .trend-detail-content { padding: var(--space-3); font-size: 0.92rem; }
   .trend-detail-content h2 { font-size: 1.15rem; }
   .trend-detail-topbar { flex-direction: column; align-items: flex-start; }
-  .trends-cta { padding: var(--space-5) 0; }
+  .trends-cta { padding: var(--space-4) 0; }
   .trends-cta h2 { font-size: 1.25rem; }
-  .stage-filter-btn { font-size: 0.75rem; padding: 6px 12px; }
+  .stage-filter-btn { font-size: 0.78rem; padding: 8px 14px; min-height: 44px; }
   .opp-score-grid { grid-template-columns: repeat(2, 1fr); }
   .opp-header { flex-direction: column; align-items: flex-start; gap: var(--space-2); }
+  .opp-score-card { padding: var(--space-2); }
+  .score-value { font-size: 1.5rem; }
+
+  /* Trend detail source badges scrolling hint */
+  .trend-detail-sources {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 4px;
+  }
+
+  /* Guard against long unbreakable text in cards */
+  .trend-card-category,
+  .trend-card-summary {
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
 }
 /* Very narrow — single column score grid */
 @media (max-width: 360px) {
   .opp-score-grid { grid-template-columns: 1fr; }
+  .trend-card-meta { flex-direction: column; align-items: flex-start; gap: 3px; }
+  .trends-hero-stats { font-size: 0.7rem; padding: 5px 10px; }
 }
 
 /* ════════════════════════════════════════════

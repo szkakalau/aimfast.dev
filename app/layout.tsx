@@ -109,6 +109,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </div>
         </nav>
         {children}
+        {/* Close mobile nav when a link is clicked */}
+        <script dangerouslySetInnerHTML={{ __html: `
+          (function(){
+            var toggle = document.getElementById('nav-toggle');
+            var links = document.querySelectorAll('.site-nav-links a');
+            for (var i = 0; i < links.length; i++) {
+              links[i].addEventListener('click', function(){ toggle.checked = false; });
+            }
+          })();
+        `}} />
       </body>
     </html>
   );

@@ -273,4 +273,46 @@ a, button, input, select, textarea, label, [role="button"] {
   .site-nav-links a:last-child {
     border-bottom: none;
   }
+
+  /* Fix hero gradient: avoid fixed 1000px width causing overflow */
+  .hero::before,
+  .trends-hero::before {
+    width: 100vw;
+    max-width: 100vw;
+    left: 0;
+    transform: none;
+  }
+}
+
+/* ── Global mobile safeguards ── */
+@media (max-width: 480px) {
+  /* Prevent any fixed-width elements from causing horizontal overflow */
+  .trends-page,
+  .dash-main,
+  .pricing-section,
+  .faq-section,
+  .cta-section,
+  .footer-cta {
+    overflow-x: hidden;
+  }
+
+  /* Report & article content: prevent overflow from long links/code */
+  .report-content,
+  .article {
+    font-size: 0.95rem;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  .report-content pre,
+  .article pre {
+    font-size: 0.78rem;
+    padding: var(--space-2);
+  }
+
+  /* Full-width buttons stay within viewport */
+  .btn {
+    white-space: normal;
+    text-align: center;
+  }
 }

@@ -578,6 +578,63 @@
   .hero-signup .btn { width: 100%; justify-content: center; }
   .sample-card-two-col { grid-template-columns: 1fr; }
   .live-stats { font-size: 0.75rem; }
+
+  /* Pricing page: override inline section padding */
+  .pricing-section,
+  .pain-cards,
+  .faq-section,
+  .footer-cta {
+    padding-top: var(--space-5) !important;
+    padding-bottom: var(--space-5) !important;
+  }
+  .footer-cta {
+    padding-bottom: var(--space-6) !important;
+  }
+
+  /* Pricing card full-width on mobile */
+  .pricing-card {
+    max-width: 100%;
+    padding: var(--space-4);
+    margin: 0 var(--space-2);
+  }
+  .pricing-number { font-size: 2.4rem; }
+
+  /* Section header */
+  .section-header h2 { font-size: 1.35rem; }
+  .section-header p { font-size: 0.9rem; padding: 0 var(--space-2); }
+
+  /* FAQ adjust */
+  .faq-section { padding: var(--space-5) var(--space-2) !important; }
+  .faq-item { padding: var(--space-2) 0; }
+  .faq-item dt { font-size: 0.9rem; }
+
+  /* CTA buttons inline style override */
+  .trends-cta .btn,
+  .footer-cta .btn {
+    width: 100% !important;
+    justify-content: center !important;
+    font-size: 0.95rem !important;
+    padding: 12px 20px !important;
+  }
+
+  /* Pain cards tighter on mobile */
+  .pain-card { padding: var(--space-3); }
+  .pain-card h3 { font-size: 0.95rem; }
+
+  /* Footer */
+  .site-footer { padding: var(--space-3) 0; font-size: 0.75rem; }
+  .footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; }
+}
+
+@media (max-width: 480px) {
+  .pricing-card {
+    margin: 0;
+    border-radius: var(--radius-md);
+  }
+  .pricing-features { font-size: 0.82rem; }
+  .pricing-features li { padding: 5px 0; }
+  .footer-cta h2 { font-size: 1.2rem; }
+  .footer-cta p { font-size: 0.88rem; }
 }
 
 @media (max-width: 360px) {
