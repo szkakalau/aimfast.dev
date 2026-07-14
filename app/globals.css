@@ -144,7 +144,9 @@ a, button, input, select, textarea, label, [role="button"] {
   padding: var(--space-2) var(--space-3);
   max-width: 1100px; margin: 0 auto;
   border-bottom: 1px solid var(--color-border);
-  position: relative;
+  position: sticky; top: 0;
+  background: var(--color-surface);
+  z-index: var(--z-nav-sticky);
 }
 
 .site-nav-logo {
@@ -152,7 +154,7 @@ a, button, input, select, textarea, label, [role="button"] {
   font-weight: 700; font-size: 0.95rem;
   color: var(--color-text); text-decoration: none;
   letter-spacing: -0.01em;
-  z-index: 2;
+  z-index: var(--z-nav-controls);
 }
 
 /* Hamburger toggle — hidden checkbox hack */
@@ -162,7 +164,7 @@ a, button, input, select, textarea, label, [role="button"] {
 
 .nav-toggle-label {
   display: none;
-  z-index: 2;
+  z-index: var(--z-nav-controls);
   cursor: pointer;
   padding: 8px;
   min-width: 44px;
@@ -238,14 +240,38 @@ a, button, input, select, textarea, label, [role="button"] {
 }
 .nav-lang:hover { color: var(--color-accent); }
 
-/* Mobile nav */
+/* ── Nav backdrop overlay (mobile) ── */
+.nav-overlay {
+  display: none;
+}
+
 @media (max-width: 640px) {
   .nav-toggle-label {
     display: inline-flex;
   }
 
+  /* Backdrop overlay — taps close the menu (label toggles checkbox) */
+  .nav-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: oklch(0% 0 0 / 0.35);
+    z-index: var(--z-nav-overlay);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.25s var(--ease-out), visibility 0.25s var(--ease-out);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+  }
+
+  .nav-toggle-input:checked ~ .nav-overlay {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  /* Menu dropdown — smooth fade + slide */
   .site-nav-links {
-    display: none;
+    display: flex;
     position: absolute;
     top: 100%;
     left: 0;
@@ -255,12 +281,20 @@ a, button, input, select, textarea, label, [role="button"] {
     border-bottom: 1px solid var(--color-border);
     padding: var(--space-2) var(--space-3);
     gap: 0;
-    box-shadow: var(--shadow-md);
-    z-index: 10;
+    box-shadow: var(--shadow-lg);
+    z-index: var(--z-nav-dropdown);
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-8px);
+    transition: opacity 0.25s var(--ease-out),
+                visibility 0.25s var(--ease-out),
+                transform 0.25s var(--ease-out);
   }
 
   .nav-toggle-input:checked ~ .site-nav-links {
-    display: flex;
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
   }
 
   .site-nav-links a {
@@ -282,6 +316,11 @@ a, button, input, select, textarea, label, [role="button"] {
     left: 0;
     transform: none;
   }
+}
+
+/* ── Body scroll lock when mobile nav is open ── */
+body:has(#nav-toggle:checked) {
+  overflow: hidden;
 }
 
 /* ── Global mobile safeguards ── */

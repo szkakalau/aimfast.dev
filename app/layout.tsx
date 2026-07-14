@@ -107,6 +107,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <a href="/pricing/">Pricing</a>
             <LangToggle />
           </div>
+          <label htmlFor="nav-toggle" className="nav-overlay" aria-hidden="true" />
         </nav>
         {children}
         {/* Close mobile nav when a link is clicked */}
@@ -116,6 +117,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             var links = document.querySelectorAll('.site-nav-links a');
             for (var i = 0; i < links.length; i++) {
               links[i].addEventListener('click', function(){ toggle.checked = false; });
+            }
+            /* Fallback body scroll lock — only for browsers without :has() support */
+            var supportsHas = false;
+            try { document.querySelector(':has(*)'); supportsHas = true; } catch(e) {}
+            if (!supportsHas) {
+              toggle.addEventListener('change', function(){
+                document.body.style.overflow = toggle.checked ? 'hidden' : '';
+              });
             }
           })();
         `}} />

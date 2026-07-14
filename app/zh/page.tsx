@@ -186,6 +186,87 @@ export default function ZhHomePage() {
           </div>
         )}
 
+        {/* ── Methodology: How Trends Are Ranked & Discovered ── */}
+        <section className="methodology-section">
+          <div className="section-header">
+            <h2>趋势如何评分与发现</h2>
+            <p>
+              你看到的每个趋势都由管道自动评分和分阶段。以下是具体的工作方式。
+            </p>
+          </div>
+
+          <div className="engine-grid">
+            {/* Card A: Scoring */}
+            <div className="engine-card">
+              <h3><BarChart3 size={20} /> 评分机制</h3>
+              <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', marginBottom: 'var(--space-2)' }}>
+                每个术语从四个维度获得 0–100 的综合评分：
+              </p>
+              <div className="score-formula">
+                评分 = 信号平均分 × 0.3<br />
+                &nbsp;&nbsp;+ 信源数 × 8（上限 30）<br />
+                &nbsp;&nbsp;+ 互动热度 × 0.5（上限 20）<br />
+                &nbsp;&nbsp;+ 跨平台传播 × 10（上限 20）
+              </div>
+
+              <p style={{ fontSize: '0.82rem', color: 'var(--color-text-secondary)', marginBottom: 'var(--space-2)' }}>
+                <strong>成熟度阶段</strong> — 基于首次发现后的天数：
+              </p>
+              <div className="stage-legend">
+                <span className="stage-legend-item">
+                  <span className="stage-legend-dot nascent" /> 萌芽期 (0–7天)
+                </span>
+                <span className="stage-legend-item">
+                  <span className="stage-legend-dot emergent" /> 涌现期 (8–30天)
+                </span>
+                <span className="stage-legend-item">
+                  <span className="stage-legend-dot validating" /> 验证期 (31–90天)
+                </span>
+                <span className="stage-legend-item">
+                  <span className="stage-legend-dot rising" /> 上升期 (90天+)
+                </span>
+              </div>
+
+              <p style={{ fontSize: '0.82rem', color: 'var(--color-text-secondary)', marginTop: 'var(--space-2)' }}>
+                <strong>报告阈值：</strong>{' '}
+                <span className="threshold-list">
+                  <span>≥60</span> 深度研究报告 ·{' '}
+                  <span>30–59</span> 快速简报 ·{' '}
+                  <span>&lt;30</span> 仅追踪
+                </span>
+              </p>
+            </div>
+
+            {/* Card B: Discovery */}
+            <div className="engine-card">
+              <h3><Search size={20} /> 术语发现规则</h3>
+              <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', marginBottom: 'var(--space-2)' }}>
+                每晚，LLM 管道扫描 11+ 个信号源，按 5 条规则提取新兴术语：
+              </p>
+              <ul>
+                <li>
+                  <strong>跨信源验证</strong> — 术语必须在 ≥2 个独立信源中出现，孤立的单帖不会被收录。
+                </li>
+                <li>
+                  <strong>代表性过滤</strong> — 新产品仅在代表某个新兴方向时才提取，单次发布的「我做了一个App」帖不纳入。
+                </li>
+                <li>
+                  <strong>讨论量门槛</strong> — 低分单帖不达标；必须有真实的社区讨论热度。
+                </li>
+                <li>
+                  <strong>通用词黑名单</strong> — AI、React、Python、API、LLM、GPT 等已知泛化词汇会被自动忽略。
+                </li>
+                <li>
+                  <strong>质量优先于数量</strong> — 每天最多提取 20 个新术语；宁可少一些，也比充满噪音好。
+                </li>
+              </ul>
+              <p style={{ fontSize: '0.78rem', color: 'var(--color-text-muted)', marginTop: 'var(--space-2)' }}>
+                覆盖来源：HN、Reddit、GitHub、Product Hunt、X、DEV Community、V2EX、Lobsters 等。
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* ── How It Works (mini) ── */}
         <section className="workflow" style={{ padding: 'var(--space-8) 0' }}>
           <div className="section-header">

@@ -189,6 +189,88 @@ export default function HomePage() {
           </div>
         )}
 
+        {/* ── Methodology: How Trends Are Ranked & Discovered ── */}
+        <section className="methodology-section">
+          <div className="section-header">
+            <h2>How Trends Are Ranked &amp; Discovered</h2>
+            <p>
+              Every trend you see below is automatically scored and staged by our pipeline.
+              Here&apos;s exactly how it works.
+            </p>
+          </div>
+
+          <div className="engine-grid">
+            {/* Card A: Scoring */}
+            <div className="engine-card">
+              <h3><BarChart3 size={20} /> How We Score</h3>
+              <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', marginBottom: 'var(--space-2)' }}>
+                Each term gets a 0–100 score from four weighted dimensions:
+              </p>
+              <div className="score-formula">
+                Score = Signal Avg × 0.3<br />
+                &nbsp;&nbsp;+ Sources × 8 (max 30)<br />
+                &nbsp;&nbsp;+ Engagement × 0.5 (max 20)<br />
+                &nbsp;&nbsp;+ Cross-Platform × 10 (max 20)
+              </div>
+
+              <p style={{ fontSize: '0.82rem', color: 'var(--color-text-secondary)', marginBottom: 'var(--space-2)' }}>
+                <strong>Maturity stages</strong> — based on days since first detection:
+              </p>
+              <div className="stage-legend">
+                <span className="stage-legend-item">
+                  <span className="stage-legend-dot nascent" /> Nascent (0–7d)
+                </span>
+                <span className="stage-legend-item">
+                  <span className="stage-legend-dot emergent" /> Emergent (8–30d)
+                </span>
+                <span className="stage-legend-item">
+                  <span className="stage-legend-dot validating" /> Validating (31–90d)
+                </span>
+                <span className="stage-legend-item">
+                  <span className="stage-legend-dot rising" /> Rising (90d+)
+                </span>
+              </div>
+
+              <p style={{ fontSize: '0.82rem', color: 'var(--color-text-secondary)', marginTop: 'var(--space-2)' }}>
+                <strong>Report thresholds:</strong>{' '}
+                <span className="threshold-list">
+                  <span>≥60</span> deep research report ·{' '}
+                  <span>30–59</span> quick brief ·{' '}
+                  <span>&lt;30</span> tracking only
+                </span>
+              </p>
+            </div>
+
+            {/* Card B: Discovery */}
+            <div className="engine-card">
+              <h3><Search size={20} /> How Terms Are Discovered</h3>
+              <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', marginBottom: 'var(--space-2)' }}>
+                Every night, our LLM pipeline scans signals from 11+ sources and extracts emerging terms using 5 rules:
+              </p>
+              <ul>
+                <li>
+                  <strong>Cross-source validation</strong> — a term must appear in ≥2 independent sources, not a single isolated post.
+                </li>
+                <li>
+                  <strong>Representative filtering</strong> — new products are only kept if they represent a broader emerging pattern, not one-off launches.
+                </li>
+                <li>
+                  <strong>Discussion volume threshold</strong> — low-score single posts don&apos;t qualify; there must be genuine community interest.
+                </li>
+                <li>
+                  <strong>Generic term blacklist</strong> — known broad terms (AI, React, Python, API, LLM, GPT) are automatically ignored.
+                </li>
+                <li>
+                  <strong>Quality over quantity</strong> — capped at 20 new terms per day; fewer is better than noise.
+                </li>
+              </ul>
+              <p style={{ fontSize: '0.78rem', color: 'var(--color-text-muted)', marginTop: 'var(--space-2)' }}>
+                Sources: HN, Reddit, GitHub, Product Hunt, X, DEV Community, V2EX, Lobsters, and more.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* ── How It Works (mini) ── */}
         <section className="workflow" style={{ padding: 'var(--space-8) 0' }}>
           <div className="section-header">

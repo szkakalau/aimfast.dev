@@ -17,6 +17,7 @@ import {
   getResearchContent,
   stageLabelZh,
   stagePct,
+  sanitizeTrendHtml,
 } from '../../data';
 
 /* ── Helpers ── */
@@ -126,6 +127,8 @@ export default async function TrendDetailZhPage({
   if (researchMd) {
     const bodyOnly = researchMd.replace(/^---[\s\S]*?---\n*/, '').trim();
     researchHtml = await marked.parse(bodyOnly);
+    // Sanitize: strip dangerous tags/attrs from LLM-generated markdown
+    researchHtml = sanitizeTrendHtml(researchHtml);
 
     // Extract h2 sections for FAQ (GEO optimization)
     const h2Matches = bodyOnly.matchAll(/^## (.+)$/gm);
@@ -246,6 +249,10 @@ export default async function TrendDetailZhPage({
             <span className="trend-detail-meta-item">
               <BarChart3 size={14} />
               评分 <strong>{term.score}</strong>
+              <span
+                className="score-tooltip"
+                title="评分 = 信号平均分 × 0.3 + 信源数 × 8（上限30）+ 互动热度 × 0.5（上限20）+ 跨平台传播 × 10（上限20）"
+              >?</span>
             </span>
             <span className="trend-detail-meta-item">
               <Activity size={14} />

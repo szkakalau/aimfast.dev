@@ -99,4 +99,13 @@
   --shadow-lg:  0 12px 32px oklch(0% 0 0 / 0.10), 0 4px 8px oklch(0% 0 0 / 0.06);
   --shadow-xl:  0 16px 48px oklch(0% 0 0 / 0.14), 0 6px 12px oklch(0% 0 0 / 0.06);
   --shadow-glow: 0 0 24px var(--color-accent-glow);
+
+  /* ── Z-Index Scale ── */
+  --z-base:           1;
+  --z-nav-overlay:    5;   /* mobile menu backdrop */
+  --z-nav-controls:   6;   /* hamburger + logo */
+  --z-nav-dropdown:   10;  /* mobile menu dropdown */
+  --z-nav-sticky:     20;  /* sticky site-nav bar */
+  --z-modal:          50;  /* modal / full-screen overlay */
+  --z-tooltip:        100; /* tooltips / toasts */
 }

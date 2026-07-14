@@ -217,6 +217,10 @@ def generate_sitemap() -> int:
         'loc': f'{BASE_URL}/',
         'changefreq': 'daily',
         'priority': '1.0',
+        'alternates': {
+            'en': f'{BASE_URL}/',
+            'zh-CN': f'{BASE_URL}/zh/',
+        },
     })
 
     # Reports index
@@ -238,6 +242,10 @@ def generate_sitemap() -> int:
         'loc': f'{BASE_URL}/zh/',
         'changefreq': 'daily',
         'priority': '1.0',
+        'alternates': {
+            'zh-CN': f'{BASE_URL}/zh/',
+            'en': f'{BASE_URL}/',
+        },
     })
 
     # Dashboard

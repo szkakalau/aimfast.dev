@@ -43,7 +43,11 @@ export function getTrendStats(): { total: number; withResearch: number; totalSou
   try {
     const data = getAllTrendTerms();
     const terms = data.terms || [];
-    const withResearch = terms.filter((t) => t.research_md_path && t.score >= 60).length;
+    const withResearch = terms.filter((t) => {
+      if (!t.research_md_path) return false;
+      const fullPath = join(process.cwd(), t.research_md_path);
+      return existsSync(fullPath);
+    }).length;
     const totalSources = new Set(terms.flatMap((t) => t.sources || [])).size;
     return { total: terms.length, withResearch, totalSources };
   } catch {
@@ -79,4 +83,36 @@ export function stagePct(stage: string): string {
     rising: '90+',
   };
   return map[stage] || '';
+}
+
+/**
+ * Lightweight HTML sanitizer for LLM-generated markdown content.
+ * Strips dangerous tags and event handlers while preserving markdown-formatted output
+ * (headings, lists, links, code blocks, etc. are rendered by `marked` as safe HTML).
+ */
+export function sanitizeTrendHtml(html: string): string {
+  return html
+    // Strip <script>...</script>
+    .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
+    // Strip <iframe>...</iframe>
+    .replace(/<iframe\b[^<]*(?:(?!<\/iframe>)<[^<]*)*<\/iframe>/gi, '')
+    // Strip <style>...</style>
+    .replace(/<style\b[^<]*(?:(?!<\/style>)<[^<]*)*<\/style>/gi, '')
+    // Strip <object>...</object>
+    .replace(/<object\b[^<]*(?:(?!<\/object>)<[^<]*)*<\/object>/gi, '')
+    // Strip <embed ...>
+    .replace(/<embed\b[^>]*\/?>/gi, '')
+    // Strip <form>...</form>
+    .replace(/<form\b[^<]*(?:(?!<\/form>)<[^<]*)*<\/form>/gi, '')
+    // Strip <meta ...> (self-closing)
+    .replace(/<meta\b[^>]*\/?>/gi, '')
+    // Strip <base ...> (self-closing)
+    .replace(/<base\b[^>]*\/?>/gi, '')
+    // Strip inline style attributes (potential defacement)
+    .replace(/\s+style\s*=\s*"[^"]*"/gi, '')
+    .replace(/\s+style\s*=\s*'[^']*'/gi, '')
+    // Strip inline JS event handlers
+    .replace(/\s+on\w+\s*=\s*"[^"]*"/gi, '')
+    .replace(/\s+on\w+\s*=\s*'[^']*'/gi, '')
+    .replace(/\s+on\w+\s*=\s*[^\s>]+/gi, '');
 }

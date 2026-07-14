@@ -19,6 +19,7 @@ import {
   stageLabel,
   stageLabelZh,
   stagePct,
+  sanitizeTrendHtml,
 } from '../data';
 
 /* ── Helpers ── */
@@ -128,6 +129,8 @@ export default async function TrendDetailPage({
   if (researchMd) {
     const bodyOnly = researchMd.replace(/^---[\s\S]*?---\n*/, '').trim();
     researchHtml = await marked.parse(bodyOnly);
+    // Sanitize: strip dangerous tags/attrs from LLM-generated markdown
+    researchHtml = sanitizeTrendHtml(researchHtml);
 
     // Extract h2 sections for FAQ (GEO optimization)
     const h2Matches = bodyOnly.matchAll(/^## (.+)$/gm);
@@ -258,6 +261,10 @@ export default async function TrendDetailPage({
             <span className="trend-detail-meta-item">
               <BarChart3 size={14} />
               Score <strong>{term.score}</strong>
+              <span
+                className="score-tooltip"
+                title="Score = Signal Avg × 0.3 + Sources × 8 (max 30) + Engagement × 0.5 (max 20) + Cross-Platform × 10 (max 20)"
+              >?</span>
             </span>
             <span className="trend-detail-meta-item">
               <Activity size={14} />
