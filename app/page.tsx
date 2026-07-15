@@ -114,6 +114,35 @@ export default function HomePage() {
           },
         ],
       },
+      {
+        '@type': 'FAQPage',
+        mainEntity: [
+          {
+            '@type': 'Question',
+            name: 'How are trends discovered?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: `Our AI scans 11+ sources daily — HN, Reddit, GitHub, DEV Community, Lobsters, V2EX, X/Twitter, Product Hunt, HuggingFace, Arxiv, Indie Hackers — cross-referencing emerging terms and scoring them by signal strength, source diversity, and community engagement.`,
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'How often is the data updated?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: `Daily at 08:30 CST. New terms are discovered, existing terms are rescored, and market intelligence reports are regenerated every morning.`,
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Is AimFast.Dev free?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: `Yes — trend discovery and tracking is completely free. A paid plan ($19/mo) adds daily decision briefs, competitor monitoring, and full pipeline access. 14-day free trial, no credit card required.`,
+            },
+          },
+        ],
+      },
 
       // Organization + WebSite declared in root layout head — not duplicated here
     ],

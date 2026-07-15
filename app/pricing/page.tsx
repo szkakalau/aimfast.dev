@@ -13,6 +13,8 @@ export const metadata: Metadata = {
       'zh-CN': 'https://www.aimfast.dev/pricing/',
     },
   },
+  // Signals freshness to search engines (static export — no server-side lastmod)
+  other: { 'last-modified': new Date().toISOString().slice(0, 10) },
   openGraph: {
     title: 'Pricing — AimFast.Dev',
     description: 'Daily market intelligence for indie builders. $19/mo, 14-day free trial.',

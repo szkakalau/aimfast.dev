@@ -12,17 +12,34 @@ from generate_opportunity import should_analyze, load_research_content
 # ── _normalize_category (generate_trends.py) ──
 
 def test_normalize_category_known_lowercase():
-    assert _normalize_category("product") == "Product"
-    assert _normalize_category("project") == "Project"
+    assert _normalize_category("product") == "Productivity"
+    assert _normalize_category("project") == "OpenSource"
     assert _normalize_category("infrastructure") == "Infra"
+    assert _normalize_category("opensource") == "OpenSource"
+    assert _normalize_category("aimodel") == "AIModel"
+    assert _normalize_category("aiagent") == "AIAgent"
+    assert _normalize_category("aiapp") == "AIApp"
+    assert _normalize_category("dx") == "DX"
+    assert _normalize_category("consumer") == "Consumer"
+    assert _normalize_category("industry") == "Industry"
+    assert _normalize_category("design") == "Design"
 
 
 def test_normalize_category_known_titlecase():
-    assert _normalize_category("Product") == "Product"
-    assert _normalize_category("AI/LLM") == "AI/LLM"
+    assert _normalize_category("Productivity") == "Productivity"
+    assert _normalize_category("OpenSource") == "OpenSource"
+    assert _normalize_category("AIModel") == "AIModel"
+    assert _normalize_category("AIAgent") == "AIAgent"
+    assert _normalize_category("AIApp") == "AIApp"
+    assert _normalize_category("DX") == "DX"
+    assert _normalize_category("Consumer") == "Consumer"
+    assert _normalize_category("Industry") == "Industry"
+    assert _normalize_category("Design") == "Design"
+    # legacy mappings
+    assert _normalize_category("AI/LLM") == "AIModel"
+    assert _normalize_category("HotTopic") == "Industry"
     assert _normalize_category("DevTools") == "DevTools"
     assert _normalize_category("TechConcept") == "TechConcept"
-    assert _normalize_category("HotTopic") == "HotTopic"
     assert _normalize_category("Infra") == "Infra"
 
 
@@ -37,7 +54,8 @@ def test_normalize_category_empty():
 
 
 def test_normalize_category_whitespace():
-    assert _normalize_category("  product  ") == "Product"
+    assert _normalize_category("  product  ") == "Productivity"
+    assert _normalize_category("  aiagent  ") == "AIAgent"
 
 
 # ── should_analyze (generate_opportunity.py) ──

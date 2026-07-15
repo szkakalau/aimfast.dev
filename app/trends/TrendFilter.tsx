@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useCallback, useMemo, useEffect } from 'react';
+import { useState, useCallback, useMemo, useEffect, useRef } from 'react';
 import { Code2, Crosshair } from 'lucide-react';
 import type { TrendTerm } from './types';
 import TrendCard from './TrendCard';
@@ -50,13 +50,38 @@ export default function TrendFilter({ terms }: { terms: TrendTerm[] }) {
     }
     const pt = params.get('type');
     if (pt) setProductType(pt);
+    const pg = params.get('page');
+    if (pg) { const n = Number(pg); if (n > 0) setPage(n); }
     setHydrated(true);
   }, []);
 
   // ── URL sync: push filter state to query params ──
 
+  const popStateRef = useRef(false);
+
+  useEffect(() => {
+    const onPopState = () => {
+      popStateRef.current = true;
+      const params = new URLSearchParams(window.location.search);
+      const stage = params.get('stage');
+      setActiveStage(stage && STAGES.includes(stage as StageFilter) ? stage as StageFilter : 'all');
+      const sort = params.get('sort');
+      setSortKey(sort && SORT_OPTIONS.some((o) => o.key === sort) ? sort as SortKey : 'builder');
+      const cat = params.get('category');
+      if (cat === 'ai') { setAiFocus(true); setCategory('all'); }
+      else { setAiFocus(false); setCategory(cat || 'all'); }
+      const pt = params.get('type');
+      setProductType(pt || 'all');
+      const pg = params.get('page');
+      setPage(pg ? Math.max(1, Number(pg) || 1) : 1);
+    };
+    window.addEventListener('popstate', onPopState);
+    return () => window.removeEventListener('popstate', onPopState);
+  }, []);
+
   useEffect(() => {
     if (!hydrated) return; // skip initial render before URL read
+    if (popStateRef.current) { popStateRef.current = false; return; }
     const params = new URLSearchParams();
     if (activeStage !== 'all') params.set('stage', activeStage);
     if (sortKey !== 'builder') params.set('sort', sortKey);
@@ -118,7 +143,7 @@ export default function TrendFilter({ terms }: { terms: TrendTerm[] }) {
       result = result.filter((t) => (t.suggested_products || []).includes(productType));
     }
     if (aiFocus) {
-      result = result.filter((t) => t.category === 'AI/LLM');
+      result = result.filter((t) => t.category?.startsWith('AI'));
     } else if (category !== 'all') {
       result = result.filter((t) => normalizeCategory(t.category) === category);
     }
@@ -187,7 +212,7 @@ export default function TrendFilter({ terms }: { terms: TrendTerm[] }) {
   // ── Empty state message ──
 
   const emptyMessage = aiFocus
-    ? 'No AI/LLM terms in this stage. Try a different stage or turn off AI Focus.'
+    ? 'No AI terms in this stage. Try a different stage or turn off AI Focus.'
     : category !== 'all'
       ? `No "${category}" terms in this stage. Try another category or stage.`
       : productType !== 'all'
@@ -230,8 +255,8 @@ export default function TrendFilter({ terms }: { terms: TrendTerm[] }) {
               aria-label="Filter by category"
             >
               <option value="all">All Categories</option>
-              <option value="__ai__">AI/LLM</option>
-              {categories.filter(c => c !== 'AI/LLM').map((cat) => (
+              <option value="__ai__">🤖 AI Focus</option>
+              {categories.filter(c => !c.startsWith('AI')).map((cat) => (
                 <option key={cat} value={cat}>{cat}</option>
               ))}
             </select>

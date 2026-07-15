@@ -2,9 +2,11 @@
 One-time fix: normalize category casing in trend_terms.json.
 
 Fixes:
-  - "product" → "Product"
-  - "project" → "Project"
+  - "product" → "Productivity" (legacy mapping)
+  - "project" → "OpenSource" (legacy mapping)
   - "infrastructure" → "Infra"
+  - "ai/llm" → "AIModel" (legacy mapping)
+  - "hottopic" → "Industry" (legacy mapping)
   - Any other lowercase → title case matching the canonical set
 
 Usage: python scripts/fix_category_case.py [--dry-run]
@@ -21,14 +23,29 @@ TRACKING_FILE = ROOT / "tracking" / "trend_terms.json"
 
 # Canonical category set (matching LLM prompt in generate_trends.py)
 CANONICAL_CATEGORIES = {
+    "aimodel": "AIModel",
+    "ai model": "AIModel",
+    "ai/llm": "AIModel",
+    "llm": "AIModel",
+    "aiagent": "AIAgent",
+    "ai agent": "AIAgent",
+    "agent": "AIAgent",
+    "aiapp": "AIApp",
+    "ai app": "AIApp",
     "techconcept": "TechConcept",
     "devtools": "DevTools",
-    "ai/llm": "AI/LLM",
     "infra": "Infra",
     "infrastructure": "Infra",
-    "product": "Product",
-    "project": "Project",
-    "hottopic": "HotTopic",
+    "opensource": "OpenSource",
+    "open source": "OpenSource",
+    "project": "OpenSource",
+    "dx": "DX",
+    "productivity": "Productivity",
+    "product": "Productivity",
+    "consumer": "Consumer",
+    "industry": "Industry",
+    "hottopic": "Industry",
+    "design": "Design",
 }
 
 # Additional normalization: title-case any unknown categories

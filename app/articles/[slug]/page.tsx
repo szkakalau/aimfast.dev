@@ -120,7 +120,8 @@ export default async function ArticlePage({
 
   // Parse frontmatter
   const frontmatter = parseFrontmatter(source);
-  const content = extractBody(source);
+  // Strip leading H1 to avoid duplicate heading (page header already renders H1)
+  let content = extractBody(source).replace(/^# .+\n+/, '');
   const canonicalUrl = `https://www.aimfast.dev/articles/${slug}/`;
   const enUrl = `https://www.aimfast.dev/articles/${slug}/en/`;
   const hasEn = hasEnglishVersion(slug);

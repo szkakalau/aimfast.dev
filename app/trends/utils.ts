@@ -97,6 +97,32 @@ export function isTracked(id: string): boolean {
   return getTrackedItems().some((item) => item.id === id);
 }
 
+// ── Markdown Section Text Extraction (used by Trend Detail FAQ) ──
+
+/**
+ * Extract plain text from a markdown section by heading name.
+ * Strips markdown syntax and returns the first 3 sentences (max 300 chars).
+ * Returns empty string if the section is not found or has no content.
+ */
+export function extractSectionText(markdown: string, sectionName: string): string {
+  const escaped = sectionName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const regex = new RegExp(`## ${escaped}\\s*\\n([\\s\\S]*?)(?=\\n## |$)`, 'i');
+  const match = markdown.match(regex);
+  if (!match || !match[1]) return '';
+  let text = match[1]
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+    .replace(/[*_~`]+/g, '')
+    .replace(/^#{1,6}\s+/gm, '')
+    .replace(/^[\s]*[-*+]\s+/gm, '')
+    .replace(/^>\s?/gm, '')
+    .replace(/\n+/g, ' ')
+    .replace(/\s{2,}/g, ' ')
+    .trim();
+  const sentences = text.match(/[^.!?]+[.!?]+/g) || [];
+  const result = sentences.slice(0, 3).join(' ').trim();
+  return result.length > 300 ? result.slice(0, 297) + '...' : result;
+}
+
 // ── Decision Score (used by Dashboard Watchlist) ──
 
 const SCORE_DELTA_WEIGHT = 0.6;

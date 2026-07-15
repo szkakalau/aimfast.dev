@@ -113,15 +113,20 @@ def extract_terms_from_signals(signals: list[dict]) -> list[dict]:
 5. 最多提取 20 个词，按重要性和讨论度排序。如果没有足够质量的候选，宁可返回少一些
 
 分类体系（category 字段）：
-- TechConcept: 新兴技术概念/方法论（如 Fluid Compute、WebAssembly）
-- DevTools: 开发者工具/平台方向
-- AI/LLM: AI 与大模型相关
-- Infra: 基础设施/云计算
-- Product: 值得关注的独立产品
-- Project: 值得关注的开源项目
-- HotTopic: 热门讨论话题
+- AIModel: AI & LLM model releases（模型发布、benchmark、权重/API 新模型）
+- AIAgent: Agent frameworks, SDKs & protocols（Agent 框架、MCP 协议、Agent 工具链）
+- AIApp: AI-powered applications（AI 驱动的应用产品、垂直 AI 工具）
+- DevTools: Developer tools & platforms（开发者工具/平台）
+- Infra: Cloud, networking, infrastructure（基础设施/云计算/网络）
+- OpenSource: Open source projects（值得关注的开源项目/社区）
+- DX: Developer experience, methodology, coding trends（开发体验、编程方法论、技术文化讨论）
+- Productivity: Productivity & workflow tools（效率工具/工作流）
+- Consumer: Consumer products, hardware, IoT（消费产品/硬件/IoT）
+- TechConcept: Emerging tech concepts & paradigms（新兴技术概念/范式）
+- Industry: Market trends, funding, industry shifts（市场趋势、融资、行业变动、商业策略）
+- Design: Design methodology, UX, accessibility（设计方法论、UX、无障碍）
 
-**重要**：category 字段必须精确使用上述 7 个值之一，大小写必须完全匹配。不要使用 "product"（小写）、"Infrastructure" 等变体。
+**重要**：category 字段必须精确使用上述 12 个值之一，大小写必须完全匹配。
 
 字段说明（每个元素必须包含以下 5 个字段）：
 - canonical: 英文术语名称（MUST be in English — 如果原始信号是中文，翻译为简洁的英文术语。如 "哒哒哒" → "Taptap Break Reminder"，"飞投" → "WebDrop LAN Transfer"。确保英文名自然、可读。）
@@ -288,14 +293,36 @@ def _normalize_category(cat: str) -> str:
         return "General"
     cat = cat.strip()
     mapping = {
-        "product": "Product",
-        "project": "Project",
+        # AI family
+        "aimodel": "AIModel",
+        "ai model": "AIModel",
+        "ai/llm": "AIModel",
+        "llm": "AIModel",
+        "aiagent": "AIAgent",
+        "ai agent": "AIAgent",
+        "agent": "AIAgent",
+        "aiapp": "AIApp",
+        "ai app": "AIApp",
+        # Other categories
+        "product": "Productivity",
+        "project": "OpenSource",
+        "opensource": "OpenSource",
+        "open source": "OpenSource",
+        "oss": "OpenSource",
         "infra": "Infra",
         "infrastructure": "Infra",
         "techconcept": "TechConcept",
+        "tech concept": "TechConcept",
         "devtools": "DevTools",
-        "ai/llm": "AI/LLM",
-        "hottopic": "HotTopic",
+        "dev tools": "DevTools",
+        "hottopic": "Industry",
+        "hot topic": "Industry",
+        "dx": "DX",
+        "productivity": "Productivity",
+        "consumer": "Consumer",
+        "industry": "Industry",
+        "design": "Design",
+        "general": "General",
     }
     key = cat.lower()
     if key in mapping:
@@ -513,22 +540,23 @@ status: tracking
 **来源**: {sources}
 **趋势评分**: {score}/100
 
-### 概述
+## What is {canonical}
 
 {summary_zh}
 
 {summary_en}
 
-### 追踪状态
+## Why now
+
+该主题于 {first_seen} 首次出现于技术社区。目前已追踪到 {total_mentions} 次提及，来源包括 {sources}。跨平台信号增长表明该话题在技术社区中正在获得关注。
+
+## Who should care
+
+- **独立开发者**: 寻找新兴技术方向或产品灵感
+- **技术创业者**: 关注被忽视的用户痛点和市场空白
+- **早期采用者**: 希望在竞争对手之前识别新兴工具和框架
 
 > ⚠️ **追踪阶段** — 当前信源数量和讨论度尚不足以触发完整研究报告。该主题将持续在每日 Pipeline 中接收新信号，当跨平台讨论热度积累到 60 分以上时自动升级为完整趋势分析。
-
-### 为什么值得关注
-
-该主题首次出现于技术社区，可能是早期信号。AimFast.Dev 将持续追踪其发展动态：
-- 每日信号采集覆盖 HN / GitHub / Reddit / Product Hunt / V2EX 等 13 个信源
-- 术语评分随跨平台讨论自动增长
-- 达到 60 分阈值后自动生成深度研究报告 + 机会分析
 
 ---
 
@@ -555,20 +583,21 @@ status: tracking
 **Sources**: {sources}
 **Trend Score**: {score}/100
 
-### Overview
+## What is {canonical}
 
 {summary_en}
 
-### Tracking Status
+## Why now
+
+This topic first appeared in the tech community on {first_seen}. We have tracked {total_mentions} mentions across sources including {sources}. Cross-platform signal growth suggests this topic is gaining attention in the developer community.
+
+## Who should care
+
+- **Independent developers**: Looking for emerging technology directions or product inspiration
+- **Technical founders**: Tracking underserved user pain points and market gaps
+- **Early adopters**: Seeking to identify emerging tools and frameworks before competitors
 
 > ⚠️ **Tracking Stage** — Current signal volume and discussion heat haven't reached the threshold for a full research report yet. This topic continues to receive new signals in the daily pipeline. When cross-platform discussion accumulates to 60+ points, it will automatically upgrade to a full trend analysis.
-
-### Why This Matters
-
-This topic first appeared in the tech community and may be an early signal. AimFast.Dev will continue tracking its development:
-- Daily signal collection covers 13 sources including HN, GitHub, Reddit, Product Hunt, V2EX, and more
-- Term scores grow automatically with cross-platform discussions
-- Full research report + opportunity analysis triggers at the 60-point threshold
 
 ---
 

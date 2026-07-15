@@ -12,5 +12,31 @@ export const metadata: Metadata = {
 export default function DashboardPage() {
   // Embed trend data at build time — no extra client fetch needed for Watchlist display
   const trendData = getAllTrendTerms();
-  return <DashboardClient trendTerms={trendData.terms} />;
+  return (
+    <>
+      {/* Static SEO fallback: search engines and LLM crawlers see this when JS is disabled.
+          The real dashboard loads client-side via DashboardClient. */}
+      <noscript>
+        <main className="container" style={{ padding: 'var(--space-8) 0' }}>
+          <h1>AimFast.Dev — Dashboard</h1>
+          <p>
+            Daily market intelligence for indie builders. One validated product
+            opportunity every morning — what to build, who will pay, and how much
+            to charge. Track competitors, monitor watchlist signals, and get
+            AI-powered decision support from 11+ global sources.
+          </p>
+          <ul>
+            <li>Watchlist: monitor tracked terms with 7-day trend deltas</li>
+            <li>Today&apos;s Decision: one actionable opportunity with evidence, buyer, pricing, and validation path</li>
+            <li>Competitor Intel: weekly mentions, sentiment, and suggested counter-moves</li>
+            <li>Full Report: comprehensive daily signal digest with plain-English breakdowns</li>
+          </ul>
+          <p>
+            <a href="/trends/">Browse all trends →</a>
+          </p>
+        </main>
+      </noscript>
+      <DashboardClient trendTerms={trendData.terms} />
+    </>
+  );
 }

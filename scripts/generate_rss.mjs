@@ -14,7 +14,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
 const ARTICLES_DIR = join(ROOT, 'content', 'articles');
 const PUBLIC_DIR = join(ROOT, 'public', 'articles');
-const SITE_URL = 'https://aimfast.dev';
+const SITE_URL = 'https://www.aimfast.dev';
 
 const PLACEHOLDER_DATE = '2026-01-01';
 
