@@ -140,13 +140,18 @@ a, button, input, select, textarea, label, [role="button"] {
 
 /* ── Site Navigation ── */
 .site-nav {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: var(--space-2) var(--space-3);
-  max-width: 1100px; margin: 0 auto;
-  border-bottom: 1px solid var(--color-border);
   position: sticky; top: 0;
-  background: var(--color-surface);
   z-index: var(--z-nav-sticky);
+  border-bottom: 1px solid var(--color-border);
+  background: oklch(100% 0 0 / 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.site-nav-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  max-width: 1100px; margin: 0 auto; width: 100%;
+  padding: var(--space-2) var(--space-3);
 }
 
 .site-nav-logo {

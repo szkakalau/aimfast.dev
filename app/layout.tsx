@@ -96,18 +96,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <nav className="site-nav" aria-label="Main navigation">
-          <a href="/" className="site-nav-logo">AimFast.Dev</a>
-          <input type="checkbox" id="nav-toggle" className="nav-toggle-input" aria-hidden="true" />
-          <label htmlFor="nav-toggle" className="nav-toggle-label" aria-label="Toggle navigation menu">
-            <span className="nav-toggle-icon" />
-          </label>
-          <div className="site-nav-links">
-            <a href="/">Trends</a>
-            <a href="/dashboard/">Dashboard</a>
-            <a href="/pricing/">Pricing</a>
-            <LangToggle />
+          <div className="site-nav-inner">
+            <a href="/" className="site-nav-logo">AimFast.Dev</a>
+            <input type="checkbox" id="nav-toggle" className="nav-toggle-input" aria-hidden="true" />
+            <label htmlFor="nav-toggle" className="nav-toggle-label" aria-label="Toggle navigation menu">
+              <span className="nav-toggle-icon" />
+            </label>
+            <div className="site-nav-links">
+              <a href="/">Trends</a>
+              <a href="/dashboard/">Dashboard</a>
+              <a href="/pricing/">Pricing</a>
+              <LangToggle />
+            </div>
+            <label htmlFor="nav-toggle" className="nav-overlay" aria-hidden="true" />
           </div>
-          <label htmlFor="nav-toggle" className="nav-overlay" aria-hidden="true" />
         </nav>
         {children}
         {/* Close mobile nav when a link is clicked */}

@@ -151,81 +151,72 @@ export default function TrendFilter({ terms }: { terms: TrendTerm[] }) {
         ))}
       </div>
 
-      {/* Product Type Filter */}
-      {productTypes.length > 0 && (
-        <div className="stage-filter" style={{ marginBottom: 'var(--space-2)' }}>
-          <button
-            type="button"
-            onClick={() => handleProductType('all')}
-            className={`stage-filter-btn${productType === 'all' ? ' active' : ''}`}
-          >
-            All Types
-          </button>
-          {productTypes.map((pt) => (
-            <button
-              key={pt}
-              type="button"
-              onClick={() => handleProductType(pt)}
-              className={`stage-filter-btn${productType === pt ? ' active' : ''}`}
+      {/* Filter Bar — dropdowns + AI Focus + sort + count in one row */}
+      <div className="filter-bar">
+        <div className="filter-group">
+          {categories.length > 0 && (
+            <select
+              className="filter-select"
+              value={aiFocus ? '__ai__' : category}
+              onChange={(e) => {
+                const v = e.target.value;
+                if (v === '__ai__') {
+                  if (!aiFocus) handleAiFocus();
+                } else {
+                  handleCategory(v);
+                }
+              }}
+              aria-label="Filter by category"
             >
-              {pt}
-            </button>
-          ))}
-        </div>
-      )}
-
-      {/* AI Focus + Category Filter */}
-      {categories.length > 0 && (
-        <div className="stage-filter" style={{ marginBottom: 'var(--space-2)' }}>
+              <option value="all">📂 All Categories</option>
+              <option value="__ai__">🎯 AI/LLM</option>
+              {categories.filter(c => c !== 'AI/LLM').map((cat) => (
+                <option key={cat} value={cat}>{cat}</option>
+              ))}
+            </select>
+          )}
+          {productTypes.length > 0 && (
+            <select
+              className="filter-select"
+              value={productType}
+              onChange={(e) => handleProductType(e.target.value)}
+              aria-label="Filter by product type"
+            >
+              <option value="all">📦 All Types</option>
+              {productTypes.map((pt) => (
+                <option key={pt} value={pt}>{pt}</option>
+              ))}
+            </select>
+          )}
           <button
             type="button"
             onClick={handleAiFocus}
-            className={`stage-filter-btn ai-focus${aiFocus ? ' active' : ''}`}
+            className={`filter-ai-toggle${aiFocus ? ' active' : ''}`}
             aria-pressed={aiFocus}
           >
             🎯 AI Focus
           </button>
-          <span className="filter-sep" aria-hidden="true" />
-          <button
-            type="button"
-            onClick={() => handleCategory('all')}
-            className={`stage-filter-btn${!aiFocus && category === 'all' ? ' active' : ''}`}
-          >
-            All Categories
-          </button>
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              type="button"
-              onClick={() => handleCategory(cat)}
-              className={`stage-filter-btn${!aiFocus && category === cat ? ' active' : ''}`}
-            >
-              {cat}
-            </button>
-          ))}
         </div>
-      )}
-
-      {/* Sort Bar */}
-      <div className="sort-bar">
-        <span className="sort-count">{filtered.length} results</span>
-        <select
-          className="sort-select"
-          value={sortKey}
-          onChange={handleSort}
-          aria-label="Sort terms"
-        >
-          <optgroup label="For Builders">
-            <option value="builder">{SORT_OPTIONS[0].label}</option>
-          </optgroup>
-          <optgroup label="General">
-            {SORT_OPTIONS.slice(1).map((opt) => (
-              <option key={opt.key} value={opt.key}>
-                {opt.label}
-              </option>
-            ))}
-          </optgroup>
-        </select>
+        <div className="filter-right">
+          <span className="sort-count">{filtered.length} results</span>
+          <select
+            className="sort-select"
+            value={sortKey}
+            onChange={handleSort}
+            aria-label="Sort terms"
+          >
+            <optgroup label="For Builders">
+              <option value="builder">{SORT_OPTIONS[0].label}</option>
+            </optgroup>
+            <optgroup label="General">
+              {SORT_OPTIONS.slice(1).map((opt) => (
+                <option key={opt.key} value={opt.key}>
+                  {opt.label}
+                </option>
+              ))}
+            </optgroup>
+          </select>
+        </div>
       </div>
 
       {/* Trend Grid */}
