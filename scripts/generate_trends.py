@@ -290,6 +290,7 @@ def _normalize_category(cat: str) -> str:
     mapping = {
         "product": "Product",
         "project": "Project",
+        "infra": "Infra",
         "infrastructure": "Infra",
         "techconcept": "TechConcept",
         "devtools": "DevTools",
