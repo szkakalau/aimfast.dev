@@ -1,8 +1,12 @@
 /**
- * RSS feed generator — reads content/articles/*.mdx and writes public/articles/rss.xml.
+ * RSS feed generator — reads content/articles/*.mdx and writes two feeds:
+ *   public/articles/rss.xml     — English articles (slugs ending in -en)
+ *   public/articles/rss-zh.xml  — Chinese articles (original language)
+ *
+ * Filters out entries with empty summaries and placeholder dates.
  * Run before `next build` to include in static export.
  */
-import { readFileSync, readdirSync, writeFileSync, mkdirSync } from 'node:fs';
+import { readFileSync, readdirSync, writeFileSync, mkdirSync, statSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -11,6 +15,8 @@ const ROOT = join(__dirname, '..');
 const ARTICLES_DIR = join(ROOT, 'content', 'articles');
 const PUBLIC_DIR = join(ROOT, 'public', 'articles');
 const SITE_URL = 'https://aimfast.dev';
+
+const PLACEHOLDER_DATE = '2026-01-01';
 
 function parseFrontmatter(source) {
   const fm = {};
@@ -41,46 +47,87 @@ try {
   process.exit(0);
 }
 
-const articles = [];
+const enArticles = [];
+const zhArticles = [];
+let skippedEmpty = 0;
+let skippedPlaceholderDate = 0;
+
 for (const file of files) {
   const slug = file.replace(/\.mdx$/, '');
   const raw = readFileSync(join(ARTICLES_DIR, file), 'utf-8');
   const fm = parseFrontmatter(raw);
-  articles.push({
+
+  // Skip entries with empty summaries
+  if (!fm.summary || fm.summary.trim() === '') {
+    skippedEmpty++;
+    continue;
+  }
+
+  let date = fm.date;
+  // Use file mtime as fallback for placeholder dates
+  if (!date || date === PLACEHOLDER_DATE) {
+    try {
+      const stat = statSync(join(ARTICLES_DIR, file));
+      date = stat.mtime.toISOString().slice(0, 10);
+      skippedPlaceholderDate++;
+    } catch {
+      date = PLACEHOLDER_DATE;
+    }
+  }
+
+  const article = {
     slug,
     title: fm.title || slug,
-    date: fm.date || '2026-01-01',
-    summary: fm.summary || '',
-  });
+    date,
+    summary: fm.summary,
+  };
+
+  // Split by language: -en suffix → English, everything else → Chinese
+  if (slug.endsWith('-en')) {
+    enArticles.push(article);
+  } else {
+    zhArticles.push(article);
+  }
 }
 
-articles.sort((a, b) => b.date.localeCompare(a.date));
+function generateFeed(articles, language, filename) {
+  articles.sort((a, b) => b.date.localeCompare(a.date));
 
-const items = articles
-  .map(
-    (a) => `  <item>
-    <title>${escXml(a.title)}</title>
-    <link>${SITE_URL}/articles/${a.slug}/</link>
-    <description>${escXml(a.summary)}</description>
-    <pubDate>${new Date(a.date).toUTCString()}</pubDate>
-    <guid>${SITE_URL}/articles/${a.slug}/</guid>
-  </item>`
-  )
-  .join('\n');
+  const items = articles
+    .map(
+      (a) => `    <item>
+      <title>${escXml(a.title)}</title>
+      <link>${SITE_URL}/articles/${a.slug}/</link>
+      <description>${escXml(a.summary)}</description>
+      <pubDate>${new Date(a.date + 'T00:00:00+08:00').toUTCString()}</pubDate>
+      <guid>${SITE_URL}/articles/${a.slug}/</guid>
+    </item>`,
+    )
+    .join('\n');
 
-const rss = `<?xml version="1.0" encoding="UTF-8"?>
+  return `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-<channel>
-  <title>AimFast.Dev — Articles</title>
-  <link>${SITE_URL}/articles/</link>
-  <description>Deep-dive signal analysis for indie developers. Weekly articles translating cross-platform signals into buildable opportunities.</description>
-  <language>en</language>
-  <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
-  <atom:link href="${SITE_URL}/articles/rss.xml" rel="self" type="application/rss+xml"/>
+  <channel>
+    <title>AimFast.Dev — Articles${language === 'en' ? '' : ' (中文)'}</title>
+    <link>${SITE_URL}/articles/</link>
+    <description>Deep-dive signal analysis for indie developers. ${language === 'en' ? 'Weekly articles translating cross-platform signals into buildable opportunities.' : '深度信号分析文章，将跨平台信号转化为可执行的产品机会。'}</description>
+    <language>${language === 'en' ? 'en' : 'zh-CN'}</language>
+    <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
+    <atom:link href="${SITE_URL}/articles/${filename}" rel="self" type="application/rss+xml"/>
 ${items}
-</channel>
+  </channel>
 </rss>`;
+}
 
 mkdirSync(PUBLIC_DIR, { recursive: true });
-writeFileSync(join(PUBLIC_DIR, 'rss.xml'), rss, 'utf-8');
-console.log(`[RSS] Generated with ${articles.length} articles → public/articles/rss.xml`);
+
+const enXml = generateFeed(enArticles, 'en', 'rss.xml');
+writeFileSync(join(PUBLIC_DIR, 'rss.xml'), enXml, 'utf-8');
+console.log(`[RSS] English: ${enArticles.length} articles → public/articles/rss.xml`);
+
+const zhXml = generateFeed(zhArticles, 'zh-CN', 'rss-zh.xml');
+writeFileSync(join(PUBLIC_DIR, 'rss-zh.xml'), zhXml, 'utf-8');
+console.log(`[RSS] Chinese: ${zhArticles.length} articles → public/articles/rss-zh.xml`);
+
+if (skippedEmpty > 0) console.log(`[RSS] Skipped ${skippedEmpty} article(s) with empty summary`);
+if (skippedPlaceholderDate > 0) console.log(`[RSS] Fixed ${skippedPlaceholderDate} placeholder date(s) using file mtime`);

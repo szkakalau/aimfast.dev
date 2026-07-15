@@ -20,9 +20,10 @@ export const metadata: Metadata = {
     description: 'Browse daily signal intelligence reports with product opportunities and trend analysis.',
     url: 'https://www.aimfast.dev/reports/',
     siteName: 'AimFast.Dev',
+    locale: 'en',
     images: [
       {
-        url: 'https://www.aimfast.dev/og-image.png',
+        url: 'https://www.aimfast.dev/og-reports.png',
         width: 1200,
         height: 630,
         alt: 'AimFast.Dev — Daily Reports',
@@ -33,7 +34,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Daily Reports — AimFast.Dev',
     description: 'Browse daily signal intelligence reports.',
-    images: ['https://www.aimfast.dev/og-image.png'],
+    images: ['https://www.aimfast.dev/og-reports.png'],
   },
 };
 
@@ -78,18 +79,30 @@ export default function ReportsIndexPage() {
 
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'CollectionPage',
-    name: 'Daily Reports — AimFast.Dev',
-    description: 'Daily signal intelligence reports for indie developers.',
-    url: 'https://www.aimfast.dev/reports/',
-    mainEntity: {
-      '@type': 'ItemList',
-      itemListElement: reports.map((r, i) => ({
-        '@type': 'ListItem',
-        position: i + 1,
-        url: `https://www.aimfast.dev/reports/${r.date}/`,
-      })),
-    },
+    '@graph': [
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.aimfast.dev/' },
+          { '@type': 'ListItem', position: 2, name: 'Reports', item: 'https://www.aimfast.dev/reports/' },
+        ],
+      },
+      {
+        '@type': 'CollectionPage',
+        name: 'Daily Reports — AimFast.Dev',
+        description: 'Daily signal intelligence reports for indie developers.',
+        url: 'https://www.aimfast.dev/reports/',
+        inLanguage: 'zh-CN',
+        mainEntity: {
+          '@type': 'ItemList',
+          itemListElement: reports.map((r, i) => ({
+            '@type': 'ListItem',
+            position: i + 1,
+            url: `https://www.aimfast.dev/reports/${r.date}/`,
+          })),
+        },
+      },
+    ],
   };
 
   return (

@@ -55,10 +55,10 @@ export async function generateMetadata({
       publishedTime: fm.date || undefined,
       url: canonicalUrl,
       siteName: 'AimFast.Dev',
-      locale: 'en_US',
+      locale: 'en',
       images: [
         {
-          url: 'https://www.aimfast.dev/og-image.png',
+          url: 'https://www.aimfast.dev/og-articles.png',
           width: 1200,
           height: 630,
           alt: 'AimFast.Dev — Daily Signal Intelligence',
@@ -69,7 +69,7 @@ export async function generateMetadata({
       card: 'summary_large_image',
       title: `${title} — AimFast.Dev`,
       description: fm.summary || 'Deep-dive signal analysis for indie developers.',
-      images: ['https://www.aimfast.dev/og-image.png'],
+      images: ['https://www.aimfast.dev/og-articles.png'],
     },
   };
 }
@@ -138,11 +138,12 @@ export default async function ArticleEnPage({
       {
         '@type': 'Article',
         headline: frontmatter.title || slug,
-        datePublished: frontmatter.date || undefined,
+        datePublished: frontmatter.date ? `${frontmatter.date}T00:00:00+08:00` : undefined,
         description: frontmatter.summary || '',
         author: { '@type': 'Organization', name: 'AimFast.Dev' },
         publisher: { '@type': 'Organization', name: 'AimFast.Dev' },
         inLanguage: 'en',
+        translationOfWork: { '@type': 'CreativeWork', '@id': `https://www.aimfast.dev/articles/${slug.replace(/-en$/, '')}/` },
         url: canonicalUrl,
         mainEntityOfPage: { '@type': 'WebPage', '@id': canonicalUrl },
       },

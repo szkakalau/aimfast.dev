@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     locale: 'zh-CN',
     images: [
       {
-        url: 'https://www.aimfast.dev/og-image.png',
+        url: 'https://www.aimfast.dev/og-pricing.png',
         width: 1200,
         height: 630,
         alt: 'AimFast.Dev — 定价',
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: '定价 — AimFast.Dev',
     description: '面向独立开发者的每日市场情报。$19/月。',
-    images: ['https://www.aimfast.dev/og-image.png'],
+    images: ['https://www.aimfast.dev/og-pricing.png'],
   },
 };
 

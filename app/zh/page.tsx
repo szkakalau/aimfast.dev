@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     locale: 'zh-CN',
     images: [
       {
-        url: 'https://www.aimfast.dev/og-image.png',
+        url: 'https://www.aimfast.dev/og-home.png',
         width: 1200,
         height: 630,
         alt: 'AimFast.Dev — 趋势发现',
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     title: '趋势发现 — 新兴技术术语 | AimFast.Dev',
     description:
       '比别人更早发现新兴技术术语。每日免费追踪。',
-    images: ['https://www.aimfast.dev/og-image.png'],
+    images: ['https://www.aimfast.dev/og-home.png'],
   },
 };
 

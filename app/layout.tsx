@@ -1,11 +1,34 @@
 import type { Metadata, Viewport } from 'next';
+import { Fira_Sans, Fira_Code, JetBrains_Mono } from 'next/font/google';
 import LangToggle from '../components/LangToggle';
 import './globals.css';
+
+const firaSans = Fira_Sans({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700', '800'],
+  variable: '--font-fira-sans',
+  display: 'swap',
+});
+
+const firaCode = Fira_Code({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-fira-code',
+  display: 'swap',
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  weight: ['400', '500', '600'],
+  variable: '--font-jetbrains-mono',
+  display: 'swap',
+});
 
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   viewportFit: 'cover',
+  themeColor: '#0a0a0a',
 };
 
 export const metadata: Metadata = {
@@ -28,9 +51,10 @@ export const metadata: Metadata = {
       'Discover emerging tech terms before they trend. Free daily tracking. Dashboard: one validated product opportunity every morning.',
     url: 'https://www.aimfast.dev/',
     siteName: 'AimFast.Dev',
+    locale: 'en',
     images: [
       {
-        url: 'https://www.aimfast.dev/og-image.png',
+        url: 'https://www.aimfast.dev/og-home.png',
         width: 1200,
         height: 630,
         alt: 'AimFast.Dev — Trend Discovery & Market Intelligence',
@@ -41,7 +65,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'AimFast.Dev — Free Trend Discovery',
     description: 'Discover emerging tech terms before they trend. Free daily tracking. Dashboard: daily product opportunities.',
-    images: ['https://www.aimfast.dev/og-image.png'],
+    images: ['https://www.aimfast.dev/og-home.png'],
   },
 };
 
@@ -54,7 +78,11 @@ const jsonLd = {
       url: 'https://www.aimfast.dev/',
       description:
         'Daily market intelligence for indie builders. AI scans 11 sources to deliver one validated product opportunity every morning — what to build, who will pay, and how much to charge.',
-      foundingDate: '2026',
+      foundingDate: '2026-01-01',
+      sameAs: [
+        'https://github.com/szkakalau/aimfast.dev',
+        'https://twitter.com/aimfastdev',
+      ],
     },
     {
       '@type': 'WebSite',
@@ -62,30 +90,21 @@ const jsonLd = {
       url: 'https://www.aimfast.dev/',
       description:
         'Daily market intelligence for indie builders. Product opportunities, competitor tracking, trend analysis from 11 global sources.',
-      potentialAction: {
-        '@type': 'SearchAction',
-        target: {
-          '@type': 'EntryPoint',
-          urlTemplate: 'https://www.aimfast.dev/search?q={search_term_string}',
-        },
-        'query-input': 'required name=search_term_string',
-      },
     },
   ],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${firaSans.variable} ${firaCode.variable} ${jetbrainsMono.variable}`}>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Fira+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
-          rel="stylesheet"
-        />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/manifest.json" />
         <link rel="alternate" type="application/rss+xml" title="AimFast.Dev Articles RSS" href="/articles/rss.xml" />
+        <link rel="alternate" type="application/rss+xml" title="AimFast.Dev 文章 RSS (中文)" href="/articles/rss-zh.xml" />
+        <link rel="alternate" type="application/rss+xml" title="AimFast.Dev Reports RSS" href="/reports/rss.xml" />
+        <link rel="llms.txt" href="/llms.txt" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -95,6 +114,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="alternate" hrefLang="x-default" href="https://www.aimfast.dev/" />
       </head>
       <body>
+        <a className="skip-link" href="#main-content">Skip to content</a>
         <nav className="site-nav" aria-label="Main navigation">
           <div className="site-nav-inner">
             <a href="/" className="site-nav-logo">AimFast.Dev</a>
@@ -111,8 +131,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <label htmlFor="nav-toggle" className="nav-overlay" aria-hidden="true" />
           </div>
         </nav>
+        <span id="main-content" tabIndex={-1} />
         {children}
         {/* Close mobile nav when a link is clicked */}
+        {/* Set lang attribute based on path prefix — dev mode fallback (build uses fix-en-lang.mjs) */}
+        <script dangerouslySetInnerHTML={{ __html: `
+          (function(){var p=location.pathname;document.documentElement.lang=p.startsWith('/zh')||p.startsWith('/zh/')?'zh-CN':'en';})();
+        `}} />
         <script dangerouslySetInnerHTML={{ __html: `
           (function(){
             var toggle = document.getElementById('nav-toggle');

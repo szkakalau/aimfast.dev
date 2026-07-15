@@ -80,9 +80,10 @@ export async function generateMetadata({
       url,
       siteName: 'AimFast.Dev',
       type: 'article',
+      locale: 'en',
       images: [
         {
-          url: 'https://www.aimfast.dev/og-image.png',
+          url: `https://www.aimfast.dev/og/trends/${slug}.png`,
           width: 1200,
           height: 630,
           alt: `${term.canonical} — Trend Report | AimFast.Dev`,
@@ -93,7 +94,7 @@ export async function generateMetadata({
       card: 'summary_large_image',
       title,
       description,
-      images: ['https://www.aimfast.dev/og-image.png'],
+      images: [`https://www.aimfast.dev/og/trends/${slug}.png`],
     },
   };
 }
@@ -139,28 +140,50 @@ export default async function TrendDetailPage({
       sections.push(m[1].trim());
     }
 
+    // Helper: extract plain text from a markdown section by heading name
+    const extractSectionText = (sectionName: string): string => {
+      const escaped = sectionName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      const regex = new RegExp(`## ${escaped}\\s*\\n([\\s\\S]*?)(?=\\n## |$)`, 'i');
+      const match = bodyOnly.match(regex);
+      if (!match || !match[1]) return '';
+      let text = match[1]
+        .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+        .replace(/[*_~`]+/g, '')
+        .replace(/^#{1,6}\s+/gm, '')
+        .replace(/^[\s]*[-*+]\s+/gm, '')
+        .replace(/^>\s?/gm, '')
+        .replace(/\n+/g, ' ')
+        .replace(/\s{2,}/g, ' ')
+        .trim();
+      const sentences = text.match(/[^.!?]+[.!?]+/g) || [];
+      const result = sentences.slice(0, 3).join(' ').trim();
+      return result.length > 300 ? result.slice(0, 297) + '...' : result;
+    };
+
     // Generate FAQ from research report sections
     if (sections.length > 0) {
-      // What is X?
-      const whatIs = sections.find((s) => /what is/i.test(s));
-      if (whatIs) {
-        faqItems.push({
-          q: `What is ${term.canonical}?`,
-          a: `${term.canonical} is an emerging technology term tracked by AimFast.Dev. ${term.summary_en || term.summary_zh} First detected on ${term.first_seen} across ${term.source_count} independent sources.`,
-        });
-      }
-      // Why now?
-      const whyNow = sections.find((s) => /why now/i.test(s));
-      if (whyNow) {
-        faqItems.push({
-          q: `Why is ${term.canonical} trending now?`,
-          a: `The term "${term.canonical}" has been spotted across ${term.source_count} sources (${term.sources.join(', ')}) with ${term.total_mentions} total mentions and ${term.growth_pct}% growth. See the full report below for market signals and commercial context.`,
-        });
-      }
-      // Who should care?
+      // What is X? — use the first matching section or the intro paragraph
+      const whatIsSection = sections.find((s) => /what is|overview|introduction/i.test(s));
+      const whatIsText = whatIsSection ? extractSectionText(whatIsSection) : '';
+      faqItems.push({
+        q: `What is ${term.canonical}?`,
+        a: whatIsText || `${term.canonical} is an emerging technology term tracked by AimFast.Dev. ${term.summary_en || term.summary_zh} First detected on ${term.first_seen} across ${term.source_count} independent sources.`,
+      });
+
+      // Why now? — use market context, trend analysis, or signal sections
+      const whyNowSection = sections.find((s) => /why now|market context|trend analysis|signal/i.test(s));
+      const whyNowText = whyNowSection ? extractSectionText(whyNowSection) : '';
+      faqItems.push({
+        q: `Why is ${term.canonical} trending now?`,
+        a: whyNowText || `The term "${term.canonical}" has been spotted across ${term.source_count} sources (${term.sources.slice(0, 4).join(', ')}${term.sources.length > 4 ? ' and more' : ''}) with ${term.total_mentions} total mentions and ${term.growth_pct}% growth.`,
+      });
+
+      // Who should care? — use target audience, opportunity, or who sections
+      const whoSection = sections.find((s) => /who|target audience|opportunity|build/i.test(s));
+      const whoText = whoSection ? extractSectionText(whoSection) : '';
       faqItems.push({
         q: `Who should pay attention to ${term.canonical}?`,
-        a: `Independent developers, indie hackers, and product builders tracking emerging tech trends. This term falls under the "${term.category}" category and is currently in the ${term.stage} stage (${stagePct(term.stage)} days since first detection).`,
+        a: whoText || `Independent developers, indie hackers, and product builders tracking emerging tech trends. This term falls under the "${term.category}" category and is currently in the ${term.stage} stage (${stagePct(term.stage)} days since first detection).`,
       });
     }
   }
@@ -182,10 +205,11 @@ export default async function TrendDetailPage({
         headline: `${term.canonical} — Trend Report`,
         description: term.summary_en,
         url: `https://www.aimfast.dev/trends/${slug}/`,
-        datePublished: term.first_seen,
-        dateModified: term.last_seen,
+        datePublished: `${term.first_seen}T00:00:00+08:00`,
+        dateModified: `${term.last_seen}T00:00:00+08:00`,
         author: { '@type': 'Organization', name: 'AimFast.Dev' },
         inLanguage: 'en',
+        workTranslation: { '@type': 'CreativeWork', '@id': `https://www.aimfast.dev/trends/${slug}/zh/`, inLanguage: 'zh-CN' },
         mainEntityOfPage: {
           '@type': 'WebPage',
           '@id': `https://www.aimfast.dev/trends/${slug}/`,

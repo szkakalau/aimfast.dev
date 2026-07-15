@@ -65,9 +65,9 @@
   --color-chart-blue-lt:  #3B82F6;
 
   /* ── Typography ── */
-  --font-heading: 'Fira Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-mono:    'JetBrains Mono', monospace;
-  --font-body:    'Fira Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading: var(--font-fira-sans), 'Fira Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono:    var(--font-jetbrains-mono), var(--font-fira-code), 'JetBrains Mono', 'Fira Code', monospace;
+  --font-body:    var(--font-fira-sans), 'Fira Sans', -apple-system, BlinkMacSystemFont, sans-serif;
 
   /* ── Spacing: 8px rhythm ── */
   --space-1:  8px;

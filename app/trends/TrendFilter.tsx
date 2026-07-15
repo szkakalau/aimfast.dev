@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useCallback, useMemo } from 'react';
+import { useState, useCallback, useMemo, useEffect } from 'react';
 import { Code2, Crosshair } from 'lucide-react';
 import type { TrendTerm } from './types';
 import TrendCard from './TrendCard';
@@ -32,6 +32,42 @@ export default function TrendFilter({ terms }: { terms: TrendTerm[] }) {
     const items = getTrackedItems();
     return new Set(items.map((item) => item.id));
   });
+
+  // ── URL sync: read initial state from query params ──
+
+  const [hydrated, setHydrated] = useState(false);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const stage = params.get('stage');
+    if (stage && STAGES.includes(stage as StageFilter)) setActiveStage(stage as StageFilter);
+    const sort = params.get('sort');
+    if (sort && SORT_OPTIONS.some((o) => o.key === sort)) setSortKey(sort as SortKey);
+    const cat = params.get('category');
+    if (cat) {
+      if (cat === 'ai') { setAiFocus(true); setCategory('all'); }
+      else { setCategory(cat); }
+    }
+    const pt = params.get('type');
+    if (pt) setProductType(pt);
+    setHydrated(true);
+  }, []);
+
+  // ── URL sync: push filter state to query params ──
+
+  useEffect(() => {
+    if (!hydrated) return; // skip initial render before URL read
+    const params = new URLSearchParams();
+    if (activeStage !== 'all') params.set('stage', activeStage);
+    if (sortKey !== 'builder') params.set('sort', sortKey);
+    if (aiFocus) params.set('category', 'ai');
+    else if (category !== 'all') params.set('category', category);
+    if (productType !== 'all') params.set('type', productType);
+    if (page > 1) params.set('page', String(page));
+    const qs = params.toString();
+    const newUrl = qs ? `${window.location.pathname}?${qs}` : window.location.pathname;
+    window.history.replaceState(null, '', newUrl);
+  }, [hydrated, activeStage, sortKey, category, aiFocus, productType, page]);
 
   // ── Derived data ──
 

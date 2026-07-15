@@ -18,9 +18,10 @@ export const metadata: Metadata = {
     description: 'Daily market intelligence for indie builders. $19/mo, 14-day free trial.',
     url: 'https://www.aimfast.dev/pricing/',
     siteName: 'AimFast.Dev',
+    locale: 'en',
     images: [
       {
-        url: 'https://www.aimfast.dev/og-image.png',
+        url: 'https://www.aimfast.dev/og-pricing.png',
         width: 1200,
         height: 630,
         alt: 'AimFast.Dev — Pricing',
@@ -31,7 +32,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Pricing — AimFast.Dev',
     description: 'Daily market intelligence for indie builders. $19/mo.',
-    images: ['https://www.aimfast.dev/og-image.png'],
+    images: ['https://www.aimfast.dev/og-pricing.png'],
   },
 };
 
@@ -61,12 +62,23 @@ const FAQ_ITEMS = [
 export default function PricingPage() {
   const faqJsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: FAQ_ITEMS.map(({ q, a }) => ({
-      '@type': 'Question',
-      name: q,
-      acceptedAnswer: { '@type': 'Answer', text: a },
-    })),
+    '@graph': [
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.aimfast.dev/' },
+          { '@type': 'ListItem', position: 2, name: 'Pricing', item: 'https://www.aimfast.dev/pricing/' },
+        ],
+      },
+      {
+        '@type': 'FAQPage',
+        mainEntity: FAQ_ITEMS.map(({ q, a }) => ({
+          '@type': 'Question',
+          name: q,
+          acceptedAnswer: { '@type': 'Answer', text: a },
+        })),
+      },
+    ],
   };
 
   return (

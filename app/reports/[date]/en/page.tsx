@@ -52,10 +52,10 @@ export async function generateMetadata({
       publishedTime: fm.date || date,
       url: canonicalUrl,
       siteName: 'AimFast.Dev',
-      locale: 'en_US',
+      locale: 'en',
       images: [
         {
-          url: 'https://www.aimfast.dev/og-image.png',
+          url: 'https://www.aimfast.dev/og-reports.png',
           width: 1200,
           height: 630,
           alt: 'AimFast.Dev — Daily Signal Intelligence',
@@ -66,7 +66,7 @@ export async function generateMetadata({
       card: 'summary_large_image',
       title: `${title} — AimFast.Dev`,
       description: fm.summary || 'Daily product opportunities from 14 signal sources.',
-      images: ['https://www.aimfast.dev/og-image.png'],
+      images: ['https://www.aimfast.dev/og-reports.png'],
     },
   };
 }
@@ -128,11 +128,12 @@ export default async function ReportEnPage({
       {
         '@type': 'Article',
         headline: title,
-        datePublished: fm.date || date,
+        datePublished: `${fm.date || date}T00:00:00+08:00`,
         description: fm.summary || `Daily signal intelligence report for ${date}.`,
         author: { '@type': 'Organization', name: 'AimFast.Dev' },
         publisher: { '@type': 'Organization', name: 'AimFast.Dev' },
         inLanguage: 'en',
+        translationOfWork: { '@type': 'CreativeWork', '@id': `https://www.aimfast.dev/reports/${date}/` },
         url: canonicalUrl,
         mainEntityOfPage: { '@type': 'WebPage', '@id': canonicalUrl },
       },

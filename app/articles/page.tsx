@@ -19,9 +19,10 @@ export const metadata: Metadata = {
     description: 'Deep-dive product opportunity analysis for indie developers.',
     url: 'https://www.aimfast.dev/articles/',
     siteName: 'AimFast.Dev',
+    locale: 'en',
     images: [
       {
-        url: 'https://www.aimfast.dev/og-image.png',
+        url: 'https://www.aimfast.dev/og-articles.png',
         width: 1200,
         height: 630,
         alt: 'AimFast.Dev — Planet Articles',
@@ -32,7 +33,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Planet Articles — AimFast.Dev',
     description: 'Deep-dive product opportunity analysis for indie developers.',
-    images: ['https://www.aimfast.dev/og-image.png'],
+    images: ['https://www.aimfast.dev/og-articles.png'],
   },
 };
 
@@ -79,18 +80,30 @@ export default function ArticlesIndexPage() {
 
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'CollectionPage',
-    name: 'Planet Articles — AimFast.Dev',
-    description: 'Deep-dive signal analysis articles for indie developers.',
-    url: 'https://www.aimfast.dev/articles/',
-    mainEntity: {
-      '@type': 'ItemList',
-      itemListElement: articles.map((a, i) => ({
-        '@type': 'ListItem',
-        position: i + 1,
-        url: `https://www.aimfast.dev/articles/${a.slug}/`,
-      })),
-    },
+    '@graph': [
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.aimfast.dev/' },
+          { '@type': 'ListItem', position: 2, name: 'Articles', item: 'https://www.aimfast.dev/articles/' },
+        ],
+      },
+      {
+        '@type': 'CollectionPage',
+        name: 'Planet Articles — AimFast.Dev',
+        description: 'Deep-dive signal analysis articles for indie developers.',
+        url: 'https://www.aimfast.dev/articles/',
+        inLanguage: 'zh-CN',
+        mainEntity: {
+          '@type': 'ItemList',
+          itemListElement: articles.map((a, i) => ({
+            '@type': 'ListItem',
+            position: i + 1,
+            url: `https://www.aimfast.dev/articles/${a.slug}/`,
+          })),
+        },
+      },
+    ],
   };
 
   return (

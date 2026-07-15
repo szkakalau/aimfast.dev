@@ -78,9 +78,10 @@ export async function generateMetadata({
       url,
       siteName: 'AimFast.Dev',
       type: 'article',
+      locale: 'zh-CN',
       images: [
         {
-          url: 'https://www.aimfast.dev/og-image.png',
+          url: `https://www.aimfast.dev/og/trends/${slug}.png`,
           width: 1200,
           height: 630,
           alt: `${term.canonical} — 趋势报告 | AimFast.Dev`,
@@ -91,7 +92,7 @@ export async function generateMetadata({
       card: 'summary_large_image',
       title,
       description,
-      images: ['https://www.aimfast.dev/og-image.png'],
+      images: [`https://www.aimfast.dev/og/trends/${slug}.png`],
     },
   };
 }
@@ -170,10 +171,11 @@ export default async function TrendDetailZhPage({
         headline: `${term.canonical} — 趋势报告`,
         description: term.summary_zh,
         url: `https://www.aimfast.dev/trends/${slug}/zh/`,
-        datePublished: term.first_seen,
-        dateModified: term.last_seen,
+        datePublished: `${term.first_seen}T00:00:00+08:00`,
+        dateModified: `${term.last_seen}T00:00:00+08:00`,
         author: { '@type': 'Organization', name: 'AimFast.Dev' },
         inLanguage: 'zh-CN',
+        translationOfWork: { '@type': 'CreativeWork', '@id': `https://www.aimfast.dev/trends/${slug}/` },
         mainEntityOfPage: {
           '@type': 'WebPage',
           '@id': `https://www.aimfast.dev/trends/${slug}/zh/`,

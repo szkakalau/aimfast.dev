@@ -23,9 +23,10 @@ export const metadata: Metadata = {
       'Track emerging tech terms before they trend. Daily updates from 11+ sources. Free. No signup required.',
     url: 'https://www.aimfast.dev/',
     siteName: 'AimFast.Dev',
+    locale: 'en',
     images: [
       {
-        url: 'https://www.aimfast.dev/og-image.png',
+        url: 'https://www.aimfast.dev/og-home.png',
         width: 1200,
         height: 630,
         alt: 'AimFast.Dev — Trend Discovery',
@@ -37,7 +38,7 @@ export const metadata: Metadata = {
     title: 'Trend Discovery — Emerging Tech Terms | AimFast.Dev',
     description:
       'Discover emerging tech terms before they trend. Free daily tracking.',
-    images: ['https://www.aimfast.dev/og-image.png'],
+    images: ['https://www.aimfast.dev/og-home.png'],
   },
 };
 
@@ -52,12 +53,19 @@ export default function HomePage() {
     '@context': 'https://schema.org',
     '@graph': [
       {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.aimfast.dev/' },
+        ],
+      },
+      {
         '@type': 'CollectionPage',
         name: 'Trend Discovery — AimFast.Dev',
         description:
           'Discover emerging technology terms, concepts, and market signals before they trend.',
         url: 'https://www.aimfast.dev/',
         inLanguage: 'en',
+        dateModified: updated_at || new Date().toISOString().slice(0, 10),
         mainEntity: {
           '@type': 'ItemList',
           itemListElement: terms.map((t, i) => ({
@@ -67,6 +75,44 @@ export default function HomePage() {
             name: t.canonical,
           })),
         },
+      },
+      {
+        '@type': 'HowTo',
+        name: 'How Trends Are Scored & Discovered',
+        description:
+          'Every trend is automatically scored and staged by our pipeline across 11+ sources.',
+        step: [
+          {
+            '@type': 'HowToStep',
+            position: 1,
+            name: 'Cross-source validation',
+            text: 'A term must appear in 2 or more independent sources — not a single isolated post.',
+          },
+          {
+            '@type': 'HowToStep',
+            position: 2,
+            name: 'Representative filtering',
+            text: 'New products are kept only if they represent a broader emerging pattern, not one-off launches.',
+          },
+          {
+            '@type': 'HowToStep',
+            position: 3,
+            name: 'Discussion volume threshold',
+            text: 'Low-score single posts don\'t qualify; there must be genuine community interest.',
+          },
+          {
+            '@type': 'HowToStep',
+            position: 4,
+            name: 'Generic term blacklist',
+            text: 'Known broad terms like AI, React, Python, API, LLM, GPT are automatically ignored.',
+          },
+          {
+            '@type': 'HowToStep',
+            position: 5,
+            name: 'Quality over quantity',
+            text: 'Output is capped at 20 new terms per day; fewer is better than noise.',
+          },
+        ],
       },
 
       // Organization + WebSite declared in root layout head — not duplicated here
@@ -82,20 +128,19 @@ export default function HomePage() {
       />
 
       <main className="trends-page">
-        {/* ── Compact status bar (replaces hero for returning users) ── */}
-        <div className="trends-status-bar" role="status" aria-label="Trend tracking status">
-          <h1 className="sr-only">AimFast.Dev — Discover What&apos;s Emerging Before Everyone Else</h1>
-          <div className="trends-status-content">
-            <span className="trends-status-stat">
-              <TrendingUp size={14} aria-hidden="true" />
-              <strong>{terms.length}</strong> terms tracked across {stats.totalSources}+ sources
-            </span>
-            <span className="trends-status-sep" aria-hidden="true" />
-            <span className="trends-status-stat">
-              Updated daily 08:30 CST
-            </span>
+        {/* ── Compact Hero ── */}
+        <section className="trends-hero">
+          <h1>Discover What&apos;s Emerging Before Everyone Else</h1>
+          <p className="trends-hero-desc">
+            Daily tracking of new tech terms, concepts, and market signals
+            across {stats.totalSources}+ sources. Free. No signup required.
+          </p>
+          <div className="trends-hero-stats">
+            <TrendingUp size={14} aria-hidden="true" />
+            Tracking <strong>{terms.length} terms</strong>
+            {' · '}Updated daily 08:30 CST
           </div>
-        </div>
+        </section>
 
         {/* ── Live Stats Bar ── */}
         {stats.total > 0 && (
