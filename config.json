@@ -46,7 +46,8 @@
         "key": "huggingface",
         "source": "API",
         "priority": "P1",
-        "enabled": true
+        "enabled": false,
+        "_note": "间歇性限速 + HF Blog RSS 已覆盖官方公告，暂关闭"
       },
       {
         "name": "Reddit",
@@ -60,21 +61,24 @@
         "key": "lobsters",
         "source": "API",
         "priority": "P1",
-        "enabled": true
+        "enabled": false,
+        "_note": "社区较小，日更新量低（~5-10条），信噪比不足"
       },
       {
         "name": "DEV Community",
         "key": "devcommunity",
         "source": "API",
         "priority": "P1",
-        "enabled": true
+        "enabled": false,
+        "_note": "API 响应慢，信号与 HN/Reddit 高度重叠"
       },
       {
         "name": "ArXiv Papers",
         "key": "arxiv",
         "source": "API",
         "priority": "P1",
-        "enabled": true
+        "enabled": false,
+        "_note": "论文信号噪音大，LLM 摘要准确率不稳定"
       },
       {
         "name": "X/Twitter",
@@ -184,9 +188,9 @@
         "key": "xiaohongshu",
         "source": "API (未认证/认证)",
         "priority": "P1",
-        "enabled": true,
+        "enabled": false,
         "script": "collect_xiaohongshu",
-        "_note": "未登录模式数据量有限, 设置 ~/.config/aimfast/xhs_cookies.json 后可获取完整搜索数据"
+        "_note": "未登录模式数据量极少，需 xhs_cookies.json 解锁认证后才可用"
       }
     ]
   },
