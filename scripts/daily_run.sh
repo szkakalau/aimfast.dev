@@ -32,8 +32,7 @@ if [ -z "$PYTHON" ]; then
     for candidate in \
         "$LOCALAPPDATA/Programs/Python/Python314/python" \
         "$LOCALAPPDATA/Programs/Python/Python313/python" \
-        "$LOCALAPPDATA/Programs/Python/Python312/python" \
-        "/c/Users/castr/AppData/Local/Programs/Python/Python314/python"; do
+        "$LOCALAPPDATA/Programs/Python/Python312/python"; do
         if [ -x "$candidate" ] && "$candidate" --version &>/dev/null 2>&1; then
             PYTHON="$candidate"
             break

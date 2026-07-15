@@ -276,6 +276,7 @@ export function DashboardClient({ trendTerms }: Props) {
             try { localStorage.setItem('kakaopc_dashboard_cache', JSON.stringify(json)); } catch { /* noop */ }
           } catch (err) {
             console.error('[Dashboard] Failed to parse dashboard data:', err);
+            setDashError(true);
           }
         } else {
           // Fallback to cache
@@ -430,9 +431,15 @@ export function DashboardClient({ trendTerms }: Props) {
           onSelectDate={() => {}}
         />
         <main className="dash-main">
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '40vh' }}>
-            <p style={{ color: 'var(--color-text-muted)' }}>{t.noData}</p>
-          </div>
+          {dashError ? (
+            <div className="container" style={{ marginTop: 'var(--space-4)' }}>
+              <ErrorBanner section="Dashboard" onRetry={() => window.location.reload()} />
+            </div>
+          ) : (
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '40vh' }}>
+              <p style={{ color: 'var(--color-text-muted)' }}>{t.noData}</p>
+            </div>
+          )}
         </main>
       </>
     );

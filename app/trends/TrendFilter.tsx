@@ -2,11 +2,11 @@
 
 import { useState, useCallback, useMemo } from 'react';
 import { Code2, Crosshair } from 'lucide-react';
-import type { TrendTerm } from '@/app/trends/types';
-import TrendCard from '@/app/trends/TrendCard';
-import Pagination from '@/app/trends/Pagination';
-import { stageLabel, STAGES, type StageFilter } from '@/app/trends/labels';
-import { builderScore, normalizeCategory, getTrackedItems, addTrackedItem, removeTrackedItem } from '@/app/trends/utils';
+import type { TrendTerm } from './types';
+import TrendCard from './TrendCard';
+import Pagination from './Pagination';
+import { stageLabel, STAGES, type StageFilter } from './labels';
+import { builderScore, normalizeCategory, getTrackedItems, addTrackedItem, removeTrackedItem } from './utils';
 
 const PER_PAGE = 30;
 

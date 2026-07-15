@@ -1,0 +1,55 @@
+# AimFast.Dev — Trend Discovery Engine (Full)
+
+> Automated trend discovery platform scanning 31+ sources nightly with LLM pipeline.
+> Tracks 150+ emerging tech terms with Builder Score, stage classification, and cross-source validation.
+> Free, no signup. Updated daily.
+
+## How the Discovery Engine Works
+
+AimFast.Dev runs a nightly LLM pipeline across 31+ sources (Hacker News, Reddit, GitHub trending, Product Hunt, X/Twitter, DEV Community, V2EX, Lobsters, and more). Each day, the pipeline:
+
+1. **Extracts** candidate terms and concepts from source content
+2. **Normalizes** variants (e.g., "Claude Code" = "claude-code")
+3. **Classifies** terms into maturity stages based on first-seen date
+4. **Scores** each term with a Builder Score (0-100) — a composite of signal strength, source diversity, engagement velocity, and cross-platform presence
+5. **Cross-validates** — terms must appear in ≥2 independent sources to surface
+6. **Caps** output at 20 new terms per day (quality over quantity)
+
+## Maturity Stages
+
+| Stage | Window | Meaning |
+|-------|--------|---------|
+| **Nascent** | 0–7 days | Brand new signal, highest risk/reward |
+| **Emergent** | 8–30 days | Growing mention pattern across sources |
+| **Validating** | 31–90 days | Sustained presence, community validation |
+| **Rising** | 90+ days | Established trend with measurable momentum |
+
+## Key Pages
+
+### Home (https://www.aimfast.dev/)
+Hero with recent top-scoring terms, stage-filter navigation, and the full term grid with pagination (30 terms/page).
+
+### Trends Dashboard (https://www.aimfast.dev/trends)
+Filterable, sortable grid of all tracked terms. Controls:
+- Stage filter (Nascent / Emergent / Validating / Rising)
+- Product Type filter (DevTool, Framework, SaaS, AI Model, etc.)
+- Category filter (AI/ML, Developer Tools, Infrastructure, etc.)
+- AI Focus toggle
+- Sort by: Builder Score (default), Momentum Score, Mention Count, Newest
+
+### Reports (https://www.aimfast.dev/reports)
+Daily digests with structured analysis: top terms by score, biggest movers, source breakdown, and LLM-written summaries of notable signals.
+
+### Articles (https://www.aimfast.dev/articles)
+Long-form analysis pieces based on trend data — comparing competing technologies, tracking category evolution, and identifying market patterns.
+
+### Pricing (https://www.aimfast.dev/pricing)
+Free tier (discovery engine) vs. paid tier (monitoring engine with competitor tracking, topic watchlists, daily alerts).
+
+## Technical Details
+
+- **Stack**: Next.js 16 (App Router), React 19, MDX for hybrid content
+- **Deployment**: Vercel (clean URLs, static + server-rendered)
+- **Data**: Static JSON archives in /dashboard/data/, nightly pipeline in Python scripts/
+- **Content**: English primary, Chinese translations for key pages (zh/ routes)
+- **Performance**: Stale-while-revalidate caching, sharp for image optimization
