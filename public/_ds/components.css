@@ -43,7 +43,12 @@
 .badge-wip   { background: var(--color-accent-muted);  color: var(--color-accent); }
 .badge-draft { background: var(--color-surface-alt);    color: var(--color-text-muted); }
 
-/* ── Card ── */
+/* ── Card System (3 tiers) ──
+   .card              — base: surface bg, shadow-xs, radius-lg, padding-4
+   .card-interactive  — hover: shadow-md + translateY(-2px) (trend cards, spotlight cards)
+   .card-highlight    — accent left border + elevated shadow (decision cards, sample cards)
+   Size modifiers:    .card-sm (padding-3), .card-md (padding-4, default), .card-lg (padding-5)
+*/
 .card {
   background: var(--color-surface);
   border: none;
@@ -53,8 +58,25 @@
   transition: box-shadow var(--duration-normal) var(--ease-out),
               transform var(--duration-normal) var(--ease-out);
 }
-.card:hover { box-shadow: var(--shadow-md); transform: translateY(-1px); }
 
+/* Interactive — lifts on hover. Use for cards that are clickable or expandable. */
+.card-interactive:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+/* Highlight — accent left border for emphasis. Use for decision cards, hero cards. */
+.card-highlight {
+  border-left: 3px solid var(--color-accent);
+  box-shadow: var(--shadow-sm);
+}
+.card-highlight:hover { box-shadow: var(--shadow-md); }
+
+/* Size modifiers */
+.card-sm { padding: var(--space-3); }
+.card-lg { padding: var(--space-5); }
+
+/* Legacy aliases — converge to .card-interactive or .card-highlight over time */
 .card-accent { border-left: 3px solid var(--color-accent); box-shadow: var(--shadow-sm); }
 .card-accent:hover { box-shadow: var(--shadow-md); }
 

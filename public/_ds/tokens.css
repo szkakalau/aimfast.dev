@@ -109,3 +109,49 @@
   --z-modal:          50;  /* modal / full-screen overlay */
   --z-tooltip:        100; /* tooltips / toasts */
 }
+
+/* ═════ Dark Theme ═════
+   Activate: <html data-theme="dark">
+   Toggle:  document.documentElement.dataset.theme = 'dark'
+   Persist: localStorage.getItem('kakaopc_theme') */
+[data-theme="dark"] {
+  --color-bg:             oklch(14% 0.005 250);
+  --color-surface:        oklch(18% 0.006 250);
+  --color-surface-alt:    oklch(22% 0.008 255);
+  --color-border:         oklch(30% 0.01 250);
+  --color-border-hover:   oklch(42% 0.012 250);
+  --color-text:           oklch(95% 0.002 90);
+  --color-text-secondary: oklch(78% 0.008 90);
+  --color-text-muted:     oklch(60% 0.01 90);
+
+  --color-accent:         oklch(65% 0.17 60);
+  --color-accent-hover:   oklch(72% 0.18 60);
+  --color-accent-muted:   oklch(65% 0.17 60 / 0.12);
+  --color-accent-glow:    oklch(65% 0.17 60 / 0.18);
+
+  --color-blue:           oklch(60% 0.20 265);
+  --color-blue-hover:     oklch(67% 0.21 265);
+  --color-blue-muted:     oklch(60% 0.20 265 / 0.10);
+  --color-blue-glow:      oklch(60% 0.20 265 / 0.14);
+
+  --color-green:          oklch(65% 0.15 155);
+  --color-green-muted:    oklch(65% 0.15 155 / 0.12);
+  --color-red:            oklch(60% 0.22 25);
+  --color-red-muted:      oklch(60% 0.22 25 / 0.12);
+
+  --color-on-accent:      oklch(14% 0.005 250);
+
+  --shadow-xs:  0 1px 2px oklch(0% 0 0 / 0.20);
+  --shadow-sm:  0 1px 3px oklch(0% 0 0 / 0.24), 0 1px 2px oklch(0% 0 0 / 0.20);
+  --shadow-md:  0 4px 12px oklch(0% 0 0 / 0.30), 0 2px 4px oklch(0% 0 0 / 0.20);
+  --shadow-lg:  0 12px 32px oklch(0% 0 0 / 0.40), 0 4px 8px oklch(0% 0 0 / 0.24);
+  --shadow-xl:  0 16px 48px oklch(0% 0 0 / 0.46), 0 6px 12px oklch(0% 0 0 / 0.24);
+  --shadow-glow: 0 0 24px var(--color-accent-glow);
+
+  --color-chart-accent:   #3B82F6;
+  --color-chart-cta:      #F59E0B;
+  --color-chart-green:    #34D399;
+  --color-chart-red:      #F87171;
+  --color-chart-grid:     #374151;
+  --color-chart-blue-lt:  #60A5FA;
+}

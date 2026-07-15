@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useCallback, useMemo } from 'react';
+import { Code2, Crosshair } from 'lucide-react';
 import type { TrendTerm } from '@/app/trends/types';
 import TrendCard from '@/app/trends/TrendCard';
 import Pagination from '@/app/trends/Pagination';
@@ -12,7 +13,7 @@ const PER_PAGE = 30;
 type SortKey = 'builder' | 'score' | 'opportunity' | 'revenue' | 'newest' | 'mentions';
 
 const SORT_OPTIONS: { key: SortKey; label: string }[] = [
-  { key: 'builder', label: '🧑‍💻 Builder Score' },
+  { key: 'builder', label: 'Builder Score' },
   { key: 'score', label: 'Score ↓' },
   { key: 'opportunity', label: 'Opportunity ↓' },
   { key: 'revenue', label: 'Revenue ↓' },
@@ -192,8 +193,8 @@ export default function TrendFilter({ terms }: { terms: TrendTerm[] }) {
               }}
               aria-label="Filter by category"
             >
-              <option value="all">📂 All Categories</option>
-              <option value="__ai__">🎯 AI/LLM</option>
+              <option value="all">All Categories</option>
+              <option value="__ai__">AI/LLM</option>
               {categories.filter(c => c !== 'AI/LLM').map((cat) => (
                 <option key={cat} value={cat}>{cat}</option>
               ))}
@@ -206,7 +207,7 @@ export default function TrendFilter({ terms }: { terms: TrendTerm[] }) {
               onChange={(e) => handleProductType(e.target.value)}
               aria-label="Filter by product type"
             >
-              <option value="all">📦 All Types</option>
+              <option value="all">All Types</option>
               {productTypes.map((pt) => (
                 <option key={pt} value={pt}>{pt}</option>
               ))}
@@ -218,7 +219,8 @@ export default function TrendFilter({ terms }: { terms: TrendTerm[] }) {
             className={`filter-ai-toggle${aiFocus ? ' active' : ''}`}
             aria-pressed={aiFocus}
           >
-            🎯 AI Focus
+            <Crosshair size={14} aria-hidden="true" />
+            AI Focus
           </button>
         </div>
         <div className="filter-right">
@@ -253,7 +255,7 @@ export default function TrendFilter({ terms }: { terms: TrendTerm[] }) {
         <>
           <div className="trend-grid" id="trend-grid">
             {pageTerms.map((term) => (
-              <TrendCard key={term.id} term={term} isTracked={trackedIds.has(term.id)} onTrack={handleTrack} />
+              <TrendCard key={term.id} term={term} isTracked={trackedIds.has(term.id)} onTrack={handleTrack} atLimit={trackedIds.size >= 50} />
             ))}
           </div>
           <Pagination page={page} totalPages={totalPages} onPage={goPage} />

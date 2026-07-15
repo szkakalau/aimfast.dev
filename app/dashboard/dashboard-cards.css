@@ -1052,3 +1052,33 @@ body:has(.dash-header) > .site-nav {
   /* Header status */
   .dash-header-status { font-size: 0.65rem; }
 }
+
+/* ── Watchlist onboarding (cold start) ── */
+.watchlist-onboarding {
+  text-align: left;
+}
+
+.onboarding-steps {
+  display: flex; flex-direction: column; gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.onboarding-step {
+  display: flex; align-items: center; gap: var(--space-2);
+  font-size: 0.88rem; color: var(--color-text-secondary);
+}
+
+.onboarding-step-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 24px; height: 24px;
+  border-radius: 50%;
+  background: var(--color-accent-muted);
+  color: var(--color-accent);
+  font-family: var(--font-mono);
+  font-size: 0.75rem; font-weight: 600;
+  flex-shrink: 0;
+}
+
+.onboarding-cta {
+  display: inline-flex;
+}

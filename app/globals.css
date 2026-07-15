@@ -360,3 +360,39 @@ body:has(#nav-toggle:checked) {
     text-align: center;
   }
 }
+
+/* ── Error Banner (section-level, non-blocking) ── */
+.error-banner {
+  display: flex; align-items: center; gap: var(--space-2);
+  padding: 10px 16px;
+  background: var(--color-red-muted);
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+  color: var(--color-red);
+  margin-bottom: var(--space-3);
+}
+
+.error-banner-text {
+  flex: 1;
+  color: var(--color-text-secondary);
+}
+
+.error-banner-retry {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-family: var(--font-body); font-size: 0.8rem; font-weight: 500;
+  padding: 4px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: border-color var(--duration-fast) var(--ease-out),
+              color var(--duration-fast) var(--ease-out);
+  min-height: 32px;
+}
+
+.error-banner-retry:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}

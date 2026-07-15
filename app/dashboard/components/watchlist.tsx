@@ -1,6 +1,8 @@
 'use client';
 
+import { BarChart3 } from 'lucide-react';
 import type { TrackedItem } from '@/app/trends/utils';
+import ErrorBanner from '@/components/ErrorBanner';
 
 /** Minimal signal shape for delta computation. Matches daily signals.json fields we need. */
 export interface SignalSnapshot {
@@ -19,6 +21,7 @@ interface WatchlistProps {
   topRecommendations: SignalSnapshot[]; // top N signals for cold-start recommendations
   loading?: boolean;
   historyUnavailable?: boolean;
+  historyError?: boolean;
 }
 
 /** Compute 7-day score delta. Returns null if history data is unavailable or the term is too new. */
@@ -38,6 +41,7 @@ export default function Watchlist({
   topRecommendations,
   loading,
   historyUnavailable,
+  historyError,
 }: WatchlistProps) {
   // Build lookup maps
   const todayMap = new Map(todaySignals.map((s) => [s.id, s]));
@@ -47,7 +51,7 @@ export default function Watchlist({
   if (loading) {
     return (
       <section className="dash-section" aria-label="My Watchlist">
-        <h2 className="dash-section-title">📊 My Watchlist</h2>
+        <h2 className="dash-section-title"><BarChart3 size={18} className="icon-inline" aria-hidden="true" /> My Watchlist</h2>
         <div className="watchlist-grid">
           {[1, 2, 3].map((i) => (
             <div key={i} className="watchlist-card skeleton-card" aria-busy="true">
@@ -64,11 +68,27 @@ export default function Watchlist({
   if (trackedItems.length === 0) {
     return (
       <section className="dash-section" aria-label="My Watchlist">
-        <h2 className="dash-section-title">📊 My Watchlist</h2>
+        <h2 className="dash-section-title"><BarChart3 size={18} className="icon-inline" aria-hidden="true" /> My Watchlist</h2>
         <div className="watchlist-empty">
-          <p className="watchlist-empty-text">
-            Track trending terms from the <a href="/">Trends page</a> to monitor their growth here.
-          </p>
+          <div className="watchlist-onboarding">
+            <div className="onboarding-steps">
+              <div className="onboarding-step">
+                <span className="onboarding-step-num">1</span>
+                <span>Browse <a href="/">Trends</a> to find signals</span>
+              </div>
+              <div className="onboarding-step">
+                <span className="onboarding-step-num">2</span>
+                <span>Click <strong>+ Track</strong> on cards you care about</span>
+              </div>
+              <div className="onboarding-step">
+                <span className="onboarding-step-num">3</span>
+                <span>Check back daily for 7-day growth deltas</span>
+              </div>
+            </div>
+            <a href="/" className="onboarding-cta btn btn-primary" style={{ fontSize: '0.85rem', padding: '8px 20px' }}>
+              Browse Trends →
+            </a>
+          </div>
         </div>
         {topRecommendations.length > 0 && (
           <>
@@ -93,7 +113,7 @@ export default function Watchlist({
   return (
     <section className="dash-section" aria-label="My Watchlist">
       <div className="dash-section-header">
-        <h2 className="dash-section-title">📊 My Watchlist</h2>
+        <h2 className="dash-section-title"><BarChart3 size={18} className="icon-inline" aria-hidden="true" /> My Watchlist</h2>
         <span className="watchlist-count">{trackedItems.length} tracked</span>
       </div>
 
@@ -101,6 +121,10 @@ export default function Watchlist({
         <div className="watchlist-toast" role="alert">
           Historical data temporarily unavailable. Deltas will appear once restored.
         </div>
+      )}
+
+      {historyError && (
+        <ErrorBanner section="History" onRetry={() => window.location.reload()} />
       )}
 
       <div className="watchlist-grid">

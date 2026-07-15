@@ -4,9 +4,9 @@ import { Calendar, Activity, BarChart3, Plus, Check } from 'lucide-react';
 import type { TrendTerm } from './types';
 import { stageLabel } from './labels';
 
-type Props = { term: TrendTerm; isTracked?: boolean; onTrack?: (id: string) => void };
+type Props = { term: TrendTerm; isTracked?: boolean; onTrack?: (id: string) => void; atLimit?: boolean };
 
-export default function TrendCard({ term, isTracked, onTrack }: Props) {
+export default function TrendCard({ term, isTracked, onTrack, atLimit }: Props) {
   const slug = term.id.replace('trend-', '');
 
   const handleTrack = (e: React.MouseEvent) => {
@@ -77,9 +77,15 @@ export default function TrendCard({ term, isTracked, onTrack }: Props) {
         {onTrack && (
           <button
             type="button"
-            className={`track-btn${isTracked ? ' tracked' : ''}`}
+            className={`track-btn${isTracked ? ' tracked' : atLimit ? '' : ' track-btn-pulse'}`}
             onClick={handleTrack}
-            aria-label={isTracked ? `Untrack ${term.canonical}` : `Track ${term.canonical}`}
+            disabled={atLimit && !isTracked}
+            aria-label={
+              atLimit && !isTracked
+                ? `Tracking limit reached (50 items). Untrack some items to add ${term.canonical}.`
+                : isTracked ? `Untrack ${term.canonical}` : `Track ${term.canonical}`
+            }
+            title={atLimit && !isTracked ? 'Tracking limit reached (50 items)' : undefined}
           >
             {isTracked ? (
               <><Check size={14} /> Tracked</>

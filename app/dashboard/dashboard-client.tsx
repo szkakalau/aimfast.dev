@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useCallback, useMemo } from 'react';
+import { Flame } from 'lucide-react';
 import type { TrendTerm } from '@/app/trends/types';
 import { getTrackedItems, computeDecisionScore } from '@/app/trends/utils';
 import { DashboardHeader } from './components/dashboard-header';
@@ -9,13 +10,14 @@ import { CompetitorCard } from './components/competitor-card';
 import { FullReport } from './components/full-report';
 import { DashboardFooter } from './components/dashboard-footer';
 import Watchlist, { type SignalSnapshot } from './components/watchlist';
+import ErrorBanner from '@/components/ErrorBanner';
 
 /* ── I18N dictionary ── */
 const I18N_DICT: Record<string, Record<string, string>> = {
   zh: {
     headerTitle: 'AimFast.Dev',
-    watchlistTitle: '📊 My Watchlist',
-    serendipityTitle: '🔥 Also Trending Today',
+    watchlistTitle: 'My Watchlist',
+    serendipityTitle: 'Also Trending Today',
     serendipityHint: 'Track terms from Trends to monitor their growth here.',
     decisionCardTitle: '今日决策',
     decisionNoSignal: '今日暂无高确定性机会。以下是过去 7 天热度最高的信号。',
@@ -29,7 +31,7 @@ const I18N_DICT: Record<string, Record<string, string>> = {
     decisionWhyNot: '为什么不选另外两个',
     decisionAskAI: '问 AI',
     decisionEngagement: '互动',
-    cEndTitle: '🛍️ C 端消费机会',
+    cEndTitle: 'C 端消费机会',
     cEndBuyer: '谁会付钱',
     ciTitle: '竞品动态',
     ciAddTarget: '添加追踪',
@@ -58,8 +60,8 @@ const I18N_DICT: Record<string, Record<string, string>> = {
   },
   en: {
     headerTitle: 'AimFast.Dev',
-    watchlistTitle: '📊 My Watchlist',
-    serendipityTitle: '🔥 Also Trending Today',
+    watchlistTitle: 'My Watchlist',
+    serendipityTitle: 'Also Trending Today',
     serendipityHint: 'Track terms from Trends to monitor their growth here.',
     decisionCardTitle: "Today's Decision",
     decisionNoSignal: 'No high-confidence opportunity today. Here are the hottest signals from the past 7 days.',
@@ -73,7 +75,7 @@ const I18N_DICT: Record<string, Record<string, string>> = {
     decisionWhyNot: 'Why Not the Others',
     decisionAskAI: 'Ask AI',
     decisionEngagement: 'interactions',
-    cEndTitle: '🛍️ Consumer Opportunities',
+    cEndTitle: 'Consumer Opportunities',
     cEndBuyer: 'Who Pays',
     ciTitle: 'Competitor Intel',
     ciAddTarget: 'Add Target',
@@ -222,6 +224,8 @@ export function DashboardClient({ trendTerms }: Props) {
   const [trackedItems, setTrackedItems] = useState(getTrackedItems);
   const [historyTerms, setHistoryTerms] = useState<TrendTerm[]>([]);
   const [historyUnavailable, setHistoryUnavailable] = useState(false);
+  const [dashError, setDashError] = useState(false);
+  const [historyError, setHistoryError] = useState(false);
 
   // ── i18n ──
   const t = useMemo(() => I18N_DICT[lang] || I18N_DICT.en, [lang]);
@@ -281,17 +285,20 @@ export function DashboardClient({ trendTerms }: Props) {
               const parsed = JSON.parse(cached) as DashboardData;
               setData(parsed);
               setSelectedDate(parsed.date);
+            } else {
+              setDashError(true);
             }
-          } catch { /* noop */ }
+          } catch { setDashError(true); }
         }
 
         if (histRes.ok) {
           try {
             const hist: TrendTerm[] = await histRes.json();
             setHistoryTerms(hist);
-          } catch { setHistoryUnavailable(true); }
+          } catch { setHistoryUnavailable(true); setHistoryError(true); }
         } else {
           setHistoryUnavailable(true);
+          setHistoryError(true);
         }
 
         setLoading(false);
@@ -446,6 +453,13 @@ export function DashboardClient({ trendTerms }: Props) {
       />
 
       <main className="dash-main">
+        {/* ── Global error (dashboard data fetch failed, no cache) ── */}
+        {dashError && (
+          <div className="container" style={{ marginBottom: 'var(--space-3)' }}>
+            <ErrorBanner section="Dashboard" onRetry={() => window.location.reload()} />
+          </div>
+        )}
+
         {/* ── Watchlist ── */}
         <Watchlist
           trackedItems={trackedItems}
@@ -453,6 +467,7 @@ export function DashboardClient({ trendTerms }: Props) {
           historySignals={watchlistHistory}
           topRecommendations={topRecommendations}
           historyUnavailable={historyUnavailable}
+          historyError={historyError}
         />
 
         {/* ── Today's Decision (tracked-prioritized) ── */}
@@ -468,7 +483,7 @@ export function DashboardClient({ trendTerms }: Props) {
         {/* ── Serendipity: Also Trending Today ── */}
         {serendipitySignals.length > 0 && (
           <section className="dash-section">
-            <h2 className="dash-section-title">{t.serendipityTitle}</h2>
+            <h2 className="dash-section-title"><Flame size={18} className="icon-inline" aria-hidden="true" /> {t.serendipityTitle}</h2>
             <div className="serendipity-row">
               {serendipitySignals.map((sig) => {
                 const trend = todayMap.get(sig.id);

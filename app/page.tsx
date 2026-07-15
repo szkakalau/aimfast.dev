@@ -82,23 +82,20 @@ export default function HomePage() {
       />
 
       <main className="trends-page">
-        {/* ── Hero ── */}
-        <section className="trends-hero">
-          <h1>
-            Discover What&apos;s Emerging
-            <br />
-            Before Everyone Else
-          </h1>
-          <p className="trends-hero-desc">
-            Daily tracking of new tech terms, concepts, and market signals
-            across {stats.totalSources}+ sources. Free. No signup required.
-          </p>
-          <div className="trends-hero-stats">
-            <TrendingUp size={14} />
-            Tracking <strong>{terms.length} terms</strong>
-            {' · '}Updated daily 08:30 CST
+        {/* ── Compact status bar (replaces hero for returning users) ── */}
+        <div className="trends-status-bar" role="status" aria-label="Trend tracking status">
+          <h1 className="sr-only">AimFast.Dev — Discover What&apos;s Emerging Before Everyone Else</h1>
+          <div className="trends-status-content">
+            <span className="trends-status-stat">
+              <TrendingUp size={14} aria-hidden="true" />
+              <strong>{terms.length}</strong> terms tracked across {stats.totalSources}+ sources
+            </span>
+            <span className="trends-status-sep" aria-hidden="true" />
+            <span className="trends-status-stat">
+              Updated daily 08:30 CST
+            </span>
           </div>
-        </section>
+        </div>
 
         {/* ── Live Stats Bar ── */}
         {stats.total > 0 && (

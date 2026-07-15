@@ -1,5 +1,7 @@
 'use client';
 
+import { ShoppingBag } from 'lucide-react';
+
 type CEndOpportunity = {
   name?: string;
   name_en?: string;
@@ -174,7 +176,7 @@ export function DecisionCard({ t, lang, signal, decision, reportMd: _reportMd, d
       {/* ── C-End Consumer Opportunities ── */}
       {decision?.c_end_opportunities && decision.c_end_opportunities.length > 0 && (
         <div className="decision-cend-section">
-          <h3 className="decision-cend-title">{t.cEndTitle}</h3>
+          <h3 className="decision-cend-title"><ShoppingBag size={16} className="icon-inline" aria-hidden="true" /> {t.cEndTitle}</h3>
           <div className="cend-list">
             {decision.c_end_opportunities.map((opp, idx) => (
               <div key={idx} className="cend-item">

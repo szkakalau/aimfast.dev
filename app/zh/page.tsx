@@ -78,23 +78,20 @@ export default function ZhHomePage() {
       />
 
       <main className="trends-page">
-        {/* ── Hero ── */}
-        <section className="trends-hero">
-          <h1>
-            比别人更早
-            <br />
-            发现正在崛起的机会
-          </h1>
-          <p className="trends-hero-desc">
-            每日追踪新兴技术术语、概念和市场信号，
-            覆盖 {stats.totalSources}+ 个信号源。免费，无需注册。
-          </p>
-          <div className="trends-hero-stats">
-            <TrendingUp size={14} />
-            正在追踪 <strong>{terms.length} 个术语</strong>
-            {' · '}每日 08:30 CST 更新
+        {/* ── Compact status bar ── */}
+        <div className="trends-status-bar" role="status" aria-label="趋势追踪状态">
+          <h1 className="sr-only">AimFast.Dev — 比别人更早发现正在崛起的机会</h1>
+          <div className="trends-status-content">
+            <span className="trends-status-stat">
+              <TrendingUp size={14} aria-hidden="true" />
+              正在追踪 <strong>{terms.length}</strong> 个术语，覆盖 {stats.totalSources}+ 个信号源
+            </span>
+            <span className="trends-status-sep" aria-hidden="true" />
+            <span className="trends-status-stat">
+              每日 08:30 CST 更新
+            </span>
           </div>
-        </section>
+        </div>
 
         {/* ── Live Stats Bar ── */}
         {stats.total > 0 && (
