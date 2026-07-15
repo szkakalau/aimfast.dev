@@ -78,7 +78,7 @@ COLLECTORS=(
     "Google Trends:collect_trends"
     "Product Hunt:collect_producthunt"
     "DEV Community:collect_devcommunity"
-    "Reddit:collect_reddit"
+    "Reddit (11 subs):collect_reddit"
     "Reddit Consumer:collect_reddit_consumer"
     "V2EX:collect_v2ex"
     "w2solo:collect_w2solo"
@@ -91,10 +91,15 @@ COLLECTORS=(
     "Product Changelogs:collect_changelogs"
     "Google News:collect_googlenews"
     "GitHub Releases:collect_github_releases"
+    # ── 新增信源: 包管理 + 开发者社区（2026-07-16） ──
+    "npm:collect_npm"
+    "PyPI:collect_pypi"
+    "Stack Overflow:collect_stackoverflow"
+    "YouTube:collect_youtube"
 )
 
 # C-end collectors are non-blocking — they may fail due to rate limits or missing auth
-C_END_COLLECTORS=("Reddit Consumer" "豆瓣" "小红书" "X/Twitter" "Product Changelogs" "Google News" "GitHub Releases")
+C_END_COLLECTORS=("Reddit Consumer" "豆瓣" "小红书" "X/Twitter" "Product Changelogs" "Google News" "GitHub Releases" "npm" "PyPI" "Stack Overflow" "YouTube")
 
 for entry in "${COLLECTORS[@]}"; do
     name="${entry%%:*}"

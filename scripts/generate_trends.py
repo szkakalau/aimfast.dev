@@ -540,17 +540,17 @@ status: tracking
 **来源**: {sources}
 **趋势评分**: {score}/100
 
-## What is {canonical}
+## {canonical} 是什么
 
 {summary_zh}
 
 {summary_en}
 
-## Why now
+## 为什么现在关注
 
 该主题于 {first_seen} 首次出现于技术社区。目前已追踪到 {total_mentions} 次提及，来源包括 {sources}。跨平台信号增长表明该话题在技术社区中正在获得关注。
 
-## Who should care
+## 谁应该关注
 
 - **独立开发者**: 寻找新兴技术方向或产品灵感
 - **技术创业者**: 关注被忽视的用户痛点和市场空白

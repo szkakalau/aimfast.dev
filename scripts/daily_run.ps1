@@ -66,7 +66,7 @@ $Collectors = @(
     @{Name="Google Trends"; Script="collect_trends"; Enabled=$true},
     @{Name="Product Hunt"; Script="collect_producthunt"; Enabled=$true},
     @{Name="DEV Community"; Script="collect_devcommunity"; Enabled=$false},
-    @{Name="Reddit"; Script="collect_reddit"; Enabled=$true},
+    @{Name="Reddit (11 subs)"; Script="collect_reddit"; Enabled=$true},
     @{Name="Reddit Consumer"; Script="collect_reddit_consumer"; Enabled=$true},
     @{Name="V2EX"; Script="collect_v2ex"; Enabled=$true},
     @{Name="w2solo"; Script="collect_w2solo"; Enabled=$true},
@@ -75,7 +75,11 @@ $Collectors = @(
     @{Name="ArXiv"; Script="collect_arxiv"; Enabled=$false},
     @{Name="豆瓣"; Script="collect_douban"; Enabled=$true},
     @{Name="小红书"; Script="collect_xiaohongshu"; Enabled=$false},
-    @{Name="X/Twitter"; Script="collect_x"; Enabled=$true}
+    @{Name="X/Twitter"; Script="collect_x"; Enabled=$true},
+    @{Name="npm"; Script="collect_npm"; Enabled=$true},
+    @{Name="PyPI"; Script="collect_pypi"; Enabled=$true},
+    @{Name="Stack Overflow"; Script="collect_stackoverflow"; Enabled=$true},
+    @{Name="YouTube"; Script="collect_youtube"; Enabled=$true}
 )
 
 Write-Log ""

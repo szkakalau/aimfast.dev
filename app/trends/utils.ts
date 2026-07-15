@@ -105,6 +105,7 @@ export function isTracked(id: string): boolean {
  * Returns empty string if the section is not found or has no content.
  */
 export function extractSectionText(markdown: string, sectionName: string): string {
+  if (!sectionName || !markdown) return '';
   const escaped = sectionName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   const regex = new RegExp(`## ${escaped}\\s*\\n([\\s\\S]*?)(?=\\n## |$)`, 'i');
   const match = markdown.match(regex);

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
       'zh-CN': 'https://www.aimfast.dev/pricing/zh/',
     },
   },
-  other: { 'last-modified': new Date().toISOString().slice(0, 10) },
+  other: { 'last-modified': '2026-07-16' },
   openGraph: {
     title: '定价 — AimFast.Dev',
     description: '三档方案，面向独立开发者。Starter $19/月、Builder $39/月、Team $79/月。所有方案均含 14 天免费试用。',

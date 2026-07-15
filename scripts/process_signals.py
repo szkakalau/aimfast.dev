@@ -239,6 +239,12 @@ SOURCE_DOMAIN_MAP = {
     # tech: 技术社区 — 开发者/工程师视角
     "github": "tech", "hn": "tech", "lobsters": "tech",
     "devcommunity": "tech", "arxiv": "tech", "huggingface": "tech",
+    # package: 包管理生态 — 技术采用信号（v2.4 新增）
+    "npm": "tech", "pypi": "tech",
+    # qa: 开发者问答 — 痛点信号（v2.4 新增）
+    "stackoverflow": "tech",
+    # content: 内容平台 — 技术布道/趋势（v2.4 新增）
+    "youtube": "mixed",
     # consumer: 消费者社区 — 普通用户视角
     "reddit-consumer": "consumer", "douban": "consumer",
     "xiaohongshu": "consumer", "xhs": "consumer",

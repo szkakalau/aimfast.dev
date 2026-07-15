@@ -20,10 +20,19 @@ TZ_SHANGHAI = timezone(timedelta(hours=8))
 HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; AimFast-Dev/2.0; +https://aimfast.dev)"}
 
 SUBREDDITS = [
+    # 原有 4 个
     "programming",
     "MachineLearning",
     "SideProject",
     "Entrepreneur",
+    # 新增 7 个 — 扩展覆盖 SaaS、创业、Web、Infra 话题
+    "SaaS",
+    "startups",
+    "webdev",
+    "ExperiencedDevs",
+    "selfhosted",
+    "devops",
+    "indiehackers",
 ]
 
 ATOM_NS = "http://www.w3.org/2005/Atom"

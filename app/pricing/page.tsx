@@ -13,7 +13,7 @@ export const metadata: Metadata = {
       'zh-CN': 'https://www.aimfast.dev/pricing/',
     },
   },
-  other: { 'last-modified': new Date().toISOString().slice(0, 10) },
+  other: { 'last-modified': '2026-07-16' },
   openGraph: {
     title: 'Pricing — AimFast.Dev',
     description: 'Three plans for indie builders. Starter $19/mo, Builder $39/mo, Team $79/mo. 14-day free trial on all plans.',

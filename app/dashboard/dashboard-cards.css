@@ -695,13 +695,20 @@ body:has(.dash-header) > .site-nav {
   flex-wrap: wrap;
   gap: var(--space-2);
 }
-.dash-header-left h1 {
+.dash-header-left h1,
+.dash-header-left .site-nav-logo {
   font-size: 1.15rem;
   font-weight: 700;
   margin: 0;
   display: flex;
   align-items: center;
   gap: var(--space-1);
+  color: var(--color-text);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+}
+.dash-header-left .site-nav-logo:hover {
+  color: var(--color-accent);
 }
 .dash-header-nav {
   display: flex;

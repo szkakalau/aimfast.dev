@@ -1,5 +1,5 @@
 {
-  "_comment": "AimFast.Dev — v2.3 第一层信号源扩展: changelogs + Google News + GitHub Releases。RSS feed 仅保留已验证可用的 7 个源；Anthropic/Cursor/Midjourney/Replit/ElevenLabs 无可用 RSS，通过 GitHub Releases 或 Google News 覆盖。",
+  "_comment": "AimFast.Dev — v2.4 第二层信号源扩展（2026-07-16）: npm + PyPI + Stack Overflow + YouTube。信源从 17 个扩展到 21 个，覆盖开发者采用信号（包下载量）和痛点信号（SO 问题量）。",
   "api_keys": {
     "producthunt": {
       "client_id": "YOUR_PH_CLIENT_ID",
@@ -83,6 +83,38 @@
         "priority": "P1",
         "enabled": true,
         "_note": "v2.3 启用 — Tier 3 零认证兜底 (公开 trends)，有 Firefox X 登录时自动升级到 Tier 1"
+      },
+      {
+        "name": "npm",
+        "key": "npm",
+        "source": "npm Registry API + Downloads API",
+        "priority": "P1",
+        "enabled": true,
+        "_note": "v2.4 新增 2026-07-16 — JavaScript 生态技术采用信号（下载量趋势）"
+      },
+      {
+        "name": "PyPI",
+        "key": "pypi",
+        "source": "PyPI RSS + JSON API",
+        "priority": "P1",
+        "enabled": true,
+        "_note": "v2.4 新增 2026-07-16 — Python 生态技术采用信号（包活跃度）"
+      },
+      {
+        "name": "Stack Overflow",
+        "key": "stackoverflow",
+        "source": "RSS (feeds/tag)",
+        "priority": "P1",
+        "enabled": true,
+        "_note": "v2.4 新增 2026-07-16 — 开发者真实痛点信号（问题量趋势）"
+      },
+      {
+        "name": "YouTube",
+        "key": "youtube",
+        "source": "RSS (feeds/videos.xml)",
+        "priority": "P2",
+        "enabled": true,
+        "_note": "v2.4 新增 2026-07-16 — 内容趋势信号（技术布道 / 产品发布视频）"
       }
     ],
     "domestic": [

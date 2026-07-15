@@ -58,6 +58,25 @@ def test_normalize_category_whitespace():
     assert _normalize_category("  aiagent  ") == "AIAgent"
 
 
+def test_normalize_category_llm_variants():
+    """LLM may return categories with spaces or mixed case."""
+    assert _normalize_category("ai model") == "AIModel"
+    assert _normalize_category("AI Model") == "AIModel"
+    assert _normalize_category("ai agent") == "AIAgent"
+    assert _normalize_category("open source") == "OpenSource"
+    assert _normalize_category("Open Source") == "OpenSource"
+    assert _normalize_category("dev tools") == "DevTools"
+    assert _normalize_category("hot topic") == "Industry"
+    assert _normalize_category("tech concept") == "TechConcept"
+
+
+def test_normalize_category_legacy_aliases():
+    """Legacy LLM output patterns map correctly to new categories."""
+    assert _normalize_category("LLM") == "AIModel"
+    assert _normalize_category("Agent") == "AIAgent"
+    assert _normalize_category("OSS") == "OpenSource"
+
+
 # ── should_analyze (generate_opportunity.py) ──
 
 def test_should_analyze_below_min_score():

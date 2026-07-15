@@ -104,6 +104,10 @@ DEFAULT_SOURCE_AUTHORITY: dict[str, int] = {
     "googlenews": 4, "trends": 4, "x": 4, "x-trends": 3,
     # 消费者源 — 真实需求
     "reddit-consumer": 4, "douban": 3, "xiaohongshu": 3, "xhs": 3,
+    # 包管理生态 — 技术采用信号（v2.4 新增 2026-07-16）
+    "npm": 7, "pypi": 7,
+    # 开发者社区 — 痛点 + 采用信号（v2.4 新增 2026-07-16）
+    "stackoverflow": 8, "youtube": 4,
     # 未知
     "unknown": 3,
 }
