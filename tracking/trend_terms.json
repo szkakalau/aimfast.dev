@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-15T23:10:29.060137+08:00",
+  "updated_at": "2026-07-16T07:48:51.843764+08:00",
   "terms": [
     {
       "id": "trend-claude-agent-sdk",
@@ -702,7 +702,31 @@
       ],
       "summary_zh": "一种将现有 Web 应用逆向工程转化为 AI Agent 工具的方法论，正在成为 Agent 工具链构建的新范式。",
       "summary_en": "A methodology for reverse-engineering existing web applications into tools for AI agents, emerging as a new paradigm in agent toolchain construction.",
-      "research_md_path": "content/trends/reverse-engineering-web-apps-into-agent-tools.md"
+      "research_md_path": "content/trends/reverse-engineering-web-apps-into-agent-tools.md",
+      "opportunity_score": 58,
+      "market_score": 65,
+      "competition_score": 35,
+      "demand_score": 70,
+      "seo_difficulty": 30,
+      "suggested_products": [
+        "Chrome Extension",
+        "API",
+        "CLI Tool",
+        "Open Source",
+        "MCP Server"
+      ],
+      "estimated_dev_days": 45,
+      "revenue_potential": 3,
+      "risk_factors_en": [
+        "Legal and ethical concerns around reverse engineering web apps without permission",
+        "Rapid evolution of AI agent frameworks may make approach obsolete or absorbed by platform vendors"
+      ],
+      "risk_factors_zh": [
+        "未经许可逆向工程Web应用存在法律与道德风险",
+        "AI代理框架快速演进可能使本方法过时或被平台厂商整合"
+      ],
+      "opportunity_summary_en": "Reverse-engineering web apps into agent tools addresses a real need for automating legacy or API-limited web services. The market is nascent with low competition, offering a first-mover advantage for indie developers. A Chrome extension or CLI tool MVP can be built in ~45 days and validated with early adopters on HN and GitHub.",
+      "opportunity_summary_zh": "将Web应用逆向工程转化为Agent工具，解决了自动化遗留或API受限Web服务的真实需求。市场处于早期、竞争低，独立开发者有先发优势。可在45天内构建Chrome扩展或CLI工具的MVP，在HN和GitHub上验证早期用户。"
     },
     {
       "id": "trend-grok-4.5",
@@ -730,7 +754,32 @@
       ],
       "summary_zh": "SpaceXAI 发布 Grok 4.5，宣称编码任务成本低于 AI 竞争对手，受到 InfoWorld 等媒体关注。",
       "summary_en": "SpaceXAI launched Grok 4.5, claiming lower coding-task costs than AI rivals, gaining attention from InfoWorld and other outlets.",
-      "research_md_path": "content/trends/grok-4.5.md"
+      "research_md_path": "content/trends/grok-4.5.md",
+      "opportunity_score": 48,
+      "market_score": 55,
+      "competition_score": 70,
+      "demand_score": 50,
+      "seo_difficulty": 45,
+      "suggested_products": [
+        "VS Code Extension",
+        "CLI Tool",
+        "API",
+        "MCP Server"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 3,
+      "risk_factors_en": [
+        "SpaceXAI may not release public API or open-source model, limiting third-party products",
+        "Large incumbents like GitHub Copilot could quickly match pricing",
+        "Early stage with very low signal strength increases uncertainty"
+      ],
+      "risk_factors_zh": [
+        "SpaceXAI可能不发布公共API或开源模型，限制第三方产品",
+        "GitHub Copilot等大型现有产品可能迅速匹配定价",
+        "早期阶段信号强度很低，增加了不确定性"
+      ],
+      "opportunity_summary_en": "Grok 4.5 claims lower coding-task costs than rivals, a promising angle in a competitive market. However, with only 2 signals and no deep research, the opportunity is speculative. Developers could build a lightweight VS Code extension or CLI tool that wraps Grok 4.5's API to offer cheap code completion, but success hinges on API availability and cost advantage being real.",
+      "opportunity_summary_zh": "Grok 4.5宣称编码任务成本低于竞争对手，在竞争激烈的市场中是一个有前景的角度。然而，仅有2个信号且无深度研究，机会尚属推测。开发者可以构建轻量级VS Code扩展或CLI工具，封装Grok 4.5的API以提供廉价代码补全，但成功取决于API可用性和成本优势是否真实。"
     },
     {
       "id": "trend-openwiki",
@@ -870,7 +919,29 @@
       ],
       "summary_zh": "一个为 Python 自由线程模式实现 Go 风格协程的开源库，引起了开发者社区的广泛讨论。",
       "summary_en": "An open-source library bringing Go-style coroutines to Python's free-threaded mode, generating significant discussion in the developer community.",
-      "research_md_path": "content/trends/runloom.md"
+      "research_md_path": "content/trends/runloom.md",
+      "opportunity_score": 45,
+      "market_score": 40,
+      "competition_score": 20,
+      "demand_score": 50,
+      "seo_difficulty": 15,
+      "suggested_products": [
+        "Open Source",
+        "SDK/Library",
+        "VS Code Extension"
+      ],
+      "estimated_dev_days": 60,
+      "revenue_potential": 1,
+      "risk_factors_en": [
+        "Runloom depends on Python's free-threaded mode, which is still experimental and may not gain widespread adoption.",
+        "Large tech companies or Python core developers could implement similar features natively, making Runloom obsolete."
+      ],
+      "risk_factors_zh": [
+        "Runloom 依赖 Python 的自由线程模式，该模式仍处于实验阶段，可能不会获得广泛采用。",
+        "大型科技公司或 Python 核心开发者可能原生实现类似功能，使 Runloom 过时。"
+      ],
+      "opportunity_summary_en": "Runloom is a promising early-stage open-source library that brings Go-style coroutines to Python's free-threaded mode, generating buzz on HN. The competition is minimal, but the market is very narrow and dependent on an experimental Python feature. The best opportunity is to build a strong open-source community and later offer commercial support or integrations.",
+      "opportunity_summary_zh": "Runloom 是一个有前景的早期开源库，将 Go 风格协程引入 Python 的自由线程模式，在 HN 上引发了讨论。竞争极少，但市场非常狭窄且依赖于实验性的 Python 特性。最佳机会是建立强大的开源社区，然后提供商业支持或集成。"
     },
     {
       "id": "trend-livekit-realtime-voice-agents",
@@ -895,7 +966,33 @@
       ],
       "summary_zh": "Mastra 推出的新包，可将 Agent 转变为实时语音 Agent，代表 AI Agent 交互方式的重要演进方向。",
       "summary_en": "A new Mastra package that transforms agents into real-time voice agents, representing a key evolution in AI agent interaction.",
-      "research_md_path": "content/trends/livekit-realtime-voice-agents.md"
+      "research_md_path": "content/trends/livekit-realtime-voice-agents.md",
+      "opportunity_score": 52,
+      "market_score": 70,
+      "competition_score": 25,
+      "demand_score": 45,
+      "seo_difficulty": 30,
+      "suggested_products": [
+        "API",
+        "AI Agent",
+        "Open Source",
+        "SaaS",
+        "Template/Boilerplate"
+      ],
+      "estimated_dev_days": 21,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Large tech companies like Google or OpenAI may enter the space with more resources.",
+        "Low current signal and hype may indicate insufficient market demand.",
+        "Dependence on Mastra's ecosystem could limit flexibility."
+      ],
+      "risk_factors_zh": [
+        "大型科技公司如Google或OpenAI可能以更多资源进入该领域。",
+        "当前信号和热度低可能表明市场需求不足。",
+        "依赖Mastra生态系统可能限制灵活性。"
+      ],
+      "opportunity_summary_en": "LiveKit Realtime Voice Agents is an early-stage trend with low competition and SEO difficulty, offering a blue ocean opportunity for indie developers. The market potential is moderate but unproven, with only one signal from GitHub releases. Building a lightweight API or open-source template could capture early adopters, but revenue potential is low until demand grows.",
+      "opportunity_summary_zh": "LiveKit Realtime Voice Agents是一个早期趋势，竞争低、SEO难度低，为独立开发者提供蓝海机会。市场潜力中等但未经验证，仅有来自GitHub发布的一个信号。构建轻量级API或开源模板可以吸引早期用户，但收入潜力低，直到需求增长。"
     },
     {
       "id": "trend-colibri",
@@ -939,7 +1036,31 @@
       ],
       "summary_zh": "一个用纯 C 语言编写的超轻量推理引擎，可在 25GB 内存的消费级机器上运行 744B 参数的 MoE 模型，关注度极高。",
       "summary_en": "A ultra-lightweight inference engine in pure C that runs a 744B-parameter MoE model on a 25GB consumer machine, gaining massive attention.",
-      "research_md_path": "content/trends/colibri.md"
+      "research_md_path": "content/trends/colibri.md",
+      "opportunity_score": 55,
+      "market_score": 65,
+      "competition_score": 20,
+      "demand_score": 55,
+      "seo_difficulty": 25,
+      "suggested_products": [
+        "Open Source",
+        "CLI Tool",
+        "API",
+        "Web App",
+        "SaaS"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 3,
+      "risk_factors_en": [
+        "Large tech companies (e.g., Google, Meta) may release similar optimized inference solutions, increasing competition.",
+        "Project may not gain sufficient community traction or maintain development momentum."
+      ],
+      "risk_factors_zh": [
+        "大型科技公司（如Google、Meta）可能发布类似的优化推理解决方案，增加竞争。",
+        "项目可能无法获得足够的社区关注或保持开发动力。"
+      ],
+      "opportunity_summary_en": "Colibri offers a unique opportunity to democratize large MoE model inference on consumer hardware. The current market is nearly empty, providing a first-mover advantage for independent developers. However, the project is very early-stage and requires validation of demand and technical stability.",
+      "opportunity_summary_zh": "Colibri提供了一个独特的机会，在消费级硬件上民主化大型MoE模型推理。当前市场几乎空白，为独立开发者提供了先发优势。然而，该项目处于非常早期的阶段，需要验证需求和技术稳定性。"
     },
     {
       "id": "trend-wloc",
@@ -983,7 +1104,29 @@
       ],
       "summary_zh": "一个可修改 Apple 网络定位返回坐标的开源工具，支持多种代理工具，在 GitHub 上获得了极高关注。",
       "summary_en": "An open-source tool that modifies Apple's network location coordinates, supporting various proxy tools and gaining massive GitHub attention.",
-      "research_md_path": "content/trends/wloc.md"
+      "research_md_path": "content/trends/wloc.md",
+      "opportunity_score": 52,
+      "market_score": 35,
+      "competition_score": 20,
+      "demand_score": 65,
+      "seo_difficulty": 30,
+      "suggested_products": [
+        "CLI Tool",
+        "Open Source",
+        "Desktop App"
+      ],
+      "estimated_dev_days": 14,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Apple may patch or restrict location spoofing in future OS updates.",
+        "Legal gray area for location spoofing in some regions."
+      ],
+      "risk_factors_zh": [
+        "苹果可能在系统更新中封堵或限制位置修改功能。",
+        "位置修改在某些地区存在法律灰色地带。"
+      ],
+      "opportunity_summary_en": "wloc is a nascent open-source tool for Apple location spoofing with moderate demand but limited market size. Competition is low, but monetization is challenging due to its niche nature and legal risks. A CLI tool or desktop app could serve developers and privacy enthusiasts, but revenue potential remains low.",
+      "opportunity_summary_zh": "wloc 是一个新兴的开源工具，用于修改苹果设备位置，需求中等但市场规模有限。竞争较低，但由于其小众性质和潜在法律风险，变现困难。可开发 CLI 工具或桌面应用服务开发者和隐私爱好者，但收入潜力较低。"
     },
     {
       "id": "trend-torlink",
@@ -1027,7 +1170,126 @@
       ],
       "summary_zh": "一个在终端中运行的种子文件查找和下载工具，以零配置和简洁设计获得了大量关注。",
       "summary_en": "A sleek, zero-setup torrent finder and downloader that lives in the terminal, gaining significant attention for its minimalist design.",
-      "research_md_path": "content/trends/torlink.md"
+      "research_md_path": "content/trends/torlink.md",
+      "opportunity_score": 45,
+      "market_score": 35,
+      "competition_score": 30,
+      "demand_score": 40,
+      "seo_difficulty": 20,
+      "suggested_products": [
+        "CLI Tool",
+        "Open Source",
+        "Desktop App"
+      ],
+      "estimated_dev_days": 14,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Niche audience limits scalability",
+        "Competition from established GUI clients"
+      ],
+      "risk_factors_zh": [
+        "受众狭窄限制规模化",
+        "来自成熟 GUI 客户端的竞争"
+      ],
+      "opportunity_summary_en": "Torlink is a nascent zero-setup terminal torrent tool with low competition and easy SEO. However, the market is small and monetization is difficult. It's a good side project for developers but not a high-revenue opportunity.",
+      "opportunity_summary_zh": "Torlink 是一款新兴的零配置终端种子工具，竞争低且 SEO 容易。但市场规模小，变现困难。适合开发者作为副项目，而非高收入机会。"
+    },
+    {
+      "id": "trend-durable-agent-crash-recovery",
+      "canonical": "Durable Agent Crash Recovery",
+      "canonical_zh": "持久化 Agent 崩溃恢复",
+      "aliases": [],
+      "first_seen": "2026-07-16",
+      "last_seen": "2026-07-16",
+      "stage": "nascent",
+      "score": 48,
+      "source_count": 1,
+      "total_mentions": 1,
+      "sources": [
+        "github-releases"
+      ],
+      "growth_pct": 100,
+      "category": "AIAgent",
+      "tags": [
+        "release",
+        "breaking-change",
+        "github-release"
+      ],
+      "summary_zh": "Mastra 框架发布 v1.51.0，支持持久化 Agent 的崩溃恢复（服务端+客户端+启动时），该特性在 Agent 框架中具有里程碑意义，确保生产环境的可靠性。",
+      "summary_en": "Mastra framework v1.51.0 introduces durable agent crash recovery for server, client, and boot-time, a milestone feature ensuring production reliability in agent frameworks.",
+      "research_md_path": "content/trends/durable-agent-crash-recovery.md",
+      "opportunity_score": 62,
+      "market_score": 55,
+      "competition_score": 25,
+      "demand_score": 70,
+      "seo_difficulty": 30,
+      "suggested_products": [
+        "Open Source",
+        "SaaS",
+        "SDK/Library",
+        "CLI Tool",
+        "API"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 3,
+      "risk_factors_en": [
+        "Major cloud providers may integrate similar features into their agent platforms.",
+        "Small initial market size limits immediate revenue."
+      ],
+      "risk_factors_zh": [
+        "大型云厂商可能将类似功能集成到其 Agent 平台中。",
+        "初始市场规模小，限制即时收入。"
+      ],
+      "opportunity_summary_en": "Durable agent crash recovery is a nascent but critical feature for production AI agents. With only one framework implementing it, there is a clear blue ocean for independent developers to build a dedicated solution. Focus on an open-source library or lightweight SaaS that integrates with popular agent frameworks.",
+      "opportunity_summary_zh": "持久化 Agent 崩溃恢复是生产级 AI Agent 的一个新兴但关键的特性。目前仅有一个框架实现，独立开发者有明确的蓝海机会。建议构建开源库或轻量级 SaaS，集成主流 Agent 框架。"
+    },
+    {
+      "id": "trend-self-hosted-ai-workspace",
+      "canonical": "Self-Hosted AI Workspace",
+      "canonical_zh": "自托管 AI 工作空间",
+      "aliases": [],
+      "first_seen": "2026-07-16",
+      "last_seen": "2026-07-16",
+      "stage": "nascent",
+      "score": 48,
+      "source_count": 1,
+      "total_mentions": 1,
+      "sources": [
+        "github"
+      ],
+      "growth_pct": 100,
+      "category": "OpenSource",
+      "tags": [
+        "Python",
+        "active"
+      ],
+      "summary_zh": "Odysseus 项目（自托管 AI 工作空间）获得 8.2 万+ GitHub Stars，热度极高，反映了开发者对自托管、数据可控的 AI 工作空间需求的快速增长。",
+      "summary_en": "The Odysseus self-hosted AI workspace project has gained over 82,000 GitHub stars, signaling rapidly growing developer demand for self-hosted, data-controlled AI workspaces.",
+      "research_md_path": "content/trends/self-hosted-ai-workspace.md",
+      "opportunity_score": 58,
+      "market_score": 62,
+      "competition_score": 30,
+      "demand_score": 55,
+      "seo_difficulty": 25,
+      "suggested_products": [
+        "Open Source",
+        "Web App",
+        "CLI Tool",
+        "AI Agent",
+        "Desktop App"
+      ],
+      "estimated_dev_days": 45,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Large cloud AI providers (Google, Microsoft) may enter with competitive offerings",
+        "Low signal count (1) makes demand validation uncertain"
+      ],
+      "risk_factors_zh": [
+        "大型云 AI 提供商（Google、Microsoft）可能推出竞品",
+        "信号数量少（1 个）导致需求验证不确定"
+      ],
+      "opportunity_summary_en": "The self-hosted AI workspace trend is nascent but backed by strong GitHub traction (82k+ stars). There is a clear gap for easy-to-deploy, privacy-first solutions. However, limited signals and potential big tech entry pose risks for early movers.",
+      "opportunity_summary_zh": "自托管 AI 工作空间趋势处于初期，但拥有强劲的 GitHub 热度（8.2 万+星）。市场上缺乏易于部署、隐私优先的解决方案。然而，信号有限且大厂可能进入，对早期入局者构成风险。"
     },
     {
       "id": "trend-pet-reminder",
@@ -1078,7 +1340,29 @@
       ],
       "summary_zh": "Hacker News 上关于开发者因 LLM 感到疏远是否需要支持小组的讨论，反映了 AI 时代开发者的焦虑情绪。",
       "summary_en": "A discussion on Hacker News about whether developers alienated by LLMs need a support group, reflecting developer anxiety in the AI era.",
-      "research_md_path": "content/trends/developers-alienated-by-llms.md"
+      "research_md_path": "content/trends/developers-alienated-by-llms.md",
+      "opportunity_score": 38,
+      "market_score": 32,
+      "competition_score": 15,
+      "demand_score": 40,
+      "seo_difficulty": 20,
+      "suggested_products": [
+        "Newsletter",
+        "Web App",
+        "Discord/Slack Bot"
+      ],
+      "estimated_dev_days": 14,
+      "revenue_potential": 1,
+      "risk_factors_en": [
+        "Extremely niche audience may not sustain long-term interest",
+        "Big tech or existing mental health platforms could enter easily"
+      ],
+      "risk_factors_zh": [
+        "极小众受众可能无法维持长期兴趣",
+        "大厂或现有心理健康平台可能轻易进入"
+      ],
+      "opportunity_summary_en": "The trend 'Developers Alienated by LLMs' is an early signal of developer anxiety, but with only one mention and low scores, it's too premature to act. A free newsletter or community bot could test demand, but monetization is unlikely. The opportunity is speculative and high-risk.",
+      "opportunity_summary_zh": "趋势“被LLM疏远的开发者”是开发者焦虑的早期信号，但由于仅有一个提及且评分低，行动为时过早。免费新闻通讯或社区机器人可测试需求，但变现可能性低。该机会具有投机性和高风险。"
     },
     {
       "id": "trend-lightwell",
@@ -1125,7 +1409,31 @@
       ],
       "summary_zh": "IBM 和 Red Hat 联合推出的 AI 驱动的开源安全平台，旨在保护开源代码免受 AI 攻击。",
       "summary_en": "An AI-powered open-source security platform launched by IBM and Red Hat to defend open-source code from AI attacks.",
-      "research_md_path": "content/trends/lightwell.md"
+      "research_md_path": "content/trends/lightwell.md",
+      "opportunity_score": 42,
+      "market_score": 55,
+      "competition_score": 35,
+      "demand_score": 40,
+      "seo_difficulty": 20,
+      "suggested_products": [
+        "SaaS",
+        "API",
+        "VS Code Extension",
+        "CLI Tool",
+        "Open Source"
+      ],
+      "estimated_dev_days": 45,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Big tech (IBM/Red Hat) may release a comprehensive solution, limiting indie space",
+        "Low current signal count suggests uncertain market demand"
+      ],
+      "risk_factors_zh": [
+        "大厂（IBM/Red Hat）可能发布全面解决方案，限制独立开发者空间",
+        "当前信号数量低暗示市场需求不确定"
+      ],
+      "opportunity_summary_en": "Lightwell is a nascent AI security platform for open-source code. While the market has potential, current signals are weak and big players are involved. Indie developers should monitor but not commit heavily yet.",
+      "opportunity_summary_zh": "Lightwell 是一个针对开源代码的 AI 安全平台，处于萌芽期。尽管市场有潜力，但当前信号较弱且有大厂参与。独立开发者应保持关注，但暂不宜重注投入。"
     },
     {
       "id": "trend-langgraph-for-swift",
@@ -1248,7 +1556,31 @@
       ],
       "summary_zh": "Codeg V0.20.0 上线科研模式，成为多智能体协作工作台，在 V2EX 上发布并获得关注。",
       "summary_en": "Codeg V0.20.0 launches a science mode, becoming a multi-agent collaboration workbench, gaining attention on V2EX.",
-      "research_md_path": "content/trends/codeg-v0.20.0.md"
+      "research_md_path": "content/trends/codeg-v0.20.0.md",
+      "opportunity_score": 45,
+      "market_score": 60,
+      "competition_score": 30,
+      "demand_score": 50,
+      "seo_difficulty": 20,
+      "suggested_products": [
+        "AI Agent",
+        "VS Code Extension",
+        "CLI Tool",
+        "SaaS",
+        "Open Source"
+      ],
+      "estimated_dev_days": 45,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Very early signal with low validation; may not gain traction.",
+        "Large AI companies (OpenAI, Google) could build similar multi-agent workbenches."
+      ],
+      "risk_factors_zh": [
+        "信号非常早期，验证不足；可能无法获得关注。",
+        "大型AI公司（OpenAI、Google）可能构建类似的多智能体工作台。"
+      ],
+      "opportunity_summary_en": "Codeg V0.20.0 introduces a multi-agent collaboration workbench, an early signal in a niche with low competition. The market potential is moderate but unvalidated, with risks from big tech entry. Independent developers could build a focused tool like an AI Agent or VS Code extension, but should validate demand first.",
+      "opportunity_summary_zh": "Codeg V0.20.0 推出了多智能体协作工作台，这是一个竞争较低的细分领域的早期信号。市场潜力中等但未验证，存在大型科技公司进入的风险。独立开发者可以构建像AI Agent或VS Code扩展这样的专注工具，但应先验证需求。"
     },
     {
       "id": "trend-open-source-llm-control-plane",
@@ -1347,7 +1679,29 @@
       ],
       "summary_zh": "Windows 系统托盘中的 Agent 额度查看工具，反映了 AI Agent 使用量管理正成为开发者日常需求，类似工具生态正在形成。",
       "summary_en": "A Windows system tray tool for checking agent quota, reflecting that AI agent usage management is becoming a daily need for developers, with a similar tool ecosystem emerging.",
-      "research_md_path": "content/trends/quotabarwin.md"
+      "research_md_path": "content/trends/quotabarwin.md",
+      "opportunity_score": 38,
+      "market_score": 35,
+      "competition_score": 20,
+      "demand_score": 40,
+      "seo_difficulty": 25,
+      "suggested_products": [
+        "Desktop App",
+        "CLI Tool",
+        "Plugin/Add-on"
+      ],
+      "estimated_dev_days": 14,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Extremely early stage with no validated demand beyond one mention",
+        "Large AI platform providers may build similar quota management features natively"
+      ],
+      "risk_factors_zh": [
+        "极早期阶段，除一个提及外无验证需求",
+        "大型 AI 平台可能原生内置类似的额度管理功能"
+      ],
+      "opportunity_summary_en": "QuotaBarWin is a nascent idea for a Windows system tray tool to monitor AI agent usage quotas. The single signal suggests a potential niche, but demand is unvalidated and the market is tiny. This is a high-risk, low-reward opportunity best suited for a quick MVP experiment.",
+      "opportunity_summary_zh": "QuotaBarWin 是一个用于 Windows 系统托盘监控 AI Agent 使用额度的早期想法。单一信号表明存在潜在细分市场，但需求未经验证且市场规模极小。这是一个高风险、低回报的机会，最适合快速 MVP 实验。"
     },
     {
       "id": "trend-l9gpu",
@@ -1398,6 +1752,56 @@
       "summary_zh": "一个让发件人完成工作才能进入收件箱的邮件工具。",
       "summary_en": "An email tool that makes senders work to get into your inbox.",
       "research_md_path": "content/trends/captchainbox.md"
+    },
+    {
+      "id": "trend-ai-customer-success-tools",
+      "canonical": "AI Customer Success Tools",
+      "canonical_zh": "AI 客户成功工具",
+      "aliases": [],
+      "first_seen": "2026-07-16",
+      "last_seen": "2026-07-16",
+      "stage": "nascent",
+      "score": 33,
+      "source_count": 1,
+      "total_mentions": 1,
+      "sources": [
+        "devcommunity"
+      ],
+      "growth_pct": 100,
+      "category": "AIApp",
+      "tags": [
+        "tooling",
+        "ai",
+        "saas",
+        "productivity"
+      ],
+      "summary_zh": "DEV 社区文章总结了 7 个利用 AI 减少 SaaS 流失和驱动扩展收入的平台，反映了 AI 在客户成功领域垂直应用的兴起。",
+      "summary_en": "A DEV Community article summarizes 7 platforms using AI to reduce SaaS churn and drive expansion revenue, reflecting the rise of vertical AI applications in customer success.",
+      "research_md_path": "content/trends/ai-customer-success-tools.md",
+      "opportunity_score": 52,
+      "market_score": 60,
+      "competition_score": 45,
+      "demand_score": 55,
+      "seo_difficulty": 40,
+      "suggested_products": [
+        "SaaS",
+        "AI Agent",
+        "Chrome Extension",
+        "API",
+        "Web App"
+      ],
+      "estimated_dev_days": 45,
+      "revenue_potential": 4,
+      "risk_factors_en": [
+        "Large incumbents like Salesforce or Zendesk may integrate AI features rapidly",
+        "Low current signal count indicates uncertain market traction"
+      ],
+      "risk_factors_zh": [
+        "大型现有企业如 Salesforce 或 Zendesk 可能快速集成 AI 功能",
+        "当前信号数低表明市场吸引力不确定"
+      ],
+      "opportunity_summary_en": "AI Customer Success Tools is a nascent but promising niche in the large SaaS retention market. With low competition and moderate demand, indie developers can build focused solutions like a churn prediction AI agent or a Chrome extension for health monitoring. The main risks are potential entry from big players and uncertain early traction.",
+      "opportunity_summary_zh": "AI 客户成功工具在庞大的 SaaS 留存市场中是一个有前景的新兴领域。竞争较低，需求适中，独立开发者可以构建专注的解决方案，如流失预测 AI 代理或用于健康监控的 Chrome 扩展。主要风险是大型玩家可能进入以及早期吸引力不确定。"
     },
     {
       "id": "trend-nectar",
@@ -1568,7 +1972,31 @@
       ],
       "summary_zh": "开源项目 Claude Code Templates 提供 100+ 即装即用的 Agent、命令、MCP、Hooks 配置及 Analytics 监控面板，简化 Claude Code 工作流搭建。",
       "summary_en": "The open-source project Claude Code Templates offers 100+ ready-to-use agent, command, MCP, and hooks configurations with an analytics dashboard, simplifying Claude Code workflow setup.",
-      "research_md_path": "content/trends/claude-code-templates.md"
+      "research_md_path": "content/trends/claude-code-templates.md",
+      "opportunity_score": 42,
+      "market_score": 35,
+      "competition_score": 20,
+      "demand_score": 30,
+      "seo_difficulty": 15,
+      "suggested_products": [
+        "Template/Boilerplate",
+        "Open Source",
+        "VS Code Extension",
+        "CLI Tool",
+        "SaaS"
+      ],
+      "estimated_dev_days": 14,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Low initial demand may not grow",
+        "Official Claude Code features could make templates obsolete"
+      ],
+      "risk_factors_zh": [
+        "初期需求可能无法增长",
+        "官方 Claude Code 功能可能使模板过时"
+      ],
+      "opportunity_summary_en": "Claude Code Templates is a nascent open-source project with 100+ configurations, but only 1 signal exists. The market is tiny and unvalidated. An indie developer could build a curated template marketplace, but demand and revenue are highly uncertain.",
+      "opportunity_summary_zh": "Claude Code Templates 是一个处于早期阶段的开源项目，提供 100+ 配置，但仅有一个信源。市场规模极小且未经验证。独立开发者可以构建一个精选模板市场，但需求和收入高度不确定。"
     },
     {
       "id": "trend-distributed-git-network-for-ai-agents",
@@ -1595,7 +2023,33 @@
       ],
       "summary_zh": "前 GitHub CEO 推出的为 AI Agent 设计的分布式 Git 网络，可能重塑 Agent 代码协作的基础设施。",
       "summary_en": "A distributed Git network for AI agents launched by a former GitHub CEO, potentially reshaping the infrastructure for agent code collaboration.",
-      "research_md_path": "content/trends/distributed-git-network-for-ai-agents.md"
+      "research_md_path": "content/trends/distributed-git-network-for-ai-agents.md",
+      "opportunity_score": 42,
+      "market_score": 35,
+      "competition_score": 15,
+      "demand_score": 30,
+      "seo_difficulty": 20,
+      "suggested_products": [
+        "CLI Tool",
+        "API",
+        "AI Agent",
+        "Open Source",
+        "VS Code Extension"
+      ],
+      "estimated_dev_days": 60,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Official product may already be in development by former GitHub CEO's team, creating direct competition.",
+        "Low initial demand and unclear value proposition could lead to slow adoption.",
+        "Large tech companies (e.g., GitHub, GitLab) may enter this space quickly."
+      ],
+      "risk_factors_zh": [
+        "前 GitHub CEO 团队可能已在开发官方产品，形成直接竞争。",
+        "初始需求低且价值主张不明确，可能导致采用缓慢。",
+        "大型科技公司（如 GitHub、GitLab）可能很快进入该领域。"
+      ],
+      "opportunity_summary_en": "A distributed Git network for AI agents is an early-stage concept with minimal competition and low SEO difficulty. However, demand signals are weak, and the official team may already be building a solution. The opportunity is speculative and best suited for those willing to experiment before the market matures.",
+      "opportunity_summary_zh": "为 AI Agent 设计的分布式 Git 网络是一个早期概念，竞争极少且 SEO 难度低。然而，需求信号薄弱，官方团队可能已在构建解决方案。该机会具有投机性，最适合愿意在市场成熟前进行实验的开发者。"
     },
     {
       "id": "trend-leanstral-1.5",
@@ -1640,7 +2094,31 @@
       ],
       "summary_zh": "Mistral 以 Apache 2.0 许可证发布的开源模型，代表了开源 AI 模型生态的持续扩展。",
       "summary_en": "An open-source model released by Mistral under the Apache 2.0 license, representing the continued expansion of the open-source AI model ecosystem.",
-      "research_md_path": "content/trends/leanstral-1.5.md"
+      "research_md_path": "content/trends/leanstral-1.5.md",
+      "opportunity_score": 45,
+      "market_score": 40,
+      "competition_score": 30,
+      "demand_score": 35,
+      "seo_difficulty": 25,
+      "suggested_products": [
+        "API",
+        "Open Source",
+        "CLI Tool",
+        "Web App",
+        "SaaS"
+      ],
+      "estimated_dev_days": 14,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Mistral or other major players may release superior versions, making smaller offerings obsolete.",
+        "Low user interest may lead to zero traction and wasted development effort."
+      ],
+      "risk_factors_zh": [
+        "Mistral或其他大厂可能发布更优版本，使小产品过时。",
+        "用户兴趣低可能导致零流量和开发浪费。"
+      ],
+      "opportunity_summary_en": "Leanstral 1.5 is a nascent open-source model with low competition and SEO difficulty, but very low demand and market signals. The opportunity is early but risky, best suited for a quick MVP (e.g., API wrapper or CLI tool) to test the market. Without stronger user validation, scaling is unlikely.",
+      "opportunity_summary_zh": "Leanstral 1.5是一个初期开源模型，竞争和SEO难度低，但需求和市场信号极低。机会早期但有风险，适合快速构建MVP（如API封装或CLI工具）测试市场。缺乏用户验证，难以规模化。"
     },
     {
       "id": "trend-markwise",
@@ -1664,7 +2142,29 @@
       ],
       "summary_zh": "Markwise 是一个 Chrome 扩展，支持网页划词标注、高亮、笔记、刷新恢复和本地管理，定位为轻量级网页标记工具。",
       "summary_en": "Markwise is a Chrome extension for web page annotation, highlighting, note-taking, refresh recovery, and local management, positioned as a lightweight web marking tool.",
-      "research_md_path": "content/trends/markwise.md"
+      "research_md_path": "content/trends/markwise.md",
+      "opportunity_score": 35,
+      "market_score": 25,
+      "competition_score": 70,
+      "demand_score": 35,
+      "seo_difficulty": 60,
+      "suggested_products": [
+        "Chrome Extension",
+        "Web App",
+        "SaaS"
+      ],
+      "estimated_dev_days": 15,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Large competitors (e.g., Hypothesis) may add similar features for free, eroding differentiation.",
+        "Low user acquisition due to niche audience and high competition."
+      ],
+      "risk_factors_zh": [
+        "大厂竞品（如Hypothesis）可能免费添加类似功能，削弱差异化。",
+        "小众受众和高竞争导致用户获取困难。"
+      ],
+      "opportunity_summary_en": "Markwise operates in a crowded web annotation market with low traction. The opportunity is small for a standalone extension, but could be viable as a feature within a broader productivity suite. Monetization is challenging due to free alternatives.",
+      "opportunity_summary_zh": "Markwise处于拥挤的网页标注市场，吸引力低。作为独立扩展机会小，但可作为生产力套件的一部分。变现因免费替代品而困难。"
     },
     {
       "id": "trend-ai-passport",
@@ -1690,7 +2190,31 @@
       ],
       "summary_zh": "Y Combinator 支持的 Egoist Machines 推出 AI Passport，可能是一种 AI 身份验证或能力证明系统，值得关注其具体定义和应用场景。",
       "summary_en": "Y Combinator-backed Egoist Machines launches AI Passport, potentially an AI identity verification or capability attestation system, worth watching for its specific definition and use cases.",
-      "research_md_path": "content/trends/ai-passport.md"
+      "research_md_path": "content/trends/ai-passport.md",
+      "opportunity_score": 42,
+      "market_score": 35,
+      "competition_score": 20,
+      "demand_score": 30,
+      "seo_difficulty": 15,
+      "suggested_products": [
+        "Web App",
+        "API",
+        "SaaS"
+      ],
+      "estimated_dev_days": 45,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Concept is too vague to validate demand",
+        "Large tech companies may enter with similar identity solutions",
+        "Dependence on regulatory acceptance of AI identity systems"
+      ],
+      "risk_factors_zh": [
+        "概念过于模糊，难以验证需求",
+        "大型科技公司可能推出类似身份解决方案",
+        "依赖监管对 AI 身份系统的接受度"
+      ],
+      "opportunity_summary_en": "AI Passport is a very early-stage concept from a YC-backed startup, likely focusing on AI identity or capability attestation. The lack of information and market signals suggests high uncertainty, making it a speculative opportunity. Developers should wait for clearer use case definitions before committing resources.",
+      "opportunity_summary_zh": "AI Passport 是 YC 支持初创公司提出的一个非常早期的概念，可能聚焦于 AI 身份或能力证明。由于缺乏信息和市场信号，不确定性很高，属于投机性机会。开发者应等待更清晰的用例定义后再投入资源。"
     },
     {
       "id": "trend-sageport",
@@ -1734,7 +2258,31 @@
       ],
       "summary_zh": "一个开源的桌面 SSH 工作台，整合了终端、SFTP、凭据管理、AI 助手等功能，代表了服务器管理工具的整合趋势。",
       "summary_en": "An open-source desktop SSH workbench integrating terminal, SFTP, credential management, and AI assistant, representing the trend in server management tool consolidation.",
-      "research_md_path": "content/trends/sageport.md"
+      "research_md_path": "content/trends/sageport.md",
+      "opportunity_score": 42,
+      "market_score": 35,
+      "competition_score": 30,
+      "demand_score": 40,
+      "seo_difficulty": 50,
+      "suggested_products": [
+        "Desktop App",
+        "Open Source",
+        "VS Code Extension",
+        "AI Agent",
+        "CLI Tool"
+      ],
+      "estimated_dev_days": 45,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Large cloud providers (AWS, Azure) may bundle similar SSH tools",
+        "Open-source alternatives may fragment user base"
+      ],
+      "risk_factors_zh": [
+        "大型云厂商（AWS、Azure）可能捆绑类似SSH工具",
+        "开源替代品可能分散用户基础"
+      ],
+      "opportunity_summary_en": "Sageport is an early-stage open-source SSH workbench with AI integration, targeting a niche but consolidating market. Low competition and nascent traction offer a window, but demand is moderate and monetization challenging. Focus on differentiation through AI assistant and seamless credential management to capture developer mindshare.",
+      "opportunity_summary_zh": "Sageport是一款集成AI的开源SSH工作台，瞄准小众但整合中的市场。低竞争和初期势头提供了窗口期，但需求温和且变现困难。应通过AI助手和无缝凭据管理实现差异化，以获取开发者关注。"
     },
     {
       "id": "trend-ai-tattoo-generator",
@@ -3708,6 +4256,329 @@
       "summary_zh": "Hacker News 上 \"Are we offloading too much of our thinking to AI?\" 获得 348 赞和 348 评论，代表对 AI 依赖的深层讨论。",
       "summary_en": "\"Are we offloading too much of our thinking to AI?\" on Hacker News gained 348 upvotes and 348 comments, representing deep discussion on AI dependency.",
       "research_md_path": "content/trends/ai-over-reliance-concerns.md"
+    },
+    {
+      "id": "trend-inkling-open-weight-model",
+      "canonical": "Inkling Open-Weight Model",
+      "canonical_zh": "Inkling 开放权重模型",
+      "aliases": [],
+      "first_seen": "2026-07-16",
+      "last_seen": "2026-07-16",
+      "stage": "nascent",
+      "score": 0,
+      "source_count": 0,
+      "total_mentions": 0,
+      "sources": [],
+      "growth_pct": 100,
+      "category": "AIModel",
+      "tags": [],
+      "summary_zh": "Thinking Machines 发布了开源的、低成本、抗审查的多模态语言模型 Inkling，在多个科技媒体和 Hacker News 上引发热议，代表了开源 AI 模型的新方向。",
+      "summary_en": "Thinking Machines released Inkling, an open-weight multimodal language model focused on low cost and censorship resistance, sparking wide discussion across multiple tech outlets and Hacker News, representing a new direction for open-source AI.",
+      "research_md_path": "content/trends/inkling-open-weight-model.md"
+    },
+    {
+      "id": "trend-styleseed-design-rules-engine",
+      "canonical": "StyleSeed Design-Rules Engine",
+      "canonical_zh": "StyleSeed 设计规则引擎",
+      "aliases": [],
+      "first_seen": "2026-07-16",
+      "last_seen": "2026-07-16",
+      "stage": "nascent",
+      "score": 0,
+      "source_count": 0,
+      "total_mentions": 0,
+      "sources": [],
+      "growth_pct": 100,
+      "category": "AIApp",
+      "tags": [],
+      "summary_zh": "StyleSeed 是一个设计规则引擎，旨在让 AI Agent 不再生成千篇一律的 UI，在 Hacker News 上获得关注，反映了 AI 生成 UI 质量控制的迫切需求。",
+      "summary_en": "StyleSeed is a design-rules engine that prevents AI agents from building generic UI, gaining traction on Hacker News and highlighting the critical need for quality control in AI-generated interfaces.",
+      "research_md_path": "content/trends/styleseed-design-rules-engine.md"
+    },
+    {
+      "id": "trend-multi-agent-clinical-symptom-detection",
+      "canonical": "Multi-Agent Clinical Symptom Detection",
+      "canonical_zh": "多 Agent 临床症状检测",
+      "aliases": [],
+      "first_seen": "2026-07-16",
+      "last_seen": "2026-07-16",
+      "stage": "nascent",
+      "score": 0,
+      "source_count": 0,
+      "total_mentions": 0,
+      "sources": [],
+      "growth_pct": 100,
+      "category": "AIAgent",
+      "tags": [],
+      "summary_zh": "ArXiv 论文提出了一种无需微调的多 Agent 系统用于自主临床症状检测，代表了 Agent 在医疗领域的创新应用方向。",
+      "summary_en": "An ArXiv paper introduces a multi-agent system for autonomous, fine-tuning-free clinical symptom detection, representing an innovative application of agents in healthcare.",
+      "research_md_path": "content/trends/multi-agent-clinical-symptom-detection.md"
+    },
+    {
+      "id": "trend-ode-enterprise-ai-adoption",
+      "canonical": "Ode Enterprise AI Adoption",
+      "canonical_zh": "Ode 企业 AI 采用计划",
+      "aliases": [],
+      "first_seen": "2026-07-16",
+      "last_seen": "2026-07-16",
+      "stage": "nascent",
+      "score": 0,
+      "source_count": 0,
+      "total_mentions": 0,
+      "sources": [],
+      "growth_pct": 100,
+      "category": "Industry",
+      "tags": [],
+      "summary_zh": "Anthropic 和 Blackstone 联合推出 Ode 计划，以加速企业采用 AI，反映了大型资本与 AI 公司合作推动企业市场的新模式。",
+      "summary_en": "Anthropic and Blackstone jointly launched the Ode initiative to accelerate enterprise AI adoption, reflecting a new model of collaboration between major capital and AI companies.",
+      "research_md_path": "content/trends/ode-enterprise-ai-adoption.md"
+    },
+    {
+      "id": "trend-stripe-advent-paypal-acquisition",
+      "canonical": "Stripe-Advent PayPal Acquisition",
+      "canonical_zh": "Stripe 与 Advent 联合收购 PayPal",
+      "aliases": [],
+      "first_seen": "2026-07-16",
+      "last_seen": "2026-07-16",
+      "stage": "nascent",
+      "score": 0,
+      "source_count": 0,
+      "total_mentions": 0,
+      "sources": [],
+      "growth_pct": 100,
+      "category": "Industry",
+      "tags": [],
+      "summary_zh": "Stripe 和 Advent 联合提出收购 PayPal 的报价，在 Hacker News 上引发 300+ 讨论，可能重塑支付行业格局。",
+      "summary_en": "Stripe and Advent have made a joint offer to acquire PayPal, sparking 300+ discussions on Hacker News and potentially reshaping the payments industry landscape.",
+      "research_md_path": "content/trends/stripe-advent-paypal-acquisition.md"
+    },
+    {
+      "id": "trend-grok-build-open-source",
+      "canonical": "Grok Build Open Source",
+      "canonical_zh": "Grok Build 开源",
+      "aliases": [],
+      "first_seen": "2026-07-16",
+      "last_seen": "2026-07-16",
+      "stage": "nascent",
+      "score": 0,
+      "source_count": 0,
+      "total_mentions": 0,
+      "sources": [],
+      "growth_pct": 100,
+      "category": "OpenSource",
+      "tags": [],
+      "summary_zh": "Grok Build 宣布开源，在 Hacker News 上获得 180+ 赞和 200+ 评论，代表了 AI 构建工具开源化的趋势。",
+      "summary_en": "Grok Build has been open-sourced, receiving 180+ upvotes and 200+ comments on Hacker News, representing the trend of open-sourcing AI build tools.",
+      "research_md_path": "content/trends/grok-build-open-source.md"
+    },
+    {
+      "id": "trend-c-modular-build-tool-mcpp",
+      "canonical": "C++ Modular Build Tool (mcpp)",
+      "canonical_zh": "C++ 模块化构建工具 mcpp",
+      "aliases": [],
+      "first_seen": "2026-07-16",
+      "last_seen": "2026-07-16",
+      "stage": "nascent",
+      "score": 0,
+      "source_count": 0,
+      "total_mentions": 0,
+      "sources": [],
+      "growth_pct": 100,
+      "category": "DevTools",
+      "tags": [],
+      "summary_zh": "专为 C++ 模块化打造的构建工具 mcpp 新增了 gcc16/mingw 支持，可在 Linux 上交叉编译 Windows 可执行文件，解决了 C++ 模块化生态中的关键痛点。",
+      "summary_en": "The mcpp build tool designed for C++ modules adds gcc16/mingw support, enabling cross-compilation of Windows executables from Linux, addressing a key pain point in the C++ modular ecosystem.",
+      "research_md_path": "content/trends/c-modular-build-tool-mcpp.md"
+    },
+    {
+      "id": "trend-local-ai-routing-gateway-airoute",
+      "canonical": "Local AI Routing Gateway (AiRoute)",
+      "canonical_zh": "本地 AI 路由转发网关 AiRoute",
+      "aliases": [],
+      "first_seen": "2026-07-16",
+      "last_seen": "2026-07-16",
+      "stage": "nascent",
+      "score": 0,
+      "source_count": 0,
+      "total_mentions": 0,
+      "sources": [],
+      "growth_pct": 100,
+      "category": "DevTools",
+      "tags": [],
+      "summary_zh": "开发者分享 AiRoute，一个本地 AI 路由转发网关，用于管理多个本地 AI 模型的请求分发，反映了本地 AI 部署中路由管理需求的兴起。",
+      "summary_en": "A developer shared AiRoute, a local AI routing gateway for managing request distribution across multiple local AI models, reflecting the growing need for routing management in local AI deployments.",
+      "research_md_path": "content/trends/local-ai-routing-gateway-airoute.md"
+    },
+    {
+      "id": "trend-open-source-artifact-repository-kkrepo",
+      "canonical": "Open-Source Artifact Repository (kkRepo)",
+      "canonical_zh": "开源制品仓库 kkRepo",
+      "aliases": [],
+      "first_seen": "2026-07-16",
+      "last_seen": "2026-07-16",
+      "stage": "nascent",
+      "score": 0,
+      "source_count": 0,
+      "total_mentions": 0,
+      "sources": [],
+      "growth_pct": 100,
+      "category": "OpenSource",
+      "tags": [],
+      "summary_zh": "kkRepo v0.4.0 发布，作为 Nexus 的开源平替，新增 PostgreSQL 支持和 Composer/PHP 私服支持，反映了对开源、自托管制品仓库的需求。",
+      "summary_en": "kkRepo v0.4.0, an open-source alternative to Nexus, adds PostgreSQL support and Composer/PHP private server support, reflecting demand for open-source, self-hosted artifact repositories.",
+      "research_md_path": "content/trends/open-source-artifact-repository-kkrepo.md"
+    },
+    {
+      "id": "trend-streaming-interactive-markdown-component",
+      "canonical": "Streaming Interactive Markdown Component",
+      "canonical_zh": "流式交互式 Markdown 组件",
+      "aliases": [],
+      "first_seen": "2026-07-16",
+      "last_seen": "2026-07-16",
+      "stage": "nascent",
+      "score": 0,
+      "source_count": 0,
+      "total_mentions": 0,
+      "sources": [],
+      "growth_pct": 100,
+      "category": "DevTools",
+      "tags": [],
+      "summary_zh": "面向流式场景的开源交互式 Markdown 组件，适配 AI 对话式输出，代表了 AI 内容展示组件化的新需求。",
+      "summary_en": "An open-source interactive Markdown component designed for streaming scenarios, adapting to AI conversational output, represents a new need for componentized AI content display.",
+      "research_md_path": "content/trends/streaming-interactive-markdown-component.md"
+    },
+    {
+      "id": "trend-crewai-framework-update",
+      "canonical": "CrewAI Framework Update",
+      "canonical_zh": "CrewAI 框架更新",
+      "aliases": [],
+      "first_seen": "2026-07-16",
+      "last_seen": "2026-07-16",
+      "stage": "nascent",
+      "score": 0,
+      "source_count": 0,
+      "total_mentions": 0,
+      "sources": [],
+      "growth_pct": 100,
+      "category": "AIAgent",
+      "tags": [],
+      "summary_zh": "CrewAI v1.15.2 在 PyPI 上更新，作为编排角色扮演自主 AI Agent 的框架，持续迭代反映了 Agent 编排领域的活跃度。",
+      "summary_en": "CrewAI v1.15.2 updated on PyPI; as a framework for orchestrating role-playing autonomous AI agents, its continuous iteration reflects the vibrancy of the agent orchestration field.",
+      "research_md_path": "content/trends/crewai-framework-update.md"
+    },
+    {
+      "id": "trend-ai-sender-verification-inbox-filter",
+      "canonical": "AI Sender Verification (Inbox Filter)",
+      "canonical_zh": "AI 发件人验证收件箱过滤",
+      "aliases": [],
+      "first_seen": "2026-07-16",
+      "last_seen": "2026-07-16",
+      "stage": "nascent",
+      "score": 0,
+      "source_count": 0,
+      "total_mentions": 0,
+      "sources": [],
+      "growth_pct": 100,
+      "category": "AIApp",
+      "tags": [],
+      "summary_zh": "Show HN 项目让发件人必须完成工作才能进入收件箱，利用 AI 对抗垃圾邮件，反映了 AI 在邮件过滤中的创新应用。",
+      "summary_en": "A Show HN project forces senders to work to get into your inbox, using AI to combat spam, reflecting innovative AI applications in email filtering.",
+      "research_md_path": "content/trends/ai-sender-verification-inbox-filter.md"
+    },
+    {
+      "id": "trend-macos-usb-c-cable-identifier",
+      "canonical": "macOS USB-C Cable Identifier",
+      "canonical_zh": "macOS USB-C 线缆识别工具",
+      "aliases": [],
+      "first_seen": "2026-07-16",
+      "last_seen": "2026-07-16",
+      "stage": "nascent",
+      "score": 0,
+      "source_count": 0,
+      "total_mentions": 0,
+      "sources": [],
+      "growth_pct": 100,
+      "category": "DevTools",
+      "tags": [],
+      "summary_zh": "whatcable 是一个 macOS 菜单栏应用，用通俗语言告诉你每根 USB-C 线缆的实际能力，解决了硬件调试中的常见痛点。",
+      "summary_en": "whatcable is a macOS menu bar app that tells you in plain English what each USB-C cable can actually do, solving a common pain point in hardware debugging.",
+      "research_md_path": "content/trends/macos-usb-c-cable-identifier.md"
+    },
+    {
+      "id": "trend-macos-clipboard-history-tool-nimclip",
+      "canonical": "macOS Clipboard History Tool (Nimclip)",
+      "canonical_zh": "macOS 原生剪贴板历史工具 Nimclip",
+      "aliases": [],
+      "first_seen": "2026-07-16",
+      "last_seen": "2026-07-16",
+      "stage": "nascent",
+      "score": 0,
+      "source_count": 0,
+      "total_mentions": 0,
+      "sources": [],
+      "growth_pct": 100,
+      "category": "Productivity",
+      "tags": [],
+      "summary_zh": "Nimclip 是开源、原生、本地保存的 macOS 剪贴板历史工具，反映了对隐私友好型效率工具的需求。",
+      "summary_en": "Nimclip is an open-source, native, locally-saved macOS clipboard history tool, reflecting demand for privacy-friendly productivity tools.",
+      "research_md_path": "content/trends/macos-clipboard-history-tool-nimclip.md"
+    },
+    {
+      "id": "trend-ai-driven-saas-optimization-debate",
+      "canonical": "AI-Driven SaaS Optimization Debate",
+      "canonical_zh": "AI 驱动 SaaS 优化讨论",
+      "aliases": [],
+      "first_seen": "2026-07-16",
+      "last_seen": "2026-07-16",
+      "stage": "nascent",
+      "score": 0,
+      "source_count": 0,
+      "total_mentions": 0,
+      "sources": [],
+      "growth_pct": 100,
+      "category": "DX",
+      "tags": [],
+      "summary_zh": "微软报告显示 AI 编程工具提升 24% 效率，但开发者社区讨论其隐性成本，反映了对 AI 辅助开发效果的深入反思。",
+      "summary_en": "Microsoft's report shows AI coding tools boost efficiency by 24%, but developer community discussions about hidden costs reflect deep reflection on the true impact of AI-assisted development.",
+      "research_md_path": "content/trends/ai-driven-saas-optimization-debate.md"
+    },
+    {
+      "id": "trend-vibe-coding-personal-cloud-storage",
+      "canonical": "Vibe Coding Personal Cloud Storage",
+      "canonical_zh": "Vibe Coding 个人云盘",
+      "aliases": [],
+      "first_seen": "2026-07-16",
+      "last_seen": "2026-07-16",
+      "stage": "nascent",
+      "score": 0,
+      "source_count": 0,
+      "total_mentions": 0,
+      "sources": [],
+      "growth_pct": 100,
+      "category": "AIApp",
+      "tags": [],
+      "summary_zh": "开发者因不满某度云盘限速，用 vibe coding 方式自制个人云盘备份 iPhone 照片，反映了 AI 辅助开发赋能个人工具创新的趋势。",
+      "summary_en": "A developer frustrated with Baidu Cloud's speed limits used vibe coding to build a personal cloud storage for iPhone photo backups, reflecting the trend of AI-assisted development empowering personal tool innovation.",
+      "research_md_path": "content/trends/vibe-coding-personal-cloud-storage.md"
+    },
+    {
+      "id": "trend-online-photobooth-going-global",
+      "canonical": "Online Photobooth Going Global",
+      "canonical_zh": "在线照相馆出海",
+      "aliases": [],
+      "first_seen": "2026-07-16",
+      "last_seen": "2026-07-16",
+      "stage": "nascent",
+      "score": 0,
+      "source_count": 0,
+      "total_mentions": 0,
+      "sources": [],
+      "growth_pct": 100,
+      "category": "Consumer",
+      "tags": [],
+      "summary_zh": "PhotoBooth100.com 是一款可爱的在线照相馆网页应用，支持多语言，数据不存服务器，代表了独立开发者出海试水的新方向。",
+      "summary_en": "PhotoBooth100.com is a cute online photobooth web app with multi-language support and serverless data storage, representing a new direction for indie developers testing global markets.",
+      "research_md_path": "content/trends/online-photobooth-going-global.md"
     }
   ],
   "_version": "1.0"
