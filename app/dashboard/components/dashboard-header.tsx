@@ -15,9 +15,9 @@ export function DashboardHeader({ lang, onToggleLang, title, date, dates, onSele
     <header className="dash-header">
       <div className="dash-header-left">
         <a href="/" className="site-nav-logo" style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-1)' }}>
-          <svg className="icon icon-accent" viewBox="0 0 24 24" aria-hidden="true" width="20" height="20">
-            <circle cx="12" cy="12" r="4" />
-            <path d="M4.93 4.93a10 10 0 0 1 14.14 0M4.93 19.07a10 10 0 0 0 14.14 0" />
+          <svg className="icon icon-accent" viewBox="0 0 24 24" aria-hidden="true" width="20" height="20" fill="none">
+            <circle cx="12" cy="12" r="4" fill="currentColor" />
+            <path d="M4.93 4.93a10 10 0 0 1 14.14 0M4.93 19.07a10 10 0 0 0 14.14 0" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
           </svg>
           {title}
         </a>

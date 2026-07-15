@@ -117,7 +117,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <a className="skip-link" href="#main-content">Skip to content</a>
         <nav className="site-nav" aria-label="Main navigation">
           <div className="site-nav-inner">
-            <a href="/" className="site-nav-logo">AimFast.Dev</a>
+            <a href="/" className="site-nav-logo" style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-1)' }}>
+              <svg className="icon icon-accent" viewBox="0 0 24 24" aria-hidden="true" width="20" height="20" fill="none">
+                <circle cx="12" cy="12" r="4" fill="currentColor" />
+                <path d="M4.93 4.93a10 10 0 0 1 14.14 0M4.93 19.07a10 10 0 0 0 14.14 0" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+              </svg>
+              AimFast.Dev
+            </a>
             <input type="checkbox" id="nav-toggle" className="nav-toggle-input" aria-hidden="true" />
             <label htmlFor="nav-toggle" className="nav-toggle-label" aria-label="Toggle navigation menu">
               <span className="nav-toggle-icon" />
