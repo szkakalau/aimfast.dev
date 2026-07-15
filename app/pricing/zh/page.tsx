@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
-import { Clock, Eye, TrendingDown } from 'lucide-react';
+import { Check, Star } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: '定价 — AimFast.Dev',
   description:
-    '一个方案，全部包含。$19/月。面向独立开发者的每日市场情报 — 产品机会、竞争对手追踪、趋势分析。',
+    '三档方案，面向独立开发者。Starter $19/月起，趋势发现。Builder $39/月，每日决策 + 竞品监控。Team $79/月，团队共享 + API。',
   robots: { index: true, follow: true },
   alternates: {
     canonical: 'https://www.aimfast.dev/pricing/zh/',
@@ -13,9 +13,10 @@ export const metadata: Metadata = {
       'zh-CN': 'https://www.aimfast.dev/pricing/zh/',
     },
   },
+  other: { 'last-modified': new Date().toISOString().slice(0, 10) },
   openGraph: {
     title: '定价 — AimFast.Dev',
-    description: '面向独立开发者的每日市场情报。$19/月，14 天免费试用。',
+    description: '三档方案，面向独立开发者。Starter $19/月、Builder $39/月、Team $79/月。所有方案均含 14 天免费试用。',
     url: 'https://www.aimfast.dev/pricing/zh/',
     siteName: 'AimFast.Dev',
     locale: 'zh-CN',
@@ -31,10 +32,80 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: '定价 — AimFast.Dev',
-    description: '面向独立开发者的每日市场情报。$19/月。',
+    description: '三档方案，面向独立开发者。Starter $19/月、Builder $39/月、Team $79/月。',
     images: ['https://www.aimfast.dev/og-pricing.png'],
   },
 };
+
+interface Plan {
+  id: string;
+  name: string;
+  badge?: string;
+  monthly: number;
+  yearly: number;
+  description: string;
+  features: string[];
+  cta: string;
+  highlight?: boolean;
+}
+
+const PLANS: Plan[] = [
+  {
+    id: 'starter',
+    name: 'Starter',
+    monthly: 19,
+    yearly: 190,
+    description: '给好奇的 Builder——在趋势爆发前看到它。',
+    features: [
+      '每日趋势发现（11+ 来源）',
+      '浏览所有追踪词条',
+      '阶段与分类筛选',
+      '基础词条追踪（3 个）',
+      '每周邮件简报',
+      '14 天免费试用',
+    ],
+    cta: '开始免费试用',
+  },
+  {
+    id: 'builder',
+    name: 'Builder',
+    badge: '最受欢迎',
+    monthly: 39,
+    yearly: 390,
+    description: '每天早上一份决策。用情报而非猜测来构建产品。',
+    features: [
+      'Starter 全部功能',
+      '每日验证决策卡片',
+      '竞争对手与话题监控（最多 10 个）',
+      '完整深度研究报告（≥60 分）',
+      'AI 评分与跨平台验证',
+      '完整报告存档',
+      '无限词条追踪',
+      '优先邮件支持',
+      '14 天免费试用',
+    ],
+    cta: '开始免费试用',
+    highlight: true,
+  },
+  {
+    id: 'team',
+    name: 'Team',
+    badge: '团队版',
+    monthly: 79,
+    yearly: 790,
+    description: '小团队共享情报。统一方向，减少争论。',
+    features: [
+      'Builder 全部功能',
+      '3 个团队席位',
+      '共享监控面板',
+      'CSV 导出',
+      'API 访问（即将上线）',
+      '新功能优先体验',
+      '14 天免费试用',
+    ],
+    cta: '开始免费试用',
+  },
+];
 
 const FAQ_ITEMS = [
   {
@@ -47,15 +118,19 @@ const FAQ_ITEMS = [
   },
   {
     q: '我可以追踪竞争对手吗？',
-    a: '可以 — 这就是监控引擎。添加最多 10 个竞争对手、话题、人物或技术栈。每天你会看到他们做了什么，以及你该做什么。不只是"他们上线了 X"——我们会告诉你"他们的发布揭示了一个你可以填补的空白。"',
+    a: '可以——Builder 及以上方案包含此功能。添加最多 10 个竞争对手、话题、人物或技术栈。每天你会看到他们做了什么，以及你该做什么。不只是"他们上线了 X"——我们会告诉你"他们的发布揭示了一个你可以填补的空白。"',
   },
   {
     q: '如果我错过了一天怎么办？',
-    a: '每份报告都会存档。你可以随时在 Dashboard 中浏览过去的每日决策和完整报告。价值会不断累积 — 规律需要几周而非几天才能浮现。',
+    a: '每份报告都会存档。你可以随时在 Dashboard 中浏览过去的每日决策和完整报告。价值会不断累积——规律需要几周而非几天才能浮现。',
   },
   {
     q: '有长期合同吗？',
-    a: '没有。随时取消 — 月付或年付均可。取消后，你仍可在当前账单周期结束前使用。没有套路，没有挽留电话。',
+    a: '没有。随时取消——月付或年付均可。取消后，你仍可在当前账单周期结束前使用。没有套路，没有挽留电话。',
+  },
+  {
+    q: '可以中途升级或降级吗？',
+    a: '可以——随时切换方案。升级立即生效，费用按比例计算。降级在当前账单周期结束后生效。',
   },
 ];
 
@@ -77,101 +152,172 @@ export default function PricingZhPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 
-      {/* ═══════ Pain Cards — 不知道的代价 ═══════ */}
-      <section className="pain-cards" style={{ padding: 'var(--space-8) 0' }}>
-        <div className="section-header">
-          <h1>不知道的代价</h1>
-          <p>
-            每天早上没有市场情报，你都可能付出以下三种代价之一。
-          </p>
-        </div>
-
-        <div className="pain-grid">
-          <div className="pain-card">
-            <Clock size={32} className="pain-icon" />
-            <h3>方向浪费</h3>
-            <p>
-              你花了 2 周做了一个没人要的功能。如果你 10 天前就知道需求在衰退，
-              你会选择做别的。
-            </p>
-            <div className="pain-solution">
-              <span className="pain-arrow">→</span>
-              每日决策卡片告诉你该做什么 — 以及该跳过什么
-            </div>
-          </div>
-
-          <div className="pain-card pain-card-accent">
-            <Eye size={32} className="pain-icon" />
-            <h3>竞争盲区</h3>
-            <p>
-              你的竞争对手 3 天前改了定价。他们的免费用户在找替代品。
-              你不知道 — 直到现在。
-            </p>
-            <div className="pain-solution">
-              <span className="pain-arrow">→</span>
-              监控最多 10 个竞争对手、话题或技术栈
-            </div>
-          </div>
-
-          <div className="pain-card">
-            <TrendingDown size={32} className="pain-icon" />
-            <h3>趋势滞后</h3>
-            <p>
-              一个新的分发渠道正在起飞。早期采用者以几乎零成本获取客户。
-              等你听说了，窗口已经关闭了。
-            </p>
-            <div className="pain-solution">
-              <span className="pain-arrow">→</span>
-              每日扫描 11+ 来源，捕捉峰值前的信号
-            </div>
-          </div>
-        </div>
+      {/* ═══════ Hero ═══════ */}
+      <section style={{ padding: 'var(--space-10) 0 var(--space-6)', textAlign: 'center' }}>
+        <h1 style={{ fontSize: '2.25rem', fontWeight: 700, margin: '0 0 var(--space-3)' }}>
+          每天早上，一份决策
+        </h1>
+        <p style={{ fontSize: '1.125rem', color: 'var(--color-text-secondary)', maxWidth: '560px', margin: '0 auto', lineHeight: 1.6 }}>
+          三档方案，同一个承诺：不再猜测该做什么。
+          所有方案均含 14 天免费试用——无需信用卡。
+        </p>
       </section>
 
-      {/* ═══════ Pricing ═══════ */}
-      <section className="pricing-section" style={{ padding: 'var(--space-8) 0' }}>
-        <div className="section-header">
-          <h2>简单定价</h2>
-          <p>
-            一个方案，全部包含。没有按人头收费，没有功能分层。
-            你要么获得全部价值，要么取消 — 不必难为情。
-          </p>
+      {/* ═══════ Pricing Cards ═══════ */}
+      <section style={{ padding: '0 0 var(--space-8)', maxWidth: '960px', margin: '0 auto' }}>
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(3, 1fr)',
+          gap: 'var(--space-5)',
+          alignItems: 'start',
+        }}>
+          {PLANS.map((plan) => (
+            <div
+              key={plan.id}
+              style={{
+                position: 'relative',
+                border: plan.highlight
+                  ? '2px solid var(--color-accent, #2563eb)'
+                  : '1px solid var(--color-border, #e5e7eb)',
+                borderRadius: '12px',
+                padding: 'var(--space-6)',
+                background: plan.highlight
+                  ? 'var(--color-surface, #fff)'
+                  : 'var(--color-bg, #f9fafb)',
+                boxShadow: plan.highlight
+                  ? '0 4px 24px rgba(37, 99, 235, 0.12)'
+                  : 'none',
+              }}
+            >
+              {/* Badge */}
+              {plan.badge && (
+                <div style={{
+                  position: 'absolute',
+                  top: '-13px',
+                  left: '50%',
+                  transform: 'translateX(-50%)',
+                  background: plan.highlight ? 'var(--color-accent, #2563eb)' : 'var(--color-text-secondary, #6b7280)',
+                  color: '#fff',
+                  fontSize: '0.75rem',
+                  fontWeight: 600,
+                  padding: '4px 14px',
+                  borderRadius: '999px',
+                  whiteSpace: 'nowrap',
+                }}>
+                  {plan.badge === '最受欢迎' && (
+                    <Star size={12} style={{ display: 'inline', marginRight: '4px', verticalAlign: '-1px' }} />
+                  )}
+                  {plan.badge}
+                </div>
+              )}
+
+              {/* Plan Name */}
+              <h2 style={{
+                fontSize: '1.25rem',
+                fontWeight: 700,
+                margin: plan.badge ? 'var(--space-3) 0 var(--space-1)' : '0 0 var(--space-1)',
+              }}>
+                {plan.name}
+              </h2>
+
+              {/* Description */}
+              <p style={{
+                fontSize: '0.85rem',
+                color: 'var(--color-text-secondary)',
+                margin: '0 0 var(--space-4)',
+                minHeight: '2.5em',
+                lineHeight: 1.4,
+              }}>
+                {plan.description}
+              </p>
+
+              {/* Price */}
+              <div style={{ marginBottom: 'var(--space-4)' }}>
+                <span style={{ fontSize: '2.5rem', fontWeight: 800, lineHeight: 1 }}>
+                  ${plan.monthly}
+                </span>
+                <span style={{ fontSize: '0.95rem', color: 'var(--color-text-secondary)' }}>
+                  /月
+                </span>
+                <div style={{ fontSize: '0.8rem', color: 'var(--color-text-muted, #9ca3af)', marginTop: '2px' }}>
+                  或 ${plan.yearly}/年 — 省 ${plan.monthly * 12 - plan.yearly}
+                </div>
+              </div>
+
+              {/* CTA */}
+              <a
+                href="https://tally.so/r/placeholder"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: 'block',
+                  textAlign: 'center',
+                  padding: '12px 0',
+                  borderRadius: '8px',
+                  fontWeight: 600,
+                  fontSize: '0.95rem',
+                  textDecoration: 'none',
+                  marginBottom: 'var(--space-5)',
+                  transition: 'all 150ms ease-out',
+                  background: plan.highlight
+                    ? 'var(--color-accent, #2563eb)'
+                    : 'var(--color-bg, #f3f4f6)',
+                  color: plan.highlight ? '#fff' : 'var(--color-text, #111827)',
+                  border: plan.highlight ? 'none' : '1px solid var(--color-border, #d1d5db)',
+                }}
+              >
+                {plan.cta} →
+              </a>
+
+              {/* Features */}
+              <ul style={{
+                listStyle: 'none',
+                padding: 0,
+                margin: 0,
+                fontSize: '0.875rem',
+                lineHeight: 1.6,
+              }}>
+                {plan.features.map((f) => (
+                  <li
+                    key={f}
+                    style={{
+                      display: 'flex',
+                      alignItems: 'flex-start',
+                      gap: 'var(--space-2)',
+                      marginBottom: 'var(--space-2)',
+                    }}
+                  >
+                    <Check
+                      size={16}
+                      style={{
+                        flexShrink: 0,
+                        marginTop: '4px',
+                        color: plan.highlight
+                          ? 'var(--color-accent, #2563eb)'
+                          : 'var(--color-text-secondary, #6b7280)',
+                      }}
+                    />
+                    {f}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
 
-        <div className="pricing-card">
-          <div className="pricing-badge">全部功能</div>
-
-          <div className="pricing-amount-row">
-            <span className="pricing-dollar">$</span>
-            <span className="pricing-number">19</span>
-            <span className="pricing-period">/月</span>
-          </div>
-          <div className="pricing-annual">或 $190/年 — 省 $38</div>
-
-          <ul className="pricing-features">
-            <li>✓ 每日验证的产品机会</li>
-            <li>✓ 竞争对手和话题追踪（最多 10 个）</li>
-            <li>✓ 完整报告存档</li>
-            <li>✓ 信号 Dashboard 含系统脉搏</li>
-            <li>✓ AI 助手（即将上线）</li>
-            <li>✓ 14 天免费试用</li>
-          </ul>
-
-          <a
-            href="https://tally.so/r/placeholder"
-            className="btn btn-primary pricing-cta"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            开始免费试用 →
-          </a>
-
-          <div className="pricing-cancel">随时取消。无需理由。</div>
-        </div>
+        {/* Money-back note */}
+        <p style={{
+          textAlign: 'center',
+          fontSize: '0.85rem',
+          color: 'var(--color-text-muted, #9ca3af)',
+          marginTop: 'var(--space-4)',
+        }}>
+          所有方案均含 14 天免费试用。随时取消——无需理由。
+        </p>
       </section>
 
       {/* ═══════ FAQ ═══════ */}
-      <section className="faq-section" style={{ padding: 'var(--space-8) 0', maxWidth: '640px', margin: '0 auto' }}>
+      <section style={{ padding: 'var(--space-8) 0', maxWidth: '640px', margin: '0 auto' }}>
         <div className="section-header">
           <h2>常见问题</h2>
         </div>
@@ -187,10 +333,10 @@ export default function PricingZhPage() {
       </section>
 
       {/* ═══════ Footer CTA ═══════ */}
-      <section className="footer-cta" style={{ textAlign: 'center', padding: 'var(--space-8) 0 var(--space-10)' }}>
-        <h2>你在构建。他们在旁观。</h2>
-        <p style={{ color: 'var(--color-text-secondary)', marginBottom: 'var(--space-3)', fontSize: '1rem' }}>
-          开始 14 天免费试用。每天早上一条可执行的情报。
+      <section style={{ textAlign: 'center', padding: 'var(--space-8) 0 var(--space-10)' }}>
+        <h2>14 天免费。每天早上，一份决策。</h2>
+        <p style={{ color: 'var(--color-text-secondary)', marginBottom: 'var(--space-4)', fontSize: '1rem' }}>
+          无需信用卡。随时取消。
         </p>
         <a
           href="https://tally.so/r/placeholder"
@@ -199,14 +345,16 @@ export default function PricingZhPage() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          获取早期访问 →
+          开始构建 →
         </a>
       </section>
 
       {/* ═══════ Footer ═══════ */}
       <footer className="site-footer">
         <div className="footer-links">
-          <a href="/">English</a>
+          <a href="/pricing/">English</a>
+          <span className="footer-sep">|</span>
+          <a href="/">Trends</a>
           <span className="footer-sep">|</span>
           <a href="/dashboard/">Dashboard</a>
         </div>

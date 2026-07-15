@@ -138,7 +138,7 @@ export default function HomePage() {
             name: 'Is AimFast.Dev free?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: `Yes — trend discovery and tracking is completely free. A paid plan ($19/mo) adds daily decision briefs, competitor monitoring, and full pipeline access. 14-day free trial, no credit card required.`,
+              text: `Yes — trend discovery and tracking is completely free. Paid plans (from $19/mo) add daily decision briefs, competitor monitoring, and full pipeline access. 14-day free trial, no credit card required.`,
             },
           },
         ],

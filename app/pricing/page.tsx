@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
-import { Clock, Eye, TrendingDown } from 'lucide-react';
+import { Check, Star } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Pricing — AimFast.Dev',
   description:
-    'One plan, everything included. $19/mo. Daily market intelligence for indie builders — product opportunities, competitor tracking, trend analysis.',
+    'Three plans for indie builders. Starter $19/mo for trend discovery. Builder $39/mo with daily decisions + competitor monitoring. Team $79/mo with shared boards + API.',
   robots: { index: true, follow: true },
   alternates: {
     canonical: 'https://www.aimfast.dev/pricing/',
@@ -13,11 +13,10 @@ export const metadata: Metadata = {
       'zh-CN': 'https://www.aimfast.dev/pricing/',
     },
   },
-  // Signals freshness to search engines (static export — no server-side lastmod)
   other: { 'last-modified': new Date().toISOString().slice(0, 10) },
   openGraph: {
     title: 'Pricing — AimFast.Dev',
-    description: 'Daily market intelligence for indie builders. $19/mo, 14-day free trial.',
+    description: 'Three plans for indie builders. Starter $19/mo, Builder $39/mo, Team $79/mo. 14-day free trial on all plans.',
     url: 'https://www.aimfast.dev/pricing/',
     siteName: 'AimFast.Dev',
     locale: 'en',
@@ -33,10 +32,80 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Pricing — AimFast.Dev',
-    description: 'Daily market intelligence for indie builders. $19/mo.',
+    description: 'Three plans for indie builders. Starter $19/mo, Builder $39/mo, Team $79/mo.',
     images: ['https://www.aimfast.dev/og-pricing.png'],
   },
 };
+
+interface Plan {
+  id: string;
+  name: string;
+  badge?: string;
+  monthly: number;
+  yearly: number;
+  description: string;
+  features: string[];
+  cta: string;
+  highlight?: boolean;
+}
+
+const PLANS: Plan[] = [
+  {
+    id: 'starter',
+    name: 'Starter',
+    monthly: 19,
+    yearly: 190,
+    description: 'Trend discovery for curious builders. See what\'s emerging before it peaks.',
+    features: [
+      'Daily trend discovery (11+ sources)',
+      'Browse all tracked terms',
+      'Stage & category filtering',
+      'Basic term tracking (3 terms)',
+      'Weekly email digest',
+      '14-day free trial',
+    ],
+    cta: 'Start Free Trial',
+  },
+  {
+    id: 'builder',
+    name: 'Builder',
+    badge: 'Most Popular',
+    monthly: 39,
+    yearly: 390,
+    description: 'One decision every morning. Build with confidence, not guesswork.',
+    features: [
+      'Everything in Starter',
+      'Daily verified decision card',
+      'Competitor & topic monitoring (up to 10)',
+      'Full deep research reports (≥60 score)',
+      'AI scoring & cross-platform validation',
+      'Full report archive',
+      'Track unlimited terms',
+      'Priority email support',
+      '14-day free trial',
+    ],
+    cta: 'Start Free Trial',
+    highlight: true,
+  },
+  {
+    id: 'team',
+    name: 'Team',
+    badge: 'For Teams',
+    monthly: 79,
+    yearly: 790,
+    description: 'Shared intelligence for small teams. Align on what to build next.',
+    features: [
+      'Everything in Builder',
+      '3 team seats',
+      'Shared monitoring boards',
+      'CSV export',
+      'API access (coming soon)',
+      'Early access to new features',
+      '14-day free trial',
+    ],
+    cta: 'Start Free Trial',
+  },
+];
 
 const FAQ_ITEMS = [
   {
@@ -49,7 +118,7 @@ const FAQ_ITEMS = [
   },
   {
     q: 'Can I track my competitors?',
-    a: 'Yes — that is the Monitoring Engine. Add up to 10 competitors, topics, people, or tech stacks. Every day, you see what they did and what you should do about it. Not just "they launched X" — we tell you "their launch reveals a gap you can fill."',
+    a: 'Yes — on the Builder plan and above. Add up to 10 competitors, topics, people, or tech stacks. Every day, you see what they did and what you should do about it. Not just "they launched X" — we tell you "their launch reveals a gap you can fill."',
   },
   {
     q: 'What if I miss a day?',
@@ -58,6 +127,10 @@ const FAQ_ITEMS = [
   {
     q: 'Is there a long-term contract?',
     a: 'No. Cancel anytime — monthly or annual. If you cancel, you keep access until the end of your billing period. No tricks, no retention calls.',
+  },
+  {
+    q: 'Can I upgrade or downgrade later?',
+    a: 'Yes — switch plans anytime. Upgrading takes effect immediately with prorated billing. Downgrading applies at the end of your current billing cycle.',
   },
 ];
 
@@ -90,103 +163,172 @@ export default function PricingPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 
-      {/* ═══════ Pain Cards — The Cost of Not Knowing ═══════ */}
-      <section className="pain-cards" style={{ padding: 'var(--space-8) 0' }}>
-        <div className="section-header">
-          <h1>The Cost of Not Knowing</h1>
-          <p>
-            Every morning without market intel costs you one of three things.
-          </p>
-        </div>
-
-        <div className="pain-grid">
-          <div className="pain-card">
-            <Clock size={32} className="pain-icon" />
-            <h3>Direction Waste</h3>
-            <p>
-              You spent 2 weeks building a feature nobody asked for. If you had
-              known the demand was fading 10 days ago, you would have built
-              something else.
-            </p>
-            <div className="pain-solution">
-              <span className="pain-arrow">→</span>
-              Daily decision card tells you what to build — and what to skip
-            </div>
-          </div>
-
-          <div className="pain-card pain-card-accent">
-            <Eye size={32} className="pain-icon" />
-            <h3>Competition Blind Spots</h3>
-            <p>
-              Your competitor changed their pricing 3 days ago. Their free users
-              are looking for alternatives. You didn&apos;t know — until now.
-            </p>
-            <div className="pain-solution">
-              <span className="pain-arrow">→</span>
-              Monitor up to 10 competitors, topics, or tech stacks
-            </div>
-          </div>
-
-          <div className="pain-card">
-            <TrendingDown size={32} className="pain-icon" />
-            <h3>Trend Lag</h3>
-            <p>
-              A new distribution channel is taking off. Early adopters are
-              getting customers at near-zero cost. By the time you hear about it,
-              the window is closed.
-            </p>
-            <div className="pain-solution">
-              <span className="pain-arrow">→</span>
-              11+ sources scanned daily for emerging signals before they peak
-            </div>
-          </div>
-        </div>
+      {/* ═══════ Hero ═══════ */}
+      <section style={{ padding: 'var(--space-10) 0 var(--space-6)', textAlign: 'center' }}>
+        <h1 style={{ fontSize: '2.25rem', fontWeight: 700, margin: '0 0 var(--space-3)' }}>
+          One Decision Every Morning
+        </h1>
+        <p style={{ fontSize: '1.125rem', color: 'var(--color-text-secondary)', maxWidth: '560px', margin: '0 auto', lineHeight: 1.6 }}>
+          Three plans. Same core promise: stop guessing what to build.
+          All plans include a 14-day free trial — no credit card required.
+        </p>
       </section>
 
-      {/* ═══════ Pricing ═══════ */}
-      <section className="pricing-section" style={{ padding: 'var(--space-8) 0' }}>
-        <div className="section-header">
-          <h2>Simple Pricing</h2>
-          <p>
-            One plan, everything included. No per-seat pricing, no feature gating.
-            You either get full value or you cancel — no hard feelings.
-          </p>
+      {/* ═══════ Pricing Cards ═══════ */}
+      <section style={{ padding: '0 0 var(--space-8)', maxWidth: '960px', margin: '0 auto' }}>
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(3, 1fr)',
+          gap: 'var(--space-5)',
+          alignItems: 'start',
+        }}>
+          {PLANS.map((plan) => (
+            <div
+              key={plan.id}
+              style={{
+                position: 'relative',
+                border: plan.highlight
+                  ? '2px solid var(--color-accent, #2563eb)'
+                  : '1px solid var(--color-border, #e5e7eb)',
+                borderRadius: '12px',
+                padding: 'var(--space-6)',
+                background: plan.highlight
+                  ? 'var(--color-surface, #fff)'
+                  : 'var(--color-bg, #f9fafb)',
+                boxShadow: plan.highlight
+                  ? '0 4px 24px rgba(37, 99, 235, 0.12)'
+                  : 'none',
+              }}
+            >
+              {/* Badge */}
+              {plan.badge && (
+                <div style={{
+                  position: 'absolute',
+                  top: '-13px',
+                  left: '50%',
+                  transform: 'translateX(-50%)',
+                  background: plan.highlight ? 'var(--color-accent, #2563eb)' : 'var(--color-text-secondary, #6b7280)',
+                  color: '#fff',
+                  fontSize: '0.75rem',
+                  fontWeight: 600,
+                  padding: '4px 14px',
+                  borderRadius: '999px',
+                  whiteSpace: 'nowrap',
+                }}>
+                  {plan.badge === 'Most Popular' && (
+                    <Star size={12} style={{ display: 'inline', marginRight: '4px', verticalAlign: '-1px' }} />
+                  )}
+                  {plan.badge}
+                </div>
+              )}
+
+              {/* Plan Name */}
+              <h2 style={{
+                fontSize: '1.25rem',
+                fontWeight: 700,
+                margin: plan.badge ? 'var(--space-3) 0 var(--space-1)' : '0 0 var(--space-1)',
+              }}>
+                {plan.name}
+              </h2>
+
+              {/* Description */}
+              <p style={{
+                fontSize: '0.85rem',
+                color: 'var(--color-text-secondary)',
+                margin: '0 0 var(--space-4)',
+                minHeight: '2.5em',
+                lineHeight: 1.4,
+              }}>
+                {plan.description}
+              </p>
+
+              {/* Price */}
+              <div style={{ marginBottom: 'var(--space-4)' }}>
+                <span style={{ fontSize: '2.5rem', fontWeight: 800, lineHeight: 1 }}>
+                  ${plan.monthly}
+                </span>
+                <span style={{ fontSize: '0.95rem', color: 'var(--color-text-secondary)' }}>
+                  /mo
+                </span>
+                <div style={{ fontSize: '0.8rem', color: 'var(--color-text-muted, #9ca3af)', marginTop: '2px' }}>
+                  or ${plan.yearly}/year — save ${plan.monthly * 12 - plan.yearly}
+                </div>
+              </div>
+
+              {/* CTA */}
+              <a
+                href="https://tally.so/r/placeholder"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: 'block',
+                  textAlign: 'center',
+                  padding: '12px 0',
+                  borderRadius: '8px',
+                  fontWeight: 600,
+                  fontSize: '0.95rem',
+                  textDecoration: 'none',
+                  marginBottom: 'var(--space-5)',
+                  transition: 'all 150ms ease-out',
+                  background: plan.highlight
+                    ? 'var(--color-accent, #2563eb)'
+                    : 'var(--color-bg, #f3f4f6)',
+                  color: plan.highlight ? '#fff' : 'var(--color-text, #111827)',
+                  border: plan.highlight ? 'none' : '1px solid var(--color-border, #d1d5db)',
+                }}
+              >
+                {plan.cta} →
+              </a>
+
+              {/* Features */}
+              <ul style={{
+                listStyle: 'none',
+                padding: 0,
+                margin: 0,
+                fontSize: '0.875rem',
+                lineHeight: 1.6,
+              }}>
+                {plan.features.map((f) => (
+                  <li
+                    key={f}
+                    style={{
+                      display: 'flex',
+                      alignItems: 'flex-start',
+                      gap: 'var(--space-2)',
+                      marginBottom: 'var(--space-2)',
+                    }}
+                  >
+                    <Check
+                      size={16}
+                      style={{
+                        flexShrink: 0,
+                        marginTop: '4px',
+                        color: plan.highlight
+                          ? 'var(--color-accent, #2563eb)'
+                          : 'var(--color-text-secondary, #6b7280)',
+                      }}
+                    />
+                    {f}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
 
-        <div className="pricing-card">
-          <div className="pricing-badge">Everything Included</div>
-
-          <div className="pricing-amount-row">
-            <span className="pricing-dollar">$</span>
-            <span className="pricing-number">19</span>
-            <span className="pricing-period">/mo</span>
-          </div>
-          <div className="pricing-annual">or $190/year — save $38</div>
-
-          <ul className="pricing-features">
-            <li>✓ Daily verified product opportunity</li>
-            <li>✓ Competitor & topic tracking (up to 10)</li>
-            <li>✓ Full report archive</li>
-            <li>✓ Signal dashboard with system pulse</li>
-            <li>✓ AI assistant (coming soon)</li>
-            <li>✓ 14-day free trial</li>
-          </ul>
-
-          <a
-            href="https://tally.so/r/placeholder"
-            className="btn btn-primary pricing-cta"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Start Free Trial →
-          </a>
-
-          <div className="pricing-cancel">Cancel anytime. No questions asked.</div>
-        </div>
+        {/* Money-back note */}
+        <p style={{
+          textAlign: 'center',
+          fontSize: '0.85rem',
+          color: 'var(--color-text-muted, #9ca3af)',
+          marginTop: 'var(--space-4)',
+        }}>
+          All plans include a 14-day free trial. Cancel anytime — no questions asked.
+        </p>
       </section>
 
       {/* ═══════ FAQ ═══════ */}
-      <section className="faq-section" style={{ padding: 'var(--space-8) 0', maxWidth: '640px', margin: '0 auto' }}>
+      <section style={{ padding: 'var(--space-8) 0', maxWidth: '640px', margin: '0 auto' }}>
         <div className="section-header">
           <h2>Frequently Asked Questions</h2>
         </div>
@@ -202,10 +344,10 @@ export default function PricingPage() {
       </section>
 
       {/* ═══════ Footer CTA ═══════ */}
-      <section className="footer-cta" style={{ textAlign: 'center', padding: 'var(--space-8) 0 var(--space-10)' }}>
-        <h2>You&apos;re building. They&apos;re watching.</h2>
-        <p style={{ color: 'var(--color-text-secondary)', marginBottom: 'var(--space-3)', fontSize: '1rem' }}>
-          Start your 14-day free trial. One decision every morning.
+      <section style={{ textAlign: 'center', padding: 'var(--space-8) 0 var(--space-10)' }}>
+        <h2>14 days free. One decision every morning.</h2>
+        <p style={{ color: 'var(--color-text-secondary)', marginBottom: 'var(--space-4)', fontSize: '1rem' }}>
+          No credit card required. Cancel anytime.
         </p>
         <a
           href="https://tally.so/r/placeholder"
@@ -214,7 +356,7 @@ export default function PricingPage() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Get Early Access →
+          Start Building →
         </a>
       </section>
 

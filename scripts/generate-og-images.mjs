@@ -122,7 +122,7 @@ const SECTIONS = [
   {
     file: 'og-pricing.png',
     title: 'One Plan, Everything Included',
-    subtitle: '$19/mo — 14-day free trial. Cancel anytime.',
+    subtitle: 'Starter $19/mo · Builder $39/mo · Team $79/mo',
     accentLabel: 'PRICING',
     tagline: 'Signal Intelligence for Indie Developers',
   },
