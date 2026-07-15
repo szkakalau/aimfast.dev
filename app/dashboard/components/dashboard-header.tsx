@@ -24,6 +24,12 @@ export function DashboardHeader({ lang, onToggleLang, title, date, dates, onSele
         {status && <span className="dash-header-status">{status}</span>}
       </div>
 
+      <nav className="dash-header-nav" aria-label="Dashboard navigation">
+        <a href="/">Trends</a>
+        <a href="/dashboard/">Dashboard</a>
+        <a href="/pricing/">Pricing</a>
+      </nav>
+
       <div className="dash-header-right">
         {/* Date picker */}
         {dates.length > 1 ? (

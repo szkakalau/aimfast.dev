@@ -5,6 +5,11 @@ body:has(.dash-header) > .site-nav {
   display: none;
 }
 
+/* ── Main layout — match .container horizontal padding ── */
+.dash-main {
+  padding: 0 var(--space-3);
+}
+
 /* ── Card base (extend existing .card) ── */
 .card-full {
   margin-bottom: var(--space-3);
@@ -686,7 +691,7 @@ body:has(.dash-header) > .site-nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: var(--space-2) 0 var(--space-4);
+  padding: var(--space-2) var(--space-3) var(--space-4);
   flex-wrap: wrap;
   gap: var(--space-2);
 }
@@ -698,6 +703,26 @@ body:has(.dash-header) > .site-nav {
   align-items: center;
   gap: var(--space-1);
 }
+.dash-header-nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+.dash-header-nav a {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color var(--duration-fast) var(--ease-out);
+  padding: 8px 4px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+.dash-header-nav a:hover {
+  color: var(--color-accent);
+}
+
 .dash-header-right {
   display: flex;
   align-items: center;
