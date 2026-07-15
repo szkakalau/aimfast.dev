@@ -121,6 +121,8 @@ def extract_terms_from_signals(signals: list[dict]) -> list[dict]:
 - Project: 值得关注的开源项目
 - HotTopic: 热门讨论话题
 
+**重要**：category 字段必须精确使用上述 7 个值之一，大小写必须完全匹配。不要使用 "product"（小写）、"Infrastructure" 等变体。
+
 字段说明（每个元素必须包含以下 5 个字段）：
 - canonical: 英文术语名称（MUST be in English — 如果原始信号是中文，翻译为简洁的英文术语。如 "哒哒哒" → "Taptap Break Reminder"，"飞投" → "WebDrop LAN Transfer"。确保英文名自然、可读。）
 - canonical_zh: 中文术语名称（如果原始信号有中文名则保留，否则为空字符串）
@@ -280,6 +282,26 @@ def _make_slug_id(canonical: str, fallback_idx: int = 0) -> str:
     return f"trend-term-{h}"
 
 
+def _normalize_category(cat: str) -> str:
+    """Normalize category to canonical form (title case, handle known variants)."""
+    if not cat or not cat.strip():
+        return "General"
+    cat = cat.strip()
+    mapping = {
+        "product": "Product",
+        "project": "Project",
+        "infrastructure": "Infra",
+        "techconcept": "TechConcept",
+        "devtools": "DevTools",
+        "ai/llm": "AI/LLM",
+        "hottopic": "HotTopic",
+    }
+    key = cat.lower()
+    if key in mapping:
+        return mapping[key]
+    return cat[0].upper() + cat[1:]
+
+
 def merge_terms(existing: list[dict], extracted: list[dict], signals: list[dict], today: datetime) -> list[dict]:
     """Merge extracted terms into existing, updating existing terms and adding new ones."""
     today_str = today.strftime("%Y-%m-%d")
@@ -358,7 +380,7 @@ def merge_terms(existing: list[dict], extracted: list[dict], signals: list[dict]
                 "total_mentions": len(matching_signals),
                 "sources": signal_sources,
                 "growth_pct": 100,
-                "category": extracted_term.get("category", "General"),
+                "category": _normalize_category(extracted_term.get("category", "General")),
                 "tags": list(set(tag for s in matching_signals for tag in s.get("tags", [])))[:5],
                 "summary_zh": extracted_term.get("summary_zh", ""),
                 "summary_en": extracted_term.get("summary_en", ""),

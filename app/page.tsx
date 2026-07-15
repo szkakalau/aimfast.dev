@@ -3,7 +3,7 @@ import { TrendingUp, BarChart3, Globe, Zap, Search, Shield } from 'lucide-react'
 // Trends data module is the single source of truth for types + stage labels.
 // The homepage IS the trends discovery page — this cross-route import is intentional.
 import { getAllTrendTerms, getTrendStats } from './trends/data';
-import TrendFilter from './trends/TrendFilter';
+import TrendFilter from '@/components/TrendFilter';
 
 export const metadata: Metadata = {
   title: 'Trend Discovery — Emerging Tech Terms & Market Signals | AimFast.Dev',
@@ -75,6 +75,7 @@ export default function HomePage() {
 
   return (
     <>
+      {/* Safe: JSON.stringify escapes all HTML entities. No user input in jsonLd. */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

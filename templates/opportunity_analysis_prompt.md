@@ -8,6 +8,8 @@
 - **分类**: {category}
 - **现有研究报告**:
 {research_content}
+
+> 注意：如果研究报告标注为 "(No deep research report yet)"，说明该词条目前只有基础摘要。请基于提供的 Summary + Sources + Tags 进行评估。对这类信息较少的词条，如果信号不足，可以给出保守的评分（opportunity_score 30-50），不要强行乐观。
 - **信源**: {sources}
 - **阶段**: {stage}
 - **趋势分**: {score}/100
@@ -33,7 +35,7 @@
   "seo_difficulty": <0-100, 关键词排名难度。越低=越容易>,
   "seo_rationale_en": "<理由>",
   "seo_rationale_zh": "<理由>",
-  "suggested_products": ["最多5个，从以下选择: Chrome Extension, SaaS, API, MCP Server, AI Agent, CLI Tool, VS Code Extension, Mobile App, Desktop App, Web App, Open Source, Template/Boilerplate"],
+  "suggested_products": ["最多5个，从以下选择: Chrome Extension, SaaS, API, MCP Server, AI Agent, CLI Tool, VS Code Extension, Mobile App, Desktop App, Web App, Open Source, Template/Boilerplate, Hardware, IoT Device, SDK/Library, Discord/Slack Bot, Plugin/Add-on, Dataset, Newsletter"],
   "estimated_dev_days": <MVP 开发天数，整数>,
   "revenue_potential": <1-5, 首月收入预估星级>,
   "revenue_rationale_en": "<理由>",

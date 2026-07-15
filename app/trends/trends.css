@@ -244,6 +244,44 @@
   display: inline-flex; align-items: center; gap: 3px;
 }
 
+/* ── Builder signals row (on cards) ── */
+.trend-card-builder {
+  display: flex; align-items: center; gap: 6px;
+  font-family: var(--font-mono); font-size: 0.68rem;
+  color: var(--color-accent);
+  opacity: 0.85;
+  flex-wrap: wrap;
+}
+.builder-sep {
+  color: var(--color-text-muted);
+  opacity: 0.4;
+  font-size: 0.6rem;
+}
+
+/* ── Filter separator (visual break between filter groups) ── */
+.filter-sep {
+  display: inline-block;
+  width: 1px; height: 20px;
+  background: var(--color-border);
+  margin: 0 4px;
+  vertical-align: middle;
+}
+
+/* ── AI Focus button accent ── */
+.stage-filter-btn.ai-focus {
+  border-color: oklch(55% 0.18 250 / 0.4);
+}
+.stage-filter-btn.ai-focus:hover {
+  border-color: oklch(55% 0.18 250);
+  color: oklch(55% 0.18 250);
+}
+.stage-filter-btn.ai-focus.active {
+  background: oklch(55% 0.18 250);
+  border-color: oklch(55% 0.18 250);
+  color: #fff;
+  box-shadow: 0 0 0 4px oklch(55% 0.18 250 / 0.15);
+}
+
 /* Detail page */
 .trend-detail {
   max-width: 900px; margin: 0 auto;
@@ -553,6 +591,7 @@
   .trend-card { min-height: 140px; padding: var(--space-3); }
   .trend-card h3 { font-size: 1.05rem; }
   .trend-card-meta { font-size: 0.68rem; gap: var(--space-1); }
+  .trend-card-builder { font-size: 0.64rem; }
   .trend-detail-meta-row { gap: var(--space-2); font-size: 0.72rem; }
   .trend-detail-content { padding: var(--space-3); font-size: 0.92rem; }
   .trend-detail-content h2 { font-size: 1.15rem; }

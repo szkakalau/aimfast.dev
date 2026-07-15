@@ -19,8 +19,10 @@ TRACKING_FILE = ROOT / "tracking" / "trend_terms.json"
 CONTENT_DIR = ROOT / "content" / "trends"
 TEMPLATE_FILE = ROOT / "templates" / "opportunity_analysis_prompt.md"
 
-# Only analyze terms with score >= this threshold
-MIN_SCORE_FOR_ANALYSIS = 60
+# Default minimum score for analysis (CLI --min-score overrides).
+# Set to 0 so ALL terms get opportunity data — low-scored terms
+# can still be perfect solo-dev opportunities (blue ocean + fast MVP).
+MIN_SCORE_FOR_ANALYSIS = 0
 
 
 def load_json(path: Path) -> dict | list:
@@ -56,18 +58,37 @@ def load_template() -> str:
     return ""
 
 
-def load_research_content(research_md_path: str) -> str:
-    """Load and strip YAML frontmatter from a research markdown file."""
-    full_path = ROOT / research_md_path
-    if not full_path.exists():
+def load_research_content(term: dict) -> str:
+    """Load research markdown content for a term, with fallback to summary fields."""
+    research_md_path = term.get("research_md_path", "")
+    full_path = ROOT / research_md_path if research_md_path else None
+
+    if full_path and full_path.exists():
+        content = full_path.read_text(encoding="utf-8")
+        content = re.sub(r'^---[\s\S]*?---\n*', '', content).strip()
+        if len(content) > 3000:
+            content = content[:3000] + "\n\n... (truncated)"
+        return content
+
+    # Fallback: build context from summaries + sources when no research report exists
+    parts = []
+    summary_en = term.get("summary_en", "").strip()
+    summary_zh = term.get("summary_zh", "").strip()
+    if summary_en:
+        parts.append(f"Summary (EN): {summary_en}")
+    if summary_zh:
+        parts.append(f"Summary (ZH): {summary_zh}")
+    sources = term.get("sources", [])
+    if sources:
+        parts.append(f"Sources: {', '.join(sources[:8])}")
+    tags = term.get("tags", [])
+    if tags:
+        parts.append(f"Tags: {', '.join(tags[:10])}")
+
+    if not parts:
         return ""
-    content = full_path.read_text(encoding="utf-8")
-    # Strip YAML frontmatter
-    content = re.sub(r'^---[\s\S]*?---\n*', '', content).strip()
-    # Truncate to ~3000 chars to stay within token limits
-    if len(content) > 3000:
-        content = content[:3000] + "\n\n... (truncated)"
-    return content
+
+    return "(No deep research report yet — evaluate based on summaries below)\n\n" + "\n".join(parts)
 
 
 def build_prompt(term: dict, research_content: str) -> str:
@@ -176,14 +197,10 @@ def apply_opportunity_to_term(term: dict, analysis: dict):
             term[dest_key] = analysis[src_key]
 
 
-def should_analyze(term: dict, force: bool) -> bool:
+def should_analyze(term: dict, force: bool, min_score: int = 0) -> bool:
     """Determine if a term needs opportunity analysis."""
     score = term.get("score", 0)
-    if score < MIN_SCORE_FOR_ANALYSIS:
-        return False
-
-    research_path = term.get("research_md_path", "")
-    if not research_path:
+    if score < min_score:
         return False
 
     # Skip if already analyzed (unless --force)
@@ -197,29 +214,54 @@ def main():
     parser = argparse.ArgumentParser(description="Generate opportunity analysis for trend terms")
     parser.add_argument("--dry-run", action="store_true", help="Don't write files")
     parser.add_argument("--force", action="store_true", help="Re-analyze even if already scored")
+    parser.add_argument("--min-score", type=int, default=MIN_SCORE_FOR_ANALYSIS,
+                        help=f"Minimum score to analyze (default: {MIN_SCORE_FOR_ANALYSIS})")
+    parser.add_argument("--max-daily", type=int, default=20,
+                        help="Max terms to analyze per run (default: 20)")
     args = parser.parse_args()
 
     trend_data = load_trend_terms()
     terms = trend_data.get("terms", [])
     print(f"[opportunity] Loaded {len(terms)} trend terms")
+    print(f"[opportunity] Min score: {args.min_score}, Max daily: {args.max_daily}, Force: {args.force}")
+
+    # Priority order:
+    #   1. Terms without opportunity data (never analyzed)
+    #   2. Terms first seen recently (past 7 days)
+    #   3. Older terms
+    # This ensures new terms get analyzed first while backlog fills in gradually.
+    today_str = datetime.now(TZ_SHANGHAI).strftime("%Y-%m-%d")
+    cutoff_new = (datetime.now(TZ_SHANGHAI) - timedelta(days=7)).strftime("%Y-%m-%d")
+
+    candidates = [t for t in terms if should_analyze(t, args.force, args.min_score)]
+
+    def _priority(term: dict) -> tuple[int, int]:
+        has_opp = 0 if term.get("opportunity_score") is None else 1
+        is_new = 0 if term.get("first_seen", "") >= cutoff_new else 1
+        return (has_opp, is_new)
+
+    candidates.sort(key=_priority)
+    candidates = candidates[:args.max_daily]
+
+    if not candidates:
+        print("[opportunity] No terms to analyze (all up to date or below threshold)")
+        return
+
+    print(f"[opportunity] {len(candidates)} terms queued for analysis "
+          f"(of {len([t for t in terms if should_analyze(t, args.force, args.min_score)])} total candidates)")
 
     analyzed = 0
     skipped = 0
     failed = 0
 
-    for term in terms:
+    for term in candidates:
         canonical = term.get("canonical", "unknown")
-
-        if not should_analyze(term, args.force):
-            if term.get("opportunity_score") is not None:
-                skipped += 1
-            continue
 
         print(f"[opportunity] Analyzing: {canonical} (score={term.get('score', 0)})")
 
-        research_content = load_research_content(term.get("research_md_path", ""))
+        research_content = load_research_content(term)
         if not research_content:
-            print(f"  [opportunity] No research content found, skipping")
+            print(f"  [opportunity] No content available (no summary nor research report), skipping")
             skipped += 1
             continue
 

@@ -27,3 +27,13 @@ Key routing rules:
 1. **工具失败必须透明报告**。如果某个 URL 返回 403/404/空结果，直接告诉用户"无法访问，不能回答这个问题"——不得用其他数据源的结果包装成原始请求的答案。
 2. **区分数据来源**。如果只能通过间接来源推断，必须明确标注"这不是你要求的原始数据，而是从 X 搜索得到的替代结果"。
 3. **不知道就说不知道。** "我无法回答"永远比"我编一个答案"更有价值。
+
+## 已知技术债（2026-07-15 Review OS 审查记录）
+
+1. **双 Pipeline 架构不统一** — `scripts/` 下存在两套独立的 term 发现流水线：
+   - Pipeline A: `extract_terms → normalize_terms → classify_terms → score_terms → generate_term_research`
+   - Pipeline B: `generate_trends → generate_opportunity`
+   - 两套使用不同的评分公式、不同的数据文件，长期维护成本高。
+   - 建议：统一为单一 Pipeline，以 Pipeline B 为主体，吸收 Pipeline A 的跨源验证和生命周期分类。
+2. **React 组件测试框架缺失** — 项目无 JS 测试框架。`TrendFilter`/`TrendCard`/`Pagination` 等客户端组件无法进行单元测试。
+   - 建议：安装 `vitest` + `@testing-library/react`，优先覆盖纯函数（`builderScore`、`normalizeCategory`、`stageLabel`）。
