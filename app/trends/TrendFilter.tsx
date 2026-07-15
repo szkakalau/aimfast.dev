@@ -1,8 +1,10 @@
 'use client';
 
-import { useState, useCallback } from 'react';
-import { Calendar, Activity, BarChart3 } from 'lucide-react';
+import { useState, useCallback, useMemo } from 'react';
+import { Calendar, Activity, BarChart3, ChevronLeft, ChevronRight } from 'lucide-react';
 import type { TrendTerm } from './types';
+
+const PER_PAGE = 30;
 
 function stageLabel(stage: string): string {
   const map: Record<string, string> = {
@@ -19,12 +21,43 @@ type StageFilter = (typeof STAGES)[number];
 
 export default function TrendFilter({ terms }: { terms: TrendTerm[] }) {
   const [active, setActive] = useState<StageFilter>('all');
+  const [page, setPage] = useState(1);
+
+  const filtered = useMemo(
+    () => (active === 'all' ? terms : terms.filter((t) => t.stage === active)),
+    [terms, active],
+  );
+
+  const totalPages = Math.max(1, Math.ceil(filtered.length / PER_PAGE));
+  const safePage = Math.min(page, totalPages);
+  const pageTerms = filtered.slice((safePage - 1) * PER_PAGE, safePage * PER_PAGE);
 
   const handleFilter = useCallback((stage: StageFilter) => {
     setActive(stage);
+    setPage(1);
   }, []);
 
-  const filtered = active === 'all' ? terms : terms.filter((t) => t.stage === active);
+  const goPage = useCallback(
+    (p: number) => setPage(Math.max(1, Math.min(p, totalPages))),
+    [totalPages],
+  );
+
+  // Page number list: [1, ..., current-1, current, current+1, ..., totalPages] max 7 slots
+  const pageNumbers = useMemo(() => {
+    const pages: (number | '…')[] = [];
+    if (totalPages <= 7) {
+      for (let i = 1; i <= totalPages; i++) pages.push(i);
+    } else {
+      pages.push(1);
+      if (safePage > 3) pages.push('…');
+      const start = Math.max(2, safePage - 1);
+      const end = Math.min(totalPages - 1, safePage + 1);
+      for (let i = start; i <= end; i++) pages.push(i);
+      if (safePage < totalPages - 2) pages.push('…');
+      pages.push(totalPages);
+    }
+    return pages;
+  }, [totalPages, safePage]);
 
   return (
     <>
@@ -49,46 +82,92 @@ export default function TrendFilter({ terms }: { terms: TrendTerm[] }) {
           <p>No terms in this stage. Try another filter.</p>
         </div>
       ) : (
-        <div className="trend-grid" id="trend-grid">
-          {filtered.map((term) => {
-            const slug = term.id.replace('trend-', '');
-            return (
-              <a
-                key={term.id}
-                href={`/trends/${slug}/`}
-                className="trend-card"
+        <>
+          <div className="trend-grid" id="trend-grid">
+            {pageTerms.map((term) => {
+              const slug = term.id.replace('trend-', '');
+              return (
+                <a
+                  key={term.id}
+                  href={`/trends/${slug}/`}
+                  className="trend-card"
+                >
+                  <span className={`stage-badge ${term.stage}`}>
+                    {stageLabel(term.stage)}
+                  </span>
+                  {term.revenue_potential != null && (
+                    <span className="trend-card-stars" title={`Revenue potential: ${term.revenue_potential}/5`}>
+                      {'★'.repeat(term.revenue_potential)}{'☆'.repeat(5 - term.revenue_potential)}
+                    </span>
+                  )}
+                  <span className="trend-card-category">{term.category}</span>
+                  <h3>{term.canonical}</h3>
+                  <p className="trend-card-summary">
+                    {term.summary_en || term.summary_zh}
+                  </p>
+                  <div className="trend-card-meta">
+                    <span className="trend-card-meta-item">
+                      <Calendar size={12} />
+                      {term.first_seen}
+                    </span>
+                    <span className="trend-card-meta-item">
+                      <Activity size={12} />
+                      {term.source_count} sources
+                    </span>
+                    <span className="trend-card-meta-item">
+                      <BarChart3 size={12} />
+                      {term.total_mentions} mentions
+                    </span>
+                  </div>
+                </a>
+              );
+            })}
+          </div>
+
+          {/* ── Pagination ── */}
+          {totalPages > 1 && (
+            <nav className="trend-pagination" aria-label="Trend pagination">
+              <button
+                type="button"
+                className="pagination-btn"
+                disabled={safePage <= 1}
+                onClick={() => goPage(safePage - 1)}
+                aria-label="Previous page"
               >
-                <span className={`stage-badge ${term.stage}`}>
-                  {stageLabel(term.stage)}
-                </span>
-                {term.revenue_potential != null && (
-                  <span className="trend-card-stars" title={`Revenue potential: ${term.revenue_potential}/5`}>
-                    {'★'.repeat(term.revenue_potential)}{'☆'.repeat(5 - term.revenue_potential)}
+                <ChevronLeft size={16} />
+              </button>
+
+              {pageNumbers.map((p, i) =>
+                p === '…' ? (
+                  <span key={`ellipsis-${i}`} className="pagination-ellipsis">
+                    …
                   </span>
-                )}
-                <span className="trend-card-category">{term.category}</span>
-                <h3>{term.canonical}</h3>
-                <p className="trend-card-summary">
-                  {term.summary_en || term.summary_zh}
-                </p>
-                <div className="trend-card-meta">
-                  <span className="trend-card-meta-item">
-                    <Calendar size={12} />
-                    {term.first_seen}
-                  </span>
-                  <span className="trend-card-meta-item">
-                    <Activity size={12} />
-                    {term.source_count} sources
-                  </span>
-                  <span className="trend-card-meta-item">
-                    <BarChart3 size={12} />
-                    {term.total_mentions} mentions
-                  </span>
-                </div>
-              </a>
-            );
-          })}
-        </div>
+                ) : (
+                  <button
+                    key={p}
+                    type="button"
+                    className={`pagination-num${p === safePage ? ' active' : ''}`}
+                    onClick={() => goPage(p)}
+                    aria-label={`Page ${p}`}
+                    aria-current={p === safePage ? 'page' : undefined}
+                  >
+                    {p}
+                  </button>
+                ),
+              )}
+
+              <button
+                type="button"
+                className="pagination-btn"
+                disabled={safePage >= totalPages}
+                onClick={() => goPage(safePage + 1)}
+                aria-label="Next page"
+              >
+                <ChevronRight size={16} />
+              </button>
+            </nav>
+          )}
+        </>
       )}
     </>
   );
