@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
-import { TrendingUp, Calendar, BarChart3, Activity, Globe, Zap, Search, Shield } from 'lucide-react';
+import { TrendingUp, BarChart3, Globe, Zap, Search, Shield } from 'lucide-react';
 // Trends data module is the single source of truth for types + stage labels.
 // The homepage IS the trends discovery page — this cross-route import is intentional.
-import { getAllTrendTerms, getTrendStats, stageLabel } from './trends/data';
+import { getAllTrendTerms, getTrendStats } from './trends/data';
+import TrendFilter from './trends/TrendFilter';
 
 export const metadata: Metadata = {
   title: 'Trend Discovery — Emerging Tech Terms & Market Signals | AimFast.Dev',
@@ -120,74 +121,8 @@ export default function HomePage() {
           </div>
         )}
 
-        {/* ── Stage Filter ── */}
-        {terms.length > 0 && (
-          <div className="stage-filter">
-            {['all', 'nascent', 'emergent', 'validating', 'rising'].map(
-              (s) => (
-                <a
-                  key={s}
-                  href={s === 'all' ? '#trend-grid' : `#stage-${s}`}
-                  className="stage-filter-btn"
-                >
-                  {s === 'all' ? 'All' : stageLabel(s)}
-                </a>
-              ),
-            )}
-          </div>
-        )}
-
-        {/* ── Trend Grid ── */}
-        {terms.length === 0 ? (
-          <div className="trends-empty">
-            <h2>No trends yet</h2>
-            <p>
-              Check back after the daily pipeline runs. New terms are added
-              every morning.
-            </p>
-          </div>
-        ) : (
-          <div className="trend-grid" id="trend-grid">
-            {terms.map((term) => {
-              const slug = term.id.replace('trend-', '');
-              return (
-                <a
-                  key={term.id}
-                  href={`/trends/${slug}/`}
-                  className="trend-card"
-                >
-                  <span className={`stage-badge ${term.stage}`}>
-                    {stageLabel(term.stage)}
-                  </span>
-                  {term.revenue_potential != null && (
-                    <span className="trend-card-stars" title={`Revenue potential: ${term.revenue_potential}/5`}>
-                      {'★'.repeat(term.revenue_potential)}{'☆'.repeat(5 - term.revenue_potential)}
-                    </span>
-                  )}
-                  <span className="trend-card-category">{term.category}</span>
-                  <h3>{term.canonical}</h3>
-                  <p className="trend-card-summary">
-                    {term.summary_en || term.summary_zh}
-                  </p>
-                  <div className="trend-card-meta">
-                    <span className="trend-card-meta-item">
-                      <Calendar size={12} />
-                      {term.first_seen}
-                    </span>
-                    <span className="trend-card-meta-item">
-                      <Activity size={12} />
-                      {term.source_count} sources
-                    </span>
-                    <span className="trend-card-meta-item">
-                      <BarChart3 size={12} />
-                      {term.total_mentions} mentions
-                    </span>
-                  </div>
-                </a>
-              );
-            })}
-          </div>
-        )}
+        {/* ── Stage Filter + Trend Grid (client component) ── */}
+        <TrendFilter terms={terms} />
 
         {/* ── Methodology: How Trends Are Ranked & Discovered ── */}
         <section className="methodology-section">
