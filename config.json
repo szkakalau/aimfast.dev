@@ -46,8 +46,7 @@
         "key": "huggingface",
         "source": "API",
         "priority": "P1",
-        "enabled": false,
-        "_note": "间歇性限速 + HF Blog RSS 已覆盖官方公告，暂关闭"
+        "enabled": true
       },
       {
         "name": "Reddit",
@@ -61,24 +60,21 @@
         "key": "lobsters",
         "source": "API",
         "priority": "P1",
-        "enabled": false,
-        "_note": "社区较小，日更新量低（~5-10条），信噪比不足"
+        "enabled": true
       },
       {
         "name": "DEV Community",
         "key": "devcommunity",
         "source": "API",
         "priority": "P1",
-        "enabled": false,
-        "_note": "API 响应慢，信号与 HN/Reddit 高度重叠"
+        "enabled": true
       },
       {
         "name": "ArXiv Papers",
         "key": "arxiv",
         "source": "API",
         "priority": "P1",
-        "enabled": false,
-        "_note": "论文信号噪音大，LLM 摘要准确率不稳定"
+        "enabled": true
       },
       {
         "name": "X/Twitter",
@@ -141,7 +137,8 @@
         "key": "zhihu",
         "source": "搜索",
         "priority": "P2",
-        "enabled": false
+        "enabled": true,
+        "_note": "⚠️ 采集脚本尚未实现"
       }
     ],
     "_c_end_sources_note": "v2.1: C 端信号采集源已实现。Reddit Consumer 免费可用；豆瓣 API 免费但有限速；小红书未认证模式数据量有限。",
@@ -188,9 +185,8 @@
         "key": "xiaohongshu",
         "source": "API (未认证/认证)",
         "priority": "P1",
-        "enabled": false,
-        "script": "collect_xiaohongshu",
-        "_note": "未登录模式数据量极少，需 xhs_cookies.json 解锁认证后才可用"
+        "enabled": true,
+        "script": "collect_xiaohongshu"
       }
     ]
   },
