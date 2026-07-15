@@ -1,18 +1,22 @@
 'use client';
 
 import { useState, useEffect, useCallback, useMemo } from 'react';
+import type { TrendTerm } from '@/app/trends/types';
+import { getTrackedItems, computeDecisionScore } from '@/app/trends/utils';
 import { DashboardHeader } from './components/dashboard-header';
 import { DecisionCard } from './components/decision-card';
 import { CompetitorCard } from './components/competitor-card';
-import { SystemPulse } from './components/system-pulse';
-import { AiChatPanel } from './components/ai-chat-panel';
 import { FullReport } from './components/full-report';
 import { DashboardFooter } from './components/dashboard-footer';
+import Watchlist, { type SignalSnapshot } from './components/watchlist';
 
 /* ── I18N dictionary ── */
 const I18N_DICT: Record<string, Record<string, string>> = {
   zh: {
     headerTitle: 'AimFast.Dev',
+    watchlistTitle: '📊 My Watchlist',
+    serendipityTitle: '🔥 Also Trending Today',
+    serendipityHint: 'Track terms from Trends to monitor their growth here.',
     decisionCardTitle: '今日决策',
     decisionNoSignal: '今日暂无高确定性机会。以下是过去 7 天热度最高的信号。',
     decisionEvidence: '证据',
@@ -39,15 +43,6 @@ const I18N_DICT: Record<string, Record<string, string>> = {
     competitorAddPlaceholder: '竞品名、话题或技术栈…',
     competitorAddConfirm: '添加',
     competitorAction: '→ 你的行动',
-    pulseTitle: '系统脉搏',
-    pulseSignals: '今日信号',
-    pulseTopScore: '最高分',
-    pulseCrossPlatform: '跨平台',
-    pulseSourcesOnline: '信源在线',
-    pulseViewArchive: '查看完整日报归档 →',
-    pulseHealthy: '正常',
-    pulseDegraded: '部分异常',
-    pulseNoData: '暂无数据',
     aiChatTitle: '问 AI',
     aiChatWelcome: '关于今天的数据有什么想问的？深入追问证据、探索替代方案、验证假设。',
     aiChatPlaceholder: 'AI 助手即将上线…',
@@ -59,10 +54,13 @@ const I18N_DICT: Record<string, Record<string, string>> = {
     fullReportCollapse: '收起',
     loading: '加载中…',
     noData: '无数据',
-    backToTop: '回到顶部',
+    historyUnavailable: '历史数据暂不可用，变化趋势将在数据积累后显示。',
   },
   en: {
     headerTitle: 'AimFast.Dev',
+    watchlistTitle: '📊 My Watchlist',
+    serendipityTitle: '🔥 Also Trending Today',
+    serendipityHint: 'Track terms from Trends to monitor their growth here.',
     decisionCardTitle: "Today's Decision",
     decisionNoSignal: 'No high-confidence opportunity today. Here are the hottest signals from the past 7 days.',
     decisionEvidence: 'Evidence',
@@ -89,15 +87,6 @@ const I18N_DICT: Record<string, Record<string, string>> = {
     competitorAddPlaceholder: 'Competitor name, topic, or tech…',
     competitorAddConfirm: 'Add',
     competitorAction: '→ Your move',
-    pulseTitle: 'System Pulse',
-    pulseSignals: 'Signals Today',
-    pulseTopScore: 'Top Score',
-    pulseCrossPlatform: 'Cross-Platform',
-    pulseSourcesOnline: 'Sources Online',
-    pulseViewArchive: 'View Full Report Archive →',
-    pulseHealthy: 'Healthy',
-    pulseDegraded: 'Degraded',
-    pulseNoData: 'No data yet',
     aiChatTitle: 'Ask AI',
     aiChatWelcome: 'Ask me anything about this data — dig deeper into the evidence, explore alternatives, or validate assumptions.',
     aiChatPlaceholder: 'AI assistant coming soon…',
@@ -109,7 +98,7 @@ const I18N_DICT: Record<string, Record<string, string>> = {
     fullReportCollapse: 'Collapse',
     loading: 'Loading…',
     noData: 'No data',
-    backToTop: 'Back to top',
+    historyUnavailable: 'Historical data temporarily unavailable. Trend data will appear as it accumulates.',
   },
 };
 
@@ -208,13 +197,31 @@ export type DashboardData = {
   generated_at: string;
 };
 
-export function DashboardClient() {
+function toSnapshot(t: TrendTerm): SignalSnapshot {
+  return { id: t.id, canonical: t.canonical, category: t.category, stage: t.stage, score: t.score, total_mentions: t.total_mentions };
+}
+
+/* ── Helpers ── */
+
+function daysAgo(days: number): string {
+  const d = new Date();
+  d.setDate(d.getDate() - days);
+  return d.toISOString().slice(0, 10);
+}
+
+/* ═════ Main Component ═════ */
+
+type Props = { trendTerms: TrendTerm[] };
+
+export function DashboardClient({ trendTerms }: Props) {
   // ── State ──
   const [data, setData] = useState<DashboardData | null>(null);
   const [loading, setLoading] = useState(true);
   const [lang, setLang] = useState<'zh' | 'en'>('en');
   const [selectedDate, setSelectedDate] = useState<string>('');
-  const [chatCard, setChatCard] = useState<'decision' | 'competitor' | 'system' | null>(null);
+  const [trackedItems, setTrackedItems] = useState(getTrackedItems);
+  const [historyTerms, setHistoryTerms] = useState<TrendTerm[]>([]);
+  const [historyUnavailable, setHistoryUnavailable] = useState(false);
 
   // ── i18n ──
   const t = useMemo(() => I18N_DICT[lang] || I18N_DICT.en, [lang]);
@@ -226,6 +233,15 @@ export function DashboardClient() {
       if (saved === 'zh' || saved === 'en') setLang(saved);
       else if (navigator.language.startsWith('zh')) setLang('zh');
     } catch { /* localStorage unavailable */ }
+  }, []);
+
+  // Poll for tracking changes (e.g. from Trends page in another tab)
+  useEffect(() => {
+    const onStorage = () => setTrackedItems(getTrackedItems());
+    window.addEventListener('storage', onStorage);
+    // Also refresh on mount in case Trends page was used
+    setTrackedItems(getTrackedItems());
+    return () => window.removeEventListener('storage', onStorage);
   }, []);
 
   const toggleLang = useCallback(() => {
@@ -240,20 +256,25 @@ export function DashboardClient() {
   useEffect(() => {
     let cancelled = false;
     async function load() {
-      try {
-        const res = await fetch('/dashboard/data/dashboard.json');
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        const json: DashboardData = await res.json();
-        if (!cancelled) {
-          setData(json);
-          setSelectedDate(json.date);
-          // Cache for offline fallback
-          try { localStorage.setItem('kakaopc_dashboard_cache', JSON.stringify(json)); } catch { /* noop */ }
-        }
-      } catch (err) {
-        console.error('[Dashboard] Failed to load data:', err);
-        // Fallback to cache
-        if (!cancelled) {
+      // Fetch today's dashboard.json + 7d-ago history in parallel
+      const historyDate = daysAgo(7);
+      const [dashRes, histRes] = await Promise.all([
+        fetch('/dashboard/data/dashboard.json'),
+        fetch(`/dashboard/data/history/trends_${historyDate}.json`),
+      ]);
+
+      if (!cancelled) {
+        if (dashRes.ok) {
+          try {
+            const json: DashboardData = await dashRes.json();
+            setData(json);
+            setSelectedDate(json.date);
+            try { localStorage.setItem('kakaopc_dashboard_cache', JSON.stringify(json)); } catch { /* noop */ }
+          } catch (err) {
+            console.error('[Dashboard] Failed to parse dashboard data:', err);
+          }
+        } else {
+          // Fallback to cache
           try {
             const cached = localStorage.getItem('kakaopc_dashboard_cache');
             if (cached) {
@@ -263,28 +284,98 @@ export function DashboardClient() {
             }
           } catch { /* noop */ }
         }
-      } finally {
-        if (!cancelled) setLoading(false);
+
+        if (histRes.ok) {
+          try {
+            const hist: TrendTerm[] = await histRes.json();
+            setHistoryTerms(hist);
+          } catch { setHistoryUnavailable(true); }
+        } else {
+          setHistoryUnavailable(true);
+        }
+
+        setLoading(false);
       }
     }
     load();
     return () => { cancelled = true; };
   }, []);
 
-  // ── AI Chat ──
-  const openChat = useCallback((card: 'decision' | 'competitor' | 'system') => {
-    setChatCard((prev) => (prev === card ? null : card));
-  }, []);
-
-  const closeChat = useCallback(() => setChatCard(null), []);
-
   // ── Derived data ──
+
+  // Build today's trend map
+  const todayMap = useMemo(() => {
+    const m = new Map<string, TrendTerm>();
+    for (const t of trendTerms) m.set(t.id, t);
+    return m;
+  }, [trendTerms]);
+
+  const historyMap = useMemo(() => {
+    const m = new Map<string, TrendTerm>();
+    for (const t of historyTerms) m.set(t.id, t);
+    return m;
+  }, [historyTerms]);
+
+  // Determine the decision signal: prefer tracked term with highest decisionScore
+  const decisionSignal = useMemo(() => {
+    if (!data) return null;
+
+    // Try tracked items first
+    let bestScore = -Infinity;
+    let bestSignal: Signal | null = null;
+
+    for (const item of trackedItems) {
+      const today = todayMap.get(item.id);
+      const hist = historyMap.get(item.id);
+      if (!today) continue;
+      const ds = computeDecisionScore(today, hist ?? undefined);
+      if (ds !== null && ds > bestScore) {
+        bestScore = ds;
+        // Match trend term to dashboard signal.
+        // NOTE: assumes signal.id === trend term id (format: "trend-{slug}").
+        // If generate_dashboard.py uses a different ID scheme, this will never match.
+        const sig = data.signals.find((s) => s.id === item.id);
+        if (sig) bestSignal = sig;
+      }
+    }
+
+    // Fallback: global top signal
+    if (!bestSignal && data.signals.length > 0) {
+      bestSignal = data.signals[0];
+    }
+
+    return bestSignal;
+  }, [data, trackedItems, todayMap, historyMap]);
+
+  // Serendipity: top 3 untracked signals (by score) with trend data
+  const serendipitySignals = useMemo(() => {
+    if (!data) return [];
+    const trackedIds = new Set(trackedItems.map((t) => t.id));
+    return data.signals
+      .filter((s) => !trackedIds.has(s.id))
+      .slice(0, 3);
+  }, [data, trackedItems]);
+
+  // Watchlist data: signal snapshots for today + history
+  const watchlistToday = useMemo(
+    () => trendTerms.map(toSnapshot),
+    [trendTerms],
+  );
+  const watchlistHistory = useMemo(
+    () => historyTerms.map(toSnapshot),
+    [historyTerms],
+  );
+
+  // Top recommendations for cold start
+  const topRecommendations = useMemo(
+    () => trendTerms.slice(0, 10).map(toSnapshot),
+    [trendTerms],
+  );
+
+  // ── Derived from dashboard data ──
   const topSignal = data?.signals?.[0] || null;
   const decision = data?.decision || {};
-  const history = data?.history || [];
   const signalCount = data?.signals?.length || 0;
-  const topScore = topSignal?.score || (history.length > 0 ? history[history.length - 1].top_score : 0);
-  const crossPlatformCount = data?.signals?.filter((s) => s.cross_platform_count > 0).length || 0;
   const reportMd = lang === 'en' && data?.report_md_en ? data.report_md_en : (data?.report_md || '');
 
   // Archive dates for date picker
@@ -306,9 +397,15 @@ export function DashboardClient() {
           onSelectDate={() => {}}
         />
         <main className="dash-main">
+          <Watchlist
+            trackedItems={[]}
+            todaySignals={[]}
+            historySignals={[]}
+            topRecommendations={[]}
+            loading
+          />
           <DecisionCard t={t} lang={lang} signal={null} decision={{}} reportMd="" date="--" loading />
           <CompetitorCard t={t} intel={null} targets={[]} loading />
-          <SystemPulse t={t} history={[]} signalCount={0} topScore={0} crossPlatformCount={0} sourcesOnline={0} sourcesTotal={0} loading />
         </main>
       </>
     );
@@ -334,6 +431,8 @@ export function DashboardClient() {
     );
   }
 
+  const headerStatus = `${signalCount} signals · Updated ${data.generated_at ? new Date(data.generated_at).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false }) : 'daily'}`;
+
   return (
     <>
       <DashboardHeader
@@ -343,70 +442,60 @@ export function DashboardClient() {
         date={selectedDate || data.date}
         dates={allDates}
         onSelectDate={setSelectedDate}
+        status={headerStatus}
       />
 
       <main className="dash-main">
-        {/* ── Card 1: Today's Decision ── */}
+        {/* ── Watchlist ── */}
+        <Watchlist
+          trackedItems={trackedItems}
+          todaySignals={watchlistToday}
+          historySignals={watchlistHistory}
+          topRecommendations={topRecommendations}
+          historyUnavailable={historyUnavailable}
+        />
+
+        {/* ── Today's Decision (tracked-prioritized) ── */}
         <DecisionCard
           t={t}
           lang={lang}
-          signal={topSignal}
+          signal={decisionSignal || topSignal}
           decision={decision}
           reportMd={reportMd}
           date={selectedDate || data.date}
-          onAskAI={() => openChat('decision')}
         />
 
-        {/* AI Chat for decision card */}
-        {chatCard === 'decision' && (
-          <AiChatPanel
-            t={t}
-            cardType="decision"
-            isOpen
-            onClose={closeChat}
-          />
+        {/* ── Serendipity: Also Trending Today ── */}
+        {serendipitySignals.length > 0 && (
+          <section className="dash-section">
+            <h2 className="dash-section-title">{t.serendipityTitle}</h2>
+            <div className="serendipity-row">
+              {serendipitySignals.map((sig) => {
+                const trend = todayMap.get(sig.id);
+                return (
+                  <a
+                    key={sig.id}
+                    href={trend ? `/trends/${trend.id.replace('trend-', '')}/` : '#'}
+                    className="serendipity-card"
+                  >
+                    <span className="serendipity-card-source">{sig.source}</span>
+                    <span className="serendipity-card-title">{sig.title}</span>
+                    <span className="serendipity-card-score">Score: {sig.score}</span>
+                  </a>
+                );
+              })}
+            </div>
+          </section>
         )}
 
-        {/* ── Card 2: Competitor Intel ── */}
+        {/* ── Competitor Intel ── */}
         <CompetitorCard
           t={t}
           intel={data.competitor_intel}
           targets={data.competitor_targets || []}
-          onAskAI={() => openChat('competitor')}
         />
 
-        {/* AI Chat for competitor card */}
-        {chatCard === 'competitor' && (
-          <AiChatPanel
-            t={t}
-            cardType="competitor"
-            isOpen
-            onClose={closeChat}
-          />
-        )}
-
-        {/* ── Card 3: System Pulse ── */}
-        <SystemPulse
-          t={t}
-          history={history}
-          signalCount={signalCount}
-          topScore={topScore}
-          crossPlatformCount={crossPlatformCount}
-          sourcesOnline={11}
-          sourcesTotal={11}
-        />
-
-        {/* AI Chat for system pulse */}
-        {chatCard === 'system' && (
-          <AiChatPanel
-            t={t}
-            cardType="system"
-            isOpen
-            onClose={closeChat}
-          />
-        )}
-
-        {/* ── Full Report (collapsible daily report) ── */}
+        {/* ── Full Report ── */}
         <FullReport t={t} reportMd={reportMd} />
       </main>
 

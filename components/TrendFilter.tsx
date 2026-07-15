@@ -5,7 +5,7 @@ import type { TrendTerm } from '@/app/trends/types';
 import TrendCard from '@/app/trends/TrendCard';
 import Pagination from '@/app/trends/Pagination';
 import { stageLabel, STAGES, type StageFilter } from '@/app/trends/labels';
-import { builderScore, normalizeCategory } from '@/app/trends/utils';
+import { builderScore, normalizeCategory, getTrackedItems, addTrackedItem, removeTrackedItem } from '@/app/trends/utils';
 
 const PER_PAGE = 30;
 
@@ -27,6 +27,10 @@ export default function TrendFilter({ terms }: { terms: TrendTerm[] }) {
   const [category, setCategory] = useState<string>('all');
   const [aiFocus, setAiFocus] = useState(false);
   const [page, setPage] = useState(1);
+  const [trackedIds, setTrackedIds] = useState<Set<string>>(() => {
+    const items = getTrackedItems();
+    return new Set(items.map((item) => item.id));
+  });
 
   // ── Derived data ──
 
@@ -122,6 +126,26 @@ export default function TrendFilter({ terms }: { terms: TrendTerm[] }) {
     (p: number) => setPage(Math.max(1, Math.min(p, totalPages))),
     [totalPages],
   );
+
+  const handleTrack = useCallback((id: string) => {
+    setTrackedIds((prev) => {
+      const next = new Set(prev);
+      if (next.has(id)) {
+        next.delete(id);
+        removeTrackedItem(id);
+      } else {
+        if (next.size >= 50) {
+          // At limit — warn user via console (non-intrusive).
+          // UI-level toast would require adding a notification system; out of scope for now.
+          console.warn('[Track] Tracking limit reached (50 items). Remove some items to track new ones.');
+          return prev;
+        }
+        next.add(id);
+        addTrackedItem(id);
+      }
+      return next;
+    });
+  }, []);
 
   // ── Empty state message ──
 
@@ -229,7 +253,7 @@ export default function TrendFilter({ terms }: { terms: TrendTerm[] }) {
         <>
           <div className="trend-grid" id="trend-grid">
             {pageTerms.map((term) => (
-              <TrendCard key={term.id} term={term} />
+              <TrendCard key={term.id} term={term} isTracked={trackedIds.has(term.id)} onTrack={handleTrack} />
             ))}
           </div>
           <Pagination page={page} totalPages={totalPages} onPage={goPage} />

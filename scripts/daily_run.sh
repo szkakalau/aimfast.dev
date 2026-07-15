@@ -244,6 +244,38 @@ else
     log "  [Trends] FAIL (non-fatal)"
 fi
 
+# ─── Step 3.5b: Save trend terms snapshot for Dashboard history ───
+log ""
+log "--- Step 3.5b: Trend History Snapshot ---"
+HISTORY_DIR="public/dashboard/data/history"
+mkdir -p "$HISTORY_DIR"
+if [ -f tracking/trend_terms.json ]; then
+    DATE=${DATE_OVERRIDE:-$(date +%Y-%m-%d)}
+    # Extract lightweight snapshot: only fields needed by Dashboard Watchlist delta computation
+    $PYTHON -c "
+import json, sys
+with open('tracking/trend_terms.json') as f:
+    data = json.load(f)
+snapshot = [
+    {
+        'id': t['id'],
+        'canonical': t['canonical'],
+        'category': t.get('category', ''),
+        'stage': t.get('stage', 'nascent'),
+        'score': t.get('score', 0),
+        'total_mentions': t.get('total_mentions', 0),
+    }
+    for t in data.get('terms', [])
+]
+with open(f'$HISTORY_DIR/trends_${DATE}.json', 'w') as f:
+    json.dump(snapshot, f)
+print(f'  [History] Saved {len(snapshot)} terms to trends_${DATE}.json')
+" 2>&1
+    log "  [History] OK"
+else
+    log "  [History] SKIP (tracking/trend_terms.json not found)"
+fi
+
 # ─── Step 3.6: Opportunity Analysis ───
 
 log ""

@@ -310,6 +310,38 @@
   display: inline-flex; align-items: center; gap: 3px;
 }
 
+/* ── Track button (inside trend card meta row) ── */
+.track-btn {
+  display: inline-flex; align-items: center; gap: 4px;
+  margin-left: auto;
+  padding: 3px 10px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+  font-size: 0.7rem;
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: border-color var(--duration-fast) var(--ease-out),
+              color var(--duration-fast) var(--ease-out),
+              background var(--duration-fast) var(--ease-out);
+  white-space: nowrap;
+  touch-action: manipulation;
+}
+.track-btn:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+.track-btn.tracked {
+  border-color: var(--color-accent);
+  background: var(--color-accent-muted);
+  color: var(--color-accent);
+  font-weight: 500;
+}
+.trend-card.tracked {
+  box-shadow: 0 0 0 1px var(--color-accent-muted);
+}
+
 /* ── Builder signals row (on cards) ── */
 .trend-card-builder {
   display: flex; align-items: center; gap: 6px;

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { DashboardClient } from './dashboard-client';
+import { getAllTrendTerms } from '@/app/trends/data';
 
 export const metadata: Metadata = {
   title: 'Dashboard — AimFast.Dev',
@@ -9,5 +10,7 @@ export const metadata: Metadata = {
 };
 
 export default function DashboardPage() {
-  return <DashboardClient />;
+  // Embed trend data at build time — no extra client fetch needed for Watchlist display
+  const trendData = getAllTrendTerms();
+  return <DashboardClient trendTerms={trendData.terms} />;
 }

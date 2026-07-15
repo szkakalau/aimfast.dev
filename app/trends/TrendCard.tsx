@@ -1,17 +1,25 @@
 'use client';
 
-import { Calendar, Activity, BarChart3 } from 'lucide-react';
+import { Calendar, Activity, BarChart3, Plus, Check } from 'lucide-react';
 import type { TrendTerm } from './types';
 import { stageLabel } from './labels';
 
-export default function TrendCard({ term }: { term: TrendTerm }) {
+type Props = { term: TrendTerm; isTracked?: boolean; onTrack?: (id: string) => void };
+
+export default function TrendCard({ term, isTracked, onTrack }: Props) {
   const slug = term.id.replace('trend-', '');
+
+  const handleTrack = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    onTrack?.(term.id);
+  };
 
   return (
     <a
       key={term.id}
       href={`/trends/${slug}/`}
-      className="trend-card"
+      className={`trend-card${isTracked ? ' tracked' : ''}`}
     >
       <span className={`stage-badge ${term.stage}`}>
         {stageLabel(term.stage)}
@@ -65,6 +73,21 @@ export default function TrendCard({ term }: { term: TrendTerm }) {
           <BarChart3 size={12} />
           {term.total_mentions} mentions
         </span>
+
+        {onTrack && (
+          <button
+            type="button"
+            className={`track-btn${isTracked ? ' tracked' : ''}`}
+            onClick={handleTrack}
+            aria-label={isTracked ? `Untrack ${term.canonical}` : `Track ${term.canonical}`}
+          >
+            {isTracked ? (
+              <><Check size={14} /> Tracked</>
+            ) : (
+              <><Plus size={14} /> Track</>
+            )}
+          </button>
+        )}
       </div>
     </a>
   );

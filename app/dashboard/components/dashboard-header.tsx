@@ -7,9 +7,10 @@ type Props = {
   date: string;
   dates: string[];
   onSelectDate: (date: string) => void;
+  status?: string; // Compact status line replacing SystemPulse
 };
 
-export function DashboardHeader({ lang, onToggleLang, title, date, dates, onSelectDate }: Props) {
+export function DashboardHeader({ lang, onToggleLang, title, date, dates, onSelectDate, status }: Props) {
   return (
     <header className="dash-header">
       <div className="dash-header-left">
@@ -20,6 +21,7 @@ export function DashboardHeader({ lang, onToggleLang, title, date, dates, onSele
           </svg>
           {title}
         </h1>
+        {status && <span className="dash-header-status">{status}</span>}
       </div>
 
       <div className="dash-header-right">
