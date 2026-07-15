@@ -19,13 +19,42 @@ function stageLabel(stage: string): string {
 const STAGES = ['all', 'nascent', 'emergent', 'validating', 'rising'] as const;
 type StageFilter = (typeof STAGES)[number];
 
+type SortKey = 'score' | 'opportunity' | 'revenue' | 'newest' | 'mentions';
+
+const SORT_OPTIONS: { key: SortKey; label: string }[] = [
+  { key: 'score', label: 'Score ↓' },
+  { key: 'opportunity', label: 'Opportunity ↓' },
+  { key: 'revenue', label: 'Revenue ↓' },
+  { key: 'newest', label: 'Newest' },
+  { key: 'mentions', label: 'Most Mentioned' },
+];
+
 export default function TrendFilter({ terms }: { terms: TrendTerm[] }) {
   const [active, setActive] = useState<StageFilter>('all');
+  const [sortKey, setSortKey] = useState<SortKey>('score');
   const [page, setPage] = useState(1);
 
+  const sorted = useMemo(() => {
+    const arr = [...terms];
+    switch (sortKey) {
+      case 'score':
+        return arr.sort((a, b) => b.score - a.score);
+      case 'opportunity':
+        return arr.sort((a, b) => (b.opportunity_score ?? 0) - (a.opportunity_score ?? 0));
+      case 'revenue':
+        return arr.sort((a, b) => (b.revenue_potential ?? 0) - (a.revenue_potential ?? 0));
+      case 'newest':
+        return arr.sort((a, b) => b.first_seen.localeCompare(a.first_seen));
+      case 'mentions':
+        return arr.sort((a, b) => b.total_mentions - a.total_mentions);
+      default:
+        return arr;
+    }
+  }, [terms, sortKey]);
+
   const filtered = useMemo(
-    () => (active === 'all' ? terms : terms.filter((t) => t.stage === active)),
-    [terms, active],
+    () => (active === 'all' ? sorted : sorted.filter((t) => t.stage === active)),
+    [sorted, active],
   );
 
   const totalPages = Math.max(1, Math.ceil(filtered.length / PER_PAGE));
@@ -34,6 +63,11 @@ export default function TrendFilter({ terms }: { terms: TrendTerm[] }) {
 
   const handleFilter = useCallback((stage: StageFilter) => {
     setActive(stage);
+    setPage(1);
+  }, []);
+
+  const handleSort = useCallback((e: React.ChangeEvent<HTMLSelectElement>) => {
+    setSortKey(e.target.value as SortKey);
     setPage(1);
   }, []);
 
@@ -73,6 +107,23 @@ export default function TrendFilter({ terms }: { terms: TrendTerm[] }) {
             {s === 'all' ? 'All' : stageLabel(s)}
           </button>
         ))}
+      </div>
+
+      {/* ── Sort Bar ── */}
+      <div className="sort-bar">
+        <span className="sort-count">{filtered.length} results</span>
+        <select
+          className="sort-select"
+          value={sortKey}
+          onChange={handleSort}
+          aria-label="Sort terms"
+        >
+          {SORT_OPTIONS.map((opt) => (
+            <option key={opt.key} value={opt.key}>
+              {opt.label}
+            </option>
+          ))}
+        </select>
       </div>
 
       {/* ── Trend Grid ── */}
