@@ -318,6 +318,52 @@ def collect_dashboard_data() -> dict:
     }
 
 
+def _save_trend_history_snapshot(date_str: str) -> int:
+    """Generate daily trend snapshot for watchlist delta computation.
+
+    Reads tracking/trend_terms.json and writes a slim JSON array
+    (id, canonical, category, stage, score, total_mentions) to
+    public/dashboard/data/history/trends_{date_str}.json.
+    Returns the number of terms written, or 0 on failure.
+    """
+    history_dir = OUTPUT_DIR / "history"
+    snapshot_path = history_dir / f"trends_{date_str}.json"
+    if snapshot_path.exists():
+        return -1  # already exists
+
+    terms_path = TRACKING_DIR / "trend_terms.json"
+    if not terms_path.exists():
+        print("[Dashboard] [History] trend_terms.json not found, skipping snapshot")
+        return 0
+
+    try:
+        data = json.loads(terms_path.read_text(encoding="utf-8"))
+        terms = data.get("terms", []) if isinstance(data, dict) else data
+    except Exception as e:
+        print(f"[Dashboard] [History] Failed to read trend_terms.json: {e}")
+        return 0
+
+    history_terms = []
+    for t in terms:
+        history_terms.append({
+            "id": t.get("id", ""),
+            "canonical": t.get("canonical", ""),
+            "category": t.get("category", "General"),
+            "stage": t.get("stage", "nascent"),
+            "score": t.get("score", 0),
+            "total_mentions": t.get("total_mentions", 0),
+        })
+    history_terms.sort(key=lambda t: t["score"], reverse=True)
+
+    history_dir.mkdir(parents=True, exist_ok=True)
+    snapshot_path.write_text(
+        json.dumps(history_terms, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
+    print(f"[Dashboard] [History] Snapshot saved → trends_{date_str}.json ({len(history_terms)} terms)")
+    return len(history_terms)
+
+
 def run(date_str: str | None = None) -> str:
     """Generate dashboard data JSON."""
     date = date_str or datetime.now(TZ_SHANGHAI).strftime("%Y-%m-%d")
@@ -349,6 +395,10 @@ def run(date_str: str | None = None) -> str:
     art_en = len(data['article_md_en'])
     intel_count = len(data.get('competitor_intel', {}).get('targets', []))
     print(f"[Dashboard] {len(data['signals'])} signals | {len(data['history'])} days history | {len(data['opportunities'])} opportunities | {len(data['recurring_signals'])} recurring | {demand_count} demands | {intel_count} competitor intel | article: {art_zh} chars (zh) / {art_en} chars (en)")
+
+    # ── Trend history snapshot for watchlist delta computation ──
+    _save_trend_history_snapshot(date)
+
     return str(output_path)
 
 
