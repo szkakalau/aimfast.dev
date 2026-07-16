@@ -65,6 +65,11 @@ a, button, input, select, textarea, label, [role="button"] {
 }
 .article th { background: var(--color-surface); font-weight: 600; }
 .article a { color: var(--color-accent); text-decoration: underline; }
+/* .btn inside .article — revert generic link styling (specificity 0,2,0 > 0,1,0) */
+.article .btn { text-decoration: none; }
+.article .btn-primary { color: var(--color-on-accent); }
+.article .btn-primary:hover { color: var(--color-on-accent); }
+.article .btn-outline { color: var(--color-text-secondary); }
 .article hr { border: none; border-top: 1px solid var(--color-border); margin: var(--space-5) 0; }
 
 /* ── Report & general markdown content styles ── */
@@ -108,6 +113,10 @@ a, button, input, select, textarea, label, [role="button"] {
 .report-content th { background: var(--color-surface); font-weight: 600; }
 .report-content a { color: var(--color-accent); text-decoration: underline; }
 .report-content a:hover { opacity: 0.8; }
+/* .btn inside .report-content — revert generic link styling */
+.report-content .btn { text-decoration: none; }
+.report-content .btn-primary { color: var(--color-on-accent); }
+.report-content .btn-primary:hover { color: var(--color-on-accent); }
 .report-content hr { border: none; border-top: 1px solid var(--color-border); margin: var(--space-8) 0; }
 .report-content img { max-width: 100%; height: auto; border-radius: var(--radius-md); }
 
