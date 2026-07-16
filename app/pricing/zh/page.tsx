@@ -137,12 +137,23 @@ const FAQ_ITEMS = [
 export default function PricingZhPage() {
   const faqJsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: FAQ_ITEMS.map(({ q, a }) => ({
-      '@type': 'Question',
-      name: q,
-      acceptedAnswer: { '@type': 'Answer', text: a },
-    })),
+    '@graph': [
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: '首页', item: 'https://www.aimfast.dev/zh/' },
+          { '@type': 'ListItem', position: 2, name: '定价', item: 'https://www.aimfast.dev/pricing/zh/' },
+        ],
+      },
+      {
+        '@type': 'FAQPage',
+        mainEntity: FAQ_ITEMS.map(({ q, a }) => ({
+          '@type': 'Question',
+          name: q,
+          acceptedAnswer: { '@type': 'Answer', text: a },
+        })),
+      },
+    ],
   };
 
   return (

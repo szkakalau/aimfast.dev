@@ -19,6 +19,7 @@ import {
   stagePct,
   sanitizeTrendHtml,
 } from '../../data';
+import { extractSectionText } from '../../utils';
 
 /* ── Helpers ── */
 
@@ -139,17 +140,28 @@ export default async function TrendDetailZhPage({
     }
 
     if (sections.length > 0) {
+      // What is X? — match Chinese & English section headers
+      const whatIsSection = sections.find((s) => /什么是|概述|介绍|what is|overview|introduction/i.test(s));
+      const whatIsText = whatIsSection ? extractSectionText(bodyOnly, whatIsSection) : '';
       faqItems.push({
         q: `${term.canonical} 是什么？`,
-        a: `${term.canonical} 是 AimFast.Dev 追踪的新兴技术术语。${term.summary_zh || term.summary_en} 首次发现于 ${term.first_seen}，已覆盖 ${term.source_count} 个独立信源。`,
+        a: whatIsText || `${term.canonical} 是 AimFast.Dev 追踪的新兴技术术语。${term.summary_zh || term.summary_en} 首次发现于 ${term.first_seen}，已覆盖 ${term.source_count} 个独立信源。`,
       });
+
+      // Why now? — match Chinese & English section headers
+      const whyNowSection = sections.find((s) => /为什么现在|市场背景|趋势分析|信号|why now|market context|trend analysis|signal/i.test(s));
+      const whyNowText = whyNowSection ? extractSectionText(bodyOnly, whyNowSection) : '';
       faqItems.push({
         q: `为什么 ${term.canonical} 现在火了？`,
-        a: `该词已出现在 ${term.source_count} 个信源中（${term.sources.join('、')}），累计 ${term.total_mentions} 次提及，增长 ${term.growth_pct}%。详见下方完整报告。`,
+        a: whyNowText || `该词已出现在 ${term.source_count} 个信源中（${term.sources.join('、')}），累计 ${term.total_mentions} 次提及，增长 ${term.growth_pct}%。详见下方完整报告。`,
       });
+
+      // Who should care? — match Chinese & English section headers
+      const whoSection = sections.find((s) => /谁|目标用户|机会|开发|who|target audience|opportunity|build/i.test(s));
+      const whoText = whoSection ? extractSectionText(bodyOnly, whoSection) : '';
       faqItems.push({
         q: `谁应该关注 ${term.canonical}？`,
-        a: `独立开发者、独立黑客、以及关注新兴技术趋势的产品人。该词属于"${term.category}"类别，目前处于${stageLabelZh(term.stage)}。`,
+        a: whoText || `独立开发者、独立黑客、以及关注新兴技术趋势的产品人。该词属于"${term.category}"类别，目前处于${stageLabelZh(term.stage)}。`,
       });
     }
   }

@@ -36,7 +36,7 @@ body {
 /* ── Skip link ── */
 .skip-link {
   position: absolute; top: -100%; left: var(--space-3);
-  background: var(--color-accent); color: var(--color-bg);
+  background: var(--color-accent); color: var(--color-on-accent);
   padding: var(--space-1) var(--space-2); border-radius: var(--radius-sm);
   font-weight: 600; z-index: 100; text-decoration: none;
 }

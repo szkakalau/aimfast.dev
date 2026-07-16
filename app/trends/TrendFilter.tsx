@@ -5,23 +5,15 @@ import { Code2, Crosshair } from 'lucide-react';
 import type { TrendTerm } from './types';
 import TrendCard from './TrendCard';
 import Pagination from './Pagination';
-import { stageLabel, STAGES, type StageFilter } from './labels';
+import { STAGES, type StageFilter, type SortKey, type Locale, getLabels, SORT_OPTIONS } from './labels';
 import { builderScore, normalizeCategory, getTrackedItems, addTrackedItem, removeTrackedItem } from './utils';
 
 const PER_PAGE = 30;
 
-type SortKey = 'builder' | 'score' | 'opportunity' | 'revenue' | 'newest' | 'mentions';
+type Props = { terms: TrendTerm[]; locale?: Locale };
 
-const SORT_OPTIONS: { key: SortKey; label: string }[] = [
-  { key: 'builder', label: 'Builder Score' },
-  { key: 'score', label: 'Score ↓' },
-  { key: 'opportunity', label: 'Opportunity ↓' },
-  { key: 'revenue', label: 'Revenue ↓' },
-  { key: 'newest', label: 'Newest' },
-  { key: 'mentions', label: 'Most Mentioned' },
-];
-
-export default function TrendFilter({ terms }: { terms: TrendTerm[] }) {
+export default function TrendFilter({ terms, locale = 'en' }: Props) {
+  const L = getLabels(locale);
   const [activeStage, setActiveStage] = useState<StageFilter>('all');
   const [sortKey, setSortKey] = useState<SortKey>('builder');
   const [productType, setProductType] = useState<string>('all');
@@ -212,12 +204,12 @@ export default function TrendFilter({ terms }: { terms: TrendTerm[] }) {
   // ── Empty state message ──
 
   const emptyMessage = aiFocus
-    ? 'No AI terms in this stage. Try a different stage or turn off AI Focus.'
+    ? L.emptyMessages.aiFocus
     : category !== 'all'
-      ? `No "${category}" terms in this stage. Try another category or stage.`
+      ? L.emptyMessages.category(category)
       : productType !== 'all'
-        ? `No "${productType}" opportunities in this stage. Try another product type.`
-        : 'No terms in this stage. Try another filter.';
+        ? L.emptyMessages.productType(productType)
+        : L.emptyMessages.default;
 
   // ── Render ──
 
@@ -232,7 +224,7 @@ export default function TrendFilter({ terms }: { terms: TrendTerm[] }) {
             onClick={() => handleFilter(s)}
             className={`stage-filter-btn${s === activeStage ? ' active' : ''}`}
           >
-            {s === 'all' ? 'All' : stageLabel(s)}
+            {L.stageFilterLabel[s]}
           </button>
         ))}
       </div>
@@ -254,8 +246,8 @@ export default function TrendFilter({ terms }: { terms: TrendTerm[] }) {
               }}
               aria-label="Filter by category"
             >
-              <option value="all">All Categories</option>
-              <option value="__ai__">🤖 AI Focus</option>
+              <option value="all">{L.allCategories}</option>
+              <option value="__ai__">{L.aiFocus}</option>
               {categories.filter(c => !c.startsWith('AI')).map((cat) => (
                 <option key={cat} value={cat}>{cat}</option>
               ))}
@@ -268,7 +260,7 @@ export default function TrendFilter({ terms }: { terms: TrendTerm[] }) {
               onChange={(e) => handleProductType(e.target.value)}
               aria-label="Filter by product type"
             >
-              <option value="all">All Types</option>
+              <option value="all">{L.allTypes}</option>
               {productTypes.map((pt) => (
                 <option key={pt} value={pt}>{pt}</option>
               ))}
@@ -281,24 +273,24 @@ export default function TrendFilter({ terms }: { terms: TrendTerm[] }) {
             aria-pressed={aiFocus}
           >
             <Crosshair size={14} aria-hidden="true" />
-            AI Focus
+            {locale === 'zh' ? 'AI 聚焦' : 'AI Focus'}
           </button>
         </div>
         <div className="filter-right">
-          <span className="sort-count">{filtered.length} results</span>
+          <span className="sort-count">{filtered.length} {L.results}</span>
           <select
             className="sort-select"
             value={sortKey}
             onChange={handleSort}
             aria-label="Sort terms"
           >
-            <optgroup label="For Builders">
-              <option value="builder">{SORT_OPTIONS[0].label}</option>
+            <optgroup label={L.forBuilders}>
+              <option value="builder">{L.sortLabels.builder}</option>
             </optgroup>
-            <optgroup label="General">
+            <optgroup label={L.general}>
               {SORT_OPTIONS.slice(1).map((opt) => (
                 <option key={opt.key} value={opt.key}>
-                  {opt.label}
+                  {L.sortLabels[opt.key]}
                 </option>
               ))}
             </optgroup>
@@ -309,14 +301,14 @@ export default function TrendFilter({ terms }: { terms: TrendTerm[] }) {
       {/* Trend Grid */}
       {filtered.length === 0 ? (
         <div className="trends-empty" role="status">
-          <h2>No matches</h2>
+          <h2>{L.noMatches}</h2>
           <p>{emptyMessage}</p>
         </div>
       ) : (
         <>
           <div className="trend-grid" id="trend-grid">
             {pageTerms.map((term) => (
-              <TrendCard key={term.id} term={term} isTracked={trackedIds.has(term.id)} onTrack={handleTrack} atLimit={trackedIds.size >= 50} />
+              <TrendCard key={term.id} term={term} isTracked={trackedIds.has(term.id)} onTrack={handleTrack} atLimit={trackedIds.size >= 50} locale={locale} />
             ))}
           </div>
           <Pagination page={page} totalPages={totalPages} onPage={goPage} />

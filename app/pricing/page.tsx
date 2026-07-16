@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     canonical: 'https://www.aimfast.dev/pricing/',
     languages: {
       en: 'https://www.aimfast.dev/pricing/',
-      'zh-CN': 'https://www.aimfast.dev/pricing/',
+      'zh-CN': 'https://www.aimfast.dev/pricing/zh/',
     },
   },
   other: { 'last-modified': '2026-07-16' },

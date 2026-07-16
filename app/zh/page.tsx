@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
-import { TrendingUp, Calendar, BarChart3, Activity, Globe, Zap, Search, Shield } from 'lucide-react';
+import { TrendingUp, BarChart3, Globe, Zap, Search, Shield } from 'lucide-react';
 // Trends data module is the single source of truth for types + stage labels.
-import { getAllTrendTerms, getTrendStats, stageLabelZh } from '../trends/data';
+// The homepage IS the trends discovery page — this cross-route import is intentional.
+import { getAllTrendTerms, getTrendStats } from '../trends/data';
+import TrendFilter from '../trends/TrendFilter';
 
 export const metadata: Metadata = {
   title: '趋势发现 — 新兴技术术语与市场信号 | AimFast.Dev',
@@ -51,12 +53,19 @@ export default function ZhHomePage() {
     '@context': 'https://schema.org',
     '@graph': [
       {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: '首页', item: 'https://www.aimfast.dev/zh/' },
+        ],
+      },
+      {
         '@type': 'CollectionPage',
         name: '趋势发现 — AimFast.Dev',
         description:
           '比别人更早发现新兴技术术语、概念和市场信号。',
         url: 'https://www.aimfast.dev/zh/',
         inLanguage: 'zh-CN',
+        dateModified: updated_at || new Date().toISOString().slice(0, 10),
         mainEntity: {
           '@type': 'ItemList',
           itemListElement: terms.map((t, i) => ({
@@ -67,31 +76,98 @@ export default function ZhHomePage() {
           })),
         },
       },
+      {
+        '@type': 'HowTo',
+        name: '趋势如何评分与发现',
+        description:
+          '每个趋势都由管道自动评分和分阶段，覆盖 11+ 个信号源。',
+        step: [
+          {
+            '@type': 'HowToStep',
+            position: 1,
+            name: '跨信源验证',
+            text: '术语必须在 2 个及以上独立信源中出现——孤立的单帖不会被收录。',
+          },
+          {
+            '@type': 'HowToStep',
+            position: 2,
+            name: '代表性过滤',
+            text: '新产品仅在代表某个新兴方向时才保留，一次性发布不会纳入。',
+          },
+          {
+            '@type': 'HowToStep',
+            position: 3,
+            name: '讨论量门槛',
+            text: '低分单帖不达标；必须有真实的社区讨论热度。',
+          },
+          {
+            '@type': 'HowToStep',
+            position: 4,
+            name: '通用词黑名单',
+            text: '已知泛化词汇如 AI、React、Python、API、LLM、GPT 会被自动忽略。',
+          },
+          {
+            '@type': 'HowToStep',
+            position: 5,
+            name: '质量优先于数量',
+            text: '每天最多提取 20 个新术语；宁可少一些，也比充满噪音好。',
+          },
+        ],
+      },
+      {
+        '@type': 'FAQPage',
+        mainEntity: [
+          {
+            '@type': 'Question',
+            name: '趋势是如何发现的？',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: `我们的 AI 每天扫描 11+ 个信号源——HN、Reddit、GitHub、DEV Community、Lobsters、V2EX、X/Twitter、Product Hunt、HuggingFace、Arxiv、Indie Hackers——交叉引用新兴术语，并按信号强度、来源多样性和社区互动评分。`,
+            },
+          },
+          {
+            '@type': 'Question',
+            name: '数据多久更新一次？',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: `每天 08:30 CST 更新。每天早晨，新术语被发现，已有术语被重新评分，市场情报报告被重新生成。`,
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'AimFast.Dev 是免费的吗？',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: `是的——趋势发现和追踪完全免费。付费方案（$19/月起）可解锁每日决策简报、竞品监控和完整管道访问。14 天免费试用，无需信用卡。`,
+            },
+          },
+        ],
+      },
     ],
   };
 
   return (
     <>
+      {/* Safe: JSON.stringify escapes all HTML entities. No user input in jsonLd. */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
       <main className="trends-page">
-        {/* ── Compact status bar ── */}
-        <div className="trends-status-bar" role="status" aria-label="趋势追踪状态">
-          <h1 className="sr-only">AimFast.Dev — 比别人更早发现正在崛起的机会</h1>
-          <div className="trends-status-content">
-            <span className="trends-status-stat">
-              <TrendingUp size={14} aria-hidden="true" />
-              正在追踪 <strong>{terms.length}</strong> 个术语，覆盖 {stats.totalSources}+ 个信号源
-            </span>
-            <span className="trends-status-sep" aria-hidden="true" />
-            <span className="trends-status-stat">
-              每日 08:30 CST 更新
-            </span>
+        {/* ── Compact Hero ── */}
+        <section className="trends-hero">
+          <h1>比别人更早发现正在崛起的机会</h1>
+          <p className="trends-hero-desc">
+            每日追踪新技术术语、概念和市场信号，
+            覆盖 {stats.totalSources}+ 个信号源。免费，无需注册。
+          </p>
+          <div className="trends-hero-stats">
+            <TrendingUp size={14} aria-hidden="true" />
+            正在追踪 <strong>{terms.length} 个术语</strong>
+            {' · '}每日 08:30 CST 更新
           </div>
-        </div>
+        </section>
 
         {/* ── Live Stats Bar ── */}
         {stats.total > 0 && (
@@ -115,73 +191,8 @@ export default function ZhHomePage() {
           </div>
         )}
 
-        {/* ── Stage Filter ── */}
-        {terms.length > 0 && (
-          <div className="stage-filter">
-            {['all', 'nascent', 'emergent', 'validating', 'rising'].map(
-              (s) => (
-                <a
-                  key={s}
-                  href={s === 'all' ? '#trend-grid' : `#stage-${s}`}
-                  className="stage-filter-btn"
-                >
-                  {s === 'all' ? '全部' : stageLabelZh(s)}
-                </a>
-              ),
-            )}
-          </div>
-        )}
-
-        {/* ── Trend Grid ── */}
-        {terms.length === 0 ? (
-          <div className="trends-empty">
-            <h2>暂无趋势</h2>
-            <p>
-              每日管道运行后更新。每天早上会有新的术语加入。
-            </p>
-          </div>
-        ) : (
-          <div className="trend-grid" id="trend-grid">
-            {terms.map((term) => {
-              const slug = term.id.replace('trend-', '');
-              return (
-                <a
-                  key={term.id}
-                  href={`/trends/${slug}/zh/`}
-                  className="trend-card"
-                >
-                  <span className={`stage-badge ${term.stage}`}>
-                    {stageLabelZh(term.stage)}
-                  </span>
-                  {term.revenue_potential != null && (
-                    <span className="trend-card-stars" title={`商业潜力: ${term.revenue_potential}/5`}>
-                      {'★'.repeat(term.revenue_potential)}{'☆'.repeat(5 - term.revenue_potential)}
-                    </span>
-                  )}
-                  <span className="trend-card-category">{term.category}</span>
-                  <h3>{term.canonical_zh || term.canonical}</h3>
-                  <p className="trend-card-summary">
-                    {term.summary_zh || term.summary_en}
-                  </p>
-                  <div className="trend-card-meta">
-                    <span className="trend-card-meta-item">
-                      <Calendar size={12} />
-                      {term.first_seen}
-                    </span>
-                    <span className="trend-card-meta-item">
-                      <Activity size={12} />
-                      {term.source_count} 个来源
-                    </span>
-                    <span className="trend-card-meta-item">
-                      <BarChart3 size={12} />
-                      {term.total_mentions} 次提及
-                    </span>
-                  </div>
-                </a>
-              );
-            })}
-          </div>
-        )}
+        {/* ── Stage Filter + Trend Grid (client component) ── */}
+        <TrendFilter terms={terms} locale="zh" />
 
         {/* ── Methodology: How Trends Are Ranked & Discovered ── */}
         <section className="methodology-section">
@@ -245,7 +256,7 @@ export default function ZhHomePage() {
                   <strong>跨信源验证</strong> — 术语必须在 ≥2 个独立信源中出现，孤立的单帖不会被收录。
                 </li>
                 <li>
-                  <strong>代表性过滤</strong> — 新产品仅在代表某个新兴方向时才提取，单次发布的「我做了一个App」帖不纳入。
+                  <strong>代表性过滤</strong> — 新产品仅在代表某个新兴方向时才提取，单次发布的帖子不纳入。
                 </li>
                 <li>
                   <strong>讨论量门槛</strong> — 低分单帖不达标；必须有真实的社区讨论热度。
