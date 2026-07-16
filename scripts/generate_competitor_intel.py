@@ -65,6 +65,8 @@ def _load_weekly_stats(target: dict, current_date: str) -> dict:
 def _build_system_prompt() -> str:
     return """你是一个竞品情报分析师。你的任务是把原始信号转化为可执行的情报。
 
+⚠️ **重要：所有输出必须使用英文（English）**，不要输出中文。
+
 ## 你的处理流程
 
 1. **去噪**：判断每条提及是否有实质内容。
@@ -72,9 +74,9 @@ def _build_system_prompt() -> str:
    - 有讨论、有观点、有数据 → 保留
 
 2. **分类**：对有价值的提及：
-   - 翻译：把原文核心意思翻译成中文（1-2 句话）
-   - 竞品影响：这对竞品意味着什么？（方向变化？用户反馈？增长信号？）
-   - 对追踪者的价值：这个情报对追踪者有什么可行动的？（工具机会？切入点？风险？）
+   - summary：用英文提炼原文核心意思（1-2 句话），保留关键英文术语
+   - competitor_impact：这对竞品意味着什么？（方向变化？用户反馈？增长信号？）
+   - your_action：追踪者可以据此**做什么**？（工具机会？切入点？风险？）
 
 3. **聚合**：
    - 本周提及趋势（上升/下降/持平）
@@ -87,32 +89,32 @@ def _build_system_prompt() -> str:
 
 ```json
 {
-  "target_name": "目标名称",
+  "target_name": "Target Name",
   "stats": {
     "weekly_mentions": 12,
     "trend": "up",
     "sentiment": "neutral",
     "noise_count": 5,
     "signal_count": 7,
-    "core_narrative": "一句话描述本周讨论的核心主题变化"
+    "core_narrative": "One-sentence summary of this week's core narrative shift"
   },
   "highlights": [
     {
       "source": "HN",
       "source_url": "https://...",
-      "original_text": "原文关键句（英文）",
-      "translation": "中文翻译",
-      "competitor_impact": "对竞品的影响",
-      "your_action": "对追踪者的可行动建议",
+      "original_text": "Original key sentence",
+      "translation": "English summary/paraphrase of the key point",
+      "competitor_impact": "What this means for the tracked target",
+      "your_action": "Actionable recommendation for the tracker",
       "relevance": "high"
     }
   ],
   "suggested_actions": [
-    {"action": "deep_dive", "label": "深入了解 XXX"},
-    {"action": "build", "label": "考虑做 XXX 工具"},
-    {"action": "ignore", "label": "忽略（现阶段不相关）"}
+    {"action": "deep_dive", "label": "Deep dive into X"},
+    {"action": "build", "label": "Consider building an X tool"},
+    {"action": "ignore", "label": "Ignore (not relevant at this stage)"}
   ],
-  "noise_summary": "已过滤 5 条无关提及（纯转帖/无实质内容）"
+  "noise_summary": "Filtered 5 irrelevant mentions (reposts / no substance)"
 }
 ```
 
@@ -124,14 +126,14 @@ def _build_system_prompt() -> str:
 - `your_action`：追踪者（你）可以据此**做什么**？（永远不要写目标应该做什么）
 
 错误示例（视角混淆 — 严禁）：
-  - ❌ `your_action`: "Cursor 应立即修复 iOS 隐私问题"
-  - ❌ `your_action`: "Vercel 应该降价以保持竞争力"
-  - ❌ `your_action`: "评估 Cursor 是否应内置此功能"
+  - ❌ `your_action`: "Cursor should immediately fix the iOS privacy issue"
+  - ❌ `your_action`: "Vercel should lower prices to stay competitive"
+  - ❌ `your_action`: "Evaluate whether Cursor should build this feature"
 
 正确示例（追踪者视角）：
-  - ✅ `your_action`: "Cursor 的隐私问题可能导致用户流失——如果你在做 AI 编程工具，这是一个差异化切入点"
-  - ✅ `your_action`: "关注 Vercel 定价变化，如果你的产品依赖 Vercel，评估迁移成本"
-  - ✅ `your_action`: "这些第三方工具在增强 Cursor 能力——考虑做一个 Cursor 互补插件来获取用户"
+  - ✅ `your_action`: "Cursor's privacy issues may cause user churn — if you're building an AI coding tool, this is a differentiation opportunity"
+  - ✅ `your_action`: "Monitor Vercel pricing changes; if your product depends on Vercel, assess migration costs"
+  - ✅ `your_action`: "Third-party tools are extending Cursor — consider building a complementary plugin to capture users"
 
 **对于 competitor / platform 类型的追踪目标**，追踪者在问的是："这个竞品的动态对我有什么影响？我能利用什么？我应该担心什么？" 不要替竞品做决策。
 
@@ -141,7 +143,8 @@ def _build_system_prompt() -> str:
 - relevance 标记: high（直接竞品/关键变化）/ medium（间接相关）/ low（背景信息）
 - suggested_actions 必须有 2-4 个选项，从追踪者角度出发
 - 如果所有提及都是噪音，highlights 为空数组，noise_summary 说明原因
-- 只返回 JSON，不要有任何 markdown 包裹或额外文字"""
+- 只返回 JSON，不要有任何 markdown 包裹或额外文字
+- **所有文本字段必须使用英文**"""
 
 
 def _build_user_prompt(target: dict, stats: dict) -> str:
@@ -182,8 +185,9 @@ def _build_user_prompt(target: dict, stats: dict) -> str:
 
 ## 指令
 
-对以上提及进行去噪、分类、翻译，输出结构化的竞品情报 JSON。
+对以上提及进行去噪、分类、摘要（英文），输出结构化的竞品情报 JSON。
 只保留有实质内容的提及，标记为 noise 的仅在 stats.noise_count 中体现。
+所有输出文本必须使用英文。
 """
 
 
@@ -206,7 +210,7 @@ def _parse_llm_response(response: str, target_name: str, stats: dict) -> dict:
 
 
 def _fallback_intel(target_name: str, stats: dict) -> dict:
-    """LLM 不可用时的降级输出。"""
+    """Fallback output when LLM is unavailable."""
     return {
         "target_name": target_name,
         "stats": {
@@ -215,13 +219,13 @@ def _fallback_intel(target_name: str, stats: dict) -> dict:
             "sentiment": "unknown",
             "noise_count": 0,
             "signal_count": 0,
-            "core_narrative": "LLM 不可用，使用降级模式"
+            "core_narrative": "LLM unavailable — fallback mode"
         },
         "highlights": [],
         "suggested_actions": [
-            {"action": "check_raw", "label": f"查看 {target_name} 原始提及"}
+            {"action": "check_raw", "label": f"View raw mentions for {target_name}"}
         ],
-        "noise_summary": "LLM 不可用，未能进行分析。原始匹配数据保存在 competitor_matches.json",
+        "noise_summary": "LLM unavailable, analysis skipped. Raw match data saved in competitor_matches.json",
         "_fallback": True
     }
 
@@ -261,7 +265,7 @@ def run(date_str: str | None = None) -> dict:
         stats = _load_weekly_stats(target, date)
 
         if match_count == 0:
-            # 无匹配 → 仍输出占位
+            # No matches — output placeholder
             intel = {
                 "target_name": tname,
                 "stats": {
@@ -270,11 +274,11 @@ def run(date_str: str | None = None) -> dict:
                     "sentiment": "neutral",
                     "noise_count": 0,
                     "signal_count": 0,
-                    "core_narrative": "今日未匹配到相关提及"
+                    "core_narrative": "No relevant mentions found today"
                 },
                 "highlights": [],
                 "suggested_actions": [],
-                "noise_summary": "今日信号源中未找到与此目标的相关内容",
+                "noise_summary": "No content related to this target found in today's signal sources",
             }
             results.append(intel)
             continue
