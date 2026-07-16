@@ -559,6 +559,15 @@
   color: var(--color-accent); text-decoration: underline;
 }
 
+/* .btn-primary inside content area — revert generic link styling (.trend-detail-content a wins over .btn-primary on specificity) */
+.trend-detail-content .btn-primary {
+  color: var(--color-on-accent);
+  text-decoration: none;
+}
+.trend-detail-content .btn-primary:hover {
+  color: var(--color-on-accent);
+}
+
 .trend-detail-content code {
   font-family: var(--font-mono); font-size: 0.85em;
   background: var(--color-surface-alt); padding: 2px 6px;
