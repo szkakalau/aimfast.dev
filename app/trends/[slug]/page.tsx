@@ -61,7 +61,7 @@ export async function generateMetadata({
   }
 
   const title = `${term.canonical} — Trend Report & Analysis | AimFast.Dev`;
-  const description = (term.summary_en || term.summary_zh || '').slice(0, 160);
+  const description = (term.summary_en || '').slice(0, 160);
   const url = `https://www.aimfast.dev/trends/${slug}/`;
 
   return {
@@ -150,7 +150,7 @@ export default async function TrendDetailPage({
       const whatIsText = whatIsSection ? extractSectionText(bodyOnly, whatIsSection) : '';
       faqItems.push({
         q: `What is ${term.canonical}?`,
-        a: whatIsText || `${term.canonical} is an emerging technology term tracked by AimFast.Dev. ${term.summary_en || term.summary_zh} First detected on ${term.first_seen} across ${term.source_count} independent sources.`,
+        a: whatIsText || `${term.canonical} is an emerging technology term tracked by AimFast.Dev. ${term.summary_en || ''} First detected on ${term.first_seen} across ${term.source_count} independent sources.`,
       });
 
       // Why now? — use market context, trend analysis, or signal sections
@@ -437,7 +437,7 @@ export default async function TrendDetailPage({
           <aside className="trend-sidebar">
             <div className="trend-sidebar-card">
               <h4>About This Trend</h4>
-              <p>{term.summary_en || term.summary_zh}</p>
+              <p>{term.summary_en || ''}</p>
               <div
                 style={{
                   fontSize: '0.82rem',

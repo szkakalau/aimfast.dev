@@ -30,13 +30,30 @@ export function getResearchContent(path: string): string {
   }
 }
 
+/** Returns true if the body text is predominantly Chinese (CJK > 30% of alphanum+CJK chars). */
+function isChineseText(text: string): boolean {
+  const cjk = (text.match(/[一-鿿㐀-䶿]/g) || []).length;
+  const alpha = (text.match(/[a-zA-Z0-9]/g) || []).length;
+  const total = cjk + alpha;
+  if (total === 0) return false;
+  return cjk / total > 0.3;
+}
+
 export function getResearchContentEn(path: string): string {
   // Try English variant first (e.g., content/trends/homegames-en.md)
   const enPath = path.replace(/\.md$/, '-en.md');
   const enContent = getResearchContent(enPath);
-  if (enContent) return enContent;
-  // Fall back to original
-  return getResearchContent(path);
+  if (enContent) {
+    const bodyOnly = enContent.replace(/^---[\s\S]*?---\n*/, '').trim();
+    if (!isChineseText(bodyOnly)) return enContent;
+  }
+  // Fall back to original, but reject if it's also Chinese
+  const origContent = getResearchContent(path);
+  if (origContent) {
+    const bodyOnly = origContent.replace(/^---[\s\S]*?---\n*/, '').trim();
+    if (!isChineseText(bodyOnly)) return origContent;
+  }
+  return '';
 }
 
 export function getTrendStats(): { total: number; withResearch: number; totalSources: number } {
