@@ -147,6 +147,19 @@ export default function TrendFilter({ terms, locale = 'en' }: Props) {
   const totalPages = Math.max(1, Math.ceil(filtered.length / PER_PAGE));
   const pageTerms = filtered.slice((Math.min(page, totalPages) - 1) * PER_PAGE, Math.min(page, totalPages) * PER_PAGE);
 
+  // ── Scroll to top of trend grid on page change ──
+  // Prevents browser focus-scroll from jumping to the pagination buttons
+  // (which are at the bottom of the grid) after a page button click.
+
+  useEffect(() => {
+    if (!hydrated) return;
+    const grid = document.getElementById('trend-grid');
+    if (grid) {
+      const top = grid.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({ top: Math.max(0, top - 16), behavior: 'instant' });
+    }
+  }, [page, hydrated]);
+
   // ── Handlers (reset page on every filter change) ──
 
   const handleFilter = useCallback((stage: StageFilter) => {
