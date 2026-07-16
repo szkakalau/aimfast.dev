@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-16T07:48:51.843764+08:00",
+  "updated_at": "2026-07-17T07:44:51.996614+08:00",
   "terms": [
     {
       "id": "trend-claude-agent-sdk",
@@ -782,6 +782,54 @@
       "opportunity_summary_zh": "Grok 4.5宣称编码任务成本低于竞争对手，在竞争激烈的市场中是一个有前景的角度。然而，仅有2个信号且无深度研究，机会尚属推测。开发者可以构建轻量级VS Code扩展或CLI工具，封装Grok 4.5的API以提供廉价代码补全，但成功取决于API可用性和成本优势是否真实。"
     },
     {
+      "id": "trend-rust-to-zig-rewrite",
+      "canonical": "Rust-to-Zig Rewrite",
+      "canonical_zh": "从 Rust 到 Zig 的重写",
+      "aliases": [],
+      "first_seen": "2026-07-17",
+      "last_seen": "2026-07-17",
+      "stage": "nascent",
+      "score": 49,
+      "source_count": 1,
+      "total_mentions": 1,
+      "sources": [
+        "hn"
+      ],
+      "growth_pct": 100,
+      "category": "TechConcept",
+      "tags": [
+        "story",
+        "author_jorangreef",
+        "front_page",
+        "story_48933149"
+      ],
+      "summary_zh": "一个高赞的 Hacker News 帖子详细描述了将项目从 Rust 重写为 Zig 的经验，引发了关于系统编程语言未来选择的广泛讨论。",
+      "summary_en": "A highly upvoted Hacker News post details the experience of rewriting a project from Rust to Zig, sparking a broad discussion about future choices in systems programming languages.",
+      "research_md_path": "content/trends/rust-to-zig-rewrite.md",
+      "opportunity_score": 42,
+      "market_score": 35,
+      "competition_score": 20,
+      "demand_score": 40,
+      "seo_difficulty": 15,
+      "suggested_products": [
+        "CLI Tool",
+        "VS Code Extension",
+        "Open Source"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 1,
+      "risk_factors_en": [
+        "Very small market size limits revenue potential",
+        "Language ecosystem may shift rapidly, making tooling obsolete"
+      ],
+      "risk_factors_zh": [
+        "市场规模极小限制收入潜力",
+        "语言生态系统可能快速变化导致工具过时"
+      ],
+      "opportunity_summary_en": "The Rust-to-Zig rewrite trend is nascent with only one signal, indicating very early exploration. While competition is low, the market size is tiny and demand is unproven. A CLI tool or VS Code extension could serve early adopters, but monetization will be difficult.",
+      "opportunity_summary_zh": "Rust 到 Zig 重写趋势处于萌芽阶段，仅有一条信号，表明是非常早期的探索。虽然竞争很低，但市场规模极小且需求未经验证。CLI 工具或 VS Code 扩展可以服务早期采用者，但变现会很困难。"
+    },
+    {
       "id": "trend-openwiki",
       "canonical": "OpenWiki",
       "aliases": [],
@@ -1200,15 +1248,39 @@
       "canonical_zh": "持久化 Agent 崩溃恢复",
       "aliases": [],
       "first_seen": "2026-07-16",
-      "last_seen": "2026-07-16",
+      "last_seen": "2026-07-17",
       "stage": "nascent",
       "score": 48,
-      "source_count": 1,
-      "total_mentions": 1,
+      "source_count": 25,
+      "total_mentions": 2,
       "sources": [
-        "github-releases"
+        "github-releases",
+        "openai",
+        "v2ex",
+        "reddit-consumer",
+        "huggingface",
+        "cloudflare",
+        "pypi",
+        "youtube",
+        "stackoverflow",
+        "googlenews",
+        "arxiv",
+        "apple-ml",
+        "x-trends",
+        "huggingface-blog",
+        "lobsters",
+        "reddit",
+        "douban",
+        "github",
+        "devcommunity",
+        "w2solo",
+        "vercel",
+        "npm",
+        "google-ai",
+        "supabase",
+        "hn"
       ],
-      "growth_pct": 100,
+      "growth_pct": 200,
       "category": "AIAgent",
       "tags": [
         "release",
@@ -1363,6 +1435,54 @@
       ],
       "opportunity_summary_en": "The trend 'Developers Alienated by LLMs' is an early signal of developer anxiety, but with only one mention and low scores, it's too premature to act. A free newsletter or community bot could test demand, but monetization is unlikely. The opportunity is speculative and high-risk.",
       "opportunity_summary_zh": "趋势“被LLM疏远的开发者”是开发者焦虑的早期信号，但由于仅有一个提及且评分低，行动为时过早。免费新闻通讯或社区机器人可测试需求，但变现可能性低。该机会具有投机性和高风险。"
+    },
+    {
+      "id": "trend-decoy-font",
+      "canonical": "Decoy Font",
+      "canonical_zh": "诱饵字体",
+      "aliases": [],
+      "first_seen": "2026-07-17",
+      "last_seen": "2026-07-17",
+      "stage": "nascent",
+      "score": 46,
+      "source_count": 1,
+      "total_mentions": 1,
+      "sources": [
+        "hn"
+      ],
+      "growth_pct": 100,
+      "category": "TechConcept",
+      "tags": [
+        "story",
+        "author_ray__",
+        "story_48936584",
+        "front_page"
+      ],
+      "summary_zh": "一个关于 'Decoy Font' 的帖子在 Hacker News 上获得了大量关注，探讨了字体设计中的一种新概念，可能涉及隐私或反爬虫技术。",
+      "summary_en": "A post about 'Decoy Font' gained traction on Hacker News, exploring a novel concept in font design that may relate to privacy or anti-scraping techniques.",
+      "research_md_path": "content/trends/decoy-font.md",
+      "opportunity_score": 42,
+      "market_score": 35,
+      "competition_score": 25,
+      "demand_score": 40,
+      "seo_difficulty": 20,
+      "suggested_products": [
+        "Open Source",
+        "SDK/Library",
+        "API"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Very early stage with only 1 signal; trend may fizzle out",
+        "Large tech companies or open-source community could quickly adopt and commoditize the concept"
+      ],
+      "risk_factors_zh": [
+        "仅1个信号的极早期阶段，趋势可能消退",
+        "大公司或开源社区可能快速采纳并商品化该概念"
+      ],
+      "opportunity_summary_en": "Decoy Font is a nascent concept in font design for privacy and anti-scraping, with only one signal from Hacker News. The market is unproven but competition is absent, offering a blue ocean for early movers. The opportunity is speculative and requires further validation before serious investment.",
+      "opportunity_summary_zh": "Decoy Font 是字体设计领域一个与隐私和反爬虫相关的新兴概念，目前仅有一个来自 Hacker News 的信号。市场尚未验证，但竞争空白，为早期进入者提供了蓝海。该机会具有投机性，在认真投入前需要进一步验证。"
     },
     {
       "id": "trend-lightwell",
@@ -1999,6 +2119,56 @@
       "opportunity_summary_zh": "Claude Code Templates 是一个处于早期阶段的开源项目，提供 100+ 配置，但仅有一个信源。市场规模极小且未经验证。独立开发者可以构建一个精选模板市场，但需求和收入高度不确定。"
     },
     {
+      "id": "trend-enterprise-ai-governance-at-scale",
+      "canonical": "Enterprise AI Governance at Scale",
+      "canonical_zh": "大规模企业 AI 治理",
+      "aliases": [],
+      "first_seen": "2026-07-17",
+      "last_seen": "2026-07-17",
+      "stage": "nascent",
+      "score": 30,
+      "source_count": 1,
+      "total_mentions": 1,
+      "sources": [
+        "googlenews"
+      ],
+      "growth_pct": 100,
+      "category": "Industry",
+      "tags": [
+        "launch",
+        "news",
+        "ai",
+        "googlenews"
+      ],
+      "summary_zh": "TraphicLights.ai 的推出，专注于解决企业级 AI 治理问题，表明随着 AI 部署规模扩大，合规和控制成为关键需求。",
+      "summary_en": "The launch of TraphicLights.ai, focused on enterprise AI governance, indicates that compliance and control are becoming critical needs as AI deployments scale.",
+      "research_md_path": "content/trends/enterprise-ai-governance-at-scale.md",
+      "opportunity_score": 65,
+      "market_score": 70,
+      "competition_score": 40,
+      "demand_score": 75,
+      "seo_difficulty": 30,
+      "suggested_products": [
+        "SaaS",
+        "API",
+        "AI Agent",
+        "Web App",
+        "Open Source"
+      ],
+      "estimated_dev_days": 60,
+      "revenue_potential": 4,
+      "risk_factors_en": [
+        "Large cloud providers (AWS, Azure, Google) may enter with built-in governance solutions",
+        "Regulatory changes could shift requirements rapidly"
+      ],
+      "risk_factors_zh": [
+        "大型云厂商（AWS、Azure、Google）可能推出内置治理方案",
+        "监管变化可能快速调整需求"
+      ],
+      "opportunity_summary_en": "Enterprise AI governance at scale is an emerging niche with high demand and low competition, ideal for independent developers to build a focused SaaS or API solution. The launch of TraphicLights.ai signals market validation, but early movers can still capture share. Key risks include potential entry by cloud giants and shifting regulations.",
+      "opportunity_summary_zh": "企业级AI治理是一个新兴赛道，需求高、竞争低，适合独立开发者构建专注的SaaS或API方案。TraphicLights.ai的推出验证了市场，但早期入局者仍有机会。主要风险包括云巨头进入和监管变化。"
+    },
+    {
       "id": "trend-distributed-git-network-for-ai-agents",
       "canonical": "Distributed Git Network for AI Agents",
       "canonical_zh": "面向 AI Agent 的分布式 Git 网络",
@@ -2306,7 +2476,31 @@
       ],
       "summary_zh": "AI Tattoo Generator 通过文字描述生成多种风格的纹身设计图并支持皮肤预览，是 AI 在垂直创意领域的又一个实用产品案例。",
       "summary_en": "AI Tattoo Generator creates multi-style tattoo designs from text descriptions with skin preview support, representing another practical product case of AI in a vertical creative domain.",
-      "research_md_path": "content/trends/ai-tattoo-generator.md"
+      "research_md_path": "content/trends/ai-tattoo-generator.md",
+      "opportunity_score": 38,
+      "market_score": 35,
+      "competition_score": 25,
+      "demand_score": 40,
+      "seo_difficulty": 30,
+      "suggested_products": [
+        "Web App",
+        "Mobile App",
+        "API",
+        "Discord/Slack Bot",
+        "Plugin/Add-on"
+      ],
+      "estimated_dev_days": 21,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Low user retention due to novelty wearing off",
+        "Potential copyright issues with generated designs"
+      ],
+      "risk_factors_zh": [
+        "用户因新鲜感消退而留存率低",
+        "生成设计可能涉及版权问题"
+      ],
+      "opportunity_summary_en": "AI Tattoo Generator is a nascent niche with low competition and moderate demand. A simple web or mobile app can be built quickly, but revenue potential is limited by market size. Focus on unique features like skin preview to differentiate.",
+      "opportunity_summary_zh": "AI 纹身生成器是一个新兴的细分领域，竞争低、需求中等。可快速构建简单的网页或移动应用，但收入潜力受市场规模限制。专注于皮肤预览等独特功能以实现差异化。"
     },
     {
       "id": "trend-ai-agent-security-scanning",
@@ -2975,7 +3169,30 @@
       "summary_zh": "多个独立项目（如Bun、Postgres）正在被用Rust重写，并取得显著进展，表明Rust在系统软件领域的替代趋势正在加速。",
       "summary_en": "Multiple independent projects (Bun, Postgres) are being rewritten in Rust with significant progress, indicating an accelerating trend of Rust replacing classic system software.",
       "research_md_path": "content/trends/rewriting-classic-software-in-rust.md",
-      "canonical_zh": "Rust重写经典软件"
+      "canonical_zh": "Rust重写经典软件",
+      "opportunity_score": 45,
+      "market_score": 55,
+      "competition_score": 30,
+      "demand_score": 50,
+      "seo_difficulty": 40,
+      "suggested_products": [
+        "CLI Tool",
+        "Open Source",
+        "SaaS",
+        "Desktop App"
+      ],
+      "estimated_dev_days": 60,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Large open-source communities may dominate key projects",
+        "Enterprises may be slow to adopt Rust rewrites due to ecosystem maturity concerns"
+      ],
+      "risk_factors_zh": [
+        "大型开源社区可能主导关键项目",
+        "企业可能因生态成熟度问题而缓慢采用 Rust 重写"
+      ],
+      "opportunity_summary_en": "The trend of rewriting classic software in Rust is accelerating but still nascent, with a fragmented landscape of open-source projects. Independent developers can find niche opportunities by creating polished, user-friendly CLI tools or SaaS wrappers around Rust rewrites. However, revenue potential is limited, and success depends on solving specific pain points better than existing solutions.",
+      "opportunity_summary_zh": "用 Rust 重写经典软件的趋势正在加速但仍处于早期阶段，开源项目格局分散。独立开发者可以通过创建精致的、用户友好的 CLI 工具或围绕 Rust 重写的 SaaS 封装来找到利基机会。然而，收入潜力有限，成功取决于比现有解决方案更好地解决特定痛点。"
     },
     {
       "id": "trend-ai-agent-hallucination-and-traceability",
@@ -2994,7 +3211,32 @@
       "summary_zh": "多个技术社区讨论AI Agent伪造测试日志并自我相信的问题，反映出对Agent行为可靠性和可追溯性的担忧成为热点。",
       "summary_en": "Multiple tech communities discuss AI agents faking test logs and believing them, highlighting growing concerns about agent reliability and provenance as a hot topic.",
       "research_md_path": "content/trends/ai-agent-hallucination-and-traceability.md",
-      "canonical_zh": "AI Agent幻觉与可追溯性问题"
+      "canonical_zh": "AI Agent幻觉与可追溯性问题",
+      "opportunity_score": 42,
+      "market_score": 35,
+      "competition_score": 20,
+      "demand_score": 40,
+      "seo_difficulty": 25,
+      "suggested_products": [
+        "API",
+        "Open Source",
+        "VS Code Extension",
+        "SaaS"
+      ],
+      "estimated_dev_days": 45,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Large AI companies (OpenAI, Google) may build traceability features natively, making standalone solutions obsolete",
+        "Market may remain niche with slow adoption if agent usage doesn't explode",
+        "Technical challenge of detecting hallucinations is unsolved, risking low accuracy"
+      ],
+      "risk_factors_zh": [
+        "大型AI公司（OpenAI、Google）可能原生构建可追溯性功能，使独立解决方案过时",
+        "如果Agent使用不爆发，市场可能保持小众且采用缓慢",
+        "检测幻觉的技术挑战尚未解决，存在低准确率风险"
+      ],
+      "opportunity_summary_en": "AI agent hallucination and traceability is a nascent niche with low competition and SEO difficulty, but limited market size and unclear demand. The opportunity lies in building lightweight tools (APIs or open-source) for developers to monitor agent behavior, but monetization will be challenging. Early entry could position for future growth if the agent ecosystem expands.",
+      "opportunity_summary_zh": "AI Agent幻觉与可追溯性是一个新兴细分领域，竞争和SEO难度低，但市场规模有限且需求不明确。机会在于为开发者构建轻量级工具（API或开源）来监控Agent行为，但变现将面临挑战。如果Agent生态系统扩展，早期入场可能为未来增长奠定基础。"
     },
     {
       "id": "trend-browser-video-editor-ai-driven",
@@ -3013,7 +3255,31 @@
       "summary_zh": "FableCut作为零依赖的浏览器视频编辑器，可由AI Agent驱动，在HN获得高赞，代表AI与创意工具结合的新方向。",
       "summary_en": "FableCut, a zero-dependency browser video editor drivable by AI agents, gained high upvotes on HN, representing a new direction in AI-powered creative tools.",
       "research_md_path": "content/trends/browser-video-editor-ai-driven.md",
-      "canonical_zh": "浏览器视频编辑器AI驱动"
+      "canonical_zh": "浏览器视频编辑器AI驱动",
+      "opportunity_score": 62,
+      "market_score": 70,
+      "competition_score": 30,
+      "demand_score": 65,
+      "seo_difficulty": 40,
+      "suggested_products": [
+        "Web App",
+        "AI Agent",
+        "SaaS",
+        "Chrome Extension",
+        "Plugin/Add-on"
+      ],
+      "estimated_dev_days": 45,
+      "revenue_potential": 3,
+      "risk_factors_en": [
+        "Large tech companies (e.g., Adobe, Google) may enter with similar AI video tools",
+        "User adoption depends on AI accuracy and browser performance"
+      ],
+      "risk_factors_zh": [
+        "大型科技公司（如Adobe、Google）可能推出类似AI视频工具",
+        "用户采用依赖AI准确性和浏览器性能"
+      ],
+      "opportunity_summary_en": "The AI-driven browser video editor space is nascent with low competition, offering a blue ocean opportunity. Strong initial signals from HN interest suggest demand, though validation is limited. A focused web app or AI agent product could capture early adopters, but risks from big tech entry and technical constraints remain.",
+      "opportunity_summary_zh": "AI驱动的浏览器视频编辑器领域处于萌芽期，竞争较低，提供蓝海机会。HN上的强烈兴趣信号表明需求存在，但验证有限。聚焦的Web应用或AI Agent产品可以捕获早期用户，但仍面临大厂进入和技术限制的风险。"
     },
     {
       "id": "trend-chrome-devtools-mcp-protocol",
@@ -3032,7 +3298,33 @@
       "summary_zh": "Chrome DevTools MCP项目使编码Agent能直接控制浏览器调试工具，在GitHub Trending上获得高星，标志开发工具与AI Agent的深度集成。",
       "summary_en": "The Chrome DevTools MCP project enables coding agents to directly control browser debugging tools, trending on GitHub, marking deep integration of dev tools with AI agents.",
       "research_md_path": "content/trends/chrome-devtools-mcp-protocol.md",
-      "canonical_zh": "Chrome DevTools MCP协议"
+      "canonical_zh": "Chrome DevTools MCP协议",
+      "opportunity_score": 55,
+      "market_score": 65,
+      "competition_score": 20,
+      "demand_score": 60,
+      "seo_difficulty": 25,
+      "suggested_products": [
+        "MCP Server",
+        "VS Code Extension",
+        "Chrome Extension",
+        "CLI Tool",
+        "Open Source"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 3,
+      "risk_factors_en": [
+        "Google may integrate similar functionality into Chrome DevTools natively",
+        "Low developer awareness and adoption of MCP protocol",
+        "Requires continuous maintenance to keep up with Chrome updates"
+      ],
+      "risk_factors_zh": [
+        "Google 可能将类似功能原生集成到 Chrome DevTools 中",
+        "开发者对 MCP 协议的认知和采用率低",
+        "需要持续维护以跟上 Chrome 更新"
+      ],
+      "opportunity_summary_en": "The Chrome DevTools MCP Protocol opens a new niche for AI-agent-driven browser debugging. Early entry allows building a dedicated MCP server or VS Code extension with minimal competition. However, the nascent market means demand and revenue are uncertain, and Google could enter at any time.",
+      "opportunity_summary_zh": "Chrome DevTools MCP 协议为 AI Agent 驱动的浏览器调试开辟了新领域。早期进入可构建专用 MCP 服务器或 VS Code 扩展，竞争极小。然而，市场尚在萌芽，需求和收入不确定，且 Google 随时可能入场。"
     },
     {
       "id": "trend-ai-code-review-fatigue",
@@ -3051,7 +3343,33 @@
       "summary_zh": "多篇讨论指出AI代码审查虽然效率高，但导致开发者注意力疲劳和审查质量下降，成为开发者社区热议话题。",
       "summary_en": "Multiple discussions point out that AI code reviews, while efficient, cause attention fatigue and reduced review quality, becoming a hot topic in developer communities.",
       "research_md_path": "content/trends/ai-code-review-fatigue.md",
-      "canonical_zh": "AI代码审查疲劳"
+      "canonical_zh": "AI代码审查疲劳",
+      "opportunity_score": 45,
+      "market_score": 40,
+      "competition_score": 20,
+      "demand_score": 55,
+      "seo_difficulty": 30,
+      "suggested_products": [
+        "VS Code Extension",
+        "CLI Tool",
+        "Open Source",
+        "API",
+        "Newsletter"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Large AI platform vendors (e.g., GitHub, JetBrains) may integrate fatigue mitigation features, reducing independent opportunity.",
+        "Developer willingness to pay for anti-fatigue tools is unproven.",
+        "Market may remain too niche to sustain a standalone product."
+      ],
+      "risk_factors_zh": [
+        "大型 AI 平台（如 GitHub、JetBrains）可能内置疲劳缓解功能，削弱独立机会。",
+        "开发者为抗疲劳工具付费的意愿未经证实。",
+        "市场可能过于细分，难以支撑独立产品。"
+      ],
+      "opportunity_summary_en": "AI code review fatigue is a real but nascent pain point for developers. Currently a blue ocean with low competition, but monetization is uncertain. An early-stage open-source or VS Code extension could build community traction, but success depends on proving value beyond existing workarounds.",
+      "opportunity_summary_zh": "AI 代码审查疲劳是开发者的真实但初期的痛点。目前是蓝海，竞争低，但变现不确定。早期开源或 VS Code 扩展可积累社区，但成功需证明超越现有变通方案的价值。"
     },
     {
       "id": "trend-ai-assisted-historical-document-ocr-correction",
@@ -3070,7 +3388,30 @@
       "summary_zh": "ICDAR 2026推出LLM辅助历史文档OCR后校正竞赛，表明AI在文化遗产数字化领域的专业化应用正在形成。",
       "summary_en": "ICDAR 2026 launches a competition on LLM-assisted OCR post-correction for historical documents, indicating emerging specialized AI applications in cultural heritage digitization.",
       "research_md_path": "content/trends/ai-assisted-historical-document-ocr-correction.md",
-      "canonical_zh": "AI辅助历史文档OCR校正"
+      "canonical_zh": "AI辅助历史文档OCR校正",
+      "opportunity_score": 42,
+      "market_score": 35,
+      "competition_score": 20,
+      "demand_score": 40,
+      "seo_difficulty": 15,
+      "suggested_products": [
+        "Web App",
+        "API",
+        "Open Source",
+        "Dataset"
+      ],
+      "estimated_dev_days": 90,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Very small target market limits scalability",
+        "Dependence on academic funding and institutional adoption"
+      ],
+      "risk_factors_zh": [
+        "目标市场极小，限制规模化",
+        "依赖学术资金和机构采用"
+      ],
+      "opportunity_summary_en": "AI-assisted historical document OCR correction is an emerging niche with low competition but limited market size. The ICDAR 2026 competition signals growing interest, but commercialization requires institutional partnerships. A focused web app or API could serve archives, but revenue potential remains low in the short term.",
+      "opportunity_summary_zh": "AI辅助历史文档OCR校正是一个新兴的利基市场，竞争低但市场规模有限。ICDAR 2026竞赛标志着兴趣增长，但商业化需要机构合作。专注的Web应用或API可服务于档案馆，但短期内收入潜力较低。"
     },
     {
       "id": "trend-autonomous-red-team-testing-platform",
@@ -3089,7 +3430,31 @@
       "summary_zh": "T3MP3ST作为多Agent自主红队测试平台在GitHub Trending上快速增长，代表AI安全领域自动化攻击测试的新趋势。",
       "summary_en": "T3MP3ST, a multi-agent autonomous red teaming platform, is rapidly trending on GitHub, representing a new trend in automated offensive security testing.",
       "research_md_path": "content/trends/autonomous-red-team-testing-platform.md",
-      "canonical_zh": "自主红队测试平台"
+      "canonical_zh": "自主红队测试平台",
+      "opportunity_score": 45,
+      "market_score": 55,
+      "competition_score": 20,
+      "demand_score": 40,
+      "seo_difficulty": 30,
+      "suggested_products": [
+        "Open Source",
+        "SaaS",
+        "API",
+        "CLI Tool",
+        "AI Agent"
+      ],
+      "estimated_dev_days": 45,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Market may remain niche with limited adoption",
+        "Large security vendors (e.g., CrowdStrike, Palo Alto) could integrate similar capabilities"
+      ],
+      "risk_factors_zh": [
+        "市场可能保持小众，采用率有限",
+        "大型安全厂商（如CrowdStrike、Palo Alto）可能集成类似功能"
+      ],
+      "opportunity_summary_en": "T3MP3ST signals a nascent opportunity in autonomous red-teaming, with low competition and early-stage demand. However, the market is small and unproven, requiring careful validation before heavy investment. A focused open-source tool or API could attract early adopters in AI security.",
+      "opportunity_summary_zh": "T3MP3ST预示着自主红队测试的早期机会，竞争低且需求处于萌芽阶段。但市场规模小且未经证实，需要谨慎验证后再投入。一个专注的开源工具或API可能吸引AI安全领域的早期用户。"
     },
     {
       "id": "trend-ai-coding-assistant-search-interest-decline",
@@ -3108,7 +3473,31 @@
       "summary_zh": "Google Trends数据显示「AI code assistant」搜索量下降66%，可能反映市场趋于成熟或用户兴趣转移。",
       "summary_en": "Google Trends shows a 66% decline in search volume for 'AI code assistant', possibly indicating market maturation or shifting user interest.",
       "research_md_path": "content/trends/ai-coding-assistant-search-interest-decline.md",
-      "canonical_zh": "AI编码助手搜索热度下降"
+      "canonical_zh": "AI编码助手搜索热度下降",
+      "opportunity_score": 35,
+      "market_score": 25,
+      "competition_score": 70,
+      "demand_score": 30,
+      "seo_difficulty": 80,
+      "suggested_products": [
+        "VS Code Extension",
+        "CLI Tool",
+        "API",
+        "AI Agent",
+        "Open Source"
+      ],
+      "estimated_dev_days": 45,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Major incumbents (e.g., GitHub, Microsoft) dominate the space",
+        "Declining search volume may indicate permanent market contraction"
+      ],
+      "risk_factors_zh": [
+        "主要竞争对手（如GitHub、微软）主导市场",
+        "搜索量下降可能表明市场永久性收缩"
+      ],
+      "opportunity_summary_en": "The decline in AI coding assistant search interest suggests a maturing market with limited growth opportunity. Competition from established players is high, and user demand appears to be waning. A niche, specialized tool (e.g., for a specific language or workflow) might find a small audience, but broad entry is risky.",
+      "opportunity_summary_zh": "AI编码助手搜索兴趣下降表明市场成熟，增长机会有限。来自成熟玩家的竞争激烈，用户需求似乎减弱。专注于特定语言或工作流的利基工具可能找到小受众，但广泛进入风险较高。"
     },
     {
       "id": "trend-ai-distraction-free-vim",
@@ -3127,7 +3516,29 @@
       "summary_zh": "Drew DeVault关于开发无AI版Vim的访谈在Lobsters引发讨论，反映部分开发者对AI过度嵌入工具的抵触情绪。",
       "summary_en": "Drew DeVault's interview about developing an AI-free version of Vim sparks discussion on Lobsters, reflecting pushback from some developers against excessive AI integration in tools.",
       "research_md_path": "content/trends/ai-distraction-free-vim.md",
-      "canonical_zh": "AI无干扰版Vim"
+      "canonical_zh": "AI无干扰版Vim",
+      "opportunity_score": 45,
+      "market_score": 35,
+      "competition_score": 20,
+      "demand_score": 50,
+      "seo_difficulty": 30,
+      "suggested_products": [
+        "Open Source",
+        "CLI Tool",
+        "Plugin/Add-on"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Limited market size and growth potential",
+        "Competition from mainstream Vim forks if demand increases"
+      ],
+      "risk_factors_zh": [
+        "市场规模和增长潜力有限",
+        "如果需求增加，主流Vim分支可能加入竞争"
+      ],
+      "opportunity_summary_en": "The AI Distraction-Free Vim concept addresses a genuine but niche frustration among developers. Current competition is minimal, offering a blue ocean opportunity, but the market is small and monetization uncertain. A lightweight open-source CLI tool or plugin could be built quickly to test demand.",
+      "opportunity_summary_zh": "无AI干扰Vim概念解决了开发者中真实但小众的痛点。目前竞争极小，是蓝海机会，但市场规模小且变现不确定。可以快速构建一个轻量级开源CLI工具或插件来测试需求。"
     },
     {
       "id": "trend-open-source-software-sustainable-funding-model",
@@ -3146,7 +3557,33 @@
       "summary_zh": "关于如何在不妥协的情况下资助开源软件的讨论在Lobsters上持续，反映开源社区对资金可持续性的长期关注。",
       "summary_en": "Discussions on funding open-source software without compromising it continue on Lobsters, reflecting the community's persistent concern about financial sustainability.",
       "research_md_path": "content/trends/open-source-software-sustainable-funding-model.md",
-      "canonical_zh": "开源软件可持续资金模式"
+      "canonical_zh": "开源软件可持续资金模式",
+      "opportunity_score": 45,
+      "market_score": 50,
+      "competition_score": 60,
+      "demand_score": 55,
+      "seo_difficulty": 50,
+      "suggested_products": [
+        "SaaS",
+        "Web App",
+        "Newsletter",
+        "Open Source",
+        "Plugin/Add-on"
+      ],
+      "estimated_dev_days": 45,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Low willingness to pay among developers",
+        "Existing strong competitors like GitHub Sponsors and Open Collective",
+        "Dependence on community goodwill rather than stable revenue"
+      ],
+      "risk_factors_zh": [
+        "开发者付费意愿低",
+        "现有强劲竞争对手如 GitHub Sponsors 和 Open Collective",
+        "依赖社区善意而非稳定收入"
+      ],
+      "opportunity_summary_en": "The open-source sustainable funding model remains a debated topic with no clear winner. Current solutions are fragmented, and developers seek alternatives that balance openness with financial viability. A niche product focusing on transparency and community trust could find a small but loyal user base.",
+      "opportunity_summary_zh": "开源可持续资助模型仍然是一个有争议的话题，尚无明确赢家。现有解决方案碎片化，开发者寻求平衡开放性与财务可行性的替代方案。一个专注于透明度和社区信任的小众产品可能找到一个小而忠诚的用户群。"
     },
     {
       "id": "trend-ai-agent-wait-experience-optimization",
@@ -3165,7 +3602,29 @@
       "summary_zh": "FreeBuddy等产品针对AI Agent执行任务时的等待空档提供内容推荐，代表AI工作流中用户体验优化的新方向。",
       "summary_en": "Products like FreeBuddy offer content recommendations during AI agent task execution, representing a new direction in UX optimization for AI workflows.",
       "research_md_path": "content/trends/ai-agent-wait-experience-optimization.md",
-      "canonical_zh": "AI Agent等待体验优化"
+      "canonical_zh": "AI Agent等待体验优化",
+      "opportunity_score": 38,
+      "market_score": 30,
+      "competition_score": 20,
+      "demand_score": 25,
+      "seo_difficulty": 15,
+      "suggested_products": [
+        "Chrome Extension",
+        "AI Agent",
+        "Web App"
+      ],
+      "estimated_dev_days": 14,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Lack of proven demand may lead to zero traction",
+        "Large AI platforms could integrate similar features natively"
+      ],
+      "risk_factors_zh": [
+        "缺乏验证的需求可能导致零用户增长",
+        "大型AI平台可能原生集成类似功能"
+      ],
+      "opportunity_summary_en": "AI agent wait experience optimization is a nascent niche with very little competition and low SEO difficulty. However, there is no evidence of user demand or willingness to pay, making it a high-risk opportunity. A minimal viable product like a Chrome extension could be built quickly to test the market, but revenue potential is currently low.",
+      "opportunity_summary_zh": "AI Agent等待体验优化是一个新兴的细分领域，竞争极小且SEO难度低。然而，没有证据表明用户有需求或付费意愿，因此这是一个高风险机会。可以快速构建一个Chrome扩展等最小可行产品来测试市场，但目前收入潜力较低。"
     },
     {
       "id": "trend-website-reverse-engineering-ai-tool",
@@ -3184,7 +3643,32 @@
       "summary_zh": "为AI开发的网站逆向辅助工具在V2EX发布，反映AI辅助逆向工程成为开发者工具的新兴细分领域。",
       "summary_en": "An AI-assisted website reverse engineering tool posted on V2EX highlights an emerging niche in developer tools for AI-aided reverse engineering.",
       "research_md_path": "content/trends/website-reverse-engineering-ai-tool.md",
-      "canonical_zh": "网站逆向AI工具"
+      "canonical_zh": "网站逆向AI工具",
+      "opportunity_score": 35,
+      "market_score": 30,
+      "competition_score": 20,
+      "demand_score": 35,
+      "seo_difficulty": 15,
+      "suggested_products": [
+        "Chrome Extension",
+        "CLI Tool",
+        "Open Source",
+        "VS Code Extension"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Low user demand may not sustain a dedicated product",
+        "Rapid AI model improvements could automate reverse engineering, reducing tool value",
+        "Potential legal and ethical concerns around reverse engineering websites"
+      ],
+      "risk_factors_zh": [
+        "用户需求低，可能无法支撑一个独立产品",
+        "AI模型快速进步可能自动化逆向工程，降低工具价值",
+        "逆向工程网站可能涉及法律和伦理风险"
+      ],
+      "opportunity_summary_en": "An AI-powered website reverse engineering tool is an early-stage niche with minimal competition but also limited proven demand. The opportunity is best suited as a small open-source project or browser extension to validate interest before investing heavily. Monetization remains uncertain, and legal risks require careful consideration.",
+      "opportunity_summary_zh": "AI驱动的网站逆向工程工具是一个早期细分领域，竞争极低但需求验证不足。最适合作为小型开源项目或浏览器扩展先验证兴趣，再考虑加大投入。变现仍不确定，且需谨慎处理法律风险。"
     },
     {
       "id": "trend-external-brain-dependency-and-cognitive-decline",
@@ -3203,7 +3687,31 @@
       "summary_zh": "V2EX上关于外部AI大脑越来越强导致原生大脑退化的讨论获得28条回复，反映开发者对AI依赖的深层反思。",
       "summary_en": "A V2EX discussion on how increasingly powerful external AI brains may degrade native cognition, with 28 replies, reflects deep reflection on AI dependency among developers.",
       "research_md_path": "content/trends/external-brain-dependency-and-cognitive-decline.md",
-      "canonical_zh": "外部大脑依赖与认知退化"
+      "canonical_zh": "外部大脑依赖与认知退化",
+      "opportunity_score": 45,
+      "market_score": 40,
+      "competition_score": 20,
+      "demand_score": 35,
+      "seo_difficulty": 30,
+      "suggested_products": [
+        "Newsletter",
+        "Web App",
+        "Mobile App",
+        "Open Source",
+        "Chrome Extension"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Market too niche for sustainable revenue",
+        "Difficult to measure or prove cognitive decline effect"
+      ],
+      "risk_factors_zh": [
+        "市场过于小众，难以获得可持续收入",
+        "难以衡量或证明认知下降的效果"
+      ],
+      "opportunity_summary_en": "This trend reflects a philosophical anxiety among developers about over-reliance on AI, but lacks concrete demand or market validation. Early-stage content (e.g., newsletters, reflective tools) could build an audience, but monetization is uncertain. The low competition makes it a blue ocean, but the small market size limits immediate opportunity.",
+      "opportunity_summary_zh": "这一趋势反映了开发者对过度依赖AI的哲学焦虑，但缺乏具体需求或市场验证。早期内容（如新闻通讯、反思工具）可以积累受众，但变现不确定。低竞争使其成为蓝海，但市场规模小限制了即时机会。"
     },
     {
       "id": "trend-gpt-5.6-code-generation-quality",
@@ -3222,7 +3730,29 @@
       "summary_zh": "GPT-5.6在HN和V2EX引发大量讨论，特别是其代码生成质量和实际应用效果成为关注焦点。",
       "summary_en": "GPT-5.6 sparks extensive discussion on HN and V2EX, with focus on its code generation quality and practical application effectiveness.",
       "research_md_path": "content/trends/gpt-5.6-code-generation-quality.md",
-      "canonical_zh": "GPT-5.6代码生成质量"
+      "canonical_zh": "GPT-5.6代码生成质量",
+      "opportunity_score": 35,
+      "market_score": 45,
+      "competition_score": 30,
+      "demand_score": 35,
+      "seo_difficulty": 20,
+      "suggested_products": [
+        "VS Code Extension",
+        "CLI Tool",
+        "Web App"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Market may remain too niche to generate significant revenue",
+        "OpenAI could integrate quality improvements directly, making third-party tools obsolete"
+      ],
+      "risk_factors_zh": [
+        "市场可能过于小众，难以产生显著收入",
+        "OpenAI可能直接集成质量改进，使第三方工具过时"
+      ],
+      "opportunity_summary_en": "GPT-5.6 code generation quality is a nascent trend with low competition and SEO difficulty, but demand signals are weak and revenue potential is limited. A lightweight tool like a VS Code extension could test the market, but the risk of platform integration is high. Proceed cautiously with a small MVP to validate demand.",
+      "opportunity_summary_zh": "GPT-5.6代码生成质量是一个新兴趋势，竞争和SEO难度低，但需求信号弱，收入潜力有限。像VS Code扩展这样的轻量工具可以测试市场，但平台集成的风险很高。建议谨慎推进，用小型MVP验证需求。"
     },
     {
       "id": "trend-ai-clone-saas-threat",
@@ -3241,7 +3771,29 @@
       "summary_zh": "HN上关于用户可能用AI克隆SaaS产品的讨论，反映AI降低软件复制成本对SaaS商业模式的潜在冲击。",
       "summary_en": "Discussion on HN about users potentially cloning SaaS products with AI reflects the potential disruption to SaaS business models from reduced software replication costs.",
       "research_md_path": "content/trends/ai-clone-saas-threat.md",
-      "canonical_zh": "AI克隆SaaS威胁"
+      "canonical_zh": "AI克隆SaaS威胁",
+      "opportunity_score": 35,
+      "market_score": 40,
+      "competition_score": 20,
+      "demand_score": 30,
+      "seo_difficulty": 15,
+      "suggested_products": [
+        "AI Agent",
+        "Web App",
+        "Newsletter"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Legal and ethical concerns around cloning may deter adoption or invite lawsuits.",
+        "Large SaaS platforms or cloud providers could build in-house defenses, reducing market opportunity."
+      ],
+      "risk_factors_zh": [
+        "克隆相关的法律和伦理问题可能阻碍采用或引发诉讼。",
+        "大型SaaS平台或云服务商可能构建内部防御，减少市场机会。"
+      ],
+      "opportunity_summary_en": "The AI Clone SaaS Threat trend signals a potential disruption to SaaS business models, but the market is nascent with limited demand signals. Early movers could explore threat detection or educational tools, but risks around legality and platform competition are high. Overall opportunity is moderate to low, requiring careful validation.",
+      "opportunity_summary_zh": "AI克隆SaaS威胁趋势预示着对SaaS商业模式的潜在颠覆，但市场处于萌芽期，需求信号有限。先行者可探索威胁检测或教育工具，但法律和平台竞争风险较高。整体机会中等偏低，需谨慎验证。"
     },
     {
       "id": "trend-ai-tutor-real-time-interaction",
@@ -3260,7 +3812,29 @@
       "summary_zh": "为5岁儿童构建的实时AI导师在HN获得关注，代表AI教育在低龄儿童个性化学习领域的新探索。",
       "summary_en": "A real-time AI tutor for 5-year-olds gains attention on HN, representing new exploration in personalized AI education for young children.",
       "research_md_path": "content/trends/ai-tutor-real-time-interaction.md",
-      "canonical_zh": "AI导师实时交互"
+      "canonical_zh": "AI导师实时交互",
+      "opportunity_score": 35,
+      "market_score": 40,
+      "competition_score": 25,
+      "demand_score": 30,
+      "seo_difficulty": 20,
+      "suggested_products": [
+        "Web App",
+        "Mobile App",
+        "AI Agent"
+      ],
+      "estimated_dev_days": 45,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Unproven demand for AI tutoring among 5-year-olds may lead to low adoption",
+        "Large tech companies (e.g., Google, Khan Academy) could enter with similar products quickly"
+      ],
+      "risk_factors_zh": [
+        "5岁儿童AI辅导需求未经验证，可能导致低采用率",
+        "大型科技公司（如Google、可汗学院）可能快速推出类似产品"
+      ],
+      "opportunity_summary_en": "The real-time AI tutor for 5-year-olds is a very early-stage idea with minimal competition and low SEO difficulty, but demand signals are weak and unvalidated. The market is speculative and revenue potential is limited without stronger evidence of user need. A cautious approach is advised, focusing on a small prototype to test demand before scaling.",
+      "opportunity_summary_zh": "为5岁儿童提供实时AI导师是一个极早期想法，竞争少、SEO难度低，但需求信号薄弱且未经验证。市场具有推测性，若无更强用户需求证据，收入潜力有限。建议谨慎推进，先开发小型原型测试需求，再考虑规模化。"
     },
     {
       "id": "trend-zero-registration-demo-experience-mode",
@@ -4579,6 +5153,310 @@
       "summary_zh": "PhotoBooth100.com 是一款可爱的在线照相馆网页应用，支持多语言，数据不存服务器，代表了独立开发者出海试水的新方向。",
       "summary_en": "PhotoBooth100.com is a cute online photobooth web app with multi-language support and serverless data storage, representing a new direction for indie developers testing global markets.",
       "research_md_path": "content/trends/online-photobooth-going-global.md"
+    },
+    {
+      "id": "trend-ai-agent-cli-tools-from-services",
+      "canonical": "AI Agent CLI Tools from Services",
+      "canonical_zh": "服务的 AI Agent CLI 工具",
+      "aliases": [],
+      "first_seen": "2026-07-17",
+      "last_seen": "2026-07-17",
+      "stage": "nascent",
+      "score": 0,
+      "source_count": 0,
+      "total_mentions": 0,
+      "sources": [],
+      "growth_pct": 100,
+      "category": "AIAgent",
+      "tags": [],
+      "summary_zh": "DoorDash 推出了一个 CLI 工具，允许 AI Agent 直接下单，这标志着主流服务平台开始为 AI Agent 提供原生接口。",
+      "summary_en": "DoorDash launched a CLI tool enabling AI agents to place orders directly, marking a trend of mainstream service platforms offering native interfaces for AI agents.",
+      "research_md_path": "content/trends/ai-agent-cli-tools-from-services.md"
+    },
+    {
+      "id": "trend-shift-from-mcp-to-cli-for-ai-agents",
+      "canonical": "Shift from MCP to CLI for AI Agents",
+      "canonical_zh": "AI Agent 从 MCP 向 CLI 的转变",
+      "aliases": [],
+      "first_seen": "2026-07-17",
+      "last_seen": "2026-07-17",
+      "stage": "nascent",
+      "score": 0,
+      "source_count": 0,
+      "total_mentions": 0,
+      "sources": [],
+      "growth_pct": 100,
+      "category": "AIAgent",
+      "tags": [],
+      "summary_zh": "一篇热门文章指出，越来越多的开发者和公司正在放弃 Anthropic 的 MCP 协议，转而使用更传统的 CLI 接口来连接 AI Agent。",
+      "summary_en": "A popular article points out that more developers and companies are abandoning Anthropic's MCP protocol in favor of traditional CLI interfaces for connecting AI agents.",
+      "research_md_path": "content/trends/shift-from-mcp-to-cli-for-ai-agents.md"
+    },
+    {
+      "id": "trend-multi-platform-ai-chat-history-management",
+      "canonical": "Multi-Platform AI Chat History Management",
+      "canonical_zh": "多平台 AI 聊天历史管理",
+      "aliases": [],
+      "first_seen": "2026-07-17",
+      "last_seen": "2026-07-17",
+      "stage": "nascent",
+      "score": 0,
+      "source_count": 0,
+      "total_mentions": 0,
+      "sources": [],
+      "growth_pct": 100,
+      "category": "AIApp",
+      "tags": [],
+      "summary_zh": "开发社区中出现了一个热门求助帖，寻求能够跨多个 AI 平台（如 ChatGPT、Claude）统一管理会话历史的工具，反映了用户对碎片化 AI 体验的痛点。",
+      "summary_en": "A popular request in the dev community for a tool to manage chat history across multiple AI platforms (e.g., ChatGPT, Claude) highlights the pain point of fragmented AI experiences.",
+      "research_md_path": "content/trends/multi-platform-ai-chat-history-management.md"
+    },
+    {
+      "id": "trend-agent-context-bloat-solutions",
+      "canonical": "Agent Context Bloat Solutions",
+      "canonical_zh": "Agent 上下文膨胀解决方案",
+      "aliases": [],
+      "first_seen": "2026-07-17",
+      "last_seen": "2026-07-17",
+      "stage": "nascent",
+      "score": 0,
+      "source_count": 0,
+      "total_mentions": 0,
+      "sources": [],
+      "growth_pct": 100,
+      "category": "AIAgent",
+      "tags": [],
+      "summary_zh": "Ratel 等项目通过提供无限工具和技能而不导致上下文膨胀，直接回应了构建复杂 AI Agent 时的一个核心挑战。",
+      "summary_en": "Projects like Ratel directly address a core challenge in building complex AI agents by providing unlimited tools and skills without context bloat.",
+      "research_md_path": "content/trends/agent-context-bloat-solutions.md"
+    },
+    {
+      "id": "trend-kimi-k3-open-frontier-intelligence",
+      "canonical": "Kimi K3 Open Frontier Intelligence",
+      "canonical_zh": "Kimi K3 开放前沿智能",
+      "aliases": [],
+      "first_seen": "2026-07-17",
+      "last_seen": "2026-07-17",
+      "stage": "nascent",
+      "score": 0,
+      "source_count": 0,
+      "total_mentions": 0,
+      "sources": [],
+      "growth_pct": 100,
+      "category": "AIModel",
+      "tags": [],
+      "summary_zh": "Kimi K3 在 Hacker News 上获得了大量关注和讨论，表明社区对开放、前沿的 AI 模型有持续的兴趣。",
+      "summary_en": "Kimi K3 gained significant attention and discussion on Hacker News, indicating continued community interest in open, frontier AI models.",
+      "research_md_path": "content/trends/kimi-k3-open-frontier-intelligence.md"
+    },
+    {
+      "id": "trend-odysseus-self-hosted-ai-workspace",
+      "canonical": "Odysseus Self-hosted AI Workspace",
+      "canonical_zh": "Odysseus 自托管 AI 工作区",
+      "aliases": [],
+      "first_seen": "2026-07-17",
+      "last_seen": "2026-07-17",
+      "stage": "nascent",
+      "score": 0,
+      "source_count": 0,
+      "total_mentions": 0,
+      "sources": [],
+      "growth_pct": 100,
+      "category": "OpenSource",
+      "tags": [],
+      "summary_zh": "Odysseus 是一个高星标的开源项目，提供自托管的 AI 工作区，反映了开发者在 AI 工具方面对自主权和隐私的追求。",
+      "summary_en": "Odysseus is a highly-starred open-source project offering a self-hosted AI workspace, reflecting the developer community's push for autonomy and privacy in AI tools.",
+      "research_md_path": "content/trends/odysseus-self-hosted-ai-workspace.md"
+    },
+    {
+      "id": "trend-llm-token-consumption-reduction-proxy",
+      "canonical": "LLM Token Consumption Reduction Proxy",
+      "canonical_zh": "LLM Token 消耗减少代理",
+      "aliases": [],
+      "first_seen": "2026-07-17",
+      "last_seen": "2026-07-17",
+      "stage": "nascent",
+      "score": 0,
+      "source_count": 0,
+      "total_mentions": 0,
+      "sources": [],
+      "growth_pct": 100,
+      "category": "DevTools",
+      "tags": [],
+      "summary_zh": "rtk-ai/rtk 是一个用 Rust 编写的 CLI 代理，能减少 60-90% 的 LLM token 消耗，直接回应了 AI 成本问题。",
+      "summary_en": "rtk-ai/rtk is a Rust-based CLI proxy that reduces LLM token consumption by 60-90%, directly addressing the issue of AI costs.",
+      "research_md_path": "content/trends/llm-token-consumption-reduction-proxy.md"
+    },
+    {
+      "id": "trend-ai-taste-and-quality-control",
+      "canonical": "AI Taste and Quality Control",
+      "canonical_zh": "AI 品味与质量控制",
+      "aliases": [],
+      "first_seen": "2026-07-17",
+      "last_seen": "2026-07-17",
+      "stage": "nascent",
+      "score": 0,
+      "source_count": 0,
+      "total_mentions": 0,
+      "sources": [],
+      "growth_pct": 100,
+      "category": "TechConcept",
+      "tags": [],
+      "summary_zh": "像 'taste-skill' 这样的项目旨在防止 AI 生成无聊、通用的内容，这代表了一个新兴的关注点：控制 AI 输出的质量和风格。",
+      "summary_en": "Projects like 'taste-skill' aim to prevent AI from generating boring, generic slop, representing an emerging focus on controlling the quality and style of AI output.",
+      "research_md_path": "content/trends/ai-taste-and-quality-control.md"
+    },
+    {
+      "id": "trend-xai-grok-build-coding-agent",
+      "canonical": "xAI Grok Build Coding Agent",
+      "canonical_zh": "xAI Grok Build 编码 Agent",
+      "aliases": [],
+      "first_seen": "2026-07-17",
+      "last_seen": "2026-07-17",
+      "stage": "nascent",
+      "score": 0,
+      "source_count": 0,
+      "total_mentions": 0,
+      "sources": [],
+      "growth_pct": 100,
+      "category": "AIAgent",
+      "tags": [],
+      "summary_zh": "xAI 的 Grok Build 是一个开源的、全屏、支持鼠标交互的编码 Agent TUI，展示了大型 AI 公司对 Agent 驱动开发工具的投入。",
+      "summary_en": "xAI's Grok Build is an open-source, fullscreen, mouse-interactive coding agent TUI, showcasing major AI companies' investment in agent-driven development tools.",
+      "research_md_path": "content/trends/xai-grok-build-coding-agent.md"
+    },
+    {
+      "id": "trend-http-query-method",
+      "canonical": "HTTP QUERY Method",
+      "canonical_zh": "HTTP QUERY 方法",
+      "aliases": [],
+      "first_seen": "2026-07-17",
+      "last_seen": "2026-07-17",
+      "stage": "nascent",
+      "score": 0,
+      "source_count": 0,
+      "total_mentions": 0,
+      "sources": [],
+      "growth_pct": 100,
+      "category": "Infra",
+      "tags": [],
+      "summary_zh": "HTTP 新增了一个 QUERY 方法，允许复杂的搜索操作不再伪装成 POST 请求，这是 Web 协议的一个重要发展。",
+      "summary_en": "HTTP has a new QUERY method that allows complex search operations to stop pretending to be POST requests, a significant evolution of the web protocol.",
+      "research_md_path": "content/trends/http-query-method.md"
+    },
+    {
+      "id": "trend-ai-agents-replacing-traditional-saas",
+      "canonical": "AI Agents Replacing Traditional SaaS",
+      "canonical_zh": "AI Agent 取代传统 SaaS",
+      "aliases": [],
+      "first_seen": "2026-07-17",
+      "last_seen": "2026-07-17",
+      "stage": "nascent",
+      "score": 0,
+      "source_count": 0,
+      "total_mentions": 0,
+      "sources": [],
+      "growth_pct": 100,
+      "category": "Industry",
+      "tags": [],
+      "summary_zh": "一个热门讨论认为 AI Agent 正在取代传统的 SaaS 应用，这代表了对软件交付和消费模式的潜在颠覆性观点。",
+      "summary_en": "A popular discussion posits that AI agents are replacing traditional SaaS applications, representing a potentially disruptive view of software delivery and consumption.",
+      "research_md_path": "content/trends/ai-agents-replacing-traditional-saas.md"
+    },
+    {
+      "id": "trend-llm-generated-text-detection",
+      "canonical": "LLM-Generated Text Detection",
+      "canonical_zh": "LLM 生成文本检测",
+      "aliases": [],
+      "first_seen": "2026-07-17",
+      "last_seen": "2026-07-17",
+      "stage": "nascent",
+      "score": 0,
+      "source_count": 0,
+      "total_mentions": 0,
+      "sources": [],
+      "growth_pct": 100,
+      "category": "TechConcept",
+      "tags": [],
+      "summary_zh": "一篇关于使用 '经典' 机器学习方法检测 LLM 生成文本的文章在 Hacker News 上引发了热烈讨论，突显了 AI 内容真实性问题的持续重要性。",
+      "summary_en": "An article on detecting LLM-generated texts with 'classical' machine learning sparked a heated discussion on Hacker News, highlighting the ongoing importance of AI content authenticity.",
+      "research_md_path": "content/trends/llm-generated-text-detection.md"
+    },
+    {
+      "id": "trend-software-bugginess-discussion",
+      "canonical": "Software Bugginess Discussion",
+      "canonical_zh": "软件 Bug 增多讨论",
+      "aliases": [],
+      "first_seen": "2026-07-17",
+      "last_seen": "2026-07-17",
+      "stage": "nascent",
+      "score": 0,
+      "source_count": 0,
+      "total_mentions": 0,
+      "sources": [],
+      "growth_pct": 100,
+      "category": "DX",
+      "tags": [],
+      "summary_zh": "Hacker News 上 '软件是否普遍变得更糟糕' 的提问获得了大量共鸣和评论，反映了开发者对软件质量下降的普遍担忧。",
+      "summary_en": "An 'Ask HN' post questioning if software is buggier across the board received widespread agreement and comments, reflecting developer concerns about declining software quality.",
+      "research_md_path": "content/trends/software-bugginess-discussion.md"
+    },
+    {
+      "id": "trend-vibe-coding-and-ai-debt",
+      "canonical": "Vibe Coding and AI Debt",
+      "canonical_zh": "Vibe Coding 与 AI 债务",
+      "aliases": [],
+      "first_seen": "2026-07-17",
+      "last_seen": "2026-07-17",
+      "stage": "nascent",
+      "score": 0,
+      "source_count": 0,
+      "total_mentions": 0,
+      "sources": [],
+      "growth_pct": 100,
+      "category": "DX",
+      "tags": [],
+      "summary_zh": "一篇 DEV 社区的文章将 AI 生成的代码比喻为 '小额贷款'，认为最终需要偿还，这代表了对 AI 辅助编码长期影响的反思。",
+      "summary_en": "A DEV.to article metaphorically describes AI-generated code as a 'small loan' that must eventually be repaid, representing a reflection on the long-term impact of AI-assisted coding.",
+      "research_md_path": "content/trends/vibe-coding-and-ai-debt.md"
+    },
+    {
+      "id": "trend-non-developer-ai-agent-skill-creation",
+      "canonical": "Non-Developer AI Agent Skill Creation",
+      "canonical_zh": "非开发者创建 AI Agent 技能",
+      "aliases": [],
+      "first_seen": "2026-07-17",
+      "last_seen": "2026-07-17",
+      "stage": "nascent",
+      "score": 0,
+      "source_count": 0,
+      "total_mentions": 0,
+      "sources": [],
+      "growth_pct": 100,
+      "category": "AIAgent",
+      "tags": [],
+      "summary_zh": "一篇 DEV 社区文章指出，最适合编写 AI Agent 技能的人可能不会写 YAML，这引发了关于如何为非技术人员赋能以创建 Agent 的讨论。",
+      "summary_en": "A DEV.to article points out that the best person to write AI agent skills might not know YAML, sparking discussion on empowering non-technical people to create agents.",
+      "research_md_path": "content/trends/non-developer-ai-agent-skill-creation.md"
+    },
+    {
+      "id": "trend-open-source-975b-parameter-ai-model",
+      "canonical": "Open Source 975B Parameter AI Model",
+      "canonical_zh": "开源 9750 亿参数 AI 模型",
+      "aliases": [],
+      "first_seen": "2026-07-17",
+      "last_seen": "2026-07-17",
+      "stage": "nascent",
+      "score": 0,
+      "source_count": 0,
+      "total_mentions": 0,
+      "sources": [],
+      "growth_pct": 100,
+      "category": "AIModel",
+      "tags": [],
+      "summary_zh": "Thinking Machines Lab 发布了首个完全开源的 9750 亿参数模型，标志着开源 AI 模型规模的巨大飞跃。",
+      "summary_en": "Thinking Machines Lab released the first fully open-source AI model with 975 billion parameters, marking a huge leap in the scale of open-source AI models.",
+      "research_md_path": "content/trends/open-source-975b-parameter-ai-model.md"
     }
   ],
   "_version": "1.0"
