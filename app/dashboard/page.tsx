@@ -5,7 +5,7 @@ import { getAllTrendTerms } from '@/app/trends/data';
 export const metadata: Metadata = {
   title: 'Dashboard — AimFast.Dev',
   description:
-    'Daily market intelligence dashboard. Signal scores, competitor tracking, opportunity pipeline, and daily reports.',
+    'Daily market intelligence dashboard. Signal scores, opportunity pipeline, and daily reports.',
   robots: { index: false, follow: false },
 };
 
@@ -22,13 +22,12 @@ export default function DashboardPage() {
           <p>
             Daily market intelligence for indie builders. One validated product
             opportunity every morning — what to build, who will pay, and how much
-            to charge. Track competitors, monitor watchlist signals, and get
-            AI-powered decision support from 11+ global sources.
+            to charge. Monitor watchlist signals and get AI-powered decision
+            support from 11+ global sources.
           </p>
           <ul>
             <li>Watchlist: monitor tracked terms with 7-day trend deltas</li>
             <li>Today&apos;s Decision: one actionable opportunity with evidence, buyer, pricing, and validation path</li>
-            <li>Competitor Intel: weekly mentions, sentiment, and suggested counter-moves</li>
             <li>Full Report: comprehensive daily signal digest with plain-English breakdowns</li>
           </ul>
           <p>

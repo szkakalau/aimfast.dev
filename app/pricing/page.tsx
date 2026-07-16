@@ -4,7 +4,7 @@ import { Check, Star } from 'lucide-react';
 export const metadata: Metadata = {
   title: 'Pricing — AimFast.Dev',
   description:
-    'Three plans for indie builders. Starter $19/mo for trend discovery. Builder $39/mo with daily decisions + competitor monitoring. Team $79/mo with shared boards + API.',
+    'Three plans for indie builders. Starter $19/mo for trend discovery. Builder $39/mo with daily decisions. Team $79/mo with shared boards + API.',
   robots: { index: true, follow: true },
   alternates: {
     canonical: 'https://www.aimfast.dev/pricing/',
@@ -76,7 +76,7 @@ const PLANS: Plan[] = [
     features: [
       'Everything in Starter',
       'Daily verified decision card',
-      'Competitor & topic monitoring (up to 10)',
+      'Topic monitoring (up to 10)',
       'Full deep research reports (≥60 score)',
       'AI scoring & cross-platform validation',
       'Full report archive',
@@ -117,8 +117,8 @@ const FAQ_ITEMS = [
     a: 'HN, Reddit (r/programming, r/MachineLearning, r/SideProject, r/Entrepreneur, r/digitalnomad), GitHub Trending, DEV Community, Lobsters, V2EX, X/Twitter, Product Hunt, HuggingFace, Arxiv, Indie Hackers, and more — 11+ sources, daily.',
   },
   {
-    q: 'Can I track my competitors?',
-    a: 'Yes — on the Builder plan and above. Add up to 10 competitors, topics, people, or tech stacks. Every day, you see what they did and what you should do about it. Not just "they launched X" — we tell you "their launch reveals a gap you can fill."',
+    q: 'Can I track industry trends?',
+    a: 'Yes — on the Builder plan and above. Add up to 10 topics, people, or tech stacks. Every day, you see what is happening and what you should do about it. Not just "X is trending" — we tell you "this trend reveals a gap you can fill."',
   },
   {
     q: 'What if I miss a day?',

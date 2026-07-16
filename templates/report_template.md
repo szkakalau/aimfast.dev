@@ -37,21 +37,6 @@
 
 ---
 
-## 🎯 Competitor Watch（竞品动态 — Phase 2）
-
-{{#each competitor_targets}}
-### {{name}}（{{type_label}}）
-- 📊 本周提及 {{weekly_mentions}} 次（{{trend_arrow}}）
-- 情感倾向：{{sentiment}}
-- 💬 关键动态：
-{{#each highlights}}
-  - [{{source}}] {{original_text}} → 竞品影响：{{competitor_impact}} → 对你有什么用：{{your_action}}
-{{/each}}
-{{#unless highlights}}  *今日无高价值动态*{{/unless}}
-- 🗑️ {{noise_summary}}
-- 📌 建议行动：{{#each suggested_actions}}[{{label}}] {{/each}}
-{{/each}}
-{{#unless competitor_targets}}*未设置追踪目标。[去 Dashboard 添加 →](/dashboard/)*{{/unless}}
 
 ---
 

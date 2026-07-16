@@ -6,7 +6,6 @@ import type { TrendTerm } from '@/app/trends/types';
 import { getTrackedItems, computeDecisionScore } from '@/app/trends/utils';
 import { DashboardHeader } from './components/dashboard-header';
 import { DecisionCard } from './components/decision-card';
-import { CompetitorCard } from './components/competitor-card';
 import { FullReport } from './components/full-report';
 import { DashboardFooter } from './components/dashboard-footer';
 import Watchlist, { type SignalSnapshot } from './components/watchlist';
@@ -129,46 +128,6 @@ export type HistoryEntry = {
   cross_platform: number;
 };
 
-export type CompetitorIntelTarget = {
-  target_id: string;
-  target_name: string;
-  target_type: string;
-  stats: {
-    weekly_mentions: number;
-    trend: string;
-    sentiment: string;
-    noise_count: number;
-    signal_count: number;
-    core_narrative: string;
-  };
-  highlights: Array<{
-    source: string;
-    source_url: string;
-    original_text: string;
-    translation: string;
-    competitor_impact: string;
-    your_action: string;
-    relevance: string;
-  }>;
-  suggested_actions: Array<{ action: string; label: string }>;
-  noise_summary: string;
-};
-
-export type CompetitorIntel = {
-  date: string;
-  target_count: number;
-  targets: CompetitorIntelTarget[];
-};
-
-export type CompetitorTarget = {
-  id: string;
-  name: string;
-  type: string;
-  aliases: string[];
-  keywords: string[];
-  status: string;
-};
-
 export type DashboardDecision = {
   product_name?: string;
   one_liner?: string;
@@ -190,8 +149,6 @@ export type DashboardData = {
   bets: unknown[];
   lessons: unknown[];
   watchlist: unknown[];
-  competitor_targets: CompetitorTarget[];
-  competitor_intel: CompetitorIntel;
   report_md: string;
   report_md_en: string;
   pipeline: Record<string, unknown>;
@@ -413,7 +370,6 @@ export function DashboardClient({ trendTerms }: Props) {
             loading
           />
           <DecisionCard t={t} lang={lang} signal={null} decision={{}} reportMd="" date="--" loading />
-          <CompetitorCard t={t} intel={null} targets={[]} loading />
         </main>
       </>
     );
@@ -509,13 +465,6 @@ export function DashboardClient({ trendTerms }: Props) {
             </div>
           </section>
         )}
-
-        {/* ── Competitor Intel ── */}
-        <CompetitorCard
-          t={t}
-          intel={data.competitor_intel}
-          targets={data.competitor_targets || []}
-        />
 
         {/* ── Full Report ── */}
         <FullReport t={t} reportMd={reportMd} />

@@ -129,7 +129,7 @@ const SECTIONS = [
   {
     file: 'og-dashboard.png',
     title: 'Your Market Intelligence Hub',
-    subtitle: 'Track competitors, monitor trends, get daily briefs',
+    subtitle: 'Monitor trends, get daily briefs',
     accentLabel: 'DASHBOARD',
     tagline: 'Signal Intelligence for Indie Developers',
   },

@@ -322,107 +322,6 @@ body:has(.dash-header) > .site-nav {
   color: var(--color-accent);
 }
 
-/* ═════ Competitor Card ═════ */
-.competitor-card h2 {
-  margin: 0 0 var(--space-3);
-  font-size: 0.95rem;
-  font-weight: 600;
-}
-
-.competitor-list {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-3);
-}
-
-.competitor-item {
-  padding: var(--space-2);
-  border: none;
-  border-radius: var(--radius-md);
-  background: var(--color-surface);
-  box-shadow: var(--shadow-xs);
-  transition: box-shadow var(--duration-fast) var(--ease-out),
-              transform var(--duration-fast) var(--ease-out);
-}
-.competitor-item:hover {
-  box-shadow: var(--shadow-sm);
-  transform: translateY(-1px);
-}
-
-.competitor-item-header {
-  display: flex;
-  align-items: center;
-  gap: var(--space-1);
-  margin-bottom: var(--space-1);
-  flex-wrap: wrap;
-}
-
-.competitor-name {
-  font-weight: 600;
-  font-size: 0.9rem;
-  color: var(--color-text);
-}
-
-.type-badge {
-  font-size: 0.75rem;
-  padding: 1px 8px;
-  border-radius: var(--radius-sm);
-  background: var(--color-surface-alt);
-  color: var(--color-text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-}
-
-.trend-icon {
-  font-size: 0.85rem;
-  font-weight: 700;
-}
-.trend-icon.trend-up { color: var(--color-green); }
-.trend-icon.trend-down { color: var(--color-red); }
-.trend-icon.trend-stable { color: var(--color-text-muted); }
-
-.mention-count {
-  font-size: 0.72rem;
-  color: var(--color-text-muted);
-  font-family: var(--font-mono);
-}
-
-.competitor-narrative {
-  font-size: 0.85rem;
-  color: var(--color-text-secondary);
-  margin: 0 0 var(--space-1);
-  line-height: 1.55;
-}
-
-.competitor-action {
-  font-size: 0.82rem;
-  color: var(--color-text);
-  margin: 0;
-  line-height: 1.5;
-}
-.action-arrow {
-  color: var(--color-accent);
-  font-weight: 600;
-}
-
-.quick-add {
-  display: flex;
-  align-items: center;
-}
-.quick-add .input {
-  padding: 6px 10px;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
-  font-size: 0.82rem;
-  font-family: var(--font-body);
-  background: var(--color-bg);
-  color: var(--color-text);
-  transition: border-color var(--duration-fast) var(--ease-out);
-}
-.quick-add .input:focus {
-  outline: none;
-  border-color: var(--color-accent);
-}
 
 /* ═════ System Pulse ═════ */
 .pulse-card {
@@ -1042,17 +941,6 @@ body:has(.dash-header) > .site-nav {
     font-size: 0.8rem;
   }
 
-  /* Competitor card improvements */
-  .competitor-name {
-    font-size: 0.85rem;
-  }
-  .competitor-narrative {
-    font-size: 0.8rem;
-  }
-  .competitor-action {
-    font-size: 0.78rem;
-  }
-
   /* Full report toggle: full-width touch target */
   .full-report-toggle {
     min-height: 48px;
@@ -1067,11 +955,6 @@ body:has(.dash-header) > .site-nav {
   .evidence-tag {
     font-size: 0.72rem;
     padding: 3px 8px;
-  }
-
-  /* Type badge legibility */
-  .type-badge {
-    font-size: 0.68rem;
   }
 
   /* Watchlist: single column on mobile */

@@ -36,7 +36,7 @@ export default {
         title: "Pricing",
         url: "https://www.aimfast.dev/pricing",
         description:
-          "Pricing plans for AimFast.Dev — including the monitoring engine for competitor and topic tracking.",
+          "Pricing plans for AimFast.Dev — including the monitoring engine for topic tracking.",
       },
     ],
   },

@@ -89,7 +89,7 @@ const jsonLd = {
       name: 'AimFast.Dev',
       url: 'https://www.aimfast.dev/',
       description:
-        'Daily market intelligence for indie builders. Product opportunities, competitor tracking, trend analysis from 11 global sources.',
+        'Daily market intelligence for indie builders. Product opportunities, trend analysis from 11 global sources.',
     },
   ],
 };

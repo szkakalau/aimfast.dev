@@ -138,7 +138,7 @@ export default function HomePage() {
             name: 'Is AimFast.Dev free?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: `Yes — trend discovery and tracking is completely free. Paid plans (from $19/mo) add daily decision briefs, competitor monitoring, and full pipeline access. 14-day free trial, no credit card required.`,
+              text: `Yes — trend discovery and tracking is completely free. Paid plans (from $19/mo) add daily decision briefs and full pipeline access. 14-day free trial, no credit card required.`,
             },
           },
         ],
@@ -308,13 +308,13 @@ export default function HomePage() {
               <Shield size={32} className="engine-icon" />
               <h3>Monitoring Engine</h3>
               <p>
-                Track up to 10 competitors, topics, people, or tech stacks.
-                Every day, the AI tells you what they did, and — most importantly
+                Track up to 10 topics, people, or tech stacks.
+                Every day, the AI tells you what's happening, and — most importantly
                 — what <em>you</em> should do about it.
               </p>
               <ul className="engine-list">
-                <li>Competitor pricing & feature changes</li>
                 <li>Topic trend tracking</li>
+                <li>Pricing & feature change signals</li>
                 <li>Actionable alerts, not noise</li>
               </ul>
             </div>
@@ -328,7 +328,7 @@ export default function HomePage() {
 
           <div className="engine-output">
             <span className="engine-output-label">Daily Report</span>
-            One decision card · Competitor updates · System pulse · 2 minutes to read
+            One decision card · Trend signals · 2 minutes to read
           </div>
         </section>
 
@@ -338,7 +338,7 @@ export default function HomePage() {
           <p>
             Every morning, our Discovery Engine scans {stats.totalSources}+ sources and
             distills signals like these into one actionable decision — with
-            pricing, validation, and competitor context.
+            pricing, validation, and market context.
           </p>
           <a
             href="/dashboard/"

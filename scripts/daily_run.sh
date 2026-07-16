@@ -193,39 +193,6 @@ else
     log "  [Enrich] WARN (non-fatal)"
 fi
 
-# ─── Step 2.6: Merge Competitor Targets (from Dashboard) ───
-
-log ""
-log "--- Step 2.6: Merge Competitor Targets ---"
-
-if $PYTHON -m scripts.merge_competitor_targets 2>&1; then
-    log "  [MergeTargets] OK"
-else
-    log "  [MergeTargets] WARN (non-fatal)"
-fi
-
-# ─── Step 2.7: Competitor Matching ───
-
-log ""
-log "--- Step 2.7: Competitor Matching (Phase 1 双引擎) ---"
-
-if $PYTHON -m scripts.match_competitors 2>&1; then
-    log "  [MatchCompetitor] OK"
-else
-    log "  [MatchCompetitor] WARN (non-fatal)"
-fi
-
-# ─── Step 2.8: Competitor Intel (LLM) ───
-
-log ""
-log "--- Step 2.8: Competitor Intel (LLM) ---"
-
-if $PYTHON -m scripts.generate_competitor_intel 2>&1; then
-    log "  [CompetitorIntel] OK"
-else
-    log "  [CompetitorIntel] WARN (non-fatal)"
-fi
-
 # ─── Step 3: Daily Report ───
 
 log ""
@@ -453,7 +420,7 @@ fi
 log ""
 log "--- Step 13: Deploy Dashboard Data & SEO Content ---"
 
-git add public/dashboard/data/dashboard.json tracking/recurring_signals.json tracking/demand_radar.json tracking/competitor_targets.json tracking/trend_terms.json public/sitemap.xml content/reports/ content/articles/ content/trends/ public/*/index.html compare/ daily/*/signals.json daily/*/competitor_matches.json daily/*/competitor_intel.json 2>&1 || true
+git add public/dashboard/data/dashboard.json tracking/recurring_signals.json tracking/demand_radar.json tracking/trend_terms.json public/sitemap.xml content/reports/ content/articles/ content/trends/ public/*/index.html compare/ daily/*/signals.json 2>&1 || true
 
 if git diff --cached --name-only | grep -q .; then
     git config user.email "pipeline@aimfast.dev"

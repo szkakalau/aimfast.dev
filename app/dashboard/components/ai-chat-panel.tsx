@@ -10,7 +10,7 @@ type Message = {
 
 type Props = {
   t: Record<string, string>;
-  cardType: 'decision' | 'competitor' | 'system';
+  cardType: 'decision' | 'system';
   isOpen: boolean;
   onClose: () => void;
 };
