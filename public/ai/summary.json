@@ -1,0 +1,32 @@
+{
+  "name": "AimFast.Dev — Free Trend Discovery & Market Intelligence",
+  "description": "Automated trend discovery platform scanning 21+ sources (HN, Reddit, GitHub, Product Hunt, X/Twitter, DEV, V2EX, Lobsters, HuggingFace, ArXiv, npm, PyPI, Stack Overflow, YouTube, Google Trends, Douban, Xiaohongshu, w2solo, Indie Hackers) nightly with an LLM pipeline. Tracks 170+ emerging tech terms with Builder Score (0-100), 4-tier maturity stage classification (Nascent/Emergent/Validating/Rising), and cross-source validation (min 2 independent sources). Free, no signup. Updated daily.",
+  "url": "https://www.aimfast.dev",
+  "type": "WebApplication",
+  "category": "Market Intelligence / Trend Discovery",
+  "languages": ["en", "zh-CN"],
+  "provider": "AimFast.Dev",
+  "foundingDate": "2026-01-01",
+  "sameAs": [
+    "https://github.com/szkakalau/aimfast.dev",
+    "https://twitter.com/aimfastdev"
+  ],
+  "features": [
+    "Daily trend discovery from 21+ global sources",
+    "Builder Score — 5-factor weighted composite (source_count ×15 + growth ×12 + authority ×8 + mentions ×5 + freshness ×10)",
+    "4-tier maturity stage classification (Nascent 0-7d, Emergent 8-30d, Validating 31-90d, Rising 90d+)",
+    "Cross-platform validation (≥2 independent sources required)",
+    "C-End consumer opportunity auto-detection",
+    "Daily LLM-generated reports (3,000-6,000 chars) with structured decisions",
+    "Filterable trend dashboard with pagination",
+    "RSS feeds for articles and reports",
+    "Bilingual content (EN + ZH-CN)"
+  ],
+  "pricing": {
+    "free": "Trend discovery, browsing, basic tracking (3 terms)",
+    "starter": "$19/mo — weekly digest, basic tracking",
+    "builder": "$39/mo — daily decisions, topic monitoring, unlimited tracking",
+    "team": "$79/mo — 3 seats, shared boards, CSV export, API access"
+  },
+  "lastModified": "2026-07-17"
+}

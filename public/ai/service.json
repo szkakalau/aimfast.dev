@@ -1,0 +1,55 @@
+{
+  "name": "AimFast.Dev Trend Discovery Engine",
+  "description": "Automated pipeline that collects signals from 21+ global sources nightly, processes them through an LLM pipeline, and delivers structured market intelligence: trend term scoring (Builder Score 0-100), maturity stage classification, cross-platform validation, and actionable daily reports.",
+  "url": "https://www.aimfast.dev",
+  "apiEndpoints": [],
+  "dataFormats": ["JSON", "Markdown", "RSS"],
+  "capabilities": [
+    {
+      "name": "trend_discovery",
+      "description": "Browse 170+ emerging tech terms with filterable stage classification, sort by Builder Score, momentum, or mention volume.",
+      "url": "https://www.aimfast.dev/"
+    },
+    {
+      "name": "dashboard",
+      "description": "Daily market intelligence dashboard with watchlist, decision cards, and full LLM-generated reports.",
+      "url": "https://www.aimfast.dev/dashboard/"
+    },
+    {
+      "name": "daily_reports",
+      "description": "Archived daily signal intelligence reports (3,000-6,000 chars each) with product opportunities, trend analysis, and buildable insights.",
+      "url": "https://www.aimfast.dev/reports/"
+    },
+    {
+      "name": "articles",
+      "description": "Deep-dive signal analysis articles unpacking product opportunities with evidence, plain-English translation, and actionable steps.",
+      "url": "https://www.aimfast.dev/articles/"
+    },
+    {
+      "name": "rss_feeds",
+      "description": "RSS feeds for articles (EN + ZH) and daily reports.",
+      "urls": [
+        "https://www.aimfast.dev/articles/rss.xml",
+        "https://www.aimfast.dev/articles/rss-zh.xml",
+        "https://www.aimfast.dev/reports/rss.xml"
+      ]
+    },
+    {
+      "name": "llms_txt",
+      "description": "AI-readable site documentation: concise index (llms.txt, 147 words) and full methodology reference (llms-full.txt, 2,656 words) covering pipeline architecture, Builder Score formula, E-P-A signal scoring, maturity stages, and cross-validation logic.",
+      "urls": [
+        "https://www.aimfast.dev/llms.txt",
+        "https://www.aimfast.dev/llms-full.txt"
+      ]
+    }
+  ],
+  "publicData": [
+    "https://www.aimfast.dev/dashboard/data/dashboard.json",
+    "https://www.aimfast.dev/sitemap.xml"
+  ],
+  "contact": {
+    "github": "https://github.com/szkakalau/aimfast.dev",
+    "twitter": "https://twitter.com/aimfastdev"
+  },
+  "lastModified": "2026-07-17"
+}

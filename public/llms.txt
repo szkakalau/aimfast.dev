@@ -1,18 +1,26 @@
 # AimFast.Dev — Trend Discovery Engine
 
-> Automated trend discovery platform scanning 31+ sources (HN, Reddit, GitHub, Product Hunt, X, DEV, V2EX, Lobsters) nightly with an LLM pipeline. Tracks 150+ emerging tech terms with Builder Score, stage classification, and cross-source validation. Free, no signup.
+> Automated trend discovery platform scanning 21+ sources (HN, Reddit, GitHub, Product Hunt, X, DEV, V2EX, Lobsters) nightly with an LLM pipeline. Tracks 170+ emerging tech terms with Builder Score, stage classification, and cross-source validation. Free, no signup.
 
 ## Home
-https://www.aimfast.dev/ - Daily tracking of new tech terms, concepts, and market signals. Builder Score (0-100), stage badges, source diversity metrics.
+[Trend Discovery](https://www.aimfast.dev/) — Daily tracking of new tech terms, concepts, and market signals. Builder Score (0-100), stage badges, source diversity metrics.
 
 ## Trends Dashboard
-https://www.aimfast.dev/ - Browse all 150+ tracked terms. Filter by maturity stage (Nascent/Emergent/Validating/Rising), product type, category, and AI-focus. Sort by Builder Score, momentum, or mention volume.
+[Browse all tracked terms](https://www.aimfast.dev/) — Filter by maturity stage (Nascent/Emergent/Validating/Rising), product type, category, and AI-focus. Sort by Builder Score, momentum, or mention volume.
 
 ## Reports
-https://www.aimfast.dev/reports - Archived daily trend digests with LLM-generated analysis of top emerging terms, source breakdowns, and market signals.
+[Daily Reports Archive](https://www.aimfast.dev/reports/) — Archived daily trend digests with LLM-generated analysis of top emerging terms, source breakdowns, and market signals.
 
 ## Articles
-https://www.aimfast.dev/articles - In-depth analysis on emerging technology trends, market intelligence, and signals from the discovery pipeline.
+[Deep-Dive Articles](https://www.aimfast.dev/articles/) — In-depth analysis on emerging technology trends, market intelligence, and signals from the discovery pipeline.
 
 ## Pricing
-https://www.aimfast.dev/pricing - Plans for the monitoring engine: topic watchlists and daily actionable alerts.
+[Plans & Pricing](https://www.aimfast.dev/pricing/) — Plans for the monitoring engine: topic watchlists and daily actionable alerts. Free tier available.
+
+## AI & Developer Resources
+- [llms-full.txt](https://www.aimfast.dev/llms-full.txt) — Complete methodology reference (2,656 words): pipeline architecture, Builder Score formula, signal scoring, maturity stages, cross-validation logic.
+- [Dashboard Data (JSON)](https://www.aimfast.dev/dashboard/data/dashboard.json) — Daily dashboard bundle with signals, reports, decisions, and archive.
+- [RSS — Articles (EN)](https://www.aimfast.dev/articles/rss.xml)
+- [RSS — Articles (ZH)](https://www.aimfast.dev/articles/rss-zh.xml)
+- [RSS — Reports](https://www.aimfast.dev/reports/rss.xml)
+- [AI Discovery](https://www.aimfast.dev/.well-known/ai.txt) — AI crawler permissions and discovery endpoints.

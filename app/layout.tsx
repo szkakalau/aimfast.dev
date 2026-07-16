@@ -77,12 +77,18 @@ const jsonLd = {
       name: 'AimFast.Dev',
       url: 'https://www.aimfast.dev/',
       description:
-        'Daily market intelligence for indie builders. AI scans 11 sources to deliver one validated product opportunity every morning — what to build, who will pay, and how much to charge.',
+        'Daily market intelligence for indie builders. AI scans 21+ sources to deliver one validated product opportunity every morning — what to build, who will pay, and how much to charge.',
       foundingDate: '2026-01-01',
       sameAs: [
         'https://github.com/szkakalau/aimfast.dev',
         'https://twitter.com/aimfastdev',
       ],
+      contactPoint: {
+        '@type': 'ContactPoint',
+        contactType: 'customer support',
+        email: 'support@aimfast.dev',
+        url: 'https://www.aimfast.dev/about/',
+      },
     },
     {
       '@type': 'WebSite',
@@ -132,6 +138,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <a href="/">Trends</a>
               <a href="/dashboard/">Dashboard</a>
               <a href="/pricing/">Pricing</a>
+              <a href="/about/">About</a>
               <LangToggle />
             </div>
             <label htmlFor="nav-toggle" className="nav-overlay" aria-hidden="true" />

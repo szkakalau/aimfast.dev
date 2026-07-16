@@ -1,0 +1,36 @@
+{
+  "faqs": [
+    {
+      "question": "What is AimFast.Dev?",
+      "answer": "AimFast.Dev is an automated trend discovery platform that scans 21+ sources (Hacker News, Reddit, GitHub, Product Hunt, X/Twitter, and more) nightly. It uses an LLM pipeline to extract, normalize, classify, and score emerging technology terms, then generates daily reports identifying buildable product opportunities for indie developers. The platform tracks 170+ terms with a proprietary Builder Score (0-100) and 4-tier maturity stage classification."
+    },
+    {
+      "question": "What is the Builder Score?",
+      "answer": "The Builder Score is a 5-factor weighted composite (0-100) calculated daily for each tracked term: source_count ×15 + growth ×12 + authority ×8 + mentions ×5 + freshness ×10. It measures signal strength across independent sources, engagement velocity, and recency. Terms appearing in 3 unrelated communities score far higher than terms with 500 mentions in a single echo chamber."
+    },
+    {
+      "question": "How is this different from Google Alerts or Google Trends?",
+      "answer": "Google Alerts gives you links; AimFast.Dev gives you a decision. The platform reads 300+ signals across 21 platforms, cross-references them, scores them with the Builder Score formula, classifies them by maturity stage, and generates a daily report telling you what to build, who will pay, and how much to charge. It also auto-detects consumer (C-End) product opportunities that traditional developer tools miss."
+    },
+    {
+      "question": "What sources does AimFast.Dev scan?",
+      "answer": "21+ sources across four categories: (1) Developer platforms — Hacker News, GitHub Trending, DEV Community, Lobsters, Stack Overflow; (2) Package registries — npm, PyPI; (3) AI/ML — HuggingFace, ArXiv; (4) Product discovery — Product Hunt, Indie Hackers; (5) Chinese ecosystem — V2EX, w2solo, Douban, Xiaohongshu; (6) Social & search — X/Twitter, Reddit (11 subreddits), YouTube, Google Trends."
+    },
+    {
+      "question": "How much does AimFast.Dev cost?",
+      "answer": "Free tier includes full trend discovery and browsing with basic tracking (3 terms). Paid plans: Starter ($19/mo) adds weekly digest, Builder ($39/mo) adds daily decision cards and topic monitoring, Team ($79/mo) adds 3 seats, shared boards, CSV export, and API access. All paid plans include a 14-day free trial — no credit card required."
+    },
+    {
+      "question": "What are the maturity stages?",
+      "answer": "Terms are classified into four stages based on age from first detection: Nascent (0-7 days — brand new, highest risk/reward), Emergent (8-30 days — growing mention pattern across sources), Validating (31-90 days — sustained presence, market confirming), Rising (90+ days — established trend with measurable momentum). Each stage has specific action guidance."
+    },
+    {
+      "question": "How are terms validated?",
+      "answer": "A signal must appear in ≥2 independent sources to be considered a valid trend. Independent means different platforms with different audiences. Deduplication uses 85% title similarity threshold, and clustering groups related signals by shared keyword overlap to prevent the same trend appearing as multiple discoveries."
+    },
+    {
+      "question": "How do I use AimFast.Dev?",
+      "answer": "Visit https://www.aimfast.dev to browse all tracked emerging tech terms. Filter by maturity stage, category, or product type. Sort by Builder Score, momentum, or mention volume. Visit the Dashboard for daily decision cards and full reports. No signup required for trend discovery."
+    }
+  ]
+}

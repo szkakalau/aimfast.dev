@@ -153,6 +153,43 @@ export default function PricingPage() {
           acceptedAnswer: { '@type': 'Answer', text: a },
         })),
       },
+      {
+        '@type': 'Product',
+        name: 'AimFast.Dev — Trend Discovery & Market Intelligence',
+        description:
+          'Automated trend discovery platform. Daily LLM-generated reports with product opportunities, builder scores, and market signals from 21+ global sources.',
+        url: 'https://www.aimfast.dev/pricing/',
+        brand: { '@type': 'Brand', name: 'AimFast.Dev' },
+        offers: [
+          {
+            '@type': 'Offer',
+            name: 'Starter',
+            price: '19',
+            priceCurrency: 'USD',
+            priceValidUntil: '2026-12-31',
+            url: 'https://www.aimfast.dev/pricing/',
+            description: 'Trend discovery for curious builders. Weekly email digest.',
+          },
+          {
+            '@type': 'Offer',
+            name: 'Builder',
+            price: '39',
+            priceCurrency: 'USD',
+            priceValidUntil: '2026-12-31',
+            url: 'https://www.aimfast.dev/pricing/',
+            description: 'Daily verified decision card. Topic monitoring. Unlimited terms.',
+          },
+          {
+            '@type': 'Offer',
+            name: 'Team',
+            price: '79',
+            priceCurrency: 'USD',
+            priceValidUntil: '2026-12-31',
+            url: 'https://www.aimfast.dev/pricing/',
+            description: '3 team seats. Shared boards. CSV export. API access.',
+          },
+        ],
+      },
     ],
   };
 

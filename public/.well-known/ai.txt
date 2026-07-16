@@ -1,0 +1,38 @@
+# AimFast.Dev — AI Crawler Permissions
+# https://www.aimfast.dev/.well-known/ai.txt
+
+# All AI crawlers are allowed — this site is designed to be discovered and cited by AI.
+# See /robots.txt for general crawler rules.
+
+Allow: GPTBot
+Allow: OAI-SearchBot
+Allow: ChatGPT-User
+Allow: anthropic-ai
+Allow: ClaudeBot
+Allow: Claude-SearchBot
+Allow: claude-web
+Allow: PerplexityBot
+Allow: Perplexity-User
+Allow: Google-Extended
+Allow: Google-CloudVertexBot
+Allow: Applebot-Extended
+Allow: cohere-ai
+Allow: DuckAssistBot
+Allow: Bytespider
+Allow: meta-externalagent
+Allow: Meta-ExternalFetcher
+Allow: Amazonbot
+Allow: AI2Bot
+Allow: AI2Bot-Dolma
+Allow: xAI-Bot
+Allow: YouBot
+Allow: CCBot
+
+# AI-readable site index
+LLMs-TXT: https://www.aimfast.dev/llms.txt
+LLMs-Full-TXT: https://www.aimfast.dev/llms-full.txt
+
+# AI discovery endpoints
+AI-Summary: https://www.aimfast.dev/ai/summary.json
+AI-FAQ: https://www.aimfast.dev/ai/faq.json
+AI-Service: https://www.aimfast.dev/ai/service.json

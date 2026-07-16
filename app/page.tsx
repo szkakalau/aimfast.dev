@@ -49,6 +49,15 @@ export default function HomePage() {
   const { terms, updated_at } = data;
   const stats = getTrendStats();
 
+  // Compute stage distribution for first-party data display
+  const stageCounts = { nascent: 0, emergent: 0, validating: 0, rising: 0 };
+  for (const t of terms) {
+    const s = t.stage as keyof typeof stageCounts;
+    if (s in stageCounts) stageCounts[s]++;
+  }
+  const topTerms = [...terms].sort((a, b) => b.score - a.score).slice(0, 5);
+  const avgScore = terms.length > 0 ? Math.round(terms.reduce((sum, t) => sum + t.score, 0) / terms.length) : 0;
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -171,9 +180,9 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* ── Live Stats Bar ── */}
+        {/* ── Live Stats Bar — AimFast.Dev Proprietary Data ── */}
         {stats.total > 0 && (
-          <div className="live-stats" aria-label="Trend tracking statistics">
+          <div className="live-stats" aria-label="Trend tracking statistics" data-source="AimFast.Dev proprietary">
             <span className="live-stat">
               <TrendingUp size={16} aria-hidden="true" />
               <span className="live-stat-value">{stats.total}</span> terms tracked
@@ -189,9 +198,24 @@ export default function HomePage() {
               <span className="live-stat-value">{stats.totalSources}</span>+ sources
             </span>
             <span className="live-stat-sep" aria-hidden="true">·</span>
-            <span className="live-stat">Updated daily 08:30 CST</span>
+            <span className="live-stat">
+              <BarChart3 size={16} aria-hidden="true" />
+              Avg Score <span className="live-stat-value">{avgScore}</span>
+            </span>
+            <span className="live-stat-sep" aria-hidden="true">·</span>
+            <span className="live-stat">Updated{updated_at ? ` ${updated_at}` : ' daily'} 08:30 CST</span>
           </div>
         )}
+
+        {/* ── Proprietary Data Provenance Note ── */}
+        <div style={{
+          textAlign: 'center', fontSize: '0.75rem', color: 'var(--color-text-muted, #9ca3af)',
+          marginTop: 'calc(var(--space-1) * -1)', marginBottom: 'var(--space-5)',
+        }}>
+          <span style={{ fontWeight: 600, color: 'var(--color-accent, #2563eb)' }}>AimFast.Dev Proprietary Data</span>
+          {' — '}Stage distribution: Nascent {stageCounts.nascent} · Emergent {stageCounts.emergent} · Validating {stageCounts.validating} · Rising {stageCounts.rising}
+          {' — '}Top terms: {topTerms.map((t) => t.canonical).join(', ')}
+        </div>
 
         {/* ── Stage Filter + Trend Grid (client component) ── */}
         <TrendFilter terms={terms} />
