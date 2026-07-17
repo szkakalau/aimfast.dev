@@ -19,6 +19,8 @@ const LANG_ROUTES: LangRoute[] = [
   { pattern: /^\/zh\/$/,          zh: true,  alt: () => '/' },
   { pattern: /^\/pricing\/$/,     zh: false, alt: () => '/pricing/zh/' },
   { pattern: /^\/pricing\/zh\/$/, zh: true,  alt: () => '/pricing/' },
+  { pattern: /^\/about\/$/,       zh: false, alt: () => '/about/zh/' },
+  { pattern: /^\/about\/zh\/$/,   zh: true,  alt: () => '/about/' },
 
   // Dashboard: client-side i18n toggle (localStorage), URL doesn't change
   { pattern: /^\/dashboard\/$/, zh: false, alt: () => '/dashboard/' },

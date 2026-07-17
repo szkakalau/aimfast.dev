@@ -178,7 +178,7 @@ export default function PricingZhPage() {
       <section style={{ padding: '0 var(--space-3) var(--space-8)', maxWidth: '960px', margin: '0 auto' }}>
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
           gap: 'var(--space-5)',
           alignItems: 'start',
         }}>
