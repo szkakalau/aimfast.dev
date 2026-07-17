@@ -160,7 +160,7 @@ export default async function ArticleZhPage({
       <main className="container">
         <article className="article" style={{ padding: 'var(--space-8) 0' }}>
           <header style={{ marginBottom: 'var(--space-6)' }}>
-            <h1>{frontmatter.title || slug}</h1>
+            <h1 style={{ overflowWrap: 'break-word', wordBreak: 'break-word' }}>{frontmatter.title || slug}</h1>
             {frontmatter.date && (
               <time dateTime={frontmatter.date} className="article-meta-date">
                 {frontmatter.date}
@@ -170,7 +170,7 @@ export default async function ArticleZhPage({
               <p className="article-meta-summary">{frontmatter.summary}</p>
             )}
             <div style={{ marginTop: 'var(--space-3)', fontSize: '0.875rem' }}>
-              <a href={enUrl} hrefLang="en" rel="alternate">
+              <a href={enUrl} hrefLang="en" rel="alternate" style={{ minHeight: 44, display: 'inline-flex', alignItems: 'center' }}>
                 Read in English →
               </a>
             </div>

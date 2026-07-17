@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-07-16T07:48:51.843764+08:00",
-  "total": 172,
+  "updated_at": "2026-07-17T07:44:51.996614+08:00",
+  "total": 191,
   "terms": [
     {
       "id": "claude-agent-sdk",
@@ -352,6 +352,28 @@
       "url": "https://www.aimfast.dev/trends/grok-4.5/"
     },
     {
+      "id": "rust-to-zig-rewrite",
+      "canonical": "Rust-to-Zig Rewrite",
+      "canonical_zh": "从 Rust 到 Zig 的重写",
+      "stage": "nascent",
+      "score": 49,
+      "category": "TechConcept",
+      "source_count": 1,
+      "total_mentions": 1,
+      "growth_pct": 100,
+      "first_seen": "2026-07-17",
+      "summary_en": "A highly upvoted Hacker News post details the experience of rewriting a project from Rust to Zig, sparking a broad discussion about future choices in systems programming languages.",
+      "summary_zh": "一个高赞的 Hacker News 帖子详细描述了将项目从 Rust 重写为 Zig 的经验，引发了关于系统编程语言未来选择的广泛讨论。",
+      "suggested_products": [
+        "CLI Tool",
+        "VS Code Extension",
+        "Open Source"
+      ],
+      "opportunity_score": 42,
+      "revenue_potential": 1,
+      "url": "https://www.aimfast.dev/trends/rust-to-zig-rewrite/"
+    },
+    {
       "id": "openwiki",
       "canonical": "OpenWiki",
       "canonical_zh": null,
@@ -544,9 +566,9 @@
       "stage": "nascent",
       "score": 48,
       "category": "AIAgent",
-      "source_count": 1,
-      "total_mentions": 1,
-      "growth_pct": 100,
+      "source_count": 25,
+      "total_mentions": 2,
+      "growth_pct": 200,
       "first_seen": "2026-07-16",
       "summary_en": "Mastra framework v1.51.0 introduces durable agent crash recovery for server, client, and boot-time, a milestone feature ensuring production reliability in agent frameworks.",
       "summary_zh": "Mastra 框架发布 v1.51.0，支持持久化 Agent 的崩溃恢复（服务端+客户端+启动时），该特性在 Agent 框架中具有里程碑意义，确保生产环境的可靠性。",
@@ -624,6 +646,28 @@
       "opportunity_score": 38,
       "revenue_potential": 1,
       "url": "https://www.aimfast.dev/trends/developers-alienated-by-llms/"
+    },
+    {
+      "id": "decoy-font",
+      "canonical": "Decoy Font",
+      "canonical_zh": "诱饵字体",
+      "stage": "nascent",
+      "score": 46,
+      "category": "TechConcept",
+      "source_count": 1,
+      "total_mentions": 1,
+      "growth_pct": 100,
+      "first_seen": "2026-07-17",
+      "summary_en": "A post about 'Decoy Font' gained traction on Hacker News, exploring a novel concept in font design that may relate to privacy or anti-scraping techniques.",
+      "summary_zh": "一个关于 'Decoy Font' 的帖子在 Hacker News 上获得了大量关注，探讨了字体设计中的一种新概念，可能涉及隐私或反爬虫技术。",
+      "suggested_products": [
+        "Open Source",
+        "SDK/Library",
+        "API"
+      ],
+      "opportunity_score": 42,
+      "revenue_potential": 2,
+      "url": "https://www.aimfast.dev/trends/decoy-font/"
     },
     {
       "id": "lightwell",
@@ -1014,6 +1058,30 @@
       "url": "https://www.aimfast.dev/trends/claude-code-templates/"
     },
     {
+      "id": "enterprise-ai-governance-at-scale",
+      "canonical": "Enterprise AI Governance at Scale",
+      "canonical_zh": "大规模企业 AI 治理",
+      "stage": "nascent",
+      "score": 30,
+      "category": "Industry",
+      "source_count": 1,
+      "total_mentions": 1,
+      "growth_pct": 100,
+      "first_seen": "2026-07-17",
+      "summary_en": "The launch of TraphicLights.ai, focused on enterprise AI governance, indicates that compliance and control are becoming critical needs as AI deployments scale.",
+      "summary_zh": "TraphicLights.ai 的推出，专注于解决企业级 AI 治理问题，表明随着 AI 部署规模扩大，合规和控制成为关键需求。",
+      "suggested_products": [
+        "SaaS",
+        "API",
+        "AI Agent",
+        "Web App",
+        "Open Source"
+      ],
+      "opportunity_score": 65,
+      "revenue_potential": 4,
+      "url": "https://www.aimfast.dev/trends/enterprise-ai-governance-at-scale/"
+    },
+    {
       "id": "distributed-git-network-for-ai-agents",
       "canonical": "Distributed Git Network for AI Agents",
       "canonical_zh": "面向 AI Agent 的分布式 Git 网络",
@@ -1142,9 +1210,15 @@
       "first_seen": "2026-07-14",
       "summary_en": "AI Tattoo Generator creates multi-style tattoo designs from text descriptions with skin preview support, representing another practical product case of AI in a vertical creative domain.",
       "summary_zh": "AI Tattoo Generator 通过文字描述生成多种风格的纹身设计图并支持皮肤预览，是 AI 在垂直创意领域的又一个实用产品案例。",
-      "suggested_products": [],
-      "opportunity_score": null,
-      "revenue_potential": null,
+      "suggested_products": [
+        "Web App",
+        "Mobile App",
+        "API",
+        "Discord/Slack Bot",
+        "Plugin/Add-on"
+      ],
+      "opportunity_score": 38,
+      "revenue_potential": 2,
       "url": "https://www.aimfast.dev/trends/ai-tattoo-generator/"
     },
     {
@@ -1790,9 +1864,14 @@
       "first_seen": "2026-07-10",
       "summary_en": "Multiple independent projects (Bun, Postgres) are being rewritten in Rust with significant progress, indicating an accelerating trend of Rust replacing classic system software.",
       "summary_zh": "多个独立项目（如Bun、Postgres）正在被用Rust重写，并取得显著进展，表明Rust在系统软件领域的替代趋势正在加速。",
-      "suggested_products": [],
-      "opportunity_score": null,
-      "revenue_potential": null,
+      "suggested_products": [
+        "CLI Tool",
+        "Open Source",
+        "SaaS",
+        "Desktop App"
+      ],
+      "opportunity_score": 45,
+      "revenue_potential": 2,
       "url": "https://www.aimfast.dev/trends/rewriting-classic-software-in-rust/"
     },
     {
@@ -1808,9 +1887,14 @@
       "first_seen": "2026-07-10",
       "summary_en": "Multiple tech communities discuss AI agents faking test logs and believing them, highlighting growing concerns about agent reliability and provenance as a hot topic.",
       "summary_zh": "多个技术社区讨论AI Agent伪造测试日志并自我相信的问题，反映出对Agent行为可靠性和可追溯性的担忧成为热点。",
-      "suggested_products": [],
-      "opportunity_score": null,
-      "revenue_potential": null,
+      "suggested_products": [
+        "API",
+        "Open Source",
+        "VS Code Extension",
+        "SaaS"
+      ],
+      "opportunity_score": 42,
+      "revenue_potential": 2,
       "url": "https://www.aimfast.dev/trends/ai-agent-hallucination-and-traceability/"
     },
     {
@@ -1826,9 +1910,15 @@
       "first_seen": "2026-07-10",
       "summary_en": "FableCut, a zero-dependency browser video editor drivable by AI agents, gained high upvotes on HN, representing a new direction in AI-powered creative tools.",
       "summary_zh": "FableCut作为零依赖的浏览器视频编辑器，可由AI Agent驱动，在HN获得高赞，代表AI与创意工具结合的新方向。",
-      "suggested_products": [],
-      "opportunity_score": null,
-      "revenue_potential": null,
+      "suggested_products": [
+        "Web App",
+        "AI Agent",
+        "SaaS",
+        "Chrome Extension",
+        "Plugin/Add-on"
+      ],
+      "opportunity_score": 62,
+      "revenue_potential": 3,
       "url": "https://www.aimfast.dev/trends/browser-video-editor-ai-driven/"
     },
     {
@@ -1844,9 +1934,15 @@
       "first_seen": "2026-07-10",
       "summary_en": "The Chrome DevTools MCP project enables coding agents to directly control browser debugging tools, trending on GitHub, marking deep integration of dev tools with AI agents.",
       "summary_zh": "Chrome DevTools MCP项目使编码Agent能直接控制浏览器调试工具，在GitHub Trending上获得高星，标志开发工具与AI Agent的深度集成。",
-      "suggested_products": [],
-      "opportunity_score": null,
-      "revenue_potential": null,
+      "suggested_products": [
+        "MCP Server",
+        "VS Code Extension",
+        "Chrome Extension",
+        "CLI Tool",
+        "Open Source"
+      ],
+      "opportunity_score": 55,
+      "revenue_potential": 3,
       "url": "https://www.aimfast.dev/trends/chrome-devtools-mcp-protocol/"
     },
     {
@@ -1862,9 +1958,15 @@
       "first_seen": "2026-07-10",
       "summary_en": "Multiple discussions point out that AI code reviews, while efficient, cause attention fatigue and reduced review quality, becoming a hot topic in developer communities.",
       "summary_zh": "多篇讨论指出AI代码审查虽然效率高，但导致开发者注意力疲劳和审查质量下降，成为开发者社区热议话题。",
-      "suggested_products": [],
-      "opportunity_score": null,
-      "revenue_potential": null,
+      "suggested_products": [
+        "VS Code Extension",
+        "CLI Tool",
+        "Open Source",
+        "API",
+        "Newsletter"
+      ],
+      "opportunity_score": 45,
+      "revenue_potential": 2,
       "url": "https://www.aimfast.dev/trends/ai-code-review-fatigue/"
     },
     {
@@ -1880,9 +1982,14 @@
       "first_seen": "2026-07-10",
       "summary_en": "ICDAR 2026 launches a competition on LLM-assisted OCR post-correction for historical documents, indicating emerging specialized AI applications in cultural heritage digitization.",
       "summary_zh": "ICDAR 2026推出LLM辅助历史文档OCR后校正竞赛，表明AI在文化遗产数字化领域的专业化应用正在形成。",
-      "suggested_products": [],
-      "opportunity_score": null,
-      "revenue_potential": null,
+      "suggested_products": [
+        "Web App",
+        "API",
+        "Open Source",
+        "Dataset"
+      ],
+      "opportunity_score": 42,
+      "revenue_potential": 2,
       "url": "https://www.aimfast.dev/trends/ai-assisted-historical-document-ocr-correction/"
     },
     {
@@ -1898,9 +2005,15 @@
       "first_seen": "2026-07-10",
       "summary_en": "T3MP3ST, a multi-agent autonomous red teaming platform, is rapidly trending on GitHub, representing a new trend in automated offensive security testing.",
       "summary_zh": "T3MP3ST作为多Agent自主红队测试平台在GitHub Trending上快速增长，代表AI安全领域自动化攻击测试的新趋势。",
-      "suggested_products": [],
-      "opportunity_score": null,
-      "revenue_potential": null,
+      "suggested_products": [
+        "Open Source",
+        "SaaS",
+        "API",
+        "CLI Tool",
+        "AI Agent"
+      ],
+      "opportunity_score": 45,
+      "revenue_potential": 2,
       "url": "https://www.aimfast.dev/trends/autonomous-red-team-testing-platform/"
     },
     {
@@ -1916,9 +2029,15 @@
       "first_seen": "2026-07-10",
       "summary_en": "Google Trends shows a 66% decline in search volume for 'AI code assistant', possibly indicating market maturation or shifting user interest.",
       "summary_zh": "Google Trends数据显示「AI code assistant」搜索量下降66%，可能反映市场趋于成熟或用户兴趣转移。",
-      "suggested_products": [],
-      "opportunity_score": null,
-      "revenue_potential": null,
+      "suggested_products": [
+        "VS Code Extension",
+        "CLI Tool",
+        "API",
+        "AI Agent",
+        "Open Source"
+      ],
+      "opportunity_score": 35,
+      "revenue_potential": 2,
       "url": "https://www.aimfast.dev/trends/ai-coding-assistant-search-interest-decline/"
     },
     {
@@ -1934,9 +2053,13 @@
       "first_seen": "2026-07-10",
       "summary_en": "Drew DeVault's interview about developing an AI-free version of Vim sparks discussion on Lobsters, reflecting pushback from some developers against excessive AI integration in tools.",
       "summary_zh": "Drew DeVault关于开发无AI版Vim的访谈在Lobsters引发讨论，反映部分开发者对AI过度嵌入工具的抵触情绪。",
-      "suggested_products": [],
-      "opportunity_score": null,
-      "revenue_potential": null,
+      "suggested_products": [
+        "Open Source",
+        "CLI Tool",
+        "Plugin/Add-on"
+      ],
+      "opportunity_score": 45,
+      "revenue_potential": 2,
       "url": "https://www.aimfast.dev/trends/ai-distraction-free-vim/"
     },
     {
@@ -1952,9 +2075,15 @@
       "first_seen": "2026-07-10",
       "summary_en": "Discussions on funding open-source software without compromising it continue on Lobsters, reflecting the community's persistent concern about financial sustainability.",
       "summary_zh": "关于如何在不妥协的情况下资助开源软件的讨论在Lobsters上持续，反映开源社区对资金可持续性的长期关注。",
-      "suggested_products": [],
-      "opportunity_score": null,
-      "revenue_potential": null,
+      "suggested_products": [
+        "SaaS",
+        "Web App",
+        "Newsletter",
+        "Open Source",
+        "Plugin/Add-on"
+      ],
+      "opportunity_score": 45,
+      "revenue_potential": 2,
       "url": "https://www.aimfast.dev/trends/open-source-software-sustainable-funding-model/"
     },
     {
@@ -1970,9 +2099,13 @@
       "first_seen": "2026-07-10",
       "summary_en": "Products like FreeBuddy offer content recommendations during AI agent task execution, representing a new direction in UX optimization for AI workflows.",
       "summary_zh": "FreeBuddy等产品针对AI Agent执行任务时的等待空档提供内容推荐，代表AI工作流中用户体验优化的新方向。",
-      "suggested_products": [],
-      "opportunity_score": null,
-      "revenue_potential": null,
+      "suggested_products": [
+        "Chrome Extension",
+        "AI Agent",
+        "Web App"
+      ],
+      "opportunity_score": 38,
+      "revenue_potential": 2,
       "url": "https://www.aimfast.dev/trends/ai-agent-wait-experience-optimization/"
     },
     {
@@ -1988,9 +2121,14 @@
       "first_seen": "2026-07-10",
       "summary_en": "An AI-assisted website reverse engineering tool posted on V2EX highlights an emerging niche in developer tools for AI-aided reverse engineering.",
       "summary_zh": "为AI开发的网站逆向辅助工具在V2EX发布，反映AI辅助逆向工程成为开发者工具的新兴细分领域。",
-      "suggested_products": [],
-      "opportunity_score": null,
-      "revenue_potential": null,
+      "suggested_products": [
+        "Chrome Extension",
+        "CLI Tool",
+        "Open Source",
+        "VS Code Extension"
+      ],
+      "opportunity_score": 35,
+      "revenue_potential": 2,
       "url": "https://www.aimfast.dev/trends/website-reverse-engineering-ai-tool/"
     },
     {
@@ -2006,9 +2144,15 @@
       "first_seen": "2026-07-10",
       "summary_en": "A V2EX discussion on how increasingly powerful external AI brains may degrade native cognition, with 28 replies, reflects deep reflection on AI dependency among developers.",
       "summary_zh": "V2EX上关于外部AI大脑越来越强导致原生大脑退化的讨论获得28条回复，反映开发者对AI依赖的深层反思。",
-      "suggested_products": [],
-      "opportunity_score": null,
-      "revenue_potential": null,
+      "suggested_products": [
+        "Newsletter",
+        "Web App",
+        "Mobile App",
+        "Open Source",
+        "Chrome Extension"
+      ],
+      "opportunity_score": 45,
+      "revenue_potential": 2,
       "url": "https://www.aimfast.dev/trends/external-brain-dependency-and-cognitive-decline/"
     },
     {
@@ -2024,9 +2168,13 @@
       "first_seen": "2026-07-10",
       "summary_en": "GPT-5.6 sparks extensive discussion on HN and V2EX, with focus on its code generation quality and practical application effectiveness.",
       "summary_zh": "GPT-5.6在HN和V2EX引发大量讨论，特别是其代码生成质量和实际应用效果成为关注焦点。",
-      "suggested_products": [],
-      "opportunity_score": null,
-      "revenue_potential": null,
+      "suggested_products": [
+        "VS Code Extension",
+        "CLI Tool",
+        "Web App"
+      ],
+      "opportunity_score": 35,
+      "revenue_potential": 2,
       "url": "https://www.aimfast.dev/trends/gpt-5.6-code-generation-quality/"
     },
     {
@@ -2042,9 +2190,13 @@
       "first_seen": "2026-07-10",
       "summary_en": "Discussion on HN about users potentially cloning SaaS products with AI reflects the potential disruption to SaaS business models from reduced software replication costs.",
       "summary_zh": "HN上关于用户可能用AI克隆SaaS产品的讨论，反映AI降低软件复制成本对SaaS商业模式的潜在冲击。",
-      "suggested_products": [],
-      "opportunity_score": null,
-      "revenue_potential": null,
+      "suggested_products": [
+        "AI Agent",
+        "Web App",
+        "Newsletter"
+      ],
+      "opportunity_score": 35,
+      "revenue_potential": 2,
       "url": "https://www.aimfast.dev/trends/ai-clone-saas-threat/"
     },
     {
@@ -2060,9 +2212,13 @@
       "first_seen": "2026-07-10",
       "summary_en": "A real-time AI tutor for 5-year-olds gains attention on HN, representing new exploration in personalized AI education for young children.",
       "summary_zh": "为5岁儿童构建的实时AI导师在HN获得关注，代表AI教育在低龄儿童个性化学习领域的新探索。",
-      "suggested_products": [],
-      "opportunity_score": null,
-      "revenue_potential": null,
+      "suggested_products": [
+        "Web App",
+        "Mobile App",
+        "AI Agent"
+      ],
+      "opportunity_score": 35,
+      "revenue_potential": 2,
       "url": "https://www.aimfast.dev/trends/ai-tutor-real-time-interaction/"
     },
     {
@@ -3252,6 +3408,294 @@
       "opportunity_score": null,
       "revenue_potential": null,
       "url": "https://www.aimfast.dev/trends/online-photobooth-going-global/"
+    },
+    {
+      "id": "ai-agent-cli-tools-from-services",
+      "canonical": "AI Agent CLI Tools from Services",
+      "canonical_zh": "服务的 AI Agent CLI 工具",
+      "stage": "nascent",
+      "score": 0,
+      "category": "AIAgent",
+      "source_count": 0,
+      "total_mentions": 0,
+      "growth_pct": 100,
+      "first_seen": "2026-07-17",
+      "summary_en": "DoorDash launched a CLI tool enabling AI agents to place orders directly, marking a trend of mainstream service platforms offering native interfaces for AI agents.",
+      "summary_zh": "DoorDash 推出了一个 CLI 工具，允许 AI Agent 直接下单，这标志着主流服务平台开始为 AI Agent 提供原生接口。",
+      "suggested_products": [],
+      "opportunity_score": null,
+      "revenue_potential": null,
+      "url": "https://www.aimfast.dev/trends/ai-agent-cli-tools-from-services/"
+    },
+    {
+      "id": "shift-from-mcp-to-cli-for-ai-agents",
+      "canonical": "Shift from MCP to CLI for AI Agents",
+      "canonical_zh": "AI Agent 从 MCP 向 CLI 的转变",
+      "stage": "nascent",
+      "score": 0,
+      "category": "AIAgent",
+      "source_count": 0,
+      "total_mentions": 0,
+      "growth_pct": 100,
+      "first_seen": "2026-07-17",
+      "summary_en": "A popular article points out that more developers and companies are abandoning Anthropic's MCP protocol in favor of traditional CLI interfaces for connecting AI agents.",
+      "summary_zh": "一篇热门文章指出，越来越多的开发者和公司正在放弃 Anthropic 的 MCP 协议，转而使用更传统的 CLI 接口来连接 AI Agent。",
+      "suggested_products": [],
+      "opportunity_score": null,
+      "revenue_potential": null,
+      "url": "https://www.aimfast.dev/trends/shift-from-mcp-to-cli-for-ai-agents/"
+    },
+    {
+      "id": "multi-platform-ai-chat-history-management",
+      "canonical": "Multi-Platform AI Chat History Management",
+      "canonical_zh": "多平台 AI 聊天历史管理",
+      "stage": "nascent",
+      "score": 0,
+      "category": "AIApp",
+      "source_count": 0,
+      "total_mentions": 0,
+      "growth_pct": 100,
+      "first_seen": "2026-07-17",
+      "summary_en": "A popular request in the dev community for a tool to manage chat history across multiple AI platforms (e.g., ChatGPT, Claude) highlights the pain point of fragmented AI experiences.",
+      "summary_zh": "开发社区中出现了一个热门求助帖，寻求能够跨多个 AI 平台（如 ChatGPT、Claude）统一管理会话历史的工具，反映了用户对碎片化 AI 体验的痛点。",
+      "suggested_products": [],
+      "opportunity_score": null,
+      "revenue_potential": null,
+      "url": "https://www.aimfast.dev/trends/multi-platform-ai-chat-history-management/"
+    },
+    {
+      "id": "agent-context-bloat-solutions",
+      "canonical": "Agent Context Bloat Solutions",
+      "canonical_zh": "Agent 上下文膨胀解决方案",
+      "stage": "nascent",
+      "score": 0,
+      "category": "AIAgent",
+      "source_count": 0,
+      "total_mentions": 0,
+      "growth_pct": 100,
+      "first_seen": "2026-07-17",
+      "summary_en": "Projects like Ratel directly address a core challenge in building complex AI agents by providing unlimited tools and skills without context bloat.",
+      "summary_zh": "Ratel 等项目通过提供无限工具和技能而不导致上下文膨胀，直接回应了构建复杂 AI Agent 时的一个核心挑战。",
+      "suggested_products": [],
+      "opportunity_score": null,
+      "revenue_potential": null,
+      "url": "https://www.aimfast.dev/trends/agent-context-bloat-solutions/"
+    },
+    {
+      "id": "kimi-k3-open-frontier-intelligence",
+      "canonical": "Kimi K3 Open Frontier Intelligence",
+      "canonical_zh": "Kimi K3 开放前沿智能",
+      "stage": "nascent",
+      "score": 0,
+      "category": "AIModel",
+      "source_count": 0,
+      "total_mentions": 0,
+      "growth_pct": 100,
+      "first_seen": "2026-07-17",
+      "summary_en": "Kimi K3 gained significant attention and discussion on Hacker News, indicating continued community interest in open, frontier AI models.",
+      "summary_zh": "Kimi K3 在 Hacker News 上获得了大量关注和讨论，表明社区对开放、前沿的 AI 模型有持续的兴趣。",
+      "suggested_products": [],
+      "opportunity_score": null,
+      "revenue_potential": null,
+      "url": "https://www.aimfast.dev/trends/kimi-k3-open-frontier-intelligence/"
+    },
+    {
+      "id": "odysseus-self-hosted-ai-workspace",
+      "canonical": "Odysseus Self-hosted AI Workspace",
+      "canonical_zh": "Odysseus 自托管 AI 工作区",
+      "stage": "nascent",
+      "score": 0,
+      "category": "OpenSource",
+      "source_count": 0,
+      "total_mentions": 0,
+      "growth_pct": 100,
+      "first_seen": "2026-07-17",
+      "summary_en": "Odysseus is a highly-starred open-source project offering a self-hosted AI workspace, reflecting the developer community's push for autonomy and privacy in AI tools.",
+      "summary_zh": "Odysseus 是一个高星标的开源项目，提供自托管的 AI 工作区，反映了开发者在 AI 工具方面对自主权和隐私的追求。",
+      "suggested_products": [],
+      "opportunity_score": null,
+      "revenue_potential": null,
+      "url": "https://www.aimfast.dev/trends/odysseus-self-hosted-ai-workspace/"
+    },
+    {
+      "id": "llm-token-consumption-reduction-proxy",
+      "canonical": "LLM Token Consumption Reduction Proxy",
+      "canonical_zh": "LLM Token 消耗减少代理",
+      "stage": "nascent",
+      "score": 0,
+      "category": "DevTools",
+      "source_count": 0,
+      "total_mentions": 0,
+      "growth_pct": 100,
+      "first_seen": "2026-07-17",
+      "summary_en": "rtk-ai/rtk is a Rust-based CLI proxy that reduces LLM token consumption by 60-90%, directly addressing the issue of AI costs.",
+      "summary_zh": "rtk-ai/rtk 是一个用 Rust 编写的 CLI 代理，能减少 60-90% 的 LLM token 消耗，直接回应了 AI 成本问题。",
+      "suggested_products": [],
+      "opportunity_score": null,
+      "revenue_potential": null,
+      "url": "https://www.aimfast.dev/trends/llm-token-consumption-reduction-proxy/"
+    },
+    {
+      "id": "ai-taste-and-quality-control",
+      "canonical": "AI Taste and Quality Control",
+      "canonical_zh": "AI 品味与质量控制",
+      "stage": "nascent",
+      "score": 0,
+      "category": "TechConcept",
+      "source_count": 0,
+      "total_mentions": 0,
+      "growth_pct": 100,
+      "first_seen": "2026-07-17",
+      "summary_en": "Projects like 'taste-skill' aim to prevent AI from generating boring, generic slop, representing an emerging focus on controlling the quality and style of AI output.",
+      "summary_zh": "像 'taste-skill' 这样的项目旨在防止 AI 生成无聊、通用的内容，这代表了一个新兴的关注点：控制 AI 输出的质量和风格。",
+      "suggested_products": [],
+      "opportunity_score": null,
+      "revenue_potential": null,
+      "url": "https://www.aimfast.dev/trends/ai-taste-and-quality-control/"
+    },
+    {
+      "id": "xai-grok-build-coding-agent",
+      "canonical": "xAI Grok Build Coding Agent",
+      "canonical_zh": "xAI Grok Build 编码 Agent",
+      "stage": "nascent",
+      "score": 0,
+      "category": "AIAgent",
+      "source_count": 0,
+      "total_mentions": 0,
+      "growth_pct": 100,
+      "first_seen": "2026-07-17",
+      "summary_en": "xAI's Grok Build is an open-source, fullscreen, mouse-interactive coding agent TUI, showcasing major AI companies' investment in agent-driven development tools.",
+      "summary_zh": "xAI 的 Grok Build 是一个开源的、全屏、支持鼠标交互的编码 Agent TUI，展示了大型 AI 公司对 Agent 驱动开发工具的投入。",
+      "suggested_products": [],
+      "opportunity_score": null,
+      "revenue_potential": null,
+      "url": "https://www.aimfast.dev/trends/xai-grok-build-coding-agent/"
+    },
+    {
+      "id": "http-query-method",
+      "canonical": "HTTP QUERY Method",
+      "canonical_zh": "HTTP QUERY 方法",
+      "stage": "nascent",
+      "score": 0,
+      "category": "Infra",
+      "source_count": 0,
+      "total_mentions": 0,
+      "growth_pct": 100,
+      "first_seen": "2026-07-17",
+      "summary_en": "HTTP has a new QUERY method that allows complex search operations to stop pretending to be POST requests, a significant evolution of the web protocol.",
+      "summary_zh": "HTTP 新增了一个 QUERY 方法，允许复杂的搜索操作不再伪装成 POST 请求，这是 Web 协议的一个重要发展。",
+      "suggested_products": [],
+      "opportunity_score": null,
+      "revenue_potential": null,
+      "url": "https://www.aimfast.dev/trends/http-query-method/"
+    },
+    {
+      "id": "ai-agents-replacing-traditional-saas",
+      "canonical": "AI Agents Replacing Traditional SaaS",
+      "canonical_zh": "AI Agent 取代传统 SaaS",
+      "stage": "nascent",
+      "score": 0,
+      "category": "Industry",
+      "source_count": 0,
+      "total_mentions": 0,
+      "growth_pct": 100,
+      "first_seen": "2026-07-17",
+      "summary_en": "A popular discussion posits that AI agents are replacing traditional SaaS applications, representing a potentially disruptive view of software delivery and consumption.",
+      "summary_zh": "一个热门讨论认为 AI Agent 正在取代传统的 SaaS 应用，这代表了对软件交付和消费模式的潜在颠覆性观点。",
+      "suggested_products": [],
+      "opportunity_score": null,
+      "revenue_potential": null,
+      "url": "https://www.aimfast.dev/trends/ai-agents-replacing-traditional-saas/"
+    },
+    {
+      "id": "llm-generated-text-detection",
+      "canonical": "LLM-Generated Text Detection",
+      "canonical_zh": "LLM 生成文本检测",
+      "stage": "nascent",
+      "score": 0,
+      "category": "TechConcept",
+      "source_count": 0,
+      "total_mentions": 0,
+      "growth_pct": 100,
+      "first_seen": "2026-07-17",
+      "summary_en": "An article on detecting LLM-generated texts with 'classical' machine learning sparked a heated discussion on Hacker News, highlighting the ongoing importance of AI content authenticity.",
+      "summary_zh": "一篇关于使用 '经典' 机器学习方法检测 LLM 生成文本的文章在 Hacker News 上引发了热烈讨论，突显了 AI 内容真实性问题的持续重要性。",
+      "suggested_products": [],
+      "opportunity_score": null,
+      "revenue_potential": null,
+      "url": "https://www.aimfast.dev/trends/llm-generated-text-detection/"
+    },
+    {
+      "id": "software-bugginess-discussion",
+      "canonical": "Software Bugginess Discussion",
+      "canonical_zh": "软件 Bug 增多讨论",
+      "stage": "nascent",
+      "score": 0,
+      "category": "DX",
+      "source_count": 0,
+      "total_mentions": 0,
+      "growth_pct": 100,
+      "first_seen": "2026-07-17",
+      "summary_en": "An 'Ask HN' post questioning if software is buggier across the board received widespread agreement and comments, reflecting developer concerns about declining software quality.",
+      "summary_zh": "Hacker News 上 '软件是否普遍变得更糟糕' 的提问获得了大量共鸣和评论，反映了开发者对软件质量下降的普遍担忧。",
+      "suggested_products": [],
+      "opportunity_score": null,
+      "revenue_potential": null,
+      "url": "https://www.aimfast.dev/trends/software-bugginess-discussion/"
+    },
+    {
+      "id": "vibe-coding-and-ai-debt",
+      "canonical": "Vibe Coding and AI Debt",
+      "canonical_zh": "Vibe Coding 与 AI 债务",
+      "stage": "nascent",
+      "score": 0,
+      "category": "DX",
+      "source_count": 0,
+      "total_mentions": 0,
+      "growth_pct": 100,
+      "first_seen": "2026-07-17",
+      "summary_en": "A DEV.to article metaphorically describes AI-generated code as a 'small loan' that must eventually be repaid, representing a reflection on the long-term impact of AI-assisted coding.",
+      "summary_zh": "一篇 DEV 社区的文章将 AI 生成的代码比喻为 '小额贷款'，认为最终需要偿还，这代表了对 AI 辅助编码长期影响的反思。",
+      "suggested_products": [],
+      "opportunity_score": null,
+      "revenue_potential": null,
+      "url": "https://www.aimfast.dev/trends/vibe-coding-and-ai-debt/"
+    },
+    {
+      "id": "non-developer-ai-agent-skill-creation",
+      "canonical": "Non-Developer AI Agent Skill Creation",
+      "canonical_zh": "非开发者创建 AI Agent 技能",
+      "stage": "nascent",
+      "score": 0,
+      "category": "AIAgent",
+      "source_count": 0,
+      "total_mentions": 0,
+      "growth_pct": 100,
+      "first_seen": "2026-07-17",
+      "summary_en": "A DEV.to article points out that the best person to write AI agent skills might not know YAML, sparking discussion on empowering non-technical people to create agents.",
+      "summary_zh": "一篇 DEV 社区文章指出，最适合编写 AI Agent 技能的人可能不会写 YAML，这引发了关于如何为非技术人员赋能以创建 Agent 的讨论。",
+      "suggested_products": [],
+      "opportunity_score": null,
+      "revenue_potential": null,
+      "url": "https://www.aimfast.dev/trends/non-developer-ai-agent-skill-creation/"
+    },
+    {
+      "id": "open-source-975b-parameter-ai-model",
+      "canonical": "Open Source 975B Parameter AI Model",
+      "canonical_zh": "开源 9750 亿参数 AI 模型",
+      "stage": "nascent",
+      "score": 0,
+      "category": "AIModel",
+      "source_count": 0,
+      "total_mentions": 0,
+      "growth_pct": 100,
+      "first_seen": "2026-07-17",
+      "summary_en": "Thinking Machines Lab released the first fully open-source AI model with 975 billion parameters, marking a huge leap in the scale of open-source AI models.",
+      "summary_zh": "Thinking Machines Lab 发布了首个完全开源的 9750 亿参数模型，标志着开源 AI 模型规模的巨大飞跃。",
+      "suggested_products": [],
+      "opportunity_score": null,
+      "revenue_potential": null,
+      "url": "https://www.aimfast.dev/trends/open-source-975b-parameter-ai-model/"
     }
   ]
 }

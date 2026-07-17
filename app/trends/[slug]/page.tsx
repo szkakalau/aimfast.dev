@@ -246,7 +246,7 @@ export default async function TrendDetailPage({
           <span className={`stage-badge ${term.stage}`}>
             {stageLabel(term.stage)}
           </span>
-          <h1>{term.canonical}</h1>
+          <h1 style={{ overflowWrap: 'break-word' }}>{term.canonical}</h1>
 
           <div className="trend-detail-sources">
             {term.sources.map((s) => (
@@ -410,7 +410,7 @@ export default async function TrendDetailPage({
                 {/* CTA */}
                 <div className="opp-cta">
                   <p>Want daily opportunity scores like this for every emerging trend?</p>
-                  <a href="/" className="btn btn-primary" style={{ fontSize: '0.92rem', padding: '10px 24px' }}>
+                  <a href="/" className="btn btn-primary" style={{ fontSize: '0.92rem', padding: '12px 24px' }}>
                     Start Free Trial →
                   </a>
                 </div>
@@ -478,7 +478,7 @@ export default async function TrendDetailPage({
                   width: '100%',
                   justifyContent: 'center',
                   fontSize: '0.88rem',
-                  padding: '10px 20px',
+                  padding: '12px 20px',
                 }}
               >
                 Start Free Trial

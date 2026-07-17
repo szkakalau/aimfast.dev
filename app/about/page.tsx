@@ -80,10 +80,10 @@ export default function AboutPage() {
 
       {/* ═══════ Hero ═══════ */}
       <section style={{ padding: 'var(--space-10) 0 var(--space-6)', textAlign: 'center' }}>
-        <h1 style={{ fontSize: '2.25rem', fontWeight: 700, margin: '0 0 var(--space-3)' }}>
+        <h1 style={{ fontWeight: 700, margin: '0 0 var(--space-3)' }}>
           One Decision Every Morning
         </h1>
-        <p style={{ fontSize: '1.125rem', color: 'var(--color-text-secondary)', maxWidth: '600px', margin: '0 auto', lineHeight: 1.6 }}>
+        <p style={{ fontSize: '1.125rem', color: 'var(--color-text-secondary)', maxWidth: '600px', margin: '0 auto', lineHeight: 1.6, overflowWrap: 'break-word' }}>
           AimFast.Dev is an automated trend discovery platform.
           Every night, our pipeline scans 21+ global sources, scores emerging tech terms,
           and generates one actionable product opportunity by morning.

@@ -211,6 +211,7 @@ export default function HomePage() {
         <div style={{
           textAlign: 'center', fontSize: '0.75rem', color: 'var(--color-text-muted, #9ca3af)',
           marginTop: 'calc(var(--space-1) * -1)', marginBottom: 'var(--space-5)',
+          overflowWrap: 'break-word',
         }}>
           <span style={{ fontWeight: 600, color: 'var(--color-accent, #2563eb)' }}>AimFast.Dev Proprietary Data</span>
           {' — '}Stage distribution: Nascent {stageCounts.nascent} · Emergent {stageCounts.emergent} · Validating {stageCounts.validating} · Rising {stageCounts.rising}

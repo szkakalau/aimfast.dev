@@ -157,15 +157,15 @@ export default function PricingZhPage() {
   };
 
   return (
-    <main>
+    <main className="container">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 
       {/* ═══════ Hero ═══════ */}
-      <section style={{ padding: 'var(--space-10) 0 var(--space-6)', textAlign: 'center' }}>
-        <h1 style={{ fontSize: '2.25rem', fontWeight: 700, margin: '0 0 var(--space-3)' }}>
+      <section style={{ padding: 'var(--space-10) var(--space-3) var(--space-6)', textAlign: 'center' }}>
+        <h1 style={{ fontSize: 'clamp(1.6rem, 6vw, 2.25rem)', fontWeight: 700, margin: '0 0 var(--space-3)' }}>
           每天早上，一份决策
         </h1>
         <p style={{ fontSize: '1.125rem', color: 'var(--color-text-secondary)', maxWidth: '560px', margin: '0 auto', lineHeight: 1.6 }}>
@@ -175,10 +175,10 @@ export default function PricingZhPage() {
       </section>
 
       {/* ═══════ Pricing Cards ═══════ */}
-      <section style={{ padding: '0 0 var(--space-8)', maxWidth: '960px', margin: '0 auto' }}>
+      <section style={{ padding: '0 var(--space-3) var(--space-8)', maxWidth: '960px', margin: '0 auto' }}>
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(3, 1fr)',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
           gap: 'var(--space-5)',
           alignItems: 'start',
         }}>
@@ -244,7 +244,7 @@ export default function PricingZhPage() {
 
               {/* Price */}
               <div style={{ marginBottom: 'var(--space-4)' }}>
-                <span style={{ fontSize: '2.5rem', fontWeight: 800, lineHeight: 1 }}>
+                <span style={{ fontSize: 'clamp(1.8rem, 7vw, 2.5rem)', fontWeight: 800, lineHeight: 1 }}>
                   ${plan.monthly}
                 </span>
                 <span style={{ fontSize: '0.95rem', color: 'var(--color-text-secondary)' }}>
@@ -328,7 +328,7 @@ export default function PricingZhPage() {
       </section>
 
       {/* ═══════ FAQ ═══════ */}
-      <section style={{ padding: 'var(--space-8) 0', maxWidth: '640px', margin: '0 auto' }}>
+      <section style={{ padding: 'var(--space-8) var(--space-3)', maxWidth: '640px', margin: '0 auto' }}>
         <div className="section-header">
           <h2>常见问题</h2>
         </div>
@@ -344,7 +344,7 @@ export default function PricingZhPage() {
       </section>
 
       {/* ═══════ Footer CTA ═══════ */}
-      <section style={{ textAlign: 'center', padding: 'var(--space-8) 0 var(--space-10)' }}>
+      <section style={{ textAlign: 'center', padding: 'var(--space-8) var(--space-3) var(--space-10)' }}>
         <h2>14 天免费。每天早上，一份决策。</h2>
         <p style={{ color: 'var(--color-text-secondary)', marginBottom: 'var(--space-4)', fontSize: '1rem' }}>
           无需信用卡。随时取消。

@@ -627,6 +627,8 @@
 }
 
 @media (max-width: 480px) {
+  .hero { padding-top: var(--space-6); }
+
   .pricing-card {
     margin: 0;
     border-radius: var(--radius-md);

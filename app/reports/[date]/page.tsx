@@ -166,7 +166,7 @@ export default async function ReportPage({
       />
       <main className="container">
         <nav aria-label="Breadcrumb" style={{ padding: 'var(--space-4) 0', fontSize: '0.875rem' }}>
-          <ol style={{ listStyle: 'none', display: 'flex', gap: 'var(--space-2)', margin: 0, padding: 0 }}>
+          <ol style={{ listStyle: 'none', display: 'flex', flexWrap: 'wrap', gap: 'var(--space-2)', margin: 0, padding: 0 }}>
             <li><a href="/">Trends</a></li>
             <li aria-hidden="true">/</li>
             <li><a href="/reports/">Reports</a></li>
@@ -189,7 +189,7 @@ export default async function ReportPage({
             )}
             {hasZh && (
               <div style={{ marginTop: 'var(--space-4)', fontSize: '0.875rem' }}>
-                <a href={zhUrl} hrefLang="zh-CN" rel="alternate">
+                <a href={zhUrl} hrefLang="zh-CN" rel="alternate" style={{ minHeight: 44, display: 'inline-flex', alignItems: 'center' }}>
                   阅读中文版 →
                 </a>
               </div>

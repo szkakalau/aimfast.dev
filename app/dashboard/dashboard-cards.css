@@ -102,6 +102,8 @@ body:has(.dash-header) > .site-nav {
   font-weight: 700;
   margin: 0 0 var(--space-1);
   color: var(--color-text);
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .decision-summary {
