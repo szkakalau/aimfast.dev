@@ -1,7 +1,14 @@
 """
 Trend Discovery Pipeline
 Reads daily signals, extracts emerging terms via LLM, maintains trend_terms.json,
-and generates research reports for high-scoring terms.
+and generates research reports using dynamic percentile thresholds.
+
+Report tiers (based on score percentile rank within the day's terms):
+  Top 25%  → Full research report (LLM, 8 sections, 2000+ words)
+  25%–80%  → SEO brief (LLM, 3 sections, 200-300 words, unique content)
+  Bottom 20% → No HTML page (JSON tracking only, score < 10 also skipped)
+
+Briefs are auto-upgraded to full reports when a term's score enters the top 25%.
 
 Usage: python scripts/generate_trends.py [--dry-run] [--max-terms 30]
 """
@@ -83,6 +90,25 @@ def compute_score_from_signals(matching_signals: list[dict]) -> int:
         + min(cross_platform * 10, 20)
     )
     return min(round(score), 100)
+
+
+def compute_percentile_thresholds(terms: list[dict]) -> tuple[float, float]:
+    """Compute dynamic score thresholds based on percentile distribution.
+
+    Returns (full_report_threshold, brief_threshold) where:
+      - full_report_threshold: top 25% of scores
+      - brief_threshold: top 80% of scores
+
+    When all terms have low scores, the thresholds reflect the actual
+    distribution rather than arbitrary fixed numbers.
+    """
+    scores = sorted([t.get("score", 0) for t in terms], reverse=True)
+    if not scores:
+        return 100.0, 100.0
+    n = len(scores)
+    full_idx = max(0, min(n - 1, int(n * 0.25)))
+    brief_idx = max(0, min(n - 1, int(n * 0.80)))
+    return float(scores[full_idx]), float(scores[brief_idx])
 
 
 def extract_terms_from_signals(signals: list[dict]) -> list[dict]:
@@ -422,6 +448,21 @@ def merge_terms(existing: list[dict], extracted: list[dict], signals: list[dict]
     return existing
 
 
+def _is_brief(filepath: Path) -> bool:
+    """Detect if an existing report file is a template brief (not a full research report).
+
+    Template briefs have 'status: tracking' in frontmatter or '追踪阶段' in the body.
+    Full research reports have neither marker.
+    """
+    if not filepath.exists():
+        return False
+    try:
+        head = filepath.read_text(encoding="utf-8")[:800]
+    except Exception:
+        return False
+    return "status: tracking" in head or "追踪阶段" in head
+
+
 def generate_research_report(term: dict) -> int:
     """Generate research reports for a term via LLM — BOTH Chinese and English.
     Returns count of new files written (0-2)."""
@@ -501,10 +542,14 @@ def generate_research_report(term: dict) -> int:
     return written
 
 
-def generate_quick_brief(term: dict) -> int:
-    """Generate lightweight tracking notes for medium-score terms (30-59).
-    Generates BOTH Chinese (slug.md) and English (slug-en.md) versions.
-    Template-based, costs nothing. Returns count of new files written (0-2)."""
+def generate_seo_brief(term: dict) -> int:
+    """Generate LLM SEO short report for medium-score terms (25th-80th percentile).
+
+    3 sections — What is it / Why now / Who should care — each ~2-3 sentences.
+    Every page is LLM-generated with unique content (no templates — Google penalizes
+    near-duplicate pages).
+
+    Returns count of new files written (0-2)."""
     slug = term["id"].replace("trend-", "")
     zh_path = CONTENT_DIR / f"{slug}.md"
     en_path = CONTENT_DIR / f"{slug}-en.md"
@@ -513,6 +558,7 @@ def generate_quick_brief(term: dict) -> int:
     category = term.get("category", "General")
     first_seen = term.get("first_seen", "")
     score = term.get("score", 0)
+    stage = term.get("stage", "nascent")
     total_mentions = term.get("total_mentions", 0)
     sources = ", ".join(term.get("sources", []))
     summary_zh = term.get("summary_zh", "")
@@ -522,89 +568,100 @@ def generate_quick_brief(term: dict) -> int:
     CONTENT_DIR.mkdir(parents=True, exist_ok=True)
     written = 0
 
-    # ── Chinese brief ──
+    # ── Chinese SEO brief ──
     if not zh_path.exists():
-        brief_zh = f"""---
-title: "{canonical} — 快速追踪"
-category: {category}
-first_seen: {first_seen}
-score: {score}
-status: tracking
----
+        system_zh = "你为独立开发者撰写简洁的技术趋势简报（中文）。每条内容必须基于提供的数据，不可编造。"
+        user_zh = f"""写一篇关于 "{canonical}" 的中文短简报。3 个小节，每节 2-3 句。
 
-## {canonical}
+已知数据：
+- 分类: {category}
+- 首次发现: {first_seen}
+- 评分: {score}/100
+- 阶段: {stage}
+- 信源: {sources}
+- 提及次数: {total_mentions}
+- 摘要: {summary_zh}
 
-**分类**: {category}
-**首次发现**: {first_seen}
-**信号数**: {total_mentions}
-**来源**: {sources}
-**趋势评分**: {score}/100
+用 ## 作为小节标题：
 
-## {canonical} 是什么
+## 这是什么
+用 2-3 句解释 {canonical} 是什么。
 
-{summary_zh}
-
-{summary_en}
-
-## 为什么现在关注
-
-该主题于 {first_seen} 首次出现于技术社区。目前已追踪到 {total_mentions} 次提及，来源包括 {sources}。跨平台信号增长表明该话题在技术社区中正在获得关注。
+## 为什么现在出现
+解释为什么这个术语现在值得关注。引用具体数据：{total_mentions} 次提及，来源包括 {sources}。
 
 ## 谁应该关注
+哪些开发者/创业者/产品人最应该追踪这个趋势。
 
-- **独立开发者**: 寻找新兴技术方向或产品灵感
-- **技术创业者**: 关注被忽视的用户痛点和市场空白
-- **早期采用者**: 希望在竞争对手之前识别新兴工具和框架
+基于提供的数据写作，保持事实准确。总计 200-300 字。"""
 
-> ⚠️ **追踪阶段** — 当前信源数量和讨论度尚不足以触发完整研究报告。该主题将持续在每日 Pipeline 中接收新信号，当跨平台讨论热度积累到 60 分以上时自动升级为完整趋势分析。
+        try:
+            sys.path.insert(0, str(ROOT / "scripts"))
+            from llm_client import chat
 
----
-
-*此简报由 AimFast.Dev 趋势管道自动生成。最后更新: {now_str} CST*
-"""
-        zh_path.write_text(brief_zh, encoding="utf-8")
-        written += 1
-
-    # ── English brief ──
-    if not en_path.exists():
-        brief_en = f"""---
-title: "{canonical} — Quick Brief"
+            report = chat(system_zh, user_zh)
+            header = f"""---
+title: "{canonical}"
 category: {category}
 first_seen: {first_seen}
 score: {score}
+stage: {stage}
 status: tracking
+generated: {now_str} CST
 ---
 
-## {canonical}
+"""
+            zh_path.write_text(header + report, encoding="utf-8")
+            written += 1
+            print(f"  [trends] Generated ZH SEO brief for {canonical}")
+        except Exception as e:
+            print(f"  [trends] Failed ZH SEO brief for {canonical}: {e}")
 
-**Category**: {category}
-**First seen**: {first_seen}
-**Signal count**: {total_mentions}
-**Sources**: {sources}
-**Trend Score**: {score}/100
+    # ── English SEO brief ──
+    if not en_path.exists():
+        en_system = "You write concise trend briefings in English for indie developers and SaaS founders. Every claim must be grounded in the provided data — do not fabricate."
+        user_en = f"""Write a short trend briefing for "{canonical}" in English. 3 sections, 2-3 sentences each.
 
-## What is {canonical}
+Known data:
+- Category: {category}
+- First seen: {first_seen}
+- Score: {score}/100
+- Stage: {stage}
+- Sources: {sources}
+- Mentions: {total_mentions}
+- Summary: {summary_en}
 
-{summary_en}
+Use ## for section headers:
+
+## What is it
+2-3 sentences explaining what {canonical} is.
 
 ## Why now
-
-This topic first appeared in the tech community on {first_seen}. We have tracked {total_mentions} mentions across sources including {sources}. Cross-platform signal growth suggests this topic is gaining attention in the developer community.
+Why this term matters now. Reference the data: {total_mentions} mentions across {sources}.
 
 ## Who should care
+Which indie developers, founders, or product people should track this.
 
-- **Independent developers**: Looking for emerging technology directions or product inspiration
-- **Technical founders**: Tracking underserved user pain points and market gaps
-- **Early adopters**: Seeking to identify emerging tools and frameworks before competitors
+Ground every claim in the provided data. Total ~200-300 words."""
 
-> ⚠️ **Tracking Stage** — Current signal volume and discussion heat haven't reached the threshold for a full research report yet. This topic continues to receive new signals in the daily pipeline. When cross-platform discussion accumulates to 60+ points, it will automatically upgrade to a full trend analysis.
-
+        try:
+            report = chat(en_system, user_en)
+            header = f"""---
+title: "{canonical}"
+category: {category}
+first_seen: {first_seen}
+score: {score}
+stage: {stage}
+status: tracking
+generated: {now_str} CST
 ---
 
-*This briefing was auto-generated by the AimFast.Dev trend pipeline. Last updated: {now_str} CST*
 """
-        en_path.write_text(brief_en, encoding="utf-8")
-        written += 1
+            en_path.write_text(header + report, encoding="utf-8")
+            written += 1
+            print(f"  [trends] Generated EN SEO brief for {canonical}")
+        except Exception as e:
+            print(f"  [trends] Failed EN SEO brief for {canonical}: {e}")
 
     return written
 
@@ -683,33 +740,66 @@ def main():
     new_count = len(updated_terms) - len(existing_terms)
     print(f"[trends] Merged: {len(updated_terms)} total ({new_count} new)")
 
-    # Generate research reports (≥60) and quick briefs (30-59)
+    # Compute dynamic percentile thresholds
+    full_threshold, brief_threshold = compute_percentile_thresholds(updated_terms)
+    print(f"[trends] Percentile thresholds: full report ≥{full_threshold:.0f}, SEO brief ≥{brief_threshold:.0f}")
+
+    # ── Three-tier report generation ──
+    #   Top 25%     → full research report (LLM, 8 sections)
+    #   25%–80%     → SEO brief (LLM, 3 sections, unique content)
+    #   Bottom 20%  → no HTML page (JSON tracking only)
+    #   score < 10  → absolute minimum quality gate (noise rejection)
     reports_generated = 0
     briefs_generated = 0
+    upgraded = 0
+
     for term in updated_terms:
         score = term.get("score", 0)
         slug = term["id"].replace("trend-", "")
         zh_path = CONTENT_DIR / f"{slug}.md"
         en_path = CONTENT_DIR / f"{slug}-en.md"
 
-        if score >= 60:
-            # Generate if either ZH or EN report is missing
-            if not zh_path.exists() or not en_path.exists():
-                missing = []
-                if not zh_path.exists():
-                    missing.append("ZH")
-                if not en_path.exists():
-                    missing.append("EN")
-                print(f"[trends] Generating research report for {term['canonical']} (score={score}, missing: {', '.join(missing)})...")
+        # Absolute minimum quality gate — filter out pure noise
+        if score < 10:
+            continue
+
+        if score >= full_threshold:
+            zh_is_brief = _is_brief(zh_path)
+            en_is_brief = _is_brief(en_path)
+
+            need_gen = not zh_path.exists() or zh_is_brief or not en_path.exists() or en_is_brief
+            if need_gen:
+                # Remove brief files so generate_research_report writes full versions
+                if zh_is_brief:
+                    zh_path.unlink()
+                if en_is_brief:
+                    en_path.unlink()
+                if zh_is_brief or en_is_brief:
+                    upgraded += 1
+                    print(f"[trends] ↑ Upgrading brief → full report: {term['canonical']} (score={score})")
+                else:
+                    missing = []
+                    if not zh_path.exists():
+                        missing.append("ZH")
+                    if not en_path.exists():
+                        missing.append("EN")
+                    print(f"[trends] Generating research report for {term['canonical']} (score={score}, missing: {', '.join(missing)})...")
                 if not args.dry_run:
                     reports_generated += generate_research_report(term)
-        elif score >= 30:
+        elif score >= brief_threshold:
             if not zh_path.exists():
-                print(f"[trends] Generating quick brief for {term['canonical']} (score={score})...")
+                print(f"[trends] Generating SEO brief for {term['canonical']} (score={score})...")
                 if not args.dry_run:
-                    briefs_generated += generate_quick_brief(term)
+                    briefs_generated += generate_seo_brief(term)
+        # else: bottom 20% — score too low, no page generated
 
-    print(f"[trends] Generated {reports_generated} report files + {briefs_generated} quick brief files (ZH+EN)")
+    parts = [
+        f"{reports_generated} report files",
+        f"{briefs_generated} SEO brief files",
+    ]
+    if upgraded > 0:
+        parts.append(f"{upgraded} upgraded from brief")
+    print(f"[trends] Generated {' + '.join(parts)} (ZH+EN)")
 
     # Save
     trend_data["terms"] = updated_terms

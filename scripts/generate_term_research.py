@@ -1,22 +1,20 @@
 """
-第六层：Term 研究报告生成器
-────────────────────────────
-从 Layers 1-5 的 term 数据库中读取高评分 term，
-生成包含 12 个板块的深度研究报告。
+DEPRECATED — 已废弃 (2026-07-17)
+─────────────────────────────────
+此流水线已被 generate_trends.py 统一替代。
 
-各 term 的数据来自:
-  - canonical_terms.json → stage, age, aliases, sources, score
-  - term_index.json     → 完整 mention 历史（source, date, title）
-  - term_scores.json    → 五因子评分 breakdown
+废弃原因：
+  1. 双 Pipeline 架构不统一（已知技术债）
+  2. 固定阈值 (60/30) 被动态百分位阈值替代
+  3. 模板简报被 LLM 生成的 SEO 短报告替代
+  4. 输出目录 content/terms/ 不再使用，统一到 content/trends/
 
-触发阈值:
-  score ≥ 60 → 完整研究报告（12 板块，LLM 生成）
-  score 30-59 → 快速简报（模板生成，提示需要更多信号）
-  score < 30 → 跳过
+替代方案：python scripts/generate_trends.py
+  - Top 25% → 完整研究报告
+  - 25%–80% → SEO 短报告（LLM 生成，内容独特）
+  - Bottom 20% → 不生成页面（JSON 追踪）
 
-输出:
-  - content/terms/{slug}.md (中文) + {slug}-en.md (英文)
-  - 更新 canonical_terms.json 的 research 字段
+保留文件用于参考，不再参与每日 crontab。
 """
 import json
 import re
