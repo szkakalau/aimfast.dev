@@ -9,6 +9,11 @@
 /* ── Global responsive media ── */
 img, video, iframe { max-width: 100%; height: auto; }
 
+/* ── Prevent sticky nav from covering scroll targets (anchors, scrollIntoView) ── */
+html {
+  scroll-padding-top: 56px;
+}
+
 /* ── Global heading word-break (prevents overflow from long unbreakable terms) ── */
 h1, h2, h3 { overflow-wrap: break-word; }
 
@@ -199,6 +204,7 @@ a, button, input, select, textarea, label, [role="button"] {
   display: block;
   width: 20px;
   height: 2px;
+  background: #111827; /* fallback if --color-text is unavailable */
   background: var(--color-text);
   border-radius: 2px;
   transition: transform var(--duration-fast) var(--ease-out),
@@ -271,7 +277,18 @@ a, button, input, select, textarea, label, [role="button"] {
   }
 
   .nav-toggle-label {
-    display: inline-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 10px;
+    cursor: pointer;
+    z-index: var(--z-nav-controls);
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    -webkit-user-select: none;
   }
 
   /* Backdrop overlay — taps close the menu (label toggles checkbox) */
