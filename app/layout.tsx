@@ -34,7 +34,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   title: 'AimFast.Dev — Free Trend Discovery & Market Intelligence',
   description:
-    'Discover emerging tech terms before they trend. Free daily tracking across 11+ sources. Dashboard membership unlocks daily product opportunities — what to build, who will pay, and how much to charge.',
+    'Discover emerging tech terms before they trend. Free daily tracking across 21+ sources. Dashboard membership unlocks daily product opportunities — what to build, who will pay, and how much to charge.',
   robots: { index: true, follow: true },
   metadataBase: new URL('https://www.aimfast.dev'),
   alternates: {
@@ -95,7 +95,7 @@ const jsonLd = {
       name: 'AimFast.Dev',
       url: 'https://www.aimfast.dev/',
       description:
-        'Daily market intelligence for indie builders. Product opportunities, trend analysis from 11 global sources.',
+        'Daily market intelligence for indie builders. Product opportunities, trend analysis from 21+ global sources.',
     },
   ],
 };

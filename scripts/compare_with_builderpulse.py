@@ -449,7 +449,7 @@ METHODOLOGY_DIFFS = """
 | **定位** | 每日一条 Build Idea 的纯内容简报 | 完整情报管线：采集→评分→生成→验证→部署 |
 | **仓库性质** | 纯 Markdown 内容仓库 | Next.js 全栈应用 + Python 数据管道 |
 | **输出格式** | 1 条 Build Idea + Why Now + 信号链接 | 5 层日报 + 深度文章 + 落地页 |
-| **信号源数量** | ~9 个（全英文） | 14 个（9 海外 + 5 中国） |
+| **信号源数量** | ~9 个（全英文） | 21+ 个（14 海外 + 5 中国 + 2 包管理） |
 | **中国信号** | ❌ 无 | ✅ V2EX / w2solo |
 | **LLM 集成** | 不透明（推测后端使用） | 透明：DeepSeek API，月预算 $20 |
 | **发布渠道** | GitHub + builderpulse.ai | aimfast.dev（Vercel 静态站点） |

@@ -334,7 +334,7 @@ generated_at: {datetime.now(TZ_SHANGHAI).isoformat()}
 ### 已知信号
 
 该术语从 {len(sources)} 个信源获得 {appearances} 次提及。AimFast.Dev 将持续追踪其发展：
-- 每日 18 个信源全覆盖（HN / GitHub / Reddit / V2EX / 官方 Blog / Google News 等）
+- 每日 21+ 个信源全覆盖（HN / GitHub / Reddit / V2EX / 官方 Blog / Google News 等）
 - 术语评分随跨平台讨论自动增长
 - 进入 top {FULL_RESEARCH_PCT*100:.0f}% 分数区间后 → 自动升级为完整机会分析报告
 
@@ -372,7 +372,7 @@ generated_at: {datetime.now(TZ_SHANGHAI).isoformat()}
 
 ### Known Signals
 
-{appearances} mentions from {len(sources)} sources. AimFast.Dev continues tracking across 18+ sources daily.
+{appearances} mentions from {len(sources)} sources. AimFast.Dev continues tracking across 21+ sources daily.
 At top {FULL_RESEARCH_PCT*100:.0f}% percentile → auto-generates a full 12-section opportunity report.
 
 ---

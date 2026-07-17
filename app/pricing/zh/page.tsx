@@ -57,7 +57,7 @@ const PLANS: Plan[] = [
     yearly: 190,
     description: '给好奇的 Builder——在趋势爆发前看到它。',
     features: [
-      '每日趋势发现（11+ 来源）',
+      '每日趋势发现（21+ 来源）',
       '浏览所有追踪词条',
       '阶段与分类筛选',
       '基础词条追踪（3 个）',
@@ -110,11 +110,11 @@ const PLANS: Plan[] = [
 const FAQ_ITEMS = [
   {
     q: '这和设置 Google Alerts 有什么区别？',
-    a: 'Google Alerts 给你链接，我们给你决策。我们的 AI 阅读 300+ 信号，覆盖 11 个平台，交叉验证、评分，然后告诉你"做这个，跳过那个"。Google Alerts 无法告诉你一个 Reddit 抱怨和一个 GitHub star 暴涨其实是同一个未被满足的需求。',
+    a: 'Google Alerts 给你链接，我们给你决策。我们的 AI 阅读 300+ 信号，覆盖 21+ 个平台，交叉验证、评分，然后告诉你"做这个，跳过那个"。Google Alerts 无法告诉你一个 Reddit 抱怨和一个 GitHub star 暴涨其实是同一个未被满足的需求。',
   },
   {
     q: '你们扫描哪些来源？',
-    a: 'HN、Reddit（r/programming、r/MachineLearning、r/SideProject、r/Entrepreneur、r/digitalnomad）、GitHub Trending、DEV Community、Lobsters、V2EX、X/Twitter、Product Hunt、HuggingFace、Arxiv、Indie Hackers 等 — 11+ 个来源，每日更新。',
+    a: 'HN、Reddit、GitHub Trending、DEV Community、Lobsters、V2EX、X/Twitter、Product Hunt、HuggingFace、Arxiv、npm、PyPI、Stack Overflow、YouTube、Google News、Google Trends 等 — 21+ 个来源，每日更新。',
   },
   {
     q: '我可以追踪竞争对手吗？',

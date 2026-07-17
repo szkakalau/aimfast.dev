@@ -4,7 +4,7 @@ export default {
   siteName: "AimFast.Dev",
   siteUrl: "https://www.aimfast.dev",
   siteDescription:
-    "Automated trend discovery platform scanning 31+ sources nightly with LLM pipeline. Tracks 150+ emerging tech terms with Builder Score, stage classification, and cross-source validation. Free, no signup.",
+    "Automated trend discovery platform scanning 21+ sources nightly with LLM pipeline. Tracks 170+ emerging tech terms with Builder Score, stage classification, and cross-source validation. Free, no signup.",
   crawlers: "all",
   provider: {
     Pages: [
@@ -12,7 +12,7 @@ export default {
         title: "Home — Trend Discovery",
         url: "https://www.aimfast.dev/",
         description:
-          "Daily tracking of new tech terms, concepts, and market signals across 31+ sources. See what's emerging before everyone else.",
+          "Daily tracking of new tech terms, concepts, and market signals across 21+ sources. See what's emerging before everyone else.",
       },
       {
         title: "Trends Dashboard",

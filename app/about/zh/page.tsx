@@ -105,7 +105,7 @@ export default function AboutZhPage() {
             <div>
               <h3 style={{ margin: '0 0 var(--space-1)', fontSize: '1.05rem' }}>信号采集</h3>
               <p style={{ color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
-                19 个独立采集器每夜并行运行，从开发者平台（Hacker News、GitHub、DEV、Lobsters）、社交媒体（X/Twitter、Reddit、YouTube）、
+                21+ 个独立采集器每夜并行运行，从开发者平台（Hacker News、GitHub、DEV、Lobsters）、社交媒体（X/Twitter、Reddit、YouTube）、
                 包注册表（npm、PyPI）、AI/ML 中心（HuggingFace、ArXiv）以及消费平台
                 （豆瓣、小红书、Product Hunt）拉取数据。单个采集源的失败不会阻塞其他采集源。
               </p>

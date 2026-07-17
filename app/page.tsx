@@ -8,7 +8,7 @@ import TrendFilter from './trends/TrendFilter';
 export const metadata: Metadata = {
   title: 'Trend Discovery — Emerging Tech Terms & Market Signals | AimFast.Dev',
   description:
-    'Discover emerging technology terms, concepts, and market signals before they trend. Free daily tracking of nascent tech across 11+ sources. No signup required.',
+    'Discover emerging technology terms, concepts, and market signals before they trend. Free daily tracking of nascent tech across 21+ sources. No signup required.',
   robots: { index: true, follow: true },
   alternates: {
     canonical: 'https://www.aimfast.dev/',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Trend Discovery — Emerging Tech Terms | AimFast.Dev',
     description:
-      'Track emerging tech terms before they trend. Daily updates from 11+ sources. Free. No signup required.',
+      'Track emerging tech terms before they trend. Daily updates from 21+ sources. Free. No signup required.',
     url: 'https://www.aimfast.dev/',
     siteName: 'AimFast.Dev',
     locale: 'en',
@@ -89,7 +89,7 @@ export default function HomePage() {
         '@type': 'HowTo',
         name: 'How Trends Are Scored & Discovered',
         description:
-          'Every trend is automatically scored and staged by our pipeline across 11+ sources.',
+          'Every trend is automatically scored and staged by our pipeline across 21+ sources.',
         step: [
           {
             '@type': 'HowToStep',
@@ -131,7 +131,7 @@ export default function HomePage() {
             name: 'How are trends discovered?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: `Our AI scans 11+ sources daily — HN, Reddit, GitHub, DEV Community, Lobsters, V2EX, X/Twitter, Product Hunt, HuggingFace, Arxiv, Indie Hackers — cross-referencing emerging terms and scoring them by signal strength, source diversity, and community engagement.`,
+              text: `Our AI scans 21+ sources daily — HN, Reddit, GitHub, DEV Community, Lobsters, V2EX, X/Twitter, Product Hunt, HuggingFace, Arxiv, npm, PyPI, Stack Overflow, YouTube, and more — cross-referencing emerging terms and scoring them by signal strength, source diversity, and community engagement.`,
             },
           },
           {
@@ -277,7 +277,7 @@ export default function HomePage() {
             <div className="engine-card">
               <h3><Search size={20} /> How Terms Are Discovered</h3>
               <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', marginBottom: 'var(--space-2)' }}>
-                Every night, our LLM pipeline scans signals from 11+ sources and extracts emerging terms using 5 rules:
+                Every night, our LLM pipeline scans signals from 21+ sources and extracts emerging terms using 5 rules:
               </p>
               <ul>
                 <li>
@@ -318,7 +318,7 @@ export default function HomePage() {
               <Search size={32} className="engine-icon" />
               <h3>Discovery Engine</h3>
               <p>
-                AI scans 11+ sources — HN, Reddit, GitHub, Product Hunt, X, DEV,
+                AI scans 21+ sources — HN, Reddit, GitHub, Product Hunt, X, DEV,
                 V2EX, and more — for emerging pain points, rising trends, and
                 market gaps.
               </p>

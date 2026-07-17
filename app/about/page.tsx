@@ -105,7 +105,7 @@ export default function AboutPage() {
             <div>
               <h3 style={{ margin: '0 0 var(--space-1)', fontSize: '1.05rem' }}>Signal Collection</h3>
               <p style={{ color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
-                19 independent collectors run in parallel every night, pulling data from developer platforms
+                21+ independent collectors run in parallel every night, pulling data from developer platforms
                 (Hacker News, GitHub, DEV, Lobsters), social media (X/Twitter, Reddit, YouTube),
                 package registries (npm, PyPI), AI/ML hubs (HuggingFace, ArXiv), and consumer platforms
                 (Douban, Xiaohongshu, Product Hunt). One failure never blocks another.

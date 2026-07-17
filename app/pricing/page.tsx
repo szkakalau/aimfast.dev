@@ -57,7 +57,7 @@ const PLANS: Plan[] = [
     yearly: 190,
     description: 'Trend discovery for curious builders. See what\'s emerging before it peaks.',
     features: [
-      'Daily trend discovery (11+ sources)',
+      'Daily trend discovery (21+ sources)',
       'Browse all tracked terms',
       'Stage & category filtering',
       'Basic term tracking (3 terms)',
@@ -110,11 +110,11 @@ const PLANS: Plan[] = [
 const FAQ_ITEMS = [
   {
     q: 'How is this different from setting up Google Alerts?',
-    a: 'Google Alerts gives you links. We give you a decision. Our AI reads 300+ signals across 11 platforms, cross-references them, scores them, and tells you "build this, skip that." Google Alerts cannot tell you that a Reddit complaint and a GitHub star spike are the same unmet need.',
+    a: 'Google Alerts gives you links. We give you a decision. Our AI reads 300+ signals across 21+ platforms, cross-references them, scores them, and tells you "build this, skip that." Google Alerts cannot tell you that a Reddit complaint and a GitHub star spike are the same unmet need.',
   },
   {
     q: 'What sources do you scan?',
-    a: 'HN, Reddit (r/programming, r/MachineLearning, r/SideProject, r/Entrepreneur, r/digitalnomad), GitHub Trending, DEV Community, Lobsters, V2EX, X/Twitter, Product Hunt, HuggingFace, Arxiv, Indie Hackers, and more — 11+ sources, daily.',
+    a: 'HN, Reddit, GitHub Trending, DEV Community, Lobsters, V2EX, X/Twitter, Product Hunt, HuggingFace, Arxiv, npm, PyPI, Stack Overflow, YouTube, Google News, Google Trends, and more — 21+ sources, daily.',
   },
   {
     q: 'Can I track industry trends?',

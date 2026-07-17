@@ -23,7 +23,7 @@ export default function DashboardPage() {
             Daily market intelligence for indie builders. One validated product
             opportunity every morning — what to build, who will pay, and how much
             to charge. Monitor watchlist signals and get AI-powered decision
-            support from 11+ global sources.
+            support from 21+ global sources.
           </p>
           <ul>
             <li>Watchlist: monitor tracked terms with 7-day trend deltas</li>
