@@ -150,9 +150,22 @@ export default function TrendFilter({ terms, locale = 'en' }: Props) {
   // ── Scroll to top of trend grid on page change ──
   // Prevents browser focus-scroll from jumping to the pagination buttons
   // (which are at the bottom of the grid) after a page button click.
+  // Only fires on user-initiated page clicks, NOT on initial hydration
+  // (otherwise it fights the browser's own scroll restoration on refresh).
+
+  const userPageRef = useRef(false);
+
+  const goPage = useCallback(
+    (p: number) => {
+      userPageRef.current = true;
+      setPage(Math.max(1, Math.min(p, totalPages)));
+    },
+    [totalPages],
+  );
 
   useEffect(() => {
-    if (!hydrated) return;
+    if (!hydrated || !userPageRef.current) return;
+    userPageRef.current = false;
     const grid = document.getElementById('trend-grid');
     if (grid) {
       const top = grid.getBoundingClientRect().top + window.scrollY;
@@ -188,11 +201,6 @@ export default function TrendFilter({ terms, locale = 'en' }: Props) {
     setSortKey(e.target.value as SortKey);
     setPage(1);
   }, []);
-
-  const goPage = useCallback(
-    (p: number) => setPage(Math.max(1, Math.min(p, totalPages))),
-    [totalPages],
-  );
 
   const handleTrack = useCallback((id: string) => {
     setTrackedIds((prev) => {
