@@ -238,7 +238,7 @@ export default function ZhHomePage() {
               <p style={{ fontSize: '0.82rem', color: 'var(--color-text-secondary)', marginTop: 'var(--space-2)' }}>
                 <strong>报告阈值：</strong>{' '}
                 <span className="threshold-list">
-                  <span>≥60</span> 深度研究报告 ·{' '}
+                  <span>Top 25%</span> 深度研究报告 ·{' '}
                   <span>30–59</span> 快速简报 ·{' '}
                   <span>&lt;30</span> 仅追踪
                 </span>

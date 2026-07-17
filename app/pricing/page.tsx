@@ -77,7 +77,7 @@ const PLANS: Plan[] = [
       'Everything in Starter',
       'Daily verified decision card',
       'Topic monitoring (up to 10)',
-      'Full deep research reports (≥60 score)',
+      'Full deep research reports (top 25% Builder Score)',
       'AI scoring & cross-platform validation',
       'Full report archive',
       'Track unlimited terms',

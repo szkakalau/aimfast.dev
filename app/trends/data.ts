@@ -46,12 +46,29 @@ export function getResearchContentEn(path: string): string {
   if (enContent) {
     const bodyOnly = enContent.replace(/^---[\s\S]*?---\n*/, '').trim();
     if (!isChineseText(bodyOnly)) return enContent;
+    // EN file exists but LLM-generated content is Chinese — show it anyway
+    // with a language note prepended (better than empty "not yet generated")
+    const frontmatterEnd = enContent.indexOf('---\n', 4);
+    if (frontmatterEnd !== -1) {
+      const before = enContent.slice(0, frontmatterEnd + 4);
+      const after = enContent.slice(frontmatterEnd + 4);
+      return before + '\n> ⚠️ The English version of this report is being regenerated. Showing the available version below.\n\n' + after;
+    }
+    return enContent;
   }
   // Fall back to original, but reject if it's also Chinese
   const origContent = getResearchContent(path);
   if (origContent) {
     const bodyOnly = origContent.replace(/^---[\s\S]*?---\n*/, '').trim();
     if (!isChineseText(bodyOnly)) return origContent;
+    // Original is also Chinese — show it with a note rather than nothing
+    const frontmatterEnd = origContent.indexOf('---\n', 4);
+    if (frontmatterEnd !== -1) {
+      const before = origContent.slice(0, frontmatterEnd + 4);
+      const after = origContent.slice(frontmatterEnd + 4);
+      return before + '\n> ⚠️ The English version of this report is being regenerated. Showing the available version below.\n\n' + after;
+    }
+    return origContent;
   }
   return '';
 }

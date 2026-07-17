@@ -39,7 +39,6 @@ STAGES_PATH = TRACKING_DIR / "term_stages.json"
 #   80-100% → 跳过
 FULL_RESEARCH_PCT = 0.25       # top 25% → 完整报告
 QUICK_BRIEF_PCT = 0.80         # top 80% → 简报（底部 20% 跳过）
-MAX_FULL_REPORTS_PER_DAY = 5   # 每日最多生成 5 篇完整报告（控制 LLM 成本）
 ABSOLUTE_MIN_SCORE = 10        # 绝对最低分: 低于此分的 term 在任何情况下都跳过
 
 # ── 报告 Prompt ────────────────────────────────────────
@@ -439,14 +438,6 @@ def run(date_str: str | None = None):
             continue
 
         if score_val >= full_threshold:
-            if full_reports >= MAX_FULL_REPORTS_PER_DAY:
-                # 今日完整报告配额已满 → 降级为简报
-                if not zh_exists:
-                    written = _generate_quick_brief(s, date)
-                    if written > 0:
-                        quick_briefs += 1
-                continue
-
             if not zh_exists:
                 written = _generate_full_report(s, mentions, score_detail, date)
                 if written > 0:

@@ -266,7 +266,7 @@ export default function HomePage() {
               <p style={{ fontSize: '0.82rem', color: 'var(--color-text-secondary)', marginTop: 'var(--space-2)' }}>
                 <strong>Report thresholds:</strong>{' '}
                 <span className="threshold-list">
-                  <span>≥60</span> deep research report ·{' '}
+                  <span>Top 25%</span> deep research report ·{' '}
                   <span>30–59</span> quick brief ·{' '}
                   <span>&lt;30</span> tracking only
                 </span>

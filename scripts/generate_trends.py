@@ -513,20 +513,56 @@ def generate_research_report(term: dict) -> int:
     if not en_path.exists():
         en_system = "You write technical trend research reports for indie developers. Use natural, idiomatic English. Target audience: indie hackers, SaaS founders, and software developers worldwide."
 
-        en_template = template.replace(
-            "Write a comprehensive trend research report",
-            "Write a comprehensive trend research report in English"
+        # Build an English user prompt from scratch — the Chinese template
+        # confuses the LLM into outputting Chinese even with an English system prompt.
+        canonical = term["canonical"]
+        category = term.get("category", "General")
+        summary = term.get("summary_en", "") or term.get("summary_zh", "")
+        sources = ", ".join(term.get("sources", []))
+        first_seen = term.get("first_seen", "")
+        stage = term.get("stage", "nascent")
+        score = term.get("score", 0)
+        source_count = term.get("source_count", 0)
+        total_mentions = term.get("total_mentions", 0)
+
+        user_prompt_en = (
+            "You are writing a trend research report for indie developers. "
+            "Write the ENTIRE report in ENGLISH — no Chinese characters anywhere.\n\n"
+            "## Known Data\n\n"
+            f"- **Term Name**: {canonical}\n"
+            f"- **Category**: {category}\n"
+            f"- **Summary**: {summary}\n"
+            f"- **Sources**: {sources}\n"
+            f"- **First Seen**: {first_seen}\n"
+            f"- **Current Stage**: {stage}\n"
+            f"- **Trend Score**: {score}/100\n"
+            f"- **Source Count**: {source_count}\n"
+            f"- **Total Mentions**: {total_mentions}\n\n"
+            "## Report Structure\n\n"
+            "Write 8 sections with `## Section Name` headers. Each section 80-150 words.\n\n"
+            f"### ## What is it\n\n"
+            f"Explain what {canonical} is in plain English. Help an indie developer understand it in 30 seconds.\n\n"
+            "### ## Why now\n\n"
+            "Why is this emerging now? Market shifts, tech advances, user needs, or industry events.\n\n"
+            "### ## Who's behind it\n\n"
+            "Key companies, organizations, individuals, or open-source communities. Note their roles.\n\n"
+            "### ## Market signals\n\n"
+            f"Cross-platform patterns, discussion volume ({source_count} sources, {total_mentions} mentions), "
+            f"maturity stage: {stage}.\n\n"
+            "### ## Commercial opportunities\n\n"
+            "2-3 specific ways indie developers can build products or services around this.\n\n"
+            "### ## Related terms\n\n"
+            f"2-3 related emerging trends and how they connect to {canonical}.\n\n"
+            "### ## SEO opportunity\n\n"
+            "Search volume trend (rising/stable/falling), 3 long-tail keywords, competition level.\n\n"
+            "### ## Product ideas\n\n"
+            "2-3 concrete product ideas. Include: product name, description, why now.\n\n"
+            "## Format Rules\n\n"
+            "- Write the ENTIRE report in English — NO Chinese characters\n"
+            "- Use the provided numbers directly\n"
+            "- Keep an objective, analytical tone\n"
+            "- Separate sections with blank lines\n"
         )
-        user_prompt_en = en_template.replace("{canonical}", term["canonical"])
-        user_prompt_en = user_prompt_en.replace("{category}", term.get("category", "General"))
-        user_prompt_en = user_prompt_en.replace("{summary_zh}", term.get("summary_zh", ""))
-        user_prompt_en = user_prompt_en.replace("{summary_en}", term.get("summary_en", ""))
-        user_prompt_en = user_prompt_en.replace("{sources}", ", ".join(term.get("sources", [])))
-        user_prompt_en = user_prompt_en.replace("{first_seen}", term.get("first_seen", ""))
-        user_prompt_en = user_prompt_en.replace("{stage}", term.get("stage", "nascent"))
-        user_prompt_en = user_prompt_en.replace("{score}", str(term.get("score", 0)))
-        user_prompt_en = user_prompt_en.replace("{source_count}", str(term.get("source_count", 0)))
-        user_prompt_en = user_prompt_en.replace("{total_mentions}", str(term.get("total_mentions", 0)))
 
         try:
             sys.path.insert(0, str(ROOT / "scripts"))
