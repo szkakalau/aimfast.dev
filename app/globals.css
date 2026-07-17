@@ -265,6 +265,11 @@ a, button, input, select, textarea, label, [role="button"] {
 }
 
 @media (max-width: 640px) {
+  /* Mobile nav bar — more opaque to prevent content bleed-through */
+  .site-nav {
+    background: oklch(100% 0 0 / 0.97);
+  }
+
   .nav-toggle-label {
     display: inline-flex;
   }
@@ -274,7 +279,7 @@ a, button, input, select, textarea, label, [role="button"] {
     display: block;
     position: fixed;
     inset: 0;
-    background: oklch(0% 0 0 / 0.35);
+    background: oklch(0% 0 0 / 0.45);
     z-index: var(--z-nav-overlay);
     visibility: hidden;
     opacity: 0;
