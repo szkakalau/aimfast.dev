@@ -274,14 +274,12 @@ def generate_sitemap() -> int:
         'priority': '0.7',
     })
 
-    # Reports
+    # Reports — EN primary at root, ZH at /zh/ suffix
     if CONTENT_REPORTS.exists():
-        for f in sorted(CONTENT_REPORTS.glob('*.md')):
-            if '-en' in f.name:
-                continue
-            date = f.stem
-            en_file = CONTENT_REPORTS / f"{date}-en.md"
-            has_en = en_file.exists()
+        for f in sorted(CONTENT_REPORTS.glob('*-en.md')):
+            date = f.name.replace('-en.md', '')
+            zh_file = CONTENT_REPORTS / f"{date}.md"
+            has_zh = zh_file.exists()
 
             urls.append({
                 'loc': f'{BASE_URL}/reports/{date}/',
@@ -289,32 +287,30 @@ def generate_sitemap() -> int:
                 'changefreq': 'weekly',
                 'priority': '0.8',
                 'alternates': {
-                    'zh-CN': f'{BASE_URL}/reports/{date}/',
-                    'en': f'{BASE_URL}/reports/{date}/en/',
-                } if has_en else None,
+                    'en': f'{BASE_URL}/reports/{date}/',
+                    'zh-CN': f'{BASE_URL}/reports/{date}/zh/',
+                } if has_zh else None,
             })
-            if has_en:
+            if has_zh:
                 urls.append({
-                    'loc': f'{BASE_URL}/reports/{date}/en/',
+                    'loc': f'{BASE_URL}/reports/{date}/zh/',
                     'lastmod': date,
                     'changefreq': 'weekly',
                     'priority': '0.8',
                     'alternates': {
-                        'en': f'{BASE_URL}/reports/{date}/en/',
-                        'zh-CN': f'{BASE_URL}/reports/{date}/',
+                        'zh-CN': f'{BASE_URL}/reports/{date}/zh/',
+                        'en': f'{BASE_URL}/reports/{date}/',
                     },
                 })
 
-    # Articles
+    # Articles — EN primary at root, ZH at /zh/ suffix
     if CONTENT_ARTICLES.exists():
         seen_slugs = set()
-        for f in sorted(CONTENT_ARTICLES.glob('*.mdx')):
-            if '-en' in f.name:
-                continue
-            slug = f.stem
+        for f in sorted(CONTENT_ARTICLES.glob('*-en.mdx')):
+            slug = f.name.replace('-en.mdx', '')
             seen_slugs.add(slug)
-            en_file = CONTENT_ARTICLES / f"{slug}-en.mdx"
-            has_en = en_file.exists()
+            zh_file = CONTENT_ARTICLES / f"{slug}.mdx"
+            has_zh = zh_file.exists()
 
             # Extract date from frontmatter for lastmod
             lastmod = ""
@@ -332,19 +328,19 @@ def generate_sitemap() -> int:
                 'changefreq': 'weekly',
                 'priority': '0.8',
                 'alternates': {
-                    'zh-CN': f'{BASE_URL}/articles/{slug}/',
-                    'en': f'{BASE_URL}/articles/{slug}/en/',
-                } if has_en else None,
+                    'en': f'{BASE_URL}/articles/{slug}/',
+                    'zh-CN': f'{BASE_URL}/articles/{slug}/zh/',
+                } if has_zh else None,
             })
-            if has_en:
+            if has_zh:
                 urls.append({
-                    'loc': f'{BASE_URL}/articles/{slug}/en/',
+                    'loc': f'{BASE_URL}/articles/{slug}/zh/',
                     'lastmod': lastmod,
                     'changefreq': 'weekly',
                     'priority': '0.8',
                     'alternates': {
-                        'en': f'{BASE_URL}/articles/{slug}/en/',
-                        'zh-CN': f'{BASE_URL}/articles/{slug}/',
+                        'zh-CN': f'{BASE_URL}/articles/{slug}/zh/',
+                        'en': f'{BASE_URL}/articles/{slug}/',
                     },
                 })
 

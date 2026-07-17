@@ -7,11 +7,11 @@ import { parseFrontmatter, extractBody } from '@/lib/frontmatter';
 
 const ARTICLES_DIR = join(process.cwd(), 'content', 'articles');
 
-function getEnglishArticles(): { slug: string; hasEn: boolean }[] {
+function getZhArticles(): { slug: string }[] {
   try {
     return readdirSync(ARTICLES_DIR)
-      .filter((f) => f.endsWith('-en.mdx'))
-      .map((f) => ({ slug: f.replace(/-en\.mdx$/, ''), hasEn: true }));
+      .filter((f) => f.endsWith('.mdx') && !f.includes('-en'))
+      .map((f) => ({ slug: f.replace(/\.mdx$/, '') }));
   } catch {
     return [];
   }
@@ -26,7 +26,7 @@ export async function generateMetadata({
   if (!isValidPathSegment(slug)) {
     return { title: 'Invalid Request — AimFast.Dev' };
   }
-  const filePath = join(ARTICLES_DIR, `${slug}-en.mdx`);
+  const filePath = join(ARTICLES_DIR, `${slug}.mdx`);
 
   let source: string;
   try {
@@ -37,25 +37,25 @@ export async function generateMetadata({
 
   const fm = parseFrontmatter(source);
   const title = fm.title || slug;
-  const canonicalUrl = `https://www.aimfast.dev/articles/${slug}/en/`;
-  const zhUrl = `https://www.aimfast.dev/articles/${slug}/`;
+  const canonicalUrl = `https://www.aimfast.dev/articles/${slug}/zh/`;
+  const enUrl = `https://www.aimfast.dev/articles/${slug}/`;
 
   return {
     title: `${title} — AimFast.Dev`,
-    description: fm.summary || 'Deep-dive signal analysis for indie developers.',
+    description: fm.summary || '面向独立开发者的深度信号分析。',
     robots: { index: true, follow: true },
     alternates: {
       canonical: canonicalUrl,
-      languages: { 'zh-CN': zhUrl },
+      languages: { 'zh-CN': canonicalUrl, en: enUrl },
     },
     openGraph: {
       title: `${title} — AimFast.Dev`,
-      description: fm.summary || 'Deep-dive signal analysis for indie developers.',
+      description: fm.summary || '面向独立开发者的深度信号分析。',
       type: 'article',
       publishedTime: fm.date || undefined,
       url: canonicalUrl,
       siteName: 'AimFast.Dev',
-      locale: 'en',
+      locale: 'zh-CN',
       images: [
         {
           url: 'https://www.aimfast.dev/og-articles.png',
@@ -68,17 +68,17 @@ export async function generateMetadata({
     twitter: {
       card: 'summary_large_image',
       title: `${title} — AimFast.Dev`,
-      description: fm.summary || 'Deep-dive signal analysis for indie developers.',
+      description: fm.summary || '面向独立开发者的深度信号分析。',
       images: ['https://www.aimfast.dev/og-articles.png'],
     },
   };
 }
 
 export function generateStaticParams() {
-  return getEnglishArticles().map(({ slug }) => ({ slug }));
+  return getZhArticles().map(({ slug }) => ({ slug }));
 }
 
-export default async function ArticleEnPage({
+export default async function ArticleZhPage({
   params,
 }: {
   params: Promise<{ slug: string }>;
@@ -94,7 +94,7 @@ export default async function ArticleEnPage({
       </main>
     );
   }
-  const filePath = join(ARTICLES_DIR, `${slug}-en.mdx`);
+  const filePath = join(ARTICLES_DIR, `${slug}.mdx`);
 
   let source: string;
   try {
@@ -105,8 +105,8 @@ export default async function ArticleEnPage({
         <article className="article" style={{ padding: 'var(--space-10) 0', textAlign: 'center' as const }}>
           <h1>Article Not Found</h1>
           <p>
-            No English version exists for this article.{' '}
-            <a href={`/articles/${slug}/`}>View Chinese version</a>
+            No Chinese version exists for this article.{' '}
+            <a href={`/articles/${slug}/`}>View English version</a>
           </p>
           <p><a href="/">Back to home</a></p>
         </article>
@@ -117,8 +117,8 @@ export default async function ArticleEnPage({
   const frontmatter = parseFrontmatter(source);
   // Strip leading H1 to avoid duplicate heading (page header already renders H1)
   let content = extractBody(source).replace(/^# .+\n+/, '');
-  const canonicalUrl = `https://www.aimfast.dev/articles/${slug}/en/`;
-  const zhUrl = `https://www.aimfast.dev/articles/${slug}/`;
+  const canonicalUrl = `https://www.aimfast.dev/articles/${slug}/zh/`;
+  const enUrl = `https://www.aimfast.dev/articles/${slug}/`;
 
   const { content: mdxContent } = await compileMDX({
     source: content,
@@ -143,8 +143,8 @@ export default async function ArticleEnPage({
         description: frontmatter.summary || '',
         author: { '@type': 'Organization', name: 'AimFast.Dev' },
         publisher: { '@type': 'Organization', name: 'AimFast.Dev' },
-        inLanguage: 'en',
-        translationOfWork: { '@type': 'CreativeWork', '@id': `https://www.aimfast.dev/articles/${slug.replace(/-en$/, '')}/` },
+        inLanguage: 'zh-CN',
+        translationOfWork: { '@type': 'CreativeWork', '@id': enUrl, inLanguage: 'en' },
         url: canonicalUrl,
         mainEntityOfPage: { '@type': 'WebPage', '@id': canonicalUrl },
       },
@@ -170,8 +170,8 @@ export default async function ArticleEnPage({
               <p className="article-meta-summary">{frontmatter.summary}</p>
             )}
             <div style={{ marginTop: 'var(--space-3)', fontSize: '0.875rem' }}>
-              <a href={zhUrl} hrefLang="zh-CN" rel="alternate">
-                阅读中文版 →
+              <a href={enUrl} hrefLang="en" rel="alternate">
+                Read in English →
               </a>
             </div>
           </header>
@@ -181,7 +181,7 @@ export default async function ArticleEnPage({
           <p>
             &copy; {new Date().getFullYear()} AimFast.Dev ·{' '}
             <a href="/">Trends</a> · <a href="/dashboard/">Dashboard</a> · <a href="/pricing/">Pricing</a> ·{' '}
-            <a href={zhUrl}>中文版</a>
+            <a href={enUrl}>English version</a>
           </p>
         </footer>
       </main>

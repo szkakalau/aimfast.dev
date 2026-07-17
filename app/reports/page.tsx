@@ -42,21 +42,21 @@ interface ReportMeta {
   date: string;
   title: string;
   summary: string;
-  hasEn: boolean;
+  hasZh: boolean;
 }
 
 function getReports(): ReportMeta[] {
   try {
     const files = readdirSync(REPORTS_DIR).filter((f) => f.endsWith('.md'));
-    const zhFiles = files.filter((f) => !f.includes('-en'));
-    const enSet = new Set(
-      files.filter((f) => f.includes('-en')).map((f) => f.replace('-en.md', ''))
+    const enFiles = files.filter((f) => f.includes('-en'));
+    const zhSet = new Set(
+      files.filter((f) => !f.includes('-en')).map((f) => f.replace('.md', ''))
     );
 
-    return zhFiles
+    return enFiles
       .map((f) => {
-        const date = f.replace('.md', '');
-        const hasEn = enSet.has(date);
+        const date = f.replace('-en.md', '');
+        const hasZh = zhSet.has(date);
         const filePath = join(REPORTS_DIR, f);
         const source = readFileSync(filePath, 'utf-8');
 
@@ -65,7 +65,7 @@ function getReports(): ReportMeta[] {
           date,
           title: fm.title || `Daily Report — ${date}`,
           summary: fm.summary || '',
-          hasEn,
+          hasZh,
         };
       })
       .sort((a, b) => b.date.localeCompare(a.date)); // newest first
@@ -92,7 +92,7 @@ export default function ReportsIndexPage() {
         name: 'Daily Reports — AimFast.Dev',
         description: 'Daily signal intelligence reports for indie developers.',
         url: 'https://www.aimfast.dev/reports/',
-        inLanguage: 'zh-CN',
+        inLanguage: 'en',
         mainEntity: {
           '@type': 'ItemList',
           itemListElement: reports.map((r, i) => ({
@@ -131,15 +131,15 @@ export default function ReportsIndexPage() {
                   </a>
                   <div style={{ marginTop: 'var(--space-2)' }}>
                     <a href={`/reports/${r.date}/`} style={{ fontSize: '0.85rem' }}>
-                      中文
+                      English
                     </a>
-                    {r.hasEn && (
+                    {r.hasZh && (
                       <a
-                        href={`/reports/${r.date}/en/`}
+                        href={`/reports/${r.date}/zh/`}
                         className="report-lang-link"
                         style={{ fontSize: '0.85rem' }}
                       >
-                        · English
+                        · 中文
                       </a>
                     )}
                   </div>

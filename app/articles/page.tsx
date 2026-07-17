@@ -42,21 +42,21 @@ interface ArticleMeta {
   title: string;
   date: string;
   summary: string;
-  hasEn: boolean;
+  hasZh: boolean;
 }
 
 function getArticles(): ArticleMeta[] {
   try {
     const files = readdirSync(ARTICLES_DIR).filter((f) => f.endsWith('.mdx'));
-    const zhFiles = files.filter((f) => !f.includes('-en'));
-    const enSet = new Set(
-      files.filter((f) => f.includes('-en')).map((f) => f.replace('-en.mdx', ''))
+    const enFiles = files.filter((f) => f.includes('-en'));
+    const zhSet = new Set(
+      files.filter((f) => !f.includes('-en')).map((f) => f.replace('.mdx', ''))
     );
 
-    return zhFiles
+    return enFiles
       .map((f) => {
-        const slug = f.replace('.mdx', '');
-        const hasEn = enSet.has(slug);
+        const slug = f.replace('-en.mdx', '');
+        const hasZh = zhSet.has(slug);
         const filePath = join(ARTICLES_DIR, f);
         const source = readFileSync(filePath, 'utf-8');
 
@@ -66,7 +66,7 @@ function getArticles(): ArticleMeta[] {
           title: fm.title || slug,
           date: fm.date || '',
           summary: fm.summary || '',
-          hasEn,
+          hasZh,
         };
       })
       .sort((a, b) => b.date.localeCompare(a.date)); // newest first
@@ -93,7 +93,7 @@ export default function ArticlesIndexPage() {
         name: 'Planet Articles — AimFast.Dev',
         description: 'Deep-dive signal analysis articles for indie developers.',
         url: 'https://www.aimfast.dev/articles/',
-        inLanguage: 'zh-CN',
+        inLanguage: 'en',
         mainEntity: {
           '@type': 'ItemList',
           itemListElement: articles.map((a, i) => ({
@@ -141,10 +141,10 @@ export default function ArticlesIndexPage() {
                   <h2 className="article-list-title">{a.title}</h2>
                   {a.summary && <p className="article-list-summary">{a.summary}</p>}
                 </a>
-                {a.hasEn && (
+                {a.hasZh && (
                   <span className="article-list-lang">
-                    <a href={`/articles/${a.slug}/en/`} hrefLang="en">
-                      EN →
+                    <a href={`/articles/${a.slug}/zh/`} hrefLang="zh-CN">
+                      中文
                     </a>
                   </span>
                 )}

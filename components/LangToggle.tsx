@@ -27,13 +27,13 @@ const LANG_ROUTES: LangRoute[] = [
   { pattern: /^\/trends\/(.+?)\/zh\/?$/, zh: true,  alt: (g) => `/trends/${g[1]}/` },
   { pattern: /^\/trends\/(.+?)\/?$/,     zh: false, alt: (g) => `/trends/${g[1]}/zh/` },
 
-  // Reports: ZH primary, EN at /en/ suffix
-  { pattern: /^\/reports\/(.+?)\/en\/?$/, zh: false, alt: (g) => `/reports/${g[1]}/` },
-  { pattern: /^\/reports\/(.+?)\/?$/,     zh: true,  alt: (g) => `/reports/${g[1]}/en/` },
+  // Reports: EN primary, ZH at /zh/ suffix
+  { pattern: /^\/reports\/(.+?)\/zh\/?$/, zh: true,  alt: (g) => `/reports/${g[1]}/` },
+  { pattern: /^\/reports\/(.+?)\/?$/,     zh: false, alt: (g) => `/reports/${g[1]}/zh/` },
 
-  // Articles: ZH primary, EN at /en/ suffix
-  { pattern: /^\/articles\/(.+?)\/en\/?$/, zh: false, alt: (g) => `/articles/${g[1]}/` },
-  { pattern: /^\/articles\/(.+?)\/?$/,     zh: true,  alt: (g) => `/articles/${g[1]}/en/` },
+  // Articles: EN primary, ZH at /zh/ suffix
+  { pattern: /^\/articles\/(.+?)\/zh\/?$/, zh: true,  alt: (g) => `/articles/${g[1]}/` },
+  { pattern: /^\/articles\/(.+?)\/?$/,     zh: false, alt: (g) => `/articles/${g[1]}/zh/` },
 ];
 
 /* ── Helpers ── */

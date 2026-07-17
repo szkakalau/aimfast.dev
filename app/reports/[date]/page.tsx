@@ -10,17 +10,17 @@ const REPORTS_DIR = join(process.cwd(), 'content', 'reports');
 function getReportDates(): string[] {
   try {
     return readdirSync(REPORTS_DIR)
-      .filter((f) => f.endsWith('.md') && !f.includes('-en'))
-      .map((f) => f.replace(/\.md$/, ''));
+      .filter((f) => f.endsWith('-en.md'))
+      .map((f) => f.replace(/-en\.md$/, ''));
   } catch {
     return [];
   }
 }
 
-function hasEnglishVersion(date: string): boolean {
+function hasZhVersion(date: string): boolean {
   try {
-    const enPath = join(REPORTS_DIR, `${date}-en.md`);
-    return readFileSync(enPath, 'utf-8') !== undefined;
+    const zhPath = join(REPORTS_DIR, `${date}.md`);
+    return readFileSync(zhPath, 'utf-8') !== undefined;
   } catch {
     return false;
   }
@@ -35,7 +35,7 @@ export async function generateMetadata({
   if (!isValidPathSegment(date)) {
     return { title: 'Invalid Request — AimFast.Dev' };
   }
-  const filePath = join(REPORTS_DIR, `${date}.md`);
+  const filePath = join(REPORTS_DIR, `${date}-en.md`);
 
   let source: string;
   try {
@@ -47,13 +47,15 @@ export async function generateMetadata({
   const { fm } = parseFrontmatterWithBody(source);
   const title = fm.title || `Daily Report — ${date}`;
   const canonicalUrl = `https://www.aimfast.dev/reports/${date}/`;
-  const enUrl = `https://www.aimfast.dev/reports/${date}/en/`;
-  const hasEn = hasEnglishVersion(date);
+  const zhUrl = `https://www.aimfast.dev/reports/${date}/zh/`;
+  const hasZh = hasZhVersion(date);
 
-  const alternates: Record<string, unknown> = { canonical: canonicalUrl };
-  if (hasEn) {
-    alternates['languages'] = { en: enUrl };
-  }
+  const alternates: Record<string, unknown> = {
+    canonical: canonicalUrl,
+    languages: hasZh
+      ? { en: canonicalUrl, 'zh-CN': zhUrl }
+      : { en: canonicalUrl },
+  };
 
   return {
     title: `${title} — AimFast.Dev`,
@@ -67,7 +69,7 @@ export async function generateMetadata({
       publishedTime: fm.date || date,
       url: canonicalUrl,
       siteName: 'AimFast.Dev',
-      locale: 'zh-CN',
+      locale: 'en',
       images: [
         {
           url: 'https://www.aimfast.dev/og-reports.png',
@@ -104,7 +106,7 @@ export default async function ReportPage({
       </main>
     );
   }
-  const filePath = join(REPORTS_DIR, `${date}.md`);
+  const filePath = join(REPORTS_DIR, `${date}-en.md`);
 
   let source: string;
   try {
@@ -122,8 +124,8 @@ export default async function ReportPage({
   const { fm, body } = parseFrontmatterWithBody(source);
   const title = fm.title || `Daily Report — ${date}`;
   const canonicalUrl = `https://www.aimfast.dev/reports/${date}/`;
-  const enUrl = `https://www.aimfast.dev/reports/${date}/en/`;
-  const hasEn = hasEnglishVersion(date);
+  const zhUrl = `https://www.aimfast.dev/reports/${date}/zh/`;
+  const hasZh = hasZhVersion(date);
 
   const { content } = await compileMDX({
     source: body,
@@ -148,8 +150,8 @@ export default async function ReportPage({
         description: fm.summary || `Daily signal intelligence report for ${date}.`,
         author: { '@type': 'Organization', name: 'AimFast.Dev' },
         publisher: { '@type': 'Organization', name: 'AimFast.Dev' },
-        inLanguage: 'zh-CN',
-        workTranslation: hasEn ? { '@type': 'CreativeWork', '@id': enUrl, inLanguage: 'en' } : undefined,
+        inLanguage: 'en',
+        translationOfWork: hasZh ? { '@type': 'CreativeWork', '@id': zhUrl, inLanguage: 'zh-CN' } : undefined,
         url: canonicalUrl,
         mainEntityOfPage: { '@type': 'WebPage', '@id': canonicalUrl },
       },
@@ -185,10 +187,10 @@ export default async function ReportPage({
                 {fm.summary}
               </p>
             )}
-            {hasEn && (
+            {hasZh && (
               <div style={{ marginTop: 'var(--space-4)', fontSize: '0.875rem' }}>
-                <a href={enUrl} hrefLang="en" rel="alternate">
-                  Read in English →
+                <a href={zhUrl} hrefLang="zh-CN" rel="alternate">
+                  阅读中文版 →
                 </a>
               </div>
             )}
@@ -201,8 +203,8 @@ export default async function ReportPage({
           <p style={{ fontSize: '0.875rem', color: 'var(--color-muted)' }}>
             &copy; {new Date().getFullYear()} AimFast.Dev ·{' '}
             <a href="/">Trends</a> · <a href="/dashboard/">Dashboard</a> · <a href="/pricing/">Pricing</a>
-            {hasEn && (
-              <> · <a href={`/reports/${date}/en/`}>English version</a></>
+            {hasZh && (
+              <> · <a href={zhUrl}>中文版</a></>
             )}
           </p>
         </footer>

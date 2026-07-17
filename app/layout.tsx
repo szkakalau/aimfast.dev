@@ -149,7 +149,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* Close mobile nav when a link is clicked */}
         {/* Set lang attribute based on path prefix — dev mode fallback (build uses fix-en-lang.mjs) */}
         <script dangerouslySetInnerHTML={{ __html: `
-          (function(){var p=location.pathname;document.documentElement.lang=p.startsWith('/zh')||p.startsWith('/zh/')?'zh-CN':'en';})();
+          (function(){var p=location.pathname;document.documentElement.lang=/(^|\/)zh(\/|$)/.test(p)?'zh-CN':'en';})();
         `}} />
         <script dangerouslySetInnerHTML={{ __html: `
           (function(){

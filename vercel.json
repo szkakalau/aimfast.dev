@@ -1,7 +1,18 @@
 {
   "framework": "nextjs",
   "cleanUrls": true,
-  "redirects": [],
+  "redirects": [
+    {
+      "source": "/reports/:date/en/",
+      "destination": "/reports/:date/",
+      "permanent": true
+    },
+    {
+      "source": "/articles/:slug/en/",
+      "destination": "/articles/:slug/",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/_ds/(.*)",
