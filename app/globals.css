@@ -10,8 +10,9 @@
 img, video, iframe { max-width: 100%; height: auto; }
 
 /* ── Prevent sticky nav from covering scroll targets (anchors, scrollIntoView) ── */
+/* nav height: 16px(top pad) + 44px(content) + 16px(bottom pad) + 1px(border) = 77px */
 html {
-  scroll-padding-top: 56px;
+  scroll-padding-top: 80px;
 }
 
 /* ── Global heading word-break (prevents overflow from long unbreakable terms) ── */
