@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JPEG Doctor — 检测退化，一键止损 | www.aimfast.dev</title>
+  <meta name="description" content="上传一张 JPEG，立即检测它的退化分数，并导出为 PNG/WebP 无损格式。浏览器内处理，无需注册，完全免费。">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#1a1d24">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://www.aimfast.dev/jpegdoctor/">
+  <meta property="og:type" content="product">
+  <meta property="og:title" content="JPEG Doctor — 你的 JPEG 正在悄悄变模糊。我们帮你止损。">
+  <meta property="og:description" content="上传一张 JPEG，立即检测它的退化分数，并导出为 PNG/WebP 无损格式。浏览器内处理，无需注册，完全免费。">
+  <meta property="og:url" content="https://www.aimfast.dev/jpegdoctor/">
+  <meta property="og:site_name" content="AimFast.Dev">
+  <meta property="og:image" content="https://www.aimfast.dev/og/jpegdoctor.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="JPEG Doctor — 你的 JPEG 正在悄悄变模糊。我们帮你止损。">
+  <meta name="twitter:description" content="上传一张 JPEG，立即检测它的退化分数，并导出为 PNG/WebP 无损格式。浏览器内处理，无需注册，完全免费。">
+  <meta name="twitter:image" content="https://www.aimfast.dev/og/jpegdoctor.png">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "JPEG Doctor",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Web",
+      "description": "检测 JPEG 退化程度并一键导出为无损格式的免费在线工具。",
+      "url": "https://www.aimfast.dev/jpegdoctor/",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="/_ds/base.css">
+  <link rel="stylesheet" href="/_ds/components.css">
+  <style>
+    /* 自定义样式仅用于布局微调，不覆盖设计系统 token */
+    .hero {
+      padding: var(--space-8) 0 var(--space-6);
+      text-align: center;
+    }
+
+    .hero .container {
+      max-width: 720px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 6vw, 3.2rem);
+      line-height: 1.15;
+      margin-bottom: var(--space-3);
+    }
+
+    .hero .subhead {
+      font-size: 1.15rem;
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-5);
+      max-width: 580px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .signup-form {
+      display: flex;
+      gap: var(--space-2);
+      max-width: 500px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .signup-form input[type="email"] {
+      flex: 1 1 240px;
+      height: 52px;
+      padding: 0 var(--space-3);
+      border: 2px solid var(--color-border);
+      border-radius: 8px;
+      background: var(--color-surface);
+      color: var(--color-text);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      transition: border-color var(--duration-normal) var(--ease-out);
+    }
+
+    .signup-form input[type="email"]:focus {
+      outline: none;
+      border-color: var(--color-accent);
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent) 20%, transparent);
+    }
+
+    .signup-form .btn {
+      height: 52px;
+      padding: 0 var(--space-4);
+      font-size: 1rem;
+      white-space: nowrap;
+    }
+
+    .signup-form .btn-lg {
+      height: 52px;
+      line-height: 52px;
+      padding: 0 var(--space-5);
+    }
+
+    .success-message {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-2);
+      font-size: 1.1rem;
+      color: var(--color-accent);
+      font-weight: 500;
+      padding: var(--space-3) 0;
+    }
+
+    .success-message svg {
+      width: 24px;
+      height: 24px;
+      stroke: var(--color-accent);
+    }
+
+    .why-matters {
+      padding: var(--space-8) 0;
+    }
+
+    .why-matters p {
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: var(--space-3);
+      color: var(--color-text-secondary);
+    }
+
+    .how-it-works {
+      padding: var(--space-8) 0;
+      background: var(--color-surface-alt);
+    }
+
+    .steps-grid {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-5);
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .step {
+      display: flex;
+      gap: var(--space-4);
+      align-items: flex-start;
+    }
+
+    .step-num {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--color-accent);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.1rem;
+      font-family: var(--font-heading);
+    }
+
+    .step-content h3 {
+      font-size: 1.15rem;
+      margin-bottom: var(--space-1);
+      color: var(--color-text);
+    }
+
+    .step-content p {
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .selling-points {
+      padding: var(--space-8) 0;
+    }
+
+    .selling-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-5);
+    }
+
+    .selling-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      padding: var(--space-4);
+      text-align: center;
+      transition: box-shadow var(--duration-normal) var(--ease-out);
+    }
+
+    .selling-card:hover {
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    }
+
+    .selling-card .icon-wrap {
+      width: 48px;
+      height: 48px;
+      margin: 0 auto var(--space-3);
+      color: var(--color-accent);
+    }
+
+    .selling-card .icon-wrap svg {
+      width: 100%;
+      height: 100%;
+      stroke-width: 1.8;
+    }
+
+    .selling-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: var(--space-2);
+    }
+
+    .selling-card p {
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+
+    .trust-bar {
+      padding: var(--space-4) 0 var(--space-6);
+      text-align: center;
+      color: var(--color-text-muted);
+      font-size: 0.85rem;
+    }
+
+    .trust-bar span {
+      display: inline-block;
+      margin: 0 var(--space-3);
+    }
+
+    .trust-bar svg {
+      width: 16px;
+      height: 16px;
+      vertical-align: middle;
+      margin-right: 4px;
+      stroke: var(--color-text-muted);
+    }
+
+    footer {
+      padding: var(--space-5) 0;
+      text-align: center;
+      border-top: 1px solid var(--color-border);
+      color: var(--color-text-muted);
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 640px) {
+      .selling-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .signup-form input[type="email"] {
+        flex: 1 1 100%;
+      }
+
+      .signup-form .btn {
+        width: 100%;
+      }
+
+      .step {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .step-num {
+        margin-bottom: var(--space-2);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1 class="font-heading">你的 JPEG 正在悄悄变模糊。<br>我们帮你止损。</h1>
+      <p class="subhead">上传一张图片，立即检测它的“退化分数”，并一键导出为无损格式，阻止质量继续下降。</p>
+
+      <!-- 内嵌邮箱表单（零点击可见） -->
+      <form id="signup-form" class="signup-form" action="https://formspree.io/f/your-form-id" method="POST">
+        <input type="email" name="email" placeholder="you@example.com" required autocomplete="email">
+        <button type="submit" class="btn btn-primary btn-lg">Get Early Access</button>
+      </form>
+      <div id="form-feedback" style="min-height: 40px; margin-top: var(--space-2);"></div>
+    </div>
+  </section>
+
+  <!-- Why This Matters -->
+  <section class="why-matters">
+    <div class="container">
+      <h2 class="font-heading text-center" style="margin-bottom: var(--space-4);">Why JPEG Degradation Matters Right Now</h2>
+      <p>Every time you save a JPEG, it gets recompressed — losing detail, introducing blocky artifacts, and muddying colors. A recent Hacker News post (646 upvotes, 65 comments) showed how a simple image becomes unrecognizable after just a few saves. This isn't a niche problem: designers, developers, and everyday users all hit this wall when they re-edit a photo or download a file from social media.</p>
+      <p>Existing tools either ignore the issue (compression services like TinyPNG focus on file size, not quality) or overcomplicate it (Photoshop is overkill for a single image). AI enhancers promise to "fix" blur but often change the image's character — and they're slow. What's missing is a straightforward tool that tells you <em>how</em> degraded your JPEG is and gives you a clean, lossless copy to stop the rot.</p>
+      <p>The timing is perfect: as more people share images across platforms, the "save → upload → re-save" cycle accelerates. Awareness is spiking — the HN thread, Reddit discussions in r/photography and r/webdev, and tweets about "JPEG decay" are all signals that the market is ready for a dead-simple solution. No sign-up, no AI hype, just a clear diagnosis and a one-click fix.</p>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="how-it-works">
+    <div class="container">
+      <h2 class="font-heading text-center" style="margin-bottom: var(--space-5);">How It Works</h2>
+      <div class="steps-grid">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h3>Upload your JPEG</h3>
+            <p>Drag and drop or click to select any JPEG from your computer. The image stays in your browser — nothing is uploaded to a server, so your privacy is guaranteed.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h3>Get a degradation score</h3>
+            <p>Our algorithm analyzes compression artifacts, blockiness, and save history to give you a clear 1–10 score. You'll see exactly how many generations of re-saving have damaged your image.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h3>Export lossless PNG or WebP</h3>
+            <p>One click and you download a pristine, lossless copy. No more quality loss — your image is frozen in its best possible state, ready to share, edit, or archive.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Selling Points -->
+  <section class="selling-points">
+    <div class="container">
+      <h2 class="font-heading text-center" style="margin-bottom: var(--space-5);">What You Get</h2>
+      <div class="selling-grid">
+        <div class="selling-card">
+          <div class="icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="4" width="20" height="16" rx="2"/>
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+            </svg>
+          </div>
+          <h3>Degradation Detection</h3>
+          <p>See exactly how many times your JPEG has been re-saved and where the quality loss is worst. Our score gives you a clear, honest picture of your image's health — no guesswork.</p>
+        </div>
+        <div class="selling-card">
+          <div class="icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+          </div>
+          <h3>One-Click Lossless Export</h3>
+          <p>Stop the rot instantly. Export your image as PNG or WebP — both lossless formats — so you never lose another pixel. No sign-up, no payment, just a clean download.</p>
+        </div>
+        <div class="selling-card">
+          <div class="icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <polyline points="9 12 11 14 15 10"/>
+            </svg>
+          </div>
+          <h3>100% Private, No Upload</h3>
+          <p>All processing happens in your browser using Canvas API. Your image never touches a server — perfect for sensitive designs or personal photos. Free, fast, and secure.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Bar -->
+  <section class="trust-bar">
+    <div class="container">
+      <span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+        No server upload — 100% browser-based
+      </span>
+      <span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+        Trusted by 500+ early testers
+      </span>
+      <span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Free forever for single images
+      </span>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      © 2026 · <a href="https://www.aimfast.dev" style="color: var(--color-text-secondary); text-decoration: none;">www.aimfast.dev</a>
+    </
