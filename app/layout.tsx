@@ -32,9 +32,9 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: 'AimFast.Dev — Free Trend Discovery & Market Intelligence',
+  title: 'AimFast.Dev — Signal Over Hype: AI-Curated Tech Trends',
   description:
-    'Discover emerging tech terms before they trend. Free daily tracking across 21+ sources. Dashboard membership unlocks daily product opportunities — what to build, who will pay, and how much to charge.',
+    'AI scans 21+ sources daily, cross-validates every term, and ranks by builder relevance — signal over hype. Dashboard membership unlocks daily product opportunities — what to build, who will pay, and how much to charge.',
   robots: { index: true, follow: true },
   metadataBase: new URL('https://www.aimfast.dev'),
   alternates: {
@@ -46,9 +46,9 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'website',
-    title: 'AimFast.Dev — Free Trend Discovery & Market Intelligence',
+    title: 'AimFast.Dev — Signal Over Hype: AI-Curated Tech Trends',
     description:
-      'Discover emerging tech terms before they trend. Free daily tracking. Dashboard: one validated product opportunity every morning.',
+      'AI ranks tech terms by builder relevance, not hype. Free daily tracking. Dashboard: one validated product opportunity every morning.',
     url: 'https://www.aimfast.dev/',
     siteName: 'AimFast.Dev',
     locale: 'en',
@@ -63,8 +63,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AimFast.Dev — Free Trend Discovery',
-    description: 'Discover emerging tech terms before they trend. Free daily tracking. Dashboard: daily product opportunities.',
+    title: 'AimFast.Dev — Signal Over Hype',
+    description: 'AI ranks tech terms by builder relevance, not hype. Free daily tracking. Dashboard: daily product opportunities.',
     images: ['https://www.aimfast.dev/og-home.png'],
   },
 };

@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Trend Discovery — AimFast.Dev',
   description:
-    'Discover emerging technology terms, concepts, and market signals before they trend.',
+    'AI cross-validated tech terms ranked by builder relevance — signal over hype.',
   robots: { index: false, follow: true },
   alternates: {
     canonical: 'https://www.aimfast.dev/',

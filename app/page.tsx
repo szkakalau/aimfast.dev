@@ -6,9 +6,9 @@ import { getAllTrendTerms, getTrendStats } from './trends/data';
 import TrendFilter from './trends/TrendFilter';
 
 export const metadata: Metadata = {
-  title: 'Trend Discovery — Emerging Tech Terms & Market Signals | AimFast.Dev',
+  title: 'Signal Over Hype — AI-Curated Tech Trends & Market Signals | AimFast.Dev',
   description:
-    'Discover emerging technology terms, concepts, and market signals before they trend. Free daily tracking of nascent tech across 21+ sources. No signup required.',
+    'AI scans 21+ sources daily, cross-validates every term, and ranks by builder relevance — so you see what\'s worth acting on, not what\'s just loud. Free. No signup.',
   robots: { index: true, follow: true },
   alternates: {
     canonical: 'https://www.aimfast.dev/',
@@ -18,9 +18,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Trend Discovery — Emerging Tech Terms | AimFast.Dev',
+    title: 'Signal Over Hype — Tech Trends | AimFast.Dev',
     description:
-      'Track emerging tech terms before they trend. Daily updates from 21+ sources. Free. No signup required.',
+      'AI ranks tech terms by builder relevance — not by hype. Free daily tracking.',
     url: 'https://www.aimfast.dev/',
     siteName: 'AimFast.Dev',
     locale: 'en',
@@ -35,9 +35,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Trend Discovery — Emerging Tech Terms | AimFast.Dev',
+    title: 'Signal Over Hype — Tech Trends | AimFast.Dev',
     description:
-      'Discover emerging tech terms before they trend. Free daily tracking.',
+      'Signal over hype — AI-cross-validated tech terms ranked by builder relevance. Free daily tracking.',
     images: ['https://www.aimfast.dev/og-home.png'],
   },
 };
@@ -74,7 +74,7 @@ export default function HomePage() {
         '@type': 'CollectionPage',
         name: 'Trend Discovery — AimFast.Dev',
         description:
-          'Discover emerging technology terms, concepts, and market signals before they trend.',
+          'AI scans 21+ sources daily, cross-validates every term, and ranks by builder relevance — signal over hype.',
         url: 'https://www.aimfast.dev/',
         inLanguage: 'en',
         dateModified: updated_at || new Date().toISOString().slice(0, 10),
@@ -171,10 +171,11 @@ export default function HomePage() {
       <main className="trends-page">
         {/* ── Compact Hero ── */}
         <section className="trends-hero">
-          <h1>Discover What&apos;s Emerging Before Everyone Else</h1>
+          <h1>Signal Over Hype. Every Morning.</h1>
           <p className="trends-hero-desc">
-            Daily tracking of new tech terms, concepts, and market signals
-            across {stats.totalSources}+ sources. Free. No signup required.
+            AI scans {stats.totalSources}+ sources, cross-validates every term,
+            and ranks by builder relevance — so you see what&apos;s worth acting on,
+            not what&apos;s just loud. Free. No signup.
           </p>
           <div className="trends-hero-stats">
             <TrendingUp size={14} aria-hidden="true" />

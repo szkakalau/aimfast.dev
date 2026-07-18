@@ -6,9 +6,9 @@ import { getAllTrendTerms, getTrendStats } from '../trends/data';
 import TrendFilter from '../trends/TrendFilter';
 
 export const metadata: Metadata = {
-  title: '趋势发现 — 新兴技术术语与市场信号 | AimFast.Dev',
+  title: '信号而非噪音 — AI 精选技术趋势与市场信号 | AimFast.Dev',
   description:
-    '比别人更早发现新兴技术术语、概念和市场信号。每日免费追踪 21+ 个信号源。无需注册。',
+    'AI 每天扫描 21+ 个信源，交叉验证后按 Builder Score 排序——帮你过滤噪音，聚焦真正值得行动的机会。免费，无需注册。',
   robots: { index: true, follow: true },
   alternates: {
     canonical: 'https://www.aimfast.dev/zh/',
@@ -18,9 +18,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: '趋势发现 — 新兴技术术语 | AimFast.Dev',
+    title: '信号而非噪音 — 技术趋势 | AimFast.Dev',
     description:
-      '比别人更早追踪新兴技术术语。每日更新，覆盖 21+ 信号源。免费，无需注册。',
+      '按 Builder Score 排序的技术术语——不追热点，只看价值。每日免费追踪。',
     url: 'https://www.aimfast.dev/zh/',
     siteName: 'AimFast.Dev',
     locale: 'zh-CN',
@@ -35,9 +35,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '趋势发现 — 新兴技术术语 | AimFast.Dev',
+    title: '信号而非噪音 — 技术趋势 | AimFast.Dev',
     description:
-      '比别人更早发现新兴技术术语。每日免费追踪。',
+      '信号而非噪音——AI 交叉验证的技术术语，按 Builder Score 排序。每日免费追踪。',
     images: ['https://www.aimfast.dev/og-home.png'],
   },
 };
@@ -62,7 +62,7 @@ export default function ZhHomePage() {
         '@type': 'CollectionPage',
         name: '趋势发现 — AimFast.Dev',
         description:
-          '比别人更早发现新兴技术术语、概念和市场信号。',
+          'AI 每天扫描 21+ 个信源，交叉验证后按 Builder Score 排序——帮你过滤噪音，聚焦真正值得行动的机会。',
         url: 'https://www.aimfast.dev/zh/',
         inLanguage: 'zh-CN',
         dateModified: updated_at || new Date().toISOString().slice(0, 10),
@@ -157,10 +157,10 @@ export default function ZhHomePage() {
       <main className="trends-page">
         {/* ── Compact Hero ── */}
         <section className="trends-hero">
-          <h1>比别人更早发现正在崛起的机会</h1>
+          <h1>找到值得行动的信号</h1>
           <p className="trends-hero-desc">
-            每日追踪新技术术语、概念和市场信号，
-            覆盖 {stats.totalSources}+ 个信号源。免费，无需注册。
+            AI 每天扫描 {stats.totalSources}+ 个信源，交叉验证后按 Builder Score 排序
+            ——帮你过滤噪音，聚焦真正值得关注的机会。免费，无需注册。
           </p>
           <div className="trends-hero-stats">
             <TrendingUp size={14} aria-hidden="true" />
