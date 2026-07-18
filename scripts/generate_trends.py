@@ -136,7 +136,7 @@ def extract_terms_from_signals(signals: list[dict]) -> list[dict]:
 2. 对于新产品/项目：仅当它是某新兴方向的代表时才提取（如多个信号在讨论同一个新范式），而非孤立的"我做了个 App"帖
 3. 对于热门讨论：判断讨论量是否值得追踪，单个低分帖子不算
 4. 忽略已知通用技术词汇（如 "AI", "React", "Python", "API", "OpenAI", "LLM", "GPT" 等）
-5. 最多提取 20 个词，按重要性和讨论度排序。如果没有足够质量的候选，宁可返回少一些
+5. 按重要性和讨论度排序。如果没有足够质量的候选，宁可返回少一些。不设数量上限，质量是唯一门槛
 
 分类体系（category 字段）：
 - AIModel: AI & LLM model releases（模型发布、benchmark、权重/API 新模型）
@@ -280,7 +280,7 @@ def _extract_terms_keyword_fallback(signals: list[dict]) -> list[dict]:
             "summary_en": f"An emerging trend related to {tag}, appearing across multiple tech community sources today.",
         })
 
-    return terms[:20]
+    return terms
 
 
 def _make_slug_id(canonical: str, fallback_idx: int = 0) -> str:
@@ -737,7 +737,7 @@ Write in Chinese (zh-CN). Be specific and actionable. Avoid generic advice."""
 def main():
     parser = argparse.ArgumentParser(description="Generate trend terms from daily signals")
     parser.add_argument("--dry-run", action="store_true", help="Don't write files")
-    parser.add_argument("--max-terms", type=int, default=30, help="Max terms to extract")
+    parser.add_argument("--max-terms", type=int, default=60, help="Max terms to extract (safety cap, not a daily limit)")
     parser.add_argument("--date", type=str, help="Date to process (default: today)")
     args = parser.parse_args()
 

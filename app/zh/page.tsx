@@ -110,7 +110,7 @@ export default function ZhHomePage() {
             '@type': 'HowToStep',
             position: 5,
             name: '质量优先于数量',
-            text: '每天最多提取 20 个新术语；宁可少一些，也比充满噪音好。',
+            text: '质量优先于数量——只有经过跨源验证的高质量术语才会被收录，不设数量上限。',
           },
         ],
       },
@@ -265,7 +265,7 @@ export default function ZhHomePage() {
                   <strong>通用词黑名单</strong> — AI、React、Python、API、LLM、GPT 等已知泛化词汇会被自动忽略。
                 </li>
                 <li>
-                  <strong>质量优先于数量</strong> — 每天最多提取 20 个新术语；宁可少一些，也比充满噪音好。
+                  <strong>质量优先于数量</strong> — 只有经过跨源验证的高质量术语才会被收录，不设数量上限。
                 </li>
               </ul>
               <p style={{ fontSize: '0.78rem', color: 'var(--color-text-muted)', marginTop: 'var(--space-2)' }}>

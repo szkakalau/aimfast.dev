@@ -57,6 +57,9 @@ export default function HomePage() {
   }
   const topTerms = [...terms].sort((a, b) => b.score - a.score).slice(0, 5);
   const avgScore = terms.length > 0 ? Math.round(terms.reduce((sum, t) => sum + t.score, 0) / terms.length) : 0;
+  const updatedAtFormatted = updated_at
+    ? updated_at.slice(0, 16).replace('T', ' ') + ' CST'
+    : '';
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -119,7 +122,7 @@ export default function HomePage() {
             '@type': 'HowToStep',
             position: 5,
             name: 'Quality over quantity',
-            text: 'Output is capped at 20 new terms per day; fewer is better than noise.',
+            text: 'Quality over quantity — only terms with genuine cross-source validation are accepted. No numeric cap.',
           },
         ],
       },
@@ -203,7 +206,7 @@ export default function HomePage() {
               Avg Score <span className="live-stat-value">{avgScore}</span>
             </span>
             <span className="live-stat-sep" aria-hidden="true">·</span>
-            <span className="live-stat">Updated{updated_at ? ` ${updated_at}` : ' daily'} 08:30 CST</span>
+            <span className="live-stat">Updated {updatedAtFormatted || 'daily 08:30 CST'}</span>
           </div>
         )}
 
@@ -293,7 +296,7 @@ export default function HomePage() {
                   <strong>Generic term blacklist</strong> — known broad terms (AI, React, Python, API, LLM, GPT) are automatically ignored.
                 </li>
                 <li>
-                  <strong>Quality over quantity</strong> — capped at 20 new terms per day; fewer is better than noise.
+                  <strong>Quality over quantity</strong> — only terms with genuine cross-source validation are accepted. No numeric cap.
                 </li>
               </ul>
               <p style={{ fontSize: '0.78rem', color: 'var(--color-text-muted)', marginTop: 'var(--space-2)' }}>
