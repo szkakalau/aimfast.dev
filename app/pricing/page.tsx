@@ -154,11 +154,13 @@ export default function PricingPage() {
         })),
       },
       {
-        '@type': 'Product',
+        '@type': 'SoftwareApplication',
         name: 'AimFast.Dev — Trend Discovery & Market Intelligence',
         description:
           'Automated trend discovery platform. Daily LLM-generated reports with product opportunities, builder scores, and market signals from 21+ global sources.',
         url: 'https://www.aimfast.dev/pricing/',
+        applicationCategory: 'BusinessApplication',
+        operatingSystem: 'Web',
         brand: { '@type': 'Brand', name: 'AimFast.Dev' },
         offers: [
           {
