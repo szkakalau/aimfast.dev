@@ -76,6 +76,8 @@ const jsonLd = {
       '@type': 'Organization',
       name: 'AimFast.Dev',
       url: 'https://www.aimfast.dev/',
+      logo: 'https://www.aimfast.dev/og-home.png',
+      image: 'https://www.aimfast.dev/og-home.png',
       description:
         'Daily market intelligence for indie builders. AI scans 21+ sources to deliver one validated product opportunity every morning — what to build, who will pay, and how much to charge.',
       foundingDate: '2026-01-01',

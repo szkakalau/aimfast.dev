@@ -53,6 +53,8 @@ export default function AboutZhPage() {
           '@type': 'Organization',
           name: 'AimFast.Dev',
           url: 'https://www.aimfast.dev/zh/',
+          logo: 'https://www.aimfast.dev/og-home.png',
+          image: 'https://www.aimfast.dev/og-home.png',
           description:
             '面向独立开发者的每日市场情报。AI 扫描 21+ 数据源，每天早上交付一个经过验证的产品机会。',
           foundingDate: '2026-01-01',

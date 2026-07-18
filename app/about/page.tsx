@@ -53,6 +53,8 @@ export default function AboutPage() {
           '@type': 'Organization',
           name: 'AimFast.Dev',
           url: 'https://www.aimfast.dev/',
+          logo: 'https://www.aimfast.dev/og-home.png',
+          image: 'https://www.aimfast.dev/og-home.png',
           description:
             'Daily market intelligence for indie builders. AI scans 21+ sources to deliver one validated product opportunity every morning.',
           foundingDate: '2026-01-01',
