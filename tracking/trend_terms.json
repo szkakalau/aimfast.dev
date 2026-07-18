@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-17T07:44:51.996614+08:00",
+  "updated_at": "2026-07-18T08:04:01.691171+08:00",
   "terms": [
     {
       "id": "trend-claude-agent-sdk",
@@ -3910,7 +3910,32 @@
       "tags": [],
       "summary_zh": "一种替代 LLM 质量门控的新方法，通过确定性路由和采样来优化模型输出质量，引发技术讨论。",
       "summary_en": "An alternative to LLM quality gates using deterministic routing and sampling to optimize output quality, sparking technical debate.",
-      "research_md_path": "content/trends/deterministic-routing-and-sampling-for-llms.md"
+      "research_md_path": "content/trends/deterministic-routing-and-sampling-for-llms.md",
+      "opportunity_score": 40,
+      "market_score": 35,
+      "competition_score": 20,
+      "demand_score": 30,
+      "seo_difficulty": 10,
+      "suggested_products": [
+        "SaaS",
+        "API",
+        "Open Source",
+        "SDK/Library"
+      ],
+      "estimated_dev_days": 45,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Lack of proven demand or validation",
+        "Large AI labs may develop similar solutions internally",
+        "Technical complexity may deter adoption"
+      ],
+      "risk_factors_zh": [
+        "缺乏经过验证的需求或验证",
+        "大型AI实验室可能内部开发类似方案",
+        "技术复杂性可能阻碍采用"
+      ],
+      "opportunity_summary_en": "Deterministic routing and sampling for LLMs is a nascent technical concept with no current market presence or demand signals. The opportunity is extremely early and high-risk, with no validation from users or competitors. Independent developers should wait for clearer market signals before investing significant resources.",
+      "opportunity_summary_zh": "LLM的确定性路由和采样是一个新兴技术概念，目前没有市场存在或需求信号。机会极其早期且高风险，缺乏用户或竞争对手的验证。独立开发者应等待更明确的市场信号后再投入大量资源。"
     },
     {
       "id": "trend-agent-bug-hunting",
@@ -3929,7 +3954,31 @@
       "tags": [],
       "summary_zh": "利用 AI Agent 在开发者睡眠时自动扫描和寻找应用 Bug 的实践，代表了 AI 在自动化测试领域的新应用。",
       "summary_en": "The practice of using AI agents to automatically scan and hunt for bugs in applications while developers sleep, representing a new application in automated testing.",
-      "research_md_path": "content/trends/agent-bug-hunting.md"
+      "research_md_path": "content/trends/agent-bug-hunting.md",
+      "opportunity_score": 45,
+      "market_score": 55,
+      "competition_score": 20,
+      "demand_score": 40,
+      "seo_difficulty": 15,
+      "suggested_products": [
+        "AI Agent",
+        "VS Code Extension",
+        "CLI Tool",
+        "SaaS",
+        "Open Source"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Lack of validated demand and user feedback",
+        "Potential entry by larger AI testing platforms or cloud providers"
+      ],
+      "risk_factors_zh": [
+        "缺乏验证的需求和用户反馈",
+        "大型 AI 测试平台或云服务商可能进入"
+      ],
+      "opportunity_summary_en": "Agent Bug Hunting is a blue ocean niche with low competition and SEO difficulty, but demand and market signals are weak. An MVP can be built quickly as a VS Code extension or CLI tool, but revenue potential is limited without proven traction. Early focus on building a community and validating use cases is critical.",
+      "opportunity_summary_zh": "Agent Bug Hunting 是一个蓝海细分领域，竞争和 SEO 难度低，但需求和市场信号较弱。可以快速构建 MVP（如 VS Code 扩展或 CLI 工具），但在没有验证吸引力之前收入潜力有限。早期重点是建立社区和验证用例。"
     },
     {
       "id": "trend-negative-leap-second-preparedness",
@@ -3970,7 +4019,30 @@
       "tags": [],
       "summary_zh": "Hacker News 上关于系统是否为首次负闰秒做好准备的讨论，凸显了时间同步基础设施面临的新挑战。",
       "summary_en": "A discussion on Hacker News about whether systems are ready for the first negative leap second, highlighting new challenges in time synchronization infrastructure.",
-      "research_md_path": "content/trends/negative-leap-second-preparedness.md"
+      "research_md_path": "content/trends/negative-leap-second-preparedness.md",
+      "opportunity_score": 45,
+      "market_score": 30,
+      "competition_score": 20,
+      "demand_score": 40,
+      "seo_difficulty": 10,
+      "suggested_products": [
+        "CLI Tool",
+        "Open Source",
+        "API",
+        "Newsletter"
+      ],
+      "estimated_dev_days": 14,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Very small total addressable market",
+        "Large cloud providers (AWS, Google) may build internal solutions or ignore the issue"
+      ],
+      "risk_factors_zh": [
+        "总目标市场非常小",
+        "大型云服务商（AWS、Google）可能内部解决或忽略该问题"
+      ],
+      "opportunity_summary_en": "The first negative leap second poses a novel challenge for time synchronization, but the market is extremely niche. Early mover advantage exists for a simple CLI tool or open-source library, but revenue potential is low. The opportunity is more suited as a side project or community contribution rather than a primary business.",
+      "opportunity_summary_zh": "首次负闰秒给时间同步带来新挑战，但市场极为小众。简单的 CLI 工具或开源库有先发优势，但收入潜力低。该机会更适合作为副业项目或社区贡献，而非主要业务。"
     },
     {
       "id": "trend-pgbouncer-4x-throughput",
@@ -3989,7 +4061,29 @@
       "tags": [],
       "summary_zh": "一项将 PgBouncer 吞吐量提升 4 倍的技术成果，对 PostgreSQL 连接池优化有重要参考价值。",
       "summary_en": "A technical achievement that scaled PgBouncer throughput by 4x, providing important reference for PostgreSQL connection pool optimization.",
-      "research_md_path": "content/trends/pgbouncer-4x-throughput.md"
+      "research_md_path": "content/trends/pgbouncer-4x-throughput.md",
+      "opportunity_score": 35,
+      "market_score": 40,
+      "competition_score": 70,
+      "demand_score": 30,
+      "seo_difficulty": 60,
+      "suggested_products": [
+        "Open Source",
+        "SDK/Library",
+        "Plugin/Add-on"
+      ],
+      "estimated_dev_days": 45,
+      "revenue_potential": 1,
+      "risk_factors_en": [
+        "Low demand and unclear monetization path",
+        "Competition from established PgBouncer and cloud-native connection poolers"
+      ],
+      "risk_factors_zh": [
+        "需求低且变现路径不明确",
+        "来自成熟的 PgBouncer 和云原生连接池的竞争"
+      ],
+      "opportunity_summary_en": "PgBouncer 4x throughput is a notable technical achievement but lacks clear market demand and monetization potential. The existing PgBouncer ecosystem is mature, making a new product a tough sell. Independent developers should wait for stronger demand signals before investing.",
+      "opportunity_summary_zh": "PgBouncer 4倍吞吐量是一项值得注意的技术成果，但缺乏明确的市场需求和变现潜力。现有的 PgBouncer 生态系统成熟，新产品的推广困难。独立开发者应等待更强的需求信号再投入。"
     },
     {
       "id": "trend-one-person-business-templates",
@@ -4008,7 +4102,31 @@
       "tags": [],
       "summary_zh": "GitHub 上涌现大量「一人公司」模板和案例复盘，讨论如何靠小工具/插件/SaaS 赚到第一个 100 万，成为开发者副业热点。",
       "summary_en": "GitHub is seeing a surge of 'one-person company' templates and case studies on how to make the first million with small tools, plugins, and SaaS, becoming a hot topic for developer side hustles.",
-      "research_md_path": "content/trends/one-person-business-templates.md"
+      "research_md_path": "content/trends/one-person-business-templates.md",
+      "opportunity_score": 42,
+      "market_score": 35,
+      "competition_score": 20,
+      "demand_score": 40,
+      "seo_difficulty": 30,
+      "suggested_products": [
+        "Template/Boilerplate",
+        "Newsletter",
+        "Web App",
+        "SaaS",
+        "Plugin/Add-on"
+      ],
+      "estimated_dev_days": 14,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Low initial demand may lead to slow traction",
+        "Large platforms (e.g., GitHub) could integrate similar templates, reducing differentiation"
+      ],
+      "risk_factors_zh": [
+        "初期需求低可能导致增长缓慢",
+        "大型平台（如GitHub）可能集成类似模板，降低差异化"
+      ],
+      "opportunity_summary_en": "One-Person Business Templates is a nascent trend with high growth rate but very low current signals. The blue ocean competition and low SEO difficulty offer an entry point, but demand validation is weak. A lightweight MVP like a curated newsletter or boilerplate template could test the market quickly.",
+      "opportunity_summary_zh": "一人公司模板是一个萌芽趋势，增长率高但当前信号极弱。蓝海竞争和低SEO难度提供了切入点，但需求验证不足。轻量级MVP如精选Newsletter或模板脚手架可快速测试市场。"
     },
     {
       "id": "trend-deterministic-routing-sampling-for-llms",
@@ -4027,7 +4145,31 @@
       "tags": [],
       "summary_zh": "DEV 社区讨论用确定性路由和采样替代 LLM 质量门控，作为控制 LLM 输出质量的新方法，获得 10 赞和 16 评论。",
       "summary_en": "The DEV community discusses deterministic routing and sampling as an alternative to LLM quality gates for controlling LLM output quality, earning 10 upvotes and 16 comments.",
-      "research_md_path": "content/trends/deterministic-routing-sampling-for-llms.md"
+      "research_md_path": "content/trends/deterministic-routing-sampling-for-llms.md",
+      "opportunity_score": 45,
+      "market_score": 30,
+      "competition_score": 15,
+      "demand_score": 35,
+      "seo_difficulty": 20,
+      "suggested_products": [
+        "Open Source",
+        "SDK/Library",
+        "API",
+        "VS Code Extension",
+        "CLI Tool"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Lack of proven demand beyond small community interest",
+        "Potential for large AI platforms to integrate similar features natively"
+      ],
+      "risk_factors_zh": [
+        "除小众社区兴趣外缺乏经过验证的需求",
+        "大型 AI 平台可能原生集成类似功能"
+      ],
+      "opportunity_summary_en": "The concept of deterministic routing and sampling for LLMs is a nascent idea with low competition and low SEO difficulty. Community interest is mild, suggesting a small but untapped niche. An open-source SDK or library could be a low-risk entry point, but revenue potential is limited.",
+      "opportunity_summary_zh": "确定性路由和采样用于 LLM 是一个尚处于萌芽阶段的概念，竞争低且 SEO 难度低。社区兴趣温和，表明存在一个小众但未开发的领域。开源 SDK 或库可作为低风险切入点，但收入潜力有限。"
     },
     {
       "id": "trend-agent-skills-unification",
@@ -4046,7 +4188,33 @@
       "tags": [],
       "summary_zh": "DEV 社区分享如何将提示文件统一为 Agent 技能，实现内容自动化整合，代表 Agent 开发新方向。",
       "summary_en": "The DEV community shares how to unify prompt files into agent skills for content automation, representing a new direction in agent development.",
-      "research_md_path": "content/trends/agent-skills-unification.md"
+      "research_md_path": "content/trends/agent-skills-unification.md",
+      "opportunity_score": 42,
+      "market_score": 35,
+      "competition_score": 20,
+      "demand_score": 40,
+      "seo_difficulty": 25,
+      "suggested_products": [
+        "VS Code Extension",
+        "CLI Tool",
+        "Template/Boilerplate",
+        "Open Source",
+        "SaaS"
+      ],
+      "estimated_dev_days": 14,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Concept is too nascent and may not gain traction",
+        "Large AI companies could build native unification features",
+        "Low developer willingness to pay for skill management tools"
+      ],
+      "risk_factors_zh": [
+        "概念过于早期，可能无法获得关注",
+        "大型 AI 公司可能内置统一技能功能",
+        "开发者对技能管理工具的付费意愿低"
+      ],
+      "opportunity_summary_en": "Agent Skills Unification is an early-stage opportunity to simplify agent development by standardizing prompt-to-skill conversion. The market is blue ocean with minimal competition, but demand is unvalidated and monetization is uncertain. A lightweight VS Code extension or CLI tool could test interest quickly, but the risk of big-tech entry is high.",
+      "opportunity_summary_zh": "Agent Skills Unification 是一个早期机会，通过标准化提示到技能的转换来简化 Agent 开发。市场为蓝海，竞争极小，但需求未经验证且变现不确定。轻量级 VS Code 扩展或 CLI 工具可快速测试兴趣，但大厂进入风险较高。"
     },
     {
       "id": "trend-pgbouncer-4x-throughput-scaling",
@@ -4065,7 +4233,29 @@
       "tags": [],
       "summary_zh": "Hacker News 文章展示将 PgBouncer 吞吐量提升 4 倍的方法，获得 181 赞和 37 评论，代表数据库连接池优化新成果。",
       "summary_en": "A Hacker News article showing how to scale PgBouncer throughput by 4x, with 181 upvotes and 37 comments, representing new achievements in database connection pool optimization.",
-      "research_md_path": "content/trends/pgbouncer-4x-throughput-scaling.md"
+      "research_md_path": "content/trends/pgbouncer-4x-throughput-scaling.md",
+      "opportunity_score": 48,
+      "market_score": 35,
+      "competition_score": 20,
+      "demand_score": 55,
+      "seo_difficulty": 30,
+      "suggested_products": [
+        "Open Source",
+        "CLI Tool",
+        "SaaS"
+      ],
+      "estimated_dev_days": 45,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "PgBouncer itself may integrate these optimizations, eliminating the need for third-party tools",
+        "Low developer awareness and adoption of niche connection pool tweaks"
+      ],
+      "risk_factors_zh": [
+        "PgBouncer 自身可能集成这些优化，消除第三方工具需求",
+        "开发者对连接池微调认知和采用度低"
+      ],
+      "opportunity_summary_en": "The PgBouncer 4x throughput scaling trend presents a niche opportunity for specialized optimization tools. However, the market is small and the risk of the main project absorbing the feature is high. A focused open-source tool or CLI could serve a dedicated user base.",
+      "opportunity_summary_zh": "PgBouncer 4x 吞吐量扩展趋势为专用优化工具提供了小众机会。但市场规模小，且主项目吸收该功能的风险高。专注的开源工具或 CLI 可服务特定用户群。"
     },
     {
       "id": "trend-ai-agent-productivity-burnout",
@@ -4084,7 +4274,31 @@
       "tags": [],
       "summary_zh": "AI 编程工具使少数开发者效率飙升，但团队整体却因代码审查负担加重而陷入倦怠，引发社区对 AI 协作模式的反思。",
       "summary_en": "AI coding tools boost individual productivity but overload senior engineers with code review, sparking community debate on AI collaboration dynamics.",
-      "research_md_path": "content/trends/ai-agent-productivity-burnout.md"
+      "research_md_path": "content/trends/ai-agent-productivity-burnout.md",
+      "opportunity_score": 45,
+      "market_score": 55,
+      "competition_score": 30,
+      "demand_score": 60,
+      "seo_difficulty": 35,
+      "suggested_products": [
+        "VS Code Extension",
+        "AI Agent",
+        "SaaS",
+        "Slack/Discord Bot",
+        "CLI Tool"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Large AI code tool vendors (e.g., GitHub Copilot) may add built-in review management",
+        "Community may adopt open-source workarounds instead of paying"
+      ],
+      "risk_factors_zh": [
+        "大型AI代码工具厂商（如GitHub Copilot）可能内置审查管理功能",
+        "社区可能采用开源变通方案而非付费"
+      ],
+      "opportunity_summary_en": "AI Agent Productivity Burnout represents a nascent pain point where senior engineers face increased code review load due to AI-generated code. The market is small but growing, with no dominant competitor yet. A targeted tool like a VS Code extension that prioritizes review queues or automates low-level checks could capture early adopters, but revenue potential remains uncertain.",
+      "opportunity_summary_zh": "AI Agent生产力倦怠是一个新兴痛点，资深工程师因AI生成的代码面临更多审查负担。市场虽小但增长中，尚无主导竞争者。针对性的工具（如优先排序审查队列或自动化低级检查的VS Code扩展）可吸引早期用户，但收入潜力仍不确定。"
     },
     {
       "id": "trend-coding-agent-session-replay",
@@ -4103,7 +4317,30 @@
       "tags": [],
       "summary_zh": "多个信号关注对编程代理（如 Claude Code、OpenCode）的 token 消耗对比和会话可视化，表明开发者需要更透明的代理行为追踪工具。",
       "summary_en": "Multiple signals compare token usage of coding agents and visualize agent sessions, indicating a growing need for transparent agent behavior tracking tools.",
-      "research_md_path": "content/trends/coding-agent-session-replay.md"
+      "research_md_path": "content/trends/coding-agent-session-replay.md",
+      "opportunity_score": 45,
+      "market_score": 50,
+      "competition_score": 20,
+      "demand_score": 40,
+      "seo_difficulty": 30,
+      "suggested_products": [
+        "VS Code Extension",
+        "CLI Tool",
+        "Open Source",
+        "Web App"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Major AI coding agent vendors (e.g., Anthropic, GitHub) could build built-in session replay, killing demand for third-party tools.",
+        "Market may remain niche if developers don't widely adopt coding agents or prioritize transparency."
+      ],
+      "risk_factors_zh": [
+        "主要AI编码代理厂商（如Anthropic、GitHub）可能内置会话回放功能，扼杀第三方工具需求。",
+        "如果开发者未广泛采用编码代理或不重视透明度，市场可能保持小众。"
+      ],
+      "opportunity_summary_en": "Coding Agent Session Replay is a nascent niche with low competition and easy SEO, but demand is still weak and monetization uncertain. A lightweight open-source or VS Code extension could attract early adopters, but the window may close if vendors integrate similar features.",
+      "opportunity_summary_zh": "编程代理会话回放是一个早期小众领域，竞争低、SEO容易，但需求仍较弱且变现不确定。轻量级开源工具或VS Code扩展可能吸引早期用户，但如果厂商集成类似功能，机会窗口可能关闭。"
     },
     {
       "id": "trend-consumer-grade-agent-app-builder",
@@ -4122,7 +4359,31 @@
       "tags": [],
       "summary_zh": "从儿童绘本生成到业务自动化，非开发者也能快速创建 Agent 应用，预示人人可构建 AI Agent 的时代到来。",
       "summary_en": "Non-developers can now quickly create agent apps for tasks like children's book generation and automation, signaling an era where anyone can build AI agents.",
-      "research_md_path": "content/trends/consumer-grade-agent-app-builder.md"
+      "research_md_path": "content/trends/consumer-grade-agent-app-builder.md",
+      "opportunity_score": 42,
+      "market_score": 55,
+      "competition_score": 25,
+      "demand_score": 40,
+      "seo_difficulty": 30,
+      "suggested_products": [
+        "Web App",
+        "AI Agent",
+        "SaaS",
+        "Template/Boilerplate",
+        "Mobile App"
+      ],
+      "estimated_dev_days": 60,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Big tech (Google, Microsoft) may enter with integrated agent builders",
+        "Market may remain niche if no clear use case emerges for non-developers"
+      ],
+      "risk_factors_zh": [
+        "大公司（谷歌、微软）可能推出集成式Agent构建器",
+        "如果非开发者没有明确用例，市场可能保持小众"
+      ],
+      "opportunity_summary_en": "The Consumer-Grade Agent App Builder trend is nascent with zero current traction, but the concept of enabling non-developers to create AI agents has long-term potential. Competition is low and SEO is easy, but demand signals are weak and monetization is uncertain. A cautious approach with a simple web app MVP is recommended, focusing on a specific use case like children's book generation.",
+      "opportunity_summary_zh": "消费级Agent应用构建器趋势处于萌芽阶段，当前零热度，但让非开发者创建AI Agent的概念具有长期潜力。竞争低且SEO容易，但需求信号弱且变现不确定。建议谨慎推进，以特定用例（如儿童绘本生成）的简易Web应用MVP入手。"
     },
     {
       "id": "trend-on-device-large-model-inference",
@@ -4141,7 +4402,31 @@
       "tags": [],
       "summary_zh": "colibri 项目在 25GB 内存的消费级设备上运行 744B MoE 模型，Reame 推理服务器越跑越快，推动边缘 AI 部署。",
       "summary_en": "Projects like colibri run 744B MoE models on 25GB consumer hardware, while Reame accelerates inference over time, pushing edge AI deployment forward.",
-      "research_md_path": "content/trends/on-device-large-model-inference.md"
+      "research_md_path": "content/trends/on-device-large-model-inference.md",
+      "opportunity_score": 45,
+      "market_score": 60,
+      "competition_score": 30,
+      "demand_score": 50,
+      "seo_difficulty": 40,
+      "suggested_products": [
+        "SDK/Library",
+        "CLI Tool",
+        "Open Source",
+        "API",
+        "Desktop App"
+      ],
+      "estimated_dev_days": 60,
+      "revenue_potential": 3,
+      "risk_factors_en": [
+        "Hardware limitations may restrict performance and adoption.",
+        "Large tech companies could enter with proprietary solutions."
+      ],
+      "risk_factors_zh": [
+        "硬件限制可能影响性能和采用率。",
+        "大型科技公司可能推出专有解决方案进入市场。"
+      ],
+      "opportunity_summary_en": "On-device large model inference is a nascent opportunity with low competition but significant hardware barriers. Projects like colibri show feasibility on consumer hardware, but mainstream demand is unproven. A focused SDK or CLI tool for developers could capture early adopters.",
+      "opportunity_summary_zh": "设备端大模型推理是一个新兴机会，竞争低但硬件障碍大。colibri等项目展示了在消费硬件上的可行性，但主流需求尚未验证。面向开发者的SDK或CLI工具可以抓住早期用户。"
     },
     {
       "id": "trend-open-source-ai-security-platform",
@@ -4160,7 +4445,31 @@
       "tags": [],
       "summary_zh": "IBM 和 Red Hat 联合推出 Lightwell 平台，保护开源代码免受 AI 驱动的攻击，多个新闻源报道，表明 AI 时代开源供应链安全成为焦点。",
       "summary_en": "IBM and Red Hat launch Lightwell to defend open-source code from AI-driven attacks, highlighting open-source supply chain security as a key concern.",
-      "research_md_path": "content/trends/open-source-ai-security-platform.md"
+      "research_md_path": "content/trends/open-source-ai-security-platform.md",
+      "opportunity_score": 55,
+      "market_score": 65,
+      "competition_score": 40,
+      "demand_score": 60,
+      "seo_difficulty": 35,
+      "suggested_products": [
+        "CLI Tool",
+        "Open Source",
+        "SaaS",
+        "API",
+        "AI Agent"
+      ],
+      "estimated_dev_days": 45,
+      "revenue_potential": 3,
+      "risk_factors_en": [
+        "Large vendors (IBM, Red Hat) may dominate with integrated solutions",
+        "Open-source community may resist proprietary security tools"
+      ],
+      "risk_factors_zh": [
+        "大厂（IBM、Red Hat）可能推出集成方案主导市场",
+        "开源社区可能抵制专有安全工具"
+      ],
+      "opportunity_summary_en": "The rise of AI-driven attacks on open-source code creates an emerging niche for security tools. Lightwell's launch signals market validation, but the space is still early. Indie developers can build lightweight, open-source-focused tools before big players fully commoditize the space.",
+      "opportunity_summary_zh": "AI驱动的开源代码攻击催生了新兴安全工具市场。Lightwell的发布验证了市场需求，但赛道仍属早期。独立开发者可在巨头完全商品化之前，构建轻量级、聚焦开源的工具。"
     },
     {
       "id": "trend-distributed-git-for-ai-agents",
@@ -4179,7 +4488,33 @@
       "tags": [],
       "summary_zh": "前 GitHub CEO 推出面向 AI Agent 的分布式 Git 网络，旨在解决代理之间的代码协作与信任问题。",
       "summary_en": "Former GitHub CEO launches a distributed Git network for AI agents, aiming to solve code collaboration and trust issues between agents.",
-      "research_md_path": "content/trends/distributed-git-for-ai-agents.md"
+      "research_md_path": "content/trends/distributed-git-for-ai-agents.md",
+      "opportunity_score": 42,
+      "market_score": 60,
+      "competition_score": 20,
+      "demand_score": 40,
+      "seo_difficulty": 15,
+      "suggested_products": [
+        "Open Source",
+        "CLI Tool",
+        "API",
+        "VS Code Extension",
+        "AI Agent"
+      ],
+      "estimated_dev_days": 45,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Market may remain niche with slow adoption",
+        "Large tech companies could enter with integrated solutions",
+        "Lack of clear monetization model"
+      ],
+      "risk_factors_zh": [
+        "市场可能保持小众，采用缓慢",
+        "大科技公司可能推出集成方案",
+        "缺乏明确的变现模式"
+      ],
+      "opportunity_summary_en": "Distributed Git for AI Agents is a nascent concept from a high-profile founder, offering a blue ocean opportunity in agent collaboration infrastructure. However, demand is unproven and market size is small. Early-mover advantage exists but requires careful validation before significant investment.",
+      "opportunity_summary_zh": "面向 AI 代理的分布式 Git 是一个由知名创始人提出的新兴概念，在代理协作基础设施领域提供了蓝海机会。然而，需求尚未验证，市场规模较小。存在先发优势，但在重大投入前需谨慎验证。"
     },
     {
       "id": "trend-replay-and-visualize-agent-sessions",
@@ -4198,7 +4533,31 @@
       "tags": [],
       "summary_zh": "Mindwalk 等工具将编码代理会话重放在代码库的 3D 地图上，开发者开始关注代理行为的可解释性和调试体验。",
       "summary_en": "Tools like Mindwalk replay coding agent sessions on a 3D codebase map, showing growing interest in agent behavior explainability and debugging.",
-      "research_md_path": "content/trends/replay-and-visualize-agent-sessions.md"
+      "research_md_path": "content/trends/replay-and-visualize-agent-sessions.md",
+      "opportunity_score": 42,
+      "market_score": 35,
+      "competition_score": 15,
+      "demand_score": 45,
+      "seo_difficulty": 20,
+      "suggested_products": [
+        "VS Code Extension",
+        "SaaS",
+        "Open Source",
+        "CLI Tool",
+        "Desktop App"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Market may remain niche if agent adoption slows",
+        "Large AI companies (e.g., OpenAI, Anthropic) could integrate similar features natively"
+      ],
+      "risk_factors_zh": [
+        "如果代理采用放缓，市场可能保持小众",
+        "大型 AI 公司（如 OpenAI、Anthropic）可能原生集成类似功能"
+      ],
+      "opportunity_summary_en": "The agent session replay space is a blue ocean with minimal competition and low SEO difficulty, but market awareness and demand are still weak. Early entry allows building a niche tool for agent debugging, but revenue potential is limited until the market matures. The main risk is that major AI platforms may absorb this functionality.",
+      "opportunity_summary_zh": "代理会话重放领域是蓝海，竞争极少且 SEO 难度低，但市场认知和需求仍然薄弱。早期进入可以构建一个针对代理调试的小众工具，但收入潜力有限，直到市场成熟。主要风险是主要 AI 平台可能吸收这一功能。"
     },
     {
       "id": "trend-browser-fingerprinting-via-math-functions",
@@ -4217,7 +4576,32 @@
       "tags": [],
       "summary_zh": "Chromium 148 中 Math.tanh 可被用于指纹识别操作系统，引发隐私与安全社区的热烈讨论。",
       "summary_en": "Math.tanh in Chromium 148 is now exploitable for OS fingerprinting, sparking heated debate in the privacy and security community.",
-      "research_md_path": "content/trends/browser-fingerprinting-via-math-functions.md"
+      "research_md_path": "content/trends/browser-fingerprinting-via-math-functions.md",
+      "opportunity_score": 42,
+      "market_score": 30,
+      "competition_score": 20,
+      "demand_score": 35,
+      "seo_difficulty": 25,
+      "suggested_products": [
+        "Chrome Extension",
+        "SDK/Library",
+        "Open Source",
+        "API"
+      ],
+      "estimated_dev_days": 14,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Browser vendors may patch the exploit, making the tool obsolete.",
+        "Google or other large security firms could release a free solution.",
+        "Privacy regulations may limit use of fingerprinting data."
+      ],
+      "risk_factors_zh": [
+        "浏览器厂商可能修补该漏洞，导致工具失效。",
+        "Google 或其他大型安全公司可能发布免费解决方案。",
+        "隐私法规可能限制指纹数据的使用。"
+      ],
+      "opportunity_summary_en": "The Math.tanh OS fingerprinting technique is a nascent, blue-ocean opportunity with very low competition. However, demand is limited to security researchers and privacy advocates, with unclear revenue paths. The biggest risk is browser patches that could render the tool useless quickly.",
+      "opportunity_summary_zh": "Math.tanh 操作系统指纹识别技术是一个新兴的蓝海机会，竞争极低。但需求仅限于安全研究人员和隐私倡导者，变现路径不清晰。最大的风险是浏览器补丁可能迅速使工具失效。"
     },
     {
       "id": "trend-prefix-pinyin-input-method",
@@ -4236,7 +4620,29 @@
       "tags": [],
       "summary_zh": "开发者用 Rust 实现前缀式拼音输入法，解决中英文切换痛点，展示了对输入效率的极致追求。",
       "summary_en": "A Rust-based prefix pinyin input method eliminates the need to switch between Chinese and English, showcasing a pursuit of typing efficiency.",
-      "research_md_path": "content/trends/prefix-pinyin-input-method.md"
+      "research_md_path": "content/trends/prefix-pinyin-input-method.md",
+      "opportunity_score": 42,
+      "market_score": 35,
+      "competition_score": 70,
+      "demand_score": 40,
+      "seo_difficulty": 50,
+      "suggested_products": [
+        "Desktop App",
+        "CLI Tool",
+        "Open Source"
+      ],
+      "estimated_dev_days": 60,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Large tech companies (e.g., Sogou, Google) could easily add similar features, eroding differentiation.",
+        "User adoption may be low due to learning curve and lack of ecosystem support."
+      ],
+      "risk_factors_zh": [
+        "大公司（如搜狗、谷歌）可能轻易添加类似功能，削弱差异化。",
+        "用户采纳率可能因学习曲线和生态支持不足而低。"
+      ],
+      "opportunity_summary_en": "A Rust-based prefix pinyin input method addresses a real but niche pain point of Chinese-English switching. The market is dominated by incumbents, making differentiation and monetization difficult. However, an open-source desktop or CLI tool could attract a small, dedicated user base.",
+      "opportunity_summary_zh": "基于Rust的前缀式拼音输入法解决了中英文切换的小众痛点。市场被巨头主导，差异化和变现困难。但开源桌面或CLI工具可能吸引一小部分忠实用户。"
     },
     {
       "id": "trend-zig-for-game-development",
@@ -4255,7 +4661,31 @@
       "tags": [],
       "summary_zh": "社区讨论表明 Zig 语言在游戏开发领域表现良好，成为新兴的游戏开发语言选择。",
       "summary_en": "Community discussions indicate Zig is proving to be a solid choice for game development, emerging as a new language in the space.",
-      "research_md_path": "content/trends/zig-for-game-development.md"
+      "research_md_path": "content/trends/zig-for-game-development.md",
+      "opportunity_score": 38,
+      "market_score": 30,
+      "competition_score": 15,
+      "demand_score": 35,
+      "seo_difficulty": 20,
+      "suggested_products": [
+        "Template/Boilerplate",
+        "Open Source",
+        "CLI Tool",
+        "SaaS",
+        "SDK/Library"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Extremely early stage with no proven demand",
+        "Major game engines (Unreal, Unity) dominate and may adopt Zig slowly"
+      ],
+      "risk_factors_zh": [
+        "处于极早期阶段，需求未经验证",
+        "主流游戏引擎（Unreal、Unity）占据主导，可能缓慢采用 Zig"
+      ],
+      "opportunity_summary_en": "Zig for game development is a nascent trend with minimal competition and low SEO difficulty. However, demand signals are weak and monetization is unclear. An early-stage open-source template or CLI tool could build a foundation, but the opportunity is speculative.",
+      "opportunity_summary_zh": "Zig 用于游戏开发是一个萌芽趋势，竞争极少且 SEO 难度低。然而，需求信号薄弱，变现前景不明。早期开源模板或 CLI 工具可奠定基础，但机会仍具投机性。"
     },
     {
       "id": "trend-3d-container-loading-tool",
@@ -4274,7 +4704,33 @@
       "tags": [],
       "summary_zh": "面向外贸的 3D 装箱工具发布，解决了跨境物流中空间优化的实际需求。",
       "summary_en": "A 3D container loading tool for foreign trade addresses the practical need for space optimization in cross-border logistics.",
-      "research_md_path": "content/trends/3d-container-loading-tool.md"
+      "research_md_path": "content/trends/3d-container-loading-tool.md",
+      "opportunity_score": 45,
+      "market_score": 50,
+      "competition_score": 30,
+      "demand_score": 55,
+      "seo_difficulty": 40,
+      "suggested_products": [
+        "Web App",
+        "SaaS",
+        "API",
+        "Open Source",
+        "Desktop App"
+      ],
+      "estimated_dev_days": 60,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Existing open-source tools may reduce willingness to pay",
+        "Large logistics software vendors could integrate similar features",
+        "Niche market size limits scalability"
+      ],
+      "risk_factors_zh": [
+        "现有开源工具可能降低付费意愿",
+        "大型物流软件供应商可能集成类似功能",
+        "利基市场规模限制可扩展性"
+      ],
+      "opportunity_summary_en": "The 3D container loading tool addresses a real need in cross-border logistics with moderate demand. Competition is low, and SEO is relatively easy, but the niche market and free alternatives pose risks. A web-based SaaS with API access could serve small exporters, but revenue potential is limited.",
+      "opportunity_summary_zh": "3D装箱工具解决了跨境物流中的真实需求，需求中等。竞争较低，SEO相对容易，但利基市场和免费替代品存在风险。基于网络的SaaS及API服务可服务小型出口商，但收入潜力有限。"
     },
     {
       "id": "trend-smart-home-cloud-shutdown-record",
@@ -4293,7 +4749,31 @@
       "tags": [],
       "summary_zh": "开发者建立永久公开记录，追踪因云服务关停而变砖的智能家居设备，引发对设备依赖云服务的反思。",
       "summary_en": "A developer creates a permanent public record of smart home devices bricked by cloud shutdowns, sparking reflection on device cloud dependency.",
-      "research_md_path": "content/trends/smart-home-cloud-shutdown-record.md"
+      "research_md_path": "content/trends/smart-home-cloud-shutdown-record.md",
+      "opportunity_score": 42,
+      "market_score": 35,
+      "competition_score": 20,
+      "demand_score": 50,
+      "seo_difficulty": 30,
+      "suggested_products": [
+        "Dataset",
+        "Web App",
+        "Open Source",
+        "Newsletter",
+        "Mobile App"
+      ],
+      "estimated_dev_days": 14,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Low user engagement due to niche audience",
+        "No clear path to revenue"
+      ],
+      "risk_factors_zh": [
+        "小众受众导致用户参与度低",
+        "缺乏明确的变现路径"
+      ],
+      "opportunity_summary_en": "The trend of documenting cloud-shutdown-bricked smart home devices is a niche with low competition and moderate user frustration. However, the market size is tiny, and monetization is challenging. A lightweight dataset or open-source project could serve as a side project rather than a primary business.",
+      "opportunity_summary_zh": "记录因云服务关停而变砖的智能家居设备这一趋势属于小众领域，竞争少，用户有一定痛点。但市场规模极小，变现困难。轻量级数据集或开源项目可作为副业，而非主要业务。"
     },
     {
       "id": "trend-e-ink-game-boy-clone",
