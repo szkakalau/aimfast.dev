@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Server Reboot Kit — Your Home Server, Rebooted. In Under 2 Hours. | www.aimfast.dev</title>
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#1a1d24">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://www.aimfast.dev/home-server-reboot-kit/">
+  <meta property="og:type" content="product">
+  <meta property="og:title" content="Home Server Reboot Kit — Your Home Server, Rebooted. In Under 2 Hours.">
+  <meta property="og:description" content="Stop wrestling with Proxmox, Docker Swarm, and config files. Get a dead-simple, stable, low-power home server setup that just works.">
+  <meta property="og:url" content="https://www.aimfast.dev/home-server-reboot-kit/">
+  <meta property="og:site_name" content="AimFast.Dev">
+  <meta property="og:image" content="https://www.aimfast.dev/og/home-server-reboot-kit.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Home Server Reboot Kit — Your Home Server, Rebooted. In Under 2 Hours.">
+  <meta name="twitter:description" content="Stop wrestling with Proxmox, Docker Swarm, and config files. Get a dead-simple, stable, low-power home server setup that just works.">
+  <meta name="twitter:image" content="https://www.aimfast.dev/og/home-server-reboot-kit.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Home Server Reboot Kit",
+    "applicationCategory": "AIApplication",
+    "operatingSystem": "Web",
+    "description": "A 20-page PDF guide to build a stable, low-power, almost zero-maintenance home server in under 2 hours. Includes decision tree, hardware picks, and 10-step quickstart.",
+    "url": "https://www.aimfast.dev/home-server-reboot-kit/",
+    "offers": {
+      "@type": "Offer",
+      "price": "9.99",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+  <link rel="stylesheet" href="/_ds/base.css">
+  <link rel="stylesheet" href="/_ds/components.css">
+  <style>
+    /* Custom styles only for layout and non-token overrides */
+    .hero {
+      padding: var(--space-8) 0 var(--space-6);
+      text-align: center;
+    }
+    .hero h1 {
+      max-width: 720px;
+      margin: 0 auto var(--space-3);
+    }
+    .hero .subhead {
+      max-width: 580px;
+      margin: 0 auto var(--space-5);
+      color: var(--color-text-secondary);
+      font-size: 1.15rem;
+    }
+    .signup-form {
+      display: flex;
+      gap: var(--space-2);
+      max-width: 480px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .signup-form input[type="email"] {
+      flex: 1 1 240px;
+      height: 52px;
+      padding: 0 var(--space-3);
+      border: 2px solid var(--color-border);
+      border-radius: 8px;
+      background: var(--color-surface);
+      color: var(--color-text);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      transition: border-color var(--duration-normal) var(--ease-out);
+    }
+    .signup-form input[type="email"]:focus {
+      outline: none;
+      border-color: var(--color-accent);
+      box-shadow: 0 0 0 3px rgba(var(--color-accent-rgb), 0.15);
+    }
+    .signup-form .btn {
+      height: 52px;
+      padding: 0 var(--space-4);
+      font-size: 1rem;
+      white-space: nowrap;
+    }
+    .signup-success {
+      display: none;
+      max-width: 480px;
+      margin: 0 auto;
+      padding: var(--space-3) var(--space-4);
+      background: var(--color-surface-alt);
+      border-radius: 8px;
+      border-left: 4px solid var(--color-accent);
+      font-weight: 500;
+      color: var(--color-text);
+    }
+    .signup-success.visible {
+      display: block;
+    }
+    .signup-error {
+      display: none;
+      max-width: 480px;
+      margin: var(--space-2) auto 0;
+      color: var(--color-text-secondary);
+      font-size: 0.9rem;
+      background: var(--color-surface-alt);
+      padding: var(--space-2) var(--space-3);
+      border-radius: 6px;
+    }
+    .signup-error.visible {
+      display: block;
+    }
+
+    .why-matters {
+      padding: var(--space-8) 0;
+    }
+    .why-matters p {
+      max-width: 720px;
+      margin: 0 auto var(--space-3);
+      color: var(--color-text-secondary);
+      line-height: 1.75;
+    }
+
+    .how-it-works {
+      padding: var(--space-8) 0;
+      background: var(--color-surface-alt);
+    }
+    .steps-grid {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-5);
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .step {
+      display: flex;
+      gap: var(--space-4);
+      align-items: flex-start;
+    }
+    .step-num {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--color-accent);
+      color: var(--color-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+    .step-content h3 {
+      margin: 0 0 var(--space-1);
+      font-size: 1.15rem;
+    }
+    .step-content p {
+      margin: 0;
+      color: var(--color-text-secondary);
+      line-height: 1.65;
+    }
+
+    .selling-points {
+      padding: var(--space-8) 0;
+    }
+    .selling-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-5);
+    }
+    .selling-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      padding: var(--space-5) var(--space-4);
+      text-align: center;
+    }
+    .selling-card .icon-wrap {
+      margin-bottom: var(--space-3);
+      color: var(--color-accent);
+    }
+    .selling-card h3 {
+      margin: 0 0 var(--space-2);
+      font-size: 1.1rem;
+    }
+    .selling-card p {
+      margin: 0;
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+
+    .trust-bar {
+      padding: var(--space-5) 0 var(--space-6);
+      text-align: center;
+      color: var(--color-text-muted);
+      font-size: 0.85rem;
+      display: flex;
+      justify-content: center;
+      gap: var(--space-5);
+      flex-wrap: wrap;
+    }
+    .trust-bar span {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-1);
+    }
+
+    .footer {
+      padding: var(--space-5) 0;
+      text-align: center;
+      border-top: 1px solid var(--color-border);
+      color: var(--color-text-muted);
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 640px) {
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      .signup-form {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .signup-form input[type="email"] {
+        flex: 1 1 auto;
+      }
+      .selling-grid {
+        grid-template-columns: 1fr;
+      }
+      .trust-bar {
+        flex-direction: column;
+        gap: var(--space-2);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero + inline email form -->
+  <section class="hero">
+    <div class="container">
+      <h1 class="h1">Your Home Server, Rebooted. In Under 2 Hours.</h1>
+      <p class="subhead">Stop wrestling with Proxmox, Docker Swarm, and config files. Get a dead-simple, stable, low-power home server setup that just works.</p>
+
+      <!-- Inline signup form (no modal, no popup) -->
+      <form id="signup-form" class="signup-form" action="https://formspree.io/f/your-form-id" method="POST">
+        <input type="email" name="email" placeholder="you@example.com" required autocomplete="email">
+        <button type="submit" class="btn btn-primary btn-lg">Get Early Access — $9.99</button>
+      </form>
+      <div id="signup-success" class="signup-success">✓ You're on the list! Check your inbox for the kit.</div>
+      <div id="signup-error" class="signup-error">Something went wrong. Please try again or email us.</div>
+    </div>
+  </section>
+
+  <!-- Why This Matters -->
+  <section class="why-matters">
+    <div class="container">
+      <h2 class="h2 text-center" style="margin-bottom: var(--space-4);">Why Home Server Clarity Matters Right Now</h2>
+      <p>Last week, a post titled “The death and rebirth of my home server” hit the front page of Hacker News with 116 upvotes and 75 comments in under 12 hours. The author tried Proxmox, Nomad, Docker Swarm, and a half-dozen other stacks before settling on a minimalist, almost boring setup. The thread exploded because thousands of developers are living the same cycle: over-engineering, burning weekends, and ending up with a fragile server that needs constant attention.</p>
+      <p>Existing solutions are either too complex (full Kubernetes, Proxmox clusters) or too vague (random blog posts, 2-hour YouTube tutorials with no structured decision framework). The average self-hoster spends 5+ hours just picking a stack, then another 5 hours debugging configs. That’s 10 hours of lost time — and often the wrong hardware purchased.</p>
+      <p>Right now, the signal is undeniable: the HN thread, the 75 comments, the cross-posts on r/selfhosted and r/homelab. The community is hungry for a <strong>curated, opinionated, dead-simple guide</strong> that cuts through the noise. That’s exactly what the Home Server Reboot Kit delivers — a 20-page PDF that saves you 10+ hours and gets you a stable, low-power server this weekend.</p>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="how-it-works">
+    <div class="container">
+      <h2 class="h2 text-center" style="margin-bottom: var(--space-5);">How It Works</h2>
+      <div class="steps-grid">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h3>Answer 3 questions in the decision tree</h3>
+            <p>Tell us your primary use (NAS? Media server? Dev environment?), your budget, and your tolerance for tinkering. In 60 seconds you’ll get a personalized hardware + software recommendation — no more analysis paralysis.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h3>Follow the 10-step quickstart</h3>
+            <p>From flashing a USB drive to having Jellyfin and Syncthing running, each step is a single page with screenshots and exact commands. No fluff, no detours — just a straight path to a working server in under 2 hours.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h3>Use the troubleshooting table when things go wrong</h3>
+            <p>The 5 most common failures (boot loop, no network, drive not detected, permission errors, SSL expiry) are documented with copy-paste fixes. You’ll never spend a Sunday afternoon debugging again.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Selling Points (3-column grid) -->
+  <section class="selling-points">
+    <div class="container">
+      <h2 class="h2 text-center" style="margin-bottom: var(--space-5);">What You Get</h2>
+      <div class="selling-grid">
+        <div class="selling-card">
+          <div class="icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </div>
+          <h3>The Decision Tree</h3>
+          <p>Answer three quick questions about your use case, budget, and patience level, and instantly get a tailored hardware + software stack. No more reading 10 conflicting blog posts — just a clear, opinionated recommendation that fits your exact situation.</p>
+        </div>
+        <div class="selling-card">
+          <div class="icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </div>
+          <h3>The Minimalist Stack</h3>
+          <p>One operating system (Debian-based), one dashboard (CasaOS), and two core apps (Jellyfin + Syncthing). That’s the entire stack — proven by the HN author’s real-world experience. No Docker Swarm, no Nomad, no over-engineering.</p>
+        </div>
+        <div class="selling-card">
+          <div class="icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+          </div>
+          <h3>10-Step Quickstart</h3>
+          <p>From USB stick to running services in under 2 hours. Includes a one-page troubleshooting table covering the 5 most common failures (boot loop, network drop, drive not detected, permission errors, SSL expiry).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Bar -->
+  <div class="trust-bar">
+    <span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+      Based on real HN experience (116 upvotes)
+    </span>
+    <span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+      75+ comments from self-hosters
+    </span>
+    <span>
+      <svg xmlns="http://www.w3.org/2000/svg"
