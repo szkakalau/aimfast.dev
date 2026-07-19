@@ -1,29 +1,390 @@
 {
   "_schema": "Term 生命周期快照 — 按年龄划分阶段",
   "_version": "1.0",
-  "date": "2026-07-19",
+  "date": "2026-07-20",
   "summary": {
     "total_terms": 60,
     "newborns_today": 0,
-    "transitions_today": 0,
+    "transitions_today": 60,
     "stage_distribution": {
-      "nascent": 60,
-      "emergent": 0,
+      "nascent": 0,
+      "emergent": 60,
       "validating": 0,
       "rising": 0
     }
   },
   "newborns": [],
-  "transitions": [],
+  "transitions": [
+    {
+      "term": "Vercel",
+      "from": "nascent",
+      "to": "emergent",
+      "date": "2026-07-20"
+    },
+    {
+      "term": "Cloudflare",
+      "from": "nascent",
+      "to": "emergent",
+      "date": "2026-07-20"
+    },
+    {
+      "term": "OpenAI",
+      "from": "nascent",
+      "to": "emergent",
+      "date": "2026-07-20"
+    },
+    {
+      "term": "Apple ML",
+      "from": "nascent",
+      "to": "emergent",
+      "date": "2026-07-20"
+    },
+    {
+      "term": "HuggingFace",
+      "from": "nascent",
+      "to": "emergent",
+      "date": "2026-07-20"
+    },
+    {
+      "term": "Deutsche Telekom",
+      "from": "nascent",
+      "to": "emergent",
+      "date": "2026-07-20"
+    },
+    {
+      "term": "Microsoft 365 Copilot",
+      "from": "nascent",
+      "to": "emergent",
+      "date": "2026-07-20"
+    },
+    {
+      "term": "ChatGPT",
+      "from": "nascent",
+      "to": "emergent",
+      "date": "2026-07-20"
+    },
+    {
+      "term": "Lovable",
+      "from": "nascent",
+      "to": "emergent",
+      "date": "2026-07-20"
+    },
+    {
+      "term": "Muse Spark 1.1",
+      "from": "nascent",
+      "to": "emergent",
+      "date": "2026-07-20"
+    },
+    {
+      "term": "AI Gateway",
+      "from": "nascent",
+      "to": "emergent",
+      "date": "2026-07-20"
+    },
+    {
+      "term": "GPT-5.6 Sol",
+      "from": "nascent",
+      "to": "emergent",
+      "date": "2026-07-20"
+    },
+    {
+      "term": "GPT-5.6 Luna",
+      "from": "nascent",
+      "to": "emergent",
+      "date": "2026-07-20"
+    },
+    {
+      "term": "GPT-5.6 Terra",
+      "from": "nascent",
+      "to": "emergent",
+      "date": "2026-07-20"
+    },
+    {
+      "term": "Meerkat",
+      "from": "nascent",
+      "to": "emergent",
+      "date": "2026-07-20"
+    },
+    {
+      "term": "Vercel Agent",
+      "from": "nascent",
+      "to": "emergent",
+      "date": "2026-07-20"
+    },
+    {
+      "term": "GPT-Live",
+      "from": "nascent",
+      "to": "emergent",
+      "date": "2026-07-20"
+    },
+    {
+      "term": "Grok 4.5",
+      "from": "nascent",
+      "to": "emergent",
+      "date": "2026-07-20"
+    },
+    {
+      "term": "Vercel CLI",
+      "from": "nascent",
+      "to": "emergent",
+      "date": "2026-07-20"
+    },
+    {
+      "term": "Vercel Microfrontends",
+      "from": "nascent",
+      "to": "emergent",
+      "date": "2026-07-20"
+    },
+    {
+      "term": "Flags SDK",
+      "from": "nascent",
+      "to": "emergent",
+      "date": "2026-07-20"
+    },
+    {
+      "term": "Chat SDK",
+      "from": "nascent",
+      "to": "emergent",
+      "date": "2026-07-20"
+    },
+    {
+      "term": "Vercel Connect",
+      "from": "nascent",
+      "to": "emergent",
+      "date": "2026-07-20"
+    },
+    {
+      "term": "Dial",
+      "from": "nascent",
+      "to": "emergent",
+      "date": "2026-07-20"
+    },
+    {
+      "term": "Photon",
+      "from": "nascent",
+      "to": "emergent",
+      "date": "2026-07-20"
+    },
+    {
+      "term": "vLLM",
+      "from": "nascent",
+      "to": "emergent",
+      "date": "2026-07-20"
+    },
+    {
+      "term": "Amazon SageMaker Studio",
+      "from": "nascent",
+      "to": "emergent",
+      "date": "2026-07-20"
+    },
+    {
+      "term": "mastra-ai/mastra",
+      "from": "nascent",
+      "to": "emergent",
+      "date": "2026-07-20"
+    },
+    {
+      "term": "LiveKit",
+      "from": "nascent",
+      "to": "emergent",
+      "date": "2026-07-20"
+    },
+    {
+      "term": "n8n-io/n8n",
+      "from": "nascent",
+      "to": "emergent",
+      "date": "2026-07-20"
+    },
+    {
+      "term": "microsoft/vscode",
+      "from": "nascent",
+      "to": "emergent",
+      "date": "2026-07-20"
+    },
+    {
+      "term": "ollama/ollama",
+      "from": "nascent",
+      "to": "emergent",
+      "date": "2026-07-20"
+    },
+    {
+      "term": "Ollama",
+      "from": "nascent",
+      "to": "emergent",
+      "date": "2026-07-20"
+    },
+    {
+      "term": "LangChain",
+      "from": "nascent",
+      "to": "emergent",
+      "date": "2026-07-20"
+    },
+    {
+      "term": "shadcn-ui/ui",
+      "from": "nascent",
+      "to": "emergent",
+      "date": "2026-07-20"
+    },
+    {
+      "term": "supabase/supabase",
+      "from": "nascent",
+      "to": "emergent",
+      "date": "2026-07-20"
+    },
+    {
+      "term": "Supabase",
+      "from": "nascent",
+      "to": "emergent",
+      "date": "2026-07-20"
+    },
+    {
+      "term": "openai/openai-python",
+      "from": "nascent",
+      "to": "emergent",
+      "date": "2026-07-20"
+    },
+    {
+      "term": "cloudflare/workers-sdk",
+      "from": "nascent",
+      "to": "emergent",
+      "date": "2026-07-20"
+    },
+    {
+      "term": "Wrangler",
+      "from": "nascent",
+      "to": "emergent",
+      "date": "2026-07-20"
+    },
+    {
+      "term": "Miniflare",
+      "from": "nascent",
+      "to": "emergent",
+      "date": "2026-07-20"
+    },
+    {
+      "term": "Linux Foundation",
+      "from": "nascent",
+      "to": "emergent",
+      "date": "2026-07-20"
+    },
+    {
+      "term": "Robbyant",
+      "from": "nascent",
+      "to": "emergent",
+      "date": "2026-07-20"
+    },
+    {
+      "term": "LingBot-World 2.0",
+      "from": "nascent",
+      "to": "emergent",
+      "date": "2026-07-20"
+    },
+    {
+      "term": "Mistral",
+      "from": "nascent",
+      "to": "emergent",
+      "date": "2026-07-20"
+    },
+    {
+      "term": "Leanstral 1.5",
+      "from": "nascent",
+      "to": "emergent",
+      "date": "2026-07-20"
+    },
+    {
+      "term": "IBM",
+      "from": "nascent",
+      "to": "emergent",
+      "date": "2026-07-20"
+    },
+    {
+      "term": "Red Hat",
+      "from": "nascent",
+      "to": "emergent",
+      "date": "2026-07-20"
+    },
+    {
+      "term": "Lightwell",
+      "from": "nascent",
+      "to": "emergent",
+      "date": "2026-07-20"
+    },
+    {
+      "term": "GPT-5.6",
+      "from": "nascent",
+      "to": "emergent",
+      "date": "2026-07-20"
+    },
+    {
+      "term": "Meta",
+      "from": "nascent",
+      "to": "emergent",
+      "date": "2026-07-20"
+    },
+    {
+      "term": "Databricks",
+      "from": "nascent",
+      "to": "emergent",
+      "date": "2026-07-20"
+    },
+    {
+      "term": "GLM 5.2",
+      "from": "nascent",
+      "to": "emergent",
+      "date": "2026-07-20"
+    },
+    {
+      "term": "Anthropic",
+      "from": "nascent",
+      "to": "emergent",
+      "date": "2026-07-20"
+    },
+    {
+      "term": "SpaceXAI",
+      "from": "nascent",
+      "to": "emergent",
+      "date": "2026-07-20"
+    },
+    {
+      "term": "LingBot-VLA 2.0",
+      "from": "nascent",
+      "to": "emergent",
+      "date": "2026-07-20"
+    },
+    {
+      "term": "Finto",
+      "from": "nascent",
+      "to": "emergent",
+      "date": "2026-07-20"
+    },
+    {
+      "term": "GPT-5.5",
+      "from": "nascent",
+      "to": "emergent",
+      "date": "2026-07-20"
+    },
+    {
+      "term": "PyTorch",
+      "from": "nascent",
+      "to": "emergent",
+      "date": "2026-07-20"
+    },
+    {
+      "term": "Qwen3.5",
+      "from": "nascent",
+      "to": "emergent",
+      "date": "2026-07-20"
+    }
+  ],
   "terms": {
     "Vercel": {
       "term": "Vercel",
       "term_type": "company",
       "first_seen": "2026-07-12",
       "last_seen": "2026-07-12",
-      "age_days": 7,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
+      "age_days": 8,
+      "stage": "emergent",
+      "stage_label": "Emergent (8-30天)",
       "sources": {
         "Vercel": 14
       },
@@ -35,9 +396,9 @@
       "term_type": "company",
       "first_seen": "2026-07-12",
       "last_seen": "2026-07-12",
-      "age_days": 7,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
+      "age_days": 8,
+      "stage": "emergent",
+      "stage_label": "Emergent (8-30天)",
       "sources": {
         "Cloudflare": 3
       },
@@ -49,9 +410,9 @@
       "term_type": "company",
       "first_seen": "2026-07-12",
       "last_seen": "2026-07-12",
-      "age_days": 7,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
+      "age_days": 8,
+      "stage": "emergent",
+      "stage_label": "Emergent (8-30天)",
       "sources": {
         "OpenAI": 9
       },
@@ -63,9 +424,9 @@
       "term_type": "company",
       "first_seen": "2026-07-12",
       "last_seen": "2026-07-12",
-      "age_days": 7,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
+      "age_days": 8,
+      "stage": "emergent",
+      "stage_label": "Emergent (8-30天)",
       "sources": {
         "Apple ML": 4
       },
@@ -77,9 +438,9 @@
       "term_type": "company",
       "first_seen": "2026-07-12",
       "last_seen": "2026-07-12",
-      "age_days": 7,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
+      "age_days": 8,
+      "stage": "emergent",
+      "stage_label": "Emergent (8-30天)",
       "sources": {
         "HuggingFace Blog": 4
       },
@@ -91,9 +452,9 @@
       "term_type": "company",
       "first_seen": "2026-07-12",
       "last_seen": "2026-07-12",
-      "age_days": 7,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
+      "age_days": 8,
+      "stage": "emergent",
+      "stage_label": "Emergent (8-30天)",
       "sources": {
         "OpenAI": 1
       },
@@ -105,9 +466,9 @@
       "term_type": "product",
       "first_seen": "2026-07-12",
       "last_seen": "2026-07-12",
-      "age_days": 7,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
+      "age_days": 8,
+      "stage": "emergent",
+      "stage_label": "Emergent (8-30天)",
       "sources": {
         "OpenAI": 1
       },
@@ -119,9 +480,9 @@
       "term_type": "product",
       "first_seen": "2026-07-12",
       "last_seen": "2026-07-12",
-      "age_days": 7,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
+      "age_days": 8,
+      "stage": "emergent",
+      "stage_label": "Emergent (8-30天)",
       "sources": {
         "OpenAI": 1
       },
@@ -133,9 +494,9 @@
       "term_type": "product",
       "first_seen": "2026-07-12",
       "last_seen": "2026-07-12",
-      "age_days": 7,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
+      "age_days": 8,
+      "stage": "emergent",
+      "stage_label": "Emergent (8-30天)",
       "sources": {
         "Vercel": 1
       },
@@ -147,9 +508,9 @@
       "term_type": "model",
       "first_seen": "2026-07-12",
       "last_seen": "2026-07-12",
-      "age_days": 7,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
+      "age_days": 8,
+      "stage": "emergent",
+      "stage_label": "Emergent (8-30天)",
       "sources": {
         "Google News": 3,
         "Vercel": 1
@@ -162,9 +523,9 @@
       "term_type": "product",
       "first_seen": "2026-07-12",
       "last_seen": "2026-07-12",
-      "age_days": 7,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
+      "age_days": 8,
+      "stage": "emergent",
+      "stage_label": "Emergent (8-30天)",
       "sources": {
         "Vercel": 3
       },
@@ -176,9 +537,9 @@
       "term_type": "model",
       "first_seen": "2026-07-12",
       "last_seen": "2026-07-12",
-      "age_days": 7,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
+      "age_days": 8,
+      "stage": "emergent",
+      "stage_label": "Emergent (8-30天)",
       "sources": {
         "Vercel": 1
       },
@@ -190,9 +551,9 @@
       "term_type": "model",
       "first_seen": "2026-07-12",
       "last_seen": "2026-07-12",
-      "age_days": 7,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
+      "age_days": 8,
+      "stage": "emergent",
+      "stage_label": "Emergent (8-30天)",
       "sources": {
         "Vercel": 1
       },
@@ -204,9 +565,9 @@
       "term_type": "model",
       "first_seen": "2026-07-12",
       "last_seen": "2026-07-12",
-      "age_days": 7,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
+      "age_days": 8,
+      "stage": "emergent",
+      "stage_label": "Emergent (8-30天)",
       "sources": {
         "Vercel": 1
       },
@@ -218,9 +579,9 @@
       "term_type": "project",
       "first_seen": "2026-07-12",
       "last_seen": "2026-07-12",
-      "age_days": 7,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
+      "age_days": 8,
+      "stage": "emergent",
+      "stage_label": "Emergent (8-30天)",
       "sources": {
         "Cloudflare": 1
       },
@@ -232,9 +593,9 @@
       "term_type": "product",
       "first_seen": "2026-07-12",
       "last_seen": "2026-07-12",
-      "age_days": 7,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
+      "age_days": 8,
+      "stage": "emergent",
+      "stage_label": "Emergent (8-30天)",
       "sources": {
         "Vercel": 1
       },
@@ -246,9 +607,9 @@
       "term_type": "product",
       "first_seen": "2026-07-12",
       "last_seen": "2026-07-12",
-      "age_days": 7,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
+      "age_days": 8,
+      "stage": "emergent",
+      "stage_label": "Emergent (8-30天)",
       "sources": {
         "OpenAI": 1
       },
@@ -260,9 +621,9 @@
       "term_type": "model",
       "first_seen": "2026-07-12",
       "last_seen": "2026-07-12",
-      "age_days": 7,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
+      "age_days": 8,
+      "stage": "emergent",
+      "stage_label": "Emergent (8-30天)",
       "sources": {
         "Vercel": 1,
         "Google News": 1
@@ -275,9 +636,9 @@
       "term_type": "product",
       "first_seen": "2026-07-12",
       "last_seen": "2026-07-12",
-      "age_days": 7,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
+      "age_days": 8,
+      "stage": "emergent",
+      "stage_label": "Emergent (8-30天)",
       "sources": {
         "Vercel": 1
       },
@@ -289,9 +650,9 @@
       "term_type": "product",
       "first_seen": "2026-07-12",
       "last_seen": "2026-07-12",
-      "age_days": 7,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
+      "age_days": 8,
+      "stage": "emergent",
+      "stage_label": "Emergent (8-30天)",
       "sources": {
         "Vercel": 1
       },
@@ -303,9 +664,9 @@
       "term_type": "product",
       "first_seen": "2026-07-12",
       "last_seen": "2026-07-12",
-      "age_days": 7,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
+      "age_days": 8,
+      "stage": "emergent",
+      "stage_label": "Emergent (8-30天)",
       "sources": {
         "Vercel": 1
       },
@@ -317,9 +678,9 @@
       "term_type": "product",
       "first_seen": "2026-07-12",
       "last_seen": "2026-07-12",
-      "age_days": 7,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
+      "age_days": 8,
+      "stage": "emergent",
+      "stage_label": "Emergent (8-30天)",
       "sources": {
         "Vercel": 4
       },
@@ -331,9 +692,9 @@
       "term_type": "product",
       "first_seen": "2026-07-12",
       "last_seen": "2026-07-12",
-      "age_days": 7,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
+      "age_days": 8,
+      "stage": "emergent",
+      "stage_label": "Emergent (8-30天)",
       "sources": {
         "Vercel": 1
       },
@@ -345,9 +706,9 @@
       "term_type": "product",
       "first_seen": "2026-07-12",
       "last_seen": "2026-07-12",
-      "age_days": 7,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
+      "age_days": 8,
+      "stage": "emergent",
+      "stage_label": "Emergent (8-30天)",
       "sources": {
         "Vercel": 1
       },
@@ -359,9 +720,9 @@
       "term_type": "product",
       "first_seen": "2026-07-12",
       "last_seen": "2026-07-12",
-      "age_days": 7,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
+      "age_days": 8,
+      "stage": "emergent",
+      "stage_label": "Emergent (8-30天)",
       "sources": {
         "Vercel": 1
       },
@@ -373,9 +734,9 @@
       "term_type": "project",
       "first_seen": "2026-07-12",
       "last_seen": "2026-07-12",
-      "age_days": 7,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
+      "age_days": 8,
+      "stage": "emergent",
+      "stage_label": "Emergent (8-30天)",
       "sources": {
         "HuggingFace Blog": 1
       },
@@ -387,9 +748,9 @@
       "term_type": "product",
       "first_seen": "2026-07-12",
       "last_seen": "2026-07-12",
-      "age_days": 7,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
+      "age_days": 8,
+      "stage": "emergent",
+      "stage_label": "Emergent (8-30天)",
       "sources": {
         "HuggingFace Blog": 1
       },
@@ -401,9 +762,9 @@
       "term_type": "project",
       "first_seen": "2026-07-12",
       "last_seen": "2026-07-12",
-      "age_days": 7,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
+      "age_days": 8,
+      "stage": "emergent",
+      "stage_label": "Emergent (8-30天)",
       "sources": {
         "GitHub Releases": 1
       },
@@ -415,9 +776,9 @@
       "term_type": "product",
       "first_seen": "2026-07-12",
       "last_seen": "2026-07-12",
-      "age_days": 7,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
+      "age_days": 8,
+      "stage": "emergent",
+      "stage_label": "Emergent (8-30天)",
       "sources": {
         "GitHub Releases": 1
       },
@@ -429,9 +790,9 @@
       "term_type": "project",
       "first_seen": "2026-07-12",
       "last_seen": "2026-07-12",
-      "age_days": 7,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
+      "age_days": 8,
+      "stage": "emergent",
+      "stage_label": "Emergent (8-30天)",
       "sources": {
         "GitHub Releases": 5
       },
@@ -443,9 +804,9 @@
       "term_type": "project",
       "first_seen": "2026-07-12",
       "last_seen": "2026-07-12",
-      "age_days": 7,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
+      "age_days": 8,
+      "stage": "emergent",
+      "stage_label": "Emergent (8-30天)",
       "sources": {
         "GitHub Releases": 1
       },
@@ -457,9 +818,9 @@
       "term_type": "project",
       "first_seen": "2026-07-12",
       "last_seen": "2026-07-12",
-      "age_days": 7,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
+      "age_days": 8,
+      "stage": "emergent",
+      "stage_label": "Emergent (8-30天)",
       "sources": {
         "GitHub Releases": 1
       },
@@ -471,9 +832,9 @@
       "term_type": "company",
       "first_seen": "2026-07-12",
       "last_seen": "2026-07-12",
-      "age_days": 7,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
+      "age_days": 8,
+      "stage": "emergent",
+      "stage_label": "Emergent (8-30天)",
       "sources": {
         "Google News": 1
       },
@@ -485,9 +846,9 @@
       "term_type": "project",
       "first_seen": "2026-07-12",
       "last_seen": "2026-07-12",
-      "age_days": 7,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
+      "age_days": 8,
+      "stage": "emergent",
+      "stage_label": "Emergent (8-30天)",
       "sources": {
         "GitHub Releases": 7
       },
@@ -499,9 +860,9 @@
       "term_type": "project",
       "first_seen": "2026-07-12",
       "last_seen": "2026-07-12",
-      "age_days": 7,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
+      "age_days": 8,
+      "stage": "emergent",
+      "stage_label": "Emergent (8-30天)",
       "sources": {
         "GitHub Releases": 1
       },
@@ -513,9 +874,9 @@
       "term_type": "project",
       "first_seen": "2026-07-12",
       "last_seen": "2026-07-12",
-      "age_days": 7,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
+      "age_days": 8,
+      "stage": "emergent",
+      "stage_label": "Emergent (8-30天)",
       "sources": {
         "GitHub Releases": 1
       },
@@ -527,9 +888,9 @@
       "term_type": "company",
       "first_seen": "2026-07-12",
       "last_seen": "2026-07-12",
-      "age_days": 7,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
+      "age_days": 8,
+      "stage": "emergent",
+      "stage_label": "Emergent (8-30天)",
       "sources": {
         "GitHub Releases": 1
       },
@@ -541,9 +902,9 @@
       "term_type": "project",
       "first_seen": "2026-07-12",
       "last_seen": "2026-07-12",
-      "age_days": 7,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
+      "age_days": 8,
+      "stage": "emergent",
+      "stage_label": "Emergent (8-30天)",
       "sources": {
         "GitHub Releases": 1
       },
@@ -555,9 +916,9 @@
       "term_type": "project",
       "first_seen": "2026-07-12",
       "last_seen": "2026-07-12",
-      "age_days": 7,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
+      "age_days": 8,
+      "stage": "emergent",
+      "stage_label": "Emergent (8-30天)",
       "sources": {
         "GitHub Releases": 5
       },
@@ -569,9 +930,9 @@
       "term_type": "product",
       "first_seen": "2026-07-12",
       "last_seen": "2026-07-12",
-      "age_days": 7,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
+      "age_days": 8,
+      "stage": "emergent",
+      "stage_label": "Emergent (8-30天)",
       "sources": {
         "GitHub Releases": 2
       },
@@ -583,9 +944,9 @@
       "term_type": "product",
       "first_seen": "2026-07-12",
       "last_seen": "2026-07-12",
-      "age_days": 7,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
+      "age_days": 8,
+      "stage": "emergent",
+      "stage_label": "Emergent (8-30天)",
       "sources": {
         "GitHub Releases": 2
       },
@@ -597,9 +958,9 @@
       "term_type": "company",
       "first_seen": "2026-07-12",
       "last_seen": "2026-07-12",
-      "age_days": 7,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
+      "age_days": 8,
+      "stage": "emergent",
+      "stage_label": "Emergent (8-30天)",
       "sources": {
         "Google News": 1
       },
@@ -611,9 +972,9 @@
       "term_type": "company",
       "first_seen": "2026-07-12",
       "last_seen": "2026-07-12",
-      "age_days": 7,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
+      "age_days": 8,
+      "stage": "emergent",
+      "stage_label": "Emergent (8-30天)",
       "sources": {
         "Google News": 3
       },
@@ -625,9 +986,9 @@
       "term_type": "model",
       "first_seen": "2026-07-12",
       "last_seen": "2026-07-12",
-      "age_days": 7,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
+      "age_days": 8,
+      "stage": "emergent",
+      "stage_label": "Emergent (8-30天)",
       "sources": {
         "Google News": 1
       },
@@ -639,9 +1000,9 @@
       "term_type": "company",
       "first_seen": "2026-07-12",
       "last_seen": "2026-07-12",
-      "age_days": 7,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
+      "age_days": 8,
+      "stage": "emergent",
+      "stage_label": "Emergent (8-30天)",
       "sources": {
         "Google News": 1
       },
@@ -653,9 +1014,9 @@
       "term_type": "model",
       "first_seen": "2026-07-12",
       "last_seen": "2026-07-12",
-      "age_days": 7,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
+      "age_days": 8,
+      "stage": "emergent",
+      "stage_label": "Emergent (8-30天)",
       "sources": {
         "Google News": 1
       },
@@ -667,9 +1028,9 @@
       "term_type": "company",
       "first_seen": "2026-07-12",
       "last_seen": "2026-07-12",
-      "age_days": 7,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
+      "age_days": 8,
+      "stage": "emergent",
+      "stage_label": "Emergent (8-30天)",
       "sources": {
         "Google News": 2
       },
@@ -681,9 +1042,9 @@
       "term_type": "company",
       "first_seen": "2026-07-12",
       "last_seen": "2026-07-12",
-      "age_days": 7,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
+      "age_days": 8,
+      "stage": "emergent",
+      "stage_label": "Emergent (8-30天)",
       "sources": {
         "Google News": 2
       },
@@ -695,9 +1056,9 @@
       "term_type": "project",
       "first_seen": "2026-07-12",
       "last_seen": "2026-07-12",
-      "age_days": 7,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
+      "age_days": 8,
+      "stage": "emergent",
+      "stage_label": "Emergent (8-30天)",
       "sources": {
         "Google News": 2
       },
@@ -709,9 +1070,9 @@
       "term_type": "model",
       "first_seen": "2026-07-12",
       "last_seen": "2026-07-12",
-      "age_days": 7,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
+      "age_days": 8,
+      "stage": "emergent",
+      "stage_label": "Emergent (8-30天)",
       "sources": {
         "Google News": 1
       },
@@ -723,9 +1084,9 @@
       "term_type": "company",
       "first_seen": "2026-07-12",
       "last_seen": "2026-07-12",
-      "age_days": 7,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
+      "age_days": 8,
+      "stage": "emergent",
+      "stage_label": "Emergent (8-30天)",
       "sources": {
         "Google News": 4
       },
@@ -737,9 +1098,9 @@
       "term_type": "company",
       "first_seen": "2026-07-12",
       "last_seen": "2026-07-12",
-      "age_days": 7,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
+      "age_days": 8,
+      "stage": "emergent",
+      "stage_label": "Emergent (8-30天)",
       "sources": {
         "Google News": 1
       },
@@ -751,9 +1112,9 @@
       "term_type": "model",
       "first_seen": "2026-07-12",
       "last_seen": "2026-07-12",
-      "age_days": 7,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
+      "age_days": 8,
+      "stage": "emergent",
+      "stage_label": "Emergent (8-30天)",
       "sources": {
         "Google News": 1
       },
@@ -765,9 +1126,9 @@
       "term_type": "company",
       "first_seen": "2026-07-12",
       "last_seen": "2026-07-12",
-      "age_days": 7,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
+      "age_days": 8,
+      "stage": "emergent",
+      "stage_label": "Emergent (8-30天)",
       "sources": {
         "Google News": 2
       },
@@ -779,9 +1140,9 @@
       "term_type": "company",
       "first_seen": "2026-07-12",
       "last_seen": "2026-07-12",
-      "age_days": 7,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
+      "age_days": 8,
+      "stage": "emergent",
+      "stage_label": "Emergent (8-30天)",
       "sources": {
         "Google News": 1
       },
@@ -793,9 +1154,9 @@
       "term_type": "model",
       "first_seen": "2026-07-12",
       "last_seen": "2026-07-12",
-      "age_days": 7,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
+      "age_days": 8,
+      "stage": "emergent",
+      "stage_label": "Emergent (8-30天)",
       "sources": {
         "Google News": 1
       },
@@ -807,9 +1168,9 @@
       "term_type": "company",
       "first_seen": "2026-07-12",
       "last_seen": "2026-07-12",
-      "age_days": 7,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
+      "age_days": 8,
+      "stage": "emergent",
+      "stage_label": "Emergent (8-30天)",
       "sources": {
         "Google News": 1
       },
@@ -821,9 +1182,9 @@
       "term_type": "model",
       "first_seen": "2026-07-12",
       "last_seen": "2026-07-12",
-      "age_days": 7,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
+      "age_days": 8,
+      "stage": "emergent",
+      "stage_label": "Emergent (8-30天)",
       "sources": {
         "OpenAI": 1
       },
@@ -835,9 +1196,9 @@
       "term_type": "technology",
       "first_seen": "2026-07-12",
       "last_seen": "2026-07-12",
-      "age_days": 7,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
+      "age_days": 8,
+      "stage": "emergent",
+      "stage_label": "Emergent (8-30天)",
       "sources": {
         "HuggingFace Blog": 1
       },
@@ -849,9 +1210,9 @@
       "term_type": "model",
       "first_seen": "2026-07-12",
       "last_seen": "2026-07-12",
-      "age_days": 7,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
+      "age_days": 8,
+      "stage": "emergent",
+      "stage_label": "Emergent (8-30天)",
       "sources": {
         "GitHub Releases": 1
       },
