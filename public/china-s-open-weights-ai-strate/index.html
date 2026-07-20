@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ModelMigrate — 开源AI模型迁移评测工具 | www.aimfast.dev</title>
+  <meta name="description" content="花2分钟，基于社区真实评测对比GPT-4o、Claude、Qwen、Llama等模型，获得性能、成本与迁移难度报告。">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#1a1d24">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://www.aimfast.dev/model-migrate/">
+  <meta property="og:type" content="product">
+  <meta property="og:title" content="ModelMigrate — 开源AI模型迁移评测工具">
+  <meta property="og:description" content="花2分钟，基于社区真实评测对比GPT-4o、Claude、Qwen、Llama等模型，获得性能、成本与迁移难度报告。">
+  <meta property="og:url" content="https://www.aimfast.dev/model-migrate/">
+  <meta property="og:site_name" content="AimFast.Dev">
+  <meta property="og:image" content="https://www.aimfast.dev/og/model-migrate.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="ModelMigrate — 开源AI模型迁移评测工具">
+  <meta name="twitter:description" content="花2分钟，基于社区真实评测对比GPT-4o、Claude、Qwen、Llama等模型，获得性能、成本与迁移难度报告。">
+  <meta name="twitter:image" content="https://www.aimfast.dev/og/model-migrate.png">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "ModelMigrate",
+      "applicationCategory": "AIApplication",
+      "operatingSystem": "Web",
+      "description": "交互式开源AI模型迁移评测工具，基于社区共识对比性能、成本和迁移难度，提供行动清单。",
+      "url": "https://www.aimfast.dev/model-migrate/",
+      "offers": {
+        "@type": "Offer",
+        "price": "9.99",
+        "priceCurrency": "USD"
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="/_ds/base.css">
+  <link rel="stylesheet" href="/_ds/components.css">
+  <style>
+    /* 自定义样式仅用于布局微调，不重复定义token */
+    .hero {
+      padding: var(--space-8) 0 var(--space-6);
+      text-align: center;
+    }
+    .hero h1 {
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero .subhead {
+      max-width: 560px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: var(--space-4);
+    }
+    .signup-form {
+      display: flex;
+      gap: var(--space-2);
+      max-width: 480px;
+      margin: var(--space-4) auto 0;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .signup-form input {
+      flex: 1 1 240px;
+      height: 52px;
+      padding: 0 var(--space-3);
+      border: 2px solid var(--color-border);
+      border-radius: 8px;
+      background: var(--color-surface);
+      color: var(--color-text);
+      font-size: 1rem;
+      transition: border-color var(--duration-normal) var(--ease-out);
+    }
+    .signup-form input:focus {
+      outline: none;
+      border-color: var(--color-accent);
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent) 20%, transparent);
+    }
+    .signup-form .btn {
+      height: 52px;
+      padding: 0 var(--space-4);
+      font-size: 1rem;
+    }
+    .signup-success {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-2);
+      padding: var(--space-3);
+      background: color-mix(in srgb, var(--color-accent) 12%, transparent);
+      border-radius: 8px;
+      color: var(--color-accent);
+      font-weight: 500;
+      max-width: 480px;
+      margin: var(--space-4) auto 0;
+    }
+    .signup-success.show {
+      display: flex;
+    }
+    .signup-error {
+      display: none;
+      color: #e74c3c;
+      font-size: 0.9rem;
+      margin-top: var(--space-1);
+      text-align: center;
+    }
+    .signup-error.show {
+      display: block;
+    }
+
+    .why-matters {
+      padding: var(--space-8) 0;
+    }
+    .why-matters p {
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: var(--space-3);
+    }
+
+    .how-it-works {
+      padding: var(--space-8) 0;
+      background: var(--color-surface-alt);
+    }
+    .steps-grid {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-5);
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .step {
+      display: flex;
+      gap: var(--space-4);
+      align-items: flex-start;
+    }
+    .step-num {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--color-accent);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+    .step-content h3 {
+      margin-bottom: var(--space-1);
+    }
+    .step-content p {
+      margin: 0;
+      color: var(--color-text-secondary);
+    }
+
+    .selling-points {
+      padding: var(--space-8) 0;
+    }
+    .selling-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-5);
+    }
+    .selling-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      padding: var(--space-4);
+      text-align: center;
+    }
+    .selling-card .icon-wrap {
+      margin-bottom: var(--space-2);
+      color: var(--color-accent);
+    }
+    .selling-card h3 {
+      margin-bottom: var(--space-1);
+    }
+    .selling-card p {
+      color: var(--color-text-secondary);
+      font-size: 0.95rem;
+    }
+
+    .trust-bar {
+      padding: var(--space-4) 0 var(--space-6);
+      text-align: center;
+      color: var(--color-text-muted);
+      font-size: 0.85rem;
+    }
+    .trust-bar span {
+      display: inline-block;
+      margin: 0 var(--space-3);
+    }
+
+    footer {
+      padding: var(--space-4) 0;
+      text-align: center;
+      border-top: 1px solid var(--color-border);
+      color: var(--color-text-muted);
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 640px) {
+      .selling-grid {
+        grid-template-columns: 1fr;
+      }
+      .signup-form {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .signup-form input {
+        width: 100%;
+      }
+      .step {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero + 内嵌邮箱表单 -->
+  <section class="hero container">
+    <h1>你的AI模型选对了吗？<br>花2分钟找到最佳迁移方案</h1>
+    <p class="subhead text-secondary">基于社区真实评测，对比GPT-4o、Claude、Qwen、Llama等主流模型的性能、成本和迁移难度。</p>
+    
+    <form id="signup-form" class="signup-form" action="https://formspree.io/f/your-form-id" method="POST">
+      <input type="email" name="email" placeholder="you@example.com" required autocomplete="email">
+      <button type="submit" class="btn btn-primary btn-lg">Get Early Access</button>
+    </form>
+    <div id="signup-success" class="signup-success">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+      ✓ You're on the list!
+    </div>
+    <div id="signup-error" class="signup-error">Something went wrong. Please try again.</div>
+  </section>
+
+  <!-- Why This Matters -->
+  <section class="why-matters container">
+    <h2>Why AI Model Migration Matters Right Now</h2>
+    <p>The Hacker News thread “China’s open-weights AI strategy is winning” exploded with 723 comments in 48 hours. Developers aren’t debating geopolitics — they’re asking: “Should I switch from GPT-4o to Qwen 3.8? What about Kimi vs. Claude?” The signal is clear: the community is hungry for structured, actionable comparison data, but all they have is scattered anecdotes and subjective tweets.</p>
+    <p>Existing solutions like Chatbot Arena tell you which model wins in a blind test, but they don’t answer the real question: “What will it cost me to migrate? How hard is it to adapt my codebase? Which tasks will degrade?” Meanwhile, Artificial Analysis gives you raw pricing and latency numbers but zero guidance on the actual migration workflow. The gap is a decision tool — not another benchmark, but a <em>migration advisor</em>.</p>
+    <p>Now is the perfect moment. The open-weight ecosystem has reached critical mass: Qwen 3.8 matches GPT-4 on code generation, Kimi K3 rivals Claude 3.5 Sonnet on long-context reasoning, and Llama 4 is just around the corner. Every CTO and AI architect is facing a portfolio choice. The window to capture this “migration decision” market is open — and it won’t stay open long.</p>
+  </section>
+
+  <!-- How It Works -->
+  <section class="how-it-works">
+    <div class="container">
+      <h2 class="text-center">How It Works</h2>
+      <div class="steps-grid">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h3>Select your current and target model</h3>
+            <p>Choose from a curated list of 10+ popular models — including GPT-4o, Claude 3.5 Sonnet, Qwen 3.8, Kimi K3, Llama 4, and Mistral Large. Pick the task that matters most to you: code generation, text summarization, role-playing, or reasoning.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h3>Get a structured comparison report</h3>
+            <p>Our engine aggregates community consensus from HN, Reddit, and GitHub issues to produce a clear scoreboard: performance (task-specific), monthly cost (at 1M tokens), migration difficulty (1–5 stars), and API compatibility notes. All data is sourced from public discussions and official pricing pages.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h3>Follow the action checklist</h3>
+            <p>Receive 3–5 concrete steps to execute the migration — from testing on HuggingFace to checking your codebase for `tool_use` API dependencies. No fluff, just a clear path from decision to deployment.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Selling Points (3列 grid) -->
+  <section class="selling-points container">
+    <h2 class="text-center">What You Get</h2>
+    <div class="selling-grid">
+      <div class="selling-card">
+        <div class="icon-wrap">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <polyline points="9 12 11 14 15 10"/>
+          </svg>
+        </div>
+        <h3>Community Consensus</h3>
+        <p>Not a single blogger’s opinion — we distill signals from hundreds of HN comments, Reddit threads, and GitHub issues to give you a balanced, data-driven view of how models really perform in the wild.</p>
+      </div>
+      <div class="selling-card">
+        <div class="icon-wrap">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+          </svg>
+        </div>
+        <h3>Cost Visualization</h3>
+        <p>See exactly how much you’ll save (or spend) by switching. We calculate monthly costs at 1M tokens for each model pair, so you can justify the migration to your team with hard numbers.</p>
+      </div>
+      <div class="selling-card">
+        <div class="icon-wrap">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+          </svg>
+        </div>
+        <h3>Actionable Migration Guide</h3>
+        <p>We don’t just tell you which model is better — we give you a step-by-step checklist to actually make the switch, including code-level considerations and common pitfalls to avoid.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Bar -->
+  <div class="trust-bar container">
+    <span>✦ 723+ HN comments analyzed</span>
+    <span>✦ 10+ models compared</span>
+    <span>✦ 100% community-sourced data</span>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    © 2026 · www.aimfast.dev
+  </footer>
+
+  <script>
+    async function handleSubmit(event) {
+      event.preventDefault();
+      const form = event.target;
+      const email = form.email.value.trim();
+      const successEl = document.getElementById('signup-success');
+      const errorEl = document.getElementById('signup-error');
+
+      // 隐藏之前的消息
+      successEl.classList.remove('show');
+      errorEl.classList.remove('show');
+
+      if (!email) return;
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams({ email })
+        });
+
+        if (response.ok) {
+          // 成功：隐藏表单，显示成功消息
+          form.style.display = 'none';
+          successEl.classList.add('show');
+        } else {
+          // 失败：显示错误
+          errorEl.classList.add('show');
+        }
+      } catch (err) {
+        errorEl.classList.add('show');
+      }
+    }
+
+    // 绑定表单提交
+    document.getElementById('signup-form').addEventListener('submit', handleSubmit);
+  </script>
+
+</body>
+</html>
