@@ -443,7 +443,7 @@ export default async function TrendDetailZhPage({
                   <strong>分类：</strong>{term.category}
                 </div>
                 <div>
-                  <strong>发现天数：</strong>{stagePct(term.stage)} 天
+                  <strong>阶段：</strong>{stageLabelZh(term.stage)}
                 </div>
                 <div>
                   <strong>标签：</strong>

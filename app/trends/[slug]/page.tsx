@@ -166,7 +166,7 @@ export default async function TrendDetailPage({
       const whoText = whoSection ? extractSectionText(bodyOnly, whoSection) : '';
       faqItems.push({
         q: `Who should pay attention to ${term.canonical}?`,
-        a: whoText || `Independent developers, indie hackers, and product builders tracking emerging tech trends. This term falls under the "${term.category}" category and is currently in the ${term.stage} stage (${stagePct(term.stage)} days since first detection).`,
+        a: whoText || `Independent developers, indie hackers, and product builders tracking emerging tech trends. This term falls under the "${term.category}" category and is currently in the ${term.stage} stage.`,
       });
     }
   }
@@ -449,7 +449,7 @@ export default async function TrendDetailPage({
                   <strong>Category:</strong> {term.category}
                 </div>
                 <div>
-                  <strong>Age:</strong> {stagePct(term.stage)} days
+                  <strong>Age:</strong> {stageLabel(term.stage)}
                 </div>
                 <div>
                   <strong>Tags:</strong>{' '}

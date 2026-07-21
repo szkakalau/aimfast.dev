@@ -243,36 +243,37 @@ export default function HomePage() {
                 Each term gets a 0–100 score from four weighted dimensions:
               </p>
               <div className="score-formula">
-                Score = Signal Avg × 0.3<br />
-                &nbsp;&nbsp;+ Sources × 8 (max 30)<br />
-                &nbsp;&nbsp;+ Engagement × 0.5 (max 20)<br />
-                &nbsp;&nbsp;+ Cross-Platform × 10 (max 20)
+                Score = weighted composite of four dimensions:<br />
+                &nbsp;&nbsp;• Source diversity (highest weight)<br />
+                &nbsp;&nbsp;• Signal strength across independent sources<br />
+                &nbsp;&nbsp;• Community engagement velocity<br />
+                &nbsp;&nbsp;• Cross-platform propagation
               </div>
 
               <p style={{ fontSize: '0.82rem', color: 'var(--color-text-secondary)', marginBottom: 'var(--space-2)' }}>
-                <strong>Maturity stages</strong> — based on days since first detection:
+                <strong>Maturity stages</strong> — based on age since first detection:
               </p>
               <div className="stage-legend">
                 <span className="stage-legend-item">
-                  <span className="stage-legend-dot nascent" /> Nascent (0–7d)
+                  <span className="stage-legend-dot nascent" /> Nascent
                 </span>
                 <span className="stage-legend-item">
-                  <span className="stage-legend-dot emergent" /> Emergent (8–30d)
+                  <span className="stage-legend-dot emergent" /> Emergent
                 </span>
                 <span className="stage-legend-item">
-                  <span className="stage-legend-dot validating" /> Validating (31–90d)
+                  <span className="stage-legend-dot validating" /> Validating
                 </span>
                 <span className="stage-legend-item">
-                  <span className="stage-legend-dot rising" /> Rising (90d+)
+                  <span className="stage-legend-dot rising" /> Rising
                 </span>
               </div>
 
               <p style={{ fontSize: '0.82rem', color: 'var(--color-text-secondary)', marginTop: 'var(--space-2)' }}>
                 <strong>Report thresholds:</strong>{' '}
                 <span className="threshold-list">
-                  <span>Top 25%</span> deep research report ·{' '}
-                  <span>30–59</span> quick brief ·{' '}
-                  <span>&lt;30</span> tracking only
+                  <span>Top tier</span> deep research report ·{' '}
+                  <span>Mid range</span> quick brief ·{' '}
+                  <span>Lower range</span> tracking only
                 </span>
               </p>
             </div>

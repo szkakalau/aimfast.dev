@@ -36,7 +36,7 @@ describe('TrendCard', () => {
 
   it('renders stage badge', () => {
     render(<TrendCard term={mockTerm} />);
-    expect(screen.getByText('Emergent (8-30d)')).toBeInTheDocument();
+    expect(screen.getByText('Emergent')).toBeInTheDocument();
   });
 
   it('renders meta info', () => {

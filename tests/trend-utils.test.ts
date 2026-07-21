@@ -7,10 +7,10 @@ import type { TrendTerm } from '@/app/trends/types';
 
 describe('stageLabel', () => {
   it('returns full label for known stages', () => {
-    expect(stageLabel('nascent')).toBe('Nascent (0-7d)');
-    expect(stageLabel('emergent')).toBe('Emergent (8-30d)');
-    expect(stageLabel('validating')).toBe('Validating (31-90d)');
-    expect(stageLabel('rising')).toBe('Rising (90d+)');
+    expect(stageLabel('nascent')).toBe('Nascent');
+    expect(stageLabel('emergent')).toBe('Emergent');
+    expect(stageLabel('validating')).toBe('Validating');
+    expect(stageLabel('rising')).toBe('Rising');
   });
 
   it('returns raw value for unknown stages', () => {

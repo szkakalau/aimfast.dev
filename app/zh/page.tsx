@@ -211,36 +211,37 @@ export default function ZhHomePage() {
                 每个术语从四个维度获得 0–100 的综合评分：
               </p>
               <div className="score-formula">
-                评分 = 信号平均分 × 0.3<br />
-                &nbsp;&nbsp;+ 信源数 × 8（上限 30）<br />
-                &nbsp;&nbsp;+ 互动热度 × 0.5（上限 20）<br />
-                &nbsp;&nbsp;+ 跨平台传播 × 10（上限 20）
+                评分 = 四个维度的加权综合：<br />
+                &nbsp;&nbsp;• 来源多样性（权重最高）<br />
+                &nbsp;&nbsp;• 跨独立来源的信号强度<br />
+                &nbsp;&nbsp;• 社区互动活跃度<br />
+                &nbsp;&nbsp;• 跨平台传播度
               </div>
 
               <p style={{ fontSize: '0.82rem', color: 'var(--color-text-secondary)', marginBottom: 'var(--space-2)' }}>
-                <strong>成熟度阶段</strong> — 基于首次发现后的天数：
+                <strong>成熟度阶段</strong> — 基于首次发现后的时间：
               </p>
               <div className="stage-legend">
                 <span className="stage-legend-item">
-                  <span className="stage-legend-dot nascent" /> 萌芽期 (0–7天)
+                  <span className="stage-legend-dot nascent" /> 萌芽期
                 </span>
                 <span className="stage-legend-item">
-                  <span className="stage-legend-dot emergent" /> 涌现期 (8–30天)
+                  <span className="stage-legend-dot emergent" /> 涌现期
                 </span>
                 <span className="stage-legend-item">
-                  <span className="stage-legend-dot validating" /> 验证期 (31–90天)
+                  <span className="stage-legend-dot validating" /> 验证期
                 </span>
                 <span className="stage-legend-item">
-                  <span className="stage-legend-dot rising" /> 上升期 (90天+)
+                  <span className="stage-legend-dot rising" /> 上升期
                 </span>
               </div>
 
               <p style={{ fontSize: '0.82rem', color: 'var(--color-text-secondary)', marginTop: 'var(--space-2)' }}>
                 <strong>报告阈值：</strong>{' '}
                 <span className="threshold-list">
-                  <span>Top 25%</span> 深度研究报告 ·{' '}
-                  <span>30–59</span> 快速简报 ·{' '}
-                  <span>&lt;30</span> 仅追踪
+                  <span>高分段</span> 深度研究报告 ·{' '}
+                  <span>中分段</span> 快速简报 ·{' '}
+                  <span>低分段</span> 仅追踪
                 </span>
               </p>
             </div>

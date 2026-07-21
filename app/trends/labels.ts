@@ -4,20 +4,20 @@ export type Locale = 'en' | 'zh';
 
 export function stageLabel(stage: string): string {
   const map: Record<string, string> = {
-    nascent: 'Nascent (0-7d)',
-    emergent: 'Emergent (8-30d)',
-    validating: 'Validating (31-90d)',
-    rising: 'Rising (90d+)',
+    nascent: 'Nascent',
+    emergent: 'Emergent',
+    validating: 'Validating',
+    rising: 'Rising',
   };
   return map[stage] || stage;
 }
 
 export function stageLabelZh(stage: string): string {
   const map: Record<string, string> = {
-    nascent: '萌芽期 (0-7天)',
-    emergent: '涌现期 (8-30天)',
-    validating: '验证期 (31-90天)',
-    rising: '上升期 (90天+)',
+    nascent: '萌芽期',
+    emergent: '涌现期',
+    validating: '验证期',
+    rising: '上升期',
   };
   return map[stage] || stage;
 }
@@ -70,7 +70,7 @@ export function getLabels(locale: Locale): TrendLabels {
       forBuilders: '面向开发者',
       general: '通用排序',
       noMatches: '没有匹配项',
-      stageFilterLabel: { all: '全部', nascent: '萌芽期 (0-7天)', emergent: '涌现期 (8-30天)', validating: '验证期 (31-90天)', rising: '上升期 (90天+)' },
+      stageFilterLabel: { all: '全部', nascent: '萌芽期', emergent: '涌现期', validating: '验证期', rising: '上升期' },
       sortLabels: Object.fromEntries(SORT_OPTIONS.map(o => [o.key, o.labelZh])),
       emptyMessages: {
         aiFocus: '当前阶段没有 AI 相关术语。请尝试其他阶段或关闭 AI 聚焦。',
@@ -89,7 +89,7 @@ export function getLabels(locale: Locale): TrendLabels {
     forBuilders: 'For Builders',
     general: 'General',
     noMatches: 'No matches',
-    stageFilterLabel: { all: 'All', nascent: 'Nascent (0-7d)', emergent: 'Emergent (8-30d)', validating: 'Validating (31-90d)', rising: 'Rising (90d+)' },
+    stageFilterLabel: { all: 'All', nascent: 'Nascent', emergent: 'Emergent', validating: 'Validating', rising: 'Rising' },
     sortLabels: Object.fromEntries(SORT_OPTIONS.map(o => [o.key, o.label])),
     emptyMessages: {
       aiFocus: 'No AI terms in this stage. Try a different stage or turn off AI Focus.',

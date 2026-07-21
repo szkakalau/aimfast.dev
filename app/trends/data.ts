@@ -91,30 +91,30 @@ export function getTrendStats(): { total: number; withResearch: number; totalSou
 
 export function stageLabel(stage: string): string {
   const map: Record<string, string> = {
-    nascent: 'Nascent (0-7d)',
-    emergent: 'Emergent (8-30d)',
-    validating: 'Validating (31-90d)',
-    rising: 'Rising (90d+)',
+    nascent: 'Nascent',
+    emergent: 'Emergent',
+    validating: 'Validating',
+    rising: 'Rising',
   };
   return map[stage] || stage;
 }
 
 export function stageLabelZh(stage: string): string {
   const map: Record<string, string> = {
-    nascent: '萌芽期 (0-7天)',
-    emergent: '涌现期 (8-30天)',
-    validating: '验证期 (31-90天)',
-    rising: '上升期 (90天+)',
+    nascent: '萌芽期',
+    emergent: '涌现期',
+    validating: '验证期',
+    rising: '上升期',
   };
   return map[stage] || stage;
 }
 
 export function stagePct(stage: string): string {
   const map: Record<string, string> = {
-    nascent: '0–7',
-    emergent: '8–30',
-    validating: '31–90',
-    rising: '90+',
+    nascent: 'brand new',
+    emergent: 'recent',
+    validating: 'established',
+    rising: 'mature',
   };
   return map[stage] || '';
 }
