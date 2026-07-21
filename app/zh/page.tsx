@@ -8,7 +8,7 @@ import TrendFilter from '../trends/TrendFilter';
 export const metadata: Metadata = {
   title: '信号而非噪音 — AI 精选技术趋势与市场信号 | AimFast.Dev',
   description:
-    'AI 每天扫描 21+ 个信源，交叉验证后按 Builder Score 排序——帮你过滤噪音，聚焦真正值得行动的机会。免费，无需注册。',
+    'AI 每天扫描 30+ 个信源，交叉验证后按 Builder Score 排序——帮你过滤噪音，聚焦真正值得行动的机会。免费，无需注册。',
   robots: { index: true, follow: true },
   alternates: {
     canonical: 'https://www.aimfast.dev/zh/',
@@ -62,7 +62,7 @@ export default function ZhHomePage() {
         '@type': 'CollectionPage',
         name: '趋势发现 — AimFast.Dev',
         description:
-          'AI 每天扫描 21+ 个信源，交叉验证后按 Builder Score 排序——帮你过滤噪音，聚焦真正值得行动的机会。',
+          'AI 每天扫描 30+ 个信源，交叉验证后按 Builder Score 排序——帮你过滤噪音，聚焦真正值得行动的机会。',
         url: 'https://www.aimfast.dev/zh/',
         inLanguage: 'zh-CN',
         dateModified: updated_at || new Date().toISOString().slice(0, 10),
@@ -80,7 +80,7 @@ export default function ZhHomePage() {
         '@type': 'HowTo',
         name: '趋势如何评分与发现',
         description:
-          '每个趋势都由管道自动评分和分阶段，覆盖 21+ 个信号源。',
+          '每个趋势都由管道自动评分和分阶段，覆盖 30+ 个信号源。',
         step: [
           {
             '@type': 'HowToStep',
@@ -122,7 +122,7 @@ export default function ZhHomePage() {
             name: '趋势是如何发现的？',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: `我们的 AI 每天扫描 21+ 个信号源——HN、Reddit、GitHub、DEV Community、Lobsters、V2EX、X/Twitter、Product Hunt、HuggingFace、Arxiv、npm、PyPI、Stack Overflow、YouTube 等——交叉引用新兴术语，并按信号强度、来源多样性和社区互动评分。`,
+              text: `我们的 AI 每天扫描 30+ 个信号源——HN、Reddit、GitHub、DEV Community、Lobsters、V2EX、X/Twitter、Product Hunt、HuggingFace、Arxiv、npm、PyPI、Stack Overflow、YouTube 等——交叉引用新兴术语，并按信号强度、来源多样性和社区互动评分。`,
             },
           },
           {
@@ -249,7 +249,7 @@ export default function ZhHomePage() {
             <div className="engine-card">
               <h3><Search size={20} /> 术语发现规则</h3>
               <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', marginBottom: 'var(--space-2)' }}>
-                每晚，LLM 管道扫描 21+ 个信号源，按 5 条规则提取新兴术语：
+                每晚，LLM 管道扫描 30+ 个信号源，按 5 条规则提取新兴术语：
               </p>
               <ul>
                 <li>
@@ -289,7 +289,7 @@ export default function ZhHomePage() {
               <Search size={32} className="engine-icon" />
               <h3>挖掘引擎</h3>
               <p>
-                AI 扫描 21+ 个来源 — HN、Reddit、GitHub、Product Hunt、X、DEV、
+                AI 扫描 30+ 个来源 — HN、Reddit、GitHub、Product Hunt、X、DEV、
                 V2EX 等 — 寻找新兴痛点、上升趋势和市场空白。
               </p>
               <ul className="engine-list">

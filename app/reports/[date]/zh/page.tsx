@@ -68,7 +68,7 @@ export async function generateMetadata({
     twitter: {
       card: 'summary_large_image',
       title: `${title} — AimFast.Dev`,
-      description: fm.summary || '每日产品机会，来自 21+ 个信号源。',
+      description: fm.summary || '每日产品机会，来自 30+ 个信号源。',
       images: ['https://www.aimfast.dev/og-reports.png'],
     },
   };

@@ -4,7 +4,7 @@ import { TrendingUp, BarChart3, Zap, Globe } from 'lucide-react';
 export const metadata: Metadata = {
   title: '关于 — AimFast.Dev',
   description:
-    'AimFast.Dev 是一个自动化趋势发现平台，每夜扫描 21+ 数据源。了解我们的方法论、Pipeline 和团队。',
+    'AimFast.Dev 是一个自动化趋势发现平台，每夜扫描 30+ 数据源。了解我们的方法论、Pipeline 和团队。',
   robots: { index: true, follow: true },
   alternates: {
     canonical: 'https://www.aimfast.dev/about/zh/',
@@ -47,7 +47,7 @@ export default function AboutZhPage() {
         '@type': 'AboutPage',
         name: '关于 AimFast.Dev',
         description:
-          'AimFast.Dev 是一个自动化趋势发现平台，每夜通过 LLM Pipeline 扫描 21+ 数据源，追踪 170+ 新兴技术术语，使用专有的 Builder Score 和阶段分类。',
+          'AimFast.Dev 是一个自动化趋势发现平台，每夜通过 LLM Pipeline 扫描 30+ 数据源，追踪 170+ 新兴技术术语，使用专有的 Builder Score 和阶段分类。',
         url: 'https://www.aimfast.dev/about/zh/',
         about: {
           '@type': 'Organization',
@@ -56,7 +56,7 @@ export default function AboutZhPage() {
           logo: 'https://www.aimfast.dev/og-home.png',
           image: 'https://www.aimfast.dev/og-home.png',
           description:
-            '面向独立开发者的每日市场情报。AI 扫描 21+ 数据源，每天早上交付一个经过验证的产品机会。',
+            '面向独立开发者的每日市场情报。AI 扫描 30+ 数据源，每天早上交付一个经过验证的产品机会。',
           foundingDate: '2026-01-01',
           sameAs: [
             'https://github.com/szkakalau/aimfast.dev',
@@ -87,7 +87,7 @@ export default function AboutZhPage() {
         </h1>
         <p style={{ fontSize: '1.125rem', color: 'var(--color-text-secondary)', maxWidth: '600px', margin: '0 auto', lineHeight: 1.6, overflowWrap: 'break-word' }}>
           AimFast.Dev 是一个自动化趋势发现平台。
-          每天夜里，我们的 Pipeline 扫描 21+ 全球数据源，对新兴技术术语进行评分，
+          每天夜里，我们的 Pipeline 扫描 30+ 全球数据源，对新兴技术术语进行评分，
           并在早上生成一个可行动的产品机会。
         </p>
       </section>
@@ -107,7 +107,7 @@ export default function AboutZhPage() {
             <div>
               <h3 style={{ margin: '0 0 var(--space-1)', fontSize: '1.05rem' }}>信号采集</h3>
               <p style={{ color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
-                21+ 个独立采集器每夜并行运行，从开发者平台（Hacker News、GitHub、DEV、Lobsters）、社交媒体（X/Twitter、Reddit、YouTube）、
+                30+ 个独立采集器每夜并行运行，从开发者平台（Hacker News、GitHub、DEV、Lobsters）、社交媒体（X/Twitter、Reddit、YouTube）、
                 包注册表（npm、PyPI）、AI/ML 中心（HuggingFace、ArXiv）以及消费平台
                 （豆瓣、小红书、Product Hunt）拉取数据。单个采集源的失败不会阻塞其他采集源。
               </p>

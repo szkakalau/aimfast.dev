@@ -34,7 +34,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   title: 'AimFast.Dev — Signal Over Hype: AI-Curated Tech Trends',
   description:
-    'AI scans 21+ sources daily, cross-validates every term, and ranks by builder relevance — signal over hype. Dashboard membership unlocks daily product opportunities — what to build, who will pay, and how much to charge.',
+    'AI scans 30+ sources daily, cross-validates every term, and ranks by builder relevance — signal over hype. Dashboard membership unlocks daily product opportunities — what to build, who will pay, and how much to charge.',
   robots: { index: true, follow: true },
   metadataBase: new URL('https://www.aimfast.dev'),
   alternates: {
@@ -79,7 +79,7 @@ const jsonLd = {
       logo: 'https://www.aimfast.dev/og-home.png',
       image: 'https://www.aimfast.dev/og-home.png',
       description:
-        'Daily market intelligence for indie builders. AI scans 21+ sources to deliver one validated product opportunity every morning — what to build, who will pay, and how much to charge.',
+        'Daily market intelligence for indie builders. AI scans 30+ sources to deliver one validated product opportunity every morning — what to build, who will pay, and how much to charge.',
       foundingDate: '2026-01-01',
       sameAs: [
         'https://github.com/szkakalau/aimfast.dev',
@@ -97,7 +97,7 @@ const jsonLd = {
       name: 'AimFast.Dev',
       url: 'https://www.aimfast.dev/',
       description:
-        'Daily market intelligence for indie builders. Product opportunities, trend analysis from 21+ global sources.',
+        'Daily market intelligence for indie builders. Product opportunities, trend analysis from 30+ global sources.',
     },
   ],
 };

@@ -4,7 +4,7 @@ import { TrendingUp, BarChart3, Zap, Globe } from 'lucide-react';
 export const metadata: Metadata = {
   title: 'About — AimFast.Dev',
   description:
-    'AimFast.Dev is an automated trend discovery platform scanning 21+ sources nightly. Learn about our methodology, pipeline, and the team behind the daily market intelligence.',
+    'AimFast.Dev is an automated trend discovery platform scanning 30+ sources nightly. Learn about our methodology, pipeline, and the team behind the daily market intelligence.',
   robots: { index: true, follow: true },
   alternates: {
     canonical: 'https://www.aimfast.dev/about/',
@@ -47,7 +47,7 @@ export default function AboutPage() {
         '@type': 'AboutPage',
         name: 'About AimFast.Dev',
         description:
-          'AimFast.Dev is an automated trend discovery platform that scans 21+ sources nightly with an LLM pipeline, tracking 170+ emerging tech terms with proprietary Builder Score and stage classification.',
+          'AimFast.Dev is an automated trend discovery platform that scans 30+ sources nightly with an LLM pipeline, tracking 170+ emerging tech terms with proprietary Builder Score and stage classification.',
         url: 'https://www.aimfast.dev/about/',
         about: {
           '@type': 'Organization',
@@ -56,7 +56,7 @@ export default function AboutPage() {
           logo: 'https://www.aimfast.dev/og-home.png',
           image: 'https://www.aimfast.dev/og-home.png',
           description:
-            'Daily market intelligence for indie builders. AI scans 21+ sources to deliver one validated product opportunity every morning.',
+            'Daily market intelligence for indie builders. AI scans 30+ sources to deliver one validated product opportunity every morning.',
           foundingDate: '2026-01-01',
           sameAs: [
             'https://github.com/szkakalau/aimfast.dev',
@@ -87,7 +87,7 @@ export default function AboutPage() {
         </h1>
         <p style={{ fontSize: '1.125rem', color: 'var(--color-text-secondary)', maxWidth: '600px', margin: '0 auto', lineHeight: 1.6, overflowWrap: 'break-word' }}>
           AimFast.Dev is an automated trend discovery platform.
-          Every night, our pipeline scans 21+ global sources, scores emerging tech terms,
+          Every night, our pipeline scans 30+ global sources, scores emerging tech terms,
           and generates one actionable product opportunity by morning.
         </p>
       </section>
@@ -107,7 +107,7 @@ export default function AboutPage() {
             <div>
               <h3 style={{ margin: '0 0 var(--space-1)', fontSize: '1.05rem' }}>Signal Collection</h3>
               <p style={{ color: 'var(--color-text-secondary)', margin: 0, lineHeight: 1.6 }}>
-                21+ independent collectors run in parallel every night, pulling data from developer platforms
+                30+ independent collectors run in parallel every night, pulling data from developer platforms
                 (Hacker News, GitHub, DEV, Lobsters), social media (X/Twitter, Reddit, YouTube),
                 package registries (npm, PyPI), AI/ML hubs (HuggingFace, ArXiv), and consumer platforms
                 (Douban, Xiaohongshu, Product Hunt). One failure never blocks another.
