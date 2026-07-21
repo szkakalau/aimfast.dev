@@ -4,11 +4,6 @@ import bcrypt from 'bcryptjs';
 import { checkRateLimit, resetRateLimit } from '@/lib/rate-limit';
 import { authConfig } from '@/lib/auth.config';
 
-// 启动时校验关键环境变量
-if (!process.env.AUTH_SECRET) {
-  throw new Error('AUTH_SECRET environment variable is required. Generate: openssl rand -base64 32');
-}
-
 const LOGIN_MAX_ATTEMPTS = 5;
 const LOGIN_WINDOW_MS = 15 * 60 * 1000; // 15 分钟
 
