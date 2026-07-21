@@ -103,10 +103,13 @@ COLLECTORS=(
     "SegmentFault:collect_segmentfault"
     # ── 新增信源: 学术深度 + 内容增强（2026-07-22 Phase 3） ──
     "Semantic Scholar:collect_semanticscholar"
+    # ── 新增信源: 高级中文信源 + 独立开发者产品（2026-07-22 Phase 4） ──
+    "OSChina:collect_oschina"
+    "Show HN:collect_showhn"
 )
 
 # C-end collectors are non-blocking — they may fail due to rate limits or missing auth
-C_END_COLLECTORS=("Reddit Consumer" "豆瓣" "小红书" "X/Twitter" "Product Changelogs" "Google News" "GitHub Releases" "npm" "PyPI" "Stack Overflow" "YouTube" "Job Trends" "Substack" "掘金" "SegmentFault" "Semantic Scholar")
+C_END_COLLECTORS=("Reddit Consumer" "豆瓣" "小红书" "X/Twitter" "Product Changelogs" "Google News" "GitHub Releases" "npm" "PyPI" "Stack Overflow" "YouTube" "Job Trends" "Substack" "掘金" "SegmentFault" "Semantic Scholar" "OSChina" "Show HN")
 
 for entry in "${COLLECTORS[@]}"; do
     name="${entry%%:*}"
