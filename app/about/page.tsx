@@ -178,22 +178,22 @@ export default function AboutPage() {
         </p>
 
         <p style={{ color: 'var(--color-text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
-          Our Builder Score formula weights <strong>source_count ×15</strong> above all other factors,
-          reflecting this cross-validation principle. Growth velocity (×12) captures momentum direction.
-          Freshness decay (×10) ensures the dashboard surfaces what&apos;s happening now, not last month.
+          Our Builder Score formula weights <strong>source diversity</strong> above all other factors,
+          reflecting this cross-validation principle. Growth velocity captures momentum direction.
+          Freshness decay ensures the dashboard surfaces what&apos;s happening now, not last month.
         </p>
 
         <p style={{ color: 'var(--color-text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
           Every signal must clear a minimum bar: appear in ≥2 independent sources, survive
-          deduplication (85% title similarity threshold), and pass the E-P-A scoring rubric.
-          Signals that fail to produce unique insights for 7 consecutive days are flagged
+          deduplication (high-precision title similarity matching), and pass the E-P-A scoring rubric.
+          Signals that fail to produce unique insights over consecutive days are flagged
           for review — not silently dropped.
         </p>
 
         <p style={{ color: 'var(--color-text-secondary)', lineHeight: 1.7 }}>
-          For the complete technical reference — including the exact scoring formulas, pipeline
-          architecture, and LLM prompt methodology — see{' '}
-          <a href="/llms-full.txt">llms-full.txt</a> (2,656 words, AI-readable format).
+          For the complete technical reference — including pipeline
+          architecture, data formats, and methodology principles — see{' '}
+          <a href="/llms-full.txt">llms-full.txt</a> (AI-readable format).
         </p>
       </section>
 

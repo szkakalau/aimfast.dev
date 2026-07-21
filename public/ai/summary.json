@@ -1,6 +1,6 @@
 {
   "name": "AimFast.Dev — Free Trend Discovery & Market Intelligence",
-  "description": "Automated trend discovery platform scanning 21+ sources (HN, Reddit, GitHub, Product Hunt, X/Twitter, DEV, V2EX, Lobsters, HuggingFace, ArXiv, npm, PyPI, Stack Overflow, YouTube, Google Trends, Douban, Xiaohongshu, w2solo, Indie Hackers) nightly with an LLM pipeline. Tracks 170+ emerging tech terms with Builder Score (0-100), 4-tier maturity stage classification (Nascent/Emergent/Validating/Rising), and cross-source validation (min 2 independent sources). Free, no signup. Updated daily.",
+  "description": "Automated trend discovery platform scanning 30+ sources (HN, Reddit, GitHub, Product Hunt, X/Twitter, DEV, V2EX, Lobsters, HuggingFace, ArXiv, npm, PyPI, Stack Overflow, YouTube, Google Trends, Douban, Xiaohongshu, w2solo, Indie Hackers) nightly with an LLM pipeline. Tracks 170+ emerging tech terms with Builder Score (0-100), 4-tier maturity stage classification (Nascent/Emergent/Validating/Rising), and cross-source validation. Free, no signup. Updated daily.",
   "url": "https://www.aimfast.dev",
   "type": "WebApplication",
   "category": "Market Intelligence / Trend Discovery",
@@ -12,9 +12,9 @@
     "https://twitter.com/aimfastdev"
   ],
   "features": [
-    "Daily trend discovery from 21+ global sources",
-    "Builder Score — 5-factor weighted composite (source_count ×15 + growth ×12 + authority ×8 + mentions ×5 + freshness ×10)",
-    "4-tier maturity stage classification (Nascent 0-7d, Emergent 8-30d, Validating 31-90d, Rising 90d+)",
+    "Daily trend discovery from 30+ global sources",
+    "Builder Score — proprietary 5-factor weighted composite (source diversity, growth velocity, authority, mention volume, freshness)",
+    "4-tier maturity stage classification (Nascent, Emergent, Validating, Rising)",
     "Cross-platform validation (≥2 independent sources required)",
     "C-End consumer opportunity auto-detection",
     "Daily LLM-generated reports (3,000-6,000 chars) with structured decisions",

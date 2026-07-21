@@ -1,6 +1,6 @@
 {
   "name": "AimFast.Dev Trend Discovery Engine",
-  "description": "Automated pipeline that collects signals from 21+ global sources nightly, processes them through an LLM pipeline, and delivers structured market intelligence: trend term scoring (Builder Score 0-100), maturity stage classification, cross-platform validation, and actionable daily reports.",
+  "description": "Automated pipeline that collects signals from 30+ global sources nightly, processes them through an LLM pipeline, and delivers structured market intelligence: trend term scoring (Builder Score 0-100), maturity stage classification, cross-platform validation, and actionable daily reports.",
   "url": "https://www.aimfast.dev",
   "apiEndpoints": [],
   "dataFormats": ["JSON", "Markdown", "RSS"],
@@ -36,7 +36,7 @@
     },
     {
       "name": "llms_txt",
-      "description": "AI-readable site documentation: concise index (llms.txt, 147 words) and full methodology reference (llms-full.txt, 2,656 words) covering pipeline architecture, Builder Score formula, E-P-A signal scoring, maturity stages, and cross-validation logic.",
+      "description": "AI-readable site documentation: concise index (llms.txt) and architecture & data reference (llms-full.txt) covering pipeline architecture, data formats, site structure, and methodology principles.",
       "urls": [
         "https://www.aimfast.dev/llms.txt",
         "https://www.aimfast.dev/llms-full.txt"

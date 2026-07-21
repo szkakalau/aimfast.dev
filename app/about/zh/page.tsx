@@ -173,19 +173,19 @@ export default function AboutZhPage() {
         </p>
 
         <p style={{ color: 'var(--color-text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
-          我们的 Builder Score 公式将 <strong>来源数量 ×15</strong> 置于所有其他因素之上，
-          体现了这种交叉验证原则。增长速度（×12）捕捉动量方向。
-          新鲜度衰减（×10）确保 Dashboard 展示的是现在发生的事情，而不是上个月的。
+          我们的 Builder Score 公式将 <strong>来源多样性</strong> 置于所有其他因素之上，
+          体现了这种交叉验证原则。增长速度捕捉动量方向。
+          新鲜度衰减确保 Dashboard 展示的是现在发生的事情，而不是上个月的。
         </p>
 
         <p style={{ color: 'var(--color-text-secondary)', lineHeight: 1.7, marginBottom: 'var(--space-4)' }}>
-          每个信号必须通过最低门槛：出现在 ≥2 个独立来源中，经受去重（85% 标题相似度阈值），
-          并通过 E-P-A 评分体系。连续 7 天无法产生独特洞察的信号会被标记为待审查——而不是被无声地丢弃。
+          每个信号必须通过最低门槛：出现在 ≥2 个独立来源中，经受去重（高精度标题相似度匹配），
+          并通过 E-P-A 评分体系。连续多天无法产生独特洞察的信号会被标记为待审查——而不是被无声地丢弃。
         </p>
 
         <p style={{ color: 'var(--color-text-secondary)', lineHeight: 1.7 }}>
-          完整的技术参考——包括具体的评分公式、Pipeline 架构和 LLM prompt 方法论——请参阅{' '}
-          <a href="/llms-full.txt">llms-full.txt</a>（2,656 词，AI 可读格式）。
+          完整的技术参考——包括 Pipeline 架构、数据格式和方法论原则——请参阅{' '}
+          <a href="/llms-full.txt">llms-full.txt</a>（AI 可读格式）。
         </p>
       </section>
 

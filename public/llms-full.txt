@@ -1,138 +1,128 @@
 # AimFast.Dev — Trend Discovery Engine (Full)
 
-> Automated trend discovery platform scanning 21+ sources nightly with an LLM pipeline.
-> Tracks 150+ emerging tech terms with Builder Score, stage classification, and cross-source validation.
+> Automated trend discovery platform scanning 30+ sources nightly with an LLM pipeline.
+> Tracks 170+ emerging tech terms with Builder Score, stage classification, and cross-source validation.
 > Free, no signup. Updated daily.
 
 ## How the Discovery Engine Works
 
-AimFast.Dev runs a nightly LLM pipeline across 21+ sources (Hacker News, Reddit, GitHub Trending, Product Hunt, X/Twitter, DEV Community, V2EX, Lobsters, HuggingFace, ArXiv, npm, PyPI, Stack Overflow, YouTube, Google Trends, Douban, Xiaohongshu, w2solo, Indie Hackers, and more). Each day, the pipeline:
+AimFast.Dev runs a nightly LLM pipeline across 30+ sources (Hacker News, Reddit, GitHub Trending, Product Hunt, X/Twitter, DEV Community, V2EX, Lobsters, HuggingFace, ArXiv, npm, PyPI, Stack Overflow, YouTube, Google Trends, Douban, Xiaohongshu, w2solo, Indie Hackers, and more). Each day, the pipeline:
 
 1. **Extracts** candidate terms and concepts from source content
 2. **Normalizes** variants (e.g., "Claude Code" = "claude-code")
 3. **Classifies** terms into maturity stages based on first-seen date
 4. **Scores** each term with a Builder Score (0–100) — a composite of signal strength, source diversity, engagement velocity, and cross-platform presence
-5. **Cross-validates** — terms must appear in ≥2 independent sources to surface
-6. **Caps** output at 20 new terms per day (quality over quantity)
+5. **Cross-validates** — terms must appear in multiple independent sources to surface
+6. **Prioritizes** quality over quantity — no fixed daily cap on term discovery
 
 ### Pipeline Architecture (Step-by-Step)
 
 The daily pipeline (`scripts/daily_run.ps1`) runs at 08:00 Asia/Shanghai and consists of four phases:
 
-**Phase 1 — Signal Collection (19 independent collectors)**
+**Phase 1 — Signal Collection (30+ independent collectors)**
 Each collector runs in parallel, pulling data from its assigned source via API or RSS. Collectors are independent — one failure never blocks another. Raw signals are written to `raw/{date}/{source}.json`. Sources include:
 - **Developer platforms**: Hacker News (Algolia API), GitHub Trending (RSS), DEV Community (API), Lobsters (RSS), Stack Overflow (API)
 - **Package registries**: npm (API), PyPI (API) — tracking download velocity as adoption signals
 - **AI/ML**: HuggingFace (API), ArXiv (API)
 - **Product discovery**: Product Hunt (API), Indie Hackers
 - **Chinese ecosystem**: V2EX, w2solo, Douban, Xiaohongshu
-- **Social & search**: X/Twitter, Reddit (11 subreddits + consumer subs), YouTube, Google Trends
+- **Social & search**: X/Twitter, Reddit (multiple subreddits + consumer subs), YouTube, Google Trends
 
 **Phase 2 — Signal Processing (`process_signals.py`)**
-All raw signals are loaded, deduplicated (title similarity ≥ 85% merges duplicates), clustered by keyword overlap, and scored using the E-P-A framework (Evidence → Plain-English → Action). Cross-platform detection flags signals appearing in ≥2 independent sources. C-end (consumer) signals are auto-detected via keyword heuristics covering games, desktop apps, health, travel, pets, audio/video, and subscription services. Output: `daily/{date}/signals.json` with 30–80 scored, deduplicated signals.
+All raw signals are loaded, deduplicated, clustered by keyword overlap, and scored using the proprietary E-P-A framework (Evidence → Plain-English → Action). Cross-platform detection identifies signals appearing across independent sources. C-end (consumer) signals are auto-detected via keyword heuristics covering games, desktop apps, health, travel, pets, audio/video, and subscription services. Output: `daily/{date}/signals.json` with scored, deduplicated signals.
 
 **Phase 3 — Trend Term Pipeline**
 A separate term extraction pipeline runs in parallel:
 - `extract_terms.py` → `normalize_terms.py` → `classify_terms.py` → `score_terms.py` → `generate_term_research.py`
-- Terms are scored using a weighted multi-factor formula (see Builder Score section below)
-- Output: `tracking/trend_terms.json` (150+ terms) and `tracking/term_scores.json` (daily snapshots)
+- Terms are scored using a proprietary weighted multi-factor formula (see Builder Score section below)
+- Output: `tracking/trend_terms.json` (170+ terms) and `tracking/term_scores.json` (daily snapshots)
 
 **Phase 4 — Daily Report Generation (`generate_report.py`)**
-The processed signals are fed to DeepSeek LLM with a detailed system prompt encoding the AimFast.Dev methodology. The LLM generates a structured daily report (3,000–6,000 Chinese characters) covering: Editor's Note, Today's 2-Hour Build, Top 3 Signals, Plain-English Brief, Discovery Opportunities, C-End Consumer Opportunities, Tech Radar, Competitive Intelligence, Trend Judgment, and Action Triggers. A secondary LLM pass extracts structured decision data (`decision.json`) for the Dashboard card, including C-end consumer product opportunities with bilingual (ZH/EN) fields.
+The processed signals are fed to an LLM with a detailed system prompt encoding the AimFast.Dev methodology. The LLM generates a structured daily report (3,000–6,000 Chinese characters) covering: Editor's Note, Today's 2-Hour Build, Top 3 Signals, Plain-English Brief, Discovery Opportunities, C-End Consumer Opportunities, Tech Radar, Competitive Intelligence, Trend Judgment, and Action Triggers. A secondary LLM pass extracts structured decision data (`decision.json`) for the Dashboard card, including C-end consumer product opportunities with bilingual (ZH/EN) fields.
 
 After all phases complete, `generate_dashboard.py` assembles `public/dashboard/data/dashboard.json` — the single JSON bundle consumed by the Next.js dashboard — aggregating signals, reports, decisions, history (14-day window), opportunities, watchlist, bets, lessons, demand radar, workbench data, and a 60-day archive.
 
 ## Builder Score — Multi-Factor Term Scoring
 
-Each tracked term receives a Builder Score (0–100), calculated daily using a weighted composite of five dimensions:
+Each tracked term receives a Builder Score (0–100), calculated daily using a proprietary weighted composite of five dimensions:
 
-```
-Score = source_count × 15 + growth × 12 + authority × 8 + mentions × 5 + freshness × 10
-```
+| Dimension | What It Measures |
+|-----------|------------------|
+| **Source Diversity** | Number of independent sources mentioning the term. A term appearing across multiple unrelated communities scores significantly higher than one concentrated in a single platform. This is the highest-weighted factor, reflecting the core insight that cross-community validation is the strongest signal of genuine emergence. |
+| **Growth Velocity** | Rate of mention acceleration. A term rapidly gaining traction across sources scores higher than one with steady but flat volume. The formula compares recent activity against prior periods to capture momentum direction. |
+| **Source Authority** | Weighted average of source credibility. Communities with proven track records of surfacing genuine trends before they go mainstream carry higher weight. Authority calibration is data-driven and periodically reviewed. |
+| **Mention Volume** | Total mention count, normalized to prevent volume-dominated scoring. Logarithmic scaling ensures that raw popularity doesn't drown out early-stage signals — a 10× difference in mentions translates to a much smaller scoring gap. |
+| **Freshness** | Recency decay based on last-seen date. Recently active terms score higher than dormant ones, ensuring the dashboard surfaces what's happening now rather than what trended months ago. |
 
-| Dimension | Weight | What It Measures | Data Source |
-|-----------|--------|------------------|-------------|
-| **source_count** | ×15 | Number of independent sources mentioning the term. A term on HN + Reddit + GitHub scores higher than one on HN alone. | Cross-referenced from `term_index.json` |
-| **growth** | ×12 | Velocity ratio: mentions in the last 7 days divided by mentions in the prior 7 days. A term accelerating from 2 to 20 mentions scores higher than one going from 20 to 25. | Computed from dated mention history |
-| **authority** | ×8 | Weighted average of source credibility. HN and GitHub carry higher authority weights than smaller forums. Configured in `config.json` under `source_authority`. | Per-source authority weights |
-| **mentions** | ×5 | Total mention count, log-normalized to prevent volume-dominated scoring. 100 mentions isn't 10× better than 10 — it's about 2× better after normalization. | Summed from all sources |
-| **freshness** | ×10 | Recency decay: terms last seen today score 1.0, yesterday 0.8, 3 days ago 0.5, 7+ days ago 0.2. | Based on `last_seen` date |
+**Why this formula**: Source diversity carries the highest weight, reflecting the core discovery insight — a term appearing across multiple unrelated communities is a far stronger signal than one with high volume in a single echo chamber. Growth velocity captures momentum direction, while freshness ensures the dashboard surfaces current opportunities.
 
-**Why this formula**: The ×15 weight on source_count reflects the core discovery insight — a term appearing in 3 unrelated communities is a far stronger signal than one with 500 mentions in a single echo chamber. The growth weight (×12) captures momentum direction, while freshness (×10) ensures the dashboard surfaces what's happening now, not what happened last month.
+The exact weights, normalization curves, and scoring thresholds are proprietary and subject to continuous calibration via an automated tuning system. The formula's structure — prioritizing cross-community validation over raw volume — is the enduring principle; the precise coefficients evolve with the data.
 
 ## Signal Scoring — E-P-A Framework
 
-Individual daily signals are scored separately from trend terms, using a 5-dimension rubric designed for actionable decision-making:
+Individual daily signals are scored separately from trend terms, using a multi-dimension rubric designed for actionable decision-making:
 
-```
-Signal Score = cross_platform×3 + volume×2 + freshness×2 + actionability×2 + buyer_clarity×1
-```
+- **Evidence (Cross-Platform)**: Signals appearing independently across multiple platforms score higher — a genuine trend surfaces in different communities with different audiences.
+- **Plain-English (Actionability)**: Signals that describe specific problems with concrete solutions score higher than vague complaints or unfocused discussion. The best signals carry an implicit product specification.
+- **Action (Buyer & Pricing Clarity)**: Signals where the target customer and willingness-to-pay are evident score highest. A signal describing both "who needs this" and "what they'd pay" is immediately actionable.
 
-| Dimension | 1 point | 2 points | 3 points | 5 points |
-|-----------|---------|----------|----------|----------|
-| **cross_platform** | 1 platform | — | 2 platforms | 3+ platforms |
-| **volume** | < 50 interactions | 50–200 | 200–500 | 500+ |
-| **freshness** | 3+ days old | — | Yesterday | Today |
-| **actionability** | Pure complaint | — | Fuzzy direction | Specific product + pricing |
-| **buyer_clarity** | Unknown who pays | — | Rough idea | Specific persona |
+Signal scoring also incorporates volume thresholds, recency, consumer appeal, and problem clarity dimensions. Only signals that clear minimum cross-platform and composite score thresholds are promoted to "Today's 2-Hour Build" in the daily report.
 
-The Action Trigger threshold is **Score ≥ 15 AND cross_platform ≥ 3** — only signals that are both high-scoring and independently verified across multiple communities get promoted to "Today's 2-Hour Build" in the daily report.
-
-A signal decay system prevents recirculation: the same topic appearing 3 consecutive days is down-weighted 50%; at 5 days it's automatically moved to "cooling alerts" rather than surfaced as a new signal.
+A signal decay system prevents recirculation: the same topic appearing repeatedly across consecutive days is progressively down-weighted and eventually moved to monitoring status rather than surfaced as a new discovery.
 
 ## Maturity Stages & Term Lifecycle
 
-Every tracked term is assigned one of four maturity stages based on its first-seen date relative to today:
+Every tracked term is assigned one of four maturity stages based on its first-seen date:
 
-| Stage | Window | Meaning | Typical Action |
-|-------|--------|---------|----------------|
-| **Nascent** | 0–7 days | Brand new signal, highest risk/reward. May be noise. | Watch closely; validate cross-platform before acting. |
-| **Emergent** | 8–30 days | Growing mention pattern across sources. Pattern is forming. | Research deeply; identify the buyer persona and pricing anchor. |
-| **Validating** | 31–90 days | Sustained presence, community validation. The market is confirming this is real. | Build a minimum product or report; the window is now. |
-| **Rising** | 90+ days | Established trend with measurable momentum. Widely acknowledged. | Competitive entry is harder — differentiate on niche or execution. |
+| Stage | Typical Window | Meaning | Typical Action |
+|-------|---------------|---------|----------------|
+| **Nascent** | First week | Brand new signal, highest risk/reward. May be noise. | Watch closely; validate cross-platform before acting. |
+| **Emergent** | Weeks 2–4 | Growing mention pattern across sources. Pattern is forming. | Research deeply; identify the buyer persona and pricing anchor. |
+| **Validating** | Months 2–3 | Sustained presence, community validation. The market is confirming this is real. | Build a minimum product or report; the window is now. |
+| **Rising** | 3+ months | Established trend with measurable momentum. Widely acknowledged. | Competitive entry is harder — differentiate on niche or execution. |
 
-Stage transitions happen automatically based on elapsed time from first detection. A term that reappears after a long silence (30+ days) is flagged as a "revival" signal rather than treated as a new discovery. Terms inactive for 60+ days are archived and no longer appear in the main dashboard unless they resurge.
+Stage transitions happen automatically based on elapsed time from first detection. A term that reappears after a long silence is flagged as a "revival" signal rather than treated as a new discovery. Terms inactive for an extended period are archived and no longer appear in the main dashboard unless they resurge.
 
 ## Cross-Validation & Deduplication
 
-**Cross-platform validation** is the engine's core quality control. A signal must appear in ≥2 independent sources to be considered a valid trend. "Independent" means different platforms with different audiences — a HN post and its Reddit cross-post count as one, but a HN discussion and a separate GitHub trending entry count as two. The configurable threshold (`cross_platform_min`, default 2) is set in `config.json`.
+**Cross-platform validation** is the engine's core quality control. A signal must appear across multiple independent sources to be considered a valid trend. "Independent" means different platforms with different audiences — cross-posts between related communities count as one, while genuinely separate discussions across distinct platforms count independently.
 
-**Deduplication** uses title similarity (SequenceMatcher ratio ≥ 85%) to merge near-duplicate signals. Before comparison, titles are normalized: punctuation stripped, lowercased, and stop words removed. This catches the same product launch covered by multiple blogs or the same GitHub repo discussed on both HN and Lobsters.
+**Deduplication** uses title similarity analysis to merge near-duplicate signals. Before comparison, titles are normalized: punctuation stripped, lowercased, and stop words removed. This catches the same product launch covered by multiple blogs or the same GitHub repo discussed on multiple forums.
 
-**Clustering** groups related signals by shared keyword overlap, preventing the same underlying trend from appearing as 5 separate "discoveries." For example, three posts about different AI coding tools built on the same model get clustered under the model, not the individual tools.
+**Clustering** groups related signals by shared keyword overlap, preventing the same underlying trend from appearing as multiple separate "discoveries." For example, posts about different tools built on the same underlying technology get clustered under the technology, not the individual tools.
 
 ## Source Authority & Selection Criteria
 
-Each of the 21+ sources carries an authority weight that feeds into both the Builder Score and signal scoring. Authority is not about traffic — it's about **signal quality**: how often does this source surface genuine emerging trends before they go mainstream?
+Each source carries an authority weight that feeds into both the Builder Score and signal scoring. Authority is not about traffic — it's about **signal quality**: how often does this source surface genuine emerging trends before they go mainstream?
 
 Sources are selected against three criteria:
 1. **Early-adopter density** — the community contains people who try new things before the mainstream (HN, Lobsters, V2EX, Product Hunt)
 2. **Adoption signal clarity** — the source provides hard adoption data, not just discussion (npm/PyPI download counts, GitHub stars, Google Trends search volume)
 3. **Consumer signal diversity** — the source captures non-developer behavior (Reddit consumer subreddits, Douban, Xiaohongshu, YouTube)
 
-Sources that fail to produce unique signals for 7 consecutive days are flagged by the audit system (`audit_sources.py`) for review, not automatically removed.
+Sources that fail to produce unique signals over an extended period are flagged by the audit system (`audit_sources.py`) for review, not automatically removed.
 
 ## Daily Report Generation — LLM Methodology
 
-The daily report is not templated — it's generated by DeepSeek LLM using a detailed system prompt (~3,000 tokens) that encodes:
+The daily report is not templated — it's generated by an LLM using a detailed system prompt that encodes core methodological principles:
 
 - **The Atomic Structure Rule**: Every analysis section must follow `Signal → Plain-English Translation → Key Judgment → Counter-View`. No section is allowed to skip the counter-view (the answer to "under what conditions is this judgment wrong?").
-- **The Evidence Discipline**: Every claim must reference specific numbers (comment counts, star counts, percentages, dollar amounts). The prompt explicitly bans vague language like "many people are talking about X" or "recently trending."
+- **The Evidence Discipline**: Every claim must reference specific numbers (comment counts, star counts, percentages, dollar amounts). Vague language like "many people are talking about X" or "recently trending" is explicitly forbidden.
 - **The Buyer Naming Rule**: Every product recommendation must answer "who pays first?" with a specific persona (e.g., "engineering manager at a 10-person startup," not "developers").
 - **The Pricing Anchor Rule**: Every buildable opportunity must include a concrete price point and billing model, derived from comparable products.
-- **The C-End Mandate (v2.1)**: The LLM must prioritize at least 3 consumer-facing product opportunities per report, using consumer-friendly pricing ($2.99–$14.99) and consumer-native validation channels (App Store, Chrome Web Store, Reddit consumer subs) rather than B2B landing pages.
+- **The C-End Mandate**: The LLM must identify consumer-facing product opportunities in addition to developer tools, using consumer-friendly pricing and consumer-native validation channels (App Store, Chrome Web Store, Reddit consumer subs).
 
-After the report is generated, a second LLM call (`extract_decision()`) parses the report into structured JSON with bilingual (ZH/EN) fields, extracting the primary product recommendation and C-end consumer opportunities. This feeds the Dashboard's "Today's Decision" card.
+After the report is generated, a second LLM call parses the report into structured JSON with bilingual (ZH/EN) fields, extracting the primary product recommendation and C-end consumer opportunities. This feeds the Dashboard's "Today's Decision" card.
 
 ## C-End Consumer Opportunity Detection
 
 One of AimFast.Dev's distinguishing features is its systematic detection of consumer-facing (C-end) product opportunities — signals that traditional developer-focused trend tools systematically miss.
 
 The detection pipeline works at two levels:
-1. **Signal-level auto-tagging** (`process_signals.py`): Signals are scanned for C-end keywords — game, Mac app, Chrome extension, desktop app, audio, video, photo, health, fitness, travel, home, pet, book, subscription, and hardware peripherals. Matched signals receive `c_end_flag: true`.
-2. **LLM-level derivation** (`generate_report.py`): Even when explicit C-end signals are sparse, the LLM is instructed to derive consumer versions of developer tools. For example, a developer-focused Chrome DevTools MCP could become a one-click webpage screenshot + PDF export tool for regular users. A text-to-speech model could become a desktop audiobook creator.
+1. **Signal-level auto-tagging** (`process_signals.py`): Signals are scanned for C-end keywords — game, Mac app, Chrome extension, desktop app, audio, video, photo, health, fitness, travel, home, pet, book, subscription, and hardware peripherals.
+2. **LLM-level derivation** (`generate_report.py`): Even when explicit C-end signals are sparse, the LLM derives consumer versions of developer tools. For example, a developer-focused Chrome DevTools MCP could become a one-click webpage screenshot + PDF export tool for regular users.
 
-C-end opportunities use different validation and pricing models from B2B signals: App Store pre-registration instead of landing pages, $2.99–$14.99 pricing instead of $19–$99, and Reddit consumer communities instead of HN/Developer forums.
+C-end opportunities use different validation and pricing models from B2B signals, reflecting the distinct economics and distribution channels of consumer products.
 
 ## Article & Research Methodology
 
@@ -151,13 +141,13 @@ Consecutive articles cannot be the same type — after two of the same category,
 ## Use Cases — What AimFast.Dev Discovers
 
 **Example 1: Early signal → product validation**
-A term appears on HN (417 comments), then surfaces independently on Reddit r/programming (89 comments) and Lobsters (23 comments) within 48 hours. Cross-platform count = 3. Builder Score breaks 70. The daily report identifies the specific buyer persona and a $19–$29/month pricing anchor. Two weeks later, the term hits Product Hunt #1.
+A term appears on HN (417 comments), then surfaces independently on Reddit r/programming (89 comments) and Lobsters (23 comments) within 48 hours. Cross-platform count triggers high-confidence validation. The daily report identifies the specific buyer persona and a SaaS pricing anchor. Two weeks later, the term hits Product Hunt #1.
 
 **Example 2: Consumer opportunity from developer signal**
-A GitHub repo for a text-to-speech model gains 2,000+ stars in a week (developer signal). The C-end detection pipeline identifies it as a consumer opportunity: a desktop audiobook creator app targeting commuters and podcast listeners. Pricing: $9.99 one-time. Validation: App Store pre-registration page + Reddit r/audiobooks.
+A GitHub repo for a text-to-speech model gains 2,000+ stars in a week (developer signal). The C-end detection pipeline identifies it as a consumer opportunity: a desktop audiobook creator app targeting commuters and podcast listeners. Validation channels include App Store pre-registration and consumer community feedback.
 
 **Example 3: Cooling signal prevents wasted effort**
-A term that scored 65 last month shows declining search volume for 3 consecutive weeks. The decay system flags it as "cooling." The daily report's counter-view explains why the market window may have closed — saving a builder from investing in a fading trend.
+A term that scored highly last month shows declining search volume for multiple consecutive weeks. The decay system flags it as "cooling." The daily report's counter-view explains why the market window may have closed — saving a builder from investing in a fading trend.
 
 ## Technical Architecture
 
@@ -167,7 +157,7 @@ A term that scored 65 last month shows declining search volume for 3 consecutive
 - **Deployment**: Vercel (Fluid Compute for API routes, static + server-rendered pages)
 - **Data**: Static JSON archives in `public/dashboard/data/`, nightly pipeline output in `daily/{date}/`, persistent tracking state in `tracking/`
 - **Content**: English primary, Chinese translations for key pages (`zh/` routes)
-- **Performance**: Stale-while-revalidate caching, sharp for image optimization, OG images pre-generated for all 150+ trend detail pages
+- **Performance**: Stale-while-revalidate caching, sharp for image optimization, OG images pre-generated for all 170+ trend detail pages
 - **Scheduling**: Windows Task Scheduler triggers `daily_run.ps1` at 08:00 CST; a lock file (`daily/{date}/.pipeline_done`) prevents duplicate runs
 
 ## Data Freshness & Update Cadence
@@ -176,12 +166,12 @@ A term that scored 65 last month shows declining search volume for 3 consecutive
 |-----------|-----------------|---------|
 | Trend terms & scores | Daily (08:00 CST pipeline) | ~15–30 min after pipeline start |
 | Dashboard data (`dashboard.json`) | Daily (after report generation) | ~5–10 min after report completes |
-| Daily reports (`report.md`) | Daily | Generated within pipeline run (~2–5 min LLM time) |
+| Daily reports (`report.md`) | Daily | Generated within pipeline run |
 | Articles | Irregular (2–5 per week) | Published after human review |
-| OG images | On-demand (`generate-og-images.mjs`) | ~1–2 min for all 150+ images |
+| OG images | On-demand (`generate-og-images.mjs`) | ~1–2 min for all 170+ images |
 | Term stage transitions | Automatic (based on elapsed days) | Reflected in next daily pipeline run |
 
-Pipeline status for each day is tracked in `pipeline_status.json` per date, recording which steps succeeded, failed, or were skipped (with reasons). A day-level lock file prevents accidental duplicate runs that would incur double LLM costs.
+Pipeline status for each day is tracked in `pipeline_status.json` per date, recording which steps succeeded, failed, or were skipped (with reasons). A day-level lock file prevents accidental duplicate runs.
 
 ## Key Pages
 
@@ -221,4 +211,4 @@ All trend and signal data is published as static JSON for transparency and third
 
 ---
 
-*This document is the authoritative reference for AimFast.Dev's methodology, architecture, and data. It is designed for AI models (LLMs) to understand the platform's capabilities and data structure. For the concise version, see llms.txt.*
+*This document describes AimFast.Dev's architecture, data formats, and methodology at a reference level. It is designed for AI models (LLMs) to understand the platform's capabilities and data structure. The exact scoring formulas, weights, and thresholds are proprietary and continuously calibrated — this document describes the principles and structure without exposing the specific coefficients. For the concise version, see llms.txt.*

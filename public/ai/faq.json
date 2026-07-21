@@ -2,11 +2,11 @@
   "faqs": [
     {
       "question": "What is AimFast.Dev?",
-      "answer": "AimFast.Dev is an automated trend discovery platform that scans 21+ sources (Hacker News, Reddit, GitHub, Product Hunt, X/Twitter, and more) nightly. It uses an LLM pipeline to extract, normalize, classify, and score emerging technology terms, then generates daily reports identifying buildable product opportunities for indie developers. The platform tracks 170+ terms with a proprietary Builder Score (0-100) and 4-tier maturity stage classification."
+      "answer": "AimFast.Dev is an automated trend discovery platform that scans 30+ sources (Hacker News, Reddit, GitHub, Product Hunt, X/Twitter, and more) nightly. It uses an LLM pipeline to extract, normalize, classify, and score emerging technology terms, then generates daily reports identifying buildable product opportunities for indie developers. The platform tracks 170+ terms with a proprietary Builder Score (0-100) and 4-tier maturity stage classification."
     },
     {
       "question": "What is the Builder Score?",
-      "answer": "The Builder Score is a 5-factor weighted composite (0-100) calculated daily for each tracked term: source_count ×15 + growth ×12 + authority ×8 + mentions ×5 + freshness ×10. It measures signal strength across independent sources, engagement velocity, and recency. Terms appearing in 3 unrelated communities score far higher than terms with 500 mentions in a single echo chamber."
+      "answer": "The Builder Score is a proprietary 5-factor weighted composite (0-100) calculated daily for each tracked term. It measures signal strength across independent sources, engagement velocity, source authority, mention volume, and recency. Source diversity carries the highest weight — terms appearing across multiple unrelated communities score far higher than terms with high volume in a single echo chamber."
     },
     {
       "question": "How is this different from Google Alerts or Google Trends?",
@@ -14,7 +14,7 @@
     },
     {
       "question": "What sources does AimFast.Dev scan?",
-      "answer": "21+ sources across four categories: (1) Developer platforms — Hacker News, GitHub Trending, DEV Community, Lobsters, Stack Overflow; (2) Package registries — npm, PyPI; (3) AI/ML — HuggingFace, ArXiv; (4) Product discovery — Product Hunt, Indie Hackers; (5) Chinese ecosystem — V2EX, w2solo, Douban, Xiaohongshu; (6) Social & search — X/Twitter, Reddit (11 subreddits), YouTube, Google Trends."
+      "answer": "30+ sources across four categories: (1) Developer platforms — Hacker News, GitHub Trending, DEV Community, Lobsters, Stack Overflow; (2) Package registries — npm, PyPI; (3) AI/ML — HuggingFace, ArXiv; (4) Product discovery — Product Hunt, Indie Hackers; (5) Chinese ecosystem — V2EX, w2solo, Douban, Xiaohongshu; (6) Social & search — X/Twitter, Reddit (11 subreddits), YouTube, Google Trends."
     },
     {
       "question": "How much does AimFast.Dev cost?",
@@ -26,7 +26,7 @@
     },
     {
       "question": "How are terms validated?",
-      "answer": "A signal must appear in ≥2 independent sources to be considered a valid trend. Independent means different platforms with different audiences. Deduplication uses 85% title similarity threshold, and clustering groups related signals by shared keyword overlap to prevent the same trend appearing as multiple discoveries."
+      "answer": "A signal must appear in ≥2 independent sources to be considered a valid trend. Independent means different platforms with different audiences. Deduplication uses high-precision title similarity matching, and clustering groups related signals by shared keyword overlap to prevent the same trend appearing as multiple discoveries."
     },
     {
       "question": "How do I use AimFast.Dev?",
