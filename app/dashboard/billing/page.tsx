@@ -1,5 +1,6 @@
 import { auth } from '@/lib/auth';
 import { prisma } from '@/lib/prisma';
+import { getUserId } from '@/lib/session';
 import { CancelButton } from './cancel-button';
 import Link from 'next/link';
 
@@ -9,9 +10,11 @@ const PLAN_LABELS: Record<string, string> = {
   team: 'Team',
 };
 
+const TRIAL_DAYS = 14;
+
 export default async function BillingPage({ searchParams }: { searchParams: Promise<{ success?: string }> }) {
   const session = await auth();
-  const userId = (session?.user as any).id;
+  const userId = getUserId(session);
   const params = await searchParams;
 
   const subscription = await prisma.subscription.findUnique({ where: { userId } });
@@ -47,7 +50,7 @@ export default async function BillingPage({ searchParams }: { searchParams: Prom
               </h2>
               <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.875rem' }}>
                 {subscription.status === 'active' && trialActive
-                  ? `14-day trial — ends on ${new Date(subscription.trialEnd!).toLocaleDateString()}`
+                  ? `${TRIAL_DAYS}-day trial — ends on ${new Date(subscription.trialEnd!).toLocaleDateString()}`
                   : subscription.status === 'active'
                     ? `Next billing: ${new Date(subscription.currentPeriodEnd).toLocaleDateString()}`
                     : `Status: ${subscription.status}`

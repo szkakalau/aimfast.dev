@@ -25,18 +25,23 @@ export function PricingCTA({ planId, session, highlight, cta }: Props) {
     }
 
     setLoading(true);
-    const res = await fetch('/api/stripe/checkout', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ planId }),
-    });
+    try {
+      const res = await fetch('/api/stripe/checkout', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ planId }),
+      });
 
-    const data = await res.json();
+      const data = await res.json();
 
-    if (data.url) {
-      window.location.href = data.url;
-    } else {
-      setError(data.error || 'Something went wrong.');
+      if (data.url) {
+        window.location.href = data.url;
+      } else {
+        setError(data.error || 'Something went wrong.');
+        setLoading(false);
+      }
+    } catch {
+      setError('Network error. Please try again.');
       setLoading(false);
     }
   }

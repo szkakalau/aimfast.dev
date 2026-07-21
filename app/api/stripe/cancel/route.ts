@@ -2,15 +2,16 @@ import { NextResponse } from 'next/server';
 import { auth } from '@/lib/auth';
 import { stripe } from '@/lib/stripe';
 import { prisma } from '@/lib/prisma';
+import { getUserId } from '@/lib/session';
 
 export async function POST() {
   try {
     const session = await auth();
-    if (!session?.user) {
+    const userId = getUserId(session);
+    if (!userId) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
-    const userId = (session.user as any).id;
     const subscription = await prisma.subscription.findUnique({ where: { userId } });
 
     if (!subscription) {
@@ -28,7 +29,7 @@ export async function POST() {
 
     return NextResponse.json({ success: true });
   } catch (error) {
-    console.error('Cancel error:', error);
+    console.error('Cancel subscription failed');
     return NextResponse.json({ error: 'Failed to cancel subscription.' }, { status: 500 });
   }
 }

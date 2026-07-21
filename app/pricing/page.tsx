@@ -136,8 +136,13 @@ const FAQ_ITEMS = [
   },
 ];
 
-export default async function PricingPage() {
+export default async function PricingPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ canceled?: string }>;
+}) {
   const session = await auth();
+  const params = await searchParams;
   const faqJsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -204,6 +209,23 @@ export default async function PricingPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
+
+      {/* ═══════ Canceled Notice ═══════ */}
+      {params.canceled && (
+        <div style={{
+          padding: 'var(--space-3) var(--space-4)',
+          margin: 'var(--space-3) auto 0',
+          maxWidth: '560px',
+          background: '#fffbeb',
+          border: '1px solid #fde68a',
+          borderRadius: '8px',
+          color: '#92400e',
+          fontSize: '0.875rem',
+          textAlign: 'center',
+        }}>
+          Checkout was canceled. Your card has not been charged. Feel free to try again whenever you&apos;re ready.
+        </div>
+      )}
 
       {/* ═══════ Hero ═══════ */}
       <section style={{ padding: 'var(--space-10) var(--space-3) var(--space-6)', textAlign: 'center' }}>

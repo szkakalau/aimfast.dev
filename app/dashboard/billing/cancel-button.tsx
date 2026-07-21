@@ -10,9 +10,13 @@ export function CancelButton() {
 
   async function handleCancel() {
     setLoading(true);
-    const res = await fetch('/api/stripe/cancel', { method: 'POST' });
-    if (res.ok) {
-      router.refresh();
+    try {
+      const res = await fetch('/api/stripe/cancel', { method: 'POST' });
+      if (res.ok) {
+        router.refresh();
+      }
+    } catch {
+      // network error — silently reset, user can retry
     }
     setLoading(false);
   }

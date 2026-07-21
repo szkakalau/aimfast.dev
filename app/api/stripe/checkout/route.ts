@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import { auth } from '@/lib/auth';
 import { stripe } from '@/lib/stripe';
 import { prisma } from '@/lib/prisma';
+import { getUserId } from '@/lib/session';
 
 const PRICE_IDS: Record<string, string> = {
   starter: process.env.STRIPE_STARTER_PRICE_ID!,
@@ -16,7 +17,7 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
-    const userId = (session.user as any).id;
+    const userId = getUserId(session);
     const { planId } = await request.json();
 
     if (!planId || !['starter', 'builder', 'team'].includes(planId)) {
@@ -38,14 +39,26 @@ export async function POST(request: Request) {
     let stripeCustomerId = existing?.stripeCustomerId;
 
     if (!stripeCustomerId) {
-      const customer = await stripe.customers.create({
+      // 先搜索已有 Stripe Customer（减少重复创建和竞态孤儿）
+      const existingCustomers = await stripe.customers.list({
         email: user?.email ?? undefined,
-        metadata: { userId },
+        limit: 1,
       });
-      stripeCustomerId = customer.id;
+      if (existingCustomers.data.length > 0) {
+        stripeCustomerId = existingCustomers.data[0].id;
+      } else {
+        const customer = await stripe.customers.create({
+          email: user?.email ?? undefined,
+          metadata: { userId },
+        });
+        stripeCustomerId = customer.id;
+      }
     }
 
-    const origin = request.headers.get('origin') || process.env.AUTH_URL || 'http://localhost:3000';
+    const origin = request.headers.get('origin') || process.env.AUTH_URL;
+    if (!origin) {
+      return NextResponse.json({ error: 'Origin not configured.' }, { status: 500 });
+    }
 
     const checkoutSession = await stripe.checkout.sessions.create({
       customer: stripeCustomerId,
@@ -59,7 +72,7 @@ export async function POST(request: Request) {
 
     return NextResponse.json({ url: checkoutSession.url! });
   } catch (error: any) {
-    console.error('Checkout error:', error);
+    console.error('Checkout failed');
     return NextResponse.json({ error: 'Failed to create checkout session.' }, { status: 500 });
   }
 }
