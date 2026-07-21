@@ -101,10 +101,12 @@ COLLECTORS=(
     # ── 新增信源: 中文开发者生态（2026-07-22） ──
     "掘金:collect_juejin"
     "SegmentFault:collect_segmentfault"
+    # ── 新增信源: 学术深度 + 内容增强（2026-07-22 Phase 3） ──
+    "Semantic Scholar:collect_semanticscholar"
 )
 
 # C-end collectors are non-blocking — they may fail due to rate limits or missing auth
-C_END_COLLECTORS=("Reddit Consumer" "豆瓣" "小红书" "X/Twitter" "Product Changelogs" "Google News" "GitHub Releases" "npm" "PyPI" "Stack Overflow" "YouTube" "Job Trends" "Substack" "掘金" "SegmentFault")
+C_END_COLLECTORS=("Reddit Consumer" "豆瓣" "小红书" "X/Twitter" "Product Changelogs" "Google News" "GitHub Releases" "npm" "PyPI" "Stack Overflow" "YouTube" "Job Trends" "Substack" "掘金" "SegmentFault" "Semantic Scholar")
 
 for entry in "${COLLECTORS[@]}"; do
     name="${entry%%:*}"
@@ -196,6 +198,17 @@ if $PYTHON -m scripts.enrich_signals 2>&1; then
     log "  [Enrich] OK"
 else
     log "  [Enrich] WARN (non-fatal)"
+fi
+
+# ─── Step 2.6: Cross-Source Term Validation ───
+
+log ""
+log "--- Step 2.6: Cross-Source Term Validation ---"
+
+if $PYTHON -m scripts.cross_validate_terms 2>&1; then
+    log "  [CrossVal] OK"
+else
+    log "  [CrossVal] WARN (non-fatal)"
 fi
 
 # ─── Step 3: Daily Report ───
