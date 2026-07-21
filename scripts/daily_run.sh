@@ -98,10 +98,13 @@ COLLECTORS=(
     "PyPI:collect_pypi"
     "Stack Overflow:collect_stackoverflow"
     "YouTube:collect_youtube"
+    # ── 新增信源: 中文开发者生态（2026-07-22） ──
+    "掘金:collect_juejin"
+    "SegmentFault:collect_segmentfault"
 )
 
 # C-end collectors are non-blocking — they may fail due to rate limits or missing auth
-C_END_COLLECTORS=("Reddit Consumer" "豆瓣" "小红书" "X/Twitter" "Product Changelogs" "Google News" "GitHub Releases" "npm" "PyPI" "Stack Overflow" "YouTube" "Job Trends" "Substack")
+C_END_COLLECTORS=("Reddit Consumer" "豆瓣" "小红书" "X/Twitter" "Product Changelogs" "Google News" "GitHub Releases" "npm" "PyPI" "Stack Overflow" "YouTube" "Job Trends" "Substack" "掘金" "SegmentFault")
 
 for entry in "${COLLECTORS[@]}"; do
     name="${entry%%:*}"
