@@ -2,6 +2,7 @@ import NextAuth from 'next-auth';
 import Credentials from 'next-auth/providers/credentials';
 import bcrypt from 'bcryptjs';
 import { checkRateLimit, resetRateLimit } from '@/lib/rate-limit';
+import { authConfig } from '@/lib/auth.config';
 
 // 启动时校验关键环境变量
 if (!process.env.AUTH_SECRET) {
@@ -11,12 +12,8 @@ if (!process.env.AUTH_SECRET) {
 const LOGIN_MAX_ATTEMPTS = 5;
 const LOGIN_WINDOW_MS = 15 * 60 * 1000; // 15 分钟
 
-// Prisma 仅在 authorize 回调中使用（动态导入，Edge Runtime 中不会加载）
 export const { handlers, auth, signIn, signOut } = NextAuth({
-  session: { strategy: 'jwt' },
-  pages: {
-    signIn: '/login',
-  },
+  ...authConfig,
   providers: [
     Credentials({
       name: 'credentials',
@@ -55,18 +52,4 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       },
     }),
   ],
-  callbacks: {
-    async jwt({ token, user }) {
-      if (user) {
-        token.id = user.id;
-      }
-      return token;
-    },
-    async session({ session, token }) {
-      if (session.user) {
-        (session.user as any).id = token.id;
-      }
-      return session;
-    },
-  },
 });
