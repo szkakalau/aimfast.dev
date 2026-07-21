@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import { Check, Star } from 'lucide-react';
+import { auth } from '@/lib/auth';
+import { PricingCTA } from './pricing-cta';
 
 export const metadata: Metadata = {
   title: 'Pricing — AimFast.Dev',
@@ -134,7 +136,8 @@ const FAQ_ITEMS = [
   },
 ];
 
-export default function PricingPage() {
+export default async function PricingPage() {
+  const session = await auth();
   const faqJsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -295,29 +298,7 @@ export default function PricingPage() {
               </div>
 
               {/* CTA */}
-              <a
-                href="https://tally.so/r/placeholder"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  display: 'block',
-                  textAlign: 'center',
-                  padding: '12px 0',
-                  borderRadius: '8px',
-                  fontWeight: 600,
-                  fontSize: '0.95rem',
-                  textDecoration: 'none',
-                  marginBottom: 'var(--space-5)',
-                  transition: 'all 150ms ease-out',
-                  background: plan.highlight
-                    ? 'var(--color-accent, #2563eb)'
-                    : 'var(--color-bg, #f3f4f6)',
-                  color: plan.highlight ? '#fff' : 'var(--color-text, #111827)',
-                  border: plan.highlight ? 'none' : '1px solid var(--color-border, #d1d5db)',
-                }}
-              >
-                {plan.cta} →
-              </a>
+              <PricingCTA planId={plan.id} session={session} highlight={plan.highlight} cta={plan.cta} />
 
               {/* Features */}
               <ul style={{
@@ -386,17 +367,9 @@ export default function PricingPage() {
       <section style={{ textAlign: 'center', padding: 'var(--space-8) var(--space-3) var(--space-10)' }}>
         <h2>14 days free. One decision every morning.</h2>
         <p style={{ color: 'var(--color-text-secondary)', marginBottom: 'var(--space-4)', fontSize: '1rem' }}>
-          No credit card required. Cancel anytime.
+          Cancel anytime.
         </p>
-        <a
-          href="https://tally.so/r/placeholder"
-          className="btn btn-primary"
-          style={{ fontSize: '1rem', padding: '14px 32px' }}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Start Building →
-        </a>
+        <PricingCTA planId="builder" session={session} highlight cta="Start Building" />
       </section>
 
       {/* ═══════ Footer ═══════ */}
