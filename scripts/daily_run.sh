@@ -74,8 +74,9 @@ log "--- Step 1: Signal Collection ---"
 
 COLLECTORS=(
     "Hacker News:collect_hackernews"
-    "GitHub Trending:collect_github"
+    "GitHub Deep:collect_github"
     "Google Trends:collect_trends"
+    "Job Trends:collect_job_trends"
     "Product Hunt:collect_producthunt"
     "DEV Community:collect_devcommunity"
     "Reddit (11 subs):collect_reddit"
@@ -88,6 +89,7 @@ COLLECTORS=(
     "豆瓣:collect_douban"
     # "小红书:collect_xiaohongshu"  # 暂禁用 — 未认证模式数据量有限
     "X/Twitter:collect_x"
+    "Substack:collect_substack"
     "Product Changelogs:collect_changelogs"
     "Google News:collect_googlenews"
     "GitHub Releases:collect_github_releases"
@@ -99,7 +101,7 @@ COLLECTORS=(
 )
 
 # C-end collectors are non-blocking — they may fail due to rate limits or missing auth
-C_END_COLLECTORS=("Reddit Consumer" "豆瓣" "小红书" "X/Twitter" "Product Changelogs" "Google News" "GitHub Releases" "npm" "PyPI" "Stack Overflow" "YouTube")
+C_END_COLLECTORS=("Reddit Consumer" "豆瓣" "小红书" "X/Twitter" "Product Changelogs" "Google News" "GitHub Releases" "npm" "PyPI" "Stack Overflow" "YouTube" "Job Trends" "Substack")
 
 for entry in "${COLLECTORS[@]}"; do
     name="${entry%%:*}"
