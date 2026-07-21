@@ -18,6 +18,10 @@ export async function POST(request: Request) {
     }
 
     const userId = getUserId(session);
+    if (!userId) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
+
     const { planId } = await request.json();
 
     if (!planId || !['starter', 'builder', 'team'].includes(planId)) {

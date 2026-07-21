@@ -31,8 +31,10 @@ export async function POST(request: Request) {
 
         const sub = await stripe.subscriptions.retrieve(data.subscription as string);
         const now = new Date();
-        const periodEnd = sub.current_period_end
-          ? new Date(sub.current_period_end * 1000)
+        // Stripe SDK v22+: current_period_end 移到 Subscription Item 级别
+        const itemPeriodEnd = sub.items.data[0]?.current_period_end;
+        const periodEnd = itemPeriodEnd
+          ? new Date(itemPeriodEnd * 1000)
           : new Date(now.getTime() + 14 * 24 * 60 * 60 * 1000);
 
         // upsert — 幂等处理 Stripe 重复事件
@@ -62,8 +64,10 @@ export async function POST(request: Request) {
         const data = event.data.object;
         if (data.subscription) {
           const sub = await stripe.subscriptions.retrieve(data.subscription as string);
-          const periodEnd = sub.current_period_end
-            ? new Date(sub.current_period_end * 1000)
+          // Stripe SDK v22+: current_period_end 移到 Subscription Item 级别
+          const itemPeriodEnd = sub.items.data[0]?.current_period_end;
+          const periodEnd = itemPeriodEnd
+            ? new Date(itemPeriodEnd * 1000)
             : undefined;
           await prisma.subscription.updateMany({
             where: { stripeSubscriptionId: data.subscription as string },
