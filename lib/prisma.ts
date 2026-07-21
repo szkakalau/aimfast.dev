@@ -15,7 +15,7 @@ import { PrismaNeonHttp } from '@prisma/adapter-neon';
  *
  * 配套脚本：scripts/node_proxy_setup.mjs（Node.js fetch 代理配置）
  */
-const adapter = new PrismaNeonHttp(process.env.DATABASE_URL!);
+const adapter = new PrismaNeonHttp(process.env.DATABASE_URL!, {});
 
 const globalForPrisma = globalThis as unknown as { prisma: PrismaClient };
 
