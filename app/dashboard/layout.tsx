@@ -3,6 +3,8 @@ import { redirect } from 'next/navigation';
 import Link from 'next/link';
 
 export default async function DashboardLayout({ children }: { children: React.ReactNode }) {
+  // auth() 在 layout 和 page 中各调用一次。
+  // JWT 策略下每次调用仅解码 token（无 DB 查询），性能影响可忽略（< 1ms）。
   const session = await auth();
   if (!session?.user) {
     redirect('/login?callback=/dashboard');
