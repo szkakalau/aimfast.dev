@@ -4,7 +4,11 @@ import { NextResponse } from 'next/server';
 export default auth((req) => {
   const { pathname } = req.nextUrl;
 
-  if (pathname.startsWith('/dashboard') && !req.auth) {
+  // /dashboard/* 和 /reports/* 需要登录
+  const protectedRoutes = ['/dashboard', '/reports'];
+  const needsAuth = protectedRoutes.some((route) => pathname.startsWith(route));
+
+  if (needsAuth && !req.auth) {
     const loginUrl = new URL('/login', req.url);
     loginUrl.searchParams.set('callback', pathname);
     return NextResponse.redirect(loginUrl);
@@ -14,5 +18,5 @@ export default auth((req) => {
 });
 
 export const config = {
-  matcher: ['/dashboard/:path*'],
+  matcher: ['/dashboard/:path*', '/reports/:path*'],
 };
