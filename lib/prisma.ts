@@ -1,13 +1,8 @@
 import { PrismaClient } from '@prisma/client';
-import { PrismaNeon } from '@prisma/adapter-neon';
-import { Pool, neonConfig } from '@neondatabase/serverless';
-import ws from 'ws';
+import { PrismaNeonHttp } from '@prisma/adapter-neon';
 
-// Neon serverless driver WebSocket setup
-neonConfig.webSocketConstructor = ws;
-
-const pool = new Pool({ connectionString: process.env.DATABASE_URL! });
-const adapter = new PrismaNeon(pool);
+// PrismaNeonHttp 走 HTTPS fetch，绕过 GFW 对 WebSocket 的 DPI 拦截
+const adapter = new PrismaNeonHttp(process.env.DATABASE_URL!);
 
 const globalForPrisma = globalThis as unknown as { prisma: PrismaClient };
 

@@ -1,11 +1,9 @@
 import NextAuth from 'next-auth';
 import Credentials from 'next-auth/providers/credentials';
-import { PrismaAdapter } from '@auth/prisma-adapter';
 import bcrypt from 'bcryptjs';
-import { prisma } from '@/lib/prisma';
 
+// Prisma 仅在 authorize 回调中使用（动态导入，Edge Runtime 中不会加载）
 export const { handlers, auth, signIn, signOut } = NextAuth({
-  adapter: PrismaAdapter(prisma),
   session: { strategy: 'jwt' },
   pages: {
     signIn: '/login',
@@ -20,6 +18,8 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       async authorize(credentials) {
         if (!credentials?.email || !credentials?.password) return null;
 
+        // 动态导入 — 仅在 Node.js Runtime 执行，Edge Middleware 不会触发
+        const { prisma } = await import('@/lib/prisma');
         const user = await prisma.user.findUnique({
           where: { email: credentials.email as string },
         });
