@@ -120,6 +120,7 @@ def extract_terms_from_signals(signals: list[dict]) -> list[dict]:
     signal_summaries = []
     for s in signals[:100]:  # Top 100 by score
         signal_summaries.append({
+            "id": s.get("id", ""),
             "title": s.get("title", ""),
             "summary": s.get("summary", ""),
             "source": s.get("source", ""),
@@ -154,10 +155,11 @@ def extract_terms_from_signals(signals: list[dict]) -> list[dict]:
 
 **重要**：category 字段必须精确使用上述 12 个值之一，大小写必须完全匹配。
 
-字段说明（每个元素必须包含以下 5 个字段）：
+字段说明（每个元素必须包含以下 6 个字段）：
 - canonical: 英文术语名称（MUST be in English — 如果原始信号是中文，翻译为简洁的英文术语。如 "哒哒哒" → "Taptap Break Reminder"，"飞投" → "WebDrop LAN Transfer"。确保英文名自然、可读。）
 - canonical_zh: 中文术语名称（如果原始信号有中文名则保留，否则为空字符串）
 - category: 分类标签
+- signal_ids: 字符串数组 — 列出支持该术语的 signal 的 "id" 值。这些是你用来识别该术语的信号。例如: ["hn-48968606", "reddit-abc123"]。必须引用至少 1 个 signal id。仅引用对该术语有实质性贡献的信号。
 - summary_zh: 一句话中文摘要，说明为什么值得追踪
 - summary_en: 一句话英文摘要（必须填写！不可为空。如果原始信号是中文，翻译成英文。）
 
@@ -166,7 +168,7 @@ def extract_terms_from_signals(signals: list[dict]) -> list[dict]:
 Signals:
 {json.dumps(signal_summaries, ensure_ascii=False, indent=2)}"""
 
-    system_prompt = "You extract emerging themes from tech community signals — new concepts, technologies, products, and hot discussions. IMPORTANT: The 'canonical' field MUST be in English for every entry. If the original signal uses a Chinese name, translate it to a natural, readable English equivalent. The 'canonical_zh' field stores the Chinese name if one exists. Both 'summary_en' and 'summary_zh' are required — never leave summary_en empty. Return only valid JSON array."
+    system_prompt = "You extract emerging themes from tech community signals — new concepts, technologies, products, and hot discussions. IMPORTANT: The 'canonical' field MUST be in English for every entry. If the original signal uses a Chinese name, translate it to a natural, readable English equivalent. The 'canonical_zh' field stores the Chinese name if one exists. Both 'summary_en' and 'summary_zh' are required — never leave summary_en empty. The 'signal_ids' field MUST be a non-empty array of signal IDs from the provided signals list — list the IDs you used to identify this term. Return only valid JSON array."
 
     # Try LLM extraction
     try:
@@ -182,6 +184,18 @@ Signals:
                 response = response[:-3]
         terms = json.loads(response)
         if isinstance(terms, list) and len(terms) > 0 and isinstance(terms[0], dict):
+            # Validate signal_ids presence (non-fatal warning)
+            signal_ids_present = sum(1 for t in terms if t.get("signal_ids"))
+            if signal_ids_present < len(terms):
+                missing = [t.get("canonical", "?") for t in terms if not t.get("signal_ids")]
+                print(f"  [trends] Warning: {len(missing)}/{len(terms)} terms missing signal_ids: {missing[:3]}...")
+            # Normalize signal_ids to ensure they're a list
+            for t in terms:
+                ids = t.get("signal_ids")
+                if ids is None:
+                    t["signal_ids"] = []
+                elif not isinstance(ids, list):
+                    t["signal_ids"] = [str(ids)] if ids else []
             # Post-process: ensure canonical is English
             terms = _ensure_english_canonical(terms)
             return terms
@@ -356,9 +370,25 @@ def _normalize_category(cat: str) -> str:
     return cat[0].upper() + cat[1:]
 
 
+def _get_matching_signals(signals_by_id: dict, extracted_term: dict, signals: list[dict], canonical: str) -> list[dict]:
+    """Resolve matching signals: prefer signal_ids from LLM, fallback to substring match."""
+    ids = extracted_term.get("signal_ids", [])
+    if ids:
+        matching = [signals_by_id[sid] for sid in ids if sid in signals_by_id]
+        if matching:
+            return matching
+    # Fallback: substring match
+    return [
+        s for s in signals
+        if canonical.lower() in s.get("summary", "").lower()
+        or canonical.lower() in s.get("title", "").lower()
+    ]
+
+
 def merge_terms(existing: list[dict], extracted: list[dict], signals: list[dict], today: datetime) -> list[dict]:
     """Merge extracted terms into existing, updating existing terms and adding new ones."""
     today_str = today.strftime("%Y-%m-%d")
+    signals_by_id: dict[str, dict] = {s["id"]: s for s in signals if s.get("id")}
     term_index: dict[str, int] = {}
     for i, t in enumerate(existing):
         term_index[t["id"]] = i
@@ -382,13 +412,18 @@ def merge_terms(existing: list[dict], extracted: list[dict], signals: list[dict]
             t["last_seen"] = today_str
             t["total_mentions"] += 1
 
-            # Update sources
-            signal_sources = list(set(s.get("source_key", "") for s in signals if s.get("score", 0) > 0))
-            for src in signal_sources:
-                if src not in t["sources"]:
-                    t["sources"].append(src)
+            # Re-score using LLM-provided signal_ids if available
+            matching = _get_matching_signals(signals_by_id, extracted_term, signals, canonical)
+            if matching:
+                new_score = compute_score_from_signals(matching)
+                t["score"] = max(t["score"], new_score)
 
-            t["source_count"] = len(t["sources"])
+                new_sources = list(set(s.get("source_key", "") for s in matching))
+                for src in new_sources:
+                    if src not in t["sources"]:
+                        t["sources"].append(src)
+                t["source_count"] = len(t["sources"])
+                t["total_mentions"] += len(matching)
 
             # Recalculate growth (simple: mentions this week vs total)
             age_days = (today - datetime.strptime(t["first_seen"], "%Y-%m-%d").replace(tzinfo=TZ_SHANGHAI)).days
@@ -396,9 +431,6 @@ def merge_terms(existing: list[dict], extracted: list[dict], signals: list[dict]
                 t["growth_pct"] = round((t["total_mentions"] / max(age_days, 1)) * 100)
 
             t["stage"] = compute_stage(t["first_seen"], today)
-            t["score"] = max(t["score"], compute_score_from_signals(
-                [s for s in signals if canonical.lower() in s.get("summary", "").lower()]
-            ))
             # Update canonical_zh if newly provided
             cn_zh = extracted_term.get("canonical_zh", "").strip()
             if cn_zh and not t.get("canonical_zh"):
@@ -412,11 +444,7 @@ def merge_terms(existing: list[dict], extracted: list[dict], signals: list[dict]
             new_id = _make_slug_id(canonical)
             slug = new_id.replace("trend-", "")
 
-            matching_signals = [
-                s for s in signals
-                if canonical.lower() in s.get("summary", "").lower()
-                or canonical.lower() in s.get("title", "").lower()
-            ]
+            matching_signals = _get_matching_signals(signals_by_id, extracted_term, signals, canonical)
 
             signal_sources = list(set(s.get("source_key", "") for s in matching_signals))
             score = compute_score_from_signals(matching_signals)
@@ -734,11 +762,139 @@ Search volume estimates, key long-tail keywords, competition level.
 Write in Chinese (zh-CN). Be specific and actionable. Avoid generic advice."""
 
 
+def _rescore_batch(term_batch: list[dict], signal_summaries: list[dict], signals_by_id: dict, term_by_id: dict) -> int:
+    """Match one batch of zero-score terms against all signals via LLM. Returns updated count."""
+    system_prompt = (
+        "You are a semantic matching engine. Given a list of trend terms and a list of signals, "
+        "identify which signals are related to each term. A signal is related if it discusses "
+        "the same concept, technology, product, or theme — even if the term name does not appear "
+        "literally in the signal text. Return only valid JSON."
+    )
+
+    user_prompt = f"""For each trend term below, identify which signals (by their "id") are related to it.
+
+A signal is related if it discusses the same concept, technology, product, or theme as the term
+— even if the word does not appear verbatim. Use semantic understanding.
+
+Return a JSON array where each element has:
+- "term_id": the term ID from the list
+- "signal_ids": array of signal IDs that are related (empty array [] if none match)
+
+Only include terms that have at least one matching signal — skip terms with zero matches entirely.
+
+Trend Terms:
+{json.dumps(term_batch, ensure_ascii=False, indent=2)}
+
+Signals:
+{json.dumps(signal_summaries, ensure_ascii=False, indent=2)}
+
+Return ONLY the JSON array, nothing else."""
+
+    try:
+        sys.path.insert(0, str(ROOT / "scripts"))
+        from llm_client import chat
+
+        response = chat(system_prompt, user_prompt)
+        response = response.strip()
+        if response.startswith("```"):
+            response = response.split("\n", 1)[1]
+            if response.endswith("```"):
+                response = response[:-3]
+
+        mappings = json.loads(response)
+        if not isinstance(mappings, list):
+            print("  [trends] rescore: Unexpected LLM response format in batch")
+            return 0
+    except Exception as e:
+        print(f"  [trends] rescore: Batch LLM call failed: {e}")
+        return 0
+
+    updated = 0
+    for mapping in mappings:
+        term_id = mapping.get("term_id", "")
+        term = term_by_id.get(term_id)
+        if not term or term.get("score", 0) != 0:
+            continue
+
+        signal_ids = mapping.get("signal_ids", [])
+        matching_signals = [signals_by_id[sid] for sid in signal_ids if sid in signals_by_id]
+
+        if not matching_signals:
+            continue
+
+        score = compute_score_from_signals(matching_signals)
+        signal_sources = list(set(s.get("source_key", "") for s in matching_signals))
+        tags = list(set(tag for s in matching_signals for tag in s.get("tags", [])))[:5]
+
+        term["score"] = score
+        term["source_count"] = len(signal_sources)
+        term["total_mentions"] = len(matching_signals)
+        term["sources"] = signal_sources
+        term["tags"] = tags
+        updated += 1
+
+        if score > 0:
+            print(f"  [trends] rescore: {term['canonical']} -> score={score}, sources={len(signal_sources)}, mentions={len(matching_signals)}")
+
+    return updated
+
+
+def rescore_zero_terms(terms: list[dict], signals: list[dict], batch_size: int = 30) -> int:
+    """Use LLM to semantically match existing score=0 terms to today's signals.
+    Processes terms in batches to avoid hitting LLM output limits.
+    Returns count of terms updated."""
+    zero_terms = [t for t in terms if t.get("score", 0) == 0]
+    if not zero_terms:
+        print("[trends] rescore: No zero-score terms found.")
+        return 0
+
+    print(f"[trends] rescore: {len(zero_terms)} zero-score terms, processing in batches of {batch_size}...")
+
+    # Build compact representations (shared across batches)
+    signal_summaries = []
+    for s in signals:
+        signal_summaries.append({
+            "id": s.get("id", ""),
+            "title": s.get("title", "")[:150],
+            "summary": s.get("summary", "")[:200],
+            "source": s.get("source", ""),
+            "tags": s.get("tags", [])[:5],
+        })
+
+    signals_by_id = {s["id"]: s for s in signals if s.get("id")}
+    term_by_id = {t["id"]: t for t in terms}
+
+    total_updated = 0
+    for i in range(0, len(zero_terms), batch_size):
+        batch = zero_terms[i:i + batch_size]
+        batch_idx = i // batch_size + 1
+        total_batches = (len(zero_terms) + batch_size - 1) // batch_size
+
+        batch_summaries = []
+        for t in batch:
+            batch_summaries.append({
+                "term_id": t["id"],
+                "canonical": t["canonical"],
+                "summary_en": t.get("summary_en", "")[:200],
+                "summary_zh": t.get("summary_zh", "")[:200],
+                "category": t.get("category", "General"),
+            })
+
+        print(f"  [trends] rescore: Batch {batch_idx}/{total_batches} ({len(batch)} terms)...")
+        n = _rescore_batch(batch_summaries, signal_summaries, signals_by_id, term_by_id)
+        total_updated += n
+
+    print(f"[trends] rescore: Updated {total_updated}/{len(zero_terms)} zero-score terms total")
+    return total_updated
+
+
 def main():
     parser = argparse.ArgumentParser(description="Generate trend terms from daily signals")
     parser.add_argument("--dry-run", action="store_true", help="Don't write files")
     parser.add_argument("--max-terms", type=int, default=60, help="Max terms to extract (safety cap, not a daily limit)")
     parser.add_argument("--date", type=str, help="Date to process (default: today)")
+    parser.add_argument("--rescore", action="store_true",
+        help="Re-score existing zero-score terms using LLM semantic matching")
     args = parser.parse_args()
 
     today = datetime.now(TZ_SHANGHAI)
@@ -775,6 +931,13 @@ def main():
     updated_terms = merge_terms(existing_terms, extracted, signals, today)
     new_count = len(updated_terms) - len(existing_terms)
     print(f"[trends] Merged: {len(updated_terms)} total ({new_count} new)")
+
+    # Optionally rescore existing zero-score terms
+    if args.rescore:
+        print("[trends] Running rescore pass for zero-score terms...")
+        rescored = rescore_zero_terms(updated_terms, signals)
+        if rescored > 0:
+            updated_terms.sort(key=lambda t: t.get("score", 0), reverse=True)
 
     # Compute dynamic percentile thresholds
     full_threshold, brief_threshold = compute_percentile_thresholds(updated_terms)
