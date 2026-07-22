@@ -318,6 +318,33 @@ try {
     Write-Log "  [SEO] FAIL (non-fatal): $_"
 }
 
+# --- Step 10.5: Competitor Intel (export targets + generate intelligence) ---
+
+Write-Log ""
+Write-Log "--- Step 10.5: Competitor Intel ---"
+
+try {
+    $output = & $Python -m scripts.export_tracking_targets 2>&1
+    if ($LASTEXITCODE -eq 0) {
+        Write-Log "  [ExportTargets] OK"
+    } else {
+        Write-Log "  [ExportTargets] WARN (non-fatal, exit=$LASTEXITCODE)"
+    }
+} catch {
+    Write-Log "  [ExportTargets] FAIL (non-fatal): $_"
+}
+
+try {
+    $output = & $Python -m scripts.generate_competitor_intel 2>&1
+    if ($LASTEXITCODE -eq 0) {
+        Write-Log "  [CompetitorIntel] OK"
+    } else {
+        Write-Log "  [CompetitorIntel] WARN (non-fatal, exit=$LASTEXITCODE)"
+    }
+} catch {
+    Write-Log "  [CompetitorIntel] FAIL (non-fatal): $_"
+}
+
 # --- Step 11: Dashboard Data ---
 
 Write-Log ""

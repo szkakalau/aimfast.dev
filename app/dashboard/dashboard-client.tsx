@@ -9,7 +9,18 @@ import { DecisionCard } from './components/decision-card';
 import { FullReport } from './components/full-report';
 import { DashboardFooter } from './components/dashboard-footer';
 import Watchlist, { type SignalSnapshot } from './components/watchlist';
+import SubscriptionGuard from './components/subscription-guard';
+import CompetitorIntel from './components/competitor-intel';
 import ErrorBanner from '@/components/ErrorBanner';
+
+/** 订阅状态 — 服务端传入，用于功能门控 */
+export type SubscriptionStatus = {
+  planId: string | null;
+  status: string | null;
+  trialEnd: string | null;
+  currentPeriodEnd: string | null;
+  cancelAtPeriodEnd: boolean;
+} | null;
 
 /* ── I18N dictionary ── */
 const I18N_DICT: Record<string, Record<string, string>> = {
@@ -128,6 +139,36 @@ export type HistoryEntry = {
   cross_platform: number;
 };
 
+export type CompetitorIntelHighlight = {
+  source: string;
+  source_url: string;
+  original_text: string;
+  translation: string;
+  competitor_impact: string;
+  your_action: string;
+  relevance: 'high' | 'medium' | 'low';
+};
+
+export type CompetitorIntelTarget = {
+  id: string;
+  name: string;
+  type: string;
+  stats: {
+    weekly_mentions: number;
+    noise_count: number;
+    trend: 'up' | 'down' | 'stable';
+    sentiment: 'positive' | 'negative' | 'neutral';
+    notable_change: string | null;
+  };
+  highlights: CompetitorIntelHighlight[];
+  suggested_actions: Array<{ action: string; label: string }>;
+};
+
+export type CompetitorIntelData = {
+  targets: CompetitorIntelTarget[];
+  generated_at: string;
+};
+
 export type DashboardDecision = {
   product_name?: string;
   one_liner?: string;
@@ -152,6 +193,7 @@ export type DashboardData = {
   report_md: string;
   report_md_en: string;
   pipeline: Record<string, unknown>;
+  competitor_intel?: CompetitorIntelData;
   archive: Array<{ date: string; report_md: string; report_md_en: string; has_report: boolean }>;
   generated_at: string;
 };
@@ -170,9 +212,9 @@ function daysAgo(days: number): string {
 
 /* ═════ Main Component ═════ */
 
-type Props = { trendTerms: TrendTerm[] };
+type Props = { trendTerms: TrendTerm[]; subscription?: SubscriptionStatus };
 
-export function DashboardClient({ trendTerms }: Props) {
+export function DashboardClient({ trendTerms, subscription = null }: Props) {
   // ── State ──
   const [data, setData] = useState<DashboardData | null>(null);
   const [loading, setLoading] = useState(true);
@@ -186,6 +228,20 @@ export function DashboardClient({ trendTerms }: Props) {
 
   // ── i18n ──
   const t = useMemo(() => I18N_DICT[lang] || I18N_DICT.en, [lang]);
+
+  // ── 订阅状态 ──
+  const isSubscribed = useMemo(() => {
+    if (!subscription) return false;
+    const { status, trialEnd } = subscription;
+    if (status === 'active' || status === 'trialing') return true;
+    // trialEnd 还在未来 → 视为试用中
+    if (trialEnd && new Date(trialEnd) > new Date()) return true;
+    return false;
+  }, [subscription]);
+  const isBuilderPlus = useMemo(
+    () => isSubscribed && subscription?.planId !== 'starter',
+    [isSubscribed, subscription],
+  );
 
   // Detect browser language on mount
   useEffect(() => {
@@ -204,6 +260,51 @@ export function DashboardClient({ trendTerms }: Props) {
     setTrackedItems(getTrackedItems());
     return () => window.removeEventListener('storage', onStorage);
   }, []);
+
+  // ── localStorage → 服务端迁移桥 ──
+  useEffect(() => {
+    let cancelled = false;
+    async function migrate() {
+      // 仅已登录用户执行迁移
+      if (!subscription) return;
+      try {
+        const local = getTrackedItems();
+        if (local.length === 0) return;
+
+        // 检查服务端是否已有追踪目标
+        const res = await fetch('/api/tracking');
+        if (!res.ok) return;
+        const { targets } = await res.json();
+        if (targets?.length > 0) {
+          // 服务端已有数据 → 直接清除旧的 localStorage
+          localStorage.removeItem('aimfast_tracked');
+          return;
+        }
+
+        // 将 localStorage 中的旧数据导入服务端
+        for (const item of local) {
+          if (cancelled) break;
+          // 只导入有意义的名称（去掉 "trend-" 前缀）
+          const name = item.id.replace(/^trend-/, '').replace(/-/g, ' ');
+          await fetch('/api/tracking', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name, type: 'topic' }),
+          });
+        }
+
+        if (!cancelled) {
+          // 迁移完成 → 清除 localStorage
+          localStorage.removeItem('aimfast_tracked');
+          setTrackedItems([]);
+        }
+      } catch {
+        // 静默失败 — localStorage 数据不会丢失
+      }
+    }
+    migrate();
+    return () => { cancelled = true; };
+  }, [subscription]);
 
   const toggleLang = useCallback(() => {
     setLang((prev) => {
@@ -423,7 +524,7 @@ export function DashboardClient({ trendTerms }: Props) {
           </div>
         )}
 
-        {/* ── Watchlist ── */}
+        {/* ── Watchlist ── (free — always visible) */}
         <Watchlist
           trackedItems={trackedItems}
           todaySignals={watchlistToday}
@@ -433,18 +534,8 @@ export function DashboardClient({ trendTerms }: Props) {
           historyError={historyError}
         />
 
-        {/* ── Today's Decision (tracked-prioritized) ── */}
-        <DecisionCard
-          t={t}
-          lang={lang}
-          signal={decisionSignal || topSignal}
-          decision={decision}
-          reportMd={reportMd}
-          date={selectedDate || data.date}
-        />
-
-        {/* ── Serendipity: Also Trending Today ── */}
-        {serendipitySignals.length > 0 && (
+        {/* ── 未订阅 → 先展示 Serendipity 做 teaser，再显示升级门控 ── */}
+        {!isSubscribed && serendipitySignals.length > 0 && (
           <section className="dash-section">
             <h2 className="dash-section-title"><Flame size={18} className="icon-inline" aria-hidden="true" /> {t.serendipityTitle}</h2>
             <div className="serendipity-row">
@@ -466,8 +557,52 @@ export function DashboardClient({ trendTerms }: Props) {
           </section>
         )}
 
-        {/* ── Full Report ── */}
-        <FullReport t={t} reportMd={reportMd} />
+        {/* ── 付费内容门控 ── */}
+        <SubscriptionGuard subscription={subscription}>
+          {/* ── Competitor Intel (Builder+ only) ── */}
+          {isBuilderPlus && (
+            <CompetitorIntel
+              data={data?.competitor_intel}
+              lang={lang}
+            />
+          )}
+
+          {/* ── Today's Decision (tracked-prioritized) ── */}
+          <DecisionCard
+            t={t}
+            lang={lang}
+            signal={decisionSignal || topSignal}
+            decision={decision}
+            reportMd={reportMd}
+            date={selectedDate || data.date}
+          />
+
+          {/* ── Serendipity: Also Trending Today (subscribed view) ── */}
+          {serendipitySignals.length > 0 && (
+            <section className="dash-section">
+              <h2 className="dash-section-title"><Flame size={18} className="icon-inline" aria-hidden="true" /> {t.serendipityTitle}</h2>
+              <div className="serendipity-row">
+                {serendipitySignals.map((sig) => {
+                  const trend = todayMap.get(sig.id);
+                  return (
+                    <a
+                      key={sig.id}
+                      href={trend ? `/trends/${trend.id.replace('trend-', '')}/` : '#'}
+                      className="serendipity-card"
+                    >
+                      <span className="serendipity-card-source">{sig.source}</span>
+                      <span className="serendipity-card-title">{sig.title}</span>
+                      <span className="serendipity-card-score">Score: {sig.score}</span>
+                    </a>
+                  );
+                })}
+              </div>
+            </section>
+          )}
+
+          {/* ── Full Report ── */}
+          <FullReport t={t} reportMd={reportMd} />
+        </SubscriptionGuard>
       </main>
 
       <DashboardFooter t={t} generatedAt={data.generated_at} />

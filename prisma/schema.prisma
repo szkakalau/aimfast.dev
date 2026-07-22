@@ -19,7 +19,8 @@ model User {
   // 详见: https://authjs.dev/getting-started/adapters/prisma
   accounts       Account[]
   sessions       Session[]
-  subscription   Subscription?
+  subscription     Subscription?
+  trackingTargets  TrackingTarget[]
 
   createdAt      DateTime  @default(now())
   updatedAt      DateTime  @updatedAt
@@ -79,4 +80,23 @@ model Subscription {
 
   @@index([status])
   @@index([userId])
+}
+
+model TrackingTarget {
+  id        String   @id @default(cuid())
+  userId    String
+  name      String              // 追踪目标名称，如 "polymarket whale"
+  type      String   @default("topic")  // competitor | person | topic | tech | platform
+  aliases   String   @default("[]")     // JSON 数组，如 ["polymarket", "polymarkets"]
+  keywords  String   @default("[]")     // JSON 数组，如 ["whale", "prediction market"]
+  notes     String   @default("")
+  status    String   @default("active") // active | paused
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, name])
+  @@index([userId])
+  @@index([status])
 }

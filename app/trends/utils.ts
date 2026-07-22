@@ -26,6 +26,9 @@ export function builderScore(t: TrendTerm): number {
 }
 
 // ── Tracking (localStorage-backed watchlist) ──
+// ⚠️ DEPRECATED: 从 2026-07-22 起，追踪目标迁移到服务端数据库 (app/api/tracking)。
+// 以下函数仅在向后兼容场景使用 — 新功能请通过 GET/POST /api/tracking 操作。
+// 旧 localStorage 数据会在 Dashboard 首次加载时自动迁移到服务端。
 
 const TRACKED_KEY = 'aimfast_tracked';
 const MAX_TRACKED = 50;

@@ -260,6 +260,16 @@ def collect_dashboard_data() -> dict:
     # 6. Pipeline status (diagnostics for skipped steps)
     pipeline_status = read_pipeline_status(effective_date)
 
+    # 6b. Competitor Intel (日常竞品情报 — 从 generate_competitor_intel.py 产出)
+    competitor_intel = {}
+    intel_path = DAILY_DIR / effective_date / "competitor_intel.json"
+    if intel_path.exists():
+        try:
+            competitor_intel = json.loads(intel_path.read_text(encoding="utf-8"))
+            print(f"[Dashboard] Competitor intel loaded: {len(competitor_intel.get('targets', []))} targets")
+        except Exception as e:
+            print(f"[Dashboard] [WARN] Failed to read competitor_intel.json: {e}")
+
     # 7. Archive (all available historical reports + articles)
     archive = _collect_archive(max_days=60)
     # Trim archive content to keep dashboard.json under ~500KB
@@ -292,6 +302,7 @@ def collect_dashboard_data() -> dict:
         "article_md_en": article_md_en,
         "article_meta": article_meta,
         "pipeline": pipeline_status.get("steps", {}),
+        "competitor_intel": competitor_intel,
         "archive": archive,
         "generated_at": datetime.now(TZ_SHANGHAI).isoformat(),
     }
