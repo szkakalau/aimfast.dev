@@ -10,11 +10,13 @@ export function getUserId(session: { user?: { id?: string } } | null): string | 
  * 从 NextAuth session 中提取用户角色。
  * 返回 "admin" | "user"，默认为 "user"。
  */
-export function getUserRole(session: { user?: { role?: string } } | null): string {
-  return (session?.user as any)?.role ?? 'user';
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function getUserRole(session: any): string {
+  return session?.user?.role ?? 'user';
 }
 
 /** 是否管理员 */
-export function isAdmin(session: { user?: { role?: string } } | null): boolean {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function isAdmin(session: any): boolean {
   return getUserRole(session) === 'admin';
 }
