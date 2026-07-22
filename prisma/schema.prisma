@@ -13,6 +13,7 @@ model User {
   emailVerified  DateTime?
   image          String?
   hashedPassword String?
+  role           String    @default("user")  // "user" | "admin"
   // ═══ Account + Session: 当前未使用（JWT 策略），保留用于未来 OAuth ═══
   // NextAuth v5 JWT 策略不依赖数据库 session 表。
   // 当接入 Google/GitHub OAuth 时，PrismaAdapter 将自动启用这些表。

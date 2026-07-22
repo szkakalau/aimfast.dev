@@ -3,7 +3,7 @@ import { DashboardClient } from './dashboard-client';
 import { getAllTrendTerms } from '@/app/trends/data';
 import { auth } from '@/lib/auth';
 import { prisma } from '@/lib/prisma';
-import { getUserId } from '@/lib/session';
+import { getUserId, getUserRole } from '@/lib/session';
 
 export const metadata: Metadata = {
   title: 'Dashboard — AimFast.Dev',
@@ -19,6 +19,8 @@ export default async function DashboardPage() {
   // 服务端获取订阅状态 — 用于功能门控（不做重定向，由 client 组件决定展示内容）
   const session = await auth();
   const userId = getUserId(session);
+  const role = getUserRole(session);
+  const isAdminUser = role === 'admin';
   const sub = userId
     ? await prisma.subscription.findUnique({ where: { userId } })
     : null;
@@ -56,7 +58,7 @@ export default async function DashboardPage() {
           </p>
         </main>
       </noscript>
-      <DashboardClient trendTerms={trendData.terms} subscription={subscription} />
+      <DashboardClient trendTerms={trendData.terms} subscription={subscription} isAdmin={isAdminUser} />
     </>
   );
 }

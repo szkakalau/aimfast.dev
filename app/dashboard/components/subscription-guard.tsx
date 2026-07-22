@@ -22,10 +22,15 @@ type SubscriptionStatus = {
 export default function SubscriptionGuard({
   subscription,
   children,
+  isAdmin = false,
 }: {
   subscription: SubscriptionStatus | null;
   children: React.ReactNode;
+  isAdmin?: boolean;
 }) {
+  // ── 管理员自动放行 ──
+  if (isAdmin) return <>{children}</>;
+
   // ── 无订阅 ──
   if (!subscription || !subscription.status) {
     return (

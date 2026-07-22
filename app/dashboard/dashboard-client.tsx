@@ -212,9 +212,9 @@ function daysAgo(days: number): string {
 
 /* ═════ Main Component ═════ */
 
-type Props = { trendTerms: TrendTerm[]; subscription?: SubscriptionStatus };
+type Props = { trendTerms: TrendTerm[]; subscription?: SubscriptionStatus; isAdmin?: boolean };
 
-export function DashboardClient({ trendTerms, subscription = null }: Props) {
+export function DashboardClient({ trendTerms, subscription = null, isAdmin = false }: Props) {
   // ── State ──
   const [data, setData] = useState<DashboardData | null>(null);
   const [loading, setLoading] = useState(true);
@@ -229,18 +229,19 @@ export function DashboardClient({ trendTerms, subscription = null }: Props) {
   // ── i18n ──
   const t = useMemo(() => I18N_DICT[lang] || I18N_DICT.en, [lang]);
 
-  // ── 订阅状态 ──
+  // ── 订阅状态（admin 自动拥有全部权限）──
   const isSubscribed = useMemo(() => {
+    if (isAdmin) return true;
     if (!subscription) return false;
     const { status, trialEnd } = subscription;
     if (status === 'active' || status === 'trialing') return true;
     // trialEnd 还在未来 → 视为试用中
     if (trialEnd && new Date(trialEnd) > new Date()) return true;
     return false;
-  }, [subscription]);
+  }, [subscription, isAdmin]);
   const isBuilderPlus = useMemo(
-    () => isSubscribed && subscription?.planId !== 'starter',
-    [isSubscribed, subscription],
+    () => isAdmin || (isSubscribed && subscription?.planId !== 'starter'),
+    [isSubscribed, subscription, isAdmin],
   );
 
   // Detect browser language on mount
@@ -558,7 +559,7 @@ export function DashboardClient({ trendTerms, subscription = null }: Props) {
         )}
 
         {/* ── 付费内容门控 ── */}
-        <SubscriptionGuard subscription={subscription}>
+        <SubscriptionGuard subscription={subscription} isAdmin={isAdmin}>
           {/* ── Competitor Intel (Builder+ only) ── */}
           {isBuilderPlus && (
             <CompetitorIntel

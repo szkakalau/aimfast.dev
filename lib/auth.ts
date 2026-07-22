@@ -43,7 +43,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         // 登录成功 → 清除失败计数
         resetRateLimit(`login:${email}`);
 
-        return { id: user.id, name: user.name, email: user.email };
+        return { id: user.id, name: user.name, email: user.email, role: user.role };
       },
     }),
   ],
