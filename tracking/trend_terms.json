@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-21T07:51:13.069810+08:00",
+  "updated_at": "2026-07-22T08:16:37.942489+08:00",
   "terms": [
     {
       "id": "trend-claude-agent-sdk",
@@ -7423,7 +7423,33 @@
       "tags": [],
       "summary_zh": "Kimi发布全球首个3万亿参数开源模型K3，编程能力超越Claude Fable 5登顶Arena.AI，引发广泛关注。",
       "summary_en": "Kimi launches the world's first 3-trillion-parameter open-source model K3, whose coding ability surpasses Claude Fable 5 to top Arena.AI, generating widespread attention.",
-      "research_md_path": "content/trends/kimi-k3-3-trillion-parameter-open-source-model.md"
+      "research_md_path": "content/trends/kimi-k3-3-trillion-parameter-open-source-model.md",
+      "opportunity_score": 45,
+      "market_score": 65,
+      "competition_score": 30,
+      "demand_score": 50,
+      "seo_difficulty": 40,
+      "suggested_products": [
+        "AI Agent",
+        "API",
+        "VS Code Extension",
+        "MCP Server",
+        "SaaS"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 3,
+      "risk_factors_en": [
+        "Large tech companies may release similar open-source models rapidly",
+        "High computational cost for running 3-trillion-parameter model limits accessibility",
+        "Model performance may not sustain lead as competitors catch up"
+      ],
+      "risk_factors_zh": [
+        "大型科技公司可能快速推出类似开源模型",
+        "运行3万亿参数模型的高计算成本限制了可及性",
+        "模型性能领先地位可能被竞争者追赶"
+      ],
+      "opportunity_summary_en": "Kimi K3's record-breaking 3-trillion-parameter open-source model creates a unique niche for specialized coding tools. Independent developers can build lightweight wrappers or agents leveraging its API. However, high resource requirements and potential big-tech entry pose significant risks.",
+      "opportunity_summary_zh": "Kimi K3的3万亿参数开源模型为专业编程工具创造了独特机会。独立开发者可以构建轻量级封装或智能体利用其API。但高资源需求和潜在的大厂入场构成重大风险。"
     },
     {
       "id": "trend-agent-native-cloud-infrastructure",
@@ -7442,7 +7468,31 @@
       "tags": [],
       "summary_zh": "阿里云推出Agent Native Cloud，用于规模化企业AI Agent，标志着云基础设施正针对Agent原生场景进行重构。",
       "summary_en": "Alibaba Cloud launches Agent Native Cloud to scale enterprise AI agents, marking a shift in cloud infrastructure being rebuilt for agent-native scenarios.",
-      "research_md_path": "content/trends/agent-native-cloud-infrastructure.md"
+      "research_md_path": "content/trends/agent-native-cloud-infrastructure.md",
+      "opportunity_score": 42,
+      "market_score": 55,
+      "competition_score": 20,
+      "demand_score": 45,
+      "seo_difficulty": 15,
+      "suggested_products": [
+        "Open Source",
+        "SaaS",
+        "API",
+        "MCP Server",
+        "AI Agent"
+      ],
+      "estimated_dev_days": 60,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Major cloud providers (AWS, Azure, GCP) may enter and dominate the space",
+        "Enterprise adoption of agent-native infrastructure is uncertain and may be slow"
+      ],
+      "risk_factors_zh": [
+        "大型云厂商（AWS、Azure、GCP）可能进入并主导市场",
+        "企业对Agent原生基础设施的采用不确定且可能缓慢"
+      ],
+      "opportunity_summary_en": "Agent-Native Cloud Infrastructure is a nascent trend with low competition and SEO difficulty, offering a potential blue ocean for indie developers. However, the market is very early, with only Alibaba Cloud's announcement as a signal, and enterprise adoption is uncertain. The opportunity score is moderate due to lack of concrete demand and revenue evidence, suggesting a cautious approach with a focus on open-source or niche tools.",
+      "opportunity_summary_zh": "Agent-Native Cloud Infrastructure 是一个早期趋势，竞争和SEO难度都低，为独立开发者提供了潜在的蓝海机会。但市场非常初期，仅阿里云公告为信号，企业采用不确定。由于缺乏具体需求和收入证据，机会评分中等，建议采取谨慎态度，专注于开源或小众工具。"
     },
     {
       "id": "trend-hallusquatting-attack-on-ai-package-recommendation",
@@ -7461,7 +7511,29 @@
       "tags": [],
       "summary_zh": "研究揭示AI编程助手推荐的GitHub仓库名称幻觉率高达92.4%，催生名为HalluSquatting的新型攻击方式，对开发者工具安全构成新威胁。",
       "summary_en": "Research reveals that AI coding assistants hallucinate GitHub repository names at a rate of 92.4%, giving rise to a new attack vector called HalluSquatting, posing a new security threat to developer tools.",
-      "research_md_path": "content/trends/hallusquatting-attack-on-ai-package-recommendation.md"
+      "research_md_path": "content/trends/hallusquatting-attack-on-ai-package-recommendation.md",
+      "opportunity_score": 45,
+      "market_score": 35,
+      "competition_score": 15,
+      "demand_score": 40,
+      "seo_difficulty": 10,
+      "suggested_products": [
+        "VS Code Extension",
+        "CLI Tool",
+        "Open Source"
+      ],
+      "estimated_dev_days": 45,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Low market awareness may lead to slow adoption",
+        "Major AI coding tool vendors (e.g., GitHub, JetBrains) could integrate similar security features natively"
+      ],
+      "risk_factors_zh": [
+        "市场认知度低可能导致采用缓慢",
+        "主流AI编程工具供应商（如GitHub、JetBrains）可能原生集成类似安全功能"
+      ],
+      "opportunity_summary_en": "HalluSquatting is a newly identified security vulnerability in AI coding assistants with a 92.4% hallucination rate, presenting an early-stage opportunity. The market is blue ocean with no competitors, but awareness and demand are low. A VS Code extension or CLI tool could quickly validate the concept, though revenue potential is modest.",
+      "opportunity_summary_zh": "HalluSquatting是AI编程助手中新发现的安全漏洞，幻觉率高达92.4%，带来了早期机会。市场是蓝海，没有竞争对手，但认知度和需求较低。VS Code扩展或CLI工具可以快速验证概念，但收入潜力有限。"
     },
     {
       "id": "trend-threebox-chat-to-3d-creation",
@@ -7480,7 +7552,31 @@
       "tags": [],
       "summary_zh": "ThreeBox通过聊天创建3D模型和游戏场景并开源，代表了AI驱动的3D内容生成进入更易用、更可及的新阶段。",
       "summary_en": "ThreeBox enables chat-based 3D model and game scene creation and is now open-source, representing a new phase of accessible AI-driven 3D content generation.",
-      "research_md_path": "content/trends/threebox-chat-to-3d-creation.md"
+      "research_md_path": "content/trends/threebox-chat-to-3d-creation.md",
+      "opportunity_score": 42,
+      "market_score": 40,
+      "competition_score": 20,
+      "demand_score": 45,
+      "seo_difficulty": 25,
+      "suggested_products": [
+        "Open Source",
+        "Web App",
+        "AI Agent",
+        "API",
+        "Plugin/Add-on"
+      ],
+      "estimated_dev_days": 45,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Large tech companies (e.g., NVIDIA, Google) may enter with similar integrated solutions",
+        "Low user adoption due to quality limitations of AI-generated 3D models"
+      ],
+      "risk_factors_zh": [
+        "大型科技公司（如NVIDIA、Google）可能推出类似集成解决方案",
+        "AI生成3D模型的质量限制可能导致用户采用率低"
+      ],
+      "opportunity_summary_en": "ThreeBox Chat-to-3D Creation is an early-stage open-source tool in a nascent market with low competition and SEO difficulty. Demand is moderate but unproven, and revenue potential is low. The opportunity is best suited for indie developers looking to build a community-driven product with future monetization via API or premium features.",
+      "opportunity_summary_zh": "ThreeBox Chat-to-3D Creation是一个处于萌芽阶段的开源工具，市场竞争和SEO难度较低。需求中等但尚未验证，收入潜力较低。该机会最适合希望构建社区驱动产品并通过API或高级功能实现未来变现的独立开发者。"
     },
     {
       "id": "trend-agent-triangle-model",
@@ -7499,7 +7595,31 @@
       "tags": [],
       "summary_zh": "意图共鸣科技提出智能体三角模型，将通用认知基座、人文交互内核和私有知识域作为AI稳定的三大支柱，引发行业讨论。",
       "summary_en": "Intent Resonance Technology proposes the Agent Triangle Model, defining general cognition base, human interaction core, and private knowledge domain as the three pillars of stable AI, sparking industry discussion.",
-      "research_md_path": "content/trends/agent-triangle-model.md"
+      "research_md_path": "content/trends/agent-triangle-model.md",
+      "opportunity_score": 48,
+      "market_score": 60,
+      "competition_score": 15,
+      "demand_score": 45,
+      "seo_difficulty": 20,
+      "suggested_products": [
+        "Open Source",
+        "Template/Boilerplate",
+        "AI Agent"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Concept may remain niche and fail to gain traction",
+        "Large AI companies could adopt and standardize similar frameworks, reducing opportunity",
+        "No proven demand or use cases yet"
+      ],
+      "risk_factors_zh": [
+        "概念可能保持小众，无法获得关注",
+        "大型AI公司可能采用并标准化类似框架，减少机会",
+        "尚无经过验证的需求或用例"
+      ],
+      "opportunity_summary_en": "The Agent Triangle Model is an early-stage framework with low competition and easy SEO, but demand and market signals are weak. A first-mover advantage exists for building open-source tools or templates, but monetization is uncertain. The opportunity is real but speculative, requiring validation before significant investment.",
+      "opportunity_summary_zh": "智能体三角模型是一个早期框架，竞争低且SEO容易，但需求和市场信号较弱。构建开源工具或模板存在先发优势，但变现不确定。机会真实但具有投机性，需要先验证再投入。"
     },
     {
       "id": "trend-hello-agents-educational-tutorial",
@@ -7518,7 +7638,31 @@
       "tags": [],
       "summary_zh": "datawhalechina/hello-agents项目以67K+星成为GitHub趋势项目，系统性地从零开始教授智能体原理与实践，反映出智能体教育的巨大需求。",
       "summary_en": "The datawhalechina/hello-agents project trends on GitHub with 67K+ stars, systematically teaching agent principles and practices from scratch, reflecting huge demand for agent education.",
-      "research_md_path": "content/trends/hello-agents-educational-tutorial.md"
+      "research_md_path": "content/trends/hello-agents-educational-tutorial.md",
+      "opportunity_score": 55,
+      "market_score": 70,
+      "competition_score": 30,
+      "demand_score": 75,
+      "seo_difficulty": 40,
+      "suggested_products": [
+        "Web App",
+        "Template/Boilerplate",
+        "Newsletter",
+        "AI Agent",
+        "Open Source"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 3,
+      "risk_factors_en": [
+        "Large AI companies like OpenAI or Google may release official educational content, increasing competition.",
+        "The market is nascent and user willingness to pay for agent education is unproven."
+      ],
+      "risk_factors_zh": [
+        "大型AI公司如OpenAI或谷歌可能发布官方教育内容，增加竞争。",
+        "市场处于早期，用户为智能体教育付费的意愿尚未验证。"
+      ],
+      "opportunity_summary_en": "The hello-agents project's 67K+ stars signal strong demand for agent education. As a first-mover, building a structured tutorial platform with interactive labs could capture this growing market. However, monetization and potential entry by big tech are key risks.",
+      "opportunity_summary_zh": "hello-agents项目的67K+星标表明对智能体教育的强烈需求。作为先行者，构建一个包含交互式实验室的结构化教程平台可以抓住这个增长市场。然而，变现和大厂进入是主要风险。"
     },
     {
       "id": "trend-stack-overflow-decline-due-to-ai",
@@ -7537,7 +7681,33 @@
       "tags": [],
       "summary_zh": "一篇热门分析以图表展示AI对Stack Overflow访问量的冲击，引发关于开发者知识获取方式转变的广泛讨论。",
       "summary_en": "A popular analysis visualizes AI's impact on Stack Overflow traffic, sparking widespread discussion about the shift in how developers acquire knowledge.",
-      "research_md_path": "content/trends/stack-overflow-decline-due-to-ai.md"
+      "research_md_path": "content/trends/stack-overflow-decline-due-to-ai.md",
+      "opportunity_score": 45,
+      "market_score": 55,
+      "competition_score": 30,
+      "demand_score": 60,
+      "seo_difficulty": 40,
+      "suggested_products": [
+        "Web App",
+        "VS Code Extension",
+        "AI Agent",
+        "Chrome Extension",
+        "Newsletter"
+      ],
+      "estimated_dev_days": 45,
+      "revenue_potential": 3,
+      "risk_factors_en": [
+        "AI model improvements may reduce the need for human-curated Q&A",
+        "Large tech companies (e.g., Google, Microsoft) could launch similar products",
+        "User adoption depends on trust in AI-generated versus human-verified answers"
+      ],
+      "risk_factors_zh": [
+        "AI模型改进可能减少对人工精选问答的需求",
+        "大型科技公司（如Google、Microsoft）可能推出类似产品",
+        "用户采纳取决于对AI生成答案与人工验证答案的信任度"
+      ],
+      "opportunity_summary_en": "The decline of Stack Overflow due to AI presents a gap for curated, AI-assisted developer knowledge platforms. As developers seek reliable alternatives, there is an opportunity to build a product that combines AI efficiency with human verification. Early movers can capture a niche market before major players enter.",
+      "opportunity_summary_zh": "Stack Overflow因AI而衰落，为精选的AI辅助开发者知识平台创造了空白。随着开发者寻求可靠替代方案，有机会构建融合AI效率与人工验证的产品。先行者可以在大厂进入前抢占利基市场。"
     },
     {
       "id": "trend-agent-reach-multi-platform-social-scraper",
@@ -7556,7 +7726,31 @@
       "tags": [],
       "summary_zh": "Agent-Reach项目以57K+星成为GitHub趋势项目，提供让AI Agent通过CLI无API费用地读取和搜索Twitter、Reddit、YouTube、GitHub、B站、小红书等平台的能力。",
       "summary_en": "The Agent-Reach project trends on GitHub with 57K+ stars, enabling AI agents to read and search Twitter, Reddit, YouTube, GitHub, Bilibili, and Xiaohongshu via CLI with zero API fees.",
-      "research_md_path": "content/trends/agent-reach-multi-platform-social-scraper.md"
+      "research_md_path": "content/trends/agent-reach-multi-platform-social-scraper.md",
+      "opportunity_score": 45,
+      "market_score": 60,
+      "competition_score": 30,
+      "demand_score": 50,
+      "seo_difficulty": 40,
+      "suggested_products": [
+        "CLI Tool",
+        "API",
+        "SaaS",
+        "Chrome Extension",
+        "Open Source"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Platforms may change terms to block scraping",
+        "Large competitors like OpenAI or browser vendors could integrate similar features"
+      ],
+      "risk_factors_zh": [
+        "平台可能更改条款阻止抓取",
+        "大型竞争对手如OpenAI或浏览器厂商可能集成类似功能"
+      ],
+      "opportunity_summary_en": "The Agent-Reach project shows strong early traction with 57K+ stars. The opportunity lies in building a commercial layer on top of the open-source CLI tool, such as a managed API or SaaS dashboard. However, the nascent stage and lack of validated demand mean cautious investment is needed.",
+      "opportunity_summary_zh": "Agent-Reach项目凭借57K+星标显示出强劲的早期吸引力。机会在于在开源CLI工具之上构建商业层，例如托管API或SaaS仪表板。然而，处于初期阶段且缺乏验证的需求意味着需要谨慎投资。"
     },
     {
       "id": "trend-longstraw-long-context-rl",
@@ -7575,7 +7769,31 @@
       "tags": [],
       "summary_zh": "LongStraw提出在固定GPU预算下将强化学习扩展到200万token以上上下文窗口的方法，是长上下文AI的重要进展。",
       "summary_en": "LongStraw proposes a method to scale reinforcement learning beyond 2 million token context windows under a fixed GPU budget, a significant advance in long-context AI.",
-      "research_md_path": "content/trends/longstraw-long-context-rl.md"
+      "research_md_path": "content/trends/longstraw-long-context-rl.md",
+      "opportunity_score": 42,
+      "market_score": 55,
+      "competition_score": 20,
+      "demand_score": 35,
+      "seo_difficulty": 10,
+      "suggested_products": [
+        "Open Source",
+        "API",
+        "CLI Tool"
+      ],
+      "estimated_dev_days": 60,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Extremely nascent market with no proven demand",
+        "High technical complexity requiring deep RL and GPU optimization expertise",
+        "Potential competition from big labs (Google, Meta) if they release similar methods"
+      ],
+      "risk_factors_zh": [
+        "市场极其早期，需求未经证实",
+        "技术复杂度高，需要深度强化学习和GPU优化专长",
+        "可能面临大实验室（如Google、Meta）发布类似方法的竞争"
+      ],
+      "opportunity_summary_en": "LongStraw Long-Context RL addresses a cutting-edge niche in scaling reinforcement learning to over 2 million tokens. The market is completely unserved but very small and nascent, with high technical barriers. An open-source implementation or API could attract early adopters, but revenue prospects are limited in the short term.",
+      "opportunity_summary_zh": "LongStraw长上下文RL解决了将强化学习扩展到超过200万token的前沿问题。市场完全空白但非常小且早期，技术门槛高。开源实现或API可能吸引早期用户，但短期收入前景有限。"
     },
     {
       "id": "trend-ezbookkeeping-mobile-app",
@@ -7594,7 +7812,29 @@
       "tags": [],
       "summary_zh": "基于开源ezBookkeeping的移动端应用发布，满足用户对自部署、数据私密的记账需求，反映了个人数据主权意识的增强。",
       "summary_en": "A mobile app based on the open-source ezBookkeeping is released, addressing user demand for self-hosted, privacy-preserving bookkeeping, reflecting growing awareness of personal data sovereignty.",
-      "research_md_path": "content/trends/ezbookkeeping-mobile-app.md"
+      "research_md_path": "content/trends/ezbookkeeping-mobile-app.md",
+      "opportunity_score": 38,
+      "market_score": 35,
+      "competition_score": 20,
+      "demand_score": 45,
+      "seo_difficulty": 30,
+      "suggested_products": [
+        "Mobile App",
+        "Open Source",
+        "Web App"
+      ],
+      "estimated_dev_days": 45,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Low user adoption due to self-hosted complexity",
+        "Competition from free open-source alternatives"
+      ],
+      "risk_factors_zh": [
+        "自部署的复杂性导致用户采用率低",
+        "来自免费开源竞品的竞争"
+      ],
+      "opportunity_summary_en": "The ezBookkeeping mobile app targets a niche need for privacy-first bookkeeping. While competition is low and demand is steady, the market is small and user willingness to pay is weak. A viable MVP could be built quickly, but revenue potential remains limited.",
+      "opportunity_summary_zh": "ezBookkeeping移动应用瞄准了注重隐私的记账小众需求。尽管竞争低且需求稳定，但市场小且用户付费意愿弱。MVP可快速构建，但收入潜力有限。"
     },
     {
       "id": "trend-enterprise-ai-agent-competition",
@@ -7613,7 +7853,31 @@
       "tags": [],
       "summary_zh": "多个信号显示中国科技巨头（蚂蚁、腾讯、阿里、百度）在企业级AI Agent领域展开激烈竞争，同时有3T参数大模型Agent出现，表明企业AI Agent部署正在加速。",
       "summary_en": "Multiple signals indicate fierce competition among Chinese tech giants (Ant, Tencent, Alibaba, Baidu) in enterprise AI agents, alongside the emergence of a 3T-parameter agent model, signaling accelerated enterprise AI agent deployment.",
-      "research_md_path": "content/trends/enterprise-ai-agent-competition.md"
+      "research_md_path": "content/trends/enterprise-ai-agent-competition.md",
+      "opportunity_score": 42,
+      "market_score": 60,
+      "competition_score": 85,
+      "demand_score": 50,
+      "seo_difficulty": 80,
+      "suggested_products": [
+        "SaaS",
+        "API",
+        "AI Agent",
+        "Chrome Extension",
+        "Plugin/Add-on"
+      ],
+      "estimated_dev_days": 90,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Dominant tech giants (Ant, Tencent, Alibaba, Baidu) can quickly replicate features and leverage existing customer relationships.",
+        "Enterprise market requires high trust and compliance, which is difficult for indie developers without brand or resources."
+      ],
+      "risk_factors_zh": [
+        "科技巨头（蚂蚁、腾讯、阿里、百度）能快速复制功能并利用现有客户关系。",
+        "企业市场需要高信任和合规性，独立开发者缺乏品牌和资源难以应对。"
+      ],
+      "opportunity_summary_en": "The enterprise AI agent market is heavily contested by Chinese tech giants, making direct competition risky for indie developers. However, there may be niche opportunities in specialized verticals or integration tools that large players overlook. A focused product targeting a specific enterprise pain point with a low-cost MVP could be viable, but revenue potential remains modest.",
+      "opportunity_summary_zh": "企业级AI Agent市场已被中国科技巨头激烈争夺，独立开发者直接竞争风险较高。但在大型玩家忽视的特定垂直领域或集成工具中可能存在利基机会。针对特定企业痛点、低成本MVP的聚焦产品或许可行，但收入潜力有限。"
     },
     {
       "id": "trend-kimi-k3-model-surge",
@@ -7632,7 +7896,33 @@
       "tags": [],
       "summary_zh": "Kimi K3模型需求激增导致Moonshot AI暂停新订阅，并在V2EX引发热议，同时影响美国半导体股票，表明国产AI模型正在产生市场影响。",
       "summary_en": "Surge in demand for the Kimi K3 model forced Moonshot AI to suspend new subscriptions, sparked heated discussions on V2EX, and impacted U.S. semiconductor stocks, showing domestic AI models are gaining market influence.",
-      "research_md_path": "content/trends/kimi-k3-model-surge.md"
+      "research_md_path": "content/trends/kimi-k3-model-surge.md",
+      "opportunity_score": 45,
+      "market_score": 55,
+      "competition_score": 30,
+      "demand_score": 70,
+      "seo_difficulty": 40,
+      "suggested_products": [
+        "API",
+        "SaaS",
+        "Chrome Extension",
+        "AI Agent",
+        "Mobile App"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 4,
+      "risk_factors_en": [
+        "Moonshot AI may release their own API and compete directly",
+        "Regulatory risks in domestic AI market",
+        "Potential for large tech companies to dominate the space"
+      ],
+      "risk_factors_zh": [
+        "Moonshot AI可能发布自己的API并直接竞争",
+        "国内AI市场的监管风险",
+        "大型科技公司可能主导该领域"
+      ],
+      "opportunity_summary_en": "The Kimi K3 model surge indicates a strong market opportunity for independent developers to build tools and services around it. With limited existing competition and high demand, creating API wrappers or specialized applications could capture early adopters. However, risks from the official provider and large competitors must be managed carefully.",
+      "opportunity_summary_zh": "Kimi K3模型激增表明独立开发者围绕其构建工具和服务有强大的市场机会。现有竞争有限且需求高，创建API封装或专用应用可捕获早期用户。但需谨慎管理来自官方提供商和大型竞争对手的风险。"
     },
     {
       "id": "trend-vibe-coding-side-project-economics",
@@ -7651,7 +7941,29 @@
       "tags": [],
       "summary_zh": "V2EX上关于Vibe Coding副业四个月成本超收益的讨论引发31条回复，同时有多个独立开发者分享SaaS零收入经验，表明AI辅助编程的副业经济模式正面临现实考验。",
       "summary_en": "A V2EX discussion on four months of Vibe Coding side projects with costs exceeding revenue drew 31 replies, alongside multiple indie devs sharing zero-revenue SaaS experiences, indicating the side-project economy powered by AI coding faces reality checks.",
-      "research_md_path": "content/trends/vibe-coding-side-project-economics.md"
+      "research_md_path": "content/trends/vibe-coding-side-project-economics.md",
+      "opportunity_score": 42,
+      "market_score": 35,
+      "competition_score": 20,
+      "demand_score": 45,
+      "seo_difficulty": 15,
+      "suggested_products": [
+        "Web App",
+        "SaaS",
+        "Template/Boilerplate"
+      ],
+      "estimated_dev_days": 14,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Low user willingness to pay for side project tools",
+        "Potential entry of AI coding platforms (e.g., GitHub Copilot, Cursor) into this space"
+      ],
+      "risk_factors_zh": [
+        "用户为副业工具付费意愿低",
+        "AI编程平台（如GitHub Copilot、Cursor）可能进入该领域"
+      ],
+      "opportunity_summary_en": "The Vibe Coding side project economics trend reveals a real but niche pain point: indie developers struggle to monetize AI-assisted side projects. With minimal competition and low search difficulty, early movers can build simple tools or templates to help track and improve project ROI. However, the market is small and users have low willingness to pay, limiting revenue potential.",
+      "opportunity_summary_zh": "Vibe Coding副业经济趋势揭示了一个真实但小众的痛点：独立开发者难以从AI辅助的副项目中获利。竞争极少，搜索难度低，早期进入者可构建简单工具或模板来帮助追踪和改善项目ROI。但市场规模小，用户付费意愿低，限制了收入潜力。"
     },
     {
       "id": "trend-ai-agent-internet-access-tool",
@@ -7670,7 +7982,30 @@
       "tags": [],
       "summary_zh": "开源项目Agent-Reach（58K星）让AI Agent能读取Twitter、Reddit、YouTube等全网内容，无需API费用，体现了Agent获取实时网络数据的新范式。",
       "summary_en": "Open-source project Agent-Reach (58K stars) enables AI agents to read content across Twitter, Reddit, YouTube and more without API fees, representing a new paradigm for agents accessing real-time web data.",
-      "research_md_path": "content/trends/ai-agent-internet-access-tool.md"
+      "research_md_path": "content/trends/ai-agent-internet-access-tool.md",
+      "opportunity_score": 45,
+      "market_score": 55,
+      "competition_score": 25,
+      "demand_score": 50,
+      "seo_difficulty": 30,
+      "suggested_products": [
+        "Open Source",
+        "API",
+        "CLI Tool",
+        "MCP Server"
+      ],
+      "estimated_dev_days": 14,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Large AI companies (e.g., OpenAI, Google) may integrate similar capabilities into their platforms, making standalone tools obsolete.",
+        "Open-source alternatives may commoditize the space, reducing willingness to pay."
+      ],
+      "risk_factors_zh": [
+        "大型AI公司（如OpenAI、Google）可能将类似功能集成到其平台中，使独立工具过时。",
+        "开源替代品可能使该领域商品化，降低用户付费意愿。"
+      ],
+      "opportunity_summary_en": "AI Agent Internet Access Tool is a nascent opportunity with only one open-source project (Agent-Reach) leading the space. There is a clear need for free, API-free web access for agents, but monetization is uncertain. Early entry could capture developer mindshare, but risks include large platform integration and open-source commoditization.",
+      "opportunity_summary_zh": "AI Agent 网络访问工具是一个新兴机会，目前仅有一个开源项目（Agent-Reach）领先。为智能体提供免费、无需API的网络访问需求明确，但变现路径不确定。早期进入可获取开发者心智，但风险包括大平台集成和开源商品化。"
     },
     {
       "id": "trend-solo-saas-founder-stack",
@@ -7689,7 +8024,31 @@
       "tags": [],
       "summary_zh": "多个DEV社区帖子讨论独立SaaS创始人的工具栈和实战策略，包括认证托管、邮件SaaS、多租户架构等，表明独立开发者SaaS生态正在形成成熟的实践知识体系。",
       "summary_en": "Multiple DEV community posts discuss solo SaaS founder tool stacks and battle-tested strategies, including authentication hosting, email SaaS, and multi-tenancy architecture, indicating a maturing body of practical knowledge for indie SaaS builders.",
-      "research_md_path": "content/trends/solo-saas-founder-stack.md"
+      "research_md_path": "content/trends/solo-saas-founder-stack.md",
+      "opportunity_score": 42,
+      "market_score": 45,
+      "competition_score": 35,
+      "demand_score": 50,
+      "seo_difficulty": 60,
+      "suggested_products": [
+        "Template/Boilerplate",
+        "SaaS",
+        "Web App",
+        "Newsletter",
+        "CLI Tool"
+      ],
+      "estimated_dev_days": 45,
+      "revenue_potential": 3,
+      "risk_factors_en": [
+        "Low search volume may limit organic growth",
+        "Large players (e.g., Vercel, Netlify) could bundle similar stacks"
+      ],
+      "risk_factors_zh": [
+        "搜索量低可能限制自然增长",
+        "大公司（如Vercel、Netlify）可能捆绑类似栈"
+      ],
+      "opportunity_summary_en": "The 'Solo SaaS Founder Stack' trend is nascent with growing community interest but lacks concrete market data. There is an opportunity to create a curated boilerplate or SaaS that integrates common tools for solo founders, though SEO difficulty and potential big player moves pose risks. Revenue potential is moderate, targeting a dedicated but small audience.",
+      "opportunity_summary_zh": "“独立SaaS创始人工具栈”趋势初期，社区兴趣增长但缺乏具体市场数据。有机会创建精选样板或SaaS，为独立创始人整合常用工具，但SEO难度和大公司潜在进入构成风险。收入潜力中等，面向专注但规模较小的受众。"
     },
     {
       "id": "trend-open-source-ai-security-tools",
@@ -7708,7 +8067,31 @@
       "tags": [],
       "summary_zh": "Capital One发布开源VulnHunter Agentic AI代码安全工具，同时有Ledger Agent Stack开源AI加密工具包发布，表明企业级开源AI安全工具正在兴起。",
       "summary_en": "Capital One released open-source VulnHunter agentic AI code security tool, alongside the Ledger Agent Stack open-source AI crypto toolkit, indicating a rise in enterprise-grade open-source AI security tools.",
-      "research_md_path": "content/trends/open-source-ai-security-tools.md"
+      "research_md_path": "content/trends/open-source-ai-security-tools.md",
+      "opportunity_score": 42,
+      "market_score": 45,
+      "competition_score": 30,
+      "demand_score": 40,
+      "seo_difficulty": 35,
+      "suggested_products": [
+        "Open Source",
+        "VS Code Extension",
+        "CLI Tool",
+        "AI Agent",
+        "API"
+      ],
+      "estimated_dev_days": 45,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Large cloud providers (e.g., AWS, Microsoft) may release competing integrated security tools.",
+        "Open-source community fragmentation could dilute adoption and support."
+      ],
+      "risk_factors_zh": [
+        "大型云服务商（如AWS、微软）可能发布集成的安全工具形成竞争。",
+        "开源社区碎片化可能削弱采用率和支持力度。"
+      ],
+      "opportunity_summary_en": "The market for open-source AI security tools is nascent with low competition, offering a niche for early movers. However, demand signals are weak and monetization is uncertain, requiring careful validation. A focused open-source tool (e.g., VS Code extension for code security) could build community traction before exploring revenue.",
+      "opportunity_summary_zh": "开源AI安全工具市场处于早期，竞争较低，为早期进入者提供了细分机会。但需求信号较弱且变现不确定，需要谨慎验证。一款专注的开源工具（如用于代码安全的VS Code扩展）可以先建立社区影响力，再探索收入模式。"
     },
     {
       "id": "trend-ai-confidence-overaccuracy-effect",
@@ -7727,7 +8110,29 @@
       "tags": [],
       "summary_zh": "研究发现AI建议使人准确率降低3倍但自信提升2倍，在Hacker News获得164赞和71评论，揭示了AI辅助决策中值得警惕的认知偏差。",
       "summary_en": "Research showing AI advice makes people 3x less accurate but 2x more confident gained 164 upvotes and 71 comments on Hacker News, revealing a cognitive bias worth monitoring in AI-assisted decision-making.",
-      "research_md_path": "content/trends/ai-confidence-overaccuracy-effect.md"
+      "research_md_path": "content/trends/ai-confidence-overaccuracy-effect.md",
+      "opportunity_score": 45,
+      "market_score": 40,
+      "competition_score": 20,
+      "demand_score": 50,
+      "seo_difficulty": 30,
+      "suggested_products": [
+        "Chrome Extension",
+        "Web App",
+        "Open Source"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Cognitive bias is hard to productize; users may not pay for awareness alone.",
+        "Large AI companies (e.g., OpenAI, Google) could integrate similar warnings into their products."
+      ],
+      "risk_factors_zh": [
+        "认知偏差难以产品化；用户可能不愿意仅为意识提升付费。",
+        "大型AI公司（如OpenAI、Google）可能将类似警告集成到自身产品中。"
+      ],
+      "opportunity_summary_en": "The AI overconfidence effect is a newly identified cognitive bias with growing awareness but no commercial solution yet. A simple tool that alerts users when they are overconfident in AI advice could fill a niche. However, monetization is uncertain and large players may eventually absorb the functionality.",
+      "opportunity_summary_zh": "AI过度自信效应是一个新近被识别的认知偏差，关注度在上升但尚无商业解决方案。一个简单工具，在用户对AI建议过度自信时发出警告，可能填补细分市场。然而，变现模式不确定，大型厂商最终可能吸收该功能。"
     },
     {
       "id": "trend-claude-code-runtime-migration",
@@ -7746,7 +8151,33 @@
       "tags": [],
       "summary_zh": "Claude Code改用Rust编写的Bun运行时在Hacker News获得362赞和499评论，表明AI编程工具底层运行时迁移成为热点讨论。",
       "summary_en": "Claude Code's migration to Bun written in Rust garnered 362 upvotes and 499 comments on Hacker News, showing AI coding tool runtime migration is a hot topic.",
-      "research_md_path": "content/trends/claude-code-runtime-migration.md"
+      "research_md_path": "content/trends/claude-code-runtime-migration.md",
+      "opportunity_score": 45,
+      "market_score": 55,
+      "competition_score": 20,
+      "demand_score": 40,
+      "seo_difficulty": 30,
+      "suggested_products": [
+        "Open Source",
+        "CLI Tool",
+        "MCP Server",
+        "VS Code Extension",
+        "Plugin/Add-on"
+      ],
+      "estimated_dev_days": 14,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "The trend may remain niche with limited mainstream adoption",
+        "Official Claude Code team could release their own optimized runtime, eliminating third-party need",
+        "Dependency on Bun's stability and ongoing development"
+      ],
+      "risk_factors_zh": [
+        "该趋势可能保持小众，主流采用有限",
+        "Claude Code官方团队可能发布自己的优化运行时，消除第三方需求",
+        "依赖Bun的稳定性和持续开发"
+      ],
+      "opportunity_summary_en": "Claude Code's migration to Bun runtime is a nascent trend with strong community buzz but limited concrete demand. The low competition and moderate market interest create a small window for open-source tooling or CLI utilities that simplify migration. However, revenue potential is low and the window may close quickly if official solutions emerge.",
+      "opportunity_summary_zh": "Claude Code迁移到Bun运行时是一个新兴趋势，社区热议但具体需求有限。低竞争和适度的市场兴趣为开源工具或简化迁移的CLI工具创造了小窗口。然而，收入潜力低，如果官方解决方案出现，窗口可能很快关闭。"
     },
     {
       "id": "trend-one-person-company-opc-ecosystem",
@@ -7765,7 +8196,31 @@
       "tags": [],
       "summary_zh": "多个信号（w2solo 报告、WAIC 2026 OPC 专区）显示一人公司数量激增且 AI 工具加速了这一趋势，成为值得追踪的行业现象。",
       "summary_en": "Multiple signals (w2solo report, WAIC 2026 OPC zone) show a surge in one-person companies accelerated by AI tools, making this a notable industry trend.",
-      "research_md_path": "content/trends/one-person-company-opc-ecosystem.md"
+      "research_md_path": "content/trends/one-person-company-opc-ecosystem.md",
+      "opportunity_score": 48,
+      "market_score": 55,
+      "competition_score": 30,
+      "demand_score": 50,
+      "seo_difficulty": 20,
+      "suggested_products": [
+        "Web App",
+        "AI Agent",
+        "SaaS",
+        "Newsletter",
+        "Template/Boilerplate"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 3,
+      "risk_factors_en": [
+        "Market may remain niche if solo entrepreneurship doesn't scale",
+        "Large incumbents (e.g., Notion, Zapier) could add OPC-specific features"
+      ],
+      "risk_factors_zh": [
+        "若单人创业未能规模化，市场可能保持小众",
+        "大型厂商（如Notion、Zapier）可能增加针对一人公司的功能"
+      ],
+      "opportunity_summary_en": "The one-person company ecosystem is an emerging trend with growing interest from indie developers and solopreneurs, accelerated by AI tools. Competition is low and SEO is easy, offering a blue ocean for tailored tools and resources. However, the market is still nascent with limited concrete data on demand and revenue models.",
+      "opportunity_summary_zh": "一人公司生态是一个新兴趋势，在AI工具推动下，独立开发者和单人创业者的兴趣日益增长。竞争低且SEO容易，为定制化工具和资源提供了蓝海。但市场仍处于早期，具体需求和收入模式的数据有限。"
     },
     {
       "id": "trend-ai-agent-skill-marketplace",
@@ -7784,7 +8239,31 @@
       "tags": [],
       "summary_zh": "Goink 等工具引入了面向 AI Agent 的“技能市场”和风格提取功能，反映 Agent 能力可组合、可交易的新范式。",
       "summary_en": "Tools like Goink introduce a 'skill marketplace' and style extraction for AI agents, reflecting a new paradigm of composable and tradable agent capabilities.",
-      "research_md_path": "content/trends/ai-agent-skill-marketplace.md"
+      "research_md_path": "content/trends/ai-agent-skill-marketplace.md",
+      "opportunity_score": 45,
+      "market_score": 60,
+      "competition_score": 20,
+      "demand_score": 40,
+      "seo_difficulty": 30,
+      "suggested_products": [
+        "SaaS",
+        "API",
+        "AI Agent",
+        "Open Source",
+        "Chrome Extension"
+      ],
+      "estimated_dev_days": 45,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Market may remain niche if AI agent adoption is slow",
+        "Large tech companies could build native skill marketplaces"
+      ],
+      "risk_factors_zh": [
+        "如果 AI Agent 采用速度慢，市场可能保持小众",
+        "大型科技公司可能构建原生技能市场"
+      ],
+      "opportunity_summary_en": "The AI agent skill marketplace is a nascent opportunity with low competition and high potential in the growing agent ecosystem. However, demand signals are weak and revenue models unproven. Independent developers can enter early with a lightweight SaaS or API, but should be cautious about market readiness.",
+      "opportunity_summary_zh": "AI Agent 技能市场是一个新兴机会，竞争低，在日益增长的 Agent 生态中潜力大。然而，需求信号弱，变现模式未经验证。独立开发者可以早期进入，构建轻量级 SaaS 或 API，但需谨慎评估市场成熟度。"
     },
     {
       "id": "trend-chrome-devtools-mcp-for-coding-agents",
@@ -7842,6 +8321,120 @@
       "summary_zh": "w2solo 文章指出 React Compiler 已落地，手动 useMemo/useCallback 优化成为反模式，反映 React 开发实践的重大转变。",
       "summary_en": "A w2solo article points out that with React Compiler now stable, manual useMemo/useCallback optimizations have become anti-patterns, signaling a major shift in React development practices.",
       "research_md_path": "content/trends/react-compiler-anti-patterns.md"
+    },
+    {
+      "id": "trend-agent-skill-ecosystems",
+      "canonical": "Agent Skill Ecosystems",
+      "canonical_zh": "Agent技能生态",
+      "aliases": [],
+      "first_seen": "2026-07-22",
+      "last_seen": "2026-07-22",
+      "stage": "nascent",
+      "score": 0,
+      "source_count": 0,
+      "total_mentions": 0,
+      "sources": [],
+      "growth_pct": 100,
+      "category": "AIAgent",
+      "tags": [],
+      "summary_zh": "多个信号（GitHub趋势项目、掘金文章）围绕“Agent Skills”概念涌现，表明AI Agent正从通用对话向可组合的专项技能模块演进，值得追踪其生态发展。",
+      "summary_en": "Multiple signals (GitHub trending repos, Juejin articles) around the concept of 'Agent Skills' indicate a shift from general-purpose AI agents to composable, domain-specific skill modules, making this ecosystem worth tracking.",
+      "research_md_path": "content/trends/agent-skill-ecosystems.md"
+    },
+    {
+      "id": "trend-one-person-company-opc-movement",
+      "canonical": "One-Person Company (OPC) Movement",
+      "canonical_zh": "一人公司运动",
+      "aliases": [],
+      "first_seen": "2026-07-22",
+      "last_seen": "2026-07-22",
+      "stage": "nascent",
+      "score": 0,
+      "source_count": 0,
+      "total_mentions": 0,
+      "sources": [],
+      "growth_pct": 100,
+      "category": "Industry",
+      "tags": [],
+      "summary_zh": "WAIC 2026首次设立OPC专区，结合多个独立开发者社区的热门讨论，显示AI大幅降低创业门槛，'一人公司'正从边缘走向主流。",
+      "summary_en": "WAIC 2026 debuted an OPC (One-Person Company) zone, and combined with hot discussions in indie developer communities, it signals that AI is drastically lowering the startup barrier, moving the 'one-person company' from fringe to mainstream.",
+      "research_md_path": "content/trends/one-person-company-opc-movement.md"
+    },
+    {
+      "id": "trend-ai-coding-tool-migration-wave",
+      "canonical": "AI Coding Tool Migration Wave",
+      "canonical_zh": "AI编程工具迁移潮",
+      "aliases": [],
+      "first_seen": "2026-07-22",
+      "last_seen": "2026-07-22",
+      "stage": "nascent",
+      "score": 0,
+      "source_count": 0,
+      "total_mentions": 0,
+      "sources": [],
+      "growth_pct": 100,
+      "category": "DevTools",
+      "tags": [],
+      "summary_zh": "从Cursor到Codex的迁移体验、Codex最佳实践指南等多个高热度讨论，表明开发者正在积极评估和迁移AI编程工具，形成了一股值得追踪的迁移潮。",
+      "summary_en": "Multiple high-engagement discussions about migrating from Cursor to Codex and best practices for Codex indicate developers are actively evaluating and switching AI coding tools, forming a migration wave worth tracking.",
+      "research_md_path": "content/trends/ai-coding-tool-migration-wave.md"
+    },
+    {
+      "id": "trend-react-compiler-obsolescence-of-manual-optimization",
+      "canonical": "React Compiler Obsolescence of Manual Optimizations",
+      "canonical_zh": "React编译器淘汰手动优化",
+      "aliases": [],
+      "first_seen": "2026-07-22",
+      "last_seen": "2026-07-22",
+      "stage": "nascent",
+      "score": 0,
+      "source_count": 0,
+      "total_mentions": 0,
+      "sources": [],
+      "growth_pct": 100,
+      "category": "DX",
+      "tags": [],
+      "summary_zh": "一篇关于2026年useMemo等手动优化已成反模式的文章获得关注，反映React Compiler正式落地后，开发者体验和编码范式正在发生根本性变化。",
+      "summary_en": "An article arguing that manual optimizations like useMemo have become anti-patterns in 2026 gained traction, reflecting a fundamental shift in developer experience and coding paradigms following the official release of the React Compiler.",
+      "research_md_path": "content/trends/react-compiler-obsolescence-of-manual-optimization.md"
+    },
+    {
+      "id": "trend-ai-governance-tools-for-healthcare",
+      "canonical": "AI Governance Tools for Healthcare",
+      "canonical_zh": "医疗AI治理工具",
+      "aliases": [],
+      "first_seen": "2026-07-22",
+      "last_seen": "2026-07-22",
+      "stage": "nascent",
+      "score": 0,
+      "source_count": 0,
+      "total_mentions": 0,
+      "sources": [],
+      "growth_pct": 100,
+      "category": "Industry",
+      "tags": [],
+      "summary_zh": "DiMe发起构建可运行的AI治理工具倡议，表明在医疗等受监管行业，AI应用正从原则讨论转向具体工具落地。",
+      "summary_en": "DiMe's initiative to build operational AI governance tools signals a shift from principle discussions to concrete tooling for AI applications in regulated industries like healthcare.",
+      "research_md_path": "content/trends/ai-governance-tools-for-healthcare.md"
+    },
+    {
+      "id": "trend-self-hosted-agent-infrastructure",
+      "canonical": "Self-Hosted Agent Infrastructure",
+      "canonical_zh": "自托管Agent基础设施",
+      "aliases": [],
+      "first_seen": "2026-07-22",
+      "last_seen": "2026-07-22",
+      "stage": "nascent",
+      "score": 0,
+      "source_count": 0,
+      "total_mentions": 0,
+      "sources": [],
+      "growth_pct": 100,
+      "category": "Infra",
+      "tags": [],
+      "summary_zh": "多个信号（open-connector、OSS Cross-Harness）指向为AI Agent提供自托管注册中心、分析网关等基础设施，反映企业级Agent部署对数据主权和可控性的需求。",
+      "summary_en": "Multiple signals (open-connector, OSS Cross-Harness) point to self-hosted infrastructure for AI agents, like registries and analytics gateways, reflecting enterprise demand for data sovereignty and control in agent deployment.",
+      "research_md_path": "content/trends/self-hosted-agent-infrastructure.md"
     }
   ],
   "_version": "1.0"
