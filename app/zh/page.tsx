@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { TrendingUp, BarChart3, Globe, Zap, Search, Shield } from 'lucide-react';
+import { TrendingUp, BarChart3, Globe, Zap, Search, Shield, Mail } from 'lucide-react';
 // Trends data module is the single source of truth for types + stage labels.
 // The homepage IS the trends discovery page — this cross-route import is intentional.
 import { getAllTrendTerms, getTrendStats } from '../trends/data';
@@ -159,7 +159,7 @@ export default function ZhHomePage() {
         <section className="trends-hero">
           <h1>找到值得行动的信号</h1>
           <p className="trends-hero-desc">
-            AI 每天扫描 {stats.totalSources}+ 个信源，交叉验证后按 Builder Score 排序
+            AI 每天扫描 30+ 个信源，交叉验证后按 Builder Score 排序
             ——帮你过滤噪音，聚焦真正值得关注的机会。免费，无需注册。
           </p>
           <div className="trends-hero-stats">
@@ -168,6 +168,19 @@ export default function ZhHomePage() {
             {' · '}每日 08:30 CST 更新
           </div>
         </section>
+
+        {/* ── Newsletter Subscribe CTA ── */}
+        <div className="newsletter-cta">
+          <a
+            href="https://buttondown.com/aimfast"
+            className="newsletter-cta-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Mail size={16} aria-hidden="true" />
+            <span>每周创始人的趋势复盘 — 分数背后的真实思考。<strong>免费订阅 →</strong></span>
+          </a>
+        </div>
 
         {/* ── Live Stats Bar ── */}
         {stats.total > 0 && (
@@ -184,7 +197,7 @@ export default function ZhHomePage() {
             <span className="live-stat-sep" aria-hidden="true">·</span>
             <span className="live-stat">
               <Globe size={16} aria-hidden="true" />
-              <span className="live-stat-value">{stats.totalSources}</span>+ 信号源
+              <span className="live-stat-value">30</span>+ 信号源
             </span>
             <span className="live-stat-sep" aria-hidden="true">·</span>
             <span className="live-stat">每日 08:30 CST 更新</span>
@@ -332,7 +345,7 @@ export default function ZhHomePage() {
         <section className="trends-cta">
           <h2>想看完整情报？</h2>
           <p>
-            每天早上，我们的挖掘引擎扫描 {stats.totalSources}+ 个信号源，
+            每天早上，我们的挖掘引擎扫描 30+ 个信号源，
             将类似这样的信号提炼为一条可执行的决策 —
             附带定价、验证和竞争对手上下文。
           </p>

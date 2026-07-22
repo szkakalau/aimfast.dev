@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { TrendingUp, BarChart3, Globe, Zap, Search, Shield } from 'lucide-react';
+import { TrendingUp, BarChart3, Globe, Zap, Search, Shield, Mail } from 'lucide-react';
 // Trends data module is the single source of truth for types + stage labels.
 // The homepage IS the trends discovery page — this cross-route import is intentional.
 import { getAllTrendTerms, getTrendStats } from './trends/data';
@@ -173,7 +173,7 @@ export default function HomePage() {
         <section className="trends-hero">
           <h1>Signal Over Hype. Every Morning.</h1>
           <p className="trends-hero-desc">
-            AI scans {stats.totalSources}+ sources, cross-validates every term,
+            AI scans 30+ sources, cross-validates every term,
             and ranks by builder relevance — so you see what&apos;s worth acting on,
             not what&apos;s just loud. Free. No signup.
           </p>
@@ -183,6 +183,19 @@ export default function HomePage() {
             {' · '}Updated daily 08:30 CST
           </div>
         </section>
+
+        {/* ── Newsletter Subscribe CTA ── */}
+        <div className="newsletter-cta">
+          <a
+            href="https://buttondown.com/aimfast"
+            className="newsletter-cta-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Mail size={16} aria-hidden="true" />
+            <span>Weekly founder&apos;s letter — the real thinking behind the scores. <strong>Subscribe free →</strong></span>
+          </a>
+        </div>
 
         {/* ── Live Stats Bar — AimFast.Dev Proprietary Data ── */}
         {stats.total > 0 && (
@@ -199,7 +212,7 @@ export default function HomePage() {
             <span className="live-stat-sep" aria-hidden="true">·</span>
             <span className="live-stat">
               <Globe size={16} aria-hidden="true" />
-              <span className="live-stat-value">{stats.totalSources}</span>+ sources
+              <span className="live-stat-value">30</span>+ sources
             </span>
             <span className="live-stat-sep" aria-hidden="true">·</span>
             <span className="live-stat">
@@ -366,7 +379,7 @@ export default function HomePage() {
         <section className="trends-cta">
           <h2>Want the full picture?</h2>
           <p>
-            Every morning, our Discovery Engine scans {stats.totalSources}+ sources and
+            Every morning, our Discovery Engine scans 30+ sources and
             distills signals like these into one actionable decision — with
             pricing, validation, and market context.
           </p>
