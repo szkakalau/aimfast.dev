@@ -1,0 +1,35 @@
+## What is it
+
+Physics-Based UI applies real-world physical principles—like gravity, friction, elasticity, and momentum—to user interface elements. Instead of static buttons and rigid transitions, components move and react as if they exist in a physical space. Think of a menu that bounces when you scroll past its limit, a button that compresses like a spring when pressed, or a card that glides with inertia when flicked. The most visible example right now is "Jelly UI," where interface elements wobble and stretch like gelatin. For indie developers, this means building interfaces that feel alive and tactile, responding to user input in ways that mimic the real world, which can make digital products more intuitive and satisfying to use.
+
+## Why now
+
+This trend is emerging now for several converging reasons. First, consumer hardware has reached a point where high-refresh-rate screens (120Hz and beyond) are standard, making subtle physics animations smooth and appealing rather than jarring. Second, users are fatigued by flat, sterile interfaces that dominated the past decade—there's a growing appetite for digital experiences that feel more organic and human. Third, the rise of spatial computing and AR/VR demands interfaces that behave physically to maintain immersion. Finally, modern frontend frameworks (React, Flutter, SwiftUI) now include built-in physics animation APIs, lowering the barrier for indie developers to experiment. The combination of hardware capability, user demand, and accessible tooling makes this the right moment for Physics-Based UI to move from novelty to mainstream.
+
+## Who's behind it
+
+The Physics-Based UI trend is still nascent, with no single dominant player. Early experimentation comes from design-forward startups and individual developers on platforms like Hacker News, where the "Jelly UI" concept first gained traction. Design tool companies like Framer and Rive are incorporating physics simulation features, enabling designers to prototype these interactions without code. On the open-source side, libraries like React Spring, Framer Motion, and Apple's UIKit Dynamics have long provided physics-based animation primitives. Major tech companies are watching closely—Apple's visionOS uses physics-heavy interactions for spatial computing, and Google's Material Design guidelines now include motion physics recommendations. The trend is currently driven by a grassroots community of indie designers and developers rather than a single corporate initiative.
+
+## Market signals
+
+Currently, the market signals for Physics-Based UI are minimal but noteworthy. The data shows just 1 source and 1 mention on Hacker News, placing this firmly in the "nascent" stage with a trend score of 48/100. This low volume is typical for an emerging concept that hasn't yet crossed into mainstream developer consciousness. However, the fact that it appeared on Hacker News—a bellwether for developer trends—suggests early adopter interest. Cross-platform patterns are emerging: you can see physics-inspired UI in niche apps like the note-taking app Linear (springy scroll physics) and the game-like habit tracker Finch. No major product has fully committed to a Jelly UI aesthetic yet, which means the window for indie developers to establish thought leadership and build first-mover products is wide open.
+
+## Commercial opportunities
+
+Indie developers can capitalize on Physics-Based UI in several specific ways. First, build a **physics UI component library**—a lightweight, framework-agnostic toolkit that lets other developers add jelly buttons, springy menus, and bouncy scroll views with minimal code. Sell it as a premium npm package or subscription service. Second, create a **no-code physics animation tool** that lets designers and non-technical founders prototype physics-based interactions visually, then export production-ready code. This fills a gap since existing tools are either too complex or lack physics simulation. Third, develop a **niche app or game** that uses physics UI as its core differentiator—for example, a meditation app where breathing exercises are guided by a gently pulsing, jelly-like orb that responds to touch. The novelty factor alone can drive viral growth on product hunt and social media.
+
+## Related terms
+
+Two closely related trends are **Micro-interactions** and **Spatial UI**. Micro-interactions are small, contained animations that provide feedback for user actions—a button that depresses, a toggle that slides. Physics-Based UI takes micro-interactions to the next level by making them feel physically grounded, with realistic momentum and elasticity. Spatial UI, driven by AR/VR and visionOS, is the other key connection. In spatial computing, interfaces must obey physical laws to feel real—menus that float with weight, windows that cast shadows and collide with each other. Physics-Based UI provides the underlying mechanics that make spatial interfaces convincing. As both micro-interactions and spatial UI grow, the demand for physics-based design principles will accelerate.
+
+## SEO opportunity
+
+The search volume for "Physics-Based UI" is currently **rising** as early adopters begin researching the concept. Competition is **very low**—almost no established content exists, which is rare and valuable for indie developers who want to rank early. Three long-tail keywords to target: "Jelly UI implementation tutorial", "physics-based animation library React", and "springy UI components for mobile apps". These phrases have low competition but clear search intent from developers looking to build. The window for SEO advantage is narrow—expect major tech publications and framework docs to cover this within 6-12 months. An indie developer who publishes a high-quality tutorial or case study now could capture significant organic traffic and establish authority before the mainstream wave hits.
+
+## Product ideas
+
+**Product 1: JellyKit** — An open-source JavaScript library for adding physics-based UI to any web project. Includes pre-built components (jelly buttons, springy modals, bouncy lists) with a simple API. Monetize via a "Pro" tier with premium components, support, and a Figma plugin. Why now: No standard library exists yet, and the Hacker News buzz shows demand.
+
+**Product 2: Physique** — A mobile-first design tool (web app) for prototyping physics interactions. Drag and drop elements, set physical properties (mass, stiffness, damping), and preview on real devices. Export to React Native or Flutter code. Why now: Designers are hungry for tools that match the new UI trends, and existing tools ignore physics.
+
+**Product 3: BounceBoard** — A SaaS analytics dashboard that uses Physics-Based UI to visualize data. Metrics "float" in 3D space, charts ripple when updated, and filters snap with spring physics. Why now: Differentiates in a crowded analytics market by making data exploration feel playful and memorable, which increases user retention.
