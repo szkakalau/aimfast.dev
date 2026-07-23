@@ -54,6 +54,7 @@ jobs:
       - name: Run daily pipeline
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          BUTTONDOWN_API_KEY: ${{ secrets.BUTTONDOWN_API_KEY }}
           PYTHONUTF8: '1'
           LANG: en_US.UTF-8
           TZ: Asia/Shanghai
