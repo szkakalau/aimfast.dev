@@ -1,107 +1,106 @@
 {
   "_schema": "Term 归一化表 — canonical → aliases + 聚合统计",
   "_version": "1.0",
-  "last_normalized": "2026-07-23T08:10:01.049677+08:00",
+  "last_normalized": "2026-07-23T10:24:18.509075+08:00",
   "canonicals": {
     "Vercel": {
       "first_seen": "2026-07-12",
-      "last_seen": "2026-07-12",
+      "last_seen": "2026-07-23",
       "term_type": "company",
       "aliases": [],
       "merged_terms": [
         "Vercel"
       ],
-      "appearances": 14,
-      "distinct_days": 1,
-      "distinct_sources": 1,
+      "appearances": 22,
+      "distinct_days": 2,
+      "distinct_sources": 2,
       "sources": {
-        "Vercel": 14
+        "Vercel": 21,
+        "Reddit r/InternetIsBeautiful": 1
       },
       "age_days": 11,
       "stage": "emergent",
-      "score": 134.6,
-      "research_md_path": "content/terms/vercel.md",
-      "research_generated_at": "2026-07-23T08:10:01.207860+08:00"
+      "score": 310.3
     },
     "Cloudflare": {
       "first_seen": "2026-07-12",
-      "last_seen": "2026-07-12",
+      "last_seen": "2026-07-23",
       "term_type": "company",
       "aliases": [],
       "merged_terms": [
         "Cloudflare"
       ],
-      "appearances": 3,
-      "distinct_days": 1,
-      "distinct_sources": 1,
+      "appearances": 5,
+      "distinct_days": 2,
+      "distinct_sources": 2,
       "sources": {
-        "Cloudflare": 3
+        "Cloudflare": 4,
+        "GitHub Releases": 1
       },
       "age_days": 11,
       "stage": "emergent",
-      "score": 109.9,
-      "research_md_path": "content/terms/cloudflare.md",
-      "research_generated_at": "2026-07-23T08:10:01.207894+08:00"
+      "score": 291.8
     },
     "OpenAI": {
       "first_seen": "2026-07-12",
-      "last_seen": "2026-07-12",
+      "last_seen": "2026-07-23",
       "term_type": "company",
       "aliases": [],
       "merged_terms": [
         "OpenAI"
       ],
-      "appearances": 9,
-      "distinct_days": 1,
-      "distinct_sources": 1,
+      "appearances": 23,
+      "distinct_days": 2,
+      "distinct_sources": 3,
       "sources": {
-        "OpenAI": 9
+        "OpenAI": 16,
+        "YouTube": 6,
+        "Lobsters": 1
       },
       "age_days": 11,
       "stage": "emergent",
-      "score": 137.8,
-      "research_md_path": "content/terms/openai.md",
-      "research_generated_at": "2026-07-23T08:10:01.207918+08:00"
+      "score": 413.5
     },
     "Apple ML": {
       "first_seen": "2026-07-12",
-      "last_seen": "2026-07-12",
+      "last_seen": "2026-07-23",
       "term_type": "company",
       "aliases": [],
       "merged_terms": [
         "Apple ML"
       ],
-      "appearances": 4,
-      "distinct_days": 1,
+      "appearances": 5,
+      "distinct_days": 2,
       "distinct_sources": 1,
       "sources": {
-        "Apple ML": 4
+        "Apple ML": 5
       },
       "age_days": 11,
       "stage": "emergent",
-      "score": 121.0,
-      "research_md_path": "content/terms/apple-ml.md",
-      "research_generated_at": "2026-07-23T08:10:01.207942+08:00"
+      "score": 216.4
     },
-    "HuggingFace": {
+    "Hugging Face": {
       "first_seen": "2026-07-12",
-      "last_seen": "2026-07-12",
+      "last_seen": "2026-07-23",
       "term_type": "company",
-      "aliases": [],
-      "merged_terms": [
+      "aliases": [
         "HuggingFace"
       ],
-      "appearances": 4,
-      "distinct_days": 1,
-      "distinct_sources": 1,
+      "merged_terms": [
+        "Hugging Face",
+        "HuggingFace"
+      ],
+      "appearances": 8,
+      "distinct_days": 2,
+      "distinct_sources": 3,
       "sources": {
-        "HuggingFace Blog": 4
+        "HuggingFace Blog": 6,
+        "Lobsters": 1,
+        "OSChina": 1
       },
       "age_days": 11,
       "stage": "emergent",
-      "score": 113.0,
-      "research_md_path": "content/terms/huggingface.md",
-      "research_generated_at": "2026-07-23T08:10:01.207963+08:00"
+      "score": 360.5
     },
     "Deutsche Telekom": {
       "first_seen": "2026-07-12",
@@ -119,9 +118,7 @@
       },
       "age_days": 11,
       "stage": "emergent",
-      "score": 114.0,
-      "research_md_path": "content/terms/deutsche-telekom.md",
-      "research_generated_at": "2026-07-23T08:10:01.207985+08:00"
+      "score": 114.0
     },
     "Microsoft 365 Copilot": {
       "first_seen": "2026-07-12",
@@ -139,29 +136,28 @@
       },
       "age_days": 11,
       "stage": "emergent",
-      "score": 114.0,
-      "research_md_path": "content/terms/microsoft-365-copilot.md",
-      "research_generated_at": "2026-07-23T08:10:01.208006+08:00"
+      "score": 114.0
     },
     "ChatGPT": {
       "first_seen": "2026-07-12",
-      "last_seen": "2026-07-12",
+      "last_seen": "2026-07-23",
       "term_type": "product",
       "aliases": [],
       "merged_terms": [
         "ChatGPT"
       ],
-      "appearances": 1,
-      "distinct_days": 1,
-      "distinct_sources": 1,
+      "appearances": 6,
+      "distinct_days": 2,
+      "distinct_sources": 4,
       "sources": {
-        "OpenAI": 1
+        "OpenAI": 2,
+        "YouTube": 2,
+        "Hacker News": 1,
+        "掘金": 1
       },
       "age_days": 11,
       "stage": "emergent",
-      "score": 114.0,
-      "research_md_path": "content/terms/chatgpt.md",
-      "research_generated_at": "2026-07-23T08:10:01.208026+08:00"
+      "score": 416.4
     },
     "Lovable": {
       "first_seen": "2026-07-12",
@@ -179,9 +175,7 @@
       },
       "age_days": 11,
       "stage": "emergent",
-      "score": 106.0,
-      "research_md_path": "content/terms/lovable.md",
-      "research_generated_at": "2026-07-23T08:10:01.208045+08:00"
+      "score": 106.0
     },
     "Muse Spark 1.1": {
       "first_seen": "2026-07-12",
@@ -200,95 +194,59 @@
       },
       "age_days": 11,
       "stage": "emergent",
-      "score": 157.0,
-      "research_md_path": "content/terms/muse-spark-1.1.md",
-      "research_generated_at": "2026-07-23T08:10:01.208066+08:00"
+      "score": 157.0
     },
     "AI Gateway": {
       "first_seen": "2026-07-12",
-      "last_seen": "2026-07-12",
+      "last_seen": "2026-07-23",
       "term_type": "product",
-      "aliases": [],
-      "merged_terms": [
-        "AI Gateway"
+      "aliases": [
+        "MAI Gateway"
       ],
-      "appearances": 3,
-      "distinct_days": 1,
-      "distinct_sources": 1,
+      "merged_terms": [
+        "AI Gateway",
+        "MAI Gateway"
+      ],
+      "appearances": 5,
+      "distinct_days": 2,
+      "distinct_sources": 2,
       "sources": {
-        "Vercel": 3
+        "Vercel": 4,
+        "w2solo": 1
       },
       "age_days": 11,
       "stage": "emergent",
-      "score": 117.9,
-      "research_md_path": "content/terms/ai-gateway.md",
-      "research_generated_at": "2026-07-23T08:10:01.208086+08:00"
+      "score": 296.6
     },
-    "GPT-5.6 Sol": {
+    "GPT-5.6": {
       "first_seen": "2026-07-12",
-      "last_seen": "2026-07-12",
+      "last_seen": "2026-07-23",
       "term_type": "model",
       "aliases": [
-        "GPT 5.6 Sol"
-      ],
-      "merged_terms": [
-        "GPT 5.6 Sol"
-      ],
-      "appearances": 1,
-      "distinct_days": 1,
-      "distinct_sources": 1,
-      "sources": {
-        "Vercel": 1
-      },
-      "age_days": 11,
-      "stage": "emergent",
-      "score": 106.0,
-      "research_md_path": "content/terms/gpt-5.6-sol.md",
-      "research_generated_at": "2026-07-23T08:10:01.208106+08:00"
-    },
-    "GPT-5.6 Luna": {
-      "first_seen": "2026-07-12",
-      "last_seen": "2026-07-12",
-      "term_type": "model",
-      "aliases": [
-        "GPT 5.6 Luna"
-      ],
-      "merged_terms": [
-        "GPT 5.6 Luna"
-      ],
-      "appearances": 1,
-      "distinct_days": 1,
-      "distinct_sources": 1,
-      "sources": {
-        "Vercel": 1
-      },
-      "age_days": 11,
-      "stage": "emergent",
-      "score": 106.0,
-      "research_md_path": "content/terms/gpt-5.6-luna.md",
-      "research_generated_at": "2026-07-23T08:10:01.208126+08:00"
-    },
-    "GPT-5.6 Terra": {
-      "first_seen": "2026-07-12",
-      "last_seen": "2026-07-12",
-      "term_type": "model",
-      "aliases": [
+        "ChatGPT 5.6",
+        "GPT 5.6 Luna",
+        "GPT 5.6 Sol",
         "GPT 5.6 Terra"
       ],
       "merged_terms": [
-        "GPT 5.6 Terra"
+        "ChatGPT 5.6",
+        "GPT 5.6 Luna",
+        "GPT 5.6 Sol",
+        "GPT 5.6 Terra",
+        "GPT-5.6"
       ],
-      "appearances": 1,
-      "distinct_days": 1,
-      "distinct_sources": 1,
+      "appearances": 6,
+      "distinct_days": 2,
+      "distinct_sources": 4,
       "sources": {
-        "Vercel": 1
+        "Vercel": 3,
+        "Google News": 1,
+        "OSChina": 1,
+        "掘金": 1
       },
       "age_days": 11,
       "stage": "emergent",
-      "score": 106.0,
-      "research_md_path": "content/terms/gpt-5.6-terra.md",
-      "research_generated_at": "2026-07-23T08:10:01.208146+08:00"
+      "score": 319.7
     },
     "Meerkat": {
       "first_seen": "2026-07-12",
@@ -306,29 +264,25 @@
       },
       "age_days": 11,
       "stage": "emergent",
-      "score": 98.0,
-      "research_md_path": "content/terms/meerkat.md",
-      "research_generated_at": "2026-07-23T08:10:01.208166+08:00"
+      "score": 98.0
     },
     "Vercel Agent": {
       "first_seen": "2026-07-12",
-      "last_seen": "2026-07-12",
+      "last_seen": "2026-07-23",
       "term_type": "product",
       "aliases": [],
       "merged_terms": [
         "Vercel Agent"
       ],
-      "appearances": 1,
-      "distinct_days": 1,
+      "appearances": 2,
+      "distinct_days": 2,
       "distinct_sources": 1,
       "sources": {
-        "Vercel": 1
+        "Vercel": 2
       },
       "age_days": 11,
       "stage": "emergent",
-      "score": 106.0,
-      "research_md_path": "content/terms/vercel-agent.md",
-      "research_generated_at": "2026-07-23T08:10:01.208186+08:00"
+      "score": 251.5
     },
     "GPT-Live": {
       "first_seen": "2026-07-12",
@@ -346,9 +300,7 @@
       },
       "age_days": 11,
       "stage": "emergent",
-      "score": 114.0,
-      "research_md_path": "content/terms/gpt-live.md",
-      "research_generated_at": "2026-07-23T08:10:01.208211+08:00"
+      "score": 114.0
     },
     "Grok 4.5": {
       "first_seen": "2026-07-12",
@@ -367,9 +319,7 @@
       },
       "age_days": 11,
       "stage": "emergent",
-      "score": 157.5,
-      "research_md_path": "content/terms/grok-4.5.md",
-      "research_generated_at": "2026-07-23T08:10:01.208232+08:00"
+      "score": 157.5
     },
     "Vercel CLI": {
       "first_seen": "2026-07-12",
@@ -387,9 +337,7 @@
       },
       "age_days": 11,
       "stage": "emergent",
-      "score": 106.0,
-      "research_md_path": "content/terms/vercel-cli.md",
-      "research_generated_at": "2026-07-23T08:10:01.208252+08:00"
+      "score": 106.0
     },
     "Vercel Microfrontends": {
       "first_seen": "2026-07-12",
@@ -407,9 +355,7 @@
       },
       "age_days": 11,
       "stage": "emergent",
-      "score": 106.0,
-      "research_md_path": "content/terms/vercel-microfrontends.md",
-      "research_generated_at": "2026-07-23T08:10:01.208272+08:00"
+      "score": 106.0
     },
     "Flags SDK": {
       "first_seen": "2026-07-12",
@@ -427,9 +373,7 @@
       },
       "age_days": 11,
       "stage": "emergent",
-      "score": 106.0,
-      "research_md_path": "content/terms/flags-sdk.md",
-      "research_generated_at": "2026-07-23T08:10:01.208292+08:00"
+      "score": 106.0
     },
     "Chat SDK": {
       "first_seen": "2026-07-12",
@@ -447,29 +391,25 @@
       },
       "age_days": 11,
       "stage": "emergent",
-      "score": 121.0,
-      "research_md_path": "content/terms/chat-sdk.md",
-      "research_generated_at": "2026-07-23T08:10:01.208311+08:00"
+      "score": 121.0
     },
     "Vercel Connect": {
       "first_seen": "2026-07-12",
-      "last_seen": "2026-07-12",
+      "last_seen": "2026-07-23",
       "term_type": "product",
       "aliases": [],
       "merged_terms": [
         "Vercel Connect"
       ],
-      "appearances": 1,
-      "distinct_days": 1,
+      "appearances": 2,
+      "distinct_days": 2,
       "distinct_sources": 1,
       "sources": {
-        "Vercel": 1
+        "Vercel": 2
       },
       "age_days": 11,
       "stage": "emergent",
-      "score": 106.0,
-      "research_md_path": "content/terms/vercel-connect.md",
-      "research_generated_at": "2026-07-23T08:10:01.208330+08:00"
+      "score": 251.5
     },
     "Dial": {
       "first_seen": "2026-07-12",
@@ -487,9 +427,7 @@
       },
       "age_days": 11,
       "stage": "emergent",
-      "score": 106.0,
-      "research_md_path": "content/terms/dial.md",
-      "research_generated_at": "2026-07-23T08:10:01.208349+08:00"
+      "score": 106.0
     },
     "Photon": {
       "first_seen": "2026-07-12",
@@ -507,9 +445,7 @@
       },
       "age_days": 11,
       "stage": "emergent",
-      "score": 106.0,
-      "research_md_path": "content/terms/photon.md",
-      "research_generated_at": "2026-07-23T08:10:01.208368+08:00"
+      "score": 106.0
     },
     "vLLM": {
       "first_seen": "2026-07-12",
@@ -527,9 +463,7 @@
       },
       "age_days": 11,
       "stage": "emergent",
-      "score": 98.0,
-      "research_md_path": "content/terms/vllm.md",
-      "research_generated_at": "2026-07-23T08:10:01.208387+08:00"
+      "score": 98.0
     },
     "Amazon SageMaker Studio": {
       "first_seen": "2026-07-12",
@@ -547,9 +481,7 @@
       },
       "age_days": 11,
       "stage": "emergent",
-      "score": 98.0,
-      "research_md_path": "content/terms/amazon-sagemaker-studio.md",
-      "research_generated_at": "2026-07-23T08:10:01.208407+08:00"
+      "score": 98.0
     },
     "mastra-ai/mastra": {
       "first_seen": "2026-07-12",
@@ -567,9 +499,7 @@
       },
       "age_days": 11,
       "stage": "emergent",
-      "score": 90.0,
-      "research_md_path": "content/terms/mastra-aimastra.md",
-      "research_generated_at": "2026-07-23T08:10:01.208428+08:00"
+      "score": 90.0
     },
     "LiveKit": {
       "first_seen": "2026-07-12",
@@ -587,9 +517,7 @@
       },
       "age_days": 11,
       "stage": "emergent",
-      "score": 90.0,
-      "research_md_path": "content/terms/livekit.md",
-      "research_generated_at": "2026-07-23T08:10:01.208447+08:00"
+      "score": 90.0
     },
     "n8n-io/n8n": {
       "first_seen": "2026-07-12",
@@ -607,29 +535,29 @@
       },
       "age_days": 11,
       "stage": "emergent",
-      "score": 107.4,
-      "research_md_path": "content/terms/n8n-ion8n.md",
-      "research_generated_at": "2026-07-23T08:10:01.208467+08:00"
+      "score": 107.4
     },
-    "microsoft/vscode": {
+    "VSCode": {
       "first_seen": "2026-07-12",
-      "last_seen": "2026-07-12",
+      "last_seen": "2026-07-23",
       "term_type": "project",
-      "aliases": [],
-      "merged_terms": [
+      "aliases": [
         "microsoft/vscode"
       ],
-      "appearances": 1,
-      "distinct_days": 1,
-      "distinct_sources": 1,
+      "merged_terms": [
+        "VSCode",
+        "microsoft/vscode"
+      ],
+      "appearances": 2,
+      "distinct_days": 2,
+      "distinct_sources": 2,
       "sources": {
-        "GitHub Releases": 1
+        "GitHub Releases": 1,
+        "SegmentFault": 1
       },
       "age_days": 11,
       "stage": "emergent",
-      "score": 90.0,
-      "research_md_path": "content/terms/microsoftvscode.md",
-      "research_generated_at": "2026-07-23T08:10:01.208486+08:00"
+      "score": 283.5
     },
     "ollama/ollama": {
       "first_seen": "2026-07-12",
@@ -647,33 +575,30 @@
       },
       "age_days": 11,
       "stage": "emergent",
-      "score": 90.0,
-      "research_md_path": "content/terms/ollamaollama.md",
-      "research_generated_at": "2026-07-23T08:10:01.208539+08:00"
+      "score": 90.0
     },
     "Ollama": {
       "first_seen": "2026-07-12",
-      "last_seen": "2026-07-12",
+      "last_seen": "2026-07-23",
       "term_type": "company",
       "aliases": [],
       "merged_terms": [
         "Ollama"
       ],
-      "appearances": 1,
-      "distinct_days": 1,
-      "distinct_sources": 1,
+      "appearances": 2,
+      "distinct_days": 2,
+      "distinct_sources": 2,
       "sources": {
-        "Google News": 1
+        "Google News": 1,
+        "Stack Overflow": 1
       },
       "age_days": 11,
       "stage": "emergent",
-      "score": 74.0,
-      "research_md_path": "content/terms/ollama.md",
-      "research_generated_at": "2026-07-23T08:10:01.208571+08:00"
+      "score": 295.5
     },
     "LangChain": {
       "first_seen": "2026-07-12",
-      "last_seen": "2026-07-12",
+      "last_seen": "2026-07-23",
       "term_type": "project",
       "aliases": [
         "langchain-ai/langchain"
@@ -682,17 +607,17 @@
         "LangChain",
         "langchain-ai/langchain"
       ],
-      "appearances": 7,
-      "distinct_days": 1,
-      "distinct_sources": 1,
+      "appearances": 22,
+      "distinct_days": 2,
+      "distinct_sources": 3,
       "sources": {
-        "GitHub Releases": 7
+        "Stack Overflow": 14,
+        "GitHub Releases": 7,
+        "掘金": 1
       },
       "age_days": 11,
       "stage": "emergent",
-      "score": 111.1,
-      "research_md_path": "content/terms/langchain.md",
-      "research_generated_at": "2026-07-23T08:10:01.208593+08:00"
+      "score": 435.5
     },
     "shadcn-ui/ui": {
       "first_seen": "2026-07-12",
@@ -710,9 +635,7 @@
       },
       "age_days": 11,
       "stage": "emergent",
-      "score": 90.0,
-      "research_md_path": "content/terms/shadcn-uiui.md",
-      "research_generated_at": "2026-07-23T08:10:01.208615+08:00"
+      "score": 90.0
     },
     "supabase/supabase": {
       "first_seen": "2026-07-12",
@@ -730,29 +653,26 @@
       },
       "age_days": 11,
       "stage": "emergent",
-      "score": 90.0,
-      "research_md_path": "content/terms/supabasesupabase.md",
-      "research_generated_at": "2026-07-23T08:10:01.208635+08:00"
+      "score": 90.0
     },
     "Supabase": {
       "first_seen": "2026-07-12",
-      "last_seen": "2026-07-12",
+      "last_seen": "2026-07-23",
       "term_type": "company",
       "aliases": [],
       "merged_terms": [
         "Supabase"
       ],
-      "appearances": 1,
-      "distinct_days": 1,
-      "distinct_sources": 1,
+      "appearances": 2,
+      "distinct_days": 2,
+      "distinct_sources": 2,
       "sources": {
-        "GitHub Releases": 1
+        "GitHub Releases": 1,
+        "Supabase": 1
       },
       "age_days": 11,
       "stage": "emergent",
-      "score": 90.0,
-      "research_md_path": "content/terms/supabase.md",
-      "research_generated_at": "2026-07-23T08:10:01.208654+08:00"
+      "score": 299.5
     },
     "openai/openai-python": {
       "first_seen": "2026-07-12",
@@ -770,29 +690,25 @@
       },
       "age_days": 11,
       "stage": "emergent",
-      "score": 90.0,
-      "research_md_path": "content/terms/openaiopenai-python.md",
-      "research_generated_at": "2026-07-23T08:10:01.208674+08:00"
+      "score": 90.0
     },
     "cloudflare/workers-sdk": {
       "first_seen": "2026-07-12",
-      "last_seen": "2026-07-12",
+      "last_seen": "2026-07-23",
       "term_type": "project",
       "aliases": [],
       "merged_terms": [
         "cloudflare/workers-sdk"
       ],
-      "appearances": 5,
-      "distinct_days": 1,
+      "appearances": 6,
+      "distinct_days": 2,
       "distinct_sources": 1,
       "sources": {
-        "GitHub Releases": 5
+        "GitHub Releases": 6
       },
       "age_days": 11,
       "stage": "emergent",
-      "score": 107.4,
-      "research_md_path": "content/terms/cloudflareworkers-sdk.md",
-      "research_generated_at": "2026-07-23T08:10:01.208694+08:00"
+      "score": 199.4
     },
     "Wrangler": {
       "first_seen": "2026-07-12",
@@ -810,9 +726,7 @@
       },
       "age_days": 11,
       "stage": "emergent",
-      "score": 97.5,
-      "research_md_path": "content/terms/wrangler.md",
-      "research_generated_at": "2026-07-23T08:10:01.208713+08:00"
+      "score": 97.5
     },
     "Miniflare": {
       "first_seen": "2026-07-12",
@@ -830,9 +744,7 @@
       },
       "age_days": 11,
       "stage": "emergent",
-      "score": 97.5,
-      "research_md_path": "content/terms/miniflare.md",
-      "research_generated_at": "2026-07-23T08:10:01.208733+08:00"
+      "score": 97.5
     },
     "Linux Foundation": {
       "first_seen": "2026-07-12",
@@ -850,9 +762,7 @@
       },
       "age_days": 11,
       "stage": "emergent",
-      "score": 74.0,
-      "research_md_path": "content/terms/linux-foundation.md",
-      "research_generated_at": "2026-07-23T08:10:01.208753+08:00"
+      "score": 74.0
     },
     "Robbyant": {
       "first_seen": "2026-07-12",
@@ -870,9 +780,7 @@
       },
       "age_days": 11,
       "stage": "emergent",
-      "score": 85.9,
-      "research_md_path": "content/terms/robbyant.md",
-      "research_generated_at": "2026-07-23T08:10:01.208773+08:00"
+      "score": 85.9
     },
     "LingBot-World 2.0": {
       "first_seen": "2026-07-12",
@@ -890,29 +798,25 @@
       },
       "age_days": 11,
       "stage": "emergent",
-      "score": 74.0,
-      "research_md_path": "content/terms/lingbot-world-2.0.md",
-      "research_generated_at": "2026-07-23T08:10:01.208797+08:00"
+      "score": 74.0
     },
     "Mistral": {
       "first_seen": "2026-07-12",
-      "last_seen": "2026-07-12",
+      "last_seen": "2026-07-23",
       "term_type": "company",
       "aliases": [],
       "merged_terms": [
         "Mistral"
       ],
-      "appearances": 1,
-      "distinct_days": 1,
+      "appearances": 4,
+      "distinct_days": 2,
       "distinct_sources": 1,
       "sources": {
-        "Google News": 1
+        "Google News": 4
       },
       "age_days": 11,
       "stage": "emergent",
-      "score": 74.0,
-      "research_md_path": "content/terms/mistral.md",
-      "research_generated_at": "2026-07-23T08:10:01.208817+08:00"
+      "score": 287.0
     },
     "Leanstral 1.5": {
       "first_seen": "2026-07-12",
@@ -930,9 +834,7 @@
       },
       "age_days": 11,
       "stage": "emergent",
-      "score": 74.0,
-      "research_md_path": "content/terms/leanstral-1.5.md",
-      "research_generated_at": "2026-07-23T08:10:01.208837+08:00"
+      "score": 74.0
     },
     "IBM": {
       "first_seen": "2026-07-12",
@@ -950,9 +852,7 @@
       },
       "age_days": 11,
       "stage": "emergent",
-      "score": 81.5,
-      "research_md_path": "content/terms/ibm.md",
-      "research_generated_at": "2026-07-23T08:10:01.208856+08:00"
+      "score": 81.5
     },
     "Red Hat": {
       "first_seen": "2026-07-12",
@@ -970,9 +870,7 @@
       },
       "age_days": 11,
       "stage": "emergent",
-      "score": 81.5,
-      "research_md_path": "content/terms/red-hat.md",
-      "research_generated_at": "2026-07-23T08:10:01.208879+08:00"
+      "score": 81.5
     },
     "Lightwell": {
       "first_seen": "2026-07-12",
@@ -990,29 +888,7 @@
       },
       "age_days": 11,
       "stage": "emergent",
-      "score": 81.5,
-      "research_md_path": "content/terms/lightwell.md",
-      "research_generated_at": "2026-07-23T08:10:01.208899+08:00"
-    },
-    "GPT-5.6": {
-      "first_seen": "2026-07-12",
-      "last_seen": "2026-07-12",
-      "term_type": "model",
-      "aliases": [],
-      "merged_terms": [
-        "GPT-5.6"
-      ],
-      "appearances": 1,
-      "distinct_days": 1,
-      "distinct_sources": 1,
-      "sources": {
-        "Google News": 1
-      },
-      "age_days": 11,
-      "stage": "emergent",
-      "score": 74.0,
-      "research_md_path": "content/terms/gpt-5.6.md",
-      "research_generated_at": "2026-07-23T08:10:01.208919+08:00"
+      "score": 81.5
     },
     "Meta": {
       "first_seen": "2026-07-12",
@@ -1030,9 +906,7 @@
       },
       "age_days": 11,
       "stage": "emergent",
-      "score": 89.0,
-      "research_md_path": "content/terms/meta.md",
-      "research_generated_at": "2026-07-23T08:10:01.208938+08:00"
+      "score": 89.0
     },
     "Databricks": {
       "first_seen": "2026-07-12",
@@ -1050,9 +924,7 @@
       },
       "age_days": 11,
       "stage": "emergent",
-      "score": 74.0,
-      "research_md_path": "content/terms/databricks.md",
-      "research_generated_at": "2026-07-23T08:10:01.208958+08:00"
+      "score": 74.0
     },
     "GLM 5.2": {
       "first_seen": "2026-07-12",
@@ -1070,29 +942,26 @@
       },
       "age_days": 11,
       "stage": "emergent",
-      "score": 74.0,
-      "research_md_path": "content/terms/glm-5.2.md",
-      "research_generated_at": "2026-07-23T08:10:01.208978+08:00"
+      "score": 74.0
     },
     "Anthropic": {
       "first_seen": "2026-07-12",
-      "last_seen": "2026-07-12",
+      "last_seen": "2026-07-23",
       "term_type": "company",
       "aliases": [],
       "merged_terms": [
         "Anthropic"
       ],
-      "appearances": 2,
-      "distinct_days": 1,
-      "distinct_sources": 1,
+      "appearances": 4,
+      "distinct_days": 2,
+      "distinct_sources": 2,
       "sources": {
-        "Google News": 2
+        "Google News": 2,
+        "OSChina": 2
       },
       "age_days": 11,
       "stage": "emergent",
-      "score": 81.5,
-      "research_md_path": "content/terms/anthropic.md",
-      "research_generated_at": "2026-07-23T08:10:01.208997+08:00"
+      "score": 283.0
     },
     "SpaceXAI": {
       "first_seen": "2026-07-12",
@@ -1110,9 +979,7 @@
       },
       "age_days": 11,
       "stage": "emergent",
-      "score": 74.0,
-      "research_md_path": "content/terms/spacexai.md",
-      "research_generated_at": "2026-07-23T08:10:01.209016+08:00"
+      "score": 74.0
     },
     "LingBot-VLA 2.0": {
       "first_seen": "2026-07-12",
@@ -1130,9 +997,7 @@
       },
       "age_days": 11,
       "stage": "emergent",
-      "score": 74.0,
-      "research_md_path": "content/terms/lingbot-vla-2.0.md",
-      "research_generated_at": "2026-07-23T08:10:01.209035+08:00"
+      "score": 74.0
     },
     "Finto": {
       "first_seen": "2026-07-12",
@@ -1150,9 +1015,7 @@
       },
       "age_days": 11,
       "stage": "emergent",
-      "score": 74.0,
-      "research_md_path": "content/terms/finto.md",
-      "research_generated_at": "2026-07-23T08:10:01.209054+08:00"
+      "score": 74.0
     },
     "GPT-5.5": {
       "first_seen": "2026-07-12",
@@ -1170,9 +1033,7 @@
       },
       "age_days": 11,
       "stage": "emergent",
-      "score": 114.0,
-      "research_md_path": "content/terms/gpt-5.5.md",
-      "research_generated_at": "2026-07-23T08:10:01.209074+08:00"
+      "score": 114.0
     },
     "PyTorch": {
       "first_seen": "2026-07-12",
@@ -1190,9 +1051,7 @@
       },
       "age_days": 11,
       "stage": "emergent",
-      "score": 98.0,
-      "research_md_path": "content/terms/pytorch.md",
-      "research_generated_at": "2026-07-23T08:10:01.209093+08:00"
+      "score": 98.0
     },
     "Qwen3.5": {
       "first_seen": "2026-07-12",
@@ -1210,12 +1069,4396 @@
       },
       "age_days": 11,
       "stage": "emergent",
-      "score": 90.0,
-      "research_md_path": "content/terms/qwen3.5.md",
-      "research_generated_at": "2026-07-23T08:10:01.209112+08:00"
+      "score": 90.0
+    },
+    "Bento": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "Bento"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "HN Show HN": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "ReadKinetic": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "ReadKinetic"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "HN Show HN": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "Langy": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "Langy"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "HN Show HN": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "Computable": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "Computable"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "HN Show HN": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "Housecat.com": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "Housecat.com"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "HN Show HN": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "RAG": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "RAG"
+      ],
+      "appearances": 5,
+      "distinct_days": 1,
+      "distinct_sources": 2,
+      "sources": {
+        "Stack Overflow": 4,
+        "V2EX 产品发布": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 316.6
+    },
+    "macOS": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "macOS"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "V2EX 产品发布": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 220.0
+    },
+    "GitHub Stars": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "GitHub Stars"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "V2EX 产品发布": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 220.0
+    },
+    "Productivity Calculator": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "Productivity Calculator"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "w2solo": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 220.0
+    },
+    "PriceRadar": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "PriceRadar"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "w2solo": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 220.0
+    },
+    "Apple Store": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "Apple Store"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "w2solo": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 220.0
+    },
+    "Google Play": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "Google Play"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "w2solo": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 220.0
+    },
+    "Chrome": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "Chrome"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "w2solo": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 220.0
+    },
+    "TikTok Shop": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "TikTok Shop"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "w2solo": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 220.0
+    },
+    "Amazon": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "company",
+      "aliases": [],
+      "merged_terms": [
+        "Amazon"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "w2solo": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 220.0
+    },
+    "Rust": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "Rust"
+      ],
+      "appearances": 2,
+      "distinct_days": 1,
+      "distinct_sources": 2,
+      "sources": {
+        "Hacker News": 1,
+        "Lobsters": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 319.5
+    },
+    "Bevy": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "Bevy"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "Hacker News": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 260.0
+    },
+    "MemPalace/mempalace": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "project",
+      "aliases": [],
+      "merged_terms": [
+        "MemPalace/mempalace"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "GitHub Trending": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 260.0
+    },
+    "Coasty": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "Coasty"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "HN Job Discussion": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "YC S26": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "company",
+      "aliases": [],
+      "merged_terms": [
+        "YC S26"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "HN Job Discussion": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "Multi-Agent": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "Multi-Agent"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "掘金": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "A2A": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "A2A"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "掘金": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "OBS Studio": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "OBS Studio"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "OSChina": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "The Daily FM": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "The Daily FM"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "HN Show HN": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "TransferIQ": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "TransferIQ"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "w2solo": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 220.0
+    },
+    "Monito": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "Monito"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "w2solo": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 220.0
+    },
+    "Mintplex-Labs/anything-llm": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "project",
+      "aliases": [],
+      "merged_terms": [
+        "Mintplex-Labs/anything-llm"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "GitHub Trending": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 260.0
+    },
+    "AnythingLLM": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "AnythingLLM"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "GitHub Trending": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 260.0
+    },
+    "GapMinder": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "company",
+      "aliases": [],
+      "merged_terms": [
+        "GapMinder"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "Google News": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 212.0
+    },
+    "Lasken AI": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "company",
+      "aliases": [],
+      "merged_terms": [
+        "Lasken AI"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "Google News": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 212.0
+    },
+    "Fil Rouge Capital": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "company",
+      "aliases": [],
+      "merged_terms": [
+        "Fil Rouge Capital"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "Google News": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 212.0
+    },
+    "SIMD": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "SIMD"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "Hacker News": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 260.0
+    },
+    "Weekday": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "Weekday"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "HN Job Discussion": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "YC W21": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "company",
+      "aliases": [],
+      "merged_terms": [
+        "YC W21"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "HN Job Discussion": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "ng-zorro-antd": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "project",
+      "aliases": [],
+      "merged_terms": [
+        "ng-zorro-antd"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "OSChina": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "Angular": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "Angular"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "OSChina": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "Ant Design": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "Ant Design"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "OSChina": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "Typecho": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "Typecho"
+      ],
+      "appearances": 2,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "SegmentFault": 2
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 211.5
+    },
+    "QMIX": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "QMIX"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "Semantic Scholar": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "Orate": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "Orate"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "HN Show HN": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "browser-use/browser-use": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "project",
+      "aliases": [],
+      "merged_terms": [
+        "browser-use/browser-use"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "GitHub Trending": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 260.0
+    },
+    "MiroFish": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "project",
+      "aliases": [
+        "666ghj/MiroFish"
+      ],
+      "merged_terms": [
+        "666ghj/MiroFish",
+        "MiroFish"
+      ],
+      "appearances": 2,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "GitHub Trending": 2
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 267.5
+    },
+    "lightpanda-io/browser": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "project",
+      "aliases": [],
+      "merged_terms": [
+        "lightpanda-io/browser"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "GitHub Trending": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 260.0
+    },
+    "Lightpanda": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "Lightpanda"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "GitHub Trending": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 260.0
+    },
+    "Skyvern": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "project",
+      "aliases": [
+        "Skyvern-AI/skyvern"
+      ],
+      "merged_terms": [
+        "Skyvern",
+        "Skyvern-AI/skyvern"
+      ],
+      "appearances": 2,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "GitHub Trending": 2
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 267.5
+    },
+    "Omnigent": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "project",
+      "aliases": [
+        "omnigent-ai/omnigent"
+      ],
+      "merged_terms": [
+        "Omnigent",
+        "omnigent-ai/omnigent"
+      ],
+      "appearances": 2,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "GitHub Trending": 2
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 267.5
+    },
+    "Claude Code": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "Claude Code"
+      ],
+      "appearances": 5,
+      "distinct_days": 1,
+      "distinct_sources": 4,
+      "sources": {
+        "掘金": 2,
+        "GitHub Trending": 1,
+        "DEV Community": 1,
+        "V2EX 程序员": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 347.2
+    },
+    "Codex": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "Codex"
+      ],
+      "appearances": 6,
+      "distinct_days": 1,
+      "distinct_sources": 3,
+      "sources": {
+        "掘金": 4,
+        "GitHub Trending": 1,
+        "OpenAI": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 345.7
+    },
+    "unicity-aos/aos-ce": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "project",
+      "aliases": [],
+      "merged_terms": [
+        "unicity-aos/aos-ce"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "GitHub Trending": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 260.0
+    },
+    "AOS": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "AOS"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "GitHub Trending": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 260.0
+    },
+    "google-ai-edge/LiteRT-LM": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "project",
+      "aliases": [
+        "LiteRT-LM"
+      ],
+      "merged_terms": [
+        "LiteRT-LM",
+        "google-ai-edge/LiteRT-LM"
+      ],
+      "appearances": 2,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "GitHub Trending": 2
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 267.5
+    },
+    "Google": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "company",
+      "aliases": [],
+      "merged_terms": [
+        "Google"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "GitHub Trending": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 260.0
+    },
+    "withmarbleapp/os-taxonomy": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "project",
+      "aliases": [],
+      "merged_terms": [
+        "withmarbleapp/os-taxonomy"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "GitHub Trending": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 260.0
+    },
+    "yvgude/lean-ctx": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "project",
+      "aliases": [],
+      "merged_terms": [
+        "yvgude/lean-ctx"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "GitHub Trending": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 260.0
+    },
+    "LeanCTX": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "LeanCTX"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "GitHub Trending": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 260.0
+    },
+    "facebook/react": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "project",
+      "aliases": [],
+      "merged_terms": [
+        "facebook/react"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "GitHub Releases": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 228.0
+    },
+    "React": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "React"
+      ],
+      "appearances": 6,
+      "distinct_days": 1,
+      "distinct_sources": 5,
+      "sources": {
+        "DEV Community": 2,
+        "GitHub Releases": 1,
+        "V2EX 奇思妙想": 1,
+        "HN Job Discussion": 1,
+        "Stack Overflow": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 382.4
+    },
+    "Cross Country Healthcare": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "company",
+      "aliases": [],
+      "merged_terms": [
+        "Cross Country Healthcare"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "Google News": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 212.0
+    },
+    "Knox Lane": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "company",
+      "aliases": [],
+      "merged_terms": [
+        "Knox Lane"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "Google News": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 212.0
+    },
+    "Terrence Tao": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "company",
+      "aliases": [],
+      "merged_terms": [
+        "Terrence Tao"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "Hacker News": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 260.0
+    },
+    "MCP": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "MCP"
+      ],
+      "appearances": 4,
+      "distinct_days": 1,
+      "distinct_sources": 3,
+      "sources": {
+        "DEV Community": 2,
+        "掘金": 1,
+        "HN Show HN": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 340.0
+    },
+    "Cursor": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "Cursor"
+      ],
+      "appearances": 2,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "掘金": 2
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 211.5
+    },
+    "Uber": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "company",
+      "aliases": [],
+      "merged_terms": [
+        "Uber"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "掘金": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "Vue 3": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "Vue 3"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "掘金": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "Motion Vue": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "Motion Vue"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "掘金": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "Framer Motion": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "Framer Motion"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "掘金": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "Git": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "Git"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "Lobsters": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 244.0
+    },
+    "Paozhu": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "Paozhu"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "OSChina": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "C++": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "C++"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "OSChina": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "Nginx": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "Nginx"
+      ],
+      "appearances": 3,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "SegmentFault": 3
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 215.9
+    },
+    "Spring Boot": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "Spring Boot"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "SegmentFault": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "ADB": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "ADB"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "SegmentFault": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "MonkeyCode": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "MonkeyCode"
+      ],
+      "appearances": 4,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "SegmentFault": 4
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 219.0
+    },
+    "StarCraft II": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "StarCraft II"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "Semantic Scholar": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "OpenAssistant": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "project",
+      "aliases": [],
+      "merged_terms": [
+        "OpenAssistant"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "Semantic Scholar": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "Reachpad": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "Reachpad"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "HN Show HN": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "Superserve": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "Superserve"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "HN Show HN": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "Firecracker": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "Firecracker"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "HN Show HN": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "Chalk": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "Chalk"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "HN Show HN": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "Stele": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "Stele"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "HN Show HN": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "Tailwind CSS": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "Tailwind CSS"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "w2solo": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 220.0
+    },
+    "Google Cloud": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "Google Cloud"
+      ],
+      "appearances": 3,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "Google News": 3
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 223.9
+    },
+    "Unlayer": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "Unlayer"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "Hacker News": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 260.0
+    },
+    "YC W22": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "company",
+      "aliases": [],
+      "merged_terms": [
+        "YC W22"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "Hacker News": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 260.0
+    },
+    "Foster": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "Foster"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "HN Job Discussion": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "Legion Health": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "Legion Health"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "HN Job Discussion": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "YC S21": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "company",
+      "aliases": [],
+      "merged_terms": [
+        "YC S21"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "HN Job Discussion": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "Skills": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "Skills"
+      ],
+      "appearances": 2,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "掘金": 2
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 211.5
+    },
+    "Kimi K3": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "model",
+      "aliases": [],
+      "merged_terms": [
+        "Kimi K3"
+      ],
+      "appearances": 9,
+      "distinct_days": 1,
+      "distinct_sources": 4,
+      "sources": {
+        "掘金": 3,
+        "OSChina": 3,
+        "Google News": 2,
+        "V2EX 产品发布": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 336.3
+    },
+    "Moonshot AI": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "company",
+      "aliases": [
+        "Moonshot"
+      ],
+      "merged_terms": [
+        "Moonshot",
+        "Moonshot AI"
+      ],
+      "appearances": 3,
+      "distinct_days": 1,
+      "distinct_sources": 2,
+      "sources": {
+        "Google News": 2,
+        "OSChina": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 281.2
+    },
+    "Free Ink": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "Free Ink"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "Lobsters": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 244.0
+    },
+    "Claude Fable 5": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "model",
+      "aliases": [
+        "Fable 5"
+      ],
+      "merged_terms": [
+        "Claude Fable 5",
+        "Fable 5"
+      ],
+      "appearances": 6,
+      "distinct_days": 1,
+      "distinct_sources": 3,
+      "sources": {
+        "OSChina": 3,
+        "掘金": 2,
+        "V2EX 程序员": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 331.1
+    },
+    "SWE-bench": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "SWE-bench"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "OSChina": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "腾讯云": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "company",
+      "aliases": [],
+      "merged_terms": [
+        "腾讯云"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "OSChina": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "Octop": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "Octop"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "OSChina": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "LightClaw ACE": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "LightClaw ACE"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "OSChina": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "阿里巴巴": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "company",
+      "aliases": [],
+      "merged_terms": [
+        "阿里巴巴"
+      ],
+      "appearances": 2,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "OSChina": 2
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 211.5
+    },
+    "NeurIPS": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "NeurIPS"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "Reddit": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 228.0
+    },
+    "Kimi Code": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "Kimi Code"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "V2EX 程序员": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 220.0
+    },
+    "crRequest": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "crRequest"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "V2EX 程序员": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 220.0
+    },
+    "SSH": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "SSH"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "V2EX 程序员": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 220.0
+    },
+    "Zooproxy": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "Zooproxy"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "w2solo": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 220.0
+    },
+    "Substack": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "Substack"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "DEV Community": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 236.0
+    },
+    "DEV.to": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "DEV.to"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "DEV Community": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 236.0
+    },
+    "Kata Containers": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "Kata Containers"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "Google News": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 212.0
+    },
+    "Postgres": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "Postgres"
+      ],
+      "appearances": 2,
+      "distinct_days": 1,
+      "distinct_sources": 2,
+      "sources": {
+        "Hacker News": 1,
+        "Reddit": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 311.5
+    },
+    "Kagi": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "Kagi"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "Hacker News": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 260.0
+    },
+    "GigaToken": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "GigaToken"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "Hacker News": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 260.0
+    },
+    "MiMoCode": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "MiMoCode"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "掘金": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "RStudio": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "RStudio"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "OSChina": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "gRPC": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "gRPC"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "OSChina": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "VirtualBox": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "VirtualBox"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "OSChina": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "Miora": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "Miora"
+      ],
+      "appearances": 2,
+      "distinct_days": 1,
+      "distinct_sources": 2,
+      "sources": {
+        "OSChina": 1,
+        "YouTube": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 275.5
+    },
+    "宇树科技": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "company",
+      "aliases": [],
+      "merged_terms": [
+        "宇树科技"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "OSChina": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "UnifoLM-OminiA-0.3": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "model",
+      "aliases": [],
+      "merged_terms": [
+        "UnifoLM-OminiA-0.3"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "OSChina": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "Next.js": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "Next.js"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "OSChina": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "Firefox": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "Firefox"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "OSChina": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "Grafana": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "Grafana"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "OSChina": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "Prometheus": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "Prometheus"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "OSChina": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "Loki": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "Loki"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "OSChina": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "Elasticsearch": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "Elasticsearch"
+      ],
+      "appearances": 2,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "OSChina": 2
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 211.5
+    },
+    "InfluxDB": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "InfluxDB"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "OSChina": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "SunnyUI": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "SunnyUI"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "OSChina": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "WinForm": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "WinForm"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "OSChina": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "EasyGoAdmin": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "EasyGoAdmin"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "OSChina": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "Gin": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "Gin"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "OSChina": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "EleVue": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "EleVue"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "OSChina": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "Vue": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "Vue"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "OSChina": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "ElementUI": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "ElementUI"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "OSChina": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "Qwen Image 3.0": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "model",
+      "aliases": [],
+      "merged_terms": [
+        "Qwen Image 3.0"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "OSChina": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "Hyprland": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "Hyprland"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "OSChina": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "wlroots": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "wlroots"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "OSChina": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "Wayland": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "Wayland"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "OSChina": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "Mumble": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "Mumble"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "OSChina": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "Parquet": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "Parquet"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "Reddit": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 228.0
+    },
+    "EMNLP": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "EMNLP"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "Reddit": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 228.0
+    },
+    "WAIC": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "WAIC"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "SegmentFault": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "Cube-Sandbox": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "Cube-Sandbox"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "SegmentFault": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "CVE-2026-42533": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "CVE-2026-42533"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "SegmentFault": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "Prompt Studio": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "Prompt Studio"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "V2EX 产品发布": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 220.0
+    },
+    "Konva": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "Konva"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "V2EX 奇思妙想": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 220.0
+    },
+    "Box": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "company",
+      "aliases": [],
+      "merged_terms": [
+        "Box"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "Google News": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 212.0
+    },
+    "Nvidia DGX Spark": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "Nvidia DGX Spark"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "Hacker News": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 260.0
+    },
+    "Nvidia": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "company",
+      "aliases": [],
+      "merged_terms": [
+        "Nvidia"
+      ],
+      "appearances": 4,
+      "distinct_days": 1,
+      "distinct_sources": 3,
+      "sources": {
+        "Google News": 2,
+        "Hacker News": 1,
+        "SegmentFault": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 342.0
+    },
+    "Safari Technology Preview": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "Safari Technology Preview"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "Hacker News": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 260.0
+    },
+    "Safari": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "Safari"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "Hacker News": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 260.0
+    },
+    "7-Zip": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "7-Zip"
+      ],
+      "appearances": 2,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "OSChina": 2
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 211.5
+    },
+    "Surge 6": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "Surge 6"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "V2EX 程序员": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 220.0
+    },
+    "Tailscale": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "Tailscale"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "V2EX 程序员": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 220.0
+    },
+    "TRAE IDE": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "TRAE IDE"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "YouTube": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 212.0
+    },
+    "LangGraph": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "LangGraph"
+      ],
+      "appearances": 6,
+      "distinct_days": 1,
+      "distinct_sources": 2,
+      "sources": {
+        "Stack Overflow": 5,
+        "ArXiv": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 324.7
+    },
+    "OpenAI Presence": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "OpenAI Presence"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "OpenAI": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 252.0
+    },
+    "Vercel MCP": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "Vercel MCP"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "Vercel": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 244.0
+    },
+    "Supabase Pipelines": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "Supabase Pipelines"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "Supabase": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 236.0
+    },
+    "Nuxt": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "Nuxt"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "DEV Community": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 236.0
+    },
+    "SvelteKit": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "SvelteKit"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "DEV Community": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 236.0
+    },
+    "Google Translate": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "Google Translate"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "DEV Community": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 236.0
+    },
+    "Swift": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "Swift"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "DEV Community": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 236.0
+    },
+    "Gemini": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "model",
+      "aliases": [],
+      "merged_terms": [
+        "Gemini"
+      ],
+      "appearances": 3,
+      "distinct_days": 1,
+      "distinct_sources": 3,
+      "sources": {
+        "DEV Community": 1,
+        "OSChina": 1,
+        "Stack Overflow": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 344.9
+    },
+    "Gemini 3.6 Flash": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "model",
+      "aliases": [],
+      "merged_terms": [
+        "Gemini 3.6 Flash"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "OSChina": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "Sentry": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "Sentry"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "DEV Community": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 236.0
+    },
+    "ATLOCK": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "ATLOCK"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "DEV Community": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 236.0
+    },
+    "PostHog": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "company",
+      "aliases": [],
+      "merged_terms": [
+        "PostHog"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "Google News": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 212.0
+    },
+    "Samsung": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "company",
+      "aliases": [],
+      "merged_terms": [
+        "Samsung"
+      ],
+      "appearances": 3,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "Google News": 3
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 223.9
+    },
+    "Emacs": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "Emacs"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "Hacker News": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 260.0
+    },
+    "COSMIC DE": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "COSMIC DE"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "Lobsters": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 244.0
+    },
+    "PHP": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "PHP"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "Lobsters": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 244.0
+    },
+    "Lua": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "Lua"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "Lobsters": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 244.0
+    },
+    "systemd": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "systemd"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "Lobsters": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 244.0
+    },
+    "iPad mini": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "iPad mini"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "Lobsters": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 244.0
+    },
+    "PyPI": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "PyPI"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "Lobsters": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 244.0
+    },
+    "Futhark": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "Futhark"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "Lobsters": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 244.0
+    },
+    "Django": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "Django"
+      ],
+      "appearances": 3,
+      "distinct_days": 1,
+      "distinct_sources": 2,
+      "sources": {
+        "SegmentFault": 2,
+        "Lobsters": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 289.2
+    },
+    "ECC": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "ECC"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "Lobsters": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 244.0
+    },
+    "DDR5": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "DDR5"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "Lobsters": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 244.0
+    },
+    "Topcoat": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "Topcoat"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "Lobsters": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 244.0
+    },
+    "XFS": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "XFS"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "Lobsters": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 244.0
+    },
+    "Linux Kernel": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "Linux Kernel"
+      ],
+      "appearances": 2,
+      "distinct_days": 1,
+      "distinct_sources": 2,
+      "sources": {
+        "Lobsters": 1,
+        "Reddit": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 303.5
+    },
+    "CMake": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "CMake"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "Lobsters": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 244.0
+    },
+    "OCaml": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "OCaml"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "Lobsters": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 244.0
+    },
+    "Eio": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "Eio"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "Lobsters": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 244.0
+    },
+    "CVNet": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "CVNet"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "OSChina": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "Jetson": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "Jetson"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "OSChina": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "BBQ": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "BBQ"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "OSChina": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "Jina v5": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "model",
+      "aliases": [],
+      "merged_terms": [
+        "Jina v5"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "OSChina": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "GraalVM": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "GraalVM"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "Reddit": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 228.0
+    },
+    "Kubernetes": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "Kubernetes"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "Reddit": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 228.0
+    },
+    "GitOps": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "GitOps"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "Reddit": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 228.0
+    },
+    "Elixir": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "Elixir"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "Reddit": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 228.0
+    },
+    "Neon": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "Neon"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "Reddit": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 228.0
+    },
+    "Docker": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "Docker"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "Reddit": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 228.0
+    },
+    "SkewAdam": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "SkewAdam"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "Reddit": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 228.0
+    },
+    "MoE": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "MoE"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "Reddit": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 228.0
+    },
+    "Google AI": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "company",
+      "aliases": [],
+      "merged_terms": [
+        "Google AI"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "Google AI Blog": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 244.0
+    },
+    "Grabette": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "project",
+      "aliases": [],
+      "merged_terms": [
+        "Grabette"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "HuggingFace Blog": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 236.0
+    },
+    "NTT DATA Group": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "company",
+      "aliases": [],
+      "merged_terms": [
+        "NTT DATA Group"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "OpenAI": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 252.0
+    },
+    "OpenAI Foundation": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "company",
+      "aliases": [],
+      "merged_terms": [
+        "OpenAI Foundation"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "OpenAI": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 252.0
+    },
+    "OpenAI Group PBC": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "company",
+      "aliases": [],
+      "merged_terms": [
+        "OpenAI Group PBC"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "OpenAI": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 252.0
+    },
+    "Python": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "Python"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "Vercel": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 244.0
+    },
+    "MySQL": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "MySQL"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "SegmentFault": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "EXPO": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "EXPO"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "SegmentFault": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "iOS": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "iOS"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "SegmentFault": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "Vuex": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "Vuex"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "SegmentFault": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "Apache": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "Apache"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "SegmentFault": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "JVM": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "JVM"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "SegmentFault": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "CMS": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "CMS"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "SegmentFault": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "WAIC 2026": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "WAIC 2026"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "SegmentFault": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 204.0
+    },
+    "FastAPI": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "FastAPI"
+      ],
+      "appearances": 2,
+      "distinct_days": 1,
+      "distinct_sources": 2,
+      "sources": {
+        "PyPI": 1,
+        "Stack Overflow": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 307.5
+    },
+    "Litestar": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "Litestar"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "PyPI": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 236.0
+    },
+    "BlackSheep": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "BlackSheep"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "PyPI": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 236.0
+    },
+    "Strawberry GraphQL": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "Strawberry GraphQL"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "PyPI": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 236.0
+    },
+    "Ariadne": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "Ariadne"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "PyPI": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 236.0
+    },
+    "Starlite": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "Starlite"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "PyPI": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 236.0
+    },
+    "Typer": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "Typer"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "PyPI": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 236.0
+    },
+    "Rich": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "Rich"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "PyPI": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 236.0
+    },
+    "Textual": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "Textual"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "PyPI": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 236.0
+    },
+    "Pydantic": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "Pydantic"
+      ],
+      "appearances": 2,
+      "distinct_days": 1,
+      "distinct_sources": 2,
+      "sources": {
+        "PyPI": 1,
+        "Stack Overflow": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 307.5
+    },
+    "ChromaDB": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "ChromaDB"
+      ],
+      "appearances": 2,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "Stack Overflow": 2
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 251.5
+    },
+    "FAISS": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "FAISS"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "Stack Overflow": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 244.0
+    },
+    "CLIP": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "model",
+      "aliases": [],
+      "merged_terms": [
+        "CLIP"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "Stack Overflow": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 244.0
+    },
+    "Playwright": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "Playwright"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "Stack Overflow": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 244.0
+    },
+    "Groq": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "company",
+      "aliases": [],
+      "merged_terms": [
+        "Groq"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "Stack Overflow": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 244.0
+    },
+    "Llama 3.3": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "model",
+      "aliases": [],
+      "merged_terms": [
+        "Llama 3.3"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "Stack Overflow": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 244.0
+    },
+    "Langgraph Studio": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "Langgraph Studio"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "Stack Overflow": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 244.0
+    },
+    "PyMilvus": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "PyMilvus"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "Stack Overflow": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 244.0
+    },
+    "Milvus Lite": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "Milvus Lite"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "Stack Overflow": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 244.0
+    },
+    "LlamaIndex": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "project",
+      "aliases": [],
+      "merged_terms": [
+        "LlamaIndex"
+      ],
+      "appearances": 6,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "Stack Overflow": 6
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 263.4
+    },
+    "BM25": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "BM25"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "Stack Overflow": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 244.0
+    },
+    "AirbyteSalesforceReader": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "AirbyteSalesforceReader"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "Stack Overflow": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 244.0
+    },
+    "BGE-M3": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "model",
+      "aliases": [],
+      "merged_terms": [
+        "BGE-M3"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "Stack Overflow": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 244.0
+    },
+    "Shopify": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "company",
+      "aliases": [],
+      "merged_terms": [
+        "Shopify"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "YouTube": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 212.0
+    },
+    "Enter Pro": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "Enter Pro"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "YouTube": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 212.0
+    },
+    "Accio Work": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "Accio Work"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "YouTube": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 212.0
+    },
+    "WorkBuddy": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "WorkBuddy"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "YouTube": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 212.0
+    },
+    "TicNote Cloud": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "TicNote Cloud"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "YouTube": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 212.0
+    },
+    "Kane AI": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "Kane AI"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "YouTube": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 212.0
+    },
+    "Zapier MCP": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "Zapier MCP"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "YouTube": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 212.0
+    },
+    "Enia Code": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "Enia Code"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "YouTube": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 212.0
+    },
+    "GraphQL": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "GraphQL"
+      ],
+      "appearances": 2,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "PyPI": 2
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 243.5
+    },
+    "ASGI": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "aliases": [],
+      "merged_terms": [
+        "ASGI"
+      ],
+      "appearances": 2,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "PyPI": 2
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 243.5
+    },
+    "Telegram": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "aliases": [],
+      "merged_terms": [
+        "Telegram"
+      ],
+      "appearances": 1,
+      "distinct_days": 1,
+      "distinct_sources": 1,
+      "sources": {
+        "V2EX 奇思妙想": 1
+      },
+      "age_days": 0,
+      "stage": "nascent",
+      "score": 220.0
     }
   },
-  "total_canonicals": 60,
-  "total_aliases": 4,
-  "last_updated": "2026-07-23T08:10:01.159612+08:00"
+  "total_canonicals": 298,
+  "total_aliases": 14,
+  "last_updated": "2026-07-23T10:25:02.145760+08:00"
 }

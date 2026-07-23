@@ -1,12 +1,12 @@
 {
   "_schema": "Term 索引 — 原始 signal 记录。聚合统计由 normalize_terms → canonical_terms.json 统一计算。",
   "_version": "1.0",
-  "last_updated": "2026-07-23T08:10:01.051127+08:00",
-  "total_terms": 61,
+  "last_updated": "2026-07-23T10:24:18.514771+08:00",
+  "total_terms": 312,
   "terms": {
     "Vercel": {
       "first_seen": "2026-07-12",
-      "last_seen": "2026-07-12",
+      "last_seen": "2026-07-23",
       "term_type": "company",
       "signals": [
         {
@@ -106,13 +106,69 @@
           "source_key": "vercel",
           "title": "Chat SDK adds Photon support",
           "signal_id": "changelog-1316361"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "Vercel",
+          "source_key": "vercel",
+          "title": "Vercel Connect adds 90+ preset connectors",
+          "signal_id": "changelog-8881665"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "Vercel",
+          "source_key": "vercel",
+          "title": "AI Gateway now supports streaming transcription",
+          "signal_id": "changelog-4747472"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "Vercel",
+          "source_key": "vercel",
+          "title": "Extend eve agents with installable extensions",
+          "signal_id": "changelog-4091068"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "Vercel",
+          "source_key": "vercel",
+          "title": "How Searchable ships customer-requested features in 30 minutes on Vercel",
+          "signal_id": "changelog-0474065"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "Vercel",
+          "source_key": "vercel",
+          "title": "Introducing the new Vercel Agent",
+          "signal_id": "changelog-1657832"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "Vercel",
+          "source_key": "vercel",
+          "title": "Python function bundles now include precompiled bytecode",
+          "signal_id": "changelog-7701993"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "Vercel",
+          "source_key": "vercel",
+          "title": "Vercel MCP now supports purchases",
+          "signal_id": "changelog-9743214"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "Reddit r/InternetIsBeautiful",
+          "source_key": "reddit-consumer",
+          "title": "[SUB NEWS] New Banned Domain: Vercel.app",
+          "signal_id": "redditc-t3_1v3oss6"
         }
       ],
       "canonical_name": "Vercel"
     },
     "Cloudflare": {
       "first_seen": "2026-07-12",
-      "last_seen": "2026-07-12",
+      "last_seen": "2026-07-23",
       "term_type": "company",
       "signals": [
         {
@@ -135,13 +191,27 @@
           "source_key": "cloudflare",
           "title": "Introducing Meerkat: an experiment in global consensus",
           "signal_id": "changelog-2693223"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "GitHub Releases",
+          "source_key": "github-releases",
+          "title": "[cloudflare/workers-sdk] create-cloudflare@2.70.13",
+          "signal_id": "ghr-9133738"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "Cloudflare",
+          "source_key": "cloudflare",
+          "title": "How the 2026 World Cup affected Internet traffic",
+          "signal_id": "changelog-0024977"
         }
       ],
       "canonical_name": "Cloudflare"
     },
     "OpenAI": {
       "first_seen": "2026-07-12",
-      "last_seen": "2026-07-12",
+      "last_seen": "2026-07-23",
       "term_type": "company",
       "signals": [
         {
@@ -206,13 +276,111 @@
           "source_key": "openai",
           "title": "Introducing GPT-Live",
           "signal_id": "changelog-3553586"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "Lobsters",
+          "source_key": "lobsters",
+          "title": "OpenAI model breaks out of security sandbox, hacks Hugging Face for data to pass test",
+          "signal_id": "lobsters-7nrek3"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "OpenAI",
+          "source_key": "openai",
+          "title": "Introducing the ChatGPT for small business program",
+          "signal_id": "changelog-9563664"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "OpenAI",
+          "source_key": "openai",
+          "title": "Building AI infrastructure with the Effingham County community",
+          "signal_id": "changelog-3101755"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "OpenAI",
+          "source_key": "openai",
+          "title": "How news organizations are using AI to advance their vital missions",
+          "signal_id": "changelog-7415608"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "OpenAI",
+          "source_key": "openai",
+          "title": "Advancing the next era of national science",
+          "signal_id": "changelog-2135936"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "OpenAI",
+          "source_key": "openai",
+          "title": "Introducing OpenAI Presence",
+          "signal_id": "changelog-6084279"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "OpenAI",
+          "source_key": "openai",
+          "title": "NTT DATA Group cuts incident analysis to 30 minutes with Codex",
+          "signal_id": "changelog-9425275"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "OpenAI",
+          "source_key": "openai",
+          "title": "David Vélez and Robin Vince join the boards of the OpenAI Foundation and OpenAI Group PBC",
+          "signal_id": "changelog-3477761"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "YouTube",
+          "source_key": "youtube",
+          "title": "What racing reveals about working with AI — the OpenAI Podcast Ep. 22",
+          "signal_id": "yt-KNPjRpNtQ7s"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "YouTube",
+          "source_key": "youtube",
+          "title": "The AI Era Needs a Different Kind of Talent | Peter Steinberger | OpenAI France",
+          "signal_id": "yt-Xk-X1TI2pQ4"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "YouTube",
+          "source_key": "youtube",
+          "title": "Think AI-First: Emmanuel Marill on Building AI-Native Companies | OpenAI France",
+          "signal_id": "yt-Fu3WWi-pAv4"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "YouTube",
+          "source_key": "youtube",
+          "title": "Stop Prompting. Start Giving AI Goals. | Katia Gil Guzman | OpenAI France",
+          "signal_id": "yt-1fL_lwsdMd4"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "YouTube",
+          "source_key": "youtube",
+          "title": "From AI Pilots to Production | François Weider on Enterprise Adoption | OpenAI France",
+          "signal_id": "yt-W0mU8zgop60"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "YouTube",
+          "source_key": "youtube",
+          "title": "What Great AI Founders Do Differently | Laura Modiano | OpenAI France",
+          "signal_id": "yt-K9_G-v8AE_s"
         }
       ],
       "canonical_name": "OpenAI"
     },
     "Apple ML": {
       "first_seen": "2026-07-12",
-      "last_seen": "2026-07-12",
+      "last_seen": "2026-07-23",
       "term_type": "company",
       "signals": [
         {
@@ -242,13 +410,20 @@
           "source_key": "apple-ml",
           "title": "Unmasking On-Policy Distillation: Where It Helps, Where It Hurts, and Why",
           "signal_id": "changelog-5642218"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "Apple ML",
+          "source_key": "apple-ml",
+          "title": "Accelerating Text-to-Video Generation with Calibrated Sparse Attention",
+          "signal_id": "changelog-2417274"
         }
       ],
       "canonical_name": "Apple ML"
     },
     "HuggingFace": {
       "first_seen": "2026-07-12",
-      "last_seen": "2026-07-12",
+      "last_seen": "2026-07-23",
       "term_type": "company",
       "signals": [
         {
@@ -278,9 +453,23 @@
           "source_key": "huggingface-blog",
           "title": "From Hugging Face to Amazon SageMaker Studio in one click",
           "signal_id": "changelog-7226711"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "HuggingFace Blog",
+          "source_key": "huggingface-blog",
+          "title": "The State of Simulation for Physical AI: An Overview",
+          "signal_id": "changelog-6785812"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "HuggingFace Blog",
+          "source_key": "huggingface-blog",
+          "title": "Grabette: an open system to record robot-manipulation data",
+          "signal_id": "changelog-8500146"
         }
       ],
-      "canonical_name": "HuggingFace"
+      "canonical_name": "Hugging Face"
     },
     "Deutsche Telekom": {
       "first_seen": "2026-07-12",
@@ -314,7 +503,7 @@
     },
     "ChatGPT": {
       "first_seen": "2026-07-12",
-      "last_seen": "2026-07-12",
+      "last_seen": "2026-07-23",
       "term_type": "product",
       "signals": [
         {
@@ -323,6 +512,41 @@
           "source_key": "openai",
           "title": "ChatGPT is now a partner for your most ambitious work",
           "signal_id": "changelog-3081777"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "OpenAI",
+          "source_key": "openai",
+          "title": "Introducing the ChatGPT for small business program",
+          "signal_id": "changelog-9563664"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "Hacker News",
+          "source_key": "hn",
+          "title": "Terrence Tao's ChatGPT Conversation about the Jacobian Conjecture Counterexample",
+          "signal_id": "hn-49010345"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "掘金",
+          "source_key": "juejin",
+          "title": "没写一行代码！我用 ChatGPT 5.6 (Sol) 做了一个智慧充电站 3D 大屏",
+          "signal_id": "juejin-7661160753004904448"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "YouTube",
+          "source_key": "youtube",
+          "title": "How Shopify Uses ChatGPT Work to Build Faster with AI Agents",
+          "signal_id": "yt-bbd6dcb9"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "YouTube",
+          "source_key": "youtube",
+          "title": "ChatGPT can now complete tasks on your computer",
+          "signal_id": "yt-dB6pOolO7io"
         }
       ],
       "canonical_name": "ChatGPT"
@@ -380,7 +604,7 @@
     },
     "AI Gateway": {
       "first_seen": "2026-07-12",
-      "last_seen": "2026-07-12",
+      "last_seen": "2026-07-23",
       "term_type": "product",
       "signals": [
         {
@@ -403,6 +627,13 @@
           "source_key": "vercel",
           "title": "Grok 4.5 now available on AI Gateway",
           "signal_id": "changelog-1040129"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "Vercel",
+          "source_key": "vercel",
+          "title": "AI Gateway now supports streaming transcription",
+          "signal_id": "changelog-4747472"
         }
       ],
       "canonical_name": "AI Gateway"
@@ -420,7 +651,7 @@
           "signal_id": "changelog-6180301"
         }
       ],
-      "canonical_name": "GPT-5.6 Sol"
+      "canonical_name": "GPT-5.6"
     },
     "GPT 5.6 Luna": {
       "first_seen": "2026-07-12",
@@ -435,7 +666,7 @@
           "signal_id": "changelog-6180301"
         }
       ],
-      "canonical_name": "GPT-5.6 Luna"
+      "canonical_name": "GPT-5.6"
     },
     "GPT 5.6 Terra": {
       "first_seen": "2026-07-12",
@@ -450,7 +681,7 @@
           "signal_id": "changelog-6180301"
         }
       ],
-      "canonical_name": "GPT-5.6 Terra"
+      "canonical_name": "GPT-5.6"
     },
     "Meerkat": {
       "first_seen": "2026-07-12",
@@ -469,7 +700,7 @@
     },
     "Vercel Agent": {
       "first_seen": "2026-07-12",
-      "last_seen": "2026-07-12",
+      "last_seen": "2026-07-23",
       "term_type": "product",
       "signals": [
         {
@@ -478,6 +709,13 @@
           "source_key": "vercel",
           "title": "Vercel Agent: An agent you can let near production",
           "signal_id": "changelog-6048602"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "Vercel",
+          "source_key": "vercel",
+          "title": "Introducing the new Vercel Agent",
+          "signal_id": "changelog-1657832"
         }
       ],
       "canonical_name": "Vercel Agent"
@@ -602,7 +840,7 @@
     },
     "Vercel Connect": {
       "first_seen": "2026-07-12",
-      "last_seen": "2026-07-12",
+      "last_seen": "2026-07-23",
       "term_type": "product",
       "signals": [
         {
@@ -611,6 +849,13 @@
           "source_key": "vercel",
           "title": "Chat SDK now supports Vercel Connect",
           "signal_id": "changelog-3162797"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "Vercel",
+          "source_key": "vercel",
+          "title": "Vercel Connect adds 90+ preset connectors",
+          "signal_id": "changelog-8881665"
         }
       ],
       "canonical_name": "Vercel Connect"
@@ -761,7 +1006,7 @@
           "signal_id": "ghr-8055058"
         }
       ],
-      "canonical_name": "microsoft/vscode"
+      "canonical_name": "VSCode"
     },
     "ollama/ollama": {
       "first_seen": "2026-07-12",
@@ -780,7 +1025,7 @@
     },
     "Ollama": {
       "first_seen": "2026-07-12",
-      "last_seen": "2026-07-12",
+      "last_seen": "2026-07-23",
       "term_type": "company",
       "signals": [
         {
@@ -789,6 +1034,13 @@
           "source_key": "googlenews",
           "title": "Open-source AI developer tool Ollama raises $65M to grow its platform",
           "signal_id": "gn-0123228"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "Stack Overflow",
+          "source_key": "stackoverflow",
+          "title": "llama_index Ollama misloading model issue",
+          "signal_id": "so-79838505"
         }
       ],
       "canonical_name": "Ollama"
@@ -838,7 +1090,7 @@
     },
     "LangChain": {
       "first_seen": "2026-07-12",
-      "last_seen": "2026-07-12",
+      "last_seen": "2026-07-23",
       "term_type": "project",
       "signals": [
         {
@@ -854,6 +1106,111 @@
           "source_key": "github-releases",
           "title": "[langchain-ai/langchain] langchain==1.3.12",
           "signal_id": "ghr-8163436"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "掘金",
+          "source_key": "juejin",
+          "title": "阿里一面，我霸气反问：你说你们在做Agent项目，说说langchain、muti-agent、a2a这些你们都是怎么做的？面试官一直在擦汗。。",
+          "signal_id": "juejin-7657453685375369267"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "Stack Overflow",
+          "source_key": "stackoverflow",
+          "title": "Violation of node execution order in a LangGraph/LangChain agent [closed]",
+          "signal_id": "so-79976431"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "Stack Overflow",
+          "source_key": "stackoverflow",
+          "title": "LangGraph astream_events hangs on node with external api call",
+          "signal_id": "so-79963174"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "Stack Overflow",
+          "source_key": "stackoverflow",
+          "title": "Langchain's latest langchain-openrouter is not compatible with the latest langchain-core and langchain-openai",
+          "signal_id": "so-79951951"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "Stack Overflow",
+          "source_key": "stackoverflow",
+          "title": "ChromaDB get() or query() returns empty results after embedding updates in LangChain",
+          "signal_id": "so-79945139"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "Stack Overflow",
+          "source_key": "stackoverflow",
+          "title": "Best practices for scaling LangChain agent architecture in FastAPI",
+          "signal_id": "so-79936596"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "Stack Overflow",
+          "source_key": "stackoverflow",
+          "title": "Input validation error: '1.57' is not of type 'number' from langchain_mcp_adapter",
+          "signal_id": "so-79935672"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "Stack Overflow",
+          "source_key": "stackoverflow",
+          "title": "How to use LangChain Agent with tools in a Python project?",
+          "signal_id": "so-79930598"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "Stack Overflow",
+          "source_key": "stackoverflow",
+          "title": "OpenAI RAG LangChain tool calling is not working/compatible with withStructuredOutput()?",
+          "signal_id": "so-79923286"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "Stack Overflow",
+          "source_key": "stackoverflow",
+          "title": "Low cosine similarity score when using Langchain FAISS wrapper and CLIP Model",
+          "signal_id": "so-79921783"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "Stack Overflow",
+          "source_key": "stackoverflow",
+          "title": "Resolving Concurrency Bottlenecks in LangChain's RunnableParallel with ChromaDB PersistentClient",
+          "signal_id": "so-79903575"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "Stack Overflow",
+          "source_key": "stackoverflow",
+          "title": "Problem with setting up Langchain agents to use Playwright",
+          "signal_id": "so-79896302"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "Stack Overflow",
+          "source_key": "stackoverflow",
+          "title": "Agentic RAG tool_calling issue: Groq + LangChain agent fails with tool_use_failed when calling custom tool (Llama 3.3)",
+          "signal_id": "so-79896070"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "Stack Overflow",
+          "source_key": "stackoverflow",
+          "title": "Langchain dependencies conflict",
+          "signal_id": "so-79886662"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "Stack Overflow",
+          "source_key": "stackoverflow",
+          "title": "Using Langchain's MarkdownTextSplitter with a tokenizer",
+          "signal_id": "so-79863365"
         }
       ],
       "canonical_name": "LangChain"
@@ -890,7 +1247,7 @@
     },
     "Supabase": {
       "first_seen": "2026-07-12",
-      "last_seen": "2026-07-12",
+      "last_seen": "2026-07-23",
       "term_type": "company",
       "signals": [
         {
@@ -899,6 +1256,13 @@
           "source_key": "github-releases",
           "title": "[supabase/supabase] Developer Update - July 2026",
           "signal_id": "ghr-4935807"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "Supabase",
+          "source_key": "supabase",
+          "title": "Supabase Pipelines is now in Public Alpha",
+          "signal_id": "changelog-7795585"
         }
       ],
       "canonical_name": "Supabase"
@@ -920,7 +1284,7 @@
     },
     "cloudflare/workers-sdk": {
       "first_seen": "2026-07-12",
-      "last_seen": "2026-07-12",
+      "last_seen": "2026-07-23",
       "term_type": "project",
       "signals": [
         {
@@ -957,6 +1321,13 @@
           "source_key": "github-releases",
           "title": "[cloudflare/workers-sdk] create-cloudflare@2.70.10",
           "signal_id": "ghr-1097336"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "GitHub Releases",
+          "source_key": "github-releases",
+          "title": "[cloudflare/workers-sdk] create-cloudflare@2.70.13",
+          "signal_id": "ghr-9133738"
         }
       ],
       "canonical_name": "cloudflare/workers-sdk"
@@ -1066,7 +1437,7 @@
     },
     "Mistral": {
       "first_seen": "2026-07-12",
-      "last_seen": "2026-07-12",
+      "last_seen": "2026-07-23",
       "term_type": "company",
       "signals": [
         {
@@ -1075,6 +1446,27 @@
           "source_key": "googlenews",
           "title": "Mistral Releases Apache 2.0 Open Source Leanstral 1.5",
           "signal_id": "gn-5230124"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "Samsung Weighs $1 Billion Investment in AI Firm Mistral",
+          "signal_id": "gn-3780701"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "Samsung in Talks to Invest in French AI Startup Mistral for Up to Nearly $1.1 Billion",
+          "signal_id": "gn-0837578"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "Samsung Eyes Major Mistral AI Investment",
+          "signal_id": "gn-7668780"
         }
       ],
       "canonical_name": "Mistral"
@@ -1162,7 +1554,7 @@
     },
     "GPT-5.6": {
       "first_seen": "2026-07-12",
-      "last_seen": "2026-07-12",
+      "last_seen": "2026-07-23",
       "term_type": "model",
       "signals": [
         {
@@ -1171,6 +1563,13 @@
           "source_key": "googlenews",
           "title": "GPT-5.6: Frontier intelligence that scales with your ambition",
           "signal_id": "gn-8702548"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "GPT-5.6 为了在测试里拿高分，黑了 Hugging Face 的生产环境",
+          "signal_id": "oschina-476550"
         }
       ],
       "canonical_name": "GPT-5.6"
@@ -1243,7 +1642,7 @@
     },
     "Anthropic": {
       "first_seen": "2026-07-12",
-      "last_seen": "2026-07-12",
+      "last_seen": "2026-07-23",
       "term_type": "company",
       "signals": [
         {
@@ -1259,6 +1658,20 @@
           "source_key": "googlenews",
           "title": "Meta jumps into AI coding market in effort to chase Anthropic and OpenAI",
           "signal_id": "gn-9106847"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "Kimi K3 实战对标 Fable 5：开源模型在 SWE-bench 上几乎打平了",
+          "signal_id": "oschina-476574"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "Fable 5 比开源模型贵三倍，Anthropic 的账怎么算？",
+          "signal_id": "oschina-475956"
         }
       ],
       "canonical_name": "Anthropic"
@@ -1352,6 +1765,4303 @@
         }
       ],
       "canonical_name": "Qwen3.5"
+    },
+    "Bento": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "HN Show HN",
+          "source_key": "showhn",
+          "title": "Bento - An entire PowerPoint in one HTML file (edit+view+data+collab)",
+          "signal_id": "showhn-49008211"
+        }
+      ],
+      "canonical_name": "Bento"
+    },
+    "ReadKinetic": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "HN Show HN",
+          "source_key": "showhn",
+          "title": "ReadKinetic – a free, local-first speed reader for your own books",
+          "signal_id": "showhn-49002344"
+        }
+      ],
+      "canonical_name": "ReadKinetic"
+    },
+    "Langy": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "HN Show HN",
+          "source_key": "showhn",
+          "title": "Langy, an automated AI engineer (we gave it a robot body) [video]",
+          "signal_id": "showhn-49007760"
+        }
+      ],
+      "canonical_name": "Langy"
+    },
+    "Computable": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "HN Show HN",
+          "source_key": "showhn",
+          "title": "Computable – Buy, sell, and redeem GPU for the exact weeks you want",
+          "signal_id": "showhn-48998828"
+        }
+      ],
+      "canonical_name": "Computable"
+    },
+    "Housecat.com": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "HN Show HN",
+          "source_key": "showhn",
+          "title": "Housecat.com – Gmail + durable workflows + sandbox VM",
+          "signal_id": "showhn-49006149"
+        }
+      ],
+      "canonical_name": "Housecat.com"
+    },
+    "RAG": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "V2EX 产品发布",
+          "source_key": "v2ex",
+          "title": "做了一个带知识库 RAG 问答的 macOS GitHub Stars 工具，想听听大家的建议",
+          "signal_id": "v2ex-1229165"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "Stack Overflow",
+          "source_key": "stackoverflow",
+          "title": "How to evaluate RAG app which uses Pydantic output parser for output parsing?",
+          "signal_id": "so-79960693"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "Stack Overflow",
+          "source_key": "stackoverflow",
+          "title": "OpenAI RAG LangChain tool calling is not working/compatible with withStructuredOutput()?",
+          "signal_id": "so-79923286"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "Stack Overflow",
+          "source_key": "stackoverflow",
+          "title": "Improve the RAG chatbot result",
+          "signal_id": "so-79900654"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "Stack Overflow",
+          "source_key": "stackoverflow",
+          "title": "Agentic RAG tool_calling issue: Groq + LangChain agent fails with tool_use_failed when calling custom tool (Llama 3.3)",
+          "signal_id": "so-79896070"
+        }
+      ],
+      "canonical_name": "RAG"
+    },
+    "macOS": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "V2EX 产品发布",
+          "source_key": "v2ex",
+          "title": "做了一个带知识库 RAG 问答的 macOS GitHub Stars 工具，想听听大家的建议",
+          "signal_id": "v2ex-1229165"
+        }
+      ],
+      "canonical_name": "macOS"
+    },
+    "GitHub Stars": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "V2EX 产品发布",
+          "source_key": "v2ex",
+          "title": "做了一个带知识库 RAG 问答的 macOS GitHub Stars 工具，想听听大家的建议",
+          "signal_id": "v2ex-1229165"
+        }
+      ],
+      "canonical_name": "GitHub Stars"
+    },
+    "Productivity Calculator": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "w2solo",
+          "source_key": "w2solo",
+          "title": "做了一个免费的在线 Productivity Calculator，帮你快速计算真实工作效率",
+          "signal_id": "w2solo-7837"
+        }
+      ],
+      "canonical_name": "Productivity Calculator"
+    },
+    "PriceRadar": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "w2solo",
+          "source_key": "w2solo",
+          "title": "做了一个查 App 订阅全球价格的小站 支持 apple store / play store",
+          "signal_id": "w2solo-7834"
+        }
+      ],
+      "canonical_name": "PriceRadar"
+    },
+    "Apple Store": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "w2solo",
+          "source_key": "w2solo",
+          "title": "做了一个查 App 订阅全球价格的小站 支持 apple store / play store",
+          "signal_id": "w2solo-7834"
+        }
+      ],
+      "canonical_name": "Apple Store"
+    },
+    "Google Play": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "w2solo",
+          "source_key": "w2solo",
+          "title": "做了一个查 App 订阅全球价格的小站 支持 apple store / play store",
+          "signal_id": "w2solo-7834"
+        }
+      ],
+      "canonical_name": "Google Play"
+    },
+    "Chrome": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "w2solo",
+          "source_key": "w2solo",
+          "title": "花 3 个月做了 7 个 Chrome 插件，让获取 TikTok Shop 和 Amazon 数据变得更简单",
+          "signal_id": "w2solo-7827"
+        }
+      ],
+      "canonical_name": "Chrome"
+    },
+    "TikTok Shop": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "w2solo",
+          "source_key": "w2solo",
+          "title": "花 3 个月做了 7 个 Chrome 插件，让获取 TikTok Shop 和 Amazon 数据变得更简单",
+          "signal_id": "w2solo-7827"
+        }
+      ],
+      "canonical_name": "TikTok Shop"
+    },
+    "Amazon": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "company",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "w2solo",
+          "source_key": "w2solo",
+          "title": "花 3 个月做了 7 个 Chrome 插件，让获取 TikTok Shop 和 Amazon 数据变得更简单",
+          "signal_id": "w2solo-7827"
+        }
+      ],
+      "canonical_name": "Amazon"
+    },
+    "Rust": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Hacker News",
+          "source_key": "hn",
+          "title": "Show HN: A self-running space economy SIM in Rust and Bevy",
+          "signal_id": "hn-48996187"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "Lobsters",
+          "source_key": "lobsters",
+          "title": "Announcing Topcoat: a framework for building full-stack reactive web apps with Rust",
+          "signal_id": "lobsters-l8hiip"
+        }
+      ],
+      "canonical_name": "Rust"
+    },
+    "Bevy": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Hacker News",
+          "source_key": "hn",
+          "title": "Show HN: A self-running space economy SIM in Rust and Bevy",
+          "signal_id": "hn-48996187"
+        }
+      ],
+      "canonical_name": "Bevy"
+    },
+    "MemPalace/mempalace": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "project",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "GitHub Trending",
+          "source_key": "github",
+          "title": "MemPalace/mempalace",
+          "signal_id": "github-1201656210"
+        }
+      ],
+      "canonical_name": "MemPalace/mempalace"
+    },
+    "Coasty": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "HN Job Discussion",
+          "source_key": "job_trends",
+          "title": "Launch HN: Coasty (YC S26) – An API for computer-use agents",
+          "signal_id": "hn-jobs-48922706"
+        }
+      ],
+      "canonical_name": "Coasty"
+    },
+    "YC S26": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "company",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "HN Job Discussion",
+          "source_key": "job_trends",
+          "title": "Launch HN: Coasty (YC S26) – An API for computer-use agents",
+          "signal_id": "hn-jobs-48922706"
+        }
+      ],
+      "canonical_name": "YC S26"
+    },
+    "Multi-Agent": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "掘金",
+          "source_key": "juejin",
+          "title": "阿里一面，我霸气反问：你说你们在做Agent项目，说说langchain、muti-agent、a2a这些你们都是怎么做的？面试官一直在擦汗。。",
+          "signal_id": "juejin-7657453685375369267"
+        }
+      ],
+      "canonical_name": "Multi-Agent"
+    },
+    "A2A": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "掘金",
+          "source_key": "juejin",
+          "title": "阿里一面，我霸气反问：你说你们在做Agent项目，说说langchain、muti-agent、a2a这些你们都是怎么做的？面试官一直在擦汗。。",
+          "signal_id": "juejin-7657453685375369267"
+        }
+      ],
+      "canonical_name": "A2A"
+    },
+    "OBS Studio": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "开源直播与录制工具 OBS Studio 32.2.0 发布",
+          "signal_id": "oschina-476791"
+        }
+      ],
+      "canonical_name": "OBS Studio"
+    },
+    "VSCode": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "SegmentFault",
+          "source_key": "segmentfault",
+          "title": "有什么推荐的 Vscode Ai 代码补全插件吗?",
+          "signal_id": "sf-1010000048048649"
+        }
+      ],
+      "canonical_name": "VSCode"
+    },
+    "The Daily FM": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "HN Show HN",
+          "source_key": "showhn",
+          "title": "The Daily FM – Turn any source into a daily podcast",
+          "signal_id": "showhn-49013244"
+        }
+      ],
+      "canonical_name": "The Daily FM"
+    },
+    "MAI Gateway": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "w2solo",
+          "source_key": "w2solo",
+          "title": "周末被 Agent 烧钱吓到后，我开始认真看 MAI Gateway",
+          "signal_id": "w2solo-7828"
+        }
+      ],
+      "canonical_name": "AI Gateway"
+    },
+    "TransferIQ": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "w2solo",
+          "source_key": "w2solo",
+          "title": "收录了 19 家服务商后，我研究了一家覆盖 300 多家服务商的同行",
+          "signal_id": "w2solo-7826"
+        }
+      ],
+      "canonical_name": "TransferIQ"
+    },
+    "Monito": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "w2solo",
+          "source_key": "w2solo",
+          "title": "收录了 19 家服务商后，我研究了一家覆盖 300 多家服务商的同行",
+          "signal_id": "w2solo-7826"
+        }
+      ],
+      "canonical_name": "Monito"
+    },
+    "Mintplex-Labs/anything-llm": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "project",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "GitHub Trending",
+          "source_key": "github",
+          "title": "Mintplex-Labs/anything-llm",
+          "signal_id": "github-649170660"
+        }
+      ],
+      "canonical_name": "Mintplex-Labs/anything-llm"
+    },
+    "AnythingLLM": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "GitHub Trending",
+          "source_key": "github",
+          "title": "Mintplex-Labs/anything-llm",
+          "signal_id": "github-649170660"
+        }
+      ],
+      "canonical_name": "AnythingLLM"
+    },
+    "GapMinder": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "company",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "GapMinder leads seed funding round in Croatian healthtech startup Lasken AI, alongside Fil Rouge Capital",
+          "signal_id": "gn-7201760"
+        }
+      ],
+      "canonical_name": "GapMinder"
+    },
+    "Lasken AI": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "company",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "GapMinder leads seed funding round in Croatian healthtech startup Lasken AI, alongside Fil Rouge Capital",
+          "signal_id": "gn-7201760"
+        }
+      ],
+      "canonical_name": "Lasken AI"
+    },
+    "Fil Rouge Capital": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "company",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "GapMinder leads seed funding round in Croatian healthtech startup Lasken AI, alongside Fil Rouge Capital",
+          "signal_id": "gn-7201760"
+        }
+      ],
+      "canonical_name": "Fil Rouge Capital"
+    },
+    "SIMD": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Hacker News",
+          "source_key": "hn",
+          "title": "Everyone Should Know SIMD",
+          "signal_id": "hn-49010648"
+        }
+      ],
+      "canonical_name": "SIMD"
+    },
+    "Weekday": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "HN Job Discussion",
+          "source_key": "job_trends",
+          "title": "Launch HN: Weekday (YC W21) – Hire engineers vouched for by other engineers",
+          "signal_id": "hn-jobs-27844728"
+        }
+      ],
+      "canonical_name": "Weekday"
+    },
+    "YC W21": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "company",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "HN Job Discussion",
+          "source_key": "job_trends",
+          "title": "Launch HN: Weekday (YC W21) – Hire engineers vouched for by other engineers",
+          "signal_id": "hn-jobs-27844728"
+        }
+      ],
+      "canonical_name": "YC W21"
+    },
+    "ng-zorro-antd": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "project",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "ng-zorro-antd 22.0.0 发布，基于 Angular 的 UI 组件",
+          "signal_id": "oschina-476127"
+        }
+      ],
+      "canonical_name": "ng-zorro-antd"
+    },
+    "Angular": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "ng-zorro-antd 22.0.0 发布，基于 Angular 的 UI 组件",
+          "signal_id": "oschina-476127"
+        }
+      ],
+      "canonical_name": "Angular"
+    },
+    "Ant Design": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "ng-zorro-antd 22.0.0 发布，基于 Angular 的 UI 组件",
+          "signal_id": "oschina-476127"
+        }
+      ],
+      "canonical_name": "Ant Design"
+    },
+    "Typecho": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "SegmentFault",
+          "source_key": "segmentfault",
+          "title": "有没有方法让两个typecho博客使用同一个用户系统？",
+          "signal_id": "sf-1010000048054409"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "SegmentFault",
+          "source_key": "segmentfault",
+          "title": "typecho路径重复如何设置优先级?",
+          "signal_id": "sf-1010000048048753"
+        }
+      ],
+      "canonical_name": "Typecho"
+    },
+    "QMIX": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Semantic Scholar",
+          "source_key": "semanticscholar",
+          "title": "QMIX: Monotonic Value Function Factorisation for Deep Multi-Agent Reinforcement Learning",
+          "signal_id": "s2-ffc211476f2e40e79466ffc198c919a97da3bb76"
+        }
+      ],
+      "canonical_name": "QMIX"
+    },
+    "Orate": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "HN Show HN",
+          "source_key": "showhn",
+          "title": "Orate – On-device neural text-to-speech queue for Mac",
+          "signal_id": "showhn-48997941"
+        }
+      ],
+      "canonical_name": "Orate"
+    },
+    "Hugging Face": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "company",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Lobsters",
+          "source_key": "lobsters",
+          "title": "OpenAI model breaks out of security sandbox, hacks Hugging Face for data to pass test",
+          "signal_id": "lobsters-7nrek3"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "GPT-5.6 为了在测试里拿高分，黑了 Hugging Face 的生产环境",
+          "signal_id": "oschina-476550"
+        }
+      ],
+      "canonical_name": "Hugging Face"
+    },
+    "browser-use/browser-use": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "project",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "GitHub Trending",
+          "source_key": "github",
+          "title": "browser-use/browser-use",
+          "signal_id": "github-881458615"
+        }
+      ],
+      "canonical_name": "browser-use/browser-use"
+    },
+    "666ghj/MiroFish": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "project",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "GitHub Trending",
+          "source_key": "github",
+          "title": "666ghj/MiroFish",
+          "signal_id": "github-1104332987"
+        }
+      ],
+      "canonical_name": "MiroFish"
+    },
+    "MiroFish": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "GitHub Trending",
+          "source_key": "github",
+          "title": "666ghj/MiroFish",
+          "signal_id": "github-1104332987"
+        }
+      ],
+      "canonical_name": "MiroFish"
+    },
+    "lightpanda-io/browser": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "project",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "GitHub Trending",
+          "source_key": "github",
+          "title": "lightpanda-io/browser",
+          "signal_id": "github-598667202"
+        }
+      ],
+      "canonical_name": "lightpanda-io/browser"
+    },
+    "Lightpanda": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "GitHub Trending",
+          "source_key": "github",
+          "title": "lightpanda-io/browser",
+          "signal_id": "github-598667202"
+        }
+      ],
+      "canonical_name": "Lightpanda"
+    },
+    "Skyvern-AI/skyvern": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "project",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "GitHub Trending",
+          "source_key": "github",
+          "title": "Skyvern-AI/skyvern",
+          "signal_id": "github-764723738"
+        }
+      ],
+      "canonical_name": "Skyvern"
+    },
+    "Skyvern": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "GitHub Trending",
+          "source_key": "github",
+          "title": "Skyvern-AI/skyvern",
+          "signal_id": "github-764723738"
+        }
+      ],
+      "canonical_name": "Skyvern"
+    },
+    "omnigent-ai/omnigent": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "project",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "GitHub Trending",
+          "source_key": "github",
+          "title": "omnigent-ai/omnigent",
+          "signal_id": "github-1266212515"
+        }
+      ],
+      "canonical_name": "Omnigent"
+    },
+    "Omnigent": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "GitHub Trending",
+          "source_key": "github",
+          "title": "omnigent-ai/omnigent",
+          "signal_id": "github-1266212515"
+        }
+      ],
+      "canonical_name": "Omnigent"
+    },
+    "Claude Code": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "GitHub Trending",
+          "source_key": "github",
+          "title": "omnigent-ai/omnigent",
+          "signal_id": "github-1266212515"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "掘金",
+          "source_key": "juejin",
+          "title": "别再裸用 Claude Code 了！32 个亲测Skills + 8 个 MCP，开发效率直接拉满！",
+          "signal_id": "juejin-7620060655607857178"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "掘金",
+          "source_key": "juejin",
+          "title": "Claude Code Skills 推荐：2026年最值得安装的10个AI技能",
+          "signal_id": "juejin-7637367613895393295"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "DEV Community",
+          "source_key": "devcommunity",
+          "title": "I added MCP servers to Claude Code. Here's what they cost in tokens.",
+          "signal_id": "dev-4191779"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "V2EX 程序员",
+          "source_key": "v2ex",
+          "title": "Claude Code 的 Prompt Cache 到底怎么工作？ 5 个让缓存失效的坑",
+          "signal_id": "v2ex-1229144"
+        }
+      ],
+      "canonical_name": "Claude Code"
+    },
+    "Codex": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "GitHub Trending",
+          "source_key": "github",
+          "title": "omnigent-ai/omnigent",
+          "signal_id": "github-1266212515"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "掘金",
+          "source_key": "juejin",
+          "title": "Cursor 转 Codex 大半个月，聊聊我的真实感受",
+          "signal_id": "juejin-7637856870833635343"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "掘金",
+          "source_key": "juejin",
+          "title": "Codex 穷鬼大救星",
+          "signal_id": "juejin-7635467758865235968"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "掘金",
+          "source_key": "juejin",
+          "title": "Codex 最佳实践（超级长文）：先搞懂 AI，再用好 AI",
+          "signal_id": "juejin-7654140424869855282"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "掘金",
+          "source_key": "juejin",
+          "title": "小米MiMoCode官网颜值高？Codex：拿来吧，您嘞！1:1完美复刻～",
+          "signal_id": "juejin-7650352436700774400"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "OpenAI",
+          "source_key": "openai",
+          "title": "NTT DATA Group cuts incident analysis to 30 minutes with Codex",
+          "signal_id": "changelog-9425275"
+        }
+      ],
+      "canonical_name": "Codex"
+    },
+    "unicity-aos/aos-ce": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "project",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "GitHub Trending",
+          "source_key": "github",
+          "title": "unicity-aos/aos-ce",
+          "signal_id": "github-1298696137"
+        }
+      ],
+      "canonical_name": "unicity-aos/aos-ce"
+    },
+    "AOS": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "GitHub Trending",
+          "source_key": "github",
+          "title": "unicity-aos/aos-ce",
+          "signal_id": "github-1298696137"
+        }
+      ],
+      "canonical_name": "AOS"
+    },
+    "google-ai-edge/LiteRT-LM": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "project",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "GitHub Trending",
+          "source_key": "github",
+          "title": "google-ai-edge/LiteRT-LM",
+          "signal_id": "github-966386486"
+        }
+      ],
+      "canonical_name": "google-ai-edge/LiteRT-LM"
+    },
+    "LiteRT-LM": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "GitHub Trending",
+          "source_key": "github",
+          "title": "google-ai-edge/LiteRT-LM",
+          "signal_id": "github-966386486"
+        }
+      ],
+      "canonical_name": "google-ai-edge/LiteRT-LM"
+    },
+    "Google": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "company",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "GitHub Trending",
+          "source_key": "github",
+          "title": "google-ai-edge/LiteRT-LM",
+          "signal_id": "github-966386486"
+        }
+      ],
+      "canonical_name": "Google"
+    },
+    "withmarbleapp/os-taxonomy": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "project",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "GitHub Trending",
+          "source_key": "github",
+          "title": "withmarbleapp/os-taxonomy",
+          "signal_id": "github-1293375068"
+        }
+      ],
+      "canonical_name": "withmarbleapp/os-taxonomy"
+    },
+    "yvgude/lean-ctx": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "project",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "GitHub Trending",
+          "source_key": "github",
+          "title": "yvgude/lean-ctx",
+          "signal_id": "github-1189918673"
+        }
+      ],
+      "canonical_name": "yvgude/lean-ctx"
+    },
+    "LeanCTX": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "GitHub Trending",
+          "source_key": "github",
+          "title": "yvgude/lean-ctx",
+          "signal_id": "github-1189918673"
+        }
+      ],
+      "canonical_name": "LeanCTX"
+    },
+    "facebook/react": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "project",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "GitHub Releases",
+          "source_key": "github-releases",
+          "title": "[facebook/react] 19.2.8 (July 21st, 2026)",
+          "signal_id": "ghr-5002665"
+        }
+      ],
+      "canonical_name": "facebook/react"
+    },
+    "React": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "GitHub Releases",
+          "source_key": "github-releases",
+          "title": "[facebook/react] 19.2.8 (July 21st, 2026)",
+          "signal_id": "ghr-5002665"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "V2EX 奇思妙想",
+          "source_key": "v2ex",
+          "title": "开源] Late Eastern Han Dynasty — 用 React + Konva 做的节点式三国大战略，寻同好",
+          "signal_id": "v2ex-1229148"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "HN Job Discussion",
+          "source_key": "job_trends",
+          "title": "Ask HN: Should I even bother competing for React jobs?",
+          "signal_id": "hn-jobs-28172360"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "DEV Community",
+          "source_key": "devcommunity",
+          "title": "How AI changed the way I pick frameworks, and the two places React survived",
+          "signal_id": "dev-4180473"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "DEV Community",
+          "source_key": "devcommunity",
+          "title": "Why Google Translate Crashes Your React App (and How to Fix It)",
+          "signal_id": "dev-4194163"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "Stack Overflow",
+          "source_key": "stackoverflow",
+          "title": "How to run LlamaIndex ReAct agent with gpt-oss? Getting \"SyntaxError: 'async for' outside async function\"",
+          "signal_id": "so-79751082"
+        }
+      ],
+      "canonical_name": "React"
+    },
+    "Cross Country Healthcare": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "company",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "Deals tracker: Cross Country Healthcare acquired by Knox Lane",
+          "signal_id": "gn-6847662"
+        }
+      ],
+      "canonical_name": "Cross Country Healthcare"
+    },
+    "Knox Lane": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "company",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "Deals tracker: Cross Country Healthcare acquired by Knox Lane",
+          "signal_id": "gn-6847662"
+        }
+      ],
+      "canonical_name": "Knox Lane"
+    },
+    "Terrence Tao": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "company",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Hacker News",
+          "source_key": "hn",
+          "title": "Terrence Tao's ChatGPT Conversation about the Jacobian Conjecture Counterexample",
+          "signal_id": "hn-49010345"
+        }
+      ],
+      "canonical_name": "Terrence Tao"
+    },
+    "MCP": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "掘金",
+          "source_key": "juejin",
+          "title": "别再裸用 Claude Code 了！32 个亲测Skills + 8 个 MCP，开发效率直接拉满！",
+          "signal_id": "juejin-7620060655607857178"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "HN Show HN",
+          "source_key": "showhn",
+          "title": "Chalk: a Mac app for technical diagrams with a built-in MCP for Claude",
+          "signal_id": "showhn-48998042"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "DEV Community",
+          "source_key": "devcommunity",
+          "title": "MCP Session Architecture: Scale Agent Integrations Without Sticky Servers",
+          "signal_id": "dev-4191782"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "DEV Community",
+          "source_key": "devcommunity",
+          "title": "I added MCP servers to Claude Code. Here's what they cost in tokens.",
+          "signal_id": "dev-4191779"
+        }
+      ],
+      "canonical_name": "MCP"
+    },
+    "Cursor": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "掘金",
+          "source_key": "juejin",
+          "title": "Cursor 转 Codex 大半个月，聊聊我的真实感受",
+          "signal_id": "juejin-7637856870833635343"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "掘金",
+          "source_key": "juejin",
+          "title": "搞懂 Cursor 后，我一行代码都不敲了《进阶篇》",
+          "signal_id": "juejin-7621018086649331721"
+        }
+      ],
+      "canonical_name": "Cursor"
+    },
+    "Uber": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "company",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "掘金",
+          "source_key": "juejin",
+          "title": "最近公司烧token比招员工还贵，老板干懵了...",
+          "signal_id": "juejin-7646256871183024128"
+        }
+      ],
+      "canonical_name": "Uber"
+    },
+    "Vue 3": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "掘金",
+          "source_key": "juejin",
+          "title": "尤雨溪力荐！Vue3 专属！100+ 动效组件！",
+          "signal_id": "juejin-7541719099627798564"
+        }
+      ],
+      "canonical_name": "Vue 3"
+    },
+    "Motion Vue": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "掘金",
+          "source_key": "juejin",
+          "title": "尤雨溪力荐！Vue3 专属！100+ 动效组件！",
+          "signal_id": "juejin-7541719099627798564"
+        }
+      ],
+      "canonical_name": "Motion Vue"
+    },
+    "Framer Motion": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "掘金",
+          "source_key": "juejin",
+          "title": "尤雨溪力荐！Vue3 专属！100+ 动效组件！",
+          "signal_id": "juejin-7541719099627798564"
+        }
+      ],
+      "canonical_name": "Framer Motion"
+    },
+    "Git": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Lobsters",
+          "source_key": "lobsters",
+          "title": "git --end-of-options",
+          "signal_id": "lobsters-cxz7vd"
+        }
+      ],
+      "canonical_name": "Git"
+    },
+    "Paozhu": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "C++ web框架 Paozhu 1.14.0 发布，html 生成 pdf 文件，xlsx 文件读写",
+          "signal_id": "oschina-476009"
+        }
+      ],
+      "canonical_name": "Paozhu"
+    },
+    "C++": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "C++ web框架 Paozhu 1.14.0 发布，html 生成 pdf 文件，xlsx 文件读写",
+          "signal_id": "oschina-476009"
+        }
+      ],
+      "canonical_name": "C++"
+    },
+    "Nginx": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "SegmentFault",
+          "source_key": "segmentfault",
+          "title": "微信小程序上传图片时返回 413，Nginx 和 Spring Boot 应该如何配置？",
+          "signal_id": "sf-1010000048058934"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "SegmentFault",
+          "source_key": "segmentfault",
+          "title": "NGINX修复严重堆缓冲区溢出漏洞 CVE-2026-42533？",
+          "signal_id": "sf-1010000048052865"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "SegmentFault",
+          "source_key": "segmentfault",
+          "title": "建议增加nginx（国密）和Apache（国密）？",
+          "signal_id": "sf-1010000048026184"
+        }
+      ],
+      "canonical_name": "Nginx"
+    },
+    "Spring Boot": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "SegmentFault",
+          "source_key": "segmentfault",
+          "title": "微信小程序上传图片时返回 413，Nginx 和 Spring Boot 应该如何配置？",
+          "signal_id": "sf-1010000048058934"
+        }
+      ],
+      "canonical_name": "Spring Boot"
+    },
+    "ADB": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "SegmentFault",
+          "source_key": "segmentfault",
+          "title": "基于ADB的安卓自动化中，如何解决短文本和表情识别不准的问题？",
+          "signal_id": "sf-1010000048033044"
+        }
+      ],
+      "canonical_name": "ADB"
+    },
+    "MonkeyCode": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "SegmentFault",
+          "source_key": "segmentfault",
+          "title": "monkeycode如何提高开发效率？",
+          "signal_id": "sf-1010000048020658"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "SegmentFault",
+          "source_key": "segmentfault",
+          "title": "monkeycode的代码审查功能使用方法？",
+          "signal_id": "sf-1010000048020807"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "SegmentFault",
+          "source_key": "segmentfault",
+          "title": "monkeycode的智能提示功能详解？",
+          "signal_id": "sf-1010000048020755"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "SegmentFault",
+          "source_key": "segmentfault",
+          "title": "monkeycode的代码生成能力如何？",
+          "signal_id": "sf-1010000048020588"
+        }
+      ],
+      "canonical_name": "MonkeyCode"
+    },
+    "StarCraft II": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Semantic Scholar",
+          "source_key": "semanticscholar",
+          "title": "Grandmaster level in StarCraft II using multi-agent reinforcement learning",
+          "signal_id": "s2-361c00b22e29d0816ca896513d2c165e26399821"
+        }
+      ],
+      "canonical_name": "StarCraft II"
+    },
+    "OpenAssistant": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "project",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Semantic Scholar",
+          "source_key": "semanticscholar",
+          "title": "OpenAssistant Conversations - Democratizing Large Language Model Alignment",
+          "signal_id": "s2-ae736662f64d56f3ab1894fbd9c45f8f37251843"
+        }
+      ],
+      "canonical_name": "OpenAssistant"
+    },
+    "Reachpad": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "HN Show HN",
+          "source_key": "showhn",
+          "title": "Reachpad – Run all your coding agents from anywhere from the browser",
+          "signal_id": "showhn-48998667"
+        }
+      ],
+      "canonical_name": "Reachpad"
+    },
+    "Superserve": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "HN Show HN",
+          "source_key": "showhn",
+          "title": "Superserve – Firecracker microVM sandboxes for long-running AI agents",
+          "signal_id": "showhn-48999489"
+        }
+      ],
+      "canonical_name": "Superserve"
+    },
+    "Firecracker": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "HN Show HN",
+          "source_key": "showhn",
+          "title": "Superserve – Firecracker microVM sandboxes for long-running AI agents",
+          "signal_id": "showhn-48999489"
+        }
+      ],
+      "canonical_name": "Firecracker"
+    },
+    "Chalk": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "HN Show HN",
+          "source_key": "showhn",
+          "title": "Chalk: a Mac app for technical diagrams with a built-in MCP for Claude",
+          "signal_id": "showhn-48998042"
+        }
+      ],
+      "canonical_name": "Chalk"
+    },
+    "Stele": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "HN Show HN",
+          "source_key": "showhn",
+          "title": "Stele – A self-maintaining knowledge graph for AI coding agents",
+          "signal_id": "showhn-49010384"
+        }
+      ],
+      "canonical_name": "Stele"
+    },
+    "Tailwind CSS": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "w2solo",
+          "source_key": "w2solo",
+          "title": "全新升级/圈子论坛软件开发 5.0 版本/行业圈子/多端打造 APP 小程序公众号/圈子交友资源",
+          "signal_id": "w2solo-7832"
+        }
+      ],
+      "canonical_name": "Tailwind CSS"
+    },
+    "Google Cloud": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "Google Cloud revenue surges 82% as enterprise AI adoption quiets investor concerns over spending",
+          "signal_id": "gn-3225844"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "Google Cloud's AI Boom Validates Billions in Capex Spending",
+          "signal_id": "gn-4758421"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "Google justifies its massive AI spending with a booming cloud business",
+          "signal_id": "gn-0627792"
+        }
+      ],
+      "canonical_name": "Google Cloud"
+    },
+    "Unlayer": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Hacker News",
+          "source_key": "hn",
+          "title": "Launch HN: Unlayer (YC W22) – Add email and document builders to your app",
+          "signal_id": "hn-49008901"
+        }
+      ],
+      "canonical_name": "Unlayer"
+    },
+    "YC W22": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "company",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Hacker News",
+          "source_key": "hn",
+          "title": "Launch HN: Unlayer (YC W22) – Add email and document builders to your app",
+          "signal_id": "hn-49008901"
+        }
+      ],
+      "canonical_name": "YC W22"
+    },
+    "Foster": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "HN Job Discussion",
+          "source_key": "job_trends",
+          "title": "Launch HN: Foster (YC W21) – Improve your writing with on-demand editing",
+          "signal_id": "hn-jobs-31850439"
+        }
+      ],
+      "canonical_name": "Foster"
+    },
+    "Legion Health": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "HN Job Discussion",
+          "source_key": "job_trends",
+          "title": "Launch HN: Legion Health (YC S21) – Smarter Staffing for Mental Health",
+          "signal_id": "hn-jobs-27983197"
+        }
+      ],
+      "canonical_name": "Legion Health"
+    },
+    "YC S21": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "company",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "HN Job Discussion",
+          "source_key": "job_trends",
+          "title": "Launch HN: Legion Health (YC S21) – Smarter Staffing for Mental Health",
+          "signal_id": "hn-jobs-27983197"
+        }
+      ],
+      "canonical_name": "YC S21"
+    },
+    "Skills": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "掘金",
+          "source_key": "juejin",
+          "title": "2026编程圈很火的10个Skills",
+          "signal_id": "juejin-7660712622825144374"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "掘金",
+          "source_key": "juejin",
+          "title": "Claude Code Skills 推荐：2026年最值得安装的10个AI技能",
+          "signal_id": "juejin-7637367613895393295"
+        }
+      ],
+      "canonical_name": "Skills"
+    },
+    "Kimi K3": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "model",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "掘金",
+          "source_key": "juejin",
+          "title": "全网都在吹的 Kimi K3，到底怎么样？",
+          "signal_id": "juejin-7663685196478611506"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "掘金",
+          "source_key": "juejin",
+          "title": "盘点 18 个 Kimi K3 外网爆火的案例，太令人惊艳了。",
+          "signal_id": "juejin-7664465589441183778"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "Kimi K3 实战对标 Fable 5：开源模型在 SWE-bench 上几乎打平了",
+          "signal_id": "oschina-476574"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "Fable 5 比开源模型贵三倍，Anthropic 的账怎么算？",
+          "signal_id": "oschina-475956"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "掘金",
+          "source_key": "juejin",
+          "title": "Kimi k3是真碉，但太不经用，也有拉跨点！",
+          "signal_id": "juejin-7663426727991164991"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "V2EX 产品发布",
+          "source_key": "v2ex",
+          "title": "我做了一个 Kimi K3 的工作台，把成本、部署、评测和使用场景整理到一起",
+          "signal_id": "v2ex-1229169"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "China’s Moonshot AI unveils largest open-source model Kimi K3 with 2.8T parameters",
+          "signal_id": "gn-2244263"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "A top White House official is escalating the fight over Moonshot AI's viral Kimi K3 model",
+          "signal_id": "gn-1542927"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "Kimi K3 到底有多强？国产模型超越 Claude Fable 5，半天实战编码测评",
+          "signal_id": "oschina-475974"
+        }
+      ],
+      "canonical_name": "Kimi K3"
+    },
+    "Moonshot": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "company",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "Fable 5 比开源模型贵三倍，Anthropic 的账怎么算？",
+          "signal_id": "oschina-475956"
+        }
+      ],
+      "canonical_name": "Moonshot AI"
+    },
+    "Free Ink": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Lobsters",
+          "source_key": "lobsters",
+          "title": "Free Ink · An open ecosystem for e-readers",
+          "signal_id": "lobsters-rwdmjn"
+        }
+      ],
+      "canonical_name": "Free Ink"
+    },
+    "Fable 5": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "model",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "Kimi K3 实战对标 Fable 5：开源模型在 SWE-bench 上几乎打平了",
+          "signal_id": "oschina-476574"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "Fable 5 比开源模型贵三倍，Anthropic 的账怎么算？",
+          "signal_id": "oschina-475956"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "掘金",
+          "source_key": "juejin",
+          "title": "凌晨睡不着，我给台风巴威写了个追踪网站",
+          "signal_id": "juejin-7659393583027896330"
+        }
+      ],
+      "canonical_name": "Claude Fable 5"
+    },
+    "SWE-bench": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "Kimi K3 实战对标 Fable 5：开源模型在 SWE-bench 上几乎打平了",
+          "signal_id": "oschina-476574"
+        }
+      ],
+      "canonical_name": "SWE-bench"
+    },
+    "腾讯云": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "company",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "腾讯云开源自研 AI 助手 Octop",
+          "signal_id": "oschina-476519"
+        }
+      ],
+      "canonical_name": "腾讯云"
+    },
+    "Octop": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "腾讯云开源自研 AI 助手 Octop",
+          "signal_id": "oschina-476519"
+        }
+      ],
+      "canonical_name": "Octop"
+    },
+    "LightClaw ACE": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "腾讯云开源自研 AI 助手 Octop",
+          "signal_id": "oschina-476519"
+        }
+      ],
+      "canonical_name": "LightClaw ACE"
+    },
+    "阿里巴巴": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "company",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "Fable 5 比开源模型贵三倍，Anthropic 的账怎么算？",
+          "signal_id": "oschina-475956"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "“画中画中画”——Qwen Image 3.0 把四层 UI 塞进了一张图",
+          "signal_id": "oschina-476175"
+        }
+      ],
+      "canonical_name": "阿里巴巴"
+    },
+    "NeurIPS": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Reddit",
+          "source_key": "reddit",
+          "title": "NeurIPS 2026 Reviews Are Out Today (22 July, AoE) — Discussion Thread [D]",
+          "signal_id": "reddit-t3_1v3a2le"
+        }
+      ],
+      "canonical_name": "NeurIPS"
+    },
+    "Kimi Code": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "V2EX 程序员",
+          "source_key": "v2ex",
+          "title": "关于 Kimi Code 付费套餐限额不透明的投诉指南",
+          "signal_id": "v2ex-1229133"
+        }
+      ],
+      "canonical_name": "Kimi Code"
+    },
+    "crRequest": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "V2EX 程序员",
+          "source_key": "v2ex",
+          "title": "跨平台工具客户端 crRequest 1.2.1 新增对 SSH 支持",
+          "signal_id": "v2ex-1229150"
+        }
+      ],
+      "canonical_name": "crRequest"
+    },
+    "SSH": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "V2EX 程序员",
+          "source_key": "v2ex",
+          "title": "跨平台工具客户端 crRequest 1.2.1 新增对 SSH 支持",
+          "signal_id": "v2ex-1229150"
+        }
+      ],
+      "canonical_name": "SSH"
+    },
+    "Zooproxy": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "w2solo",
+          "source_key": "w2solo",
+          "title": "【免费流量分享】Zooproxy 双 ISP 纯净 IP ！300MB 动态住宅 IP 兑换码！",
+          "signal_id": "w2solo-7830"
+        }
+      ],
+      "canonical_name": "Zooproxy"
+    },
+    "Substack": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "DEV Community",
+          "source_key": "devcommunity",
+          "title": "Substack's New AI Detector Has the Same Blind Spot DEV.to's Did",
+          "signal_id": "dev-4203888"
+        }
+      ],
+      "canonical_name": "Substack"
+    },
+    "DEV.to": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "DEV Community",
+          "source_key": "devcommunity",
+          "title": "Substack's New AI Detector Has the Same Blind Spot DEV.to's Did",
+          "signal_id": "dev-4203888"
+        }
+      ],
+      "canonical_name": "DEV.to"
+    },
+    "Kata Containers": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "Kata Containers 4.0 Cements the Project's Role as the Open Source Standard for Sandboxing AI Agents",
+          "signal_id": "gn-8537583"
+        }
+      ],
+      "canonical_name": "Kata Containers"
+    },
+    "Postgres": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Hacker News",
+          "source_key": "hn",
+          "title": "The startup's Postgres survival guide",
+          "signal_id": "hn-49005787"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "Reddit",
+          "source_key": "reddit",
+          "title": "The Long Road to Bottomless Postgres: Discussing Neon, pg_mooncake, pg_tier, pg_lake, and ColdFront",
+          "signal_id": "reddit-t3_1v24401"
+        }
+      ],
+      "canonical_name": "Postgres"
+    },
+    "Kagi": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Hacker News",
+          "source_key": "hn",
+          "title": "Back to Kagi",
+          "signal_id": "hn-49006195"
+        }
+      ],
+      "canonical_name": "Kagi"
+    },
+    "GigaToken": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Hacker News",
+          "source_key": "hn",
+          "title": "GigaToken: ~1000x faster Language model tokenization",
+          "signal_id": "hn-49010167"
+        }
+      ],
+      "canonical_name": "GigaToken"
+    },
+    "Claude Fable 5": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "model",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "掘金",
+          "source_key": "juejin",
+          "title": "凌晨睡不着，我给台风巴威写了个追踪网站",
+          "signal_id": "juejin-7659393583027896330"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "V2EX 程序员",
+          "source_key": "v2ex",
+          "title": "编程能力排名是 claude fable5 > gpt sol extra > claude 4.8 吗？",
+          "signal_id": "v2ex-1229132"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "Kimi K3 到底有多强？国产模型超越 Claude Fable 5，半天实战编码测评",
+          "signal_id": "oschina-475974"
+        }
+      ],
+      "canonical_name": "Claude Fable 5"
+    },
+    "MiMoCode": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "掘金",
+          "source_key": "juejin",
+          "title": "小米MiMoCode官网颜值高？Codex：拿来吧，您嘞！1:1完美复刻～",
+          "signal_id": "juejin-7650352436700774400"
+        }
+      ],
+      "canonical_name": "MiMoCode"
+    },
+    "ChatGPT 5.6": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "model",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "掘金",
+          "source_key": "juejin",
+          "title": "没写一行代码！我用 ChatGPT 5.6 (Sol) 做了一个智慧充电站 3D 大屏",
+          "signal_id": "juejin-7661160753004904448"
+        }
+      ],
+      "canonical_name": "GPT-5.6"
+    },
+    "RStudio": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "RStudio 2026.07.1 发布，R 语言的集成开发环境",
+          "signal_id": "oschina-476961"
+        }
+      ],
+      "canonical_name": "RStudio"
+    },
+    "gRPC": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "gRPC 1.83.0 发布，跨语言 RPC 框架",
+          "signal_id": "oschina-476934"
+        }
+      ],
+      "canonical_name": "gRPC"
+    },
+    "VirtualBox": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "VirtualBox 7.2.14 发布",
+          "signal_id": "oschina-476831"
+        }
+      ],
+      "canonical_name": "VirtualBox"
+    },
+    "Miora": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "腾讯发布首个自研创意智能体 Miora",
+          "signal_id": "oschina-476728"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "YouTube",
+          "source_key": "youtube",
+          "title": "AI Cloned My Taste and Built My Whole Brand (Miora)",
+          "signal_id": "yt-ojzQNCfCduY"
+        }
+      ],
+      "canonical_name": "Miora"
+    },
+    "宇树科技": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "company",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "宇树科技发布 UnifoLM-OminiA-0.3",
+          "signal_id": "oschina-476701"
+        }
+      ],
+      "canonical_name": "宇树科技"
+    },
+    "UnifoLM-OminiA-0.3": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "model",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "宇树科技发布 UnifoLM-OminiA-0.3",
+          "signal_id": "oschina-476701"
+        }
+      ],
+      "canonical_name": "UnifoLM-OminiA-0.3"
+    },
+    "Next.js": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "Next.js v16.2.11 发布",
+          "signal_id": "oschina-476610"
+        }
+      ],
+      "canonical_name": "Next.js"
+    },
+    "Firefox": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "Firefox 153.0 发布",
+          "signal_id": "oschina-476582"
+        }
+      ],
+      "canonical_name": "Firefox"
+    },
+    "Grafana": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "Grafana 13.1.1 发布，系统指标监控与分析平台",
+          "signal_id": "oschina-476557"
+        }
+      ],
+      "canonical_name": "Grafana"
+    },
+    "Prometheus": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "Grafana 13.1.1 发布，系统指标监控与分析平台",
+          "signal_id": "oschina-476557"
+        }
+      ],
+      "canonical_name": "Prometheus"
+    },
+    "Loki": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "Grafana 13.1.1 发布，系统指标监控与分析平台",
+          "signal_id": "oschina-476557"
+        }
+      ],
+      "canonical_name": "Loki"
+    },
+    "Elasticsearch": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "Grafana 13.1.1 发布，系统指标监控与分析平台",
+          "signal_id": "oschina-476557"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "如何在 Elasticsearch 中使用 BBQ 将 Jina v5 嵌入缩小 29 倍而不损失召回率",
+          "signal_id": "oschina-3395786"
+        }
+      ],
+      "canonical_name": "Elasticsearch"
+    },
+    "InfluxDB": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "Grafana 13.1.1 发布，系统指标监控与分析平台",
+          "signal_id": "oschina-476557"
+        }
+      ],
+      "canonical_name": "InfluxDB"
+    },
+    "SunnyUI": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "SunnyUI V3.9.8 发布啦，C# WinForm 开源控件库！",
+          "signal_id": "oschina-476515"
+        }
+      ],
+      "canonical_name": "SunnyUI"
+    },
+    "WinForm": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "SunnyUI V3.9.8 发布啦，C# WinForm 开源控件库！",
+          "signal_id": "oschina-476515"
+        }
+      ],
+      "canonical_name": "WinForm"
+    },
+    "EasyGoAdmin": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "EasyGoAdmin 敏捷开发框架 Gin+EleVue 版本 v3.1.1 发布",
+          "signal_id": "oschina-476457"
+        }
+      ],
+      "canonical_name": "EasyGoAdmin"
+    },
+    "Gin": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "EasyGoAdmin 敏捷开发框架 Gin+EleVue 版本 v3.1.1 发布",
+          "signal_id": "oschina-476457"
+        }
+      ],
+      "canonical_name": "Gin"
+    },
+    "EleVue": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "EasyGoAdmin 敏捷开发框架 Gin+EleVue 版本 v3.1.1 发布",
+          "signal_id": "oschina-476457"
+        }
+      ],
+      "canonical_name": "EleVue"
+    },
+    "Vue": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "EasyGoAdmin 敏捷开发框架 Gin+EleVue 版本 v3.1.1 发布",
+          "signal_id": "oschina-476457"
+        }
+      ],
+      "canonical_name": "Vue"
+    },
+    "ElementUI": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "EasyGoAdmin 敏捷开发框架 Gin+EleVue 版本 v3.1.1 发布",
+          "signal_id": "oschina-476457"
+        }
+      ],
+      "canonical_name": "ElementUI"
+    },
+    "Qwen Image 3.0": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "model",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "“画中画中画”——Qwen Image 3.0 把四层 UI 塞进了一张图",
+          "signal_id": "oschina-476175"
+        }
+      ],
+      "canonical_name": "Qwen Image 3.0"
+    },
+    "Hyprland": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "Hyprland 0.56 发布",
+          "signal_id": "oschina-476057"
+        }
+      ],
+      "canonical_name": "Hyprland"
+    },
+    "wlroots": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "Hyprland 0.56 发布",
+          "signal_id": "oschina-476057"
+        }
+      ],
+      "canonical_name": "wlroots"
+    },
+    "Wayland": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "Hyprland 0.56 发布",
+          "signal_id": "oschina-476057"
+        }
+      ],
+      "canonical_name": "Wayland"
+    },
+    "Mumble": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "Mumble 1.5.915 发布",
+          "signal_id": "oschina-476045"
+        }
+      ],
+      "canonical_name": "Mumble"
+    },
+    "Parquet": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Reddit",
+          "source_key": "reddit",
+          "title": "A Fast Path for Fixed-Length Lists in Parquet",
+          "signal_id": "reddit-t3_1v3j7od"
+        }
+      ],
+      "canonical_name": "Parquet"
+    },
+    "EMNLP": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Reddit",
+          "source_key": "reddit",
+          "title": "EMNLP Industry 2026 Paper Reviews [D]",
+          "signal_id": "reddit-t3_1v3iaux"
+        }
+      ],
+      "canonical_name": "EMNLP"
+    },
+    "WAIC": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "SegmentFault",
+          "source_key": "segmentfault",
+          "title": "WAIC2026上腾讯Cube-Sandbox对本地AI开发有何影响?",
+          "signal_id": "sf-1010000048054552"
+        }
+      ],
+      "canonical_name": "WAIC"
+    },
+    "Cube-Sandbox": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "SegmentFault",
+          "source_key": "segmentfault",
+          "title": "WAIC2026上腾讯Cube-Sandbox对本地AI开发有何影响?",
+          "signal_id": "sf-1010000048054552"
+        }
+      ],
+      "canonical_name": "Cube-Sandbox"
+    },
+    "CVE-2026-42533": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "SegmentFault",
+          "source_key": "segmentfault",
+          "title": "NGINX修复严重堆缓冲区溢出漏洞 CVE-2026-42533？",
+          "signal_id": "sf-1010000048052865"
+        }
+      ],
+      "canonical_name": "CVE-2026-42533"
+    },
+    "Prompt Studio": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "V2EX 产品发布",
+          "source_key": "v2ex",
+          "title": "做了个管 AIGC 提示词的本地工作台 —— Prompt Studio",
+          "signal_id": "v2ex-1229091"
+        }
+      ],
+      "canonical_name": "Prompt Studio"
+    },
+    "Konva": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "V2EX 奇思妙想",
+          "source_key": "v2ex",
+          "title": "开源] Late Eastern Han Dynasty — 用 React + Konva 做的节点式三国大战略，寻同好",
+          "signal_id": "v2ex-1229148"
+        }
+      ],
+      "canonical_name": "Konva"
+    },
+    "Box": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "company",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "Box Unveils Security And Governance Controls For Enterprise AI Agents",
+          "signal_id": "gn-0205867"
+        }
+      ],
+      "canonical_name": "Box"
+    },
+    "Nvidia DGX Spark": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Hacker News",
+          "source_key": "hn",
+          "title": "Nvidia DGX Spark as a daily driver",
+          "signal_id": "hn-48971128"
+        }
+      ],
+      "canonical_name": "Nvidia DGX Spark"
+    },
+    "Nvidia": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "company",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Hacker News",
+          "source_key": "hn",
+          "title": "Nvidia DGX Spark as a daily driver",
+          "signal_id": "hn-48971128"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "Nvidia's Jensen Huang defends Chinese AI: \"Open-source models that are excellent should be used\"",
+          "signal_id": "gn-7649436"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "Jensen Huang says open models should be embraced, not banned as Washington weighs restrictions",
+          "signal_id": "gn-8440102"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "SegmentFault",
+          "source_key": "segmentfault",
+          "title": "如何理解英伟达在WAIC 2026上提出的'每美元智能'衡量标准？",
+          "signal_id": "sf-1010000048051698"
+        }
+      ],
+      "canonical_name": "Nvidia"
+    },
+    "Safari Technology Preview": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Hacker News",
+          "source_key": "hn",
+          "title": "Safari Technology Preview 248 Released",
+          "signal_id": "hn-49013356"
+        }
+      ],
+      "canonical_name": "Safari Technology Preview"
+    },
+    "Safari": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Hacker News",
+          "source_key": "hn",
+          "title": "Safari Technology Preview 248 Released",
+          "signal_id": "hn-49013356"
+        }
+      ],
+      "canonical_name": "Safari"
+    },
+    "7-Zip": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "7-Zip曝出高危漏洞：解压即中招",
+          "signal_id": "oschina-476990"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "7-Zip 被曝缓冲区溢出漏洞，可被用于远程执行任意代码",
+          "signal_id": "oschina-476199"
+        }
+      ],
+      "canonical_name": "7-Zip"
+    },
+    "Surge 6": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "V2EX 程序员",
+          "source_key": "v2ex",
+          "title": "[慢迅] Surge 6 支持 tailscale 了",
+          "signal_id": "v2ex-1229110"
+        }
+      ],
+      "canonical_name": "Surge 6"
+    },
+    "Tailscale": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "V2EX 程序员",
+          "source_key": "v2ex",
+          "title": "[慢迅] Surge 6 支持 tailscale 了",
+          "signal_id": "v2ex-1229110"
+        }
+      ],
+      "canonical_name": "Tailscale"
+    },
+    "TRAE IDE": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "YouTube",
+          "source_key": "youtube",
+          "title": "AI-Assisted Development – Multi-Agent Coding & Deployment with TRAE IDE",
+          "signal_id": "yt-yVga-_gMfIM"
+        }
+      ],
+      "canonical_name": "TRAE IDE"
+    },
+    "LangGraph": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "ArXiv",
+          "source_key": "arxiv",
+          "title": "Graph-Based Agentic AI with LangGraph: Workflow Pathways for Long-Running Stateful Business Processes",
+          "signal_id": "arxiv-2607.19297v1"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "Stack Overflow",
+          "source_key": "stackoverflow",
+          "title": "Violation of node execution order in a LangGraph/LangChain agent [closed]",
+          "signal_id": "so-79976431"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "Stack Overflow",
+          "source_key": "stackoverflow",
+          "title": "LangGraph astream_events hangs on node with external api call",
+          "signal_id": "so-79963174"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "Stack Overflow",
+          "source_key": "stackoverflow",
+          "title": "Langgraph Studio Multi-Agent Example: Hierarchical Agents?",
+          "signal_id": "so-79888246"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "Stack Overflow",
+          "source_key": "stackoverflow",
+          "title": "Overriding the agent state in Langgraph",
+          "signal_id": "so-79876394"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "Stack Overflow",
+          "source_key": "stackoverflow",
+          "title": "LangGraph seems to ignore tool outputs with Gemini models",
+          "signal_id": "so-79859269"
+        }
+      ],
+      "canonical_name": "LangGraph"
+    },
+    "OpenAI Presence": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "OpenAI",
+          "source_key": "openai",
+          "title": "Introducing OpenAI Presence",
+          "signal_id": "changelog-6084279"
+        }
+      ],
+      "canonical_name": "OpenAI Presence"
+    },
+    "Vercel MCP": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Vercel",
+          "source_key": "vercel",
+          "title": "Vercel MCP now supports purchases",
+          "signal_id": "changelog-9743214"
+        }
+      ],
+      "canonical_name": "Vercel MCP"
+    },
+    "Supabase Pipelines": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Supabase",
+          "source_key": "supabase",
+          "title": "Supabase Pipelines is now in Public Alpha",
+          "signal_id": "changelog-7795585"
+        }
+      ],
+      "canonical_name": "Supabase Pipelines"
+    },
+    "Nuxt": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "DEV Community",
+          "source_key": "devcommunity",
+          "title": "Nuxt vs SvelteKit: What works better?",
+          "signal_id": "dev-4201021"
+        }
+      ],
+      "canonical_name": "Nuxt"
+    },
+    "SvelteKit": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "DEV Community",
+          "source_key": "devcommunity",
+          "title": "Nuxt vs SvelteKit: What works better?",
+          "signal_id": "dev-4201021"
+        }
+      ],
+      "canonical_name": "SvelteKit"
+    },
+    "Google Translate": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "DEV Community",
+          "source_key": "devcommunity",
+          "title": "Why Google Translate Crashes Your React App (and How to Fix It)",
+          "signal_id": "dev-4194163"
+        }
+      ],
+      "canonical_name": "Google Translate"
+    },
+    "Swift": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "DEV Community",
+          "source_key": "devcommunity",
+          "title": "Swift Classes — Deinitializers and How Swift Cleans Up After Itself 🧹",
+          "signal_id": "dev-4172009"
+        }
+      ],
+      "canonical_name": "Swift"
+    },
+    "Gemini": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "model",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "DEV Community",
+          "source_key": "devcommunity",
+          "title": "New Gemini models dropped\r\n\r\nhttps://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-6-flash-3-",
+          "signal_id": "dev-4198748"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "Google Gemini 一口气发了三个新模型，还有一个只给政府用",
+          "signal_id": "oschina-476554"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "Stack Overflow",
+          "source_key": "stackoverflow",
+          "title": "LangGraph seems to ignore tool outputs with Gemini models",
+          "signal_id": "so-79859269"
+        }
+      ],
+      "canonical_name": "Gemini"
+    },
+    "Gemini 3.6 Flash": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "model",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "Google Gemini 一口气发了三个新模型，还有一个只给政府用",
+          "signal_id": "oschina-476554"
+        }
+      ],
+      "canonical_name": "Gemini 3.6 Flash"
+    },
+    "Sentry": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "DEV Community",
+          "source_key": "devcommunity",
+          "title": "The Scoreboard Lied. Now Sentry Shows Which Layer Broke",
+          "signal_id": "dev-4192403"
+        }
+      ],
+      "canonical_name": "Sentry"
+    },
+    "ATLOCK": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "DEV Community",
+          "source_key": "devcommunity",
+          "title": "How ATLOCK v4 actually Locks Files at the OS level (A technical breakdown)",
+          "signal_id": "dev-4187545"
+        }
+      ],
+      "canonical_name": "ATLOCK"
+    },
+    "Moonshot AI": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "company",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "China’s Moonshot AI unveils largest open-source model Kimi K3 with 2.8T parameters",
+          "signal_id": "gn-2244263"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "A top White House official is escalating the fight over Moonshot AI's viral Kimi K3 model",
+          "signal_id": "gn-1542927"
+        }
+      ],
+      "canonical_name": "Moonshot AI"
+    },
+    "PostHog": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "company",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "PostHog CEO James Hawkins: The More Ambitious Your Startup Idea, The Easier Everything Gets",
+          "signal_id": "gn-5534318"
+        }
+      ],
+      "canonical_name": "PostHog"
+    },
+    "Samsung": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "company",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "Samsung Weighs $1 Billion Investment in AI Firm Mistral",
+          "signal_id": "gn-3780701"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "Samsung in Talks to Invest in French AI Startup Mistral for Up to Nearly $1.1 Billion",
+          "signal_id": "gn-0837578"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "Samsung Eyes Major Mistral AI Investment",
+          "signal_id": "gn-7668780"
+        }
+      ],
+      "canonical_name": "Samsung"
+    },
+    "Emacs": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Hacker News",
+          "source_key": "hn",
+          "title": "Malleable Computing, Emacs, and You",
+          "signal_id": "hn-49013538"
+        }
+      ],
+      "canonical_name": "Emacs"
+    },
+    "COSMIC DE": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Lobsters",
+          "source_key": "lobsters",
+          "title": "COSMIC DE’s First Seven Months",
+          "signal_id": "lobsters-nv7xhn"
+        }
+      ],
+      "canonical_name": "COSMIC DE"
+    },
+    "PHP": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Lobsters",
+          "source_key": "lobsters",
+          "title": "log is non-monotonic in PHP and Lua",
+          "signal_id": "lobsters-pa54mh"
+        }
+      ],
+      "canonical_name": "PHP"
+    },
+    "Lua": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Lobsters",
+          "source_key": "lobsters",
+          "title": "log is non-monotonic in PHP and Lua",
+          "signal_id": "lobsters-pa54mh"
+        }
+      ],
+      "canonical_name": "Lua"
+    },
+    "systemd": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Lobsters",
+          "source_key": "lobsters",
+          "title": "Unranked, systemd, crawls",
+          "signal_id": "lobsters-tsp3fq"
+        }
+      ],
+      "canonical_name": "systemd"
+    },
+    "iPad mini": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Lobsters",
+          "source_key": "lobsters",
+          "title": "Bringing the modern web to the original iPad mini",
+          "signal_id": "lobsters-rkj3j4"
+        }
+      ],
+      "canonical_name": "iPad mini"
+    },
+    "PyPI": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Lobsters",
+          "source_key": "lobsters",
+          "title": "PyPI releases now reject new files after 14 days",
+          "signal_id": "lobsters-53g8f7"
+        }
+      ],
+      "canonical_name": "PyPI"
+    },
+    "Futhark": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Lobsters",
+          "source_key": "lobsters",
+          "title": "Rewriting the Futhark type checker",
+          "signal_id": "lobsters-roovnv"
+        }
+      ],
+      "canonical_name": "Futhark"
+    },
+    "Django": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Lobsters",
+          "source_key": "lobsters",
+          "title": "Some more things about Django I've been enjoying",
+          "signal_id": "lobsters-x5ewgv"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "SegmentFault",
+          "source_key": "segmentfault",
+          "title": "django模板中嵌套iframe页面出现多此嵌套问题？",
+          "signal_id": "sf-1010000048063496"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "SegmentFault",
+          "source_key": "segmentfault",
+          "title": "django中采用RESTRFRAMWORK开发API统一返回格式出错?",
+          "signal_id": "sf-1010000048055472"
+        }
+      ],
+      "canonical_name": "Django"
+    },
+    "ECC": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Lobsters",
+          "source_key": "lobsters",
+          "title": "ECC and DDR5",
+          "signal_id": "lobsters-mbge4p"
+        }
+      ],
+      "canonical_name": "ECC"
+    },
+    "DDR5": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Lobsters",
+          "source_key": "lobsters",
+          "title": "ECC and DDR5",
+          "signal_id": "lobsters-mbge4p"
+        }
+      ],
+      "canonical_name": "DDR5"
+    },
+    "Topcoat": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Lobsters",
+          "source_key": "lobsters",
+          "title": "Announcing Topcoat: a framework for building full-stack reactive web apps with Rust",
+          "signal_id": "lobsters-l8hiip"
+        }
+      ],
+      "canonical_name": "Topcoat"
+    },
+    "XFS": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Lobsters",
+          "source_key": "lobsters",
+          "title": "RefluXFS: A Linux Kernel Local Privilege Escalation to Root in XFS (CVE-2026-64600)",
+          "signal_id": "lobsters-tltlwf"
+        }
+      ],
+      "canonical_name": "XFS"
+    },
+    "Linux Kernel": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Lobsters",
+          "source_key": "lobsters",
+          "title": "RefluXFS: A Linux Kernel Local Privilege Escalation to Root in XFS (CVE-2026-64600)",
+          "signal_id": "lobsters-tltlwf"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "Reddit",
+          "source_key": "reddit",
+          "title": "Linux kernel will support $ORIGIN, sort of",
+          "signal_id": "reddit-t3_1v2bwax"
+        }
+      ],
+      "canonical_name": "Linux Kernel"
+    },
+    "CMake": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Lobsters",
+          "source_key": "lobsters",
+          "title": "dcmake: a new CMake debugger UI",
+          "signal_id": "lobsters-zy7kbn"
+        }
+      ],
+      "canonical_name": "CMake"
+    },
+    "OCaml": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Lobsters",
+          "source_key": "lobsters",
+          "title": "Taking OCaml and Eio for a spin",
+          "signal_id": "lobsters-mush3s"
+        }
+      ],
+      "canonical_name": "OCaml"
+    },
+    "Eio": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Lobsters",
+          "source_key": "lobsters",
+          "title": "Taking OCaml and Eio for a spin",
+          "signal_id": "lobsters-mush3s"
+        }
+      ],
+      "canonical_name": "Eio"
+    },
+    "CVNet": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "【论文解读】复数 CVNet：跳过 FFT，Jetson 上 2.75 ms 如何完成雷达手势识别？",
+          "signal_id": "oschina-0710703"
+        }
+      ],
+      "canonical_name": "CVNet"
+    },
+    "Jetson": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "【论文解读】复数 CVNet：跳过 FFT，Jetson 上 2.75 ms 如何完成雷达手势识别？",
+          "signal_id": "oschina-0710703"
+        }
+      ],
+      "canonical_name": "Jetson"
+    },
+    "BBQ": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "如何在 Elasticsearch 中使用 BBQ 将 Jina v5 嵌入缩小 29 倍而不损失召回率",
+          "signal_id": "oschina-3395786"
+        }
+      ],
+      "canonical_name": "BBQ"
+    },
+    "Jina v5": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "model",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "如何在 Elasticsearch 中使用 BBQ 将 Jina v5 嵌入缩小 29 倍而不损失召回率",
+          "signal_id": "oschina-3395786"
+        }
+      ],
+      "canonical_name": "Jina v5"
+    },
+    "GraalVM": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Reddit",
+          "source_key": "reddit",
+          "title": "Sandboxing Script Extensions with GraalVM",
+          "signal_id": "reddit-t3_1v3fxxn"
+        }
+      ],
+      "canonical_name": "GraalVM"
+    },
+    "Kubernetes": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Reddit",
+          "source_key": "reddit",
+          "title": "kubara - A GitOps-First Approach to Reusable Kubernetes Platforms",
+          "signal_id": "reddit-t3_1v2x23h"
+        }
+      ],
+      "canonical_name": "Kubernetes"
+    },
+    "GitOps": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Reddit",
+          "source_key": "reddit",
+          "title": "kubara - A GitOps-First Approach to Reusable Kubernetes Platforms",
+          "signal_id": "reddit-t3_1v2x23h"
+        }
+      ],
+      "canonical_name": "GitOps"
+    },
+    "Elixir": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Reddit",
+          "source_key": "reddit",
+          "title": "Elixir Cluster 101",
+          "signal_id": "reddit-t3_1v2ebui"
+        }
+      ],
+      "canonical_name": "Elixir"
+    },
+    "Neon": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Reddit",
+          "source_key": "reddit",
+          "title": "The Long Road to Bottomless Postgres: Discussing Neon, pg_mooncake, pg_tier, pg_lake, and ColdFront",
+          "signal_id": "reddit-t3_1v24401"
+        }
+      ],
+      "canonical_name": "Neon"
+    },
+    "Docker": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Reddit",
+          "source_key": "reddit",
+          "title": "What Is Docker, and What It Silently Replaced 🤫..",
+          "signal_id": "reddit-t3_1v2u18f"
+        }
+      ],
+      "canonical_name": "Docker"
+    },
+    "SkewAdam": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Reddit",
+          "source_key": "reddit",
+          "title": "SkewAdam: A tiered optimizer that cuts MoE state memory by 97% (fits a 6.7B MoE on a 40GB GPU) [R]",
+          "signal_id": "reddit-t3_1v38k1m"
+        }
+      ],
+      "canonical_name": "SkewAdam"
+    },
+    "MoE": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Reddit",
+          "source_key": "reddit",
+          "title": "SkewAdam: A tiered optimizer that cuts MoE state memory by 97% (fits a 6.7B MoE on a 40GB GPU) [R]",
+          "signal_id": "reddit-t3_1v38k1m"
+        }
+      ],
+      "canonical_name": "MoE"
+    },
+    "Google AI": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "company",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Google AI Blog",
+          "source_key": "google-ai",
+          "title": "3 Google updates from Galaxy Unpacked 2026",
+          "signal_id": "changelog-0462733"
+        }
+      ],
+      "canonical_name": "Google AI"
+    },
+    "Grabette": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "project",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "HuggingFace Blog",
+          "source_key": "huggingface-blog",
+          "title": "Grabette: an open system to record robot-manipulation data",
+          "signal_id": "changelog-8500146"
+        }
+      ],
+      "canonical_name": "Grabette"
+    },
+    "NTT DATA Group": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "company",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "OpenAI",
+          "source_key": "openai",
+          "title": "NTT DATA Group cuts incident analysis to 30 minutes with Codex",
+          "signal_id": "changelog-9425275"
+        }
+      ],
+      "canonical_name": "NTT DATA Group"
+    },
+    "OpenAI Foundation": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "company",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "OpenAI",
+          "source_key": "openai",
+          "title": "David Vélez and Robin Vince join the boards of the OpenAI Foundation and OpenAI Group PBC",
+          "signal_id": "changelog-3477761"
+        }
+      ],
+      "canonical_name": "OpenAI Foundation"
+    },
+    "OpenAI Group PBC": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "company",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "OpenAI",
+          "source_key": "openai",
+          "title": "David Vélez and Robin Vince join the boards of the OpenAI Foundation and OpenAI Group PBC",
+          "signal_id": "changelog-3477761"
+        }
+      ],
+      "canonical_name": "OpenAI Group PBC"
+    },
+    "Python": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Vercel",
+          "source_key": "vercel",
+          "title": "Python function bundles now include precompiled bytecode",
+          "signal_id": "changelog-7701993"
+        }
+      ],
+      "canonical_name": "Python"
+    },
+    "MySQL": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "SegmentFault",
+          "source_key": "segmentfault",
+          "title": "MySQL中DATE()函数为何导致百万级数据查询比BETWEEN慢几十倍？",
+          "signal_id": "sf-1010000048062697"
+        }
+      ],
+      "canonical_name": "MySQL"
+    },
+    "EXPO": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "SegmentFault",
+          "source_key": "segmentfault",
+          "title": "没有苹果电脑和开发者账号，如何用EXPO在iOS真机上测试APP？",
+          "signal_id": "sf-1010000048062667"
+        }
+      ],
+      "canonical_name": "EXPO"
+    },
+    "iOS": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "SegmentFault",
+          "source_key": "segmentfault",
+          "title": "没有苹果电脑和开发者账号，如何用EXPO在iOS真机上测试APP？",
+          "signal_id": "sf-1010000048062667"
+        }
+      ],
+      "canonical_name": "iOS"
+    },
+    "Vuex": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "SegmentFault",
+          "source_key": "segmentfault",
+          "title": "Vuex 状态监听：watch 和 subscribe 如何选择？",
+          "signal_id": "sf-1010000048039762"
+        }
+      ],
+      "canonical_name": "Vuex"
+    },
+    "Apache": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "SegmentFault",
+          "source_key": "segmentfault",
+          "title": "建议增加nginx（国密）和Apache（国密）？",
+          "signal_id": "sf-1010000048026184"
+        }
+      ],
+      "canonical_name": "Apache"
+    },
+    "JVM": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "SegmentFault",
+          "source_key": "segmentfault",
+          "title": "JVM CMS垃圾回收器中，为何要为已占空间的浮动垃圾预留空间？",
+          "signal_id": "sf-1010000048052512"
+        }
+      ],
+      "canonical_name": "JVM"
+    },
+    "CMS": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "SegmentFault",
+          "source_key": "segmentfault",
+          "title": "JVM CMS垃圾回收器中，为何要为已占空间的浮动垃圾预留空间？",
+          "signal_id": "sf-1010000048052512"
+        }
+      ],
+      "canonical_name": "CMS"
+    },
+    "WAIC 2026": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "SegmentFault",
+          "source_key": "segmentfault",
+          "title": "如何理解英伟达在WAIC 2026上提出的'每美元智能'衡量标准？",
+          "signal_id": "sf-1010000048051698"
+        }
+      ],
+      "canonical_name": "WAIC 2026"
+    },
+    "FastAPI": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "PyPI",
+          "source_key": "pypi",
+          "title": "fastapi — FastAPI framework, high performance, easy to learn, fast to code, ready for production",
+          "signal_id": "pypi-fastapi"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "Stack Overflow",
+          "source_key": "stackoverflow",
+          "title": "Best practices for scaling LangChain agent architecture in FastAPI",
+          "signal_id": "so-79936596"
+        }
+      ],
+      "canonical_name": "FastAPI"
+    },
+    "Litestar": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "PyPI",
+          "source_key": "pypi",
+          "title": "litestar — Litestar - A production-ready, highly performant, extensible ASGI API Framework",
+          "signal_id": "pypi-litestar"
+        }
+      ],
+      "canonical_name": "Litestar"
+    },
+    "BlackSheep": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "PyPI",
+          "source_key": "pypi",
+          "title": "blacksheep — Fast web framework for Python asyncio",
+          "signal_id": "pypi-blacksheep"
+        }
+      ],
+      "canonical_name": "BlackSheep"
+    },
+    "Strawberry GraphQL": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "PyPI",
+          "source_key": "pypi",
+          "title": "strawberry-graphql — A library for creating GraphQL APIs",
+          "signal_id": "pypi-strawberry-graphql"
+        }
+      ],
+      "canonical_name": "Strawberry GraphQL"
+    },
+    "Ariadne": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "PyPI",
+          "source_key": "pypi",
+          "title": "ariadne — Ariadne is a Python library for implementing GraphQL servers.",
+          "signal_id": "pypi-ariadne"
+        }
+      ],
+      "canonical_name": "Ariadne"
+    },
+    "Starlite": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "PyPI",
+          "source_key": "pypi",
+          "title": "starlite — Performant, light and flexible ASGI API Framework",
+          "signal_id": "pypi-starlite"
+        }
+      ],
+      "canonical_name": "Starlite"
+    },
+    "Typer": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "PyPI",
+          "source_key": "pypi",
+          "title": "typer — Typer, build great CLIs. Easy to code. Based on Python type hints.",
+          "signal_id": "pypi-typer"
+        }
+      ],
+      "canonical_name": "Typer"
+    },
+    "Rich": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "PyPI",
+          "source_key": "pypi",
+          "title": "rich — Render rich text, tables, progress bars, syntax highlighting, markdown and more to the terminal",
+          "signal_id": "pypi-rich"
+        }
+      ],
+      "canonical_name": "Rich"
+    },
+    "Textual": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "PyPI",
+          "source_key": "pypi",
+          "title": "textual — Modern Text User Interface framework",
+          "signal_id": "pypi-textual"
+        }
+      ],
+      "canonical_name": "Textual"
+    },
+    "Pydantic": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "PyPI",
+          "source_key": "pypi",
+          "title": "pydantic — Data validation using Python type hints",
+          "signal_id": "pypi-pydantic"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "Stack Overflow",
+          "source_key": "stackoverflow",
+          "title": "How to evaluate RAG app which uses Pydantic output parser for output parsing?",
+          "signal_id": "so-79960693"
+        }
+      ],
+      "canonical_name": "Pydantic"
+    },
+    "ChromaDB": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Stack Overflow",
+          "source_key": "stackoverflow",
+          "title": "ChromaDB get() or query() returns empty results after embedding updates in LangChain",
+          "signal_id": "so-79945139"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "Stack Overflow",
+          "source_key": "stackoverflow",
+          "title": "Resolving Concurrency Bottlenecks in LangChain's RunnableParallel with ChromaDB PersistentClient",
+          "signal_id": "so-79903575"
+        }
+      ],
+      "canonical_name": "ChromaDB"
+    },
+    "FAISS": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Stack Overflow",
+          "source_key": "stackoverflow",
+          "title": "Low cosine similarity score when using Langchain FAISS wrapper and CLIP Model",
+          "signal_id": "so-79921783"
+        }
+      ],
+      "canonical_name": "FAISS"
+    },
+    "CLIP": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "model",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Stack Overflow",
+          "source_key": "stackoverflow",
+          "title": "Low cosine similarity score when using Langchain FAISS wrapper and CLIP Model",
+          "signal_id": "so-79921783"
+        }
+      ],
+      "canonical_name": "CLIP"
+    },
+    "Playwright": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Stack Overflow",
+          "source_key": "stackoverflow",
+          "title": "Problem with setting up Langchain agents to use Playwright",
+          "signal_id": "so-79896302"
+        }
+      ],
+      "canonical_name": "Playwright"
+    },
+    "Groq": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "company",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Stack Overflow",
+          "source_key": "stackoverflow",
+          "title": "Agentic RAG tool_calling issue: Groq + LangChain agent fails with tool_use_failed when calling custom tool (Llama 3.3)",
+          "signal_id": "so-79896070"
+        }
+      ],
+      "canonical_name": "Groq"
+    },
+    "Llama 3.3": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "model",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Stack Overflow",
+          "source_key": "stackoverflow",
+          "title": "Agentic RAG tool_calling issue: Groq + LangChain agent fails with tool_use_failed when calling custom tool (Llama 3.3)",
+          "signal_id": "so-79896070"
+        }
+      ],
+      "canonical_name": "Llama 3.3"
+    },
+    "Langgraph Studio": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Stack Overflow",
+          "source_key": "stackoverflow",
+          "title": "Langgraph Studio Multi-Agent Example: Hierarchical Agents?",
+          "signal_id": "so-79888246"
+        }
+      ],
+      "canonical_name": "Langgraph Studio"
+    },
+    "PyMilvus": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Stack Overflow",
+          "source_key": "stackoverflow",
+          "title": "Why does PyMilvus still report “milvus-lite is required” after installing pymilvus[milvus-lite] on Python 3.11?",
+          "signal_id": "so-79873497"
+        }
+      ],
+      "canonical_name": "PyMilvus"
+    },
+    "Milvus Lite": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Stack Overflow",
+          "source_key": "stackoverflow",
+          "title": "Why does PyMilvus still report “milvus-lite is required” after installing pymilvus[milvus-lite] on Python 3.11?",
+          "signal_id": "so-79873497"
+        }
+      ],
+      "canonical_name": "Milvus Lite"
+    },
+    "LlamaIndex": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "project",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Stack Overflow",
+          "source_key": "stackoverflow",
+          "title": "What are the default BM25 parameters in LlamaIndex BM25Retriever, and how can they be explicitly verified?",
+          "signal_id": "so-79951883"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "Stack Overflow",
+          "source_key": "stackoverflow",
+          "title": "llama_index Ollama misloading model issue",
+          "signal_id": "so-79838505"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "Stack Overflow",
+          "source_key": "stackoverflow",
+          "title": "How do I apply multiple filters with different conditions using LlamaIndex's MetadataFilters",
+          "signal_id": "so-79824579"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "Stack Overflow",
+          "source_key": "stackoverflow",
+          "title": "Why doesn't SqlModel preform insert query in Llamaindex tool",
+          "signal_id": "so-79788748"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "Stack Overflow",
+          "source_key": "stackoverflow",
+          "title": "How to run LlamaIndex ReAct agent with gpt-oss? Getting \"SyntaxError: 'async for' outside async function\"",
+          "signal_id": "so-79751082"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "Stack Overflow",
+          "source_key": "stackoverflow",
+          "title": "LlamaIndex Python: Metadata filter with `None` value does not retrieve documents",
+          "signal_id": "so-79746620"
+        }
+      ],
+      "canonical_name": "LlamaIndex"
+    },
+    "BM25": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Stack Overflow",
+          "source_key": "stackoverflow",
+          "title": "What are the default BM25 parameters in LlamaIndex BM25Retriever, and how can they be explicitly verified?",
+          "signal_id": "so-79951883"
+        }
+      ],
+      "canonical_name": "BM25"
+    },
+    "AirbyteSalesforceReader": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Stack Overflow",
+          "source_key": "stackoverflow",
+          "title": "ModuleNotFoundError: No module named 'source_salesforce' when using AirbyteSalesforceReader",
+          "signal_id": "so-79830911"
+        }
+      ],
+      "canonical_name": "AirbyteSalesforceReader"
+    },
+    "BGE-M3": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "model",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "Stack Overflow",
+          "source_key": "stackoverflow",
+          "title": "How can I match the token count used by BGE-M3 embedding model before embedding?",
+          "signal_id": "so-79753835"
+        }
+      ],
+      "canonical_name": "BGE-M3"
+    },
+    "Shopify": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "company",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "YouTube",
+          "source_key": "youtube",
+          "title": "How Shopify Uses ChatGPT Work to Build Faster with AI Agents",
+          "signal_id": "yt-bbd6dcb9"
+        }
+      ],
+      "canonical_name": "Shopify"
+    },
+    "Enter Pro": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "YouTube",
+          "source_key": "youtube",
+          "title": "I Built a Real E-Commerce SaaS with Enter Pro",
+          "signal_id": "yt-nkpxtkuHejs"
+        }
+      ],
+      "canonical_name": "Enter Pro"
+    },
+    "Accio Work": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "YouTube",
+          "source_key": "youtube",
+          "title": "An AI Promised to Make Me $1,000 in 24 Hours (Accio Work)",
+          "signal_id": "yt-qZwr6PXYHU4"
+        }
+      ],
+      "canonical_name": "Accio Work"
+    },
+    "WorkBuddy": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "YouTube",
+          "source_key": "youtube",
+          "title": "AI Did My Entire Job for 7 Days (WorkBuddy)",
+          "signal_id": "yt-m8Cujr5wGSM"
+        }
+      ],
+      "canonical_name": "WorkBuddy"
+    },
+    "TicNote Cloud": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "YouTube",
+          "source_key": "youtube",
+          "title": "I Used an AI to Take All My Notes for a Week (TicNote Cloud)",
+          "signal_id": "yt-XBD-kciNg5Y"
+        }
+      ],
+      "canonical_name": "TicNote Cloud"
+    },
+    "Kane AI": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "YouTube",
+          "source_key": "youtube",
+          "title": "I Let AI Write My Tests, Then Broke It (Kane AI)",
+          "signal_id": "yt-2k4mXX0ovak"
+        }
+      ],
+      "canonical_name": "Kane AI"
+    },
+    "Zapier MCP": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "YouTube",
+          "source_key": "youtube",
+          "title": "I Let AI Run My Entire Business (Zapier MCP)",
+          "signal_id": "yt-5PONSpAlwFo"
+        }
+      ],
+      "canonical_name": "Zapier MCP"
+    },
+    "Enia Code": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "YouTube",
+          "source_key": "youtube",
+          "title": "I Built a Physics Simulator With One Prompt (Enia Code)",
+          "signal_id": "yt-Ym21X1JVm2E"
+        }
+      ],
+      "canonical_name": "Enia Code"
+    },
+    "GraphQL": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "PyPI",
+          "source_key": "pypi",
+          "title": "strawberry-graphql — A library for creating GraphQL APIs",
+          "signal_id": "pypi-strawberry-graphql"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "PyPI",
+          "source_key": "pypi",
+          "title": "ariadne — Ariadne is a Python library for implementing GraphQL servers.",
+          "signal_id": "pypi-ariadne"
+        }
+      ],
+      "canonical_name": "GraphQL"
+    },
+    "ASGI": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "PyPI",
+          "source_key": "pypi",
+          "title": "litestar — Litestar - A production-ready, highly performant, extensible ASGI API Framework",
+          "signal_id": "pypi-litestar"
+        },
+        {
+          "date": "2026-07-23",
+          "source": "PyPI",
+          "source_key": "pypi",
+          "title": "starlite — Performant, light and flexible ASGI API Framework",
+          "signal_id": "pypi-starlite"
+        }
+      ],
+      "canonical_name": "ASGI"
+    },
+    "Telegram": {
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-23",
+          "source": "V2EX 奇思妙想",
+          "source_key": "v2ex",
+          "title": "Telegram 一搜全是灰产群，做了个过滤版收录站，想听听看法？",
+          "signal_id": "v2ex-1228077"
+        }
+      ],
+      "canonical_name": "Telegram"
     }
   },
   "_normalized": true

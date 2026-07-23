@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-22T15:32:59.948511+08:00",
+  "updated_at": "2026-07-23T10:41:44.026210+08:00",
   "terms": [
     {
       "id": "trend-claude-agent-sdk",
@@ -928,6 +928,89 @@
       "research_md_path": "content/trends/claude-code-runtime-migration.md"
     },
     {
+      "id": "trend-ai-agent-cost-crisis",
+      "canonical": "AI Agent Cost Crisis",
+      "canonical_zh": "AI Agent 成本危机",
+      "aliases": [],
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "stage": "nascent",
+      "score": 66,
+      "source_count": 2,
+      "total_mentions": 2,
+      "sources": [
+        "juejin",
+        "w2solo"
+      ],
+      "growth_pct": 100,
+      "category": "Industry",
+      "tags": [
+        "前端",
+        "后端",
+        "product-launch",
+        "程序员",
+        "indie-dev"
+      ],
+      "summary_zh": "多个独立信号显示，企业部署 AI Agent 后 token 消耗成本远超预期，甚至超过人力成本，引发对 AI 投入产出比的广泛讨论。",
+      "summary_en": "Multiple independent signals indicate that the token costs of deploying AI agents in enterprises are far exceeding expectations, even surpassing labor costs, sparking widespread discussion on AI ROI.",
+      "research_md_path": "content/trends/ai-agent-cost-crisis.md"
+    },
+    {
+      "id": "trend-context-intelligence-layer-for-ai",
+      "canonical": "Context Intelligence Layer for AI",
+      "canonical_zh": "AI 上下文智能层",
+      "aliases": [],
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "stage": "nascent",
+      "score": 66,
+      "source_count": 2,
+      "total_mentions": 2,
+      "sources": [
+        "showhn",
+        "github"
+      ],
+      "growth_pct": 100,
+      "category": "AIAgent",
+      "tags": [
+        "Rust",
+        "product-launch",
+        "show-hn",
+        "AI",
+        "topic:mcp-server"
+      ],
+      "summary_zh": "LeanCTX 和 Stele 等项目致力于为 AI Agent 提供上下文管理、知识图谱和 token 优化，解决 Agent 的上下文窗口和记忆问题。",
+      "summary_en": "Projects like LeanCTX and Stele aim to provide context management, knowledge graphs, and token optimization for AI agents, addressing context window and memory limitations.",
+      "research_md_path": "content/trends/context-intelligence-layer-for-ai.md"
+    },
+    {
+      "id": "trend-on-device-ai-inference-for-edge",
+      "canonical": "On-Device AI Inference for Edge",
+      "canonical_zh": "端侧 AI 推理框架",
+      "aliases": [],
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "stage": "nascent",
+      "score": 66,
+      "source_count": 2,
+      "total_mentions": 2,
+      "sources": [
+        "showhn",
+        "github"
+      ],
+      "growth_pct": 100,
+      "category": "AIModel",
+      "tags": [
+        "C++",
+        "topic:edge-ai",
+        "product-launch",
+        "show-hn"
+      ],
+      "summary_zh": "Google 开源的 LiteRT-LM 和本地 TTS 工具 Orate 表明，端侧 AI 推理正在从概念走向生产级部署，降低对云端的依赖。",
+      "summary_en": "Google's open-source LiteRT-LM and on-device TTS tool Orate indicate that edge AI inference is moving from concept to production-grade deployment, reducing cloud dependency.",
+      "research_md_path": "content/trends/on-device-ai-inference-for-edge.md"
+    },
+    {
       "id": "trend-fable-5",
       "canonical": "Fable 5",
       "canonical_zh": "",
@@ -1164,6 +1247,33 @@
       ],
       "opportunity_summary_en": "The 975B open-source model is a breakthrough in scale but lacks market validation and practical use cases. Early-stage opportunities exist in building tools to run or fine-tune it affordably, but the high compute cost and nascent ecosystem pose significant risks. A conservative approach is recommended until demand signals strengthen.",
       "opportunity_summary_zh": "9750亿参数开源模型在规模上取得突破，但缺乏市场验证和实际用例。早期机会在于构建低成本运行或微调该模型的工具，但高昂的计算成本和萌芽生态系统带来重大风险。建议在需求信号增强前采取保守策略。"
+    },
+    {
+      "id": "trend-open-source-ai-model-challengers",
+      "canonical": "Open Source AI Model Challengers",
+      "canonical_zh": "开源大模型挑战者",
+      "aliases": [],
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "stage": "nascent",
+      "score": 65,
+      "source_count": 2,
+      "total_mentions": 3,
+      "sources": [
+        "juejin",
+        "oschina"
+      ],
+      "growth_pct": 100,
+      "category": "AIModel",
+      "tags": [
+        "GitHub",
+        "AI/大模型",
+        "oschina",
+        "开源"
+      ],
+      "summary_zh": "Kimi K3 和 Qwen 3.8 等中国开源模型在 SWE-bench 等基准测试上接近甚至追平闭源模型 Fable 5，但成本仅为其三分之一，引发行业震动。",
+      "summary_en": "Chinese open-source models like Kimi K3 and Qwen 3.8 are approaching or matching the closed-source Fable 5 on benchmarks like SWE-bench, at a fraction of the cost, shaking up the industry.",
+      "research_md_path": "content/trends/open-source-ai-model-challengers.md"
     },
     {
       "id": "trend-muse-spark-1.1",
@@ -1447,6 +1557,32 @@
       "opportunity_summary_zh": "非开发者 AI Agent 技能创建的概念基于一篇文章有早期关注，但缺乏广泛验证。市场处于初期，竞争低，提供了构建无代码 Agent 工具的机会。但需求和变现风险高，且大厂可能进入主导。"
     },
     {
+      "id": "trend-ai-agent-sandboxing",
+      "canonical": "AI Agent Sandboxing",
+      "canonical_zh": "AI Agent 沙箱隔离",
+      "aliases": [],
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "stage": "nascent",
+      "score": 59,
+      "source_count": 1,
+      "total_mentions": 2,
+      "sources": [
+        "showhn"
+      ],
+      "growth_pct": 100,
+      "category": "AIAgent",
+      "tags": [
+        "Productivity",
+        "product-launch",
+        "AI",
+        "show-hn"
+      ],
+      "summary_zh": "Housecat 和 Superserve 等新产品聚焦于为长时间运行的 AI Agent 提供安全的沙箱环境（如 Firecracker 微VM），解决 Agent 安全执行问题。",
+      "summary_en": "New products like Housecat and Superserve focus on providing secure sandbox environments (e.g., Firecracker microVMs) for long-running AI agents, addressing safe execution concerns.",
+      "research_md_path": "content/trends/ai-agent-sandboxing.md"
+    },
+    {
       "id": "trend-chinas-open-weight-ai-strategy",
       "canonical": "China's Open-Weight AI Strategy",
       "canonical_zh": "中国开源权重AI战略",
@@ -1606,6 +1742,82 @@
       "research_md_path": "content/trends/kimi-k3-model-surge.md"
     },
     {
+      "id": "trend-browser-automation-for-ai-agents",
+      "canonical": "Browser Automation for AI Agents",
+      "canonical_zh": "面向 AI Agent 的浏览器自动化",
+      "aliases": [],
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "stage": "nascent",
+      "score": 58,
+      "source_count": 1,
+      "total_mentions": 3,
+      "sources": [
+        "github"
+      ],
+      "growth_pct": 100,
+      "category": "AIAgent",
+      "tags": [
+        "Zig",
+        "Python",
+        "topic:browser-automation"
+      ],
+      "summary_zh": "多个开源项目（browser-use、Lightpanda、Skyvern）专注于让 AI Agent 能够直接操控浏览器，成为 Agent 基础设施的关键方向。",
+      "summary_en": "Multiple open-source projects (browser-use, Lightpanda, Skyvern) focus on enabling AI agents to directly control browsers, becoming a key direction in agent infrastructure.",
+      "research_md_path": "content/trends/browser-automation-for-ai-agents.md"
+    },
+    {
+      "id": "trend-agent-operating-system",
+      "canonical": "Agent Operating System",
+      "canonical_zh": "Agent 操作系统",
+      "aliases": [],
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "stage": "nascent",
+      "score": 58,
+      "source_count": 1,
+      "total_mentions": 2,
+      "sources": [
+        "github"
+      ],
+      "growth_pct": 100,
+      "category": "AIAgent",
+      "tags": [
+        "Rust",
+        "fresh",
+        "topic:ai-agent",
+        "Python"
+      ],
+      "summary_zh": "AOS（Agent 操作系统）和 Omnigent 等框架试图为 AI Agent 提供底层运行时和编排层，将 Agent 视为独立 '进程' 来管理。",
+      "summary_en": "Frameworks like AOS (Agent Operating System) and Omnigent attempt to provide a low-level runtime and orchestration layer for AI agents, treating them as independent 'processes'.",
+      "research_md_path": "content/trends/agent-operating-system.md"
+    },
+    {
+      "id": "trend-ai-powered-codex-workflow",
+      "canonical": "AI-Powered Codex Workflow",
+      "canonical_zh": "AI 驱动的 Codex 工作流",
+      "aliases": [],
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "stage": "nascent",
+      "score": 58,
+      "source_count": 1,
+      "total_mentions": 3,
+      "sources": [
+        "juejin"
+      ],
+      "growth_pct": 100,
+      "category": "DevTools",
+      "tags": [
+        "前端",
+        "后端",
+        "人工智能"
+      ],
+      "summary_zh": "开发者社区围绕 OpenAI Codex 形成大量实践分享，从 'Cursor 转 Codex' 到 '穷鬼工作流'，反映出 AI 编程工具使用范式正在快速迭代。",
+      "summary_en": "The developer community is sharing extensive practices around OpenAI Codex, from 'switching from Cursor to Codex' to 'budget workflows', reflecting a rapid evolution in AI coding tool usage paradigms.",
+      "research_md_path": "content/trends/ai-powered-codex-workflow.md"
+    },
+    {
       "id": "trend-local-first-file-sharing",
       "canonical": "Local-First File Sharing",
       "aliases": [],
@@ -1630,6 +1842,31 @@
       "summary_zh": "纯局域网文件共享工具（如飞投/WebDrop）受关注，强调零安装、跨平台、隐私保护。",
       "summary_en": "LAN-only file sharing tools (e.g., Feitou/WebDrop) gain attention for zero-install, cross-platform, and privacy-focused features.",
       "research_md_path": "content/trends/local-first-file-sharing.md"
+    },
+    {
+      "id": "trend-ai-coding-agent-skills-ecosystem",
+      "canonical": "AI Coding Agent Skills Ecosystem",
+      "canonical_zh": "AI 编程 Agent 技能生态",
+      "aliases": [],
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "stage": "nascent",
+      "score": 57,
+      "source_count": 1,
+      "total_mentions": 2,
+      "sources": [
+        "juejin"
+      ],
+      "growth_pct": 100,
+      "category": "AIAgent",
+      "tags": [
+        "Claude",
+        "后端",
+        "Java"
+      ],
+      "summary_zh": "围绕 AI 编程助手（如 Claude Code、Codex）的 'Skills' 概念迅速走红，开发者社区大量分享可复用的技能包，形成新的工具生态。",
+      "summary_en": "The 'Skills' concept for AI coding assistants (e.g., Claude Code, Codex) is rapidly gaining traction, with the developer community sharing reusable skill packs and forming a new tool ecosystem.",
+      "research_md_path": "content/trends/ai-coding-agent-skills-ecosystem.md"
     },
     {
       "id": "trend-consumer-grade-agent-app-builder",
@@ -1756,6 +1993,31 @@
       "canonical_zh": "大模型 API 网关开源"
     },
     {
+      "id": "trend-single-file-productivity-apps",
+      "canonical": "Single-File Productivity Apps",
+      "canonical_zh": "单文件生产力应用",
+      "aliases": [],
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "stage": "nascent",
+      "score": 52,
+      "source_count": 1,
+      "total_mentions": 1,
+      "sources": [
+        "showhn"
+      ],
+      "growth_pct": 100,
+      "category": "DevTools",
+      "tags": [
+        "Web",
+        "product-launch",
+        "show-hn"
+      ],
+      "summary_zh": "Bento 等工具将完整的 PPT 编辑、查看、协作功能打包进单个 HTML 文件中，挑战传统的文档应用架构。",
+      "summary_en": "Tools like Bento pack full PPT editing, viewing, and collaboration capabilities into a single HTML file, challenging traditional document application architectures.",
+      "research_md_path": "content/trends/single-file-productivity-apps.md"
+    },
+    {
       "id": "trend-homegames",
       "canonical": "Homegames",
       "aliases": [],
@@ -1827,6 +2089,30 @@
       ],
       "opportunity_summary_en": "mcpp addresses a specific pain point in C++ modular development with cross-compilation support, but the market is nascent and small. Early mover advantage exists, but monetization is uncertain. The opportunity is moderate for a niche tool, best pursued as an open-source project with optional premium add-ons.",
       "opportunity_summary_zh": "mcpp 通过交叉编译支持解决了 C++ 模块化开发中的特定痛点，但市场尚在早期且规模小。存在先发优势，但变现不确定。该机会对于小众工具而言中等，最好以开源项目配合可选高级附加组件的形式推进。"
+    },
+    {
+      "id": "trend-gpu-spot-market",
+      "canonical": "GPU Spot Market",
+      "canonical_zh": "GPU 算力现货市场",
+      "aliases": [],
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "stage": "nascent",
+      "score": 50,
+      "source_count": 1,
+      "total_mentions": 1,
+      "sources": [
+        "showhn"
+      ],
+      "growth_pct": 100,
+      "category": "Infra",
+      "tags": [
+        "product-launch",
+        "show-hn"
+      ],
+      "summary_zh": "Computable 等项目允许用户按周买卖和赎回 GPU 算力，代表 GPU 资源从长期租赁向灵活现货市场转变的新趋势。",
+      "summary_en": "Projects like Computable allow users to buy, sell, and redeem GPU compute by the week, representing a shift from long-term leases to a flexible spot market for GPU resources.",
+      "research_md_path": "content/trends/gpu-spot-market.md"
     },
     {
       "id": "trend-instantvideos.org",
@@ -2197,6 +2483,31 @@
       ],
       "opportunity_summary_en": "Zig for game development is a nascent trend with minimal competition and low SEO difficulty. However, demand signals are weak and monetization is unclear. An early-stage open-source template or CLI tool could build a foundation, but the opportunity is speculative.",
       "opportunity_summary_zh": "Zig 用于游戏开发是一个萌芽趋势，竞争极少且 SEO 难度低。然而，需求信号薄弱，变现前景不明。早期开源模板或 CLI 工具可奠定基础，但机会仍具投机性。"
+    },
+    {
+      "id": "trend-ai-agent-interview-trends",
+      "canonical": "AI Agent Interview Trends",
+      "canonical_zh": "AI Agent 面试趋势",
+      "aliases": [],
+      "first_seen": "2026-07-23",
+      "last_seen": "2026-07-23",
+      "stage": "nascent",
+      "score": 49,
+      "source_count": 1,
+      "total_mentions": 1,
+      "sources": [
+        "juejin"
+      ],
+      "growth_pct": 100,
+      "category": "Industry",
+      "tags": [
+        "Agent",
+        "面试",
+        "AI编程"
+      ],
+      "summary_zh": "阿里等大厂面试中 Agent 相关技术（LangChain、Multi-Agent、A2A、MCP）成为核心考点，反映行业对 Agent 开发人才的迫切需求。",
+      "summary_en": "Agent-related technologies (LangChain, Multi-Agent, A2A, MCP) are becoming core topics in interviews at major companies like Alibaba, reflecting a strong industry demand for agent development talent.",
+      "research_md_path": "content/trends/ai-agent-interview-trends.md"
     },
     {
       "id": "trend-openwiki",
