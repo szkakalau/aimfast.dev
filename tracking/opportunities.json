@@ -487,12 +487,12 @@
       "buyer": "to-be-determined",
       "landing_page_url": "https://www.aimfast.dev/regressive-jpegs",
       "lp_status": "live",
-      "verification_result": "pending",
+      "verification_result": "failed",
       "day7_uv": 0,
       "day7_signups": 0,
-      "day7_decision": "",
-      "current_status": "monitoring",
-      "notes": "LP 已生成于 2026-07-19 07:53 | 部署: vercel --prod"
+      "day7_decision": "abandon",
+      "current_status": "archived",
+      "notes": "Day 7: ❌ 验证失败（0 UV < 30 阈值）→ 放弃"
     },
     {
       "id": "OP-20260720-026",
@@ -569,6 +569,25 @@
       "day7_decision": "",
       "current_status": "monitoring",
       "notes": "LP 已生成于 2026-07-25 08:27 | 部署: vercel --prod"
+    },
+    {
+      "id": "OP-20260726-030",
+      "date": "2026-07-26",
+      "opportunity": "Bribes.fyi – Know before you go. New feature added",
+      "signals": [
+        "HN Show HN"
+      ],
+      "score": 40,
+      "cross_platform_count": 2,
+      "buyer": "to-be-determined",
+      "landing_page_url": "https://www.aimfast.dev/bribes-fyi---know-before-you-g",
+      "lp_status": "live",
+      "verification_result": "pending",
+      "day7_uv": 0,
+      "day7_signups": 0,
+      "day7_decision": "",
+      "current_status": "monitoring",
+      "notes": "LP 已生成于 2026-07-26 08:22 | 部署: vercel --prod"
     }
   ]
 }
