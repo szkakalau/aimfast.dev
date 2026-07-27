@@ -150,7 +150,7 @@ export default function HomePage() {
             name: 'Is AimFast.Dev free?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: `Yes — trend discovery and tracking is completely free. Paid plans (from $19/mo) add daily decision briefs and full pipeline access. 14-day free trial, no credit card required.`,
+              text: `Yes — trend discovery and monitoring is completely free. Paid plans (from $19/mo) add daily decision briefs and full pipeline access. 14-day free trial, no credit card required.`,
             },
           },
         ],
@@ -304,7 +304,7 @@ export default function HomePage() {
                 <span className="threshold-list">
                   <span>Top tier</span> deep research report ·{' '}
                   <span>Mid range</span> quick brief ·{' '}
-                  <span>Lower range</span> tracking only
+                  <span>Lower range</span> monitoring only
                 </span>
               </p>
             </div>
@@ -333,7 +333,7 @@ export default function HomePage() {
                 </li>
               </ul>
               <p style={{ fontSize: '0.78rem', color: 'var(--color-text-muted)', marginTop: 'var(--space-2)' }}>
-                Platforms tracked:{' '}
+                Sources:{' '}
                 <a href="https://news.ycombinator.com" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline' }}>HN</a>,{' '}
                 <a href="https://reddit.com" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline' }}>Reddit</a>,{' '}
                 <a href="https://github.com/trending" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline' }}>GitHub</a>,{' '}
@@ -377,12 +377,12 @@ export default function HomePage() {
               <Shield size={32} className="engine-icon" />
               <h3>Monitoring Engine</h3>
               <p>
-                Track up to 10 topics, people, or tech stacks.
+                Follow up to 10 topics, people, or tech stacks.
                 Every day, the AI tells you what's happening, and — most importantly
                 — what <em>you</em> should do about it.
               </p>
               <ul className="engine-list">
-                <li>Topic trend tracking</li>
+                <li>Topic trend analysis</li>
                 <li>Pricing & feature change signals</li>
                 <li>Actionable alerts, not noise</li>
               </ul>
