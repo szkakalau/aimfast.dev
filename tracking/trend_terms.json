@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-26T08:17:06.622086+08:00",
+  "updated_at": "2026-07-27T08:56:48.971903+08:00",
   "terms": [
     {
       "id": "trend-claude-agent-sdk",
@@ -721,6 +721,34 @@
       "research_md_path": "content/trends/ai-agent-skill-marketplace.md"
     },
     {
+      "id": "trend-self-hosted-security-solutions",
+      "canonical": "Self-Hosted Security Solutions",
+      "canonical_zh": "自托管安全方案",
+      "aliases": [],
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "stage": "nascent",
+      "score": 67,
+      "source_count": 2,
+      "total_mentions": 2,
+      "sources": [
+        "showhn",
+        "hn"
+      ],
+      "growth_pct": 100,
+      "category": "OpenSource",
+      "tags": [
+        "story",
+        "story_49055169",
+        "show-hn",
+        "front_page",
+        "Security"
+      ],
+      "summary_zh": "轻量级自托管CCTV和GrapheneOS的锁屏数据保护机制，反映出开发者对隐私和自主控制的强烈需求。",
+      "summary_en": "Lightweight self-hosted CCTV and GrapheneOS's locked-device data protection mechanisms reflect a strong developer demand for privacy and self-sovereignty.",
+      "research_md_path": "content/trends/self-hosted-security-solutions.md"
+    },
+    {
       "id": "trend-ai-coding-tool-comparison-cursorclaude-codecodex",
       "canonical": "AI Coding Tool Comparison (Cursor/Claude Code/Codex)",
       "aliases": [],
@@ -1041,6 +1069,34 @@
       "research_md_path": "content/trends/on-device-ai-inference-for-edge.md"
     },
     {
+      "id": "trend-agent-collaboration-frameworks",
+      "canonical": "Agent Collaboration Frameworks",
+      "canonical_zh": "智能体协作框架",
+      "aliases": [],
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "stage": "nascent",
+      "score": 66,
+      "source_count": 2,
+      "total_mentions": 4,
+      "sources": [
+        "v2ex",
+        "showhn"
+      ],
+      "growth_pct": 100,
+      "category": "AIAgent",
+      "tags": [
+        "AI",
+        "create",
+        "show-hn",
+        "产品发布",
+        "product-launch"
+      ],
+      "summary_zh": "多个独立项目同时涌现，从开源协作框架到双Agent代码审查工具，表明Agent间协作模式正成为AI开发新范式。",
+      "summary_en": "Multiple independent projects — from open-source collaboration frameworks to dual-agent code review tools — indicate that agent-to-agent collaboration is emerging as a new paradigm in AI development.",
+      "research_md_path": "content/trends/agent-collaboration-frameworks.md"
+    },
+    {
       "id": "trend-fable-5",
       "canonical": "Fable 5",
       "canonical_zh": "",
@@ -1304,6 +1360,34 @@
       "summary_zh": "Kimi K3 和 Qwen 3.8 等中国开源模型在 SWE-bench 等基准测试上接近甚至追平闭源模型 Fable 5，但成本仅为其三分之一，引发行业震动。",
       "summary_en": "Chinese open-source models like Kimi K3 and Qwen 3.8 are approaching or matching the closed-source Fable 5 on benchmarks like SWE-bench, at a fraction of the cost, shaking up the industry.",
       "research_md_path": "content/trends/open-source-ai-model-challengers.md"
+    },
+    {
+      "id": "trend-ai-skill-ecosystem",
+      "canonical": "AI Skill Ecosystem",
+      "canonical_zh": "AI技能生态",
+      "aliases": [],
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "stage": "nascent",
+      "score": 65,
+      "source_count": 2,
+      "total_mentions": 4,
+      "sources": [
+        "github",
+        "juejin"
+      ],
+      "growth_pct": 100,
+      "category": "AIAgent",
+      "tags": [
+        "前端",
+        "active",
+        "人工智能",
+        "Python",
+        "后端"
+      ],
+      "summary_zh": "围绕Claude Code等AI编程助手的“Skills”生态快速成型，出现了降Token技巧、跨平台信息综合、地理可视化等多样化Skill，社区已开始系统化讨论Skill设计方法论。",
+      "summary_en": "A 'Skills' ecosystem around AI coding assistants like Claude Code is rapidly forming, with diverse skills for token reduction, cross-platform research, and geovisualization, and the community has begun systematic discussions on skill design methodology.",
+      "research_md_path": "content/trends/ai-skill-ecosystem.md"
     },
     {
       "id": "trend-muse-spark-1.1",
@@ -1611,6 +1695,60 @@
       "summary_zh": "Housecat 和 Superserve 等新产品聚焦于为长时间运行的 AI Agent 提供安全的沙箱环境（如 Firecracker 微VM），解决 Agent 安全执行问题。",
       "summary_en": "New products like Housecat and Superserve focus on providing secure sandbox environments (e.g., Firecracker microVMs) for long-running AI agents, addressing safe execution concerns.",
       "research_md_path": "content/trends/ai-agent-sandboxing.md"
+    },
+    {
+      "id": "trend-browser-native-ai-inference",
+      "canonical": "Browser-Native AI Inference",
+      "canonical_zh": "浏览器端AI推理",
+      "aliases": [],
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "stage": "nascent",
+      "score": 59,
+      "source_count": 1,
+      "total_mentions": 2,
+      "sources": [
+        "showhn"
+      ],
+      "growth_pct": 100,
+      "category": "AIModel",
+      "tags": [
+        "AI",
+        "show-hn",
+        "DevTools",
+        "Web",
+        "product-launch"
+      ],
+      "summary_zh": "TTS模型和视频编辑器直接在浏览器中运行FFmpeg和ONNX推理，标志着无需服务器、完全本地化的AI应用正在成为现实。",
+      "summary_en": "TTS models and video editors running FFmpeg and ONNX inference directly in the browser signal that fully local, serverless AI applications are becoming a reality.",
+      "research_md_path": "content/trends/browser-native-ai-inference.md"
+    },
+    {
+      "id": "trend-ai-native-code-presentation",
+      "canonical": "AI-Native Code Presentation",
+      "canonical_zh": "AI原生代码演示",
+      "aliases": [],
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "stage": "nascent",
+      "score": 59,
+      "source_count": 1,
+      "total_mentions": 2,
+      "sources": [
+        "showhn"
+      ],
+      "growth_pct": 100,
+      "category": "DevTools",
+      "tags": [
+        "Open Source",
+        "DevTools",
+        "show-hn",
+        "Web",
+        "Mobile"
+      ],
+      "summary_zh": "开源动画代码演示工具和依赖自由的Markdown编辑Web组件，展示了开发者体验工具向更轻量、更可视化方向演进。",
+      "summary_en": "Open-source animated code presentation tools and dependency-free Markdown editing web components show developer experience tools evolving toward lighter, more visual formats.",
+      "research_md_path": "content/trends/ai-native-code-presentation.md"
     },
     {
       "id": "trend-chinas-open-weight-ai-strategy",
@@ -2021,6 +2159,30 @@
       "summary_en": "Multiple signals mention open-source LLM API gateways supporting OpenAI, Anthropic, DeepSeek, etc., reflecting growing demand for unified multi-model API management.",
       "research_md_path": "content/trends/open-source-large-model-api-gateway.md",
       "canonical_zh": "大模型 API 网关开源"
+    },
+    {
+      "id": "trend-ai-video-analysis-tools",
+      "canonical": "AI Video Analysis Tools",
+      "canonical_zh": "AI视频分析工具",
+      "aliases": [],
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "stage": "nascent",
+      "score": 54,
+      "source_count": 1,
+      "total_mentions": 2,
+      "sources": [
+        "v2ex"
+      ],
+      "growth_pct": 100,
+      "category": "AIApp",
+      "tags": [
+        "产品发布",
+        "create"
+      ],
+      "summary_zh": "从视频逐镜头Prompt提取到YouTube内容分析总结，AI视频理解工具正在从通用走向垂直场景。",
+      "summary_en": "From shot-by-shot prompt extraction to YouTube content summarization, AI video understanding tools are moving from general-purpose toward vertical scenarios.",
+      "research_md_path": "content/trends/ai-video-analysis-tools.md"
     },
     {
       "id": "trend-single-file-productivity-apps",
@@ -3852,6 +4014,30 @@
       "summary_zh": "开源项目Agent-Reach（58K星）让AI Agent能读取Twitter、Reddit、YouTube等全网内容，无需API费用，体现了Agent获取实时网络数据的新范式。",
       "summary_en": "Open-source project Agent-Reach (58K stars) enables AI agents to read content across Twitter, Reddit, YouTube and more without API fees, representing a new paradigm for agents accessing real-time web data.",
       "research_md_path": "content/trends/ai-agent-internet-access-tool.md"
+    },
+    {
+      "id": "trend-image-to-3d-generation",
+      "canonical": "Image-to-3D Generation",
+      "canonical_zh": "图像到3D生成",
+      "aliases": [],
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "stage": "nascent",
+      "score": 48,
+      "source_count": 1,
+      "total_mentions": 1,
+      "sources": [
+        "github"
+      ],
+      "growth_pct": 100,
+      "category": "AIModel",
+      "tags": [
+        "fresh",
+        "Python"
+      ],
+      "summary_zh": "img2threejs项目通过Token高效的图像到3D重建，将参考图片转化为可直接使用的Three.js模型，代表了AI生成3D内容的新方向。",
+      "summary_en": "The img2threejs project converts reference images into ready-to-use Three.js models via token-efficient reconstruction, representing a new direction in AI-generated 3D content.",
+      "research_md_path": "content/trends/image-to-3d-generation.md"
     },
     {
       "id": "trend-pet-reminder",

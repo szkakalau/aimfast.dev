@@ -1,12 +1,12 @@
 {
   "_schema": "Term 索引 — 原始 signal 记录。聚合统计由 normalize_terms → canonical_terms.json 统一计算。",
   "_version": "1.0",
-  "last_updated": "2026-07-26T08:11:49.560114+08:00",
-  "total_terms": 706,
+  "last_updated": "2026-07-27T08:10:34.523305+08:00",
+  "total_terms": 855,
   "terms": {
     "Vercel": {
       "first_seen": "2026-07-12",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "company",
       "signals": [
         {
@@ -400,13 +400,76 @@
           "source_key": "vercel",
           "title": "Service tiers now available on AI Gateway",
           "signal_id": "changelog-6459892"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "Vercel",
+          "source_key": "vercel",
+          "title": "Vercel WAF for Blob is now in beta",
+          "signal_id": "changelog-4250160"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "Vercel",
+          "source_key": "vercel",
+          "title": "Workflow steps now support extended function durations",
+          "signal_id": "changelog-7443264"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "Vercel",
+          "source_key": "vercel",
+          "title": "Claude Opus 5 now available on AI Gateway",
+          "signal_id": "changelog-1127199"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "Vercel",
+          "source_key": "vercel",
+          "title": "Evaluation metrics for Vercel Flags",
+          "signal_id": "changelog-7435773"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "Vercel",
+          "source_key": "vercel",
+          "title": "Connect to and manage Sandboxes from the dashboard",
+          "signal_id": "changelog-1194388"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "Vercel",
+          "source_key": "vercel",
+          "title": "Inspect feature flag history with Vercel CLI",
+          "signal_id": "changelog-8277473"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "Vercel",
+          "source_key": "vercel",
+          "title": "GitHub tools are now an installable eve extension",
+          "signal_id": "changelog-7908417"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "Vercel",
+          "source_key": "vercel",
+          "title": "Ling 3.0 Flash is now available on AI Gateway",
+          "signal_id": "changelog-2839839"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "Vercel",
+          "source_key": "vercel",
+          "title": "Vercel MCP can now deploy code",
+          "signal_id": "changelog-3005731"
         }
       ],
       "canonical_name": "Vercel"
     },
     "Cloudflare": {
       "first_seen": "2026-07-12",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "company",
       "signals": [
         {
@@ -534,13 +597,27 @@
           "source_key": "github-releases",
           "title": "[cloudflare/workers-sdk] @cloudflare/vitest-pool-workers@0.18.8",
           "signal_id": "ghr-1532546"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "Cloudflare",
+          "source_key": "cloudflare",
+          "title": "BGP ORIGIN attribute manipulation and its impact on the Internet",
+          "signal_id": "changelog-4383030"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "Cloudflare",
+          "source_key": "cloudflare",
+          "title": "Introducing Cache Response Rules",
+          "signal_id": "changelog-6815735"
         }
       ],
       "canonical_name": "Cloudflare"
     },
     "OpenAI": {
       "first_seen": "2026-07-12",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "company",
       "signals": [
         {
@@ -920,6 +997,20 @@
           "source_key": "youtube",
           "title": "How California Small Businesses Are Using ChatGPT | OpenAI Academy",
           "signal_id": "yt-cFyFF3Ad2aM"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "OpenAI",
+          "source_key": "openai",
+          "title": "Launching Health in ChatGPT",
+          "signal_id": "changelog-0082813"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "新晋菲尔兹奖得主 Tsimerman 官宣加入 OpenAI",
+          "signal_id": "oschina-478486"
         }
       ],
       "canonical_name": "OpenAI"
@@ -1018,7 +1109,7 @@
     },
     "HuggingFace": {
       "first_seen": "2026-07-12",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "company",
       "signals": [
         {
@@ -1160,6 +1251,13 @@
           "source_key": "pypi",
           "title": "datasets — HuggingFace community-driven open-source library of datasets",
           "signal_id": "pypi-datasets"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "HuggingFace Blog",
+          "source_key": "huggingface-blog",
+          "title": "Bringing Nunchaku 4-bit Diffusion Inference to Diffusers",
+          "signal_id": "changelog-3684253"
         }
       ],
       "canonical_name": "Hugging Face"
@@ -1196,7 +1294,7 @@
     },
     "ChatGPT": {
       "first_seen": "2026-07-12",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "product",
       "signals": [
         {
@@ -1359,6 +1457,13 @@
           "source_key": "youtube",
           "title": "How Shopify Uses ChatGPT Work to Build Faster with AI Agents",
           "signal_id": "yt-a68f606b"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "OpenAI",
+          "source_key": "openai",
+          "title": "Launching Health in ChatGPT",
+          "signal_id": "changelog-0082813"
         }
       ],
       "canonical_name": "ChatGPT"
@@ -1416,7 +1521,7 @@
     },
     "AI Gateway": {
       "first_seen": "2026-07-12",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "product",
       "signals": [
         {
@@ -1516,6 +1621,20 @@
           "source_key": "vercel",
           "title": "Service tiers now available on AI Gateway",
           "signal_id": "changelog-6459892"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "Vercel",
+          "source_key": "vercel",
+          "title": "Claude Opus 5 now available on AI Gateway",
+          "signal_id": "changelog-1127199"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "Vercel",
+          "source_key": "vercel",
+          "title": "Ling 3.0 Flash is now available on AI Gateway",
+          "signal_id": "changelog-2839839"
         }
       ],
       "canonical_name": "AI Gateway"
@@ -1655,7 +1774,7 @@
     },
     "Vercel CLI": {
       "first_seen": "2026-07-12",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "product",
       "signals": [
         {
@@ -1678,6 +1797,13 @@
           "source_key": "vercel",
           "title": "Inspect feature flag history with Vercel CLI",
           "signal_id": "changelog-1748260"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "Vercel",
+          "source_key": "vercel",
+          "title": "Inspect feature flag history with Vercel CLI",
+          "signal_id": "changelog-8277473"
         }
       ],
       "canonical_name": "Vercel CLI"
@@ -1816,7 +1942,7 @@
     },
     "vLLM": {
       "first_seen": "2026-07-12",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -1883,7 +2009,7 @@
     },
     "n8n-io/n8n": {
       "first_seen": "2026-07-12",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -1990,6 +2116,41 @@
           "source_key": "github-releases",
           "title": "[n8n-io/n8n] n8n@1.123.67",
           "signal_id": "ghr-8195116"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "GitHub Releases",
+          "source_key": "github-releases",
+          "title": "[n8n-io/n8n] stable",
+          "signal_id": "ghr-0634727"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "GitHub Releases",
+          "source_key": "github-releases",
+          "title": "[n8n-io/n8n] n8n@2.31.6",
+          "signal_id": "ghr-0127776"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "GitHub Releases",
+          "source_key": "github-releases",
+          "title": "[n8n-io/n8n] n8n@2.32.5",
+          "signal_id": "ghr-1776075"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "GitHub Releases",
+          "source_key": "github-releases",
+          "title": "[n8n-io/n8n] n8n@2.32.4",
+          "signal_id": "ghr-1899655"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "GitHub Releases",
+          "source_key": "github-releases",
+          "title": "[n8n-io/n8n] beta",
+          "signal_id": "ghr-1144246"
         }
       ],
       "canonical_name": "n8n-io/n8n"
@@ -2025,7 +2186,7 @@
     },
     "ollama/ollama": {
       "first_seen": "2026-07-12",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -2048,13 +2209,27 @@
           "source_key": "github-releases",
           "title": "[ollama/ollama] v0.32.2",
           "signal_id": "ghr-3504044"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "GitHub Releases",
+          "source_key": "github-releases",
+          "title": "[ollama/ollama] v0.32.4",
+          "signal_id": "ghr-6494559"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "GitHub Releases",
+          "source_key": "github-releases",
+          "title": "[ollama/ollama] v0.32.3",
+          "signal_id": "ghr-6804441"
         }
       ],
       "canonical_name": "ollama/ollama"
     },
     "Ollama": {
       "first_seen": "2026-07-12",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "company",
       "signals": [
         {
@@ -2112,13 +2287,27 @@
           "source_key": "github-releases",
           "title": "[ollama/ollama] v0.32.2",
           "signal_id": "ghr-3504044"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "GitHub Releases",
+          "source_key": "github-releases",
+          "title": "[ollama/ollama] v0.32.4",
+          "signal_id": "ghr-6494559"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "GitHub Releases",
+          "source_key": "github-releases",
+          "title": "[ollama/ollama] v0.32.3",
+          "signal_id": "ghr-6804441"
         }
       ],
       "canonical_name": "Ollama"
     },
     "langchain-ai/langchain": {
       "first_seen": "2026-07-12",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -2190,13 +2379,48 @@
           "source_key": "github-releases",
           "title": "[langchain-ai/langchain] langchain-openrouter==0.2.7",
           "signal_id": "ghr-1426005"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "GitHub Releases",
+          "source_key": "github-releases",
+          "title": "[langchain-ai/langchain] langchain-anthropic==1.5.2",
+          "signal_id": "ghr-2356212"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "GitHub Releases",
+          "source_key": "github-releases",
+          "title": "[langchain-ai/langchain] langchain-openai==1.4.1",
+          "signal_id": "ghr-1658084"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "GitHub Releases",
+          "source_key": "github-releases",
+          "title": "[langchain-ai/langchain] langchain-fireworks==1.5.1",
+          "signal_id": "ghr-0686907"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "GitHub Releases",
+          "source_key": "github-releases",
+          "title": "[langchain-ai/langchain] langchain-core==1.5.1",
+          "signal_id": "ghr-9585957"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "GitHub Releases",
+          "source_key": "github-releases",
+          "title": "[langchain-ai/langchain] langchain-anthropic==1.5.1",
+          "signal_id": "ghr-4329440"
         }
       ],
       "canonical_name": "LangChain"
     },
     "LangChain": {
       "first_seen": "2026-07-12",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -2422,13 +2646,48 @@
           "source_key": "stackoverflow",
           "title": "ImportError: cannot import name 'create_tool_calling_agent' from 'langchain.agents' [duplicate]",
           "signal_id": "so-79866836"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "GitHub Releases",
+          "source_key": "github-releases",
+          "title": "[langchain-ai/langchain] langchain-anthropic==1.5.2",
+          "signal_id": "ghr-2356212"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "GitHub Releases",
+          "source_key": "github-releases",
+          "title": "[langchain-ai/langchain] langchain-openai==1.4.1",
+          "signal_id": "ghr-1658084"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "GitHub Releases",
+          "source_key": "github-releases",
+          "title": "[langchain-ai/langchain] langchain-fireworks==1.5.1",
+          "signal_id": "ghr-0686907"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "GitHub Releases",
+          "source_key": "github-releases",
+          "title": "[langchain-ai/langchain] langchain-core==1.5.1",
+          "signal_id": "ghr-9585957"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "GitHub Releases",
+          "source_key": "github-releases",
+          "title": "[langchain-ai/langchain] langchain-anthropic==1.5.1",
+          "signal_id": "ghr-4329440"
         }
       ],
       "canonical_name": "LangChain"
     },
     "shadcn-ui/ui": {
       "first_seen": "2026-07-12",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -2451,6 +2710,20 @@
           "source_key": "github-releases",
           "title": "[shadcn-ui/ui] shadcn@4.14.0",
           "signal_id": "ghr-4416487"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "GitHub Releases",
+          "source_key": "github-releases",
+          "title": "[shadcn-ui/ui] shadcn@4.15.0",
+          "signal_id": "ghr-0944693"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "GitHub Releases",
+          "source_key": "github-releases",
+          "title": "[shadcn-ui/ui] shadcn@4.14.1",
+          "signal_id": "ghr-3022336"
         }
       ],
       "canonical_name": "shadcn-ui/ui"
@@ -2472,7 +2745,7 @@
     },
     "Supabase": {
       "first_seen": "2026-07-12",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "company",
       "signals": [
         {
@@ -2516,13 +2789,20 @@
           "source_key": "supabase",
           "title": "Supabase Pipelines is now in Public Alpha",
           "signal_id": "changelog-9689695"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "Supabase",
+          "source_key": "supabase",
+          "title": "Observability for every Supabase project with Grafana Cloud",
+          "signal_id": "changelog-1004443"
         }
       ],
       "canonical_name": "Supabase"
     },
     "openai/openai-python": {
       "first_seen": "2026-07-12",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -2545,13 +2825,20 @@
           "source_key": "github-releases",
           "title": "[openai/openai-python] v2.47.0",
           "signal_id": "ghr-5923584"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "GitHub Releases",
+          "source_key": "github-releases",
+          "title": "[openai/openai-python] v2.48.0",
+          "signal_id": "ghr-8093228"
         }
       ],
       "canonical_name": "openai/openai-python"
     },
     "cloudflare/workers-sdk": {
       "first_seen": "2026-07-12",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -2644,13 +2931,48 @@
           "source_key": "github-releases",
           "title": "[cloudflare/workers-sdk] @cloudflare/vitest-pool-workers@0.18.8",
           "signal_id": "ghr-1532546"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "GitHub Releases",
+          "source_key": "github-releases",
+          "title": "[cloudflare/workers-sdk] wrangler@4.114.0",
+          "signal_id": "ghr-6306714"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "GitHub Releases",
+          "source_key": "github-releases",
+          "title": "[cloudflare/workers-sdk] create-cloudflare@2.70.14",
+          "signal_id": "ghr-5018533"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "GitHub Releases",
+          "source_key": "github-releases",
+          "title": "[cloudflare/workers-sdk] miniflare@4.20260722.0",
+          "signal_id": "ghr-9034626"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "GitHub Releases",
+          "source_key": "github-releases",
+          "title": "[cloudflare/workers-sdk] @cloudflare/workers-auth@0.5.2",
+          "signal_id": "ghr-1924962"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "GitHub Releases",
+          "source_key": "github-releases",
+          "title": "[cloudflare/workers-sdk] @cloudflare/vitest-pool-workers@0.18.8",
+          "signal_id": "ghr-1050608"
         }
       ],
       "canonical_name": "Cloudflare Workers SDK"
     },
     "Wrangler": {
       "first_seen": "2026-07-12",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "product",
       "signals": [
         {
@@ -2680,13 +3002,20 @@
           "source_key": "github-releases",
           "title": "[cloudflare/workers-sdk] wrangler@4.114.0",
           "signal_id": "ghr-8792687"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "GitHub Releases",
+          "source_key": "github-releases",
+          "title": "[cloudflare/workers-sdk] wrangler@4.114.0",
+          "signal_id": "ghr-6306714"
         }
       ],
       "canonical_name": "Wrangler"
     },
     "Miniflare": {
       "first_seen": "2026-07-12",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "product",
       "signals": [
         {
@@ -2709,6 +3038,13 @@
           "source_key": "github-releases",
           "title": "[cloudflare/workers-sdk] miniflare@4.20260722.0",
           "signal_id": "ghr-0807374"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "GitHub Releases",
+          "source_key": "github-releases",
+          "title": "[cloudflare/workers-sdk] miniflare@4.20260722.0",
+          "signal_id": "ghr-9034626"
         }
       ],
       "canonical_name": "Miniflare"
@@ -2774,7 +3110,7 @@
     },
     "Mistral": {
       "first_seen": "2026-07-12",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "company",
       "signals": [
         {
@@ -2927,7 +3263,7 @@
     },
     "Meta": {
       "first_seen": "2026-07-12",
-      "last_seen": "2026-07-12",
+      "last_seen": "2026-07-27",
       "term_type": "company",
       "signals": [
         {
@@ -2957,6 +3293,13 @@
           "source_key": "googlenews",
           "title": "Meta jumps into AI coding market in effort to chase Anthropic and OpenAI",
           "signal_id": "gn-9106847"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "掘金",
+          "source_key": "juejin",
+          "title": "三年了，为什么 AI 应用还没爆发？",
+          "signal_id": "juejin-7659709059810705462"
         }
       ],
       "canonical_name": "Meta"
@@ -3049,7 +3392,7 @@
     },
     "Anthropic": {
       "first_seen": "2026-07-12",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "company",
       "signals": [
         {
@@ -3128,6 +3471,27 @@
           "source_key": "w2solo",
           "title": "Model123：一站式企业级 AI 编程服务平台，让 Vibe Coding 触手可及",
           "signal_id": "w2solo-7848"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "Anthropic’s Opus 5 Signals the Next Phase of Enterprise AI: Better Economics, Not Just Better Models",
+          "signal_id": "gn-8832656"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "掘金",
+          "source_key": "juejin",
+          "title": "Opus 5 深夜炸场，价格还挺香。。。",
+          "signal_id": "juejin-7665969355775049774"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "200 家硅谷初创联名反对白宫政府封禁中国开源 AI 模型",
+          "signal_id": "oschina-478417"
         }
       ],
       "canonical_name": "Anthropic"
@@ -3313,7 +3677,7 @@
     },
     "RAG": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "technology",
       "signals": [
         {
@@ -3364,13 +3728,20 @@
           "source_key": "juejin",
           "title": "搭 RAG 的第一个坎：网页检索答非所问？聊聊文档加载与分块的那些坑",
           "signal_id": "juejin-7664224225222737935"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "RAG 核心概念与原理：Chunking、Embedding、相似度、HNSW 与多路召回",
+          "signal_id": "oschina-6600239"
         }
       ],
       "canonical_name": "RAG"
     },
     "macOS": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-07-23",
+      "last_seen": "2026-07-27",
       "term_type": "technology",
       "signals": [
         {
@@ -3379,6 +3750,20 @@
           "source_key": "v2ex",
           "title": "做了一个带知识库 RAG 问答的 macOS GitHub Stars 工具，想听听大家的建议",
           "signal_id": "v2ex-1229165"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "Hacker News",
+          "source_key": "hn",
+          "title": "Decker, a platform that builds on the legacy of Hypercard and classic macOS",
+          "signal_id": "hn-49060856"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "Hacker News",
+          "source_key": "hn",
+          "title": "Show HN: SpinWin – A macOS menu bar app to visually rotate or spin any window",
+          "signal_id": "hn-49049638"
         }
       ],
       "canonical_name": "macOS"
@@ -3460,7 +3845,7 @@
     },
     "Chrome": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-07-23",
+      "last_seen": "2026-07-27",
       "term_type": "product",
       "signals": [
         {
@@ -3469,6 +3854,13 @@
           "source_key": "w2solo",
           "title": "花 3 个月做了 7 个 Chrome 插件，让获取 TikTok Shop 和 Amazon 数据变得更简单",
           "signal_id": "w2solo-7827"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "Lobsters",
+          "source_key": "lobsters",
+          "title": "Chrome registers a global shortcut for Gemini popup window",
+          "signal_id": "lobsters-c76s0r"
         }
       ],
       "canonical_name": "Chrome"
@@ -3505,7 +3897,7 @@
     },
     "Rust": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "technology",
       "signals": [
         {
@@ -3556,6 +3948,34 @@
           "source_key": "w2solo",
           "title": "6 种 SERP 客户端实现对比:Python / Go / Node / TypeScript / Rust / Java",
           "signal_id": "w2solo-7849"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "ArXiv",
+          "source_key": "arxiv",
+          "title": "From Resource Flow to Executable Tests: Petri-Net-Guided LLM Test Generation for Concurrent Stateful Rust APIs",
+          "signal_id": "arxiv-2607.21530v1"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "GitHub Trending",
+          "source_key": "github",
+          "title": "rtk-ai/rtk",
+          "signal_id": "github-1139971460"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "echoFS - 一行命令秒变局域网文件中心",
+          "signal_id": "oschina-478289"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "Reddit",
+          "source_key": "reddit",
+          "title": "Delightful integration tests in Rust",
+          "signal_id": "reddit-t3_1v6bcof"
         }
       ],
       "canonical_name": "Rust"
@@ -3577,7 +3997,7 @@
     },
     "MemPalace/mempalace": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -3592,7 +4012,7 @@
     },
     "Coasty": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "product",
       "signals": [
         {
@@ -3817,7 +4237,7 @@
     },
     "SIMD": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "technology",
       "signals": [
         {
@@ -3846,7 +4266,7 @@
     },
     "Weekday": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "product",
       "signals": [
         {
@@ -3861,7 +4281,7 @@
     },
     "YC W21": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-07-23",
+      "last_seen": "2026-07-27",
       "term_type": "company",
       "signals": [
         {
@@ -3870,6 +4290,13 @@
           "source_key": "job_trends",
           "title": "Launch HN: Weekday (YC W21) – Hire engineers vouched for by other engineers",
           "signal_id": "hn-jobs-27844728"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "HN Job Discussion",
+          "source_key": "job_trends",
+          "title": "Launch HN: Foster (YC W21) – Improve your writing with on-demand editing",
+          "signal_id": "hn-jobs-31850439"
         }
       ],
       "canonical_name": "YC W21"
@@ -3906,7 +4333,7 @@
     },
     "Ant Design": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-07-23",
+      "last_seen": "2026-07-27",
       "term_type": "technology",
       "signals": [
         {
@@ -3915,13 +4342,20 @@
           "source_key": "oschina",
           "title": "ng-zorro-antd 22.0.0 发布，基于 Angular 的 UI 组件",
           "signal_id": "oschina-476127"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "Ant Design 6.5.2 发布，企业级 UI 设计语言和 React 实现",
+          "signal_id": "oschina-478412"
         }
       ],
       "canonical_name": "Ant Design"
     },
     "Typecho": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "product",
       "signals": [
         {
@@ -4144,7 +4578,7 @@
     },
     "Claude Code": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "product",
       "signals": [
         {
@@ -4244,13 +4678,20 @@
           "source_key": "v2ex",
           "title": "Claude Code 保姆级教程：从安装到进阶，附非程序员使用场景",
           "signal_id": "v2ex-1229418"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "DEV Community",
+          "source_key": "devcommunity",
+          "title": "Connect Google Sheets to Claude Code in 5 minutes",
+          "signal_id": "dev-4218906"
         }
       ],
       "canonical_name": "Claude Code"
     },
     "Codex": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "product",
       "signals": [
         {
@@ -4419,7 +4860,7 @@
     },
     "unicity-aos/aos-ce": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -4508,7 +4949,7 @@
     },
     "withmarbleapp/os-taxonomy": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -4610,7 +5051,7 @@
     },
     "React": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "technology",
       "signals": [
         {
@@ -4745,6 +5186,20 @@
           "source_key": "juejin",
           "title": "Vite+React+TS+Tailwind搭建WebGPU本地大模型项目，拆解前端核心知识点",
           "signal_id": "juejin-7664472300168347690"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "Ant Design 6.5.2 发布，企业级 UI 设计语言和 React 实现",
+          "signal_id": "oschina-478412"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "Agent 工程思考：从 ReAct 到 Agent Harness",
+          "signal_id": "oschina-8272759"
         }
       ],
       "canonical_name": "React"
@@ -4796,7 +5251,7 @@
     },
     "MCP": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "technology",
       "signals": [
         {
@@ -4861,13 +5316,41 @@
           "source_key": "juejin",
           "title": "GitHub 已开源：民政部官方的国家地名信息库 MCP & Skill 实现",
           "signal_id": "juejin-7638298153040707627"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "DEV Community",
+          "source_key": "devcommunity",
+          "title": "I Connected 3 MCP Servers to One Agent. It Got Scary Fast.",
+          "signal_id": "dev-4231226"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "DEV Community",
+          "source_key": "devcommunity",
+          "title": "Teaching Codex to Paint: A Stateful Image-Editing Skill Built on Gemini's Interactions API and MCP",
+          "signal_id": "dev-4218709"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "DEV Community",
+          "source_key": "devcommunity",
+          "title": "Teaching Google Antigravity to Paint: A Stateful Image-Editing Skill Built on Gemini's Interactions API and MCP",
+          "signal_id": "dev-4224001"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "DEV Community",
+          "source_key": "devcommunity",
+          "title": "What Still Required Human Judgment When Adding MCP to an AI-Assisted SaaS",
+          "signal_id": "dev-4224716"
         }
       ],
       "canonical_name": "MCP"
     },
     "Cursor": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "product",
       "signals": [
         {
@@ -4903,7 +5386,7 @@
     },
     "Uber": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-07-23",
+      "last_seen": "2026-07-27",
       "term_type": "company",
       "signals": [
         {
@@ -4918,7 +5401,7 @@
     },
     "Vue 3": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-07-23",
+      "last_seen": "2026-07-27",
       "term_type": "technology",
       "signals": [
         {
@@ -4927,6 +5410,13 @@
           "source_key": "juejin",
           "title": "尤雨溪力荐！Vue3 专属！100+ 动效组件！",
           "signal_id": "juejin-7541719099627798564"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "SegmentFault",
+          "source_key": "segmentfault",
+          "title": "vue3遇到一个无法理解的现象，有大佬帮忙指点一下吗？谢谢！！！？",
+          "signal_id": "sf-1010000048073935"
         }
       ],
       "canonical_name": "Vue 3"
@@ -4963,7 +5453,7 @@
     },
     "Git": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-07-23",
+      "last_seen": "2026-07-27",
       "term_type": "technology",
       "signals": [
         {
@@ -4972,6 +5462,13 @@
           "source_key": "lobsters",
           "title": "git --end-of-options",
           "signal_id": "lobsters-cxz7vd"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "Reddit",
+          "source_key": "reddit",
+          "title": "A twit idea: directory convention for Git worktrees",
+          "signal_id": "reddit-t3_1v6d8tt"
         }
       ],
       "canonical_name": "Git"
@@ -5029,7 +5526,7 @@
     },
     "Nginx": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "technology",
       "signals": [
         {
@@ -5058,7 +5555,7 @@
     },
     "Spring Boot": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "technology",
       "signals": [
         {
@@ -5073,7 +5570,7 @@
     },
     "ADB": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "technology",
       "signals": [
         {
@@ -5082,6 +5579,13 @@
           "source_key": "segmentfault",
           "title": "基于ADB的安卓自动化中，如何解决短文本和表情识别不准的问题？",
           "signal_id": "sf-1010000048033044"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "Lobsters",
+          "source_key": "lobsters",
+          "title": "Android May Soon Restrict On-Device ADB, Affecting Shizuku, libadb and Developers",
+          "signal_id": "lobsters-t5os1h"
         }
       ],
       "canonical_name": "ADB"
@@ -5310,7 +5814,7 @@
     },
     "Foster": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "product",
       "signals": [
         {
@@ -5325,7 +5829,7 @@
     },
     "Legion Health": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "product",
       "signals": [
         {
@@ -5377,7 +5881,7 @@
     },
     "Kimi K3": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "model",
       "signals": [
         {
@@ -5456,6 +5960,13 @@
           "source_key": "juejin",
           "title": "Kimi K3 修Bug，越修越多！",
           "signal_id": "juejin-7665594862280392730"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "掘金",
+          "source_key": "juejin",
+          "title": "我被 Kimi K3 榨干了 99 块，还笑出了声——一个程序员的“真香”现场",
+          "signal_id": "juejin-7663687263675416595"
         }
       ],
       "canonical_name": "Kimi K3"
@@ -5517,11 +6028,11 @@
           "signal_id": "juejin-7659393583027896330"
         }
       ],
-      "canonical_name": "Claude Fable 5"
+      "canonical_name": "Fable 5"
     },
     "SWE-bench": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-07-23",
+      "last_seen": "2026-07-27",
       "term_type": "technology",
       "signals": [
         {
@@ -5530,6 +6041,13 @@
           "source_key": "oschina",
           "title": "Kimi K3 实战对标 Fable 5：开源模型在 SWE-bench 上几乎打平了",
           "signal_id": "oschina-476574"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "91% 的 Token 花在读代码上，这套上下文交接术把成本砍掉了四成",
+          "signal_id": "oschina-478278"
         }
       ],
       "canonical_name": "SWE-bench"
@@ -5617,7 +6135,7 @@
     },
     "NeurIPS": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "technology",
       "signals": [
         {
@@ -5647,6 +6165,34 @@
           "source_key": "reddit",
           "title": "NeurIPS E and D, Average rating 3 and average confidence 4, I can rebuttal and address all their concerns? Do I still ha",
           "signal_id": "reddit-t3_1v4qrv9"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "Reddit",
+          "source_key": "reddit",
+          "title": "Neurips 2026 Main Track Theory Paper Tracker- Discussion Thread [D]",
+          "signal_id": "reddit-t3_1v77r9s"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "Reddit",
+          "source_key": "reddit",
+          "title": "Link plots/figures in NeurIPS rebuttal [R]",
+          "signal_id": "reddit-t3_1v6qt8l"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "Reddit",
+          "source_key": "reddit",
+          "title": "I still didn't get my NeurIPS meta review [D]",
+          "signal_id": "reddit-t3_1v5wcy3"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "Reddit",
+          "source_key": "reddit",
+          "title": "Neurips Position Track Rebuttal and Reviews [R]",
+          "signal_id": "reddit-t3_1v5ykl8"
         }
       ],
       "canonical_name": "NeurIPS"
@@ -5817,7 +6363,7 @@
     },
     "Claude Fable 5": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "model",
       "signals": [
         {
@@ -5842,11 +6388,11 @@
           "signal_id": "oschina-475974"
         }
       ],
-      "canonical_name": "Claude Fable 5"
+      "canonical_name": "Fable 5"
     },
     "MiMoCode": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-07-23",
+      "last_seen": "2026-07-27",
       "term_type": "product",
       "signals": [
         {
@@ -5861,7 +6407,7 @@
     },
     "ChatGPT 5.6": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "model",
       "signals": [
         {
@@ -5995,7 +6541,7 @@
     },
     "Firefox": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-07-23",
+      "last_seen": "2026-07-27",
       "term_type": "product",
       "signals": [
         {
@@ -6004,6 +6550,13 @@
           "source_key": "oschina",
           "title": "Firefox 153.0 发布",
           "signal_id": "oschina-476582"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "Reddit",
+          "source_key": "reddit",
+          "title": "Mohabi: Disaggregating and Sandboxing the Firefox JavaScript Engine",
+          "signal_id": "reddit-t3_1v55d8t"
         }
       ],
       "canonical_name": "Firefox"
@@ -6167,7 +6720,7 @@
     },
     "Vue": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "technology",
       "signals": [
         {
@@ -6316,7 +6869,7 @@
     },
     "WAIC": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "technology",
       "signals": [
         {
@@ -6338,7 +6891,7 @@
     },
     "Cube-Sandbox": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "product",
       "signals": [
         {
@@ -6428,7 +6981,7 @@
     },
     "Nvidia": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-07-23",
+      "last_seen": "2026-07-27",
       "term_type": "company",
       "signals": [
         {
@@ -6458,6 +7011,20 @@
           "source_key": "segmentfault",
           "title": "如何理解英伟达在WAIC 2026上提出的'每美元智能'衡量标准？",
           "signal_id": "sf-1010000048051698"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "Nvidia, Microsoft back open-source AI models, urge US lawmakers to avoid restrictive rules",
+          "signal_id": "gn-0375424"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "Nvidia, other tech giants caution against open-source AI ban in open letter",
+          "signal_id": "gn-1240080"
         }
       ],
       "canonical_name": "Nvidia"
@@ -6557,11 +7124,11 @@
           "signal_id": "yt-yVga-_gMfIM"
         }
       ],
-      "canonical_name": "TRAE IDE"
+      "canonical_name": "Trae IDE"
     },
     "LangGraph": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "technology",
       "signals": [
         {
@@ -6647,7 +7214,7 @@
     },
     "Vercel MCP": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "product",
       "signals": [
         {
@@ -6684,6 +7251,13 @@
           "source_key": "vercel",
           "title": "Vercel MCP now supports purchases",
           "signal_id": "changelog-2470676"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "Vercel",
+          "source_key": "vercel",
+          "title": "Vercel MCP can now deploy code",
+          "signal_id": "changelog-3005731"
         }
       ],
       "canonical_name": "Vercel MCP"
@@ -6764,7 +7338,7 @@
     },
     "Swift": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "technology",
       "signals": [
         {
@@ -6780,13 +7354,20 @@
           "source_key": "devcommunity",
           "title": "Swift Classes — The Four Ways Variables and Constants Can Combine 🎭",
           "signal_id": "dev-4172113"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "G#：融合 Go/Kotlin/Swift 理念的 .NET 现代语言",
+          "signal_id": "oschina-478468"
         }
       ],
       "canonical_name": "Swift"
     },
     "Gemini": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "model",
       "signals": [
         {
@@ -6816,6 +7397,27 @@
           "source_key": "devcommunity",
           "title": "Teaching Claude Code to Paint: A Stateful Image-Editing Skill Built on Gemini's Interactions API and MCP",
           "signal_id": "dev-4209254"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "DEV Community",
+          "source_key": "devcommunity",
+          "title": "Teaching Codex to Paint: A Stateful Image-Editing Skill Built on Gemini's Interactions API and MCP",
+          "signal_id": "dev-4218709"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "DEV Community",
+          "source_key": "devcommunity",
+          "title": "Teaching Google Antigravity to Paint: A Stateful Image-Editing Skill Built on Gemini's Interactions API and MCP",
+          "signal_id": "dev-4224001"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "Lobsters",
+          "source_key": "lobsters",
+          "title": "Chrome registers a global shortcut for Gemini popup window",
+          "signal_id": "lobsters-c76s0r"
         }
       ],
       "canonical_name": "Gemini"
@@ -6858,7 +7460,7 @@
     },
     "Sentry": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "product",
       "signals": [
         {
@@ -6867,13 +7469,20 @@
           "source_key": "devcommunity",
           "title": "The Scoreboard Lied. Now Sentry Shows Which Layer Broke",
           "signal_id": "dev-4192403"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "DEV Community",
+          "source_key": "devcommunity",
+          "title": "Sentry's Span Hierarchy Exposed a Silent Retry in My 5-Agent Pipeline. One Agent Took 22.6s, the Others Took 5.",
+          "signal_id": "dev-4220414"
         }
       ],
       "canonical_name": "Sentry"
     },
     "ATLOCK": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-07-23",
+      "last_seen": "2026-07-27",
       "term_type": "product",
       "signals": [
         {
@@ -6882,6 +7491,13 @@
           "source_key": "devcommunity",
           "title": "How ATLOCK v4 actually Locks Files at the OS level (A technical breakdown)",
           "signal_id": "dev-4187545"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "DEV Community",
+          "source_key": "devcommunity",
+          "title": "🔒 How I Built ATLOCK v4 — A Deep Technical Breakdown of a Windows Security Suite",
+          "signal_id": "dev-4216112"
         }
       ],
       "canonical_name": "ATLOCK"
@@ -7074,7 +7690,7 @@
     },
     "Django": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "technology",
       "signals": [
         {
@@ -7214,7 +7830,7 @@
     },
     "OCaml": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-07-23",
+      "last_seen": "2026-07-27",
       "term_type": "technology",
       "signals": [
         {
@@ -7223,6 +7839,13 @@
           "source_key": "lobsters",
           "title": "Taking OCaml and Eio for a spin",
           "signal_id": "lobsters-mush3s"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "Reddit",
+          "source_key": "reddit",
+          "title": "Reusing Buffers in Multicore OCaml",
+          "signal_id": "reddit-t3_1v5wthf"
         }
       ],
       "canonical_name": "OCaml"
@@ -7333,7 +7956,7 @@
     },
     "Kubernetes": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "technology",
       "signals": [
         {
@@ -7342,6 +7965,13 @@
           "source_key": "reddit",
           "title": "kubara - A GitOps-First Approach to Reusable Kubernetes Platforms",
           "signal_id": "reddit-t3_1v2x23h"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "HN Show HN",
+          "source_key": "showhn",
+          "title": "Managing on-premise servers without Kubernetes",
+          "signal_id": "showhn-49057985"
         }
       ],
       "canonical_name": "Kubernetes"
@@ -7591,7 +8221,7 @@
     },
     "MySQL": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "technology",
       "signals": [
         {
@@ -7606,7 +8236,7 @@
     },
     "EXPO": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "technology",
       "signals": [
         {
@@ -7621,7 +8251,7 @@
     },
     "iOS": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "technology",
       "signals": [
         {
@@ -7636,7 +8266,7 @@
     },
     "Vuex": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "technology",
       "signals": [
         {
@@ -7666,7 +8296,7 @@
     },
     "JVM": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "technology",
       "signals": [
         {
@@ -7688,7 +8318,7 @@
     },
     "CMS": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "technology",
       "signals": [
         {
@@ -7718,7 +8348,7 @@
     },
     "FastAPI": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "product",
       "signals": [
         {
@@ -7740,7 +8370,7 @@
     },
     "Litestar": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "product",
       "signals": [
         {
@@ -7755,7 +8385,7 @@
     },
     "BlackSheep": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "product",
       "signals": [
         {
@@ -7770,7 +8400,7 @@
     },
     "Strawberry GraphQL": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "product",
       "signals": [
         {
@@ -7785,7 +8415,7 @@
     },
     "Ariadne": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "product",
       "signals": [
         {
@@ -7800,7 +8430,7 @@
     },
     "Starlite": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "product",
       "signals": [
         {
@@ -7815,7 +8445,7 @@
     },
     "Typer": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "product",
       "signals": [
         {
@@ -7830,7 +8460,7 @@
     },
     "Rich": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "product",
       "signals": [
         {
@@ -7845,7 +8475,7 @@
     },
     "Textual": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "product",
       "signals": [
         {
@@ -7860,7 +8490,7 @@
     },
     "Pydantic": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "product",
       "signals": [
         {
@@ -7882,7 +8512,7 @@
     },
     "ChromaDB": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "product",
       "signals": [
         {
@@ -8045,7 +8675,7 @@
     },
     "LlamaIndex": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -8556,7 +9186,7 @@
     },
     "Cache Response Rules": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "product",
       "signals": [
         {
@@ -8572,13 +9202,20 @@
           "source_key": "cloudflare",
           "title": "Introducing Cache Response Rules",
           "signal_id": "changelog-5059530"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "Cloudflare",
+          "source_key": "cloudflare",
+          "title": "Introducing Cache Response Rules",
+          "signal_id": "changelog-6815735"
         }
       ],
       "canonical_name": "Cache Response Rules"
     },
     "Grafana Cloud": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "product",
       "signals": [
         {
@@ -8594,13 +9231,20 @@
           "source_key": "supabase",
           "title": "Observability for every Supabase project with Grafana Cloud",
           "signal_id": "changelog-8284521"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "Supabase",
+          "source_key": "supabase",
+          "title": "Observability for every Supabase project with Grafana Cloud",
+          "signal_id": "changelog-1004443"
         }
       ],
       "canonical_name": "Grafana Cloud"
     },
     "Vercel Flags": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "product",
       "signals": [
         {
@@ -8616,13 +9260,20 @@
           "source_key": "vercel",
           "title": "Evaluation metrics for Vercel Flags",
           "signal_id": "changelog-2215342"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "Vercel",
+          "source_key": "vercel",
+          "title": "Evaluation metrics for Vercel Flags",
+          "signal_id": "changelog-7435773"
         }
       ],
       "canonical_name": "Vercel Flags"
     },
     "GitHub": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "company",
       "signals": [
         {
@@ -8645,13 +9296,20 @@
           "source_key": "github",
           "title": "amplifthq/opentag",
           "signal_id": "github-1278926400"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "Vercel",
+          "source_key": "vercel",
+          "title": "GitHub tools are now an installable eve extension",
+          "signal_id": "changelog-7908417"
         }
       ],
       "canonical_name": "GitHub"
     },
     "Ling 3.0 Flash": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "model",
       "signals": [
         {
@@ -8660,13 +9318,20 @@
           "source_key": "vercel",
           "title": "Ling 3.0 Flash is now available on AI Gateway",
           "signal_id": "changelog-6988923"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "Vercel",
+          "source_key": "vercel",
+          "title": "Ling 3.0 Flash is now available on AI Gateway",
+          "signal_id": "changelog-2839839"
         }
       ],
       "canonical_name": "Ling 3.0 Flash"
     },
     "Nunchaku": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -8682,13 +9347,20 @@
           "source_key": "huggingface-blog",
           "title": "Bringing Nunchaku 4-bit Diffusion Inference to Diffusers",
           "signal_id": "changelog-2494607"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "HuggingFace Blog",
+          "source_key": "huggingface-blog",
+          "title": "Bringing Nunchaku 4-bit Diffusion Inference to Diffusers",
+          "signal_id": "changelog-3684253"
         }
       ],
       "canonical_name": "Nunchaku"
     },
     "Diffusers": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -8704,6 +9376,13 @@
           "source_key": "huggingface-blog",
           "title": "Bringing Nunchaku 4-bit Diffusion Inference to Diffusers",
           "signal_id": "changelog-2494607"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "HuggingFace Blog",
+          "source_key": "huggingface-blog",
+          "title": "Bringing Nunchaku 4-bit Diffusion Inference to Diffusers",
+          "signal_id": "changelog-3684253"
         }
       ],
       "canonical_name": "Diffusers"
@@ -8911,7 +9590,7 @@
     },
     "openclaw/openclaw": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -8926,7 +9605,7 @@
     },
     "obra/superpowers": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -8941,7 +9620,7 @@
     },
     "affaan-m/ECC": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -8986,7 +9665,7 @@
     },
     "anthropics/skills": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -9016,7 +9695,7 @@
     },
     "github/spec-kit": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -9031,7 +9710,7 @@
     },
     "farion1231/cc-switch": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -9061,7 +9740,7 @@
     },
     "Graphify-Labs/graphify": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -9091,7 +9770,7 @@
     },
     "nexu-io/open-design": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -9106,7 +9785,7 @@
     },
     "addyosmani/agent-skills": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -9121,7 +9800,7 @@
     },
     "earendil-works/pi": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -9136,7 +9815,7 @@
     },
     "Egonex-AI/Understand-Anything": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -9151,7 +9830,7 @@
     },
     "paperclipai/paperclip": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -9166,7 +9845,7 @@
     },
     "rtk-ai/rtk": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -9181,7 +9860,7 @@
     },
     "koala73/worldmonitor": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -9211,7 +9890,7 @@
     },
     "code-yeongyu/oh-my-openagent": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -9226,7 +9905,7 @@
     },
     "shanraisshan/claude-code-best-practice": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -9241,7 +9920,7 @@
     },
     "Fission-AI/OpenSpec": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -9256,7 +9935,7 @@
     },
     "colbymchenry/codegraph": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -9271,7 +9950,7 @@
     },
     "odysseus-dev/odysseus": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -9286,7 +9965,7 @@
     },
     "headroomlabs-ai/headroom": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -9301,7 +9980,7 @@
     },
     "santifer/career-ops": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -9316,7 +9995,7 @@
     },
     "ZhuLinsen/dailystockanalysis": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -9331,7 +10010,7 @@
     },
     "mvanhorn/last30days-skill": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -9346,7 +10025,7 @@
     },
     "xai-org/grok-build": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -9361,7 +10040,7 @@
     },
     "JustVugg/colibri": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -9376,7 +10055,7 @@
     },
     "GLM-5.2": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "model",
       "signals": [
         {
@@ -9406,7 +10085,7 @@
     },
     "Fei-Away/Codex-Dream-Skin": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -9436,7 +10115,7 @@
     },
     "x4gKing/X4G": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -9488,7 +10167,7 @@
     },
     "Surge": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "product",
       "signals": [
         {
@@ -9497,6 +10176,13 @@
           "source_key": "github",
           "title": "Yu9191/wloc",
           "signal_id": "github-1278830624"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "GitHub Trending",
+          "source_key": "github",
+          "title": "mekos2772/ios-location-spoofer",
+          "signal_id": "github-1284981522"
         }
       ],
       "canonical_name": "Surge 6"
@@ -9548,7 +10234,7 @@
     },
     "elder-plinius/T3MP3ST": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -9563,7 +10249,7 @@
     },
     "oso95/scroll-world": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -9593,7 +10279,7 @@
     },
     "oomol-lab/open-connector": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -9645,7 +10331,7 @@
     },
     "MDX-Tom/gpt-5.6-instruct": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -9660,7 +10346,7 @@
     },
     "gpt-5.6-sol": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "model",
       "signals": [
         {
@@ -9675,7 +10361,7 @@
     },
     "synthetic-sciences/openscience": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -9690,7 +10376,7 @@
     },
     "create-cloudflare": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "product",
       "signals": [
         {
@@ -9699,13 +10385,20 @@
           "source_key": "github-releases",
           "title": "[cloudflare/workers-sdk] create-cloudflare@2.70.14",
           "signal_id": "ghr-6139877"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "GitHub Releases",
+          "source_key": "github-releases",
+          "title": "[cloudflare/workers-sdk] create-cloudflare@2.70.14",
+          "signal_id": "ghr-5018533"
         }
       ],
       "canonical_name": "create-cloudflare"
     },
     "anthropics/anthropic-sdk-python": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -9735,6 +10428,20 @@
           "source_key": "github-releases",
           "title": "[anthropics/anthropic-sdk-python] v0.118.0",
           "signal_id": "ghr-0221358"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "GitHub Releases",
+          "source_key": "github-releases",
+          "title": "[anthropics/anthropic-sdk-python] v0.120.0",
+          "signal_id": "ghr-7919456"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "GitHub Releases",
+          "source_key": "github-releases",
+          "title": "[anthropics/anthropic-sdk-python] v0.119.0",
+          "signal_id": "ghr-0655596"
         }
       ],
       "canonical_name": "anthropics/anthropic-sdk-python"
@@ -9791,7 +10498,7 @@
     },
     "n8n": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "product",
       "signals": [
         {
@@ -9870,13 +10577,48 @@
           "source_key": "github-releases",
           "title": "[n8n-io/n8n] n8n@1.123.67",
           "signal_id": "ghr-8195116"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "GitHub Releases",
+          "source_key": "github-releases",
+          "title": "[n8n-io/n8n] stable",
+          "signal_id": "ghr-0634727"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "GitHub Releases",
+          "source_key": "github-releases",
+          "title": "[n8n-io/n8n] n8n@2.31.6",
+          "signal_id": "ghr-0127776"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "GitHub Releases",
+          "source_key": "github-releases",
+          "title": "[n8n-io/n8n] n8n@2.32.5",
+          "signal_id": "ghr-1776075"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "GitHub Releases",
+          "source_key": "github-releases",
+          "title": "[n8n-io/n8n] n8n@2.32.4",
+          "signal_id": "ghr-1899655"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "GitHub Releases",
+          "source_key": "github-releases",
+          "title": "[n8n-io/n8n] beta",
+          "signal_id": "ghr-1144246"
         }
       ],
       "canonical_name": "n8n"
     },
     "VS Code": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "product",
       "signals": [
         {
@@ -9892,6 +10634,13 @@
           "source_key": "github-releases",
           "title": "[microsoft/vscode] 1.130.0",
           "signal_id": "ghr-6687955"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "SegmentFault",
+          "source_key": "segmentfault",
+          "title": "有什么推荐的 Vscode Ai 代码补全插件吗?",
+          "signal_id": "sf-1010000048048649"
         }
       ],
       "canonical_name": "VS Code"
@@ -9994,7 +10743,7 @@
     },
     "Shadcn": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -10024,6 +10773,20 @@
           "source_key": "github-releases",
           "title": "[shadcn-ui/ui] shadcn@4.14.0",
           "signal_id": "ghr-4416487"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "GitHub Releases",
+          "source_key": "github-releases",
+          "title": "[shadcn-ui/ui] shadcn@4.15.0",
+          "signal_id": "ghr-0944693"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "GitHub Releases",
+          "source_key": "github-releases",
+          "title": "[shadcn-ui/ui] shadcn@4.14.1",
+          "signal_id": "ghr-3022336"
         }
       ],
       "canonical_name": "shadcn-ui/ui"
@@ -10107,7 +10870,7 @@
           "signal_id": "ghr-9227142"
         }
       ],
-      "canonical_name": "Cloudflare Vitest Pool Workers"
+      "canonical_name": "@cloudflare/vitest-pool-workers"
     },
     "Anthropic Python SDK": {
       "first_seen": "2026-07-24",
@@ -10287,7 +11050,7 @@
     },
     "Microsoft": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "company",
       "signals": [
         {
@@ -10324,6 +11087,27 @@
           "source_key": "googlenews",
           "title": "Databricks, Microsoft Extend Enterprise AI Alliance to 2030",
           "signal_id": "gn-0182099"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "GitHub Trending",
+          "source_key": "github",
+          "title": "microsoft/VibeVoice",
+          "signal_id": "github-1044296738"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "Nvidia, Microsoft back open-source AI models, urge US lawmakers to avoid restrictive rules",
+          "signal_id": "gn-0375424"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "微软推出两款自研模型：MAI-Image-2.5-Pro 和 MAI-Voice-2-Flash",
+          "signal_id": "oschina-478288"
         }
       ],
       "canonical_name": "Microsoft"
@@ -11010,7 +11794,7 @@
     },
     "LG ThinQ": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "product",
       "signals": [
         {
@@ -11062,7 +11846,7 @@
     },
     "Reddit": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "company",
       "signals": [
         {
@@ -11135,7 +11919,7 @@
     },
     "Zig": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "technology",
       "signals": [
         {
@@ -11158,6 +11942,13 @@
           "source_key": "showhn",
           "title": "Whetuu – a zero-config cross-shell prompt written in Zig",
           "signal_id": "showhn-49022371"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "Lobsters",
+          "source_key": "lobsters",
+          "title": "Zig by Example",
+          "signal_id": "lobsters-s75zd9"
         }
       ],
       "canonical_name": "Zig"
@@ -11687,7 +12478,7 @@
     },
     "Fil-C": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -11716,7 +12507,7 @@
     },
     "RocksDB": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -11768,7 +12559,7 @@
     },
     "Transformers": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "technology",
       "signals": [
         {
@@ -11790,7 +12581,7 @@
     },
     "Zod": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -11820,7 +12611,7 @@
     },
     "Prisma": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -11835,7 +12626,7 @@
     },
     "Hono": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -11850,7 +12641,7 @@
     },
     "Elysia": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -11865,7 +12656,7 @@
     },
     "Bun": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "technology",
       "signals": [
         {
@@ -11880,7 +12671,7 @@
     },
     "Vitest": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -11895,7 +12686,7 @@
     },
     "Biome": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -11910,7 +12701,7 @@
     },
     "Oxlint": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -11925,7 +12716,7 @@
     },
     "Rolldown": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -11940,7 +12731,7 @@
     },
     "Effect": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -11955,7 +12746,7 @@
     },
     "Arktype": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -11970,7 +12761,7 @@
     },
     "Valibot": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -11985,7 +12776,7 @@
     },
     "Trigger.dev": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "product",
       "signals": [
         {
@@ -12000,7 +12791,7 @@
     },
     "Inngest": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "product",
       "signals": [
         {
@@ -12015,7 +12806,7 @@
     },
     "Resend": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "product",
       "signals": [
         {
@@ -12030,7 +12821,7 @@
     },
     "Directus": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -12045,7 +12836,7 @@
     },
     "PocketBase": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -12075,7 +12866,7 @@
     },
     "Ruvector": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -12090,7 +12881,7 @@
     },
     "Novu": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -12105,7 +12896,7 @@
     },
     "Temporal": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -12120,7 +12911,7 @@
     },
     "Turborepo": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -12150,7 +12941,7 @@
     },
     "S3Mini": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -12172,7 +12963,7 @@
     },
     "Vectra": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -12232,7 +13023,7 @@
     },
     "Oxc": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -12262,7 +13053,7 @@
     },
     "CrateDB": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -12277,7 +13068,7 @@
     },
     "QKnow": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -12292,7 +13083,7 @@
     },
     "QData": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -12314,7 +13105,7 @@
     },
     "DataX": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -12344,7 +13135,7 @@
     },
     "TypeScript": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "technology",
       "signals": [
         {
@@ -12367,6 +13158,13 @@
           "source_key": "w2solo",
           "title": "6 种 SERP 客户端实现对比:Python / Go / Node / TypeScript / Rust / Java",
           "signal_id": "w2solo-7849"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "DEV Community",
+          "source_key": "devcommunity",
+          "title": "How I Built a Full RPG Game in TypeScript — Zero Images, Pure Canvas 2D",
+          "signal_id": "dev-4228138"
         }
       ],
       "canonical_name": "TypeScript"
@@ -12611,7 +13409,7 @@
     },
     "DeepSeek": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "company",
       "signals": [
         {
@@ -12627,6 +13425,69 @@
           "source_key": "github",
           "title": "deepseek-ai/DeepSpec",
           "signal_id": "github-1281315781"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "DeepSeek is said to pause new funding round as IPO plans advance",
+          "signal_id": "gn-8713787"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "DeepSeek Halts $1.5 Billion Funding Round After Leak",
+          "signal_id": "gn-7968868"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "DeepSeek pauses funding round after viral posts",
+          "signal_id": "gn-2936862"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "AI Startup Funding Why Did DeepSeek Pause Talks?",
+          "signal_id": "gn-5422976"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "DeepSeek Pauses Second Funding Round After Viral Founder Remarks",
+          "signal_id": "gn-2806562"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "DeepSeek tells investors to wait as its $71 billion fundraising round stalls",
+          "signal_id": "gn-3111576"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "DeepSeek Said to Tell Backers of Funding Pause After Viral Posts",
+          "signal_id": "gn-8231575"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "Jensen Huang Debuts on X, Champions Open-Source AI Ecosystem, Calls for Widespread Use of DeepSeek and Kimi",
+          "signal_id": "gn-7226292"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "SegmentFault",
+          "source_key": "segmentfault",
+          "title": "vue3遇到一个无法理解的现象，有大佬帮忙指点一下吗？谢谢！！！？",
+          "signal_id": "sf-1010000048073935"
         }
       ],
       "canonical_name": "DeepSeek"
@@ -12648,7 +13509,7 @@
     },
     "Datasets": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -12663,7 +13524,7 @@
     },
     "Accelerate": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -12678,7 +13539,7 @@
     },
     "TRL": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -12693,7 +13554,7 @@
     },
     "SGLang": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -12708,7 +13569,7 @@
     },
     "Guidance": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -12723,7 +13584,7 @@
     },
     "DSPy": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -12738,7 +13599,7 @@
     },
     "Instructor": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -12753,7 +13614,7 @@
     },
     "Outlines": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -12768,7 +13629,7 @@
     },
     "LM Format Enforcer": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -12783,7 +13644,7 @@
     },
     "FastMCP": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -12798,7 +13659,7 @@
     },
     "AutoGen": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -12813,7 +13674,7 @@
     },
     "CrewAI": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -12828,7 +13689,7 @@
     },
     "Agno": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -12843,7 +13704,7 @@
     },
     "Pydantic AI": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -12858,7 +13719,7 @@
     },
     "DuckDB": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -12873,7 +13734,7 @@
     },
     "LanceDB": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -12888,7 +13749,7 @@
     },
     "Qdrant": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -12903,7 +13764,7 @@
     },
     "Weaviate": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -12918,7 +13779,7 @@
     },
     "SQLAlchemy": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -12933,7 +13794,7 @@
     },
     "Tortoise ORM": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -12948,7 +13809,7 @@
     },
     "Elm Architecture": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "technology",
       "signals": [
         {
@@ -12963,7 +13824,7 @@
     },
     "Canva": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "company",
       "signals": [
         {
@@ -12993,7 +13854,7 @@
     },
     "Linux": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "technology",
       "signals": [
         {
@@ -13002,6 +13863,20 @@
           "source_key": "reddit",
           "title": "Linux kernel will support $ORIGIN, sort of",
           "signal_id": "reddit-t3_1v2bwax"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "Hacker News",
+          "source_key": "hn",
+          "title": "Show HN: CheapSecurity – Lightweight, Self-Hosted CCTV for Linux SBCs",
+          "signal_id": "hn-49059398"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "Hacker News",
+          "source_key": "hn",
+          "title": "Ask HN: What Linux distro do you daily drive?",
+          "signal_id": "hn-49029345"
         }
       ],
       "canonical_name": "Linux"
@@ -13433,7 +14308,7 @@
     },
     "andrewyng/openworker": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -13537,7 +14412,7 @@
     },
     "MLX": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "technology",
       "signals": [
         {
@@ -13546,6 +14421,13 @@
           "source_key": "github",
           "title": "Blaizzy/nativ",
           "signal_id": "github-1306758289"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "GitHub Releases",
+          "source_key": "github-releases",
+          "title": "[ollama/ollama] v0.32.4",
+          "signal_id": "ghr-6494559"
         }
       ],
       "canonical_name": "MLX"
@@ -13627,7 +14509,7 @@
     },
     "Y Combinator": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "company",
       "signals": [
         {
@@ -13636,6 +14518,13 @@
           "source_key": "googlenews",
           "title": "Y Combinator's Fall 2026 wish list puts a sitting Army Secretary in the founder pitch room",
           "signal_id": "gn-7239135"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "Apply for Funding: Y Combinator Opens Applications for Fall 2026 Startup Accelerator and Funding Program",
+          "signal_id": "gn-8190410"
         }
       ],
       "canonical_name": "Y Combinator"
@@ -13707,7 +14596,7 @@
     },
     "sentence-transformers/all-MiniLM-L6-v2": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -13722,7 +14611,7 @@
     },
     "openai-community/gpt2": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -13737,7 +14626,7 @@
     },
     "BAAI/bge-m3": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -13752,7 +14641,7 @@
     },
     "google-bert/bert-base-uncased": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -13767,7 +14656,7 @@
     },
     "Qwen/Qwen3-0.6B": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -13782,7 +14671,7 @@
     },
     "sentence-transformers/all-mpnet-base-v2": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -13797,7 +14686,7 @@
     },
     "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -13827,7 +14716,7 @@
     },
     "Qwen/Qwen3-8B": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -13842,7 +14731,7 @@
     },
     "BAAI/bge-reranker-v2-m3": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -13857,7 +14746,7 @@
     },
     "openai/clip-vit-base-patch32": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -13872,7 +14761,7 @@
     },
     "FacebookAI/xlm-roberta-base": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -13887,7 +14776,7 @@
     },
     "nomic-ai/nomic-embed-text-v1.5": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -13902,7 +14791,7 @@
     },
     "Qwen/Qwen2.5-1.5B-Instruct": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -13917,7 +14806,7 @@
     },
     "BAAI/bge-large-en-v1.5": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -13932,7 +14821,7 @@
     },
     "google-t5/t5-small": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -13947,7 +14836,7 @@
     },
     "BAAI/bge-small-en-v1.5": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -13962,7 +14851,7 @@
     },
     "amazon/chronos-2": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -13977,7 +14866,7 @@
     },
     "intfloat/multilingual-e5-small": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -13992,7 +14881,7 @@
     },
     "cross-encoder/ms-marco-MiniLM-L6-v2": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -14007,7 +14896,7 @@
     },
     "facebook/opt-125m": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -14022,7 +14911,7 @@
     },
     "google/electra-base-discriminator": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -14048,11 +14937,11 @@
           "signal_id": "hf-timm-mobilenetv3_small_100.lamb_in1k"
         }
       ],
-      "canonical_name": "timm/mobilenetv3small100.lambin1k"
+      "canonical_name": "timm/mobilenetv3_small_100.lamb_in1k"
     },
     "lpiccinelli/unidepth-v2-vitl14": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -14067,7 +14956,7 @@
     },
     "trl-internal-testing/tiny-Qwen2ForCausalLM-2.5": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -14284,7 +15173,7 @@
     },
     "@modelcontextprotocol/sdk": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -14299,7 +15188,7 @@
     },
     "drizzle-orm": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -14314,7 +15203,7 @@
     },
     "mcp-local-rag": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -14329,7 +15218,7 @@
     },
     "groq-rag": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -14344,7 +15233,7 @@
     },
     "@steebchen/s3mini": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -14359,7 +15248,7 @@
     },
     "pulumi-bunnynet": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -14419,7 +15308,7 @@
     },
     "Linyaps": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -14434,7 +15323,7 @@
     },
     "uniTerm": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "product",
       "signals": [
         {
@@ -14449,7 +15338,7 @@
     },
     "Wails": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "technology",
       "signals": [
         {
@@ -14464,7 +15353,7 @@
     },
     "Java": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "technology",
       "signals": [
         {
@@ -14480,6 +15369,13 @@
           "source_key": "w2solo",
           "title": "6 种 SERP 客户端实现对比:Python / Go / Node / TypeScript / Rust / Java",
           "signal_id": "w2solo-7849"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "Logback 1.6.0 发布，Java 日志框架",
+          "signal_id": "oschina-478260"
         }
       ],
       "canonical_name": "Java"
@@ -14531,7 +15427,7 @@
     },
     "Vibe Coding": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "technology",
       "signals": [
         {
@@ -14546,7 +15442,7 @@
     },
     "Cornerstone": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "project",
       "signals": [
         {
@@ -14602,7 +15498,7 @@
           "signal_id": "showhn-49021961"
         }
       ],
-      "canonical_name": "Vanilla JavaScript"
+      "canonical_name": "JavaScript"
     },
     "ValuePair": {
       "first_seen": "2026-07-24",
@@ -14906,7 +15802,7 @@
     },
     "Kimi": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-07-27",
       "term_type": "product",
       "signals": [
         {
@@ -14915,6 +15811,34 @@
           "source_key": "v2ex",
           "title": "kimi 做了个 k399 小游戏，居然有点好玩",
           "signal_id": "v2ex-1229382"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "Jensen Huang Debuts on X, Champions Open-Source AI Ecosystem, Calls for Widespread Use of DeepSeek and Kimi",
+          "signal_id": "gn-7226292"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "掘金",
+          "source_key": "juejin",
+          "title": "Kimi k3是真碉，但太不经用，也有拉跨点！",
+          "signal_id": "juejin-7663426727991164991"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "掘金",
+          "source_key": "juejin",
+          "title": "我被 Kimi K3 榨干了 99 块，还笑出了声——一个程序员的“真香”现场",
+          "signal_id": "juejin-7663687263675416595"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "掘金",
+          "source_key": "juejin",
+          "title": "盘点 18 个 Kimi K3 外网爆火的案例，太令人惊艳了。",
+          "signal_id": "juejin-7664465589441183778"
         }
       ],
       "canonical_name": "Kimi"
@@ -15052,6 +15976,2269 @@
         }
       ],
       "canonical_name": "Zapier"
+    },
+    "MedGame": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "project",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "ArXiv",
+          "source_key": "arxiv",
+          "title": "MedGame: Storytelling Gamification Empowered by Large Language Models for Medical Education",
+          "signal_id": "arxiv-2607.21570v1"
+        }
+      ],
+      "canonical_name": "MedGame"
+    },
+    "OpenForgeRL": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "project",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "ArXiv",
+          "source_key": "arxiv",
+          "title": "OpenForgeRL: Train Harness-native Agents in Any Environment",
+          "signal_id": "arxiv-2607.21557v1"
+        }
+      ],
+      "canonical_name": "OpenForgeRL"
+    },
+    "GuardianAgentBench": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "project",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "ArXiv",
+          "source_key": "arxiv",
+          "title": "GuardianAgentBench: Where Agents Fail and How to Guard Them",
+          "signal_id": "arxiv-2607.20982v1"
+        }
+      ],
+      "canonical_name": "GuardianAgentBench"
+    },
+    "REFACT": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "project",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "ArXiv",
+          "source_key": "arxiv",
+          "title": "REFACT: Adaptive Fact Restatement for Compact and Faithful Chain-of-Thought Reasoning",
+          "signal_id": "arxiv-2607.20833v1"
+        }
+      ],
+      "canonical_name": "REFACT"
+    },
+    "PrefReward": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "project",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "ArXiv",
+          "source_key": "arxiv",
+          "title": "PrefReward: Learning User Preference Matrix for Personalized Text Generation",
+          "signal_id": "arxiv-2607.21067v1"
+        }
+      ],
+      "canonical_name": "PrefReward"
+    },
+    "V-DEAL": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "project",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "ArXiv",
+          "source_key": "arxiv",
+          "title": "V-DEAL: Diagnosing Video Safety De-Calibration as an Understanding-Refusal Coupling Failure",
+          "signal_id": "arxiv-2607.21151v1"
+        }
+      ],
+      "canonical_name": "V-DEAL"
+    },
+    "MIRROR": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "project",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "ArXiv",
+          "source_key": "arxiv",
+          "title": "MIRROR: Learning from the Other View for Multi-Modal Reasoning",
+          "signal_id": "arxiv-2607.21552v1"
+        }
+      ],
+      "canonical_name": "MIRROR"
+    },
+    "EmoAgent-R1": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "project",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "ArXiv",
+          "source_key": "arxiv",
+          "title": "EmoAgent-R1: Towards Multimodal Emotion Understanding with Reinforcement Learning-based Dynamic Agent Specialization",
+          "signal_id": "arxiv-2607.21013v1"
+        }
+      ],
+      "canonical_name": "EmoAgent-R1"
+    },
+    "Thinkink": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "project",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "ArXiv",
+          "source_key": "arxiv",
+          "title": "Thinkink: 2D Spatial Ink-native Interaction with LLMs",
+          "signal_id": "arxiv-2607.21468v1"
+        }
+      ],
+      "canonical_name": "Thinkink"
+    },
+    "pAI-Econ-claude": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "project",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "ArXiv",
+          "source_key": "arxiv",
+          "title": "pAI-Econ-claude: A Gated Human-in-the-Loop Multi-Agent Architecture for AI-Assisted Economic Theory Development",
+          "signal_id": "arxiv-2607.21268v1"
+        }
+      ],
+      "canonical_name": "pAI-Econ-claude"
+    },
+    "Vercel WAF": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "Vercel",
+          "source_key": "vercel",
+          "title": "Vercel WAF for Blob is now in beta",
+          "signal_id": "changelog-4250160"
+        }
+      ],
+      "canonical_name": "Vercel WAF"
+    },
+    "Vercel Blob": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "Vercel",
+          "source_key": "vercel",
+          "title": "Vercel WAF for Blob is now in beta",
+          "signal_id": "changelog-4250160"
+        }
+      ],
+      "canonical_name": "Vercel Blob"
+    },
+    "BGP": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "Cloudflare",
+          "source_key": "cloudflare",
+          "title": "BGP ORIGIN attribute manipulation and its impact on the Internet",
+          "signal_id": "changelog-4383030"
+        }
+      ],
+      "canonical_name": "BGP"
+    },
+    "Claude Opus 5": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "model",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "Vercel",
+          "source_key": "vercel",
+          "title": "Claude Opus 5 now available on AI Gateway",
+          "signal_id": "changelog-1127199"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "掘金",
+          "source_key": "juejin",
+          "title": "Opus 5 深夜炸场，价格还挺香。。。",
+          "signal_id": "juejin-7665969355775049774"
+        }
+      ],
+      "canonical_name": "Claude Opus 5"
+    },
+    "TCP/IP": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "DEV Community",
+          "source_key": "devcommunity",
+          "title": "Começando com Redes: Camadas de uma conexão TCP/IP",
+          "signal_id": "dev-4158432"
+        }
+      ],
+      "canonical_name": "TCP/IP"
+    },
+    "Hetzner": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "company",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "DEV Community",
+          "source_key": "devcommunity",
+          "title": "Hetzner Inference: First Look",
+          "signal_id": "dev-4222291"
+        }
+      ],
+      "canonical_name": "Hetzner"
+    },
+    "NIST": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "company",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "DEV Community",
+          "source_key": "devcommunity",
+          "title": "389 Tests Passed. NIST Still Caught the Bug.",
+          "signal_id": "dev-4228739"
+        }
+      ],
+      "canonical_name": "NIST"
+    },
+    "Gemini Interactions API": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "DEV Community",
+          "source_key": "devcommunity",
+          "title": "Teaching Codex to Paint: A Stateful Image-Editing Skill Built on Gemini's Interactions API and MCP",
+          "signal_id": "dev-4218709"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "DEV Community",
+          "source_key": "devcommunity",
+          "title": "Teaching Google Antigravity to Paint: A Stateful Image-Editing Skill Built on Gemini's Interactions API and MCP",
+          "signal_id": "dev-4224001"
+        }
+      ],
+      "canonical_name": "Gemini Interactions API"
+    },
+    "Unreal Engine": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "DEV Community",
+          "source_key": "devcommunity",
+          "title": "How Unreal Engine Works: Not an API, but Engineering Thinking",
+          "signal_id": "dev-4230491"
+        }
+      ],
+      "canonical_name": "Unreal Engine"
+    },
+    "PWA": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "DEV Community",
+          "source_key": "devcommunity",
+          "title": "PWAs Cache Resources. Spirit Installs an Application.",
+          "signal_id": "dev-4236080"
+        }
+      ],
+      "canonical_name": "PWA"
+    },
+    "JSON": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "DEV Community",
+          "source_key": "devcommunity",
+          "title": "Your JSON Array Was Streaming All Along",
+          "signal_id": "dev-4235347"
+        }
+      ],
+      "canonical_name": "JSON"
+    },
+    "Apache Airflow": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "project",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "DEV Community",
+          "source_key": "devcommunity",
+          "title": "Apache Airflow, Explained Like You've Never Seen a Pipeline Before 🔥🚀",
+          "signal_id": "dev-4219266"
+        }
+      ],
+      "canonical_name": "Apache Airflow"
+    },
+    "Google Sheets": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "DEV Community",
+          "source_key": "devcommunity",
+          "title": "Connect Google Sheets to Claude Code in 5 minutes",
+          "signal_id": "dev-4218906"
+        }
+      ],
+      "canonical_name": "Google Sheets"
+    },
+    "Windows": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "DEV Community",
+          "source_key": "devcommunity",
+          "title": "🔒 How I Built ATLOCK v4 — A Deep Technical Breakdown of a Windows Security Suite",
+          "signal_id": "dev-4216112"
+        }
+      ],
+      "canonical_name": "Windows"
+    },
+    "Unlimited-OCR": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "project",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "DEV Community",
+          "source_key": "devcommunity",
+          "title": "Unlimited-OCR: Parsing a 40-Page PDF in One Pass Without Your GPU Melting",
+          "signal_id": "dev-4225529"
+        }
+      ],
+      "canonical_name": "Unlimited-OCR"
+    },
+    "Canvas 2D": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "DEV Community",
+          "source_key": "devcommunity",
+          "title": "How I Built a Full RPG Game in TypeScript — Zero Images, Pure Canvas 2D",
+          "signal_id": "dev-4228138"
+        }
+      ],
+      "canonical_name": "Canvas 2D"
+    },
+    "JuliusBrussee/caveman": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "project",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "GitHub Trending",
+          "source_key": "github",
+          "title": "JuliusBrussee/caveman",
+          "signal_id": "github-1201173969"
+        }
+      ],
+      "canonical_name": "JuliusBrussee/caveman"
+    },
+    "ComposioHQ/awesome-claude-skills": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "project",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "GitHub Trending",
+          "source_key": "github",
+          "title": "ComposioHQ/awesome-claude-skills",
+          "signal_id": "github-1078079172"
+        }
+      ],
+      "canonical_name": "ComposioHQ/awesome-claude-skills"
+    },
+    "Panniantong/Agent-Reach": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "project",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "GitHub Trending",
+          "source_key": "github",
+          "title": "Panniantong/Agent-Reach",
+          "signal_id": "github-1165277268"
+        }
+      ],
+      "canonical_name": "Panniantong/Agent-Reach"
+    },
+    "tw93/Mole": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "project",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "GitHub Trending",
+          "source_key": "github",
+          "title": "tw93/Mole",
+          "signal_id": "github-1062356571"
+        }
+      ],
+      "canonical_name": "tw93/Mole"
+    },
+    "pbakaus/impeccable": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "project",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "GitHub Trending",
+          "source_key": "github",
+          "title": "pbakaus/impeccable",
+          "signal_id": "github-1097346685"
+        }
+      ],
+      "canonical_name": "pbakaus/impeccable"
+    },
+    "microsoft/VibeVoice": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "project",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "GitHub Trending",
+          "source_key": "github",
+          "title": "microsoft/VibeVoice",
+          "signal_id": "github-1044296738"
+        }
+      ],
+      "canonical_name": "microsoft/VibeVoice"
+    },
+    "img2threejs/img2threejs": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "project",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "GitHub Trending",
+          "source_key": "github",
+          "title": "img2threejs/img2threejs",
+          "signal_id": "github-1301140808"
+        }
+      ],
+      "canonical_name": "img2threejs/img2threejs"
+    },
+    "lemonade-sdk/lemonade": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "project",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "GitHub Trending",
+          "source_key": "github",
+          "title": "lemonade-sdk/lemonade",
+          "signal_id": "github-984341155"
+        }
+      ],
+      "canonical_name": "lemonade-sdk/lemonade"
+    },
+    "petergyang/no-ai-slop": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "project",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "GitHub Trending",
+          "source_key": "github",
+          "title": "petergyang/no-ai-slop",
+          "signal_id": "github-1291783779"
+        }
+      ],
+      "canonical_name": "petergyang/no-ai-slop"
+    },
+    "xuchonglang/investing-for-beginners": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "project",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "GitHub Trending",
+          "source_key": "github",
+          "title": "xuchonglang/investing-for-beginners",
+          "signal_id": "github-1287845516"
+        }
+      ],
+      "canonical_name": "xuchonglang/investing-for-beginners"
+    },
+    "mekos2772/ios-location-spoofer": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "project",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "GitHub Trending",
+          "source_key": "github",
+          "title": "mekos2772/ios-location-spoofer",
+          "signal_id": "github-1284981522"
+        }
+      ],
+      "canonical_name": "mekos2772/ios-location-spoofer"
+    },
+    "Shadowrocket": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "GitHub Trending",
+          "source_key": "github",
+          "title": "mekos2772/ios-location-spoofer",
+          "signal_id": "github-1284981522"
+        }
+      ],
+      "canonical_name": "Shadowrocket"
+    },
+    "isjiamu/gzh-design-skill": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "project",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "GitHub Trending",
+          "source_key": "github",
+          "title": "isjiamu/gzh-design-skill",
+          "signal_id": "github-1285705904"
+        }
+      ],
+      "canonical_name": "isjiamu/gzh-design-skill"
+    },
+    "lopopolo/harness-engineering": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "project",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "GitHub Trending",
+          "source_key": "github",
+          "title": "lopopolo/harness-engineering",
+          "signal_id": "github-1305243497"
+        }
+      ],
+      "canonical_name": "lopopolo/harness-engineering"
+    },
+    "Krishnagangwal/CS-Fundamentals": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "project",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "GitHub Trending",
+          "source_key": "github",
+          "title": "Krishnagangwal/CS-Fundamentals",
+          "signal_id": "github-1282768734"
+        }
+      ],
+      "canonical_name": "Krishnagangwal/CS-Fundamentals"
+    },
+    "@cloudflare/workers-auth": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "GitHub Releases",
+          "source_key": "github-releases",
+          "title": "[cloudflare/workers-sdk] @cloudflare/workers-auth@0.5.2",
+          "signal_id": "ghr-1924962"
+        }
+      ],
+      "canonical_name": "@cloudflare/workers-auth"
+    },
+    "@cloudflare/vitest-pool-workers": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "GitHub Releases",
+          "source_key": "github-releases",
+          "title": "[cloudflare/workers-sdk] @cloudflare/vitest-pool-workers@0.18.8",
+          "signal_id": "ghr-1050608"
+        }
+      ],
+      "canonical_name": "@cloudflare/vitest-pool-workers"
+    },
+    "Opus 5": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "model",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "Anthropic’s Opus 5 Signals the Next Phase of Enterprise AI: Better Economics, Not Just Better Models",
+          "signal_id": "gn-8832656"
+        }
+      ],
+      "canonical_name": "Claude Opus 5"
+    },
+    "Midjourney": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "company",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "Midjourney announces surprise purchase of popular horoscope app Co-Star",
+          "signal_id": "gn-6486516"
+        }
+      ],
+      "canonical_name": "Midjourney"
+    },
+    "Co-Star": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "Midjourney announces surprise purchase of popular horoscope app Co-Star",
+          "signal_id": "gn-6486516"
+        }
+      ],
+      "canonical_name": "Co-Star"
+    },
+    "Inkling AI": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "model",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "Mira Murati’s Inkling AI Model Review: Best Open-Source Model in the West",
+          "signal_id": "gn-8866087"
+        }
+      ],
+      "canonical_name": "Inkling AI"
+    },
+    "CARPL.ai": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "company",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "Healthtech startup CARPL.ai raises $10 million from International Finance Corporation",
+          "signal_id": "gn-6424435"
+        }
+      ],
+      "canonical_name": "CARPL.ai"
+    },
+    "International Finance Corporation": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "company",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "Healthtech startup CARPL.ai raises $10 million from International Finance Corporation",
+          "signal_id": "gn-6424435"
+        }
+      ],
+      "canonical_name": "International Finance Corporation"
+    },
+    "Microchip": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "company",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "Microchip acquires Hailo after Israeli AI chip startup's dramatic fall from $1 billion valuation",
+          "signal_id": "gn-7507399"
+        }
+      ],
+      "canonical_name": "Microchip"
+    },
+    "Hailo": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "company",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "Microchip acquires Hailo after Israeli AI chip startup's dramatic fall from $1 billion valuation",
+          "signal_id": "gn-7507399"
+        }
+      ],
+      "canonical_name": "Hailo"
+    },
+    "Notion": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "company",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "Notion acquires ZeroEntropy, the AI search startup co-founded by Moroccan CEO Ghita Houir Alami",
+          "signal_id": "gn-7552623"
+        }
+      ],
+      "canonical_name": "Notion"
+    },
+    "ZeroEntropy": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "company",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "Notion acquires ZeroEntropy, the AI search startup co-founded by Moroccan CEO Ghita Houir Alami",
+          "signal_id": "gn-7552623"
+        }
+      ],
+      "canonical_name": "ZeroEntropy"
+    },
+    "Info-Tech": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "company",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "Enterprises with a formal AI strategy are 3x more likely to report measurable impact, Info-Tech study finds",
+          "signal_id": "gn-5501357"
+        }
+      ],
+      "canonical_name": "Info-Tech"
+    },
+    "GrapheneOS": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "project",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "Hacker News",
+          "source_key": "hn",
+          "title": "GrapheneOS protections against data extraction from locked devices",
+          "signal_id": "hn-49055169"
+        }
+      ],
+      "canonical_name": "GrapheneOS"
+    },
+    "Htmx": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "Hacker News",
+          "source_key": "hn",
+          "title": "Htmx 4.0, the first JavaScript library to release exclusively on the Game Boy",
+          "signal_id": "hn-49057241"
+        }
+      ],
+      "canonical_name": "Htmx"
+    },
+    "Htmx 4.0": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "Hacker News",
+          "source_key": "hn",
+          "title": "Htmx 4.0, the first JavaScript library to release exclusively on the Game Boy",
+          "signal_id": "hn-49057241"
+        }
+      ],
+      "canonical_name": "Htmx 4.0"
+    },
+    "Game Boy": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "Hacker News",
+          "source_key": "hn",
+          "title": "Htmx 4.0, the first JavaScript library to release exclusively on the Game Boy",
+          "signal_id": "hn-49057241"
+        }
+      ],
+      "canonical_name": "Game Boy"
+    },
+    "Brolly": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "Hacker News",
+          "source_key": "hn",
+          "title": "Show HN: Brolly, a plain-text weather forecast site",
+          "signal_id": "hn-49049693"
+        }
+      ],
+      "canonical_name": "Brolly"
+    },
+    "Decker": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "Hacker News",
+          "source_key": "hn",
+          "title": "Decker, a platform that builds on the legacy of Hypercard and classic macOS",
+          "signal_id": "hn-49060856"
+        }
+      ],
+      "canonical_name": "Decker"
+    },
+    "Hypercard": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "Hacker News",
+          "source_key": "hn",
+          "title": "Decker, a platform that builds on the legacy of Hypercard and classic macOS",
+          "signal_id": "hn-49060856"
+        }
+      ],
+      "canonical_name": "Hypercard"
+    },
+    "Go Analysis Framework": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "project",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "Hacker News",
+          "source_key": "hn",
+          "title": "Go Analysis Framework: modular static analysis by go team",
+          "signal_id": "hn-49057398"
+        }
+      ],
+      "canonical_name": "Go Analysis Framework"
+    },
+    "PCB": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "Hacker News",
+          "source_key": "hn",
+          "title": "I learned PCB design, 3D printing and C just to listen to music",
+          "signal_id": "hn-49022355"
+        }
+      ],
+      "canonical_name": "PCB"
+    },
+    "3D Printing": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "Hacker News",
+          "source_key": "hn",
+          "title": "I learned PCB design, 3D printing and C just to listen to music",
+          "signal_id": "hn-49022355"
+        }
+      ],
+      "canonical_name": "3D Printing"
+    },
+    "Reverse Minesweeper": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "Hacker News",
+          "source_key": "hn",
+          "title": "Show HN: Reverse Minesweeper",
+          "signal_id": "hn-49057666"
+        }
+      ],
+      "canonical_name": "Reverse Minesweeper"
+    },
+    "Bribes.fyi": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "Hacker News",
+          "source_key": "hn",
+          "title": "Show HN: Bribes.fyi – Know before you go. New feature added",
+          "signal_id": "hn-49050566"
+        }
+      ],
+      "canonical_name": "Bribes.fyi"
+    },
+    "CheapSecurity": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "Hacker News",
+          "source_key": "hn",
+          "title": "Show HN: CheapSecurity – Lightweight, Self-Hosted CCTV for Linux SBCs",
+          "signal_id": "hn-49059398"
+        }
+      ],
+      "canonical_name": "CheapSecurity"
+    },
+    "CCTV": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "Hacker News",
+          "source_key": "hn",
+          "title": "Show HN: CheapSecurity – Lightweight, Self-Hosted CCTV for Linux SBCs",
+          "signal_id": "hn-49059398"
+        }
+      ],
+      "canonical_name": "CCTV"
+    },
+    "Data-Oriented Design": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "Hacker News",
+          "source_key": "hn",
+          "title": "Introduction to Data-Oriented Design [pdf]",
+          "signal_id": "hn-49060724"
+        }
+      ],
+      "canonical_name": "Data-Oriented Design"
+    },
+    "Writemark": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "Hacker News",
+          "source_key": "hn",
+          "title": "Show HN: Writemark, a dependency free web component for inline Markdown editing",
+          "signal_id": "hn-49051130"
+        }
+      ],
+      "canonical_name": "Writemark"
+    },
+    "Markdown": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "Hacker News",
+          "source_key": "hn",
+          "title": "Show HN: Writemark, a dependency free web component for inline Markdown editing",
+          "signal_id": "hn-49051130"
+        }
+      ],
+      "canonical_name": "Markdown"
+    },
+    "SSD": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "Hacker News",
+          "source_key": "hn",
+          "title": "Ask HN: Is there a website that tracks excessive writes to SSDs in OS/app betas?",
+          "signal_id": "hn-49022990"
+        }
+      ],
+      "canonical_name": "SSD"
+    },
+    "FFmpeg": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "project",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "Hacker News",
+          "source_key": "hn",
+          "title": "Simulate cassette tape audio profiles using FFmpeg",
+          "signal_id": "hn-49061887"
+        }
+      ],
+      "canonical_name": "FFmpeg"
+    },
+    "SpinWin": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "Hacker News",
+          "source_key": "hn",
+          "title": "Show HN: SpinWin – A macOS menu bar app to visually rotate or spin any window",
+          "signal_id": "hn-49049638"
+        }
+      ],
+      "canonical_name": "SpinWin"
+    },
+    "sed": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "Hacker News",
+          "source_key": "hn",
+          "title": "Using sed to make indexes for books (1997)",
+          "signal_id": "hn-49016917"
+        }
+      ],
+      "canonical_name": "sed"
+    },
+    "timm/mobilenetv3_small_100.lamb_in1k": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "project",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "HuggingFace",
+          "source_key": "huggingface",
+          "title": "timm/mobilenetv3_small_100.lamb_in1k",
+          "signal_id": "hf-timm-mobilenetv3_small_100.lamb_in1k"
+        }
+      ],
+      "canonical_name": "timm/mobilenetv3_small_100.lamb_in1k"
+    },
+    "autogluon/chronos-bolt-small": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "project",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "HuggingFace",
+          "source_key": "huggingface",
+          "title": "autogluon/chronos-bolt-small",
+          "signal_id": "hf-autogluon-chronos-bolt-small"
+        }
+      ],
+      "canonical_name": "autogluon/chronos-bolt-small"
+    },
+    "React Fiber": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "掘金",
+          "source_key": "juejin",
+          "title": "面试官问你：“AI 能写 80% 的代码了，公司为什么还需要你？”",
+          "signal_id": "juejin-7655245911811784750"
+        }
+      ],
+      "canonical_name": "React Fiber"
+    },
+    "Blender": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "掘金",
+          "source_key": "juejin",
+          "title": "没写一行代码！我用 ChatGPT 5.6 (Sol) 做了一个智慧充电站 3D 大屏",
+          "signal_id": "juejin-7661160753004904448"
+        }
+      ],
+      "canonical_name": "Blender"
+    },
+    "Opus 4.8": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "model",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "掘金",
+          "source_key": "juejin",
+          "title": "Opus5.0首测，瘫坐沙发！效果，时间，token皆无敌！",
+          "signal_id": "juejin-7665740209466032166"
+        }
+      ],
+      "canonical_name": "Opus 4.8"
+    },
+    "Android": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "Lobsters",
+          "source_key": "lobsters",
+          "title": "Android May Soon Restrict On-Device ADB, Affecting Shizuku, libadb and Developers",
+          "signal_id": "lobsters-t5os1h"
+        }
+      ],
+      "canonical_name": "Android"
+    },
+    "Shizuku": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "project",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "Lobsters",
+          "source_key": "lobsters",
+          "title": "Android May Soon Restrict On-Device ADB, Affecting Shizuku, libadb and Developers",
+          "signal_id": "lobsters-t5os1h"
+        }
+      ],
+      "canonical_name": "Shizuku"
+    },
+    "libadb": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "project",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "Lobsters",
+          "source_key": "lobsters",
+          "title": "Android May Soon Restrict On-Device ADB, Affecting Shizuku, libadb and Developers",
+          "signal_id": "lobsters-t5os1h"
+        }
+      ],
+      "canonical_name": "libadb"
+    },
+    "Verse": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "Lobsters",
+          "source_key": "lobsters",
+          "title": "Verse: A New Scripting Language",
+          "signal_id": "lobsters-usdhrd"
+        }
+      ],
+      "canonical_name": "Verse"
+    },
+    "Himalaya": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "project",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "Lobsters",
+          "source_key": "lobsters",
+          "title": "Himalaya v2.0.0: CLI to manage emails",
+          "signal_id": "lobsters-sd5em2"
+        }
+      ],
+      "canonical_name": "Himalaya"
+    },
+    "CLI": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "Lobsters",
+          "source_key": "lobsters",
+          "title": "Himalaya v2.0.0: CLI to manage emails",
+          "signal_id": "lobsters-sd5em2"
+        }
+      ],
+      "canonical_name": "CLI"
+    },
+    "Forth": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "Lobsters",
+          "source_key": "lobsters",
+          "title": "Teaching Kids Forth",
+          "signal_id": "lobsters-n3dz7x"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "Lobsters",
+          "source_key": "lobsters",
+          "title": "Forth Moving Lisp Moving Forth",
+          "signal_id": "lobsters-exipox"
+        }
+      ],
+      "canonical_name": "Forth"
+    },
+    "jQuery": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "Lobsters",
+          "source_key": "lobsters",
+          "title": "Dmitri Gaskin on jQuery (2008)",
+          "signal_id": "lobsters-67043h"
+        }
+      ],
+      "canonical_name": "jQuery"
+    },
+    "Scanwheel": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "project",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "Lobsters",
+          "source_key": "lobsters",
+          "title": "Scanwheel: a drum style mechanical television you can build yourself",
+          "signal_id": "lobsters-asgpfk"
+        }
+      ],
+      "canonical_name": "Scanwheel"
+    },
+    "SQLite": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "Lobsters",
+          "source_key": "lobsters",
+          "title": "SQLite WAL Mode Can Lock Short-Lived Readers",
+          "signal_id": "lobsters-uusfyj"
+        }
+      ],
+      "canonical_name": "SQLite"
+    },
+    "SQLite WAL": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "Lobsters",
+          "source_key": "lobsters",
+          "title": "SQLite WAL Mode Can Lock Short-Lived Readers",
+          "signal_id": "lobsters-uusfyj"
+        }
+      ],
+      "canonical_name": "SQLite"
+    },
+    "Lisp": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "Lobsters",
+          "source_key": "lobsters",
+          "title": "Forth Moving Lisp Moving Forth",
+          "signal_id": "lobsters-exipox"
+        }
+      ],
+      "canonical_name": "Lisp"
+    },
+    "DEFLATE": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "Lobsters",
+          "source_key": "lobsters",
+          "title": "Fast DEFLATE compression in Lean",
+          "signal_id": "lobsters-1o4ba2"
+        }
+      ],
+      "canonical_name": "DEFLATE"
+    },
+    "Lean": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "Lobsters",
+          "source_key": "lobsters",
+          "title": "Fast DEFLATE compression in Lean",
+          "signal_id": "lobsters-1o4ba2"
+        }
+      ],
+      "canonical_name": "Lean"
+    },
+    "OpenLoco": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "project",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "Lobsters",
+          "source_key": "lobsters",
+          "title": "OpenLoco version 26.07  Release",
+          "signal_id": "lobsters-9fqugm"
+        }
+      ],
+      "canonical_name": "OpenLoco"
+    },
+    "ThinkPad T480": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "Lobsters",
+          "source_key": "lobsters",
+          "title": "Using ThinkPad T480 as a mobile phone",
+          "signal_id": "lobsters-xoxury"
+        }
+      ],
+      "canonical_name": "ThinkPad T480"
+    },
+    "Valkey": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "project",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "Lobsters",
+          "source_key": "lobsters",
+          "title": "The secret life of data in Valkey",
+          "signal_id": "lobsters-2vuexn"
+        }
+      ],
+      "canonical_name": "Valkey"
+    },
+    "next-auth": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "project",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "npm",
+          "source_key": "npm",
+          "title": "next-auth",
+          "signal_id": "npm-next-auth"
+        }
+      ],
+      "canonical_name": "next-auth"
+    },
+    "flowise": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "project",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "npm",
+          "source_key": "npm",
+          "title": "flowise",
+          "signal_id": "npm-flowise"
+        }
+      ],
+      "canonical_name": "flowise"
+    },
+    "ZGI": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "project",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "ZGI 正式上线 Gitee：让 Agent 不只被创建，也能被执行、追踪和管理",
+          "signal_id": "oschina-479885"
+        }
+      ],
+      "canonical_name": "ZGI"
+    },
+    "Gitee": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "company",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "ZGI 正式上线 Gitee：让 Agent 不只被创建，也能被执行、追踪和管理",
+          "signal_id": "oschina-479885"
+        }
+      ],
+      "canonical_name": "Gitee"
+    },
+    "SolonCode": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "别再把 Coding Agent 当智能补全了：SolonCode 想做的是数字员工",
+          "signal_id": "oschina-479611"
+        }
+      ],
+      "canonical_name": "SolonCode"
+    },
+    "tssh": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "project",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "tssh v0.1.26 已经发布，支持 trz/tsz 的 ssh 客户端",
+          "signal_id": "oschina-479481"
+        }
+      ],
+      "canonical_name": "tssh"
+    },
+    "VLOOK": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "project",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "VLOOK 2026.7～主题天花板级大焕新+幻灯片视图～好看好用 Markdown 主题包与排版增强插件",
+          "signal_id": "oschina-479243"
+        }
+      ],
+      "canonical_name": "VLOOK"
+    },
+    "Typora": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "VLOOK 2026.7～主题天花板级大焕新+幻灯片视图～好看好用 Markdown 主题包与排版增强插件",
+          "signal_id": "oschina-479243"
+        }
+      ],
+      "canonical_name": "Typora"
+    },
+    "DWSurvey": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "project",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "调问更新 7.12~7.25丨150+ 优质模板上线！选人更高效，体验再升级",
+          "signal_id": "oschina-479214"
+        }
+      ],
+      "canonical_name": "DWSurvey"
+    },
+    "WePush": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "project",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "WePush v5.0.6 已经发布，消息批量推送工具",
+          "signal_id": "oschina-478906"
+        }
+      ],
+      "canonical_name": "WePush"
+    },
+    "ClickHouse": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "图灵平台：万亿级轨迹数据的秒级检索实战",
+          "signal_id": "oschina-7853377"
+        }
+      ],
+      "canonical_name": "ClickHouse"
+    },
+    "License Manager": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "project",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "✨License Manager 软件授权管理系统 v1.2.1 发布-支持产品试用许可",
+          "signal_id": "oschina-478529"
+        }
+      ],
+      "canonical_name": "License Manager"
+    },
+    "GSharp": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "G#：融合 Go/Kotlin/Swift 理念的 .NET 现代语言",
+          "signal_id": "oschina-478468"
+        }
+      ],
+      "canonical_name": "GSharp"
+    },
+    ".NET": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "G#：融合 Go/Kotlin/Swift 理念的 .NET 现代语言",
+          "signal_id": "oschina-478468"
+        }
+      ],
+      "canonical_name": ".NET"
+    },
+    "Kotlin": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "G#：融合 Go/Kotlin/Swift 理念的 .NET 现代语言",
+          "signal_id": "oschina-478468"
+        }
+      ],
+      "canonical_name": "Kotlin"
+    },
+    "Wow": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "project",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": ":trophy: Wow v8.9.0 发布：荣获 KaiCode’26 优秀奖，可靠性全面进化",
+          "signal_id": "oschina-478452"
+        }
+      ],
+      "canonical_name": "Wow"
+    },
+    "KaiCode’26": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "project",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": ":trophy: Wow v8.9.0 发布：荣获 KaiCode’26 优秀奖，可靠性全面进化",
+          "signal_id": "oschina-478452"
+        }
+      ],
+      "canonical_name": "KaiCode’26"
+    },
+    "Tails": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "project",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "Tails 7.10 发布",
+          "signal_id": "oschina-478431"
+        }
+      ],
+      "canonical_name": "Tails"
+    },
+    "GNOME": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "project",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "Tails 7.10 发布",
+          "signal_id": "oschina-478431"
+        }
+      ],
+      "canonical_name": "GNOME"
+    },
+    "勾股 OA": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "project",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "开源的 OA 办公系统 — 勾股 OA 6.0.1 发布",
+          "signal_id": "oschina-478429"
+        }
+      ],
+      "canonical_name": "勾股 OA"
+    },
+    "Bsin-PaaS": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "🔥Bsin-PaaS 4.0 发布，一站式企业数据价值空间 · 工程底座",
+          "signal_id": "oschina-478358"
+        }
+      ],
+      "canonical_name": "Bsin-PaaS"
+    },
+    "Flux3": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "model",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "德国黑森林实验室发布 Flux3 多模态模型",
+          "signal_id": "oschina-478329"
+        }
+      ],
+      "canonical_name": "Flux3"
+    },
+    "Black Forest Labs": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "company",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "德国黑森林实验室发布 Flux3 多模态模型",
+          "signal_id": "oschina-478329"
+        }
+      ],
+      "canonical_name": "Black Forest Labs"
+    },
+    "Agent Harness": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "Agent 工程思考：从 ReAct 到 Agent Harness",
+          "signal_id": "oschina-8272759"
+        }
+      ],
+      "canonical_name": "Agent Harness"
+    },
+    "Mapbox GL JS": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "Mapbox GL JS 3.27.0 发布，WEB GIS 开发框架",
+          "signal_id": "oschina-478297"
+        }
+      ],
+      "canonical_name": "Mapbox GL JS"
+    },
+    "echoFS": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "echoFS - 一行命令秒变局域网文件中心",
+          "signal_id": "oschina-478289"
+        }
+      ],
+      "canonical_name": "echoFS"
+    },
+    "MAI-Image-2.5-Pro": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "model",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "微软推出两款自研模型：MAI-Image-2.5-Pro 和 MAI-Voice-2-Flash",
+          "signal_id": "oschina-478288"
+        }
+      ],
+      "canonical_name": "MAI-Image-2.5-Pro"
+    },
+    "MAI-Voice-2-Flash": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "model",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "微软推出两款自研模型：MAI-Image-2.5-Pro 和 MAI-Voice-2-Flash",
+          "signal_id": "oschina-478288"
+        }
+      ],
+      "canonical_name": "MAI-Voice-2-Flash"
+    },
+    "Stencil": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "company",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "91% 的 Token 花在读代码上，这套上下文交接术把成本砍掉了四成",
+          "signal_id": "oschina-478278"
+        }
+      ],
+      "canonical_name": "Stencil"
+    },
+    "Logback": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "Logback 1.6.0 发布，Java 日志框架",
+          "signal_id": "oschina-478260"
+        }
+      ],
+      "canonical_name": "Logback"
+    },
+    "Quartz": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "DataX 执行引擎正式加入！qData 开源版 v1.6.0 大幅降低部署与使用门槛",
+          "signal_id": "oschina-477795"
+        }
+      ],
+      "canonical_name": "Quartz"
+    },
+    "HNSW": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "RAG 核心概念与原理：Chunking、Embedding、相似度、HNSW 与多路召回",
+          "signal_id": "oschina-6600239"
+        }
+      ],
+      "canonical_name": "HNSW"
+    },
+    "Chroma": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "PyPI",
+          "source_key": "pypi",
+          "title": "chromadb — Chroma.",
+          "signal_id": "pypi-chromadb"
+        }
+      ],
+      "canonical_name": "Chroma"
+    },
+    "Triton": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "Reddit",
+          "source_key": "reddit",
+          "title": "Introducing Triton: DirectX 11 driver for QEMU",
+          "signal_id": "reddit-t3_1v6ijz9"
+        }
+      ],
+      "canonical_name": "Triton"
+    },
+    "DirectX": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "Reddit",
+          "source_key": "reddit",
+          "title": "Introducing Triton: DirectX 11 driver for QEMU",
+          "signal_id": "reddit-t3_1v6ijz9"
+        }
+      ],
+      "canonical_name": "DirectX"
+    },
+    "QEMU": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "Reddit",
+          "source_key": "reddit",
+          "title": "Introducing Triton: DirectX 11 driver for QEMU",
+          "signal_id": "reddit-t3_1v6ijz9"
+        }
+      ],
+      "canonical_name": "QEMU"
+    },
+    "CodeRabbit": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "Reddit",
+          "source_key": "reddit",
+          "title": "Using the CodeRabbit Preview on a Go codebase",
+          "signal_id": "reddit-t3_1v77rya"
+        }
+      ],
+      "canonical_name": "CodeRabbit"
+    },
+    "PostgreSQL": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "Reddit",
+          "source_key": "reddit",
+          "title": "PostgreSQL Extension Catalog",
+          "signal_id": "reddit-t3_1v5oal0"
+        }
+      ],
+      "canonical_name": "PostgreSQL"
+    },
+    "Carbon": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "Reddit",
+          "source_key": "reddit",
+          "title": "Carbon: graduating from the experiment - Chandler Carruth - NDC Toronto 2026",
+          "signal_id": "reddit-t3_1v5i86w"
+        }
+      ],
+      "canonical_name": "Carbon"
+    },
+    "Swiss Tables": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "Reddit",
+          "source_key": "reddit",
+          "title": "Golang Maps: How Swiss Tables Replaced the Old Bucket Design",
+          "signal_id": "reddit-t3_1v58vch"
+        }
+      ],
+      "canonical_name": "Swiss Tables"
+    },
+    "SWI-Prolog": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "Reddit",
+          "source_key": "reddit",
+          "title": "A Database Engine Written in SWI-Prolog",
+          "signal_id": "reddit-t3_1v505dc"
+        }
+      ],
+      "canonical_name": "SWI-Prolog"
+    },
+    "DoorDash": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "company",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "Reddit",
+          "source_key": "reddit",
+          "title": "Transparent high-performance proxy cache for DoorDash services",
+          "signal_id": "reddit-t3_1v53o6s"
+        }
+      ],
+      "canonical_name": "DoorDash"
+    },
+    "JavaScript": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "Reddit",
+          "source_key": "reddit",
+          "title": "Mohabi: Disaggregating and Sandboxing the Firefox JavaScript Engine",
+          "signal_id": "reddit-t3_1v55d8t"
+        }
+      ],
+      "canonical_name": "JavaScript"
+    },
+    "Amazon S3": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "Reddit",
+          "source_key": "reddit",
+          "title": "How Canva uses S3 for logged-in session management",
+          "signal_id": "reddit-t3_1v44xfb"
+        }
+      ],
+      "canonical_name": "Amazon S3"
+    },
+    "MediaWiki": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "Reddit",
+          "source_key": "reddit",
+          "title": "Writing a Wikipedia MediaWiki Parser In Plain C",
+          "signal_id": "reddit-t3_1v5e2fz"
+        }
+      ],
+      "canonical_name": "MediaWiki"
+    },
+    "YOLO26n": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "model",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "Reddit",
+          "source_key": "reddit",
+          "title": "I implemented the YOLO26n model inference from scratch using ARM64 Assembly Language (No framework) [P]",
+          "signal_id": "reddit-t3_1v6w394"
+        }
+      ],
+      "canonical_name": "YOLO26n"
+    },
+    "ARM64": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "Reddit",
+          "source_key": "reddit",
+          "title": "I implemented the YOLO26n model inference from scratch using ARM64 Assembly Language (No framework) [P]",
+          "signal_id": "reddit-t3_1v6w394"
+        }
+      ],
+      "canonical_name": "ARM64"
+    },
+    "AAAI": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "company",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "Reddit",
+          "source_key": "reddit",
+          "title": "Missed AAAI reciprocal reviewer nomination deadline — risk of desk rejection? [D]",
+          "signal_id": "reddit-t3_1v7hgrh"
+        }
+      ],
+      "canonical_name": "AAAI"
+    },
+    "Trae": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "SegmentFault",
+          "source_key": "segmentfault",
+          "title": "为什么我的网页在浏览器中打开会直接下载而不是显示？如何解决？",
+          "signal_id": "sf-1010000048073928"
+        }
+      ],
+      "canonical_name": "Trae IDE"
+    },
+    "WeChat Mini Program": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "SegmentFault",
+          "source_key": "segmentfault",
+          "title": "微信小程序上传图片时返回 413，Nginx 和 Spring Boot 应该如何配置？",
+          "signal_id": "sf-1010000048058934"
+        },
+        {
+          "date": "2026-07-27",
+          "source": "SegmentFault",
+          "source_key": "segmentfault",
+          "title": "微信小程序拍摄视频时长2分钟之后结束拍摄无响应？",
+          "signal_id": "sf-1010000048054447"
+        }
+      ],
+      "canonical_name": "WeChat Mini Program"
+    },
+    "Tencent": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "company",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "SegmentFault",
+          "source_key": "segmentfault",
+          "title": "WAIC2026上腾讯Cube-Sandbox对本地AI开发有何影响?",
+          "signal_id": "sf-1010000048054552"
+        }
+      ],
+      "canonical_name": "Tencent"
+    },
+    "Proxmox": {
+      "first_seen": "2026-07-27",
+      "last_seen": "2026-07-27",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-07-27",
+          "source": "HN Show HN",
+          "source_key": "showhn",
+          "title": "Proxmox -> Share your host's Bluetooth with a VM over the network",
+          "signal_id": "showhn-49050824"
+        }
+      ],
+      "canonical_name": "Proxmox"
     }
   },
   "_normalized": true
