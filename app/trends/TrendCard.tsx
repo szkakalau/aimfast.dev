@@ -70,9 +70,9 @@ export default function TrendCard({ term, isTracked, onTrack, atLimit, locale = 
           <Calendar size={12} />
           {term.first_seen}
         </span>
-        <span className="trend-card-meta-item">
+        <span className="trend-card-meta-item" title={isZh ? `${term.source_count} 个来源` : `${term.source_count} channels`}>
           <Activity size={12} />
-          {term.source_count} {isZh ? '个来源' : 'channels'}
+          {term.source_count}
         </span>
         <span className="trend-card-meta-item">
           <BarChart3 size={12} />

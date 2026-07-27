@@ -191,7 +191,7 @@ export default function HomePage() {
         <section className="trends-hero">
           <h1>Signal Over Hype. Every Morning.</h1>
           <p className="trends-hero-desc">
-            AI scans 30+ channels, cross-validates every term,
+            AI scans 30+ platforms, cross-validates every term,
             and ranks by builder relevance — so you see what&apos;s worth acting on,
             not what&apos;s just loud. Free. No signup.
           </p>
@@ -230,7 +230,7 @@ export default function HomePage() {
             <span className="live-stat-sep" aria-hidden="true">·</span>
             <span className="live-stat">
               <Globe size={16} aria-hidden="true" />
-              <span className="live-stat-value">30</span>+ channels
+              <span className="live-stat-value">30</span>+ platforms
             </span>
             <span className="live-stat-sep" aria-hidden="true">·</span>
             <span className="live-stat">
