@@ -90,13 +90,15 @@ export default function TrendCard({ term, isTracked, onTrack, atLimit, locale = 
                 ? (isZh ? `追踪数量已达上限 (50)。请取消关注一些项目后添加 ${displayName}。` : `Tracking limit reached (50 items). Untrack some items to add ${term.canonical}.`)
                 : isTracked ? (isZh ? `取消追踪 ${displayName}` : `Untrack ${term.canonical}`) : (isZh ? `追踪 ${displayName}` : `Track ${term.canonical}`)
             }
-            title={atLimit && !isTracked ? (isZh ? '追踪数量已达上限 (50)' : 'Tracking limit reached (50 items)') : undefined}
+            title={
+              atLimit && !isTracked
+                ? (isZh ? '追踪数量已达上限 (50)' : 'Tracking limit reached (50 items)')
+                : isTracked
+                  ? (isZh ? `取消追踪 ${displayName}` : `Untrack ${term.canonical}`)
+                  : (isZh ? `追踪 ${displayName}` : `Track ${term.canonical}`)
+            }
           >
-            {isTracked ? (
-              <><Check size={14} /> {isZh ? '已追踪' : 'Following'}</>
-            ) : (
-              <><Plus size={14} /> {isZh ? '追踪' : 'Follow'}</>
-            )}
+            {isTracked ? <Check size={14} /> : <Plus size={14} />}
           </button>
         )}
       </div>
