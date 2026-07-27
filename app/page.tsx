@@ -92,13 +92,13 @@ export default function HomePage() {
         '@type': 'HowTo',
         name: 'How Trends Are Scored & Discovered',
         description:
-          'Every trend is automatically scored and staged by our pipeline across 30+ sources.',
+          'Every trend is automatically scored and staged by our pipeline across 30+ platforms.',
         step: [
           {
             '@type': 'HowToStep',
             position: 1,
-            name: 'Cross-source validation',
-            text: 'A term must appear in 2 or more independent sources — not a single isolated post.',
+            name: 'Cross-platform validation',
+            text: 'A term must appear in 2 or more independent platforms — not a single isolated post.',
           },
           {
             '@type': 'HowToStep',
@@ -134,7 +134,7 @@ export default function HomePage() {
             name: 'How are trends discovered?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: `Our AI scans 30+ sources daily — HN, Reddit, GitHub, DEV Community, Lobsters, V2EX, X/Twitter, Product Hunt, HuggingFace, Arxiv, npm, PyPI, Stack Overflow, YouTube, and more — cross-referencing emerging terms and scoring them by signal strength, source diversity, and community engagement.`,
+              text: `Our AI scans 30+ platforms daily — HN, Reddit, GitHub, DEV Community, Lobsters, V2EX, X/Twitter, Product Hunt, HuggingFace, Arxiv, npm, PyPI, Stack Overflow, YouTube, and more — cross-referencing emerging terms and scoring them by signal strength, channel diversity, and community engagement.`,
             },
           },
           {
@@ -156,6 +156,24 @@ export default function HomePage() {
         ],
       },
 
+      {
+        '@type': 'Person',
+        name: 'Kakalau',
+        url: 'https://github.com/szkakalau',
+        sameAs: [
+          'https://github.com/szkakalau',
+          'https://twitter.com/aimfastdev',
+        ],
+        jobTitle: 'Founder & Builder',
+        worksFor: {
+          '@type': 'Organization',
+          name: 'AimFast.Dev',
+          url: 'https://www.aimfast.dev/',
+        },
+        description:
+          'Independent builder behind AimFast.Dev — automated trend discovery and market intelligence for indie builders.',
+      },
+
       // Organization + WebSite declared in root layout head — not duplicated here
     ],
   };
@@ -173,7 +191,7 @@ export default function HomePage() {
         <section className="trends-hero">
           <h1>Signal Over Hype. Every Morning.</h1>
           <p className="trends-hero-desc">
-            AI scans 30+ sources, cross-validates every term,
+            AI scans 30+ channels, cross-validates every term,
             and ranks by builder relevance — so you see what&apos;s worth acting on,
             not what&apos;s just loud. Free. No signup.
           </p>
@@ -212,7 +230,7 @@ export default function HomePage() {
             <span className="live-stat-sep" aria-hidden="true">·</span>
             <span className="live-stat">
               <Globe size={16} aria-hidden="true" />
-              <span className="live-stat-value">30</span>+ sources
+              <span className="live-stat-value">30</span>+ channels
             </span>
             <span className="live-stat-sep" aria-hidden="true">·</span>
             <span className="live-stat">
@@ -257,8 +275,8 @@ export default function HomePage() {
               </p>
               <div className="score-formula">
                 Score = weighted composite of four dimensions:<br />
-                &nbsp;&nbsp;• Source diversity (highest weight)<br />
-                &nbsp;&nbsp;• Signal strength across independent sources<br />
+                &nbsp;&nbsp;• Channel diversity (highest weight)<br />
+                &nbsp;&nbsp;• Signal strength across independent platforms<br />
                 &nbsp;&nbsp;• Community engagement velocity<br />
                 &nbsp;&nbsp;• Cross-platform propagation
               </div>
@@ -295,11 +313,11 @@ export default function HomePage() {
             <div className="engine-card">
               <h3><Search size={20} /> How Terms Are Discovered</h3>
               <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', marginBottom: 'var(--space-2)' }}>
-                Every night, our LLM pipeline scans signals from 30+ sources and extracts emerging terms using 5 rules:
+                Every night, our LLM pipeline scans signals from 30+ channels and extracts emerging terms using 5 rules:
               </p>
               <ul>
                 <li>
-                  <strong>Cross-source validation</strong> — a term must appear in ≥2 independent sources, not a single isolated post.
+                  <strong>Cross-platform validation</strong> — a term must appear in ≥2 independent platforms, not a single isolated post.
                 </li>
                 <li>
                   <strong>Representative filtering</strong> — new products are only kept if they represent a broader emerging pattern, not one-off launches.
@@ -315,7 +333,15 @@ export default function HomePage() {
                 </li>
               </ul>
               <p style={{ fontSize: '0.78rem', color: 'var(--color-text-muted)', marginTop: 'var(--space-2)' }}>
-                Sources: HN, Reddit, GitHub, Product Hunt, X, DEV Community, V2EX, Lobsters, and more.
+                Platforms tracked:{' '}
+                <a href="https://news.ycombinator.com" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline' }}>HN</a>,{' '}
+                <a href="https://reddit.com" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline' }}>Reddit</a>,{' '}
+                <a href="https://github.com/trending" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline' }}>GitHub</a>,{' '}
+                <a href="https://www.producthunt.com" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline' }}>Product Hunt</a>,{' '}
+                <a href="https://x.com" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline' }}>X</a>,{' '}
+                <a href="https://dev.to" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline' }}>DEV Community</a>,{' '}
+                <a href="https://www.v2ex.com" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline' }}>V2EX</a>,{' '}
+                <a href="https://lobste.rs" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline' }}>Lobsters</a>, and more.
               </p>
             </div>
           </div>
@@ -336,7 +362,7 @@ export default function HomePage() {
               <Search size={32} className="engine-icon" />
               <h3>Discovery Engine</h3>
               <p>
-                AI scans 30+ sources — HN, Reddit, GitHub, Product Hunt, X, DEV,
+                AI scans 30+ channels — HN, Reddit, GitHub, Product Hunt, X, DEV,
                 V2EX, and more — for emerging pain points, rising trends, and
                 market gaps.
               </p>
@@ -379,7 +405,7 @@ export default function HomePage() {
         <section className="trends-cta">
           <h2>Want the full picture?</h2>
           <p>
-            Every morning, our Discovery Engine scans 30+ sources and
+            Every morning, our Discovery Engine scans 30+ channels and
             distills signals like these into one actionable decision — with
             pricing, validation, and market context.
           </p>

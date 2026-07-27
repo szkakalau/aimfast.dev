@@ -79,7 +79,7 @@ const jsonLd = {
       logo: 'https://www.aimfast.dev/og-home.png',
       image: 'https://www.aimfast.dev/og-home.png',
       description:
-        'Daily market intelligence for indie builders. AI scans 30+ sources to deliver one validated product opportunity every morning — what to build, who will pay, and how much to charge.',
+        'Daily market intelligence for indie builders. AI scans 30+ channels to deliver one validated product opportunity every morning — what to build, who will pay, and how much to charge.',
       foundingDate: '2026-01-01',
       sameAs: [
         'https://github.com/szkakalau/aimfast.dev',
@@ -97,7 +97,15 @@ const jsonLd = {
       name: 'AimFast.Dev',
       url: 'https://www.aimfast.dev/',
       description:
-        'Daily market intelligence for indie builders. Product opportunities, trend analysis from 30+ global sources.',
+        'Daily market intelligence for indie builders. Product opportunities, trend analysis from 30+ global channels.',
+      potentialAction: {
+        '@type': 'SearchAction',
+        target: {
+          '@type': 'EntryPoint',
+          urlTemplate: 'https://www.aimfast.dev/search/?q={search_term_string}',
+        },
+        'query-input': 'required name=search_term_string',
+      },
     },
   ],
 };
