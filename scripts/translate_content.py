@@ -4,6 +4,7 @@ Translates daily report and article to English via DeepSeek.
 Output: report-en.md, article-en.md in the same daily dir.
 """
 import sys
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
@@ -146,15 +147,25 @@ def run(date_str: str | None = None) -> dict:
     results = {}
     success_count = 0
 
-    for src_name, dst_name in targets:
-        content_type = src_name
-        src_path = date_dir / src_name
-        dst_path = date_dir / dst_name
+    # Parallel translation: report.md + article.md are independent
+    with ThreadPoolExecutor(max_workers=2) as executor:
+        futures = {}
+        for src_name, dst_name in targets:
+            src_path = date_dir / src_name
+            dst_path = date_dir / dst_name
+            future = executor.submit(translate_file, src_path, dst_path, src_name)
+            futures[future] = src_name
 
-        ok = translate_file(src_path, dst_path, content_type)
-        results[src_name] = "ok" if ok else "skipped"
-        if ok:
-            success_count += 1
+        for future in as_completed(futures):
+            src_name = futures[future]
+            try:
+                ok = future.result()
+            except Exception as e:
+                print(f"  [{src_name}] Translation failed with exception: {e}")
+                ok = False
+            results[src_name] = "ok" if ok else "skipped"
+            if ok:
+                success_count += 1
 
     print(f"\n[Translate] Done: {success_count}/{len(targets)} files translated")
 

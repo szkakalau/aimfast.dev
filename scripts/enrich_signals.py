@@ -8,6 +8,7 @@ import re
 import subprocess
 import sys
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
@@ -430,11 +431,12 @@ def run(date_str: str | None = None):
 
 def _enrich_signals(selected: list[dict], output_dir: Path, date_str: str,
                     engine_path: Path, python_path: str, ec: dict) -> list[dict]:
-    """对一批信号运行引擎，返回 item 列表。"""
-    items = []
-    for i, sig in enumerate(selected):
+    """对一批信号并行运行引擎，返回 item 列表（保持原顺序）。"""
+    items: list[dict | None] = [None] * len(selected)
+
+    def _enrich_one(idx: int, sig: dict) -> tuple[int, dict]:
         topic = extract_topic(sig)
-        print(f"[enrich] [{i+1}/{len(selected)}] researching: {topic}")
+        print(f"[enrich] [{idx+1}/{len(selected)}] researching: {topic}")
 
         result = run_engine(
             topic=topic,
@@ -460,12 +462,40 @@ def _enrich_signals(selected: list[dict], output_dir: Path, date_str: str,
             "summary_brief": result["summary_brief"],
             "raw_file": str(raw_file.relative_to(ROOT)) if raw_file else "",
         }
-        items.append(item)
 
         if not result["success"]:
             print(f"[enrich]   engine failed: {result['stderr'][:200]}")
 
-    return items
+        return idx, item
+
+    with ThreadPoolExecutor(max_workers=len(selected)) as executor:
+        futures = {
+            executor.submit(_enrich_one, i, sig): i
+            for i, sig in enumerate(selected)
+        }
+        for future in as_completed(futures):
+            try:
+                idx, item = future.result()
+                items[idx] = item
+            except Exception as e:
+                idx = futures[future]
+                sig = selected[idx]
+                print(f"[enrich] [{idx+1}/{len(selected)}] FAILED: {extract_topic(sig)} — {e}")
+                items[idx] = {
+                    "signal_id": sig.get("id", ""),
+                    "signal_title": sig.get("title", ""),
+                    "topic": extract_topic(sig),
+                    "score": sig.get("score", 0),
+                    "engine_success": False,
+                    "engine_elapsed_s": 0,
+                    "sources_found": {},
+                    "total_items": 0,
+                    "top_voices": [],
+                    "summary_brief": "",
+                    "raw_file": "",
+                }
+
+    return [it for it in items if it is not None]
 
 
 # ── 周度深度回溯 ───────────────────────────────────────

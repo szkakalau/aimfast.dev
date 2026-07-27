@@ -533,7 +533,7 @@ def _should_skip_regeneration(term: dict, zh_path: Path) -> bool:
 
 def generate_all_reports(terms: list[dict], full_threshold: float, brief_threshold: float,
                          dry_run: bool = False) -> tuple[int, int, int]:
-    """Parallel report generation using ThreadPoolExecutor (max 4 workers).
+    """Parallel report generation using ThreadPoolExecutor (max 6 workers).
 
     Returns (reports_generated, briefs_generated, upgraded).
 
@@ -584,7 +584,7 @@ def generate_all_reports(terms: list[dict], full_threshold: float, brief_thresho
 
     # Count skipped (already have reports)
     skipped = len(terms) - len(tasks) - skipped_p4
-    print(f"[trends] Generating {len(tasks)} new reports in parallel (max 4 workers), {skipped} skipped")
+    print(f"[trends] Generating {len(tasks)} new reports in parallel (max 6 workers), {skipped} skipped")
 
     if dry_run:
         reports, briefs = 0, 0
@@ -597,7 +597,7 @@ def generate_all_reports(terms: list[dict], full_threshold: float, brief_thresho
     completed = 0
     today_str = datetime.now(TZ_SHANGHAI).strftime("%Y-%m-%d")
 
-    with ThreadPoolExecutor(max_workers=4) as executor:
+    with ThreadPoolExecutor(max_workers=6) as executor:
         futures = {}
         for report_type, term in tasks:
             if report_type == "full":
@@ -1101,7 +1101,7 @@ def main():
     #   25%–80%     → SEO brief (LLM, 3 sections, unique content)
     #   Bottom 20%  → no HTML page (JSON tracking only)
     #   score < 10  → absolute minimum quality gate (noise rejection)
-    # Uses ThreadPoolExecutor (max_workers=4) for concurrent LLM calls.
+    # Uses ThreadPoolExecutor (max_workers=6) for concurrent LLM calls.
     reports_generated, briefs_generated, upgraded = generate_all_reports(
         updated_terms, full_threshold, brief_threshold, dry_run=args.dry_run
     )
