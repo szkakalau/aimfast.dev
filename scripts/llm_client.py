@@ -1,11 +1,12 @@
 """
 共享 LLM 客户端
 支持 DeepSeek API（OpenAI 兼容格式）和本地 fallback。
-v2.3: 添加月度 token 预算追踪，接近预算时自动降级为模板 fallback。
+v2.4: 添加 threading.Lock 保护 token 计数，支持并发调用。
 """
 import json
 import os
 import time
+import threading
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
@@ -20,6 +21,9 @@ DEEPSEEK_CHAT = f"{DEEPSEEK_BASE}/v1/chat/completions"
 
 TZ_SHANGHAI = timezone(timedelta(hours=8))
 TOKEN_USAGE_PATH = ROOT / "tracking" / "token_usage.json"
+
+# Thread-safe token counting lock
+_token_lock = threading.Lock()
 
 # 从环境变量获取配置
 def _get_api_key() -> str:
@@ -68,28 +72,30 @@ def _write_token_usage(data: dict):
 
 
 def _check_and_record_tokens(tokens_used: int, is_retry: bool = False):
-    """记录 token 消耗。如果超过月度预算的 90%，打印警告；超过 100%，设置预算超限标志。"""
+    """记录 token 消耗。如果超过月度预算的 90%，打印警告；超过 100%，设置预算超限标志。
+    线程安全：使用 _token_lock 保护文件读写。"""
     if tokens_used <= 0:
         return
 
-    usage = _read_token_usage()
-    # 重试不计入（避免重复计数同一请求）
-    if not is_retry:
-        usage["total_tokens"] += tokens_used
-        usage["calls"] += 1
+    with _token_lock:
+        usage = _read_token_usage()
+        # 重试不计入（避免重复计数同一请求）
+        if not is_retry:
+            usage["total_tokens"] += tokens_used
+            usage["calls"] += 1
 
-    budget = _get_monthly_budget()
-    ratio = usage["total_tokens"] / budget
+        budget = _get_monthly_budget()
+        ratio = usage["total_tokens"] / budget
 
-    if ratio >= 1.0 and not usage.get("budget_exceeded"):
-        usage["budget_exceeded"] = True
-        print(f"[LLM] ⚠️ 月度 token 预算已用尽！（{usage['total_tokens']:,}/{budget:,} = {ratio:.0%})")
-        print(f"[LLM] 后续调用将使用模板 fallback 直到下个月")
-    elif ratio >= 0.9 and not usage.get("budget_warned"):
-        usage["budget_warned"] = True
-        print(f"[LLM] ⚠️ 月度 token 预算已用 {ratio:.0%}（{usage['total_tokens']:,}/{budget:,}）")
+        if ratio >= 1.0 and not usage.get("budget_exceeded"):
+            usage["budget_exceeded"] = True
+            print(f"[LLM] ⚠️ 月度 token 预算已用尽！（{usage['total_tokens']:,}/{budget:,} = {ratio:.0%})")
+            print(f"[LLM] 后续调用将使用模板 fallback 直到下个月")
+        elif ratio >= 0.9 and not usage.get("budget_warned"):
+            usage["budget_warned"] = True
+            print(f"[LLM] ⚠️ 月度 token 预算已用 {ratio:.0%}（{usage['total_tokens']:,}/{budget:,}）")
 
-    _write_token_usage(usage)
+        _write_token_usage(usage)
 
 
 def _is_budget_exceeded() -> bool:

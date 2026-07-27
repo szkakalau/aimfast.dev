@@ -16,6 +16,7 @@ import json
 import sys
 import os
 import argparse
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
@@ -491,6 +492,85 @@ def _is_brief(filepath: Path) -> bool:
     return "status: tracking" in head or "追踪阶段" in head
 
 
+def generate_all_reports(terms: list[dict], full_threshold: float, brief_threshold: float,
+                         dry_run: bool = False) -> tuple[int, int, int]:
+    """Parallel report generation using ThreadPoolExecutor (max 4 workers).
+    Returns (reports_generated, briefs_generated, upgraded)."""
+    tasks: list[tuple[str, dict]] = []
+    upgraded = 0
+
+    for term in terms:
+        score = term.get("score", 0)
+        slug = term["id"].replace("trend-", "")
+        zh_path = CONTENT_DIR / f"{slug}.md"
+        en_path = CONTENT_DIR / f"{slug}-en.md"
+
+        if score < 10:
+            continue
+
+        if score >= full_threshold:
+            zh_is_brief = _is_brief(zh_path)
+            en_is_brief = _is_brief(en_path)
+            need_gen = not zh_path.exists() or zh_is_brief or not en_path.exists() or en_is_brief
+            if need_gen:
+                if zh_is_brief:
+                    zh_path.unlink()
+                if en_is_brief:
+                    en_path.unlink()
+                if zh_is_brief or en_is_brief:
+                    upgraded += 1
+                    print(f"[trends] ↑ Upgrading brief → full report: {term['canonical']} (score={score})")
+                tasks.append(("full", term))
+        elif score >= brief_threshold:
+            if not zh_path.exists():
+                tasks.append(("brief", term))
+
+    if not tasks:
+        return 0, 0, upgraded
+
+    # Count skipped (already have reports)
+    skipped = len(terms) - len(tasks)
+    print(f"[trends] Generating {len(tasks)} new reports in parallel (max 4 workers), {skipped} skipped")
+
+    if dry_run:
+        reports, briefs = 0, 0
+        for report_type, term in tasks:
+            print(f"  [trends] DRY RUN: would generate {report_type} for {term['canonical']}")
+        return reports, briefs, upgraded
+
+    reports_generated = 0
+    briefs_generated = 0
+    completed = 0
+    today_str = datetime.now(TZ_SHANGHAI).strftime("%Y-%m-%d")
+
+    with ThreadPoolExecutor(max_workers=4) as executor:
+        futures = {}
+        for report_type, term in tasks:
+            if report_type == "full":
+                future = executor.submit(generate_research_report, term)
+            else:
+                future = executor.submit(generate_seo_brief, term)
+            futures[future] = (report_type, term)
+
+        for future in as_completed(futures):
+            report_type, term = futures[future]
+            completed += 1
+            try:
+                written = future.result()
+                if written > 0:
+                    term["last_report_date"] = today_str
+                if report_type == "full":
+                    reports_generated += written
+                else:
+                    briefs_generated += written
+            except Exception as e:
+                print(f"  [trends] Failed {report_type} report for {term.get('canonical', '?')}: {e}")
+            if completed % 5 == 0 or completed == len(tasks):
+                print(f"  [trends] Report progress: {completed}/{len(tasks)}")
+
+    return reports_generated, briefs_generated, upgraded
+
+
 def generate_research_report(term: dict) -> int:
     """Generate research reports for a term via LLM — BOTH Chinese and English.
     Returns count of new files written (0-2)."""
@@ -943,54 +1023,15 @@ def main():
     full_threshold, brief_threshold = compute_percentile_thresholds(updated_terms)
     print(f"[trends] Percentile thresholds: full report ≥{full_threshold:.0f}, SEO brief ≥{brief_threshold:.0f}")
 
-    # ── Three-tier report generation ──
+    # ── Three-tier report generation (parallel) ──
     #   Top 25%     → full research report (LLM, 8 sections)
     #   25%–80%     → SEO brief (LLM, 3 sections, unique content)
     #   Bottom 20%  → no HTML page (JSON tracking only)
     #   score < 10  → absolute minimum quality gate (noise rejection)
-    reports_generated = 0
-    briefs_generated = 0
-    upgraded = 0
-
-    for term in updated_terms:
-        score = term.get("score", 0)
-        slug = term["id"].replace("trend-", "")
-        zh_path = CONTENT_DIR / f"{slug}.md"
-        en_path = CONTENT_DIR / f"{slug}-en.md"
-
-        # Absolute minimum quality gate — filter out pure noise
-        if score < 10:
-            continue
-
-        if score >= full_threshold:
-            zh_is_brief = _is_brief(zh_path)
-            en_is_brief = _is_brief(en_path)
-
-            need_gen = not zh_path.exists() or zh_is_brief or not en_path.exists() or en_is_brief
-            if need_gen:
-                # Remove brief files so generate_research_report writes full versions
-                if zh_is_brief:
-                    zh_path.unlink()
-                if en_is_brief:
-                    en_path.unlink()
-                if zh_is_brief or en_is_brief:
-                    upgraded += 1
-                    print(f"[trends] ↑ Upgrading brief → full report: {term['canonical']} (score={score})")
-                else:
-                    missing = []
-                    if not zh_path.exists():
-                        missing.append("ZH")
-                    if not en_path.exists():
-                        missing.append("EN")
-                    print(f"[trends] Generating research report for {term['canonical']} (score={score}, missing: {', '.join(missing)})...")
-                if not args.dry_run:
-                    reports_generated += generate_research_report(term)
-        elif score >= brief_threshold:
-            if not zh_path.exists():
-                print(f"[trends] Generating SEO brief for {term['canonical']} (score={score})...")
-                if not args.dry_run:
-                    briefs_generated += generate_seo_brief(term)
-        # else: bottom 20% — score too low, no page generated
+    # Uses ThreadPoolExecutor (max_workers=4) for concurrent LLM calls.
+    reports_generated, briefs_generated, upgraded = generate_all_reports(
+        updated_terms, full_threshold, brief_threshold, dry_run=args.dry_run
+    )
 
     parts = [
         f"{reports_generated} report files",

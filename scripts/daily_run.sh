@@ -53,6 +53,30 @@ log() {
     echo "$line" >> "$LOG_FILE"
 }
 
+# ── Step Timing ──────────────────────────────────────
+STEP_START=0
+step_start() { STEP_START=$(date +%s); }
+step_end() {
+    local name="$1"
+    local elapsed=$(($(date +%s) - STEP_START))
+    local line="[TIMING] $name: ${elapsed}s"
+    echo "$line"
+    echo "$line" >> "$LOG_FILE"
+    # 超过 5 分钟的步骤标记为 WARN
+    if [ $elapsed -gt 300 ]; then
+        local warn="[TIMING] ⚠️ $name took ${elapsed}s (>5min)"
+        echo "$warn" >&2
+        echo "$warn" >> "$LOG_FILE"
+    fi
+}
+
+# ── Failure Tracking ─────────────────────────────────
+FAILED_STEPS=""
+track_failure() {
+    local step_name="$1"
+    FAILED_STEPS="$FAILED_STEPS$step_name, "
+}
+
 log "=== AimFast.Dev Daily Pipeline Start ==="
 log "Date: $DATE"
 log "Project: $PROJECT_ROOT"
@@ -71,6 +95,7 @@ fi
 
 log ""
 log "--- Step 1: Signal Collection ---"
+step_start
 
 COLLECTORS=(
     "Hacker News:collect_hackernews"
@@ -111,36 +136,89 @@ COLLECTORS=(
 # C-end collectors are non-blocking — they may fail due to rate limits or missing auth
 C_END_COLLECTORS=("Reddit Consumer" "豆瓣" "小红书" "X/Twitter" "Product Changelogs" "Google News" "GitHub Releases" "npm" "PyPI" "Stack Overflow" "YouTube" "Job Trends" "Substack" "掘金" "SegmentFault" "Semantic Scholar" "OSChina" "Show HN")
 
+# Parallel execution with concurrency cap
+MAX_PARALLEL=6
+running=0
+collector_total=${#COLLECTORS[@]}
+collector_done=0
+
 for entry in "${COLLECTORS[@]}"; do
     name="${entry%%:*}"
     script="${entry##*:}"
-    if $PYTHON -m "scripts.$script" 2>&1; then
-        log "  [$name] OK"
-    else
-        # C-end collectors: warn instead of error
-        if [[ " ${C_END_COLLECTORS[*]} " =~ " ${name} " ]]; then
-            log "  [$name] WARN (non-blocking C-end collector, exit=$?)"
-        else
-            log "  [$name] ERROR (exit=$?)"
+
+    # Wait until a slot opens up
+    while [ $running -ge $MAX_PARALLEL ]; do
+        if wait -n 2>/dev/null; then
+            :  # child exited successfully
         fi
+        running=$((running - 1))
+        collector_done=$((collector_done + 1))
+    done
+
+    (
+        if $PYTHON -m "scripts.$script" 2>&1; then
+            echo "OK"
+        else
+            rc=$?
+            if [[ " ${C_END_COLLECTORS[*]} " =~ " ${name} " ]]; then
+                echo "WARN:$rc"
+            else
+                echo "ERROR:$rc"
+            fi
+        fi
+    ) > "$DAILY_DIR/.collector_${name//\//_}.log" 2>&1 &
+    running=$((running + 1))
+done
+
+# Wait for remaining background jobs
+while [ $running -gt 0 ]; do
+    if wait -n 2>/dev/null; then
+        :  # child exited successfully
+    fi
+    running=$((running - 1))
+    collector_done=$((collector_done + 1))
+done
+
+# Read back collector results and log them
+for entry in "${COLLECTORS[@]}"; do
+    name="${entry%%:*}"
+    log_file="$DAILY_DIR/.collector_${name//\//_}.log"
+    if [ -f "$log_file" ]; then
+        result=$(tail -1 "$log_file" 2>/dev/null || echo "UNKNOWN")
+        case "$result" in
+            OK) log "  [$name] OK" ;;
+            WARN:*) log "  [$name] WARN (non-blocking C-end collector, exit=${result#WARN:})" ;;
+            ERROR:*) log "  [$name] ERROR (exit=${result#ERROR:})" ;;
+            *) log "  [$name] UNKNOWN (check $log_file)" ;;
+        esac
+        rm -f "$log_file"
+    else
+        log "  [$name] NO_LOG (collector may have crashed)"
     fi
 done
+
+step_end "Step1: Collectors (${#COLLECTORS[@]} sources)"
 
 # ═══ Step 1.5: Term Extraction (NLP Entity Extraction + Cross-Source Term DB) ═══
 
 log ""
 log "--- Step 1.5: Term Extraction (LLM NER + Cross-Source DB) ---"
+step_start
 
 if $PYTHON -m scripts.extract_terms 2>&1; then
     log "  [TermExtract] OK"
 else
     log "  [TermExtract] WARN (non-fatal — term index not updated)"
+    track_failure "TermExtract"
 fi
 
-# ═══ Step 1.6: Term Normalization (Entity Dedup + Canonical Mapping) ═══
+step_end "Step1.5: TermExtract"
+
+# ═══ Step 1.6-1.8: Term Normalization + Classification + Scoring (local) ═══
 
 log ""
-log "--- Step 1.6: Term Normalization (Canonical Mapping) ---"
+log "--- Step 1.6-1.8: Term Normalization + Classification + Scoring ---"
+step_start
 
 if $PYTHON -m scripts.normalize_terms 2>&1; then
     log "  [Norm] OK"
@@ -148,21 +226,11 @@ else
     log "  [Norm] WARN (non-fatal — normalization skipped)"
 fi
 
-# ═══ Step 1.7: Term Lifecycle Classification (Age → Stage Mapping) ═══
-
-log ""
-log "--- Step 1.7: Term Lifecycle (Age → Nascent/Emergent/Validating/Rising) ---"
-
 if $PYTHON -m scripts.classify_terms 2>&1; then
     log "  [Stages] OK"
 else
     log "  [Stages] WARN (non-fatal)"
 fi
-
-# ═══ Step 1.8: Term Scoring (Multi-Factor Score → Visibility Ranking) ═══
-
-log ""
-log "--- Step 1.8: Term Scoring (source_count + growth + authority + mentions + freshness) ---"
 
 if $PYTHON -m scripts.score_terms 2>&1; then
     log "  [Scores] OK"
@@ -170,10 +238,12 @@ else
     log "  [Scores] WARN (non-fatal)"
 fi
 
-# ═══ Step 1.9: Term Research Reports (AI-Generated Deep Dive for High-Score Terms) ═══
+step_end "Step1.6-1.8: Norm+Classify+Score"
+
+# ═══ Step 1.9: Term Research Reports (DEPRECATED — kept for backward compat) ═══
 
 log ""
-log "--- Step 1.9: Term Research Reports (12-section opportunity analysis) ---"
+log "--- Step 1.9: Term Research Reports (DEPRECATED, fast no-op) ---"
 
 if $PYTHON -m scripts.generate_term_research 2>&1; then
     log "  [Research] OK"
@@ -185,23 +255,31 @@ fi
 
 log ""
 log "--- Step 2: Signal Processing ---"
+step_start
 
 if $PYTHON -m scripts.process_signals 2>&1; then
     log "  [Process] OK"
 else
     log "  [Process] FAIL"
+    track_failure "ProcessSignals"
 fi
+
+step_end "Step2: ProcessSignals"
 
 # ─── Step 2.5: Enrich Top Signals with /last30days ───
 
 log ""
 log "--- Step 2.5: Community Enrichment (/last30days) ---"
+step_start
 
 if $PYTHON -m scripts.enrich_signals 2>&1; then
     log "  [Enrich] OK"
 else
     log "  [Enrich] WARN (non-fatal)"
+    track_failure "Enrich"
 fi
+
+step_end "Step2.5: Enrich"
 
 # ─── Step 2.6: Cross-Source Term Validation ───
 
@@ -218,23 +296,31 @@ fi
 
 log ""
 log "--- Step 3: Daily Report ---"
+step_start
 
 if $PYTHON -m scripts.generate_report 2>&1; then
     log "  [Report] OK"
 else
     log "  [Report] FAIL"
+    track_failure "DailyReport"
 fi
+
+step_end "Step3: DailyReport"
 
 # ─── Step 3.5: Trend Discovery ───
 
 log ""
 log "--- Step 3.5: Trend Discovery ---"
+step_start
 
 if $PYTHON -m scripts.generate_trends 2>&1; then
     log "  [Trends] OK"
 else
     log "  [Trends] FAIL (non-fatal)"
+    track_failure "Trends"
 fi
+
+step_end "Step3.5: Trends"
 
 # ─── Step 3.5b: Save trend terms snapshot for Dashboard history ───
 log ""
@@ -272,15 +358,18 @@ fi
 
 log ""
 log "--- Step 3.6: Opportunity Analysis ---"
+step_start
 
 if $PYTHON -m scripts.generate_opportunity 2>&1; then
     log "  [Opportunity] OK"
 else
     log "  [Opportunity] FAIL (non-fatal)"
+    track_failure "Opportunity"
 fi
 
+step_end "Step3.6: Opportunity"
+
 # --- Step 4: Planet Article (DISABLED) ---
-# 星球文章生成已禁用 — config.json distribution.planet_article.enabled = false
 
 log ""
 log "--- Step 4: Planet Article (DISABLED) ---"
@@ -290,6 +379,7 @@ log "  [Article] DISABLED — planet_article generation turned off in config.jso
 
 log ""
 log "--- Step 5: Action Plan ---"
+step_start
 
 PIPE_FILE="$DAILY_DIR/pipeline.json"
 if $PYTHON -m scripts.generate_action 2>&1; then
@@ -306,7 +396,10 @@ if $PYTHON -m scripts.generate_action 2>&1; then
     fi
 else
     log "  [Action] FAIL"
+    track_failure "Action"
 fi
+
+step_end "Step5: Action"
 
 # ─── Step 6: Tracking Update ───
 
@@ -317,6 +410,7 @@ if $PYTHON -m scripts.update_tracking 2>&1; then
     log "  [Tracking] OK"
 else
     log "  [Tracking] FAIL"
+    track_failure "Tracking"
 fi
 
 # ─── Step 6b: Recurring Signal Tracking ───
@@ -328,6 +422,7 @@ if $PYTHON -m scripts.track_recurring 2>&1; then
     log "  [Recurring] OK"
 else
     log "  [Recurring] FAIL"
+    track_failure "Recurring"
 fi
 
 # ─── Step 6c: Demand Radar ───
@@ -339,6 +434,7 @@ if $PYTHON -m scripts.track_demands 2>&1; then
     log "  [DemandRadar] OK"
 else
     log "  [DemandRadar] FAIL"
+    track_failure "DemandRadar"
 fi
 
 # ─── Step 6d: Workbench Report ───
@@ -350,12 +446,14 @@ if $PYTHON -m scripts.update_workbench 2>&1; then
     log "  [Workbench] OK"
 else
     log "  [Workbench] FAIL"
+    track_failure "Workbench"
 fi
 
 # ─── Step 7: Landing Page ───
 
 log ""
 log "--- Step 7: Landing Page ---"
+step_start
 
 if $PYTHON -m scripts.generate_landing_page 2>&1; then
     if [ -f "$PIPE_FILE" ]; then
@@ -371,50 +469,67 @@ if $PYTHON -m scripts.generate_landing_page 2>&1; then
     fi
 else
     log "  [LP] FAIL"
+    track_failure "LandingPage"
 fi
+
+step_end "Step7: LandingPage"
 
 # ─── Step 8: Translate Content (zh → en) ───
 
 log ""
 log "--- Step 9: Translate Content (zh → en) ---"
+step_start
 
 if $PYTHON -m scripts.translate_content 2>&1; then
     log "  [Translate] OK"
 else
     log "  [Translate] FAIL (non-fatal)"
+    track_failure "Translate"
 fi
+
+step_end "Step8: Translate"
 
 # ─── Step 10: SEO Content Files ───
 
 log ""
 log "--- Step 10: SEO Content Files ---"
+step_start
 
 if $PYTHON -m scripts.generate_seo_files 2>&1; then
     log "  [SEO] OK"
 else
     log "  [SEO] FAIL (non-fatal)"
+    track_failure "SEO"
 fi
+
+step_end "Step10: SEO"
 
 # ─── Step 11: Dashboard ───
 
 log ""
 log "--- Step 11: Dashboard ---"
+step_start
 
 if $PYTHON -m scripts.generate_dashboard 2>&1; then
     log "  [Dashboard] OK"
 else
     log "  [Dashboard] FAIL"
+    track_failure "Dashboard"
 fi
+
+step_end "Step11: Dashboard"
 
 # ─── Step 12: Weekly Report (Sunday only) ───
 
 if [ "$(date +%u)" -eq 7 ]; then
     log ""
     log "--- Step 12: Weekly Report (Sunday trigger) ---"
+    step_start
     if $PYTHON -m scripts.generate_weekly 2>&1; then
         log "  [Weekly] OK"
     else
         log "  [Weekly] FAIL"
+        track_failure "Weekly"
     fi
 
     # Weekly community deep-dive (30-day lookback on the week's hottest topic)
@@ -423,6 +538,7 @@ if [ "$(date +%u)" -eq 7 ]; then
     else
         log "  [WeeklyEnrich] WARN (non-fatal)"
     fi
+    step_end "Step12: Weekly"
 fi
 
 # ─── Step 12b: BuilderPulse 对比 ───
@@ -456,12 +572,26 @@ if git diff --cached --name-only | grep -q .; then
     fi
 else
     log "  [Git] No changes to deploy"
+    log ""
+    log "--- Pipeline Diagnostics ---"
+    log "Failed steps: ${FAILED_STEPS:-none}"
+    for f in tracking/trend_terms.json tracking/term_index.json tracking/token_usage.json content/trends/ public/dashboard/data/dashboard.json; do
+        if [ -f "$f" ]; then
+            log "[DIAG] $f: $(wc -c < "$f") bytes"
+        else
+            log "[DIAG] $f: MISSING"
+        fi
+    done
+    # Count generated content files
+    TREND_COUNT=$(find content/trends/ -name "*.md" -newer "$DAILY_DIR" 2>/dev/null | wc -l)
+    log "[DIAG] Recently modified trend files: $TREND_COUNT"
 fi
 
 # ─── Summary ───
 
 log ""
 log "=== Pipeline Complete ==="
+log "Failed steps: ${FAILED_STEPS:-none}"
 
 # Write lock file
 echo "done" > "$LOCK_FILE"

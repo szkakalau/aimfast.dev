@@ -52,6 +52,7 @@ jobs:
           echo "DATE_OVERRIDE=${{ github.event.inputs.date_override }}" >> $GITHUB_ENV
 
       - name: Run daily pipeline
+        id: pipeline
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           BUTTONDOWN_API_KEY: ${{ secrets.BUTTONDOWN_API_KEY }}
@@ -61,6 +62,7 @@ jobs:
         run: |
           chmod +x scripts/daily_run.sh
           bash scripts/daily_run.sh
+        continue-on-error: true
 
       - name: Commit and push pipeline output
         if: always()
@@ -75,7 +77,20 @@ jobs:
 
           if git diff --staged --quiet; then
             echo "No changes to commit."
+            echo "--- Diagnostic: key output state ---"
+            for f in tracking/trend_terms.json tracking/term_index.json; do
+              if [ -f "$f" ]; then
+                SIZE=$(wc -c < "$f")
+                echo "  $f: ${SIZE} bytes"
+              else
+                echo "  $f: MISSING"
+              fi
+            done
+            TREND_COUNT=$(find content/trends/ -name "*.md" -newer daily/ 2>/dev/null | wc -l)
+            echo "  Recently modified trend files: $TREND_COUNT"
           else
+            echo "Changes detected, committing..."
+            git diff --staged --stat
             git commit -m "Pipeline data update: $DATE"
             git push origin HEAD:master
           fi
