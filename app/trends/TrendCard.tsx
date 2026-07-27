@@ -93,9 +93,9 @@ export default function TrendCard({ term, isTracked, onTrack, atLimit, locale = 
             title={atLimit && !isTracked ? (isZh ? '追踪数量已达上限 (50)' : 'Tracking limit reached (50 items)') : undefined}
           >
             {isTracked ? (
-              <><Check size={14} /> {isZh ? '已追踪' : 'Tracked'}</>
+              <><Check size={14} /> {isZh ? '已追踪' : 'Following'}</>
             ) : (
-              <><Plus size={14} /> {isZh ? '追踪' : 'Track'}</>
+              <><Plus size={14} /> {isZh ? '追踪' : 'Follow'}</>
             )}
           </button>
         )}

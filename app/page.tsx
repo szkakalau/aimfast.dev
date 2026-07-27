@@ -197,7 +197,7 @@ export default function HomePage() {
           </p>
           <div className="trends-hero-stats">
             <TrendingUp size={14} aria-hidden="true" />
-            Tracking <strong>{terms.length} terms</strong>
+            Monitoring <strong>{terms.length} terms</strong>
             {' · '}Updated daily 08:30 CST
           </div>
         </section>
@@ -220,7 +220,7 @@ export default function HomePage() {
           <div className="live-stats" aria-label="Trend tracking statistics" data-source="AimFast.Dev proprietary">
             <span className="live-stat">
               <TrendingUp size={16} aria-hidden="true" />
-              <span className="live-stat-value">{stats.total}</span> terms tracked
+              <span className="live-stat-value">{stats.total}</span> terms monitored
             </span>
             <span className="live-stat-sep" aria-hidden="true">·</span>
             <span className="live-stat">
