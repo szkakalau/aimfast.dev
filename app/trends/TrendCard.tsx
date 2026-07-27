@@ -74,9 +74,9 @@ export default function TrendCard({ term, isTracked, onTrack, atLimit, locale = 
           <Activity size={12} />
           {term.source_count}
         </span>
-        <span className="trend-card-meta-item">
+        <span className="trend-card-meta-item" title={isZh ? `${term.total_mentions} 次提及` : `${term.total_mentions} mentions`}>
           <BarChart3 size={12} />
-          {term.total_mentions} {isZh ? '次提及' : 'mentions'}
+          {term.total_mentions}
         </span>
 
         {onTrack && (
