@@ -313,7 +313,7 @@ export default function HomePage() {
             <div className="engine-card">
               <h3><Search size={20} /> How Terms Are Discovered</h3>
               <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', marginBottom: 'var(--space-2)' }}>
-                Every night, our LLM pipeline scans signals from 30+ channels and extracts emerging terms using 5 rules:
+                Every night, our LLM pipeline scans signals from 30+ platforms and extracts emerging terms using 5 rules:
               </p>
               <ul>
                 <li>
@@ -362,7 +362,7 @@ export default function HomePage() {
               <Search size={32} className="engine-icon" />
               <h3>Discovery Engine</h3>
               <p>
-                AI scans 30+ channels — HN, Reddit, GitHub, Product Hunt, X, DEV,
+                AI scans 30+ platforms — HN, Reddit, GitHub, Product Hunt, X, DEV,
                 V2EX, and more — for emerging pain points, rising trends, and
                 market gaps.
               </p>
@@ -405,7 +405,7 @@ export default function HomePage() {
         <section className="trends-cta">
           <h2>Want the full picture?</h2>
           <p>
-            Every morning, our Discovery Engine scans 30+ channels and
+            Every morning, our Discovery Engine scans 30+ platforms and
             distills signals like these into one actionable decision — with
             pricing, validation, and market context.
           </p>
