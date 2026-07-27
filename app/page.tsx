@@ -8,7 +8,7 @@ import TrendFilter from './trends/TrendFilter';
 export const metadata: Metadata = {
   title: 'Signal Over Hype — AI-Curated Tech Trends & Market Signals | AimFast.Dev',
   description:
-    'AI scans 30+ sources daily, cross-validates every term, and ranks by builder relevance — so you see what\'s worth acting on, not what\'s just loud. Free. No signup.',
+    'AI scans 30+ channels daily, cross-validates every term, and ranks by builder relevance — so you see what\'s worth acting on, not what\'s just loud. Free. No signup.',
   robots: { index: true, follow: true },
   alternates: {
     canonical: 'https://www.aimfast.dev/',
@@ -74,7 +74,7 @@ export default function HomePage() {
         '@type': 'CollectionPage',
         name: 'Trend Discovery — AimFast.Dev',
         description:
-          'AI scans 30+ sources daily, cross-validates every term, and ranks by builder relevance — signal over hype.',
+          'AI scans 30+ channels daily, cross-validates every term, and ranks by builder relevance — signal over hype.',
         url: 'https://www.aimfast.dev/',
         inLanguage: 'en',
         dateModified: updated_at || new Date().toISOString().slice(0, 10),

@@ -34,7 +34,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   title: 'AimFast.Dev — Signal Over Hype: AI-Curated Tech Trends',
   description:
-    'AI scans 30+ sources daily, cross-validates every term, and ranks by builder relevance — signal over hype. Dashboard membership unlocks daily product opportunities — what to build, who will pay, and how much to charge.',
+    'AI scans 30+ channels daily, cross-validates every term, and ranks by builder relevance — signal over hype. Dashboard membership unlocks daily product opportunities — what to build, who will pay, and how much to charge.',
   robots: { index: true, follow: true },
   metadataBase: new URL('https://www.aimfast.dev'),
   alternates: {
