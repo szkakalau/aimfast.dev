@@ -199,10 +199,26 @@ done
 
 step_end "Step1: Collectors (${#COLLECTORS[@]} sources)"
 
-# ═══ Step 1.5: Term Extraction (NLP Entity Extraction + Cross-Source Term DB) ═══
+# ─── Step 2: Signal Processing ───
 
 log ""
-log "--- Step 1.5: Term Extraction (LLM NER + Cross-Source DB) ---"
+log "--- Step 2: Signal Processing ---"
+step_start
+
+if $PYTHON -m scripts.process_signals 2>&1; then
+    log "  [Process] OK"
+else
+    log "  [Process] FAIL"
+    track_failure "ProcessSignals"
+fi
+
+step_end "Step2: ProcessSignals"
+
+# ═══ Step 2.1: Term Extraction (NLP Entity Extraction + Cross-Source Term DB) ═══
+# Moved AFTER process_signals so fallback to daily/{date}/signals.json works (bottleneck #5 fix)
+
+log ""
+log "--- Step 2.1: Term Extraction (LLM NER + Cross-Source DB) ---"
 step_start
 
 if $PYTHON -m scripts.extract_terms 2>&1; then
@@ -212,12 +228,12 @@ else
     track_failure "TermExtract"
 fi
 
-step_end "Step1.5: TermExtract"
+step_end "Step2.1: TermExtract"
 
-# ═══ Step 1.6-1.8: Term Normalization + Classification + Scoring (local) ═══
+# ═══ Step 2.2-2.4: Term Normalization + Classification + Scoring (local) ═══
 
 log ""
-log "--- Step 1.6-1.8: Term Normalization + Classification + Scoring ---"
+log "--- Step 2.2-2.4: Term Normalization + Classification + Scoring ---"
 step_start
 
 if $PYTHON -m scripts.normalize_terms 2>&1; then
@@ -238,12 +254,12 @@ else
     log "  [Scores] WARN (non-fatal)"
 fi
 
-step_end "Step1.6-1.8: Norm+Classify+Score"
+step_end "Step2.2-2.4: Norm+Classify+Score"
 
-# ═══ Step 1.9: Term Research Reports (DEPRECATED — kept for backward compat) ═══
+# ═══ Step 2.5: Term Research Reports (DEPRECATED — kept for backward compat) ═══
 
 log ""
-log "--- Step 1.9: Term Research Reports (DEPRECATED, fast no-op) ---"
+log "--- Step 2.5: Term Research Reports (DEPRECATED, fast no-op) ---"
 
 if $PYTHON -m scripts.generate_term_research 2>&1; then
     log "  [Research] OK"
@@ -251,22 +267,7 @@ else
     log "  [Research] WARN (non-fatal)"
 fi
 
-# ─── Step 2: Signal Processing ───
-
-log ""
-log "--- Step 2: Signal Processing ---"
-step_start
-
-if $PYTHON -m scripts.process_signals 2>&1; then
-    log "  [Process] OK"
-else
-    log "  [Process] FAIL"
-    track_failure "ProcessSignals"
-fi
-
-step_end "Step2: ProcessSignals"
-
-# ─── Step 2.5: Enrich Top Signals with /last30days ───
+# ─── Step 2.6: Enrich Top Signals with /last30days ───
 
 log ""
 log "--- Step 2.5: Community Enrichment (/last30days) ---"
@@ -313,7 +314,7 @@ log ""
 log "--- Step 3.5: Trend Discovery ---"
 step_start
 
-if $PYTHON -m scripts.generate_trends 2>&1; then
+if $PYTHON -m scripts.generate_trends --rescore 2>&1; then
     log "  [Trends] OK"
 else
     log "  [Trends] FAIL (non-fatal)"

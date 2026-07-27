@@ -112,14 +112,17 @@ def compute_percentile_thresholds(terms: list[dict]) -> tuple[float, float]:
     return float(scores[full_idx]), float(scores[brief_idx])
 
 
-def extract_terms_from_signals(signals: list[dict]) -> list[dict]:
+def extract_terms_from_signals(signals: list[dict], entity_terms: list[dict] | None = None) -> list[dict]:
     """
     Extract emerging tech terms from today's signals using LLM.
     Falls back to keyword-based extraction if LLM is unavailable.
+
+    entity_terms: high-frequency terms from the entity extraction pipeline (term_index.json).
+                  Used to bridge the gap between entity extraction and trend discovery.
     """
     # Build a compact signal summary for the LLM prompt
     signal_summaries = []
-    for s in signals[:100]:  # Top 100 by score
+    for s in signals[:300]:  # Top 300 by score (was 100 — bottleneck #1 fix)
         signal_summaries.append({
             "id": s.get("id", ""),
             "title": s.get("title", ""),
@@ -129,16 +132,29 @@ def extract_terms_from_signals(signals: list[dict]) -> list[dict]:
             "score": s.get("score", 0),
         })
 
-    user_prompt = f"""从以下今日采集的技术社区 signals 中，提取值得追踪的新兴主题。
+    # Build entity term context (bottleneck #3: bridge entity extraction → trend discovery)
+    entity_context = ""
+    if entity_terms:
+        entity_lines = []
+        for et in entity_terms[:50]:  # Top 50 entity terms by cross-source count
+            entity_lines.append(f"- {et['term']} (type={et.get('term_type', '?')}, sources={et.get('cross_source_count', 0)}, mentions={et.get('total_mentions', 0)})")
+        if entity_lines:
+            entity_context = f"""
+已知实体词库（来自实体提取管线，这些是已经在信号中高频出现的命名实体。可以参考它们来发现趋势，但不要机械照搬——只提取其中确实代表新兴趋势的）：
+{chr(10).join(entity_lines)}
+"""
 
-范围：新概念、新技术、新产品、热门讨论 — 都可以。
+    user_prompt = f"""从以下今日采集的技术社区 signals 中，提取值得追踪的新兴主题。
+{entity_context}
+
+范围：新概念、新技术、新产品、热门讨论 — 都可以。目标 15-30 个候选词。
 
 提取原则（重要）：
-1. 优先提取在多个信号中反复出现的主题（≥2 个独立信源讨论同一概念/产品）
-2. 对于新产品/项目：仅当它是某新兴方向的代表时才提取（如多个信号在讨论同一个新范式），而非孤立的"我做了个 App"帖
-3. 对于热门讨论：判断讨论量是否值得追踪，单个低分帖子不算
-4. 忽略已知通用技术词汇（如 "AI", "React", "Python", "API", "OpenAI", "LLM", "GPT" 等）
-5. 按重要性和讨论度排序。如果没有足够质量的候选，宁可返回少一些。不设数量上限，质量是唯一门槛
+1. 优先提取在多个信号中反复出现的主题。单个信号也可以提取——只要内容独特、有追踪价值（新发布的产品、新提出的概念、值得关注的趋势讨论）
+2. 对于新产品/项目：即使是独立开发者发布的单个产品，只要它代表了一个有趣的方向或解决了一个真实问题，就应该提取
+3. 对于热门讨论：判断讨论是否有深度，是否反映了开发者社区的关注点变化
+4. 忽略已知通用技术词汇（如 "AI", "React", "Python", "API", "OpenAI", "LLM", "GPT" 等）——但如果是这些领域的新具体项目/产品/变体，仍然提取
+5. 按重要性和讨论度排序。尽量提取 15-30 个候选词。宁多勿少——后续评分会过滤低质量候选
 
 分类体系（category 字段）：
 - AIModel: AI & LLM model releases（模型发布、benchmark、权重/API 新模型）
@@ -1002,9 +1018,28 @@ def main():
     existing_terms = trend_data.get("terms", [])
     print(f"[trends] Loaded {len(existing_terms)} existing trend terms")
 
+    # Load entity terms from extraction pipeline (bottleneck #3: bridge pipelines)
+    entity_terms = []
+    term_index_path = ROOT / "tracking" / "term_index.json"
+    if term_index_path.exists():
+        try:
+            term_index_data = load_json(term_index_path)
+            if isinstance(term_index_data, dict):
+                raw_entity_terms = term_index_data.get("terms", [])
+                # Filter to high-signal entity terms: cross_source_count >= 2 AND total_mentions >= 2
+                entity_terms = sorted(
+                    [et for et in raw_entity_terms
+                     if et.get("cross_source_count", 0) >= 2 and et.get("total_mentions", 0) >= 2],
+                    key=lambda t: (t.get("cross_source_count", 0), t.get("total_mentions", 0)),
+                    reverse=True
+                )
+                print(f"[trends] Loaded {len(entity_terms)} high-signal entity terms from term_index (pipeline bridge)")
+        except Exception as e:
+            print(f"[trends] WARN: Failed to load entity terms: {e}")
+
     # Extract new terms
     print("[trends] Extracting new terms from signals...")
-    extracted = extract_terms_from_signals(signals)
+    extracted = extract_terms_from_signals(signals, entity_terms)
     print(f"[trends] Extracted {len(extracted)} candidate terms")
 
     # Merge
