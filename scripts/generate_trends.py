@@ -429,6 +429,10 @@ def merge_terms(existing: list[dict], extracted: list[dict], signals: list[dict]
             t["last_seen"] = today_str
             t["total_mentions"] += 1
 
+            # Save previous score for P4 delta tracking (skip unchanged reports)
+            if t.get("score", 0) > 0:
+                t["prev_score"] = t["score"]
+
             # Re-score using LLM-provided signal_ids if available
             matching = _get_matching_signals(signals_by_id, extracted_term, signals, canonical)
             if matching:
@@ -508,12 +512,38 @@ def _is_brief(filepath: Path) -> bool:
     return "status: tracking" in head or "追踪阶段" in head
 
 
+def _should_skip_regeneration(term: dict, zh_path: Path) -> bool:
+    """P4: Skip report regeneration if score delta <20% and report file exists (not a brief).
+
+    A brief should never be skipped — it must be upgraded if score crossed the threshold.
+    """
+    if not zh_path.exists():
+        return False
+    if _is_brief(zh_path):
+        return False  # Must upgrade, never skip a brief
+
+    prev_score = term.get("prev_score", 0)
+    curr_score = term.get("score", 0)
+    if prev_score <= 0:
+        return False
+
+    delta = abs(curr_score - prev_score) / prev_score
+    return delta < 0.2
+
+
 def generate_all_reports(terms: list[dict], full_threshold: float, brief_threshold: float,
                          dry_run: bool = False) -> tuple[int, int, int]:
     """Parallel report generation using ThreadPoolExecutor (max 4 workers).
-    Returns (reports_generated, briefs_generated, upgraded)."""
+
+    Returns (reports_generated, briefs_generated, upgraded).
+
+    P4: Skips report regeneration for terms whose score changed <20% since
+    the previous day — the existing report file is reused (last_report_date refreshed).
+    """
     tasks: list[tuple[str, dict]] = []
     upgraded = 0
+    skipped_p4 = 0
+    today_str = datetime.now(TZ_SHANGHAI).strftime("%Y-%m-%d")
 
     for term in terms:
         score = term.get("score", 0)
@@ -536,16 +566,24 @@ def generate_all_reports(terms: list[dict], full_threshold: float, brief_thresho
                 if zh_is_brief or en_is_brief:
                     upgraded += 1
                     print(f"[trends] ↑ Upgrading brief → full report: {term['canonical']} (score={score})")
+                # P4: skip if score barely changed and reports exist (but not briefs — briefs were handled above)
+                elif _should_skip_regeneration(term, zh_path):
+                    term["last_report_date"] = today_str
+                    skipped_p4 += 1
+                    continue
                 tasks.append(("full", term))
         elif score >= brief_threshold:
             if not zh_path.exists():
                 tasks.append(("brief", term))
 
+    if skipped_p4:
+        print(f"[trends] P4: Skipped {skipped_p4} reports (score delta <20%)")
+
     if not tasks:
         return 0, 0, upgraded
 
     # Count skipped (already have reports)
-    skipped = len(terms) - len(tasks)
+    skipped = len(terms) - len(tasks) - skipped_p4
     print(f"[trends] Generating {len(tasks)} new reports in parallel (max 4 workers), {skipped} skipped")
 
     if dry_run:

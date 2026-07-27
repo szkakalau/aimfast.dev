@@ -35,7 +35,7 @@ def get_enrichment_config() -> dict:
         "python_path": ec.get("python_path", "auto"),
         "max_signals": ec.get("max_signals", 2),
         "min_score": ec.get("min_score", 20),
-        "timeout_per_signal_s": ec.get("timeout_per_signal_s", 180),
+        "timeout_per_signal_s": ec.get("timeout_per_signal_s", 120),
         "max_items": ec.get("max_items", 15),
         "memory_dir": ec.get("memory_dir", str(Path.home() / "Documents" / "Last30Days")),
     }

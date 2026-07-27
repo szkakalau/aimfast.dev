@@ -73,6 +73,14 @@ jobs:
           git config user.email "bot@aimfast.dev"
 
           DATE=$(date +%Y-%m-%d)
+
+          # Read pipeline exit code if available
+          EXIT_CODE_FILE="logs/.exit_code"
+          if [ -f "$EXIT_CODE_FILE" ]; then
+            echo "--- Pipeline Exit Code ---"
+            cat "$EXIT_CODE_FILE"
+          fi
+
           git add -A
 
           if git diff --staged --quiet; then

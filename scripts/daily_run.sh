@@ -5,6 +5,11 @@
 
 set -euo pipefail
 
+# ── Pipeline Exit Code Tracking ─────────────────────────
+PIPELINE_EXIT_CODE=1  # default to failure, set to 0 on success
+EXIT_CODE_FILE=""
+trap '_exit_code=$?; [ -n "$EXIT_CODE_FILE" ] && echo "PIPELINE_EXIT_CODE=$_exit_code" >> "$EXIT_CODE_FILE"; exit $_exit_code' EXIT
+
 export TZ=Asia/Shanghai
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -12,10 +17,12 @@ PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
 DATE=$(date +%Y-%m-%d)
 LOG_DIR="$PROJECT_ROOT/logs"
 LOG_FILE="$LOG_DIR/$DATE.log"
+EXIT_CODE_FILE="$LOG_DIR/.exit_code"
 
 cd "$PROJECT_ROOT"
 
 mkdir -p "$LOG_DIR"
+echo "" > "$EXIT_CODE_FILE"
 
 # Resolve Python — prefer python3, then python
 # Must verify with --version (Windows App alias passes `command -v` but fails)
@@ -286,12 +293,16 @@ step_end "Step2.5: Enrich"
 
 log ""
 log "--- Step 2.6: Cross-Source Term Validation ---"
+step_start
 
 if $PYTHON -m scripts.cross_validate_terms 2>&1; then
     log "  [CrossVal] OK"
 else
     log "  [CrossVal] WARN (non-fatal)"
+    track_failure "CrossVal"
 fi
+
+step_end "Step2.6: CrossVal"
 
 # ─── Step 3: Daily Report ───
 
@@ -326,6 +337,7 @@ step_end "Step3.5: Trends"
 # ─── Step 3.5b: Save trend terms snapshot for Dashboard history ───
 log ""
 log "--- Step 3.5b: Trend History Snapshot ---"
+step_start
 HISTORY_DIR="public/dashboard/data/history"
 mkdir -p "$HISTORY_DIR"
 if [ -f tracking/trend_terms.json ]; then
@@ -353,7 +365,10 @@ print(f'  [History] Saved {len(snapshot)} terms to trends_${DATE}.json')
     log "  [History] OK"
 else
     log "  [History] SKIP (tracking/trend_terms.json not found)"
+    track_failure "HistorySnapshot"
 fi
+
+step_end "Step3.5b: HistorySnapshot"
 
 # ─── Step 3.6: Opportunity Analysis ───
 
@@ -406,6 +421,7 @@ step_end "Step5: Action"
 
 log ""
 log "--- Step 6: Tracking Update ---"
+step_start
 
 if $PYTHON -m scripts.update_tracking 2>&1; then
     log "  [Tracking] OK"
@@ -414,10 +430,13 @@ else
     track_failure "Tracking"
 fi
 
+step_end "Step6: Tracking"
+
 # ─── Step 6b: Recurring Signal Tracking ───
 
 log ""
 log "--- Step 6b: Recurring Signal Tracking ---"
+step_start
 
 if $PYTHON -m scripts.track_recurring 2>&1; then
     log "  [Recurring] OK"
@@ -426,10 +445,13 @@ else
     track_failure "Recurring"
 fi
 
+step_end "Step6b: Recurring"
+
 # ─── Step 6c: Demand Radar ───
 
 log ""
 log "--- Step 6c: Demand Radar ---"
+step_start
 
 if $PYTHON -m scripts.track_demands 2>&1; then
     log "  [DemandRadar] OK"
@@ -438,10 +460,13 @@ else
     track_failure "DemandRadar"
 fi
 
+step_end "Step6c: DemandRadar"
+
 # ─── Step 6d: Workbench Report ───
 
 log ""
 log "--- Step 6d: Workbench Report ---"
+step_start
 
 if $PYTHON -m scripts.update_workbench 2>&1; then
     log "  [Workbench] OK"
@@ -449,6 +474,8 @@ else
     log "  [Workbench] FAIL"
     track_failure "Workbench"
 fi
+
+step_end "Step6d: Workbench"
 
 # ─── Step 7: Landing Page ───
 
@@ -546,12 +573,16 @@ fi
 
 log ""
 log "--- Step 12b: BuilderPulse Comparison ---"
+step_start
 
 if $PYTHON -m scripts.compare_with_builderpulse --date "$DATE" 2>&1; then
     log "  [Compare] OK"
 else
     log "  [Compare] FAIL (non-blocking)"
+    track_failure "BuilderPulse"
 fi
+
+step_end "Step12b: BuilderPulse"
 
 # ─── Step 13: Git commit & push ───
 
@@ -591,6 +622,7 @@ fi
 # ─── Summary ───
 
 log ""
+PIPELINE_EXIT_CODE=0
 log "=== Pipeline Complete ==="
 log "Failed steps: ${FAILED_STEPS:-none}"
 
