@@ -72,7 +72,7 @@ export default function TrendCard({ term, isTracked, onTrack, atLimit, locale = 
         </span>
         <span className="trend-card-meta-item">
           <Activity size={12} />
-          {term.source_count} {isZh ? '个来源' : 'sources'}
+          {term.source_count} {isZh ? '个来源' : 'channels'}
         </span>
         <span className="trend-card-meta-item">
           <BarChart3 size={12} />

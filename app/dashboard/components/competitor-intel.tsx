@@ -248,11 +248,13 @@ function AddTargetForm({ onAdded, currentCount, lang }: AddTargetFormProps) {
           placeholder={lang === 'zh' ? '竞品名、话题或技术栈…' : 'Competitor name, topic, or tech…'}
           onKeyDown={(e) => e.key === 'Enter' && handleSubmit()}
           autoFocus
+          aria-label={lang === 'zh' ? '追踪目标名称' : 'Target name'}
         />
         <select
           className="ci-add-select"
           value={type}
           onChange={(e) => setType(e.target.value)}
+          aria-label={lang === 'zh' ? '目标类型' : 'Target type'}
         >
           {TYPE_OPTIONS.map((opt) => (
             <option key={opt.value} value={opt.value}>{opt.label}</option>

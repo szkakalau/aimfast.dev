@@ -105,6 +105,7 @@ export function AiChatPanel({ t, cardType: _cardType, isOpen, onClose }: Props) 
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={handleKeyDown}
           placeholder={t.aiChatPlaceholder || 'Ask a question…'}
+          aria-label={t.aiChatPlaceholder || 'Ask a question'}
         />
         <button className="ai-chat-send" onClick={handleSend} disabled={!input.trim()}>
           {t.aiChatSend || '→'}

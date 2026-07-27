@@ -84,6 +84,7 @@ const jsonLd = {
       sameAs: [
         'https://github.com/szkakalau/aimfast.dev',
         'https://twitter.com/aimfastdev',
+        'https://buttondown.com/aimfast',
       ],
       contactPoint: {
         '@type': 'ContactPoint',
@@ -151,7 +152,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <a href="/about/">About</a>
               <LangToggle />
             </div>
-            <label htmlFor="nav-toggle" className="nav-overlay" aria-hidden="true" />
+            <label htmlFor="nav-toggle" className="nav-backdrop" aria-hidden="true" />
           </div>
         </nav>
         <span id="main-content" tabIndex={-1} />
