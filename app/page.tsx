@@ -200,7 +200,8 @@ export default async function HomePage({
           <p className="trends-hero-desc">
             AI scans 30+ platforms, cross-validates every term,
             and ranks by builder relevance — so you see what&apos;s worth acting on,
-            not what&apos;s just loud. Free. No signup.
+            not what&apos;s just loud. From early-stage experiments to breakout products,
+            track the tech landscape with data-driven scoring. Free. No signup.
           </p>
           <div className="trends-hero-stats">
             <TrendingUp size={14} aria-hidden="true" />
@@ -360,7 +361,7 @@ export default async function HomePage({
             <h2>Two Engines, One Report</h2>
             <p>
               Every night, our dual-engine system scans the internet. Every morning,
-              you get one decision.
+              you get one decision — validated, priced, and ready to execute.
             </p>
           </div>
 
@@ -371,7 +372,8 @@ export default async function HomePage({
               <p>
                 AI scans 30+ platforms — HN, Reddit, GitHub, Product Hunt, X, DEV,
                 V2EX, and more — for emerging pain points, rising trends, and
-                market gaps.
+                market gaps. Every term is cross-validated across independent sources
+                before it reaches your dashboard.
               </p>
               <ul className="engine-list">
                 <li>Cross-platform signal validation</li>
@@ -386,7 +388,9 @@ export default async function HomePage({
               <p>
                 Follow up to 10 topics, people, or tech stacks.
                 Every day, the AI tells you what's happening, and — most importantly
-                — what <em>you</em> should do about it.
+                — what <em>you</em> should do about it. Track competitors, spot
+                shifts in developer sentiment, and catch opportunities before
+                they hit the mainstream.
               </p>
               <ul className="engine-list">
                 <li>Topic trend analysis</li>
@@ -404,7 +408,7 @@ export default async function HomePage({
 
           <div className="engine-output">
             <span className="engine-output-label">Daily Report</span>
-            One decision card · Trend signals · 2 minutes to read
+            One decision card · Trend signals · Competitive analysis · 2 minutes to read
           </div>
         </section>
 

@@ -77,10 +77,25 @@ const jsonLd = {
       description:
         'Daily market intelligence for indie builders. AI scans 30+ channels to deliver one validated product opportunity every morning — what to build, who will pay, and how much to charge.',
       foundingDate: '2026-01-01',
+      areaServed: 'Worldwide',
+      knowsAbout: [
+        'trend analysis',
+        'market intelligence',
+        'product opportunity discovery',
+        'indie hacker tools',
+        'signal intelligence',
+        'competitive research',
+      ],
       sameAs: [
         'https://github.com/szkakalau/aimfast.dev',
         'https://twitter.com/aimfastdev',
         'https://buttondown.com/aimfast',
+        // TODO: Create LinkedIn company page, Crunchbase entry, and YouTube channel
+        // to add as Knowledge Graph pillars. These sameAs links are critical for
+        // Google entity disambiguation and will significantly boost brand authority.
+        // - LinkedIn: https://www.linkedin.com/company/aimfast-dev (create)
+        // - Crunchbase: https://www.crunchbase.com/organization/aimfast-dev (create)
+        // - YouTube: https://www.youtube.com/@AimFastDev (create if applicable)
       ],
       contactPoint: {
         '@type': 'ContactPoint',
