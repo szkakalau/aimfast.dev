@@ -248,12 +248,8 @@ def generate_sitemap() -> int:
         },
     })
 
-    # Dashboard
-    urls.append({
-        'loc': f'{BASE_URL}/dashboard/',
-        'changefreq': 'daily',
-        'priority': '0.8',
-    })
+    # Dashboard (excluded from sitemap — auth-gated, noindex)
+    # See app/dashboard/page.tsx: robots { index: false, follow: false }
 
     # Pricing
     urls.append({

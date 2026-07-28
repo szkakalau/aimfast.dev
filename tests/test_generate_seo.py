@@ -75,9 +75,10 @@ class TestSitemapKeyUrls:
         locs = self._locs()
         assert "https://www.aimfast.dev/pricing/zh/" in locs
 
-    def test_dashboard_present(self):
+    def test_dashboard_not_in_sitemap(self):
+        """Dashboard is auth-gated and has noindex — must NOT be in sitemap."""
         locs = self._locs()
-        assert "https://www.aimfast.dev/dashboard/" in locs
+        assert "https://www.aimfast.dev/dashboard/" not in locs
 
     def test_reports_index_present(self):
         locs = self._locs()

@@ -3,6 +3,12 @@ import { prisma } from '@/lib/prisma';
 import { getUserId } from '@/lib/session';
 import { CancelButton } from './cancel-button';
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Billing — AimFast.Dev',
+  robots: { index: false, follow: false },
+};
 
 const PLAN_LABELS: Record<string, string> = {
   starter: 'Starter',
