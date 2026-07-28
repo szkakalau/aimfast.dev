@@ -11,6 +11,11 @@ const { auth } = NextAuth(authConfig);
 export default auth((req) => {
   const { pathname } = req.nextUrl;
 
+  // Attach lang header for server-side <html lang> — eliminates client-side JS fix.
+  const isZh = /(?:^|\/)zh(?:\/|$)/.test(pathname);
+  const response = NextResponse.next();
+  response.headers.set('x-lang', isZh ? 'zh-CN' : 'en');
+
   // /dashboard/* 和 /reports/* 需要登录
   const protectedRoutes = ['/dashboard', '/reports'];
   const needsAuth = protectedRoutes.some((route) => pathname.startsWith(route));
@@ -21,7 +26,7 @@ export default auth((req) => {
     return NextResponse.redirect(loginUrl);
   }
 
-  return NextResponse.next();
+  return response;
 });
 
 export const config = {

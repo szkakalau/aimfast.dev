@@ -46,7 +46,7 @@ export async function generateMetadata({
     robots: { index: true, follow: true },
     alternates: {
       canonical: canonicalUrl,
-      languages: { 'zh-CN': canonicalUrl, en: enUrl },
+      languages: { 'zh-CN': canonicalUrl, en: enUrl, 'x-default': enUrl },
     },
     openGraph: {
       title: `${title} — AimFast.Dev`,

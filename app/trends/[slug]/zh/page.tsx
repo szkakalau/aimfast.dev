@@ -71,6 +71,7 @@ export async function generateMetadata({
       languages: {
         en: `https://www.aimfast.dev/trends/${slug}/`,
         'zh-CN': url,
+        'x-default': `https://www.aimfast.dev/trends/${slug}/`,
       },
     },
     openGraph: {
@@ -122,6 +123,13 @@ export default async function TrendDetailZhPage({
   }
 
   const researchMd = getResearchContent(term.research_md_path);
+
+  // ── Related trends: same category, top 5 by score ──
+  const allTerms = getAllTrendTerms();
+  const relatedTrends = allTerms.terms
+    .filter((t) => t.category === term.category && t.id !== term.id)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 5);
 
   // Strip YAML frontmatter, extract sections for FAQ generation
   let researchHtml = '';
@@ -458,6 +466,27 @@ export default async function TrendDetailZhPage({
                 </div>
               </div>
             </div>
+
+            {relatedTrends.length > 0 && (
+              <div className="trend-sidebar-card">
+                <h4>相关趋势</h4>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0, fontSize: '0.85rem', lineHeight: '1.8' }}>
+                  {relatedTrends.map((rt) => {
+                    const rtSlug = rt.id.replace('trend-', '');
+                    return (
+                      <li key={rt.id}>
+                        <a href={`/trends/${rtSlug}/zh/`} style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>
+                          {rt.canonical_zh || rt.canonical}
+                        </a>
+                        <span style={{ color: 'var(--color-text-muted)', fontSize: '0.75rem', marginLeft: 'var(--space-2)' }}>
+                          {rt.score}
+                        </span>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            )}
 
             <div className="trend-sidebar-card">
               <h4>想看完整情报？</h4>

@@ -10,16 +10,16 @@ import { builderScore, normalizeCategory, getTrackedItems, addTrackedItem, remov
 
 const PER_PAGE = 30;
 
-type Props = { terms: TrendTerm[]; locale?: Locale };
+type Props = { terms: TrendTerm[]; locale?: Locale; initialPage?: number };
 
-export default function TrendFilter({ terms, locale = 'en' }: Props) {
+export default function TrendFilter({ terms, locale = 'en', initialPage = 1 }: Props) {
   const L = getLabels(locale);
   const [activeStage, setActiveStage] = useState<StageFilter>('all');
   const [sortKey, setSortKey] = useState<SortKey>('builder');
   const [productType, setProductType] = useState<string>('all');
   const [category, setCategory] = useState<string>('all');
   const [aiFocus, setAiFocus] = useState(false);
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(initialPage);
   const [trackedIds, setTrackedIds] = useState<Set<string>>(() => {
     const items = getTrackedItems();
     return new Set(items.map((item) => item.id));

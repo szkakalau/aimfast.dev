@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
   alternates: {
     canonical: 'https://www.aimfast.dev/reports/',
-    languages: { 'zh-CN': 'https://www.aimfast.dev/reports/' },
+    languages: { 'zh-CN': 'https://www.aimfast.dev/reports/', 'x-default': 'https://www.aimfast.dev/reports/' },
   },
   openGraph: {
     title: 'Daily Reports — AimFast.Dev',

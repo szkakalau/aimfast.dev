@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     languages: {
       en: 'https://www.aimfast.dev/pricing/',
       'zh-CN': 'https://www.aimfast.dev/pricing/zh/',
+      'x-default': 'https://www.aimfast.dev/pricing/',
     },
   },
   other: { 'last-modified': '2026-07-16' },

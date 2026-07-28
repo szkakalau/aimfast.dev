@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from 'next';
+import { headers } from 'next/headers';
 import { Fira_Sans, Fira_Code, JetBrains_Mono } from 'next/font/google';
 import LangToggle from '../components/LangToggle';
 import './globals.css';
@@ -37,13 +38,8 @@ export const metadata: Metadata = {
     'AI scans 30+ channels daily, cross-validates every term, and ranks by builder relevance — signal over hype. Dashboard membership unlocks daily product opportunities — what to build, who will pay, and how much to charge.',
   robots: { index: true, follow: true },
   metadataBase: new URL('https://www.aimfast.dev'),
-  alternates: {
-    canonical: 'https://www.aimfast.dev/',
-    languages: {
-      en: 'https://www.aimfast.dev/',
-      'zh-CN': 'https://www.aimfast.dev/zh/',
-    },
-  },
+  // NOTE: alternates (canonical + hreflang) are set per-page.
+  // Setting them here leaks homepage hreflang to every child page — don't do it.
   openGraph: {
     type: 'website',
     title: 'AimFast.Dev — Signal Over Hype: AI-Curated Tech Trends',
@@ -111,9 +107,13 @@ const jsonLd = {
   ],
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  // Server-side lang detection via middleware-set header — no client-side JS needed.
+  const headersList = await headers();
+  const lang = headersList.get('x-lang') || 'en';
+
   return (
-    <html lang="en" className={`${firaSans.variable} ${firaCode.variable} ${jetbrainsMono.variable}`}>
+    <html lang={lang} className={`${firaSans.variable} ${firaCode.variable} ${jetbrainsMono.variable}`}>
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -126,9 +126,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <link rel="alternate" hrefLang="en" href="https://www.aimfast.dev/" />
-        <link rel="alternate" hrefLang="zh-CN" href="https://www.aimfast.dev/zh/" />
-        <link rel="alternate" hrefLang="x-default" href="https://www.aimfast.dev/" />
+        {/* Per-page hreflang alternates are set via generateMetadata in each page. */}
       </head>
       <body>
         <a className="skip-link" href="#main-content">Skip to content</a>
@@ -158,10 +156,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <span id="main-content" tabIndex={-1} />
         {children}
         {/* Close mobile nav when a link is clicked */}
-        {/* Set lang attribute based on path prefix — dev mode fallback (build uses fix-en-lang.mjs) */}
-        <script dangerouslySetInnerHTML={{ __html: `
-          (function(){var p=location.pathname;document.documentElement.lang=/(^|\/)zh(\/|$)/.test(p)?'zh-CN':'en';})();
-        `}} />
+        {/* lang attribute is now set server-side via middleware x-lang header */}
         <script dangerouslySetInnerHTML={{ __html: `
           (function(){
             var toggle = document.getElementById('nav-toggle');

@@ -53,8 +53,8 @@ export async function generateMetadata({
   const alternates: Record<string, unknown> = {
     canonical: canonicalUrl,
     languages: hasZh
-      ? { en: canonicalUrl, 'zh-CN': zhUrl }
-      : { en: canonicalUrl },
+      ? { en: canonicalUrl, 'zh-CN': zhUrl, 'x-default': canonicalUrl }
+      : { en: canonicalUrl, 'x-default': canonicalUrl },
   };
 
   return {

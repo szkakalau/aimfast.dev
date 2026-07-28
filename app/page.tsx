@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     languages: {
       en: 'https://www.aimfast.dev/',
       'zh-CN': 'https://www.aimfast.dev/zh/',
+      'x-default': 'https://www.aimfast.dev/',
     },
   },
   openGraph: {
@@ -44,7 +45,13 @@ export const metadata: Metadata = {
 
 /* ── Page ── */
 
-export default function HomePage() {
+export default async function HomePage({
+  searchParams,
+}: {
+  searchParams: Promise<{ page?: string }>;
+}) {
+  const sp = await searchParams;
+  const initialPage = Math.max(1, parseInt(sp.page || '1', 10) || 1);
   const data = getAllTrendTerms();
   const { terms, updated_at } = data;
   const stats = getTrendStats();
@@ -254,7 +261,7 @@ export default function HomePage() {
         </div>
 
         {/* ── Stage Filter + Trend Grid (client component) ── */}
-        <TrendFilter terms={terms} />
+        <TrendFilter terms={terms} initialPage={initialPage} />
 
         {/* ── Methodology: How Trends Are Ranked & Discovered ── */}
         <section className="methodology-section">

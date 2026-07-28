@@ -73,6 +73,7 @@ export async function generateMetadata({
       languages: {
         'zh-CN': `https://www.aimfast.dev/trends/${slug}/zh/`,
         en: url,
+        'x-default': url,
       },
     },
     openGraph: {
@@ -124,6 +125,13 @@ export default async function TrendDetailPage({
   }
 
   const researchMd = getResearchContentEn(term.research_md_path);
+
+  // ── Related trends: same category, top 5 by score ──
+  const allTerms = getAllTrendTerms();
+  const relatedTrends = allTerms.terms
+    .filter((t) => t.category === term.category && t.id !== term.id)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 5);
 
   // Strip YAML frontmatter, extract sections for FAQ generation
   let researchHtml = '';
@@ -464,6 +472,27 @@ export default async function TrendDetailPage({
                 </div>
               </div>
             </div>
+
+            {relatedTrends.length > 0 && (
+              <div className="trend-sidebar-card">
+                <h4>Related Trends</h4>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0, fontSize: '0.85rem', lineHeight: '1.8' }}>
+                  {relatedTrends.map((rt) => {
+                    const rtSlug = rt.id.replace('trend-', '');
+                    return (
+                      <li key={rt.id}>
+                        <a href={`/trends/${rtSlug}/`} style={{ color: 'var(--color-accent)', textDecoration: 'none' }}>
+                          {rt.canonical}
+                        </a>
+                        <span style={{ color: 'var(--color-text-muted)', fontSize: '0.75rem', marginLeft: 'var(--space-2)' }}>
+                          {rt.score}
+                        </span>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            )}
 
             <div className="trend-sidebar-card">
               <h4>Want the full picture?</h4>
