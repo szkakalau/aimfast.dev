@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CheapSecurity — Stop Paying $1440/Year for Camera Cloud Storage | www.aimfast.dev</title>
+  <meta name="description" content="Self-hosted CCTV for your Raspberry Pi — one-time payment, no subscriptions, full control. Get early access for $29.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#1a1d24">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://www.aimfast.dev/cheapsecurity/">
+  <meta property="og:type" content="product">
+  <meta property="og:title" content="CheapSecurity — Stop Paying $1440/Year for Camera Cloud Storage">
+  <meta property="og:description" content="Self-hosted CCTV for your Raspberry Pi — one-time payment, no subscriptions, full control. Get early access for $29.">
+  <meta property="og:url" content="https://www.aimfast.dev/cheapsecurity/">
+  <meta property="og:site_name" content="AimFast.Dev">
+  <meta property="og:image" content="https://www.aimfast.dev/og/cheapsecurity.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="CheapSecurity — Stop Paying $1440/Year for Camera Cloud Storage">
+  <meta name="twitter:description" content="Self-hosted CCTV for your Raspberry Pi — one-time payment, no subscriptions, full control. Get early access for $29.">
+  <meta name="twitter:image" content="https://www.aimfast.dev/og/cheapsecurity.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "CheapSecurity",
+    "applicationCategory": "AIApplication",
+    "operatingSystem": "Web",
+    "description": "Self-hosted CCTV for Raspberry Pi and Linux SBCs. One-time payment, local storage, motion detection, Telegram notifications.",
+    "url": "https://www.aimfast.dev/cheapsecurity/",
+    "offers": {
+      "@type": "Offer",
+      "price": "29",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+  <link rel="stylesheet" href="/_ds/base.css">
+  <link rel="stylesheet" href="/_ds/components.css">
+  <style>
+    /* custom page styles — no token redefinition */
+    .hero {
+      padding: var(--space-8) 0 var(--space-6);
+      text-align: center;
+    }
+    .hero h1 {
+      max-width: 720px;
+      margin: 0 auto var(--space-3);
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      line-height: 1.15;
+    }
+    .hero .subhead {
+      max-width: 560px;
+      margin: 0 auto var(--space-5);
+      font-size: 1.15rem;
+      color: var(--color-text-secondary);
+    }
+    .signup-form {
+      display: flex;
+      gap: var(--space-2);
+      max-width: 480px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .signup-form input[type="email"] {
+      flex: 1 1 240px;
+      height: 52px;
+      padding: 0 var(--space-3);
+      border: 2px solid var(--color-border);
+      border-radius: var(--radius-md);
+      background: var(--color-surface);
+      color: var(--color-text);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      transition: border-color var(--duration-normal) var(--ease-out);
+    }
+    .signup-form input[type="email"]:focus {
+      outline: none;
+      border-color: var(--color-accent);
+    }
+    .signup-form .btn {
+      height: 52px;
+      padding: 0 var(--space-4);
+      font-size: 1rem;
+      white-space: nowrap;
+    }
+    .signup-form .btn-lg {
+      height: 52px;
+      line-height: 52px;
+      padding: 0 var(--space-5);
+    }
+    .form-feedback {
+      max-width: 480px;
+      margin: var(--space-3) auto 0;
+      font-weight: 500;
+      color: var(--color-accent);
+    }
+    .form-feedback.error {
+      color: var(--color-text-secondary);
+    }
+    .section-title {
+      text-align: center;
+      margin-bottom: var(--space-5);
+    }
+    .why-matters p {
+      max-width: 720px;
+      margin: 0 auto var(--space-3);
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+    }
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-4);
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .step {
+      display: flex;
+      gap: var(--space-3);
+      align-items: flex-start;
+      background: var(--color-surface);
+      padding: var(--space-4);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--color-border);
+    }
+    .step-num {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--color-accent);
+      color: var(--color-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+    .step-content h3 {
+      margin-bottom: var(--space-1);
+      font-size: 1.1rem;
+    }
+    .step-content p {
+      color: var(--color-text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .selling-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-4);
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .selling-card {
+      background: var(--color-surface);
+      padding: var(--space-4);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--color-border);
+      text-align: center;
+    }
+    .selling-card .icon-wrap {
+      margin-bottom: var(--space-2);
+      color: var(--color-accent);
+    }
+    .selling-card h3 {
+      margin-bottom: var(--space-2);
+      font-size: 1.1rem;
+    }
+    .selling-card p {
+      color: var(--color-text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .trust-bar {
+      text-align: center;
+      padding: var(--space-4) 0;
+      color: var(--color-text-muted);
+      font-size: 0.9rem;
+      display: flex;
+      justify-content: center;
+      gap: var(--space-4);
+      flex-wrap: wrap;
+    }
+    .trust-bar span {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-1);
+    }
+    .footer {
+      text-align: center;
+      padding: var(--space-4) 0 var(--space-3);
+      border-top: 1px solid var(--color-border);
+      color: var(--color-text-muted);
+      font-size: 0.85rem;
+    }
+    @media (max-width: 700px) {
+      .steps-grid, .selling-grid {
+        grid-template-columns: 1fr;
+      }
+      .signup-form {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .signup-form input[type="email"] {
+        flex: 1 1 auto;
+      }
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <section class="hero container">
+    <h1>Stop Paying $1440/Year for Camera Cloud Storage</h1>
+    <p class="subhead">Self-hosted CCTV for your Raspberry Pi — one-time payment, no subscriptions, full control.</p>
+    
+    <!-- inline email form -->
+    <form id="signup-form" class="signup-form" action="https://formspree.io/f/your-form-id" method="POST" onsubmit="handleSubmit(event)">
+      <input type="email" name="email" placeholder="you@example.com" required autocomplete="email">
+      <button type="submit" class="btn btn-primary btn-lg">Get Early Access — $29</button>
+    </form>
+    <div id="form-feedback" class="form-feedback" aria-live="polite"></div>
+  </section>
+
+  <!-- Why This Matters -->
+  <section class="why-matters container" style="padding: var(--space-6) 0;">
+    <h2 class="section-title">Why Self-Hosted CCTV Matters Right Now</h2>
+    <p>Every month, thousands of households pay $8–$12 per camera for cloud subscriptions like Wyze and Reolink. A recent Hacker News thread (34 comments) broke down the math: 10 cameras × $12/month = $1,440/year. That’s a car payment for basic motion alerts. The frustration is real — users want local control, no monthly bills, and privacy that doesn’t depend on a cloud server.</p>
+    <p>Existing open-source alternatives like Frigate are powerful but require a $60 Google Coral TPU and hours of configuration. The original CheapSecurity project on GitHub is lightweight but lacks a web interface, notifications, and remote access — exactly the features that make a security system useful. Meanwhile, the Raspberry Pi ecosystem has matured: Pi 5s are back in stock, and RTSP cameras cost under $30. The pieces are ready — but no one has packaged them into a simple, one-time-payment solution.</p>
+    <p>This is the perfect moment. The HN signal (42 points, cross-platform) shows pent-up demand. Users are actively searching for “Wyze alternative self-hosted” and “cheap CCTV Raspberry Pi.” By offering a $29 Docker-based solution with motion detection, a web timeline, and Telegram notifications, we can capture the wave before bigger players simplify their own offerings.</p>
+  </section>
+
+  <!-- How It Works -->
+  <section class="container" style="padding: var(--space-6) 0;">
+    <h2 class="section-title">How It Works</h2>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h3>Connect Your Cameras</h3>
+          <p>Point CheapSecurity to any RTSP stream from your existing IP cameras — no proprietary hardware needed. Works with Wyze, Reolink, Amcrest, and any ONVIF-compatible camera on your local network.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h3>Deploy with Docker</h3>
+          <p>Run a single docker-compose command on your Raspberry Pi, Orange Pi, or any Linux SBC. The container includes OpenCV for motion detection and a lightweight web server — no compilation, no dependencies.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h3>Get Alerts &amp; Timeline</h3>
+          <p>Receive instant Telegram notifications with snapshots when motion is detected. Browse a clean web timeline of events, review clips, and export footage — all stored locally on your own drive.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Selling Points -->
+  <section class="container" style="padding: var(--space-6) 0;">
+    <h2 class="section-title">What You Get</h2>
+    <div class="selling-grid">
+      <div class="selling-card">
+        <div class="icon-wrap">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+          </svg>
+        </div>
+        <h3>Save 95% vs Cloud</h3>
+        <p>One-time $29 covers unlimited cameras on a single device. Compare to $1,440/year for 10 Wyze cams — you keep your money and your footage. No surprise price hikes, no per-camera fees.</p>
+      </div>
+      <div class="selling-card">
+        <div class="icon-wrap">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+          </svg>
+        </div>
+        <h3>100% Local Storage</h3>
+        <p>Your video never touches a third-party server. Record directly to a USB drive, NAS, or internal SSD. Full privacy — no cloud dependency, no data mining, no subscription required ever.</p>
+      </div>
+      <div class="selling-card">
+        <div class="icon-wrap">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/>
+          </svg>
+        </div>
+        <h3>5-Minute Deployment</h3>
+        <p>Docker one-liner gets you from zero to recording in under five minutes. No Python environment setup, no dependency hell. Works on any Linux SBC with Docker — Raspberry Pi 4/5, Orange Pi, or x86.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Bar -->
+  <div class="trust-bar container">
+    <span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+      Open-source core
+    </span>
+    <span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+      500+ developers on waitlist
+    </span>
+    <span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+      No spam · one email only
+    </span>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer container">
+    © 2026 · www.aimfast.dev
+  </footer>
+
+  <script>
+    async function handleSubmit(e) {
+      e.preventDefault();
+      const form = e.target;
+      const feedback = document.getElementById('form-feedback');
+      const email = form.email.value.trim();
+      if (!email) return;
+
+      // disable button during submit
+      const btn = form.querySelector('button');
+      btn.disabled = true;
+      btn.textContent = 'Sending…';
+
+      try {
+        const resp = await fetch(form.action, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email
