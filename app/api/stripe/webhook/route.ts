@@ -74,16 +74,19 @@ export async function POST(request: Request) {
       }
 
       case 'invoice.paid': {
-        const data = event.data.object;
-        if (data.subscription) {
-          const sub = await stripe.subscriptions.retrieve(data.subscription as string);
+        const invoice = event.data.object;
+        // SDK v22+: subscription 已从 Invoice 直接属性迁移到 parent.subscription_details
+        const subscriptionRef = invoice.parent?.subscription_details?.subscription;
+        const subscriptionId = typeof subscriptionRef === 'string' ? subscriptionRef : subscriptionRef?.id;
+        if (subscriptionId) {
+          const sub = await stripe.subscriptions.retrieve(subscriptionId);
           // Stripe SDK v22+: current_period_end 移到 Subscription Item 级别
           const itemPeriodEnd = sub.items.data[0]?.current_period_end;
           const periodEnd = itemPeriodEnd
             ? new Date(itemPeriodEnd * 1000)
             : undefined;
           await prisma.subscription.updateMany({
-            where: { stripeSubscriptionId: data.subscription as string },
+            where: { stripeSubscriptionId: subscriptionId },
             data: {
               status: 'active',
               ...(periodEnd ? { currentPeriodEnd: periodEnd } : {}),
@@ -94,10 +97,12 @@ export async function POST(request: Request) {
       }
 
       case 'invoice.payment_failed': {
-        const data = event.data.object;
-        if (data.subscription) {
+        const invoice = event.data.object;
+        const subscriptionRef = invoice.parent?.subscription_details?.subscription;
+        const subscriptionId = typeof subscriptionRef === 'string' ? subscriptionRef : subscriptionRef?.id;
+        if (subscriptionId) {
           await prisma.subscription.updateMany({
-            where: { stripeSubscriptionId: data.subscription as string },
+            where: { stripeSubscriptionId: subscriptionId },
             data: { status: 'past_due' },
           });
         }
