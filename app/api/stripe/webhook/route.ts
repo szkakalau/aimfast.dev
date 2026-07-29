@@ -111,8 +111,10 @@ export async function POST(request: Request) {
 
       case 'customer.subscription.updated': {
         const data = event.data.object;
-        const periodEnd = data.current_period_end
-          ? new Date(data.current_period_end * 1000)
+        // SDK v22+: current_period_end 已从 Subscription 移除，需从 Subscription Item 获取
+        const itemPeriodEnd = data.items.data[0]?.current_period_end;
+        const periodEnd = itemPeriodEnd
+          ? new Date(itemPeriodEnd * 1000)
           : undefined;
         await prisma.subscription.updateMany({
           where: { stripeSubscriptionId: data.id },
