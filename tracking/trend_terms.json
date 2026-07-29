@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-29T08:38:05.688833+08:00",
+  "updated_at": "2026-07-29T10:08:00.625552+08:00",
   "terms": [
     {
       "id": "trend-claude-agent-sdk",
@@ -694,7 +694,33 @@
       "summary_zh": "多个信号关注AI agent的安全漏洞扫描和危险能力检测，表明AI agent安全正成为新兴热点。",
       "summary_en": "Multiple signals highlight the need for scanning AI agents for vulnerabilities and dangerous capabilities, indicating a growing focus on AI agent security.",
       "research_md_path": "content/trends/ai-agent-security-scanning.md",
-      "last_report_date": "2026-07-28"
+      "last_report_date": "2026-07-28",
+      "opportunity_score": 72,
+      "market_score": 78,
+      "competition_score": 25,
+      "demand_score": 80,
+      "seo_difficulty": 20,
+      "suggested_products": [
+        "CLI Tool",
+        "API",
+        "SaaS",
+        "Plugin/Add-on",
+        "Open Source"
+      ],
+      "estimated_dev_days": 45,
+      "revenue_potential": 4,
+      "risk_factors_en": [
+        "Large security vendors (e.g., CrowdStrike, Snyk) may integrate Agent scanning into existing platforms",
+        "Rapid evolution of AI Agent frameworks could make specific scanning methods quickly obsolete",
+        "Open-source alternatives may commoditize basic features, squeezing margins"
+      ],
+      "risk_factors_zh": [
+        "大型安全厂商（如CrowdStrike、Snyk）可能将Agent扫描集成到现有平台",
+        "AI Agent框架快速演进可能使特定扫描方法迅速过时",
+        "开源替代品可能将基础功能商品化，挤压利润空间"
+      ],
+      "opportunity_summary_en": "AI Agent Security Scanning is a nascent, high-growth niche with low competition and strong demand from developers needing to secure autonomous agents. The 100% growth rate and early stage allow indie developers to quickly build a CLI or API product and capture market share via SEO. Revenue potential is high due to enterprise compliance needs, though risks from large vendors and framework evolution require a focused, adaptable approach.",
+      "opportunity_summary_zh": "AI Agent安全扫描是一个萌芽期、高增长的小众市场，竞争低且需求强烈，开发者急需保护自主Agent的安全。100%的增长率与早期阶段允许独立开发者快速构建CLI或API产品，并通过SEO抢占市场份额。企业合规需求带来高收入潜力，但需警惕大厂进入和框架演进风险，应采取专注且灵活的策略。"
     },
     {
       "id": "trend-agent-skills-ecosystem",
@@ -828,7 +854,31 @@
       ],
       "summary_zh": "多个社区讨论AI生成代码的质量问题（如社交媒体影响、代码审查），反映开发者对AI代码可靠性的广泛关注。",
       "summary_en": "Community discussions on AI code generation quality (social media impact, code review) reflect widespread developer concern about AI code reliability.",
-      "research_md_path": "content/trends/ai-code-generation-quality-debate.md"
+      "research_md_path": "content/trends/ai-code-generation-quality-debate.md",
+      "opportunity_score": 72,
+      "market_score": 65,
+      "competition_score": 25,
+      "demand_score": 75,
+      "seo_difficulty": 15,
+      "suggested_products": [
+        "VS Code Extension",
+        "GitHub Action",
+        "Web App",
+        "SaaS",
+        "Open Source"
+      ],
+      "estimated_dev_days": 45,
+      "revenue_potential": 3,
+      "risk_factors_en": [
+        "Large AI tool vendors (GitHub, Anthropic) may integrate quality checks, increasing competition.",
+        "Developer skepticism about AI code quality may reduce willingness to pay for AI-based solutions."
+      ],
+      "risk_factors_zh": [
+        "大型AI工具厂商（GitHub、Anthropic）可能内置质量检查功能，加剧竞争。",
+        "开发者对AI代码质量的怀疑可能降低对AI解决方案的付费意愿。"
+      ],
+      "opportunity_summary_en": "The AI Code Generation Quality Debate is a nascent trend with strong developer pain points and no dedicated tools. Early movers can build specialized code review or reliability scoring products. The market is small now but growing with AI code adoption.",
+      "opportunity_summary_zh": "AI代码生成质量辩论是一个萌芽趋势，开发者痛点强烈且缺乏专用工具。早期进入者可以构建专门的代码审查或可靠性评分产品。目前市场较小，但随AI代码采用率增长而扩大。"
     },
     {
       "id": "trend-open-weight-model-debate",
@@ -911,7 +961,33 @@
       "summary_zh": "《从零开始构建智能体》教程在GitHub上获得大量星标，反映学习AI agent开发的需求旺盛。",
       "summary_en": "The 'Building Agents from Scratch' tutorial stars on GitHub, reflecting high demand for learning AI agent development.",
       "research_md_path": "content/trends/ai-agent-tutorial.md",
-      "last_report_date": "2026-07-28"
+      "last_report_date": "2026-07-28",
+      "opportunity_score": 72,
+      "market_score": 68,
+      "competition_score": 35,
+      "demand_score": 78,
+      "seo_difficulty": 40,
+      "suggested_products": [
+        "Web App",
+        "Template/Boilerplate",
+        "AI Agent",
+        "SaaS",
+        "Open Source"
+      ],
+      "estimated_dev_days": 45,
+      "revenue_potential": 4,
+      "risk_factors_en": [
+        "Large AI companies (OpenAI, Google) may release official tutorials or integrated tools, reducing demand for third-party content.",
+        "Open-source alternatives could commoditize basic tutorials, limiting pricing power.",
+        "The nascent stage means market validation is still needed; early adopters may not sustain long-term growth."
+      ],
+      "risk_factors_zh": [
+        "大型AI公司（OpenAI、Google）可能发布官方教程或集成工具，降低对第三方内容的需求。",
+        "开源替代品可能使基础教程商品化，限制定价能力。",
+        "萌芽阶段仍需要市场验证；早期采用者可能无法维持长期增长。"
+      ],
+      "opportunity_summary_en": "The AI Agent tutorial space is nascent with low competition and rising demand, offering opportunities for structured paid courses and template markets. Focus on Chinese developer communities can leverage low SEO difficulty and strong early signals. However, watch for potential entry by large AI companies and commoditization risks.",
+      "opportunity_summary_zh": "AI Agent教程领域处于萌芽阶段，竞争低、需求上升，结构化付费课程和模板市场存在机会。聚焦中文开发者社区可利用低SEO难度和强劲早期信号。但需警惕大型AI公司可能进入和商品化风险。"
     },
     {
       "id": "trend-open-source-ai-security-tools",
@@ -941,7 +1017,33 @@
       "summary_zh": "Capital One发布开源VulnHunter Agentic AI代码安全工具，同时有Ledger Agent Stack开源AI加密工具包发布，表明企业级开源AI安全工具正在兴起。",
       "summary_en": "Capital One released open-source VulnHunter agentic AI code security tool, alongside the Ledger Agent Stack open-source AI crypto toolkit, indicating a rise in enterprise-grade open-source AI security tools.",
       "research_md_path": "content/trends/open-source-ai-security-tools.md",
-      "last_report_date": "2026-07-28"
+      "last_report_date": "2026-07-28",
+      "opportunity_score": 72,
+      "market_score": 65,
+      "competition_score": 30,
+      "demand_score": 70,
+      "seo_difficulty": 25,
+      "suggested_products": [
+        "VS Code Extension",
+        "API",
+        "SaaS",
+        "Plugin/Add-on",
+        "Open Source"
+      ],
+      "estimated_dev_days": 45,
+      "revenue_potential": 4,
+      "risk_factors_en": [
+        "Enterprise tools like VulnHunter may quickly release official lightweight versions, reducing differentiation.",
+        "Open-source nature may limit direct monetization; community might expect free offerings.",
+        "Security domain requires deep expertise; bugs could damage reputation."
+      ],
+      "risk_factors_zh": [
+        "企业工具如VulnHunter可能快速推出官方轻量版，削弱差异化。",
+        "开源性质限制了直接变现，社区可能期望免费。",
+        "安全领域需要深厚专业知识，漏洞可能损害声誉。"
+      ],
+      "opportunity_summary_en": "Open-source AI security tools are in a nascent stage with low competition and rising demand. Independent developers can build lightweight VS Code plugins or APIs leveraging open-source projects like VulnHunter and Ledger Agent Stack. Early SEO investment and community building (e.g., SecHub) can create a defensible niche before big players dominate.",
+      "opportunity_summary_zh": "开源AI安全工具处于萌芽期，竞争低、需求上升。独立开发者可基于VulnHunter和Ledger Agent Stack等开源项目构建轻量级VS Code插件或API。早期布局SEO和社区（如SecHub）可在巨头进入前建立护城河。"
     },
     {
       "id": "trend-agent-skills-unification",
@@ -5995,7 +6097,30 @@
       "summary_zh": "通过外部 KV 缓存卸载将长上下文推理成本降低 50%，是 LLM 推理优化的重要进展。",
       "summary_en": "Reduces long-context inference costs by 50% via external KV cache offload, a significant advancement in LLM inference optimization.",
       "research_md_path": "content/trends/kv-cache-offload-inference.md",
-      "last_report_date": "2026-07-28"
+      "last_report_date": "2026-07-28",
+      "opportunity_score": 45,
+      "market_score": 35,
+      "competition_score": 20,
+      "demand_score": 55,
+      "seo_difficulty": 15,
+      "suggested_products": [
+        "Open Source",
+        "API",
+        "CLI Tool",
+        "SDK/Library"
+      ],
+      "estimated_dev_days": 60,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Technology may not scale or have latency issues compared to in-memory caching",
+        "Large AI labs (e.g., Google, Meta) could incorporate similar optimizations into their own infrastructure, commoditizing the solution"
+      ],
+      "risk_factors_zh": [
+        "技术可能在延迟方面不如内存缓存，存在扩展性问题",
+        "大型 AI 实验室（如 Google、Meta）可能将类似优化纳入自身基础设施，使方案商品化"
+      ],
+      "opportunity_summary_en": "KV Cache Offload Inference is a nascent technology with very low competition and early-stage demand, offering a blue ocean opportunity for developers focused on LLM inference cost reduction. However, the market is tiny with only one mention and no proven traction, requiring significant technical validation and user education. The best approach is to build an open-source proof-of-concept to gauge interest, then potentially offer a managed API or library.",
+      "opportunity_summary_zh": "KV Cache Offload Inference 是一项萌芽技术，竞争极低且需求初现，为关注 LLM 推理成本降低的开发者提供了蓝海机会。但市场极小，仅有一次提及且无验证，需要大量技术验证和用户教育。最佳方式是先构建开源概念验证来评估兴趣，再考虑提供托管 API 或库。"
     },
     {
       "id": "trend-litert-lm-edge-ai-framework",
@@ -6020,7 +6145,31 @@
       "summary_zh": "Google 开源的边缘设备 LLM 推理框架，面向生产环境，高性能，推动了 AI 在边缘设备的部署。",
       "summary_en": "Google's open-source, production-ready, high-performance LLM inference framework for edge devices, advancing AI deployment on edge.",
       "research_md_path": "content/trends/litert-lm-edge-ai-framework.md",
-      "last_report_date": "2026-07-28"
+      "last_report_date": "2026-07-28",
+      "opportunity_score": 52,
+      "market_score": 60,
+      "competition_score": 20,
+      "demand_score": 45,
+      "seo_difficulty": 30,
+      "suggested_products": [
+        "SDK/Library",
+        "CLI Tool",
+        "Open Source",
+        "Template/Boilerplate",
+        "IoT Device"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Google may dominate the space with official releases, limiting third-party opportunities",
+        "Low current traction (score 48/100) indicates uncertain adoption and market readiness"
+      ],
+      "risk_factors_zh": [
+        "Google可能通过官方发布主导该领域，限制第三方机会",
+        "当前热度低（评分48/100）表明采用和市场准备度不确定"
+      ],
+      "opportunity_summary_en": "LiteRT-LM Edge AI Framework is a Google-backed open-source project for edge LLM inference, currently in a nascent stage with minimal competition. The market for on-device AI is growing but still unproven, offering early-mover advantages for indie developers. However, low traction and potential Google dominance pose significant risks, making it a speculative opportunity best suited for those willing to invest in infrastructure tooling.",
+      "opportunity_summary_zh": "LiteRT-LM Edge AI Framework是Google支持的开源边缘LLM推理项目，目前处于萌芽阶段，竞争极少。端侧AI市场正在增长但尚未验证，为独立开发者提供了先发优势。然而，低热度与Google可能的主导地位构成重大风险，使其成为一个投机性机会，更适合愿意投资基础设施工具的开发者。"
     },
     {
       "id": "trend-caveman-token-optimization",
@@ -6045,7 +6194,31 @@
       "summary_zh": "一个 Claude Code 技能，通过使用类似原始人的简洁语言将 Token 消耗减少 65%，展示了极致的 Prompt 优化思路。",
       "summary_en": "A Claude Code skill that cuts token consumption by 65% by using caveman-like terse language, demonstrating an extreme prompt optimization approach.",
       "research_md_path": "content/trends/caveman-token-optimization.md",
-      "last_report_date": "2026-07-28"
+      "last_report_date": "2026-07-28",
+      "opportunity_score": 48,
+      "market_score": 55,
+      "competition_score": 15,
+      "demand_score": 40,
+      "seo_difficulty": 10,
+      "suggested_products": [
+        "Open Source",
+        "CLI Tool",
+        "Browser Extension"
+      ],
+      "estimated_dev_days": 5,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Technique may be too niche or not widely applicable to different models.",
+        "Large AI providers could integrate similar optimization natively, reducing third-party value.",
+        "Low current interest makes it hard to gain traction or validate demand."
+      ],
+      "risk_factors_zh": [
+        "该技巧可能过于小众，或无法广泛适用于不同模型。",
+        "大型 AI 提供商可能原生集成类似的优化，降低第三方价值。",
+        "当前兴趣度低，难以获得关注或验证需求。"
+      ],
+      "opportunity_summary_en": "Caveman Token Optimization is a nascent prompt technique that reduces token usage by 65%, but has only 1 mention on GitHub. The market for AI Agent cost optimization is growing, but the idea lacks validation and user demand. A lightweight open-source tool or CLI could be built quickly to test interest, but monetization is uncertain.",
+      "opportunity_summary_zh": "Caveman Token Optimization 是一种新颖的 Prompt 技巧，可减少 65% 的 Token 消耗，但目前仅在 GitHub 上被提及一次。AI Agent 成本优化市场正在增长，但该想法缺乏验证和用户需求。可以快速构建轻量级开源工具或 CLI 来测试兴趣，但变现前景不明。"
     },
     {
       "id": "trend-voicebox-ai-voice-studio",
@@ -6070,7 +6243,31 @@
       "summary_zh": "开源 AI 语音工作室，支持语音克隆、听写和创作，推动了语音 AI 技术的民主化。",
       "summary_en": "An open-source AI voice studio supporting voice cloning, dictation, and creation, democratizing voice AI technology.",
       "research_md_path": "content/trends/voicebox-ai-voice-studio.md",
-      "last_report_date": "2026-07-28"
+      "last_report_date": "2026-07-28",
+      "opportunity_score": 37,
+      "market_score": 40,
+      "competition_score": 20,
+      "demand_score": 35,
+      "seo_difficulty": 10,
+      "suggested_products": [
+        "Open Source",
+        "API",
+        "AI Agent",
+        "Discord/Slack Bot",
+        "Web App"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Extremely low current traction (1 mention) may indicate lack of interest or early failure.",
+        "Large companies like OpenAI or Google could release similar products with more resources."
+      ],
+      "risk_factors_zh": [
+        "当前关注度极低（仅1次提及），可能表明缺乏兴趣或早期失败。",
+        "OpenAI或Google等大公司可能发布类似产品，资源更丰富。"
+      ],
+      "opportunity_summary_en": "Voicebox AI Voice Studio is a nascent open-source voice AI project with very low competition and SEO difficulty. However, its single mention and lack of proven demand make it a high-risk, early-stage opportunity. Independent developers could build simple tools like a voice cloning API or Discord bot, but revenue potential is limited until traction grows.",
+      "opportunity_summary_zh": "Voicebox AI Voice Studio是一个萌芽期的开源语音AI项目，竞争和SEO难度极低。但仅有一次提及且需求未经验证，属于高风险早期机会。独立开发者可构建简单的语音克隆API或Discord机器人，但在获得关注前变现潜力有限。"
     },
     {
       "id": "trend-mastra-agent-framework",
@@ -6096,7 +6293,31 @@
       "summary_zh": "Mastra 框架新增沙盒部署和一键构建功能，简化了 AI Agent 的部署流程，是 Agent 工程化的重要进展。",
       "summary_en": "Mastra framework adds sandbox deployments and one-step build, simplifying AI agent deployment, a significant advancement in agent engineering.",
       "research_md_path": "content/trends/mastra-agent-framework.md",
-      "last_report_date": "2026-07-28"
+      "last_report_date": "2026-07-28",
+      "opportunity_score": 42,
+      "market_score": 65,
+      "competition_score": 20,
+      "demand_score": 55,
+      "seo_difficulty": 15,
+      "suggested_products": [
+        "Open Source",
+        "Template/Boilerplate",
+        "CLI Tool",
+        "AI Agent",
+        "SaaS"
+      ],
+      "estimated_dev_days": 21,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Extremely early stage with zero market traction; risk of project abandonment",
+        "Large AI companies may release similar built-in tools, making the framework redundant"
+      ],
+      "risk_factors_zh": [
+        "极早期阶段，市场牵引力为零；项目有被放弃的风险",
+        "大公司可能发布类似内置工具，使该框架冗余"
+      ],
+      "opportunity_summary_en": "Mastra Agent Framework is a nascent open-source tool simplifying AI Agent deployment with sandbox and one-click build. The low competition and easy SEO make it a potential early-mover opportunity for indie developers. However, the lack of demand signals and high uncertainty require cautious investment.",
+      "opportunity_summary_zh": "Mastra Agent Framework 是一个萌芽期的开源工具，通过沙盒和一键构建简化 AI Agent 部署。低竞争和易 SEO 使其对独立开发者有先发机会。但需求信号缺失和高不确定性要求谨慎投入。"
     },
     {
       "id": "trend-chrome-devtools-mcp-protocol",
@@ -6793,7 +7014,31 @@
       "summary_zh": "一种让 AI Agent 在网络中发现工具和彼此的网络协议，推动 Agent 间协作和工具生态的形成。",
       "summary_en": "A network protocol that allows AI agents to discover tools and each other, fostering inter-agent collaboration and a tool ecosystem.",
       "research_md_path": "content/trends/pilot-protocol.md",
-      "last_report_date": "2026-07-28"
+      "last_report_date": "2026-07-28",
+      "opportunity_score": 52,
+      "market_score": 55,
+      "competition_score": 15,
+      "demand_score": 40,
+      "seo_difficulty": 20,
+      "suggested_products": [
+        "AI Agent",
+        "SDK/Library",
+        "Open Source",
+        "CLI Tool",
+        "Plugin/Add-on"
+      ],
+      "estimated_dev_days": 45,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Extreme early stage with only 1 mention; may fail to gain adoption",
+        "Big tech (e.g. OpenAI, Google) could build similar protocols"
+      ],
+      "risk_factors_zh": [
+        "极度早期仅1次提及；可能无法获得采用",
+        "大公司（如OpenAI、Google）可能构建类似协议"
+      ],
+      "opportunity_summary_en": "Pilot Protocol is a nascent AI agent interoperability protocol with minimal competition and low SEO difficulty. However, demand and market validation are extremely weak at this point. The opportunity is speculative and best suited for early adopters willing to bet on a future standard.",
+      "opportunity_summary_zh": "Pilot Protocol是一个新兴的AI Agent互操作性协议，竞争极少，SEO难度低。但目前需求和市场验证极弱。该机会具有投机性，最适合愿意押注未来标准的早期采用者。"
     },
     {
       "id": "trend-infrawrench-cloud-workflow-manager",
@@ -6821,7 +7066,31 @@
       "summary_zh": "一个通过工作流和聊天界面管理云服务的工具，将 DevOps 操作与 AI 对话界面结合。",
       "summary_en": "A tool that manages cloud services through workflows and chat, combining DevOps operations with an AI conversational interface.",
       "research_md_path": "content/trends/infrawrench-cloud-workflow-manager.md",
-      "last_report_date": "2026-07-28"
+      "last_report_date": "2026-07-28",
+      "opportunity_score": 44,
+      "market_score": 35,
+      "competition_score": 80,
+      "demand_score": 40,
+      "seo_difficulty": 70,
+      "suggested_products": [
+        "AI Agent",
+        "CLI Tool",
+        "SaaS",
+        "VS Code Extension",
+        "Open Source"
+      ],
+      "estimated_dev_days": 45,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Extremely low initial traction (1 mention) suggests lack of validation",
+        "Major cloud providers may integrate similar AI features, making competition even harder"
+      ],
+      "risk_factors_zh": [
+        "初始关注度极低（仅1次提及），缺乏验证",
+        "主要云服务商可能集成类似AI功能，使竞争更加激烈"
+      ],
+      "opportunity_summary_en": "Infrawrench Cloud Workflow Manager is a very early-stage AI-powered cloud management tool with only 1 mention and a low trend score. The market is highly competitive with established players, and the product concept lacks validation. However, if executed as a niche open-source or AI agent tool, it could find a small developer audience.",
+      "opportunity_summary_zh": "Infrawrench Cloud Workflow Manager 是一款非常早期的AI驱动云管理工具，仅有1次提及且趋势分低。市场竞争激烈，成熟玩家众多，产品概念缺乏验证。但如果作为小众开源或AI代理工具执行，或许能吸引一小部分开发者。"
     },
     {
       "id": "trend-python-3.15-ultra-low-overhead-profiling",
@@ -7441,7 +7710,33 @@
       "summary_zh": "包含 1250 个 SwiftUI 组件，并通过 MCP 协议让 AI 直接将组件写入应用，极大加速了 iOS 开发。",
       "summary_en": "A library of 1250 SwiftUI components that uses the MCP protocol to let AI write components directly into your app, greatly accelerating iOS development.",
       "research_md_path": "content/trends/swiftui-mcp-component-library.md",
-      "last_report_date": "2026-07-28"
+      "last_report_date": "2026-07-28",
+      "opportunity_score": 34,
+      "market_score": 25,
+      "competition_score": 10,
+      "demand_score": 30,
+      "seo_difficulty": 15,
+      "suggested_products": [
+        "MCP Server",
+        "Open Source",
+        "Template/Boilerplate",
+        "VS Code Extension",
+        "CLI Tool"
+      ],
+      "estimated_dev_days": 45,
+      "revenue_potential": 1,
+      "risk_factors_en": [
+        "Extremely low market validation with only 1 mention",
+        "SwiftUI component libraries already exist (e.g., SwiftUIX), reducing novelty",
+        "MCP protocol integration is niche and may not gain adoption"
+      ],
+      "risk_factors_zh": [
+        "市场验证极低，仅有一次提及",
+        "已有SwiftUI组件库（如SwiftUIX）存在，降低了新颖性",
+        "MCP协议集成属于小众，可能不被采纳"
+      ],
+      "opportunity_summary_en": "The SwiftUI MCP Component Library is a very early-stage concept with minimal traction. While the idea of AI-driven UI component injection is interesting, there is no evidence of market demand or competitive landscape. The opportunity is highly speculative and risky for indie developers.",
+      "opportunity_summary_zh": "SwiftUI MCP组件库是一个非常早期的概念，几乎没有市场验证。虽然AI驱动UI组件注入的想法有趣，但缺乏市场需求证据和竞争格局。对独立开发者而言，机会高度投机且风险大。"
     },
     {
       "id": "trend-codeg-v0.20.0",
@@ -7709,7 +8004,29 @@
       "summary_zh": "一个 macOS 菜单栏小工具，在 AI Agent 长时间运行任务时防止 Mac 锁屏，解决了 Agent 自动化中的实际痛点。",
       "summary_en": "A macOS menu bar utility that prevents the Mac from locking during long-running AI agent tasks, solving a practical pain point in agent automation.",
       "research_md_path": "content/trends/ai997-mac-agent-keeper.md",
-      "last_report_date": "2026-07-28"
+      "last_report_date": "2026-07-28",
+      "opportunity_score": 42,
+      "market_score": 35,
+      "competition_score": 20,
+      "demand_score": 45,
+      "seo_difficulty": 15,
+      "suggested_products": [
+        "Desktop App",
+        "Open Source",
+        "Plugin/Add-on"
+      ],
+      "estimated_dev_days": 7,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Market may remain too niche to sustain a business",
+        "Apple could add similar feature in future macOS updates"
+      ],
+      "risk_factors_zh": [
+        "市场可能过于小众，难以支撑商业模型",
+        "苹果可能在未来macOS更新中加入类似功能"
+      ],
+      "opportunity_summary_en": "AI997 Mac Agent Keeper addresses a genuine but narrow pain point for AI Agent developers on macOS. With no direct competitors and low development cost, it offers a quick MVP opportunity. However, limited demand signals and potential platform feature duplication pose significant risks.",
+      "opportunity_summary_zh": "AI997 Mac Agent Keeper 解决了Mac上AI Agent开发者的真实但狭窄的痛点。由于没有直接竞品且开发成本低，提供了快速MVP的机会。但需求信号有限以及平台可能内置类似功能构成重大风险。"
     },
     {
       "id": "trend-ai-agent-wait-experience-optimization",
@@ -8093,7 +8410,31 @@
       "summary_zh": "AI 时代 Java 后端从微服务回归单体架构的趋势，反映了对简化架构和降低复杂性的追求。",
       "summary_en": "The trend of Java backends returning from microservices to monolithic architecture in the AI era, reflecting a pursuit of simplified architecture and reduced complexity.",
       "research_md_path": "content/trends/microservices-to-monolith-return.md",
-      "last_report_date": "2026-07-28"
+      "last_report_date": "2026-07-28",
+      "opportunity_score": 38,
+      "market_score": 32,
+      "competition_score": 15,
+      "demand_score": 40,
+      "seo_difficulty": 10,
+      "suggested_products": [
+        "Template/Boilerplate",
+        "Open Source",
+        "CLI Tool"
+      ],
+      "estimated_dev_days": 21,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Trend may not gain traction as microservices remain dominant in enterprise.",
+        "Large cloud providers could release official monolith migration tools, crushing newcomers.",
+        "Developer willingness to pay for architecture simplification tools is historically low."
+      ],
+      "risk_factors_zh": [
+        "该趋势可能无法获得关注，因为微服务在企业中仍占主导地位。",
+        "大型云厂商可能发布官方单体迁移工具，压垮新入局者。",
+        "开发者对架构简化工具的付费意愿历来较低。"
+      ],
+      "opportunity_summary_en": "The 'Microservices to Monolith Return' trend is nascent with minimal competition, offering a first-mover advantage for open-source boilerplates or CLI tools. However, the market signal is weak, with only one mention and low demand validation. The opportunity is best suited for a low-cost experiment rather than a full product bet.",
+      "opportunity_summary_zh": "“从微服务回归单体”趋势处于萌芽阶段，竞争极少，为开源样板或CLI工具提供了先发优势。但市场信号薄弱，仅有一次提及且需求未验证。该机会更适合低成本实验，而非全力投入产品。"
     },
     {
       "id": "trend-no-registration-zero-barrier-demo-mode",
@@ -8262,7 +8603,33 @@
       "summary_zh": "使用 SigNoz 对 AI Agent 集群进行可观测性检测，发现 Agent 的遥测数据揭示了此前错误的假设，Agent 监控成为新需求。",
       "summary_en": "Using SigNoz to instrument AI agent swarms reveals that agent telemetry data disproves previous assumptions, making agent monitoring a new requirement.",
       "research_md_path": "content/trends/ai-agent-observability.md",
-      "last_report_date": "2026-07-28"
+      "last_report_date": "2026-07-28",
+      "opportunity_score": 60,
+      "market_score": 65,
+      "competition_score": 25,
+      "demand_score": 70,
+      "seo_difficulty": 30,
+      "suggested_products": [
+        "SaaS",
+        "Open Source",
+        "VS Code Extension",
+        "CLI Tool",
+        "MCP Server"
+      ],
+      "estimated_dev_days": 45,
+      "revenue_potential": 3,
+      "risk_factors_en": [
+        "Market is nascent with low awareness; may take time to educate users",
+        "Large cloud vendors (e.g., Datadog, New Relic) could enter with integrated solutions",
+        "Dependence on fast-evolving AI agent frameworks and standards"
+      ],
+      "risk_factors_zh": [
+        "市场处于萌芽阶段，认知度低，需教育用户",
+        "大型云厂商（如Datadog、New Relic）可能推出集成方案",
+        "依赖快速演变的 AI Agent 框架和标准"
+      ],
+      "opportunity_summary_en": "AI Agent Observability is an early-stage opportunity with minimal competition and strong latent demand from developers debugging multi-agent systems. The market is nascent but validated by real pain points, making it ideal for a focused SaaS or open-source tool. Risks include slow adoption and potential entry by big players, but the blue ocean nature offers first-mover advantages.",
+      "opportunity_summary_zh": "AI Agent 可观测性是一个早期机会，竞争极少，开发者调试多智能体系统的需求强烈。市场虽处于萌芽阶段，但已被真实痛点验证，适合打造专注的 SaaS 或开源工具。风险包括采纳缓慢和大厂进入，但蓝海性质提供了先发优势。"
     },
     {
       "id": "trend-web-view-terminal-emulator",
@@ -8408,7 +8775,31 @@
       "summary_zh": "讨论将 Coding Agent 从智能补全工具升级为能独立完成任务的数字员工，代表了 AI 编码工具的发展方向。",
       "summary_en": "Discusses upgrading coding agents from smart autocomplete tools to digital employees capable of completing tasks independently, representing the future of AI coding tools.",
       "research_md_path": "content/trends/coding-agent-as-digital-employee.md",
-      "last_report_date": "2026-07-28"
+      "last_report_date": "2026-07-28",
+      "opportunity_score": 48,
+      "market_score": 55,
+      "competition_score": 20,
+      "demand_score": 40,
+      "seo_difficulty": 15,
+      "suggested_products": [
+        "AI Agent",
+        "VS Code Extension",
+        "SaaS",
+        "CLI Tool",
+        "Open Source"
+      ],
+      "estimated_dev_days": 60,
+      "revenue_potential": 3,
+      "risk_factors_en": [
+        "Large tech companies (e.g., GitHub, Google) may soon release similar autonomous coding agents, raising competition.",
+        "Concept is too early; market may not be ready for full autonomous coding, leading to low adoption."
+      ],
+      "risk_factors_zh": [
+        "大科技公司（如 GitHub、Google）可能很快发布类似的自主编码代理，竞争加剧。",
+        "概念过早；市场可能未准备好完全自主编码，导致采用率低。"
+      ],
+      "opportunity_summary_en": "This is a nascent trend with very low competition and easy SEO, offering a first-mover advantage for indie developers building autonomous coding agents. Demand signals are weak but the underlying need is real, especially among small teams. However, the risk of big tech entry is high, and market readiness is uncertain, so a focused MVP and early community building are crucial.",
+      "opportunity_summary_zh": "这是一个竞争极低、SEO 容易的新兴趋势，为构建自主编码代理的独立开发者提供了先发优势。需求信号微弱但潜在需求真实，尤其对小团队而言。然而，大厂进入风险高，市场成熟度不确定，因此聚焦 MVP 和早期社区建设至关重要。"
     },
     {
       "id": "trend-deterministic-routing-sampling-for-llms",
@@ -8819,7 +9210,31 @@
       "summary_zh": "对 AI 编码 Agent 如何贡献到软件开发过程的实证研究，分析 Agent 提交的 Pull Request 的质量和影响。",
       "summary_en": "An empirical study on how AI coding agents contribute to software development, analyzing the quality and impact of agent-submitted pull requests.",
       "research_md_path": "content/trends/agentic-pull-request-research.md",
-      "last_report_date": "2026-07-28"
+      "last_report_date": "2026-07-28",
+      "opportunity_score": 34,
+      "market_score": 31,
+      "competition_score": 10,
+      "demand_score": 35,
+      "seo_difficulty": 20,
+      "suggested_products": [
+        "AI Agent",
+        "Open Source",
+        "Newsletter",
+        "VS Code Extension",
+        "SaaS"
+      ],
+      "estimated_dev_days": 45,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Academic concept may not translate into commercial demand",
+        "Large AI tool vendors (e.g., GitHub, OpenAI) could integrate similar evaluation natively"
+      ],
+      "risk_factors_zh": [
+        "学术概念可能无法转化为商业需求",
+        "大型AI工具厂商（如GitHub、OpenAI）可能原生集成类似评估功能"
+      ],
+      "opportunity_summary_en": "Agentic Pull Request Research is a nascent academic concept with no competition and low SEO difficulty. However, market demand is unproven and commercialization is risky. A viable approach could be to build an open-source evaluation toolkit to gain early traction.",
+      "opportunity_summary_zh": "Agentic Pull Request Research是一个新兴的学术概念，没有竞争且SEO难度低。但市场需求尚未验证，商业化风险高。可行的方式是构建开源评估工具包以获取早期关注。"
     },
     {
       "id": "trend-multiplayer-world-model-ai",
@@ -9752,7 +10167,31 @@
       ],
       "summary_zh": "Kimi AI 开源的 AgentENV 分布式系统，用于支撑 Agent 强化学习训练，为大规模 Agent 训练提供了基础设施。",
       "summary_en": "Kimi AI's open-source distributed system, AgentENV, supports agentic reinforcement learning training, providing infrastructure for large-scale agent training.",
-      "research_md_path": "content/trends/agentenv.md"
+      "research_md_path": "content/trends/agentenv.md",
+      "opportunity_score": 35,
+      "market_score": 40,
+      "competition_score": 15,
+      "demand_score": 30,
+      "seo_difficulty": 10,
+      "suggested_products": [
+        "Open Source",
+        "API",
+        "SaaS"
+      ],
+      "estimated_dev_days": 60,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Technology is extremely early-stage with uncertain adoption",
+        "Kimi AI may continue to develop and dominate the space",
+        "Large AI companies could release competing solutions"
+      ],
+      "risk_factors_zh": [
+        "技术处于极早期，采用不确定",
+        "Kimi AI 可能会继续开发并主导该领域",
+        "大型 AI 公司可能发布竞品解决方案"
+      ],
+      "opportunity_summary_en": "AgentENV is a nascent open-source infrastructure for agentic reinforcement learning training. The market is small but growing, with no commercial competition yet. However, demand is unproven, and the risk of big players entering is high.",
+      "opportunity_summary_zh": "AgentENV 是一个用于智能体强化学习训练的新兴开源基础设施。市场规模小但正在增长，目前尚无商业竞争。然而需求尚未验证，且大厂进入的风险较高。"
     },
     {
       "id": "trend-agent-friendly-ai-database",
@@ -9776,7 +10215,33 @@
       ],
       "summary_zh": "探讨为 AI Agent 设计的数据库应具备的特征，到 2028 年三分之一的企业软件交互将由 Agent 完成。",
       "summary_en": "Explores the features a database should have for AI agents, with a prediction that one-third of enterprise software interactions will be handled by agents by 2028.",
-      "research_md_path": "content/trends/agent-friendly-ai-database.md"
+      "research_md_path": "content/trends/agent-friendly-ai-database.md",
+      "opportunity_score": 42,
+      "market_score": 55,
+      "competition_score": 25,
+      "demand_score": 40,
+      "seo_difficulty": 30,
+      "suggested_products": [
+        "SaaS",
+        "Open Source",
+        "API",
+        "SDK/Library",
+        "MCP Server"
+      ],
+      "estimated_dev_days": 60,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Large cloud providers (AWS, Google) may enter with integrated agent-friendly database features.",
+        "Market may remain niche if agent adoption is slower than predicted.",
+        "Lack of clear differentiation from existing vector or graph databases."
+      ],
+      "risk_factors_zh": [
+        "大型云服务商（AWS、Google）可能推出集成的agent友好数据库功能。",
+        "如果agent采用速度慢于预期，市场可能保持小众。",
+        "与现有向量或图数据库的差异化不明确。"
+      ],
+      "opportunity_summary_en": "The Agent-Friendly AI Database is an early-stage infrastructure opportunity with low competition and moderate market potential. Developers can build a specialized database or middleware for AI agents, but demand is unproven and monetization is uncertain. A focused MVP targeting early adopters in the indie developer community could validate the concept.",
+      "opportunity_summary_zh": "Agent友好型AI数据库是一个早期基础设施机会，竞争低但市场潜力中等。开发者可以构建专为AI agent设计的数据库或中间件，但需求尚未验证且变现不确定。针对独立开发者社区的早期采用者开发MVP可以验证概念。"
     },
     {
       "id": "trend-cloudflare-saas-template",
@@ -10301,7 +10766,31 @@
       ],
       "summary_zh": "研究发现 AI Agent 无法自我验证其输出，这是一个比预期更严重的问题，对 Agent 的可靠性提出了根本性挑战。",
       "summary_en": "Research finds AI agents cannot self-verify their outputs, a more serious problem than expected, fundamentally challenging agent reliability.",
-      "research_md_path": "content/trends/ai-agent-self-verification-problem.md"
+      "research_md_path": "content/trends/ai-agent-self-verification-problem.md",
+      "opportunity_score": 42,
+      "market_score": 55,
+      "competition_score": 15,
+      "demand_score": 50,
+      "seo_difficulty": 20,
+      "suggested_products": [
+        "SaaS",
+        "API",
+        "AI Agent",
+        "Open Source",
+        "SDK/Library"
+      ],
+      "estimated_dev_days": 60,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Large AI companies (e.g., OpenAI, Google) may solve this internally, reducing market opportunity",
+        "Technical difficulty of solving self-verification may be extremely high, requiring research breakthroughs"
+      ],
+      "risk_factors_zh": [
+        "大型 AI 公司（如 OpenAI、Google）可能内部解决此问题，从而缩小市场机会",
+        "解决自我验证的技术难度可能极高，需要研究突破"
+      ],
+      "opportunity_summary_en": "The AI agent self-verification problem is a fundamental challenge but currently has low market traction. Competition is minimal, offering a blue ocean opportunity for early movers. However, the technical complexity and risk of large-company entry make this a high-risk, high-potential niche.",
+      "opportunity_summary_zh": "AI Agent 自我验证问题是一个根本性挑战，但目前市场关注度较低。竞争极小，为先行者提供了蓝海机会。然而，技术复杂性和大公司进入的风险使这一领域成为高风险、高潜力的利基市场。"
     },
     {
       "id": "trend-ai-agent-self-edit-traceability",
