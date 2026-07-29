@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from 'next';
-import { headers } from 'next/headers';
 import { Fira_Sans, Fira_Code, JetBrains_Mono } from 'next/font/google';
 import LangToggle from '../components/LangToggle';
 import './globals.css';
@@ -122,13 +121,9 @@ const jsonLd = {
   ],
 };
 
-export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  // Server-side lang detection via middleware-set header — no client-side JS needed.
-  const headersList = await headers();
-  const lang = headersList.get('x-lang') || 'en';
-
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang={lang} className={`${firaSans.variable} ${firaCode.variable} ${jetbrainsMono.variable}`}>
+    <html lang="en" className={`${firaSans.variable} ${firaCode.variable} ${jetbrainsMono.variable}`}>
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -170,8 +165,16 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         </nav>
         <span id="main-content" tabIndex={-1} />
         {children}
+        {/* Correct <html lang> for ZH pages — path-based, runs before paint.
+             Inline script avoids headers() in layout, which would force all pages
+             to dynamic SSR and prevent ISR caching. */}
+        <script dangerouslySetInnerHTML={{ __html: `
+          (function(){
+            var lang = /\\bzh\\b/.test(window.location.pathname) ? 'zh-CN' : 'en';
+            document.documentElement.lang = lang;
+          })();
+        `}} />
         {/* Close mobile nav when a link is clicked */}
-        {/* lang attribute is now set server-side via middleware x-lang header */}
         <script dangerouslySetInnerHTML={{ __html: `
           (function(){
             var toggle = document.getElementById('nav-toggle');

@@ -5,6 +5,9 @@ import type { Metadata } from 'next';
 import { isValidPathSegment } from '@/lib/path-security';
 import { parseFrontmatter, extractBody } from '@/lib/frontmatter';
 
+// ISR: cache rendered pages for 1 hour — critical for Google crawl budget.
+export const revalidate = 3600;
+
 function getArticleSlugs(): string[] {
   const dir = join(process.cwd(), 'content', 'articles');
   try {

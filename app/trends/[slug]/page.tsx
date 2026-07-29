@@ -1,5 +1,9 @@
 import type { Metadata } from 'next';
 import { marked } from 'marked';
+
+// ISR: cache rendered pages for 1 hour — critical for Google crawl budget.
+// Without this, Googlebot hits SSR on every URL and exhausts its budget quickly.
+export const revalidate = 3600;
 import {
   Calendar,
   TrendingUp,
