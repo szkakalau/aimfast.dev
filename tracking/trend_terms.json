@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-28T08:42:17.320986+08:00",
+  "updated_at": "2026-07-29T08:38:05.688833+08:00",
   "terms": [
     {
       "id": "trend-claude-agent-sdk",
@@ -2692,7 +2692,33 @@
       ],
       "summary_zh": "多个开源项目（browser-use、Lightpanda、Skyvern）专注于让 AI Agent 能够直接操控浏览器，成为 Agent 基础设施的关键方向。",
       "summary_en": "Multiple open-source projects (browser-use, Lightpanda, Skyvern) focus on enabling AI agents to directly control browsers, becoming a key direction in agent infrastructure.",
-      "research_md_path": "content/trends/browser-automation-for-ai-agents.md"
+      "research_md_path": "content/trends/browser-automation-for-ai-agents.md",
+      "opportunity_score": 63,
+      "market_score": 58,
+      "competition_score": 30,
+      "demand_score": 65,
+      "seo_difficulty": 35,
+      "suggested_products": [
+        "SaaS",
+        "API",
+        "AI Agent",
+        "Open Source",
+        "CLI Tool"
+      ],
+      "estimated_dev_days": 45,
+      "revenue_potential": 3,
+      "risk_factors_en": [
+        "Major tech companies (Google, Microsoft) may enter with built-in browser automation capabilities.",
+        "Open-source projects may commoditize the core technology, reducing differentiation.",
+        "Reliance on evolving LLM capabilities and browser APIs could introduce instability."
+      ],
+      "risk_factors_zh": [
+        "大科技公司（Google、Microsoft）可能内置浏览器自动化功能进入市场。",
+        "开源项目可能使核心技术商品化，降低差异化。",
+        "依赖不断演进的LLM能力和浏览器API可能带来不稳定性。"
+      ],
+      "opportunity_summary_en": "Browser Automation for AI Agents is a nascent but fast-growing niche with strong open-source momentum and low competition. Independent developers can build vertical SaaS tools or APIs leveraging existing projects like browser-use. The main risk is commoditization and potential big tech entry, but early movers can capture developer mindshare.",
+      "opportunity_summary_zh": "Browser Automation for AI Agents是一个早期但快速增长的细分领域，具备强大的开源动力和低竞争环境。独立开发者可以利用browser-use等现有项目构建垂直SaaS工具或API。主要风险是商品化和潜在的大厂进入，但早期玩家可以捕获开发者心智。"
     },
     {
       "id": "trend-agent-operating-system",
@@ -2718,7 +2744,33 @@
       ],
       "summary_zh": "AOS（Agent 操作系统）和 Omnigent 等框架试图为 AI Agent 提供底层运行时和编排层，将 Agent 视为独立 '进程' 来管理。",
       "summary_en": "Frameworks like AOS (Agent Operating System) and Omnigent attempt to provide a low-level runtime and orchestration layer for AI agents, treating them as independent 'processes'.",
-      "research_md_path": "content/trends/agent-operating-system.md"
+      "research_md_path": "content/trends/agent-operating-system.md",
+      "opportunity_score": 65,
+      "market_score": 62,
+      "competition_score": 25,
+      "demand_score": 60,
+      "seo_difficulty": 30,
+      "suggested_products": [
+        "Plugin/Add-on",
+        "Open Source",
+        "Template/Boilerplate",
+        "SaaS",
+        "CLI Tool"
+      ],
+      "estimated_dev_days": 45,
+      "revenue_potential": 3,
+      "risk_factors_en": [
+        "Large AI companies may release similar OS-level products, increasing competition.",
+        "Current market is too small; adoption may take longer than expected.",
+        "Technical complexity of building a reliable Agent OS may delay MVP."
+      ],
+      "risk_factors_zh": [
+        "大型 AI 公司可能推出类似的操作系统级产品，增加竞争。",
+        "当前市场太小，采用可能比预期更慢。",
+        "构建可靠 Agent OS 的技术复杂性可能延迟 MVP。"
+      ],
+      "opportunity_summary_en": "Agent Operating System is a promising niche with low competition and growing developer interest. Early movers can build tools like plugins, lightweight runtimes, or security modules to capture the emerging market. However, the market is still nascent and requires careful timing and focus on specific pain points.",
+      "opportunity_summary_zh": "Agent Operating System 是一个有前景的细分市场，竞争低，开发者兴趣在增长。先行者可以构建插件、轻量运行时或安全模块来捕获新兴市场。但市场仍处于萌芽期，需要谨慎把握时机并聚焦具体痛点。"
     },
     {
       "id": "trend-ai-powered-codex-workflow",
@@ -2743,7 +2795,31 @@
       ],
       "summary_zh": "开发者社区围绕 OpenAI Codex 形成大量实践分享，从 'Cursor 转 Codex' 到 '穷鬼工作流'，反映出 AI 编程工具使用范式正在快速迭代。",
       "summary_en": "The developer community is sharing extensive practices around OpenAI Codex, from 'switching from Cursor to Codex' to 'budget workflows', reflecting a rapid evolution in AI coding tool usage paradigms.",
-      "research_md_path": "content/trends/ai-powered-codex-workflow.md"
+      "research_md_path": "content/trends/ai-powered-codex-workflow.md",
+      "opportunity_score": 62,
+      "market_score": 65,
+      "competition_score": 25,
+      "demand_score": 70,
+      "seo_difficulty": 20,
+      "suggested_products": [
+        "VS Code Extension",
+        "Desktop App",
+        "SaaS",
+        "Template/Boilerplate",
+        "Newsletter"
+      ],
+      "estimated_dev_days": 45,
+      "revenue_potential": 3,
+      "risk_factors_en": [
+        "OpenAI may build similar workflow features natively into Codex or ChatGPT, reducing demand for third-party tools.",
+        "Market is very early; lack of broad adoption could lead to slow growth."
+      ],
+      "risk_factors_zh": [
+        "OpenAI 可能将类似工作流功能原生集成到 Codex 或 ChatGPT 中，降低对第三方工具的需求。",
+        "市场非常早期；缺乏广泛采用可能导致增长缓慢。"
+      ],
+      "opportunity_summary_en": "AI-Powered Codex Workflow is a nascent but promising niche with low competition and strong demand from independent developers seeking cost-effective AI coding. Early movers can capture SEO advantage and build loyal communities by offering workflow templates, monitoring tools, or curated prompt services. However, the risk of OpenAI entering the space and the small current market size require a lean, fast MVP approach.",
+      "opportunity_summary_zh": "AI-Powered Codex Workflow 是一个新兴但有前景的小众领域，竞争低，独立开发者对低成本 AI 编码的需求强烈。早期进入者可以通过提供工作流模板、监控工具或精选提示词服务来获得 SEO 优势和建立忠实社区。然而，OpenAI 进入该领域的风险以及当前市场规模较小，需要采用精益、快速的 MVP 方法。"
     },
     {
       "id": "trend-ai-uxui-design-skill",
@@ -2769,7 +2845,33 @@
       "summary_zh": "为 AI Agent 提供的 UI/UX 设计智能技能，让 AI 能生成更专业的界面设计，提升了 AI 生成应用的设计质量。",
       "summary_en": "AI skills that provide design intelligence for professional UI/UX, enabling AI to generate more professional interfaces and improving the design quality of AI-generated applications.",
       "research_md_path": "content/trends/ai-uxui-design-skill.md",
-      "last_report_date": "2026-07-28"
+      "last_report_date": "2026-07-28",
+      "opportunity_score": 56,
+      "market_score": 62,
+      "competition_score": 12,
+      "demand_score": 65,
+      "seo_difficulty": 15,
+      "suggested_products": [
+        "SDK/Library",
+        "VS Code Extension",
+        "Plugin/Add-on",
+        "Template/Boilerplate",
+        "SaaS"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 3,
+      "risk_factors_en": [
+        "Major design tool companies (Figma, Adobe) or AI platforms (OpenAI) may integrate similar capabilities, increasing competition.",
+        "Market is extremely early; developer adoption may be slower than expected.",
+        "Quality of AI-generated UIs may not meet professional standards initially, limiting appeal."
+      ],
+      "risk_factors_zh": [
+        "大型设计工具公司（Figma、Adobe）或AI平台（OpenAI）可能集成类似能力，加剧竞争。",
+        "市场极为早期，开发者采用速度可能慢于预期。",
+        "AI生成UI的质量最初可能达不到专业标准，限制吸引力。"
+      ],
+      "opportunity_summary_en": "AI UX/UI Design Skill is a nascent trend with extremely low competition and rising demand from the AI agent boom. Early movers can build SDKs, plugins, or template marketplaces to capture developer mindshare before larger players enter. The opportunity is real but requires patience as the market matures.",
+      "opportunity_summary_zh": "AI UX/UI Design Skill 是一个新生趋势，竞争极低，且随着AI智能体爆发需求上升。先行者可以构建SDK、插件或模板市场，在大厂进入前抢占开发者心智。机会真实存在，但需要耐心等待市场成熟。"
     },
     {
       "id": "trend-local-first-file-sharing",
@@ -2820,7 +2922,33 @@
       ],
       "summary_zh": "围绕 AI 编程助手（如 Claude Code、Codex）的 'Skills' 概念迅速走红，开发者社区大量分享可复用的技能包，形成新的工具生态。",
       "summary_en": "The 'Skills' concept for AI coding assistants (e.g., Claude Code, Codex) is rapidly gaining traction, with the developer community sharing reusable skill packs and forming a new tool ecosystem.",
-      "research_md_path": "content/trends/ai-coding-agent-skills-ecosystem.md"
+      "research_md_path": "content/trends/ai-coding-agent-skills-ecosystem.md",
+      "opportunity_score": 58,
+      "market_score": 45,
+      "competition_score": 15,
+      "demand_score": 60,
+      "seo_difficulty": 10,
+      "suggested_products": [
+        "Web App",
+        "VS Code Extension",
+        "CLI Tool",
+        "Open Source",
+        "Plugin/Add-on"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Big players (Anthropic, OpenAI, GitHub) may build native skill marketplaces, crushing third-party platforms.",
+        "Low current adoption may lead to insufficient traction and community momentum.",
+        "Lack of standardization could fragment the ecosystem and slow growth."
+      ],
+      "risk_factors_zh": [
+        "大厂（Anthropic、OpenAI、GitHub）可能自建原生技能市场，挤压第三方平台。",
+        "当前采用率低，可能导致社区动力不足。",
+        "缺乏标准化可能导致生态碎片化，减缓增长。"
+      ],
+      "opportunity_summary_en": "The AI Coding Agent Skills Ecosystem is in a nascent stage with very low competition and high potential for first-movers. Creating a skill marketplace or quality tool could capture early developer mindshare, but monetization will require patience until the ecosystem matures. The biggest risk is platform risk from major AI providers.",
+      "opportunity_summary_zh": "AI编程技能包生态处于极早期，竞争极低，先发优势明显。打造技能市场或质量工具可抢占开发者心智，但变现需等待生态成熟。最大风险来自大厂平台的潜在碾压。"
     },
     {
       "id": "trend-ai-career-transformation",
@@ -2848,7 +2976,33 @@
       "summary_zh": "2026 年程序员面临 AI 驱动的职业转型，编码方式被重塑，团队角色从全栈向 5 种新角色分化。",
       "summary_en": "Programmers face AI-driven career transformation in 2026, with coding methods reshaped and team roles evolving from full-stack to five new specialized roles.",
       "research_md_path": "content/trends/ai-career-transformation.md",
-      "last_report_date": "2026-07-28"
+      "last_report_date": "2026-07-28",
+      "opportunity_score": 72,
+      "market_score": 65,
+      "competition_score": 15,
+      "demand_score": 78,
+      "seo_difficulty": 20,
+      "suggested_products": [
+        "SaaS",
+        "VS Code Extension",
+        "Web App",
+        "Newsletter",
+        "AI Agent"
+      ],
+      "estimated_dev_days": 45,
+      "revenue_potential": 4,
+      "risk_factors_en": [
+        "Concept may not gain mainstream traction beyond Chinese developer community",
+        "Large companies like GitHub or Microsoft could launch similar role-analysis features",
+        "Independent developers may prefer free community resources over paid tools"
+      ],
+      "risk_factors_zh": [
+        "概念可能仅局限于中文开发者社区，未获全球主流认可",
+        "GitHub、微软等大公司可能推出类似角色分析功能",
+        "独立开发者可能更倾向免费社区资源而非付费工具"
+      ],
+      "opportunity_summary_en": "AI Career Transformation is an early-stage trend with low competition and rising demand among independent developers. The best opportunity is to build a SaaS tool that analyzes GitHub repositories to recommend personalized role transitions, complemented by a VS Code extension for real-time guidance. First-mover advantage is critical, and the niche focus on Chinese-speaking independent developers provides a defensible beachhead.",
+      "opportunity_summary_zh": "AI Career Transformation 是一个早期趋势，竞争低，独立开发者需求上升。最佳机会是构建SaaS工具分析GitHub仓库推荐个性化角色转型，配合VS Code插件提供实时指导。先发优势至关重要，专注中文独立开发者群体可形成防御性滩头阵地。"
     },
     {
       "id": "trend-rl-trained-agent-for-model-training",
@@ -2929,7 +3083,31 @@
       "summary_zh": "多个独立开发者发布了免费、在线的 PDF 语音朗读工具，支持多角色朗读和自动滚屏，反映了阅读辅助工具的需求增长。",
       "summary_en": "Multiple indie developers launched free, online PDF voice reading tools with multi-voice reading and auto-scrolling, reflecting growing demand for reading assistance tools.",
       "research_md_path": "content/trends/pdf-voice-reading-tool.md",
-      "last_report_date": "2026-07-28"
+      "last_report_date": "2026-07-28",
+      "opportunity_score": 62,
+      "market_score": 55,
+      "competition_score": 30,
+      "demand_score": 65,
+      "seo_difficulty": 35,
+      "suggested_products": [
+        "Web App",
+        "Desktop App",
+        "API",
+        "Chrome Extension",
+        "Mobile App"
+      ],
+      "estimated_dev_days": 21,
+      "revenue_potential": 3,
+      "risk_factors_en": [
+        "Large tech companies (Microsoft, Google) could integrate similar features into existing products, reducing differentiation.",
+        "TTS API costs may rise or become commoditized, squeezing margins for API-based offerings."
+      ],
+      "risk_factors_zh": [
+        "大型科技公司（微软、谷歌）可能将类似功能集成到现有产品中，降低差异化。",
+        "TTS API成本可能上升或商品化，挤压基于API的产品的利润。"
+      ],
+      "opportunity_summary_en": "PDF Voice Reading Tool is an early-stage niche with low competition and rising demand from accessibility and multitasking users. Independent developers can capture initial traffic through SEO on long-tail keywords and offer freemium web/desktop apps. Main risks include potential entry by big tech and API cost fluctuations, but a focused, privacy-first approach can carve out a sustainable position.",
+      "opportunity_summary_zh": "PDF语音朗读工具处于早期小众阶段，竞争低，来自无障碍和多任务用户的需求上升。独立开发者可通过长尾关键词SEO获取初期流量，并提供免费增值的网页/桌面应用。主要风险包括大厂可能进入和API成本波动，但专注隐私优先的策略可占据可持续位置。"
     },
     {
       "id": "trend-consumer-grade-agent-app-builder",
@@ -3129,7 +3307,31 @@
       ],
       "summary_zh": "从视频逐镜头Prompt提取到YouTube内容分析总结，AI视频理解工具正在从通用走向垂直场景。",
       "summary_en": "From shot-by-shot prompt extraction to YouTube content summarization, AI video understanding tools are moving from general-purpose toward vertical scenarios.",
-      "research_md_path": "content/trends/ai-video-analysis-tools.md"
+      "research_md_path": "content/trends/ai-video-analysis-tools.md",
+      "opportunity_score": 62,
+      "market_score": 65,
+      "competition_score": 25,
+      "demand_score": 70,
+      "seo_difficulty": 20,
+      "suggested_products": [
+        "API",
+        "Chrome Extension",
+        "SaaS",
+        "AI Agent",
+        "CLI Tool"
+      ],
+      "estimated_dev_days": 45,
+      "revenue_potential": 4,
+      "risk_factors_en": [
+        "Large tech companies like Google or OpenAI may integrate similar features into existing platforms",
+        "Video analysis models are expensive to run, affecting margins for indie developers"
+      ],
+      "risk_factors_zh": [
+        "大型科技公司如Google或OpenAI可能将类似功能整合到现有平台",
+        "视频分析模型运行成本高，影响独立开发者利润率"
+      ],
+      "opportunity_summary_en": "AI Video Analysis Tools is a nascent but promising niche for indie developers, with low competition and rising demand from content creators. Early entry allows capturing SEO for long-tail keywords and building specialized products like YouTube summarization APIs or shot-by-shot extraction tools. However, the risk of big tech integration and high model costs requires a focused, niche-first approach.",
+      "opportunity_summary_zh": "AI视频分析工具对独立开发者而言是一个萌芽但潜力巨大的垂直领域，竞争低且创作者需求上升。早期入局可抢占长尾关键词SEO，构建YouTube摘要API或逐镜头提取等专精产品。但需警惕大厂整合风险和模型成本压力，建议聚焦细分场景快速验证。"
     },
     {
       "id": "trend-ai-agent-runtime-integrity",
@@ -3234,7 +3436,31 @@
       ],
       "summary_zh": "Bento 等工具将完整的 PPT 编辑、查看、协作功能打包进单个 HTML 文件中，挑战传统的文档应用架构。",
       "summary_en": "Tools like Bento pack full PPT editing, viewing, and collaboration capabilities into a single HTML file, challenging traditional document application architectures.",
-      "research_md_path": "content/trends/single-file-productivity-apps.md"
+      "research_md_path": "content/trends/single-file-productivity-apps.md",
+      "opportunity_score": 48,
+      "market_score": 35,
+      "competition_score": 20,
+      "demand_score": 40,
+      "seo_difficulty": 15,
+      "suggested_products": [
+        "Web App",
+        "Open Source",
+        "Template/Boilerplate"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Concept may remain niche and fail to gain mainstream traction.",
+        "Large incumbents like Google or Microsoft could integrate similar features into existing products.",
+        "Technical limitations of single-file architecture may restrict functionality and scalability."
+      ],
+      "risk_factors_zh": [
+        "概念可能保持小众，无法获得主流关注。",
+        "Google 或 Microsoft 等大厂可能将类似功能集成到现有产品中。",
+        "单文件架构的技术限制可能限制功能和可扩展性。"
+      ],
+      "opportunity_summary_en": "Single-File Productivity Apps is a highly experimental concept with minimal competition and early SEO opportunity, but lacks market validation and proven demand. The best approach is to build a lightweight open-source web app to test user interest and iterate quickly. Monetization should be secondary, focusing first on community building and proof of concept.",
+      "opportunity_summary_zh": "单文件生产力应用是一个高度实验性的概念，竞争极小且 SEO 机会早，但缺乏市场验证和明确需求。最佳做法是构建轻量级开源 Web 应用来测试用户兴趣并快速迭代。变现应放在次要位置，首先关注社区建设和概念验证。"
     },
     {
       "id": "trend-postgresql-cost-optimization",
@@ -3359,7 +3585,31 @@
       "summary_zh": "NVIDIA、微软、IBM 等科技巨头联合发起开放安全 AI 联盟，旨在加强 AI 网络安全，反映了行业对 AI 安全的高度重视。",
       "summary_en": "Tech giants including NVIDIA, Microsoft, and IBM launch the Open Secure AI Alliance to strengthen AI cybersecurity, reflecting the industry's high priority on AI security.",
       "research_md_path": "content/trends/open-secure-ai-alliance.md",
-      "last_report_date": "2026-07-28"
+      "last_report_date": "2026-07-28",
+      "opportunity_score": 48,
+      "market_score": 60,
+      "competition_score": 20,
+      "demand_score": 65,
+      "seo_difficulty": 25,
+      "suggested_products": [
+        "SaaS",
+        "API",
+        "Open Source",
+        "Newsletter",
+        "CLI Tool"
+      ],
+      "estimated_dev_days": 45,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "The alliance may release its own open-source tools, competing directly with indie products.",
+        "Enterprise adoption of new security standards is slow, risking low initial demand."
+      ],
+      "risk_factors_zh": [
+        "联盟可能发布自己的开源工具，直接与独立产品竞争。",
+        "企业采纳新安全标准缓慢，存在初期需求低迷的风险。"
+      ],
+      "opportunity_summary_en": "The Open Secure AI Alliance presents a nascent opportunity for indie developers to create tools that align with emerging AI security standards. The low competition and moderate demand for AI model protection suggest a potential niche. However, the involvement of large tech firms and the early stage of the trend introduce significant uncertainty.",
+      "opportunity_summary_zh": "Open Secure AI Alliance 为独立开发者提供了与新兴AI安全标准对齐的工具机会。竞争低且AI模型保护需求中等，暗示了潜在细分市场。然而，大型科技公司的参与以及趋势的早期阶段带来了显著不确定性。"
     },
     {
       "id": "trend-self-hosted-cctv-for-sbc",
@@ -3385,7 +3635,33 @@
       "summary_zh": "CheapSecurity 是一个轻量级、自托管的 CCTV 系统，专为 Linux 单板计算机设计，推动了低成本家庭安防方案。",
       "summary_en": "CheapSecurity is a lightweight, self-hosted CCTV system designed for Linux SBCs, promoting low-cost home security solutions.",
       "research_md_path": "content/trends/self-hosted-cctv-for-sbc.md",
-      "last_report_date": "2026-07-28"
+      "last_report_date": "2026-07-28",
+      "opportunity_score": 42,
+      "market_score": 35,
+      "competition_score": 20,
+      "demand_score": 40,
+      "seo_difficulty": 25,
+      "suggested_products": [
+        "Open Source",
+        "IoT Device",
+        "Mobile App",
+        "Web App",
+        "Hardware"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Very limited market size may never reach critical mass",
+        "Open-source nature makes direct monetization difficult",
+        "Larger cloud CCTV vendors could add local-only modes, reducing demand"
+      ],
+      "risk_factors_zh": [
+        "市场规模非常有限，可能永远达不到临界量",
+        "开源特性使得直接变现困难",
+        "大型云CCTV供应商可能添加仅本地模式，降低需求"
+      ],
+      "opportunity_summary_en": "Self-Hosted CCTV for SBC is a nascent niche with low competition and SEO difficulty, ideal for early movers. However, the tiny current demand and limited revenue potential make it a high-risk, low-reward opportunity. A focused open-source tool with easy setup could capture the privacy-conscious SBC community, but scaling beyond hobbyists is uncertain.",
+      "opportunity_summary_zh": "Self-Hosted CCTV for SBC 是一个新兴的小众领域，竞争和SEO难度低，适合早期进入者。然而，当前需求极小且收入潜力有限，使其成为高风险低回报的机会。一个专注易用的开源工具可以吸引注重隐私的SBC社区，但扩展到爱好者之外仍不确定。"
     },
     {
       "id": "trend-open-source-ai-security-platform",
@@ -3461,7 +3737,33 @@
       ],
       "summary_zh": "Computable 等项目允许用户按周买卖和赎回 GPU 算力，代表 GPU 资源从长期租赁向灵活现货市场转变的新趋势。",
       "summary_en": "Projects like Computable allow users to buy, sell, and redeem GPU compute by the week, representing a shift from long-term leases to a flexible spot market for GPU resources.",
-      "research_md_path": "content/trends/gpu-spot-market.md"
+      "research_md_path": "content/trends/gpu-spot-market.md",
+      "opportunity_score": 48,
+      "market_score": 45,
+      "competition_score": 15,
+      "demand_score": 55,
+      "seo_difficulty": 20,
+      "suggested_products": [
+        "CLI Tool",
+        "SaaS",
+        "Web App",
+        "Open Source",
+        "Newsletter"
+      ],
+      "estimated_dev_days": 21,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Market adoption may be slow if GPU supply shortage eases or cloud providers offer flexible plans.",
+        "Dependence on third-party platforms like Computable and Akash for liquidity and reliability.",
+        "Large cloud providers (AWS, Azure) could enter with similar spot offerings, crushing startups."
+      ],
+      "risk_factors_zh": [
+        "如果 GPU 供应短缺缓解或云提供商推出灵活计划，市场采用可能放缓。",
+        "依赖 Computable 和 Akash 等第三方平台的流动性和可靠性。",
+        "大型云提供商（AWS、Azure）可能推出类似现货产品，压垮初创公司。"
+      ],
+      "opportunity_summary_en": "GPU Spot Market is a nascent niche with low competition and rising search interest, ideal for early movers. Building a CLI tool or aggregation platform can capture developer mindshare quickly. However, revenue is uncertain and major cloud providers pose a long-term threat.",
+      "opportunity_summary_zh": "GPU Spot Market 是一个竞争低、搜索兴趣上升的萌芽领域，适合早期入局者。开发 CLI 工具或聚合平台可快速占领开发者心智。但收入不确定，大型云提供商构成长期威胁。"
     },
     {
       "id": "trend-feynobg-background-removal",
@@ -3487,7 +3789,33 @@
       "summary_zh": "一个自动背景去除模型和训练库，为图像处理提供开箱即用的 AI 能力。",
       "summary_en": "An automatic background removal model and training library, providing out-of-the-box AI capabilities for image processing.",
       "research_md_path": "content/trends/feynobg-background-removal.md",
-      "last_report_date": "2026-07-28"
+      "last_report_date": "2026-07-28",
+      "opportunity_score": 42,
+      "market_score": 35,
+      "competition_score": 60,
+      "demand_score": 40,
+      "seo_difficulty": 70,
+      "suggested_products": [
+        "Open Source",
+        "SDK/Library",
+        "CLI Tool",
+        "Web App",
+        "API"
+      ],
+      "estimated_dev_days": 14,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Extremely low initial traction (only 1 mention) makes it hard to validate demand",
+        "Large incumbents like remove.bg and Adobe can easily replicate features",
+        "No clear differentiation from existing open-source background removal models"
+      ],
+      "risk_factors_zh": [
+        "初始关注度极低（仅一次提及），需求难以验证",
+        "大公司如 remove.bg 和 Adobe 可轻易复制功能",
+        "与现有开源背景去除模型无明显差异化"
+      ],
+      "opportunity_summary_en": "FeyNoBg Background Removal is a nascent open-source project with minimal validation. The background removal market is large but crowded, and this specific tool lacks traction or differentiation. A cautious approach is recommended before investing significant development time.",
+      "opportunity_summary_zh": "FeyNoBg Background Removal 是一个初期开源项目，几乎没有得到验证。背景去除市场规模大但竞争激烈，该工具缺乏关注度和差异化。建议在投入大量开发时间前保持谨慎。"
     },
     {
       "id": "trend-self-hosted-document-signing",
@@ -3514,7 +3842,31 @@
       "summary_zh": "Let's Seal 项目提供免费、自托管的文档签名服务，类似于 Let's Encrypt 对 HTTPS 的推动，有望降低数字签名的门槛。",
       "summary_en": "The Let's Seal project offers free, self-hosted document signing, similar to Let's Encrypt's impact on HTTPS, potentially lowering the barrier to digital signatures.",
       "research_md_path": "content/trends/self-hosted-document-signing.md",
-      "last_report_date": "2026-07-28"
+      "last_report_date": "2026-07-28",
+      "opportunity_score": 40,
+      "market_score": 35,
+      "competition_score": 20,
+      "demand_score": 40,
+      "seo_difficulty": 10,
+      "suggested_products": [
+        "Open Source",
+        "API",
+        "Web App",
+        "CLI Tool",
+        "Template/Boilerplate"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Low market awareness may lead to slow adoption",
+        "Commercial signing services like DocuSign may add self-hosted options"
+      ],
+      "risk_factors_zh": [
+        "市场认知度低可能导致采用缓慢",
+        "像 DocuSign 这样的商业签名服务可能会增加自托管选项"
+      ],
+      "opportunity_summary_en": "Self-hosted document signing is a very early trend with almost no competition and low SEO difficulty. While demand is modest and the market is small, it offers a chance for independent developers to build a niche open-source solution. The lack of proven traction and commercial viability makes it a high-risk, low-reward opportunity for now.",
+      "opportunity_summary_zh": "自托管文档签名是一个极早期的趋势，几乎没有竞争且 SEO 难度低。虽然需求适中且市场较小，但它为独立开发者提供了一个构建利基开源解决方案的机会。缺乏已证实的吸引力和商业可行性使其目前成为一个高风险、低回报的机会。"
     },
     {
       "id": "trend-instantvideos.org",
@@ -3909,7 +4261,33 @@
       ],
       "summary_zh": "阿里等大厂面试中 Agent 相关技术（LangChain、Multi-Agent、A2A、MCP）成为核心考点，反映行业对 Agent 开发人才的迫切需求。",
       "summary_en": "Agent-related technologies (LangChain, Multi-Agent, A2A, MCP) are becoming core topics in interviews at major companies like Alibaba, reflecting a strong industry demand for agent development talent.",
-      "research_md_path": "content/trends/ai-agent-interview-trends.md"
+      "research_md_path": "content/trends/ai-agent-interview-trends.md",
+      "opportunity_score": 65,
+      "market_score": 55,
+      "competition_score": 20,
+      "demand_score": 70,
+      "seo_difficulty": 25,
+      "suggested_products": [
+        "Web App",
+        "Template/Boilerplate",
+        "Newsletter",
+        "API",
+        "AI Agent"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 3,
+      "risk_factors_en": [
+        "Major tech companies might release official interview prep materials, reducing demand for third-party products.",
+        "The trend may fizzle if AI Agent hype subsides or interview focus shifts.",
+        "Dependence on a single source (juejin) for signal; low validation increases uncertainty."
+      ],
+      "risk_factors_zh": [
+        "大厂可能推出官方面试准备资料，削弱第三方产品需求。",
+        "如果AI Agent热潮消退或面试重点转移，趋势可能昙花一现。",
+        "仅依赖单一信源（掘金），信号验证不足，不确定性高。"
+      ],
+      "opportunity_summary_en": "The AI Agent interview trend is at a very early stage with low competition and growing demand from developers. Building a niche interview prep platform or template library could capture first-mover advantage. However, the trend's sustainability depends on continued industry adoption and avoiding direct competition from official resources.",
+      "opportunity_summary_zh": "AI Agent面试趋势处于极早期，竞争极低，开发者需求上升。打造一个针对性的面试准备平台或模板库能抢占先机。但趋势的持续性取决于行业持续采用，并需避免与大厂官方资源直接竞争。"
     },
     {
       "id": "trend-nanobot-personal-ai-agent-framework",
@@ -3934,7 +4312,31 @@
       "summary_zh": "一个超轻量、开源、可自托管的个人 AI Agent 框架，支持 WebUI、工具调用、MCP 协议和多 Agent 工作流，降低了 Agent 开发门槛。",
       "summary_en": "An ultra-lightweight, open-source, self-hosted personal AI agent framework with WebUI, tool calling, MCP protocol, and multi-agent workflows, lowering the barrier to agent development.",
       "research_md_path": "content/trends/nanobot-personal-ai-agent-framework.md",
-      "last_report_date": "2026-07-28"
+      "last_report_date": "2026-07-28",
+      "opportunity_score": 42,
+      "market_score": 35,
+      "competition_score": 20,
+      "demand_score": 30,
+      "seo_difficulty": 15,
+      "suggested_products": [
+        "Open Source",
+        "Template/Boilerplate",
+        "CLI Tool",
+        "AI Agent",
+        "Web App"
+      ],
+      "estimated_dev_days": 14,
+      "revenue_potential": 1,
+      "risk_factors_en": [
+        "Extremely early stage with no traction; may never gain adoption",
+        "Large tech companies could easily build similar frameworks"
+      ],
+      "risk_factors_zh": [
+        "极早期阶段，没有牵引力；可能永远不会被采用",
+        "大型科技公司可以轻松构建类似的框架"
+      ],
+      "opportunity_summary_en": "Nanobot Personal AI Agent Framework is a nascent open-source project with minimal competition and low SEO difficulty, offering a blue ocean opportunity for early adopters. However, the lack of demand signals and traction makes it a high-risk, low-reward play in the short term. Independent developers can quickly build a lightweight AI agent boilerplate or CLI tool to test the waters.",
+      "opportunity_summary_zh": "Nanobot个人AI代理框架是一个萌芽期的开源项目，竞争极少且SEO难度低，为早期采用者提供了蓝海机会。然而，缺乏需求信号和牵引力使其短期内高风险低回报。独立开发者可以快速构建轻量级AI代理样板或CLI工具来试水。"
     },
     {
       "id": "trend-browser-based-ffmpeg-video-editor",
@@ -3961,7 +4363,31 @@
       "summary_zh": "一个在浏览器中直接使用 FFmpeg 渲染视频的编辑器，无需后端服务器，代表了 Web 端视频编辑的新方向。",
       "summary_en": "A browser-based video editor that renders videos directly with FFmpeg, requiring no backend server, representing a new direction for web-based video editing.",
       "research_md_path": "content/trends/browser-based-ffmpeg-video-editor.md",
-      "last_report_date": "2026-07-28"
+      "last_report_date": "2026-07-28",
+      "opportunity_score": 38,
+      "market_score": 30,
+      "competition_score": 20,
+      "demand_score": 35,
+      "seo_difficulty": 15,
+      "suggested_products": [
+        "Web App",
+        "Open Source",
+        "SaaS"
+      ],
+      "estimated_dev_days": 60,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Browser performance limitations may hinder user experience",
+        "Large players like Adobe or Canva could enter the space",
+        "Low current interest signals lack of product-market fit"
+      ],
+      "risk_factors_zh": [
+        "浏览器性能限制可能影响用户体验",
+        "Adobe或Canva等大厂可能进入该领域",
+        "当前关注度低，缺乏产品市场契合信号"
+      ],
+      "opportunity_summary_en": "Browser-Based FFmpeg Video Editor is a nascent concept with very low competition and SEO difficulty, offering a potential blue ocean for indie developers. However, the market is unvalidated with no proven demand, and the technology faces browser performance constraints. It is a high-risk, early-stage opportunity that may appeal to privacy-focused niches but requires significant development effort.",
+      "opportunity_summary_zh": "Browser-Based FFmpeg Video Editor是一个萌芽概念，竞争极低，SEO难度小，为独立开发者提供了潜在的蓝海机会。然而，市场尚未得到验证，缺乏明确需求，且技术面临浏览器性能限制。这是一个高风险、早期阶段的机会，可能吸引关注隐私的利基市场，但需要大量开发投入。"
     },
     {
       "id": "trend-browser-video-editor-ai-driven",
@@ -5424,7 +5850,31 @@
       ],
       "summary_zh": "img2threejs项目通过Token高效的图像到3D重建，将参考图片转化为可直接使用的Three.js模型，代表了AI生成3D内容的新方向。",
       "summary_en": "The img2threejs project converts reference images into ready-to-use Three.js models via token-efficient reconstruction, representing a new direction in AI-generated 3D content.",
-      "research_md_path": "content/trends/image-to-3d-generation.md"
+      "research_md_path": "content/trends/image-to-3d-generation.md",
+      "opportunity_score": 46,
+      "market_score": 35,
+      "competition_score": 15,
+      "demand_score": 40,
+      "seo_difficulty": 10,
+      "suggested_products": [
+        "Open Source",
+        "Web App",
+        "API",
+        "SaaS",
+        "Plugin/Add-on"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Technology may not mature or gain adoption if quality or speed is insufficient.",
+        "Large companies (e.g., Google, NVIDIA) could enter with superior solutions, crushing early movers."
+      ],
+      "risk_factors_zh": [
+        "如果质量或速度不足，技术可能无法成熟或获得采用。",
+        "大公司（如 Google、NVIDIA）可能推出更优方案，碾压早期进入者。"
+      ],
+      "opportunity_summary_en": "Image-to-3D Generation is an extremely early trend with no competition and low SEO difficulty, offering a blue-ocean opportunity for indie developers. However, the market is tiny and demand unproven, requiring a fast MVP to validate and capture early adopters. The main risks are technological immaturity and potential big-tech entry.",
+      "opportunity_summary_zh": "Image-to-3D Generation 是一个极早期趋势，无竞争且 SEO 难度低，为独立开发者提供了蓝海机会。但市场极小且需求未经验证，需要快速构建 MVP 以验证并抓住早期用户。主要风险是技术不成熟和大公司可能进入。"
     },
     {
       "id": "trend-chrome-devtools-mcp",
@@ -5449,7 +5899,31 @@
       "summary_zh": "Google 官方发布的 Chrome DevTools MCP 协议，让 AI 编码 Agent 可以直接控制浏览器调试工具，大幅提升自动化测试和调试能力。",
       "summary_en": "Google's official Chrome DevTools MCP protocol enables AI coding agents to directly control browser DevTools, significantly enhancing automated testing and debugging capabilities.",
       "research_md_path": "content/trends/chrome-devtools-mcp.md",
-      "last_report_date": "2026-07-28"
+      "last_report_date": "2026-07-28",
+      "opportunity_score": 52,
+      "market_score": 60,
+      "competition_score": 10,
+      "demand_score": 45,
+      "seo_difficulty": 15,
+      "suggested_products": [
+        "MCP Server",
+        "AI Agent",
+        "Chrome Extension",
+        "Open Source",
+        "CLI Tool"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Google may standardize and provide official implementation, reducing third-party opportunities",
+        "Very early stage with only 1 mention, market adoption uncertain"
+      ],
+      "risk_factors_zh": [
+        "Google 可能标准化并提供官方实现，减少第三方机会",
+        "非常早期阶段，仅 1 次提及，市场采用不确定"
+      ],
+      "opportunity_summary_en": "Chrome DevTools MCP is a brand-new official protocol with zero competition, offering a unique chance to build tools for AI-driven debugging. The low market signal suggests high risk but also high potential as a first-mover. Suggested products include an MCP server, AI agent integration, or a Chrome extension to simplify adoption.",
+      "opportunity_summary_zh": "Chrome DevTools MCP 是一个全新的官方协议，零竞争，为构建 AI 驱动调试工具提供了独特机会。低市场信号意味着高风险，但也意味着作为先行者的高潜力。建议产品包括 MCP 服务器、AI 代理集成或 Chrome 扩展以简化采用。"
     },
     {
       "id": "trend-bento-office-suite",
@@ -5474,7 +5948,29 @@
       "summary_zh": "一个仅由单个文件组成的办公套件，极简设计挑战了传统办公软件的复杂架构。",
       "summary_en": "An office suite that fits in a single file, challenging the complex architecture of traditional office software with its minimalist design.",
       "research_md_path": "content/trends/bento-office-suite.md",
-      "last_report_date": "2026-07-28"
+      "last_report_date": "2026-07-28",
+      "opportunity_score": 35,
+      "market_score": 20,
+      "competition_score": 15,
+      "demand_score": 25,
+      "seo_difficulty": 10,
+      "suggested_products": [
+        "Open Source",
+        "CLI Tool",
+        "Desktop App"
+      ],
+      "estimated_dev_days": 14,
+      "revenue_potential": 1,
+      "risk_factors_en": [
+        "Extremely low user adoption and interest",
+        "Competition from established free office suites like LibreOffice and Google Docs"
+      ],
+      "risk_factors_zh": [
+        "用户采用率和兴趣极低",
+        "来自LibreOffice和Google Docs等成熟免费办公套件的竞争"
+      ],
+      "opportunity_summary_en": "Bento Office Suite is a nascent, single-file office suite with only 1 GitHub mention and a trend score of 48. The market is tiny and demand is negligible, making it a high-risk, low-reward opportunity. Independent developers should only consider it as a learning experiment or for extremely constrained environments.",
+      "opportunity_summary_zh": "Bento Office Suite是一个萌芽期的单文件办公套件，仅在GitHub上被提及1次，趋势分48。市场极小，需求可忽略不计，是一个高风险、低回报的机会。独立开发者应仅将其视为学习实验或用于极端受限的环境。"
     },
     {
       "id": "trend-kv-cache-offload-inference",
