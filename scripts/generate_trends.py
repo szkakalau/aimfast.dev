@@ -192,7 +192,9 @@ Signals:
         sys.path.insert(0, str(ROOT / "scripts"))
         from llm_client import chat
 
-        response = chat(system_prompt, user_prompt)
+        # max_tokens=16384: extracting 15-30 terms from 300 signals needs room.
+        # Default 4096 caused JSON truncation at ~line 274 (2026-07-29 incident).
+        response = chat(system_prompt, user_prompt, max_tokens=16384)
         # Extract JSON from response (handle markdown code blocks)
         response = response.strip()
         if response.startswith("```"):
@@ -1064,10 +1066,16 @@ def main():
             term_index_data = load_json(term_index_path)
             if isinstance(term_index_data, dict):
                 raw_entity_terms = term_index_data.get("terms", [])
+                # term_index.json stores terms as a DICT keyed by term name.
+                # Normalize to list for downstream processing.
+                if isinstance(raw_entity_terms, dict):
+                    raw_entity_terms = list(raw_entity_terms.values())
                 # Filter to high-signal entity terms: cross_source_count >= 2 AND total_mentions >= 2
                 entity_terms = sorted(
                     [et for et in raw_entity_terms
-                     if et.get("cross_source_count", 0) >= 2 and et.get("total_mentions", 0) >= 2],
+                     if isinstance(et, dict)
+                     and et.get("cross_source_count", 0) >= 2
+                     and et.get("total_mentions", 0) >= 2],
                     key=lambda t: (t.get("cross_source_count", 0), t.get("total_mentions", 0)),
                     reverse=True
                 )
