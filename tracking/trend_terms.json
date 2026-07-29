@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-29T10:08:00.625552+08:00",
+  "updated_at": "2026-07-29T11:25:37.109021+08:00",
   "terms": [
     {
       "id": "trend-claude-agent-sdk",
@@ -1231,7 +1231,33 @@
       "summary_zh": "开发者深度对比 Cursor、Claude Code 和 Codex 等 AI 编程工具，讨论真实项目中的差距和选型策略。",
       "summary_en": "Developers deeply compare AI coding tools like Cursor, Claude Code, and Codex, discussing real-world gaps and selection strategies.",
       "research_md_path": "content/trends/ai-coding-tool-comparison-cursorclaude-codecodex.md",
-      "canonical_zh": "AI 编程工具对比与选型（Cursor/Claude Code/Codex）"
+      "canonical_zh": "AI 编程工具对比与选型（Cursor/Claude Code/Codex）",
+      "opportunity_score": 64,
+      "market_score": 66,
+      "competition_score": 30,
+      "demand_score": 75,
+      "seo_difficulty": 35,
+      "suggested_products": [
+        "Web App",
+        "VS Code Extension",
+        "Open Source",
+        "Newsletter",
+        "AI Agent"
+      ],
+      "estimated_dev_days": 45,
+      "revenue_potential": 3,
+      "risk_factors_en": [
+        "Large companies like GitHub/OpenAI may integrate comparison features directly into their tools",
+        "Rapid tool evolution could make static comparisons outdated quickly",
+        "Low current mention count (4) may indicate limited near-term demand"
+      ],
+      "risk_factors_zh": [
+        "大型公司如GitHub/OpenAI可能直接将对比功能集成到其工具中",
+        "工具快速演进可能导致静态对比迅速过时",
+        "当前提及数（4次）较低，可能表明近期需求有限"
+      ],
+      "opportunity_summary_en": "The AI coding tool comparison niche is nascent with fast growth and low competition, offering a window for structured evaluation platforms. Developer demand for unbiased benchmarks is strong, but the small current signal and risk of platform consolidation require a lean MVP. A web-based comparison engine with community-driven tests and affiliate monetization could capture early adopters.",
+      "opportunity_summary_zh": "AI编程工具对比领域处于早期快速增长阶段，竞争低，为结构化评测平台提供了窗口期。开发者对公正基准测试的需求强烈，但当前信号较小且平台整合风险存在，需要精益MVP。基于社区的对比引擎结合联盟变现，可吸引早期采用者。"
     },
     {
       "id": "trend-rewriting-classic-software-in-rust",
@@ -1412,7 +1438,33 @@
       ],
       "summary_zh": "V2EX上关于Vibe Coding副业四个月成本超收益的讨论引发31条回复，同时有多个独立开发者分享SaaS零收入经验，表明AI辅助编程的副业经济模式正面临现实考验。",
       "summary_en": "A V2EX discussion on four months of Vibe Coding side projects with costs exceeding revenue drew 31 replies, alongside multiple indie devs sharing zero-revenue SaaS experiences, indicating the side-project economy powered by AI coding faces reality checks.",
-      "research_md_path": "content/trends/vibe-coding-side-project-economics.md"
+      "research_md_path": "content/trends/vibe-coding-side-project-economics.md",
+      "opportunity_score": 58,
+      "market_score": 45,
+      "competition_score": 20,
+      "demand_score": 60,
+      "seo_difficulty": 25,
+      "suggested_products": [
+        "Web App",
+        "SaaS",
+        "CLI Tool",
+        "Newsletter",
+        "Open Source"
+      ],
+      "estimated_dev_days": 14,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Extremely small total addressable market (only 2 mentions globally)",
+        "Target users (indie developers) are price-sensitive and may prefer free alternatives",
+        "Large AI tool providers (GitHub, Anthropic) could add built-in cost tracking features"
+      ],
+      "risk_factors_zh": [
+        "目标市场极小（全球仅2次提及）",
+        "目标用户（独立开发者）价格敏感，可能偏好免费方案",
+        "大型AI工具提供商（GitHub、Anthropic）可能内置成本追踪功能"
+      ],
+      "opportunity_summary_en": "Vibe Coding Side Project Economics is a nascent trend highlighting the gap between easy building and hard monetization. With no competitors and low SEO difficulty, early entry could capture niche indie developer attention. However, the tiny market size and user cost sensitivity limit revenue potential.",
+      "opportunity_summary_zh": "Vibe Coding Side Project Economics 是一个萌芽期趋势，揭示了“易构建难变现”的矛盾。目前无竞品且SEO难度低，早期进入可抓住小众独立开发者关注。但市场规模极小且用户对价格敏感，收入潜力有限。"
     },
     {
       "id": "trend-claude-code-runtime-migration",
@@ -1440,7 +1492,29 @@
       ],
       "summary_zh": "Claude Code改用Rust编写的Bun运行时在Hacker News获得362赞和499评论，表明AI编程工具底层运行时迁移成为热点讨论。",
       "summary_en": "Claude Code's migration to Bun written in Rust garnered 362 upvotes and 499 comments on Hacker News, showing AI coding tool runtime migration is a hot topic.",
-      "research_md_path": "content/trends/claude-code-runtime-migration.md"
+      "research_md_path": "content/trends/claude-code-runtime-migration.md",
+      "opportunity_score": 62,
+      "market_score": 55,
+      "competition_score": 25,
+      "demand_score": 70,
+      "seo_difficulty": 30,
+      "suggested_products": [
+        "CLI Tool",
+        "Open Source",
+        "VS Code Extension"
+      ],
+      "estimated_dev_days": 21,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Anthropic may release official migration tools, reducing demand for third-party solutions",
+        "Bun runtime updates could quickly obsolete compatibility tools"
+      ],
+      "risk_factors_zh": [
+        "Anthropic 可能发布官方迁移工具，降低第三方方案需求",
+        "Bun 运行时更新可能迅速使兼容性工具过时"
+      ],
+      "opportunity_summary_en": "Claude Code Runtime Migration is an early-stage trend with strong community interest but limited market size. The opportunity lies in creating lightweight migration tools and benchmarks for a niche audience. However, the risk of official Anthropic solutions and rapid runtime changes requires a fast MVP and community-driven approach.",
+      "opportunity_summary_zh": "Claude Code 运行时迁移是早期趋势，社区兴趣浓厚但市场规模有限。机会在于为小众用户创建轻量级迁移工具和基准测试。然而，Anthropic 官方方案和运行时快速变化的风险要求快速 MVP 和社区驱动策略。"
     },
     {
       "id": "trend-ai-agent-cost-crisis",
@@ -1774,7 +1848,31 @@
       ],
       "summary_zh": "多个独立开发者推出本地优先的AI代理工具（如Rowboat、Shellular），强调数据隐私和离线运行，代表AI工具从云端向本地迁移的新趋势。",
       "summary_en": "Multiple indie developers launch local-first AI agent tools (e.g., Rowboat, Shellular), emphasizing data privacy and offline capability, signaling a shift from cloud to local AI tooling.",
-      "research_md_path": "content/trends/local-first-ai-agent-tools.md"
+      "research_md_path": "content/trends/local-first-ai-agent-tools.md",
+      "opportunity_score": 68,
+      "market_score": 65,
+      "competition_score": 20,
+      "demand_score": 70,
+      "seo_difficulty": 30,
+      "suggested_products": [
+        "Open Source",
+        "Desktop App",
+        "CLI Tool",
+        "Plugin/Add-on",
+        "API"
+      ],
+      "estimated_dev_days": 45,
+      "revenue_potential": 3,
+      "risk_factors_en": [
+        "Major cloud providers may integrate local-first features into existing products",
+        "Open source alternatives may limit commercial pricing power"
+      ],
+      "risk_factors_zh": [
+        "大型云服务商可能将本地优先功能整合到现有产品中",
+        "开源替代品可能限制商业定价能力"
+      ],
+      "opportunity_summary_en": "Local-first AI Agent Tools are an early-stage opportunity driven by privacy and offline needs. The market is fragmented with no dominant player, offering indie developers a chance to build niche solutions. Focus on enterprise privacy or IoT offline scenarios for best traction.",
+      "opportunity_summary_zh": "本地优先AI代理工具是一个由隐私和离线需求驱动的早期机会。市场碎片化且无主导者，为独立开发者提供了构建细分方案的空间。聚焦企业隐私或物联网离线场景可获得最佳牵引力。"
     },
     {
       "id": "trend-open-source-ai-funding-shift",
@@ -2141,7 +2239,33 @@
       ],
       "summary_zh": "多个产品（如InstantVideos、NanoScene AI）利用AI快速生成短视频或图像，反映AI内容创作工具向极速、低门槛方向发展的趋势。",
       "summary_en": "Products like InstantVideos and NanoScene AI use AI for rapid video/image generation, reflecting a trend toward fast, low-barrier AI content creation tools.",
-      "research_md_path": "content/trends/ai-powered-videomedia-tools.md"
+      "research_md_path": "content/trends/ai-powered-videomedia-tools.md",
+      "opportunity_score": 55,
+      "market_score": 60,
+      "competition_score": 35,
+      "demand_score": 70,
+      "seo_difficulty": 20,
+      "suggested_products": [
+        "SaaS",
+        "API",
+        "Web App",
+        "Template/Boilerplate",
+        "Plugin/Add-on"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 3,
+      "risk_factors_en": [
+        "Large AI companies (e.g., OpenAI, Google) may release similar tools with superior resources",
+        "Nascent market may not sustain rapid growth if demand shifts",
+        "Quality of AI-generated video may not meet professional standards yet"
+      ],
+      "risk_factors_zh": [
+        "大型AI公司（如OpenAI、Google）可能推出类似工具，资源更优",
+        "早期市场可能无法维持快速增长，如果需求转变",
+        "AI生成视频质量可能尚未达到专业标准"
+      ],
+      "opportunity_summary_en": "AI-Powered Video/Media Tools present a nascent but growing opportunity for indie developers, driven by short-video platform demand and generative AI maturity. Low competition and SEO difficulty offer an early-mover advantage, though large AI players pose a threat. Suggested products like a SaaS video generator or API service can target specific niches with a 30-day MVP.",
+      "opportunity_summary_zh": "AI驱动的视频/媒体工具为独立开发者提供了一个早期但增长中的机会，由短视频平台需求和生成式AI成熟度驱动。低竞争和SEO难度提供了先发优势，但大型AI公司构成威胁。建议的产品如SaaS视频生成器或API服务可针对特定细分市场，MVP开发时间约30天。"
     },
     {
       "id": "trend-multi-agent-system-abstraction-layer-design",
@@ -2168,7 +2292,33 @@
       "summary_zh": "多个信号讨论多 Agent 系统的设计，指出核心挑战在于抽象层级的合理设计，而非 Agent 数量，是 Agent 工程的重要方法论。",
       "summary_en": "Multiple signals discuss multi-agent system design, emphasizing that the core challenge lies in proper abstraction levels rather than agent count — a key methodology in agent engineering.",
       "research_md_path": "content/trends/multi-agent-system-abstraction-layer-design.md",
-      "canonical_zh": "多 Agent 系统抽象层设计"
+      "canonical_zh": "多 Agent 系统抽象层设计",
+      "opportunity_score": 68,
+      "market_score": 72,
+      "competition_score": 25,
+      "demand_score": 70,
+      "seo_difficulty": 20,
+      "suggested_products": [
+        "VS Code Extension",
+        "CLI Tool",
+        "Open Source",
+        "Template/Boilerplate",
+        "AI Agent"
+      ],
+      "estimated_dev_days": 45,
+      "revenue_potential": 3,
+      "risk_factors_en": [
+        "Major cloud providers (e.g., AWS, Azure) may integrate abstraction layers into their AI services, commoditizing the solution.",
+        "Community-driven open-source alternatives could emerge quickly, reducing willingness to pay.",
+        "Market may remain niche if multi-agent adoption slows down."
+      ],
+      "risk_factors_zh": [
+        "主要云厂商（如AWS、Azure）可能将抽象层集成到AI服务中，使方案商品化。",
+        "社区驱动的开源替代品可能快速出现，降低付费意愿。",
+        "如果多Agent采用放缓，市场可能保持小众。"
+      ],
+      "opportunity_summary_en": "Multi-Agent System Abstraction Layer Design is a nascent but promising concept addressing a real developer pain point. With low competition and growing demand, early movers can capture mindshare through developer tools and templates. The main risks are commoditization by cloud giants and slow market adoption.",
+      "opportunity_summary_zh": "多Agent系统抽象层设计是一个新兴但有前景的概念，解决了开发者的真实痛点。竞争低、需求增长，早期进入者可通过开发者工具和模板抢占心智。主要风险是云巨头商品化和市场采用缓慢。"
     },
     {
       "id": "trend-kimi-k3-open-weight-model",
@@ -2405,7 +2555,31 @@
       ],
       "summary_zh": "Reddit上大量关于家庭自动化设备选择、本地存储、智能锁等讨论，显示DIY智能家居社区活跃。",
       "summary_en": "Numerous Reddit discussions on home automation device selection, local storage, smart locks, etc., show a vibrant DIY smart home community.",
-      "research_md_path": "content/trends/home-automation-diy.md"
+      "research_md_path": "content/trends/home-automation-diy.md",
+      "opportunity_score": 62,
+      "market_score": 45,
+      "competition_score": 30,
+      "demand_score": 70,
+      "seo_difficulty": 35,
+      "suggested_products": [
+        "Web App",
+        "Hardware",
+        "IoT Device",
+        "Template/Boilerplate",
+        "Newsletter"
+      ],
+      "estimated_dev_days": 45,
+      "revenue_potential": 3,
+      "risk_factors_en": [
+        "Large tech companies may enter with privacy-focused products",
+        "Open-source alternatives may remain free and limit monetization"
+      ],
+      "risk_factors_zh": [
+        "大型科技公司可能推出隐私优先产品进入市场",
+        "开源替代方案可能保持免费，限制商业化"
+      ],
+      "opportunity_summary_en": "Home Automation DIY is a nascent trend with strong niche demand from privacy-conscious users. Low competition and rising search interest create a window for tools like local-control firmware and visual automation editors. However, the market is still small and dependent on open-source community momentum.",
+      "opportunity_summary_zh": "Home Automation DIY 是一个萌芽期趋势，来自隐私意识用户的强劲小众需求。低竞争和上升的搜索兴趣为本地控制固件和可视化自动化编辑器等工具创造了窗口。但市场仍较小，且依赖开源社区动力。"
     },
     {
       "id": "trend-non-developer-ai-agent-skill-creation",
@@ -2637,7 +2811,31 @@
       ],
       "summary_zh": "中国AI模型采用开放权重策略，引发了关于全球AI竞争格局和开源模型影响力的激烈讨论，值得追踪其对技术生态和地缘政治的影响。",
       "summary_en": "China's open-weight AI strategy is sparking intense debate about the global AI competitive landscape and the impact of open-source models, making it a key trend to track for its effects on technology ecosystems and geopolitics.",
-      "research_md_path": "content/trends/chinas-open-weight-ai-strategy.md"
+      "research_md_path": "content/trends/chinas-open-weight-ai-strategy.md",
+      "opportunity_score": 62,
+      "market_score": 65,
+      "competition_score": 30,
+      "demand_score": 55,
+      "seo_difficulty": 25,
+      "suggested_products": [
+        "Web App",
+        "SaaS",
+        "CLI Tool",
+        "Open Source",
+        "Newsletter"
+      ],
+      "estimated_dev_days": 45,
+      "revenue_potential": 3,
+      "risk_factors_en": [
+        "Low current awareness may limit initial traction",
+        "Large tech companies like Alibaba could release competing platforms"
+      ],
+      "risk_factors_zh": [
+        "当前认知度低可能限制初期发展",
+        "阿里巴巴等大公司可能发布竞争平台"
+      ],
+      "opportunity_summary_en": "China's open-weight AI strategy creates a niche for tools that simplify model deployment, comparison, and customization. Early HN signals suggest growing interest among English-speaking developers. Building a lightweight platform or toolchain now could capture first-mover advantage.",
+      "opportunity_summary_zh": "中国的开放权重AI策略为简化模型部署、对比和定制的工具创造了利基市场。HN的早期信号表明英语开发者兴趣渐增。现在构建轻量级平台或工具链可抢占先发优势。"
     },
     {
       "id": "trend-large-model-release-and-testing-gpt-5.6-grok-4.5",
@@ -2664,7 +2862,31 @@
       "summary_zh": "GPT-5.6 和 Grok-4.5 在同一天被广泛讨论和测试，表明大模型竞争激烈，前端设计能力成为新焦点。",
       "summary_en": "GPT-5.6 and Grok-4.5 are widely discussed and tested on the same day, indicating intense LLM competition with frontend design ability as a new focus.",
       "research_md_path": "content/trends/large-model-release-and-testing-gpt-5.6-grok-4.5.md",
-      "canonical_zh": "超大模型发布与测试（GPT-5.6 / Grok-4.5）"
+      "canonical_zh": "超大模型发布与测试（GPT-5.6 / Grok-4.5）",
+      "opportunity_score": 68,
+      "market_score": 70,
+      "competition_score": 20,
+      "demand_score": 75,
+      "seo_difficulty": 25,
+      "suggested_products": [
+        "Web App",
+        "Open Source",
+        "SaaS",
+        "VS Code Extension",
+        "API"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 3,
+      "risk_factors_en": [
+        "OpenAI or xAI may release official benchmarking tools, reducing demand for third-party solutions.",
+        "Trend is nascent with only 5 mentions on one source; adoption may slow if model capabilities don't meet expectations."
+      ],
+      "risk_factors_zh": [
+        "OpenAI 或 xAI 可能发布官方基准测试工具，降低第三方方案需求。",
+        "趋势仅在一个信源有 5 次提及，处于萌芽期；若模型能力不及预期，采用可能放缓。"
+      ],
+      "opportunity_summary_en": "The release of GPT-5.6 and Grok-4.5 creates a timely niche for tools that benchmark and compare LLM front-end generation abilities. With no existing competition and strong early demand from developers, building a dedicated evaluation platform or optimization middleware offers a clear first-mover advantage. However, the trend is nascent, so fast execution is critical to capture the window before larger players enter.",
+      "opportunity_summary_zh": "GPT-5.6 和 Grok-4.5 的发布为评估和对比大模型前端生成能力的工具创造了及时的市场空白。目前没有竞品，且开发者早期需求强烈，构建专门的评估平台或优化中间件具有明确的先发优势。但趋势尚在萌芽期，需要快速执行以抢占窗口期，避免被大厂跟进。"
     },
     {
       "id": "trend-kimi-k3-open-frontier-intelligence",
@@ -2742,7 +2964,33 @@
       ],
       "summary_zh": "Kimi发布全球首个3万亿参数开源模型K3，编程能力超越Claude Fable 5登顶Arena.AI，引发广泛关注。",
       "summary_en": "Kimi launches the world's first 3-trillion-parameter open-source model K3, whose coding ability surpasses Claude Fable 5 to top Arena.AI, generating widespread attention.",
-      "research_md_path": "content/trends/kimi-k3-3-trillion-parameter-open-source-model.md"
+      "research_md_path": "content/trends/kimi-k3-3-trillion-parameter-open-source-model.md",
+      "opportunity_score": 58,
+      "market_score": 65,
+      "competition_score": 25,
+      "demand_score": 70,
+      "seo_difficulty": 15,
+      "suggested_products": [
+        "VS Code Extension",
+        "API",
+        "SaaS",
+        "CLI Tool",
+        "Plugin/Add-on"
+      ],
+      "estimated_dev_days": 21,
+      "revenue_potential": 3,
+      "risk_factors_en": [
+        "Kimi may change license or discontinue support",
+        "Large model inference costs could erode margins for hosted services",
+        "Big tech companies may release similar open-source models"
+      ],
+      "risk_factors_zh": [
+        "月之暗面可能更改许可证或停止支持",
+        "大型模型推理成本可能侵蚀托管服务的利润",
+        "大公司可能发布类似开源模型"
+      ],
+      "opportunity_summary_en": "Kimi K3 is a newly released open-source 3-trillion-parameter model excelling in coding, with low competition and early SEO opportunity. Developers can build niche tools like code review plugins or micro-tuning platforms. However, the model is nascent with limited awareness, so quick action is needed to capture the window.",
+      "opportunity_summary_zh": "Kimi K3是一款新发布的开源3万亿参数模型，编程能力突出，竞争极少且SEO机会早期。开发者可以构建代码审查插件或微调平台等小众工具。然而，该模型处于初期阶段，认知度有限，需要快速行动以抓住窗口期。"
     },
     {
       "id": "trend-kimi-k3-model-surge",
@@ -2769,7 +3017,31 @@
       ],
       "summary_zh": "Kimi K3模型需求激增导致Moonshot AI暂停新订阅，并在V2EX引发热议，同时影响美国半导体股票，表明国产AI模型正在产生市场影响。",
       "summary_en": "Surge in demand for the Kimi K3 model forced Moonshot AI to suspend new subscriptions, sparked heated discussions on V2EX, and impacted U.S. semiconductor stocks, showing domestic AI models are gaining market influence.",
-      "research_md_path": "content/trends/kimi-k3-model-surge.md"
+      "research_md_path": "content/trends/kimi-k3-model-surge.md",
+      "opportunity_score": 62,
+      "market_score": 70,
+      "competition_score": 25,
+      "demand_score": 75,
+      "seo_difficulty": 30,
+      "suggested_products": [
+        "Web App",
+        "SaaS",
+        "API",
+        "Chrome Extension",
+        "Discord/Slack Bot"
+      ],
+      "estimated_dev_days": 21,
+      "revenue_potential": 3,
+      "risk_factors_en": [
+        "Large AI companies may release official status pages or APIs, reducing demand for third-party tools.",
+        "The trend is nascent with very low current mentions, interest may fade quickly."
+      ],
+      "risk_factors_zh": [
+        "大型AI公司可能推出官方状态页或API，减少第三方工具需求。",
+        "趋势处于萌芽阶段，当前提及量很低，兴趣可能迅速消退。"
+      ],
+      "opportunity_summary_en": "The Kimi K3 surge reveals a real pain point for developers relying on domestic AI models: supply instability. Building a model availability dashboard or cost optimization tool now could capture an early niche. However, the trend is nascent and interest may not sustain long-term.",
+      "opportunity_summary_zh": "Kimi K3 事件揭示了依赖国产AI模型的开发者的真实痛点：供应不稳定。现在构建模型可用性看板或成本优化工具可以抢占早期细分市场。但趋势处于萌芽期，兴趣可能无法长期维持。"
     },
     {
       "id": "trend-browser-automation-for-ai-agents",
@@ -2999,7 +3271,31 @@
       ],
       "summary_zh": "纯局域网文件共享工具（如飞投/WebDrop）受关注，强调零安装、跨平台、隐私保护。",
       "summary_en": "LAN-only file sharing tools (e.g., Feitou/WebDrop) gain attention for zero-install, cross-platform, and privacy-focused features.",
-      "research_md_path": "content/trends/local-first-file-sharing.md"
+      "research_md_path": "content/trends/local-first-file-sharing.md",
+      "opportunity_score": 68,
+      "market_score": 57,
+      "competition_score": 25,
+      "demand_score": 70,
+      "seo_difficulty": 30,
+      "suggested_products": [
+        "Web App",
+        "Desktop App",
+        "Mobile App",
+        "SDK/Library",
+        "Open Source"
+      ],
+      "estimated_dev_days": 14,
+      "revenue_potential": 3,
+      "risk_factors_en": [
+        "Large tech companies may integrate local file sharing into their ecosystems",
+        "User adoption may be limited to tech-savvy early adopters"
+      ],
+      "risk_factors_zh": [
+        "大型科技公司可能将本地文件共享集成到其生态中",
+        "用户采纳可能局限于技术早期采用者"
+      ],
+      "opportunity_summary_en": "Local-First File Sharing is a nascent trend with strong privacy and convenience demand, low competition, and high growth. Indie developers can quickly build zero-install tools for enterprise or cross-platform use. Early SEO and product positioning can capture a niche market before major players enter.",
+      "opportunity_summary_zh": "Local-First File Sharing 是一个萌芽趋势，隐私和便利需求强劲，竞争低且增长快。独立开发者可以快速构建零安装工具，面向企业或跨平台场景。早期 SEO 和产品定位可以在大厂入局前抢占细分市场。"
     },
     {
       "id": "trend-ai-coding-agent-skills-ecosystem",
@@ -3385,7 +3681,33 @@
       "summary_zh": "多个信号提及开源的大模型 API 网关，支持 OpenAI、Anthropic、DeepSeek 等，反映开发者对统一管理多模型 API 的需求增长。",
       "summary_en": "Multiple signals mention open-source LLM API gateways supporting OpenAI, Anthropic, DeepSeek, etc., reflecting growing demand for unified multi-model API management.",
       "research_md_path": "content/trends/open-source-large-model-api-gateway.md",
-      "canonical_zh": "大模型 API 网关开源"
+      "canonical_zh": "大模型 API 网关开源",
+      "opportunity_score": 62,
+      "market_score": 55,
+      "competition_score": 30,
+      "demand_score": 70,
+      "seo_difficulty": 25,
+      "suggested_products": [
+        "SaaS",
+        "Open Source",
+        "API",
+        "Discord/Slack Bot",
+        "Plugin/Add-on"
+      ],
+      "estimated_dev_days": 45,
+      "revenue_potential": 3,
+      "risk_factors_en": [
+        "Large cloud providers (e.g., Azure, AWS) may enter with similar managed services.",
+        "Open-source alternatives may commoditize the market, reducing differentiation.",
+        "Low current search volume limits immediate organic traffic."
+      ],
+      "risk_factors_zh": [
+        "大型云服务商（如Azure、AWS）可能推出类似托管服务。",
+        "开源方案可能使市场商品化，降低差异化。",
+        "当前搜索量低，限制即时自然流量。"
+      ],
+      "opportunity_summary_en": "The open-source large model API gateway market is in its infancy with low competition and rising demand. Developers need unified tools to manage multiple LLM APIs, control costs, and avoid vendor lock-in. A focused SaaS or open-source product targeting cost optimization and ease-of-use can capture early adopters.",
+      "opportunity_summary_zh": "开源大模型API网关市场处于萌芽期，竞争低且需求上升。开发者需要统一工具管理多个LLM API、控制成本并避免供应商锁定。专注于成本优化和易用性的SaaS或开源产品可以吸引早期用户。"
     },
     {
       "id": "trend-ai-video-analysis-tools",
@@ -3461,7 +3783,31 @@
       "summary_zh": "Halo等项目提供防篡改的AI代理运行时证据，解决AI代理行为可信度问题，成为AI安全领域的新热点。",
       "summary_en": "Projects like Halo offer tamper-evident runtime evidence for AI agents, addressing trustworthiness in AI agent behavior, emerging as a key AI security topic.",
       "research_md_path": "content/trends/ai-agent-runtime-integrity.md",
-      "last_report_date": "2026-07-28"
+      "last_report_date": "2026-07-29",
+      "opportunity_score": 62,
+      "market_score": 55,
+      "competition_score": 15,
+      "demand_score": 65,
+      "seo_difficulty": 20,
+      "suggested_products": [
+        "SDK/Library",
+        "SaaS",
+        "API",
+        "Open Source",
+        "CLI Tool"
+      ],
+      "estimated_dev_days": 45,
+      "revenue_potential": 3,
+      "risk_factors_en": [
+        "Low current awareness may stall adoption",
+        "Large AI security companies could enter later"
+      ],
+      "risk_factors_zh": [
+        "当前认知度低可能阻碍采用",
+        "大型AI安全公司后续可能进入"
+      ],
+      "opportunity_summary_en": "AI Agent Runtime Integrity is a blue ocean with minimal competition and growing demand from security and compliance. Early product like AgentGuard SDK can capture developer mindshare quickly. SEO advantage is strong due to low keyword competition.",
+      "opportunity_summary_zh": "AI Agent Runtime Integrity 是蓝海赛道，竞争极低，安全与合规需求增长。像AgentGuard SDK这样的早期产品可快速吸引开发者关注。SEO优势明显，关键词竞争低。"
     },
     {
       "id": "trend-agent-bug-hunting",
@@ -3513,7 +3859,7 @@
       ],
       "opportunity_summary_en": "Agent Bug Hunting is a blue ocean niche with low competition and SEO difficulty, but demand and market signals are weak. An MVP can be built quickly as a VS Code extension or CLI tool, but revenue potential is limited without proven traction. Early focus on building a community and validating use cases is critical.",
       "opportunity_summary_zh": "Agent Bug Hunting 是一个蓝海细分领域，竞争和 SEO 难度低，但需求和市场信号较弱。可以快速构建 MVP（如 VS Code 扩展或 CLI 工具），但在没有验证吸引力之前收入潜力有限。早期重点是建立社区和验证用例。",
-      "last_report_date": "2026-07-28"
+      "last_report_date": "2026-07-29"
     },
     {
       "id": "trend-single-file-productivity-apps",
@@ -3586,7 +3932,31 @@
       "summary_zh": "一项针对23种EC2实例类型的PostgreSQL性能和成本分析成为热门，反映开发者对数据库成本优化的持续关注。",
       "summary_en": "A performance and cost analysis of PostgreSQL across 23 EC2 instance types gains traction, highlighting ongoing developer interest in database cost optimization.",
       "research_md_path": "content/trends/postgresql-cost-optimization.md",
-      "last_report_date": "2026-07-28"
+      "last_report_date": "2026-07-28",
+      "opportunity_score": 48,
+      "market_score": 35,
+      "competition_score": 20,
+      "demand_score": 55,
+      "seo_difficulty": 30,
+      "suggested_products": [
+        "SaaS",
+        "CLI Tool",
+        "Open Source",
+        "Web App",
+        "Newsletter"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Market may remain niche and not scale beyond early adopters",
+        "Major cloud providers (AWS, Azure) could integrate cost optimization features natively"
+      ],
+      "risk_factors_zh": [
+        "市场可能保持小众，无法扩展到早期采用者之外",
+        "主要云提供商（AWS、Azure）可能原生集成成本优化功能"
+      ],
+      "opportunity_summary_en": "PostgreSQL Cost Optimization is a nascent trend with low competition and early demand signals from developer communities. The opportunity lies in building tools that automate cost-performance analysis for small teams, but revenue potential is limited due to niche scope and risk of cloud provider integration. A lightweight SaaS or CLI tool could capture early adopters before larger players enter.",
+      "opportunity_summary_zh": "PostgreSQL成本优化是一个萌芽趋势，竞争低且来自开发者社区的早期需求信号。机会在于构建自动化成本-性能分析的工具，面向小团队，但由于范围狭窄和云提供商集成的风险，收入潜力有限。轻量级SaaS或CLI工具可以在大玩家进入前捕获早期采用者。"
     },
     {
       "id": "trend-homegames",
@@ -3611,7 +3981,33 @@
       ],
       "summary_zh": "一个开源游戏平台，由开发者历时8年打造。",
       "summary_en": "An open-source game platform built by a developer over 8 years.",
-      "research_md_path": "content/trends/homegames.md"
+      "research_md_path": "content/trends/homegames.md",
+      "opportunity_score": 42,
+      "market_score": 35,
+      "competition_score": 15,
+      "demand_score": 40,
+      "seo_difficulty": 10,
+      "suggested_products": [
+        "Web App",
+        "Open Source",
+        "SaaS",
+        "Newsletter",
+        "Discord/Bot"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Extremely low user adoption and community traction may never reach critical mass",
+        "Single developer dependency with no organizational backing could lead to project abandonment",
+        "Large platforms like Steam or Itch.io could introduce similar open-source features, reducing uniqueness"
+      ],
+      "risk_factors_zh": [
+        "用户采用率和社区关注度极低，可能永远无法达到临界规模",
+        "依赖单一开发者，无组织支持，可能导致项目被放弃",
+        "大型平台如 Steam 或 Itch.io 可能推出类似开源功能，降低独特性"
+      ],
+      "opportunity_summary_en": "Homegames is a highly experimental open-source game platform with minimal market traction. Early movers can build niche services like deployment tools or community sites, but success hinges on platform growth. The opportunity is high-risk, low-certainty, suitable for developers with spare time and a passion for gaming.",
+      "opportunity_summary_zh": "Homegames 是一个实验性极强的开源游戏平台，市场关注度极低。早期进入者可以构建部署工具或社区网站等小众服务，但成功取决于平台增长。这是一个高风险、低确定性的机会，适合有空闲时间且热爱游戏的开发者。"
     },
     {
       "id": "trend-c-modular-build-tool-mcpp",
@@ -3993,7 +4389,31 @@
       ],
       "summary_zh": "一个提供约30秒短纪录片的网站。",
       "summary_en": "A website offering short documentaries around 30 seconds in length.",
-      "research_md_path": "content/trends/instantvideos.org.md"
+      "research_md_path": "content/trends/instantvideos.org.md",
+      "opportunity_score": 42,
+      "market_score": 35,
+      "competition_score": 20,
+      "demand_score": 40,
+      "seo_difficulty": 30,
+      "suggested_products": [
+        "Web App",
+        "API",
+        "SaaS"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Lack of proven demand may lead to zero traction",
+        "Large platforms (TikTok, YouTube) could easily replicate the concept",
+        "AI video generation quality may not meet documentary standards"
+      ],
+      "risk_factors_zh": [
+        "缺乏验证的需求可能导致零用户",
+        "大型平台（TikTok、YouTube）可能轻易复制该概念",
+        "AI视频生成质量可能达不到纪录片标准"
+      ],
+      "opportunity_summary_en": "InstantVideos.org targets a novel niche of 30-second documentaries, but with only a single mention on Hacker News and no market validation, the opportunity is highly speculative. While competition is low and SEO is easy, the lack of demand signals and risk of platform replication make this a high-risk, low-reward venture for indie developers.",
+      "opportunity_summary_zh": "InstantVideos.org 瞄准30秒纪录片这一新颖细分领域，但仅在Hacker News上被提及一次，缺乏市场验证，机会高度不确定。尽管竞争低、SEO容易，但需求信号缺失以及平台复制的风险，使得这对独立开发者而言是一个高风险、低回报的尝试。"
     },
     {
       "id": "trend-hello-agents",
@@ -4016,7 +4436,30 @@
       ],
       "summary_zh": "一个从零开始构建智能体的原理与实践教程项目。",
       "summary_en": "A tutorial project for building agents from scratch, covering principles and practice.",
-      "research_md_path": "content/trends/hello-agents.md"
+      "research_md_path": "content/trends/hello-agents.md",
+      "opportunity_score": 52,
+      "market_score": 45,
+      "competition_score": 20,
+      "demand_score": 60,
+      "seo_difficulty": 15,
+      "suggested_products": [
+        "CLI Tool",
+        "Template/Boilerplate",
+        "Newsletter",
+        "Web App"
+      ],
+      "estimated_dev_days": 21,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Project may remain obscure with no community growth.",
+        "Larger frameworks like LangChain could release similar beginner content, diluting uniqueness."
+      ],
+      "risk_factors_zh": [
+        "项目可能保持小众，无社区增长。",
+        "LangChain等大框架可能发布类似入门内容，削弱独特性。"
+      ],
+      "opportunity_summary_en": "hello-agents is a nascent open-source tutorial project for independent developers to build AI agents from scratch. It faces low competition and early SEO opportunity, but lacks market traction and community validation. Best near-term opportunity is creating a CLI scaffold or boilerplate tool leveraging the tutorial's principles, with monetization via paid courses or templates later.",
+      "opportunity_summary_zh": "hello-agents 是一个面向独立开发者的全新开源教程项目，教授从零构建AI智能体。它面临低竞争和早期SEO机会，但缺乏市场牵引力和社区验证。近期最佳机会是基于教程原理创建CLI脚手架或模板工具，后期通过付费课程或模板变现。"
     },
     {
       "id": "trend-exploitarium",
@@ -4039,7 +4482,31 @@
       ],
       "summary_zh": "一个公开漏洞PoC和漏洞研究报告的归档项目。",
       "summary_en": "An archive project for public exploit PoCs and vulnerability research writeups.",
-      "research_md_path": "content/trends/exploitarium.md"
+      "research_md_path": "content/trends/exploitarium.md",
+      "opportunity_score": 42,
+      "market_score": 35,
+      "competition_score": 20,
+      "demand_score": 45,
+      "seo_difficulty": 15,
+      "suggested_products": [
+        "SaaS",
+        "Web App",
+        "Open Source",
+        "CLI Tool",
+        "Newsletter"
+      ],
+      "estimated_dev_days": 45,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Low community adoption and engagement could stall growth",
+        "Lack of funding and maintainer burnout may lead to project abandonment"
+      ],
+      "risk_factors_zh": [
+        "社区采用和参与度低可能阻碍增长",
+        "缺乏资金和维护者倦怠可能导致项目废弃"
+      ],
+      "opportunity_summary_en": "Exploitarium is an early-stage open-source PoC archive with very low market traction. The opportunity lies in building niche security tools around it, but the weak demand and unproven business model pose high risks. It is a speculative bet best suited for developers willing to invest in a nascent space.",
+      "opportunity_summary_zh": "Exploitarium 是一个处于早期阶段的开源PoC档案，市场吸引力极低。围绕它构建小众安全工具存在机会，但需求薄弱和未经验证的商业模式带来高风险。这是一个投机性赌注，最适合愿意投入新兴领域的开发者。"
     },
     {
       "id": "trend-reverse-engineering-web-apps-into-agent-tools",
@@ -11760,6 +12227,47 @@
       "summary_zh": "研究发现AI建议使人准确率降低3倍但自信提升2倍，在Hacker News获得164赞和71评论，揭示了AI辅助决策中值得警惕的认知偏差。",
       "summary_en": "Research showing AI advice makes people 3x less accurate but 2x more confident gained 164 upvotes and 71 comments on Hacker News, revealing a cognitive bias worth monitoring in AI-assisted decision-making.",
       "research_md_path": "content/trends/ai-confidence-overaccuracy-effect.md"
+    },
+    {
+      "id": "trend-senator-graham-ai-policy",
+      "canonical": "Senator Graham AI Policy",
+      "canonical_zh": "格雷厄姆参议员AI政策",
+      "aliases": [],
+      "first_seen": "2026-07-29",
+      "last_seen": "2026-07-29",
+      "stage": "nascent",
+      "score": 0,
+      "source_count": 0,
+      "total_mentions": 0,
+      "sources": [],
+      "growth_pct": 100,
+      "category": "Industry",
+      "tags": [],
+      "summary_zh": "格雷厄姆参议员在AI政策领域的发言或行动可能引发行业监管讨论，值得追踪其对技术社区的影响。",
+      "summary_en": "Senator Graham's involvement in AI policy discussions could drive regulatory debates, making it worth monitoring for impacts on the tech community.",
+      "research_md_path": "content/trends/senator-graham-ai-policy.md",
+      "opportunity_score": 42,
+      "market_score": 35,
+      "competition_score": 20,
+      "demand_score": 30,
+      "seo_difficulty": 25,
+      "suggested_products": [
+        "Newsletter",
+        "Web App",
+        "AI Agent"
+      ],
+      "estimated_dev_days": 14,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Low public interest and zero traction may lead to negligible user adoption.",
+        "Policy focus is narrow and could become irrelevant if Senator Graham shifts priorities."
+      ],
+      "risk_factors_zh": [
+        "公众兴趣低且零热度可能导致用户采纳率极低。",
+        "政策焦点狭窄，如果格雷厄姆参议员转移优先事项，可能变得无关紧要。"
+      ],
+      "opportunity_summary_en": "The trend 'Senator Graham AI Policy' is nascent with no measurable traction, presenting a speculative opportunity. A simple web app or newsletter to track his statements could be built quickly but faces high risk of low demand. Given the lack of data, a conservative approach is warranted.",
+      "opportunity_summary_zh": "趋势“Senator Graham AI Policy”处于萌芽阶段，没有可衡量的热度，是一个投机性机会。可以快速构建一个简单的网页应用或新闻通讯来追踪他的言论，但面临需求低迷的高风险。鉴于数据不足，应采取保守态度。"
     }
   ],
   "_version": "1.0"
