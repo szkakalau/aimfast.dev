@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import Stripe from 'stripe';
 import { stripe } from '@/lib/stripe';
 import { prisma } from '@/lib/prisma';
 
@@ -7,14 +8,26 @@ export const dynamic = 'force-dynamic';
 
 export async function POST(request: Request) {
   const rawBody = await request.text();
-  const signature = request.headers.get('stripe-signature')!;
+  const signature = request.headers.get('stripe-signature');
 
-  let event: any;
+  if (!signature) {
+    console.error('Webhook: missing stripe-signature header');
+    return NextResponse.json({ error: 'Missing signature' }, { status: 400 });
+  }
+
+  const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
+  if (!webhookSecret) {
+    console.error('Webhook: STRIPE_WEBHOOK_SECRET is not configured');
+    return NextResponse.json({ error: 'Server configuration error' }, { status: 500 });
+  }
+
+  let event: Stripe.Event;
 
   try {
-    event = stripe.webhooks.constructEvent(rawBody, signature, process.env.STRIPE_WEBHOOK_SECRET!);
+    // 使用 Stripe 静态方法，不依赖 STRIPE_SECRET_KEY（绕过 lib/stripe.ts 的 Proxy）
+    event = Stripe.webhooks.constructEvent(rawBody, signature, webhookSecret);
   } catch (error) {
-    console.error('Webhook signature verification failed:', error);
+    console.error('Webhook signature verification failed:', (error as Error).message);
     return NextResponse.json({ error: 'Invalid signature' }, { status: 400 });
   }
 
@@ -125,7 +138,7 @@ export async function POST(request: Request) {
 
     return NextResponse.json({ received: true });
   } catch (error) {
-    console.error('Webhook handler failed');
+    console.error('Webhook handler failed:', (error as Error).message, (error as Error).stack);
     return NextResponse.json({ error: 'Webhook handler error' }, { status: 500 });
   }
 }
