@@ -195,13 +195,8 @@ Signals:
         # max_tokens=16384: extracting 15-30 terms from 300 signals needs room.
         # Default 4096 caused JSON truncation at ~line 274 (2026-07-29 incident).
         response = chat(system_prompt, user_prompt, max_tokens=16384)
-        # Extract JSON from response (handle markdown code blocks)
-        response = response.strip()
-        if response.startswith("```"):
-            response = response.split("\n", 1)[1]
-            if response.endswith("```"):
-                response = response[:-3]
-        terms = json.loads(response)
+        response_text = _extract_json_array(response)
+        terms = json.loads(response_text)
         if isinstance(terms, list) and len(terms) > 0 and isinstance(terms[0], dict):
             # Validate signal_ids presence (non-fatal warning)
             signal_ids_present = sum(1 for t in terms if t.get("signal_ids"))
@@ -220,9 +215,82 @@ Signals:
             return terms
     except Exception as e:
         print(f"  [trends] LLM extraction failed: {e}, falling back to keyword method")
+        # Save raw response for debugging (only if we got one from the LLM)
+        try:
+            if 'response' in locals():
+                _dump_debug_response(response, "parse_error")
+        except Exception:
+            pass
 
     # Fallback: tag-based extraction
     return _extract_terms_keyword_fallback(signals)
+
+
+def _extract_json_array(text: str) -> str:
+    """Extract JSON array from LLM response, handling markdown fences and extra text.
+
+    Handles: ```json ... ```, ``` ... ```, text before/after array, trailing commas.
+    On failure, dumps raw response to daily/debug/ for post-mortem analysis.
+    """
+    import re
+
+    original = text
+    text = text.strip()
+
+    # 1. Strip markdown code fences (```json or ```)
+    # Opening fence: ```json\n or ```\n
+    text = re.sub(r'^```(?:json|JSON)?\s*\n?', '', text)
+    # Closing fence: \n``` (possibly with trailing whitespace)
+    text = re.sub(r'\n?```\s*$', '', text)
+    text = text.strip()
+
+    # 2. If still doesn't look like JSON, try to find array in text
+    if not text.startswith('['):
+        match = re.search(r'\[[\s\S]*\]', text)
+        if match:
+            text = match.group(0)
+
+    # 3. Try to fix common LLM JSON errors
+    text = _repair_json(text)
+
+    # 4. Debug: save raw response on parse failure
+    if not text.startswith('['):
+        _dump_debug_response(original, "no_array_found")
+        raise ValueError("Could not locate JSON array in LLM response")
+
+    return text
+
+
+def _repair_json(text: str) -> str:
+    """Fix common LLM JSON syntax errors: trailing commas, unescaped chars."""
+    import re
+    # Remove trailing commas before ] or }
+    text = re.sub(r',\s*([}\]])', r'\1', text)
+    # Fix single-quoted keys/values (LLMs sometimes use single quotes)
+    # Only attempt if the JSON clearly uses single quotes
+    if text.count("'") > text.count('"') * 2:
+        text = _try_convert_single_to_double_quotes(text)
+    return text
+
+
+def _try_convert_single_to_double_quotes(text: str) -> str:
+    """Attempt to convert single-quoted JSON to double-quoted. Best-effort."""
+    import re
+    # Replace single quotes around keys: 'key': → "key":
+    text = re.sub(r"'([^']*)'(\s*:)", r'"\1"\2', text)
+    # Replace single quotes around string values: : 'value' → : "value"
+    text = re.sub(r":\s*'([^']*)'", r': "\1"', text)
+    return text
+
+
+def _dump_debug_response(raw: str, tag: str):
+    """Save failed LLM response to daily/debug/ for analysis."""
+    debug_dir = ROOT / "daily" / "debug"
+    debug_dir.mkdir(parents=True, exist_ok=True)
+    timestamp = datetime.now(TZ_SHANGHAI).strftime("%Y%m%d_%H%M%S")
+    path = debug_dir / f"llm_extract_{tag}_{timestamp}.txt"
+    path.write_text(raw, encoding="utf-8")
+    print(f"  [trends] Debug: raw LLM response saved to {path}")
 
 
 def _has_chinese(text: str) -> bool:
@@ -1069,7 +1137,21 @@ def main():
                 # term_index.json stores terms as a DICT keyed by term name.
                 # Normalize to list for downstream processing.
                 if isinstance(raw_entity_terms, dict):
-                    raw_entity_terms = list(raw_entity_terms.values())
+                    # Convert dict to list, computing cross_source_count / total_mentions
+                    # from the signals array (dict format lacks pre-computed aggregates).
+                    term_list = []
+                    for term_name, term_data in raw_entity_terms.items():
+                        if not isinstance(term_data, dict):
+                            continue
+                        signals = term_data.get("signals", [])
+                        source_keys = set(s.get("source_key", "") for s in signals if isinstance(s, dict))
+                        term_list.append({
+                            "term": term_name,
+                            "term_type": term_data.get("term_type", "?"),
+                            "cross_source_count": len(source_keys),
+                            "total_mentions": len(signals),
+                        })
+                    raw_entity_terms = term_list
                 # Filter to high-signal entity terms: cross_source_count >= 2 AND total_mentions >= 2
                 entity_terms = sorted(
                     [et for et in raw_entity_terms
