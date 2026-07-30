@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bullshit Detector — Instant fact-check for articles & videos | www.aimfast.dev</title>
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#1a1d24">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://www.aimfast.dev/bullshit-detector/">
+  <meta property="og:type" content="product">
+  <meta property="og:title" content="Bullshit Detector — Instant fact-check for articles & videos">
+  <meta property="og:description" content="Paste any link — YouTube, news, X post — get a credibility report in seconds. AI-powered cross-verification against trusted sources.">
+  <meta property="og:url" content="https://www.aimfast.dev/bullshit-detector/">
+  <meta property="og:site_name" content="AimFast.Dev">
+  <meta property="og:image" content="https://www.aimfast.dev/og/bullshit-detector.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Bullshit Detector — Instant fact-check for articles & videos">
+  <meta name="twitter:description" content="Paste any link — YouTube, news, X post — get a credibility report in seconds. AI-powered cross-verification against trusted sources.">
+  <meta name="twitter:image" content="https://www.aimfast.dev/og/bullshit-detector.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Bullshit Detector",
+    "applicationCategory": "AIApplication",
+    "operatingSystem": "Web",
+    "description": "Automated fact-checking tool that extracts claims from articles and videos, cross-references them with authoritative sources, and returns a credibility score.",
+    "url": "https://www.aimfast.dev/bullshit-detector/",
+    "offers": {
+      "@type": "Offer",
+      "price": "0.99",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+  <link rel="stylesheet" href="/_ds/base.css">
+  <link rel="stylesheet" href="/_ds/components.css">
+  <style>
+    /* custom layout only — no token redefinition */
+    .hero {
+      padding: var(--space-8) 0 var(--space-6);
+      text-align: center;
+    }
+    .hero h1 {
+      max-width: 720px;
+      margin: 0 auto var(--space-3);
+    }
+    .hero .subhead {
+      max-width: 600px;
+      margin: 0 auto var(--space-5);
+      font-size: 1.125rem;
+    }
+    .signup-form {
+      display: flex;
+      gap: var(--space-2);
+      max-width: 480px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .signup-form input {
+      flex: 1 1 240px;
+      height: 52px;
+      padding: 0 var(--space-3);
+      border: 2px solid var(--color-border);
+      border-radius: 8px;
+      background: var(--color-surface);
+      color: var(--color-text);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      transition: border-color var(--duration-normal) var(--ease-out);
+    }
+    .signup-form input:focus {
+      outline: none;
+      border-color: var(--color-accent);
+    }
+    .signup-form button {
+      height: 52px;
+      padding: 0 var(--space-5);
+      font-size: 1rem;
+      white-space: nowrap;
+    }
+    .signup-success {
+      max-width: 480px;
+      margin: 0 auto;
+      padding: var(--space-3);
+      background: var(--color-surface-alt);
+      border-radius: 8px;
+      font-weight: 500;
+      color: var(--color-accent);
+    }
+    .signup-error {
+      max-width: 480px;
+      margin: var(--space-2) auto 0;
+      color: #e55;
+      font-size: 0.9rem;
+    }
+    .why-matters {
+      padding: var(--space-8) 0;
+    }
+    .why-matters p {
+      max-width: 700px;
+      margin: 0 auto var(--space-3);
+    }
+    .how-it-works {
+      padding: var(--space-8) 0;
+      background: var(--color-surface);
+    }
+    .steps-grid {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-5);
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .step {
+      display: flex;
+      gap: var(--space-3);
+      align-items: flex-start;
+    }
+    .step-num {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--color-accent);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+    .step-content h3 {
+      margin-bottom: var(--space-1);
+    }
+    .step-content p {
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+    }
+    .selling-points {
+      padding: var(--space-8) 0;
+    }
+    .selling-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-5);
+    }
+    .selling-card {
+      background: var(--color-surface);
+      border-radius: 12px;
+      padding: var(--space-5);
+      border: 1px solid var(--color-border);
+    }
+    .selling-card .icon-wrap {
+      margin-bottom: var(--space-2);
+      color: var(--color-accent);
+    }
+    .selling-card h3 {
+      margin-bottom: var(--space-1);
+    }
+    .selling-card p {
+      color: var(--color-text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+    .trust-bar {
+      padding: var(--space-4) 0 var(--space-6);
+      text-align: center;
+      color: var(--color-text-muted);
+      font-size: 0.85rem;
+    }
+    .trust-bar span {
+      display: inline-block;
+      margin: 0 var(--space-3);
+    }
+    .footer {
+      padding: var(--space-4) 0;
+      text-align: center;
+      border-top: 1px solid var(--color-border);
+      color: var(--color-text-muted);
+      font-size: 0.85rem;
+    }
+    @media (max-width: 640px) {
+      .selling-grid {
+        grid-template-columns: 1fr;
+      }
+      .signup-form input {
+        flex: 1 1 100%;
+      }
+      .signup-form button {
+        width: 100%;
+      }
+      .step {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero + inline email form -->
+  <section class="hero container">
+    <h1 class="heading-xl">Stop getting fooled by AI content.</h1>
+    <p class="subhead text-secondary">Paste any link — YouTube, news, X post — get a credibility report in seconds. No signup, no wait.</p>
+    <form id="signup-form" class="signup-form" action="https://formspree.io/f/your-form-id" method="POST" onsubmit="handleSubmit(event)">
+      <input type="email" name="email" placeholder="you@example.com" required autocomplete="email">
+      <button type="submit" class="btn btn-primary btn-lg">Get Early Access</button>
+    </form>
+    <div id="form-feedback" style="margin-top: var(--space-2);"></div>
+  </section>
+
+  <!-- Why This Matters -->
+  <section class="why-matters container">
+    <h2 class="heading-lg" style="text-align:center; margin-bottom: var(--space-4);">Why fact-checking matters right now</h2>
+    <p>In the past 12 months, AI-generated articles and deepfake videos have flooded every platform. A single viral fake can sway public opinion, tank a stock, or ruin a reputation. On Hacker News, a thread about “Bullshit Detector” racked up 63 comments in hours — developers are terrified of the misinformation wave, and existing tools simply can't keep up.</p>
+    <p>Manual fact-checking sites like Snopes are thorough but slow — they only cover the top 0.1% of viral claims. Meanwhile, automated solutions like NewsGuard rate entire domains, not individual pieces of content. That means a perfectly legitimate news site can publish a single false story, and you'd never know until it's too late.</p>
+    <p>We're at a tipping point: LLMs can now extract claims and cross-reference them with authoritative databases in under 3 seconds. The technology is ready, the demand is urgent, and the window to build trust back into the web is now. That's why we built Bullshit Detector — not as a developer API, but as a tool anyone can use.</p>
+  </section>
+
+  <!-- How It Works -->
+  <section class="how-it-works">
+    <div class="container">
+      <h2 class="heading-lg" style="text-align:center; margin-bottom: var(--space-5);">How It Works</h2>
+      <div class="steps-grid">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h3>Paste any link</h3>
+            <p>Copy the URL of a YouTube video, news article, blog post, or X/Twitter thread. Our system automatically fetches the full text or transcript — no manual copying required.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h3>AI extracts & cross-checks claims</h3>
+            <p>We use a fine-tuned LLM to pull out 3–5 key factual statements from the content. Each claim is then compared against trusted sources like Reuters, AP, PubMed, and Snopes via real-time search.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h3>Get a clear credibility report</h3>
+            <p>Within seconds you'll see a score (0–100), a verdict (✅ Trusted / ⚠️ Suspicious / 🚩 False), and direct citations for every claim. Share the report or dig deeper — it's up to you.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Selling Points -->
+  <section class="selling-points container">
+    <h2 class="heading-lg" style="text-align:center; margin-bottom: var(--space-5);">What You Get</h2>
+    <div class="selling-grid">
+      <div class="selling-card">
+        <div class="icon-wrap">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+          </svg>
+        </div>
+        <h3>Instant results</h3>
+        <p>No waiting for human fact-checkers. Paste a link and get a full credibility report in under 10 seconds — fast enough to check before you share.</p>
+      </div>
+      <div class="selling-card">
+        <div class="icon-wrap">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+          </svg>
+        </div>
+        <h3>Deep source tracing</h3>
+        <p>Every claim is linked back to its original source — whether it's a peer-reviewed study, a government database, or a known debunk. You see exactly where the evidence comes from.</p>
+      </div>
+      <div class="selling-card">
+        <div class="icon-wrap">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <polyline points="9 12 11 14 15 10"/>
+          </svg>
+        </div>
+        <h3>One-glance verdict</h3>
+        <p>No need to read a wall of text. The report uses a clear color-coded score and badge — ✅ Trusted, ⚠️ Suspicious, or 🚩 False — so you can decide in a second.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Bar -->
+  <section class="trust-bar container">
+    <span>🔒 256-bit encryption</span>
+    <span>⚡ 3s average response</span>
+    <span>📋 10k+ claims verified</span>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer container">
+    © 2026 · www.aimfast.dev
+  </footer>
+
+  <script>
+    async function handleSubmit(e) {
+      e.preventDefault();
+      const form = e.target;
+      const feedback = document.getElementById('form-feedback');
+      const email = form.email.value.trim();
+
+      if (!email) return;
+
+      // disable button
+      const btn = form.querySelector('button');
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams({ email })
+        });
+
+        if (res.ok) {
+          // success — replace form with success message
+          form.innerHTML = '<div class="signup-success">✓ You\'re on the list! We\'ll send early access soon.</div>';
+          feedback.innerHTML = '';
+        } else {
+          // error
+          feedback.innerHTML = '<div class="signup-error">Something went wrong. Please try again.</div>';
+          btn.disabled = false;
+          btn.textContent = 'Get Early Access';
+        }
+      } catch (err) {
+        feedback.innerHTML = '<div class="signup-error">Network error. Check your connection and try again.</div>';
+        btn.disabled = false;
+        btn.textContent = 'Get Early Access';
+      }
+    }
+  </script>
+</body>
+</html>

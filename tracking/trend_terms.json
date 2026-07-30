@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-29T11:25:37.109021+08:00",
+  "updated_at": "2026-07-30T08:18:29.586289+08:00",
   "terms": [
     {
       "id": "trend-claude-agent-sdk",
@@ -4703,7 +4703,30 @@
       "summary_zh": "学术论文提出利用大模型自动检测和修复智能家居配置错误，是 AI 与 IoT 结合的新方向。",
       "summary_en": "A research paper proposes using LLMs to automatically detect and repair smart home configuration errors, a new direction at the AI-IoT intersection.",
       "research_md_path": "content/trends/smart-home-misconfiguration-auto-fix.md",
-      "canonical_zh": "智能家居配置错误自动化修复"
+      "canonical_zh": "智能家居配置错误自动化修复",
+      "opportunity_score": 58,
+      "market_score": 62,
+      "competition_score": 15,
+      "demand_score": 55,
+      "seo_difficulty": 20,
+      "suggested_products": [
+        "Plugin/Add-on",
+        "SaaS",
+        "API",
+        "AI Agent"
+      ],
+      "estimated_dev_days": 45,
+      "revenue_potential": 3,
+      "risk_factors_en": [
+        "Market may remain niche if smart home platforms improve native configuration UIs",
+        "Large smart home vendors (e.g., Amazon, Google) could integrate similar AI features quickly"
+      ],
+      "risk_factors_zh": [
+        "如果智能家居平台改进原生配置界面，市场可能保持小众",
+        "大型智能家居厂商（如亚马逊、谷歌）可能快速集成类似AI功能"
+      ],
+      "opportunity_summary_en": "Smart Home Misconfiguration Auto-Fix is a nascent but promising niche at the intersection of LLMs and IoT. Low competition and rising search trends offer a first-mover advantage for indie developers. A plugin for Home Assistant or a SaaS audit tool could capture early adopters with modest development effort.",
+      "opportunity_summary_zh": "智能家居配置自动修复是一个新兴且有前景的细分领域，位于大语言模型与物联网的交汇点。低竞争和上升的搜索趋势为独立开发者提供了先发优势。为Home Assistant开发插件或SaaS审计工具可以以适度的开发投入吸引早期用户。"
     },
     {
       "id": "trend-eve-online-carbon-engine-open-sourced",
@@ -4729,7 +4752,33 @@
       "summary_zh": "EVE Online 的 Carbon 游戏引擎开源，在技术社区引发关注，可能影响游戏开发工具链。",
       "summary_en": "EVE Online's Carbon game engine is open-sourced, drawing attention in tech communities and potentially impacting game development toolchains.",
       "research_md_path": "content/trends/eve-online-carbon-engine-open-sourced.md",
-      "canonical_zh": "EVE Online Carbon 引擎开源"
+      "canonical_zh": "EVE Online Carbon 引擎开源",
+      "opportunity_score": 44,
+      "market_score": 35,
+      "competition_score": 20,
+      "demand_score": 40,
+      "seo_difficulty": 25,
+      "suggested_products": [
+        "Template/Boilerplate",
+        "Open Source",
+        "Newsletter",
+        "API",
+        "Web App"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "CCP Games may abandon or restrict the open-source project",
+        "Hype could fade without community growth",
+        "Large game engine alternatives (Unity, Unreal) dominate mindshare"
+      ],
+      "risk_factors_zh": [
+        "CCP Games 可能放弃或限制开源项目",
+        "热度可能因社区成长不足而消退",
+        "大型游戏引擎替代品（Unity, Unreal）占据主流心智"
+      ],
+      "opportunity_summary_en": "EVE Online's Carbon engine open-source is a nascent opportunity with low current market signal. It offers a blue ocean for early-stage tools and content, but demand and monetization are unproven. The window for first-mover advantage exists, but risks of fading interest and competition from established engines are high.",
+      "opportunity_summary_zh": "EVE Online Carbon 引擎开源是一个萌芽期机会，当前市场信号微弱。它为早期工具和内容提供了蓝海，但需求和变现尚未验证。先发优势窗口存在，但兴趣消退和成熟引擎竞争的风险较高。"
     },
     {
       "id": "trend-ai-driven-multi-market-stock-analysis-system",
@@ -4755,7 +4804,33 @@
       "summary_zh": "ZhuLinsen/daily_stock_analysis 项目在 GitHub Trending 获得极高关注，体现 LLM 在金融分析领域的应用热度。",
       "summary_en": "The ZhuLinsen/daily_stock_analysis project gains massive traction on GitHub Trending, reflecting the popularity of LLMs in financial analysis.",
       "research_md_path": "content/trends/ai-driven-multi-market-stock-analysis-system.md",
-      "canonical_zh": "AI 驱动的多市场股票分析系统"
+      "canonical_zh": "AI 驱动的多市场股票分析系统",
+      "opportunity_score": 55,
+      "market_score": 45,
+      "competition_score": 20,
+      "demand_score": 60,
+      "seo_difficulty": 30,
+      "suggested_products": [
+        "SaaS",
+        "API",
+        "Discord/Slack Bot",
+        "Open Source",
+        "Web App"
+      ],
+      "estimated_dev_days": 45,
+      "revenue_potential": 3,
+      "risk_factors_en": [
+        "Market may remain niche with slow viral growth",
+        "Large LLM providers (OpenAI, Anthropic) could release competing built-in features",
+        "Data source reliability and regulatory compliance for multi-market financial data"
+      ],
+      "risk_factors_zh": [
+        "市场可能保持小众，增长缓慢",
+        "大型LLM提供商（OpenAI、Anthropic）可能发布内置竞争功能",
+        "多市场金融数据源可靠性和监管合规风险"
+      ],
+      "opportunity_summary_en": "AI-Driven Multi-Market Stock Analysis System is a nascent opportunity with low competition and moderate demand from independent developers. The sole open-source project on GitHub Trending signals early interest, but the market is unproven. A focused SaaS or API product could capture early adopters if executed quickly before larger players enter.",
+      "opportunity_summary_zh": "AI驱动的多市场股票分析系统是一个萌芽期机会，竞争低且独立开发者需求中等。GitHub Trending上的唯一开源项目标志着早期兴趣，但市场尚未验证。如果快速执行，专注的SaaS或API产品可以在大厂进入前抓住早期用户。"
     },
     {
       "id": "trend-zig-for-game-development",
@@ -5081,7 +5156,31 @@
       "summary_zh": "datawhalechina/hello-agents项目以67K+星成为GitHub趋势项目，系统性地从零开始教授智能体原理与实践，反映出智能体教育的巨大需求。",
       "summary_en": "The datawhalechina/hello-agents project trends on GitHub with 67K+ stars, systematically teaching agent principles and practices from scratch, reflecting huge demand for agent education.",
       "research_md_path": "content/trends/hello-agents-educational-tutorial.md",
-      "last_report_date": "2026-07-28"
+      "last_report_date": "2026-07-28",
+      "opportunity_score": 52,
+      "market_score": 55,
+      "competition_score": 30,
+      "demand_score": 65,
+      "seo_difficulty": 40,
+      "suggested_products": [
+        "Newsletter",
+        "Web App",
+        "Template/Boilerplate",
+        "API",
+        "AI Agent"
+      ],
+      "estimated_dev_days": 14,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Large AI companies may release official free tutorials",
+        "Open-source project itself could become a paid platform"
+      ],
+      "risk_factors_zh": [
+        "大型AI公司可能发布官方免费教程",
+        "开源项目本身可能成为付费平台"
+      ],
+      "opportunity_summary_en": "The 'Hello Agents Educational Tutorial' trend is nascent with high GitHub interest but minimal market validation. There is an opportunity to create structured learning products like newsletters or web apps, but monetization remains challenging due to free content dominance. Early entry could build an audience, but risks include big tech competition and project evolution.",
+      "opportunity_summary_zh": "“Hello Agents Educational Tutorial”趋势处于萌芽阶段，GitHub兴趣高涨但市场验证极少。有机会创建结构化学习产品如新闻通讯或网页应用，但由于免费内容主导，变现仍具挑战。早期入场可建立受众，但风险包括大厂竞争和项目演变。"
     },
     {
       "id": "trend-openwiki",
@@ -5104,7 +5203,31 @@
       ],
       "summary_zh": "一个CLI工具，用于为代码库编写和维护智能体文档。",
       "summary_en": "A CLI tool for writing and maintaining agent documentation for codebases.",
-      "research_md_path": "content/trends/openwiki.md"
+      "research_md_path": "content/trends/openwiki.md",
+      "opportunity_score": 52,
+      "market_score": 55,
+      "competition_score": 15,
+      "demand_score": 50,
+      "seo_difficulty": 10,
+      "suggested_products": [
+        "CLI Tool",
+        "VS Code Extension",
+        "GitHub Action",
+        "SaaS",
+        "Open Source"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Low current awareness may lead to slow adoption",
+        "Large companies like GitHub or Microsoft could build similar features into their platforms"
+      ],
+      "risk_factors_zh": [
+        "当前认知度低可能导致采用缓慢",
+        "GitHub或微软等大公司可能将类似功能集成到他们的平台中"
+      ],
+      "opportunity_summary_en": "OpenWiki is a very early-stage opportunity in the niche of AI agent documentation. The market is nascent with low competition and SEO difficulty, offering a first-mover advantage. However, demand is still latent and the project needs to build community and awareness before significant revenue is possible.",
+      "opportunity_summary_zh": "OpenWiki是AI代理文档领域一个非常早期的机会。市场处于萌芽阶段，竞争和SEO难度低，具有先发优势。然而，需求仍处于潜伏期，项目需要先建立社区和知名度，才能实现可观的收入。"
     },
     {
       "id": "trend-oomwoo",
@@ -5127,7 +5250,31 @@
       ],
       "summary_zh": "一个开源的真空机器人吸尘器项目。",
       "summary_en": "An open-source vacuum robot cleaner project.",
-      "research_md_path": "content/trends/oomwoo.md"
+      "research_md_path": "content/trends/oomwoo.md",
+      "opportunity_score": 42,
+      "market_score": 35,
+      "competition_score": 20,
+      "demand_score": 40,
+      "seo_difficulty": 15,
+      "suggested_products": [
+        "Open Source",
+        "Hardware",
+        "IoT Device",
+        "SDK/Library",
+        "Newsletter"
+      ],
+      "estimated_dev_days": 90,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Project may become abandoned due to single contributor and no community traction",
+        "Commercial competitors like iRobot may release open APIs reducing demand for DIY solutions"
+      ],
+      "risk_factors_zh": [
+        "项目可能因单一贡献者和缺乏社区动力而停滞",
+        "商业竞争对手如iRobot可能开放API，降低DIY方案需求"
+      ],
+      "opportunity_summary_en": "oomwoo is a nascent open-source vacuum robot project with potential in privacy-focused and educational niches. However, extremely low market signals and high technical barriers make it a high-risk early-stage opportunity. Success depends on building a community and differentiating from commercial alternatives.",
+      "opportunity_summary_zh": "oomwoo是一个萌芽期的开源真空机器人项目，在隐私导向和教育领域有潜力。但极低的市场信号和高技术门槛使其成为高风险早期机会。成功取决于社区建设和与商业产品的差异化。"
     },
     {
       "id": "trend-pulpie",
@@ -5152,7 +5299,29 @@
       ],
       "summary_zh": "用于清理网页数据的模型。",
       "summary_en": "Models designed for cleaning web data.",
-      "research_md_path": "content/trends/pulpie.md"
+      "research_md_path": "content/trends/pulpie.md",
+      "opportunity_score": 42,
+      "market_score": 35,
+      "competition_score": 15,
+      "demand_score": 50,
+      "seo_difficulty": 20,
+      "suggested_products": [
+        "CLI Tool",
+        "API",
+        "Chrome Extension"
+      ],
+      "estimated_dev_days": 14,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "No proven demand or user validation",
+        "Large tech companies or open-source projects could dominate if concept gains traction"
+      ],
+      "risk_factors_zh": [
+        "无已证实的用户需求或验证",
+        "若概念获得关注，大公司或开源项目可能主导"
+      ],
+      "opportunity_summary_en": "Pulpie is a nascent web data cleaning concept with minimal signals and no competition. The opportunity lies in building a simple CLI or API for developers, but the market is unvalidated and revenue potential is low. Early movers can claim SEO space, but should proceed cautiously.",
+      "opportunity_summary_zh": "Pulpie 是一个极早期的网页数据清洗概念，信号微弱且无竞争。机会在于为开发者构建简单的 CLI 或 API，但市场未验证，收入潜力低。早期进入者可抢占 SEO 空间，但应谨慎推进。"
     },
     {
       "id": "trend-open-source-vacuum-robot",
@@ -5175,7 +5344,31 @@
       ],
       "summary_zh": "makerspet/oomwoo开源真空机器人项目获得高星，代表消费级机器人开源化趋势。",
       "summary_en": "The makerspet/oomwoo open-source vacuum robot project gains stars, representing a trend toward open-source consumer robotics.",
-      "research_md_path": "content/trends/open-source-vacuum-robot.md"
+      "research_md_path": "content/trends/open-source-vacuum-robot.md",
+      "opportunity_score": 42,
+      "market_score": 30,
+      "competition_score": 10,
+      "demand_score": 45,
+      "seo_difficulty": 20,
+      "suggested_products": [
+        "Hardware",
+        "IoT Device",
+        "Open Source",
+        "Web App",
+        "Newsletter"
+      ],
+      "estimated_dev_days": 60,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Low market adoption may delay revenue generation",
+        "Large tech companies like iRobot or Xiaomi could enter with competing open-source offerings"
+      ],
+      "risk_factors_zh": [
+        "市场采用率低可能延迟收入产生",
+        "大型科技公司如iRobot或小米可能推出竞争性开源产品"
+      ],
+      "opportunity_summary_en": "Open-Source Vacuum Robot is a nascent trend with zero competition and low SEO difficulty, offering a unique chance for early movers. The market is tiny but has high growth potential driven by privacy concerns and open-source hardware trends. However, the lack of proven demand and revenue models means this is a high-risk, high-reward opportunity best suited for hobbyist-entrepreneurs.",
+      "opportunity_summary_zh": "开源扫地机器人是一个萌芽趋势，零竞争且SEO难度低，为早期进入者提供了独特机会。市场虽小但受隐私担忧和开源硬件趋势驱动，增长潜力大。然而，缺乏验证的需求和收入模式意味着这是一个高风险高回报的机会，最适合爱好者创业者。"
     },
     {
       "id": "trend-runloom",
@@ -5641,7 +5834,32 @@
       ],
       "summary_zh": "Kimi Work 是一款获得高关注度的 AI 驱动工作产品，标志着 AI 从聊天工具向生产力平台的演进，值得追踪其功能和市场反响。",
       "summary_en": "Kimi Work is a highly popular AI-powered work product, signaling the evolution of AI from chat tools to productivity platforms, and is worth tracking for its features and market reception.",
-      "research_md_path": "content/trends/kimi-work.md"
+      "research_md_path": "content/trends/kimi-work.md",
+      "opportunity_score": 55,
+      "market_score": 65,
+      "competition_score": 20,
+      "demand_score": 45,
+      "seo_difficulty": 15,
+      "suggested_products": [
+        "Plugin/Add-on",
+        "Template/Boilerplate",
+        "Discord/Slack Bot",
+        "Web App"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Extremely low market validation; only 1 mention on HN.",
+        "Large players like Notion or Slack could enter the AI workflow space, overshadowing Kimi Work.",
+        "Dependency on Kimi Work's platform stability and API availability."
+      ],
+      "risk_factors_zh": [
+        "市场验证极低；仅在HN上被提及一次。",
+        "Notion、Slack等大厂可能进入AI工作流领域，压制Kimi Work。",
+        "依赖Kimi Work的平台稳定性和API可用性。"
+      ],
+      "opportunity_summary_en": "Kimi Work is a nascent AI productivity platform with minimal market signals, offering a blue ocean opportunity for early movers. However, the lack of validation and potential big tech competition pose significant risks. The best approach is to build lightweight plugins or templates to test demand before committing heavy resources.",
+      "opportunity_summary_zh": "Kimi Work是一个萌芽期的AI生产力平台，市场信号极少，为早期进入者提供了蓝海机会。但缺乏验证和潜在的大厂竞争构成重大风险。最佳策略是构建轻量级插件或模板来测试需求，之后再投入重资源。"
     },
     {
       "id": "trend-qwen-image-3.0",
@@ -5667,7 +5885,33 @@
       ],
       "summary_zh": "Qwen-Image-3.0 的发布展示了 AI 图像生成在多模态理解和细节真实性上的进步，值得追踪其在内容创作和知识领域的应用。",
       "summary_en": "The release of Qwen-Image-3.0 showcases advances in multimodal understanding and authentic detail in AI image generation, making it relevant for content creation and knowledge domains.",
-      "research_md_path": "content/trends/qwen-image-3.0.md"
+      "research_md_path": "content/trends/qwen-image-3.0.md",
+      "opportunity_score": 42,
+      "market_score": 35,
+      "competition_score": 20,
+      "demand_score": 40,
+      "seo_difficulty": 25,
+      "suggested_products": [
+        "SaaS",
+        "API",
+        "Web App",
+        "Plugin/Add-on",
+        "CLI Tool"
+      ],
+      "estimated_dev_days": 21,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Alibaba may restrict API access or change pricing",
+        "Other open-source models (e.g., Stable Diffusion) could dominate",
+        "Low initial traction may delay user adoption"
+      ],
+      "risk_factors_zh": [
+        "阿里巴巴可能限制API访问或改变定价",
+        "其他开源模型（如Stable Diffusion）可能占据主导",
+        "初期关注度低可能延迟用户采用"
+      ],
+      "opportunity_summary_en": "Qwen-Image-3.0 is a new model with low competition and early SEO advantage. The best opportunities lie in building niche tools for realistic image generation in education and e-commerce. However, the market is extremely nascent and requires careful validation before heavy investment.",
+      "opportunity_summary_zh": "Qwen-Image-3.0是一个新模型，竞争低且SEO有早期优势。最佳机会在于为教育和电商领域的真实感图像生成构建垂直工具。然而，市场极为初期，需要谨慎验证后再投入。"
     },
     {
       "id": "trend-jelly-ui",
@@ -5693,7 +5937,29 @@
       ],
       "summary_zh": "Jelly UI 为原生 HTML 表单控件引入了软体物理效果，探索了交互设计的新方向，值得追踪其对用户体验和前端开发的影响。",
       "summary_en": "Jelly UI introduces soft-body physics to native HTML form controls, exploring new directions in interaction design, and is worth tracking for its impact on UX and frontend development.",
-      "research_md_path": "content/trends/jelly-ui.md"
+      "research_md_path": "content/trends/jelly-ui.md",
+      "opportunity_score": 42,
+      "market_score": 25,
+      "competition_score": 10,
+      "demand_score": 30,
+      "seo_difficulty": 15,
+      "suggested_products": [
+        "SDK/Library",
+        "Plugin/Add-on",
+        "Open Source"
+      ],
+      "estimated_dev_days": 14,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Concept may fail to gain traction beyond a niche audience.",
+        "Large design tool companies (e.g., Figma, Adobe) could integrate similar effects, reducing differentiation."
+      ],
+      "risk_factors_zh": [
+        "该概念可能无法在小众受众之外获得关注。",
+        "大型设计工具公司（如 Figma、Adobe）可能集成类似效果，降低差异化。"
+      ],
+      "opportunity_summary_en": "Jelly UI is a very early-stage design trend with no competition and low SEO difficulty, offering a first-mover advantage for indie developers. However, market demand is unproven and traction is minimal. The best approach is to build a lightweight open-source library to test interest and build community.",
+      "opportunity_summary_zh": "Jelly UI 是一个非常早期的设计趋势，没有竞争且 SEO 难度低，为独立开发者提供了先发优势。然而，市场需求尚未得到验证，关注度极低。最佳策略是构建一个轻量级开源库来测试兴趣并建立社区。"
     },
     {
       "id": "trend-physics-based-ui",
@@ -5719,7 +5985,31 @@
       ],
       "summary_zh": "Jelly UI 的出现反映了基于物理的 UI 设计趋势，可能重新定义用户与数字界面的交互方式，值得追踪其在主流应用中的采纳。",
       "summary_en": "The emergence of Jelly UI reflects a trend toward physics-based UI design that could redefine how users interact with digital interfaces, making its adoption in mainstream apps worth tracking.",
-      "research_md_path": "content/trends/physics-based-ui.md"
+      "research_md_path": "content/trends/physics-based-ui.md",
+      "opportunity_score": 52,
+      "market_score": 42,
+      "competition_score": 25,
+      "demand_score": 55,
+      "seo_difficulty": 30,
+      "suggested_products": [
+        "SDK/Library",
+        "Plugin/Add-on",
+        "Web App",
+        "Template/Boilerplate",
+        "SaaS"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Market may remain niche with slow adoption",
+        "Big tech (Apple, Google) could integrate physics UI natively, reducing demand for third-party tools"
+      ],
+      "risk_factors_zh": [
+        "市场可能保持小众，采用缓慢",
+        "大厂（苹果、谷歌）可能原生集成物理UI，降低第三方工具需求"
+      ],
+      "opportunity_summary_en": "Physics-Based UI is an early-stage trend with low competition and rising interest in related keywords. The best opportunity is building a lightweight SDK or plugin for developers to add physics interactions with minimal effort. However, the market is unproven and carries risk of being a passing fad.",
+      "opportunity_summary_zh": "Physics-Based UI 是早期趋势，竞争低且相关关键词兴趣上升。最佳机会是构建轻量级SDK或插件，让开发者轻松添加物理交互。但市场尚未验证，存在成为短暂热潮的风险。"
     },
     {
       "id": "trend-indie-development-real-cost-discussion",
@@ -5743,7 +6033,29 @@
       "summary_zh": "多篇独立开发者的深度分享讨论月入 3000 背后的隐性成本，反映独立开发社区对生存现实的理性反思。",
       "summary_en": "Multiple in-depth indie developer posts discuss the hidden costs behind monthly earnings of $3000, reflecting a rational rethinking of survival realities.",
       "research_md_path": "content/trends/indie-development-real-cost-discussion.md",
-      "canonical_zh": "独立开发真实成本讨论"
+      "canonical_zh": "独立开发真实成本讨论",
+      "opportunity_score": 42,
+      "market_score": 35,
+      "competition_score": 20,
+      "demand_score": 50,
+      "seo_difficulty": 30,
+      "suggested_products": [
+        "Newsletter",
+        "Web App",
+        "Template/Boilerplate"
+      ],
+      "estimated_dev_days": 14,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Limited audience size may hinder growth",
+        "Low monetization potential due to niche topic"
+      ],
+      "risk_factors_zh": [
+        "受众规模有限可能阻碍增长",
+        "小众话题导致变现潜力低"
+      ],
+      "opportunity_summary_en": "The Indie Development Real Cost Discussion is an emerging niche topic reflecting developer disillusionment with income myths. Current competition is near zero, offering a first-mover advantage for content or tools. However, the market is very small and monetization is challenging, making it a low-reward opportunity suitable for building authority rather than direct revenue.",
+      "opportunity_summary_zh": "独立开发真实成本讨论是一个新兴的小众话题，反映了开发者对收入神话的幻灭。目前竞争几乎为零，为内容或工具提供了先发优势。然而，市场规模很小且变现困难，这是一个低回报的机会，更适合建立权威而非直接盈利。"
     },
     {
       "id": "trend-ai-agent-hallucination-and-traceability",
@@ -5967,7 +6279,31 @@
       "summary_zh": "用C和Zig实现的快速图像视频保真度指标工具在Lobsters发布，代表高性能媒体质量评估工具的新方向。",
       "summary_en": "A fast image and video fidelity metrics tool implemented in C and Zig, posted on Lobsters, represents a new direction in high-performance media quality assessment.",
       "research_md_path": "content/trends/ai-video-quality-assessment-tool.md",
-      "canonical_zh": "AI视频质量评估工具"
+      "canonical_zh": "AI视频质量评估工具",
+      "opportunity_score": 42,
+      "market_score": 35,
+      "competition_score": 20,
+      "demand_score": 40,
+      "seo_difficulty": 25,
+      "suggested_products": [
+        "Open Source",
+        "CLI Tool",
+        "API",
+        "SDK/Library",
+        "Web App"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Low market awareness may lead to slow adoption",
+        "Dependence on niche C and Zig ecosystem limits developer reach"
+      ],
+      "risk_factors_zh": [
+        "市场认知度低可能导致采用缓慢",
+        "对C和Zig小众生态的依赖限制了开发者覆盖面"
+      ],
+      "opportunity_summary_en": "The AI Video Quality Assessment Tool is a nascent open-source project with a blue ocean market and low competition, but its extremely low awareness and niche tech stack pose significant adoption risks. The opportunity score is moderate due to limited signal and demand validation. A conservative approach is recommended, focusing on building a community and proving the tool's value before monetization.",
+      "opportunity_summary_zh": "AI视频质量评估工具是一个处于初期的开源项目，市场为蓝海且竞争低，但极低的认知度和小众技术栈带来了显著的采用风险。由于信号和需求验证有限，机会评分中等。建议采取保守策略，先建立社区并证明工具价值，再考虑变现。"
     },
     {
       "id": "trend-vibe-coding-for-animations",
@@ -6347,7 +6683,33 @@
       ],
       "summary_zh": "一篇热门分析以图表展示AI对Stack Overflow访问量的冲击，引发关于开发者知识获取方式转变的广泛讨论。",
       "summary_en": "A popular analysis visualizes AI's impact on Stack Overflow traffic, sparking widespread discussion about the shift in how developers acquire knowledge.",
-      "research_md_path": "content/trends/stack-overflow-decline-due-to-ai.md"
+      "research_md_path": "content/trends/stack-overflow-decline-due-to-ai.md",
+      "opportunity_score": 52,
+      "market_score": 55,
+      "competition_score": 65,
+      "demand_score": 60,
+      "seo_difficulty": 50,
+      "suggested_products": [
+        "VS Code Extension",
+        "AI Agent",
+        "Web App",
+        "Discord/Slack Bot",
+        "Chrome Extension"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 3,
+      "risk_factors_en": [
+        "Major AI players (OpenAI, Google) may integrate similar features directly into their platforms.",
+        "Developer trust in AI-generated code quality and reliability is still evolving.",
+        "The trend is nascent with only 1 mention; signal may fade if traffic stabilizes."
+      ],
+      "risk_factors_zh": [
+        "主要AI玩家（OpenAI、Google）可能直接在其平台中集成类似功能。",
+        "开发者对AI生成代码质量和可靠性的信任仍在发展中。",
+        "该趋势仅被提及1次，处于萌芽阶段；若流量稳定，信号可能减弱。"
+      ],
+      "opportunity_summary_en": "The decline of Stack Overflow due to AI presents a clear opportunity to build a community-driven, AI-powered knowledge platform for developers. While competition from existing AI tools is significant, a focused product that combines real-time AI answers with curated human insights could carve a niche. The nascent trend and moderate demand suggest a viable MVP with a 30-day build timeline.",
+      "opportunity_summary_zh": "Stack Overflow因AI而衰落，为构建一个社区驱动的、AI赋能的开发者知识平台提供了明确机会。尽管现有AI工具竞争激烈，但结合实时AI回答与精选人类见解的专注产品可以开辟利基市场。该趋势处于萌芽阶段且需求中等，表明一个30天构建周期的MVP是可行的。"
     },
     {
       "id": "trend-agent-reach-multi-platform-social-scraper",
@@ -6371,7 +6733,31 @@
       ],
       "summary_zh": "Agent-Reach项目以57K+星成为GitHub趋势项目，提供让AI Agent通过CLI无API费用地读取和搜索Twitter、Reddit、YouTube、GitHub、B站、小红书等平台的能力。",
       "summary_en": "The Agent-Reach project trends on GitHub with 57K+ stars, enabling AI agents to read and search Twitter, Reddit, YouTube, GitHub, Bilibili, and Xiaohongshu via CLI with zero API fees.",
-      "research_md_path": "content/trends/agent-reach-multi-platform-social-scraper.md"
+      "research_md_path": "content/trends/agent-reach-multi-platform-social-scraper.md",
+      "opportunity_score": 54,
+      "market_score": 65,
+      "competition_score": 30,
+      "demand_score": 60,
+      "seo_difficulty": 20,
+      "suggested_products": [
+        "CLI Tool",
+        "Open Source",
+        "AI Agent",
+        "SaaS",
+        "API"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Platform legal risks (ToS violations) could shut down the scraper",
+        "Large tech companies may release similar free tools or enforce stricter API policies"
+      ],
+      "risk_factors_zh": [
+        "平台法律风险（违反服务条款）可能导致抓取工具被封",
+        "大型科技公司可能发布类似免费工具或加强API政策"
+      ],
+      "opportunity_summary_en": "Agent-Reach Multi-Platform Social Scraper is a nascent open-source project with strong GitHub traction, offering a unique low-cost data access for AI Agents. The lack of competition and easy SEO present a first-mover advantage, but monetization and legal risks are significant. Independent developers can quickly build a CLI tool or open-source library, but should focus on niche communities to validate demand before scaling.",
+      "opportunity_summary_zh": "Agent-Reach多平台社交抓取器是一个新生开源项目，GitHub热度高，为AI Agent提供独特的低成本数据访问。竞争少且SEO容易，具备先发优势，但变现和法律风险显著。独立开发者可快速构建CLI工具或开源库，但应先在细分社群验证需求，再考虑规模化。"
     },
     {
       "id": "trend-ai-agent-internet-access-tool",
@@ -10658,7 +11044,8 @@
         "大型 AI 公司可能发布竞品解决方案"
       ],
       "opportunity_summary_en": "AgentENV is a nascent open-source infrastructure for agentic reinforcement learning training. The market is small but growing, with no commercial competition yet. However, demand is unproven, and the risk of big players entering is high.",
-      "opportunity_summary_zh": "AgentENV 是一个用于智能体强化学习训练的新兴开源基础设施。市场规模小但正在增长，目前尚无商业竞争。然而需求尚未验证，且大厂进入的风险较高。"
+      "opportunity_summary_zh": "AgentENV 是一个用于智能体强化学习训练的新兴开源基础设施。市场规模小但正在增长，目前尚无商业竞争。然而需求尚未验证，且大厂进入的风险较高。",
+      "last_report_date": "2026-07-30"
     },
     {
       "id": "trend-agent-friendly-ai-database",
@@ -10708,7 +11095,8 @@
         "与现有向量或图数据库的差异化不明确。"
       ],
       "opportunity_summary_en": "The Agent-Friendly AI Database is an early-stage infrastructure opportunity with low competition and moderate market potential. Developers can build a specialized database or middleware for AI agents, but demand is unproven and monetization is uncertain. A focused MVP targeting early adopters in the indie developer community could validate the concept.",
-      "opportunity_summary_zh": "Agent友好型AI数据库是一个早期基础设施机会，竞争低但市场潜力中等。开发者可以构建专为AI agent设计的数据库或中间件，但需求尚未验证且变现不确定。针对独立开发者社区的早期采用者开发MVP可以验证概念。"
+      "opportunity_summary_zh": "Agent友好型AI数据库是一个早期基础设施机会，竞争低但市场潜力中等。开发者可以构建专为AI agent设计的数据库或中间件，但需求尚未验证且变现不确定。针对独立开发者社区的早期采用者开发MVP可以验证概念。",
+      "last_report_date": "2026-07-30"
     },
     {
       "id": "trend-cloudflare-saas-template",
@@ -10731,7 +11119,8 @@
       ],
       "summary_zh": "基于Cloudflare的零成本出海SaaS模板出现，降低独立开发者海外部署门槛。",
       "summary_en": "A zero-cost Cloudflare-based SaaS template for going global lowers the barrier for indie developers to deploy overseas.",
-      "research_md_path": "content/trends/cloudflare-saas-template.md"
+      "research_md_path": "content/trends/cloudflare-saas-template.md",
+      "last_report_date": "2026-07-30"
     },
     {
       "id": "trend-sageport",
@@ -11305,6 +11694,51 @@
       "summary_en": "A zero-signup demo model where clicking a link provides a throwaway tenant, shared on DEV, represents a new practice for lowering SaaS trial friction.",
       "research_md_path": "content/trends/zero-registration-demo-experience-mode.md",
       "canonical_zh": "零注册演示体验模式"
+    },
+    {
+      "id": "trend-chatgpt-work-for-sales",
+      "canonical": "ChatGPT Work for Sales",
+      "canonical_zh": "",
+      "aliases": [],
+      "first_seen": "2026-07-30",
+      "last_seen": "2026-07-30",
+      "stage": "nascent",
+      "score": 8,
+      "source_count": 1,
+      "total_mentions": 4,
+      "sources": [
+        "youtube"
+      ],
+      "growth_pct": 100,
+      "category": "AIApp",
+      "tags": [],
+      "summary_zh": "OpenAI 推出面向销售场景的 ChatGPT Work 系列功能，覆盖收入情报、客户研究、账户规划、渠道预测等环节，显示 AI 在垂直业务领域的深度应用趋势。",
+      "summary_en": "OpenAI introduces ChatGPT Work for sales, covering revenue intelligence, account research, pipeline forecasting, and meeting prep, signaling deep vertical AI adoption in enterprise sales workflows.",
+      "research_md_path": "content/trends/chatgpt-work-for-sales.md",
+      "opportunity_score": 48,
+      "market_score": 70,
+      "competition_score": 30,
+      "demand_score": 60,
+      "seo_difficulty": 25,
+      "suggested_products": [
+        "AI Agent",
+        "Chrome Extension",
+        "SaaS",
+        "Web App",
+        "Plugin/Add-on"
+      ],
+      "estimated_dev_days": 45,
+      "revenue_potential": 3,
+      "risk_factors_en": [
+        "OpenAI may expand its own features and crowd out third-party tools",
+        "Enterprise sales cycles are long, making early revenue difficult"
+      ],
+      "risk_factors_zh": [
+        "OpenAI 可能扩展自身功能，挤压第三方工具空间",
+        "企业销售周期长，早期收入困难"
+      ],
+      "opportunity_summary_en": "ChatGPT Work for Sales is a nascent niche with low competition and high potential. Early movers can build specialized AI agents for sales tasks like pipeline forecasting and meeting prep. However, OpenAI's own expansion and long enterprise sales cycles pose significant risks.",
+      "opportunity_summary_zh": "ChatGPT Work for Sales 是一个竞争较低、潜力巨大的新兴细分领域。早期进入者可以为渠道预测和会议准备等销售任务构建专门的 AI 代理。但 OpenAI 自身的扩展和较长的企业销售周期是主要风险。"
     },
     {
       "id": "trend-open-source-robot-vacuum",
@@ -12268,6 +12702,133 @@
       ],
       "opportunity_summary_en": "The trend 'Senator Graham AI Policy' is nascent with no measurable traction, presenting a speculative opportunity. A simple web app or newsletter to track his statements could be built quickly but faces high risk of low demand. Given the lack of data, a conservative approach is warranted.",
       "opportunity_summary_zh": "趋势“Senator Graham AI Policy”处于萌芽阶段，没有可衡量的热度，是一个投机性机会。可以快速构建一个简单的网页应用或新闻通讯来追踪他的言论，但面临需求低迷的高风险。鉴于数据不足，应采取保守态度。"
+    },
+    {
+      "id": "trend-chatgpt-work-enterprise-management",
+      "canonical": "ChatGPT Work Enterprise Management",
+      "canonical_zh": "",
+      "aliases": [],
+      "first_seen": "2026-07-30",
+      "last_seen": "2026-07-30",
+      "stage": "nascent",
+      "score": 0,
+      "source_count": 0,
+      "total_mentions": 0,
+      "sources": [],
+      "growth_pct": 100,
+      "category": "DevTools",
+      "tags": [],
+      "summary_zh": "IT 管理员可以大规模管理 ChatGPT Work，表明 OpenAI 正在强化企业级部署与治理能力，推动 AI 工具进入受管控的企业 IT 环境。",
+      "summary_en": "IT admins can manage ChatGPT Work at scale, indicating OpenAI's push for enterprise-grade governance and deployment, enabling AI tools in regulated IT environments.",
+      "research_md_path": "content/trends/chatgpt-work-enterprise-management.md",
+      "opportunity_score": 45,
+      "market_score": 50,
+      "competition_score": 30,
+      "demand_score": 40,
+      "seo_difficulty": 20,
+      "suggested_products": [
+        "SaaS",
+        "API",
+        "Chrome Extension",
+        "Discord/Slack Bot"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "OpenAI may expand native management features, reducing third-party opportunity.",
+        "Enterprise sales cycles are long and require compliance certifications."
+      ],
+      "risk_factors_zh": [
+        "OpenAI可能扩展原生管理功能，减少第三方机会。",
+        "企业销售周期长，需要合规认证。"
+      ],
+      "opportunity_summary_en": "ChatGPT Work Enterprise Management is a nascent market with low competition and clear enterprise demand for governance tools. However, OpenAI's own roadmap poses a significant risk of obsolescence. An independent developer could build a focused SaaS or API product targeting specific pain points like usage monitoring or policy enforcement.",
+      "opportunity_summary_zh": "ChatGPT Work企业管理是一个新兴市场，竞争低，企业对治理工具有明确需求。然而，OpenAI自身路线图带来过时风险。独立开发者可以构建聚焦特定痛点的SaaS或API产品，例如使用监控或策略执行。"
+    },
+    {
+      "id": "trend-enterprise-ai-adoption-case-studies",
+      "canonical": "Enterprise AI Adoption Case Studies",
+      "canonical_zh": "企业 AI 采纳案例研究",
+      "aliases": [],
+      "first_seen": "2026-07-30",
+      "last_seen": "2026-07-30",
+      "stage": "nascent",
+      "score": 0,
+      "source_count": 0,
+      "total_mentions": 0,
+      "sources": [],
+      "growth_pct": 100,
+      "category": "Industry",
+      "tags": [],
+      "summary_zh": "Zapier、Shopify、维珍大西洋航空等企业分享 ChatGPT Work 使用案例，反映了大型企业拥抱 AI 工作流、提升运营效率的行业趋势。",
+      "summary_en": "Case studies from Zapier, Shopify, and Virgin Atlantic using ChatGPT Work illustrate the growing trend of large enterprises adopting AI workflows to boost operational efficiency.",
+      "research_md_path": "content/trends/enterprise-ai-adoption-case-studies.md",
+      "opportunity_score": 35,
+      "market_score": 30,
+      "competition_score": 20,
+      "demand_score": 40,
+      "seo_difficulty": 30,
+      "suggested_products": [
+        "Web App",
+        "Newsletter",
+        "Template/Boilerplate",
+        "AI Agent"
+      ],
+      "estimated_dev_days": 21,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Low search volume limits organic traffic",
+        "Enterprises may prefer in-house or vendor-provided case studies"
+      ],
+      "risk_factors_zh": [
+        "低搜索量限制了自然流量",
+        "企业可能更倾向于内部或供应商提供的案例研究"
+      ],
+      "opportunity_summary_en": "Enterprise AI adoption case studies represent a nascent niche with low competition and moderate demand. The trend is real but lacks strong signals for a high-ROI product. A curated web app or newsletter could serve early adopters, but revenue potential is limited.",
+      "opportunity_summary_zh": "企业AI采用案例研究是一个新兴细分领域，竞争低、需求温和。趋势真实但缺乏高回报产品的强烈信号。策划的网页应用或通讯可以服务早期用户，但收入潜力有限。"
+    },
+    {
+      "id": "trend-voice-interaction-in-enterprise-ai",
+      "canonical": "Voice Interaction in Enterprise AI",
+      "canonical_zh": "企业 AI 中的语音交互",
+      "aliases": [],
+      "first_seen": "2026-07-30",
+      "last_seen": "2026-07-30",
+      "stage": "nascent",
+      "score": 0,
+      "source_count": 0,
+      "total_mentions": 0,
+      "sources": [],
+      "growth_pct": 100,
+      "category": "DX",
+      "tags": [],
+      "summary_zh": "在 ChatGPT Work 中使用语音功能，表明语音交互正在从消费级应用渗透到企业生产力场景，可能成为未来 AI 工作流的重要交互方式。",
+      "summary_en": "Voice features in ChatGPT Work suggest voice interaction is moving from consumer apps into enterprise productivity, potentially becoming a key modality for AI workflows.",
+      "research_md_path": "content/trends/voice-interaction-in-enterprise-ai.md",
+      "opportunity_score": 42,
+      "market_score": 55,
+      "competition_score": 30,
+      "demand_score": 40,
+      "seo_difficulty": 25,
+      "suggested_products": [
+        "AI Agent",
+        "SaaS",
+        "Chrome Extension",
+        "Mobile App",
+        "API"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Enterprise adoption may be slow due to privacy and accuracy concerns",
+        "Major tech companies like Google or Microsoft could quickly dominate with built-in solutions"
+      ],
+      "risk_factors_zh": [
+        "企业采用可能因隐私和准确性问题而缓慢",
+        "Google或Microsoft等大公司可能通过内置解决方案迅速主导市场"
+      ],
+      "opportunity_summary_en": "Voice interaction in enterprise AI is an emerging trend with low competition but limited demand signals. Independent developers can explore niche integrations like voice-controlled AI agents for specific workflows. However, the market is nascent and carries risks of slow adoption and big tech entry.",
+      "opportunity_summary_zh": "企业AI中的语音交互是一个新兴趋势，竞争低但需求信号有限。独立开发者可以探索特定工作流的语音控制AI代理等小众集成。然而，市场尚在萌芽期，存在采用缓慢和大厂进入的风险。"
     }
   ],
   "_version": "1.0"
