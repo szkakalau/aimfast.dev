@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Censorship-Free LLM Evaluator — Compare Model Responses Side-by-Side | www.aimfast.dev</title>
+  <meta name="description" content="Paste a prompt. See how different models reply. Find out if distillation bypasses censorship. Instant, visual, free.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#1a1d24">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://www.aimfast.dev/censorship-free-llm-evaluator/">
+  <meta property="og:type" content="product">
+  <meta property="og:title" content="Censorship-Free LLM Evaluator — Compare Model Responses Side-by-Side">
+  <meta property="og:description" content="Paste a prompt. See how different models reply. Find out if distillation bypasses censorship. Instant, visual, free.">
+  <meta property="og:url" content="https://www.aimfast.dev/censorship-free-llm-evaluator/">
+  <meta property="og:site_name" content="AimFast.Dev">
+  <meta property="og:image" content="https://www.aimfast.dev/og/censorship-free-llm-evaluator.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Censorship-Free LLM Evaluator — Compare Model Responses Side-by-Side">
+  <meta name="twitter:description" content="Paste a prompt. See how different models reply. Find out if distillation bypasses censorship. Instant, visual, free.">
+  <meta name="twitter:image" content="https://www.aimfast.dev/og/censorship-free-llm-evaluator.png">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Censorship-Free LLM Evaluator",
+      "applicationCategory": "AIApplication",
+      "operatingSystem": "Web",
+      "description": "Compare responses from original and distilled LLMs side-by-side. Detect censorship transfer and bias in model outputs.",
+      "url": "https://www.aimfast.dev/censorship-free-llm-evaluator/",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="/_ds/base.css">
+  <link rel="stylesheet" href="/_ds/components.css">
+  <style>
+    /* custom page-level overrides — only layout & non-token things */
+    .hero {
+      padding: var(--space-8) 0 var(--space-6);
+      text-align: center;
+    }
+    .hero h1 {
+      max-width: 14ch;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero .subhead {
+      max-width: 48ch;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: var(--space-2);
+      color: var(--color-text-secondary);
+      font-size: 1.125rem;
+    }
+    .signup-form {
+      display: flex;
+      gap: var(--space-2);
+      max-width: 480px;
+      margin: var(--space-5) auto 0;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .signup-form input[type="email"] {
+      flex: 1 1 240px;
+      height: 52px;
+      padding: 0 var(--space-3);
+      border: 2px solid var(--color-border);
+      border-radius: 8px;
+      background: var(--color-surface);
+      color: var(--color-text);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      transition: border-color var(--duration-normal) var(--ease-out);
+    }
+    .signup-form input[type="email"]:focus {
+      outline: none;
+      border-color: var(--color-accent);
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent) 20%, transparent);
+    }
+    .signup-form .btn {
+      height: 52px;
+      padding: 0 var(--space-4);
+      font-size: 1rem;
+      white-space: nowrap;
+    }
+    .signup-form .btn-lg {
+      height: 52px;
+      line-height: 52px;
+      padding: 0 var(--space-5);
+    }
+    .success-message {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-2);
+      padding: var(--space-3) var(--space-4);
+      background: color-mix(in srgb, var(--color-accent) 12%, transparent);
+      border-radius: 8px;
+      color: var(--color-accent);
+      font-weight: 600;
+      margin-top: var(--space-3);
+    }
+    .error-message {
+      color: var(--color-text-secondary);
+      background: color-mix(in srgb, var(--color-accent) 8%, transparent);
+      padding: var(--space-2) var(--space-3);
+      border-radius: 6px;
+      margin-top: var(--space-2);
+      font-size: 0.9rem;
+    }
+    .why-matters p {
+      max-width: 72ch;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .how-it-works .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-5);
+      margin-top: var(--space-5);
+    }
+    .step {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+      text-align: left;
+    }
+    .step-num {
+      font-family: var(--font-mono);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      line-height: 1;
+      margin-bottom: var(--space-1);
+    }
+    .step-content h3 {
+      font-size: 1.125rem;
+      margin-bottom: var(--space-1);
+    }
+    .step-content p {
+      font-size: 0.95rem;
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+    }
+    .selling-points .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-5);
+      margin-top: var(--space-5);
+    }
+    .selling-points .card {
+      padding: var(--space-4);
+      border-radius: 12px;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      transition: transform var(--duration-normal) var(--ease-out), box-shadow var(--duration-normal) var(--ease-out);
+    }
+    .selling-points .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+    .selling-points .card .icon-wrap {
+      margin-bottom: var(--space-2);
+      color: var(--color-accent);
+    }
+    .selling-points .card h3 {
+      font-size: 1.1rem;
+      margin-bottom: var(--space-1);
+    }
+    .selling-points .card p {
+      font-size: 0.95rem;
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+    }
+    .trust-bar {
+      text-align: center;
+      padding: var(--space-4) 0 var(--space-2);
+      color: var(--color-text-muted);
+      font-size: 0.85rem;
+      display: flex;
+      justify-content: center;
+      gap: var(--space-4);
+      flex-wrap: wrap;
+    }
+    .trust-bar span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .footer {
+      text-align: center;
+      padding: var(--space-5) 0 var(--space-4);
+      border-top: 1px solid var(--color-border);
+      color: var(--color-text-muted);
+      font-size: 0.85rem;
+    }
+    @media (max-width: 720px) {
+      .how-it-works .steps-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+      }
+      .selling-points .grid-3 {
+        grid-template-columns: 1fr;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .signup-form {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .signup-form input[type="email"] {
+        width: 100%;
+      }
+      .signup-form .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero + inline email form -->
+  <section class="hero container">
+    <h1 class="heading-xl">Does Your LLM Have a Hidden Censor?</h1>
+    <p class="subhead">Paste a prompt. See how different models reply. Find out if distillation bypasses censorship — in seconds.</p>
+    
+    <!-- inline signup form (email capture) -->
+    <form id="signup-form" class="signup-form" action="https://formspree.io/f/your-form-id" method="POST">
+      <input type="email" name="email" placeholder="you@example.com" required autocomplete="email">
+      <button type="submit" class="btn btn-primary btn-lg">Get Early Access</button>
+    </form>
+    <div id="form-feedback" style="margin-top: var(--space-2); min-height: 2.5rem;"></div>
+  </section>
+
+  <!-- Why This Matters -->
+  <section class="why-matters container" style="padding: var(--space-6) 0;">
+    <h2 class="heading-lg" style="text-align: center; margin-bottom: var(--space-4);">Why LLM Censorship Detection Matters Right Now</h2>
+    <p style="margin-bottom: var(--space-3);">The AI community is buzzing: a recent Hacker News thread (48 points, 2 hours old) revealed that distilling DeepSeek into GPT-OSS <em>does not transfer censorship</em>. Developers are rushing to test this themselves, but they lack a fast, visual way to compare model outputs side-by-side. Existing solutions — like academic benchmarks (MMLU, TruthfulQA) — measure knowledge, not real-time censorship. They’re static, batch-oriented, and ignore the nuanced ways models evade sensitive topics.</p>
+    <p style="margin-bottom: var(--space-3);">Meanwhile, AI safety teams and fine-tuning engineers need to verify alignment properties after distillation. Current tools are either expensive enterprise audits or generic playgrounds that don’t highlight <em>differences</em>. This gap leaves developers guessing whether their distilled model inherited hidden biases. With the rise of open-source distillation (Llama 3, Mistral, DeepSeek variants), the demand for a lightweight, transparent censorship checker has never been higher.</p>
+    <p>Now is the perfect moment: the signal is fresh, the community is actively discussing “Try it,” and no dedicated tool exists. By providing an instant side-by-side comparison with highlighted differences, we turn a vague concern into a measurable, actionable insight — for free.</p>
+  </section>
+
+  <!-- How It Works -->
+  <section class="how-it-works container" style="padding: var(--space-6) 0;">
+    <h2 class="heading-lg" style="text-align: center; margin-bottom: var(--space-2);">How It Works</h2>
+    <p style="text-align: center; color: var(--color-text-secondary); max-width: 56ch; margin: 0 auto var(--space-4);">Three steps to uncover hidden censorship in your distilled models.</p>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h3>Paste your prompt</h3>
+          <p>Enter any text — a political question, a controversial topic, or a simple instruction. Our tool accepts raw prompts without any preprocessing, so you can test exactly what matters to you.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h3>Compare side-by-side</h3>
+          <p>We simultaneously query the original model (e.g., DeepSeek) and its distilled version (e.g., GPT-OSS). Responses appear in parallel columns, with key differences — refusals, evasions, or tone shifts — highlighted in color.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h3>Get your censorship score</h3>
+          <p>Each response receives a 0–100 Censorship Index based on linguistic markers of avoidance. A high score signals heavy filtering; a low score suggests the model answers freely. Export or share your results instantly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Selling Points (3-column grid) -->
+  <section class="selling-points container" style="padding: var(--space-6) 0;">
+    <h2 class="heading-lg" style="text-align: center; margin-bottom: var(--space-2);">What You Get</h2>
+    <div class="grid-3">
+      <div class="card">
+        <div class="icon-wrap">
+          <!-- Lucide: eye / shield-check (viewBox 0 0 24 24) -->
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <polyline points="9 12 11 14 15 10"/>
+          </svg>
+        </div>
+        <h3>Instant Bias Detection</h3>
+        <p>No more guessing. Our tool automatically highlights refusals, hedges, and topic shifts between model pairs. See in seconds whether your distilled model inherited censorship — without manual review.</p>
+      </div>
+      <div class="card">
+        <div class="icon-wrap">
+          <!-- Lucide: columns / layout (two columns) -->
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="7" height="18" rx="1"/>
+            <rect x="14" y="3" width="7" height="18" rx="1"/>
+          </svg>
+        </div>
+        <h3>Side-by-Side Comparison</h3>
+        <p>View original and distilled model outputs in parallel columns. Color-coded diffs make it obvious where one model evades and the other answers — perfect for quick audits or deep dives.</p>
+      </div>
+      <div class="card">
+        <div class="icon-wrap">
+          <!-- Lucide: download / share (arrow up from square) -->
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+        </div>
+        <h3>Export & Share Results</h3>
+        <p>Generate a clean report of your comparison, including the Censorship Index. Share a screenshot or PDF with your team, or post it on social media to contribute to the transparency conversation.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Bar -->
+  <div class="trust-bar container">
+    <span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+      No signup required
+    </span>
+    <span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      Your prompts stay private
+    </span>
+    <span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8
