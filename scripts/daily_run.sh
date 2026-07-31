@@ -589,7 +589,7 @@ step_end "Step12b: BuilderPulse"
 log ""
 log "--- Step 13: Deploy Dashboard Data & SEO Content ---"
 
-git add public/dashboard/data/dashboard.json tracking/recurring_signals.json tracking/demand_radar.json tracking/trend_terms.json public/sitemap.xml content/reports/ content/articles/ content/trends/ public/*/index.html compare/ daily/*/signals.json 2>&1 || true
+git add public/dashboard/data/dashboard.json tracking/recurring_signals.json tracking/demand_radar.json tracking/trend_terms.json public/sitemap.xml content/reports/ content/articles/ content/trends/ public/*/index.html compare/ daily/*/signals.json daily/*/extracted_terms.json 2>&1 || true
 
 if git diff --cached --name-only | grep -q .; then
     git config user.email "pipeline@aimfast.dev"
