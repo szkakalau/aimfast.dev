@@ -16,6 +16,7 @@ import json
 import sys
 import os
 import argparse
+import random
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
@@ -112,17 +113,31 @@ def compute_percentile_thresholds(terms: list[dict]) -> tuple[float, float]:
     return float(scores[full_idx]), float(scores[brief_idx])
 
 
-def extract_terms_from_signals(signals: list[dict], entity_terms: list[dict] | None = None) -> list[dict]:
+def extract_terms_from_signals(signals: list[dict], entity_terms: list[dict] | None = None,
+                                existing_terms: list[dict] | None = None) -> list[dict]:
     """
     Extract emerging tech terms from today's signals using LLM.
     Falls back to keyword-based extraction if LLM is unavailable.
 
     entity_terms: high-frequency terms from the entity extraction pipeline (term_index.json).
                   Used to bridge the gap between entity extraction and trend discovery.
+    existing_terms: already-tracked trend terms — passed to LLM so it avoids re-extracting them
+                    (bottleneck #7 fix: LLM was blindly extracting same terms every day).
     """
     # Build a compact signal summary for the LLM prompt
+    # Bottleneck #7 fix: use diverse sampling — top 200 by score + 100 random from the rest.
+    # Previously only top 300 — LLM saw the same high-score signals every day, producing
+    # nearly identical extractions. Diversity forces discovery of new signals.
+    scored = sorted(signals, key=lambda s: s.get("score", 0), reverse=True)
+    top_n = scored[:200]
+    rest = scored[200:]
+    if len(rest) > 100:
+        random.seed(datetime.now(TZ_SHANGHAI).strftime("%Y%m%d"))
+        rest = random.sample(rest, 100)
+    diverse_signals = top_n + rest
+
     signal_summaries = []
-    for s in signals[:300]:  # Top 300 by score (was 100 — bottleneck #1 fix)
+    for s in diverse_signals:
         signal_summaries.append({
             "id": s.get("id", ""),
             "title": s.get("title", ""),
@@ -144,17 +159,41 @@ def extract_terms_from_signals(signals: list[dict], entity_terms: list[dict] | N
 {chr(10).join(entity_lines)}
 """
 
-    user_prompt = f"""从以下今日采集的技术社区 signals 中，提取值得追踪的新兴主题。
-{entity_context}
+    # Bottleneck #7 fix: tell LLM which terms are already tracked.
+    # Without this, LLM extracts the same terms day after day → dedup kills them.
+    known_context = ""
+    if existing_terms and len(existing_terms) > 0:
+        known_names = sorted(set(t["canonical"] for t in existing_terms))
+        if len(known_names) > 30:
+            # Deterministic seed for reproducible sampling across runs
+            random.seed(42)
+            sample_n = min(50, len(known_names))
+            known_sample = random.sample(known_names, sample_n)
+            known_context = f"""
+【重要】以下是已经在追踪的 {len(known_names)} 个词条（采样展示 {sample_n} 个）。
+请优先发现 **不在这个列表中** 的新主题。仅当某已有词条今天有重大新证据时才可重复提取。
+已有词条：
+{chr(10).join(f'- {n}' for n in sorted(known_sample))}
 
+"""
+        else:
+            known_context = f"""【重要】以下是已经在追踪的 {len(known_names)} 个词条。请优先发现不在这个列表中的新主题。
+已有词条：
+{chr(10).join(f'- {n}' for n in known_names)}
+
+"""
+
+    user_prompt = f"""从以下今日采集的技术社区 signals 中，提取值得追踪的新兴主题。
+{entity_context}{known_context}
 范围：新概念、新技术、新产品、热门讨论 — 都可以。目标 15-30 个候选词。
 
 提取原则（重要）：
-1. 优先提取在多个信号中反复出现的主题。单个信号也可以提取——只要内容独特、有追踪价值（新发布的产品、新提出的概念、值得关注的趋势讨论）
-2. 对于新产品/项目：即使是独立开发者发布的单个产品，只要它代表了一个有趣的方向或解决了一个真实问题，就应该提取
-3. 对于热门讨论：判断讨论是否有深度，是否反映了开发者社区的关注点变化
-4. 忽略已知通用技术词汇（如 "AI", "React", "Python", "API", "OpenAI", "LLM", "GPT" 等）——但如果是这些领域的新具体项目/产品/变体，仍然提取
-5. 按重要性和讨论度排序。尽量提取 15-30 个候选词。宁多勿少——后续评分会过滤低质量候选
+1. **优先发现新主题**：已知词条列表中的主题除非今天有重大新进展，否则不要重复提取
+2. 优先提取在多个信号中反复出现的主题。单个信号也可以提取——只要内容独特、有追踪价值（新发布的产品、新提出的概念、值得关注的趋势讨论）
+3. 对于新产品/项目：即使是独立开发者发布的单个产品，只要它代表了一个有趣的方向或解决了一个真实问题，就应该提取
+4. 对于热门讨论：判断讨论是否有深度，是否反映了开发者社区的关注点变化
+5. 忽略已知通用技术词汇（如 "AI", "React", "Python", "API", "OpenAI", "LLM", "GPT" 等）——但如果是这些领域的新具体项目/产品/变体，仍然提取
+6. 按重要性和讨论度排序。尽量提取 15-30 个候选词。宁多勿少——后续评分会过滤低质量候选
 
 分类体系（category 字段）：
 - AIModel: AI & LLM model releases（模型发布、benchmark、权重/API 新模型）
@@ -187,35 +226,78 @@ Signals:
 
     system_prompt = "You extract emerging themes from tech community signals — new concepts, technologies, products, and hot discussions. IMPORTANT: The 'canonical' field MUST be in English for every entry. If the original signal uses a Chinese name, translate it to a natural, readable English equivalent. The 'canonical_zh' field stores the Chinese name if one exists. Both 'summary_en' and 'summary_zh' are required — never leave summary_en empty. The 'signal_ids' field MUST be a non-empty array of signal IDs from the provided signals list — list the IDs you used to identify this term. Return only valid JSON array."
 
-    # Try LLM extraction
-    try:
-        sys.path.insert(0, str(ROOT / "scripts"))
-        from llm_client import chat
+    # Try LLM extraction (with retry for non-determinism — bottleneck #7 fix).
+    # LLM sometimes returns 0-4 terms on one attempt and 30+ on the next
+    # with identical input. Retry up to 3 times if count is below threshold.
+    MIN_TERMS_THRESHOLD = 8
+    MAX_RETRIES = 2  # total 3 attempts
+    terms = []
+    last_exception = None
 
-        # max_tokens=16384: extracting 15-30 terms from 300 signals needs room.
-        # Default 4096 caused JSON truncation at ~line 274 (2026-07-29 incident).
-        response = chat(system_prompt, user_prompt, max_tokens=16384)
-        response_text = _extract_json_array(response)
-        terms = json.loads(response_text)
-        if isinstance(terms, list) and len(terms) > 0 and isinstance(terms[0], dict):
-            # Validate signal_ids presence (non-fatal warning)
-            signal_ids_present = sum(1 for t in terms if t.get("signal_ids"))
-            if signal_ids_present < len(terms):
-                missing = [t.get("canonical", "?") for t in terms if not t.get("signal_ids")]
-                print(f"  [trends] Warning: {len(missing)}/{len(terms)} terms missing signal_ids: {missing[:3]}...")
-            # Normalize signal_ids to ensure they're a list
-            for t in terms:
-                ids = t.get("signal_ids")
-                if ids is None:
-                    t["signal_ids"] = []
-                elif not isinstance(ids, list):
-                    t["signal_ids"] = [str(ids)] if ids else []
-            # Post-process: ensure canonical is English
-            terms = _ensure_english_canonical(terms)
-            return terms
-    except Exception as e:
-        print(f"  [trends] LLM extraction failed: {e}, falling back to keyword method")
-        # Save raw response for debugging (only if we got one from the LLM)
+    for attempt in range(MAX_RETRIES + 1):
+        try:
+            sys.path.insert(0, str(ROOT / "scripts"))
+            from llm_client import chat
+
+            if attempt > 0:
+                retry_prompt = user_prompt + f"\n\n[SYSTEM NOTE: Previous attempt returned only {len(terms)} terms. Please extract more — aim for 15-30 this time. Return valid JSON array.]"
+            else:
+                retry_prompt = user_prompt
+
+            # max_tokens=16384: extracting 15-30 terms from 300 signals needs room.
+            # Default 4096 caused JSON truncation at ~line 274 (2026-07-29 incident).
+            response = chat(system_prompt, retry_prompt, max_tokens=16384)
+            response_text = _extract_json_array(response)
+            terms = json.loads(response_text)
+            if isinstance(terms, list) and len(terms) > 0 and isinstance(terms[0], dict):
+                if attempt > 0:
+                    print(f"  [trends] Retry {attempt} succeeded: {len(terms)} terms")
+                # Validate signal_ids presence (non-fatal warning)
+                signal_ids_present = sum(1 for t in terms if t.get("signal_ids"))
+                if signal_ids_present < len(terms):
+                    missing = [t.get("canonical", "?") for t in terms if not t.get("signal_ids")]
+                    print(f"  [trends] Warning: {len(missing)}/{len(terms)} terms missing signal_ids: {missing[:3]}...")
+                # Normalize signal_ids to ensure they're a list
+                for t in terms:
+                    ids = t.get("signal_ids")
+                    if ids is None:
+                        t["signal_ids"] = []
+                    elif not isinstance(ids, list):
+                        t["signal_ids"] = [str(ids)] if ids else []
+                # Post-process: ensure canonical is English
+                terms = _ensure_english_canonical(terms)
+
+                if len(terms) >= MIN_TERMS_THRESHOLD:
+                    return terms
+                elif attempt < MAX_RETRIES:
+                    print(f"  [trends] Only {len(terms)} terms (threshold={MIN_TERMS_THRESHOLD}), retrying...")
+                    continue
+                else:
+                    print(f"  [trends] Accepting {len(terms)} terms after {MAX_RETRIES + 1} attempts")
+                    return terms
+            else:
+                if isinstance(terms, list) and len(terms) == 0:
+                    if attempt < MAX_RETRIES:
+                        print(f"  [trends] LLM returned empty array, retrying (attempt {attempt + 1}/{MAX_RETRIES + 1})...")
+                        continue
+                    else:
+                        print(f"  [trends] LLM returned empty array after {MAX_RETRIES + 1} attempts")
+                        return []
+                # Not a valid list of dicts — break to fallback
+                break
+        except Exception as e:
+            last_exception = e
+            if attempt < MAX_RETRIES:
+                print(f"  [trends] LLM extraction attempt {attempt + 1} failed: {e}, retrying...")
+                continue
+
+    # If we got terms but below threshold, return them anyway
+    if isinstance(terms, list) and len(terms) > 0 and isinstance(terms[0], dict):
+        return terms
+
+    if last_exception:
+        print(f"  [trends] LLM extraction failed after retries: {last_exception}, falling back to keyword method")
+        # Save raw response for debugging
         try:
             if 'response' in locals():
                 _dump_debug_response(response, "parse_error")
@@ -1167,13 +1249,24 @@ def main():
 
     # Extract new terms
     print("[trends] Extracting new terms from signals...")
-    extracted = extract_terms_from_signals(signals, entity_terms)
+    extracted = extract_terms_from_signals(signals, entity_terms, existing_terms)
     print(f"[trends] Extracted {len(extracted)} candidate terms")
 
-    # Merge
+    # Bottleneck #7: save extracted terms BEFORE merge for debugging
+    if not args.dry_run:
+        debug_dir = ROOT / "daily" / date_str
+        debug_dir.mkdir(parents=True, exist_ok=True)
+        save_json(debug_dir / "extracted_terms.json", extracted)
+        print(f"[trends] Debug: saved extracted terms to daily/{date_str}/extracted_terms.json")
+
+    # Merge — count how many extracted terms matched existing (dedup rate)
+    existing_before = len(existing_terms)
     updated_terms = merge_terms(existing_terms, extracted, signals, today)
-    new_count = len(updated_terms) - len(existing_terms)
-    print(f"[trends] Merged: {len(updated_terms)} total ({new_count} new)")
+    new_count = len(updated_terms) - existing_before
+    matched_count = len(extracted) - new_count
+    if len(extracted) > 0:
+        dedup_pct = matched_count * 100 // len(extracted)
+        print(f"[trends] Merged: {len(updated_terms)} total ({new_count} new, {matched_count} already tracked = {dedup_pct}% dedup rate)")
 
     # Optionally rescore existing zero-score terms
     if args.rescore:
