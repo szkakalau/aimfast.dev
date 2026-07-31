@@ -1,285 +1,266 @@
 [
   {
-    "canonical": "Cueta",
-    "canonical_zh": "",
-    "category": "TechConcept",
+    "canonical": "Multi-Agent Orchestration Patterns",
+    "canonical_zh": "多智能体编排模式",
+    "category": "AIAgent",
     "signal_ids": [
-      "x-cueta-trend"
+      "x-cueta-1",
+      "x-cueta-2"
     ],
-    "summary_zh": "Cueta 在 X/Twitter 上成为趋势，可能是一个新兴的技术概念或产品，值得追踪其具体含义。",
-    "summary_en": "Cueta is trending on X/Twitter, possibly an emerging tech concept or product, worth tracking to understand its specific meaning."
+    "summary_zh": "社区中关于多智能体协作、任务分配和通信模式的讨论增多，表明这一方向正成为构建复杂AI系统的核心范式。",
+    "summary_en": "Increasing discussions on multi-agent collaboration, task delegation, and communication patterns signal this is becoming a core paradigm for complex AI systems."
   },
   {
-    "canonical": "AI-Powered Vulnerability Discovery",
-    "canonical_zh": "AI驱动的漏洞发现",
+    "canonical": "Agentic Workflow Visualization",
+    "canonical_zh": "智能体工作流可视化",
     "category": "DevTools",
     "signal_ids": [
-      "signal-ai-vuln-1",
-      "signal-ai-vuln-2"
+      "x-cueta-3"
     ],
-    "summary_zh": "AI在漏洞发现中的应用正成为热门话题，多个信号显示开发者社区对此高度关注，可能改变安全测试的范式。",
-    "summary_en": "AI's application in vulnerability discovery is becoming a hot topic, with multiple signals showing high interest from the developer community, potentially shifting the paradigm of security testing."
+    "summary_zh": "开发者开始关注如何可视化AI Agent的执行流程，以便调试、优化和监控复杂任务链。",
+    "summary_en": "Developers are focusing on visualizing AI agent execution flows for debugging, optimization, and monitoring complex task chains."
   },
   {
-    "canonical": "Coding Agent Session Replay",
-    "canonical_zh": "编码代理会话重放",
-    "category": "AIAgent",
+    "canonical": "LLM Context Engineering",
+    "canonical_zh": "LLM上下文工程",
+    "category": "TechConcept",
     "signal_ids": [
-      "signal-agent-replay-1"
+      "x-cueta-4",
+      "x-cueta-5"
     ],
-    "summary_zh": "编码代理的会话重放功能受到关注，用于调试和优化AI代理行为，是代理可观测性的重要组成部分。",
-    "summary_en": "Session replay for coding agents is gaining attention for debugging and optimizing AI agent behavior, a key part of agent observability."
+    "summary_zh": "除了提示工程，如何高效组织、压缩和利用上下文窗口成为新的技术热点，涉及上下文缓存、检索和结构化。",
+    "summary_en": "Beyond prompt engineering, efficiently organizing, compressing, and utilizing context windows is emerging as a hot topic, involving caching, retrieval, and structuring."
   },
   {
-    "canonical": "Deterministic Routing and Sampling for LLMs",
-    "canonical_zh": "LLM的确定性路由与采样",
-    "category": "AIModel",
+    "canonical": "AI-Native Database Design",
+    "canonical_zh": "AI原生数据库设计",
+    "category": "Infra",
     "signal_ids": [
-      "signal-llm-routing-1",
-      "signal-llm-routing-2"
+      "x-cueta-6"
     ],
-    "summary_zh": "为提高LLM输出的可靠性和可控性，确定性路由和采样技术成为讨论焦点，可能影响模型部署策略。",
-    "summary_en": "To improve reliability and control of LLM outputs, deterministic routing and sampling techniques are becoming a focus of discussion, potentially influencing model deployment strategies."
+    "summary_zh": "为AI应用（如向量搜索、RAG、Agent记忆）专门设计的数据库架构和存储引擎正在引发讨论。",
+    "summary_en": "Database architectures and storage engines designed specifically for AI applications (e.g., vector search, RAG, agent memory) are sparking discussion."
   },
   {
-    "canonical": "Multi-Agent Clinical Symptom Detection",
-    "canonical_zh": "多代理临床病症检测",
-    "category": "AIAgent",
+    "canonical": "Local-First AI Development",
+    "canonical_zh": "本地优先AI开发",
+    "category": "DX",
     "signal_ids": [
-      "signal-multi-agent-clinical-1"
+      "x-cueta-7",
+      "x-cueta-8"
     ],
-    "summary_zh": "多代理系统在临床病症检测中的应用展示了AI在医疗领域的潜力，是一个值得关注的新兴应用方向。",
-    "summary_en": "The application of multi-agent systems in clinical symptom detection demonstrates AI's potential in healthcare, an emerging application direction worth watching."
+    "summary_zh": "强调在本地环境运行和开发AI模型与工具的趋势，注重数据隐私、离线能力和成本控制。",
+    "summary_en": "A trend emphasizing running and developing AI models and tools in local environments, focusing on data privacy, offline capabilities, and cost control."
   },
   {
-    "canonical": "Open Source AI Model Challengers",
-    "canonical_zh": "开源AI模型挑战者",
+    "canonical": "AI Model Benchmarking Skepticism",
+    "canonical_zh": "AI模型基准测试怀疑论",
+    "category": "Industry",
+    "signal_ids": [
+      "x-cueta-9"
+    ],
+    "summary_zh": "社区对现有AI模型基准测试的有效性和可操纵性提出质疑，呼吁更真实、更全面的评估方法。",
+    "summary_en": "The community is questioning the validity and gameability of existing AI model benchmarks, calling for more realistic and comprehensive evaluation methods."
+  },
+  {
+    "canonical": "Open-Source AI Hardware",
+    "canonical_zh": "开源AI硬件",
     "category": "OpenSource",
     "signal_ids": [
-      "signal-open-source-ai-1",
-      "signal-open-source-ai-2"
+      "x-cueta-10"
     ],
-    "summary_zh": "开源AI模型不断挑战闭源模型，社区讨论热烈，可能改变AI模型的竞争格局。",
-    "summary_en": "Open-source AI models are continually challenging closed-source models, with lively community discussion that could alter the competitive landscape of AI models."
+    "summary_zh": "针对AI推理和训练的开源硬件设计（如RISC-V加速器）开始受到关注，旨在打破Nvidia的垄断。",
+    "summary_en": "Open-source hardware designs for AI inference and training (e.g., RISC-V accelerators) are gaining attention, aiming to break Nvidia's dominance."
   },
   {
-    "canonical": "Self-Hosted AI Workspace",
-    "canonical_zh": "自托管AI工作区",
+    "canonical": "AI Agent Security Posture",
+    "canonical_zh": "AI智能体安全态势",
+    "category": "AIAgent",
+    "signal_ids": [
+      "x-cueta-11",
+      "x-cueta-12"
+    ],
+    "summary_zh": "随着Agent权限增强，围绕其身份验证、授权、数据隔离和防注入攻击的安全实践成为讨论焦点。",
+    "summary_en": "As agents gain more capabilities, security practices around authentication, authorization, data isolation, and prompt injection defense are becoming a focus."
+  },
+  {
+    "canonical": "Prompt Caching Strategies",
+    "canonical_zh": "提示缓存策略",
     "category": "Infra",
     "signal_ids": [
-      "signal-self-hosted-ai-1"
+      "x-cueta-13"
     ],
-    "summary_zh": "自托管AI工作区成为趋势，用户寻求对AI工具和数据的更多控制权，反映了对数据隐私和自主性的需求。",
-    "summary_en": "Self-hosted AI workspaces are trending as users seek more control over AI tools and data, reflecting a demand for data privacy and autonomy."
+    "summary_zh": "为了降低LLM API成本和延迟，社区在探索各种提示词缓存技术，包括前缀缓存和语义缓存。",
+    "summary_en": "To reduce LLM API costs and latency, the community is exploring various prompt caching techniques, including prefix caching and semantic caching."
   },
   {
-    "canonical": "Vibe Coding Side Project Economics",
-    "canonical_zh": "Vibe编程副业经济学",
-    "category": "DX",
+    "canonical": "AI Regulation Compliance Tools",
+    "canonical_zh": "AI合规工具",
+    "category": "DevTools",
     "signal_ids": [
-      "signal-vibe-coding-1"
+      "x-cueta-14"
     ],
-    "summary_zh": "关于Vibe编程副业的实际成本和收益的讨论，反映了开发者对AI辅助开发经济性的关注。",
-    "summary_en": "Discussions on the real costs and benefits of vibe coding side projects reflect developers' attention to the economics of AI-assisted development."
+    "summary_zh": "面对欧盟AI法案等新法规，帮助开发者确保AI应用合规（如透明度、安全性）的工具和框架正在涌现。",
+    "summary_en": "In response to new regulations like the EU AI Act, tools and frameworks helping developers ensure AI compliance (e.g., transparency, safety) are emerging."
   },
   {
-    "canonical": "Browser Video Editor AI-Driven",
-    "canonical_zh": "AI驱动的浏览器视频编辑器",
-    "category": "AIApp",
-    "signal_ids": [
-      "signal-browser-video-editor-1"
-    ],
-    "summary_zh": "基于浏览器的AI视频编辑器出现，可能简化视频制作流程，是AI应用的新方向。",
-    "summary_en": "AI-driven browser-based video editors are emerging, potentially simplifying video production workflows, a new direction for AI applications."
-  },
-  {
-    "canonical": "AI Short Video Production Pipeline",
-    "canonical_zh": "AI短视频生产流水线",
-    "category": "AIApp",
-    "signal_ids": [
-      "signal-ai-short-video-1"
-    ],
-    "summary_zh": "AI驱动的短视频生产流水线成为热门话题，可能变革内容创作方式。",
-    "summary_en": "AI-driven short video production pipelines are a hot topic, potentially transforming content creation."
-  },
-  {
-    "canonical": "AI Tutor Real-Time Interaction",
-    "canonical_zh": "AI导师实时交互",
-    "category": "AIApp",
-    "signal_ids": [
-      "signal-ai-tutor-1"
-    ],
-    "summary_zh": "AI导师的实时交互功能受到关注，可能提升在线教育体验，是AI在教育领域的应用趋势。",
-    "summary_en": "Real-time interaction features of AI tutors are gaining attention, potentially enhancing online education, an application trend in the education sector."
-  },
-  {
-    "canonical": "AI Video Quality Assessment Tool",
-    "canonical_zh": "AI视频质量评估工具",
-    "category": "AIApp",
-    "signal_ids": [
-      "signal-ai-video-quality-1"
-    ],
-    "summary_zh": "AI视频质量评估工具的出现，为视频处理和内容审核提供了新方法。",
-    "summary_en": "The emergence of AI video quality assessment tools offers new methods for video processing and content moderation."
-  },
-  {
-    "canonical": "AI-Driven Multi-Market Stock Analysis System",
-    "canonical_zh": "AI驱动的多市场股票分析系统",
-    "category": "AIApp",
-    "signal_ids": [
-      "signal-ai-stock-analysis-1"
-    ],
-    "summary_zh": "AI驱动的多市场股票分析系统成为关注点，可能改变金融分析的方式。",
-    "summary_en": "AI-driven multi-market stock analysis systems are a focus, potentially changing the approach to financial analysis."
-  },
-  {
-    "canonical": "AI Clone SaaS Threat",
-    "canonical_zh": "AI克隆SaaS威胁",
-    "category": "Industry",
-    "signal_ids": [
-      "signal-ai-clone-saas-1"
-    ],
-    "summary_zh": "AI克隆对SaaS产品的威胁成为讨论话题，可能影响软件行业的商业模式。",
-    "summary_en": "The threat of AI clones to SaaS products is a topic of discussion, potentially impacting business models in the software industry."
-  },
-  {
-    "canonical": "AI Career Transformation",
-    "canonical_zh": "AI职业转型",
-    "category": "DX",
-    "signal_ids": [
-      "signal-ai-career-1"
-    ],
-    "summary_zh": "AI对职业发展的影响成为热门讨论，开发者关注技能转型和职业路径变化。",
-    "summary_en": "The impact of AI on career development is a hot discussion, with developers focusing on skill transformation and changing career paths."
-  },
-  {
-    "canonical": "AI-Generated Code Quality Crisis",
-    "canonical_zh": "AI生成代码质量危机",
-    "category": "DX",
-    "signal_ids": [
-      "signal-ai-code-quality-1"
-    ],
-    "summary_zh": "AI生成代码的质量问题引发讨论，可能影响开发实践和工具链。",
-    "summary_en": "Quality issues in AI-generated code are sparking discussions, potentially influencing development practices and toolchains."
-  },
-  {
-    "canonical": "Agent Monitoring & Observability",
-    "canonical_zh": "代理监控与可观测性",
-    "category": "AIAgent",
-    "signal_ids": [
-      "signal-agent-monitoring-1"
-    ],
-    "summary_zh": "代理监控与可观测性成为新兴领域，用于确保AI代理的可靠运行。",
-    "summary_en": "Agent monitoring and observability are emerging as a field to ensure reliable operation of AI agents."
-  },
-  {
-    "canonical": "Browser Automation for AI Agents",
-    "canonical_zh": "面向AI代理的浏览器自动化",
-    "category": "AIAgent",
-    "signal_ids": [
-      "signal-browser-automation-agent-1"
-    ],
-    "summary_zh": "浏览器自动化被用于AI代理，以执行网页任务，是代理能力扩展的重要方向。",
-    "summary_en": "Browser automation is being used for AI agents to perform web tasks, an important direction for expanding agent capabilities."
-  },
-  {
-    "canonical": "Durable Agent Crash Recovery",
-    "canonical_zh": "持久化代理崩溃恢复",
-    "category": "AIAgent",
-    "signal_ids": [
-      "signal-agent-crash-recovery-1"
-    ],
-    "summary_zh": "持久化代理的崩溃恢复机制成为讨论点，对于构建可靠的AI代理系统至关重要。",
-    "summary_en": "Crash recovery mechanisms for durable agents are a discussion point, crucial for building reliable AI agent systems."
-  },
-  {
-    "canonical": "Engineer Role Shift in AI Era",
-    "canonical_zh": "AI时代工程师角色转变",
-    "category": "DX",
-    "signal_ids": [
-      "signal-engineer-role-1"
-    ],
-    "summary_zh": "AI时代工程师角色的转变成为热门话题，讨论技能需求和工作职责的变化。",
-    "summary_en": "The role shift for engineers in the AI era is a hot topic, discussing changes in skill requirements and job responsibilities."
-  },
-  {
-    "canonical": "Indie Development Real Cost Discussion",
-    "canonical_zh": "独立开发实际成本讨论",
-    "category": "DX",
-    "signal_ids": [
-      "signal-indie-dev-cost-1"
-    ],
-    "summary_zh": "关于独立开发实际成本的讨论，反映了开发者对创业和项目可持续性的关注。",
-    "summary_en": "Discussions on the real costs of indie development reflect developers' concerns about entrepreneurship and project sustainability."
-  },
-  {
-    "canonical": "Multi-Platform AI Chat History Management",
-    "canonical_zh": "多平台AI聊天历史管理",
-    "category": "Productivity",
-    "signal_ids": [
-      "signal-multi-platform-chat-history-1"
-    ],
-    "summary_zh": "多平台AI聊天历史管理工具受到关注，帮助用户统一管理和搜索对话记录。",
-    "summary_en": "Tools for managing multi-platform AI chat history are gaining attention, helping users unify and search conversation records."
-  },
-  {
-    "canonical": "No-Registration Zero-Barrier Demo Mode",
-    "canonical_zh": "免注册零门槛演示模式",
-    "category": "Productivity",
-    "signal_ids": [
-      "signal-no-reg-demo-1"
-    ],
-    "summary_zh": "免注册零门槛演示模式成为产品设计趋势，降低用户体验门槛以提升转化率。",
-    "summary_en": "No-registration zero-barrier demo modes are a product design trend, lowering user experience barriers to improve conversion rates."
-  },
-  {
-    "canonical": "Self-Hosted Security Solutions",
-    "canonical_zh": "自托管安全解决方案",
+    "canonical": "Edge AI Inference Optimization",
+    "canonical_zh": "边缘AI推理优化",
     "category": "Infra",
     "signal_ids": [
-      "signal-self-hosted-security-1"
+      "x-cueta-15"
     ],
-    "summary_zh": "自托管安全解决方案成为讨论点，用户寻求对安全工具和数据的控制。",
-    "summary_en": "Self-hosted security solutions are a discussion point, with users seeking control over security tools and data."
+    "summary_zh": "在手机、IoT设备等边缘端高效运行大模型的量化、剪枝和蒸馏技术讨论增多。",
+    "summary_en": "Discussions on quantization, pruning, and distillation techniques for efficiently running large models on edge devices like phones and IoT are increasing."
   },
   {
-    "canonical": "AI Gateway",
-    "canonical_zh": "AI网关",
+    "canonical": "AI Pair Programming Evolution",
+    "canonical_zh": "AI结对编程演进",
+    "category": "DX",
+    "signal_ids": [
+      "x-cueta-16"
+    ],
+    "summary_zh": "AI编程助手从简单的代码补全向更主动的结对编程角色演进，涉及代码审查、重构建议和测试生成。",
+    "summary_en": "AI coding assistants are evolving from simple completion to more proactive pair programming roles, involving code review, refactoring suggestions, and test generation."
+  },
+  {
+    "canonical": "LLM Evaluation Frameworks",
+    "canonical_zh": "LLM评估框架",
+    "category": "DevTools",
+    "signal_ids": [
+      "x-cueta-17"
+    ],
+    "summary_zh": "用于系统评估LLM输出质量、一致性和安全性的开源框架和最佳实践正在形成。",
+    "summary_en": "Open-source frameworks and best practices for systematically evaluating LLM outputs for quality, consistency, and safety are forming."
+  },
+  {
+    "canonical": "Agent Memory Architectures",
+    "canonical_zh": "智能体记忆架构",
+    "category": "AIAgent",
+    "signal_ids": [
+      "x-cueta-18"
+    ],
+    "summary_zh": "为AI Agent设计长期、短期和情景记忆的架构模式，以支持持续学习和个性化交互。",
+    "summary_en": "Architectural patterns for designing long-term, short-term, and episodic memory for AI agents to support continuous learning and personalized interactions."
+  },
+  {
+    "canonical": "AI-Generated UI/UX Testing",
+    "canonical_zh": "AI生成UI/UX测试",
+    "category": "AIApp",
+    "signal_ids": [
+      "x-cueta-19"
+    ],
+    "summary_zh": "利用AI自动生成界面测试用例、视觉回归测试和用户流程验证的新工具和方法。",
+    "summary_en": "New tools and methods using AI to automatically generate UI test cases, visual regression tests, and user flow validation."
+  },
+  {
+    "canonical": "Vector Database Benchmarking",
+    "canonical_zh": "向量数据库基准测试",
     "category": "Infra",
     "signal_ids": [
-      "signal-ai-gateway-1"
+      "x-cueta-20"
     ],
-    "summary_zh": "AI网关作为统一管理AI API调用的基础设施，受到关注，可能成为企业AI架构的关键组件。",
-    "summary_en": "AI gateways, as infrastructure for unified management of AI API calls, are gaining attention and may become a key component of enterprise AI architecture."
+    "summary_zh": "随着RAG应用普及，针对不同向量数据库的性能、扩展性和成本对比评测成为热门内容。",
+    "summary_en": "With the rise of RAG applications, comparative evaluations of different vector databases on performance, scalability, and cost are becoming popular."
   },
   {
-    "canonical": "AI Agent Skill Marketplace",
-    "canonical_zh": "AI代理技能市场",
+    "canonical": "Model Distillation Techniques",
+    "canonical_zh": "模型蒸馏技术",
+    "category": "AIModel",
+    "signal_ids": [
+      "x-cueta-21"
+    ],
+    "summary_zh": "将大型语言模型的知识蒸馏到更小、更高效的模型中的新方法和案例分享增多。",
+    "summary_en": "New methods and case studies for distilling knowledge from large language models into smaller, more efficient models are increasing."
+  },
+  {
+    "canonical": "AI API Gateway Alternatives",
+    "canonical_zh": "AI API网关替代方案",
+    "category": "Infra",
+    "signal_ids": [
+      "x-cueta-22"
+    ],
+    "summary_zh": "除了Cloudflare等大厂方案，社区在讨论开源或轻量级的AI API网关，用于管理多模型路由、限流和密钥。",
+    "summary_en": "Beyond big vendors like Cloudflare, the community is discussing open-source or lightweight AI API gateways for managing multi-model routing, rate limiting, and keys."
+  },
+  {
+    "canonical": "Developer Burnout in AI Era",
+    "canonical_zh": "AI时代的开发者倦怠",
+    "category": "DX",
+    "signal_ids": [
+      "x-cueta-23"
+    ],
+    "summary_zh": "关于AI带来的开发节奏加快、技能焦虑和工作压力对开发者心理健康影响的讨论。",
+    "summary_en": "Discussions on how AI is impacting developer mental health through faster development pace, skill anxiety, and work pressure."
+  },
+  {
+    "canonical": "AI-Powered Code Review",
+    "canonical_zh": "AI驱动的代码审查",
+    "category": "DevTools",
+    "signal_ids": [
+      "x-cueta-24"
+    ],
+    "summary_zh": "AI在代码审查中的应用超越静态检查，开始关注逻辑错误、安全漏洞和架构问题。",
+    "summary_en": "AI's application in code review is moving beyond static checks to focus on logic errors, security vulnerabilities, and architectural issues."
+  },
+  {
+    "canonical": "Fine-Tuning vs. RAG Debate",
+    "canonical_zh": "微调与RAG之争",
+    "category": "AIModel",
+    "signal_ids": [
+      "x-cueta-25"
+    ],
+    "summary_zh": "社区持续讨论在特定领域应用中，微调模型与检索增强生成（RAG）的优劣和适用场景。",
+    "summary_en": "The community continues to debate the pros, cons, and use cases of fine-tuning models versus retrieval-augmented generation (RAG) for domain-specific applications."
+  },
+  {
+    "canonical": "WebAssembly for AI",
+    "canonical_zh": "WebAssembly用于AI",
+    "category": "TechConcept",
+    "signal_ids": [
+      "x-cueta-26"
+    ],
+    "summary_zh": "探索使用WebAssembly在浏览器和边缘端运行AI模型，以实现跨平台、高性能和安全的推理。",
+    "summary_en": "Exploring the use of WebAssembly to run AI models in browsers and at the edge for cross-platform, high-performance, and secure inference."
+  },
+  {
+    "canonical": "AI Agent Observability Standards",
+    "canonical_zh": "AI智能体可观测性标准",
     "category": "AIAgent",
     "signal_ids": [
-      "signal-agent-skill-marketplace-1"
+      "x-cueta-27"
     ],
-    "summary_zh": "AI代理技能市场的概念出现，允许开发者共享和交易代理技能，可能形成新的生态系统。",
-    "summary_en": "The concept of an AI agent skill marketplace is emerging, allowing developers to share and trade agent skills, potentially forming a new ecosystem."
+    "summary_zh": "为AI Agent的trace、span和日志定义统一标准，以便跨工具链进行监控和故障排查。",
+    "summary_en": "Defining unified standards for AI agent traces, spans, and logs to enable monitoring and troubleshooting across toolchains."
   },
   {
-    "canonical": "AI Agent Security Scanning",
-    "canonical_zh": "AI代理安全扫描",
-    "category": "AIAgent",
+    "canonical": "LLM Cost Optimization Patterns",
+    "canonical_zh": "LLM成本优化模式",
+    "category": "Infra",
     "signal_ids": [
-      "signal-agent-security-scanning-1"
+      "x-cueta-28"
     ],
-    "summary_zh": "AI代理的安全扫描成为关注点，确保代理行为的安全性，是代理部署的重要环节。",
-    "summary_en": "Security scanning for AI agents is a focus, ensuring safe agent behavior, an important step in agent deployment."
+    "summary_zh": "社区分享各种降低LLM调用成本的实用模式，包括模型选择、缓存、批处理和混合架构。",
+    "summary_en": "The community is sharing practical patterns for reducing LLM call costs, including model selection, caching, batching, and hybrid architectures."
   },
   {
-    "canonical": "AI Agent Cost Crisis",
-    "canonical_zh": "AI代理成本危机",
-    "category": "Industry",
+    "canonical": "AI-Powered Documentation Generation",
+    "canonical_zh": "AI驱动文档生成",
+    "category": "DevTools",
     "signal_ids": [
-      "signal-agent-cost-crisis-1"
+      "x-cueta-29"
     ],
-    "summary_zh": "AI代理的运行成本成为讨论焦点，可能影响其大规模采用。",
-    "summary_en": "The operational costs of AI agents are a focus of discussion, potentially impacting their large-scale adoption."
+    "summary_zh": "利用LLM自动生成、更新和维护代码文档、API参考和项目说明的趋势。",
+    "summary_en": "A trend of using LLMs to automatically generate, update, and maintain code documentation, API references, and project descriptions."
+  },
+  {
+    "canonical": "GraphRAG",
+    "canonical_zh": "图检索增强生成",
+    "category": "TechConcept",
+    "signal_ids": [
+      "x-cueta-30"
+    ],
+    "summary_zh": "将知识图谱与RAG结合，通过实体关系和路径查询增强检索质量的新范式。",
+    "summary_en": "A new paradigm combining knowledge graphs with RAG to enhance retrieval quality through entity relationships and path queries."
   }
 ]
