@@ -43,7 +43,7 @@ export default function RegisterPage() {
       return;
     }
 
-    router.push('/dashboard/billing');
+    router.push('/dashboard/');
   }
 
   return (

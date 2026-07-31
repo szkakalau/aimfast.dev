@@ -22,9 +22,29 @@ model User {
   sessions       Session[]
   subscription     Subscription?
   trackingTargets  TrackingTarget[]
+  alerts           Alert[]
 
   createdAt      DateTime  @default(now())
   updatedAt      DateTime  @updatedAt
+}
+
+model Alert {
+  id        String   @id @default(cuid())
+  userId    String
+  keyword   String              // 关键词（大小写不敏感匹配）
+  category  String?             // 可选：限定品类 (DevTools, AIAgent, etc.)
+  minScore  Int      @default(50)  // 最低分数阈值
+  enabled   Boolean  @default(true)
+  lastMatchedAt DateTime?
+  lastMatchTerm  String?        // 最近一次匹配的词条名
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, keyword])
+  @@index([userId])
+  @@index([enabled])
 }
 
 model Account {

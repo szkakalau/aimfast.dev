@@ -4,7 +4,7 @@ Reads daily signals, extracts emerging terms via LLM, maintains trend_terms.json
 and generates research reports using dynamic percentile thresholds.
 
 Report tiers (based on score percentile rank within the day's terms):
-  Top 25%  → Full research report (LLM, 8 sections, 2000+ words)
+  Top 25%  → Full research report (LLM, 12 sections, 2500-3500 words)
   25%–80%  → SEO brief (LLM, 3 sections, 200-300 words, unique content)
   Bottom 20% → No HTML page (JSON tracking only, score < 10 also skipped)
 
@@ -805,8 +805,25 @@ def generate_research_report(term: dict) -> int:
         user_prompt_zh = user_prompt_zh.replace("{score}", str(term.get("score", 0)))
         user_prompt_zh = user_prompt_zh.replace("{source_count}", str(term.get("source_count", 0)))
         user_prompt_zh = user_prompt_zh.replace("{total_mentions}", str(term.get("total_mentions", 0)))
+        # Deep business case fields
+        sp = term.get("suggested_products", [])
+        user_prompt_zh = user_prompt_zh.replace("{suggested_products}", ", ".join(sp) if sp else "SaaS, Tool, API")
+        user_prompt_zh = user_prompt_zh.replace("{opportunity_score}", str(term.get("opportunity_score", 0)))
+        user_prompt_zh = user_prompt_zh.replace("{market_score}", str(term.get("market_score", 0)))
+        user_prompt_zh = user_prompt_zh.replace("{competition_score}", str(term.get("competition_score", 0)))
+        user_prompt_zh = user_prompt_zh.replace("{demand_score}", str(term.get("demand_score", 0)))
+        user_prompt_zh = user_prompt_zh.replace("{growth_pct}", str(term.get("growth_pct", 0)))
+        tags = term.get("tags", [])
+        user_prompt_zh = user_prompt_zh.replace("{tags}", ", ".join(tags) if tags else "N/A")
+        user_prompt_zh = user_prompt_zh.replace("{seo_difficulty}", str(term.get("seo_difficulty", 0)))
+        user_prompt_zh = user_prompt_zh.replace("{estimated_dev_days}", str(term.get("estimated_dev_days", 0)))
 
-        system_prompt_zh = "You write technical trend research reports for indie developers. Use Chinese (zh-CN)."
+        system_prompt_zh = (
+            "You write in-depth business opportunity analysis reports for indie developers and SaaS founders. "
+            "Use Chinese (zh-CN). Each section should be detailed and actionable — 150-300 words per section. "
+            "Be specific: cite the data, name the competitors, suggest real pricing numbers. "
+            "Avoid vague hedging language like 'maybe' or 'on the other hand' — take a clear position."
+        )
 
         try:
             sys.path.insert(0, str(ROOT / "scripts"))
@@ -825,7 +842,13 @@ def generate_research_report(term: dict) -> int:
 
     # ── English report ──
     if not en_path.exists():
-        en_system = "You write technical trend research reports for indie developers. Use natural, idiomatic English. Target audience: indie hackers, SaaS founders, and software developers worldwide."
+        en_system = (
+            "You write in-depth business opportunity analysis reports for indie developers and SaaS founders. "
+            "Use natural, idiomatic English. Target audience: indie hackers, SaaS founders, and software developers worldwide. "
+            "Each section should be detailed and actionable — 120-300 words per section. "
+            "Be specific: cite the data, name competitors, suggest real pricing numbers. "
+            "Avoid vague hedging — take a clear position."
+        )
 
         # Build an English user prompt from scratch — the Chinese template
         # confuses the LLM into outputting Chinese even with an English system prompt.
@@ -838,43 +861,74 @@ def generate_research_report(term: dict) -> int:
         score = term.get("score", 0)
         source_count = term.get("source_count", 0)
         total_mentions = term.get("total_mentions", 0)
+        growth_pct = term.get("growth_pct", 0)
+        opp_score = term.get("opportunity_score", 0)
+        mkt_score = term.get("market_score", 0)
+        comp_score = term.get("competition_score", 0)
+        dem_score = term.get("demand_score", 0)
+        seo_diff = term.get("seo_difficulty", 0)
+        est_days = term.get("estimated_dev_days", 0)
+        tags = ", ".join(term.get("tags", [])) or "N/A"
+        sp = ", ".join(term.get("suggested_products", [])) or "SaaS, Tool, API"
 
         user_prompt_en = (
-            "You are writing a trend research report for indie developers. "
-            "Write the ENTIRE report in ENGLISH — no Chinese characters anywhere.\n\n"
+            "You are writing an in-depth business opportunity analysis for indie developers and SaaS founders. "
+            "Write the ENTIRE report in ENGLISH — no Chinese characters anywhere. "
+            "Target 2500-3500 words across 12 sections. Be specific — cite data, name competitors, suggest real pricing.\n\n"
             "## Known Data\n\n"
             f"- **Term Name**: {canonical}\n"
             f"- **Category**: {category}\n"
+            f"- **Tags**: {tags}\n"
             f"- **Summary**: {summary}\n"
             f"- **Sources**: {sources}\n"
             f"- **First Seen**: {first_seen}\n"
             f"- **Current Stage**: {stage}\n"
             f"- **Trend Score**: {score}/100\n"
             f"- **Source Count**: {source_count}\n"
-            f"- **Total Mentions**: {total_mentions}\n\n"
+            f"- **Total Mentions**: {total_mentions}\n"
+            f"- **Growth Rate**: {growth_pct}%\n"
+            f"- **Opportunity Score**: {opp_score}/100\n"
+            f"- **Market Score**: {mkt_score}/100\n"
+            f"- **Competition Score**: {comp_score}/100\n"
+            f"- **Demand Score**: {dem_score}/100\n"
+            f"- **SEO Difficulty**: {seo_diff}/100\n"
+            f"- **Suggested Product Types**: {sp}\n"
+            f"- **Estimated Dev Days**: {est_days}\n\n"
             "## Report Structure\n\n"
-            "Write 8 sections with `## Section Name` headers. Each section 80-150 words.\n\n"
-            f"### ## What is it\n\n"
-            f"Explain what {canonical} is in plain English. Help an indie developer understand it in 30 seconds.\n\n"
-            "### ## Why now\n\n"
-            "Why is this emerging now? Market shifts, tech advances, user needs, or industry events.\n\n"
-            "### ## Who's behind it\n\n"
-            "Key companies, organizations, individuals, or open-source communities. Note their roles.\n\n"
-            "### ## Market signals\n\n"
-            f"Cross-platform patterns, discussion volume ({source_count} sources, {total_mentions} mentions), "
-            f"maturity stage: {stage}.\n\n"
-            "### ## Commercial opportunities\n\n"
-            "2-3 specific ways indie developers can build products or services around this.\n\n"
-            "### ## Related terms\n\n"
-            f"2-3 related emerging trends and how they connect to {canonical}.\n\n"
-            "### ## SEO opportunity\n\n"
-            "Search volume trend (rising/stable/falling), 3 long-tail keywords, competition level.\n\n"
-            "### ## Product ideas\n\n"
-            "2-3 concrete product ideas. Include: product name, description, why now.\n\n"
+            "Write 12 sections with `## Section Name` headers. Each section 120-300 words.\n\n"
+            "### ## What is it\n"
+            f"Explain what {canonical} is in plain English — technical essence AND business significance. 120-150 words.\n\n"
+            "### ## Why now\n"
+            "Why is this emerging NOW (not last year, not next year)? Market shifts, tech breakthroughs, user demand, policy changes. 150-200 words.\n\n"
+            "### ## Market Evidence\n"
+            f"Cross-platform signals: {source_count} independent sources, {total_mentions} mentions, {growth_pct}% growth rate, stage: {stage}. Is this real demand or fleeting hype? 150-200 words.\n\n"
+            "### ## Who's Behind It\n"
+            "Key companies, people, communities driving this. Who are the 'whales'? Their roles and competitive dynamics. 120-150 words.\n\n"
+            "### ## TAM & Market Size\n"
+            f"Addressable market: who are the buyers? How many? Will they pay? Price tolerance and budget. Opportunity score: {opp_score}/100, demand score: {dem_score}/100. 150-200 words.\n\n"
+            "### ## Competitive Landscape\n"
+            f"Existing players, their strengths/weaknesses, market gaps, differentiation opportunities. If Big Tech enters, how much time do you have? Competition score: {comp_score}/100. 150-200 words.\n\n"
+            "### ## Business Model\n"
+            "Recommended monetization (subscription/one-time/freemium/marketplace), why it fits, suggested pricing with rationale, 12-month revenue forecast (conservative/base/optimistic), CAC estimate and payback period. 200-300 words.\n\n"
+            "### ## MVP Blueprint\n"
+            f"A 2-7 day MVP spec: core features ONLY (cut nice-to-haves), recommended tech stack, fastest path to launch. Estimated dev days: {est_days}, suggested products: {sp}. 200-300 words.\n\n"
+            "### ## Commercial Opportunities\n"
+            "2-3 specific directions: product/service description, target user persona, expected monthly revenue range, why this direction beats alternatives. 150-200 words.\n\n"
+            "### ## Product Ideas\n"
+            "3 concrete product ideas ranked by priority (🥇🥈🥉): name, one-line value prop, target user, why now. 200-300 words.\n\n"
+            "### ## SEO Opportunity\n"
+            f"Search volume trend, 3-5 long-tail keywords, competition level (SEO difficulty: {seo_diff}/100), content strategy tip. 80-100 words.\n\n"
+            "### ## Risk Assessment\n"
+            "When would this thesis be wrong? Top 3 risks (tech/market/execution). How to validate cheaply before building? When to walk away? 150-200 words.\n\n"
+            "### ## Action Plan\n"
+            f"Concrete first step today, low-cost validation method, what to do if signal confirms, timeline: week 1 / month 1 / month 3 goals. 150-200 words.\n\n"
+            "### ## Related Terms\n"
+            f"2-3 related emerging trends and how they connect to {canonical}. 80-100 words.\n\n"
             "## Format Rules\n\n"
             "- Write the ENTIRE report in English — NO Chinese characters\n"
             "- Use the provided numbers directly\n"
-            "- Keep an objective, analytical tone\n"
+            "- Every claim must have evidence — no empty generalizations\n"
+            "- Take clear positions, not 'maybe' or 'on the other hand'\n"
             "- Separate sections with blank lines\n"
         )
 

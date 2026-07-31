@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useCallback, useMemo } from 'react';
-import { Flame } from 'lucide-react';
+import { Flame, X, ArrowRight } from 'lucide-react';
 import type { TrendTerm } from '@/app/trends/types';
 import { getTrackedItems, computeDecisionScore } from '@/app/trends/utils';
 import { DashboardHeader } from './components/dashboard-header';
@@ -11,6 +11,8 @@ import { DashboardFooter } from './components/dashboard-footer';
 import Watchlist, { type SignalSnapshot } from './components/watchlist';
 import SubscriptionGuard from './components/subscription-guard';
 import CompetitorIntel from './components/competitor-intel';
+import DeepAnalysis, { type DeepAnalysisData } from './components/deep-analysis';
+import DashboardTools from './components/dashboard-tools';
 import ErrorBanner from '@/components/ErrorBanner';
 
 /** 订阅状态 — 服务端传入，用于功能门控 */
@@ -225,6 +227,9 @@ export function DashboardClient({ trendTerms, subscription = null, isAdmin = fal
   const [historyUnavailable, setHistoryUnavailable] = useState(false);
   const [dashError, setDashError] = useState(false);
   const [historyError, setHistoryError] = useState(false);
+  const [deepAnalysisData, setDeepAnalysisData] = useState<DeepAnalysisData | null>(null);
+  const [deepAnalysisLoading, setDeepAnalysisLoading] = useState(true);
+  const [showWelcome, setShowWelcome] = useState(false);
 
   // ── i18n ──
   const t = useMemo(() => I18N_DICT[lang] || I18N_DICT.en, [lang]);
@@ -244,12 +249,18 @@ export function DashboardClient({ trendTerms, subscription = null, isAdmin = fal
     [isSubscribed, subscription, isAdmin],
   );
 
-  // Detect browser language on mount
+  // Detect browser language on mount + first visit check
   useEffect(() => {
     try {
       const saved = localStorage.getItem('kakaopc_lang');
       if (saved === 'zh' || saved === 'en') setLang(saved);
       else if (navigator.language.startsWith('zh')) setLang('zh');
+      // First visit welcome banner
+      const visited = localStorage.getItem('aimfast_dashboard_visited');
+      if (!visited) {
+        setShowWelcome(true);
+        localStorage.setItem('aimfast_dashboard_visited', '1');
+      }
     } catch { /* localStorage unavailable */ }
   }, []);
 
@@ -319,11 +330,12 @@ export function DashboardClient({ trendTerms, subscription = null, isAdmin = fal
   useEffect(() => {
     let cancelled = false;
     async function load() {
-      // Fetch today's dashboard.json + 7d-ago history in parallel
+      // Fetch today's dashboard.json + 7d-ago history + deep analysis in parallel
       const historyDate = daysAgo(7);
-      const [dashRes, histRes] = await Promise.all([
+      const [dashRes, histRes, deepRes] = await Promise.all([
         fetch('/dashboard/data/dashboard.json'),
         fetch(`/dashboard/data/history/trends_${historyDate}.json`),
+        fetch('/dashboard/data/deep_analysis.json'),
       ]);
 
       if (!cancelled) {
@@ -360,6 +372,14 @@ export function DashboardClient({ trendTerms, subscription = null, isAdmin = fal
           setHistoryUnavailable(true);
           setHistoryError(true);
         }
+
+        if (deepRes.ok) {
+          try {
+            const deep: DeepAnalysisData = await deepRes.json();
+            setDeepAnalysisData(deep);
+          } catch { /* deep analysis unavailable — not a blocker */ }
+        }
+        setDeepAnalysisLoading(false);
 
         setLoading(false);
       }
@@ -518,6 +538,48 @@ export function DashboardClient({ trendTerms, subscription = null, isAdmin = fal
       />
 
       <main className="dash-main">
+        {/* ── First Visit Welcome Banner ── */}
+        {showWelcome && (
+          <div className="welcome-banner" role="alert">
+            <div className="welcome-banner-content">
+              <div className="welcome-banner-text">
+                <h2>{lang === 'zh' ? '欢迎来到你的 Dashboard' : 'Welcome to your Dashboard'}</h2>
+                <p>
+                  {lang === 'zh'
+                    ? '这是你的每日情报中心。添加追踪目标、查看深度分析、设置趋势提醒——每天早上 08:30 更新。'
+                    : 'Your daily intelligence hub. Track topics, explore deep analysis reports, and set trend alerts. Updated every morning at 08:30 CST.'}
+                </p>
+                <div className="welcome-steps">
+                  <span className="welcome-step">
+                    <span className="welcome-step-num">1</span>
+                    {lang === 'zh' ? '浏览下方趋势，添加追踪目标' : 'Browse trends below, add tracking targets'}
+                  </span>
+                  <span className="welcome-step">
+                    <span className="welcome-step-num">2</span>
+                    {lang === 'zh' ? '升级 Pro 解锁深度分析 + 导出 + 提醒' : 'Upgrade to Pro for deep analysis + export + alerts'}
+                  </span>
+                  <span className="welcome-step">
+                    <span className="welcome-step-num">3</span>
+                    {lang === 'zh' ? '每天早上查看你的决策卡' : 'Check your decision card every morning'}
+                  </span>
+                </div>
+                {!isSubscribed && (
+                  <a href="/pricing/" className="welcome-upgrade-btn">
+                    {lang === 'zh' ? '升级到 Pro — 14 天免费试用' : 'Upgrade to Pro — 14-day free trial'} <ArrowRight size={14} />
+                  </a>
+                )}
+              </div>
+              <button
+                className="welcome-close"
+                onClick={() => setShowWelcome(false)}
+                aria-label={lang === 'zh' ? '关闭' : 'Close'}
+              >
+                <X size={18} />
+              </button>
+            </div>
+          </div>
+        )}
+
         {/* ── Global error (dashboard data fetch failed, no cache) ── */}
         {dashError && (
           <div className="container" style={{ marginBottom: 'var(--space-3)' }}>
@@ -560,6 +622,9 @@ export function DashboardClient({ trendTerms, subscription = null, isAdmin = fal
 
         {/* ── 付费内容门控 ── */}
         <SubscriptionGuard subscription={subscription} isAdmin={isAdmin}>
+          {/* ── Tools Bar (Export + Alerts) ── */}
+          <DashboardTools lang={lang} />
+
           {/* ── Competitor Intel (Builder+ only) ── */}
           {isBuilderPlus && (
             <CompetitorIntel
@@ -567,6 +632,13 @@ export function DashboardClient({ trendTerms, subscription = null, isAdmin = fal
               lang={lang}
             />
           )}
+
+          {/* ── Deep Analysis (Pro) ── */}
+          <DeepAnalysis
+            data={deepAnalysisData}
+            lang={lang}
+            loading={deepAnalysisLoading}
+          />
 
           {/* ── Today's Decision (tracked-prioritized) ── */}
           <DecisionCard

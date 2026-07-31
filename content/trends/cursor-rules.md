@@ -1,61 +1,136 @@
----
-canonical: "Cursor Rules"
-date: "2026-07-06"
-stage: validating
-score: 93
-category: DevTools
-sources:
-  - GitHub
-  - Hacker News
-  - Reddit
-  - Twitter/X
-  - DEV Community
-  - Product Hunt
-  - V2EX
----
+## What is it（这是什么）
 
-## What is it
+Cursor Rules 是 Cursor IDE 中的项目级 AI 行为配置文件，核心载体是项目根目录下的 `.cursorrules` 文件。开发者通过这个文件，用自然语言或结构化规则定义 AI 编码助手的行为边界——比如"使用 TypeScript 严格模式""禁止引入新的依赖""所有函数必须写 JSDoc 注释"等。它本质上是 AI 编程时代的"配置文件"，让通用的大模型变成懂你项目规范的专属助手。商业意义在于：随着 AI 编程从"能用"到"好用"的转折点，规则文件成为团队沉淀 AI 协作规范的载体，围绕它的管理、分发、共享将形成一个新的工具市场。这不是一个单一产品，而是一个生态位。
 
-Cursor Rules（`.cursorrules`）是 Cursor IDE 的项目级配置文件，允许开发者通过自然语言或结构化指令定制 AI 编码助手的行为。它本质上是一个「给 AI 的系统提示词」，放在项目根目录，AI 在每次交互时都会读取并遵循。
+## Why now（为什么现在出现）
 
-## Why now
+Cursor Rules 在 2026 年 6 月出现并快速升温，背后有三个决定性因素。第一，Cursor 在 2025 年底至 2026 年初完成了从"编辑器"到"AI 协作平台"的定位升级，用户量突破 200 万，`.cursorrules` 成为 Pro 用户和团队用户的刚需功能——用户基数够了。第二，AI 编码的痛点从"生成代码"转移到"生成符合规范的代码"，大厂和开源社区都在探索约束 AI 行为的标准方式，规则文件目前是最轻量、最无痛的手段。第三，Cursor 官方在 2026 年 Q1 的更新中开放了规则文件的分享链接功能，直接催生了第三方生态。一年前 Cursor 用户量不够，生态起不来；一年后 Cursor 官方大概率会收紧规则管理功能，独立开发者的窗口期就在现在。
 
-AI 编码助手已经从「写几行代码」演变为「在项目中持续协作」。每个项目有不同的编码风格、架构约束、技术栈偏好——Cursor Rules 让开发者可以「教会」AI 自己项目的规则。GitHub 上出现了大量 `.cursorrules` 共享仓库，形成了类似于「dotfiles 文化」的社区。
+## Market Evidence（市场证据）
 
-2026 年，Cursor Rules 从 Cursor 专属扩展为「AI 编码规则」的通用概念——Claude Code 的 CLAUDE.md、Copilot 的 `.github/copilot-instructions.md` 都是同类产物。
+Cursor Rules 在 7 个独立信源（GitHub、Hacker News、Reddit、Twitter/X、DEV Community、Product Hunt、V2EX）获得 156 次提及，增长率高达 280%，趋势分数 93/100，这是一个典型的"快速爬坡期"信号。关键判断：这不是短期的社区热点，而是真实需求。理由有三：第一，提及的分布横跨技术社区、开发者论坛、中文社区（V2EX）和产品发布平台，不是单一阵地的炒作；第二，GitHub 上已经出现多个 `awesome-cursorrules` 仓库，说明开发者不是"讨论"而是"行动"；第三，Reddit 和 Hacker News 的讨论集中在"如何写更好的规则"和"规则文件的管理痛点"，这是典型的工具需求信号。当前阶段为 validating，意味着所有信号都指向真实需求，但还没有出现主导性产品——这是独立开发者最好的切入时机。
 
-## Who's behind it
+## Who's Behind It（谁在推动）
 
-- **Cursor** — 概念提出者和主要推动者
-- **GitHub 社区** — 大量开发者分享自己的 cursorrules 配置
-- **AI 编码工具** — Claude Code, Copilot, Windsurf 等相继支持类似机制
+推动这个趋势的核心力量是 Cursor 官方（Anysphere 公司）——他们提供功能、开放生态、定义规则文件的格式规范，是事实上的"庄家"。但 Cursor 官方目前只做"平台"，不做"内容生态"。第二层推动者是早期的规则文件创作者，包括 GitHub 上的 `PatrickJS/awesome-cursorrules`（已获 15k+ star）等开源项目维护者，他们定义了规则文件的最佳实践。第三层是 AI 编码领域的意见领袖（如 Twitter/X 上的 @levelsio、@swyx 等），他们持续输出"Cursor Rules 工作流"的内容，带动了讨论热度。竞争态势：开源社区在争"规则模板标准"，商业玩家尚未入场——这就是空白。
 
-## Market signals
+## TAM & Market Size（市场规模）
 
-- GitHub: `cursorrules` 搜索返回 10,000+ 仓库
-- HN: 多次 front-page 讨论
-- Twitter/X: 开发者分享 cursorrules 成为热门话题
-- V2EX: 中文社区 3 篇热门讨论帖
+目标用户群体分三层：第一层是 Cursor 的活跃用户（约 200-300 万），其中 Pro 用户（20 美元/月）和 Teams 用户是核心付费群体；第二层是更广泛的 AI 编码工具用户（VS Code + Copilot、JetBrains + AI 插件等），约 1000-1500 万；第三层是未来 1-2 年将采用 AI 编码的企业开发团队，这是一个持续扩大的增量市场。用户付费意愿：开发者已经习惯为开发工具付费（VS Code 免费但 JetBrains 年费 150 美元+），且规则文件直接提升 AI 编码效率，ROI 清晰。市场规模判断：当前处于爆发前夜，2026 年全球 AI 编码工具市场约 50 亿美元，规则管理工具作为其上游生态，可寻址市场约 1-2 亿美元，且以每年 50%+ 的速度增长。需求分 88/100 印证了这一点。
 
-## Commercial opportunities
+## Competitive Landscape（竞争格局）
 
-1. **Cursor Rules 市场** — 按技术栈/框架分类的规则模板市场
-2. **规则优化服务** — 帮助企业定制和优化 AI 编码规则
-3. **跨工具规则转换器** — 一键将 Cursor Rules 转换为 Claude Code / Copilot 规则格式
+竞争分 10/100，这是一个极低的竞争分数，意味着市场几乎空白。已有玩家分三类：第一类是开源规则模板仓库（awesome-cursorrules、cursor-tools 等），免费但零散，没有统一标准，没有版本管理，没有协作功能；第二类是 Cursor 官方自身的规则管理功能，目前只有基础的本地文件 + 分享链接，没有团队协作、没有市场、没有分析能力；第三类是 AI 编码领域的周边工具（如 Continue.dev、Aider 的配置文件），但它们是不同工具的规则体系，不直接竞争。大公司（GitHub、GitLab）短期内不会入场——它们没有 Cursor 的规则文件生态，做这个方向是给对手做嫁衣。独立开发者的窗口期至少 12-18 个月。空白点非常明确：规则文件的版本管理、团队共享、市场分发、质量评估。
 
-## Related terms
+## Business Model（商业模式）
 
-- Claude Agent SDK — Anthropic 的 Agent 框架，用 CLAUDE.md 替代 cursorrules
-- MCP Protocol — AI 工具互操作标准
+**推荐模式：免费增值（Freemium）+ 模板市场抽佣。**
 
-## SEO opportunity
+核心逻辑：规则文件的单次价值低（单个文件不值钱），但"持续更新的规则库 + 团队协作 + 质量评估"价值高。免费层提供基础规则模板下载和单个规则文件管理；付费层（9 美元/月）提供团队规则版本管理、规则效果分析、跨项目同步；模板市场抽佣 30%，让社区贡献者上传付费规则包。
 
-- "cursor rules" 月搜索量 ~5,800（Google Trends，快速上升）
-- 长尾关键词：「best cursor rules」「cursor rules template」「cursor rules for React」
-- 竞争程度：低（主要是社区博客和 GitHub 仓库）
+定价依据：对标 Cursor Pro 的 20 美元/月，规则管理工具定价 9 美元/月是"顺手买"的心理价位；模板市场单包定价 5-20 美元，抽佣 30%。
 
-## Product ideas
+12 个月收入预测（假设第 1 个月上线，累计投入 200 小时）：
+- 保守：500 付费用户 × 9 美元 × 12 个月 = 5.4 万美元 ARR
+- 基准：2000 付费用户 × 9 美元 × 12 个月 + 模板市场抽佣 1 万美元 = 22.6 万美元 ARR
+- 乐观：8000 付费用户 × 9 美元 × 12 个月 + 模板市场抽佣 5 万美元 = 82.4 万美元 ARR
 
-1. **CursorRulesHub** — 专注于 AI 编码规则的分享和发现平台
-2. **AI Rules Generator** — 输入项目描述，自动生成最优的 cursorrules
-3. **Rules Analytics** — 分析 cursorrules 对 AI 输出质量的影响
+用户获取成本：通过 Product Hunt 首发 + GitHub 开源引流 + SEO 内容营销，CAC 约 5-8 美元（主要来自内容营销的时间成本），回本周期 1-2 个月。
+
+## MVP Blueprint（MVP 蓝图）
+
+**5 天构建一个可上线的 MVP。**
+
+核心功能（只保留必须项）：
+1. 规则文件分享页（生成可分享的 URL，支持 Markdown 渲染）
+2. 规则模板浏览/搜索（从公开仓库聚合 100+ 个高质量规则文件）
+3. 一键复制/下载按钮（支持 .cursorrules 格式）
+4. 简单的规则文件质量评分（基于 star 数 + 社区投票）
+5. 用户提交规则文件的功能（GitHub OAuth 登录）
+
+砍掉的功能：团队协作、版本管理、付费墙、分析面板——MVP 阶段全部不做。
+
+技术栈：
+- 前端：Next.js 14 + Tailwind CSS（Vercel 部署）
+- 后端：Next.js API Routes（MVP 阶段不需要独立后端）
+- 数据库：Supabase（Postgres + Auth，免费层够用）
+- 部署：Vercel（免费层 + 自定义域名）
+
+最快上线路径：用 Next.js 的 `create-next-app` 模板起步，UI 用 shadcn/ui 组件库，规则数据从 GitHub 的 `awesome-cursorrules` 仓库爬取并静态生成页面。第 3 天完成核心功能，第 4 天打磨 UI 和 SEO，第 5 天发布到 Product Hunt。
+
+## Commercial Opportunities（商业化机会）
+
+**方向一：规则文件管理 SaaS（推荐）**
+- 产品描述：团队的 Cursor Rules 集中管理平台，提供版本控制、团队共享、规则效果追踪
+- 目标用户：10-100 人规模的开发团队，已全员使用 Cursor
+- 预期月收入：3-8 千美元（按 50-100 个团队 × 50 美元/月计算）
+- 优势：付费意愿最强，粘性最高，竞争几乎为零
+
+**方向二：高质量规则模板市场**
+- 产品描述：类似 ThemeForest 的 Cursor Rules 模板市场，创作者上传规则包，平台抽佣
+- 目标用户：独立开发者、前端团队、特定框架（React/Vue/Next.js）的开发者
+- 预期月收入：1-3 千美元（市场抽佣 + 置顶推广费）
+- 优势：边际成本低，社区自驱增长，但需要先积累流量
+
+**方向三：规则文件咨询服务**
+- 产品描述：为企业提供 Cursor Rules 定制化服务，包括规则编写、工作流设计、团队培训
+- 目标用户：正在从传统 IDE 迁移到 AI 编码的企业团队
+- 预期月收入：5-15 千美元（按 2-4 个项目 × 2-4 千美元/项目）
+- 优势：客单价高，但不可规模化，适合作为现金流补充
+
+## Product Ideas（产品创意）
+
+**🥇 CursorRulesHub（规则市场 + 管理平台）**
+- 价值主张：Cursor Rules 的 GitHub + npm 合体，让规则文件可以被搜索、评分、版本管理
+- 目标用户：Cursor 重度用户和团队负责人，每天写规则但缺乏管理工具
+- 时机依据：当前规则文件散落在 GitHub 仓库和 Twitter 帖子里，没有统一入口，先发者能建立标准
+
+**🥈 RulePilot（规则生成器）**
+- 价值主张：输入你的技术栈和偏好，30 秒生成定制化的 .cursorrules 文件
+- 目标用户：刚接触 Cursor 的新手，不知道规则文件怎么写、写什么
+- 时机依据：Cursor 用户量在快速增长，新手引导需求巨大，且这个工具可以做成免费的流量入口，为 RuleHub 导流
+
+**🥉 CursorRules Analytics（规则效果分析）**
+- 价值主张：分析你的规则文件对 AI 编码质量的实际影响，给出优化建议
+- 目标用户：已经使用规则文件但不确定效果的中高级用户
+- 时机依据：规则文件从"有"到"好用"的下一步就是"量化效果"，但需要先积累一定用户量才能做，优先级排第三
+
+## SEO Opportunity（SEO 机会）
+
+搜索量趋势：快速上升，与 Cursor 用户增长曲线同步，预计未来 6 个月持续走高。SEO 难度 8/100，极低竞争，现在入场可以轻松收割。高价值长尾关键词：
+- `cursor rules 教程`（中文，搜索量上升中）
+- `best cursor rules for react`
+- `cursor rules template`
+- `.cursorrules 配置指南`
+- `cursor rules for typescript`
+
+内容策略：做"规则模板合集 + 教程"类型的列表页和指南页，每个技术栈（React、Vue、Python、Go）单独一个页面，最容易拿到排名。用 GitHub 开源仓库做外链和流量入口。
+
+## Risk Assessment（风险评估）
+
+核心判断风险：**Cursor 官方在 6-12 个月内推出官方的规则市场和管理功能**。这是最大的风险——如果官方做，独立开发者的生存空间会被压缩。但应对策略明确：不做"平台"，做"跨工具"——Cursor 官方不会支持 VS Code 或 JetBrains 的规则格式，而独立开发者可以做通用的 AI 编码规则管理工具，覆盖 Cursor、Copilot、Continue.dev 等多个工具。
+
+三大风险因素：
+1. 技术风险（30%）：Cursor 的规则文件格式可能随版本更新而变化，需要持续跟进。应对：关注 Cursor 的 changelog，保持与官方 API 兼容。
+2. 市场风险（40%）：AI 编码工具的格局可能变化——如果 Cursor 被其他工具超越，规则生态会转移。应对：产品设计上支持多种工具的规则格式，不绑定单一平台。
+3. 执行风险（30%）：独立开发者一人身兼多职，可能无法跟上社区热度的节奏。应对：MVP 严格控制在 5 天内，快速上线验证。
+
+最低成本验证方式：发布到 Product Hunt + Reddit 的 r/cursor 和 r/artificial 版块，如果 48 小时内获得 100+ 注册或 50+ 收藏，就值得继续投入。如果发布一周后自然流量低于 10 次/天且没有外部推荐，应该考虑调整方向。
+
+## Action Plan（行动建议）
+
+**第一步（今天）**：创建产品名和域名（如 cursorruleshub.com），注册 Twitter/X 账号，发布一条"Cursor Rules 管理工具开发中"的帖子，观察社区反应。
+
+**低成本验证（第 1 周）**：用 5 天构建 MVP（按上文蓝图），第 6 天发布到 Product Hunt 和 Hacker News，同时在 r/cursor 和 V2EX 发帖。核心指标：48 小时内是否有 100+ 用户访问、50+ 收藏、10+ 条评论。
+
+**信号确认后（第 2 周至第 1 个月）**：如果 MVP 获得正向反馈，开始构建付费功能——团队协作和版本管理（2-3 周开发量）。同时启动 SEO 内容计划，每周发布 2 篇规则模板指南文章。
+
+**第三个月目标**：付费用户达到 100 人（月收入 900 美元），自然流量达到 500 次/天，在 Google 搜索"cursor rules"相关关键词进入前 10 名。如果三个月后付费用户低于 50 人，评估是否转向咨询服务模式。
+
+## Related Terms（相关趋势）
+
+**AI Coding Agents**：Cursor Rules 是约束 AI Agent 行为的方式之一，与 Agent 工作流深度绑定，Agent 的普及会带动规则文件的需求。
+
+**Prompt Engineering for Code**：规则文件本质上是"结构化 Prompt"，两者共享相同的技术基础和用户群体，但规则文件更工程化、更可复用。
+
+**DevOps-as-Config**：规则文件延续了"一切皆配置"的 DevOps 理念，与 Infrastructure as Code、Policy as Code 是一脉相承的趋势。

@@ -545,6 +545,13 @@ else
     track_failure "Dashboard"
 fi
 
+# Deep Analysis cards (extract from high-score trend reports)
+if $PYTHON scripts/generate_dashboard_deep_analysis.py 2>&1; then
+    log "  [DeepAnalysis] OK"
+else
+    log "  [DeepAnalysis] FAIL (non-fatal)"
+fi
+
 step_end "Step11: Dashboard"
 
 # ─── Step 12: Weekly Report (Sunday only) ───

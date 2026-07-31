@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { TrendingUp, BarChart3, Globe, Zap, Search, Shield, Mail } from 'lucide-react';
+import { TrendingUp, BarChart3, Globe, Zap, Search, Shield, Mail, ArrowUpRight, Download, Bell, FileText } from 'lucide-react';
 // Trends data module is the single source of truth for types + stage labels.
 // The homepage IS the trends discovery page — this cross-route import is intentional.
 import { getAllTrendTerms, getTrendStats } from './trends/data';
@@ -194,34 +194,64 @@ export default async function HomePage({
       />
 
       <main className="trends-page">
-        {/* ── Compact Hero ── */}
+        {/* ── Hero — Value Ladder: Free Discovery → Pro Deep Analysis ── */}
         <section className="trends-hero">
-          <h1>Signal Over Hype. Every Morning.</h1>
+          <h1>Stop Guessing What to Build.</h1>
           <p className="trends-hero-desc">
-            AI scans 30+ platforms, cross-validates every term,
-            and ranks by builder relevance — so you see what&apos;s worth acting on,
-            not what&apos;s just loud. From early-stage experiments to breakout products,
-            track the tech landscape with data-driven scoring. Free. No signup.
+            Every morning, AI scans 28 platforms, cross-validates signals, and ranks
+            emerging tech trends by builder relevance. <strong>Free tier</strong> shows
+            you what&apos;s trending. <strong>Pro</strong> gives you the full business
+            case — TAM, MVP blueprint, pricing strategy, and risk assessment — so you
+            know exactly what to build and how.
           </p>
+
+          <div className="hero-cta-row">
+            <a href="/register/" className="btn btn-primary" style={{ fontSize: '1rem', padding: '14px 32px' }}>
+              Start Free Trial <ArrowUpRight size={16} />
+            </a>
+            <a href="#trend-grid" className="btn btn-secondary" style={{ fontSize: '0.95rem', padding: '14px 28px' }}>
+              Browse Trends ↓
+            </a>
+          </div>
+
           <div className="trends-hero-stats">
             <TrendingUp size={14} aria-hidden="true" />
-            Monitoring <strong>{terms.length} terms</strong>
+            <strong>{terms.length} terms</strong> tracked across 28 sources
             {' · '}Updated daily 08:30 CST
+            {' · '}<span style={{ color: 'var(--color-green)' }}>14-day free trial, no card required</span>
           </div>
         </section>
 
-        {/* ── Newsletter Subscribe CTA ── */}
-        <div className="newsletter-cta">
-          <a
-            href="https://buttondown.com/aimfast"
-            className="newsletter-cta-link"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Mail size={16} aria-hidden="true" />
-            <span>Weekly founder&apos;s letter — the real thinking behind the scores. <strong>Subscribe free →</strong></span>
-          </a>
-        </div>
+        {/* ── Newsletter Subscribe ── */}
+        <section className="newsletter-section">
+          <div className="newsletter-card">
+            <div className="newsletter-text">
+              <Mail size={20} aria-hidden="true" />
+              <div>
+                <h3>Weekly Founder's Letter</h3>
+                <p>The real thinking behind the scores — what the pipeline found, why it matters, and what to build next. One email per week.</p>
+              </div>
+            </div>
+            <form
+              action="https://buttondown.com/api/emails/embed-subscribe/aimfast"
+              method="post"
+              target="_blank"
+              className="newsletter-form"
+            >
+              <input
+                type="email"
+                name="email"
+                placeholder="you@example.com"
+                required
+                className="newsletter-input"
+                aria-label="Email address"
+              />
+              <button type="submit" className="newsletter-submit">
+                Subscribe Free →
+              </button>
+            </form>
+          </div>
+        </section>
 
         {/* ── Live Stats Bar — AimFast.Dev Proprietary Data ── */}
         {stats.total > 0 && (
@@ -262,7 +292,9 @@ export default async function HomePage({
         </div>
 
         {/* ── Stage Filter + Trend Grid (client component) ── */}
-        <TrendFilter terms={terms} initialPage={initialPage} />
+        <div id="trend-grid">
+          <TrendFilter terms={terms} initialPage={initialPage} />
+        </div>
 
         {/* ── Methodology: How Trends Are Ranked & Discovered ── */}
         <section className="methodology-section">
@@ -412,20 +444,78 @@ export default async function HomePage({
           </div>
         </section>
 
+        {/* ── Pro Features Showcase ── */}
+        <section className="pro-showcase">
+          <div className="section-header">
+            <h2>What You Get with Pro</h2>
+            <p>
+              Free tier shows you what&apos;s trending. Pro gives you the full
+              business case — TAM, MVP blueprint, pricing, risk assessment, and
+              a concrete action plan. Built for builders who want to stop
+              reading and start building.
+            </p>
+          </div>
+
+          <div className="pro-grid">
+            <div className="pro-card">
+              <FileText size={28} className="pro-card-icon" />
+              <h3>Deep Analysis Reports</h3>
+              <p>
+                Full business cases for the top 25% of trends. Each report
+                includes TAM estimation, competitive landscape, business model
+                recommendations, MVP blueprint, risk assessment, and concrete
+                next steps — 3,000+ words of actionable intelligence.
+              </p>
+              <span className="pro-card-stat">19 reports · Updated daily</span>
+            </div>
+
+            <div className="pro-card">
+              <Download size={28} className="pro-card-icon" />
+              <h3>CSV & JSON Export</h3>
+              <p>
+                Download the full trend database for your own analysis. Feed it
+                into your spreadsheet, notebook, or custom tooling. All 280+
+                terms with scores, categories, stages, and growth metrics.
+              </p>
+              <span className="pro-card-stat">CSV + JSON · One click</span>
+            </div>
+
+            <div className="pro-card">
+              <Bell size={28} className="pro-card-icon" />
+              <h3>Custom Trend Alerts</h3>
+              <p>
+                Set keyword and category alerts. Get notified when a trend
+                matching your criteria crosses your score threshold. Never miss
+                an opportunity in your domain again.
+              </p>
+              <span className="pro-card-stat">Up to 10 alerts</span>
+            </div>
+          </div>
+
+          <div className="pro-cta-center">
+            <a href="/register/" className="btn btn-primary" style={{ fontSize: '1rem', padding: '14px 36px' }}>
+              Start 14-Day Free Trial — No Card Required <ArrowUpRight size={16} />
+            </a>
+            <p className="pro-cta-sub">
+              $19/month after trial. Cancel anytime.
+            </p>
+          </div>
+        </section>
+
         {/* ── CTA ── */}
         <section className="trends-cta">
-          <h2>Want the full picture?</h2>
+          <h2>Ready to stop guessing?</h2>
           <p>
-            Every morning, our Discovery Engine scans 30+ platforms and
-            distills signals like these into one actionable decision — with
-            pricing, validation, and market context.
+            Join indie builders who start every morning with one verified
+            product opportunity — not fifty things to read, but one thing to
+            build.
           </p>
           <a
-            href="/dashboard/"
+            href="/register/"
             className="btn btn-primary"
             style={{ fontSize: '1rem', padding: '14px 32px' }}
           >
-            View Dashboard →
+            Start Free Trial →
           </a>
         </section>
 
