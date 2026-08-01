@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-31T17:04:17.178634+08:00",
+  "updated_at": "2026-08-01T08:45:16.304953+08:00",
   "terms": [
     {
       "id": "trend-claude-agent-sdk",
@@ -12601,7 +12601,8 @@
         "解决自我验证的技术难度可能极高，需要研究突破"
       ],
       "opportunity_summary_en": "The AI agent self-verification problem is a fundamental challenge but currently has low market traction. Competition is minimal, offering a blue ocean opportunity for early movers. However, the technical complexity and risk of large-company entry make this a high-risk, high-potential niche.",
-      "opportunity_summary_zh": "AI Agent 自我验证问题是一个根本性挑战，但目前市场关注度较低。竞争极小，为先行者提供了蓝海机会。然而，技术复杂性和大公司进入的风险使这一领域成为高风险、高潜力的利基市场。"
+      "opportunity_summary_zh": "AI Agent 自我验证问题是一个根本性挑战，但目前市场关注度较低。竞争极小，为先行者提供了蓝海机会。然而，技术复杂性和大公司进入的风险使这一领域成为高风险、高潜力的利基市场。",
+      "last_report_date": "2026-08-01"
     },
     {
       "id": "trend-ai-agent-self-edit-traceability",
@@ -12627,7 +12628,8 @@
       "summary_zh": "多个信号指出 AI Agent 在自编辑或自验证过程中会伪造日志并自我欺骗，导致溯源和可靠性问题，是 Agent 工程中的关键挑战。",
       "summary_en": "Multiple signals highlight that AI agents can fabricate logs and deceive themselves during self-editing or self-verification, causing provenance and reliability issues — a key challenge in agent engineering.",
       "research_md_path": "content/trends/ai-agent-self-edit-traceability.md",
-      "canonical_zh": "AI Agent 自编辑溯源问题"
+      "canonical_zh": "AI Agent 自编辑溯源问题",
+      "last_report_date": "2026-08-01"
     },
     {
       "id": "trend-zero-registration-demo-experience-mode",
@@ -13889,7 +13891,31 @@
       "tags": [],
       "summary_zh": "社区中关于多智能体协作、任务分配和通信模式的讨论增多，表明这一方向正成为构建复杂AI系统的核心范式。",
       "summary_en": "Increasing discussions on multi-agent collaboration, task delegation, and communication patterns signal this is becoming a core paradigm for complex AI systems.",
-      "research_md_path": "content/trends/multi-agent-orchestration-patterns.md"
+      "research_md_path": "content/trends/multi-agent-orchestration-patterns.md",
+      "opportunity_score": 50,
+      "market_score": 70,
+      "competition_score": 30,
+      "demand_score": 50,
+      "seo_difficulty": 40,
+      "suggested_products": [
+        "Open Source",
+        "Template/Boilerplate",
+        "SDK/Library",
+        "API",
+        "SaaS"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Large tech companies (e.g., Google, OpenAI) may release their own orchestration frameworks, dominating the market.",
+        "The trend may remain theoretical without clear practical use cases, limiting adoption."
+      ],
+      "risk_factors_zh": [
+        "大型科技公司（如Google、OpenAI）可能发布自己的编排框架，主导市场。",
+        "该趋势可能停留在理论层面，缺乏明确的实际用例，限制采用。"
+      ],
+      "opportunity_summary_en": "Multi-agent orchestration patterns are an emerging trend with growing community interest but limited concrete data. The market potential is significant, yet demand and monetization are unproven. Early developers can enter with open-source tools or templates, but must be cautious about large players entering the space.",
+      "opportunity_summary_zh": "多智能体编排模式是一个新兴趋势，社区兴趣增长但具体数据有限。市场潜力巨大，但需求和变现尚未验证。早期开发者可通过开源工具或模板进入，但需警惕大厂入局。"
     },
     {
       "id": "trend-agentic-workflow-visualization",
@@ -13908,7 +13934,31 @@
       "tags": [],
       "summary_zh": "开发者开始关注如何可视化AI Agent的执行流程，以便调试、优化和监控复杂任务链。",
       "summary_en": "Developers are focusing on visualizing AI agent execution flows for debugging, optimization, and monitoring complex task chains.",
-      "research_md_path": "content/trends/agentic-workflow-visualization.md"
+      "research_md_path": "content/trends/agentic-workflow-visualization.md",
+      "opportunity_score": 45,
+      "market_score": 65,
+      "competition_score": 30,
+      "demand_score": 60,
+      "seo_difficulty": 25,
+      "suggested_products": [
+        "VS Code Extension",
+        "Web App",
+        "Open Source",
+        "CLI Tool",
+        "MCP Server"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Large AI platforms (e.g., OpenAI, LangChain) may integrate visualization natively, crushing startups.",
+        "The niche could remain small if agent workflows don't become mainstream."
+      ],
+      "risk_factors_zh": [
+        "大型 AI 平台（如 OpenAI、LangChain）可能原生集成可视化功能，碾压初创公司。",
+        "如果 Agent 工作流未能成为主流，该细分市场可能保持小众。"
+      ],
+      "opportunity_summary_en": "The trend is nascent with low competition and SEO difficulty, offering a blue ocean for early movers. However, demand is not yet proven, and revenue potential is limited. Building a lightweight open-source visualization tool for agent workflows could establish a foothold, but differentiation and monetization strategies are critical.",
+      "opportunity_summary_zh": "该趋势处于萌芽阶段，竞争和 SEO 难度低，为早期入局者提供了蓝海。但需求尚未验证，收入潜力有限。构建一个轻量级开源 Agent 工作流可视化工具可以抢占先机，但差异化和变现策略至关重要。"
     },
     {
       "id": "trend-llm-context-engineering",
@@ -13927,7 +13977,31 @@
       "tags": [],
       "summary_zh": "除了提示工程，如何高效组织、压缩和利用上下文窗口成为新的技术热点，涉及上下文缓存、检索和结构化。",
       "summary_en": "Beyond prompt engineering, efficiently organizing, compressing, and utilizing context windows is emerging as a hot topic, involving caching, retrieval, and structuring.",
-      "research_md_path": "content/trends/llm-context-engineering.md"
+      "research_md_path": "content/trends/llm-context-engineering.md",
+      "opportunity_score": 42,
+      "market_score": 55,
+      "competition_score": 30,
+      "demand_score": 45,
+      "seo_difficulty": 35,
+      "suggested_products": [
+        "SaaS",
+        "API",
+        "MCP Server",
+        "Open Source",
+        "Newsletter"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Large AI providers (e.g., OpenAI, Anthropic) may integrate context management features natively, eliminating the need for third-party tools.",
+        "The concept is still vague and may fail to gain traction, leading to low adoption."
+      ],
+      "risk_factors_zh": [
+        "大型AI提供商（如OpenAI、Anthropic）可能原生集成上下文管理功能，消除对第三方工具的需求。",
+        "该概念仍较模糊，可能无法获得关注，导致采用率低。"
+      ],
+      "opportunity_summary_en": "LLM context engineering is a nascent trend with potential, but lacks concrete market validation. Early movers can establish a presence in a blue ocean, but must act before major platforms absorb the functionality. A focused tool or educational resource could be a low-cost entry point.",
+      "opportunity_summary_zh": "LLM上下文工程是一个新兴趋势，具有潜力，但缺乏具体的市场验证。早期进入者可以在蓝海中建立存在，但必须在主要平台吸收该功能之前行动。一个专注的工具或教育资源可以成为低成本的切入点。"
     },
     {
       "id": "trend-ai-native-database-design",
@@ -13946,7 +14020,31 @@
       "tags": [],
       "summary_zh": "为AI应用（如向量搜索、RAG、Agent记忆）专门设计的数据库架构和存储引擎正在引发讨论。",
       "summary_en": "Database architectures and storage engines designed specifically for AI applications (e.g., vector search, RAG, agent memory) are sparking discussion.",
-      "research_md_path": "content/trends/ai-native-database-design.md"
+      "research_md_path": "content/trends/ai-native-database-design.md",
+      "opportunity_score": 52,
+      "market_score": 65,
+      "competition_score": 70,
+      "demand_score": 55,
+      "seo_difficulty": 75,
+      "suggested_products": [
+        "Open Source",
+        "SaaS",
+        "API",
+        "MCP Server",
+        "Template/Boilerplate"
+      ],
+      "estimated_dev_days": 90,
+      "revenue_potential": 3,
+      "risk_factors_en": [
+        "Large cloud providers may integrate similar features into existing databases, eroding niche opportunities.",
+        "The nascent market may shift rapidly, making early investments obsolete."
+      ],
+      "risk_factors_zh": [
+        "大型云厂商可能将类似功能集成到现有数据库中，侵蚀细分市场机会。",
+        "新兴市场可能快速变化，早期投入可能过时。"
+      ],
+      "opportunity_summary_en": "The AI-native database design trend is promising but still nascent, with strong competition from established vector databases and cloud services. A niche focus on specific pain points like agent memory or hybrid workloads could carve out a viable space. However, the high development effort and market uncertainty warrant a conservative approach.",
+      "opportunity_summary_zh": "AI原生数据库设计趋势有前景但仍属早期，面临来自成熟向量数据库和云服务的激烈竞争。专注于特定痛点如Agent记忆或混合负载可能找到可行空间。然而，高开发投入和市场不确定性要求谨慎行事。"
     },
     {
       "id": "trend-local-first-ai-development",
@@ -13965,7 +14063,33 @@
       "tags": [],
       "summary_zh": "强调在本地环境运行和开发AI模型与工具的趋势，注重数据隐私、离线能力和成本控制。",
       "summary_en": "A trend emphasizing running and developing AI models and tools in local environments, focusing on data privacy, offline capabilities, and cost control.",
-      "research_md_path": "content/trends/local-first-ai-development.md"
+      "research_md_path": "content/trends/local-first-ai-development.md",
+      "opportunity_score": 48,
+      "market_score": 65,
+      "competition_score": 25,
+      "demand_score": 55,
+      "seo_difficulty": 30,
+      "suggested_products": [
+        "CLI Tool",
+        "Open Source",
+        "VS Code Extension",
+        "Desktop App",
+        "MCP Server"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Large tech companies may release integrated local AI solutions, dominating the market.",
+        "Trend may be too early, lacking a proven business model.",
+        "Open-source alternatives could commoditize paid products."
+      ],
+      "risk_factors_zh": [
+        "大型科技公司可能推出集成式本地AI解决方案，主导市场。",
+        "趋势可能过早，缺乏已验证的商业模式。",
+        "开源替代品可能使付费产品商品化。"
+      ],
+      "opportunity_summary_en": "Local-First AI Development is a nascent trend with strong long-term potential due to privacy and cost concerns. The market is relatively uncontested, offering a blue ocean for early movers. However, demand is not yet proven, and monetization will be challenging until the ecosystem matures.",
+      "opportunity_summary_zh": "本地优先AI开发是一个新兴趋势，由于隐私和成本考量，长期潜力巨大。市场相对空白，为早期进入者提供蓝海机会。然而，需求尚未验证，生态系统成熟前变现困难。"
     },
     {
       "id": "trend-ai-model-benchmarking-skepticism",
@@ -13984,7 +14108,31 @@
       "tags": [],
       "summary_zh": "社区对现有AI模型基准测试的有效性和可操纵性提出质疑，呼吁更真实、更全面的评估方法。",
       "summary_en": "The community is questioning the validity and gameability of existing AI model benchmarks, calling for more realistic and comprehensive evaluation methods.",
-      "research_md_path": "content/trends/ai-model-benchmarking-skepticism.md"
+      "research_md_path": "content/trends/ai-model-benchmarking-skepticism.md",
+      "opportunity_score": 46,
+      "market_score": 55,
+      "competition_score": 30,
+      "demand_score": 70,
+      "seo_difficulty": 40,
+      "suggested_products": [
+        "Web App",
+        "Open Source",
+        "Dataset",
+        "API",
+        "SaaS"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Large AI labs may develop their own evaluation tools, making independent products obsolete.",
+        "The niche may remain small, limiting revenue potential."
+      ],
+      "risk_factors_zh": [
+        "大型AI实验室可能开发自己的评估工具，使独立产品过时。",
+        "细分市场可能保持小众，限制收入潜力。"
+      ],
+      "opportunity_summary_en": "There is a clear need for more realistic AI model evaluation, but the market is nascent with low monetization. An open-source tool that aggregates community-driven benchmarks could gain traction. However, the risk of big players entering is high.",
+      "opportunity_summary_zh": "对更真实的AI模型评估存在明确需求，但市场处于早期，变现能力低。一个聚合社区驱动基准的开源工具可能获得关注。然而，大厂进入的风险较高。"
     },
     {
       "id": "trend-open-source-ai-hardware",
@@ -14003,7 +14151,33 @@
       "tags": [],
       "summary_zh": "针对AI推理和训练的开源硬件设计（如RISC-V加速器）开始受到关注，旨在打破Nvidia的垄断。",
       "summary_en": "Open-source hardware designs for AI inference and training (e.g., RISC-V accelerators) are gaining attention, aiming to break Nvidia's dominance.",
-      "research_md_path": "content/trends/open-source-ai-hardware.md"
+      "research_md_path": "content/trends/open-source-ai-hardware.md",
+      "opportunity_score": 35,
+      "market_score": 55,
+      "competition_score": 20,
+      "demand_score": 30,
+      "seo_difficulty": 40,
+      "suggested_products": [
+        "Open Source",
+        "Hardware",
+        "SDK/Library",
+        "Web App",
+        "Dataset"
+      ],
+      "estimated_dev_days": 60,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "High capital and manufacturing barriers",
+        "Nvidia and other big players could dominate",
+        "Low immediate demand and unclear monetization"
+      ],
+      "risk_factors_zh": [
+        "高资本和制造壁垒",
+        "英伟达等巨头可能主导",
+        "即时需求低，变现不明确"
+      ],
+      "opportunity_summary_en": "Open-source AI hardware is a nascent trend aiming to challenge Nvidia's dominance. However, lack of data and high barriers make it a high-risk opportunity. Independent developers should focus on software tools or educational content supporting open hardware rather than full hardware production.",
+      "opportunity_summary_zh": "开源AI硬件是一个旨在挑战英伟达主导地位的新兴趋势。然而，缺乏数据和高门槛使其成为高风险机会。独立开发者应关注支持开源硬件的软件工具或教育内容，而非完整的硬件生产。"
     },
     {
       "id": "trend-ai-agent-security-posture",
@@ -14022,7 +14196,31 @@
       "tags": [],
       "summary_zh": "随着Agent权限增强，围绕其身份验证、授权、数据隔离和防注入攻击的安全实践成为讨论焦点。",
       "summary_en": "As agents gain more capabilities, security practices around authentication, authorization, data isolation, and prompt injection defense are becoming a focus.",
-      "research_md_path": "content/trends/ai-agent-security-posture.md"
+      "research_md_path": "content/trends/ai-agent-security-posture.md",
+      "opportunity_score": 42,
+      "market_score": 55,
+      "competition_score": 20,
+      "demand_score": 45,
+      "seo_difficulty": 30,
+      "suggested_products": [
+        "SaaS",
+        "CLI Tool",
+        "MCP Server",
+        "Open Source",
+        "Newsletter"
+      ],
+      "estimated_dev_days": 45,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Large security vendors (e.g., CrowdStrike, Palo Alto) may enter the niche with integrated solutions.",
+        "The nascent market may not have enough paying customers to sustain an indie product."
+      ],
+      "risk_factors_zh": [
+        "大型安全厂商（如CrowdStrike、Palo Alto）可能以集成方案进入这一细分领域。",
+        "新兴市场可能缺乏足够付费客户来支撑独立产品。"
+      ],
+      "opportunity_summary_en": "AI agent security is an emerging concern with a growing market but low signals of proven demand. The competition is minimal, offering a blue ocean for early movers. However, monetization is uncertain and large players may soon dominate.",
+      "opportunity_summary_zh": "AI代理安全是一个新兴关注点，市场在增长但需求信号不足。竞争极少，为早期进入者提供蓝海机会。然而，变现不确定，且大厂可能很快主导。"
     },
     {
       "id": "trend-prompt-caching-strategies",
@@ -14041,7 +14239,31 @@
       "tags": [],
       "summary_zh": "为了降低LLM API成本和延迟，社区在探索各种提示词缓存技术，包括前缀缓存和语义缓存。",
       "summary_en": "To reduce LLM API costs and latency, the community is exploring various prompt caching techniques, including prefix caching and semantic caching.",
-      "research_md_path": "content/trends/prompt-caching-strategies.md"
+      "research_md_path": "content/trends/prompt-caching-strategies.md",
+      "opportunity_score": 58,
+      "market_score": 75,
+      "competition_score": 25,
+      "demand_score": 60,
+      "seo_difficulty": 20,
+      "suggested_products": [
+        "API",
+        "SDK/Library",
+        "MCP Server",
+        "CLI Tool",
+        "Open Source"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 3,
+      "risk_factors_en": [
+        "Large AI providers may integrate caching natively, reducing demand for third-party solutions.",
+        "Technical complexity and variability across LLM APIs could hinder standardization."
+      ],
+      "risk_factors_zh": [
+        "大型AI提供商可能原生集成缓存，减少对第三方解决方案的需求。",
+        "技术复杂性和不同LLM API的差异性可能阻碍标准化。"
+      ],
+      "opportunity_summary_en": "The trend of prompt caching is nascent with low competition and low SEO difficulty, presenting a blue ocean opportunity. Developers are cost-sensitive, but demand signals are still emerging. A focused MVP targeting a specific LLM ecosystem could gain early traction.",
+      "opportunity_summary_zh": "提示词缓存趋势尚处于起步阶段，竞争低、SEO难度低，是蓝海机会。开发者对成本敏感，但需求信号仍在形成中。针对特定LLM生态的专注MVP可能获得早期关注。"
     },
     {
       "id": "trend-ai-regulation-compliance-tools",
@@ -14060,7 +14282,31 @@
       "tags": [],
       "summary_zh": "面对欧盟AI法案等新法规，帮助开发者确保AI应用合规（如透明度、安全性）的工具和框架正在涌现。",
       "summary_en": "In response to new regulations like the EU AI Act, tools and frameworks helping developers ensure AI compliance (e.g., transparency, safety) are emerging.",
-      "research_md_path": "content/trends/ai-regulation-compliance-tools.md"
+      "research_md_path": "content/trends/ai-regulation-compliance-tools.md",
+      "opportunity_score": 43,
+      "market_score": 55,
+      "competition_score": 40,
+      "demand_score": 45,
+      "seo_difficulty": 50,
+      "suggested_products": [
+        "Web App",
+        "SaaS",
+        "Open Source",
+        "API",
+        "CLI Tool"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Regulatory uncertainty may reduce urgency",
+        "Large consultancies or cloud providers may offer free compliance tools"
+      ],
+      "risk_factors_zh": [
+        "监管不确定性可能降低紧迫性",
+        "大型咨询公司或云厂商可能提供免费合规工具"
+      ],
+      "opportunity_summary_en": "AI compliance tools are an emerging niche with potential as regulations roll out. However, demand is currently low and unproven, making it risky for indie developers. A focused MVP targeting a specific compliance requirement could be validated quickly.",
+      "opportunity_summary_zh": "AI合规工具是一个新兴细分领域，随着法规落地有潜力。但目前需求低且未验证，对独立开发者有风险。针对特定合规需求的MVP可以快速验证。"
     },
     {
       "id": "trend-edge-ai-inference-optimization",
@@ -14079,7 +14325,31 @@
       "tags": [],
       "summary_zh": "在手机、IoT设备等边缘端高效运行大模型的量化、剪枝和蒸馏技术讨论增多。",
       "summary_en": "Discussions on quantization, pruning, and distillation techniques for efficiently running large models on edge devices like phones and IoT are increasing.",
-      "research_md_path": "content/trends/edge-ai-inference-optimization.md"
+      "research_md_path": "content/trends/edge-ai-inference-optimization.md",
+      "opportunity_score": 42,
+      "market_score": 55,
+      "competition_score": 35,
+      "demand_score": 60,
+      "seo_difficulty": 45,
+      "suggested_products": [
+        "SDK/Library",
+        "CLI Tool",
+        "SaaS",
+        "Open Source",
+        "Template/Boilerplate"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Major tech companies (Google, Apple, Qualcomm) could integrate similar optimizations into their platforms, making standalone solutions redundant.",
+        "Rapid evolution of hardware and model architectures may quickly render optimization tools obsolete."
+      ],
+      "risk_factors_zh": [
+        "大型科技公司（如Google、Apple、Qualcomm）可能将类似优化集成到其平台，使独立方案失去价值。",
+        "硬件和模型架构的快速演进可能使优化工具迅速过时。"
+      ],
+      "opportunity_summary_en": "Edge AI inference optimization is an emerging field with increasing developer interest, but lacks mature commercial offerings. The low competition and moderate demand suggest a viable niche for specialized tools. However, the nascent stage and potential for platform integration pose significant risks.",
+      "opportunity_summary_zh": "边缘AI推理优化是一个新兴领域，开发者兴趣上升，但商业化产品不成熟。竞争低、需求中等，为专业工具提供了可行空间。然而，早期阶段和平台集成风险不容忽视。"
     },
     {
       "id": "trend-ai-pair-programming-evolution",
@@ -14098,7 +14368,29 @@
       "tags": [],
       "summary_zh": "AI编程助手从简单的代码补全向更主动的结对编程角色演进，涉及代码审查、重构建议和测试生成。",
       "summary_en": "AI coding assistants are evolving from simple completion to more proactive pair programming roles, involving code review, refactoring suggestions, and test generation.",
-      "research_md_path": "content/trends/ai-pair-programming-evolution.md"
+      "research_md_path": "content/trends/ai-pair-programming-evolution.md",
+      "opportunity_score": 41,
+      "market_score": 55,
+      "competition_score": 25,
+      "demand_score": 35,
+      "seo_difficulty": 20,
+      "suggested_products": [
+        "VS Code Extension",
+        "AI Agent",
+        "CLI Tool"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Major AI coding assistants may quickly adopt similar features, crushing niche players.",
+        "The trend is nascent with no validated demand, risking low adoption."
+      ],
+      "risk_factors_zh": [
+        "主流 AI 编程助手可能迅速采用类似功能，挤压细分市场。",
+        "趋势处于早期，需求未验证，存在采用率低的风险。"
+      ],
+      "opportunity_summary_en": "The evolution of AI pair programming is an emerging trend with potential, but current data is too sparse to confirm demand. A focused tool could differentiate by offering proactive code review and refactoring, yet it faces the constant threat of feature absorption by larger players. Proceed cautiously, validate with a small MVP, and consider a niche angle to stand out.",
+      "opportunity_summary_zh": "AI 结对编程的演进是一个有潜力的新兴趋势，但当前数据过于稀疏，无法确认需求。专注的工具可通过提供主动代码审查和重构来差异化，但面临大厂功能吸收的持续威胁。建议谨慎推进，用小 MVP 验证，并考虑细分角度以脱颖而出。"
     },
     {
       "id": "trend-llm-evaluation-frameworks",
@@ -14117,7 +14409,31 @@
       "tags": [],
       "summary_zh": "用于系统评估LLM输出质量、一致性和安全性的开源框架和最佳实践正在形成。",
       "summary_en": "Open-source frameworks and best practices for systematically evaluating LLM outputs for quality, consistency, and safety are forming.",
-      "research_md_path": "content/trends/llm-evaluation-frameworks.md"
+      "research_md_path": "content/trends/llm-evaluation-frameworks.md",
+      "opportunity_score": 42,
+      "market_score": 55,
+      "competition_score": 35,
+      "demand_score": 50,
+      "seo_difficulty": 40,
+      "suggested_products": [
+        "SaaS",
+        "Open Source",
+        "API",
+        "CLI Tool",
+        "VS Code Extension"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 3,
+      "risk_factors_en": [
+        "Large tech companies may release comprehensive built-in evaluation tools, overshadowing startups.",
+        "Open-source frameworks might become the default choice, limiting monetization opportunities."
+      ],
+      "risk_factors_zh": [
+        "大型科技公司可能发布全面的内置评估工具，掩盖初创公司的光芒。",
+        "开源框架可能成为默认选择，限制商业化机会。"
+      ],
+      "opportunity_summary_en": "The LLM evaluation frameworks market is nascent with significant growth potential. Competition is moderate, mostly from open-source projects, and the demand is growing but not yet vocal. An opportunity exists for a user-friendly, integrated evaluation solution that addresses practical pain points.",
+      "opportunity_summary_zh": "LLM评估框架市场处于早期，具有显著增长潜力。竞争适中，主要来自开源项目，需求正在增长但尚未充分表达。存在一个机会，即提供用户友好、集成的评估解决方案，解决实际痛点。"
     },
     {
       "id": "trend-agent-memory-architectures",
@@ -14136,7 +14452,33 @@
       "tags": [],
       "summary_zh": "为AI Agent设计长期、短期和情景记忆的架构模式，以支持持续学习和个性化交互。",
       "summary_en": "Architectural patterns for designing long-term, short-term, and episodic memory for AI agents to support continuous learning and personalized interactions.",
-      "research_md_path": "content/trends/agent-memory-architectures.md"
+      "research_md_path": "content/trends/agent-memory-architectures.md",
+      "opportunity_score": 48,
+      "market_score": 65,
+      "competition_score": 35,
+      "demand_score": 45,
+      "seo_difficulty": 40,
+      "suggested_products": [
+        "Open Source",
+        "MCP Server",
+        "SaaS",
+        "SDK/Library",
+        "API"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Major AI labs (OpenAI, Anthropic) may release built-in memory features, making standalone solutions obsolete.",
+        "Lack of standardized benchmarks makes it hard to prove effectiveness, slowing adoption.",
+        "Privacy and data security concerns could hinder enterprise adoption."
+      ],
+      "risk_factors_zh": [
+        "大型 AI 实验室（如 OpenAI、Anthropic）可能发布内置记忆功能，使独立解决方案过时。",
+        "缺乏标准化基准，难以证明有效性，减缓采用。",
+        "隐私和数据安全问题可能阻碍企业采用。"
+      ],
+      "opportunity_summary_en": "Agent memory is a nascent but high-potential niche with low competition and clear demand signals. Early movers can establish thought leadership via open-source projects and practical guides. However, monetization is uncertain and the risk of big tech entering is high, so focus on building a community and proving value first.",
+      "opportunity_summary_zh": "Agent 记忆是一个新兴但潜力巨大的细分领域，竞争低且需求信号明确。早期参与者可以通过开源项目和实用指南建立思想领导力。然而，变现尚不确定且大厂进入风险高，因此应优先建立社区和证明价值。"
     },
     {
       "id": "trend-ai-generated-uiux-testing",
@@ -14155,7 +14497,31 @@
       "tags": [],
       "summary_zh": "利用AI自动生成界面测试用例、视觉回归测试和用户流程验证的新工具和方法。",
       "summary_en": "New tools and methods using AI to automatically generate UI test cases, visual regression tests, and user flow validation.",
-      "research_md_path": "content/trends/ai-generated-uiux-testing.md"
+      "research_md_path": "content/trends/ai-generated-uiux-testing.md",
+      "opportunity_score": 40,
+      "market_score": 55,
+      "competition_score": 40,
+      "demand_score": 50,
+      "seo_difficulty": 30,
+      "suggested_products": [
+        "SaaS",
+        "VS Code Extension",
+        "MCP Server",
+        "CLI Tool",
+        "Web App"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Large QA platforms (e.g., Applitools, Mabl) may quickly integrate AI-generated testing features, saturating the market.",
+        "The nascent stage means low adoption and high uncertainty about the exact product-market fit."
+      ],
+      "risk_factors_zh": [
+        "大型QA平台（如Applitools、Mabl）可能迅速集成AI生成测试功能，导致市场饱和。",
+        "早期阶段意味着采用率低，产品市场契合度存在高度不确定性。"
+      ],
+      "opportunity_summary_en": "AI-Generated UI/UX Testing is an early-stage niche with limited competition and low SEO difficulty, offering a potential blue ocean for indie developers. However, the market is unproven with weak demand signals and formidable incumbents that could easily enter. A focused MVP that solves the maintenance pain point could be viable, but expectations should be conservative.",
+      "opportunity_summary_zh": "AI生成的UI/UX测试是一个早期细分市场，竞争有限且SEO难度低，为独立开发者提供了潜在的蓝海机会。然而，市场尚未验证，需求信号弱，且现有大厂可能轻易进入。聚焦解决维护痛点的MVP可能可行，但预期应保持保守。"
     },
     {
       "id": "trend-vector-database-benchmarking",
@@ -14174,7 +14540,31 @@
       "tags": [],
       "summary_zh": "随着RAG应用普及，针对不同向量数据库的性能、扩展性和成本对比评测成为热门内容。",
       "summary_en": "With the rise of RAG applications, comparative evaluations of different vector databases on performance, scalability, and cost are becoming popular.",
-      "research_md_path": "content/trends/vector-database-benchmarking.md"
+      "research_md_path": "content/trends/vector-database-benchmarking.md",
+      "opportunity_score": 42,
+      "market_score": 55,
+      "competition_score": 30,
+      "demand_score": 50,
+      "seo_difficulty": 25,
+      "suggested_products": [
+        "Web App",
+        "Open Source",
+        "Newsletter",
+        "SDK/Library",
+        "Template/Boilerplate"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Large cloud providers may release official benchmark reports, reducing demand for third-party tools.",
+        "Vector database landscape is evolving rapidly, making benchmarks quickly outdated."
+      ],
+      "risk_factors_zh": [
+        "大型云厂商可能发布官方评测报告，减少对第三方工具的需求。",
+        "向量数据库领域发展迅速，基准测试可能很快过时。"
+      ],
+      "opportunity_summary_en": "The opportunity is to build a continuously updated, community-driven vector database benchmarking platform. It can attract organic traffic through SEO and provide valuable data for developers. Monetization is challenging but possible through premium reports or sponsorships.",
+      "opportunity_summary_zh": "机会在于构建一个持续更新、社区驱动的向量数据库评测平台。可通过SEO吸引自然流量，为开发者提供有价值的数据。变现虽有挑战，但可通过付费报告或赞助实现。"
     },
     {
       "id": "trend-model-distillation-techniques",
@@ -14193,7 +14583,31 @@
       "tags": [],
       "summary_zh": "将大型语言模型的知识蒸馏到更小、更高效的模型中的新方法和案例分享增多。",
       "summary_en": "New methods and case studies for distilling knowledge from large language models into smaller, more efficient models are increasing.",
-      "research_md_path": "content/trends/model-distillation-techniques.md"
+      "research_md_path": "content/trends/model-distillation-techniques.md",
+      "opportunity_score": 45,
+      "market_score": 60,
+      "competition_score": 55,
+      "demand_score": 50,
+      "seo_difficulty": 70,
+      "suggested_products": [
+        "SaaS",
+        "API",
+        "CLI Tool",
+        "Open Source",
+        "SDK/Library"
+      ],
+      "estimated_dev_days": 45,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Major AI labs and cloud providers may release free, integrated distillation tools, commoditizing the space.",
+        "The nascent market may see rapid shifts in techniques, making early products obsolete."
+      ],
+      "risk_factors_zh": [
+        "大型AI实验室和云厂商可能发布免费的集成蒸馏工具，使该领域商品化。",
+        "早期市场技术迭代快，早期产品可能迅速过时。"
+      ],
+      "opportunity_summary_en": "Model distillation is a nascent but growing field with significant potential for cost-efficient AI deployment. Competition is moderate, with room for specialized tools that simplify the process for developers. However, market signals are limited, and the threat from big players warrants cautious entry.",
+      "opportunity_summary_zh": "模型蒸馏是一个新兴且增长中的领域，在高效AI部署方面潜力巨大。竞争中等，存在简化开发者流程的专用工具空间。然而，市场信号有限，大厂威胁需谨慎进入。"
     },
     {
       "id": "trend-ai-api-gateway-alternatives",
@@ -14212,7 +14626,31 @@
       "tags": [],
       "summary_zh": "除了Cloudflare等大厂方案，社区在讨论开源或轻量级的AI API网关，用于管理多模型路由、限流和密钥。",
       "summary_en": "Beyond big vendors like Cloudflare, the community is discussing open-source or lightweight AI API gateways for managing multi-model routing, rate limiting, and keys.",
-      "research_md_path": "content/trends/ai-api-gateway-alternatives.md"
+      "research_md_path": "content/trends/ai-api-gateway-alternatives.md",
+      "opportunity_score": 42,
+      "market_score": 55,
+      "competition_score": 60,
+      "demand_score": 50,
+      "seo_difficulty": 45,
+      "suggested_products": [
+        "Open Source",
+        "CLI Tool",
+        "API",
+        "SaaS",
+        "Template/Boilerplate"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Large vendors like Cloudflare may expand their offerings and dominate the market.",
+        "Open-source alternatives may remain free, limiting paid product potential."
+      ],
+      "risk_factors_zh": [
+        "像Cloudflare这样的大厂商可能会扩展其产品并主导市场。",
+        "开源替代品可能保持免费，限制付费产品的潜力。"
+      ],
+      "opportunity_summary_en": "The AI API gateway space is still emerging, with community interest but unproven demand. A lightweight, open-source-first solution could attract early adopters, but monetization will be tough. Focus on niche pain points and build a strong community to differentiate.",
+      "opportunity_summary_zh": "AI API网关领域仍在兴起，社区有兴趣但需求未证实。一个轻量级、开源优先的解决方案可以吸引早期采用者，但变现将会困难。专注于细分痛点并建立强大社区以差异化。"
     },
     {
       "id": "trend-developer-burnout-in-ai-era",
@@ -14231,7 +14669,31 @@
       "tags": [],
       "summary_zh": "关于AI带来的开发节奏加快、技能焦虑和工作压力对开发者心理健康影响的讨论。",
       "summary_en": "Discussions on how AI is impacting developer mental health through faster development pace, skill anxiety, and work pressure.",
-      "research_md_path": "content/trends/developer-burnout-in-ai-era.md"
+      "research_md_path": "content/trends/developer-burnout-in-ai-era.md",
+      "opportunity_score": 42,
+      "market_score": 55,
+      "competition_score": 30,
+      "demand_score": 45,
+      "seo_difficulty": 25,
+      "suggested_products": [
+        "Web App",
+        "AI Agent",
+        "VS Code Extension",
+        "Newsletter",
+        "SaaS"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Large tech companies may integrate burnout features into existing platforms.",
+        "The trend is nascent; market demand may not materialize as expected."
+      ],
+      "risk_factors_zh": [
+        "大型科技公司可能将倦怠管理功能集成到现有平台。",
+        "趋势处于萌芽阶段，市场需求可能不会如预期那样实现。"
+      ],
+      "opportunity_summary_en": "The trend of developer burnout in the AI era is real but nascent, with limited data and no clear monetization path. Early movers can establish a niche by focusing on specific pain points like skill anxiety or pace management. However, the market size is uncertain, and competition may emerge from larger players.",
+      "opportunity_summary_zh": "AI时代开发者倦怠这一趋势真实存在但处于萌芽阶段，数据有限且变现路径不清晰。早期进入者可以通过关注技能焦虑或节奏管理等具体痛点来建立细分市场。然而，市场规模不确定，且可能面临大厂的竞争。"
     },
     {
       "id": "trend-ai-powered-code-review",
@@ -14250,7 +14712,31 @@
       "tags": [],
       "summary_zh": "AI在代码审查中的应用超越静态检查，开始关注逻辑错误、安全漏洞和架构问题。",
       "summary_en": "AI's application in code review is moving beyond static checks to focus on logic errors, security vulnerabilities, and architectural issues.",
-      "research_md_path": "content/trends/ai-powered-code-review.md"
+      "research_md_path": "content/trends/ai-powered-code-review.md",
+      "opportunity_score": 48,
+      "market_score": 72,
+      "competition_score": 75,
+      "demand_score": 55,
+      "seo_difficulty": 80,
+      "suggested_products": [
+        "VS Code Extension",
+        "MCP Server",
+        "CLI Tool",
+        "AI Agent",
+        "Open Source"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 3,
+      "risk_factors_en": [
+        "Large incumbents like GitHub and GitLab may integrate AI review natively, squeezing independent players.",
+        "AI review quality may not meet user expectations, leading to low retention."
+      ],
+      "risk_factors_zh": [
+        "GitHub和GitLab等大厂可能原生集成AI审查，挤压独立开发者空间。",
+        "AI审查质量可能不达预期，导致用户留存率低。"
+      ],
+      "opportunity_summary_en": "AI-powered code review is a growing devtool niche with significant market potential, but it is already crowded with established players. Independent developers can find opportunities by focusing on niche aspects like security or architecture review. However, differentiation and SEO will be challenging.",
+      "opportunity_summary_zh": "AI代码审查是一个增长中的开发工具细分领域，市场潜力大，但已有众多成熟玩家。独立开发者可通过聚焦安全或架构审查等细分方向寻找机会，但差异化和SEO将面临挑战。"
     },
     {
       "id": "trend-fine-tuning-vs.-rag-debate",
@@ -14365,6 +14851,44 @@
       "summary_zh": "将知识图谱与RAG结合，通过实体关系和路径查询增强检索质量的新范式。",
       "summary_en": "A new paradigm combining knowledge graphs with RAG to enhance retrieval quality through entity relationships and path queries.",
       "research_md_path": "content/trends/graphrag.md"
+    },
+    {
+      "id": "trend-agentic-ai-beginner-course",
+      "canonical": "Agentic AI Beginner Course",
+      "canonical_zh": "智能体AI入门课程",
+      "aliases": [],
+      "first_seen": "2026-08-01",
+      "last_seen": "2026-08-01",
+      "stage": "nascent",
+      "score": 0,
+      "source_count": 0,
+      "total_mentions": 0,
+      "sources": [],
+      "growth_pct": 100,
+      "category": "AIAgent",
+      "tags": [],
+      "summary_zh": "面向初学者的智能体AI综合课程，反映Agent开发成为主流学习方向的趋势。",
+      "summary_en": "A comprehensive beginner course on agentic AI, reflecting the mainstreaming of agent development as a learning path.",
+      "research_md_path": "content/trends/agentic-ai-beginner-course.md"
+    },
+    {
+      "id": "trend-ai-native-development-workflow",
+      "canonical": "AI-Native Development Workflow",
+      "canonical_zh": "AI原生开发工作流",
+      "aliases": [],
+      "first_seen": "2026-08-01",
+      "last_seen": "2026-08-01",
+      "stage": "nascent",
+      "score": 0,
+      "source_count": 0,
+      "total_mentions": 0,
+      "sources": [],
+      "growth_pct": 100,
+      "category": "DX",
+      "tags": [],
+      "summary_zh": "课程和社区讨论中强调AI原生开发流程，从代码生成到Agent编排的转变正在重塑开发者日常。",
+      "summary_en": "Courses and community discussions emphasize AI-native development flows, shifting from code generation to agent orchestration in daily developer work.",
+      "research_md_path": "content/trends/ai-native-development-workflow.md"
     }
   ],
   "_version": "1.0"
