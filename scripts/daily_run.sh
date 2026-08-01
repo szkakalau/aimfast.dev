@@ -591,12 +591,27 @@ fi
 
 step_end "Step12b: BuilderPulse"
 
+# ─── Step 13b: Pipeline Health Dashboard ───
+
+log ""
+log "--- Step 13b: Pipeline Health Dashboard ---"
+step_start
+
+if $PYTHON scripts/pipeline_health.py 2>&1; then
+    log "  [Health] OK"
+else
+    log "  [Health] WARN (non-fatal)"
+    track_failure "PipelineHealth"
+fi
+
+step_end "Step13b: PipelineHealth"
+
 # ─── Step 13: Git commit & push ───
 
 log ""
 log "--- Step 13: Deploy Dashboard Data & SEO Content ---"
 
-git add public/dashboard/data/dashboard.json tracking/recurring_signals.json tracking/demand_radar.json tracking/trend_terms.json public/sitemap.xml content/reports/ content/articles/ content/trends/ public/*/index.html compare/ daily/*/signals.json daily/*/extracted_terms.json 2>&1 || true
+git add public/dashboard/data/dashboard.json tracking/recurring_signals.json tracking/demand_radar.json tracking/trend_terms.json tracking/pipeline_health.json public/sitemap.xml content/reports/ content/articles/ content/trends/ public/*/index.html compare/ daily/*/signals.json daily/*/extracted_terms.json 2>&1 || true
 
 if git diff --cached --name-only | grep -q .; then
     git config user.email "pipeline@aimfast.dev"

@@ -1,0 +1,117 @@
+{
+  "date": "2026-08-01",
+  "generated_at": "2026-08-01T22:38:38.735966+08:00",
+  "top_5_terms": [
+    {
+      "term": "OpenAI",
+      "score": 479.2,
+      "stage": "emergent"
+    },
+    {
+      "term": "LangChain",
+      "score": 470.4,
+      "stage": "emergent"
+    },
+    {
+      "term": "Hugging Face",
+      "score": 468.9,
+      "stage": "emergent"
+    },
+    {
+      "term": "Cloudflare",
+      "score": 468.2,
+      "stage": "emergent"
+    },
+    {
+      "term": "Codex",
+      "score": 466.7,
+      "stage": "emergent"
+    }
+  ],
+  "bottom_5_terms": [
+    {
+      "term": "ReadKinetic",
+      "score": 66.0,
+      "stage": "emergent"
+    },
+    {
+      "term": "Langy",
+      "score": 66.0,
+      "stage": "emergent"
+    },
+    {
+      "term": "Computable",
+      "score": 66.0,
+      "stage": "emergent"
+    },
+    {
+      "term": "Housecat.com",
+      "score": 66.0,
+      "stage": "emergent"
+    },
+    {
+      "term": "The Daily FM",
+      "score": 66.0,
+      "stage": "emergent"
+    }
+  ],
+  "report_sample": [
+    {
+      "slug": "self-hosted-cctv-for-sbc",
+      "has_zh": true,
+      "has_en": true,
+      "has_opportunity": false,
+      "word_count_zh": 643
+    },
+    {
+      "slug": "postgresql-cost-optimization",
+      "has_zh": true,
+      "has_en": true,
+      "has_opportunity": false,
+      "word_count_zh": 587
+    },
+    {
+      "slug": "open-secure-ai-alliance",
+      "has_zh": true,
+      "has_en": true,
+      "has_opportunity": false,
+      "word_count_zh": 525
+    },
+    {
+      "slug": "open-source-ai-security-platform",
+      "has_zh": true,
+      "has_en": true,
+      "has_opportunity": false,
+      "word_count_zh": 457
+    },
+    {
+      "slug": "webcontainer",
+      "has_zh": true,
+      "has_en": true,
+      "has_opportunity": false,
+      "word_count_zh": 480
+    }
+  ],
+  "stage_distribution": {
+    "rising": 1,
+    "validating": 3,
+    "nascent": 280,
+    "emergent": 24
+  },
+  "source_health": {
+    "p0_sources": 1,
+    "p2_sources": 3,
+    "cut_candidates": 8,
+    "investigate": 5
+  },
+  "alerts": [
+    "Nascent stage 占比 91% (280/308) — 可能表明分类管线滞后或信源噪声过大",
+    "报告 'self-hosted-cctv-for-sbc' 缺少商业机会章节",
+    "报告 'postgresql-cost-optimization' 缺少商业机会章节",
+    "报告 'open-secure-ai-alliance' 缺少商业机会章节",
+    "报告 'open-source-ai-security-platform' 缺少商业机会章节",
+    "报告 'webcontainer' 缺少商业机会章节",
+    "有 8 个信源候选待清理 — 运行 scripts/audit_sources.py 查看详情",
+    "有 5 个信源需要调查 — 可能产生数据但不产生有效信号"
+  ]
+}

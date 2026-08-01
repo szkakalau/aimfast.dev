@@ -106,6 +106,54 @@ describe('builderScore', () => {
     // days = max(0, 1) = 1
     expect(builderScore(fast)).toBe(21000); // 75*70*4/1
   });
+
+  it('returns 0 when opportunity_score is explicitly zero', () => {
+    const zero: TrendTerm = {
+      ...full,
+      opportunity_score: 0,
+      competition_score: 30,
+      revenue_potential: 4,
+      estimated_dev_days: 7,
+    };
+    // opp=0 → product = 0 * 70 * 4 / 7 = 0
+    expect(builderScore(zero)).toBe(0);
+  });
+
+  it('returns 0 when competition_score is 100 (blue ocean is zero)', () => {
+    const maxCompetition: TrendTerm = {
+      ...full,
+      opportunity_score: 80,
+      competition_score: 100,
+      revenue_potential: 4,
+      estimated_dev_days: 5,
+    };
+    // blue = 100 - 100 = 0 → product = 80 * 0 * 4 / 5 = 0
+    expect(builderScore(maxCompetition)).toBe(0);
+  });
+
+  it('returns 50000 for all maximum values', () => {
+    const maxed: TrendTerm = {
+      ...full,
+      opportunity_score: 100,
+      competition_score: 0,
+      revenue_potential: 5,
+      estimated_dev_days: 1,
+    };
+    // (100 * 100 * 5) / 1 = 50000
+    expect(builderScore(maxed)).toBe(50000);
+  });
+
+  it('returns 0 for all minimum (non-undefined) values', () => {
+    const minned: TrendTerm = {
+      ...full,
+      opportunity_score: 0,
+      competition_score: 100,
+      revenue_potential: 1,
+      estimated_dev_days: 14,
+    };
+    // (0 * 0 * 1) / 14 = 0
+    expect(builderScore(minned)).toBe(0);
+  });
 });
 
 // ── Tracking helpers ──
