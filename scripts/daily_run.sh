@@ -592,9 +592,22 @@ fi
 step_end "Step12b: BuilderPulse"
 
 # ─── Step 13b: Pipeline Health Dashboard ───
+# Write exit code BEFORE health check runs — the trap only fires on script exit,
+# which happens after this step.  Without this, pipeline_health.py always reads
+# an empty .exit_code file and reports false negatives.
 
 log ""
 log "--- Step 13b: Pipeline Health Dashboard ---"
+
+# Persist current failure state for the health script to consume
+if [ -z "$FAILED_STEPS" ]; then
+    echo "PIPELINE_EXIT_CODE=0" > "$EXIT_CODE_FILE"
+else
+    echo "PIPELINE_EXIT_CODE=1" > "$EXIT_CODE_FILE"
+fi
+# Also copy the log so timing parser can find it (normally done at script exit)
+cp "$LOG_FILE" "$DAILY_DIR/pipeline.log" 2>/dev/null || true
+
 step_start
 
 if $PYTHON scripts/pipeline_health.py 2>&1; then

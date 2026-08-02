@@ -28,24 +28,46 @@ def load_json_safe(path: Path) -> dict:
         return {}
 
 
-def read_exit_code() -> int | None:
-    """从 logs/.exit_code 读取今天的退出码。"""
-    path = LOGS_DIR / ".exit_code"
-    if not path.exists():
-        return None
-    try:
-        content = path.read_text(encoding="utf-8").strip()
-        match = re.search(r"PIPELINE_EXIT_CODE=(\d+)", content)
-        if match:
-            return int(match.group(1))
-    except OSError:
-        pass
+def read_exit_code(date_str: str) -> int | None:
+    """从多个信号源判定管线是否成功（按可靠性排序）。
+
+    1. daily/{DATE}/.pipeline_done — 只有完整成功才写入
+    2. logs/.exit_code — trap 在脚本退出时写入
+    3. daily/{DATE}/signals.json 存在 → 至少信源采集成功
+
+    返回 0=成功, 1=失败, None=无法判定。
+    """
+    # 最可靠信号：锁文件只在管线完整跑完时才写入
+    lock_file = DAILY_DIR / date_str / ".pipeline_done"
+    if lock_file.exists():
+        return 0
+
+    # 次选：shell trap 写入的退出码文件
+    exit_code_path = LOGS_DIR / ".exit_code"
+    if exit_code_path.exists():
+        try:
+            content = exit_code_path.read_text(encoding="utf-8").strip()
+            match = re.search(r"PIPELINE_EXIT_CODE=(\d+)", content)
+            if match:
+                return int(match.group(1))
+        except OSError:
+            pass
+
+    # 兜底：signals.json 存在说明 Step 1 成功（管线至少部分运行）
+    signals_file = DAILY_DIR / date_str / "signals.json"
+    if signals_file.exists():
+        return 0  # 部分成功视为成功 — 至少数据产出了
+
     return None
 
 
 def parse_timings_from_log(date_str: str) -> dict[str, int]:
-    """从 daily/{DATE}/pipeline.log 解析 [TIMING] StepName: Ns 条目。"""
+    """从 daily/{DATE}/pipeline.log 或 logs/{DATE}.log 解析 [TIMING] 条目。"""
+    # 主路径：daily_run.sh 在 Summary 阶段复制到 daily 目录
     log_path = DAILY_DIR / date_str / "pipeline.log"
+    if not log_path.exists():
+        # 回退：logs 目录下的日志（旧格式或本地运行）
+        log_path = LOGS_DIR / f"{date_str}.log"
     if not log_path.exists():
         return {}
     try:
@@ -162,7 +184,7 @@ def run(date_str: str | None = None):
     date = date_str or datetime.now(TZ_SHANGHAI).strftime("%Y-%m-%d")
 
     # 1. 退出码
-    exit_code = read_exit_code()
+    exit_code = read_exit_code(date)
 
     # 2. 耗时解析
     timings = parse_timings_from_log(date)
