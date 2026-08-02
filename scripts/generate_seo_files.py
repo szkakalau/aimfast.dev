@@ -460,6 +460,21 @@ def generate_sitemap() -> int:
                 'priority': priority,
             })
 
+    # Deduplicate by loc — LPs and trends can persist across days,
+    # causing the same URL to appear with different lastmod values.
+    # Keep the entry with the most recent lastmod.
+    deduped: dict[str, dict] = {}
+    for u in urls:
+        loc = u["loc"]
+        if loc in deduped:
+            existing_date = deduped[loc].get("lastmod", "")
+            new_date = u.get("lastmod", "")
+            if new_date > existing_date:
+                deduped[loc] = u
+        else:
+            deduped[loc] = u
+    urls = list(deduped.values())
+
     # Generate XML
     xml_lines = [
         '<?xml version="1.0" encoding="UTF-8"?>',
