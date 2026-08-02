@@ -1,23 +1,45 @@
 {
-  "date": "2026-08-01",
-  "generated_at": "2026-08-01T22:39:43.445110+08:00",
+  "date": "2026-08-02",
+  "generated_at": "2026-08-02T08:53:25.193148+08:00",
   "success": false,
   "exit_code": null,
   "duration_minutes": 0,
-  "steps": {},
+  "steps": {
+    "enrichment": {
+      "status": "skipped",
+      "duration_sec": 0,
+      "reason": "engine_not_found"
+    },
+    "report": {
+      "status": "generated",
+      "duration_sec": 0
+    },
+    "action": {
+      "status": "generated",
+      "duration_sec": 0
+    },
+    "lp": {
+      "status": "generated",
+      "duration_sec": 0
+    }
+  },
   "tokens": {
-    "total": 6929020,
-    "calls": 2388
+    "total": 1020153,
+    "calls": 405
   },
   "sources": {
-    "total": 0,
-    "successful": 0,
-    "failed": 0,
-    "failed_names": []
+    "total": 28,
+    "successful": 25,
+    "failed": 3,
+    "failed_names": [
+      "producthunt",
+      "stackoverflow",
+      "substack"
+    ]
   },
   "terms": {
-    "total": 308,
-    "new_today": 0
+    "total": 311,
+    "new_today": 1
   },
   "warnings": [],
   "consecutive_success_days": 0

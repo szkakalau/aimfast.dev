@@ -1,0 +1,242 @@
+[
+  {
+    "canonical": "Agentic AI Security Threats",
+    "canonical_zh": "智能体AI安全威胁",
+    "category": "TechConcept",
+    "signal_ids": [],
+    "summary_zh": "随着AI智能体在代码执行、文件操作等场景中的广泛应用，其安全威胁（如提示注入、权限滥用）成为社区讨论热点。",
+    "summary_en": "Security threats posed by AI agents, such as prompt injection and privilege abuse, are becoming a hot topic as agents gain more capabilities."
+  },
+  {
+    "canonical": "AI-Powered Code Review",
+    "canonical_zh": "AI驱动代码审查",
+    "category": "DevTools",
+    "signal_ids": [],
+    "summary_zh": "利用大语言模型自动审查代码，提供风格、逻辑和安全性建议，正在成为开发流程中的标准实践。",
+    "summary_en": "Using LLMs to automatically review code for style, logic, and security issues is becoming a standard practice in development workflows."
+  },
+  {
+    "canonical": "LLM Evaluation Frameworks",
+    "canonical_zh": "LLM评估框架",
+    "category": "DevTools",
+    "signal_ids": [],
+    "summary_zh": "用于系统评估大语言模型性能、安全性和鲁棒性的框架，正成为模型选型和部署前的关键工具。",
+    "summary_en": "Frameworks for systematically evaluating LLM performance, safety, and robustness are becoming crucial for model selection and deployment."
+  },
+  {
+    "canonical": "Local AI Model Execution",
+    "canonical_zh": "本地AI模型执行",
+    "category": "Infra",
+    "signal_ids": [],
+    "summary_zh": "在本地设备而非云端运行AI模型的趋势日益明显，旨在解决数据隐私、延迟和成本问题。",
+    "summary_en": "The trend of running AI models locally on devices rather than in the cloud is growing, addressing data privacy, latency, and cost concerns."
+  },
+  {
+    "canonical": "Agent Collaboration Frameworks",
+    "canonical_zh": "智能体协作框架",
+    "category": "AIAgent",
+    "signal_ids": [],
+    "summary_zh": "多个AI智能体协同工作以完成复杂任务的框架，正成为提升AI系统能力的新方向。",
+    "summary_en": "Frameworks enabling multiple AI agents to collaborate on complex tasks are emerging as a new direction to enhance AI system capabilities."
+  },
+  {
+    "canonical": "Context Intelligence Layer for AI",
+    "canonical_zh": "AI上下文智能层",
+    "category": "AIAgent",
+    "signal_ids": [],
+    "summary_zh": "为AI应用提供动态、相关上下文信息的中间层，旨在提高模型的准确性和相关性。",
+    "summary_en": "An intermediary layer providing dynamic, relevant context to AI applications, aiming to improve model accuracy and relevance."
+  },
+  {
+    "canonical": "AI Model Extreme Low-Bit Compression",
+    "canonical_zh": "AI模型极低比特压缩",
+    "category": "AIModel",
+    "signal_ids": [],
+    "summary_zh": "将AI模型压缩至极低比特位宽（如1-2比特）的技术，旨在实现更高效的边缘部署和推理。",
+    "summary_en": "Techniques for compressing AI models to extremely low bit widths (e.g., 1-2 bits) for more efficient edge deployment and inference."
+  },
+  {
+    "canonical": "AI Agent CLI Tools from Services",
+    "canonical_zh": "基于服务的AI智能体CLI工具",
+    "category": "AIAgent",
+    "signal_ids": [],
+    "summary_zh": "将云服务（如GitHub、Slack）封装为CLI工具的AI智能体，方便开发者通过命令行交互。",
+    "summary_en": "AI agents that wrap cloud services (e.g., GitHub, Slack) into CLI tools, enabling developers to interact via the command line."
+  },
+  {
+    "canonical": "Self-Hosted AI Workspace",
+    "canonical_zh": "自托管AI工作区",
+    "category": "Infra",
+    "signal_ids": [],
+    "summary_zh": "开发者越来越多地选择自托管AI工具和工作区，以增强对数据和模型的控制。",
+    "summary_en": "Developers are increasingly choosing to self-host AI tools and workspaces for greater control over data and models."
+  },
+  {
+    "canonical": "AI Agent Runtime Integrity",
+    "canonical_zh": "AI智能体运行时完整性",
+    "category": "TechConcept",
+    "signal_ids": [],
+    "summary_zh": "确保AI智能体在运行时不被篡改或劫持的安全机制，是智能体可靠性的关键。",
+    "summary_en": "Security mechanisms to ensure AI agents are not tampered with or hijacked during runtime, crucial for agent reliability."
+  },
+  {
+    "canonical": "Agent-Friendly AI Database",
+    "canonical_zh": "智能体友好型AI数据库",
+    "category": "Infra",
+    "signal_ids": [],
+    "summary_zh": "为AI智能体优化设计的数据库，支持自然语言查询和向量检索，简化智能体与数据交互。",
+    "summary_en": "Databases optimized for AI agents, supporting natural language queries and vector retrieval, simplifying agent-data interaction."
+  },
+  {
+    "canonical": "AI Skill Ecosystem",
+    "canonical_zh": "AI技能生态系统",
+    "category": "TechConcept",
+    "signal_ids": [],
+    "summary_zh": "围绕AI智能体形成的可复用技能（Skills）市场或生态，正成为新的软件分发模式。",
+    "summary_en": "A marketplace or ecosystem of reusable skills for AI agents is emerging as a new software distribution model."
+  },
+  {
+    "canonical": "LLM Control Plane",
+    "canonical_zh": "LLM控制平面",
+    "category": "Infra",
+    "signal_ids": [],
+    "summary_zh": "用于管理和编排多个LLM调用的控制平面，提供路由、监控和成本控制功能。",
+    "summary_en": "A control plane for managing and orchestrating multiple LLM calls, offering routing, monitoring, and cost control."
+  },
+  {
+    "canonical": "AI Agent Sandboxing",
+    "canonical_zh": "AI智能体沙箱",
+    "category": "AIAgent",
+    "signal_ids": [],
+    "summary_zh": "在受限环境中运行AI智能体以隔离其操作，防止对系统造成意外或恶意影响。",
+    "summary_en": "Running AI agents in restricted environments to isolate their operations, preventing accidental or malicious impact on systems."
+  },
+  {
+    "canonical": "AI-Generated Code Quality Crisis",
+    "canonical_zh": "AI生成代码质量危机",
+    "category": "DX",
+    "signal_ids": [],
+    "summary_zh": "随着AI生成代码量激增，代码质量、可维护性和安全隐患问题引发广泛讨论。",
+    "summary_en": "As AI-generated code volume surges, issues of code quality, maintainability, and security vulnerabilities are sparking widespread discussion."
+  },
+  {
+    "canonical": "Engineer Role Shift in AI Era",
+    "canonical_zh": "AI时代工程师角色转变",
+    "category": "DX",
+    "signal_ids": [],
+    "summary_zh": "AI工具正在改变工程师的日常工作，从编码者转向审查者、架构师和AI交互者。",
+    "summary_en": "AI tools are reshaping engineers' daily work, shifting from coders to reviewers, architects, and AI interaction specialists."
+  },
+  {
+    "canonical": "External Brain Dependency and Cognitive Decline",
+    "canonical_zh": "外部大脑依赖与认知退化",
+    "category": "DX",
+    "signal_ids": [],
+    "summary_zh": "过度依赖AI工具可能导致的认知能力下降问题，成为开发者社区热议的话题。",
+    "summary_en": "The potential cognitive decline from over-reliance on AI tools is a hot topic in the developer community."
+  },
+  {
+    "canonical": "One-Person Company (OPC) Ecosystem",
+    "canonical_zh": "一人公司生态系统",
+    "category": "Industry",
+    "signal_ids": [],
+    "summary_zh": "AI工具使得单人创办公司成为可能，围绕“一人公司”的商业模式和生态正在兴起。",
+    "summary_en": "AI tools make it possible for a single person to start a company, and the business model and ecosystem around 'one-person companies' are emerging."
+  },
+  {
+    "canonical": "Vibe Coding for Animations",
+    "canonical_zh": "氛围编程动画",
+    "category": "AIApp",
+    "signal_ids": [],
+    "summary_zh": "使用自然语言描述创意并生成动画，这种“氛围编程”方式正在扩展至动画制作领域。",
+    "summary_en": "Using natural language descriptions to generate animations, this 'vibe coding' approach is expanding into animation production."
+  },
+  {
+    "canonical": "Browser-Based FFmpeg Video Editor",
+    "canonical_zh": "基于浏览器的FFmpeg视频编辑器",
+    "category": "AIApp",
+    "signal_ids": [],
+    "summary_zh": "在浏览器中直接运行FFmpeg进行视频编辑，无需安装桌面软件，代表了一种新的轻量级工具趋势。",
+    "summary_en": "Running FFmpeg directly in the browser for video editing, without installing desktop software, represents a new lightweight tool trend."
+  },
+  {
+    "canonical": "AI Tattoo Generator",
+    "canonical_zh": "AI纹身生成器",
+    "category": "AIApp",
+    "signal_ids": [],
+    "summary_zh": "利用AI根据用户偏好生成个性化纹身设计的应用，展示了AI在垂直创意领域的应用潜力。",
+    "summary_en": "Apps using AI to generate personalized tattoo designs based on user preferences, showing AI's potential in niche creative fields."
+  },
+  {
+    "canonical": "AI Video Analysis Tools",
+    "canonical_zh": "AI视频分析工具",
+    "category": "AIApp",
+    "signal_ids": [],
+    "summary_zh": "用于自动分析视频内容，提取关键信息、摘要或事件的AI工具，正成为内容创作和监控的重要辅助。",
+    "summary_en": "AI tools for automatically analyzing video content, extracting key information, summaries, or events, are becoming important aids for content creation and surveillance."
+  },
+  {
+    "canonical": "AI Customer Success Tools",
+    "canonical_zh": "AI客户成功工具",
+    "category": "AIApp",
+    "signal_ids": [],
+    "summary_zh": "利用AI预测客户流失、优化服务流程的客户成功工具，正在成为SaaS企业的重要投资方向。",
+    "summary_en": "Customer success tools leveraging AI to predict churn and optimize service processes are becoming key investment areas for SaaS companies."
+  },
+  {
+    "canonical": "AI Regulation Compliance Tools",
+    "canonical_zh": "AI监管合规工具",
+    "category": "AIApp",
+    "signal_ids": [],
+    "summary_zh": "随着AI监管加强，帮助企业和开发者确保AI系统合规的工具和服务需求上升。",
+    "summary_en": "As AI regulation tightens, tools and services helping businesses and developers ensure AI system compliance are in rising demand."
+  },
+  {
+    "canonical": "Open-Source Software Sustainable Funding Model",
+    "canonical_zh": "开源软件可持续资助模式",
+    "category": "Industry",
+    "signal_ids": [],
+    "summary_zh": "开源项目如何获得可持续资金支持，成为社区和商业公司共同关注的焦点。",
+    "summary_en": "How open-source projects can achieve sustainable funding is a key concern for both the community and commercial companies."
+  },
+  {
+    "canonical": "AI Agent Self-Edit Traceability",
+    "canonical_zh": "AI智能体自编辑可追溯性",
+    "category": "TechConcept",
+    "signal_ids": [],
+    "summary_zh": "记录和追踪AI智能体对代码或文件修改过程的能力，对于调试和审计至关重要。",
+    "summary_en": "The ability to record and trace the process of AI agents modifying code or files is crucial for debugging and auditing."
+  },
+  {
+    "canonical": "Vector Database Benchmarking",
+    "canonical_zh": "向量数据库基准测试",
+    "category": "DevTools",
+    "signal_ids": [],
+    "summary_zh": "对向量数据库进行性能基准测试的工具和标准，正成为选择RAG基础设施的关键参考。",
+    "summary_en": "Tools and standards for benchmarking vector databases are becoming key references for choosing RAG infrastructure."
+  },
+  {
+    "canonical": "AI Agent Security Scanning",
+    "canonical_zh": "AI智能体安全扫描",
+    "category": "AIAgent",
+    "signal_ids": [],
+    "summary_zh": "专门针对AI智能体的安全扫描工具，用于检测漏洞和恶意行为。",
+    "summary_en": "Security scanning tools specifically for AI agents, used to detect vulnerabilities and malicious behavior."
+  },
+  {
+    "canonical": "Claude Code Templates",
+    "canonical_zh": "Claude Code模板",
+    "category": "DevTools",
+    "signal_ids": [],
+    "summary_zh": "为Claude Code提供预定义模板，以标准化和加速常见开发任务的趋势。",
+    "summary_en": "The trend of providing predefined templates for Claude Code to standardize and accelerate common development tasks."
+  },
+  {
+    "canonical": "Claude Code Runtime Migration",
+    "canonical_zh": "Claude Code运行时迁移",
+    "category": "DevTools",
+    "signal_ids": [],
+    "summary_zh": "将Claude Code从云端迁移到本地或自托管环境，以增强隐私和控制。",
+    "summary_en": "Migrating Claude Code from cloud to local or self-hosted environments for enhanced privacy and control."
+  }
+]

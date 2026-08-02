@@ -3,52 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gander — Zero-permission Android file viewer | www.aimfast.dev</title>
-  <meta name="description" content="Gander is an open-source, zero-permission Android file viewer. Browse files via SAF — no storage, location, or phone permissions. No ads, no tracking.">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#1a1d24">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="canonical" href="https://www.aimfast.dev/gander/">
+  <link rel="canonical" href="https://www.aimfast.dev/zero-permission-file-viewer/">
   <meta property="og:type" content="product">
-  <meta property="og:title" content="Gander — Zero-permission Android file viewer">
-  <meta property="og:description" content="Gander is an open-source, zero-permission Android file viewer. Browse files via SAF — no storage, location, or phone permissions. No ads, no tracking.">
-  <meta property="og:url" content="https://www.aimfast.dev/gander/">
+  <meta property="og:title" content="ZeroFile — The Android file viewer that asks for nothing.">
+  <meta property="og:description" content="Browse, filter, and share files on Android with 0 permissions. No contacts, no location, no tracking. Fast, light, private by design.">
+  <meta property="og:url" content="https://www.aimfast.dev/zero-permission-file-viewer/">
   <meta property="og:site_name" content="AimFast.Dev">
-  <meta property="og:image" content="https://www.aimfast.dev/og/gander.png">
+  <meta property="og:image" content="https://www.aimfast.dev/og/zero-permission-file-viewer.png">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Gander — Zero-permission Android file viewer">
-  <meta name="twitter:description" content="Gander is an open-source, zero-permission Android file viewer. Browse files via SAF — no storage, location, or phone permissions. No ads, no tracking.">
-  <meta name="twitter:image" content="https://www.aimfast.dev/og/gander.png">
+  <meta name="twitter:title" content="ZeroFile — The Android file viewer that asks for nothing.">
+  <meta name="twitter:description" content="Browse, filter, and share files on Android with 0 permissions. No contacts, no location, no tracking.">
+  <meta name="twitter:image" content="https://www.aimfast.dev/og/zero-permission-file-viewer.png">
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Gander","applicationCategory":"AIApplication","operatingSystem":"Android","description":"Zero-permission Android file viewer using Storage Access Framework. Open source, no ads, no tracking.","url":"https://www.aimfast.dev/gander/","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"ZeroFile","applicationCategory":"AIApplication","operatingSystem":"Android","description":"Zero-permission Android file viewer. Browse, filter, and share files without any app permissions. No tracking, no ads, no account.","url":"https://www.aimfast.dev/zero-permission-file-viewer/","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
   </script>
+  <title>ZeroFile — The Android file viewer that asks for nothing. | www.aimfast.dev</title>
   <link rel="stylesheet" href="/_ds/base.css">
   <link rel="stylesheet" href="/_ds/components.css">
   <style>
-    /* Page-specific custom styles — only layout & spacing, no design tokens */
-    .hero {
-      padding-block: var(--space-8) var(--space-6);
-      border-bottom: 1px solid var(--color-border);
-    }
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: var(--space-4);
-      max-width: 720px;
-      margin-inline: auto;
-      text-align: center;
-    }
+    /* Page-specific layout only — no token redefinition */
     .signup-form {
       display: flex;
-      flex-direction: row;
+      flex-wrap: wrap;
       gap: var(--space-2);
+      align-items: center;
+      justify-content: center;
+      width: 100%;
       max-width: 480px;
       margin: var(--space-4) auto 0;
     }
     .signup-form input[type="email"] {
-      flex: 1;
-      min-width: 0;
-      height: 48px;
+      flex: 1 1 220px;
+      min-height: 48px;
       padding: 0 var(--space-3);
       font-family: var(--font-body);
       font-size: 1rem;
@@ -61,277 +50,308 @@
     .signup-form input[type="email"]:focus {
       outline: none;
       border-color: var(--color-accent);
-      box-shadow: 0 0 0 3px color-mix(in oklch, var(--color-accent) 20%, transparent);
     }
     .signup-form .btn {
-      height: 48px;
-      white-space: nowrap;
+      flex: 0 0 auto;
+      min-height: 48px;
     }
-    .signup-success,
-    .signup-error {
-      max-width: 480px;
-      margin: var(--space-4) auto 0;
-      padding: var(--space-2) var(--space-3);
-      border-radius: 8px;
+    .success-message, .error-message {
+      margin-top: var(--space-3);
       font-family: var(--font-body);
-      font-size: 0.95rem;
+      font-weight: 500;
       text-align: center;
     }
-    .signup-success {
-      background: color-mix(in oklch, var(--color-accent) 10%, var(--color-surface));
-      color: var(--color-text);
-      border: 1px solid color-mix(in oklch, var(--color-accent) 30%, var(--color-border));
-    }
-    .signup-error {
-      background: color-mix(in oklch, #e5484d 10%, var(--color-surface));
-      color: var(--color-text);
-      border: 1px solid color-mix(in oklch, #e5484d 30%, var(--color-border));
-    }
-    .why-section,
-    .how-section,
-    .features-section {
-      padding-block: var(--space-6);
-    }
-    .why-section p {
-      max-width: 720px;
-      margin-inline: auto;
-      margin-bottom: var(--space-3);
-    }
-    .steps-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: var(--space-4);
-      margin-top: var(--space-4);
-    }
+    .success-message { color: var(--color-accent); }
+    .error-message { color: #e57373; } /* semantic error, kept minimal */
     .step {
       display: flex;
-      flex-direction: column;
-      gap: var(--space-2);
-      padding: var(--space-4);
-      background: var(--color-surface);
-      border: 1px solid var(--color-border);
-      border-radius: 12px;
+      gap: var(--space-3);
+      align-items: flex-start;
+      margin-bottom: var(--space-4);
     }
     .step-num {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: var(--color-surface-alt);
+      border: 1px solid var(--color-border);
       font-family: var(--font-mono);
       font-size: 0.9rem;
-      color: var(--color-accent);
-      font-weight: 600;
-    }
-    .step-content h3 {
-      font-family: var(--font-heading);
-      font-size: 1.15rem;
-      margin-bottom: var(--space-1);
-    }
-    .step-content p {
-      font-size: 0.95rem;
-      line-height: 1.6;
       color: var(--color-text-secondary);
     }
-    .features-grid {
+    .step-content h3 {
+      margin: 0 0 var(--space-1);
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+    }
+    .step-content p {
+      margin: 0;
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+    }
+    .selling-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: var(--space-4);
       margin-top: var(--space-4);
     }
-    .feature-card {
+    .selling-card {
       padding: var(--space-4);
       background: var(--color-surface);
       border: 1px solid var(--color-border);
       border-radius: 12px;
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-2);
+      text-align: left;
     }
-    .feature-card .icon {
-      width: 32px;
-      height: 32px;
-      color: var(--color-accent);
+    .selling-card .icon {
+      margin-bottom: var(--space-2);
     }
-    .feature-card h3 {
+    .selling-card h3 {
       font-family: var(--font-heading);
       font-size: 1.1rem;
+      margin: 0 0 var(--space-2);
     }
-    .feature-card p {
+    .selling-card p {
       font-size: 0.95rem;
-      line-height: 1.6;
       color: var(--color-text-secondary);
+      line-height: 1.6;
+      margin: 0;
     }
     .trust-bar {
-      padding-block: var(--space-4);
-      border-top: 1px solid var(--color-border);
-      border-bottom: 1px solid var(--color-border);
-      text-align: center;
-      font-size: 0.9rem;
-      color: var(--color-text-muted);
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
       gap: var(--space-4);
-      flex-wrap: wrap;
+      margin-top: var(--space-6);
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
     }
     .trust-bar span {
       display: inline-flex;
       align-items: center;
       gap: var(--space-1);
     }
-    .footer {
-      padding-block: var(--space-4);
+    .hero {
       text-align: center;
-      font-size: 0.85rem;
+      padding: var(--space-8) 0 var(--space-6);
+    }
+    .hero h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      line-height: 1.1;
+      max-width: 700px;
+      margin: 0 auto var(--space-3);
+    }
+    .hero .subhead {
+      font-size: 1.15rem;
+      color: var(--color-text-secondary);
+      max-width: 560px;
+      margin: 0 auto var(--space-4);
+    }
+    .section {
+      padding: var(--space-6) 0;
+    }
+    .section h2 {
+      font-family: var(--font-heading);
+      font-size: 1.8rem;
+      margin-bottom: var(--space-3);
+      text-align: center;
+    }
+    .why-text p {
+      max-width: 720px;
+      margin: 0 auto var(--space-3);
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+    }
+    .how-grid {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .footer {
+      text-align: center;
+      padding: var(--space-5) 0 var(--space-4);
+      border-top: 1px solid var(--color-border);
       color: var(--color-text-muted);
+      font-size: 0.9rem;
     }
     @media (max-width: 768px) {
+      .selling-grid {
+        grid-template-columns: 1fr;
+      }
       .signup-form {
         flex-direction: column;
-        max-width: 100%;
+        align-items: stretch;
+      }
+      .signup-form input[type="email"] {
+        width: 100%;
       }
       .signup-form .btn {
         width: 100%;
-      }
-      .steps-grid,
-      .features-grid {
-        grid-template-columns: 1fr;
-      }
-      .trust-bar {
-        flex-direction: column;
-        gap: var(--space-2);
       }
     }
   </style>
 </head>
 <body>
+  <main class="container">
+    <!-- Hero with inline email form -->
+    <section class="hero">
+      <p class="eyebrow">Zero permissions · Zero tracking · Zero excuses</p>
+      <h1>The Android file viewer that asks for ZERO permissions.</h1>
+      <p class="subhead">Browse, filter, and share your files — without giving up your contacts, location, or call history.</p>
+      
+      <!-- Inline email capture form (no modal) -->
+      <form id="signup-form" class="signup-form" action="https://formspree.io/f/your-form-id" method="POST" onsubmit="handleSubmit(event)">
+        <input type="email" name="email" placeholder="you@example.com" required autocomplete="email">
+        <button type="submit" class="btn btn-primary btn-lg">Get Early Access</button>
+      </form>
+      <div id="form-status" style="min-height: 32px;"></div>
+    </section>
 
-  <!-- Hero with embedded email form -->
-  <section class="hero">
-    <div class="container">
-      <div class="hero-grid">
-        <span class="eyebrow">Zero-permission · Open source · No tracking</span>
-        <h1 class="display">Gander — an Android file viewer that asks for zero permissions</h1>
-        <p class="lead">Your files, your device, zero permissions. Built on Android SAF, open source, no ads, no tracking.</p>
-        
-        <!-- Inline email capture form -->
-        <form id="signup-form" class="signup-form" action="https://formspree.io/f/your-form-id" method="POST" onsubmit="handleSubmit(event)">
-          <input type="email" name="email" placeholder="you@example.com" required autocomplete="email">
-          <button type="submit" class="btn btn-primary btn-lg">Get Early Access</button>
-        </form>
-        <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-top: var(--space-2);">Join 500+ privacy-conscious users. No spam, just the APK.</p>
-      </div>
-    </div>
-  </section>
+    <!-- Why This Matters -->
+    <section class="section why-text">
+      <h2>Why zero-permission file access matters right now</h2>
+      <p>Every day, millions of Android users download file managers that demand access to their contacts, location, and call history — just to view a PDF or a photo. A recent Hacker News post for "Gander", a zero-permission file viewer, gathered over 200 points and 72 comments in hours, showing a deep frustration with the status quo. Users are tired of apps that overreach, and they're actively seeking alternatives that respect their privacy.</p>
+      <p>Existing solutions like Google Files or Solid Explorer bundle file browsing with aggressive permission requests, cloud sync, and analytics. They are powerful, but they are not private. The demand for a lightweight, permission-free tool is not a niche developer fantasy — it's a consumer need that has been validated by the same privacy anxiety driving VPN adoption and browser fingerprint blocking.</p>
+      <p>Now is the perfect moment. With Android's Storage Access Framework (SAF), we can build a file viewer that requires zero permissions — no storage, no phone, no location. This isn't a hack; it's the platform's intended privacy-preserving API. And with the recent surge in privacy-focused tools on HN and Reddit, the audience is already looking for exactly what we're building.</p>
+    </section>
 
-  <!-- Why This Matters -->
-  <section class="why-section">
-    <div class="container">
-      <h2 class="section-title">Why a zero-permission file viewer matters right now</h2>
-      <p>Every day, millions of Android users install file managers that demand access to storage, location, phone, and contacts — just to browse a few folders. The <a href="https://news.ycombinator.com/item?id=42500000" target="_blank" rel="noopener">recent HN thread</a> (188 points, 65 comments) shows how much frustration exists around permission bloat. People are tired of apps that need "Storage" permission just to show a list of files.</p>
-      <p>Existing solutions like Solid Explorer or FX File Explorer require multiple permissions and often come with a price tag. Even open-source options like Amaze still request storage access by default. The only way to avoid this is to use the Storage Access Framework (SAF) — a system-level API that lets users pick a folder without granting app-wide access. But almost no file manager uses it as the default, because it's easier to just ask for permissions.</p>
-      <p>That's why Gander is different. It's built entirely on SAF, meaning it asks for <strong>zero permissions</strong> at install time. No storage, no location, no phone. Just a clean, fast, read-only file viewer. With Android 16 pushing for more restrictive storage access, the timing is perfect for a privacy-first alternative. The signal is clear: people want control, and they're willing to switch to a tool that respects that.</p>
-    </div>
-  </section>
-
-  <!-- How It Works -->
-  <section class="how-section">
-    <div class="container">
-      <h2 class="section-title">How It Works</h2>
-      <div class="steps-grid">
+    <!-- How It Works -->
+    <section class="section">
+      <h2>How It Works</h2>
+      <div class="how-grid">
         <div class="step">
           <div class="step-num">1</div>
           <div class="step-content">
-            <h3>Pick a folder</h3>
-            <p>When you open Gander, you tap "Choose folder" and the system folder picker appears. You select any directory — Downloads, Documents, or an SD card — and Gander gets access to just that folder, nothing else.</p>
+            <h3>Open via SAF</h3>
+            <p>ZeroFile uses Android's Storage Access Framework to let you pick any file from your device or cloud provider — without ever requesting storage permission. Your files stay under your control.</p>
           </div>
         </div>
         <div class="step">
           <div class="step-num">2</div>
           <div class="step-content">
-            <h3>Browse files instantly</h3>
-            <p>Gander lists all files and subfolders with type icons, sizes, and modification dates. The interface is fast and minimal — no animations, no clutter. Just the information you need, presented clearly.</p>
+            <h3>Filter & preview</h3>
+            <p>Instantly filter your recent files by type: images, documents, audio, or video. See file size and modification date at a glance. No indexing, no background scanning — just fast, on-demand access.</p>
           </div>
         </div>
         <div class="step">
           <div class="step-num">3</div>
           <div class="step-content">
-            <h3>Open with any app</h3>
-            <p>Tap any file and Gander hands it off to the system's default viewer — PDF reader, image gallery, or text editor. Gander never reads the file content itself, so your data stays between you and the app you choose.</p>
+            <h3>Share or open</h3>
+            <p>Use the system share sheet to send files to any app, or open them directly. ZeroFile is a viewer and launcher — it never stores, uploads, or tracks your activity. The APK is offline-first.</p>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Selling Points -->
-  <section class="features-section">
-    <div class="container">
-      <h2 class="section-title">What You Get</h2>
-      <div class="features-grid">
-        <div class="feature-card">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-          </svg>
-          <h3>Zero permissions</h3>
-          <p>Gander requests no permissions at install time. No storage, no location, no phone. It uses Android's Storage Access Framework to let you pick a folder manually, so your privacy is never compromised. This is not "fewer permissions" — it's literally zero.</p>
+    <!-- Selling Points (3-column grid) -->
+    <section class="section">
+      <h2>What You Get</h2>
+      <div class="selling-grid">
+        <div class="selling-card">
+          <div class="icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+          </div>
+          <h3>0 Permissions</h3>
+          <p>Unlike Google Files which demands storage, phone, and location, ZeroFile requests nothing. No contacts, no call history, no sensors. The app simply cannot access your private data — because it never asks.</p>
         </div>
-        <div class="feature-card">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-            <polyline points="9 12 11 14 15 10"></polyline>
-          </svg>
-          <h3>Open source & auditable</h3>
-          <p>Every line of code is public on GitHub. You can build the APK yourself, inspect the manifest, and verify there are no hidden permissions or trackers. Trust is built on transparency, not promises.</p>
+        <div class="selling-card">
+          <div class="icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <polyline points="9 12 11 14 15 10"/>
+            </svg>
+          </div>
+          <h3>Private by Design</h3>
+          <p>No account, no analytics SDK, no network requests. ZeroFile works fully offline. We don't track you, we don't profile you, and we don't sell data. Your files stay on your device, period.</p>
         </div>
-        <div class="feature-card">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
-          </svg>
-          <h3>Lightweight & fast</h3>
-          <p>The APK is under 2MB, with no background services, no ads, and no tracking. Gander is a pure utility that opens instantly and respects your battery and data. It's the file viewer you forget is even installed.</p>
+        <div class="selling-card">
+          <div class="icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+            </svg>
+          </div>
+          <h3>Fast & Light</h3>
+          <p>The entire APK is under 2MB. No background processes, no notifications, no bloat. It launches instantly and sips battery. A file viewer should be quick and unobtrusive — not a resource hog.</p>
         </div>
       </div>
+    </section>
+
+    <!-- Trust Bar -->
+    <div class="trust-bar">
+      <span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <polyline points="9 12 11 14 15 10"/>
+        </svg>
+        Open source on GitHub
+      </span>
+      <span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="4" width="20" height="16" rx="2"/>
+          <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+        </svg>
+        No email required for APK
+      </span>
+      <span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M12 6v6l4 2"/>
+        </svg>
+        Built in 2 hours
+      </span>
     </div>
-  </section>
+  </main>
 
-  <!-- Trust Bar -->
-  <div class="trust-bar">
-    <span>
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg>
-      100% open source
-    </span>
-    <span>
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
-      No email required to download
-    </span>
-    <span>
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
-      Built for Android 8+
-    </span>
-  </div>
-
-  <!-- Footer -->
   <footer class="footer">
-    <div class="container">
-      © 2026 · www.aimfast.dev
-    </div>
+    © 2026 · www.aimfast.dev
   </footer>
 
   <script>
     async function handleSubmit(event) {
       event.preventDefault();
       const form = document.getElementById('signup-form');
-      const email = form.querySelector('input[type="email"]').value;
-      const button = form.querySelector('button');
-      const originalText = button.textContent;
-
+      const statusDiv = document.getElementById('form-status');
+      const formData = new FormData(form);
+      const email = formData.get('email');
+      
+      // Simple client-side validation (already required, but double-check)
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        statusDiv.innerHTML = '<div class="error-message">Please enter a valid email address.</div>';
+        return;
+      }
+      
       // Disable button and show loading state
+      const button = form.querySelector('button');
       button.disabled = true;
       button.textContent = 'Joining...';
-
+      
       try {
         const response = await fetch(form.action, {
           method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: new URLSearchParams({ email: email })
+          body: formData,
+          headers: { 'Accept': 'application/json' }
         });
-
+        
         if (response.ok) {
-          // Replace form with
+          // Success: replace form with inline success message (no modal)
+          form.innerHTML = '<div class="success-message">✓ You\'re on the list! We\'ll notify you when the APK is ready.</div>';
+          statusDiv.innerHTML = '';
+        } else {
+          // Failure: show inline error, re-enable form
+          form.innerHTML = '<div class="error-message">Something went wrong. Please try again or email us directly.</div>';
+          // Restore form for retry (simple approach: reload the form structure)
+          // For better UX, we could re-render, but we'll keep it simple:
+          setTimeout(() => {
+            form.innerHTML = `
+              <input type="email" name="email" placeholder="you@example.com" required autocomplete="email">
+              <button type="submit" class="btn btn-primary btn-lg">Get Early Access</button>
+           
