@@ -385,6 +385,20 @@ fi
 
 step_end "Step3.6: Opportunity"
 
+# ─── Step 3.7: Extract Term Relations ───
+
+log ""
+log "--- Step 3.7: Extract Term Relations ---"
+step_start
+
+if $PYTHON scripts/extract_related_terms.py --date "$DATE" 2>&1; then
+    log "  [Relations] OK"
+else
+    log "  [Relations] FAIL (non-fatal)"
+fi
+
+step_end "Step3.7: Relations"
+
 # --- Step 4: Planet Article (DISABLED) ---
 
 log ""

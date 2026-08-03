@@ -21,6 +21,8 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
+from scripts.tech_maturity import get_feasibility
+
 TZ_SHANGHAI = timezone(timedelta(hours=8))
 ROOT = Path(__file__).resolve().parent.parent
 TRACKING_FILE = ROOT / "tracking" / "trend_terms.json"
@@ -76,8 +78,13 @@ def compute_stage(first_seen_str: str, today: datetime) -> str:
         return "nascent"
 
 
-def compute_score_from_signals(matching_signals: list[dict]) -> int:
-    """Score a term based on its matching signals (reuses existing signal scoring)."""
+def compute_score_from_signals(matching_signals: list[dict], term_name: str = "") -> int:
+    """Score a term based on its matching signals (reuses existing signal scoring).
+
+    Args:
+        matching_signals: signals that match this term
+        term_name: optional canonical term name for feasibility lookup
+    """
     if not matching_signals:
         return 0
     avg_score = sum(s.get("score", 0) for s in matching_signals) / len(matching_signals)
@@ -85,13 +92,23 @@ def compute_score_from_signals(matching_signals: list[dict]) -> int:
     total_engagement = sum(s.get("engagement", {}).get("total", 0) for s in matching_signals)
     cross_platform = sum(1 for s in matching_signals if s.get("cross_platform_count", 0) > 0)
 
-    score = (
+    base_score = (
         avg_score * 0.3
         + min(source_count * 8, 30)
         + min(total_engagement * 0.5, 20)
         + min(cross_platform * 10, 20)
     )
-    return min(round(score), 100)
+
+    # 技术可行性修正：成熟技术给予小幅加分，不惩罚新技术
+    if term_name or matching_signals:
+        lookup_name = term_name or matching_signals[0].get("title", "")
+        feasibility_mod = get_feasibility(lookup_name)
+        # 只对 > 1.0 的修正系数生效（即只在技术足够成熟时加分）
+        # 原因：新技术的早期信号本身就很有价值，不应被成熟度压分
+        if feasibility_mod > 1.0:
+            base_score *= feasibility_mod
+
+    return min(round(base_score), 100)
 
 
 def compute_percentile_thresholds(terms: list[dict]) -> tuple[float, float]:
@@ -588,7 +605,7 @@ def merge_terms(existing: list[dict], extracted: list[dict], signals: list[dict]
             # Re-score using LLM-provided signal_ids if available
             matching = _get_matching_signals(signals_by_id, extracted_term, signals, canonical)
             if matching:
-                new_score = compute_score_from_signals(matching)
+                new_score = compute_score_from_signals(matching, term_name=canonical)
                 t["score"] = max(t["score"], new_score)
 
                 new_sources = list(set(s.get("source_key", "") for s in matching))
@@ -620,7 +637,7 @@ def merge_terms(existing: list[dict], extracted: list[dict], signals: list[dict]
             matching_signals = _get_matching_signals(signals_by_id, extracted_term, signals, canonical)
 
             signal_sources = list(set(s.get("source_key", "") for s in matching_signals))
-            score = compute_score_from_signals(matching_signals)
+            score = compute_score_from_signals(matching_signals, term_name=canonical)
 
             new_term = {
                 "id": new_id,
@@ -1162,7 +1179,7 @@ Return ONLY the JSON array, nothing else."""
         if not matching_signals:
             continue
 
-        score = compute_score_from_signals(matching_signals)
+        score = compute_score_from_signals(matching_signals, term_name=term.get("canonical", ""))
         signal_sources = list(set(s.get("source_key", "") for s in matching_signals))
         tags = list(set(tag for s in matching_signals for tag in s.get("tags", [])))[:5]
 

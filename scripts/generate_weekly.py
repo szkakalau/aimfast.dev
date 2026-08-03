@@ -78,11 +78,12 @@ def collect_weekly_data(date_str: str) -> dict:
     # 反转天数顺序（周一 → 周日）
     week_data["days"].reverse()
 
+    week_start = (today - timedelta(days=6)).strftime("%Y-%m-%d")
+
     # 本周验证结果
     opp_path = TRACKING_DIR / "opportunities.json"
     if opp_path.exists():
         opps = json.loads(opp_path.read_text(encoding="utf-8")).get("opportunities", [])
-        week_start = (today - timedelta(days=6)).strftime("%Y-%m-%d")
         for op in opps:
             op_date = op.get("date", "")
             if op_date >= week_start or op.get("verification_result") != "pending":
@@ -92,10 +93,22 @@ def collect_weekly_data(date_str: str) -> dict:
     lessons_path = TRACKING_DIR / "lessons.json"
     if lessons_path.exists():
         lessons = json.loads(lessons_path.read_text(encoding="utf-8")).get("lessons", [])
-        week_start = (today - timedelta(days=6)).strftime("%Y-%m-%d")
         for ln in lessons:
             if ln.get("date", "") >= week_start:
                 week_data["new_lessons"].append(ln)
+
+    # 本周 Top 机会（来自 trend_terms.json 的 opportunity_score）
+    trend_terms_path = TRACKING_DIR / "trend_terms.json"
+    if trend_terms_path.exists():
+        trend_terms = json.loads(trend_terms_path.read_text(encoding="utf-8"))
+        this_week_terms = [
+            t for t in trend_terms.get("terms", [])
+            if t.get("last_seen", "") >= week_start
+        ]
+        this_week_terms.sort(key=lambda t: t.get("opportunity_score", 0), reverse=True)
+        week_data["top_opportunities"] = this_week_terms[:10]
+    else:
+        week_data["top_opportunities"] = []
 
     # 周标签
     iso = today.isocalendar()
@@ -183,6 +196,27 @@ def _build_user_prompt(data: dict, date_str: str) -> str:
     else:
         lines.append("*本周无验证到期——如果你有在跑验证的实验，这是正常节奏*")
 
+    # ── 本周 Top 10 AI 创业机会 ──
+    if data.get("top_opportunities"):
+        lines.extend(["", "## 本周 Top 10 AI 创业机会（来自趋势追踪）"])
+        lines.append("以下是你管线自动评估出的本周最有商业价值的 term，附机会分、预估开发天数和建议产品方向。")
+        lines.append("在写周信时，从中挑 1-2 个你真正想深入讲的——不用全列，那是仪表板做的事。")
+        lines.append("")
+        for i, t in enumerate(data["top_opportunities"][:10], 1):
+            name = t.get("canonical_zh", "") or t.get("canonical", "?")
+            opp_score = t.get("opportunity_score", 0)
+            market_score = t.get("market_score", 0)
+            est_days = t.get("estimated_dev_days", "?")
+            products = t.get("suggested_products", "")[:80]
+            demand = t.get("demand_score", 0)
+            lines.append(
+                f"{i}. **{name}** — 机会 {opp_score}/100 | 市场 {market_score}/100 | "
+                f"需求 {demand}/100 | 预估 {est_days} 天"
+            )
+            if products:
+                lines.append(f"   → {products}")
+            lines.append("")
+
     lines.extend(["", "## 从失败中学到的"])
     if data["new_lessons"]:
         for ln in data["new_lessons"]:
@@ -239,7 +273,7 @@ def push_to_buttondown(report: str, week_label: str) -> bool:
     lines = report.split("\n")
 
     # Subject: 尝试从第一行提取 H1 标题，fallback 到 week_label
-    subject = f"AimFast Weekly {week_label}"
+    subject = f"AimFast Weekly {week_label} - AI 创业机会观察"
     if lines:
         h1_match = re.match(r"^#\s+(.+)", lines[0])
         if h1_match:
