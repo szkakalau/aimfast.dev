@@ -783,7 +783,7 @@
 }
 
 .newsletter-submit:hover {
-  background: var(--color-accent-hover);
+  background: color-mix(in oklch, var(--color-accent), #000 15%);
 }
 
 /* ── Hero CTA row ── */
