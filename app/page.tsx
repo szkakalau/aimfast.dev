@@ -232,24 +232,15 @@ export default async function HomePage({
                 <p>The real thinking behind the scores — what the pipeline found, why it matters, and what to build next. One email per week.</p>
               </div>
             </div>
-            <form
-              action="https://buttondown.com/api/emails/embed-subscribe/aimfast"
-              method="post"
+            <a
+              href="https://buttondown.com/aimfast"
               target="_blank"
-              className="newsletter-form"
+              rel="noopener noreferrer"
+              className="newsletter-submit"
+              style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none' }}
             >
-              <input
-                type="email"
-                name="email"
-                placeholder="you@example.com"
-                required
-                className="newsletter-input"
-                aria-label="Email address"
-              />
-              <button type="submit" className="newsletter-submit">
-                Subscribe Free →
-              </button>
-            </form>
+              Subscribe Free →
+            </a>
           </div>
         </section>
 
