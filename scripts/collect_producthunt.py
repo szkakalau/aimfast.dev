@@ -2,8 +2,13 @@
 Product Hunt 信号采集
 数据源: Product Hunt API v2 (GraphQL, 开发者 Token)
 采集内容: 当日热门新品 + 投票数 + 评论数
+
+凭证优先级: 环境变量 > config.json
+  - PRODUCTHUNT_CLIENT_ID / PRODUCTHUNT_CLIENT_SECRET (GitHub Actions 推荐)
+  - config.json → api_keys.producthunt (本地开发兜底)
 """
 import json
+import os
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
@@ -19,7 +24,14 @@ PH_TOKEN_URL = "https://api.producthunt.com/v2/oauth/token"
 
 
 def _get_ph_credentials() -> tuple[str, str]:
-    """从 config.json 读取 PH API 凭证。"""
+    """读取 PH API 凭证：环境变量优先，config.json 兜底。"""
+    # GitHub Actions: 从 secrets 注入的环境变量
+    env_client_id = os.getenv("PRODUCTHUNT_CLIENT_ID", "")
+    env_client_secret = os.getenv("PRODUCTHUNT_CLIENT_SECRET", "")
+    if env_client_id and env_client_secret:
+        return env_client_id, env_client_secret
+
+    # 本地开发: 从 config.json 读取
     with open(CONFIG_PATH, "r", encoding="utf-8") as f:
         cfg = json.load(f)
     keys = cfg.get("api_keys", {}).get("producthunt", {})

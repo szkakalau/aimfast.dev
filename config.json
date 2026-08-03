@@ -2,6 +2,7 @@
   "_comment": "AimFast.Dev — v2.4 第二层信号源扩展（2026-07-16）: npm + PyPI + Stack Overflow + YouTube。信源从 17 个扩展到 21 个，覆盖开发者采用信号（包下载量）和痛点信号（SO 问题量）。",
   "api_keys": {
     "producthunt": {
+      "_comment": "推荐通过环境变量 PRODUCTHUNT_CLIENT_ID / PRODUCTHUNT_CLIENT_SECRET 配置，GitHub Actions 请使用 Secrets",
       "client_id": "YOUR_PH_CLIENT_ID",
       "client_secret": "YOUR_PH_CLIENT_SECRET"
     }
