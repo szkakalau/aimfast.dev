@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#1a1d24">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://www.aimfast.dev/cycloidal-gearbox-viz/">
+  <meta property="og:type" content="product">
+  <meta property="og:title" content="Cycloidal Viz — See Inside a Cycloidal Gearbox">
+  <meta property="og:description" content="Interactive 3D tool to understand cycloidal gearboxes. Drag sliders, watch the gear ratio change in real time.">
+  <meta property="og:url" content="https://www.aimfast.dev/cycloidal-gearbox-viz/">
+  <meta property="og:site_name" content="AimFast.Dev">
+  <meta property="og:image" content="https://www.aimfast.dev/og/cycloidal-gearbox-viz.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Cycloidal Viz — See Inside a Cycloidal Gearbox">
+  <meta name="twitter:description" content="Interactive 3D tool to understand cycloidal gearboxes. Drag sliders, watch the gear ratio change in real time.">
+  <meta name="twitter:image" content="https://www.aimfast.dev/og/cycloidal-gearbox-viz.png">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Cycloidal Viz","applicationCategory":"AIApplication","operatingSystem":"Web","description":"Interactive 3D visualization tool for understanding cycloidal gearboxes. Adjust parameters and see the gear ratio change in real time.","url":"https://www.aimfast.dev/cycloidal-gearbox-viz/","offers":{"@type":"Offer","price":"9.00","priceCurrency":"USD"}}
+  </script>
+
+  <link rel="stylesheet" href="/_ds/base.css">
+  <link rel="stylesheet" href="/_ds/components.css">
+
+  <title>Cycloidal Viz — See Inside a Cycloidal Gearbox | www.aimfast.dev</title>
+  <meta name="description" content="Interactive 3D tool to understand cycloidal gearboxes. Drag sliders, watch the gear ratio change in real time. Built for robotics enthusiasts and mechanical engineering students.">
+</head>
+<body>
+
+  <!-- HERO SECTION with inline email form -->
+  <section class="hero container" style="padding-top: var(--space-8); padding-bottom: var(--space-6);">
+    <div class="hero-content" style="max-width: 720px; margin: 0 auto; text-align: center;">
+      <span class="eyebrow">⚙️ Interactive 3D Visualizer</span>
+      <h1 class="hero-title" style="font-family: var(--font-heading); font-size: clamp(2.5rem, 6vw, 4rem); line-height: 1.1; margin-bottom: var(--space-2);">
+        See Inside a Cycloidal Gearbox — Without Building One
+      </h1>
+      <p class="hero-subtitle" style="font-family: var(--font-body); font-size: 1.2rem; color: var(--color-text-secondary); max-width: 600px; margin: 0 auto var(--space-4);">
+        Drag a slider. Watch the gear ratio change in real time. Understand why cycloidal drives beat planetary gears in half the space — in 5 minutes.
+      </p>
+
+      <!-- INLINE EMAIL FORM (no modal, no popup) -->
+      <form id="signup-form" class="signup-form" action="https://formspree.io/f/your-form-id" method="POST" style="display: flex; flex-wrap: wrap; gap: var(--space-2); justify-content: center; margin-top: var(--space-4);">
+        <input type="email" name="email" placeholder="you@example.com" required autocomplete="email" style="flex: 1 1 240px; min-height: 48px; padding: 0 var(--space-3); border: 1px solid var(--color-border); border-radius: 8px; background: var(--color-surface); color: var(--color-text); font-family: var(--font-body); font-size: 1rem; transition: border-color var(--duration-normal) var(--ease-out);">
+        <button type="submit" class="btn btn-primary btn-lg" style="min-height: 48px; padding: 0 var(--space-4); font-weight: 600; white-space: nowrap;">
+          Get Early Access
+        </button>
+      </form>
+      <p style="font-size: 0.9rem; color: var(--color-text-muted); margin-top: var(--space-2);">No spam. Just the demo link when it's ready.</p>
+    </div>
+  </section>
+
+  <!-- WHY THIS MATTERS (≥150 words) -->
+  <section class="why container" style="padding: var(--space-6) 0;">
+    <h2 style="font-family: var(--font-heading); font-size: 2rem; margin-bottom: var(--space-3);">Why Cycloidal Gearboxes Matter Right Now</h2>
+    <div style="max-width: 720px;">
+      <p style="margin-bottom: var(--space-3);">
+        When a 15-year-old's hand-built cycloidal gearbox hit 314 points on Hacker News with 102 comments, it wasn't just a feel-good story. It exposed a gap: thousands of robotics enthusiasts, 3D printing hobbyists, and mechanical engineering students are hungry to understand this elegant mechanism — but they're stuck with static diagrams and dense Wikipedia formulas. The HN thread was full of questions like "How does the eccentric bearing work?" and "Why is it so compact?" — clear signals of untapped learning demand.
+      </p>
+      <p style="margin-bottom: var(--space-3);">
+        Existing solutions fail to bridge the gap. YouTube videos are passive — you can't pause reality to inspect a tooth profile. Wikipedia's math is correct but impenetrable without a visualization. Open-source CAD models require heavy software and offer no explanation of the underlying kinematics. There's no interactive way to grasp the core insight: how a cycloidal disc with one fewer tooth than the ring gear creates a speed reduction through pure rolling contact.
+      </p>
+      <p style="margin-bottom: var(--space-3);">
+        The timing is perfect. The HN signal shows a spike in interest, and the maker community is growing — more people are 3D printing robot joints, building actuators, and designing compact drives. Yet no dedicated interactive tool exists. This is the moment to give them a hands-on mental model, not just a video. A tool that lets you drag sliders and see the gear ratio change instantly — that's the missing piece.
+      </p>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS (3 steps, each with descriptive paragraph) -->
+  <section class="how container" style="padding: var(--space-6) 0;">
+    <h2 style="font-family: var(--font-heading); font-size: 2rem; margin-bottom: var(--space-4);">How It Works</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--space-4);">
+      <div class="step" style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 12px; padding: var(--space-4);">
+        <div class="step-num" style="font-family: var(--font-mono); font-size: 2.5rem; color: var(--color-accent); line-height: 1; margin-bottom: var(--space-2);">1</div>
+        <div class="step-content">
+          <h3 style="font-family: var(--font-heading); font-size: 1.3rem; margin-bottom: var(--space-1);">Adjust Key Parameters</h3>
+          <p style="font-family: var(--font-body); color: var(--color-text-secondary); line-height: 1.6;">Start with the core variables: the number of cycloidal lobes, the eccentricity, and the pin count. Drag the sliders to see how each parameter influences the gear ratio and the overall geometry. The 3D model updates instantly, giving you immediate feedback on your design choices.</p>
+        </div>
+      </div>
+      <div class="step" style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 12px; padding: var(--space-4);">
+        <div class="step-num" style="font-family: var(--font-mono); font-size: 2.5rem; color: var(--color-accent); line-height: 1; margin-bottom: var(--space-2);">2</div>
+        <div class="step-content">
+          <h3 style="font-family: var(--font-heading); font-size: 1.3rem; margin-bottom: var(--space-1);">Watch the 3D Animation</h3>
+          <p style="font-family: var(--font-body); color: var(--color-text-secondary); line-height: 1.6;">Rotate the view and zoom in to see exactly how the cycloidal disc interacts with the ring pins. The animation shows the eccentric motion and the rolling contact that creates the speed reduction. You'll finally see why a cycloidal drive is so compact compared to a planetary gear of the same ratio.</p>
+        </div>
+      </div>
+      <div class="step" style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 12px; padding: var(--space-4);">
+        <div class="step-num" style="font-family: var(--font-mono); font-size: 2.5rem; color: var(--color-accent); line-height: 1; margin-bottom: var(--space-2);">3</div>
+        <div class="step-content">
+          <h3 style="font-family: var(--font-heading); font-size: 1.3rem; margin-bottom: var(--space-1);">Compare Torque Density</h3>
+          <p style="font-family: var(--font-body); color: var(--color-text-secondary); line-height: 1.6;">A side-by-side panel shows a cycloidal drive and a planetary gear set with the same volume. You'll see the torque density advantage in real time — the cycloidal design delivers higher torque in a smaller package. This is the key insight that makes cycloidal drives the go-to choice for robot joints and precision actuators.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SELLING POINTS (3 columns, each ≥20 words) -->
+  <section class="selling container" style="padding: var(--space-6) 0;">
+    <h2 style="font-family: var(--font-heading); font-size: 2rem; margin-bottom: var(--space-4);">What You Get</h2>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4);">
+      <div class="card" style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 12px; padding: var(--space-4);">
+        <div class="icon" style="width: 32px; height: 32px; margin-bottom: var(--space-2); color: var(--color-accent);">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="32" height="32">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+          </svg>
+        </div>
+        <h3 style="font-family: var(--font-heading); font-size: 1.2rem; margin-bottom: var(--space-1);">Real-time Parameter Control</h3>
+        <p style="font-family: var(--font-body); color: var(--color-text-secondary); line-height: 1.6;">Adjust the number of lobes, pin count, and eccentricity with intuitive sliders. The gear ratio updates instantly, helping you build a mental model of how each variable affects the drive's performance. No static diagrams — you see the cause and effect immediately.</p>
+      </div>
+      <div class="card" style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 12px; padding: var(--space-4);">
+        <div class="icon" style="width: 32px; height: 32px; margin-bottom: var(--space-2); color: var(--color-accent);">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="32" height="32">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+          </svg>
+        </div>
+        <h3 style="font-family: var(--font-heading); font-size: 1.2rem; margin-bottom: var(--space-1);">3D Meshing Animation</h3>
+        <p style="font-family: var(--font-body); color: var(--color-text-secondary); line-height: 1.6;">Rotate the camera, zoom into the contact points, and watch the cycloidal disc mesh with the ring pins. The 3D animation reveals the rolling contact that makes this gearbox so efficient and compact. You'll finally see the mechanism from every angle, not just a flat cross-section.</p>
+      </div>
+      <div class="card" style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 12px; padding: var(--space-4);">
+        <div class="icon" style="width: 32px; height: 32px; margin-bottom: var(--space-2); color: var(--color-accent);">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="32" height="32">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <polyline points="9 12 11 14 15 10"/>
+          </svg>
+        </div>
+        <h3 style="font-family: var(--font-heading); font-size: 1.2rem; margin-bottom: var(--space-1);">Same-Size Torque Showdown</h3>
+        <p style="font-family: var(--font-body); color: var(--color-text-secondary); line-height: 1.6;">See a head-to-head comparison between a cycloidal drive and a planetary gear of the same volume. The torque density difference becomes obvious — cycloidal wins by a significant margin. This is the key insight that drives its adoption in modern robotics and precision machinery.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <section class="trust container" style="padding: var(--space-4) 0; border-top: 1px solid var(--color-border); margin-top: var(--space-4);">
+    <div style="display: flex; flex-wrap: wrap; gap: var(--space-4); justify-content: center; font-size: 0.9rem; color: var(--color-text-muted);">
+      <span>🔒 Secure checkout</span>
+      <span>⚡ Instant access after launch</span>
+      <span>🔄 30-day money-back guarantee</span>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="container" style="padding: var(--space-4) 0; text-align: center; border-top: 1px solid var(--color-border); margin-top: var(--space-4);">
+    <p style="font-size: 0.9rem; color: var(--color-text-muted);">© 2026 · www.aimfast.dev</p>
+  </footer>
+
+  <!-- Toast for success (lightweight, no modal) -->
+  <div id="toast" style="position: fixed; top: 20px; left: 50%; transform: translateX(-50%); background: var(--color-accent); color: white; padding: var(--space-2) var(--space-4); border-radius: 8px; font-family: var(--font-body); font-size: 0.95rem; opacity: 0; transition: opacity 0.3s ease; pointer-events: none; z-index: 1000;">
+    ✓ You're on the list!
+  </div>
+
+  <script>
+    // Handle form submission with fetch, show toast, replace form on success
+    document.getElementById('signup-form').addEventListener('submit', async function(event) {
+      event.preventDefault();
+      const form = event.target;
+      const email = form.email.value;
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalText = submitBtn.textContent;
+
+      // Disable button during submission
+      submitBtn.disabled = true;
+      submit

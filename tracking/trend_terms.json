@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-02T08:40:44.084584+08:00",
+  "updated_at": "2026-08-03T08:46:44.571637+08:00",
   "terms": [
     {
       "id": "trend-claude-agent-sdk",
@@ -12793,7 +12793,8 @@
         "概念尚未验证；采用率低可能导致兴趣极小。"
       ],
       "opportunity_summary_en": "The zero-registration demo model is a nascent trend with low competition and easy SEO, but market demand is unverified. An MVP can be built quickly, but revenue potential is limited until the concept gains traction. Focus on creating a reusable tool or template to help SaaS products implement this feature.",
-      "opportunity_summary_zh": "零注册演示模式是一个新兴趋势，竞争低，SEO容易，但市场需求未验证。MVP可以快速构建，但收入潜力有限，直到概念获得牵引力。专注于创建可复用的工具或模板，帮助SaaS产品实现此功能。"
+      "opportunity_summary_zh": "零注册演示模式是一个新兴趋势，竞争低，SEO容易，但市场需求未验证。MVP可以快速构建，但收入潜力有限，直到概念获得牵引力。专注于创建可复用的工具或模板，帮助SaaS产品实现此功能。",
+      "last_report_date": "2026-08-03"
     },
     {
       "id": "trend-chatgpt-work-for-sales",
@@ -13945,7 +13946,31 @@
       "tags": [],
       "summary_zh": "研究发现AI建议使人准确率降低3倍但自信提升2倍，在Hacker News获得164赞和71评论，揭示了AI辅助决策中值得警惕的认知偏差。",
       "summary_en": "Research showing AI advice makes people 3x less accurate but 2x more confident gained 164 upvotes and 71 comments on Hacker News, revealing a cognitive bias worth monitoring in AI-assisted decision-making.",
-      "research_md_path": "content/trends/ai-confidence-overaccuracy-effect.md"
+      "research_md_path": "content/trends/ai-confidence-overaccuracy-effect.md",
+      "opportunity_score": 45,
+      "market_score": 50,
+      "competition_score": 20,
+      "demand_score": 35,
+      "seo_difficulty": 30,
+      "suggested_products": [
+        "Web App",
+        "Chrome Extension",
+        "AI Agent",
+        "API",
+        "Newsletter"
+      ],
+      "estimated_dev_days": 21,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "The trend may remain academic with no commercial demand.",
+        "Tech giants or research institutions could publish comprehensive solutions, capturing the niche."
+      ],
+      "risk_factors_zh": [
+        "该趋势可能仅停留在学术层面，缺乏商业需求。",
+        "科技巨头或研究机构可能发布全面解决方案，占据该细分市场。"
+      ],
+      "opportunity_summary_en": "The AI confidence overaccuracy effect is a newly surfaced cognitive bias with growing awareness but no existing products. There is an opportunity to create educational tools or integrations that help users calibrate AI advice, but demand is unproven. A minimal MVP could be a web app or browser extension that visualizes confidence vs. accuracy, but monetization will be challenging.",
+      "opportunity_summary_zh": "AI过度自信效应是一个新出现的认知偏差，公众意识正在增长，但尚无现有产品。有机会创建教育工具或集成，帮助用户校准AI建议，但需求尚未得到验证。最小可行产品可以是网页应用或浏览器扩展，可视化置信度与准确性的对比，但变现将是挑战。"
     },
     {
       "id": "trend-senator-graham-ai-policy",
@@ -15416,6 +15441,51 @@
       ],
       "opportunity_summary_en": "Agentic AI security threats are a nascent but high-growth area with limited competition, offering a blue ocean for indie developers. The demand is emerging with clear pain points around prompt injection and privilege abuse, though not yet mainstream. Early movers can establish a foothold through specialized tools and content, but must navigate the risk of platform-level integration by big tech.",
       "opportunity_summary_zh": "智能体安全威胁是一个新兴但高增长的领域，竞争有限，为独立开发者提供了蓝海机会。需求正在显现，围绕提示注入和权限滥用的痛点明确，但尚未成为主流。早期进入者可通过专业工具和内容建立优势，但需应对大厂平台级集成的风险。"
+    },
+    {
+      "id": "trend-serp-api-multi-version-management",
+      "canonical": "SERP API Multi-Version Management",
+      "canonical_zh": "SERP API 多版本管理",
+      "aliases": [],
+      "first_seen": "2026-08-03",
+      "last_seen": "2026-08-03",
+      "stage": "nascent",
+      "score": 0,
+      "source_count": 0,
+      "total_mentions": 0,
+      "sources": [],
+      "growth_pct": 100,
+      "category": "DevTools",
+      "tags": [],
+      "summary_zh": "SERP API 灰度发布与多版本管理方案成为开发者关注点，反映了 API 服务治理的新需求。",
+      "summary_en": "Gray release and multi-version management for SERP APIs emerge as a developer concern, reflecting new needs in API service governance.",
+      "research_md_path": "content/trends/serp-api-multi-version-management.md",
+      "opportunity_score": 35,
+      "market_score": 35,
+      "competition_score": 20,
+      "demand_score": 30,
+      "seo_difficulty": 20,
+      "suggested_products": [
+        "SaaS",
+        "API",
+        "CLI Tool",
+        "Open Source",
+        "SDK/Library"
+      ],
+      "estimated_dev_days": 60,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Large API providers (e.g., Google, SerpApi) may build native multi-version management features, making a standalone tool redundant.",
+        "The market may be too small to sustain a dedicated product, as SERP API users are already niche.",
+        "The trend might be a temporary concern with no long-term demand, given the lack of substantive signals."
+      ],
+      "risk_factors_zh": [
+        "大型 API 提供商（如 Google、SerpApi）可能原生实现多版本管理功能，使独立工具变得多余。",
+        "市场可能太小，无法支撑专门产品，因为 SERP API 用户本身已属小众。",
+        "由于缺乏实质性信号，该趋势可能只是暂时关注点，无长期需求。"
+      ],
+      "opportunity_summary_en": "The SERP API multi-version management space is a nascent, unproven market with zero competition and low SEO difficulty. However, the lack of concrete demand signals and the risk of big players entering make it a speculative opportunity. A small-scale open-source or SaaS MVP could test the waters, but revenue potential is limited until demand is validated.",
+      "opportunity_summary_zh": "SERP API 多版本管理领域是一个新兴且未经验证的市场，竞争为零且 SEO 难度低。然而，缺乏具体需求信号以及大厂进入的风险使其成为一个投机性机会。小规模的开源或 SaaS MVP 可以试水，但在需求得到验证之前，收入潜力有限。"
     }
   ],
   "_version": "1.0"
