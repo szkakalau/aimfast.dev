@@ -105,37 +105,36 @@ log "--- Step 1: Signal Collection ---"
 step_start
 
 COLLECTORS=(
-    "Hacker News:collect_hackernews"
-    "GitHub Deep:collect_github"
-    "Google Trends:collect_trends"
-    "Job Trends:collect_job_trends"
-    "Product Hunt:collect_producthunt"
-    "DEV Community:collect_devcommunity"
+    # ── 慢采集器前置（尽早开始，与后续采集器重叠）──
     "Reddit (11 subs):collect_reddit"
     "Reddit Consumer:collect_reddit_consumer"
+    "X/Twitter:collect_x"
+    "Substack:collect_substack"
+    "HuggingFace:collect_huggingface"
+    "GitHub Deep:collect_github"
+    "GitHub Releases:collect_github_releases"
+    "Semantic Scholar:collect_semanticscholar"
+    "YouTube:collect_youtube"
+    # ── 中等速度 ──
+    "Hacker News:collect_hackernews"
+    "Product Hunt:collect_producthunt"
+    "DEV Community:collect_devcommunity"
     "V2EX:collect_v2ex"
     "w2solo:collect_w2solo"
-    "HuggingFace:collect_huggingface"
     "Lobsters:collect_lobsters"
     "ArXiv:collect_arxiv"
     "豆瓣:collect_douban"
-    # "小红书:collect_xiaohongshu"  # 暂禁用 — 未认证模式数据量有限
-    "X/Twitter:collect_x"
-    "Substack:collect_substack"
-    "Product Changelogs:collect_changelogs"
-    "Google News:collect_googlenews"
-    "GitHub Releases:collect_github_releases"
-    # ── 新增信源: 包管理 + 开发者社区（2026-07-16） ──
     "npm:collect_npm"
     "PyPI:collect_pypi"
     "Stack Overflow:collect_stackoverflow"
-    "YouTube:collect_youtube"
-    # ── 新增信源: 中文开发者生态（2026-07-22） ──
+    # "小红书:collect_xiaohongshu"  # 暂禁用 — 未认证模式数据量有限
+    # ── 快速采集器 ──
+    "Google Trends:collect_trends"
+    "Job Trends:collect_job_trends"
+    "Product Changelogs:collect_changelogs"
+    "Google News:collect_googlenews"
     "掘金:collect_juejin"
     "SegmentFault:collect_segmentfault"
-    # ── 新增信源: 学术深度 + 内容增强（2026-07-22 Phase 3） ──
-    "Semantic Scholar:collect_semanticscholar"
-    # ── 新增信源: 高级中文信源 + 独立开发者产品（2026-07-22 Phase 4） ──
     "OSChina:collect_oschina"
     "Show HN:collect_showhn"
 )
@@ -143,11 +142,15 @@ COLLECTORS=(
 # C-end collectors are non-blocking — they may fail due to rate limits or missing auth
 C_END_COLLECTORS=("Reddit Consumer" "豆瓣" "小红书" "X/Twitter" "Product Changelogs" "Google News" "GitHub Releases" "npm" "PyPI" "Stack Overflow" "YouTube" "Job Trends" "Substack" "掘金" "SegmentFault" "Semantic Scholar" "OSChina" "Show HN")
 
-# Parallel execution with concurrency cap
-MAX_PARALLEL=6
+# Parallel execution with concurrency cap — tuned for I/O-bound collectors
+# 28 collectors × avg 4s each: 6 workers ≈ 20s, 14 workers ≈ 8s
+MAX_PARALLEL=14
 running=0
 collector_total=${#COLLECTORS[@]}
 collector_done=0
+collector_ok=0
+collector_warn=0
+collector_error=0
 
 for entry in "${COLLECTORS[@]}"; do
     name="${entry%%:*}"

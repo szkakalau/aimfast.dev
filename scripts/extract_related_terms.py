@@ -40,8 +40,8 @@ def infer_relation_type(description: str) -> str:
 def extract_from_english_section(text: str) -> list[dict]:
     """从英文格式的 Related Terms 章节提取（段落式，**Term** - desc）。"""
     relations = []
-    # 匹配 **Term Name** – description
-    pattern = r'\*\*([^*]+?)\*\*\s*[–\-—:：]\s*(.+?)(?=\n\n|\n\*\*|\Z)'
+    # 匹配 **Term Name** – description（可选中文注解，如 **Term**（中文名）：desc）
+    pattern = r'\*\*([^*]+?)\*\*\s*(?:（[^）]*）)?\s*(?:——|[–\-—:：])\s*(.+?)(?=\n\n|\n\*\*|\Z)'
     for m in re.finditer(pattern, text, re.DOTALL):
         term = m.group(1).strip()
         desc = m.group(2).strip()
@@ -59,8 +59,8 @@ def extract_from_english_section(text: str) -> list[dict]:
 def extract_from_chinese_section(text: str) -> list[dict]:
     """从中文格式的 Related Terms 章节提取（列表式，- **Term**：desc）。"""
     relations = []
-    # 匹配 - **Term**：description 或 - **Term** — description
-    pattern = r'[-•]\s*\*\*([^*]+?)\*\*\s*[：:—–\-]\s*(.+?)(?=\n[-•]|\n\n|\Z)'
+    # 匹配 - **Term**：description 或 - **Term** — description（可选中文注解）
+    pattern = r'[-•]\s*\*\*([^*]+?)\*\*\s*(?:（[^）]*）)?\s*(?:——|[：:—–\-])\s*(.+?)(?=\n[-•]|\n\n|\Z)'
     for m in re.finditer(pattern, text, re.DOTALL):
         term = m.group(1).strip()
         desc = m.group(2).strip()

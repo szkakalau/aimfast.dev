@@ -15,6 +15,10 @@ TRACKING_DIR = ROOT / "tracking"
 
 TZ_SHANGHAI = timezone(timedelta(hours=8))
 
+# 最大回溯天数 — 超过此天数的信号不参与重复检测
+# 312 天全量扫描需 12 min，限制 60 天可降至 ~3 min
+MAX_LOOKBACK_DAYS = 60
+
 # 停用词 — 过滤掉高频无意义词，避免倒排索引桶过大
 STOPWORDS: set[str] = {
     # 英文功能词
@@ -27,6 +31,11 @@ STOPWORDS: set[str] = {
     "using", "based", "v0", "v1", "v2", "v3", "v4", "v5", "day", "days",
     "week", "may", "need", "set", "try", "end", "yet", "via", "api",
     "add", "big", "top", "llm", "ai",
+    # ── 高频技术词（创建过大索引桶，需截断）──
+    "open", "source", "code", "data", "model", "tool", "app", "build",
+    "free", "web", "lang", "chain", "agent", "world", "first", "best",
+    "year", "time", "here", "next", "back", "work", "good", "test",
+    "live", "real", "case", "show", "chat", "deep", "part", "name",
 }
 
 # 高频词截断阈值 — 出现次数超过此比例的词不建索引
@@ -106,18 +115,26 @@ def _build_word_index(all_signals: list[dict]) -> dict[str, list[int]]:
 
 
 def _load_all_signals() -> list[dict]:
-    """加载所有日期的信号，附带日期信息。"""
+    """加载最近 MAX_LOOKBACK_DAYS 天的信号，附带日期信息。"""
     all_signals: list[dict] = []
     if not DAILY_DIR.exists():
         return all_signals
+
+    cutoff_date = datetime.now(TZ_SHANGHAI).date() - timedelta(days=MAX_LOOKBACK_DAYS)
+    skipped_dirs = 0
 
     for date_dir in sorted(DAILY_DIR.iterdir()):
         if not date_dir.is_dir():
             continue
         date_str = date_dir.name
         try:
-            datetime.strptime(date_str, "%Y-%m-%d")
+            dir_date = datetime.strptime(date_str, "%Y-%m-%d").date()
         except ValueError:
+            continue
+
+        # 跳过超过回溯窗口的旧数据
+        if dir_date < cutoff_date:
+            skipped_dirs += 1
             continue
 
         signals_path = date_dir / "signals.json"
@@ -132,7 +149,7 @@ def _load_all_signals() -> list[dict]:
         except (json.JSONDecodeError, KeyError) as e:
             print(f"[重复追踪] 读取 {date_str}/signals.json 失败: {e}")
 
-    print(f"[重复追踪] 共加载 {len(all_signals)} 条信号（{len(set(s.get('_date', '') for s in all_signals))} 天）")
+    print(f"[重复追踪] 共加载 {len(all_signals)} 条信号（最近 {MAX_LOOKBACK_DAYS} 天，跳过 {skipped_dirs} 个旧目录）")
     return all_signals
 
 
@@ -287,12 +304,28 @@ def run(date_str: str | None = None) -> list[dict]:
           f"(vs 全量 O(n^2) = {n * (n-1) // 2:,})")
 
     # 跨日期标题相似度匹配（仅在候选对内比较）
+    # 预过滤：至少共享一个长度 ≥ 4 的单词，快速剔除大部分不相关对
     threshold = 0.75
     match_count = 0
+    skipped_prefilter = 0
+
+    # 预计算每个信号的「长词集」（len ≥ 4）
+    signal_long_words: list[set[str]] = []
+    for s in all_signals:
+        words = _extract_keywords(s.get("title", ""))
+        signal_long_words.append({w for w in words if len(w) >= 4})
+
     for i, j in candidate_pairs:
         # 同一天内的重复信号已经被 process_signals 的 dedup/cluster 处理过
         if all_signals[i]["_date"] == all_signals[j]["_date"]:
             continue
+
+        # ── 廉价预过滤：无共同长词 → 跳过 ──
+        if signal_long_words[i] and signal_long_words[j]:
+            if not (signal_long_words[i] & signal_long_words[j]):
+                skipped_prefilter += 1
+                continue
+
         sim = _title_similarity(
             all_signals[i].get("title", ""),
             all_signals[j].get("title", "")
@@ -301,7 +334,7 @@ def run(date_str: str | None = None) -> list[dict]:
             union(i, j)
             match_count += 1
 
-    print(f"[重复追踪] 跨日期标题匹配: {match_count} 对（阈值 {threshold}）")
+    print(f"[重复追踪] 跨日期标题匹配: {match_count} 对（阈值 {threshold}），预过滤跳过 {skipped_prefilter} 对")
 
     # ─── 聚合分组 ───
     groups: dict[int, list[int]] = {}
