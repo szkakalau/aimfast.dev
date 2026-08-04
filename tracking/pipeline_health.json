@@ -1,9 +1,9 @@
 {
   "date": "2026-08-04",
-  "generated_at": "2026-08-04T11:36:24.023091+08:00",
+  "generated_at": "2026-08-04T13:11:40.998164+08:00",
   "success": false,
   "exit_code": 1,
-  "duration_minutes": 45,
+  "duration_minutes": 42,
   "steps": {
     "enrichment": {
       "status": "generated",
@@ -11,20 +11,21 @@
     },
     "report": {
       "status": "generated",
-      "duration_sec": 84
+      "duration_sec": 87
     },
     "action": {
       "status": "generated",
-      "duration_sec": 32
+      "duration_sec": 41
     },
     "lp": {
-      "status": "generated",
-      "duration_sec": 0
+      "status": "skipped",
+      "duration_sec": 0,
+      "reason": "no_pending_opportunity"
     }
   },
   "tokens": {
-    "total": 2486619,
-    "calls": 957
+    "total": 3028968,
+    "calls": 1184
   },
   "sources": {
     "total": 28,
@@ -32,7 +33,7 @@
     "failed": 2,
     "failed_names": [
       "producthunt",
-      "trends"
+      "w2solo"
     ]
   },
   "terms": {
@@ -40,7 +41,7 @@
     "new_today": 20
   },
   "warnings": [
-    "步骤 'Step1: Collectors (28 sources)' 耗时过长 (24 分钟)"
+    "步骤 'Step1: Collectors (28 sources)' 耗时过长 (23 分钟)"
   ],
   "consecutive_success_days": 0
 }

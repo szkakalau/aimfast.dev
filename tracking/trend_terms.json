@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-04T11:30:58.445241+08:00",
+  "updated_at": "2026-08-04T13:05:16.494772+08:00",
   "terms": [
     {
       "id": "trend-claude-agent-sdk",
@@ -218,11 +218,11 @@
         "Browser Node.js"
       ],
       "first_seen": "2026-06-15",
-      "last_seen": "2026-07-07",
+      "last_seen": "2026-08-04",
       "stage": "validating",
       "score": 88,
       "source_count": 5,
-      "total_mentions": 94,
+      "total_mentions": 95,
       "sources": [
         "Hacker News",
         "GitHub",
@@ -230,7 +230,7 @@
         "DEV Community",
         "Product Hunt"
       ],
-      "growth_pct": 120,
+      "growth_pct": 190,
       "category": "DevTools",
       "tags": [
         "stackblitz",
@@ -270,7 +270,9 @@
           "relation": "related-to",
           "reason": "WebContainer 的技术基石，WASI 的成熟度直接决定浏览器内运行时的能力边界，该术语在 2026 年搜索量同步上升。**Edge Computing（边缘计算）**：WebContainer 与边缘计算共享\"计算靠近用户\"的哲学，Cloudflare Workers 等产品的用户是 WebContainer 的潜在交叉受众。**In-browser IDE（浏览器内 IDE）**：We"
         }
-      ]
+      ],
+      "prev_score": 88,
+      "canonical_zh": "WebContainer"
     },
     {
       "id": "trend-fluid-compute",
@@ -829,18 +831,18 @@
       "canonical": "AI Agent Security Scanning",
       "aliases": [],
       "first_seen": "2026-07-07",
-      "last_seen": "2026-08-02",
+      "last_seen": "2026-08-04",
       "stage": "emergent",
       "score": 77,
       "source_count": 4,
-      "total_mentions": 18,
+      "total_mentions": 19,
       "sources": [
         "hn",
         "googlenews",
         "github",
         "devcommunity"
       ],
-      "growth_pct": 69,
+      "growth_pct": 68,
       "category": "AIAgent",
       "tags": [
         "observability",
@@ -1177,17 +1179,17 @@
       "canonical": "AI Agent Tutorial",
       "aliases": [],
       "first_seen": "2026-07-07",
-      "last_seen": "2026-07-07",
-      "stage": "nascent",
+      "last_seen": "2026-08-04",
+      "stage": "emergent",
       "score": 71,
       "source_count": 3,
-      "total_mentions": 4,
+      "total_mentions": 5,
       "sources": [
         "w2solo",
         "juejin",
         "devcommunity"
       ],
-      "growth_pct": 100,
+      "growth_pct": 18,
       "category": "AIAgent",
       "tags": [
         "后端",
@@ -1225,7 +1227,9 @@
         "萌芽阶段仍需要市场验证；早期采用者可能无法维持长期增长。"
       ],
       "opportunity_summary_en": "The AI Agent tutorial space is nascent with low competition and rising demand, offering opportunities for structured paid courses and template markets. Focus on Chinese developer communities can leverage low SEO difficulty and strong early signals. However, watch for potential entry by large AI companies and commoditization risks.",
-      "opportunity_summary_zh": "AI Agent教程领域处于萌芽阶段，竞争低、需求上升，结构化付费课程和模板市场存在机会。聚焦中文开发者社区可利用低SEO难度和强劲早期信号。但需警惕大型AI公司可能进入和商品化风险。"
+      "opportunity_summary_zh": "AI Agent教程领域处于萌芽阶段，竞争低、需求上升，结构化付费课程和模板市场存在机会。聚焦中文开发者社区可利用低SEO难度和强劲早期信号。但需警惕大型AI公司可能进入和商品化风险。",
+      "prev_score": 71,
+      "canonical_zh": "AI Agent教程"
     },
     {
       "id": "trend-open-source-ai-security-tools",
@@ -3069,16 +3073,16 @@
       "canonical_zh": "Chrome DevTools MCP 协议",
       "aliases": [],
       "first_seen": "2026-07-21",
-      "last_seen": "2026-07-21",
-      "stage": "nascent",
+      "last_seen": "2026-08-04",
+      "stage": "emergent",
       "score": 63,
       "source_count": 2,
-      "total_mentions": 2,
+      "total_mentions": 3,
       "sources": [
         "w2solo",
         "v2ex"
       ],
-      "growth_pct": 100,
+      "growth_pct": 21,
       "category": "DevTools",
       "tags": [
         "产品发布",
@@ -3131,7 +3135,8 @@
           "relation": "complements",
           "reason": "无头浏览器测试工具（如 Playwright），与 Chrome DevTools MCP 互补，后者更侧重实时调试而非自动化测试。"
         }
-      ]
+      ],
+      "prev_score": 63
     },
     {
       "id": "trend-vibe-coding",
@@ -3343,15 +3348,15 @@
       "canonical_zh": "AI Agent 沙箱隔离",
       "aliases": [],
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-02",
+      "last_seen": "2026-08-04",
       "stage": "emergent",
       "score": 59,
       "source_count": 1,
-      "total_mentions": 3,
+      "total_mentions": 4,
       "sources": [
         "showhn"
       ],
-      "growth_pct": 30,
+      "growth_pct": 33,
       "category": "AIAgent",
       "tags": [
         "Productivity",
@@ -3411,15 +3416,15 @@
       "canonical_zh": "浏览器端AI推理",
       "aliases": [],
       "first_seen": "2026-07-27",
-      "last_seen": "2026-07-27",
-      "stage": "nascent",
+      "last_seen": "2026-08-04",
+      "stage": "emergent",
       "score": 59,
       "source_count": 1,
-      "total_mentions": 2,
+      "total_mentions": 3,
       "sources": [
         "showhn"
       ],
-      "growth_pct": 100,
+      "growth_pct": 38,
       "category": "AIModel",
       "tags": [
         "AI",
@@ -3471,7 +3476,8 @@
           "relation": "related-to",
           "reason": "涵盖浏览器端和IoT设备，Browser-Native AI Inference是其在Web场景的具体实现。"
         }
-      ]
+      ],
+      "prev_score": 59
     },
     {
       "id": "trend-ai-native-code-presentation",
@@ -3479,15 +3485,15 @@
       "canonical_zh": "AI原生代码演示",
       "aliases": [],
       "first_seen": "2026-07-27",
-      "last_seen": "2026-07-27",
-      "stage": "nascent",
+      "last_seen": "2026-08-04",
+      "stage": "emergent",
       "score": 59,
       "source_count": 1,
-      "total_mentions": 2,
+      "total_mentions": 3,
       "sources": [
         "showhn"
       ],
-      "growth_pct": 100,
+      "growth_pct": 38,
       "category": "DevTools",
       "tags": [
         "Open Source",
@@ -3541,7 +3547,8 @@
           "relation": "related-to",
           "reason": "开发者体验优化大趋势，本术语是其具体实现之一。"
         }
-      ]
+      ],
+      "prev_score": 59
     },
     {
       "id": "trend-chinas-open-weight-ai-strategy",
@@ -3680,15 +3687,15 @@
       "canonical_zh": "Kimi K3 开放前沿智能",
       "aliases": [],
       "first_seen": "2026-07-17",
-      "last_seen": "2026-07-17",
-      "stage": "nascent",
+      "last_seen": "2026-08-04",
+      "stage": "emergent",
       "score": 58,
       "source_count": 1,
-      "total_mentions": 2,
+      "total_mentions": 3,
       "sources": [
         "hn"
       ],
-      "growth_pct": 100,
+      "growth_pct": 17,
       "category": "AIModel",
       "tags": [
         "story_48935342",
@@ -3740,7 +3747,8 @@
           "relation": "depends-on",
           "reason": "Kimi K3可能依赖分布式训练或推理网络，与去中心化趋势形成技术共振。"
         }
-      ]
+      ],
+      "prev_score": 58
     },
     {
       "id": "trend-kimi-k3-3-trillion-parameter-open-source-model",
@@ -4068,15 +4076,15 @@
       "canonical_zh": "AI UX/UI 设计技能",
       "aliases": [],
       "first_seen": "2026-07-28",
-      "last_seen": "2026-07-28",
+      "last_seen": "2026-08-04",
       "stage": "nascent",
       "score": 58,
       "source_count": 1,
-      "total_mentions": 2,
+      "total_mentions": 3,
       "sources": [
         "github"
       ],
-      "growth_pct": 100,
+      "growth_pct": 43,
       "category": "Design",
       "tags": [
         "active",
@@ -4129,7 +4137,8 @@
           "relation": "complements",
           "reason": "无代码设计工具与AI技能结合，可进一步降低设计门槛，形成互补生态。"
         }
-      ]
+      ],
+      "prev_score": 58
     },
     {
       "id": "trend-local-first-file-sharing",
@@ -4814,16 +4823,16 @@
       "canonical": "AI Agent Runtime Integrity",
       "aliases": [],
       "first_seen": "2026-07-08",
-      "last_seen": "2026-08-02",
+      "last_seen": "2026-08-04",
       "stage": "emergent",
       "score": 54,
       "source_count": 2,
-      "total_mentions": 3,
+      "total_mentions": 4,
       "sources": [
         "oschina",
         "devcommunity"
       ],
-      "growth_pct": 12,
+      "growth_pct": 15,
       "category": "AIAgent",
       "tags": [
         "AI/大模型",
@@ -4945,15 +4954,15 @@
       "canonical_zh": "单文件生产力应用",
       "aliases": [],
       "first_seen": "2026-07-23",
-      "last_seen": "2026-07-23",
-      "stage": "nascent",
+      "last_seen": "2026-08-04",
+      "stage": "emergent",
       "score": 52,
       "source_count": 1,
-      "total_mentions": 1,
+      "total_mentions": 2,
       "sources": [
         "showhn"
       ],
-      "growth_pct": 100,
+      "growth_pct": 17,
       "category": "DevTools",
       "tags": [
         "Web",
@@ -5003,7 +5012,8 @@
           "relation": "related-to",
           "reason": "用户无需下载客户端即可使用服务，与单文件应用的“即开即用”特点一脉相承。"
         }
-      ]
+      ],
+      "prev_score": 52
     },
     {
       "id": "trend-postgresql-cost-optimization",
@@ -5134,15 +5144,15 @@
       "canonical_zh": "C++ 模块化构建工具 mcpp",
       "aliases": [],
       "first_seen": "2026-07-16",
-      "last_seen": "2026-07-16",
-      "stage": "nascent",
+      "last_seen": "2026-08-04",
+      "stage": "emergent",
       "score": 51,
       "source_count": 1,
-      "total_mentions": 2,
+      "total_mentions": 3,
       "sources": [
         "v2ex"
       ],
-      "growth_pct": 100,
+      "growth_pct": 16,
       "category": "DevTools",
       "tags": [
         "程序员",
@@ -5191,7 +5201,8 @@
           "relation": "complements",
           "reason": "如 Ninja、Bazel，mcpp 在模块化构建领域与它们形成互补关系。"
         }
-      ]
+      ],
+      "prev_score": 51
     },
     {
       "id": "trend-open-secure-ai-alliance",
@@ -5199,11 +5210,11 @@
       "canonical_zh": "开放安全 AI 联盟",
       "aliases": [],
       "first_seen": "2026-07-28",
-      "last_seen": "2026-07-28",
+      "last_seen": "2026-08-04",
       "stage": "nascent",
       "score": 51,
       "source_count": 1,
-      "total_mentions": 6,
+      "total_mentions": 7,
       "sources": [
         "googlenews"
       ],
@@ -5250,7 +5261,8 @@
           "relation": "depends-on",
           "reason": "—关注模型和依赖链的完整性，与联盟的技术方向高度重合；**LLM Guardrails**——聚焦模型输出的安全与合规控制，是联盟标准落地的具体场景；**Responsible AI Framework**——涵盖更广泛的 AI 治理范畴，联盟标准是其实施细则之一。这三个词在 AimFast 上均有独立趋势追踪，它们的同步上升可以验证 AI 安全赛道的整体热度。"
         }
-      ]
+      ],
+      "prev_score": 51
     },
     {
       "id": "trend-self-hosted-cctv-for-sbc",
@@ -5512,15 +5524,15 @@
       "canonical_zh": "自托管文档签名",
       "aliases": [],
       "first_seen": "2026-07-28",
-      "last_seen": "2026-07-28",
+      "last_seen": "2026-08-04",
       "stage": "nascent",
       "score": 50,
       "source_count": 1,
-      "total_mentions": 1,
+      "total_mentions": 2,
       "sources": [
         "showhn"
       ],
-      "growth_pct": 100,
+      "growth_pct": 29,
       "category": "OpenSource",
       "tags": [
         "Open Source",
@@ -5572,7 +5584,8 @@
           "relation": "enables",
           "reason": "监管驱动因素，欧盟数字身份法规的更新将直接影响自托管签名方案的合规要求"
         }
-      ]
+      ],
+      "prev_score": 50
     },
     {
       "id": "trend-instantvideos.org",
@@ -5770,14 +5783,14 @@
     {
       "id": "trend-reverse-engineering-web-apps-into-agent-tools",
       "canonical": "Reverse-Engineering Web Apps into Agent Tools",
-      "canonical_zh": "",
+      "canonical_zh": "将Web应用逆向工程为Agent工具",
       "aliases": [],
       "first_seen": "2026-07-12",
-      "last_seen": "2026-07-12",
-      "stage": "nascent",
+      "last_seen": "2026-08-04",
+      "stage": "emergent",
       "score": 49,
       "source_count": 21,
-      "total_mentions": 2,
+      "total_mentions": 3,
       "sources": [
         "hn",
         "huggingface-blog",
@@ -5801,7 +5814,7 @@
         "supabase",
         "reddit"
       ],
-      "growth_pct": 100,
+      "growth_pct": 13,
       "category": "TechConcept",
       "tags": [
         "story",
@@ -5852,7 +5865,8 @@
           "relation": "related-to",
           "reason": "工具使用型 Agent，本趋势正是为其提供工具来源的核心方法论。"
         }
-      ]
+      ],
+      "prev_score": 49
     },
     {
       "id": "trend-grok-4.5",
@@ -6195,15 +6209,15 @@
       "canonical_zh": "Zig 游戏开发",
       "aliases": [],
       "first_seen": "2026-07-13",
-      "last_seen": "2026-07-13",
-      "stage": "nascent",
+      "last_seen": "2026-08-04",
+      "stage": "emergent",
       "score": 49,
       "source_count": 1,
-      "total_mentions": 1,
+      "total_mentions": 2,
       "sources": [
         "hn"
       ],
-      "growth_pct": 100,
+      "growth_pct": 9,
       "category": "TechConcept",
       "tags": [
         "author_jorangreef",
@@ -6254,7 +6268,8 @@
           "relation": "related-to",
           "reason": "Zig 与 C 的无缝互操作特性，使其能直接复用现有游戏库（如 SDL、OpenGL），降低迁移成本。"
         }
-      ]
+      ],
+      "prev_score": 49
     },
     {
       "id": "trend-ai-agent-interview-trends",
@@ -6730,15 +6745,15 @@
       "canonical": "oomwoo",
       "aliases": [],
       "first_seen": "2026-07-07",
-      "last_seen": "2026-07-07",
-      "stage": "nascent",
+      "last_seen": "2026-08-04",
+      "stage": "emergent",
       "score": 48,
       "source_count": 1,
-      "total_mentions": 1,
+      "total_mentions": 2,
       "sources": [
         "github"
       ],
-      "growth_pct": 100,
+      "growth_pct": 7,
       "category": "OpenSource",
       "tags": [
         "fresh",
@@ -6777,7 +6792,9 @@
           "relation": "depends-on",
           "reason": "开源自动驾驶车项目，与oomwoo共享硬件设计哲学，但聚焦于室内导航而非清洁功能。 2. **ESPHome**：基于ESP32的智能家居开源框架，可用于控制oomwoo的电机和传感器。 3. **Roomba Open Interface**：iRobot开放的机器人控制协议，与oomwoo目标相似但封闭性更高。"
         }
-      ]
+      ],
+      "prev_score": 48,
+      "canonical_zh": "oomwoo"
     },
     {
       "id": "trend-pulpie",
@@ -7474,15 +7491,15 @@
       "canonical_zh": "Kimi Work",
       "aliases": [],
       "first_seen": "2026-07-21",
-      "last_seen": "2026-07-21",
-      "stage": "nascent",
+      "last_seen": "2026-08-04",
+      "stage": "emergent",
       "score": 48,
       "source_count": 1,
-      "total_mentions": 1,
+      "total_mentions": 2,
       "sources": [
         "hn"
       ],
-      "growth_pct": 100,
+      "growth_pct": 14,
       "category": "AIApp",
       "tags": [
         "story",
@@ -7534,7 +7551,8 @@
           "relation": "related-to",
           "reason": "Kimi Work 的核心功能之一，体现 AI 在流程优化中的角色。"
         }
-      ]
+      ],
+      "prev_score": 48
     },
     {
       "id": "trend-qwen-image-3.0",
@@ -8030,15 +8048,15 @@
       "canonical_zh": "Vibe 动画编程",
       "aliases": [],
       "first_seen": "2026-07-14",
-      "last_seen": "2026-08-02",
+      "last_seen": "2026-08-04",
       "stage": "emergent",
       "score": 48,
       "source_count": 1,
-      "total_mentions": 2,
+      "total_mentions": 3,
       "sources": [
         "hn"
       ],
-      "growth_pct": 11,
+      "growth_pct": 14,
       "category": "DevTools",
       "tags": [
         "author_baldvinmar",
@@ -8081,15 +8099,15 @@
       "canonical_zh": "AI 短剧生产管线",
       "aliases": [],
       "first_seen": "2026-07-14",
-      "last_seen": "2026-07-31",
+      "last_seen": "2026-08-04",
       "stage": "emergent",
       "score": 48,
       "source_count": 1,
-      "total_mentions": 3,
+      "total_mentions": 4,
       "sources": [
         "huggingface-blog"
       ],
-      "growth_pct": 18,
+      "growth_pct": 19,
       "category": "AIApp",
       "tags": [
         "huggingface-blog",
@@ -9696,15 +9714,15 @@
       "canonical_zh": "增量计算库",
       "aliases": [],
       "first_seen": "2026-07-21",
-      "last_seen": "2026-07-21",
-      "stage": "nascent",
+      "last_seen": "2026-08-04",
+      "stage": "emergent",
       "score": 46,
       "source_count": 1,
-      "total_mentions": 1,
+      "total_mentions": 2,
       "sources": [
         "hn"
       ],
-      "growth_pct": 100,
+      "growth_pct": 14,
       "category": "DevTools",
       "tags": [
         "story",
@@ -9757,7 +9775,8 @@
           "relation": "related-to",
           "reason": "缓存函数结果避免重复计算，是增量计算的简化形式。"
         }
-      ]
+      ],
+      "prev_score": 46
     },
     {
       "id": "trend-on-device-large-model-inference",
@@ -9916,15 +9935,15 @@
       "canonical_zh": "Infrawrench 云工作流管理器",
       "aliases": [],
       "first_seen": "2026-07-28",
-      "last_seen": "2026-07-28",
+      "last_seen": "2026-08-04",
       "stage": "nascent",
       "score": 46,
       "source_count": 1,
-      "total_mentions": 1,
+      "total_mentions": 2,
       "sources": [
         "showhn"
       ],
-      "growth_pct": 100,
+      "growth_pct": 29,
       "category": "DevTools",
       "tags": [
         "Productivity",
@@ -9960,7 +9979,8 @@
         "主要云服务商可能集成类似AI功能，使竞争更加激烈"
       ],
       "opportunity_summary_en": "Infrawrench Cloud Workflow Manager is a very early-stage AI-powered cloud management tool with only 1 mention and a low trend score. The market is highly competitive with established players, and the product concept lacks validation. However, if executed as a niche open-source or AI agent tool, it could find a small developer audience.",
-      "opportunity_summary_zh": "Infrawrench Cloud Workflow Manager 是一款非常早期的AI驱动云管理工具，仅有1次提及且趋势分低。市场竞争激烈，成熟玩家众多，产品概念缺乏验证。但如果作为小众开源或AI代理工具执行，或许能吸引一小部分开发者。"
+      "opportunity_summary_zh": "Infrawrench Cloud Workflow Manager 是一款非常早期的AI驱动云管理工具，仅有1次提及且趋势分低。市场竞争激烈，成熟玩家众多，产品概念缺乏验证。但如果作为小众开源或AI代理工具执行，或许能吸引一小部分开发者。",
+      "prev_score": 46
     },
     {
       "id": "trend-python-3.15-ultra-low-overhead-profiling",
@@ -10287,15 +10307,15 @@
       "canonical_zh": "服务的 AI Agent CLI 工具",
       "aliases": [],
       "first_seen": "2026-07-17",
-      "last_seen": "2026-08-02",
+      "last_seen": "2026-08-04",
       "stage": "emergent",
       "score": 43,
       "source_count": 1,
-      "total_mentions": 3,
+      "total_mentions": 4,
       "sources": [
         "googlenews"
       ],
-      "growth_pct": 19,
+      "growth_pct": 22,
       "category": "AIAgent",
       "tags": [
         "ai",
@@ -10436,15 +10456,15 @@
       "canonical_zh": "Odysseus 自托管 AI 工作区",
       "aliases": [],
       "first_seen": "2026-07-17",
-      "last_seen": "2026-07-17",
-      "stage": "nascent",
+      "last_seen": "2026-08-04",
+      "stage": "emergent",
       "score": 43,
       "source_count": 1,
-      "total_mentions": 1,
+      "total_mentions": 2,
       "sources": [
         "github"
       ],
-      "growth_pct": 100,
+      "growth_pct": 11,
       "category": "OpenSource",
       "tags": [
         "active",
@@ -10479,7 +10499,8 @@
       ],
       "opportunity_summary_en": "Odysseus targets a niche but growing demand for self-hosted AI workspaces driven by privacy concerns. The market is early and competition low, offering a window for indie developers to build differentiated open-source or lightweight tools. However, monetization is challenging and the trend lacks strong growth data, suggesting a cautious approach.",
       "opportunity_summary_zh": "Odysseus瞄准了由隐私关注驱动的自托管AI工作区这一小众但增长中的需求。市场早期且竞争低，为独立开发者构建差异化开源或轻量工具提供了窗口。然而，变现困难且趋势缺乏强劲增长数据，建议谨慎推进。",
-      "last_report_date": "2026-07-28"
+      "last_report_date": "2026-07-28",
+      "prev_score": 43
     },
     {
       "id": "trend-ai-agent-autonomous-red-team-testing-platform",
@@ -11196,15 +11217,15 @@
       "canonical_zh": "LLM Token 消耗减少代理",
       "aliases": [],
       "first_seen": "2026-07-17",
-      "last_seen": "2026-07-17",
-      "stage": "nascent",
+      "last_seen": "2026-08-04",
+      "stage": "emergent",
       "score": 38,
       "source_count": 1,
-      "total_mentions": 1,
+      "total_mentions": 2,
       "sources": [
         "devcommunity"
       ],
-      "growth_pct": 100,
+      "growth_pct": 11,
       "category": "DevTools",
       "tags": [
         "ai",
@@ -11238,7 +11259,8 @@
         "开源替代品可能迅速商品化市场"
       ],
       "opportunity_summary_en": "The LLM token consumption reduction proxy is a nascent opportunity with a clear value proposition and low competition. However, demand validation is weak and the risk of API provider integration or open-source commoditization is high. A focused CLI tool or API could capture early adopters, but revenue potential is moderate.",
-      "opportunity_summary_zh": "LLM token消耗减少代理是一个新兴机会，价值主张明确且竞争低。但需求验证薄弱，API提供商集成或开源商品化风险高。专注的CLI工具或API可能吸引早期用户，但收入潜力中等。"
+      "opportunity_summary_zh": "LLM token消耗减少代理是一个新兴机会，价值主张明确且竞争低。但需求验证薄弱，API提供商集成或开源商品化风险高。专注的CLI工具或API可能吸引早期用户，但收入潜力中等。",
+      "prev_score": 38
     },
     {
       "id": "trend-ai997-mac-agent-keeper",
@@ -11625,15 +11647,15 @@
       "canonical_zh": "AI 程序化建模",
       "aliases": [],
       "first_seen": "2026-07-13",
-      "last_seen": "2026-07-13",
-      "stage": "nascent",
+      "last_seen": "2026-08-04",
+      "stage": "emergent",
       "score": 36,
       "source_count": 1,
-      "total_mentions": 1,
+      "total_mentions": 2,
       "sources": [
         "v2ex"
       ],
-      "growth_pct": 100,
+      "growth_pct": 9,
       "category": "AIApp",
       "tags": [
         "产品发布",
@@ -11665,7 +11687,8 @@
         "用户依赖传统工作流，采用速度可能缓慢"
       ],
       "opportunity_summary_en": "The AI-powered procedural modeling space is nascent with low competition, offering a first-mover advantage for indie developers. Demand from 3D creators is moderate but growing, especially among indie game developers seeking faster iteration. A plugin or SaaS tool targeting specific workflows could capture early adopters, though market education and differentiation from big players are key risks.",
-      "opportunity_summary_zh": "AI程序化建模领域尚处于萌芽阶段，竞争较低，为独立开发者提供了先发优势。来自3D创作者的需求中等但正在增长，尤其是寻求更快迭代的独立游戏开发者。针对特定工作流的插件或SaaS工具可以吸引早期用户，但市场教育和与大型玩家的差异化是关键风险。"
+      "opportunity_summary_zh": "AI程序化建模领域尚处于萌芽阶段，竞争较低，为独立开发者提供了先发优势。来自3D创作者的需求中等但正在增长，尤其是寻求更快迭代的独立游戏开发者。针对特定工作流的插件或SaaS工具可以吸引早期用户，但市场教育和与大型玩家的差异化是关键风险。",
+      "prev_score": 36
     },
     {
       "id": "trend-multi-agent-clinical-symptom-detection",
@@ -11673,15 +11696,15 @@
       "canonical_zh": "多 Agent 临床症状检测",
       "aliases": [],
       "first_seen": "2026-07-16",
-      "last_seen": "2026-07-31",
+      "last_seen": "2026-08-04",
       "stage": "emergent",
       "score": 36,
       "source_count": 1,
-      "total_mentions": 2,
+      "total_mentions": 3,
       "sources": [
         "arxiv"
       ],
-      "growth_pct": 13,
+      "growth_pct": 16,
       "category": "AIAgent",
       "tags": [],
       "summary_zh": "ArXiv 论文提出了一种无需微调的多 Agent 系统用于自主临床症状检测，代表了 Agent 在医疗领域的创新应用方向。",
@@ -11721,15 +11744,15 @@
       "canonical_zh": "ThreeBox聊天生成3D模型",
       "aliases": [],
       "first_seen": "2026-07-19",
-      "last_seen": "2026-07-19",
-      "stage": "nascent",
+      "last_seen": "2026-08-04",
+      "stage": "emergent",
       "score": 36,
       "source_count": 1,
-      "total_mentions": 1,
+      "total_mentions": 2,
       "sources": [
         "v2ex"
       ],
-      "growth_pct": 100,
+      "growth_pct": 12,
       "category": "AIAgent",
       "tags": [
         "产品发布",
@@ -11761,7 +11784,8 @@
         "技术不成熟可能导致用户体验差，阻碍采用。"
       ],
       "opportunity_summary_en": "ThreeBox Chat-to-3D Creation is a nascent trend with minimal competition and low SEO difficulty, offering a blue ocean opportunity. However, demand signals are weak and monetization is uncertain. Early movers can leverage the open-source code to build niche solutions for indie developers and creators.",
-      "opportunity_summary_zh": "ThreeBox Chat-to-3D Creation 是一个萌芽期趋势，竞争极少且SEO难度低，属于蓝海机会。然而，需求信号微弱，变现前景不明。早期进入者可利用开源代码为独立开发者和创作者构建垂直解决方案。"
+      "opportunity_summary_zh": "ThreeBox Chat-to-3D Creation 是一个萌芽期趋势，竞争极少且SEO难度低，属于蓝海机会。然而，需求信号微弱，变现前景不明。早期进入者可利用开源代码为独立开发者和创作者构建垂直解决方案。",
+      "prev_score": 36
     },
     {
       "id": "trend-microservices-to-monolith-return",
@@ -11976,15 +12000,15 @@
       "canonical": "Captchainbox",
       "aliases": [],
       "first_seen": "2026-07-07",
-      "last_seen": "2026-07-07",
-      "stage": "nascent",
+      "last_seen": "2026-08-04",
+      "stage": "emergent",
       "score": 35,
       "source_count": 1,
-      "total_mentions": 1,
+      "total_mentions": 2,
       "sources": [
         "hn"
       ],
-      "growth_pct": 100,
+      "growth_pct": 7,
       "category": "Productivity",
       "tags": [
         "story",
@@ -12030,7 +12054,9 @@
           "relation": "part-of",
           "reason": "指对传统邮件协议进行重构的趋势，强调去中心化、加密和用户控制权，Captchainbox可视为其一个功能分支。"
         }
-      ]
+      ],
+      "prev_score": 35,
+      "canonical_zh": "Captchainbox"
     },
     {
       "id": "trend-coding-agent-sandbox",
@@ -12038,15 +12064,15 @@
       "canonical_zh": "编码 Agent 沙箱",
       "aliases": [],
       "first_seen": "2026-07-14",
-      "last_seen": "2026-07-14",
-      "stage": "nascent",
+      "last_seen": "2026-08-04",
+      "stage": "emergent",
       "score": 35,
       "source_count": 1,
-      "total_mentions": 1,
+      "total_mentions": 2,
       "sources": [
         "v2ex"
       ],
-      "growth_pct": 100,
+      "growth_pct": 10,
       "category": "DevTools",
       "tags": [
         "产品发布",
@@ -12078,7 +12104,8 @@
         "初始市场需求低可能导致采用缓慢，难以实现产品市场契合"
       ],
       "opportunity_summary_en": "Coding Agent Sandbox is a nascent opportunity with minimal competition but also low proven demand. An MVP focusing on a VS Code extension or CLI tool for safe agent execution could capture early adopters. However, the risk of big players entering and slow initial growth make it a speculative bet.",
-      "opportunity_summary_zh": "编码 Agent 沙盒是一个新兴机会，竞争极少，但已证实的需求也很低。专注于安全 Agent 执行的 VS Code 扩展或 CLI 工具的 MVP 可以捕获早期用户。然而，大公司进入的风险和缓慢的初始增长使其成为一个投机性赌注。"
+      "opportunity_summary_zh": "编码 Agent 沙盒是一个新兴机会，竞争极少，但已证实的需求也很低。专注于安全 Agent 执行的 VS Code 扩展或 CLI 工具的 MVP 可以捕获早期用户。然而，大公司进入的风险和缓慢的初始增长使其成为一个投机性赌注。",
+      "prev_score": 35
     },
     {
       "id": "trend-ai-agent-observability",
@@ -12238,15 +12265,15 @@
       "canonical_zh": "LLM 生成文本检测",
       "aliases": [],
       "first_seen": "2026-07-17",
-      "last_seen": "2026-07-17",
-      "stage": "nascent",
+      "last_seen": "2026-08-04",
+      "stage": "emergent",
       "score": 35,
       "source_count": 1,
-      "total_mentions": 1,
+      "total_mentions": 2,
       "sources": [
         "arxiv"
       ],
-      "growth_pct": 100,
+      "growth_pct": 11,
       "category": "TechConcept",
       "tags": [],
       "summary_zh": "一篇关于使用 '经典' 机器学习方法检测 LLM 生成文本的文章在 Hacker News 上引发了热烈讨论，突显了 AI 内容真实性问题的持续重要性。",
@@ -12274,7 +12301,8 @@
       ],
       "opportunity_summary_en": "LLM-generated text detection is an early-stage concept with low current demand but potential growth. Competition is limited, offering a window for indie developers to build lightweight tools. However, monetization is uncertain and large players may dominate.",
       "opportunity_summary_zh": "LLM生成文本检测是一个早期概念，当前需求低但有增长潜力。竞争有限，为独立开发者提供了构建轻量级工具的窗口。然而，变现不确定且大厂可能主导。",
-      "last_report_date": "2026-07-28"
+      "last_report_date": "2026-07-28",
+      "prev_score": 35
     },
     {
       "id": "trend-coding-agent-as-digital-employee",
@@ -12938,15 +12966,15 @@
       "canonical_zh": "AI 品味与质量控制",
       "aliases": [],
       "first_seen": "2026-07-17",
-      "last_seen": "2026-07-17",
-      "stage": "nascent",
+      "last_seen": "2026-08-04",
+      "stage": "emergent",
       "score": 31,
       "source_count": 1,
-      "total_mentions": 1,
+      "total_mentions": 2,
       "sources": [
         "w2solo"
       ],
-      "growth_pct": 100,
+      "growth_pct": 11,
       "category": "TechConcept",
       "tags": [
         "product-launch",
@@ -12980,7 +13008,8 @@
         "概念过于抽象，缺乏更多研究难以实际落地。"
       ],
       "opportunity_summary_en": "AI Taste and Quality Control is an early-stage concept focused on preventing generic AI outputs. While competition is low and SEO is easy, the market is unproven with no clear demand signals. A lightweight open-source tool or API could test the waters, but revenue potential is limited.",
-      "opportunity_summary_zh": "AI 品味与质量控制是一个早期概念，旨在避免AI输出通用内容。虽然竞争少、SEO容易，但市场尚未验证，需求信号不明确。轻量级开源工具或API可用于试水，但变现潜力有限。"
+      "opportunity_summary_zh": "AI 品味与质量控制是一个早期概念，旨在避免AI输出通用内容。虽然竞争少、SEO容易，但市场尚未验证，需求信号不明确。轻量级开源工具或API可用于试水，但变现潜力有限。",
+      "prev_score": 31
     },
     {
       "id": "trend-agentic-pull-request-research",
@@ -13566,15 +13595,15 @@
       "canonical_zh": "面向 AI Agent 的分布式 Git 网络",
       "aliases": [],
       "first_seen": "2026-07-12",
-      "last_seen": "2026-07-12",
-      "stage": "nascent",
+      "last_seen": "2026-08-04",
+      "stage": "emergent",
       "score": 29,
       "source_count": 1,
-      "total_mentions": 1,
+      "total_mentions": 2,
       "sources": [
         "googlenews"
       ],
-      "growth_pct": 100,
+      "growth_pct": 9,
       "category": "Infra",
       "tags": [
         "googlenews",
@@ -13628,7 +13657,8 @@
           "relation": "complements",
           "reason": "分布式智能体网络，与 Git Network 共享去中心化协作理念。"
         }
-      ]
+      ],
+      "prev_score": 29
     },
     {
       "id": "trend-leanstral-1.5",
@@ -13785,15 +13815,15 @@
       "canonical_zh": "AI 护照",
       "aliases": [],
       "first_seen": "2026-07-14",
-      "last_seen": "2026-07-14",
-      "stage": "nascent",
+      "last_seen": "2026-08-04",
+      "stage": "emergent",
       "score": 29,
       "source_count": 1,
-      "total_mentions": 1,
+      "total_mentions": 2,
       "sources": [
         "googlenews"
       ],
-      "growth_pct": 100,
+      "growth_pct": 10,
       "category": "AIApp",
       "tags": [
         "ai",
@@ -13839,7 +13869,8 @@
           "relation": "related-to",
           "reason": "直接相关，聚焦于验证 AI 智能体的行为是否合规、是否被篡改，是 AI Passport 的核心应用之一。"
         }
-      ]
+      ],
+      "prev_score": 29
     },
     {
       "id": "trend-ai-coding-tools-as-hiring-signals",
@@ -13944,15 +13975,15 @@
       "canonical_zh": "声明式工具编排语言",
       "aliases": [],
       "first_seen": "2026-07-14",
-      "last_seen": "2026-07-14",
-      "stage": "nascent",
+      "last_seen": "2026-08-04",
+      "stage": "emergent",
       "score": 29,
       "source_count": 1,
-      "total_mentions": 1,
+      "total_mentions": 2,
       "sources": [
         "w2solo"
       ],
-      "growth_pct": 100,
+      "growth_pct": 10,
       "category": "TechConcept",
       "tags": [
         "product-launch",
@@ -13984,7 +14015,8 @@
         "大型 AI 提供商（如 OpenAI、Google）可能将类似功能内置到平台"
       ],
       "opportunity_summary_en": "Declarative tool orchestration languages are an early-stage concept with limited signals. The lack of competition and low SEO difficulty make it a potential niche for open-source experimentation. However, market demand and revenue paths are unclear, and large AI vendors pose a significant risk.",
-      "opportunity_summary_zh": "声明式工具编排语言是一个早期概念，信号有限。竞争少、SEO 难度低，适合开源实验。但市场需求和变现路径不明确，大型 AI 厂商是主要风险。"
+      "opportunity_summary_zh": "声明式工具编排语言是一个早期概念，信号有限。竞争少、SEO 难度低，适合开源实验。但市场需求和变现路径不明确，大型 AI 厂商是主要风险。",
+      "prev_score": 29
     },
     {
       "id": "trend-vibe-coding-personal-cloud-storage",
@@ -14284,14 +14316,14 @@
     {
       "id": "trend-sageport",
       "canonical": "Sageport",
-      "canonical_zh": "",
+      "canonical_zh": "Sageport",
       "aliases": [],
       "first_seen": "2026-07-12",
-      "last_seen": "2026-07-12",
-      "stage": "nascent",
+      "last_seen": "2026-08-04",
+      "stage": "emergent",
       "score": 28,
       "source_count": 21,
-      "total_mentions": 2,
+      "total_mentions": 3,
       "sources": [
         "w2solo",
         "huggingface-blog",
@@ -14315,7 +14347,7 @@
         "reddit",
         "hn"
       ],
-      "growth_pct": 100,
+      "growth_pct": 13,
       "category": "Productivity",
       "tags": [
         "indie-dev",
@@ -14347,7 +14379,8 @@
         "开源替代品可能分散用户基础"
       ],
       "opportunity_summary_en": "Sageport is an early-stage open-source SSH workbench with AI integration, targeting a niche but consolidating market. Low competition and nascent traction offer a window, but demand is moderate and monetization challenging. Focus on differentiation through AI assistant and seamless credential management to capture developer mindshare.",
-      "opportunity_summary_zh": "Sageport是一款集成AI的开源SSH工作台，瞄准小众但整合中的市场。低竞争和初期势头提供了窗口期，但需求温和且变现困难。应通过AI助手和无缝凭据管理实现差异化，以获取开发者关注。"
+      "opportunity_summary_zh": "Sageport是一款集成AI的开源SSH工作台，瞄准小众但整合中的市场。低竞争和初期势头提供了窗口期，但需求温和且变现困难。应通过AI助手和无缝凭据管理实现差异化，以获取开发者关注。",
+      "prev_score": 28
     },
     {
       "id": "trend-ai-tattoo-generator",
@@ -14694,15 +14727,15 @@
       "canonical_zh": "AI 驱动 SaaS 优化讨论",
       "aliases": [],
       "first_seen": "2026-07-16",
-      "last_seen": "2026-07-16",
-      "stage": "nascent",
+      "last_seen": "2026-08-04",
+      "stage": "emergent",
       "score": 28,
       "source_count": 1,
-      "total_mentions": 1,
+      "total_mentions": 2,
       "sources": [
         "w2solo"
       ],
-      "growth_pct": 100,
+      "growth_pct": 11,
       "category": "DX",
       "tags": [
         "discussion",
@@ -14734,7 +14767,8 @@
         "开发者对新工具的怀疑态度可能减缓采用。"
       ],
       "opportunity_summary_en": "The debate around hidden costs of AI-driven SaaS optimization is nascent but signals a niche opportunity for tools that quantify and mitigate these costs. Current competition is low, and demand is moderate among developer communities. A lightweight VS Code extension or CLI tool could validate interest with minimal development effort.",
-      "opportunity_summary_zh": "关于AI驱动SaaS优化隐性成本的讨论处于早期阶段，但为量化并降低这些成本的工具提供了细分机会。当前竞争较低，开发者社区需求中等。通过轻量级VS Code扩展或CLI工具，可以用最小的开发投入验证兴趣。"
+      "opportunity_summary_zh": "关于AI驱动SaaS优化隐性成本的讨论处于早期阶段，但为量化并降低这些成本的工具提供了细分机会。当前竞争较低，开发者社区需求中等。通过轻量级VS Code扩展或CLI工具，可以用最小的开发投入验证兴趣。",
+      "prev_score": 28
     },
     {
       "id": "trend-vibe-coding-and-ai-debt",
@@ -14742,15 +14776,15 @@
       "canonical_zh": "Vibe Coding 与 AI 债务",
       "aliases": [],
       "first_seen": "2026-07-17",
-      "last_seen": "2026-07-17",
-      "stage": "nascent",
+      "last_seen": "2026-08-04",
+      "stage": "emergent",
       "score": 28,
       "source_count": 1,
-      "total_mentions": 1,
+      "total_mentions": 2,
       "sources": [
         "w2solo"
       ],
-      "growth_pct": 100,
+      "growth_pct": 11,
       "category": "DX",
       "tags": [
         "discussion",
@@ -14780,7 +14814,8 @@
         "大型 AI 平台（如 GitHub Copilot）可能轻易添加类似功能"
       ],
       "opportunity_summary_en": "The 'Vibe Coding and AI Debt' concept is highly nascent with zero traction and only a single metaphorical article. While competition is absent, demand is unproven and the market size appears negligible. The opportunity is speculative and high-risk, best suited for a low-effort experiment rather than a serious product.",
-      "opportunity_summary_zh": "'Vibe Coding and AI Debt' 概念非常早期，零热度，仅有一篇隐喻性文章。虽然竞争缺失，但需求未被证实，市场规模极小。该机会具有投机性和高风险，更适合作为低投入的试验，而非认真打造产品。"
+      "opportunity_summary_zh": "'Vibe Coding and AI Debt' 概念非常早期，零热度，仅有一篇隐喻性文章。虽然竞争缺失，但需求未被证实，市场规模极小。该机会具有投机性和高风险，更适合作为低投入的试验，而非认真打造产品。",
+      "prev_score": 28
     },
     {
       "id": "trend-agent-triangle-model",
@@ -14886,15 +14921,15 @@
       "canonical": "AI Agent Self-Edit Traceability",
       "aliases": [],
       "first_seen": "2026-07-09",
-      "last_seen": "2026-08-02",
+      "last_seen": "2026-08-04",
       "stage": "emergent",
       "score": 27,
       "source_count": 1,
-      "total_mentions": 2,
+      "total_mentions": 3,
       "sources": [
         "devcommunity"
       ],
-      "growth_pct": 8,
+      "growth_pct": 12,
       "category": "AIAgent",
       "tags": [
         "ai",
@@ -15115,13 +15150,13 @@
       "canonical": "TypeScript 7.0 Release",
       "aliases": [],
       "first_seen": "2026-07-09",
-      "last_seen": "2026-07-09",
-      "stage": "nascent",
+      "last_seen": "2026-08-04",
+      "stage": "emergent",
       "score": 0,
       "source_count": 0,
-      "total_mentions": 0,
+      "total_mentions": 1,
       "sources": [],
-      "growth_pct": 100,
+      "growth_pct": 4,
       "category": "DevTools",
       "tags": [],
       "summary_zh": "TypeScript 7.0 发布在多个社区引发讨论，作为主流语言的重要版本更新值得追踪。",
@@ -15157,13 +15192,13 @@
       "canonical": "Autonomous Driving High-Risk Scenario Dataset",
       "aliases": [],
       "first_seen": "2026-07-09",
-      "last_seen": "2026-07-09",
-      "stage": "nascent",
+      "last_seen": "2026-08-04",
+      "stage": "emergent",
       "score": 0,
       "source_count": 0,
-      "total_mentions": 0,
+      "total_mentions": 1,
       "sources": [],
-      "growth_pct": 100,
+      "growth_pct": 4,
       "category": "AIApp",
       "tags": [],
       "summary_zh": "多个学术信号关注用 LLM 标注的高风险驾驶场景数据集，推动自动驾驶安全研究。",
@@ -15517,16 +15552,16 @@
     {
       "id": "trend-pgbouncer-4x-throughput",
       "canonical": "PgBouncer 4x Throughput",
-      "canonical_zh": "",
+      "canonical_zh": "PgBouncer 4倍吞吐量",
       "aliases": [],
       "first_seen": "2026-07-12",
-      "last_seen": "2026-07-12",
-      "stage": "nascent",
+      "last_seen": "2026-08-04",
+      "stage": "emergent",
       "score": 0,
       "source_count": 0,
-      "total_mentions": 0,
+      "total_mentions": 1,
       "sources": [],
-      "growth_pct": 100,
+      "growth_pct": 4,
       "category": "Infra",
       "tags": [],
       "summary_zh": "一项将 PgBouncer 吞吐量提升 4 倍的技术成果，对 PostgreSQL 连接池优化有重要参考价值。",
@@ -15863,13 +15898,13 @@
       "canonical_zh": "Hugging Face 桌面客户端",
       "aliases": [],
       "first_seen": "2026-07-14",
-      "last_seen": "2026-07-14",
-      "stage": "nascent",
+      "last_seen": "2026-08-04",
+      "stage": "emergent",
       "score": 0,
       "source_count": 0,
-      "total_mentions": 0,
+      "total_mentions": 1,
       "sources": [],
-      "growth_pct": 100,
+      "growth_pct": 5,
       "category": "DevTools",
       "tags": [],
       "summary_zh": "开源的全平台 Hugging Face 桌面客户端，支持断点续传、镜像站和缓存清理，解决了开发者下载和管理模型的实际痛点。",
@@ -16199,16 +16234,16 @@
     {
       "id": "trend-chatgpt-work-enterprise-management",
       "canonical": "ChatGPT Work Enterprise Management",
-      "canonical_zh": "",
+      "canonical_zh": "ChatGPT工作企业管理",
       "aliases": [],
       "first_seen": "2026-07-30",
-      "last_seen": "2026-07-30",
+      "last_seen": "2026-08-04",
       "stage": "nascent",
       "score": 0,
       "source_count": 0,
-      "total_mentions": 0,
+      "total_mentions": 1,
       "sources": [],
-      "growth_pct": 100,
+      "growth_pct": 20,
       "category": "DevTools",
       "tags": [],
       "summary_zh": "IT 管理员可以大规模管理 ChatGPT Work，表明 OpenAI 正在强化企业级部署与治理能力，推动 AI 工具进入受管控的企业 IT 环境。",
@@ -16244,13 +16279,13 @@
       "canonical_zh": "企业 AI 采纳案例研究",
       "aliases": [],
       "first_seen": "2026-07-30",
-      "last_seen": "2026-07-30",
+      "last_seen": "2026-08-04",
       "stage": "nascent",
       "score": 0,
       "source_count": 0,
-      "total_mentions": 0,
+      "total_mentions": 1,
       "sources": [],
-      "growth_pct": 100,
+      "growth_pct": 20,
       "category": "Industry",
       "tags": [],
       "summary_zh": "Zapier、Shopify、维珍大西洋航空等企业分享 ChatGPT Work 使用案例，反映了大型企业拥抱 AI 工作流、提升运营效率的行业趋势。",
@@ -16589,13 +16624,13 @@
       "canonical_zh": "AI模型基准测试怀疑论",
       "aliases": [],
       "first_seen": "2026-07-31",
-      "last_seen": "2026-07-31",
+      "last_seen": "2026-08-04",
       "stage": "nascent",
       "score": 0,
       "source_count": 0,
-      "total_mentions": 0,
+      "total_mentions": 1,
       "sources": [],
-      "growth_pct": 100,
+      "growth_pct": 25,
       "category": "Industry",
       "tags": [],
       "summary_zh": "社区对现有AI模型基准测试的有效性和可操纵性提出质疑，呼吁更真实、更全面的评估方法。",
@@ -16933,13 +16968,13 @@
       "canonical_zh": "智能体记忆架构",
       "aliases": [],
       "first_seen": "2026-07-31",
-      "last_seen": "2026-07-31",
+      "last_seen": "2026-08-04",
       "stage": "nascent",
       "score": 0,
       "source_count": 0,
-      "total_mentions": 0,
+      "total_mentions": 1,
       "sources": [],
-      "growth_pct": 100,
+      "growth_pct": 25,
       "category": "AIAgent",
       "tags": [],
       "summary_zh": "为AI Agent设计长期、短期和情景记忆的架构模式，以支持持续学习和个性化交互。",
@@ -17064,13 +17099,13 @@
       "canonical_zh": "模型蒸馏技术",
       "aliases": [],
       "first_seen": "2026-07-31",
-      "last_seen": "2026-07-31",
+      "last_seen": "2026-08-04",
       "stage": "nascent",
       "score": 0,
       "source_count": 0,
-      "total_mentions": 0,
+      "total_mentions": 1,
       "sources": [],
-      "growth_pct": 100,
+      "growth_pct": 25,
       "category": "AIModel",
       "tags": [],
       "summary_zh": "将大型语言模型的知识蒸馏到更小、更高效的模型中的新方法和案例分享增多。",
@@ -18105,14 +18140,14 @@
     {
       "id": "trend-developer-knowledge-graph",
       "canonical": "Developer Knowledge Graph",
-      "canonical_zh": "",
+      "canonical_zh": "开发者知识图谱",
       "aliases": [],
       "first_seen": "2026-08-04",
       "last_seen": "2026-08-04",
       "stage": "nascent",
       "score": 0,
       "source_count": 0,
-      "total_mentions": 0,
+      "total_mentions": 1,
       "sources": [],
       "growth_pct": 100,
       "category": "DX",
@@ -18279,14 +18314,14 @@
     {
       "id": "trend-agent-observability",
       "canonical": "Agent Observability",
-      "canonical_zh": "",
+      "canonical_zh": "Agent可观测性",
       "aliases": [],
       "first_seen": "2026-08-04",
       "last_seen": "2026-08-04",
       "stage": "nascent",
       "score": 0,
       "source_count": 0,
-      "total_mentions": 0,
+      "total_mentions": 1,
       "sources": [],
       "growth_pct": 100,
       "category": "Infra",
