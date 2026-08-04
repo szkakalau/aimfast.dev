@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#1a1d24">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://www.aimfast.dev/terminal-speed-arena/">
+  <meta property="og:type" content="product">
+  <meta property="og:title" content="Terminal Speed Arena — Benchmark your terminal, beat 97% of developers">
+  <meta property="og:description" content="Run a 3-second speed test. Compare your terminal's performance with developers worldwide and get personalized optimization tips.">
+  <meta property="og:url" content="https://www.aimfast.dev/terminal-speed-arena/">
+  <meta property="og:site_name" content="AimFast.Dev">
+  <meta property="og:image" content="https://www.aimfast.dev/og/terminal-speed-arena.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Terminal Speed Arena — Benchmark your terminal, beat 97% of developers">
+  <meta name="twitter:description" content="Run a 3-second speed test. Compare your terminal's performance with developers worldwide and get personalized optimization tips.">
+  <meta name="twitter:image" content="https://www.aimfast.dev/og/terminal-speed-arena.png">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Terminal Speed Arena","applicationCategory":"AIApplication","operatingSystem":"Web","description":"Benchmark your terminal's speed against developers worldwide. Get a performance score, percentile rank, and personalized optimization tips.","url":"https://www.aimfast.dev/terminal-speed-arena/","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+  </script>
+  <title>Terminal Speed Arena — Benchmark your terminal, beat 97% of developers | www.aimfast.dev</title>
+  <meta name="description" content="Run a 3-second speed test. Compare your terminal's performance with developers worldwide and get personalized optimization tips.">
+  <link rel="stylesheet" href="/_ds/base.css">
+  <link rel="stylesheet" href="/_ds/components.css">
+  <style>
+    /* Page-specific layout only — no token redefinition */
+    .hero {
+      padding: var(--space-8) 0 var(--space-6);
+      text-align: center;
+    }
+    .hero h1 {
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+    .hero-sub {
+      max-width: 560px;
+      margin: var(--space-3) auto var(--space-5);
+      font-size: 1.15rem;
+      color: var(--color-text-secondary);
+    }
+    .signup-form {
+      display: flex;
+      gap: var(--space-2);
+      max-width: 480px;
+      margin: 0 auto var(--space-3);
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .signup-form input[type="email"] {
+      flex: 1 1 240px;
+      height: 52px;
+      padding: 0 var(--space-3);
+      font-size: 1rem;
+      font-family: var(--font-body);
+      color: var(--color-text);
+      background-color: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      transition: border-color var(--duration-normal) var(--ease-out);
+    }
+    .signup-form input[type="email"]:focus {
+      outline: none;
+      border-color: var(--color-accent);
+      box-shadow: 0 0 0 3px color-mix(in oklch, var(--color-accent) 20%, transparent);
+    }
+    .signup-form .btn {
+      height: 52px;
+      padding: 0 var(--space-4);
+      font-size: 1rem;
+      border-radius: 8px;
+    }
+    .form-success,
+    .form-error {
+      max-width: 480px;
+      margin: var(--space-2) auto 0;
+      padding: var(--space-2) var(--space-3);
+      border-radius: 8px;
+      font-weight: 500;
+      text-align: center;
+    }
+    .form-success {
+      background: color-mix(in oklch, var(--color-accent) 12%, transparent);
+      color: var(--color-accent);
+      border: 1px solid color-mix(in oklch, var(--color-accent) 30%, transparent);
+    }
+    .form-error {
+      background: color-mix(in oklch, #e5484d 12%, transparent);
+      color: #e5484d;
+      border: 1px solid color-mix(in oklch, #e5484d 30%, transparent);
+    }
+    .trust-badge {
+      display: flex;
+      justify-content: center;
+      gap: var(--space-4);
+      flex-wrap: wrap;
+      margin-top: var(--space-3);
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+    }
+    .trust-badge span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .why-section {
+      padding: var(--space-8) 0;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .why-section h2 {
+      font-size: 2rem;
+      margin-bottom: var(--space-4);
+      text-align: center;
+    }
+    .why-section p {
+      margin-bottom: var(--space-4);
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: var(--color-text-secondary);
+    }
+    .how-section {
+      padding: var(--space-8) 0;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .how-section h2 {
+      font-size: 2rem;
+      margin-bottom: var(--space-5);
+      text-align: center;
+    }
+    .step {
+      display: flex;
+      gap: var(--space-4);
+      margin-bottom: var(--space-5);
+      align-items: flex-start;
+    }
+    .step-num {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--color-surface-alt);
+      border: 1px solid var(--color-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-mono);
+      font-weight: 600;
+      color: var(--color-accent);
+    }
+    .step-content h3 {
+      font-size: 1.2rem;
+      margin-bottom: var(--space-1);
+    }
+    .step-content p {
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+      margin: 0;
+    }
+    .selling-section {
+      padding: var(--space-8) 0;
+    }
+    .selling-section h2 {
+      font-size: 2rem;
+      margin-bottom: var(--space-5);
+      text-align: center;
+    }
+    .selling-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-5);
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .selling-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      padding: var(--space-5) var(--space-4);
+      text-align: left;
+    }
+    .selling-card .icon {
+      margin-bottom: var(--space-3);
+      color: var(--color-accent);
+    }
+    .selling-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: var(--space-2);
+    }
+    .selling-card p {
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+      margin: 0;
+      font-size: 0.95rem;
+    }
+    .trustbar {
+      padding: var(--space-5) 0 var(--space-4);
+      text-align: center;
+      border-top: 1px solid var(--color-border);
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .trustbar p {
+      color: var(--color-text-muted);
+      font-size: 0.9rem;
+      margin: 0;
+    }
+    .footer {
+      padding: var(--space-5) 0 var(--space-6);
+      text-align: center;
+      border-top: 1px solid var(--color-border);
+      color: var(--color-text-muted);
+      font-size: 0.9rem;
+    }
+    @media (max-width: 768px) {
+      .selling-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+      }
+      .signup-form {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .signup-form input[type="email"] {
+        width: 100%;
+      }
+      .signup-form .btn {
+        width: 100%;
+      }
+      .hero {
+        padding: var(--space-6) 0 var(--space-4);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO with embedded email form -->
+  <section class="hero container">
+    <h1>Your terminal is slow. Prove it.</h1>
+    <p class="hero-sub">Run a 3-second speed test. See your global rank. Get optimization tips.</p>
+    
+    <!-- Inline email capture form -->
+    <form id="signup-form" class="signup-form" action="https://formspree.io/f/your-form-id" method="POST" onsubmit="handleSubmit(event)">
+      <input type="email" name="email" placeholder="you@example.com" required autocomplete="email">
+      <button type="submit" class="btn btn-primary btn-lg">Get Early Access</button>
+    </form>
+    <div id="form-message" class="form-success" style="display: none;">✓ You're on the list!</div>
+    <div id="form-error" class="form-error" style="display: none;">Something went wrong. Please try again.</div>
+
+    <div class="trust-badge">
+      <span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+        No install required
+      </span>
+      <span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        Free forever
+      </span>
+      <span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Privacy-first
+      </span>
+    </div>
+  </section>
+
+  <!-- WHY THIS MATTERS -->
+  <section class="why-section container">
+    <h2>Why Terminal Speed Matters Right Now</h2>
+    <p>
+      The recent <strong>Shitty terminal</strong> discussion on Hacker News — with 164 points and 150 comments — revealed a raw nerve among developers. The post, ironically titled "memory-unsafe and faster than yours," sparked a flood of benchmark comparisons, with developers passionately defending their terminal emulator of choice. The underlying anxiety is real: every millisecond of lag, every slow render, every stuttering scroll adds friction to a tool you open dozens of times a day.
+    </p>
+    <p>
+      Existing solutions fall short. Terminal emulators like Alacritty or Kitty are fast, but they don't tell you <em>your</em> terminal's performance. Tools like Hyperfine benchmark command execution, not the terminal itself. Static blog posts compare a few options, but they can't measure your specific setup — your shell, your plugins, your hardware. There's a gap: no quick, personalized way to measure and improve your terminal's speed.
+    </p>
+    <p>
+      The timing is perfect. The Shitty project's viral moment shows that developers are actively discussing terminal performance right now. The conversation is fresh, the competitive spirit is high, and the desire to optimize is palpable. This is the moment to turn that energy into a measurable, shareable benchmark — and to help developers actually do something about their terminal's speed.
+    </p>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how-section container">
+    <h2>How It Works</h2>
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <h3>Run the benchmark</h3>
+        <p>Click "Start Test" and our script runs three quick measurements in your browser: startup simulation, rendering frame rate, and scroll smoothness. It takes about 3 seconds.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <h3>See your score & rank</h3>
+        <p>You get a performance score from 0 to 100, plus your percentile rank compared to thousands of other developers. See exactly where you stand globally.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <h3>Get personalized tips</h3>
+        <p>Based on your results, we generate 3 actionable optimization suggestions — from shell configuration tweaks to terminal emulator recommendations. No generic advice.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SELLING POINTS -->
+  <section class="selling-section container">
+    <h2>What You Get</h2>
+    <div class="selling-grid">
+      <div class="selling-card">
+        <div class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h3>3-second speed test</h3>
+        <p>No install, no setup. Just open the page and run the benchmark. It measures startup, rendering, and scroll performance in real-time using Web Performance APIs. Get your score instantly.</p>
+      </div>
+      <div class="selling-card">
+        <div class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8"/><path d="M12 17v4"/><path d="M17 3H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2z"/><path d="M9 7h6"/><path d="M9 11h6"/></svg>
+        </div>
+        <h3>Global leaderboard</h3>
+        <p>Compare your terminal's speed with developers from around the world. See your percentile rank and how your setup stacks up against the average. The competitive angle makes it fun to share.</p>
+      </div>
+      <div class="selling-card">
+        <div class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+        </div>
+        <h3>Personalized optimization</h3>
+       

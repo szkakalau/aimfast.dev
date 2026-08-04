@@ -1,22 +1,21 @@
 {
-  "date": "2026-08-03",
-  "generated_at": "2026-08-03T08:59:59.880830+08:00",
-  "success": true,
-  "exit_code": 0,
-  "duration_minutes": 43,
+  "date": "2026-08-04",
+  "generated_at": "2026-08-04T11:36:24.023091+08:00",
+  "success": false,
+  "exit_code": 1,
+  "duration_minutes": 45,
   "steps": {
     "enrichment": {
-      "status": "skipped",
-      "duration_sec": 0,
-      "reason": "engine_not_found"
+      "status": "generated",
+      "duration_sec": 0
     },
     "report": {
       "status": "generated",
-      "duration_sec": 61
+      "duration_sec": 84
     },
     "action": {
       "status": "generated",
-      "duration_sec": 24
+      "duration_sec": 32
     },
     "lp": {
       "status": "generated",
@@ -24,26 +23,24 @@
     }
   },
   "tokens": {
-    "total": 1493754,
-    "calls": 589
+    "total": 2486619,
+    "calls": 957
   },
   "sources": {
     "total": 28,
-    "successful": 25,
-    "failed": 3,
+    "successful": 26,
+    "failed": 2,
     "failed_names": [
       "producthunt",
-      "stackoverflow",
-      "substack"
+      "trends"
     ]
   },
   "terms": {
-    "total": 312,
-    "new_today": 1
+    "total": 332,
+    "new_today": 20
   },
   "warnings": [
-    "步骤 'Step1: Collectors (28 sources)' 耗时过长 (23 分钟)",
-    "步骤 'Step6b: Recurring' 耗时过长 (12 分钟)"
+    "步骤 'Step1: Collectors (28 sources)' 耗时过长 (24 分钟)"
   ],
-  "consecutive_success_days": 1
+  "consecutive_success_days": 0
 }
