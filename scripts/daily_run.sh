@@ -89,14 +89,38 @@ log "Date: $DATE"
 log "Project: $PROJECT_ROOT"
 log "Python: $($PYTHON --version 2>&1)"
 
-# Day-level lock file to prevent duplicate runs
+# Two-phase locking to prevent duplicate + concurrent runs
 DAILY_DIR="$PROJECT_ROOT/daily/$DATE"
-LOCK_FILE="$DAILY_DIR/.pipeline_done"
+DONE_FILE="$DAILY_DIR/.pipeline_done"
+RUNNING_FILE="$DAILY_DIR/.pipeline_running"
 mkdir -p "$DAILY_DIR"
-if [ -f "$LOCK_FILE" ]; then
-    log "Pipeline already completed for $DATE (lock file exists). Exiting."
+
+# Phase 1: Completion lock — skip if already done today
+if [ -f "$DONE_FILE" ]; then
+    log "Pipeline already completed for $DATE (done lock exists). Exiting."
     exit 0
 fi
+
+# Phase 2: Running lock — prevent concurrent runs
+if [ -f "$RUNNING_FILE" ]; then
+    OLD_PID=$(cat "$RUNNING_FILE" 2>/dev/null)
+    if [ -n "$OLD_PID" ] && kill -0 "$OLD_PID" 2>/dev/null; then
+        log "Pipeline already running for $DATE (PID $OLD_PID). Exiting."
+        exit 0
+    else
+        log "Stale running lock found (PID ${OLD_PID:-unknown} not alive). Removing."
+        rm -f "$RUNNING_FILE"
+    fi
+fi
+
+# Acquire running lock
+echo $$ > "$RUNNING_FILE"
+
+# Cleanup: always remove running lock on exit (done lock is written explicitly)
+_cleanup_running_lock() {
+    rm -f "$RUNNING_FILE"
+}
+trap _cleanup_running_lock EXIT
 
 # ─── Step 1: Signal Collection ───
 
@@ -678,8 +702,8 @@ PIPELINE_EXIT_CODE=0
 log "=== Pipeline Complete ==="
 log "Failed steps: ${FAILED_STEPS:-none}"
 
-# Write lock file
-echo "done" > "$LOCK_FILE"
+# Write completion lock (running lock removed by EXIT trap)
+echo "done" > "$DONE_FILE"
 
 if [ -d "$DAILY_DIR" ]; then
     log "Output: $(ls -1 "$DAILY_DIR" | tr '\n' ' ')"
