@@ -727,8 +727,8 @@ def main():
     print(f"\n{'='*50}")
     print(f"[OK] 共对比 {len(generated)} 天")
     if bp_missing:
-        print(f"⚠️  BuilderPulse 缺失 {len(bp_missing)} 天: {', '.join(bp_missing)}")
-    print(f"📂 报告目录: {COMPARE_DIR}")
+        print(f"[WARN] BuilderPulse 缺失 {len(bp_missing)} 天: {', '.join(bp_missing)}")
+    print(f"[OK] 报告目录: {COMPARE_DIR}")
 
 
 if __name__ == "__main__":

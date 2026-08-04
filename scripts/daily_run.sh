@@ -348,7 +348,7 @@ if [ -f tracking/trend_terms.json ]; then
     # Extract lightweight snapshot: only fields needed by Dashboard Watchlist delta computation
     $PYTHON -c "
 import json, sys
-with open('tracking/trend_terms.json') as f:
+with open('tracking/trend_terms.json', encoding='utf-8') as f:
     data = json.load(f)
 snapshot = [
     {
@@ -361,7 +361,7 @@ snapshot = [
     }
     for t in data.get('terms', [])
 ]
-with open(f'$HISTORY_DIR/trends_${DATE}.json', 'w') as f:
+with open(f'$HISTORY_DIR/trends_${DATE}.json', 'w', encoding='utf-8') as f:
     json.dump(snapshot, f)
 print(f'  [History] Saved {len(snapshot)} terms to trends_${DATE}.json')
 " 2>&1

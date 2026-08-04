@@ -125,7 +125,7 @@ def _find_candidate_pairs(term_names: list[str]) -> list[tuple[int, int, float]]
         return pairs
 
     # ── 大数据集: 词索引方案（参考 track_recurring.py 倒排索引模式）──
-    print(f"  [Norm] term 数超过 {_WORD_INDEX_THRESHOLD}，切换词索引方案避免 O(n²)")
+    print(f"  [Norm] term 数超过 {_WORD_INDEX_THRESHOLD}，切换词索引方案避免 O(n^2)")
 
     # 1. 构建倒排索引: word → [term_indices]
     from collections import defaultdict
@@ -165,7 +165,7 @@ def _find_candidate_pairs(term_names: list[str]) -> list[tuple[int, int, float]]
                     pairs.append((i, j, s))
 
     print(f"  [Norm] 词索引: {len(word_index)} 个关键词, "
-          f"候选对 {len(seen_pairs)} (vs O(n²)={n*(n-1)//2:,})")
+          f"候选对 {len(seen_pairs)} (vs O(n^2)={n*(n-1)//2:,})")
     return pairs
 
 
