@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-04T13:05:16.494772+08:00",
+  "updated_at": "2026-08-04T13:22:06.186767+08:00",
   "terms": [
     {
       "id": "trend-claude-agent-sdk",
@@ -18568,6 +18568,51 @@
       ],
       "opportunity_summary_en": "AI-powered code search is an emerging DevTools trend with growing demand due to larger codebases and AI agents. Competition is high from established players, but niche opportunities exist for focused, self-hosted, or specialized solutions. An MVP could be built in about a month, with moderate revenue potential if differentiation is achieved.",
       "opportunity_summary_zh": "AI 驱动的代码搜索是一个新兴的 DevTools 趋势，随着代码库扩大和 AI 智能体的普及，需求不断增长。现有玩家竞争激烈，但针对特定场景、自托管或专业化解决方案仍有细分机会。MVP 大约一个月可以构建，如果能实现差异化，收入潜力中等。"
+    },
+    {
+      "id": "trend-ai-agents-on-chain",
+      "canonical": "AI Agents On-Chain",
+      "canonical_zh": "链上AI代理",
+      "aliases": [],
+      "first_seen": "2026-08-04",
+      "last_seen": "2026-08-04",
+      "stage": "nascent",
+      "score": 0,
+      "source_count": 0,
+      "total_mentions": 0,
+      "sources": [],
+      "growth_pct": 100,
+      "category": "TechConcept",
+      "tags": [],
+      "summary_zh": "AI代理开始直接在区块链上执行交易和操作，形成新的链上参与者生态。",
+      "summary_en": "AI agents are becoming active on-chain participants, executing transactions and operations directly on blockchain networks.",
+      "research_md_path": "content/trends/ai-agents-on-chain.md",
+      "opportunity_score": 45,
+      "market_score": 65,
+      "competition_score": 20,
+      "demand_score": 40,
+      "seo_difficulty": 30,
+      "suggested_products": [
+        "AI Agent",
+        "SaaS",
+        "API",
+        "Open Source",
+        "SDK/Library"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Major platforms like Ethereum or Solana could release official agent frameworks, dominating the space.",
+        "Regulatory uncertainty around autonomous AI agents executing financial transactions.",
+        "Low adoption due to complexity and lack of immediate use cases."
+      ],
+      "risk_factors_zh": [
+        "以太坊或Solana等主流平台可能发布官方代理框架，占据主导地位。",
+        "自主AI代理执行金融交易的监管不确定性。",
+        "由于复杂性和缺乏即时用例，采用率可能较低。"
+      ],
+      "opportunity_summary_en": "AI agents on-chain is a nascent trend with high potential but unproven demand. Early entry offers a blue ocean, but developers should validate use cases with a small MVP. Focus on building developer tools that simplify agent deployment and transaction execution.",
+      "opportunity_summary_zh": "链上AI代理是一个潜力巨大但需求未验证的新兴趋势。早期进入有蓝海优势，但开发者应通过小规模MVP验证用例。专注于简化代理部署和交易执行的开发者工具。"
     }
   ],
   "_version": "1.0"
