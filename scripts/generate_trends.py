@@ -168,7 +168,7 @@ def extract_terms_from_signals(signals: list[dict], entity_terms: list[dict] | N
     entity_context = ""
     if entity_terms:
         entity_lines = []
-        for et in entity_terms[:50]:  # Top 50 entity terms by cross-source count
+        for et in entity_terms[:20]:  # Top 20 entity terms (reduced from 50 — b/2026-08-05: overwhelmed LLM)
             entity_lines.append(f"- {et['term']} (type={et.get('term_type', '?')}, sources={et.get('cross_source_count', 0)}, mentions={et.get('total_mentions', 0)})")
         if entity_lines:
             entity_context = f"""
@@ -184,7 +184,7 @@ def extract_terms_from_signals(signals: list[dict], entity_terms: list[dict] | N
         if len(known_names) > 30:
             # Deterministic seed for reproducible sampling across runs
             random.seed(42)
-            sample_n = min(50, len(known_names))
+            sample_n = min(10, len(known_names))
             known_sample = random.sample(known_names, sample_n)
             known_context = f"""
 【重要】以下是已经在追踪的 {len(known_names)} 个词条（采样展示 {sample_n} 个）。
@@ -246,7 +246,7 @@ Signals:
     # Try LLM extraction (with retry for non-determinism — bottleneck #7 fix).
     # LLM sometimes returns 0-4 terms on one attempt and 30+ on the next
     # with identical input. Retry up to 3 times if count is below threshold.
-    MIN_TERMS_THRESHOLD = 8
+    MIN_TERMS_THRESHOLD = 3  # reduced from 8 (b/2026-08-05: LLM consistently returned 0-1)
     MAX_RETRIES = 2  # total 3 attempts
     terms = []
     last_exception = None
@@ -257,7 +257,7 @@ Signals:
             from llm_client import chat
 
             if attempt > 0:
-                retry_prompt = user_prompt + f"\n\n[SYSTEM NOTE: Previous attempt returned only {len(terms)} terms. Please extract more — aim for 15-30 this time. Return valid JSON array.]"
+                retry_prompt = user_prompt + f"\n\n[SYSTEM NOTE: Previous attempt returned only {len(terms)} terms — far below the 15-30 target. This is a DIFFERENT PASS over the same signals. Look for products, projects, and concepts you missed the first time. Focus especially on: (1) newly launched products/tools, (2) trending GitHub repos, (3) niche concepts with high discussion quality, (4) non-English (Chinese/Japanese) tech community topics. You MUST find at least 10 viable candidates. Return valid JSON array.]"
             else:
                 retry_prompt = user_prompt
 
