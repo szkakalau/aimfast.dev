@@ -1,47 +1,47 @@
 {
-  "date": "2026-08-04",
-  "generated_at": "2026-08-04T13:27:30.667352+08:00",
+  "date": "2026-08-05",
+  "generated_at": "2026-08-05T09:07:28.383690+08:00",
   "success": true,
   "exit_code": 0,
-  "duration_minutes": 36,
+  "duration_minutes": 30,
   "steps": {
     "enrichment": {
-      "status": "generated",
-      "duration_sec": 0
+      "status": "skipped",
+      "duration_sec": 0,
+      "reason": "engine_not_found"
     },
     "report": {
       "status": "generated",
-      "duration_sec": 79
+      "duration_sec": 93
     },
     "action": {
       "status": "generated",
-      "duration_sec": 34
+      "duration_sec": 27
     },
     "lp": {
-      "status": "skipped",
-      "duration_sec": 0,
-      "reason": "no_pending_opportunity"
+      "status": "generated",
+      "duration_sec": 0
     }
   },
   "tokens": {
-    "total": 3196802,
-    "calls": 1254
+    "total": 3808861,
+    "calls": 1548
   },
   "sources": {
     "total": 28,
-    "successful": 26,
-    "failed": 2,
+    "successful": 27,
+    "failed": 1,
     "failed_names": [
-      "producthunt",
-      "w2solo"
+      "substack"
     ]
   },
   "terms": {
     "total": 333,
-    "new_today": 21
+    "new_today": 0
   },
   "warnings": [
-    "步骤 'Step1: Collectors (28 sources)' 耗时过长 (23 分钟)"
+    "步骤 'Step1: Collectors (28 sources)' 耗时过长 (13 分钟)",
+    "步骤 'Step6b: Recurring' 耗时过长 (7 分钟)"
   ],
-  "consecutive_success_days": 1
+  "consecutive_success_days": 2
 }

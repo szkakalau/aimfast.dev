@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkinTone Gen — Generate Diverse Skin Tones in 2 Seconds | www.aimfast.dev</title>
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#1a1d24">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://www.aimfast.dev/skin-tone-gen/">
+  <meta property="og:type" content="product">
+  <meta property="og:title" content="SkinTone Gen — Generate Diverse Skin Tones in 2 Seconds">
+  <meta property="og:description" content="The color space that ensures your UI, game, or illustration represents everyone. Free tool + npm package.">
+  <meta property="og:url" content="https://www.aimfast.dev/skin-tone-gen/">
+  <meta property="og:site_name" content="AimFast.Dev">
+  <meta property="og:image" content="https://www.aimfast.dev/og/skin-tone-gen.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="SkinTone Gen — Generate Diverse Skin Tones in 2 Seconds">
+  <meta name="twitter:description" content="The color space that ensures your UI, game, or illustration represents everyone. Free tool + npm package.">
+  <meta name="twitter:image" content="https://www.aimfast.dev/og/skin-tone-gen.png">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"SkinTone Gen","applicationCategory":"AIApplication","operatingSystem":"Web","description":"Generate diverse skin tone palettes with a scientific algorithm. Export to CSS, JSON, SVG. Free online tool + npm package.","url":"https://www.aimfast.dev/skin-tone-gen/","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+  </script>
+  <link rel="stylesheet" href="/_ds/base.css">
+  <link rel="stylesheet" href="/_ds/components.css">
+  <style>
+    /* Page-specific custom styles — only layout & non-token values */
+    .signup-form {
+      display: flex;
+      gap: var(--space-2);
+      max-width: 480px;
+      margin: var(--space-4) auto 0;
+    }
+    .signup-form input[type="email"] {
+      flex: 1;
+      min-height: 48px;
+      padding: 0 var(--space-3);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      color: var(--color-text);
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      transition: border-color var(--duration-normal) var(--ease-out);
+    }
+    .signup-form input[type="email"]:focus {
+      outline: none;
+      border-color: var(--color-accent);
+    }
+    .signup-form .btn {
+      min-height: 48px;
+      white-space: nowrap;
+    }
+    .step {
+      display: flex;
+      gap: var(--space-3);
+      align-items: flex-start;
+      margin-bottom: var(--space-4);
+    }
+    .step-num {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-mono);
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--color-accent);
+      background: var(--color-surface-alt);
+      border: 1px solid var(--color-border);
+      border-radius: 50%;
+    }
+    .step-content h3 {
+      margin-bottom: var(--space-1);
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+    .step-content p {
+      margin: 0;
+      color: var(--color-text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .selling-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-4);
+      margin-top: var(--space-4);
+    }
+    .selling-card {
+      padding: var(--space-4);
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+    }
+    .selling-card .icon {
+      margin-bottom: var(--space-2);
+      color: var(--color-accent);
+    }
+    .selling-card h3 {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      margin-bottom: var(--space-1);
+    }
+    .selling-card p {
+      color: var(--color-text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+    .trust-bar {
+      display: flex;
+      justify-content: center;
+      gap: var(--space-4);
+      flex-wrap: wrap;
+      margin-top: var(--space-6);
+      color: var(--color-text-muted);
+      font-size: 0.85rem;
+    }
+    .trust-bar span {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-1);
+    }
+    .footer {
+      margin-top: var(--space-8);
+      padding: var(--space-4) 0;
+      border-top: 1px solid var(--color-border);
+      text-align: center;
+      color: var(--color-text-muted);
+      font-size: 0.85rem;
+    }
+    @media (max-width: 768px) {
+      .signup-form {
+        flex-direction: column;
+        max-width: 100%;
+      }
+      .selling-grid {
+        grid-template-columns: 1fr;
+      }
+      .trust-bar {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-2);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Hero Section with inline email capture -->
+  <section class="container" style="padding-top: var(--space-8); padding-bottom: var(--space-6); text-align: center;">
+    <span class="eyebrow">🎨 Skin Tone Generator</span>
+    <h1 style="font-family: var(--font-heading); font-size: clamp(2rem, 5vw, 3rem); line-height: 1.1; margin: var(--space-3) 0 var(--space-2);">
+      Generate Diverse Skin Tones in 2 Seconds
+    </h1>
+    <p style="font-size: 1.15rem; color: var(--color-text-secondary); max-width: 600px; margin: 0 auto var(--space-4);">
+      The color space that ensures your UI, game, or illustration represents everyone. Free tool + npm package.
+    </p>
+    <!-- Inline email form (no modal) -->
+    <form id="signup-form" class="signup-form" action="https://formspree.io/f/your-form-id" method="POST" onsubmit="handleSubmit(event)">
+      <input type="email" name="email" placeholder="you@example.com" required autocomplete="email">
+      <button type="submit" class="btn btn-primary btn-lg">Get Early Access</button>
+    </form>
+    <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-top: var(--space-2);">No signup fees · Free forever · Join 500+ developers</p>
+  </section>
+
+  <!-- Why This Matters -->
+  <section class="container" style="padding: var(--space-6) 0;">
+    <h2 style="font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: var(--space-3);">Why Skin Tone Diversity Matters Right Now</h2>
+    <p style="color: var(--color-text-secondary); line-height: 1.75; max-width: 780px;">
+      A recent <strong>Show HN with 442 points and 87 comments</strong> highlighted a simple algorithm that generates realistic skin tones. The intense engagement — designers and developers asking for export formats, CSS variables, and JSON — proves a real pain point. Most existing tools either ignore skin tone ranges or rely on generic color palettes that miss the subtlety of human skin. The result: interfaces, games, and illustrations often fail to represent users authentically, leading to biased products and missed connections.
+    </p>
+    <p style="color: var(--color-text-secondary); line-height: 1.75; max-width: 780px;">
+      Current solutions like Coolors or Adobe Color are either too generic or too heavy. They don't offer a dedicated, scientifically grounded skin tone generator. Meanwhile, the demand for inclusive design is growing — companies are being called out for lack of representation. This is the perfect moment for a lightweight, developer-friendly tool that generates diverse skin tones instantly. The algorithm is proven, the community is engaged, and the gap is wide open.
+    </p>
+  </section>
+
+  <!-- How It Works -->
+  <section class="container" style="padding: var(--space-6) 0;">
+    <h2 style="font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: var(--space-4);">How It Works</h2>
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <h3>Choose your palette size</h3>
+        <p>Select how many skin tones you need — from 1 to 20. The algorithm adjusts the color space to ensure a balanced, diverse representation across the full human spectrum.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <h3>Pick your undertone</h3>
+        <p>Warm, cool, or neutral — the generator fine-tunes the palette to match your design's mood. Each tone is computed using a validated color space model, not random hex codes.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <h3>Export & embed</h3>
+        <p>Download your palette as CSS variables, JSON, SVG, or PNG. Use the npm package to integrate directly into your build. Perfect for design systems, game assets, or illustrations.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Selling Points (3-column grid) -->
+  <section class="container" style="padding: var(--space-6) 0;">
+    <h2 style="font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: var(--space-2);">What You Get</h2>
+    <div class="selling-grid">
+      <div class="selling-card">
+        <div class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <polyline points="9 12 11 14 15 10"/>
+          </svg>
+        </div>
+        <h3>Algorithm-driven</h3>
+        <p>Based on a scientifically validated color space, not random picking. Every palette is balanced for diversity and realism, ensuring your designs represent the full spectrum of human skin tones.</p>
+      </div>
+      <div class="selling-card">
+        <div class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+          </svg>
+        </div>
+        <h3>Developer-friendly</h3>
+        <p>Install via npm with a single command. Export to CSS custom properties, JSON, or SVG. Built for modern workflows — use it in React, Vue, or any design tool. Zero config.</p>
+      </div>
+      <div class="selling-card">
+        <div class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+          </svg>
+        </div>
+        <h3>Zero cost to start</h3>
+        <p>Free online tool, no registration required. Open the page, generate your palette, and export. The npm package is free forever. Pro features (Figma export) are a one-time $9.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Bar -->
+  <section class="container">
+    <div class="trust-bar">
+      <span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <polyline points="9 12 11 14 15 10"/>
+        </svg>
+        Trusted by 500+ developers
+      </span>
+      <span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"/>
+          <path d="M2 12h20"/>
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+        </svg>
+        Open source on GitHub
+      </span>
+      <span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M12 6v6l4 2"/>
+        </svg>
+        Export in 3 formats
+      </span>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer container">
+    © 2026 · www.aimfast.dev
+  </footer>
+
+  <script>
+    async function handleSubmit(event) {
+      event.preventDefault();
+      const form = event.target;
+      const email = form.email.value.trim();
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalText = submitBtn.textContent;
+
+      // Disable button and show loading state
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({ email: email })
+        });
+
+        if (response.ok) {
+          // Replace form with success message (inline, no modal)
+          const success = document.createElement('p');
+          success.style.color = 'var(--color-accent)';
+          success.style.fontWeight = '500';
+          success.style.marginTop = 'var(--space-2)';
+          success.textContent = '✓ You\'re on the list!';
+          form.replaceWith(success);
+        } else {
+          // Replace form with error message (inline)
+          const error = document.createElement('p');
+          error.style.color = '#e57373';
+          error.style.fontWeight = '500';
+          error.style.marginTop = 'var(--space-2)';
+          error.textContent = 'Something went wrong. Please try again.';
+          form.replaceWith(error);
+        }
+      } catch (err) {
+        // Network error — show inline error
+        const error = document.createElement('p');
+        error.style.color = '#e57373';
+        error.style.fontWeight = '500';
+        error.style.marginTop = 'var(--space-2)';
+        error.textContent = 'Network error — please check your connection.';
+        form.replaceWith(error);
+      }
+    }
+  </script>
+</body>
+</html>
