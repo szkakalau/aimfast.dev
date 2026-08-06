@@ -1,12 +1,12 @@
 {
   "_schema": "Term 索引 — 原始 signal 记录。聚合统计由 normalize_terms → canonical_terms.json 统一计算。",
   "_version": "1.0",
-  "last_updated": "2026-08-05T07:51:48.615511+08:00",
-  "total_terms": 2418,
+  "last_updated": "2026-08-06T07:56:36.837889+08:00",
+  "total_terms": 2526,
   "terms": {
     "Vercel": {
       "first_seen": "2026-07-12",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "company",
       "signals": [
         {
@@ -1932,7 +1932,7 @@
     },
     "Cloudflare": {
       "first_seen": "2026-07-12",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "company",
       "signals": [
         {
@@ -2711,13 +2711,55 @@
           "source_key": "v2ex",
           "title": "刚刚： Cloudflare Wallet 发布了，快去领 handle",
           "signal_id": "v2ex-1232114"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "Cloudflare 分享推理优化实践：KV cache 量化 + 权重压缩，吞吐量提升 41%，成本降 30%",
+          "signal_id": "oschina-487999"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "Cloudflare Computer 开源：你的 Agent 需要一台电脑，而不是一个容器",
+          "signal_id": "oschina-487766"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "Product Hunt",
+          "source_key": "producthunt",
+          "title": "Cloudflare Wallets: the programmable wallet for the agentic Internet",
+          "signal_id": "ph-1214908"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "V2EX 分享发现",
+          "source_key": "v2ex",
+          "title": "Cloudflare Wallets AI 支付钱包发布",
+          "signal_id": "v2ex-1232162"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "V2EX 分享发现",
+          "source_key": "v2ex",
+          "title": "Cloudflare 钱包，各位需要的开发者可以抢注一个喜欢的名字",
+          "signal_id": "v2ex-1232166"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "V2EX 分享发现",
+          "source_key": "v2ex",
+          "title": "赛博菩萨 Cloudflare 给 AI 配钱包！羊毛党，赶紧去申领！",
+          "signal_id": "v2ex-1232194"
         }
       ],
       "canonical_name": "Cloudflare"
     },
     "OpenAI": {
       "first_seen": "2026-07-12",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "company",
       "signals": [
         {
@@ -4042,6 +4084,34 @@
           "source_key": "youtube",
           "title": "How AI Helps Solve Medical Mysteries at Boston Children’s Hospital | OpenAI Forum",
           "signal_id": "yt-SJJBPwlPpww"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "Meta Launches Muse Code AI Agent to Challenge OpenAI, Anthropic",
+          "signal_id": "gn-9104650"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "Anthropic and OpenAI AI Agents Used Fake Identities in UK Cyber Tests",
+          "signal_id": "gn-5929502"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "中国开源 AI 模型将豁免美国政府安全审查",
+          "signal_id": "oschina-488173"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "OpenAI 公开邮件和聊天记录回应苹果诉讼，称“Apple is getting this wrong”",
+          "signal_id": "oschina-487756"
         }
       ],
       "canonical_name": "OpenAI"
@@ -4633,7 +4703,7 @@
     },
     "ChatGPT": {
       "first_seen": "2026-07-12",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -5082,7 +5152,7 @@
     },
     "Lovable": {
       "first_seen": "2026-07-12",
-      "last_seen": "2026-07-12",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -5091,6 +5161,13 @@
           "source_key": "vercel",
           "title": "You can now deploy Lovable apps to Vercel",
           "signal_id": "changelog-8787326"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "Product Hunt",
+          "source_key": "producthunt",
+          "title": "Capacity Desktop: A free Lovable that lives on your Mac",
+          "signal_id": "ph-1208916"
         }
       ],
       "canonical_name": "Lovable"
@@ -5129,7 +5206,7 @@
           "signal_id": "gn-5093656"
         }
       ],
-      "canonical_name": "Muse Spark 1.1"
+      "canonical_name": "Muse Spark"
     },
     "AI Gateway": {
       "first_seen": "2026-07-12",
@@ -6114,7 +6191,7 @@
     },
     "vLLM": {
       "first_seen": "2026-07-12",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -6961,7 +7038,7 @@
     },
     "Ollama": {
       "first_seen": "2026-07-12",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "company",
       "signals": [
         {
@@ -7320,7 +7397,7 @@
     },
     "LangChain": {
       "first_seen": "2026-07-12",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -7735,6 +7812,13 @@
           "source_key": "oschina",
           "title": ":seedling: Qualia 开源：面向 Java 开发者的 AI Agent 框架",
           "signal_id": "oschina-486832"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "GitHub Releases",
+          "source_key": "github-releases",
+          "title": "[langchain-ai/langchain] langchain-anthropic==1.5.4",
+          "signal_id": "ghr-3289418"
         }
       ],
       "canonical_name": "LangChain"
@@ -8852,7 +8936,7 @@
     },
     "Wrangler": {
       "first_seen": "2026-07-12",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -9043,6 +9127,13 @@
           "source_key": "github-releases",
           "title": "[cloudflare/workers-sdk] wrangler@4.118.0",
           "signal_id": "ghr-1237883"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "GitHub Releases",
+          "source_key": "github-releases",
+          "title": "[cloudflare/workers-sdk] wrangler@4.119.0",
+          "signal_id": "ghr-3089715"
         }
       ],
       "canonical_name": "Wrangler"
@@ -9165,7 +9256,7 @@
     },
     "Mistral": {
       "first_seen": "2026-07-12",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "company",
       "signals": [
         {
@@ -9317,7 +9408,7 @@
     },
     "GPT-5.6": {
       "first_seen": "2026-07-12",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "model",
       "signals": [
         {
@@ -9494,13 +9585,20 @@
           "source_key": "v2ex",
           "title": "Claude 模型喜欢写文档， GPT5.6 喜欢做测试",
           "signal_id": "v2ex-1231914"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "Hacker News",
+          "source_key": "hn",
+          "title": "Beating GPT-5.6 Sol on retrieval with 100x cheaper open models",
+          "signal_id": "hn-49186762"
         }
       ],
       "canonical_name": "GPT-5.6"
     },
     "Meta": {
       "first_seen": "2026-07-12",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-06",
       "term_type": "company",
       "signals": [
         {
@@ -9607,6 +9705,20 @@
           "source_key": "substack",
           "title": "Meta seeks to hide harms from teens",
           "signal_id": "substack-platformer-5996802"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "Meta Launches Muse Code AI Agent to Challenge OpenAI, Anthropic",
+          "signal_id": "gn-9104650"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "Hacker News",
+          "source_key": "hn",
+          "title": "Meta Ran Ads That Contained AI-Generated Child Sexual Abuse Imagery",
+          "signal_id": "hn-49187977"
         }
       ],
       "canonical_name": "Meta"
@@ -9723,11 +9835,11 @@
           "signal_id": "juejin-7657009566030872576"
         }
       ],
-      "canonical_name": "GLM-5.2"
+      "canonical_name": "GLM 5.2"
     },
     "Anthropic": {
       "first_seen": "2026-07-12",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "company",
       "signals": [
         {
@@ -9981,6 +10093,27 @@
           "source_key": "x",
           "title": "ANTHROPIC DIDN’T DELETE 80% OF CLAUDE CODE’S CONTEXT.",
           "signal_id": "x-5922039"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "Meta Launches Muse Code AI Agent to Challenge OpenAI, Anthropic",
+          "signal_id": "gn-9104650"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "Anthropic and OpenAI AI Agents Used Fake Identities in UK Cyber Tests",
+          "signal_id": "gn-5929502"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "中国开源 AI 模型将豁免美国政府安全审查",
+          "signal_id": "oschina-488173"
         }
       ],
       "canonical_name": "Anthropic"
@@ -10222,7 +10355,7 @@
     },
     "RAG": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "technology",
       "signals": [
         {
@@ -10370,7 +10503,7 @@
     },
     "macOS": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "technology",
       "signals": [
         {
@@ -10442,6 +10575,20 @@
           "source_key": "v2ex",
           "title": "StrokeMouse 现已支持触控板手势、多指手势 - 一款全开源的 MacOS 手势软件",
           "signal_id": "v2ex-1231887"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "HN Show HN",
+          "source_key": "showhn",
+          "title": "Textracto – fzf for your screen (macOS)",
+          "signal_id": "showhn-49181114"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "V2EX 产品发布",
+          "source_key": "v2ex",
+          "title": "vibe 了一个 macOS 的鼠标手势软件--iGestures",
+          "signal_id": "v2ex-1232289"
         }
       ],
       "canonical_name": "macOS"
@@ -10530,7 +10677,7 @@
     },
     "Chrome": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -10588,6 +10735,13 @@
           "source_key": "v2ex",
           "title": "[分享创造] Panerelay 0.5.0：让 agent-browser / Browser Use / Playwright CLI 直接使用日常 Chrome",
           "signal_id": "v2ex-1231859"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "V2EX 产品发布",
+          "source_key": "v2ex",
+          "title": "[分享创造] PickZ（chrome 插件） —— 选中即翻译/总结/改写/解释的轻量 AI 悬浮助手",
+          "signal_id": "v2ex-1232331"
         }
       ],
       "canonical_name": "Chrome DevTools"
@@ -10624,7 +10778,7 @@
     },
     "Rust": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "technology",
       "signals": [
         {
@@ -10857,6 +11011,27 @@
           "source_key": "v2ex",
           "title": "用 Rust 写了个开源桌面 Agent，聊两个实际卡住过我们的性能问题",
           "signal_id": "v2ex-1232115"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "Hacker News",
+          "source_key": "hn",
+          "title": "Show HN: SIMD Viterbi Decoder in Rust",
+          "signal_id": "hn-49176212"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "Reddit",
+          "source_key": "reddit",
+          "title": "The rust programming language is adopting a new contributing policy",
+          "signal_id": "reddit-t3_1vg555b"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "HN Show HN",
+          "source_key": "showhn",
+          "title": "SIMD Viterbi Decoder in Rust",
+          "signal_id": "showhn-49176212"
         }
       ],
       "canonical_name": "Rust"
@@ -10893,7 +11068,7 @@
     },
     "Coasty": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -11153,7 +11328,7 @@
     },
     "SIMD": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-07-27",
+      "last_seen": "2026-08-06",
       "term_type": "technology",
       "signals": [
         {
@@ -11176,13 +11351,20 @@
           "source_key": "lobsters",
           "title": "Everyone Should Know SIMD",
           "signal_id": "lobsters-gpqa52"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "HN Show HN",
+          "source_key": "showhn",
+          "title": "SIMD Viterbi Decoder in Rust",
+          "signal_id": "showhn-49176212"
         }
       ],
       "canonical_name": "SIMD"
     },
     "Weekday": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -11234,7 +11416,7 @@
     },
     "Angular": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "technology",
       "signals": [
         {
@@ -11285,7 +11467,7 @@
     },
     "Typecho": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -11344,7 +11526,7 @@
     },
     "Hugging Face": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "company",
       "signals": [
         {
@@ -11550,7 +11732,7 @@
     },
     "Claude Code": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -12035,13 +12217,34 @@
           "source_key": "v2ex",
           "title": "解决 Claude Code/Codex 跨 Session 失忆：我们开源了长时上下文引擎",
           "signal_id": "v2ex-1232095"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "HN Show HN",
+          "source_key": "showhn",
+          "title": "HUD, an open-source minimal terminal UI for ClaudeCode, Codex, OpenCode",
+          "signal_id": "showhn-49184388"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "V2EX 程序员",
+          "source_key": "v2ex",
+          "title": "求助 claude code 升级为 2.1.222 后，无法使用自定义供应商",
+          "signal_id": "v2ex-1232198"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "YouTube",
+          "source_key": "youtube",
+          "title": "Claude Code Full Course – Autonomous Goals, MCP, and VS Code Setup",
+          "signal_id": "yt-7l6bXLAKyEI"
         }
       ],
       "canonical_name": "Claude Code"
     },
     "Codex": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -12505,6 +12708,13 @@
           "source_key": "v2ex",
           "title": "发现一个很好用的开源工具，可以用任务面板管理 Codex",
           "signal_id": "v2ex-1232082"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "HN Show HN",
+          "source_key": "showhn",
+          "title": "HUD, an open-source minimal terminal UI for ClaudeCode, Codex, OpenCode",
+          "signal_id": "showhn-49184388"
         }
       ],
       "canonical_name": "Codex"
@@ -12571,7 +12781,7 @@
     },
     "Google": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-06",
       "term_type": "company",
       "signals": [
         {
@@ -12734,6 +12944,20 @@
           "source_key": "x",
           "title": "🚨 Gemini 3.5 Pro could launch on August 2nd week",
           "signal_id": "x-9415971"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "Jeff Dean and other top AI researchers are leaving Google to launch their own startup",
+          "signal_id": "gn-4573440"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "中国开源 AI 模型将豁免美国政府安全审查",
+          "signal_id": "oschina-488173"
         }
       ],
       "canonical_name": "Google"
@@ -12842,7 +13066,7 @@
     },
     "React": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "technology",
       "signals": [
         {
@@ -13047,6 +13271,20 @@
           "source_key": "stackoverflow",
           "title": "How to use Turborepo for an existing react app created with Create React App in order to make it a monorepo?",
           "signal_id": "so-70498521"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "Stack Overflow",
+          "source_key": "stackoverflow",
+          "title": "how to navigate from one page to another in react js?",
+          "signal_id": "so-37295377"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "w2solo",
+          "source_key": "w2solo",
+          "title": "别再这样写条件渲染了——你的 React 组件里藏着这 5 种定时炸弹",
+          "signal_id": "w2solo-7976"
         }
       ],
       "canonical_name": "React"
@@ -13098,7 +13336,7 @@
     },
     "MCP": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "technology",
       "signals": [
         {
@@ -13359,13 +13597,48 @@
           "source_key": "showhn",
           "title": "Adapt, Automatically Turns Files into REST APIs, Web UI, and MCP",
           "signal_id": "showhn-49170622"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "Simon Willison 重新拥抱 MCP：无状态协议如何改变游戏规则",
+          "signal_id": "oschina-488038"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "Product Hunt",
+          "source_key": "producthunt",
+          "title": "Vibe Buddy: Hardware for AI coding",
+          "signal_id": "ph-1213589"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "Product Hunt",
+          "source_key": "producthunt",
+          "title": "ZapDigits MCP: The MCP server for marketing data",
+          "signal_id": "ph-1213190"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "Google Trends",
+          "source_key": "trends",
+          "title": "搜索趋势: MCP server",
+          "signal_id": "trends-kw-MCP-server"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "YouTube",
+          "source_key": "youtube",
+          "title": "Claude Code Full Course – Autonomous Goals, MCP, and VS Code Setup",
+          "signal_id": "yt-7l6bXLAKyEI"
         }
       ],
       "canonical_name": "MCP"
     },
     "Cursor": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -13528,6 +13801,13 @@
           "source_key": "lobsters",
           "title": "IntelliJ IDEA Goes LSP: Java and Kotlin Intelligence Comes to VS Code, Cursor, and Agentic Flows",
           "signal_id": "lobsters-culsub"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "掘金",
+          "source_key": "juejin",
+          "title": "公司不给你配 AI，你会自己掏钱吗？",
+          "signal_id": "juejin-7670011027535921202"
         }
       ],
       "canonical_name": "Cursor"
@@ -13549,7 +13829,7 @@
     },
     "Vue 3": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-06",
       "term_type": "technology",
       "signals": [
         {
@@ -13716,7 +13996,7 @@
     },
     "Nginx": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "technology",
       "signals": [
         {
@@ -13745,7 +14025,7 @@
     },
     "Spring Boot": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "technology",
       "signals": [
         {
@@ -13781,7 +14061,7 @@
     },
     "ADB": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-07-29",
+      "last_seen": "2026-08-06",
       "term_type": "technology",
       "signals": [
         {
@@ -13797,6 +14077,13 @@
           "source_key": "lobsters",
           "title": "Android May Soon Restrict On-Device ADB, Affecting Shizuku, libadb and Developers",
           "signal_id": "lobsters-t5os1h"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "V2EX 产品发布",
+          "source_key": "v2ex",
+          "title": "libcr 项目组发布 crScrcpy 1.0.0 , 通过 adb 轻松控制你的多台 android 设备",
+          "signal_id": "v2ex-1232314"
         }
       ],
       "canonical_name": "ADB"
@@ -14032,7 +14319,7 @@
     },
     "Foster": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -14047,7 +14334,7 @@
     },
     "Legion Health": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -14113,7 +14400,7 @@
     },
     "Kimi K3": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "model",
       "signals": [
         {
@@ -14717,7 +15004,7 @@
     },
     "NeurIPS": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "technology",
       "signals": [
         {
@@ -14852,6 +15139,20 @@
           "source_key": "reddit",
           "title": "A question on ICLR and NeurIPS deadlines, and OpenReview [D]",
           "signal_id": "reddit-t3_1vf747o"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "Reddit",
+          "source_key": "reddit",
+          "title": "NeurIPS 2026 Main Track — Theory papers score tracking post Rebuttal [D]",
+          "signal_id": "reddit-t3_1vfx8pn"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "Reddit",
+          "source_key": "reddit",
+          "title": "NeurIPS 2026 Concept & Feasibility Track [D]",
+          "signal_id": "reddit-t3_1vfv9fj"
         }
       ],
       "canonical_name": "NeurIPS"
@@ -15196,7 +15497,7 @@
     },
     "Miora": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -15248,7 +15549,7 @@
     },
     "Next.js": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "technology",
       "signals": [
         {
@@ -15284,7 +15585,7 @@
     },
     "Firefox": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-07-31",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -15314,6 +15615,13 @@
           "source_key": "oschina",
           "title": "Firefox 153.0.1 发布",
           "signal_id": "oschina-481973"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "Firefox 153.0.3 发布",
+          "signal_id": "oschina-487769"
         }
       ],
       "canonical_name": "Firefox"
@@ -15505,7 +15813,7 @@
     },
     "Vue": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-03",
+      "last_seen": "2026-08-06",
       "term_type": "technology",
       "signals": [
         {
@@ -15535,6 +15843,13 @@
           "source_key": "github",
           "title": "DavidHDev/canvas-ui",
           "signal_id": "github-1302826522"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "👍JeeSite V5.18.1 发布 SpringBoot / Cloud / AI / Vue 多项新增优化，功能持续迭代升级",
+          "signal_id": "oschina-487720"
         }
       ],
       "canonical_name": "Vue 3"
@@ -15725,7 +16040,7 @@
     },
     "Cube-Sandbox": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -15770,7 +16085,7 @@
     },
     "Konva": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "technology",
       "signals": [
         {
@@ -15815,7 +16130,7 @@
     },
     "Nvidia": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "company",
       "signals": [
         {
@@ -16041,6 +16356,13 @@
           "source_key": "googlenews",
           "title": "A British AI Chip Startup Just Raised £231m—and Nvidia Should Be Watching",
           "signal_id": "gn-9666891"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "NVIDIA 成为 LVFS / Fwupd 首席赞助商",
+          "signal_id": "oschina-488134"
         }
       ],
       "canonical_name": "Nvidia"
@@ -16158,7 +16480,7 @@
     },
     "LangGraph": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "technology",
       "signals": [
         {
@@ -16904,7 +17226,7 @@
     },
     "Lua": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "technology",
       "signals": [
         {
@@ -17000,7 +17322,7 @@
     },
     "Django": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "technology",
       "signals": [
         {
@@ -17315,7 +17637,7 @@
     },
     "Kubernetes": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "technology",
       "signals": [
         {
@@ -17431,7 +17753,7 @@
     },
     "Docker": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -17677,7 +17999,7 @@
     },
     "Python": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "technology",
       "signals": [
         {
@@ -17881,7 +18203,7 @@
     },
     "MySQL": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "technology",
       "signals": [
         {
@@ -17924,7 +18246,7 @@
     },
     "EXPO": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "technology",
       "signals": [
         {
@@ -17939,7 +18261,7 @@
     },
     "iOS": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "technology",
       "signals": [
         {
@@ -18035,7 +18357,7 @@
     },
     "WAIC 2026": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -18057,7 +18379,7 @@
     },
     "FastAPI": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -18093,7 +18415,7 @@
     },
     "Litestar": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -18108,7 +18430,7 @@
     },
     "BlackSheep": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -18123,7 +18445,7 @@
     },
     "Strawberry GraphQL": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -18138,7 +18460,7 @@
     },
     "Ariadne": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -18153,7 +18475,7 @@
     },
     "Starlite": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -18168,7 +18490,7 @@
     },
     "Typer": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -18183,7 +18505,7 @@
     },
     "Rich": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -18198,7 +18520,7 @@
     },
     "Textual": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -18249,7 +18571,7 @@
     },
     "ChromaDB": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -18440,7 +18762,7 @@
     },
     "LlamaIndex": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -18563,7 +18885,7 @@
     },
     "Shopify": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "company",
       "signals": [
         {
@@ -18641,7 +18963,7 @@
     },
     "Enter Pro": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -18656,7 +18978,7 @@
     },
     "Accio Work": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -18671,7 +18993,7 @@
     },
     "WorkBuddy": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -18693,7 +19015,7 @@
     },
     "TicNote Cloud": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -18708,7 +19030,7 @@
     },
     "Kane AI": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -18738,7 +19060,7 @@
     },
     "Enia Code": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -18804,7 +19126,7 @@
     },
     "Telegram": {
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -20139,7 +20461,7 @@
           "signal_id": "github-1286080397"
         }
       ],
-      "canonical_name": "GLM-5.2"
+      "canonical_name": "GLM 5.2"
     },
     "e2b-dev/E2B": {
       "first_seen": "2026-07-24",
@@ -20218,7 +20540,7 @@
     },
     "Apple": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "company",
       "signals": [
         {
@@ -20311,6 +20633,13 @@
           "source_key": "hn",
           "title": "Ask HN: Can Apple Ever Be Disrputed?",
           "signal_id": "hn-49118494"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "OpenAI 公开邮件和聊天记录回应苹果诉讼，称“Apple is getting this wrong”",
+          "signal_id": "oschina-487756"
         }
       ],
       "canonical_name": "Apple"
@@ -20459,7 +20788,7 @@
     },
     "Three.js": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "technology",
       "signals": [
         {
@@ -20718,7 +21047,7 @@
     },
     "n8n": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -21202,7 +21531,7 @@
     },
     "VS Code": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -21260,6 +21589,13 @@
           "source_key": "lobsters",
           "title": "IntelliJ IDEA Goes LSP: Java and Kotlin Intelligence Comes to VS Code, Cursor, and Agentic Flows",
           "signal_id": "lobsters-culsub"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "YouTube",
+          "source_key": "youtube",
+          "title": "Claude Code Full Course – Autonomous Goals, MCP, and VS Code Setup",
+          "signal_id": "yt-7l6bXLAKyEI"
         }
       ],
       "canonical_name": "VS Code"
@@ -21531,7 +21867,7 @@
     },
     "OpenAI Python SDK": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-01",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -21568,6 +21904,20 @@
           "source_key": "github-releases",
           "title": "[openai/openai-python] v2.50.0",
           "signal_id": "ghr-7945825"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "GitHub Releases",
+          "source_key": "github-releases",
+          "title": "[openai/openai-python] v2.53.0",
+          "signal_id": "ghr-1137866"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "GitHub Releases",
+          "source_key": "github-releases",
+          "title": "[openai/openai-python] v2.52.1",
+          "signal_id": "ghr-8468856"
         }
       ],
       "canonical_name": "OpenAI Python SDK"
@@ -21821,7 +22171,7 @@
     },
     "Corgi": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-24",
+      "last_seen": "2026-08-06",
       "term_type": "company",
       "signals": [
         {
@@ -21837,6 +22187,13 @@
           "source_key": "googlenews",
           "title": "Insurance startup Corgi reportedly raised more money at $4B — its third round in 8 weeks",
           "signal_id": "gn-6797658"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "Jack Ma quietly invested $30 million in Corgi, one of Y Combinator's hottest startups",
+          "signal_id": "gn-7887488"
         }
       ],
       "canonical_name": "Corgi"
@@ -23414,7 +23771,7 @@
     },
     "GLM": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "model",
       "signals": [
         {
@@ -23472,6 +23829,13 @@
           "source_key": "cloudflare",
           "title": "Smaller, faster, safer: running Kimi and GLM at scale",
           "signal_id": "changelog-5442715"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "Cloudflare 分享推理优化实践：KV cache 量化 + 权重压缩，吞吐量提升 41%，成本降 30%",
+          "signal_id": "oschina-487999"
         }
       ],
       "canonical_name": "GLM"
@@ -23572,7 +23936,7 @@
     },
     "SpringBoot": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "technology",
       "signals": [
         {
@@ -23595,6 +23959,13 @@
           "source_key": "segmentfault",
           "title": "微信小程序上传图片时返回 413，Nginx 和 Spring Boot 应该如何配置？",
           "signal_id": "sf-1010000048058934"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "👍JeeSite V5.18.1 发布 SpringBoot / Cloud / AI / Vue 多项新增优化，功能持续迭代升级",
+          "signal_id": "oschina-487720"
         }
       ],
       "canonical_name": "SpringBoot"
@@ -23653,7 +24024,7 @@
     },
     "C++26": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-03",
+      "last_seen": "2026-08-06",
       "term_type": "technology",
       "signals": [
         {
@@ -23676,6 +24047,13 @@
           "source_key": "lobsters",
           "title": "How fast is C++26’s std::hive?",
           "signal_id": "lobsters-jqydry"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "Lobsters",
+          "source_key": "lobsters",
+          "title": "C++26: #embed",
+          "signal_id": "lobsters-0j5jx5"
         }
       ],
       "canonical_name": "C++26"
@@ -23822,7 +24200,7 @@
     },
     "Transformers": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "technology",
       "signals": [
         {
@@ -23844,7 +24222,7 @@
     },
     "Zod": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -23859,7 +24237,7 @@
     },
     "Drizzle ORM": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -23881,7 +24259,7 @@
     },
     "Prisma": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -23903,7 +24281,7 @@
     },
     "Hono": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -23918,7 +24296,7 @@
     },
     "Elysia": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -23933,7 +24311,7 @@
     },
     "Bun": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "technology",
       "signals": [
         {
@@ -23969,7 +24347,7 @@
     },
     "Vitest": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -23984,7 +24362,7 @@
     },
     "Biome": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -23999,7 +24377,7 @@
     },
     "Oxlint": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -24014,7 +24392,7 @@
     },
     "Rolldown": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -24029,7 +24407,7 @@
     },
     "Effect": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -24044,7 +24422,7 @@
     },
     "Arktype": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -24059,7 +24437,7 @@
     },
     "Valibot": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -24074,7 +24452,7 @@
     },
     "Trigger.dev": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -24089,7 +24467,7 @@
     },
     "Inngest": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -24104,7 +24482,7 @@
     },
     "Resend": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -24119,7 +24497,7 @@
     },
     "Directus": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -24134,7 +24512,7 @@
     },
     "PocketBase": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -24164,7 +24542,7 @@
     },
     "Ruvector": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -24186,7 +24564,7 @@
     },
     "Novu": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -24201,7 +24579,7 @@
     },
     "Temporal": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -24216,7 +24594,7 @@
     },
     "Turborepo": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -24288,7 +24666,7 @@
     },
     "S3Mini": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -24310,7 +24688,7 @@
     },
     "Vectra": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -24370,7 +24748,7 @@
     },
     "Oxc": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-07-28",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -24482,7 +24860,7 @@
     },
     "TypeScript": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "technology",
       "signals": [
         {
@@ -24568,6 +24946,13 @@
           "source_key": "w2solo",
           "title": "别再这样写 TypeScript 了——Code Review 中最常见的 8 个反模式",
           "signal_id": "w2solo-7970"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "V2EX 产品发布",
+          "source_key": "v2ex",
+          "title": "AnyCrawl: 基于 TS 的高性能爬虫，用于将任意 Web 转为干净的数据喂给 Agent",
+          "signal_id": "v2ex-1232326"
         }
       ],
       "canonical_name": "TypeScript"
@@ -24818,7 +25203,7 @@
     },
     "Visual Studio Code": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-03",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -24855,13 +25240,20 @@
           "source_key": "github-releases",
           "title": "[microsoft/vscode] 1.131.0",
           "signal_id": "ghr-7229817"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "GitHub Releases",
+          "source_key": "github-releases",
+          "title": "[microsoft/vscode] 1.132.0",
+          "signal_id": "ghr-7723925"
         }
       ],
       "canonical_name": "Visual Studio Code"
     },
     "DeepSeek": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-06",
       "term_type": "company",
       "signals": [
         {
@@ -25136,7 +25528,7 @@
     },
     "Datasets": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -25151,7 +25543,7 @@
     },
     "Accelerate": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -25166,7 +25558,7 @@
     },
     "TRL": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -25181,7 +25573,7 @@
     },
     "SGLang": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -25196,7 +25588,7 @@
     },
     "Guidance": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -25211,7 +25603,7 @@
     },
     "DSPy": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -25226,7 +25618,7 @@
     },
     "Instructor": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -25241,7 +25633,7 @@
     },
     "Outlines": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -25256,7 +25648,7 @@
     },
     "LM Format Enforcer": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-02",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -25271,7 +25663,7 @@
     },
     "FastMCP": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -25286,7 +25678,7 @@
     },
     "AutoGen": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -25301,7 +25693,7 @@
     },
     "CrewAI": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -25316,7 +25708,7 @@
     },
     "Agno": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -25331,7 +25723,7 @@
     },
     "Pydantic AI": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-02",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -25346,7 +25738,7 @@
     },
     "DuckDB": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -25375,7 +25767,7 @@
     },
     "LanceDB": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -25390,7 +25782,7 @@
     },
     "Qdrant": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -25412,7 +25804,7 @@
     },
     "Weaviate": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -25427,7 +25819,7 @@
     },
     "SQLAlchemy": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -25442,7 +25834,7 @@
     },
     "Tortoise ORM": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-02",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -25502,7 +25894,7 @@
     },
     "Linux": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-03",
+      "last_seen": "2026-08-06",
       "term_type": "technology",
       "signals": [
         {
@@ -25567,6 +25959,13 @@
           "source_key": "showhn",
           "title": "Bor – Open-source policy management for Linux desktops",
           "signal_id": "showhn-49142569"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "Reddit",
+          "source_key": "reddit",
+          "title": "Linux Processes: Threads & Concurrency",
+          "signal_id": "reddit-t3_1vgc4xz"
         }
       ],
       "canonical_name": "Linux"
@@ -25707,7 +26106,7 @@
     },
     "OpenReview": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -25892,7 +26291,7 @@
     },
     "Alibaba.com": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "company",
       "signals": [
         {
@@ -25992,6 +26391,13 @@
           "source_key": "youtube",
           "title": "My AI Agent Built a Real Product with Alibaba.com",
           "signal_id": "yt-88ec5267"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "YouTube",
+          "source_key": "youtube",
+          "title": "My AI Agent Built a Real Product with Alibaba.com",
+          "signal_id": "yt-f1c505c4"
         }
       ],
       "canonical_name": "Alibaba.com"
@@ -26013,7 +26419,7 @@
     },
     "Virgin Atlantic": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "company",
       "signals": [
         {
@@ -26050,7 +26456,7 @@
     },
     "Jodrell Bank": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-03",
+      "last_seen": "2026-08-06",
       "term_type": "company",
       "signals": [
         {
@@ -26218,7 +26624,7 @@
     },
     "LLM": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "technology",
       "signals": [
         {
@@ -26360,6 +26766,13 @@
           "source_key": "hn",
           "title": "Ask HN: Have LLMs Plateaued?",
           "signal_id": "hn-49150433"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "Lobsters",
+          "source_key": "lobsters",
+          "title": "rust-lang/rust is adopting an LLM policy",
+          "signal_id": "lobsters-czvkjy"
         }
       ],
       "canonical_name": "LLM"
@@ -26507,7 +26920,7 @@
     },
     "Y Combinator": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-06",
       "term_type": "company",
       "signals": [
         {
@@ -26838,6 +27251,55 @@
           "source_key": "googlenews",
           "title": "Y Combinator-backed AI startup LemonLime promised interviews to 7 people who got company tattoos — then apologized",
           "signal_id": "gn-2438246"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "Robinhood's New Fund Opens Y Combinator Startup Access to Everyday Investors",
+          "signal_id": "gn-5942562"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "Robinhood’s New Fund Lets Anyone Invest in Y Combinator Startups, With a Catch",
+          "signal_id": "gn-7811392"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "Robinhood Offers Retail Investors Chance to Back Y Combinator Firms",
+          "signal_id": "gn-7126396"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "Jack Ma quietly invested $30 million in Corgi, one of Y Combinator's hottest startups",
+          "signal_id": "gn-7887488"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "The job market feels more crowded than ever. How far would candidates go to set themselves apart? Y Combinator startup L",
+          "signal_id": "gn-0171122"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "Robinhood Opens Y Combinator Startups to Retail Investors",
+          "signal_id": "gn-8688854"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "Robinhood to list a fund that lets anyone back Y Combinator startups",
+          "signal_id": "gn-9753781"
         }
       ],
       "canonical_name": "Y Combinator"
@@ -27112,7 +27574,7 @@
     },
     "sentence-transformers/all-MiniLM-L6-v2": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -27127,7 +27589,7 @@
     },
     "openai-community/gpt2": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -27142,7 +27604,7 @@
     },
     "BAAI/bge-m3": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -27157,7 +27619,7 @@
     },
     "google-bert/bert-base-uncased": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -27172,7 +27634,7 @@
     },
     "Qwen/Qwen3-0.6B": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -27187,7 +27649,7 @@
     },
     "sentence-transformers/all-mpnet-base-v2": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -27202,7 +27664,7 @@
     },
     "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -27232,7 +27694,7 @@
     },
     "Qwen/Qwen3-8B": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -27247,7 +27709,7 @@
     },
     "BAAI/bge-reranker-v2-m3": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -27262,7 +27724,7 @@
     },
     "openai/clip-vit-base-patch32": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -27277,7 +27739,7 @@
     },
     "FacebookAI/xlm-roberta-base": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -27292,7 +27754,7 @@
     },
     "nomic-ai/nomic-embed-text-v1.5": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -27307,7 +27769,7 @@
     },
     "Qwen/Qwen2.5-1.5B-Instruct": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -27337,7 +27799,7 @@
     },
     "google-t5/t5-small": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -27352,7 +27814,7 @@
     },
     "BAAI/bge-small-en-v1.5": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -27367,7 +27829,7 @@
     },
     "amazon/chronos-2": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -27382,7 +27844,7 @@
     },
     "intfloat/multilingual-e5-small": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -27397,7 +27859,7 @@
     },
     "cross-encoder/ms-marco-MiniLM-L6-v2": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -27412,7 +27874,7 @@
     },
     "facebook/opt-125m": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -27427,7 +27889,7 @@
     },
     "google/electra-base-discriminator": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -27457,7 +27919,7 @@
     },
     "lpiccinelli/unidepth-v2-vitl14": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -27472,7 +27934,7 @@
     },
     "trl-internal-testing/tiny-Qwen2ForCausalLM-2.5": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -27619,7 +28081,7 @@
     },
     "Flutter": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-02",
+      "last_seen": "2026-08-06",
       "term_type": "technology",
       "signals": [
         {
@@ -27663,6 +28125,13 @@
           "source_key": "hn",
           "title": "Kaisel – Routes as Values. Dart 3 Native Router for Flutter",
           "signal_id": "hn-49135985"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "掘金",
+          "source_key": "juejin",
+          "title": "2026 Flutter VS React Native ，同时在 AI 时代 VS Native 开发，你没见过的版本",
+          "signal_id": "juejin-7613230154210852910"
         }
       ],
       "canonical_name": "Flutter"
@@ -27714,7 +28183,7 @@
     },
     "Vite": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "technology",
       "signals": [
         {
@@ -27780,7 +28249,7 @@
     },
     "@modelcontextprotocol/sdk": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -27810,7 +28279,7 @@
     },
     "mcp-local-rag": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -27825,7 +28294,7 @@
     },
     "groq-rag": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -27855,7 +28324,7 @@
     },
     "pulumi-bunnynet": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -27870,7 +28339,7 @@
     },
     "serverless-plugin-utils": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-03",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -28320,7 +28789,7 @@
     },
     "Terraform": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -28521,7 +28990,7 @@
     },
     "Kimi": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -28635,6 +29104,13 @@
           "source_key": "cloudflare",
           "title": "Smaller, faster, safer: running Kimi and GLM at scale",
           "signal_id": "changelog-5442715"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "Cloudflare 分享推理优化实践：KV cache 量化 + 权重压缩，吞吐量提升 41%，成本降 30%",
+          "signal_id": "oschina-487999"
         }
       ],
       "canonical_name": "Kimi"
@@ -28737,7 +29213,7 @@
     },
     "Webhook": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-06",
       "term_type": "technology",
       "signals": [
         {
@@ -28774,7 +29250,7 @@
     },
     "Zapier": {
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -29159,7 +29635,7 @@
     },
     "JSON": {
       "first_seen": "2026-07-27",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "technology",
       "signals": [
         {
@@ -29824,7 +30300,7 @@
     },
     "Htmx": {
       "first_seen": "2026-07-27",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "technology",
       "signals": [
         {
@@ -30098,7 +30574,7 @@
     },
     "Markdown": {
       "first_seen": "2026-07-27",
-      "last_seen": "2026-07-28",
+      "last_seen": "2026-08-06",
       "term_type": "technology",
       "signals": [
         {
@@ -30114,6 +30590,13 @@
           "source_key": "oschina",
           "title": "VLOOK 2026.7～主题天花板级大焕新+幻灯片视图～好看好用 Markdown 主题包与排版增强插件",
           "signal_id": "oschina-479243"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "HN Show HN",
+          "source_key": "showhn",
+          "title": "Spltty – a Markdown-based personal finance CLI built with Claude",
+          "signal_id": "showhn-49187132"
         }
       ],
       "canonical_name": "Markdown"
@@ -30135,7 +30618,7 @@
     },
     "FFmpeg": {
       "first_seen": "2026-07-27",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -30158,6 +30641,13 @@
           "source_key": "oschina",
           "title": "FFmpeg 9.0 发布",
           "signal_id": "oschina-486817"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "FFmpeg 9.0 发布：代号“Lei”，以此纪念中国开发者雷霄骅",
+          "signal_id": "oschina-487289"
         }
       ],
       "canonical_name": "FFmpeg"
@@ -30194,7 +30684,7 @@
     },
     "timm/mobilenetv3_small_100.lamb_in1k": {
       "first_seen": "2026-07-27",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -30209,7 +30699,7 @@
     },
     "autogluon/chronos-bolt-small": {
       "first_seen": "2026-07-27",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -30283,7 +30773,7 @@
     },
     "Android": {
       "first_seen": "2026-07-27",
-      "last_seen": "2026-08-02",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -30306,6 +30796,13 @@
           "source_key": "showhn",
           "title": "Gander, an Android file viewer that asks for no permissions",
           "signal_id": "showhn-49119425"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "V2EX 产品发布",
+          "source_key": "v2ex",
+          "title": "libcr 项目组发布 crScrcpy 1.0.0 , 通过 adb 轻松控制你的多台 android 设备",
+          "signal_id": "v2ex-1232314"
         }
       ],
       "canonical_name": "Android"
@@ -30446,7 +30943,7 @@
     },
     "SQLite": {
       "first_seen": "2026-07-27",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "technology",
       "signals": [
         {
@@ -30731,7 +31228,7 @@
     },
     "SolonCode": {
       "first_seen": "2026-07-27",
-      "last_seen": "2026-07-28",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -30740,6 +31237,13 @@
           "source_key": "oschina",
           "title": "别再把 Coding Agent 当智能补全了：SolonCode 想做的是数字员工",
           "signal_id": "oschina-479611"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": ":fire: SolonCode v2026.8.4 发布：界面字体可调、22 种语言、记忆搜索增强",
+          "signal_id": "oschina-488087"
         }
       ],
       "canonical_name": "SolonCode"
@@ -30821,7 +31325,7 @@
     },
     "ClickHouse": {
       "first_seen": "2026-07-27",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "technology",
       "signals": [
         {
@@ -31207,7 +31711,7 @@
     },
     "Chroma": {
       "first_seen": "2026-07-27",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -31289,7 +31793,7 @@
     },
     "PostgreSQL": {
       "first_seen": "2026-07-27",
-      "last_seen": "2026-08-01",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -31340,6 +31844,20 @@
           "source_key": "reddit",
           "title": "Hybrid Search Patterns with Postgres and pgvector",
           "signal_id": "reddit-t3_1vawlwy"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "TimescaleDB 2.29.1 发布，基于 PostgreSQL 的时序数据库",
+          "signal_id": "oschina-488001"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "PostgreSQL 18/19 新特性深度解读",
+          "signal_id": "oschina-5897685"
         }
       ],
       "canonical_name": "PostgreSQL"
@@ -31594,7 +32112,7 @@
     },
     "Trae": {
       "first_seen": "2026-07-27",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -31667,7 +32185,7 @@
     },
     "Proxmox": {
       "first_seen": "2026-07-27",
-      "last_seen": "2026-07-27",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -31676,6 +32194,13 @@
           "source_key": "showhn",
           "title": "Proxmox -> Share your host's Bluetooth with a VM over the network",
           "signal_id": "showhn-49050824"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "Lobsters",
+          "source_key": "lobsters",
+          "title": "Proxmox officially supports Arm, with some caveats",
+          "signal_id": "lobsters-wblbfk"
         }
       ],
       "canonical_name": "Proxmox"
@@ -32321,7 +32846,7 @@
     },
     "OpenCode": {
       "first_seen": "2026-07-28",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -32372,6 +32897,20 @@
           "source_key": "oschina",
           "title": "DeepSeek V4 Flash 单日消耗 8 万亿 tokens 登顶热搜",
           "signal_id": "oschina-486803"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "HN Show HN",
+          "source_key": "showhn",
+          "title": "HUD, an open-source minimal terminal UI for ClaudeCode, Codex, OpenCode",
+          "signal_id": "showhn-49184388"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "V2EX 产品发布",
+          "source_key": "v2ex",
+          "title": "opencode 移动端（还没开源）",
+          "signal_id": "v2ex-1232316"
         }
       ],
       "canonical_name": "OpenCode"
@@ -32732,7 +33271,7 @@
     },
     "Robinhood": {
       "first_seen": "2026-07-28",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-06",
       "term_type": "company",
       "signals": [
         {
@@ -32965,6 +33504,48 @@
           "source_key": "googlenews",
           "title": "Robinhood is launching a publicly traded fund that invests in Y Combinator startups. Anyone can buy shares.",
           "signal_id": "gn-3546684"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "Robinhood's New Fund Opens Y Combinator Startup Access to Everyday Investors",
+          "signal_id": "gn-5942562"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "Robinhood’s New Fund Lets Anyone Invest in Y Combinator Startups, With a Catch",
+          "signal_id": "gn-7811392"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "Request shares today",
+          "signal_id": "gn-2428348"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "Robinhood Offers Retail Investors Chance to Back Y Combinator Firms",
+          "signal_id": "gn-7126396"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "Robinhood Opens Y Combinator Startups to Retail Investors",
+          "signal_id": "gn-8688854"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "Robinhood to list a fund that lets anyone back Y Combinator startups",
+          "signal_id": "gn-9753781"
         }
       ],
       "canonical_name": "Robinhood"
@@ -33462,7 +34043,7 @@
     },
     "Superpowers": {
       "first_seen": "2026-07-28",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -33956,7 +34537,7 @@
     },
     "Redis": {
       "first_seen": "2026-07-28",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "technology",
       "signals": [
         {
@@ -34007,7 +34588,7 @@
     },
     "微信小程序": {
       "first_seen": "2026-07-28",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -34348,7 +34929,7 @@
           "signal_id": "v2ex-1231267"
         }
       ],
-      "canonical_name": "GLM-5.2"
+      "canonical_name": "GLM 5.2"
     },
     "BGM Box": {
       "first_seen": "2026-07-28",
@@ -34457,7 +35038,7 @@
     },
     "HTML": {
       "first_seen": "2026-07-28",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "technology",
       "signals": [
         {
@@ -34605,7 +35186,7 @@
     },
     "X Money": {
       "first_seen": "2026-07-28",
-      "last_seen": "2026-07-28",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -34614,6 +35195,13 @@
           "source_key": "x-trends",
           "title": "X Money",
           "signal_id": "x-trend-1404762"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "Product Hunt",
+          "source_key": "producthunt",
+          "title": "X Money: Your money, on the world's most powerful network.",
+          "signal_id": "ph-1215098"
         }
       ],
       "canonical_name": "X Money"
@@ -34665,7 +35253,7 @@
     },
     "Legora": {
       "first_seen": "2026-07-28",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "company",
       "signals": [
         {
@@ -34680,7 +35268,7 @@
     },
     "Gamma": {
       "first_seen": "2026-07-28",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "company",
       "signals": [
         {
@@ -35889,7 +36477,7 @@
     },
     "IonQ": {
       "first_seen": "2026-07-29",
-      "last_seen": "2026-08-03",
+      "last_seen": "2026-08-06",
       "term_type": "company",
       "signals": [
         {
@@ -35975,6 +36563,13 @@
           "source_key": "googlenews",
           "title": "FTC approves IonQ acquisition of SkyWater semiconductor ‍foundry",
           "signal_id": "gn-2291301"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "IonQ Raises 2026 Revenue Outlook After Record Quarter Fueled by Commercial Growth, SkyWater Acquisition",
+          "signal_id": "gn-7659278"
         }
       ],
       "canonical_name": "IonQ"
@@ -36789,7 +37384,7 @@
     },
     "Nix": {
       "first_seen": "2026-07-29",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "technology",
       "signals": [
         {
@@ -36819,6 +37414,13 @@
           "source_key": "lobsters",
           "title": "The Nix sandbox is a hidden input",
           "signal_id": "lobsters-4w9m07"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "Lobsters",
+          "source_key": "lobsters",
+          "title": "Nix Overrides That Expire Themselves",
+          "signal_id": "lobsters-wnyesi"
         }
       ],
       "canonical_name": "Nix"
@@ -36885,7 +37487,7 @@
     },
     "@ruvector/core": {
       "first_seen": "2026-07-29",
-      "last_seen": "2026-07-30",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -37004,7 +37606,7 @@
     },
     "React Native": {
       "first_seen": "2026-07-29",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-06",
       "term_type": "technology",
       "signals": [
         {
@@ -37034,6 +37636,13 @@
           "source_key": "juejin",
           "title": "你敢信吗？同样是跨端，KMP 跟 RN 居然差这么多！",
           "signal_id": "juejin-7669612673382105098"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "掘金",
+          "source_key": "juejin",
+          "title": "2026 Flutter VS React Native ，同时在 AI 时代 VS Native 开发，你没见过的版本",
+          "signal_id": "juejin-7613230154210852910"
         }
       ],
       "canonical_name": "React Native"
@@ -37531,7 +38140,7 @@
     },
     "Whisper": {
       "first_seen": "2026-07-29",
-      "last_seen": "2026-07-29",
+      "last_seen": "2026-08-06",
       "term_type": "model",
       "signals": [
         {
@@ -37540,6 +38149,13 @@
           "source_key": "showhn",
           "title": "Minute – Offline meeting notes on macOS with Whisper and llama.cpp",
           "signal_id": "showhn-49088771"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "Reddit",
+          "source_key": "reddit",
+          "title": "Running Whisper, Qwen3-ASR, Nemotron & MOSS completely offline on iPhone [P]",
+          "signal_id": "reddit-t3_1vgbl7w"
         }
       ],
       "canonical_name": "Whisper"
@@ -37598,7 +38214,7 @@
     },
     "Discord": {
       "first_seen": "2026-07-29",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -37621,6 +38237,13 @@
           "source_key": "github-releases",
           "title": "[mastra-ai/mastra] July 28, 2026",
           "signal_id": "ghr-9400341"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "HN Show HN",
+          "source_key": "showhn",
+          "title": "Earde – an indexed Discord alternative just for open-source projects",
+          "signal_id": "showhn-49183466"
         }
       ],
       "canonical_name": "Discord"
@@ -37884,7 +38507,7 @@
     },
     "gpt-transcribe": {
       "first_seen": "2026-07-29",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -37899,7 +38522,7 @@
     },
     "gpt-live-transcribe": {
       "first_seen": "2026-07-29",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -38355,7 +38978,7 @@
     },
     "DeepSeek V4 Pro": {
       "first_seen": "2026-07-29",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-06",
       "term_type": "model",
       "signals": [
         {
@@ -38550,7 +39173,7 @@
     },
     "XnViewMP": {
       "first_seen": "2026-07-29",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -38565,7 +39188,7 @@
     },
     "ImageMagick": {
       "first_seen": "2026-07-29",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "technology",
       "signals": [
         {
@@ -39485,7 +40108,7 @@
     },
     "WebSocket": {
       "first_seen": "2026-07-30",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "technology",
       "signals": [
         {
@@ -40197,7 +40820,7 @@
     },
     "Copilot": {
       "first_seen": "2026-07-30",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -40227,6 +40850,13 @@
           "source_key": "stackoverflow",
           "title": "VS Code Copilot Chat not showing local Ollama models in selection menu despite being detected in &quot;Language Models&q",
           "signal_id": "so-79888998"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "PostgreSQL 18/19 新特性深度解读",
+          "signal_id": "oschina-5897685"
         }
       ],
       "canonical_name": "Copilot"
@@ -40471,7 +41101,7 @@
     },
     "TimescaleDB": {
       "first_seen": "2026-07-30",
-      "last_seen": "2026-08-01",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -40480,6 +41110,13 @@
           "source_key": "oschina",
           "title": "TimescaleDB 2.29.0 发布，基于 PostgreSQL 的时序数据库",
           "signal_id": "oschina-482275"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "TimescaleDB 2.29.1 发布，基于 PostgreSQL 的时序数据库",
+          "signal_id": "oschina-488001"
         }
       ],
       "canonical_name": "TimescaleDB"
@@ -40612,7 +41249,7 @@
     },
     "Stripe": {
       "first_seen": "2026-07-30",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "company",
       "signals": [
         {
@@ -40690,7 +41327,7 @@
     },
     "MyBatis-Plus": {
       "first_seen": "2026-07-30",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -40705,7 +41342,7 @@
     },
     "ETL": {
       "first_seen": "2026-07-30",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "technology",
       "signals": [
         {
@@ -40720,7 +41357,7 @@
     },
     "ONES Wiki": {
       "first_seen": "2026-07-30",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -41166,7 +41803,7 @@
     },
     "Selenium": {
       "first_seen": "2026-07-30",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -41181,7 +41818,7 @@
     },
     "XPath": {
       "first_seen": "2026-07-30",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "technology",
       "signals": [
         {
@@ -41533,7 +42170,7 @@
     },
     "ChatGPT Work": {
       "first_seen": "2026-07-30",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -42428,7 +43065,7 @@
     },
     "shadcn/ui": {
       "first_seen": "2026-07-31",
-      "last_seen": "2026-08-01",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -42444,6 +43081,13 @@
           "source_key": "github-releases",
           "title": "[shadcn-ui/ui] shadcn@4.16.1",
           "signal_id": "ghr-0356532"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "GitHub Releases",
+          "source_key": "github-releases",
+          "title": "[shadcn-ui/ui] @shadcn/react@0.3.0",
+          "signal_id": "ghr-2834806"
         }
       ],
       "canonical_name": "shadcn-ui/ui"
@@ -42500,7 +43144,7 @@
     },
     "AWS": {
       "first_seen": "2026-07-31",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-06",
       "term_type": "company",
       "signals": [
         {
@@ -42544,6 +43188,13 @@
           "source_key": "github",
           "title": "awslabs/mcp",
           "signal_id": "github-952238700"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "Lobsters",
+          "source_key": "lobsters",
+          "title": "How Compiler Explorer Runs on AWS in 2026",
+          "signal_id": "lobsters-1eie3y"
         }
       ],
       "canonical_name": "AWS"
@@ -43760,7 +44411,7 @@
     },
     "Sub2api": {
       "first_seen": "2026-07-31",
-      "last_seen": "2026-07-31",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -43769,13 +44420,20 @@
           "source_key": "v2ex",
           "title": "sub2api 最近一直 Selected model is at capacity. Please try a different model",
           "signal_id": "v2ex-1231029"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "w2solo",
+          "source_key": "w2solo",
+          "title": "独立开发：自建 Codex Pro 20x 号池中转站",
+          "signal_id": "w2solo-7973"
         }
       ],
       "canonical_name": "Sub2api"
     },
     "PixImagen Remove Object": {
       "first_seen": "2026-07-31",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -44311,7 +44969,7 @@
     },
     "MiniMax H3": {
       "first_seen": "2026-07-31",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-06",
       "term_type": "model",
       "signals": [
         {
@@ -44369,6 +45027,13 @@
           "source_key": "oschina",
           "title": "MiniMax H3 开源：33B 全模态模型，一个视觉语言模型只够当它的编码器",
           "signal_id": "oschina-486031"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "V2EX 程序员",
+          "source_key": "v2ex",
+          "title": "minimax h3 开源模型支持在 mbp m5 32G 内存上本地部署吗",
+          "signal_id": "v2ex-1232311"
         }
       ],
       "canonical_name": "MiniMax H3"
@@ -45224,7 +45889,7 @@
     },
     "腾讯混元": {
       "first_seen": "2026-07-31",
-      "last_seen": "2026-07-31",
+      "last_seen": "2026-08-06",
       "term_type": "company",
       "signals": [
         {
@@ -45233,6 +45898,13 @@
           "source_key": "oschina",
           "title": "腾讯混元开源 AngelSpec 框架",
           "signal_id": "oschina-482843"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "腾讯混元 Hy ASR3.0preview 发布",
+          "signal_id": "oschina-487877"
         }
       ],
       "canonical_name": "腾讯混元"
@@ -45329,7 +46001,7 @@
     },
     "ICLR": {
       "first_seen": "2026-07-31",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "company",
       "signals": [
         {
@@ -45456,7 +46128,7 @@
     },
     "Home Assistant": {
       "first_seen": "2026-07-31",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -45472,6 +46144,20 @@
           "source_key": "reddit-consumer",
           "title": "Home Assistant & Thread: \"No border routers were found. Check your border router is configured correctly or reset it to ",
           "signal_id": "redditc-t3_1vept34"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "Reddit r/homeautomation",
+          "source_key": "reddit-consumer",
+          "title": "I reverse-engineered Daikin's P1/P2 protocol to unlock write access on my ventilation unit (was read-only) and hooked it",
+          "signal_id": "redditc-t3_1vg1g0o"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "Reddit r/homeautomation",
+          "source_key": "reddit-consumer",
+          "title": "Whole house AC on Home Assistant after 3 years, what stuck and what I'd change",
+          "signal_id": "redditc-t3_1vg2pia"
         }
       ],
       "canonical_name": "Home Assistant"
@@ -47622,7 +48308,7 @@
     },
     "Hacker News": {
       "first_seen": "2026-08-01",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-06",
       "term_type": "company",
       "signals": [
         {
@@ -47638,6 +48324,13 @@
           "source_key": "showhn",
           "title": "Hacker News with AI stories filtered out",
           "signal_id": "showhn-49159018"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "HN Show HN",
+          "source_key": "showhn",
+          "title": "Hacker News with reduced priority for AI driven content",
+          "signal_id": "showhn-49186767"
         }
       ],
       "canonical_name": "Hacker News"
@@ -47988,7 +48681,7 @@
     },
     "SlimLM": {
       "first_seen": "2026-08-01",
-      "last_seen": "2026-08-01",
+      "last_seen": "2026-08-06",
       "term_type": "model",
       "signals": [
         {
@@ -48463,7 +49156,7 @@
     },
     "SenseNova U1.5-Lite-Preview": {
       "first_seen": "2026-08-01",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "model",
       "signals": [
         {
@@ -48932,7 +49625,7 @@
     },
     "LemonLime": {
       "first_seen": "2026-08-02",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-06",
       "term_type": "company",
       "signals": [
         {
@@ -48997,6 +49690,13 @@
           "source_key": "googlenews",
           "title": "Y Combinator-backed AI startup LemonLime promised interviews to 7 people who got company tattoos — then apologized",
           "signal_id": "gn-2438246"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "The job market feels more crowded than ever. How far would candidates go to set themselves apart? Y Combinator startup L",
+          "signal_id": "gn-0171122"
         }
       ],
       "canonical_name": "LemonLime"
@@ -49792,7 +50492,7 @@
     },
     "Codeberg": {
       "first_seen": "2026-08-02",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "company",
       "signals": [
         {
@@ -49949,7 +50649,7 @@
     },
     "ABcloakPro": {
       "first_seen": "2026-08-02",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -50365,7 +51065,7 @@
     },
     "PayPal": {
       "first_seen": "2026-08-03",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "company",
       "signals": [
         {
@@ -51475,7 +52175,7 @@
     },
     "ARM": {
       "first_seen": "2026-08-03",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-06",
       "term_type": "technology",
       "signals": [
         {
@@ -51491,6 +52191,13 @@
           "source_key": "reddit",
           "title": "ARPL — runtime ISA/topology detection for llama.cpp on ARM (built for Snapdragon 8 Elite) [r]",
           "signal_id": "reddit-t3_1ven68z"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "Lobsters",
+          "source_key": "lobsters",
+          "title": "Proxmox officially supports Arm, with some caveats",
+          "signal_id": "lobsters-wblbfk"
         }
       ],
       "canonical_name": "ARM"
@@ -51804,7 +52511,7 @@
     },
     "Creem": {
       "first_seen": "2026-08-03",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -51834,7 +52541,7 @@
     },
     "SERP API": {
       "first_seen": "2026-08-03",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -51864,6 +52571,13 @@
           "source_key": "w2solo",
           "title": "ERP API Webhook 回调 vs 轮询对比:实时推送完整方案",
           "signal_id": "w2solo-7966"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "w2solo",
+          "source_key": "w2solo",
+          "title": "SERP API 端点稳定性横评:6 端点 × 30 天 5 家对比",
+          "signal_id": "w2solo-7972"
         }
       ],
       "canonical_name": "SERP API"
@@ -52155,7 +52869,7 @@
     },
     "@cloudflare/computer": {
       "first_seen": "2026-08-04",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -52199,13 +52913,20 @@
           "source_key": "cloudflare",
           "title": "Your agent needs a computer, not a container — introducing @cloudflare/computer",
           "signal_id": "changelog-4744787"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "Cloudflare Computer 开源：你的 Agent 需要一台电脑，而不是一个容器",
+          "signal_id": "oschina-487766"
         }
       ],
       "canonical_name": "@cloudflare/computer"
     },
     "Cloudflare Workers": {
       "first_seen": "2026-08-04",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -52242,6 +52963,48 @@
           "source_key": "cloudflare",
           "title": "Cloudflare Workers and Containers now support inbound TCP connections and gRPC",
           "signal_id": "changelog-9891431"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "GitHub Releases",
+          "source_key": "github-releases",
+          "title": "[cloudflare/workers-sdk] wrangler@4.119.0",
+          "signal_id": "ghr-3089715"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "GitHub Releases",
+          "source_key": "github-releases",
+          "title": "[cloudflare/workers-sdk] create-cloudflare@2.70.17",
+          "signal_id": "ghr-5052326"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "GitHub Releases",
+          "source_key": "github-releases",
+          "title": "[cloudflare/workers-sdk] @cloudflare/workers-utils@0.31.1",
+          "signal_id": "ghr-2412968"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "GitHub Releases",
+          "source_key": "github-releases",
+          "title": "[cloudflare/workers-sdk] @cloudflare/workers-auth@0.6.0",
+          "signal_id": "ghr-1256700"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "GitHub Releases",
+          "source_key": "github-releases",
+          "title": "[cloudflare/workers-sdk] @cloudflare/vitest-pool-workers@0.20.2",
+          "signal_id": "ghr-1702482"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "Stack Overflow",
+          "source_key": "stackoverflow",
+          "title": "Detecting if we are running in dev mode or in production mode in CloudFlare Worker",
+          "signal_id": "so-66788825"
         }
       ],
       "canonical_name": "Cloudflare Workers"
@@ -53656,7 +54419,7 @@
     },
     "DuckDuckGo": {
       "first_seen": "2026-08-04",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -54228,7 +54991,7 @@
     },
     "DBeaver": {
       "first_seen": "2026-08-04",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -54435,7 +55198,7 @@
     },
     "Palantir": {
       "first_seen": "2026-08-04",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "company",
       "signals": [
         {
@@ -54479,6 +55242,13 @@
           "source_key": "googlenews",
           "title": "Palantir Says AI Is Rewriting Enterprise Software As Commercial Revenue Surges 149% With ‘A Minuscule And Shrinking Sale",
           "signal_id": "gn-6299775"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "Palantir: Enterprise AI Adoption Is In Early Stages",
+          "signal_id": "gn-1210245"
         }
       ],
       "canonical_name": "Palantir"
@@ -54977,7 +55747,7 @@
     },
     "Project Valhalla": {
       "first_seen": "2026-08-04",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -54999,7 +55769,7 @@
     },
     "JDK 28": {
       "first_seen": "2026-08-04",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "technology",
       "signals": [
         {
@@ -55014,7 +55784,7 @@
     },
     "LLL Algorithm": {
       "first_seen": "2026-08-04",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "technology",
       "signals": [
         {
@@ -55371,7 +56141,7 @@
     },
     "Streamlit": {
       "first_seen": "2026-08-04",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -55386,7 +56156,7 @@
     },
     "ASP.NET Core": {
       "first_seen": "2026-08-04",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "technology",
       "signals": [
         {
@@ -55401,7 +56171,7 @@
     },
     "Visual Studio": {
       "first_seen": "2026-08-04",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -55416,7 +56186,7 @@
     },
     "Django Channels": {
       "first_seen": "2026-08-04",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "technology",
       "signals": [
         {
@@ -55431,7 +56201,7 @@
     },
     "AWS CodePipeline": {
       "first_seen": "2026-08-04",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -55476,7 +56246,7 @@
     },
     "Neverthrow": {
       "first_seen": "2026-08-04",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "technology",
       "signals": [
         {
@@ -55491,7 +56261,7 @@
     },
     "Copilot Chat": {
       "first_seen": "2026-08-04",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -55506,7 +56276,7 @@
     },
     "GitHub Actions": {
       "first_seen": "2026-08-04",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -55663,7 +56433,7 @@
     },
     "Kirkify": {
       "first_seen": "2026-08-04",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -55678,7 +56448,7 @@
     },
     "Charlie Kirk": {
       "first_seen": "2026-08-04",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-06",
       "term_type": "company",
       "signals": [
         {
@@ -56527,7 +57297,7 @@
     },
     "Alexa": {
       "first_seen": "2026-08-04",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -56536,6 +57306,13 @@
           "source_key": "reddit-consumer",
           "title": "UPDATE: EchoMuse - Alexa Replacement for the Echo Dot Gen 2",
           "signal_id": "redditc-t3_1ve6ane"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "Reddit r/homeautomation",
+          "source_key": "reddit-consumer",
+          "title": "Alexa and Google Privacy Concerns",
+          "signal_id": "redditc-t3_1vfvdtb"
         }
       ],
       "canonical_name": "Alexa"
@@ -56587,7 +57364,7 @@
     },
     "Zigbee": {
       "first_seen": "2026-08-04",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-06",
       "term_type": "technology",
       "signals": [
         {
@@ -56596,6 +57373,13 @@
           "source_key": "reddit-consumer",
           "title": "Newbee question about what I need with a Zigbee garage door sensor",
           "signal_id": "redditc-t3_1vepwh2"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "Reddit r/homeautomation",
+          "source_key": "reddit-consumer",
+          "title": "I reverse-engineered Daikin's P1/P2 protocol to unlock write access on my ventilation unit (was read-only) and hooked it",
+          "signal_id": "redditc-t3_1vg1g0o"
         }
       ],
       "canonical_name": "Zigbee"
@@ -56624,7 +57408,7 @@
     },
     "Matter": {
       "first_seen": "2026-08-04",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-06",
       "term_type": "technology",
       "signals": [
         {
@@ -56633,6 +57417,13 @@
           "source_key": "reddit-consumer",
           "title": "Matter over Thread devices don’t work cross-platform (Nest Thread Border Router + iPhone)",
           "signal_id": "redditc-t3_1vel7f1"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "Reddit r/homeautomation",
+          "source_key": "reddit-consumer",
+          "title": "How do you handle the physical switch problem with Matter smart bulbs?",
+          "signal_id": "redditc-t3_1vfarr6"
         }
       ],
       "canonical_name": "Matter"
@@ -56654,7 +57445,7 @@
     },
     "iPhone": {
       "first_seen": "2026-08-04",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -56670,6 +57461,13 @@
           "source_key": "showhn",
           "title": "Run an 80B Qwen in 4.3 GB of RAM on a Mac, and a 35B on an iPhone",
           "signal_id": "showhn-49158333"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "Reddit",
+          "source_key": "reddit",
+          "title": "Running Whisper, Qwen3-ASR, Nemotron & MOSS completely offline on iPhone [P]",
+          "signal_id": "reddit-t3_1vgbl7w"
         }
       ],
       "canonical_name": "iPhone"
@@ -57339,7 +58137,7 @@
     },
     "Palaura": {
       "first_seen": "2026-08-04",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -58834,7 +59632,7 @@
     },
     "FFmpeg 9.0": {
       "first_seen": "2026-08-04",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "technology",
       "signals": [
         {
@@ -58864,6 +59662,13 @@
           "source_key": "oschina",
           "title": "FFmpeg 9.0 发布：代号“Lei”，以此纪念中国开发者雷霄骅",
           "signal_id": "oschina-487289"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "V2EX 分享发现",
+          "source_key": "v2ex",
+          "title": "FFmpeg 9.0 版本刚发布了。这个版本的代号是“Lei” 雷霄骅",
+          "signal_id": "v2ex-1232176"
         }
       ],
       "canonical_name": "FFmpeg 9.0"
@@ -58915,7 +59720,7 @@
     },
     "pi.dev": {
       "first_seen": "2026-08-04",
-      "last_seen": "2026-08-04",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -59492,7 +60297,7 @@
     },
     "Cloudflare Wallets": {
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -59501,6 +60306,13 @@
           "source_key": "cloudflare",
           "title": "Announcing Cloudflare Wallets: the programmable wallet for the agentic Internet",
           "signal_id": "changelog-7988062"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "Product Hunt",
+          "source_key": "producthunt",
+          "title": "Cloudflare Wallets: the programmable wallet for the agentic Internet",
+          "signal_id": "ph-1214908"
         }
       ],
       "canonical_name": "Cloudflare Wallets"
@@ -59866,7 +60678,7 @@
     },
     "Carrington": {
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "company",
       "signals": [
         {
@@ -59875,6 +60687,13 @@
           "source_key": "googlenews",
           "title": "Carrington completes acquisition of Valon Mortgage",
           "signal_id": "gn-9830683"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "Carrington Closes Valon Mortgage Acquisition, Nears 2 Million Serviced Loans",
+          "signal_id": "gn-2421512"
         }
       ],
       "canonical_name": "Carrington"
@@ -59892,7 +60711,7 @@
           "signal_id": "gn-9830683"
         }
       ],
-      "canonical_name": "Valon Mortgage"
+      "canonical_name": "Valon"
     },
     "Vaaree": {
       "first_seen": "2026-08-05",
@@ -60233,7 +61052,7 @@
     },
     "Deloitte": {
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "company",
       "signals": [
         {
@@ -60248,7 +61067,7 @@
     },
     "SOC 2": {
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "technology",
       "signals": [
         {
@@ -60264,13 +61083,20 @@
           "source_key": "showhn",
           "title": "Ex-Deloitte auditor open-sourced the whole SOC 2 method for your AI",
           "signal_id": "showhn-49171140"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "HN Show HN",
+          "source_key": "showhn",
+          "title": "AuditBadger – SOC 2 and ISO 27001 – AI drafts, you approve",
+          "signal_id": "showhn-49181982"
         }
       ],
       "canonical_name": "SOC 2"
     },
     "FacebookAI/roberta-large": {
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "model",
       "signals": [
         {
@@ -60345,7 +61171,7 @@
     },
     "GNU/Emacs": {
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -60405,7 +61231,7 @@
     },
     "Redisson": {
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -60532,7 +61358,7 @@
     },
     "DeepSeek Harness": {
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -60562,7 +61388,7 @@
     },
     "九有数据库": {
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "company",
       "signals": [
         {
@@ -60607,7 +61433,7 @@
     },
     "亚马逊": {
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "company",
       "signals": [
         {
@@ -60637,7 +61463,7 @@
     },
     "Hey Noah": {
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -60652,7 +61478,7 @@
     },
     "Wondering": {
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -60667,7 +61493,7 @@
     },
     "Atlaso": {
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -60682,7 +61508,7 @@
     },
     "Driven": {
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -60697,7 +61523,7 @@
     },
     "Dashi Metrics": {
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -60712,7 +61538,7 @@
     },
     "Vibe Buddy": {
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -60742,7 +61568,7 @@
     },
     "Screen Awesome": {
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -60772,7 +61598,7 @@
     },
     "CSS": {
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "technology",
       "signals": [
         {
@@ -60787,7 +61613,7 @@
     },
     "iceoryx2": {
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "project",
       "signals": [
         {
@@ -60892,7 +61718,7 @@
     },
     "Maple-Preview": {
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -60901,6 +61727,13 @@
           "source_key": "showhn",
           "title": "Maple-Preview – ternary 20B MoE running at 120 tok/s on a iPhone",
           "signal_id": "showhn-49173984"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "Hacker News",
+          "source_key": "hn",
+          "title": "Show HN: Maple-Preview – Ternary 20B MoE running at 120 tok/s on a iPhone",
+          "signal_id": "hn-49173984"
         }
       ],
       "canonical_name": "Maple-Preview"
@@ -61162,7 +61995,7 @@
     },
     "Create React App": {
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "technology",
       "signals": [
         {
@@ -61177,7 +62010,7 @@
     },
     "Cloudflare Wallet": {
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -61186,6 +62019,27 @@
           "source_key": "v2ex",
           "title": "刚刚： Cloudflare Wallet 发布了，快去领 handle",
           "signal_id": "v2ex-1232114"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "V2EX 分享发现",
+          "source_key": "v2ex",
+          "title": "Cloudflare Wallets AI 支付钱包发布",
+          "signal_id": "v2ex-1232162"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "V2EX 分享发现",
+          "source_key": "v2ex",
+          "title": "Cloudflare 钱包，各位需要的开发者可以抢注一个喜欢的名字",
+          "signal_id": "v2ex-1232166"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "V2EX 分享发现",
+          "source_key": "v2ex",
+          "title": "赛博菩萨 Cloudflare 给 AI 配钱包！羊毛党，赶紧去申领！",
+          "signal_id": "v2ex-1232194"
         }
       ],
       "canonical_name": "Cloudflare Wallet"
@@ -61282,7 +62136,7 @@
     },
     "Photo to Excel": {
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -61297,7 +62151,7 @@
     },
     "GWP LAW GROUP": {
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "company",
       "signals": [
         {
@@ -61312,7 +62166,7 @@
     },
     "ERP API": {
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "technology",
       "signals": [
         {
@@ -61327,7 +62181,7 @@
     },
     "Boston Children's Hospital": {
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "company",
       "signals": [
         {
@@ -61342,7 +62196,7 @@
     },
     "Birding Pal": {
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-05",
+      "last_seen": "2026-08-06",
       "term_type": "product",
       "signals": [
         {
@@ -61354,6 +62208,1661 @@
         }
       ],
       "canonical_name": "Birding Pal"
+    },
+    "SkyWater": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "company",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "IonQ Raises 2026 Revenue Outlook After Record Quarter Fueled by Commercial Growth, SkyWater Acquisition",
+          "signal_id": "gn-7659278"
+        }
+      ],
+      "canonical_name": "SkyWater Technology"
+    },
+    "Cloudflare OS": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "Cloudflare OS: Here’s What’s Inside the Open-Source AI Agent Platform",
+          "signal_id": "gn-8137016"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "Hacker News",
+          "source_key": "hn",
+          "title": "Cloudflare OS: an open platform for agents, apps, and work",
+          "signal_id": "hn-49182996"
+        }
+      ],
+      "canonical_name": "Cloudflare OS"
+    },
+    "Klaviyo": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "company",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "Klaviyo acquires Elias Torres’ Agency in full-circle reunion for tech founders",
+          "signal_id": "gn-8759866"
+        }
+      ],
+      "canonical_name": "Klaviyo"
+    },
+    "Muse Code": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "Meta Launches Muse Code AI Agent to Challenge OpenAI, Anthropic",
+          "signal_id": "gn-9104650"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "Hacker News",
+          "source_key": "hn",
+          "title": "Muse Code and Muse Spark 1.2",
+          "signal_id": "hn-49187575"
+        }
+      ],
+      "canonical_name": "Muse Code"
+    },
+    "Jeff Dean": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "company",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "Jeff Dean and other top AI researchers are leaving Google to launch their own startup",
+          "signal_id": "gn-4573440"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "Hacker News",
+          "source_key": "hn",
+          "title": "Changes at Google DeepMind: Demis Hassabis from CEO to Chair, Jeff Dean departs",
+          "signal_id": "hn-49184755"
+        }
+      ],
+      "canonical_name": "Jeff Dean"
+    },
+    "Hitachi": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "company",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "Hitachi America’s CIO says the Japanese conglomerate’s enterprise AI strategy isn’t one-size-fits-all",
+          "signal_id": "gn-2285511"
+        }
+      ],
+      "canonical_name": "Hitachi"
+    },
+    "Airtable": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "company",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "Airtable Acquisition Is ‘Kick in the Gut’ for Software Unicorns and Their Backers",
+          "signal_id": "gn-9009216"
+        }
+      ],
+      "canonical_name": "Airtable"
+    },
+    "Jack Ma": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "company",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "Jack Ma made a $30 million bet on one of San Francisco's hottest AI startups",
+          "signal_id": "gn-3099334"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "Jack Ma quietly invested $30 million in Corgi, one of Y Combinator's hottest startups",
+          "signal_id": "gn-7887488"
+        }
+      ],
+      "canonical_name": "Jack Ma"
+    },
+    "Opsin Labs": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "company",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "Opsin Labs Report: 60% of Enterprise AI Agents Are Over-Permissioned as Adoption Accelerates 14x",
+          "signal_id": "gn-8393675"
+        }
+      ],
+      "canonical_name": "Opsin Labs"
+    },
+    "Veritas": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "company",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "Veritas to acquire McLean tech company",
+          "signal_id": "gn-0545554"
+        }
+      ],
+      "canonical_name": "Veritas"
+    },
+    "Worlds": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "company",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "Worlds Appoints Dilawar Syed as Strategic Advisor to Accelerate Enterprise AI Growth",
+          "signal_id": "gn-1366819"
+        }
+      ],
+      "canonical_name": "Worlds"
+    },
+    "Fish Audio": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "company",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "AI Voice Startup Fish Audio Closes $52M Seed Round to Expand Voice-Generation Models",
+          "signal_id": "gn-8953596"
+        }
+      ],
+      "canonical_name": "Fish Audio"
+    },
+    "CPE Tech": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "company",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "CPE Tech buys land with factory in Johor for RM10m, spends RM21m on machinery",
+          "signal_id": "gn-2725524"
+        }
+      ],
+      "canonical_name": "CPE Tech"
+    },
+    "Danantara": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "company",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "Danantara to drive AI adoption across state-owned enterprises",
+          "signal_id": "gn-8128301"
+        }
+      ],
+      "canonical_name": "Danantara"
+    },
+    "Moss": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "company",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "Berlin-based Moss hits unicorn status after closing €30 million Series C to expand its Finance AI suite",
+          "signal_id": "gn-1304876"
+        },
+        {
+          "date": "2026-08-06",
+          "source": "Reddit",
+          "source_key": "reddit",
+          "title": "Running Whisper, Qwen3-ASR, Nemotron & MOSS completely offline on iPhone [P]",
+          "signal_id": "reddit-t3_1vgbl7w"
+        }
+      ],
+      "canonical_name": "Moss"
+    },
+    "Valon": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "company",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "Carrington Closes Valon Mortgage Acquisition, Nears 2 Million Serviced Loans",
+          "signal_id": "gn-2421512"
+        }
+      ],
+      "canonical_name": "Valon"
+    },
+    "TrustScale": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "company",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "TrustScale Launches Argus to Detect and Correct AI Hallucinations and Power Safe Enterprise AI Adoption",
+          "signal_id": "gn-2075624"
+        }
+      ],
+      "canonical_name": "TrustScale"
+    },
+    "Argus": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "Google News",
+          "source_key": "googlenews",
+          "title": "TrustScale Launches Argus to Detect and Correct AI Hallucinations and Power Safe Enterprise AI Adoption",
+          "signal_id": "gn-2075624"
+        }
+      ],
+      "canonical_name": "Argus"
+    },
+    "Google DeepMind": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "company",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "Hacker News",
+          "source_key": "hn",
+          "title": "Changes at Google DeepMind: Demis Hassabis from CEO to Chair, Jeff Dean departs",
+          "signal_id": "hn-49184755"
+        }
+      ],
+      "canonical_name": "Google DeepMind"
+    },
+    "Demis Hassabis": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "company",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "Hacker News",
+          "source_key": "hn",
+          "title": "Changes at Google DeepMind: Demis Hassabis from CEO to Chair, Jeff Dean departs",
+          "signal_id": "hn-49184755"
+        }
+      ],
+      "canonical_name": "Demis Hassabis"
+    },
+    "Zed DeltaDB": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "Hacker News",
+          "source_key": "hn",
+          "title": "Zed DeltaDB",
+          "signal_id": "hn-49187256"
+        }
+      ],
+      "canonical_name": "Zed DeltaDB"
+    },
+    "Muse Spark": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "Hacker News",
+          "source_key": "hn",
+          "title": "Muse Code and Muse Spark 1.2",
+          "signal_id": "hn-49187575"
+        }
+      ],
+      "canonical_name": "Muse Spark"
+    },
+    "GNU Hurd": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "Hacker News",
+          "source_key": "hn",
+          "title": "GNU Hurd News 2026-Q2",
+          "signal_id": "hn-49146183"
+        }
+      ],
+      "canonical_name": "GNU Hurd"
+    },
+    "Atlassian Rovo": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "Hacker News",
+          "source_key": "hn",
+          "title": "Atlassian Rovo Exfiltrates Data, Bypassing Controls",
+          "signal_id": "hn-49185983"
+        }
+      ],
+      "canonical_name": "Atlassian Rovo"
+    },
+    "Celld": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "Hacker News",
+          "source_key": "hn",
+          "title": "Celld: Self-hosted, distributed Durable Objects",
+          "signal_id": "hn-49185430"
+        }
+      ],
+      "canonical_name": "Celld"
+    },
+    "HyperProbe": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "Hacker News",
+          "source_key": "hn",
+          "title": "Launch HN: HyperProbe (YC S26) – Agents that do read-only debugging in prod",
+          "signal_id": "hn-49185389"
+        }
+      ],
+      "canonical_name": "HyperProbe"
+    },
+    "SIMD Viterbi Decoder": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "Hacker News",
+          "source_key": "hn",
+          "title": "Show HN: SIMD Viterbi Decoder in Rust",
+          "signal_id": "hn-49176212"
+        }
+      ],
+      "canonical_name": "SIMD Viterbi Decoder"
+    },
+    "Prime Agent": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "Hacker News",
+          "source_key": "hn",
+          "title": "Prime Agent: A self-improving RLM agent",
+          "signal_id": "hn-49189075"
+        }
+      ],
+      "canonical_name": "Prime Agent"
+    },
+    "Claude Pro": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "掘金",
+          "source_key": "juejin",
+          "title": "公司不给你配 AI，你会自己掏钱吗？",
+          "signal_id": "juejin-7670011027535921202"
+        }
+      ],
+      "canonical_name": "Claude Pro"
+    },
+    "rust-lang/rust": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "project",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "Lobsters",
+          "source_key": "lobsters",
+          "title": "rust-lang/rust is adopting an LLM policy",
+          "signal_id": "lobsters-czvkjy"
+        }
+      ],
+      "canonical_name": "rust-lang/rust"
+    },
+    "Erdős Problems": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "Lobsters",
+          "source_key": "lobsters",
+          "title": "Why the Legendary Erdős Problems Are Falling to AI",
+          "signal_id": "lobsters-uq28a0"
+        }
+      ],
+      "canonical_name": "Erdős Problems"
+    },
+    "Cargo": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "Lobsters",
+          "source_key": "lobsters",
+          "title": "A Vision for Cargo",
+          "signal_id": "lobsters-mgr9lc"
+        }
+      ],
+      "canonical_name": "Cargo"
+    },
+    "Compiler Explorer": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "Lobsters",
+          "source_key": "lobsters",
+          "title": "How Compiler Explorer Runs on AWS in 2026",
+          "signal_id": "lobsters-1eie3y"
+        }
+      ],
+      "canonical_name": "Compiler Explorer"
+    },
+    "Symbolics OpenGenera": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "Lobsters",
+          "source_key": "lobsters",
+          "title": "Symbolics OpenGenera to go free for non-commercial use",
+          "signal_id": "lobsters-8cxvb2"
+        }
+      ],
+      "canonical_name": "Symbolics OpenGenera"
+    },
+    "Notepad--": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "Notepad-- v3.8.3 已经发布，文本编辑器",
+          "signal_id": "oschina-488216"
+        }
+      ],
+      "canonical_name": "Notepad--"
+    },
+    "LVFS": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "NVIDIA 成为 LVFS / Fwupd 首席赞助商",
+          "signal_id": "oschina-488134"
+        }
+      ],
+      "canonical_name": "LVFS"
+    },
+    "Fwupd": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "NVIDIA 成为 LVFS / Fwupd 首席赞助商",
+          "signal_id": "oschina-488134"
+        }
+      ],
+      "canonical_name": "Fwupd"
+    },
+    "LazyMind": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "LazyMind v0.2 正式发布",
+          "signal_id": "oschina-2484348"
+        }
+      ],
+      "canonical_name": "LazyMind"
+    },
+    "Hy ASR3.0preview": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "model",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "腾讯混元 Hy ASR3.0preview 发布",
+          "signal_id": "oschina-487877"
+        }
+      ],
+      "canonical_name": "Hy ASR3.0preview"
+    },
+    "Pale Moon": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "Pale Moon 34.3.2 发布，苍月浏览器",
+          "signal_id": "oschina-487857"
+        }
+      ],
+      "canonical_name": "Pale Moon"
+    },
+    "deepin": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "deepin 25.2.1 正式版更新！",
+          "signal_id": "oschina-487855"
+        }
+      ],
+      "canonical_name": "deepin"
+    },
+    "libexpat": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "project",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "慕尼黑市政府为全职开源项目维护者提供资助",
+          "signal_id": "oschina-487819"
+        }
+      ],
+      "canonical_name": "libexpat"
+    },
+    "HeidiSQL": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "HeidiSQL 12.21 发布",
+          "signal_id": "oschina-487801"
+        }
+      ],
+      "canonical_name": "HeidiSQL"
+    },
+    "JeeSite": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "👍JeeSite V5.18.1 发布 SpringBoot / Cloud / AI / Vue 多项新增优化，功能持续迭代升级",
+          "signal_id": "oschina-487720"
+        }
+      ],
+      "canonical_name": "JeeSite"
+    },
+    "MateClaw": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "OSChina",
+          "source_key": "oschina",
+          "title": "MateClaw 2.0.0 发布：Agent 团队、共享任务板与可靠执行链",
+          "signal_id": "oschina-487697"
+        }
+      ],
+      "canonical_name": "MateClaw"
+    },
+    "Wispr Flow Notetaker": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "Product Hunt",
+          "source_key": "producthunt",
+          "title": "Wispr Flow Notetaker: Meeting notes that get the details right.",
+          "signal_id": "ph-1214897"
+        }
+      ],
+      "canonical_name": "Wispr Flow Notetaker"
+    },
+    "AdAnt AI": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "Product Hunt",
+          "source_key": "producthunt",
+          "title": "AdAnt AI: Claude for viral, high-converting social ads",
+          "signal_id": "ph-1212030"
+        }
+      ],
+      "canonical_name": "AdAnt AI"
+    },
+    "NextDoor.Company": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "Product Hunt",
+          "source_key": "producthunt",
+          "title": "NextDoor.Company: Discover startups hiring near you, on a map",
+          "signal_id": "ph-1214477"
+        }
+      ],
+      "canonical_name": "NextDoor.Company"
+    },
+    "ngrok AI Gateway": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "Product Hunt",
+          "source_key": "producthunt",
+          "title": "ngrok AI Gateway: One private gateway for every AI model",
+          "signal_id": "ph-1204933"
+        }
+      ],
+      "canonical_name": "ngrok AI Gateway"
+    },
+    "BackEngine MCP": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "Product Hunt",
+          "source_key": "producthunt",
+          "title": "BackEngine MCP: Make private company knowledge usable for AI",
+          "signal_id": "ph-1215121"
+        }
+      ],
+      "canonical_name": "BackEngine MCP"
+    },
+    "Keystroke": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "Product Hunt",
+          "source_key": "producthunt",
+          "title": "Keystroke: Build powerful AI agents & workflows",
+          "signal_id": "ph-1215053"
+        }
+      ],
+      "canonical_name": "Keystroke"
+    },
+    "Snipplet": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "Product Hunt",
+          "source_key": "producthunt",
+          "title": "Snipplet: Create and share beautiful guides from places you love",
+          "signal_id": "ph-1214436"
+        }
+      ],
+      "canonical_name": "Snipplet"
+    },
+    "Kiro Crew": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "Product Hunt",
+          "source_key": "producthunt",
+          "title": "Kiro Crew: Open source agentic development workspace",
+          "signal_id": "ph-1215016"
+        }
+      ],
+      "canonical_name": "Kiro Crew"
+    },
+    "ZapDigits MCP": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "Product Hunt",
+          "source_key": "producthunt",
+          "title": "ZapDigits MCP: The MCP server for marketing data",
+          "signal_id": "ph-1213190"
+        }
+      ],
+      "canonical_name": "ZapDigits MCP"
+    },
+    "VIDEO AI ME": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "Product Hunt",
+          "source_key": "producthunt",
+          "title": "VIDEO AI ME: Make videos and post them everywhere with just one tool",
+          "signal_id": "ph-1214128"
+        }
+      ],
+      "canonical_name": "VIDEO AI ME"
+    },
+    "Capacity Desktop": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "Product Hunt",
+          "source_key": "producthunt",
+          "title": "Capacity Desktop: A free Lovable that lives on your Mac",
+          "signal_id": "ph-1208916"
+        }
+      ],
+      "canonical_name": "Capacity Desktop"
+    },
+    "OpenAI Python Library": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "PyPI",
+          "source_key": "pypi",
+          "title": "openai — The official Python library for the openai API",
+          "signal_id": "pypi-openai"
+        }
+      ],
+      "canonical_name": "OpenAI Python Library"
+    },
+    "Anthropic Python Library": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "PyPI",
+          "source_key": "pypi",
+          "title": "anthropic — The official Python library for the anthropic API",
+          "signal_id": "pypi-anthropic"
+        }
+      ],
+      "canonical_name": "Anthropic Python Library"
+    },
+    "Levenshtein automata": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "Reddit",
+          "source_key": "reddit",
+          "title": "How fuzzy search works in a search engine: Levenshtein automata and n-gram similarity",
+          "signal_id": "reddit-t3_1vg8iyl"
+        }
+      ],
+      "canonical_name": "Levenshtein automata"
+    },
+    "SQS": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "Reddit",
+          "source_key": "reddit",
+          "title": "Your SQS consumer can hang forever by default",
+          "signal_id": "reddit-t3_1vg4nwf"
+        }
+      ],
+      "canonical_name": "SQS"
+    },
+    "Elisp": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "Reddit",
+          "source_key": "reddit",
+          "title": "Gödel, Escher, Elisp: The Beauty of Macros",
+          "signal_id": "reddit-t3_1vg8bi5"
+        }
+      ],
+      "canonical_name": "Elisp"
+    },
+    "Zanzlanz": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "company",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "Reddit",
+          "source_key": "reddit",
+          "title": "How Zanzlanz released a game that has no assets",
+          "signal_id": "reddit-t3_1vfqtn6"
+        }
+      ],
+      "canonical_name": "Zanzlanz"
+    },
+    "Google Slides": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "Reddit",
+          "source_key": "reddit",
+          "title": "Reverse Engineering Google Slides",
+          "signal_id": "reddit-t3_1vfrjfk"
+        }
+      ],
+      "canonical_name": "Google Slides"
+    },
+    "Qwen3-ASR": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "model",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "Reddit",
+          "source_key": "reddit",
+          "title": "Running Whisper, Qwen3-ASR, Nemotron & MOSS completely offline on iPhone [P]",
+          "signal_id": "reddit-t3_1vgbl7w"
+        }
+      ],
+      "canonical_name": "Qwen3-ASR"
+    },
+    "Nemotron": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "model",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "Reddit",
+          "source_key": "reddit",
+          "title": "Running Whisper, Qwen3-ASR, Nemotron & MOSS completely offline on iPhone [P]",
+          "signal_id": "reddit-t3_1vgbl7w"
+        }
+      ],
+      "canonical_name": "Nemotron"
+    },
+    "Monodratic": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "Reddit",
+          "source_key": "reddit",
+          "title": "Monodratic: learned product-hash routing for sparse causal attention [R]",
+          "signal_id": "reddit-t3_1vg3jda"
+        }
+      ],
+      "canonical_name": "Monodratic"
+    },
+    "Tilley T3": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "Reddit r/BuyItForLife",
+          "source_key": "reddit-consumer",
+          "title": "2003 Tilley T3 Model Hat",
+          "signal_id": "redditc-t3_1vgivp6"
+        }
+      ],
+      "canonical_name": "Tilley T3"
+    },
+    "Storz & Bickel": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "company",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "Reddit r/BuyItForLife",
+          "source_key": "reddit-consumer",
+          "title": "Storz & Bickel dry herb vaporisers are definitely BIFL",
+          "signal_id": "redditc-t3_1vgf6i5"
+        }
+      ],
+      "canonical_name": "Storz & Bickel"
+    },
+    "Travel Pro": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "Reddit r/BuyItForLife",
+          "source_key": "reddit-consumer",
+          "title": "Travel Pro with over 1.5 M miles on it!!",
+          "signal_id": "redditc-t3_1vge6oj"
+        }
+      ],
+      "canonical_name": "Travel Pro"
+    },
+    "Green Bell": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "company",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "Reddit r/BuyItForLife",
+          "source_key": "reddit-consumer",
+          "title": "Green Bell nail clippers from Japan",
+          "signal_id": "redditc-t3_1vg4t1k"
+        }
+      ],
+      "canonical_name": "Green Bell"
+    },
+    "Felco 13": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "Reddit r/BuyItForLife",
+          "source_key": "reddit-consumer",
+          "title": "Felco 13 blade quality",
+          "signal_id": "redditc-t3_1vg8ptg"
+        }
+      ],
+      "canonical_name": "Felco 13"
+    },
+    "Hisense": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "company",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "Reddit r/BuyItForLife",
+          "source_key": "reddit-consumer",
+          "title": "Hisense TV review. LTDN42K26C",
+          "signal_id": "redditc-t3_1vgm70y"
+        }
+      ],
+      "canonical_name": "Hisense"
+    },
+    "Airbnb": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "company",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "Reddit r/digitalnomad",
+          "source_key": "reddit-consumer",
+          "title": "How are you finding comfortable 1–3 month rentals in Europe without paying Airbnb prices?",
+          "signal_id": "redditc-t3_1vg32jr"
+        }
+      ],
+      "canonical_name": "Airbnb"
+    },
+    "Daikin": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "company",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "Reddit r/homeautomation",
+          "source_key": "reddit-consumer",
+          "title": "I reverse-engineered Daikin's P1/P2 protocol to unlock write access on my ventilation unit (was read-only) and hooked it",
+          "signal_id": "redditc-t3_1vg1g0o"
+        }
+      ],
+      "canonical_name": "Daikin"
+    },
+    "UPB": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "Reddit r/homeautomation",
+          "source_key": "reddit-consumer",
+          "title": "Is UPB dead as a control platform?",
+          "signal_id": "redditc-t3_1vggok9"
+        }
+      ],
+      "canonical_name": "UPB"
+    },
+    "ZBBridge-P": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "Reddit r/homeautomation",
+          "source_key": "reddit-consumer",
+          "title": "Hi, I bought a ZBBridge-P. It appears and is added correctly, but it always shows as Offline.",
+          "signal_id": "redditc-t3_1vgetn3"
+        }
+      ],
+      "canonical_name": "ZBBridge-P"
+    },
+    "Eufy S4 Solar": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "Reddit r/homeautomation",
+          "source_key": "reddit-consumer",
+          "title": "New Junction Box for Eufy S4 Solar",
+          "signal_id": "redditc-t3_1vg0sh5"
+        }
+      ],
+      "canonical_name": "Eufy S4 Solar"
+    },
+    "ClearlyFiltered": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "Reddit r/homeautomation",
+          "source_key": "reddit-consumer",
+          "title": "I’m trying to find a device that tracks how many gallons of water I’m using in a particular sink; so that I know when to",
+          "signal_id": "redditc-t3_1vffxrs"
+        }
+      ],
+      "canonical_name": "ClearlyFiltered"
+    },
+    "HomeKit": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "Reddit r/homeautomation",
+          "source_key": "reddit-consumer",
+          "title": "Best way to update my HomeKit setup to allow android user to also control everything?",
+          "signal_id": "redditc-t3_1vfhhwq"
+        }
+      ],
+      "canonical_name": "HomeKit"
+    },
+    "Viterbi Decoder": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "HN Show HN",
+          "source_key": "showhn",
+          "title": "SIMD Viterbi Decoder in Rust",
+          "signal_id": "showhn-49176212"
+        }
+      ],
+      "canonical_name": "Viterbi Decoder"
+    },
+    "Vocab Top": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "HN Show HN",
+          "source_key": "showhn",
+          "title": "Vocab Top – AI-powered vocabulary builder that helps you retain words",
+          "signal_id": "showhn-49183110"
+        }
+      ],
+      "canonical_name": "Vocab Top"
+    },
+    "Capy": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "HN Show HN",
+          "source_key": "showhn",
+          "title": "Capy – A Git-style platform for managing your team's secrets",
+          "signal_id": "showhn-49188168"
+        }
+      ],
+      "canonical_name": "Capy"
+    },
+    "ClickBench": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "HN Show HN",
+          "source_key": "showhn",
+          "title": "ClickBench Playground – a playground for 110 database systems",
+          "signal_id": "showhn-49186732"
+        }
+      ],
+      "canonical_name": "ClickBench"
+    },
+    "ExANS": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "HN Show HN",
+          "source_key": "showhn",
+          "title": "ExANS – Lossless KV cache compression at 622 GB/s on H100",
+          "signal_id": "showhn-49185576"
+        }
+      ],
+      "canonical_name": "ExANS"
+    },
+    "H100": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "HN Show HN",
+          "source_key": "showhn",
+          "title": "ExANS – Lossless KV cache compression at 622 GB/s on H100",
+          "signal_id": "showhn-49185576"
+        }
+      ],
+      "canonical_name": "H100"
+    },
+    "AuditBadger": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "HN Show HN",
+          "source_key": "showhn",
+          "title": "AuditBadger – SOC 2 and ISO 27001 – AI drafts, you approve",
+          "signal_id": "showhn-49181982"
+        }
+      ],
+      "canonical_name": "AuditBadger"
+    },
+    "ISO 27001": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "HN Show HN",
+          "source_key": "showhn",
+          "title": "AuditBadger – SOC 2 and ISO 27001 – AI drafts, you approve",
+          "signal_id": "showhn-49181982"
+        }
+      ],
+      "canonical_name": "ISO 27001"
+    },
+    "Sif 1.0": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "HN Show HN",
+          "source_key": "showhn",
+          "title": "LLM control of deterministic coder – Sif 1.0 – LLMs as vibe coders",
+          "signal_id": "showhn-49184049"
+        }
+      ],
+      "canonical_name": "Sif 1.0"
+    },
+    "HUD": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "HN Show HN",
+          "source_key": "showhn",
+          "title": "HUD, an open-source minimal terminal UI for ClaudeCode, Codex, OpenCode",
+          "signal_id": "showhn-49184388"
+        }
+      ],
+      "canonical_name": "HUD"
+    },
+    "Spltty": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "HN Show HN",
+          "source_key": "showhn",
+          "title": "Spltty – a Markdown-based personal finance CLI built with Claude",
+          "signal_id": "showhn-49187132"
+        }
+      ],
+      "canonical_name": "Spltty"
+    },
+    "Command Code GOAT": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "HN Show HN",
+          "source_key": "showhn",
+          "title": "Command Code GOAT, $10/month for $70 of credits across 30 models",
+          "signal_id": "showhn-49188656"
+        }
+      ],
+      "canonical_name": "Command Code GOAT"
+    },
+    "Bitbead": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "HN Show HN",
+          "source_key": "showhn",
+          "title": "Bitbead – Photo to printable bead pattern, in the browser",
+          "signal_id": "showhn-49180394"
+        }
+      ],
+      "canonical_name": "Bitbead"
+    },
+    "Labgrid-MCP": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "HN Show HN",
+          "source_key": "showhn",
+          "title": "Labgrid-MCP – let AI agents drive real embedded hardware labs",
+          "signal_id": "showhn-49182016"
+        }
+      ],
+      "canonical_name": "Labgrid-MCP"
+    },
+    "USB-C Power Delivery": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "HN Show HN",
+          "source_key": "showhn",
+          "title": "We built an open USB-C Power Delivery analyzer and programmable sink",
+          "signal_id": "showhn-49184082"
+        }
+      ],
+      "canonical_name": "USB-C Power Delivery"
+    },
+    "Earde": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "HN Show HN",
+          "source_key": "showhn",
+          "title": "Earde – an indexed Discord alternative just for open-source projects",
+          "signal_id": "showhn-49183466"
+        }
+      ],
+      "canonical_name": "Earde"
+    },
+    "Hinode": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "HN Show HN",
+          "source_key": "showhn",
+          "title": "Hinode – Cloud Linux desktop with a dedicated GPU that auto-pauses",
+          "signal_id": "showhn-49176133"
+        }
+      ],
+      "canonical_name": "Hinode"
+    },
+    "Ocean": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "HN Show HN",
+          "source_key": "showhn",
+          "title": "Ocean – All your team's agent sessions in one place",
+          "signal_id": "showhn-49186756"
+        }
+      ],
+      "canonical_name": "Ocean"
+    },
+    "Textracto": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "HN Show HN",
+          "source_key": "showhn",
+          "title": "Textracto – fzf for your screen (macOS)",
+          "signal_id": "showhn-49181114"
+        }
+      ],
+      "canonical_name": "Textracto"
+    },
+    "fzf": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "HN Show HN",
+          "source_key": "showhn",
+          "title": "Textracto – fzf for your screen (macOS)",
+          "signal_id": "showhn-49181114"
+        }
+      ],
+      "canonical_name": "fzf"
+    },
+    "Lucidos": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "HN Show HN",
+          "source_key": "showhn",
+          "title": "Lucidos, a local AI OS that keeps the apps you describe running",
+          "signal_id": "showhn-49186246"
+        }
+      ],
+      "canonical_name": "Lucidos"
+    },
+    "PickZ": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "V2EX 产品发布",
+          "source_key": "v2ex",
+          "title": "[分享创造] PickZ（chrome 插件） —— 选中即翻译/总结/改写/解释的轻量 AI 悬浮助手",
+          "signal_id": "v2ex-1232331"
+        }
+      ],
+      "canonical_name": "PickZ"
+    },
+    "gopls": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "technology",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "V2EX 分享发现",
+          "source_key": "v2ex",
+          "title": "记录下 gopls 导致系统自动重启的问题",
+          "signal_id": "v2ex-1232225"
+        }
+      ],
+      "canonical_name": "gopls"
+    },
+    "AnyCrawl": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "V2EX 产品发布",
+          "source_key": "v2ex",
+          "title": "AnyCrawl: 基于 TS 的高性能爬虫，用于将任意 Web 转为干净的数据喂给 Agent",
+          "signal_id": "v2ex-1232326"
+        }
+      ],
+      "canonical_name": "AnyCrawl"
+    },
+    "crScrcpy": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "V2EX 产品发布",
+          "source_key": "v2ex",
+          "title": "libcr 项目组发布 crScrcpy 1.0.0 , 通过 adb 轻松控制你的多台 android 设备",
+          "signal_id": "v2ex-1232314"
+        }
+      ],
+      "canonical_name": "crScrcpy"
+    },
+    "Imference Desktop": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "V2EX 产品发布",
+          "source_key": "v2ex",
+          "title": "Imference Desktop — 开源的本地优先 AI 绘图桌面应用,一键安装免配置(作者不会中文)",
+          "signal_id": "v2ex-1232305"
+        }
+      ],
+      "canonical_name": "Imference Desktop"
+    },
+    "Grok": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "model",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "V2EX 分享发现",
+          "source_key": "v2ex",
+          "title": "Grok 答非所问",
+          "signal_id": "v2ex-1232204"
+        }
+      ],
+      "canonical_name": "Grok"
+    },
+    "Threads": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "w2solo",
+          "source_key": "w2solo",
+          "title": "独立开发记录：我做了一个 Threads 媒体下载工具，想听听大家的建议",
+          "signal_id": "w2solo-7975"
+        }
+      ],
+      "canonical_name": "Threads"
+    },
+    "Codex Pro 20x": {
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-06",
+      "term_type": "product",
+      "signals": [
+        {
+          "date": "2026-08-06",
+          "source": "w2solo",
+          "source_key": "w2solo",
+          "title": "独立开发：自建 Codex Pro 20x 号池中转站",
+          "signal_id": "w2solo-7973"
+        }
+      ],
+      "canonical_name": "Codex Pro 20x"
     }
   },
   "_normalized": true
