@@ -3,862 +3,17 @@
   "_version": "1.0",
   "date": "2026-08-06",
   "summary": {
-    "total_terms": 2433,
-    "newborns_today": 105,
+    "total_terms": 2328,
+    "newborns_today": 0,
     "transitions_today": 219,
     "stage_distribution": {
-      "nascent": 1256,
+      "nascent": 1151,
       "emergent": 1177,
       "validating": 0,
       "rising": 0
     }
   },
-  "newborns": [
-    {
-      "term": "Cloudflare OS",
-      "term_type": "product",
-      "sources": {
-        "Google News": 1,
-        "Hacker News": 1
-      },
-      "distinct_sources": 2
-    },
-    {
-      "term": "Muse Code",
-      "term_type": "product",
-      "sources": {
-        "Google News": 1,
-        "Hacker News": 1
-      },
-      "distinct_sources": 2
-    },
-    {
-      "term": "Jeff Dean",
-      "term_type": "company",
-      "sources": {
-        "Google News": 1,
-        "Hacker News": 1
-      },
-      "distinct_sources": 2
-    },
-    {
-      "term": "Moss",
-      "term_type": "company",
-      "sources": {
-        "Google News": 1,
-        "Reddit": 1
-      },
-      "distinct_sources": 2
-    },
-    {
-      "term": "Klaviyo",
-      "term_type": "company",
-      "sources": {
-        "Google News": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "Hitachi",
-      "term_type": "company",
-      "sources": {
-        "Google News": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "Airtable",
-      "term_type": "company",
-      "sources": {
-        "Google News": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "Jack Ma",
-      "term_type": "company",
-      "sources": {
-        "Google News": 2
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "Opsin Labs",
-      "term_type": "company",
-      "sources": {
-        "Google News": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "Veritas",
-      "term_type": "company",
-      "sources": {
-        "Google News": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "Worlds",
-      "term_type": "company",
-      "sources": {
-        "Google News": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "Fish Audio",
-      "term_type": "company",
-      "sources": {
-        "Google News": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "CPE Tech",
-      "term_type": "company",
-      "sources": {
-        "Google News": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "Danantara",
-      "term_type": "company",
-      "sources": {
-        "Google News": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "TrustScale",
-      "term_type": "company",
-      "sources": {
-        "Google News": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "Argus",
-      "term_type": "product",
-      "sources": {
-        "Google News": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "Google DeepMind",
-      "term_type": "company",
-      "sources": {
-        "Hacker News": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "Demis Hassabis",
-      "term_type": "company",
-      "sources": {
-        "Hacker News": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "Zed DeltaDB",
-      "term_type": "product",
-      "sources": {
-        "Hacker News": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "GNU Hurd",
-      "term_type": "technology",
-      "sources": {
-        "Hacker News": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "Atlassian Rovo",
-      "term_type": "product",
-      "sources": {
-        "Hacker News": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "Celld",
-      "term_type": "product",
-      "sources": {
-        "Hacker News": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "HyperProbe",
-      "term_type": "product",
-      "sources": {
-        "Hacker News": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "SIMD Viterbi Decoder",
-      "term_type": "technology",
-      "sources": {
-        "Hacker News": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "Prime Agent",
-      "term_type": "product",
-      "sources": {
-        "Hacker News": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "Claude Pro",
-      "term_type": "product",
-      "sources": {
-        "掘金": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "rust-lang/rust",
-      "term_type": "project",
-      "sources": {
-        "Lobsters": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "Erdős Problems",
-      "term_type": "technology",
-      "sources": {
-        "Lobsters": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "Cargo",
-      "term_type": "technology",
-      "sources": {
-        "Lobsters": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "Compiler Explorer",
-      "term_type": "product",
-      "sources": {
-        "Lobsters": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "Symbolics OpenGenera",
-      "term_type": "product",
-      "sources": {
-        "Lobsters": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "Notepad--",
-      "term_type": "product",
-      "sources": {
-        "OSChina": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "LVFS",
-      "term_type": "technology",
-      "sources": {
-        "OSChina": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "Fwupd",
-      "term_type": "technology",
-      "sources": {
-        "OSChina": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "LazyMind",
-      "term_type": "product",
-      "sources": {
-        "OSChina": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "Hy ASR3.0preview",
-      "term_type": "model",
-      "sources": {
-        "OSChina": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "Pale Moon",
-      "term_type": "product",
-      "sources": {
-        "OSChina": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "deepin",
-      "term_type": "product",
-      "sources": {
-        "OSChina": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "libexpat",
-      "term_type": "project",
-      "sources": {
-        "OSChina": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "HeidiSQL",
-      "term_type": "product",
-      "sources": {
-        "OSChina": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "JeeSite",
-      "term_type": "product",
-      "sources": {
-        "OSChina": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "MateClaw",
-      "term_type": "product",
-      "sources": {
-        "OSChina": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "Wispr Flow Notetaker",
-      "term_type": "product",
-      "sources": {
-        "Product Hunt": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "AdAnt AI",
-      "term_type": "product",
-      "sources": {
-        "Product Hunt": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "NextDoor.Company",
-      "term_type": "product",
-      "sources": {
-        "Product Hunt": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "ngrok AI Gateway",
-      "term_type": "product",
-      "sources": {
-        "Product Hunt": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "BackEngine MCP",
-      "term_type": "product",
-      "sources": {
-        "Product Hunt": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "Keystroke",
-      "term_type": "product",
-      "sources": {
-        "Product Hunt": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "Snipplet",
-      "term_type": "product",
-      "sources": {
-        "Product Hunt": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "Kiro Crew",
-      "term_type": "product",
-      "sources": {
-        "Product Hunt": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "ZapDigits MCP",
-      "term_type": "product",
-      "sources": {
-        "Product Hunt": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "VIDEO AI ME",
-      "term_type": "product",
-      "sources": {
-        "Product Hunt": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "Capacity Desktop",
-      "term_type": "product",
-      "sources": {
-        "Product Hunt": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "OpenAI Python Library",
-      "term_type": "product",
-      "sources": {
-        "PyPI": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "Anthropic Python Library",
-      "term_type": "product",
-      "sources": {
-        "PyPI": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "Levenshtein automata",
-      "term_type": "technology",
-      "sources": {
-        "Reddit": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "SQS",
-      "term_type": "technology",
-      "sources": {
-        "Reddit": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "Elisp",
-      "term_type": "technology",
-      "sources": {
-        "Reddit": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "Zanzlanz",
-      "term_type": "company",
-      "sources": {
-        "Reddit": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "Google Slides",
-      "term_type": "product",
-      "sources": {
-        "Reddit": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "Qwen3-ASR",
-      "term_type": "model",
-      "sources": {
-        "Reddit": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "Nemotron",
-      "term_type": "model",
-      "sources": {
-        "Reddit": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "Monodratic",
-      "term_type": "technology",
-      "sources": {
-        "Reddit": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "Tilley T3",
-      "term_type": "product",
-      "sources": {
-        "Reddit r/BuyItForLife": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "Storz & Bickel",
-      "term_type": "company",
-      "sources": {
-        "Reddit r/BuyItForLife": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "Travel Pro",
-      "term_type": "product",
-      "sources": {
-        "Reddit r/BuyItForLife": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "Green Bell",
-      "term_type": "company",
-      "sources": {
-        "Reddit r/BuyItForLife": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "Felco 13",
-      "term_type": "product",
-      "sources": {
-        "Reddit r/BuyItForLife": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "Hisense",
-      "term_type": "company",
-      "sources": {
-        "Reddit r/BuyItForLife": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "Airbnb",
-      "term_type": "company",
-      "sources": {
-        "Reddit r/digitalnomad": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "Daikin",
-      "term_type": "company",
-      "sources": {
-        "Reddit r/homeautomation": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "UPB",
-      "term_type": "technology",
-      "sources": {
-        "Reddit r/homeautomation": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "ZBBridge-P",
-      "term_type": "product",
-      "sources": {
-        "Reddit r/homeautomation": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "Eufy S4 Solar",
-      "term_type": "product",
-      "sources": {
-        "Reddit r/homeautomation": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "ClearlyFiltered",
-      "term_type": "product",
-      "sources": {
-        "Reddit r/homeautomation": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "HomeKit",
-      "term_type": "technology",
-      "sources": {
-        "Reddit r/homeautomation": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "Viterbi Decoder",
-      "term_type": "technology",
-      "sources": {
-        "HN Show HN": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "Vocab Top",
-      "term_type": "product",
-      "sources": {
-        "HN Show HN": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "Capy",
-      "term_type": "product",
-      "sources": {
-        "HN Show HN": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "ClickBench",
-      "term_type": "product",
-      "sources": {
-        "HN Show HN": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "ExANS",
-      "term_type": "product",
-      "sources": {
-        "HN Show HN": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "H100",
-      "term_type": "technology",
-      "sources": {
-        "HN Show HN": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "AuditBadger",
-      "term_type": "product",
-      "sources": {
-        "HN Show HN": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "ISO 27001",
-      "term_type": "technology",
-      "sources": {
-        "HN Show HN": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "Sif 1.0",
-      "term_type": "product",
-      "sources": {
-        "HN Show HN": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "HUD",
-      "term_type": "product",
-      "sources": {
-        "HN Show HN": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "Spltty",
-      "term_type": "product",
-      "sources": {
-        "HN Show HN": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "Command Code GOAT",
-      "term_type": "product",
-      "sources": {
-        "HN Show HN": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "Bitbead",
-      "term_type": "product",
-      "sources": {
-        "HN Show HN": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "Labgrid-MCP",
-      "term_type": "product",
-      "sources": {
-        "HN Show HN": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "USB-C Power Delivery",
-      "term_type": "technology",
-      "sources": {
-        "HN Show HN": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "Earde",
-      "term_type": "product",
-      "sources": {
-        "HN Show HN": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "Hinode",
-      "term_type": "product",
-      "sources": {
-        "HN Show HN": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "Ocean",
-      "term_type": "product",
-      "sources": {
-        "HN Show HN": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "Textracto",
-      "term_type": "product",
-      "sources": {
-        "HN Show HN": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "fzf",
-      "term_type": "technology",
-      "sources": {
-        "HN Show HN": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "Lucidos",
-      "term_type": "product",
-      "sources": {
-        "HN Show HN": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "PickZ",
-      "term_type": "product",
-      "sources": {
-        "V2EX 产品发布": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "gopls",
-      "term_type": "technology",
-      "sources": {
-        "V2EX 分享发现": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "AnyCrawl",
-      "term_type": "product",
-      "sources": {
-        "V2EX 产品发布": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "crScrcpy",
-      "term_type": "product",
-      "sources": {
-        "V2EX 产品发布": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "Imference Desktop",
-      "term_type": "product",
-      "sources": {
-        "V2EX 产品发布": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "Grok",
-      "term_type": "model",
-      "sources": {
-        "V2EX 分享发现": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "Threads",
-      "term_type": "product",
-      "sources": {
-        "w2solo": 1
-      },
-      "distinct_sources": 1
-    },
-    {
-      "term": "Codex Pro 20x",
-      "term_type": "product",
-      "sources": {
-        "w2solo": 1
-      },
-      "distinct_sources": 1
-    }
-  ],
+  "newborns": [],
   "transitions": [
     {
       "term": "ClinFusion",
@@ -2180,7 +1335,7 @@
       "term": "Vercel",
       "term_type": "company",
       "first_seen": "2026-07-12",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 25,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -2199,30 +1354,29 @@
       "term": "Cloudflare",
       "term_type": "company",
       "first_seen": "2026-07-12",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 25,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
       "sources": {
         "Cloudflare": 85,
         "GitHub Releases": 18,
-        "V2EX 分享发现": 4,
-        "OSChina": 3,
         "w2solo": 2,
+        "OSChina": 1,
         "HN Show HN": 1,
         "GitHub Trending": 1,
         "Reddit": 1,
         "Stack Overflow": 1,
-        "Product Hunt": 1
+        "V2EX 分享发现": 1
       },
-      "distinct_sources": 10,
-      "appearances": 117
+      "distinct_sources": 9,
+      "appearances": 111
     },
     "OpenAI": {
       "term": "OpenAI",
       "term_type": "company",
       "first_seen": "2026-07-12",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 25,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -2230,9 +1384,9 @@
         "OpenAI": 121,
         "YouTube": 12,
         "Substack/platformer": 12,
-        "Google News": 11,
-        "OSChina": 8,
+        "Google News": 9,
         "GitHub Releases": 8,
+        "OSChina": 6,
         "Hacker News": 4,
         "Stack Overflow": 4,
         "Substack/aisupremacy": 3,
@@ -2247,7 +1401,7 @@
         "HN Show HN": 1
       },
       "distinct_sources": 18,
-      "appearances": 193
+      "appearances": 189
     },
     "Apple ML": {
       "term": "Apple ML",
@@ -2267,7 +1421,7 @@
       "term": "Hugging Face",
       "term_type": "company",
       "first_seen": "2026-07-12",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 25,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -2316,7 +1470,7 @@
       "term": "ChatGPT",
       "term_type": "product",
       "first_seen": "2026-07-12",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 25,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -2342,32 +1496,30 @@
       "term": "Lovable",
       "term_type": "product",
       "first_seen": "2026-07-12",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-07-12",
       "age_days": 25,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
       "sources": {
-        "Vercel": 1,
-        "Product Hunt": 1
+        "Vercel": 1
       },
-      "distinct_sources": 2,
-      "appearances": 2
+      "distinct_sources": 1,
+      "appearances": 1
     },
-    "Muse Spark": {
-      "term": "Muse Spark",
+    "Muse Spark 1.1": {
+      "term": "Muse Spark 1.1",
       "term_type": "model",
       "first_seen": "2026-07-12",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-07-12",
       "age_days": 25,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
       "sources": {
         "Google News": 3,
-        "Vercel": 1,
-        "Hacker News": 1
+        "Vercel": 1
       },
-      "distinct_sources": 3,
-      "appearances": 5
+      "distinct_sources": 2,
+      "appearances": 4
     },
     "Vercel AI Gateway": {
       "term": "Vercel AI Gateway",
@@ -2388,16 +1540,16 @@
       "term": "GPT-5.6",
       "term_type": "model",
       "first_seen": "2026-07-12",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 25,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
       "sources": {
         "OpenAI": 10,
         "Vercel": 8,
-        "Hacker News": 3,
         "掘金": 2,
         "V2EX 分享发现": 2,
+        "Hacker News": 2,
         "Google News": 1,
         "OSChina": 1,
         "YouTube": 1,
@@ -2405,7 +1557,7 @@
         "V2EX 程序员": 1
       },
       "distinct_sources": 10,
-      "appearances": 30
+      "appearances": 29
     },
     "Meerkat": {
       "term": "Meerkat",
@@ -2566,7 +1718,7 @@
       "term": "vLLM",
       "term_type": "project",
       "first_seen": "2026-07-12",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 25,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -2670,7 +1822,7 @@
       "term": "Ollama",
       "term_type": "company",
       "first_seen": "2026-07-12",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 25,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -2688,12 +1840,12 @@
       "term": "LangChain",
       "term_type": "project",
       "first_seen": "2026-07-12",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 25,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
       "sources": {
-        "GitHub Releases": 68,
+        "GitHub Releases": 67,
         "Stack Overflow": 16,
         "掘金": 4,
         "npm": 1,
@@ -2701,22 +1853,22 @@
         "OSChina": 1
       },
       "distinct_sources": 6,
-      "appearances": 91
+      "appearances": 90
     },
     "shadcn-ui/ui": {
       "term": "shadcn-ui/ui",
       "term_type": "project",
       "first_seen": "2026-07-12",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-04",
       "age_days": 25,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
       "sources": {
-        "GitHub Releases": 44,
+        "GitHub Releases": 43,
         "npm": 1
       },
       "distinct_sources": 2,
-      "appearances": 45
+      "appearances": 44
     },
     "supabase/supabase": {
       "term": "supabase/supabase",
@@ -2781,16 +1933,16 @@
       "term": "Wrangler",
       "term_type": "product",
       "first_seen": "2026-07-12",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-04",
       "age_days": 25,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
       "sources": {
-        "GitHub Releases": 27,
+        "GitHub Releases": 26,
         "Reddit r/BuyItForLife": 1
       },
       "distinct_sources": 2,
-      "appearances": 28
+      "appearances": 27
     },
     "Miniflare": {
       "term": "Miniflare",
@@ -2852,7 +2004,7 @@
       "term": "Mistral",
       "term_type": "company",
       "first_seen": "2026-07-12",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 25,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -2925,19 +2077,18 @@
       "term": "Meta",
       "term_type": "company",
       "first_seen": "2026-07-12",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-04",
       "age_days": 25,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
       "sources": {
         "Substack/platformer": 8,
-        "Google News": 5,
+        "Google News": 4,
         "Substack/aisupremacy": 2,
-        "掘金": 1,
-        "Hacker News": 1
+        "掘金": 1
       },
-      "distinct_sources": 5,
-      "appearances": 17
+      "distinct_sources": 4,
+      "appearances": 15
     },
     "Databricks": {
       "term": "Databricks",
@@ -2954,8 +2105,8 @@
       "distinct_sources": 2,
       "appearances": 12
     },
-    "GLM 5.2": {
-      "term": "GLM 5.2",
+    "GLM-5.2": {
+      "term": "GLM-5.2",
       "term_type": "model",
       "first_seen": "2026-07-12",
       "last_seen": "2026-08-01",
@@ -2976,14 +2127,14 @@
       "term": "Anthropic",
       "term_type": "company",
       "first_seen": "2026-07-12",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 25,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
       "sources": {
-        "Google News": 12,
+        "Google News": 10,
         "GitHub Releases": 10,
-        "OSChina": 7,
+        "OSChina": 6,
         "掘金": 3,
         "X/Twitter": 2,
         "PyPI": 1,
@@ -2993,7 +2144,7 @@
         "DEV Community": 1
       },
       "distinct_sources": 10,
-      "appearances": 39
+      "appearances": 36
     },
     "SpaceXAI": {
       "term": "SpaceXAI",
@@ -3161,7 +2312,7 @@
       "term": "RAG",
       "term_type": "technology",
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 14,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -3182,19 +2333,19 @@
       "term": "macOS",
       "term_type": "technology",
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 14,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
       "sources": {
-        "V2EX 产品发布": 5,
-        "HN Show HN": 3,
+        "V2EX 产品发布": 4,
         "Hacker News": 2,
+        "HN Show HN": 2,
         "SegmentFault": 1,
         "GitHub Trending": 1
       },
       "distinct_sources": 5,
-      "appearances": 12
+      "appearances": 10
     },
     "GitHub Stars": {
       "term": "GitHub Stars",
@@ -3271,19 +2422,19 @@
       "term": "Chrome DevTools",
       "term_type": "product",
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 14,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
       "sources": {
-        "V2EX 产品发布": 6,
+        "V2EX 产品发布": 5,
         "GitHub Trending": 2,
         "w2solo": 1,
         "Lobsters": 1,
         "V2EX 程序员": 1
       },
       "distinct_sources": 5,
-      "appearances": 11
+      "appearances": 10
     },
     "TikTok Shop": {
       "term": "TikTok Shop",
@@ -3317,15 +2468,15 @@
       "term": "Rust",
       "term_type": "technology",
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 14,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
       "sources": {
         "Lobsters": 6,
-        "Reddit": 5,
-        "HN Show HN": 5,
-        "Hacker News": 4,
+        "Reddit": 4,
+        "HN Show HN": 4,
+        "Hacker News": 3,
         "DEV Community": 3,
         "ArXiv": 3,
         "V2EX 产品发布": 2,
@@ -3339,7 +2490,7 @@
         "Stack Overflow": 1
       },
       "distinct_sources": 15,
-      "appearances": 36
+      "appearances": 33
     },
     "Bevy": {
       "term": "Bevy",
@@ -3373,7 +2524,7 @@
       "term": "Coasty",
       "term_type": "product",
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 14,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -3556,24 +2707,23 @@
       "term": "SIMD",
       "term_type": "technology",
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-07-27",
       "age_days": 14,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
       "sources": {
         "Hacker News": 1,
         "Reddit": 1,
-        "Lobsters": 1,
-        "HN Show HN": 1
+        "Lobsters": 1
       },
-      "distinct_sources": 4,
-      "appearances": 4
+      "distinct_sources": 3,
+      "appearances": 3
     },
     "Weekday": {
       "term": "Weekday",
       "term_type": "product",
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 14,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -3615,7 +2765,7 @@
       "term": "Angular",
       "term_type": "technology",
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 14,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -3644,7 +2794,7 @@
       "term": "Typecho",
       "term_type": "product",
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 14,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -3770,7 +2920,7 @@
       "term": "Claude Code",
       "term_type": "product",
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 14,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -3778,25 +2928,24 @@
         "X/Twitter": 17,
         "GitHub Trending": 10,
         "掘金": 8,
-        "HN Show HN": 8,
+        "HN Show HN": 7,
         "V2EX 产品发布": 6,
-        "V2EX 程序员": 5,
         "DEV Community": 4,
+        "V2EX 程序员": 4,
         "Product Hunt": 4,
         "Hacker News": 3,
         "w2solo": 2,
         "Google News": 2,
-        "V2EX 分享发现": 2,
-        "YouTube": 1
+        "V2EX 分享发现": 2
       },
-      "distinct_sources": 13,
-      "appearances": 72
+      "distinct_sources": 12,
+      "appearances": 69
     },
     "Codex": {
       "term": "Codex",
       "term_type": "product",
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 14,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -3804,7 +2953,7 @@
         "GitHub Trending": 15,
         "掘金": 9,
         "V2EX 程序员": 8,
-        "HN Show HN": 7,
+        "HN Show HN": 6,
         "OpenAI": 4,
         "Substack/lenny": 4,
         "Substack/aisupremacy": 4,
@@ -3818,7 +2967,7 @@
         "V2EX 奇思妙想": 1
       },
       "distinct_sources": 15,
-      "appearances": 67
+      "appearances": 66
     },
     "unicity-aos/aos-ce": {
       "term": "unicity-aos/aos-ce",
@@ -3866,7 +3015,7 @@
       "term": "Google",
       "term_type": "company",
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-04",
       "age_days": 14,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -3874,15 +3023,14 @@
         "Substack/platformer": 8,
         "Google AI Blog": 5,
         "Hacker News": 4,
-        "OSChina": 3,
+        "OSChina": 2,
         "GitHub Trending": 1,
         "V2EX 产品发布": 1,
         "Reddit": 1,
-        "X/Twitter": 1,
-        "Google News": 1
+        "X/Twitter": 1
       },
-      "distinct_sources": 9,
-      "appearances": 25
+      "distinct_sources": 8,
+      "appearances": 23
     },
     "withmarbleapp/os-taxonomy": {
       "term": "withmarbleapp/os-taxonomy",
@@ -3944,24 +3092,24 @@
       "term": "React",
       "term_type": "technology",
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 14,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
       "sources": {
         "GitHub Releases": 7,
-        "Stack Overflow": 5,
         "掘金": 5,
+        "Stack Overflow": 4,
         "OSChina": 4,
         "DEV Community": 3,
         "HN Job Discussion": 2,
-        "w2solo": 2,
         "V2EX 奇思妙想": 1,
+        "w2solo": 1,
         "Semantic Scholar": 1,
         "GitHub Trending": 1
       },
       "distinct_sources": 10,
-      "appearances": 31
+      "appearances": 29
     },
     "Cross Country Healthcare": {
       "term": "Cross Country Healthcare",
@@ -4009,7 +3157,7 @@
       "term": "MCP",
       "term_type": "technology",
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 14,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -4019,30 +3167,27 @@
         "HN Show HN": 5,
         "掘金": 3,
         "PyPI": 2,
-        "YouTube": 2,
         "ArXiv": 2,
-        "Product Hunt": 2,
         "Reddit": 1,
         "V2EX 产品发布": 1,
+        "YouTube": 1,
         "Hacker News": 1,
         "GitHub Trending": 1,
-        "X/Twitter": 1,
-        "OSChina": 1,
-        "Google Trends": 1
+        "X/Twitter": 1
       },
-      "distinct_sources": 15,
-      "appearances": 42
+      "distinct_sources": 12,
+      "appearances": 37
     },
     "Cursor": {
       "term": "Cursor",
       "term_type": "product",
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 14,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
       "sources": {
-        "掘金": 9,
+        "掘金": 8,
         "Google News": 5,
         "Substack/aisupremacy": 3,
         "w2solo": 2,
@@ -4053,7 +3198,7 @@
         "Lobsters": 1
       },
       "distinct_sources": 9,
-      "appearances": 24
+      "appearances": 23
     },
     "Uber": {
       "term": "Uber",
@@ -4073,19 +3218,19 @@
       "term": "Vue 3",
       "term_type": "technology",
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-04",
       "age_days": 14,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
       "sources": {
         "掘金": 2,
-        "OSChina": 2,
         "SegmentFault": 1,
+        "OSChina": 1,
         "V2EX 产品发布": 1,
         "GitHub Trending": 1
       },
       "distinct_sources": 5,
-      "appearances": 7
+      "appearances": 6
     },
     "Motion Vue": {
       "term": "Motion Vue",
@@ -4168,7 +3313,7 @@
       "term": "Nginx",
       "term_type": "technology",
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 14,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -4182,7 +3327,7 @@
       "term": "Spring Boot",
       "term_type": "technology",
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 14,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -4197,17 +3342,16 @@
       "term": "ADB",
       "term_type": "technology",
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-07-29",
       "age_days": 14,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
       "sources": {
         "SegmentFault": 1,
-        "Lobsters": 1,
-        "V2EX 产品发布": 1
+        "Lobsters": 1
       },
-      "distinct_sources": 3,
-      "appearances": 3
+      "distinct_sources": 2,
+      "appearances": 2
     },
     "chaitin/MonkeyCode": {
       "term": "chaitin/MonkeyCode",
@@ -4385,7 +3529,7 @@
       "term": "Foster",
       "term_type": "product",
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 14,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -4399,7 +3543,7 @@
       "term": "Legion Health",
       "term_type": "product",
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 14,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -4441,7 +3585,7 @@
       "term": "Kimi K3",
       "term_type": "model",
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 14,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -4583,15 +3727,15 @@
       "term": "NeurIPS",
       "term_type": "technology",
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 14,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
       "sources": {
-        "Reddit": 21
+        "Reddit": 19
       },
       "distinct_sources": 1,
-      "appearances": 21
+      "appearances": 19
     },
     "Kimi Code": {
       "term": "Kimi Code",
@@ -4799,7 +3943,7 @@
       "term": "Miora",
       "term_type": "product",
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 14,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -4842,7 +3986,7 @@
       "term": "Next.js",
       "term_type": "technology",
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 14,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -4859,17 +4003,17 @@
       "term": "Firefox",
       "term_type": "product",
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-07-31",
       "age_days": 14,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
       "sources": {
-        "OSChina": 3,
+        "OSChina": 2,
         "Reddit": 1,
         "Lobsters": 1
       },
       "distinct_sources": 3,
-      "appearances": 5
+      "appearances": 4
     },
     "Grafana": {
       "term": "Grafana",
@@ -5142,7 +4286,7 @@
       "term": "腾讯 Cube-Sandbox",
       "term_type": "product",
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 14,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -5184,7 +4328,7 @@
       "term": "Konva",
       "term_type": "technology",
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 14,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -5226,19 +4370,19 @@
       "term": "Nvidia",
       "term_type": "company",
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 14,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
       "sources": {
         "Google News": 26,
-        "OSChina": 3,
         "HuggingFace Blog": 2,
+        "OSChina": 2,
         "Hacker News": 1,
         "SegmentFault": 1
       },
       "distinct_sources": 5,
-      "appearances": 33
+      "appearances": 32
     },
     "Safari Technology Preview": {
       "term": "Safari Technology Preview",
@@ -5316,7 +4460,7 @@
       "term": "TRAE IDE",
       "term_type": "product",
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 14,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -5333,7 +4477,7 @@
       "term": "LangGraph",
       "term_type": "technology",
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 14,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -5545,7 +4689,7 @@
       "term": "GNU Emacs",
       "term_type": "product",
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 14,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -5588,7 +4732,7 @@
       "term": "Lua",
       "term_type": "technology",
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 14,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -5660,7 +4804,7 @@
       "term": "Django",
       "term_type": "technology",
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 14,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -5865,7 +5009,7 @@
       "term": "Kubernetes",
       "term_type": "technology",
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 14,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -5926,7 +5070,7 @@
       "term": "Docker",
       "term_type": "product",
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 14,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -6041,7 +5185,7 @@
       "term": "Python",
       "term_type": "technology",
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 14,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -6066,7 +5210,7 @@
       "term": "MySQL",
       "term_type": "technology",
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 14,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -6082,7 +5226,7 @@
       "term": "EXPO",
       "term_type": "technology",
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 14,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -6096,7 +5240,7 @@
       "term": "iOS",
       "term_type": "technology",
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 14,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -6154,7 +5298,7 @@
       "term": "WAIC 2026",
       "term_type": "product",
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 14,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -6168,7 +5312,7 @@
       "term": "FastAPI",
       "term_type": "product",
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 14,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -6184,7 +5328,7 @@
       "term": "Litestar",
       "term_type": "product",
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 14,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -6198,7 +5342,7 @@
       "term": "BlackSheep",
       "term_type": "product",
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 14,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -6212,7 +5356,7 @@
       "term": "Strawberry GraphQL",
       "term_type": "product",
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-04",
       "age_days": 14,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -6226,7 +5370,7 @@
       "term": "Ariadne",
       "term_type": "product",
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 14,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -6240,7 +5384,7 @@
       "term": "Starlite",
       "term_type": "product",
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 14,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -6254,7 +5398,7 @@
       "term": "Typer",
       "term_type": "product",
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 14,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -6268,7 +5412,7 @@
       "term": "Rich",
       "term_type": "product",
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 14,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -6282,7 +5426,7 @@
       "term": "Textual",
       "term_type": "product",
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 14,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -6296,7 +5440,7 @@
       "term": "Pydantic AI",
       "term_type": "product",
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 14,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -6312,7 +5456,7 @@
       "term": "ChromaDB",
       "term_type": "product",
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 14,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -6445,7 +5589,7 @@
       "term": "LlamaIndex",
       "term_type": "project",
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 14,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -6505,7 +5649,7 @@
       "term": "Shopify",
       "term_type": "company",
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 14,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -6521,7 +5665,7 @@
       "term": "Enter Pro",
       "term_type": "product",
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 14,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -6535,7 +5679,7 @@
       "term": "Accio Work",
       "term_type": "product",
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 14,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -6549,7 +5693,7 @@
       "term": "WorkBuddy",
       "term_type": "product",
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-04",
       "age_days": 14,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -6564,7 +5708,7 @@
       "term": "TicNote Cloud",
       "term_type": "product",
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-04",
       "age_days": 14,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -6578,7 +5722,7 @@
       "term": "Kane AI",
       "term_type": "product",
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-04",
       "age_days": 14,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -6606,7 +5750,7 @@
       "term": "Enia Code",
       "term_type": "product",
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 14,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -6649,7 +5793,7 @@
       "term": "Telegram",
       "term_type": "product",
       "first_seen": "2026-07-23",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 14,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -7140,7 +6284,7 @@
       "term": "Superpowers",
       "term_type": "project",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -7634,13 +6778,13 @@
       "term": "Apple",
       "term_type": "company",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
       "sources": {
         "Apple ML": 3,
-        "OSChina": 3,
+        "OSChina": 2,
         "Hacker News": 2,
         "GitHub Trending": 1,
         "V2EX 程序员": 1,
@@ -7650,7 +6794,7 @@
         "OpenAI": 1
       },
       "distinct_sources": 9,
-      "appearances": 14
+      "appearances": 13
     },
     "Quantumult X": {
       "term": "Quantumult X",
@@ -7768,7 +6912,7 @@
       "term": "Three.js",
       "term_type": "technology",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -7868,7 +7012,7 @@
       "term": "n8n",
       "term_type": "product",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -7883,7 +7027,7 @@
       "term": "VS Code",
       "term_type": "product",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -7892,11 +7036,10 @@
         "SegmentFault": 1,
         "Stack Overflow": 1,
         "V2EX 程序员": 1,
-        "Lobsters": 1,
-        "YouTube": 1
+        "Lobsters": 1
       },
-      "distinct_sources": 6,
-      "appearances": 9
+      "distinct_sources": 5,
+      "appearances": 8
     },
     "LangChain-OpenAI": {
       "term": "LangChain-OpenAI",
@@ -7975,15 +7118,15 @@
       "term": "OpenAI Python SDK",
       "term_type": "project",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-01",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
       "sources": {
-        "GitHub Releases": 7
+        "GitHub Releases": 5
       },
       "distinct_sources": 1,
-      "appearances": 7
+      "appearances": 5
     },
     "Cloudflare Workers Auth": {
       "term": "Cloudflare Workers Auth",
@@ -8101,15 +7244,15 @@
       "term": "Corgi",
       "term_type": "company",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-07-24",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
       "sources": {
-        "Google News": 3
+        "Google News": 2
       },
       "distinct_sources": 1,
-      "appearances": 3
+      "appearances": 2
     },
     "andrewyng/openworker": {
       "term": "andrewyng/openworker",
@@ -9048,18 +8191,17 @@
       "term": "GLM",
       "term_type": "model",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
       "sources": {
         "Cloudflare": 6,
         "掘金": 1,
-        "Hacker News": 1,
-        "OSChina": 1
+        "Hacker News": 1
       },
-      "distinct_sources": 4,
-      "appearances": 9
+      "distinct_sources": 3,
+      "appearances": 8
     },
     "Harness": {
       "term": "Harness",
@@ -9108,17 +8250,16 @@
       "term": "SpringBoot",
       "term_type": "technology",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
       "sources": {
         "SegmentFault": 2,
-        "掘金": 1,
-        "OSChina": 1
+        "掘金": 1
       },
-      "distinct_sources": 3,
-      "appearances": 4
+      "distinct_sources": 2,
+      "appearances": 3
     },
     "Wanix": {
       "term": "Wanix",
@@ -9167,15 +8308,15 @@
       "term": "C++26",
       "term_type": "technology",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-03",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
       "sources": {
-        "Lobsters": 4
+        "Lobsters": 3
       },
       "distinct_sources": 1,
-      "appearances": 4
+      "appearances": 3
     },
     "Jolt": {
       "term": "Jolt",
@@ -9267,7 +8408,7 @@
       "term": "Model Context Protocol SDK",
       "term_type": "project",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -9282,7 +8423,7 @@
       "term": "Transformers",
       "term_type": "technology",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -9297,7 +8438,7 @@
       "term": "Zod",
       "term_type": "project",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -9311,7 +8452,7 @@
       "term": "Drizzle ORM",
       "term_type": "project",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -9326,7 +8467,7 @@
       "term": "Prisma",
       "term_type": "project",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -9341,7 +8482,7 @@
       "term": "Hono",
       "term_type": "project",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -9355,7 +8496,7 @@
       "term": "Elysia",
       "term_type": "project",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -9369,7 +8510,7 @@
       "term": "Bun",
       "term_type": "technology",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -9386,7 +8527,7 @@
       "term": "Vitest",
       "term_type": "project",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -9400,7 +8541,7 @@
       "term": "Biome",
       "term_type": "project",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -9414,7 +8555,7 @@
       "term": "Oxlint",
       "term_type": "project",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -9428,7 +8569,7 @@
       "term": "Rolldown",
       "term_type": "project",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -9442,7 +8583,7 @@
       "term": "Effect",
       "term_type": "project",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -9456,7 +8597,7 @@
       "term": "Arktype",
       "term_type": "project",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -9470,7 +8611,7 @@
       "term": "Valibot",
       "term_type": "project",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -9484,7 +8625,7 @@
       "term": "Trigger.dev",
       "term_type": "product",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -9498,7 +8639,7 @@
       "term": "Inngest",
       "term_type": "product",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -9512,7 +8653,7 @@
       "term": "Resend",
       "term_type": "product",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -9526,7 +8667,7 @@
       "term": "Directus",
       "term_type": "project",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -9540,7 +8681,7 @@
       "term": "PocketBase",
       "term_type": "project",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -9568,7 +8709,7 @@
       "term": "Ruvector",
       "term_type": "project",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -9582,7 +8723,7 @@
       "term": "Novu",
       "term_type": "project",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -9596,7 +8737,7 @@
       "term": "Temporal",
       "term_type": "project",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -9610,7 +8751,7 @@
       "term": "Turborepo",
       "term_type": "project",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -9626,7 +8767,7 @@
       "term": "MCP Local RAG",
       "term_type": "project",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -9640,7 +8781,7 @@
       "term": "S3Mini",
       "term_type": "project",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -9654,7 +8795,7 @@
       "term": "Vectra",
       "term_type": "project",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -9710,7 +8851,7 @@
       "term": "Oxc",
       "term_type": "project",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-07-28",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -9808,7 +8949,7 @@
       "term": "TypeScript",
       "term_type": "technology",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -9819,11 +8960,10 @@
         "HN Show HN": 2,
         "DEV Community": 1,
         "GitHub Trending": 1,
-        "Hacker News": 1,
-        "V2EX 产品发布": 1
+        "Hacker News": 1
       },
-      "distinct_sources": 8,
-      "appearances": 13
+      "distinct_sources": 7,
+      "appearances": 12
     },
     "Electron": {
       "term": "Electron",
@@ -10014,22 +9154,22 @@
       "term": "Visual Studio Code",
       "term_type": "product",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-03",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
       "sources": {
-        "GitHub Releases": 4,
+        "GitHub Releases": 3,
         "OSChina": 2
       },
       "distinct_sources": 2,
-      "appearances": 6
+      "appearances": 5
     },
     "DeepSeek": {
       "term": "DeepSeek",
       "term_type": "company",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-04",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -10067,7 +9207,7 @@
       "term": "Datasets",
       "term_type": "project",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -10081,7 +9221,7 @@
       "term": "Accelerate",
       "term_type": "project",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -10095,7 +9235,7 @@
       "term": "TRL",
       "term_type": "project",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -10109,7 +9249,7 @@
       "term": "SGLang",
       "term_type": "project",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -10123,7 +9263,7 @@
       "term": "Guidance",
       "term_type": "project",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -10137,7 +9277,7 @@
       "term": "DSPy",
       "term_type": "project",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -10151,7 +9291,7 @@
       "term": "Instructor",
       "term_type": "project",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -10165,7 +9305,7 @@
       "term": "Outlines",
       "term_type": "project",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -10179,7 +9319,7 @@
       "term": "LM Format Enforcer",
       "term_type": "project",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -10193,7 +9333,7 @@
       "term": "FastMCP",
       "term_type": "project",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -10207,7 +9347,7 @@
       "term": "AutoGen",
       "term_type": "project",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -10221,7 +9361,7 @@
       "term": "CrewAI",
       "term_type": "project",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -10235,7 +9375,7 @@
       "term": "Agno",
       "term_type": "project",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -10249,7 +9389,7 @@
       "term": "DuckDB",
       "term_type": "project",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -10265,7 +9405,7 @@
       "term": "LanceDB",
       "term_type": "project",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -10280,7 +9420,7 @@
       "term": "Qdrant",
       "term_type": "project",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -10295,7 +9435,7 @@
       "term": "Weaviate",
       "term_type": "project",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -10309,7 +9449,7 @@
       "term": "SQLAlchemy",
       "term_type": "project",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -10323,7 +9463,7 @@
       "term": "Tortoise ORM",
       "term_type": "project",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -10379,20 +9519,20 @@
       "term": "Linux",
       "term_type": "technology",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-03",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
       "sources": {
         "Hacker News": 3,
-        "Reddit": 2,
         "HN Show HN": 2,
+        "Reddit": 1,
         "DEV Community": 1,
         "V2EX 程序员": 1,
         "Lobsters": 1
       },
       "distinct_sources": 6,
-      "appearances": 10
+      "appearances": 9
     },
     "Kubara": {
       "term": "Kubara",
@@ -10512,7 +9652,7 @@
       "term": "OpenReview",
       "term_type": "product",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -10654,15 +9794,15 @@
       "term": "Alibaba.com",
       "term_type": "company",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
       "sources": {
-        "YouTube": 15
+        "YouTube": 14
       },
       "distinct_sources": 1,
-      "appearances": 15
+      "appearances": 14
     },
     "Dijkstra": {
       "term": "Dijkstra",
@@ -10682,7 +9822,7 @@
       "term": "Virgin Atlantic",
       "term_type": "company",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -10710,7 +9850,7 @@
       "term": "Jodrell Bank",
       "term_type": "company",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-03",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -10786,14 +9926,14 @@
       "term": "LLM",
       "term_type": "technology",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
       "sources": {
         "Stack Overflow": 5,
         "GitHub Trending": 4,
-        "Lobsters": 4,
+        "Lobsters": 3,
         "Substack/bytebytego": 3,
         "HN Show HN": 2,
         "Reddit": 1,
@@ -10801,7 +9941,7 @@
         "Hacker News": 1
       },
       "distinct_sources": 8,
-      "appearances": 21
+      "appearances": 20
     },
     "Remotion": {
       "term": "Remotion",
@@ -10920,15 +10060,15 @@
       "term": "Y Combinator",
       "term_type": "company",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-04",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
       "sources": {
-        "Google News": 55
+        "Google News": 48
       },
       "distinct_sources": 1,
-      "appearances": 55
+      "appearances": 48
     },
     "Claude": {
       "term": "Claude",
@@ -10973,7 +10113,7 @@
       "term": "sentence-transformers/all-MiniLM-L6-v2",
       "term_type": "project",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -10987,7 +10127,7 @@
       "term": "openai-community/gpt2",
       "term_type": "project",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -11001,7 +10141,7 @@
       "term": "BAAI/bge-m3",
       "term_type": "project",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -11015,7 +10155,7 @@
       "term": "google-bert/bert-base-uncased",
       "term_type": "project",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -11029,7 +10169,7 @@
       "term": "Qwen/Qwen3-0.6B",
       "term_type": "project",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -11043,7 +10183,7 @@
       "term": "sentence-transformers/all-mpnet-base-v2",
       "term_type": "project",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -11057,7 +10197,7 @@
       "term": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
       "term_type": "project",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -11085,7 +10225,7 @@
       "term": "Qwen/Qwen3-8B",
       "term_type": "project",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -11099,7 +10239,7 @@
       "term": "BAAI/bge-reranker-v2-m3",
       "term_type": "project",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -11113,7 +10253,7 @@
       "term": "openai/clip-vit-base-patch32",
       "term_type": "project",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -11127,7 +10267,7 @@
       "term": "FacebookAI/xlm-roberta-base",
       "term_type": "project",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -11141,7 +10281,7 @@
       "term": "nomic-ai/nomic-embed-text-v1.5",
       "term_type": "project",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -11155,7 +10295,7 @@
       "term": "Qwen/Qwen2.5-1.5B-Instruct",
       "term_type": "project",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -11183,7 +10323,7 @@
       "term": "google-t5/t5-small",
       "term_type": "project",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -11197,7 +10337,7 @@
       "term": "BAAI/bge-small-en-v1.5",
       "term_type": "project",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -11211,7 +10351,7 @@
       "term": "amazon/chronos-2",
       "term_type": "project",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -11225,7 +10365,7 @@
       "term": "intfloat/multilingual-e5-small",
       "term_type": "project",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -11239,7 +10379,7 @@
       "term": "cross-encoder/ms-marco-MiniLM-L6-v2",
       "term_type": "project",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -11253,7 +10393,7 @@
       "term": "facebook/opt-125m",
       "term_type": "project",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -11267,7 +10407,7 @@
       "term": "google/electra-base-discriminator",
       "term_type": "project",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -11281,7 +10421,7 @@
       "term": "timm/mobilenetv3_small_100.lamb_in1k",
       "term_type": "project",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -11295,7 +10435,7 @@
       "term": "lpiccinelli/unidepth-v2-vitl14",
       "term_type": "project",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -11309,7 +10449,7 @@
       "term": "trl-internal-testing/tiny-Qwen2ForCausalLM-2.5",
       "term_type": "project",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -11412,17 +10552,17 @@
       "term": "Flutter",
       "term_type": "technology",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-02",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
       "sources": {
-        "掘金": 5,
+        "掘金": 4,
         "DEV Community": 1,
         "Hacker News": 1
       },
       "distinct_sources": 3,
-      "appearances": 7
+      "appearances": 6
     },
     "SwiftPM": {
       "term": "SwiftPM",
@@ -11470,7 +10610,7 @@
       "term": "Vite",
       "term_type": "technology",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -11499,7 +10639,7 @@
       "term": "groq-rag",
       "term_type": "project",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -11513,7 +10653,7 @@
       "term": "pulumi-bunnynet",
       "term_type": "project",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -11527,7 +10667,7 @@
       "term": "serverless-plugin-utils",
       "term_type": "project",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-03",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -11860,7 +11000,7 @@
       "term": "Terraform",
       "term_type": "product",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -12030,7 +11170,7 @@
       "term": "Kimi",
       "term_type": "product",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -12039,11 +11179,10 @@
         "Cloudflare": 6,
         "V2EX 分享发现": 1,
         "Google News": 1,
-        "Hacker News": 1,
-        "OSChina": 1
+        "Hacker News": 1
       },
-      "distinct_sources": 6,
-      "appearances": 17
+      "distinct_sources": 5,
+      "appearances": 16
     },
     "Transformer": {
       "term": "Transformer",
@@ -12120,7 +11259,7 @@
       "term": "Webhook",
       "term_type": "technology",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-04",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -12148,7 +11287,7 @@
       "term": "Zapier",
       "term_type": "product",
       "first_seen": "2026-07-24",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 13,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -12445,7 +11584,7 @@
       "term": "JSON",
       "term_type": "technology",
       "first_seen": "2026-07-27",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 10,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -12915,7 +12054,7 @@
       "term": "Htmx",
       "term_type": "technology",
       "first_seen": "2026-07-27",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 10,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -13129,17 +12268,16 @@
       "term": "Markdown",
       "term_type": "technology",
       "first_seen": "2026-07-27",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-07-28",
       "age_days": 10,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
       "sources": {
         "Hacker News": 1,
-        "OSChina": 1,
-        "HN Show HN": 1
+        "OSChina": 1
       },
-      "distinct_sources": 3,
-      "appearances": 3
+      "distinct_sources": 2,
+      "appearances": 2
     },
     "SSD": {
       "term": "SSD",
@@ -13159,17 +12297,17 @@
       "term": "FFmpeg",
       "term_type": "project",
       "first_seen": "2026-07-27",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 10,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
       "sources": {
-        "OSChina": 2,
         "Hacker News": 1,
-        "HN Show HN": 1
+        "HN Show HN": 1,
+        "OSChina": 1
       },
       "distinct_sources": 3,
-      "appearances": 4
+      "appearances": 3
     },
     "SpinWin": {
       "term": "SpinWin",
@@ -13203,7 +12341,7 @@
       "term": "autogluon/chronos-bolt-small",
       "term_type": "project",
       "first_seen": "2026-07-27",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 10,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -13260,18 +12398,17 @@
       "term": "Android",
       "term_type": "product",
       "first_seen": "2026-07-27",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-02",
       "age_days": 10,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
       "sources": {
         "Lobsters": 1,
         "Hacker News": 1,
-        "HN Show HN": 1,
-        "V2EX 产品发布": 1
+        "HN Show HN": 1
       },
-      "distinct_sources": 4,
-      "appearances": 4
+      "distinct_sources": 3,
+      "appearances": 3
     },
     "Shizuku": {
       "term": "Shizuku",
@@ -13390,7 +12527,7 @@
       "term": "SQLite",
       "term_type": "technology",
       "first_seen": "2026-07-27",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 10,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -13549,15 +12686,15 @@
       "term": "SolonCode",
       "term_type": "product",
       "first_seen": "2026-07-27",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-07-28",
       "age_days": 10,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
       "sources": {
-        "OSChina": 2
+        "OSChina": 1
       },
       "distinct_sources": 1,
-      "appearances": 2
+      "appearances": 1
     },
     "tssh": {
       "term": "tssh",
@@ -13633,7 +12770,7 @@
       "term": "ClickHouse",
       "term_type": "technology",
       "first_seen": "2026-07-27",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 10,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -13945,7 +13082,7 @@
       "term": "Chroma",
       "term_type": "product",
       "first_seen": "2026-07-27",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 10,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -14016,17 +13153,17 @@
       "term": "PostgreSQL",
       "term_type": "product",
       "first_seen": "2026-07-27",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-01",
       "age_days": 10,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
       "sources": {
         "Reddit": 4,
-        "OSChina": 3,
-        "Lobsters": 2
+        "Lobsters": 2,
+        "OSChina": 1
       },
       "distinct_sources": 3,
-      "appearances": 9
+      "appearances": 7
     },
     "Carbon": {
       "term": "Carbon",
@@ -14189,16 +13326,15 @@
       "term": "Proxmox",
       "term_type": "product",
       "first_seen": "2026-07-27",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-07-27",
       "age_days": 10,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
       "sources": {
-        "HN Show HN": 1,
-        "Lobsters": 1
+        "HN Show HN": 1
       },
-      "distinct_sources": 2,
-      "appearances": 2
+      "distinct_sources": 1,
+      "appearances": 1
     },
     "SCALE": {
       "term": "SCALE",
@@ -14625,7 +13761,7 @@
       "term": "OpenCode",
       "term_type": "product",
       "first_seen": "2026-07-28",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 9,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -14633,12 +13769,10 @@
         "V2EX 程序员": 3,
         "Google News": 2,
         "GitHub Trending": 1,
-        "OSChina": 1,
-        "HN Show HN": 1,
-        "V2EX 产品发布": 1
+        "OSChina": 1
       },
-      "distinct_sources": 6,
-      "appearances": 9
+      "distinct_sources": 4,
+      "appearances": 7
     },
     "Claude Design": {
       "term": "Claude Design",
@@ -14841,15 +13975,15 @@
       "term": "Robinhood",
       "term_type": "company",
       "first_seen": "2026-07-28",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-04",
       "age_days": 9,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
       "sources": {
-        "Google News": 39
+        "Google News": 33
       },
       "distinct_sources": 1,
-      "appearances": 39
+      "appearances": 33
     },
     "Innodata": {
       "term": "Innodata",
@@ -15593,7 +14727,7 @@
       "term": "Redis",
       "term_type": "technology",
       "first_seen": "2026-07-28",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 9,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -15624,7 +14758,7 @@
       "term": "微信小程序",
       "term_type": "product",
       "first_seen": "2026-07-28",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 9,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -15921,7 +15055,7 @@
       "term": "HTML",
       "term_type": "technology",
       "first_seen": "2026-07-28",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 9,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -16034,16 +15168,15 @@
       "term": "X Money",
       "term_type": "product",
       "first_seen": "2026-07-28",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-07-28",
       "age_days": 9,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
       "sources": {
-        "X/Twitter Trends": 1,
-        "Product Hunt": 1
+        "X/Twitter Trends": 1
       },
-      "distinct_sources": 2,
-      "appearances": 2
+      "distinct_sources": 1,
+      "appearances": 1
     },
     "T-Mobile": {
       "term": "T-Mobile",
@@ -16091,7 +15224,7 @@
       "term": "Legora",
       "term_type": "company",
       "first_seen": "2026-07-28",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 9,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -16105,7 +15238,7 @@
       "term": "Gamma",
       "term_type": "company",
       "first_seen": "2026-07-28",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 9,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -16825,29 +15958,29 @@
       "term": "IonQ",
       "term_type": "company",
       "first_seen": "2026-07-29",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-03",
       "age_days": 8,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
       "sources": {
-        "Google News": 13
+        "Google News": 12
       },
       "distinct_sources": 1,
-      "appearances": 13
+      "appearances": 12
     },
     "SkyWater Technology": {
       "term": "SkyWater Technology",
       "term_type": "company",
       "first_seen": "2026-07-29",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-03",
       "age_days": 8,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
       "sources": {
-        "Google News": 13
+        "Google News": 12
       },
       "distinct_sources": 1,
-      "appearances": 13
+      "appearances": 12
     },
     "Sprouts.ai": {
       "term": "Sprouts.ai",
@@ -17284,16 +16417,16 @@
       "term": "Nix",
       "term_type": "technology",
       "first_seen": "2026-07-29",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 8,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
       "sources": {
-        "Lobsters": 4,
+        "Lobsters": 3,
         "Hacker News": 1
       },
       "distinct_sources": 2,
-      "appearances": 5
+      "appearances": 4
     },
     "Rocq": {
       "term": "Rocq",
@@ -17440,18 +16573,18 @@
       "term": "React Native",
       "term_type": "technology",
       "first_seen": "2026-07-29",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-04",
       "age_days": 8,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
       "sources": {
-        "掘金": 2,
         "OSChina": 1,
         "Reddit": 1,
-        "HN Show HN": 1
+        "HN Show HN": 1,
+        "掘金": 1
       },
       "distinct_sources": 4,
-      "appearances": 5
+      "appearances": 4
     },
     "夜莺监控": {
       "term": "夜莺监控",
@@ -17836,16 +16969,15 @@
       "term": "Whisper",
       "term_type": "model",
       "first_seen": "2026-07-29",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-07-29",
       "age_days": 8,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
       "sources": {
-        "HN Show HN": 1,
-        "Reddit": 1
+        "HN Show HN": 1
       },
-      "distinct_sources": 2,
-      "appearances": 2
+      "distinct_sources": 1,
+      "appearances": 1
     },
     "llama.cpp": {
       "term": "llama.cpp",
@@ -17894,17 +17026,17 @@
       "term": "Discord",
       "term_type": "product",
       "first_seen": "2026-07-29",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 8,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
       "sources": {
-        "HN Show HN": 2,
+        "HN Show HN": 1,
         "Reddit r/InternetIsBeautiful": 1,
         "GitHub Releases": 1
       },
       "distinct_sources": 3,
-      "appearances": 4
+      "appearances": 3
     },
     "NoClick": {
       "term": "NoClick",
@@ -18086,7 +17218,7 @@
       "term": "gpt-transcribe",
       "term_type": "product",
       "first_seen": "2026-07-29",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 8,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -18100,7 +17232,7 @@
       "term": "gpt-live-transcribe",
       "term_type": "product",
       "first_seen": "2026-07-29",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 8,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -18493,7 +17625,7 @@
       "term": "DeepSeek V4 Pro",
       "term_type": "model",
       "first_seen": "2026-07-29",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-04",
       "age_days": 8,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -18605,7 +17737,7 @@
       "term": "XnViewMP",
       "term_type": "product",
       "first_seen": "2026-07-29",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 8,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -18619,7 +17751,7 @@
       "term": "ImageMagick",
       "term_type": "technology",
       "first_seen": "2026-07-29",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 8,
       "stage": "emergent",
       "stage_label": "Emergent (8-30天)",
@@ -19310,7 +18442,7 @@
       "term": "WebSocket",
       "term_type": "technology",
       "first_seen": "2026-07-30",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 7,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
@@ -19871,18 +19003,18 @@
       "term": "Copilot",
       "term_type": "product",
       "first_seen": "2026-07-30",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 7,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
       "sources": {
-        "OSChina": 2,
         "Stack Overflow": 2,
         "Hacker News": 1,
-        "Lobsters": 1
+        "Lobsters": 1,
+        "OSChina": 1
       },
       "distinct_sources": 4,
-      "appearances": 6
+      "appearances": 5
     },
     "Darktable": {
       "term": "Darktable",
@@ -20087,15 +19219,15 @@
       "term": "TimescaleDB",
       "term_type": "product",
       "first_seen": "2026-07-30",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-01",
       "age_days": 7,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
       "sources": {
-        "OSChina": 2
+        "OSChina": 1
       },
       "distinct_sources": 1,
-      "appearances": 2
+      "appearances": 1
     },
     "AlphaFold": {
       "term": "AlphaFold",
@@ -20200,7 +19332,7 @@
       "term": "Stripe",
       "term_type": "company",
       "first_seen": "2026-07-30",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 7,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
@@ -20219,7 +19351,7 @@
       "term": "MyBatis-Plus",
       "term_type": "project",
       "first_seen": "2026-07-30",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 7,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
@@ -20233,7 +19365,7 @@
       "term": "ETL",
       "term_type": "technology",
       "first_seen": "2026-07-30",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 7,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
@@ -20247,7 +19379,7 @@
       "term": "ONES Wiki",
       "term_type": "product",
       "first_seen": "2026-07-30",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 7,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
@@ -20614,7 +19746,7 @@
       "term": "Selenium",
       "term_type": "project",
       "first_seen": "2026-07-30",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 7,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
@@ -20628,7 +19760,7 @@
       "term": "XPath",
       "term_type": "technology",
       "first_seen": "2026-07-30",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 7,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
@@ -20952,7 +20084,7 @@
       "term": "ChatGPT Work",
       "term_type": "product",
       "first_seen": "2026-07-30",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 7,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
@@ -21519,18 +20651,17 @@
       "term": "AWS",
       "term_type": "company",
       "first_seen": "2026-07-31",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-04",
       "age_days": 6,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
       "sources": {
         "Google News": 4,
         "w2solo": 1,
-        "GitHub Trending": 1,
-        "Lobsters": 1
+        "GitHub Trending": 1
       },
-      "distinct_sources": 4,
-      "appearances": 7
+      "distinct_sources": 3,
+      "appearances": 6
     },
     "BCG": {
       "term": "BCG",
@@ -22465,22 +21596,21 @@
       "term": "Sub2api",
       "term_type": "product",
       "first_seen": "2026-07-31",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-07-31",
       "age_days": 6,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
       "sources": {
-        "V2EX 程序员": 1,
-        "w2solo": 1
+        "V2EX 程序员": 1
       },
-      "distinct_sources": 2,
-      "appearances": 2
+      "distinct_sources": 1,
+      "appearances": 1
     },
     "PixImagen Remove Object": {
       "term": "PixImagen Remove Object",
       "term_type": "product",
       "first_seen": "2026-07-31",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 6,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
@@ -22928,7 +22058,7 @@
       "term": "MiniMax H3",
       "term_type": "model",
       "first_seen": "2026-07-31",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-04",
       "age_days": 6,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
@@ -22936,11 +22066,10 @@
         "Vercel": 4,
         "OSChina": 2,
         "V2EX 产品发布": 1,
-        "Hacker News": 1,
-        "V2EX 程序员": 1
+        "Hacker News": 1
       },
-      "distinct_sources": 5,
-      "appearances": 9
+      "distinct_sources": 4,
+      "appearances": 8
     },
     "mcp-handler": {
       "term": "mcp-handler",
@@ -23619,15 +22748,15 @@
       "term": "腾讯混元",
       "term_type": "company",
       "first_seen": "2026-07-31",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-07-31",
       "age_days": 6,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
       "sources": {
-        "OSChina": 2
+        "OSChina": 1
       },
       "distinct_sources": 1,
-      "appearances": 2
+      "appearances": 1
     },
     "Merkle tree": {
       "term": "Merkle tree",
@@ -23717,7 +22846,7 @@
       "term": "ICLR",
       "term_type": "company",
       "first_seen": "2026-07-31",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 6,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
@@ -23829,15 +22958,15 @@
       "term": "Home Assistant",
       "term_type": "product",
       "first_seen": "2026-07-31",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-04",
       "age_days": 6,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
       "sources": {
-        "Reddit r/homeautomation": 4
+        "Reddit r/homeautomation": 2
       },
       "distinct_sources": 1,
-      "appearances": 4
+      "appearances": 2
     },
     "Raspberry Pi": {
       "term": "Raspberry Pi",
@@ -25399,16 +24528,16 @@
       "term": "Hacker News",
       "term_type": "company",
       "first_seen": "2026-08-01",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-04",
       "age_days": 5,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
       "sources": {
-        "HN Show HN": 2,
-        "OSChina": 1
+        "OSChina": 1,
+        "HN Show HN": 1
       },
       "distinct_sources": 2,
-      "appearances": 3
+      "appearances": 2
     },
     "Anthropic API": {
       "term": "Anthropic API",
@@ -25708,7 +24837,7 @@
       "term": "SlimLM",
       "term_type": "model",
       "first_seen": "2026-08-01",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-01",
       "age_days": 5,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
@@ -26091,7 +25220,7 @@
       "term": "SenseNova U1.5-Lite-Preview",
       "term_type": "model",
       "first_seen": "2026-08-01",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 5,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
@@ -26456,15 +25585,15 @@
       "term": "LemonLime",
       "term_type": "company",
       "first_seen": "2026-08-02",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-04",
       "age_days": 4,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
       "sources": {
-        "Google News": 10
+        "Google News": 9
       },
       "distinct_sources": 1,
-      "appearances": 10
+      "appearances": 9
     },
     "Encore AI": {
       "term": "Encore AI",
@@ -27105,7 +26234,7 @@
       "term": "Codeberg",
       "term_type": "company",
       "first_seen": "2026-08-02",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 4,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
@@ -27246,7 +26375,7 @@
       "term": "ABcloakPro",
       "term_type": "product",
       "first_seen": "2026-08-02",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 4,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
@@ -27583,7 +26712,7 @@
       "term": "PayPal",
       "term_type": "company",
       "first_seen": "2026-08-03",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 3,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
@@ -28519,17 +27648,16 @@
       "term": "ARM",
       "term_type": "technology",
       "first_seen": "2026-08-03",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-04",
       "age_days": 3,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
       "sources": {
         "HN Show HN": 1,
-        "Reddit": 1,
-        "Lobsters": 1
+        "Reddit": 1
       },
-      "distinct_sources": 3,
-      "appearances": 3
+      "distinct_sources": 2,
+      "appearances": 2
     },
     "Framework 12": {
       "term": "Framework 12",
@@ -28816,7 +27944,7 @@
       "term": "Creem",
       "term_type": "product",
       "first_seen": "2026-08-03",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 3,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
@@ -28844,15 +27972,15 @@
       "term": "SERP API",
       "term_type": "product",
       "first_seen": "2026-08-03",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 3,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
       "sources": {
-        "w2solo": 5
+        "w2solo": 4
       },
       "distinct_sources": 1,
-      "appearances": 5
+      "appearances": 4
     },
     "SeekBrain": {
       "term": "SeekBrain",
@@ -29124,32 +28252,29 @@
       "term": "@cloudflare/computer",
       "term_type": "project",
       "first_seen": "2026-08-04",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 2,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
       "sources": {
-        "Cloudflare": 6,
-        "OSChina": 1
+        "Cloudflare": 6
       },
-      "distinct_sources": 2,
-      "appearances": 7
+      "distinct_sources": 1,
+      "appearances": 6
     },
     "Cloudflare Workers": {
       "term": "Cloudflare Workers",
       "term_type": "product",
       "first_seen": "2026-08-04",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-04",
       "age_days": 2,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
       "sources": {
-        "Cloudflare": 5,
-        "GitHub Releases": 5,
-        "Stack Overflow": 1
+        "Cloudflare": 5
       },
-      "distinct_sources": 3,
-      "appearances": 11
+      "distinct_sources": 1,
+      "appearances": 5
     },
     "Billable Usage API": {
       "term": "Billable Usage API",
@@ -29735,7 +28860,7 @@
       "term": "DuckDuckGo",
       "term_type": "product",
       "first_seen": "2026-08-04",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 2,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
@@ -30107,7 +29232,7 @@
       "term": "DBeaver",
       "term_type": "product",
       "first_seen": "2026-08-04",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 2,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
@@ -30263,16 +29388,16 @@
       "term": "Palantir",
       "term_type": "company",
       "first_seen": "2026-08-04",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 2,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
       "sources": {
         "OSChina": 5,
-        "Google News": 2
+        "Google News": 1
       },
       "distinct_sources": 2,
-      "appearances": 7
+      "appearances": 6
     },
     "APM": {
       "term": "APM",
@@ -30684,7 +29809,7 @@
       "term": "Project Valhalla",
       "term_type": "project",
       "first_seen": "2026-08-04",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 2,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
@@ -30698,7 +29823,7 @@
       "term": "JDK 28",
       "term_type": "technology",
       "first_seen": "2026-08-04",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 2,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
@@ -30712,7 +29837,7 @@
       "term": "LLL Algorithm",
       "term_type": "technology",
       "first_seen": "2026-08-04",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 2,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
@@ -31007,7 +30132,7 @@
       "term": "Streamlit",
       "term_type": "product",
       "first_seen": "2026-08-04",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 2,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
@@ -31021,7 +30146,7 @@
       "term": "ASP.NET Core",
       "term_type": "technology",
       "first_seen": "2026-08-04",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 2,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
@@ -31035,7 +30160,7 @@
       "term": "Visual Studio",
       "term_type": "product",
       "first_seen": "2026-08-04",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 2,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
@@ -31049,7 +30174,7 @@
       "term": "Django Channels",
       "term_type": "technology",
       "first_seen": "2026-08-04",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 2,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
@@ -31063,7 +30188,7 @@
       "term": "AWS CodePipeline",
       "term_type": "product",
       "first_seen": "2026-08-04",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 2,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
@@ -31105,7 +30230,7 @@
       "term": "Neverthrow",
       "term_type": "technology",
       "first_seen": "2026-08-04",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 2,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
@@ -31119,7 +30244,7 @@
       "term": "GitHub Actions",
       "term_type": "product",
       "first_seen": "2026-08-04",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 2,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
@@ -31246,7 +30371,7 @@
       "term": "Kirkify",
       "term_type": "product",
       "first_seen": "2026-08-04",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 2,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
@@ -31260,7 +30385,7 @@
       "term": "Charlie Kirk",
       "term_type": "company",
       "first_seen": "2026-08-04",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-04",
       "age_days": 2,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
@@ -31835,15 +30960,15 @@
       "term": "Alexa",
       "term_type": "product",
       "first_seen": "2026-08-04",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-04",
       "age_days": 2,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
       "sources": {
-        "Reddit r/homeautomation": 2
+        "Reddit r/homeautomation": 1
       },
       "distinct_sources": 1,
-      "appearances": 2
+      "appearances": 1
     },
     "Echo Dot": {
       "term": "Echo Dot",
@@ -31891,15 +31016,15 @@
       "term": "Zigbee",
       "term_type": "technology",
       "first_seen": "2026-08-04",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-04",
       "age_days": 2,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
       "sources": {
-        "Reddit r/homeautomation": 2
+        "Reddit r/homeautomation": 1
       },
       "distinct_sources": 1,
-      "appearances": 2
+      "appearances": 1
     },
     "Thread": {
       "term": "Thread",
@@ -31919,15 +31044,15 @@
       "term": "Matter",
       "term_type": "technology",
       "first_seen": "2026-08-04",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-04",
       "age_days": 2,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
       "sources": {
-        "Reddit r/homeautomation": 2
+        "Reddit r/homeautomation": 1
       },
       "distinct_sources": 1,
-      "appearances": 2
+      "appearances": 1
     },
     "Nest": {
       "term": "Nest",
@@ -31947,17 +31072,16 @@
       "term": "iPhone",
       "term_type": "product",
       "first_seen": "2026-08-04",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-04",
       "age_days": 2,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
       "sources": {
         "Reddit r/homeautomation": 1,
-        "HN Show HN": 1,
-        "Reddit": 1
+        "HN Show HN": 1
       },
-      "distinct_sources": 3,
-      "appearances": 3
+      "distinct_sources": 2,
+      "appearances": 2
     },
     "Aquila": {
       "term": "Aquila",
@@ -32328,7 +31452,7 @@
       "term": "Palaura",
       "term_type": "product",
       "first_seen": "2026-08-04",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 2,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
@@ -33350,18 +32474,17 @@
       "term": "FFmpeg 9.0",
       "term_type": "technology",
       "first_seen": "2026-08-04",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 2,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
       "sources": {
         "OSChina": 2,
         "掘金": 1,
-        "Lobsters": 1,
-        "V2EX 分享发现": 1
+        "Lobsters": 1
       },
-      "distinct_sources": 4,
-      "appearances": 5
+      "distinct_sources": 3,
+      "appearances": 4
     },
     "AgentDesk": {
       "term": "AgentDesk",
@@ -33395,7 +32518,7 @@
       "term": "pi.dev",
       "term_type": "product",
       "first_seen": "2026-08-04",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-04",
       "age_days": 2,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
@@ -33819,16 +32942,15 @@
       "term": "Cloudflare Wallets",
       "term_type": "product",
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 1,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
       "sources": {
-        "Cloudflare": 1,
-        "Product Hunt": 1
+        "Cloudflare": 1
       },
-      "distinct_sources": 2,
-      "appearances": 2
+      "distinct_sources": 1,
+      "appearances": 1
     },
     "Cloudflare Agents": {
       "term": "Cloudflare Agents",
@@ -34142,29 +33264,29 @@
       "term": "Carrington",
       "term_type": "company",
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 1,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
       "sources": {
-        "Google News": 2
+        "Google News": 1
       },
       "distinct_sources": 1,
-      "appearances": 2
+      "appearances": 1
     },
-    "Valon": {
-      "term": "Valon",
+    "Valon Mortgage": {
+      "term": "Valon Mortgage",
       "term_type": "company",
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 1,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
       "sources": {
-        "Google News": 2
+        "Google News": 1
       },
       "distinct_sources": 1,
-      "appearances": 2
+      "appearances": 1
     },
     "Vaaree": {
       "term": "Vaaree",
@@ -34478,7 +33600,7 @@
       "term": "Deloitte",
       "term_type": "company",
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 1,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
@@ -34492,22 +33614,22 @@
       "term": "SOC 2",
       "term_type": "technology",
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 1,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
       "sources": {
-        "HN Show HN": 2,
-        "Hacker News": 1
+        "Hacker News": 1,
+        "HN Show HN": 1
       },
       "distinct_sources": 2,
-      "appearances": 3
+      "appearances": 2
     },
     "FacebookAI/roberta-large": {
       "term": "FacebookAI/roberta-large",
       "term_type": "model",
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 1,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
@@ -34619,7 +33741,7 @@
       "term": "Redisson",
       "term_type": "project",
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 1,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
@@ -34732,7 +33854,7 @@
       "term": "DeepSeek Harness",
       "term_type": "project",
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 1,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
@@ -34760,7 +33882,7 @@
       "term": "九有数据库",
       "term_type": "company",
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 1,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
@@ -34802,7 +33924,7 @@
       "term": "亚马逊",
       "term_type": "company",
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 1,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
@@ -34830,7 +33952,7 @@
       "term": "Hey Noah",
       "term_type": "product",
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 1,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
@@ -34844,7 +33966,7 @@
       "term": "Wondering",
       "term_type": "product",
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 1,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
@@ -34858,7 +33980,7 @@
       "term": "Atlaso",
       "term_type": "product",
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 1,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
@@ -34872,7 +33994,7 @@
       "term": "Driven",
       "term_type": "product",
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 1,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
@@ -34886,7 +34008,7 @@
       "term": "Dashi Metrics",
       "term_type": "product",
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 1,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
@@ -34900,7 +34022,7 @@
       "term": "Vibe Buddy",
       "term_type": "product",
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 1,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
@@ -34928,7 +34050,7 @@
       "term": "Screen Awesome",
       "term_type": "product",
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 1,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
@@ -34956,7 +34078,7 @@
       "term": "CSS",
       "term_type": "technology",
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 1,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
@@ -34970,7 +34092,7 @@
       "term": "iceoryx2",
       "term_type": "project",
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 1,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
@@ -35068,16 +34190,15 @@
       "term": "Maple-Preview",
       "term_type": "product",
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 1,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
       "sources": {
-        "HN Show HN": 1,
-        "Hacker News": 1
+        "HN Show HN": 1
       },
-      "distinct_sources": 2,
-      "appearances": 2
+      "distinct_sources": 1,
+      "appearances": 1
     },
     "Jido Assembly": {
       "term": "Jido Assembly",
@@ -35321,7 +34442,7 @@
       "term": "Create React App",
       "term_type": "technology",
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 1,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
@@ -35335,15 +34456,15 @@
       "term": "Cloudflare Wallet",
       "term_type": "product",
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 1,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
       "sources": {
-        "V2EX 分享发现": 4
+        "V2EX 分享发现": 1
       },
       "distinct_sources": 1,
-      "appearances": 4
+      "appearances": 1
     },
     "chess-cn": {
       "term": "chess-cn",
@@ -35433,7 +34554,7 @@
       "term": "Photo to Excel",
       "term_type": "product",
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 1,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
@@ -35447,7 +34568,7 @@
       "term": "GWP LAW GROUP",
       "term_type": "company",
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 1,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
@@ -35461,7 +34582,7 @@
       "term": "ERP API",
       "term_type": "technology",
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 1,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
@@ -35475,7 +34596,7 @@
       "term": "Boston Children's Hospital",
       "term_type": "company",
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 1,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
@@ -35489,1486 +34610,12 @@
       "term": "Birding Pal",
       "term_type": "product",
       "first_seen": "2026-08-05",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-05",
       "age_days": 1,
       "stage": "nascent",
       "stage_label": "Nascent (0-7天)",
       "sources": {
         "YouTube": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "Cloudflare OS": {
-      "term": "Cloudflare OS",
-      "term_type": "product",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "Google News": 1,
-        "Hacker News": 1
-      },
-      "distinct_sources": 2,
-      "appearances": 2
-    },
-    "Klaviyo": {
-      "term": "Klaviyo",
-      "term_type": "company",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "Google News": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "Muse Code": {
-      "term": "Muse Code",
-      "term_type": "product",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "Google News": 1,
-        "Hacker News": 1
-      },
-      "distinct_sources": 2,
-      "appearances": 2
-    },
-    "Jeff Dean": {
-      "term": "Jeff Dean",
-      "term_type": "company",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "Google News": 1,
-        "Hacker News": 1
-      },
-      "distinct_sources": 2,
-      "appearances": 2
-    },
-    "Hitachi": {
-      "term": "Hitachi",
-      "term_type": "company",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "Google News": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "Airtable": {
-      "term": "Airtable",
-      "term_type": "company",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "Google News": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "Jack Ma": {
-      "term": "Jack Ma",
-      "term_type": "company",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "Google News": 2
-      },
-      "distinct_sources": 1,
-      "appearances": 2
-    },
-    "Opsin Labs": {
-      "term": "Opsin Labs",
-      "term_type": "company",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "Google News": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "Veritas": {
-      "term": "Veritas",
-      "term_type": "company",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "Google News": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "Worlds": {
-      "term": "Worlds",
-      "term_type": "company",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "Google News": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "Fish Audio": {
-      "term": "Fish Audio",
-      "term_type": "company",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "Google News": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "CPE Tech": {
-      "term": "CPE Tech",
-      "term_type": "company",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "Google News": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "Danantara": {
-      "term": "Danantara",
-      "term_type": "company",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "Google News": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "Moss": {
-      "term": "Moss",
-      "term_type": "company",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "Google News": 1,
-        "Reddit": 1
-      },
-      "distinct_sources": 2,
-      "appearances": 2
-    },
-    "TrustScale": {
-      "term": "TrustScale",
-      "term_type": "company",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "Google News": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "Argus": {
-      "term": "Argus",
-      "term_type": "product",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "Google News": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "Google DeepMind": {
-      "term": "Google DeepMind",
-      "term_type": "company",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "Hacker News": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "Demis Hassabis": {
-      "term": "Demis Hassabis",
-      "term_type": "company",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "Hacker News": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "Zed DeltaDB": {
-      "term": "Zed DeltaDB",
-      "term_type": "product",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "Hacker News": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "GNU Hurd": {
-      "term": "GNU Hurd",
-      "term_type": "technology",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "Hacker News": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "Atlassian Rovo": {
-      "term": "Atlassian Rovo",
-      "term_type": "product",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "Hacker News": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "Celld": {
-      "term": "Celld",
-      "term_type": "product",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "Hacker News": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "HyperProbe": {
-      "term": "HyperProbe",
-      "term_type": "product",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "Hacker News": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "SIMD Viterbi Decoder": {
-      "term": "SIMD Viterbi Decoder",
-      "term_type": "technology",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "Hacker News": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "Prime Agent": {
-      "term": "Prime Agent",
-      "term_type": "product",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "Hacker News": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "Claude Pro": {
-      "term": "Claude Pro",
-      "term_type": "product",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "掘金": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "rust-lang/rust": {
-      "term": "rust-lang/rust",
-      "term_type": "project",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "Lobsters": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "Erdős Problems": {
-      "term": "Erdős Problems",
-      "term_type": "technology",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "Lobsters": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "Cargo": {
-      "term": "Cargo",
-      "term_type": "technology",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "Lobsters": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "Compiler Explorer": {
-      "term": "Compiler Explorer",
-      "term_type": "product",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "Lobsters": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "Symbolics OpenGenera": {
-      "term": "Symbolics OpenGenera",
-      "term_type": "product",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "Lobsters": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "Notepad--": {
-      "term": "Notepad--",
-      "term_type": "product",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "OSChina": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "LVFS": {
-      "term": "LVFS",
-      "term_type": "technology",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "OSChina": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "Fwupd": {
-      "term": "Fwupd",
-      "term_type": "technology",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "OSChina": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "LazyMind": {
-      "term": "LazyMind",
-      "term_type": "product",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "OSChina": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "Hy ASR3.0preview": {
-      "term": "Hy ASR3.0preview",
-      "term_type": "model",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "OSChina": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "Pale Moon": {
-      "term": "Pale Moon",
-      "term_type": "product",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "OSChina": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "deepin": {
-      "term": "deepin",
-      "term_type": "product",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "OSChina": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "libexpat": {
-      "term": "libexpat",
-      "term_type": "project",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "OSChina": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "HeidiSQL": {
-      "term": "HeidiSQL",
-      "term_type": "product",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "OSChina": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "JeeSite": {
-      "term": "JeeSite",
-      "term_type": "product",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "OSChina": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "MateClaw": {
-      "term": "MateClaw",
-      "term_type": "product",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "OSChina": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "Wispr Flow Notetaker": {
-      "term": "Wispr Flow Notetaker",
-      "term_type": "product",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "Product Hunt": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "AdAnt AI": {
-      "term": "AdAnt AI",
-      "term_type": "product",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "Product Hunt": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "NextDoor.Company": {
-      "term": "NextDoor.Company",
-      "term_type": "product",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "Product Hunt": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "ngrok AI Gateway": {
-      "term": "ngrok AI Gateway",
-      "term_type": "product",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "Product Hunt": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "BackEngine MCP": {
-      "term": "BackEngine MCP",
-      "term_type": "product",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "Product Hunt": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "Keystroke": {
-      "term": "Keystroke",
-      "term_type": "product",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "Product Hunt": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "Snipplet": {
-      "term": "Snipplet",
-      "term_type": "product",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "Product Hunt": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "Kiro Crew": {
-      "term": "Kiro Crew",
-      "term_type": "product",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "Product Hunt": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "ZapDigits MCP": {
-      "term": "ZapDigits MCP",
-      "term_type": "product",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "Product Hunt": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "VIDEO AI ME": {
-      "term": "VIDEO AI ME",
-      "term_type": "product",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "Product Hunt": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "Capacity Desktop": {
-      "term": "Capacity Desktop",
-      "term_type": "product",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "Product Hunt": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "OpenAI Python Library": {
-      "term": "OpenAI Python Library",
-      "term_type": "product",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "PyPI": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "Anthropic Python Library": {
-      "term": "Anthropic Python Library",
-      "term_type": "product",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "PyPI": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "Levenshtein automata": {
-      "term": "Levenshtein automata",
-      "term_type": "technology",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "Reddit": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "SQS": {
-      "term": "SQS",
-      "term_type": "technology",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "Reddit": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "Elisp": {
-      "term": "Elisp",
-      "term_type": "technology",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "Reddit": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "Zanzlanz": {
-      "term": "Zanzlanz",
-      "term_type": "company",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "Reddit": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "Google Slides": {
-      "term": "Google Slides",
-      "term_type": "product",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "Reddit": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "Qwen3-ASR": {
-      "term": "Qwen3-ASR",
-      "term_type": "model",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "Reddit": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "Nemotron": {
-      "term": "Nemotron",
-      "term_type": "model",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "Reddit": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "Monodratic": {
-      "term": "Monodratic",
-      "term_type": "technology",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "Reddit": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "Tilley T3": {
-      "term": "Tilley T3",
-      "term_type": "product",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "Reddit r/BuyItForLife": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "Storz & Bickel": {
-      "term": "Storz & Bickel",
-      "term_type": "company",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "Reddit r/BuyItForLife": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "Travel Pro": {
-      "term": "Travel Pro",
-      "term_type": "product",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "Reddit r/BuyItForLife": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "Green Bell": {
-      "term": "Green Bell",
-      "term_type": "company",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "Reddit r/BuyItForLife": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "Felco 13": {
-      "term": "Felco 13",
-      "term_type": "product",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "Reddit r/BuyItForLife": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "Hisense": {
-      "term": "Hisense",
-      "term_type": "company",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "Reddit r/BuyItForLife": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "Airbnb": {
-      "term": "Airbnb",
-      "term_type": "company",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "Reddit r/digitalnomad": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "Daikin": {
-      "term": "Daikin",
-      "term_type": "company",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "Reddit r/homeautomation": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "UPB": {
-      "term": "UPB",
-      "term_type": "technology",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "Reddit r/homeautomation": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "ZBBridge-P": {
-      "term": "ZBBridge-P",
-      "term_type": "product",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "Reddit r/homeautomation": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "Eufy S4 Solar": {
-      "term": "Eufy S4 Solar",
-      "term_type": "product",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "Reddit r/homeautomation": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "ClearlyFiltered": {
-      "term": "ClearlyFiltered",
-      "term_type": "product",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "Reddit r/homeautomation": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "HomeKit": {
-      "term": "HomeKit",
-      "term_type": "technology",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "Reddit r/homeautomation": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "Viterbi Decoder": {
-      "term": "Viterbi Decoder",
-      "term_type": "technology",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "HN Show HN": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "Vocab Top": {
-      "term": "Vocab Top",
-      "term_type": "product",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "HN Show HN": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "Capy": {
-      "term": "Capy",
-      "term_type": "product",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "HN Show HN": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "ClickBench": {
-      "term": "ClickBench",
-      "term_type": "product",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "HN Show HN": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "ExANS": {
-      "term": "ExANS",
-      "term_type": "product",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "HN Show HN": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "H100": {
-      "term": "H100",
-      "term_type": "technology",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "HN Show HN": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "AuditBadger": {
-      "term": "AuditBadger",
-      "term_type": "product",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "HN Show HN": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "ISO 27001": {
-      "term": "ISO 27001",
-      "term_type": "technology",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "HN Show HN": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "Sif 1.0": {
-      "term": "Sif 1.0",
-      "term_type": "product",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "HN Show HN": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "HUD": {
-      "term": "HUD",
-      "term_type": "product",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "HN Show HN": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "Spltty": {
-      "term": "Spltty",
-      "term_type": "product",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "HN Show HN": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "Command Code GOAT": {
-      "term": "Command Code GOAT",
-      "term_type": "product",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "HN Show HN": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "Bitbead": {
-      "term": "Bitbead",
-      "term_type": "product",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "HN Show HN": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "Labgrid-MCP": {
-      "term": "Labgrid-MCP",
-      "term_type": "product",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "HN Show HN": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "USB-C Power Delivery": {
-      "term": "USB-C Power Delivery",
-      "term_type": "technology",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "HN Show HN": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "Earde": {
-      "term": "Earde",
-      "term_type": "product",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "HN Show HN": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "Hinode": {
-      "term": "Hinode",
-      "term_type": "product",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "HN Show HN": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "Ocean": {
-      "term": "Ocean",
-      "term_type": "product",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "HN Show HN": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "Textracto": {
-      "term": "Textracto",
-      "term_type": "product",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "HN Show HN": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "fzf": {
-      "term": "fzf",
-      "term_type": "technology",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "HN Show HN": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "Lucidos": {
-      "term": "Lucidos",
-      "term_type": "product",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "HN Show HN": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "PickZ": {
-      "term": "PickZ",
-      "term_type": "product",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "V2EX 产品发布": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "gopls": {
-      "term": "gopls",
-      "term_type": "technology",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "V2EX 分享发现": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "AnyCrawl": {
-      "term": "AnyCrawl",
-      "term_type": "product",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "V2EX 产品发布": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "crScrcpy": {
-      "term": "crScrcpy",
-      "term_type": "product",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "V2EX 产品发布": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "Imference Desktop": {
-      "term": "Imference Desktop",
-      "term_type": "product",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "V2EX 产品发布": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "Grok": {
-      "term": "Grok",
-      "term_type": "model",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "V2EX 分享发现": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "Threads": {
-      "term": "Threads",
-      "term_type": "product",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "w2solo": 1
-      },
-      "distinct_sources": 1,
-      "appearances": 1
-    },
-    "Codex Pro 20x": {
-      "term": "Codex Pro 20x",
-      "term_type": "product",
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "age_days": 0,
-      "stage": "nascent",
-      "stage_label": "Nascent (0-7天)",
-      "sources": {
-        "w2solo": 1
       },
       "distinct_sources": 1,
       "appearances": 1
