@@ -1,9 +1,9 @@
 {
-  "date": "2026-08-05",
-  "generated_at": "2026-08-05T09:07:28.383690+08:00",
+  "date": "2026-08-06",
+  "generated_at": "2026-08-06T09:23:10.629931+08:00",
   "success": true,
   "exit_code": 0,
-  "duration_minutes": 30,
+  "duration_minutes": 41,
   "steps": {
     "enrichment": {
       "status": "skipped",
@@ -12,11 +12,11 @@
     },
     "report": {
       "status": "generated",
-      "duration_sec": 93
+      "duration_sec": 94
     },
     "action": {
       "status": "generated",
-      "duration_sec": 27
+      "duration_sec": 19
     },
     "lp": {
       "status": "generated",
@@ -24,8 +24,8 @@
     }
   },
   "tokens": {
-    "total": 3808861,
-    "calls": 1548
+    "total": 4586786,
+    "calls": 1863
   },
   "sources": {
     "total": 28,
@@ -36,12 +36,12 @@
     ]
   },
   "terms": {
-    "total": 333,
-    "new_today": 0
+    "total": 355,
+    "new_today": 4
   },
   "warnings": [
-    "步骤 'Step1: Collectors (28 sources)' 耗时过长 (13 分钟)",
+    "步骤 'Step1: Collectors (28 sources)' 耗时过长 (21 分钟)",
     "步骤 'Step6b: Recurring' 耗时过长 (7 分钟)"
   ],
-  "consecutive_success_days": 2
+  "consecutive_success_days": 3
 }
