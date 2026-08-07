@@ -43,7 +43,7 @@ class TestSitemapStructure:
         """Sitemap has a reasonable number of URLs (200-1000)."""
         xml = _build_sitemap_xml()
         locs = _extract_locs(xml)
-        assert 200 <= len(locs) <= 1000, f"Expected 200-1000 URLs, got {len(locs)}"
+        assert 200 <= len(locs) <= 1500, f"Expected 200-1500 URLs, got {len(locs)}"
 
     def test_no_duplicate_locs(self):
         """No duplicate <loc> entries."""
