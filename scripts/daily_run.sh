@@ -290,16 +290,14 @@ fi
 
 step_end "Step2.2-2.4: Norm+Classify+Score"
 
-# ═══ Step 2.5: Term Research Reports (DEPRECATED — kept for backward compat) ═══
+# ═══ Step 2.5: Term Research Reports (SKIPPED — replaced by Step 3.5 generate_trends) ═══
+# 2026-08-07: 此步骤在 2614 个 term 上耗尽 1.5h+ 导致 pipeline 超时。
+# generate_trends.py（Step 3.5）已统一替代，生成 content/trends/ 下的完整报告和 SEO 简报。
+# 保留此注释作为历史记录，避免重复踩坑。
 
 log ""
-log "--- Step 2.5: Term Research Reports (DEPRECATED, fast no-op) ---"
-
-if $PYTHON -m scripts.generate_term_research 2>&1; then
-    log "  [Research] OK"
-else
-    log "  [Research] WARN (non-fatal)"
-fi
+log "--- Step 2.5: Term Research Reports (SKIPPED — handled by Step 3.5 generate_trends) ---"
+log "  [Research] SKIPPED (replaced by generate_trends)"
 
 # ─── Step 2.6: Enrich Top Signals with /last30days ───
 
