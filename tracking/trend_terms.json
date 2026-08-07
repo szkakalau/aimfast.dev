@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-06T10:55:30.663357+08:00",
+  "updated_at": "2026-08-07T12:10:30.328444+08:00",
   "terms": [
     {
       "id": "trend-claude-agent-sdk",
@@ -795,7 +795,51 @@
       ],
       "summary_zh": "Rust 在 AI 领域的应用增多，因其性能和安全性受到关注。",
       "summary_en": "Rust's application in AI is growing due to its performance and safety features.",
-      "research_md_path": "content/trends/rust-in-ai.md"
+      "research_md_path": "content/trends/rust-in-ai.md",
+      "last_report_date": "2026-08-07",
+      "opportunity_score": 71,
+      "market_score": 65,
+      "competition_score": 25,
+      "demand_score": 55,
+      "seo_difficulty": 30,
+      "suggested_products": [
+        "SDK/Library",
+        "Open Source",
+        "API",
+        "CLI Tool",
+        "Template/Boilerplate"
+      ],
+      "estimated_dev_days": 5,
+      "revenue_potential": 3,
+      "risk_factors_en": [
+        "Large tech companies (Google, Meta) may enter with Rust AI tools, compressing the window.",
+        "Demand may remain niche until AI infrastructure matures further.",
+        "Python ecosystem inertia may slow adoption of Rust-based alternatives."
+      ],
+      "risk_factors_zh": [
+        "大公司（如 Google、Meta）可能推出 Rust AI 工具，压缩时间窗口。",
+        "在 AI 基础设施进一步成熟前，需求可能保持小众。",
+        "Python 生态惯性可能减缓 Rust 替代方案的采用。"
+      ],
+      "opportunity_summary_en": "Rust in AI is an early-stage trend with a clear technical rationale: performance and safety for AI infrastructure. The market is growing, competition is minimal, and a 12-18 month window exists for independent developers to build Python-friendly Rust tools. A focused MVP could capture developer mindshare and lead to a sustainable freemium business.",
+      "opportunity_summary_zh": "Rust in AI 是一个早期趋势，技术逻辑清晰：为 AI 基础设施提供性能与安全。市场在增长，竞争极小，独立开发者有 12-18 个月的时间窗口来构建 Python 友好的 Rust 工具。一个聚焦的 MVP 可以赢得开发者心智，并导向可持续的免费增值业务。",
+      "related_terms": [
+        {
+          "term": "candle",
+          "relation": "related-to",
+          "reason": "Hugging Face 推出的 Rust 深度学习框架，与 Rust in AI 是同一技术浪潮的不同侧面，前者提供模型推理能力，后者提供基础设施组件"
+        },
+        {
+          "term": "polars",
+          "relation": "competes-with",
+          "reason": "Rust 实现的数据处理库，在 AI 数据管线中替代 Pandas，是 Rust in AI 生态的数据处理层，两者互补"
+        },
+        {
+          "term": "qdrant",
+          "relation": "part-of",
+          "reason": "Rust 向量数据库的标杆项目，是 Rust in AI 在检索层的代表性实现，两者是子领域与整体的关系"
+        }
+      ]
     },
     {
       "id": "trend-multi-modal-ai-models",
@@ -825,7 +869,49 @@
       ],
       "summary_zh": "多模态模型成为热点，整合文本、图像与音频处理能力。",
       "summary_en": "Multi-modal models become a hotspot, integrating text, image, and audio processing.",
-      "research_md_path": "content/trends/multi-modal-ai-models.md"
+      "research_md_path": "content/trends/multi-modal-ai-models.md",
+      "last_report_date": "2026-08-07",
+      "opportunity_score": 78,
+      "market_score": 85,
+      "competition_score": 45,
+      "demand_score": 80,
+      "seo_difficulty": 30,
+      "suggested_products": [
+        "SaaS",
+        "API",
+        "AI Agent",
+        "Chrome Extension",
+        "MCP Server"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 4,
+      "risk_factors_en": [
+        "Major cloud providers (AWS, Azure, Google) may release integrated vertical solutions, compressing the 6-12 month window.",
+        "Open-source models (LLaVA, Qwen-VL) improve rapidly, lowering barriers and increasing competition."
+      ],
+      "risk_factors_zh": [
+        "云厂商（AWS、Azure、Google）可能推出集成垂直解决方案，压缩6-12个月的窗口期。",
+        "开源模型（LLaVA、Qwen-VL）快速迭代，降低门槛，加剧竞争。"
+      ],
+      "opportunity_summary_en": "Multi-modal AI models are at a nascent stage with a 100% growth rate, offering a rare window for indie developers. The market is large ($30-40B) and demand is proven, but the competitive gap is clear: no one offers an integrated, vertical, out-of-the-box solution. By building a niche SaaS or API product, an indie developer can capture value before giants solidify their positions.",
+      "opportunity_summary_zh": "多模态AI模型处于萌芽期，增长率100%，为独立开发者提供了罕见的窗口期。市场规模大（300-400亿美元），需求已验证，但竞争空白明显：缺乏集成、垂直、开箱即用的解决方案。通过构建细分SaaS或API产品，独立开发者可以在巨头巩固地位前捕获价值。",
+      "related_terms": [
+        {
+          "term": "multimodal rag",
+          "relation": "complements",
+          "reason": "互补关系，多模态模型是 RAG 管线的理解引擎，两者结合实现\"文档级问答\"的完整方案"
+        },
+        {
+          "term": "vision language models (vlm)",
+          "relation": "part-of",
+          "reason": "子领域关系，VLM 是多模态模型的核心子类，聚焦\"图像+文本\"理解"
+        },
+        {
+          "term": "on-device ai / edge ai",
+          "relation": "depends-on",
+          "reason": "依赖关系，Apple 推动的端侧多模态推理是多模态模型的部署方向，两者共同扩展应用场景"
+        }
+      ]
     },
     {
       "id": "trend-story",
@@ -995,7 +1081,49 @@
       ],
       "summary_zh": "Cloudflare 推出 AI Gateway，统一管理多种 AI 模型 API，简化集成。",
       "summary_en": "Cloudflare launched AI Gateway to unify management of multiple AI model APIs, simplifying integration.",
-      "research_md_path": "content/trends/cloudflare-ai-gateway.md"
+      "research_md_path": "content/trends/cloudflare-ai-gateway.md",
+      "last_report_date": "2026-08-07",
+      "opportunity_score": 66,
+      "market_score": 78,
+      "competition_score": 60,
+      "demand_score": 55,
+      "seo_difficulty": 45,
+      "suggested_products": [
+        "SaaS",
+        "API",
+        "CLI Tool",
+        "MCP Server",
+        "Open Source"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 3,
+      "risk_factors_en": [
+        "Cloudflare may expand its AI Gateway features to cover cost analytics and governance, squeezing the niche.",
+        "Large incumbents like Vercel may bundle similar features into their existing platforms, making standalone products less attractive."
+      ],
+      "risk_factors_zh": [
+        "Cloudflare 可能会扩展其 AI Gateway 功能，涵盖成本分析和治理，挤压细分市场。",
+        "Vercel 等大型现有玩家可能会将类似功能捆绑到其现有平台，使独立产品吸引力降低。"
+      ],
+      "opportunity_summary_en": "The AI gateway market is expanding rapidly, and there is a clear gap for a developer-friendly cost control console targeting indie developers and SMBs. With a 12-18 month window before larger players dominate, a focused SaaS product with a free tier and usage-based pricing can capture early adopters. However, demand is still nascent, so validating the product with a lean MVP is crucial.",
+      "opportunity_summary_zh": "AI 网关市场正在快速扩张，面向独立开发者和中小团队的开发者友好型成本控制台存在明显空白。在大厂主导之前有 12-18 个月的时间窗口，一个提供免费层和按量付费的聚焦 SaaS 产品可以吸引早期用户。然而，需求仍处于早期，因此用精简 MVP 验证产品至关重要。",
+      "related_terms": [
+        {
+          "term": "litellm",
+          "relation": "competes-with",
+          "reason": "功能重叠的竞争对手，开源 AI 网关代理，在 GitHub 社区有较强影响力"
+        },
+        {
+          "term": "openrouter",
+          "relation": "competes-with",
+          "reason": "竞争关系，提供类似的模型路由和统一 API，但定位在社区驱动而非基础设施"
+        },
+        {
+          "term": "vercel ai gateway",
+          "relation": "competes-with",
+          "reason": "竞争关系，Vercel 的 AI SDK 内置网关能力，在 Next.js 生态内与 Cloudflare 争夺开发者入口"
+        }
+      ]
     },
     {
       "id": "trend-claude-code",
@@ -1026,7 +1154,51 @@
       ],
       "summary_zh": "Anthropic 的 Claude Code 在代码生成和自动化方面表现突出，成为开发者新宠。",
       "summary_en": "Anthropic's Claude Code excels in code generation and automation, becoming a developer favorite.",
-      "research_md_path": "content/trends/claude-code.md"
+      "research_md_path": "content/trends/claude-code.md",
+      "last_report_date": "2026-08-07",
+      "opportunity_score": 72,
+      "market_score": 78,
+      "competition_score": 25,
+      "demand_score": 80,
+      "seo_difficulty": 30,
+      "suggested_products": [
+        "CLI Tool",
+        "SaaS",
+        "MCP Server",
+        "VS Code Extension",
+        "Template/Boilerplate"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 3,
+      "risk_factors_en": [
+        "Anthropic may expand into ecosystem tools quickly, squeezing third-party opportunities.",
+        "GitHub/GitLab could integrate similar features within 6-12 months, reducing the window.",
+        "The nascent stage means low total mentions (10), and growth could be a small-sample artifact."
+      ],
+      "risk_factors_zh": [
+        "Anthropic 可能迅速扩展生态工具，挤压第三方机会。",
+        "GitHub/GitLab 可能在 6-12 个月内集成类似功能，缩短时间窗口。",
+        "早期阶段总提及量低（10 次），增长可能是小样本效应。"
+      ],
+      "opportunity_summary_en": "Claude Code's ecosystem is a blue ocean with high market growth and strong demand for productivity tools. The window is 3-6 months before big players enter, making speed crucial. Focus on niche utilities like team config sync and usage analytics to capture early adopters.",
+      "opportunity_summary_zh": "Claude Code 生态是蓝海，市场增长快，对效率工具需求强。在大厂进入前有 3-6 个月窗口，速度是关键。聚焦团队配置同步、用量分析等细分工具，可抓住早期用户。",
+      "related_terms": [
+        {
+          "term": "codex cli",
+          "relation": "competes-with",
+          "reason": "直接竞争关系，OpenAI 的终端编程代理，与 Claude Code 争夺同一用户群体"
+        },
+        {
+          "term": "agentic coding",
+          "relation": "related-to",
+          "reason": "上位概念，Claude Code 是 agentic coding 的具体实现，该趋势的持续升温会带动生态繁荣"
+        },
+        {
+          "term": "cursor",
+          "relation": "competes-with",
+          "reason": "互补兼竞争关系，IDE 内 AI 编程工具，与 Claude Code 的使用场景部分重叠，但其用户可能成为 Claude Code 生态工具的潜在客户"
+        }
+      ]
     },
     {
       "id": "trend-ai-ethics-in-coding",
@@ -1058,7 +1230,49 @@
       ],
       "summary_zh": "AI 编程工具引发的伦理问题讨论，如代码版权与责任归属。",
       "summary_en": "Ethical discussions on AI coding tools, including code copyright and responsibility.",
-      "research_md_path": "content/trends/ai-ethics-in-coding.md"
+      "research_md_path": "content/trends/ai-ethics-in-coding.md",
+      "last_report_date": "2026-08-07",
+      "opportunity_score": 72,
+      "market_score": 65,
+      "competition_score": 25,
+      "demand_score": 80,
+      "seo_difficulty": 45,
+      "suggested_products": [
+        "SaaS",
+        "GitHub App",
+        "VS Code Extension",
+        "API",
+        "CLI Tool"
+      ],
+      "estimated_dev_days": 14,
+      "revenue_potential": 3,
+      "risk_factors_en": [
+        "GitHub or other major players may integrate compliance features, squeezing independent developers.",
+        "Legal rulings could redefine the market, potentially favoring big players with legal teams."
+      ],
+      "risk_factors_zh": [
+        "GitHub 或其他大厂可能集成合规功能，挤压独立开发者空间。",
+        "法律判例可能重新定义市场，可能有利于拥有法律团队的大厂。"
+      ],
+      "opportunity_summary_en": "AI Ethics in Coding is a nascent trend with urgent compliance needs due to legal and regulatory pressures. The market is a blue ocean with no integrated solution, offering a 12-18 month window for indie developers. A SaaS product that combines code provenance, license compliance, and audit reporting can capture early adopters in regulated industries.",
+      "opportunity_summary_zh": "AI 编程伦理是一个新兴趋势，由于法律和监管压力，合规需求迫切。市场是蓝海，尚无集成解决方案，为独立开发者提供了 12-18 个月的时间窗口。一个结合代码溯源、许可证合规和审计报告的 SaaS 产品可以吸引受监管行业的早期采用者。",
+      "related_terms": [
+        {
+          "term": "vibe coding",
+          "relation": "depends-on",
+          "reason": "同源趋势，AI 编程的普及形态直接催生伦理讨论，两者是因果依赖关系"
+        },
+        {
+          "term": "ai transparency",
+          "relation": "complements",
+          "reason": "互补关系，AI 透明度法规（如欧盟 AI 法案）为伦理工具提供合规驱动力"
+        },
+        {
+          "term": "open source license compliance",
+          "relation": "part-of",
+          "reason": "子领域关系，AI 伦理在编程领域的具体落地场景就是许可证合规，两者共享工具链"
+        }
+      ]
     },
     {
       "id": "trend-react-server-components",
@@ -1093,7 +1307,49 @@
       ],
       "summary_zh": "React Server Components 在社区引发热议，讨论其前后端架构影响。",
       "summary_en": "React Server Components spark debate on frontend-backend architecture implications.",
-      "research_md_path": "content/trends/react-server-components.md"
+      "research_md_path": "content/trends/react-server-components.md",
+      "last_report_date": "2026-08-07",
+      "opportunity_score": 68,
+      "market_score": 72,
+      "competition_score": 20,
+      "demand_score": 75,
+      "seo_difficulty": 30,
+      "suggested_products": [
+        "CLI Tool",
+        "VS Code Extension",
+        "Template/Boilerplate",
+        "SaaS",
+        "Web App"
+      ],
+      "estimated_dev_days": 7,
+      "revenue_potential": 3,
+      "risk_factors_en": [
+        "Vercel may release official tools that could compete directly with independent offerings.",
+        "The market is nascent; if adoption slows, demand may not materialize as quickly as expected."
+      ],
+      "risk_factors_zh": [
+        "Vercel 可能发布官方工具，直接与独立开发者的产品竞争。",
+        "市场尚处于萌芽期；如果采用速度放缓，需求可能不会像预期那样快速出现。"
+      ],
+      "opportunity_summary_en": "React Server Components is a rapidly emerging trend with strong market tailwinds from Next.js adoption. The current lack of dedicated tools creates a significant opportunity for independent developers to build migration, debugging, and performance solutions. With low competition and a clear monetization path, this is a promising space for early movers.",
+      "opportunity_summary_zh": "React Server Components 是一个快速兴起的技术趋势，Next.js 的采用带来了强大的市场推动力。目前缺乏专门工具，为独立开发者创造了构建迁移、调试和性能解决方案的重大机会。竞争较低且变现路径清晰，对早期进入者来说是一个有前景的领域。",
+      "related_terms": [
+        {
+          "term": "next.js 15",
+          "relation": "depends-on",
+          "reason": "RSC 的宿主框架，两者是依赖关系，Next.js 的版本迭代直接决定 RSC 的可用性"
+        },
+        {
+          "term": "react 19",
+          "relation": "depends-on",
+          "reason": "RSC 的底层运行时基础，React 19 正式稳定 RSC 相关 API，两者是依赖关系"
+        },
+        {
+          "term": "server actions",
+          "relation": "complements",
+          "reason": "RSC 的配套能力，用于处理服务端数据变更，两者互补，通常一起出现"
+        }
+      ]
     },
     {
       "id": "trend-ai-driven-testing",
@@ -1125,7 +1381,51 @@
       ],
       "summary_zh": "AI 在自动化测试中的应用增加，提升测试覆盖率与效率。",
       "summary_en": "AI in automated testing grows, improving coverage and efficiency.",
-      "research_md_path": "content/trends/ai-driven-testing.md"
+      "research_md_path": "content/trends/ai-driven-testing.md",
+      "last_report_date": "2026-08-07",
+      "opportunity_score": 75,
+      "market_score": 82,
+      "competition_score": 65,
+      "demand_score": 78,
+      "seo_difficulty": 55,
+      "suggested_products": [
+        "AI Agent",
+        "SaaS",
+        "VS Code Extension",
+        "CLI Tool",
+        "Open Source"
+      ],
+      "estimated_dev_days": 14,
+      "revenue_potential": 4,
+      "risk_factors_en": [
+        "Large tech companies (e.g., Google, Microsoft) may eventually enter the market, leveraging their existing developer ecosystems.",
+        "Open-source projects like Playwright may integrate native AI features, reducing the need for third-party tools.",
+        "AI model costs and reliability could impact profitability if usage scales unexpectedly."
+      ],
+      "risk_factors_zh": [
+        "大型科技公司（如Google、Microsoft）可能最终进入市场，利用其现有开发者生态。",
+        "Playwright等开源项目可能集成原生AI功能，减少对第三方工具的需求。",
+        "AI模型成本和可靠性可能影响盈利能力，如果使用量意外增长。"
+      ],
+      "opportunity_summary_en": "AI-Driven Testing addresses a universal pain point of high test maintenance costs with a nascent market and clear demand signals. The window for indie developers is 12-18 months before big players or open-source communities fill the gap. A focused vertical solution with a subscription model can achieve early traction and sustainable revenue.",
+      "opportunity_summary_zh": "AI驱动测试解决了测试维护成本高的普遍痛点，市场处于初期阶段，需求信号明确。独立开发者的时间窗口为12-18个月，之后大厂或开源社区可能填补空白。聚焦垂直场景的订阅制解决方案有望获得早期吸引力并实现可持续收入。",
+      "related_terms": [
+        {
+          "term": "playwright ai plugins",
+          "relation": "depends-on",
+          "reason": "直接依赖关系，AI-Driven Testing 工具的核心执行引擎，其生态成熟度决定你的产品可行性"
+        },
+        {
+          "term": "llm code generation",
+          "relation": "complements",
+          "reason": "互补关系，AI 写代码的普及让代码库增长更快，测试需求随之膨胀，两者互相促进"
+        },
+        {
+          "term": "ai agent frameworks（如 langchain、crewai）",
+          "relation": "depends-on",
+          "reason": "依赖关系，AI 测试代理的编排层基础设施，决定了你的 Agent 能力和迭代速度"
+        }
+      ]
     },
     {
       "id": "trend-agent-skills-ecosystem",
@@ -1291,7 +1591,49 @@
       ],
       "summary_zh": "OpenAI 发布 o3-mini 推理模型，提供高效低成本推理能力。",
       "summary_en": "OpenAI released o3-mini reasoning model for efficient, low-cost inference.",
-      "research_md_path": "content/trends/openai-o3-mini.md"
+      "research_md_path": "content/trends/openai-o3-mini.md",
+      "last_report_date": "2026-08-07",
+      "opportunity_score": 78,
+      "market_score": 72,
+      "competition_score": 25,
+      "demand_score": 82,
+      "seo_difficulty": 20,
+      "suggested_products": [
+        "API",
+        "SaaS",
+        "CLI Tool",
+        "MCP Server",
+        "AI Agent"
+      ],
+      "estimated_dev_days": 14,
+      "revenue_potential": 4,
+      "risk_factors_en": [
+        "OpenAI may release official tools or change pricing, reducing the window of opportunity.",
+        "Open-source models could become more cost-effective, eroding the unique value proposition."
+      ],
+      "risk_factors_zh": [
+        "OpenAI 可能发布官方工具或调整定价，缩短机会窗口。",
+        "开源模型可能变得更加经济，削弱独特价值主张。"
+      ],
+      "opportunity_summary_en": "o3-mini's ultra-low cost and nascent ecosystem create a prime window for independent developers to build tooling. The market is growing and demand is strong, but the window is short. Focus on niche utilities that leverage o3-mini's cost efficiency to solve real pain points.",
+      "opportunity_summary_zh": "o3-mini 的超低成本和新生的生态系统为独立开发者构建工具创造了绝佳窗口。市场增长且需求强劲，但窗口期短暂。专注于利用 o3-mini 成本效益解决实际痛点的细分工具。",
+      "related_terms": [
+        {
+          "term": "rag（检索增强生成）",
+          "relation": "complements",
+          "reason": "互补关系，o3-mini 的低推理成本让 RAG 管线的多轮检索-生成循环在经济上可行，两者在应用层高度绑定"
+        },
+        {
+          "term": "deepseek-r1-distill",
+          "relation": "competes-with",
+          "reason": "竞争关系，开源推理模型的代表，在本地部署和中文场景是 o3-mini 的直接替代选项"
+        },
+        {
+          "term": "langgraph",
+          "relation": "complements",
+          "reason": "互补关系，Agent 编排框架，o3-mini 作为默认推理后端被集成进 LangGraph 的官方模板中"
+        }
+      ]
     },
     {
       "id": "trend-ai-code-generation-quality-debate",
@@ -1591,7 +1933,51 @@
       ],
       "summary_zh": "OpenAI 发布 GPT-5.6，带来更强的推理能力和多模态支持，社区讨论热度高。",
       "summary_en": "OpenAI released GPT-5.6 with enhanced reasoning and multimodal capabilities, sparking significant community discussion.",
-      "research_md_path": "content/trends/openai-gpt-5.6.md"
+      "research_md_path": "content/trends/openai-gpt-5.6.md",
+      "last_report_date": "2026-08-07",
+      "opportunity_score": 58,
+      "market_score": 65,
+      "competition_score": 35,
+      "demand_score": 40,
+      "seo_difficulty": 30,
+      "suggested_products": [
+        "AI Agent",
+        "SaaS",
+        "API",
+        "Chrome Extension",
+        "MCP Server"
+      ],
+      "estimated_dev_days": 14,
+      "revenue_potential": 3,
+      "risk_factors_en": [
+        "OpenAI may release GPT-5.7 or change pricing, making GPT-5.6-specific products obsolete.",
+        "Big tech (Microsoft, Google) may integrate GPT-5.6 into their own products, squeezing indie developers.",
+        "The 3 mentions and 100% growth rate are statistically insignificant; the trend may fizzle out."
+      ],
+      "risk_factors_zh": [
+        "OpenAI 可能发布 GPT-5.7 或调整定价，使基于 GPT-5.6 的产品过时。",
+        "大厂（微软、谷歌）可能将 GPT-5.6 集成到自身产品中，挤压独立开发者空间。",
+        "3 次提及和 100% 增长率在统计上不显著；趋势可能消退。"
+      ],
+      "opportunity_summary_en": "GPT-5.6 is a nascent trend with a large addressable market but no validated demand yet. The application layer is still blue ocean, offering a 6-12 month window for indie developers to build niche vertical tools. Focus on vertical-specific products that leverage GPT-5.6's reasoning and multimodal capabilities to stand out.",
+      "opportunity_summary_zh": "GPT-5.6 是一个萌芽期趋势，市场潜力巨大但需求未验证。应用层仍是蓝海，为独立开发者提供了 6-12 个月的窗口期。建议专注于垂直场景的工具，利用 GPT-5.6 的推理和多模态能力实现差异化。",
+      "related_terms": [
+        {
+          "term": "gpt-5.6 fine-tuning",
+          "relation": "complements",
+          "reason": "互补关系，微调是让 GPT-5.6 适配垂直场景的必要手段，两者常一起出现在技术讨论中"
+        },
+        {
+          "term": "multimodal rag",
+          "relation": "complements",
+          "reason": "互补关系，GPT-5.6 的多模态能力推动了检索增强生成从纯文本向图文混合演进，是应用层的重要开发方向"
+        },
+        {
+          "term": "openai batch api",
+          "relation": "depends-on",
+          "reason": "依赖关系，批量处理接口是降低 GPT-5.6 调用成本的关键路径，对独立开发者的商业模式有直接影响"
+        }
+      ]
     },
     {
       "id": "trend-mcp-model-context-protocol",
@@ -1617,7 +2003,49 @@
       ],
       "summary_zh": "MCP 协议成为 AI Agent 间通信的标准，社区讨论热烈。",
       "summary_en": "The Model Context Protocol is becoming a standard for AI agent communication, with active community discussion.",
-      "research_md_path": "content/trends/mcp-model-context-protocol.md"
+      "research_md_path": "content/trends/mcp-model-context-protocol.md",
+      "last_report_date": "2026-08-07",
+      "opportunity_score": 68,
+      "market_score": 75,
+      "competition_score": 20,
+      "demand_score": 60,
+      "seo_difficulty": 35,
+      "suggested_products": [
+        "MCP Server",
+        "Open Source",
+        "SaaS",
+        "API",
+        "CLI Tool"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 4,
+      "risk_factors_en": [
+        "OpenAI may not adopt MCP, creating ecosystem fragmentation.",
+        "Large cloud providers could enter and dominate the vertical MCP server market."
+      ],
+      "risk_factors_zh": [
+        "OpenAI 可能不采用 MCP，导致生态分裂。",
+        "大型云厂商可能进入并主导垂直 MCP Server 市场。"
+      ],
+      "opportunity_summary_en": "MCP is a nascent but rapidly growing protocol with strong backing from major AI players. Independent developers have a 6-12 month window to build vertical MCP servers and tools. The market is large, but monetization is unproven, so focus on building community and credibility first.",
+      "opportunity_summary_zh": "MCP 是一个新兴但快速增长的协议，得到了主要 AI 玩家的支持。独立开发者有 6-12 个月的时间窗口来构建垂直 MCP Server 和工具。市场虽大，但变现尚未验证，应优先建立社区和信誉。",
+      "related_terms": [
+        {
+          "term": "agentic ai",
+          "relation": "depends-on",
+          "reason": "MCP 是 Agent 实现\"行动能力\"的基础设施，两者是依赖关系，Agent 的爆发直接拉动 MCP 需求"
+        },
+        {
+          "term": "function calling",
+          "relation": "competes-with",
+          "reason": "竞争关系，OpenAI 的私有工具调用规范，与 MCP 争夺 AI 工具集成的标准地位"
+        },
+        {
+          "term": "a2a (agent-to-agent protocol)",
+          "relation": "complements",
+          "reason": "互补关系，Google 在 2025 年 4 月推出的 Agent 间通信协议，与 MCP 配合覆盖\"Agent 与工具\"和\"Agent 与 Agent\"两个层面"
+        }
+      ]
     },
     {
       "id": "trend-vector-databases",
@@ -1646,7 +2074,32 @@
       ],
       "summary_zh": "向量数据库在 RAG 应用中需求增长，社区讨论其性能与选型。",
       "summary_en": "Vector databases see growing demand in RAG applications, with community discussions on performance and selection.",
-      "research_md_path": "content/trends/vector-databases.md"
+      "research_md_path": "content/trends/vector-databases.md",
+      "last_report_date": "2026-08-07",
+      "opportunity_score": 67,
+      "market_score": 78,
+      "competition_score": 85,
+      "demand_score": 70,
+      "seo_difficulty": 75,
+      "suggested_products": [
+        "SaaS",
+        "CLI Tool",
+        "SDK/Library",
+        "MCP Server",
+        "Open Source"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 3,
+      "risk_factors_en": [
+        "Cloud providers (AWS, Azure, GCP) integrating vector search into existing databases may commoditize the space.",
+        "Open-source alternatives are free and mature, making it hard to differentiate on price alone."
+      ],
+      "risk_factors_zh": [
+        "云厂商（AWS、Azure、GCP）将向量搜索集成到现有数据库，可能使赛道商品化。",
+        "开源替代品免费且成熟，仅靠价格难以差异化。"
+      ],
+      "opportunity_summary_en": "Vector databases are a growing market with real demand from RAG applications, but competition is intense. Independent developers can find niches in specific frameworks, cost reduction, or ease-of-use. Focus on a vertical solution rather than a general-purpose database.",
+      "opportunity_summary_zh": "向量数据库市场增长迅速，RAG应用带来真实需求，但竞争激烈。独立开发者可在特定框架、降本或易用性上寻找细分机会。建议聚焦垂直解决方案，而非通用数据库。"
     },
     {
       "id": "trend-agent-skills-unification",
@@ -3919,7 +4372,43 @@
       ],
       "summary_zh": "月之暗面推出 Kimi K3 模型，在长文本处理上表现突出，引发关注。",
       "summary_en": "Moonshot AI's Kimi K3 model excels in long-context handling, drawing significant attention.",
-      "research_md_path": "content/trends/kimi-k3.md"
+      "research_md_path": "content/trends/kimi-k3.md",
+      "opportunity_score": 57,
+      "market_score": 62,
+      "competition_score": 30,
+      "demand_score": 65,
+      "seo_difficulty": 40,
+      "suggested_products": [
+        "SaaS",
+        "API",
+        "AI Agent",
+        "VS Code Extension",
+        "CLI Tool"
+      ],
+      "estimated_dev_days": 14,
+      "revenue_potential": 3,
+      "risk_factors_en": [
+        "The model is very new and may not be widely adopted; the market could remain niche.",
+        "Large AI companies or established players may quickly enter with similar offerings, increasing competition."
+      ],
+      "risk_factors_zh": [
+        "模型非常新，可能未被广泛采用，市场可能保持小众。",
+        "大型AI公司或老牌玩家可能迅速进入，提供类似产品，加剧竞争。"
+      ],
+      "opportunity_summary_en": "Kimi K3 presents a timely opportunity for indie developers to build tools around a powerful open-source model, especially in code-related domains. The market is nascent with low competition, but demand is moderate and could grow as awareness spreads. Early movers can establish a niche by offering deployment, fine-tuning, or coding automation solutions.",
+      "opportunity_summary_zh": "Kimi K3 为独立开发者提供了一个及时的机会，可以围绕强大的开源模型构建工具，特别是在代码相关领域。市场处于新生阶段，竞争低，但需求适中，随着认知度提升可能增长。早期入局者可以通过提供部署、微调或编码自动化解决方案来建立细分市场。",
+      "related_terms": [
+        {
+          "term": "swe-bench",
+          "relation": "related-to",
+          "reason": "Kimi K3 在此基准测试上表现突出，该基准本身已成为衡量模型软件工程能力的关键标尺。"
+        },
+        {
+          "term": "开源模型 vs. 闭源模型",
+          "relation": "related-to",
+          "reason": "Kimi K3 的发布引发了关于“开源模型能否以更低成本达到闭源模型性能”的广泛讨论，这是当前 AI 行业的核心争议之一。"
+        }
+      ]
     },
     {
       "id": "trend-chinas-open-weight-ai-strategy",
@@ -5466,7 +5955,54 @@
       ],
       "summary_zh": "边缘设备上的 AI 推理趋势，减少延迟并提升隐私保护。",
       "summary_en": "Edge AI inference trend reduces latency and improves privacy.",
-      "research_md_path": "content/trends/edge-ai-computing.md"
+      "research_md_path": "content/trends/edge-ai-computing.md",
+      "last_report_date": "2026-08-07",
+      "opportunity_score": 72,
+      "market_score": 78,
+      "competition_score": 45,
+      "demand_score": 80,
+      "seo_difficulty": 30,
+      "suggested_products": [
+        "CLI Tool",
+        "SDK/Library",
+        "SaaS",
+        "VS Code Extension",
+        "Template/Boilerplate"
+      ],
+      "estimated_dev_days": 21,
+      "revenue_potential": 4,
+      "risk_factors_en": [
+        "Big tech companies (Google, Apple, NVIDIA) may improve their tools and enter the gap.",
+        "Hardware fragmentation and rapid model compression advances may outpace toolchain development."
+      ],
+      "risk_factors_zh": [
+        "大厂（Google、Apple、NVIDIA）可能改进其工具并填补空白。",
+        "硬件碎片化和模型压缩技术快速进步可能使工具链开发跟不上。"
+      ],
+      "opportunity_summary_en": "Edge AI computing is at an inflection point with mature hardware and model compression, but developer tools are lacking. This creates a 12-18 month window for indie developers to build a one-stop deployment toolchain. The market is large and growing, with clear demand from mobile and IoT developers.",
+      "opportunity_summary_zh": "边缘AI计算正处于拐点，硬件和模型压缩技术成熟，但开发者工具缺乏。这为独立开发者提供了12-18个月的时间窗口来构建一站式部署工具链。市场庞大且增长迅速，移动和物联网开发者需求明确。",
+      "related_terms": [
+        {
+          "term": "model quantization",
+          "relation": "depends-on",
+          "reason": "依赖关系，Edge AI 推理的前提技术，量化精度直接决定边缘部署可行性"
+        },
+        {
+          "term": "tinyml",
+          "relation": "competes-with",
+          "reason": "竞争关系，两者都做设备端推理但 TinyML 面向 MCU 级设备，Edge AI 覆盖更高算力设备"
+        },
+        {
+          "term": "on-device ai",
+          "relation": "complements",
+          "reason": "互补关系，更宽泛的概念，Edge AI Computing 是 On-Device AI 的基础设施层"
+        },
+        {
+          "term": "ai inference optimization",
+          "relation": "depends-on",
+          "reason": "依赖关系，边缘部署必须做推理优化，两者是工具链上下游关系"
+        }
+      ]
     },
     {
       "id": "trend-homegames",
@@ -5804,7 +6340,49 @@
       ],
       "summary_zh": "OpenAI 推出 Codex CLI，增强开发者命令行 AI 编程体验。",
       "summary_en": "OpenAI's Codex CLI enhances AI-assisted coding in the terminal for developers.",
-      "research_md_path": "content/trends/codex-cli.md"
+      "research_md_path": "content/trends/codex-cli.md",
+      "last_report_date": "2026-08-07",
+      "opportunity_score": 62,
+      "market_score": 72,
+      "competition_score": 45,
+      "demand_score": 65,
+      "seo_difficulty": 40,
+      "suggested_products": [
+        "CLI Tool",
+        "MCP Server",
+        "Plugin/Add-on",
+        "SaaS",
+        "Open Source"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 3,
+      "risk_factors_en": [
+        "OpenAI and Anthropic may quickly expand into peripheral tools, closing the window.",
+        "The trend data is minimal (1 source, 3 mentions), so demand may not materialize as expected."
+      ],
+      "risk_factors_zh": [
+        "OpenAI和Anthropic可能迅速扩展外围工具，关闭窗口期。",
+        "趋势数据极少（1个信源，3次提及），需求可能不及预期。"
+      ],
+      "opportunity_summary_en": "Codex CLI is an early-stage trend in terminal AI coding, validated by Claude Code's success and OpenAI's entry. The market is growing, but data is sparse, so timing is critical. Independent developers can find opportunities in cross-model aggregation, enterprise governance, and niche workflows.",
+      "opportunity_summary_zh": "Codex CLI是终端AI编程的早期趋势，已被Claude Code的成功和OpenAI的入场验证。市场增长中，但数据稀少，时机关键。独立开发者可在跨模型聚合、企业管控和特定工作流中找到机会。",
+      "related_terms": [
+        {
+          "term": "claude code",
+          "relation": "competes-with",
+          "reason": "直接竞争关系，Anthropic 的终端 AI 编程工具，Codex CLI 的发布对标产品"
+        },
+        {
+          "term": "aider",
+          "relation": "competes-with",
+          "reason": "互补/竞争关系，开源终端 AI 编程框架，可作为 Codex CLI 的替代或集成对象"
+        },
+        {
+          "term": "github copilot cli",
+          "relation": "competes-with",
+          "reason": "竞争关系，微软阵营的终端 AI 方案，与 Codex CLI 争夺同一批用户"
+        }
+      ]
     },
     {
       "id": "trend-gpu-spot-market",
@@ -10948,7 +11526,32 @@
       ],
       "summary_zh": "关于 AI Agent 安全性的讨论增多，关注潜在风险与防护措施。",
       "summary_en": "Discussions on AI agent security rise, focusing on potential risks and mitigation.",
-      "research_md_path": "content/trends/ai-agent-security.md"
+      "research_md_path": "content/trends/ai-agent-security.md",
+      "last_report_date": "2026-08-07",
+      "opportunity_score": 45,
+      "market_score": 70,
+      "competition_score": 20,
+      "demand_score": 50,
+      "seo_difficulty": 15,
+      "suggested_products": [
+        "SaaS",
+        "API",
+        "CLI Tool",
+        "Open Source",
+        "Newsletter"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Large tech companies (e.g., cloud providers) may enter with integrated security solutions, crushing startups.",
+        "The concept is nascent; if demand fails to materialize, the market may remain too small for sustainable revenue."
+      ],
+      "risk_factors_zh": [
+        "大型科技公司（如云服务商）可能推出集成安全解决方案，碾压初创公司。",
+        "概念尚处于萌芽阶段；若需求未形成，市场可能过小，难以支撑可持续收入。"
+      ],
+      "opportunity_summary_en": "AI Agent Security is a nascent but promising niche with minimal competition and high SEO potential. Early movers can establish thought leadership and build foundational tools. However, demand is unproven, so focus on validation and flexible product development.",
+      "opportunity_summary_zh": "AI Agent Security是一个新兴且有前景的细分领域，竞争极少，SEO潜力高。早期进入者可以建立思想领导力并构建基础工具。然而，需求尚未验证，应注重验证和灵活的产品开发。"
     },
     {
       "id": "trend-ai-agent-autonomous-red-team-testing-platform",
@@ -11116,7 +11719,30 @@
       ],
       "summary_zh": "社区分享提示工程最佳实践，优化 AI 模型输出质量。",
       "summary_en": "Community shares prompt engineering best practices to optimize AI model outputs.",
-      "research_md_path": "content/trends/prompt-engineering-best-practices.md"
+      "research_md_path": "content/trends/prompt-engineering-best-practices.md",
+      "last_report_date": "2026-08-07",
+      "opportunity_score": 38,
+      "market_score": 35,
+      "competition_score": 20,
+      "demand_score": 40,
+      "seo_difficulty": 15,
+      "suggested_products": [
+        "Template/Boilerplate",
+        "Newsletter",
+        "Open Source"
+      ],
+      "estimated_dev_days": 14,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Market may not materialize if the trend fades quickly.",
+        "Large AI companies or platforms could release official best practices, dominating the niche."
+      ],
+      "risk_factors_zh": [
+        "如果趋势快速消退，市场可能无法形成。",
+        "大型AI公司或平台可能发布官方最佳实践，主导该细分领域。"
+      ],
+      "opportunity_summary_en": "Prompt Engineering Best Practices is a nascent trend with minimal competition, offering a potential first-mover advantage. However, demand is unproven and the market may not grow significantly. The opportunity is to create foundational resources like templates or newsletters to capture early interest, but revenue potential is limited in the short term.",
+      "opportunity_summary_zh": "Prompt Engineering Best Practices 是一个萌芽趋势，竞争极少，可能带来先发优势。但需求尚未验证，市场可能不会显著增长。机会在于创建模板或通讯等基础资源以捕获早期兴趣，但短期收入潜力有限。"
     },
     {
       "id": "trend-taptap-break-reminder",
@@ -11441,7 +12067,30 @@
       ],
       "summary_zh": "本地运行 AI 模型的趋势兴起，注重隐私和离线能力。",
       "summary_en": "Local AI model trend emerges, focusing on privacy and offline capabilities.",
-      "research_md_path": "content/trends/local-ai-models.md"
+      "research_md_path": "content/trends/local-ai-models.md",
+      "last_report_date": "2026-08-07",
+      "opportunity_score": 35,
+      "market_score": 30,
+      "competition_score": 20,
+      "demand_score": 30,
+      "seo_difficulty": 10,
+      "suggested_products": [
+        "Open Source",
+        "CLI Tool",
+        "Template/Boilerplate"
+      ],
+      "estimated_dev_days": 21,
+      "revenue_potential": 1,
+      "risk_factors_en": [
+        "The term may be a false positive or noise.",
+        "Large companies like Google or Apple could dominate local AI models."
+      ],
+      "risk_factors_zh": [
+        "该术语可能是误报或噪音。",
+        "谷歌或苹果等大公司可能主导本地AI模型领域。"
+      ],
+      "opportunity_summary_en": "Local AI Models is an extremely nascent trend with minimal traction, making it a high-risk, low-reward opportunity. The lack of competition and SEO difficulty are offset by unvalidated demand and unclear monetization. Independent developers should monitor this space but avoid heavy investment until more signals emerge.",
+      "opportunity_summary_zh": "本地AI模型是一个极其新兴的趋势，关注度极低，因此是高风险的低回报机会。竞争少和SEO难度低被未经验证的需求和不清晰的变现所抵消。独立开发者应关注该领域，但在更多信号出现前避免大量投入。"
     },
     {
       "id": "trend-codeg-v0.20.0",
@@ -15619,7 +16268,31 @@
       "tags": [],
       "summary_zh": "一款基于 AI 的观鸟助手应用，可能利用图像识别或声音识别来帮助用户识别鸟类，代表 AI 在自然观察和爱好者社区中的垂直应用趋势。",
       "summary_en": "An AI-powered birdwatching assistant app, likely using image or sound recognition for bird identification, representing a vertical AI application for nature enthusiasts.",
-      "research_md_path": "content/trends/birding-pal.md"
+      "research_md_path": "content/trends/birding-pal.md",
+      "opportunity_score": 38,
+      "market_score": 45,
+      "competition_score": 70,
+      "demand_score": 50,
+      "seo_difficulty": 75,
+      "suggested_products": [
+        "Mobile App",
+        "AI Agent",
+        "Web App",
+        "API",
+        "Open Source"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "Existing dominant apps like Merlin Bird ID may expand features and squash newcomers.",
+        "Limited initial traction could lead to low user adoption and revenue."
+      ],
+      "risk_factors_zh": [
+        "现有主导应用如Merlin Bird ID可能扩展功能并压制新进入者。",
+        "初期吸引力有限可能导致用户采用率和收入较低。"
+      ],
+      "opportunity_summary_en": "Birding Pal represents an AI-powered bird identification app in a nascent stage with limited signals. The market has potential but faces strong competition from established players. A differentiated approach focusing on community features or niche segments could carve out a space, but the opportunity is moderate at best.",
+      "opportunity_summary_zh": "Birding Pal代表了一款AI驱动的鸟类识别应用，处于早期阶段，信号有限。市场有潜力，但面临来自成熟玩家的激烈竞争。通过社区功能或细分市场进行差异化可能开辟空间，但机会总体中等偏下。"
     },
     {
       "id": "trend-open-source-robot-vacuum",
@@ -19149,7 +19822,76 @@
       "tags": [],
       "summary_zh": "AI 在 DevOps 流程中的应用增多，自动化运维与监控。",
       "summary_en": "AI in DevOps grows, automating operations and monitoring.",
-      "research_md_path": "content/trends/ai-in-devops.md"
+      "research_md_path": "content/trends/ai-in-devops.md",
+      "opportunity_score": 51,
+      "market_score": 65,
+      "competition_score": 45,
+      "demand_score": 60,
+      "seo_difficulty": 55,
+      "suggested_products": [
+        "AI Agent",
+        "SaaS",
+        "CLI Tool",
+        "MCP Server",
+        "Open Source"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 3,
+      "risk_factors_en": [
+        "Large incumbents like Datadog and PagerDuty may rapidly integrate AI features, squeezing out smaller players.",
+        "High dependency on AI model costs and reliability; errors could erode trust.",
+        "Market is nascent with limited validated demand; adoption may be slow."
+      ],
+      "risk_factors_zh": [
+        "Datadog、PagerDuty 等大型现有厂商可能迅速集成 AI 功能，挤压小玩家空间。",
+        "对 AI 模型的成本和可靠性高度依赖；错误可能削弱信任。",
+        "市场处于早期，验证过的需求有限；采用速度可能较慢。"
+      ],
+      "opportunity_summary_en": "AI in DevOps is a nascent but promising area with moderate competition and growing demand. Focus on niche pain points like intelligent incident triage or automated root cause analysis. Build a specialized tool that integrates with existing workflows, and leverage open-source distribution to gain early traction.",
+      "opportunity_summary_zh": "AI 在 DevOps 领域是一个新兴但前景广阔的方向，竞争适中，需求增长。专注于智能事件分类、自动根因分析等细分痛点。构建与现有工作流集成的专业工具，利用开源分发获得早期用户。"
+    },
+    {
+      "id": "trend-ai-powered-medical-diagnosis",
+      "canonical": "AI-Powered Medical Diagnosis",
+      "canonical_zh": "AI辅助医学诊断",
+      "aliases": [],
+      "first_seen": "2026-08-07",
+      "last_seen": "2026-08-07",
+      "stage": "nascent",
+      "score": 0,
+      "source_count": 0,
+      "total_mentions": 0,
+      "sources": [],
+      "growth_pct": 100,
+      "category": "AIApp",
+      "tags": [],
+      "summary_zh": "OpenAI论坛展示AI在波士顿儿童医院帮助解决医学谜团，表明AI在医疗诊断领域的应用正在深化。",
+      "summary_en": "OpenAI forum showcases AI helping solve medical mysteries at Boston Children's Hospital, indicating deepening AI applications in medical diagnosis.",
+      "research_md_path": "content/trends/ai-powered-medical-diagnosis.md",
+      "opportunity_score": 45,
+      "market_score": 75,
+      "competition_score": 70,
+      "demand_score": 60,
+      "seo_difficulty": 80,
+      "suggested_products": [
+        "Web App",
+        "AI Agent",
+        "API",
+        "SaaS",
+        "Mobile App"
+      ],
+      "estimated_dev_days": 30,
+      "revenue_potential": 2,
+      "risk_factors_en": [
+        "High regulatory compliance (FDA, HIPAA) increases development cost and time",
+        "Dominance by large tech companies and established healthcare incumbents"
+      ],
+      "risk_factors_zh": [
+        "高监管合规要求（FDA、HIPAA）增加开发成本和时间",
+        "大型科技公司和现有医疗企业的主导地位"
+      ],
+      "opportunity_summary_en": "AI in medical diagnosis is a high-potential market but is heavily regulated and competitive. The nascent stage and lack of deep research indicate uncertainty. Independent developers should focus on niche, low-risk applications like administrative assistance or patient education tools rather than direct diagnosis.",
+      "opportunity_summary_zh": "AI医疗诊断市场潜力巨大，但监管严格且竞争激烈。当前萌芽阶段和缺乏深入研究意味着不确定性。独立开发者应聚焦于细分、低风险的应用，如行政辅助或患者教育工具，而非直接诊断。"
     }
   ],
   "_version": "1.0"

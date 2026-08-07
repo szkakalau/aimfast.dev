@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Channels SDK Starter — Slack & Teams in 15 Minutes | www.aimfast.dev</title>
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#1a1d24">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://www.aimfast.dev/channels-sdk-starter/">
+  <meta property="og:type" content="product">
+  <meta property="og:title" content="Channels SDK Starter — Slack & Teams in 15 Minutes">
+  <meta property="og:description" content="Stop wrestling with OAuth and webhooks. Get your CopilotKit agent live in Slack and MS Teams before your coffee cools.">
+  <meta property="og:url" content="https://www.aimfast.dev/channels-sdk-starter/">
+  <meta property="og:site_name" content="AimFast.Dev">
+  <meta property="og:image" content="https://www.aimfast.dev/og/channels-sdk-starter.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Channels SDK Starter — Slack & Teams in 15 Minutes">
+  <meta name="twitter:description" content="Stop wrestling with OAuth and webhooks. Get your CopilotKit agent live in Slack and MS Teams before your coffee cools.">
+  <meta name="twitter:image" content="https://www.aimfast.dev/og/channels-sdk-starter.png">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Channels SDK Starter","applicationCategory":"AIApplication","operatingSystem":"Web","description":"Complete engineering template for CopilotKit Channels SDK — Slack & MS Teams in 15 minutes.","url":"https://www.aimfast.dev/channels-sdk-starter/","offers":{"@type":"Offer","price":"29","priceCurrency":"USD"}}
+  </script>
+  <link rel="stylesheet" href="/_ds/base.css">
+  <link rel="stylesheet" href="/_ds/components.css">
+  <style>
+    /* custom layout only — no token definitions */
+    .signup-form {
+      display: flex;
+      gap: var(--space-2);
+      width: 100%;
+      max-width: 480px;
+      margin: var(--space-4) auto 0;
+    }
+    .signup-form input[type="email"] {
+      flex: 1;
+      min-width: 0;
+      height: 48px;
+      padding: 0 var(--space-3);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      color: var(--color-text);
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      transition: border-color var(--duration-normal) var(--ease-out);
+    }
+    .signup-form input[type="email"]:focus {
+      outline: none;
+      border-color: var(--color-accent);
+      box-shadow: 0 0 0 3px color-mix(in oklch, var(--color-accent) 20%, transparent);
+    }
+    .signup-form .btn {
+      height: 48px;
+      white-space: nowrap;
+      padding: 0 var(--space-4);
+    }
+    .signup-success {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-2);
+      min-height: 48px;
+      padding: var(--space-2) var(--space-3);
+      background: var(--color-surface-alt);
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      font-family: var(--font-body);
+      font-weight: 500;
+      color: var(--color-text);
+      max-width: 480px;
+      margin: var(--space-4) auto 0;
+    }
+    .signup-error {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-2);
+      min-height: 48px;
+      padding: var(--space-2) var(--space-3);
+      background: var(--color-surface-alt);
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      font-family: var(--font-body);
+      font-weight: 500;
+      color: var(--color-text);
+      max-width: 480px;
+      margin: var(--space-4) auto 0;
+    }
+    .step {
+      display: flex;
+      gap: var(--space-4);
+      align-items: flex-start;
+      padding: var(--space-3) 0;
+    }
+    .step-num {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-mono);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--color-accent);
+      background: var(--color-surface-alt);
+      border: 1px solid var(--color-border);
+      border-radius: 50%;
+    }
+    .step-content h3 {
+      margin: 0 0 var(--space-1);
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      color: var(--color-text);
+    }
+    .step-content p {
+      margin: 0;
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+    }
+    .trust-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: var(--space-4);
+      padding: var(--space-4) 0;
+      border-top: 1px solid var(--color-border);
+      color: var(--color-text-muted);
+      font-size: 0.85rem;
+    }
+    .trust-bar span {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-1);
+    }
+    @media (max-width: 640px) {
+      .signup-form {
+        flex-direction: column;
+      }
+      .signup-form .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <!-- Hero with inline email form -->
+    <section class="hero" style="padding: var(--space-8) 0 var(--space-6); text-align: center;">
+      <div class="container" style="max-width: 720px;">
+        <p class="eyebrow" style="justify-content: center;">⚡ CopilotKit Channels SDK</p>
+        <h1 style="font-family: var(--font-heading); font-size: clamp(2rem, 5vw, 3rem); line-height: 1.1; margin: var(--space-3) 0 var(--space-2);">
+          Slack & Teams in 15 Minutes
+        </h1>
+        <p style="font-size: 1.1rem; color: var(--color-text-secondary); max-width: 480px; margin: 0 auto var(--space-4);">
+          Stop wrestling with OAuth and webhooks. Get your agent live before your coffee cools.
+        </p>
+        <!-- Inline email form — zero clicks to see -->
+        <form id="signup-form" class="signup-form" action="https://formspree.io/f/your-form-id" method="POST" onsubmit="handleSubmit(event)">
+          <input type="email" name="email" placeholder="you@example.com" required autocomplete="email">
+          <button type="submit" class="btn btn-primary btn-lg">Get Early Access</button>
+        </form>
+        <p style="margin-top: var(--space-3); font-size: 0.85rem; color: var(--color-text-muted);">
+          Join 500+ developers · No spam, just the template.
+        </p>
+      </div>
+    </section>
+
+    <!-- Why This Matters -->
+    <section style="padding: var(--space-6) 0;">
+      <div class="container" style="max-width: 720px;">
+        <h2 style="font-family: var(--font-heading); font-size: 1.75rem; margin-bottom: var(--space-3);">Why Channels SDK Matters Right Now</h2>
+        <p style="margin-bottom: var(--space-3); color: var(--color-text-secondary);">
+          The CopilotKit team just released their Channels SDK, and the developer response on Hacker News (86 points, 20 comments) shows real appetite for bringing agents into Slack and Teams. But the official examples are minimal — they show a demo, not a production path. Developers are left to piece together OAuth flows, event subscriptions, and message formatting on their own, which turns a 15-minute job into a two-day slog.
+        </p>
+        <p style="margin-bottom: var(--space-3); color: var(--color-text-secondary);">
+          Existing solutions like LangChain's Slack integration require you to buy into a whole different ecosystem, and they still don't handle the channel-specific quirks. The truth is, most teams just want their CopilotKit agent to show up in a channel and start working. That's exactly what this starter kit does — it wraps the official SDK with a clean, reusable structure so you skip the grunt work.
+        </p>
+        <p style="color: var(--color-text-secondary);">
+          The timing is perfect: the SDK is brand new, the ecosystem is wide open, and early adopters are actively searching for ways to get started. With the Channels SDK Starter, you're not just keeping up — you're shipping while the iron is hot.
+        </p>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section style="padding: var(--space-6) 0; background: var(--color-surface-alt);">
+      <div class="container" style="max-width: 720px;">
+        <h2 style="font-family: var(--font-heading); font-size: 1.75rem; margin-bottom: var(--space-4);">How It Works</h2>
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h3>Clone the template</h3>
+            <p>Grab the GitHub repo with a single command. You get a complete TypeScript project with Slack and Teams folders, pre-configured environment variables, and a docker-compose file for local development.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h3>Add your tokens</h3>
+            <p>Drop in your Slack bot token and Teams app credentials. The starter handles OAuth, event subscriptions, and webhook routing automatically — no need to read 50 pages of API docs.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h3>Run & deploy</h3>
+            <p>Start locally with docker-compose, test with ngrok, then deploy to your favorite host. Your CopilotKit agent is now live in Slack and Teams — fully functional, with message formatting and error handling built in.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Selling Points (3-column grid) -->
+    <section style="padding: var(--space-6) 0;">
+      <div class="container" style="max-width: 960px;">
+        <h2 style="font-family: var(--font-heading); font-size: 1.75rem; text-align: center; margin-bottom: var(--space-5);">What You Get</h2>
+        <div class="grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4);">
+          <div class="card" style="padding: var(--space-4);">
+            <div class="icon" style="width: 32px; height: 32px; margin-bottom: var(--space-2);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="32" height="32">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </div>
+            <h3 style="font-family: var(--font-heading); font-size: 1.1rem; margin-bottom: var(--space-2);">15-minute setup</h3>
+            <p style="color: var(--color-text-secondary); line-height: 1.6; margin: 0;">A complete engineering template, not a toy example. You get production-ready code with proper error handling, logging, and reconnection logic — the boring parts are already done for you.</p>
+          </div>
+          <div class="card" style="padding: var(--space-4);">
+            <div class="icon" style="width: 32px; height: 32px; margin-bottom: var(--space-2);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="32" height="32">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+            </div>
+            <h3 style="font-family: var(--font-heading); font-size: 1.1rem; margin-bottom: var(--space-2);">Zero config pain</h3>
+            <p style="color: var(--color-text-secondary); line-height: 1.6; margin: 0;">OAuth, event subscriptions, and message format conversion are all wrapped and handled. You don't need to understand Slack's block kit or Teams' adaptive cards — just plug in your agent.</p>
+          </div>
+          <div class="card" style="padding: var(--space-4);">
+            <div class="icon" style="width: 32px; height: 32px; margin-bottom: var(--space-2);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="32" height="32">
+                <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+              </svg>
+            </div>
+            <h3 style="font-family: var(--font-heading); font-size: 1.1rem; margin-bottom: var(--space-2);">Dual-channel coverage</h3>
+            <p style="color: var(--color-text-secondary); line-height: 1.6; margin: 0;">One codebase for both Slack and MS Teams. Write your agent logic once, and the starter handles the channel-specific adapters. Save days of duplicated work and keep your codebase clean.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust Bar -->
+    <section style="padding: var(--space-2) 0 var(--space-4);">
+      <div class="container" style="max-width: 960px;">
+        <div class="trust-bar">
+          <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+            Built on official CopilotKit SDK
+          </span>
+          <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M20 6 9 17l-5-5"/></svg>
+            TypeScript + Node.js
+          </span>
+          <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+            Live in production
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="padding: var(--space-4) 0; border-top: 1px solid var(--color-border); text-align: center; color: var(--color-text-muted); font-size: 0.85rem;">
+      © 2026 · www.aimfast.dev
+    </footer>
+  </main>
+
+  <script>
+    async function handleSubmit(event) {
+      event.preventDefault();
+      const form = document.getElementById('signup-form');
+      const

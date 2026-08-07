@@ -2,7 +2,7 @@
   "_schema": "需求雷达 v3.1 — Market/Business 分离 + 趋势级独立评分",
   "_version": "3.1",
   "_formula": "Market=(Trend×0.5+Growth×0.3+Consistency×0.2)×100, Business=(Pain×0.5+Pay×0.5)×100, Opportunity=Market×0.6+Business×0.4, Confidence=log2(n+1)×20",
-  "generated_at": "2026-08-06T09:21:46.902887+08:00",
+  "generated_at": "2026-08-07T12:17:19.388595+08:00",
   "weeks": [
     "2026-06-29",
     "2026-07-06",
@@ -109,9 +109,9 @@
           "snapshots": {
             "2026-07-20": 18,
             "2026-07-27": 31,
-            "2026-08-03": 12
+            "2026-08-03": 17
           },
-          "total_signals": 161,
+          "total_signals": 166,
           "delta": "falling",
           "market_score": 94,
           "business_score": 95,
@@ -129,7 +129,7 @@
           "pain_severity": 10,
           "pay_budget": 10,
           "pay_urgency": 9,
-          "total_appearances": 161,
+          "total_appearances": 166,
           "distinct_days": 11
         },
         {
@@ -137,15 +137,15 @@
           "snapshots": {
             "2026-07-20": 9,
             "2026-07-27": 9,
-            "2026-08-03": 1
+            "2026-08-03": 2
           },
-          "total_signals": 28,
+          "total_signals": 29,
           "delta": "falling",
           "market_score": 50,
           "business_score": 95,
           "competition": 19,
           "ai_replaceability": 2,
-          "confidence": 97,
+          "confidence": 98,
           "stage": "breaking",
           "opportunity_index": 29,
           "trend_score": 2,
@@ -157,7 +157,7 @@
           "pain_severity": 10,
           "pay_budget": 10,
           "pay_urgency": 9,
-          "total_appearances": 28,
+          "total_appearances": 29,
           "distinct_days": 8
         },
         {
@@ -210,11 +210,11 @@
       "snapshots": {
         "2026-07-20": 38,
         "2026-07-27": 43,
-        "2026-08-03": 15
+        "2026-08-03": 19
       },
-      "total_signals": 147,
+      "total_signals": 151,
       "delta": "falling",
-      "market_score": 61,
+      "market_score": 64,
       "business_score": 45,
       "competition": 35,
       "ai_replaceability": 4,
@@ -243,9 +243,9 @@
           "snapshots": {
             "2026-07-20": 32,
             "2026-07-27": 36,
-            "2026-08-03": 7
+            "2026-08-03": 9
           },
-          "total_signals": 165,
+          "total_signals": 167,
           "delta": "falling",
           "market_score": 91,
           "business_score": 45,
@@ -263,7 +263,7 @@
           "pain_severity": 7,
           "pay_budget": 8,
           "pay_urgency": 6,
-          "total_appearances": 165,
+          "total_appearances": 167,
           "distinct_days": 10
         },
         {
@@ -271,9 +271,9 @@
           "snapshots": {
             "2026-07-20": 10,
             "2026-07-27": 8,
-            "2026-08-03": 6
+            "2026-08-03": 7
           },
-          "total_signals": 77,
+          "total_signals": 78,
           "delta": "falling",
           "market_score": 56,
           "business_score": 45,
@@ -291,7 +291,7 @@
           "pain_severity": 7,
           "pay_budget": 8,
           "pay_urgency": 6,
-          "total_appearances": 77,
+          "total_appearances": 78,
           "distinct_days": 10
         },
         {
@@ -299,13 +299,13 @@
           "snapshots": {
             "2026-07-20": 24,
             "2026-07-27": 32,
-            "2026-08-03": 20
+            "2026-08-03": 26
           },
-          "total_signals": 128,
+          "total_signals": 134,
           "delta": "falling",
-          "market_score": 84,
+          "market_score": 86,
           "business_score": 45,
-          "competition": 51,
+          "competition": 52,
           "ai_replaceability": 4,
           "confidence": 100,
           "stage": "breaking",
@@ -319,7 +319,7 @@
           "pain_severity": 7,
           "pay_budget": 8,
           "pay_urgency": 6,
-          "total_appearances": 128,
+          "total_appearances": 134,
           "distinct_days": 9
         },
         {
@@ -327,9 +327,9 @@
           "snapshots": {
             "2026-07-20": 25,
             "2026-07-27": 24,
-            "2026-08-03": 9
+            "2026-08-03": 11
           },
-          "total_signals": 169,
+          "total_signals": 171,
           "delta": "falling",
           "market_score": 85,
           "business_score": 45,
@@ -347,7 +347,7 @@
           "pain_severity": 7,
           "pay_budget": 8,
           "pay_urgency": 6,
-          "total_appearances": 169,
+          "total_appearances": 171,
           "distinct_days": 11
         },
         {
@@ -381,7 +381,7 @@
       ],
       "opportunity_index": 23,
       "trend_score": 3,
-      "growth_score": 9,
+      "growth_score": 10,
       "consistency_score": 10,
       "pain_score": 4,
       "pay_score": 5,
@@ -389,7 +389,7 @@
       "pain_severity": 7,
       "pay_budget": 8,
       "pay_urgency": 6,
-      "total_appearances": 147,
+      "total_appearances": 151,
       "distinct_days": 11
     },
     {
@@ -400,9 +400,9 @@
       "snapshots": {
         "2026-07-20": 6,
         "2026-07-27": 11,
-        "2026-08-03": 12
+        "2026-08-03": 16
       },
-      "total_signals": 85,
+      "total_signals": 89,
       "delta": "rising",
       "market_score": 50,
       "business_score": 71,
@@ -579,7 +579,7 @@
       "pain_severity": 9,
       "pay_budget": 7,
       "pay_urgency": 10,
-      "total_appearances": 85,
+      "total_appearances": 89,
       "distinct_days": 10
     },
     {
@@ -590,9 +590,9 @@
       "snapshots": {
         "2026-07-20": 4,
         "2026-07-27": 17,
-        "2026-08-03": 11
+        "2026-08-03": 16
       },
-      "total_signals": 68,
+      "total_signals": 73,
       "delta": "falling",
       "market_score": 53,
       "business_score": 68,
@@ -623,9 +623,9 @@
           "snapshots": {
             "2026-07-20": 3,
             "2026-07-27": 9,
-            "2026-08-03": 7
+            "2026-08-03": 8
           },
-          "total_signals": 35,
+          "total_signals": 36,
           "delta": "falling",
           "market_score": 96,
           "business_score": 68,
@@ -643,7 +643,7 @@
           "pain_severity": 9,
           "pay_budget": 9,
           "pay_urgency": 8,
-          "total_appearances": 35,
+          "total_appearances": 36,
           "distinct_days": 9
         },
         {
@@ -707,9 +707,9 @@
           "snapshots": {
             "2026-07-20": 8,
             "2026-07-27": 10,
-            "2026-08-03": 6
+            "2026-08-03": 7
           },
-          "total_signals": 38,
+          "total_signals": 39,
           "delta": "falling",
           "market_score": 98,
           "business_score": 68,
@@ -727,7 +727,7 @@
           "pain_severity": 9,
           "pay_budget": 9,
           "pay_urgency": 8,
-          "total_appearances": 38,
+          "total_appearances": 39,
           "distinct_days": 8
         },
         {
@@ -741,11 +741,11 @@
           "delta": "falling",
           "market_score": 56,
           "business_score": 68,
-          "competition": 56,
+          "competition": 55,
           "ai_replaceability": 6,
           "confidence": 76,
           "stage": "breaking",
-          "opportunity_index": 20,
+          "opportunity_index": 21,
           "trend_score": 3,
           "growth_score": 10,
           "consistency_score": 4,
@@ -769,7 +769,7 @@
       "pain_severity": 9,
       "pay_budget": 9,
       "pay_urgency": 8,
-      "total_appearances": 68,
+      "total_appearances": 73,
       "distinct_days": 9
     },
     {
@@ -780,11 +780,11 @@
       "snapshots": {
         "2026-07-20": 73,
         "2026-07-27": 105,
-        "2026-08-03": 57
+        "2026-08-03": 69
       },
-      "total_signals": 530,
+      "total_signals": 542,
       "delta": "falling",
-      "market_score": 94,
+      "market_score": 97,
       "business_score": 56,
       "competition": 100,
       "ai_replaceability": 8,
@@ -841,10 +841,10 @@
           "snapshots": {
             "2026-07-20": 5,
             "2026-07-27": 5,
-            "2026-08-03": 4
+            "2026-08-03": 5
           },
-          "total_signals": 65,
-          "delta": "falling",
+          "total_signals": 66,
+          "delta": "stable",
           "market_score": 47,
           "business_score": 56,
           "competition": 33,
@@ -861,7 +861,7 @@
           "pain_severity": 8,
           "pay_budget": 7,
           "pay_urgency": 7,
-          "total_appearances": 65,
+          "total_appearances": 66,
           "distinct_days": 11
         },
         {
@@ -869,18 +869,18 @@
           "snapshots": {
             "2026-07-20": 9,
             "2026-07-27": 16,
-            "2026-08-03": 6
+            "2026-08-03": 9
           },
-          "total_signals": 80,
+          "total_signals": 83,
           "delta": "falling",
-          "market_score": 66,
+          "market_score": 67,
           "business_score": 56,
           "competition": 36,
           "ai_replaceability": 8,
           "confidence": 100,
           "stage": "breaking",
           "opportunity_index": 35,
-          "trend_score": 4,
+          "trend_score": 5,
           "growth_score": 8,
           "consistency_score": 10,
           "pain_score": 6,
@@ -889,7 +889,7 @@
           "pain_severity": 8,
           "pay_budget": 7,
           "pay_urgency": 7,
-          "total_appearances": 80,
+          "total_appearances": 83,
           "distinct_days": 11
         },
         {
@@ -897,19 +897,19 @@
           "snapshots": {
             "2026-07-20": 17,
             "2026-07-27": 20,
-            "2026-08-03": 12
+            "2026-08-03": 14
           },
-          "total_signals": 179,
+          "total_signals": 181,
           "delta": "falling",
-          "market_score": 79,
+          "market_score": 85,
           "business_score": 56,
           "competition": 58,
           "ai_replaceability": 8,
           "confidence": 100,
           "stage": "forming",
-          "opportunity_index": 26,
+          "opportunity_index": 27,
           "trend_score": 10,
-          "growth_score": 3,
+          "growth_score": 5,
           "consistency_score": 10,
           "pain_score": 6,
           "pay_score": 5,
@@ -917,7 +917,7 @@
           "pain_severity": 8,
           "pay_budget": 7,
           "pay_urgency": 7,
-          "total_appearances": 179,
+          "total_appearances": 181,
           "distinct_days": 11
         },
         {
@@ -925,19 +925,19 @@
           "snapshots": {
             "2026-07-20": 7,
             "2026-07-27": 12,
-            "2026-08-03": 8
+            "2026-08-03": 10
           },
-          "total_signals": 84,
+          "total_signals": 86,
           "delta": "falling",
-          "market_score": 64,
+          "market_score": 68,
           "business_score": 56,
           "competition": 37,
           "ai_replaceability": 8,
           "confidence": 100,
           "stage": "breaking",
-          "opportunity_index": 34,
+          "opportunity_index": 35,
           "trend_score": 5,
-          "growth_score": 7,
+          "growth_score": 8,
           "consistency_score": 10,
           "pain_score": 6,
           "pay_score": 5,
@@ -945,13 +945,13 @@
           "pain_severity": 8,
           "pay_budget": 7,
           "pay_urgency": 7,
-          "total_appearances": 84,
+          "total_appearances": 86,
           "distinct_days": 11
         }
       ],
       "opportunity_index": 1,
       "trend_score": 10,
-      "growth_score": 8,
+      "growth_score": 9,
       "consistency_score": 10,
       "pain_score": 6,
       "pay_score": 5,
@@ -959,7 +959,7 @@
       "pain_severity": 8,
       "pay_budget": 7,
       "pay_urgency": 7,
-      "total_appearances": 530,
+      "total_appearances": 542,
       "distinct_days": 11
     }
   ],
