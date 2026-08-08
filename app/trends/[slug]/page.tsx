@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 import { marked } from 'marked';
 
 // ISR: cache rendered pages for 1 hour — critical for Google crawl budget.
@@ -61,7 +62,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const term = getTrendTerm(slug);
   if (!term) {
-    return { title: 'Trend Not Found — AimFast.Dev' };
+    return { title: 'Not Found — AimFast.Dev', robots: { index: false } };
   }
 
   const title = `${term.canonical} — Trend Report & Analysis | AimFast.Dev`;
@@ -116,16 +117,7 @@ export default async function TrendDetailPage({
   const term = getTrendTerm(slug);
 
   if (!term) {
-    return (
-      <main className="trend-detail">
-        <div className="trends-empty">
-          <h2>Trend not found</h2>
-          <p>
-            <a href="/trends/">← Back to all trends</a>
-          </p>
-        </div>
-      </main>
-    );
+    notFound();
   }
 
   const researchMd = getResearchContentEn(term.research_md_path);

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 import { marked } from 'marked';
 
 // ISR: cache rendered pages for 1 hour — critical for Google crawl budget.
@@ -58,7 +59,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const term = getTrendTerm(slug);
   if (!term) {
-    return { title: '未找到趋势词 — AimFast.Dev' };
+    return { title: 'Not Found — AimFast.Dev', robots: { index: false } };
   }
 
   const title = `${term.canonical} — 趋势报告与分析 | AimFast.Dev`;
@@ -113,16 +114,7 @@ export default async function TrendDetailZhPage({
   const term = getTrendTerm(slug);
 
   if (!term) {
-    return (
-      <main className="trend-detail">
-        <div className="trends-empty">
-          <h2>未找到趋势词</h2>
-          <p>
-            <a href="/trends/">← 返回趋势列表</a>
-          </p>
-        </div>
-      </main>
-    );
+    notFound();
   }
 
   const researchMd = getResearchContent(term.research_md_path);
