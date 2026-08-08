@@ -132,6 +132,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="alternate" type="application/rss+xml" title="AimFast.Dev 文章 RSS (中文)" href="/articles/rss-zh.xml" />
         <link rel="alternate" type="application/rss+xml" title="AimFast.Dev Reports RSS" href="/reports/rss.xml" />
         <link rel="llms.txt" href="/llms.txt" />
+        <meta name="google-site-verification" content="7ZvF5e2dWPapET8QYn6QMPa0qE_AXBgk_s8T1P7cOSQ" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
