@@ -17,6 +17,16 @@
       "source": "/articles/:slug/en/",
       "destination": "/articles/:slug/",
       "permanent": true
+    },
+    {
+      "source": "/en/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/en",
+      "destination": "/",
+      "permanent": true
     }
   ],
   "headers": [
